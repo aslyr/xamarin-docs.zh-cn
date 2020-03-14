@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
 ms.openlocfilehash: 9353cffd924688058c1495b9258cc7f0e0ce7b82
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78910816"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306187"
 ---
 # <a name="introduction-to-ios-8"></a>iOS 8 简介
 
@@ -161,7 +161,7 @@ iOS 8 包含用于创建用户界面（统一情节提要）的一种新易用�
 
 - **[UISearchDisplayController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/cl/UISearchDisplayController)** –此项已由 UISearchController 在 iOS8 中替换。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 本文介绍了 iOS 8 中 Apple 引入的一些新功能。
 
 ## <a name="related-links"></a>相关链接

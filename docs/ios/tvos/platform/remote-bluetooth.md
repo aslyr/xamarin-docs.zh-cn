@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
 ms.openlocfilehash: c0338fce694d61dc19484c56dbc00bb854d0d0d7
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78915804"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306193"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>适用于 Xamarin 中 tvOS 的 Siri 远程和蓝牙控制器
 
@@ -36,7 +36,7 @@ ms.locfileid: "78915804"
 
 Siri 远程在 tvOS 应用程序中具有以下功能和预期用法：
 
-|Feature|一般应用使用情况|游戏应用使用情况|
+|功能|一般应用使用情况|游戏应用使用情况|
 |---|---|---|
 |**触摸表面**<br />轻扫以导航，按选择并按住上下文菜单。|**点击/刷**<br />可设定焦点项之间的 UI 导航。<br /><br />**单击“网络和共享中心”**<br />激活选定的（焦点）项。|**点击/刷**<br />取决于游戏设计，并可通过点击边缘来用作一种3-D 板。<br /><br />**单击“网络和共享中心”**<br />执行主按钮函数。|
 |**菜单**<br />按返回上一个屏幕或菜单。|返回到上一个屏幕，从主应用屏幕退出到 Apple TV 主屏幕。|暂停和恢复游戏，返回到上一屏幕并从主应用屏幕退出到 Apple TV 主屏幕。|
@@ -280,7 +280,7 @@ namespace tvRemote
 
 游戏控制器具有以下功能和 tvOS 应用中预期的用法：
 
-|Feature|一般应用使用情况|游戏应用使用情况|
+|功能|一般应用使用情况|游戏应用使用情况|
 |---|---|---|
 |**方向键**|在 UI 元素中导航（更改焦点）。|依赖于游戏。|
 |**指向**|激活选定的（焦点）项。|执行主按钮功能并确认对话框操作。|
@@ -361,7 +361,7 @@ Apple TV 附带的 Siri 远程可用作受限游戏控制器。 与其他游戏�
 
 <a name="Summary" />
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了 Apple TV、触控 Surface 手势和 Siri 遥控器随附的新 Siri 遥控器。 接下来，它涉及到使用笔势和情节提要、笔势和代码以及低级别事件。 最后，如果讨论了如何使用游戏控制器。
 

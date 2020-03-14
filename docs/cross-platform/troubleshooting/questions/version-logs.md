@@ -8,15 +8,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
 ms.openlocfilehash: 68de58f499788d803aa0af6c68f20e2265b1d6b5
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73013177"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305821"
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>在哪里可以找到我的版本信息和日志？
 
-## <a name="outline"></a>轮廓
+## <a name="outline"></a>外边框
 
 - [版本信息](#version-information)
   - Windows 版本信息
@@ -25,7 +25,7 @@ ms.locfileid: "73013177"
 - [IDE 和安装程序日志](#ide-and-installer-logs)
   - [Windows 日志](#windows-logs)
     - Xamarin Studio
-    - Xamarin for Visual Studio
+    - 面向 Visual Studio 的 Xamarin
     - Xamarin 通用安装程序
     - 单个 `.msi` 安装程序，详细日志
     - Visual Studio 启动，详细日志
@@ -160,9 +160,9 @@ devenv.exe /log "%USERPROFILE%\Desktop\VisualStudio.log"
 
 **查看 > 输出 > 显示输出：调试**
 
-### <a name="a-idadb-logcat-nameadb-logcat-android-adbhttpsdeveloperandroidcomtoolshelpadbhtml-logcat-logs"></a><a id="adb-logcat" name="adb-logcat" />Android [`adb`](https://developer.android.com/tools/help/adb.html) logcat 日志
+### <a name="a-idadb-logcat-nameadb-logcat-android-adb-logcat-logs"></a><a id="adb-logcat" name="adb-logcat" />Android [`adb`](https://developer.android.com/tools/help/adb.html) logcat 日志
 
-运行 `adb` 命令后，从桌面附加回**android_logcat**文件。 这些说明假定你只连接了一个设备。
+运行 `adb` 命令后，从桌面附加 android_logcat 的文件 **。** 这些说明假定你只连接了一个设备。
 
 另请参阅 " [Android 调试日志](~/android/deploy-test/debugging/android-debug-log.md)" 页。
 
@@ -170,14 +170,14 @@ devenv.exe /log "%USERPROFILE%\Desktop\VisualStudio.log"
 
 1. **Tools > Android > 启动 Android Adb 命令提示符**
 2. 清理日志： `adb logcat -c`
-3. 再现问题。
+3. 重现此问题。
 4. 输出日志： `adb logcat -vtime -d > "%USERPROFILE%\Desktop\android_logcat.txt"`
 
 #### <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
 1. **工具 > 打开 Android SDK 命令提示符**
 2. 清理日志： `adb logcat -c`
-3. 再现问题。
+3. 重现此问题。
 4. 输出日志： `adb logcat -vtime -d > ~/Desktop/android_logcat.txt`
 
 ### <a name="a-idios-simulator-logs-nameios-simulator-logs-ios-simulator-logs-on-mac"></a><a id="ios-simulator-logs" name="ios-simulator-logs" />iOS 模拟器日志（在 Mac 上）

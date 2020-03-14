@@ -1,5 +1,5 @@
 ---
-title: 使用级联样式表 (CSS) 样式设置 Xamarin.Forms 应用
+title: 使用级联样式表设置 Xamarin.Forms 应用的样式 (CSS)
 description: Xamarin.Forms 支持使用级联样式表 (CSS) 样式可视元素。
 ms.prod: xamarin
 ms.assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2
@@ -9,11 +9,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/04/2019
 ms.openlocfilehash: 726ebd55b38460ee966113e4ee487327cd42b03d
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76724191"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305599"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>使用级联样式表 (CSS) 样式设置 Xamarin.Forms 应用
 
@@ -357,9 +357,9 @@ Xamarin 格式支持以下 CSS 属性。窗体（在 "**值**" 列中，类型�
 |`align-self`|`VisualElement`| `auto` \| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial`|`align-self: flex-end;`|
 |`background-color`|`VisualElement`|_颜色_\| `initial` |`background-color: springgreen;`|
 |`background-image`|`Page`|_string_ \| `initial` |`background-image: bg.png;`|
-|`border-color`|`Button`、 `Frame`、 `ImageButton`|_颜色_\| `initial`|`border-color: #9acd32;`|
-|`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_双_\| `initial` |`border-radius: 10;`|
-|`border-width`|`Button`, `ImageButton`|_双_\| `initial` |`border-width: .5;`|
+|`border-color`|`Button`、`Frame`、`ImageButton`|_颜色_\| `initial`|`border-color: #9acd32;`|
+|`border-radius`|`BoxView`、`Button`、`Frame`、`ImageButton`|_双_\| `initial` |`border-radius: 10;`|
+|`border-width`|`Button`、`ImageButton`|_双_\| `initial` |`border-width: .5;`|
 |`color`|`ActivityIndicator`、`BoxView`、`Button`、`CheckBox`、`DatePicker`、`Editor`、`Entry`、`Label`、`Picker`、`ProgressBar`、`SearchBar`、`Switch`、`TimePicker`|_颜色_\| `initial` |`color: rgba(255, 0, 0, 0.3);`|
 |`column-gap`|`Grid`|_双_\| `initial`|`column-gap: 9;`|
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|
@@ -374,7 +374,7 @@ Xamarin 格式支持以下 CSS 属性。窗体（在 "**值**" 列中，类型�
 |`height`|`VisualElement`|_双_\| `initial` |`min-height: 250;`|
 |`justify-content`|`FlexLayout`| `start` \| `center` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial`|`justify-content: flex-end;`|
 |`letter-spacing`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `SearchHandler`, `Span`, `TimePicker`|_双_\| `initial`|`letter-spacing: 2.5;`|
-|`line-height`|`Label`, `Span`|_双_\| `initial` |`line-height: 1.8;`|
+|`line-height`|`Label`、`Span`|_双_\| `initial` |`line-height: 1.8;`|
 |`margin`|`View`|_厚度_\| `initial` |`margin: 6 12;`|
 |`margin-left`|`View`|_厚度_\| `initial` |`margin-left: 3;`|
 |`margin-top`|`View`|_厚度_\| `initial` |`margin-top: 2;`|
@@ -385,15 +385,15 @@ Xamarin 格式支持以下 CSS 属性。窗体（在 "**值**" 列中，类型�
 |`min-width`|`VisualElement`|_双_\| `initial` |`min-width: 112;`|
 |`opacity`|`VisualElement`|_双_\| `initial` |`opacity: .3;`|
 |`order`|`VisualElement`|_int_ \| `initial`|`order: -1;`|
-|`padding`|`Button`, `ImageButton`, `Layout`, `Page`|_厚度_\| `initial` |`padding: 6 12 12;`|
-|`padding-left`|`Button`, `ImageButton`, `Layout`, `Page`|_双_\| `initial`|`padding-left: 3;`|
-|`padding-top`|`Button`, `ImageButton`, `Layout`, `Page`| _双_\| `initial` |`padding-top: 4;`|
-|`padding-right`|`Button`, `ImageButton`, `Layout`, `Page`| _双_\| `initial` |`padding-right: 2;`|
-|`padding-bottom`|`Button`, `ImageButton`, `Layout`, `Page`| _双_\| `initial` |`padding-bottom: 6;`|
+|`padding`|`Button`、`ImageButton`、`Layout`、`Page`|_厚度_\| `initial` |`padding: 6 12 12;`|
+|`padding-left`|`Button`、`ImageButton`、`Layout`、`Page`|_双_\| `initial`|`padding-left: 3;`|
+|`padding-top`|`Button`、`ImageButton`、`Layout`、`Page`| _双_\| `initial` |`padding-top: 4;`|
+|`padding-right`|`Button`、`ImageButton`、`Layout`、`Page`| _双_\| `initial` |`padding-right: 2;`|
+|`padding-bottom`|`Button`、`ImageButton`、`Layout`、`Page`| _双_\| `initial` |`padding-bottom: 6;`|
 |`position`|`FlexLayout`| `relative` \| `absolute` \| `initial`|`position: absolute;`|
 |`row-gap`|`Grid`| _双_\| `initial`|`row-gap: 12;`|
-|`text-align`| `Entry`, `EntryCell`, `Label`, `SearchBar`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`。 在从右向左的环境中，应避免 `left` 和 `right`。| `text-align: right;`|
-|`text-decoration`|`Label`, `Span`|`none` \| `underline` \| `strikethrough` \| `line-through` \| `initial`|`text-decoration: underline, line-through;`|
+|`text-align`| `Entry`、`EntryCell`、`Label`、`SearchBar`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`。 在从右向左的环境中，应避免 `left` 和 `right`。| `text-align: right;`|
+|`text-decoration`|`Label`、`Span`|`none` \| `underline` \| `strikethrough` \| `line-through` \| `initial`|`text-decoration: underline, line-through;`|
 |`transform`|`VisualElement`| `none`, `rotate`, `rotateX`, `rotateY`, `scale`, `scaleX`, `scaleY`, `translate`, `translateX`, `translateY`, `initial` |`transform: rotate(180), scaleX(2.5);`|
 |`transform-origin`|`VisualElement`| _double_、 _double_ \| `initial` |`transform-origin: 7.5, 12.5;`|
 |`vertical-align`|`Label`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`|`vertical-align: bottom;`|
@@ -405,7 +405,7 @@ Xamarin 格式支持以下 CSS 属性。窗体（在 "**值**" 列中，类型�
 
 是当前不支持以下属性：
 
-- `all: initial`配置架构以匹配数据源中的架构。
+- `all: initial` 列中的一个值匹配。
 - 布局属性 （框中，或网格）。
 - 速记属性，如 `font`和 `border`。
 
@@ -419,17 +419,17 @@ Xamarin 格式支持以下 CSS 属性。窗体（在 "**值**" 列中，类型�
 
 |属性|适用于|值|示例|
 |---|---|---|---|
-|`-xf-bar-background-color`|`NavigationPage`, `TabbedPage`|_颜色_\| `initial` |`-xf-bar-background-color: teal;`|
-|`-xf-bar-text-color`|`NavigationPage`, `TabbedPage`|_颜色_\| `initial` |`-xf-bar-text-color: gray`|
+|`-xf-bar-background-color`|`NavigationPage`、`TabbedPage`|_颜色_\| `initial` |`-xf-bar-background-color: teal;`|
+|`-xf-bar-text-color`|`NavigationPage`、`TabbedPage`|_颜色_\| `initial` |`-xf-bar-text-color: gray`|
 |`-xf-horizontal-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-horizontal-scroll-bar-visibility: never;`|
-|`-xf-max-length`|`Entry`, `Editor`|_int_ \| `initial` |`-xf-max-length: 20;`|
+|`-xf-max-length`|`Entry`、`Editor`|_int_ \| `initial` |`-xf-max-length: 20;`|
 |`-xf-max-track-color`|`Slider`|_颜色_\| `initial` |`-xf-max-track-color: red;`|
 |`-xf-min-track-color`|`Slider`|_颜色_\| `initial` |`-xf-min-track-color: yellow;`|
-|`-xf-orientation`|`ScrollView`, `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`。 仅 `ScrollView`支持 `both`。 |`-xf-orientation: horizontal;`|
-|`-xf-placeholder`|`Entry`、 `Editor`、 `SearchBar`|_带引号的文本_\| `initial` |`-xf-placeholder: Enter name;`|
-|`-xf-placeholder-color`|`Entry`、 `Editor`、 `SearchBar`|_颜色_\| `initial` |`-xf-placeholder-color: green;`|
+|`-xf-orientation`|`ScrollView`、`StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`。 仅 `ScrollView`支持 `both`。 |`-xf-orientation: horizontal;`|
+|`-xf-placeholder`|`Entry`、`Editor`、`SearchBar`|_带引号的文本_\| `initial` |`-xf-placeholder: Enter name;`|
+|`-xf-placeholder-color`|`Entry`、`Editor`、`SearchBar`|_颜色_\| `initial` |`-xf-placeholder-color: green;`|
 |`-xf-spacing`|`StackLayout`|_双_\| `initial` |`-xf-spacing: 8;`|
-|`-xf-thumb-color`|`Slider`, `Switch`|_颜色_\| `initial` |`-xf-thumb-color: limegreen;`|
+|`-xf-thumb-color`|`Slider`、`Switch`|_颜色_\| `initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-vertical-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-vertical-scroll-bar-visibility: always;`|
 |`-xf-vertical-text-alignment`|`Label`| `start` \| `center` \| `end` \| `initial`|`-xf-vertical-text-alignment: end;`|
 |`-xf-visual`|`VisualElement`|_string_ \| `initial` |`-xf-visual: material;`|

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: de5728710a408b8e0c7c68dc89c7e6484cbcc3ce
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78915238"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306391"
 ---
 # <a name="validation-in-enterprise-apps"></a>企业应用程序中的验证
 
@@ -420,7 +420,7 @@ UI 在其数据验证失败的每个控件下的标签控件中显示验证错�
 
 每个[`Label`](xref:Xamarin.Forms.Label)都绑定到要验证的视图模型对象的 `Errors` 属性。 `Errors` 属性由 `ValidatableObject<T>` 类提供，其类型为 `List<string>`。 由于 `Errors` 属性可能包含多个验证错误，因此 `FirstValidationErrorConverter` 实例用于从集合中检索要显示的第一个错误。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 EShopOnContainers 移动应用执行视图模型属性的同步客户端验证，通过突出显示包含无效数据的控件并显示通知用户的错误消息，通知用户任何验证错误。数据无效的原因。
 

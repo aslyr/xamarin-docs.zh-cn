@@ -6,13 +6,13 @@ ms.assetid: D10506DD-BAA0-437F-A4AD-882D16E7B60D
 ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
-ms.date: 02/19/2020
-ms.openlocfilehash: 7136e3240a39321b2d67ca29c16a0758cf5c4cfb
-ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
+ms.date: 03/13/2020
+ms.openlocfilehash: 104237155797ca90c52ad385e8349480f9666c4c
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77486288"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303497"
 ---
 # <a name="detect-dark-mode-in-xamarinforms-applications"></a>在 Xamarin 中检测暗色模式。窗体应用程序
 
@@ -41,13 +41,54 @@ Xamarin。窗体应用程序可以使用可支持[主题](theming.md)的相同�
 
 ## <a name="define-themes"></a>定义主题
 
-有关创建深色和浅色主题的分步详细信息，请参阅[主题指南](theming.md)。
+有关创建深色和浅色主题的分步详细信息，请参阅[主题指南](theming.md)。 
+
+可以轻松地在平台代码的适当位置为应用程序设置新的主题。 若要加载新主题，只需将应用程序的当前资源字典替换为所选的主题资源字典：
+
+```csharp
+App.Current.Resources = new YourDarkTheme();
+```
+
+## <a name="detect-and-apply-theme"></a>检测并应用主题
+
+可以使用[Xamarin](~/essentials/index.md)的[`RequestedTheme`](~/essentials/app-theme.md)功能（版本1.4.0 或更高版本）来检测当前正在运行的主题。 然后，你可以在新类或 `App` 类中创建一个帮助器方法来配置该主题：
+
+```csharp
+public partial class App : Application
+{
+    public static void ApplyTheme()
+    {
+        if (AppInfo.RequestedTheme == AppTheme.Dark)
+        {
+            // change to light theme
+            // e.g. App.Current.Resources = new YourLightTheme();
+        }
+        else
+        {
+            // change to dark theme
+            // e.g. App.Current.Resources = new YourDarkTheme();
+        }
+    }
+}
+```
 
 ## <a name="react-to-appearance-mode-changes"></a>反应外观模式更改
 
 设备上的外观模式可能因多种原因而发生变化，这取决于用户配置其首选项的方式，包括明确选择模式、时间或环境因素（如低轻型）。 你需要添加平台代码以确保你的应用程序可以对这些更改做出反应，以下部分更详细地讨论了这一点。
 
 ### <a name="android"></a>Android
+
+若要在你的应用程序中支持暗色模式，你必须更新应用程序的主题，该主题可在 `Resources/values/styles.xml`中找到以从 `DayNight` 主题继承：
+
+```xml
+<style name="MainTheme.Base" parent="Theme.AppCompat.DayNight">
+```
+
+如果已升级到 AndroidX 的[材料组件](https://www.nuget.org/packages/Xamarin.Google.Android.Material/)（1.1.0）或更高版本，你可以使用：
+
+```xml
+<style name="MainTheme.Base" parent="Theme.MaterialComponents.DayNight">
+```
 
 在应用程序的**MainActivity.cs**文件中，将 `ConfigChanges.UiMode` 字段添加到 `Activity` 特性中的 `ConfigurationChanges` 属性中，以便应用程序的 UI 模式发生更改时收到通知：
 
@@ -63,17 +104,7 @@ Xamarin。窗体应用程序可以使用可支持[主题](theming.md)的相同�
 public override void OnConfigurationChanged(Configuration newConfig)
 {
     base.OnConfigurationChanged(newConfig);
-
-    if ((newConfig.UiMode & UiMode.NightNo) != 0)
-    {
-        // change to light theme
-        // e.g. App.Current.Resources = new YourLightTheme();
-    }
-    else
-    {
-        // change to dark theme
-        // e.g. App.Current.Resources = new YourDarkTheme();
-    }
+    App.ApplyTheme();
 }
 ```
 
@@ -103,7 +134,7 @@ namespace YourApp.iOS.Renderers
 
             try
             {
-                SetAppTheme();
+                App.ApplyTheme();
             }
             catch (Exception ex)
             {
@@ -115,24 +146,7 @@ namespace YourApp.iOS.Renderers
         {
             base.TraitCollectionDidChange(previousTraitCollection);
 
-            if(this.TraitCollection.UserInterfaceStyle != previousTraitCollection.UserInterfaceStyle)
-            {
-                SetAppTheme();
-            }
-        }
-
-        void SetAppTheme()
-        {
-            if (this.TraitCollection.UserInterfaceStyle == UIUserInterfaceStyle.Dark)
-            {
-                // change to dark theme
-                // e.g. App.Current.Resources = new YourDarkTheme();
-            }
-            else
-            {
-                // change to light theme
-                // e.g. App.Current.Resources = new YourLightTheme();
-            }
+            App.ApplyTheme();
         }
     }
 }
@@ -147,7 +161,6 @@ namespace YourApp.iOS.Renderers
 ```csharp
 public sealed partial class MainPage
 {
-
     UISettings uiSettings;
 
     public MainPage()
@@ -162,34 +175,12 @@ public sealed partial class MainPage
 
     private void ColorValuesChanged(UISettings sender, object args)
     {
-        var backgroundColor = sender.GetColorValue(UIColorType.Background);
-        var isDarkMode = backgroundColor == Colors.Black;
-        if(isDarkMode)
+        Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() =>
         {
-            Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() =>
-            {
-                // change to dark theme
-                // e.g. App.Current.Resources = new YourDarkTheme();
-            });
-        }
-        else
-        {
-            Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() =>
-            {
-                // change to light theme
-                // e.g. App.Current.Resources = new YourLightTheme();
-            });
-        }
+            App.ApplyTheme();
+        });
     }
 }
-```
-
-## <a name="set-dark-and-light-themes"></a>设置深色和浅色主题
-
-遵循[主题](theming.md)指南后，可以在上述平台代码的适当位置轻松为应用程序设置新的主题。 若要加载新主题，只需将应用程序的当前资源字典替换为所选的主题资源字典：
-
-```csharp
-App.Current.Resources = new YourDarkTheme();
 ```
 
 ## <a name="related-links"></a>相关链接

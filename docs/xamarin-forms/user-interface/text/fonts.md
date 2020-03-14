@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/20/2020
 ms.openlocfilehash: 3798e3612547d36905dd62e6314f158958782874
-ms.sourcegitcommit: 5b6d3bddf7148f8bb374de5657bdedc125d72ea7
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78160607"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305677"
 ---
 # <a name="fonts-in-xamarinforms"></a>在 Xamarin.Forms 中的字体
 
@@ -43,7 +43,7 @@ var about = new Label
 
 <a name="FontSize" />
 
-### <a name="font-size"></a>字号
+### <a name="font-size"></a>字体大小
 
 `FontSize` 属性可以设置为双精度值，例如：
 
@@ -61,7 +61,7 @@ Xamarin 还会在[`NamedSize`](xref:Xamarin.Forms.NamedSize)枚举中定义表�
 
 可以在 "`FontAttributes`" 属性上设置字体样式（如**粗体**和*斜体*）。 目前支持以下值：
 
-- 无
+- **无**
 - **加粗**
 - **字体**
 

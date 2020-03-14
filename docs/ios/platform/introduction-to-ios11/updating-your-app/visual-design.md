@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 09/13/2016
 ms.openlocfilehash: e5a61af4cd8a09df3ffddb74658f646aa8edfa1f
-ms.sourcegitcommit: ce4670de51e24116a944c778ee64585bd0aae0e1
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79088969"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306109"
 ---
 # <a name="visual-design-updates-in-ios-11"></a>IOS 11 中的视觉对象设计更新
 
@@ -78,7 +78,7 @@ iOS 7[引入](~/ios/platform/introduction-to-ios7/ios7-ui.md#fullscreen)了 `top
 
 [![安全区域与顶部和底部布局指南](visual-design-images/image10-sml.png)](visual-design-images/image10.png#lightbox)
 
-以前，如果你已添加了一个视图，并希望它在上述绿色区域中可见，则会将其限制为 `TopLayoutGuide` 的_底部_和 `BottomLayoutGuide`_顶部_。 在 iOS 11 中，你应将其限制在安全区域的_顶部_和_底部_。 下面是一个示例：
+以前，如果你已添加了一个视图，并希望它在上述绿色区域中可见，则会将其限制为 `TopLayoutGuide` 的_底部_和 `BottomLayoutGuide`_顶部_。 在 iOS 11 中，你应将其限制在安全区域的_顶部_和_底部_。 以下是一个示例：
 
 ```csharp
 var safeGuide = View.SafeAreaLayoutGuide;

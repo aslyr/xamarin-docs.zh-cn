@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 965ed4e802c05f8450192c0fec17fe31e464c779
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78916657"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305965"
 ---
 # <a name="debug-on-a-wear-device"></a>在穿戴设备上调试
 
@@ -148,6 +148,6 @@ Android 应用与随附的 Android 手机应用一起打包在 Google Play 上�
 
 4. 在设备上运行和调试应用程序。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了如何通过蓝牙为 Visual Studio 的应用配置应用程序的损耗调试，以及如何使用伴随电话应用程序调试应用程序。 它还提供了通过蓝牙调试应用程序的常见调试提示。

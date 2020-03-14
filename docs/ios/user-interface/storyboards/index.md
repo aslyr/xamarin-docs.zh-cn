@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 13f5c594543934e14295615517e3de01a98a69a5
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.openlocfilehash: 3d9531bbaa38a0a0a9bb42d22c79a63fda75c449
+ms.sourcegitcommit: 926f9a44065b41c7d74794a94bee66b61e903bf2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76941002"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79134018"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin 中的情节提要简介
 
@@ -22,7 +22,7 @@ ms.locfileid: "76941002"
 
 可以使用 Xamarin iOS 设计器创建、打开和编辑情节提要。 本指南还将演练如何使用设计器来创建情节提要，同时使用C#来编程导航。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>要求
 
 演示图板可用于 Xcode、Visual Studio for Mac 中的 iOS 设计器和安装了 Xamarin 工作负荷的 Visual Studio 2019。
 
@@ -82,11 +82,11 @@ ms.locfileid: "76941002"
 
 [![](images/adaptivesegue.png "The Adaptive Segues dropdown")](images/adaptivesegue.png#lightbox)
 
-|Segue|描述|
+|Segue|说明|
 |--- |--- |
 |显示|这与推送 segue 非常相似，但它会将屏幕内容纳入考虑。|
 |显示详细信息|如果应用显示主视图和详细信息视图（例如，在 iPad 上的拆分视图控制器中），则内容将替换详细信息视图。 如果应用仅显示主节点或详细信息，则内容将替换视图控制器堆栈的顶部。|
-|展示|这类似于模式 segue，并允许选择显示和转换样式。|
+|呈现|这类似于模式 segue，并允许选择显示和转换样式。|
 |Segue 演示文稿|这会以 segue 的形式呈现内容|
 
 ### <a name="transferring-data-with-segues"></a>通过 Segue 传输数据
@@ -128,7 +128,7 @@ if (callHistoryController != null) {
 
 有时，可能需要将情节提要添加到以前的非情节提要文件。 执行此操作后，可以执行以下步骤来简化 Visual Studio for Mac：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 通过浏览到**文件 > 新文件 > iOS > 情节提要**来创建新的情节提要文件，如下所示：
 
@@ -149,7 +149,7 @@ if (callHistoryController != null) {
     }
     ```
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. 右键单击项目以**添加 > 新文件 > iOS > 空情节提要**，如下所示，创建新的情节提要文件。
 
@@ -187,6 +187,10 @@ if (callHistoryController != null) {
     [![](images/add-storyboard2.png "Adding storyboard")](images/add-storyboard2.png#lightbox)
 
 2. 右键单击情节提要文件，然后选择 "**打开方式" > Xcode "Interface Builder**在 Xcode 中将其打开。
+
+    *如果希望在默认情况下使用 Xcode Interface builder，可以在 " **> iOS 的项目**" 下的 Visual Studio for Mac 首选项中选择它：*
+
+![](images/set-preferred-designer-tool.png "Selecting the preferred designer tool")
 
 3. 在 Xcode 中，打开库（通过**查看 > 显示库**或*Shift + Command + L*）以显示可添加到情节提要中的对象的列表。 通过将对象从列表拖到情节提要，将 `Navigation Controller` 添加到情节提要。 默认情况下，`Navigation Controller` 将提供两个屏幕：右侧屏幕是一个 `TableViewController`，我们将使用更简单的视图进行替换，以便可以通过单击视图并按 Delete 键来将其删除。
 
@@ -472,7 +476,7 @@ public partial class MainViewController : UIViewController
 
 当应用程序运行，并且用户单击你从其创建 Segue 的 UI 元素时，将显示在情节提要引用中指定的同一情节提要中具有给定**情节提要 ID**的场景。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文介绍了情节提要的概念，以及如何在开发 iOS 应用程序时对其有利。 它讨论场景、查看控制器、视图和视图层次结构，以及如何将场景与不同类型的 Segue 链接在一起。  它还探讨了如何从情节提要手动实例化视图控制器，以及如何创建条件 Segue。
 

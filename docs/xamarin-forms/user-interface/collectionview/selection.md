@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
 ms.openlocfilehash: a4cc237ef738edeccf66f1a91a010e4831c1c72f
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77635623"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305911"
 ---
 # <a name="xamarinforms-collectionview-selection"></a>Xamarin CollectionView 选择
 
@@ -307,7 +307,7 @@ namespace CollectionViewDemos.ViewModels
 
 [![在 iOS 和 Android 上使用自定义单项选择颜色的 CollectionView 垂直列表屏幕截图](selection-images/single-selection-color.png "使用自定义单项选择颜色的 CollectionView 垂直列表")](selection-images/single-selection-color-large.png#lightbox "使用自定义单项选择颜色的 CollectionView 垂直列表")
 
-有关可视状态的详细信息，请参阅[Xamarin。窗体可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)。
+若要详细了解视觉对象状态，请参阅 [Xamarin.Forms 视觉对象状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)。
 
 ## <a name="disable-selection"></a>禁用选定内容
 
@@ -336,4 +336,4 @@ CollectionView collectionView = new CollectionView
 ## <a name="related-links"></a>相关链接
 
 - [CollectionView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
-- [Xamarin. Forms 视觉对象状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.Forms 视觉对象状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)

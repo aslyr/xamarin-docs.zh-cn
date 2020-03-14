@@ -7,11 +7,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
 ms.openlocfilehash: 6841e94ad13357c51e6ccf59e35c659dfb9954aa
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78914630"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306025"
 ---
 # <a name="binding-objective-c-libraries"></a>绑定目标-C 库
 
@@ -169,7 +169,7 @@ API 定义文件包含多个接口。 API 定义中的接口将转换为类声�
 
 最简单的绑定是绑定方法。 只需使用C#命名约定在接口中声明方法，并使用[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)来修饰方法
 属性中。 [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)属性可将C#名称与 Xamarin 运行时中的目标-C 名称进行链接。 [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)的参数 
-attribute 是目标-C 选择器的名称。 以下是一些示例：
+attribute 是目标-C 选择器的名称。 示例如下：
 
 ```csharp
 // A method, that takes no arguments
@@ -779,7 +779,7 @@ interface MyUIViewExtension {
 }
 ```
 
-以上将创建一个 `MyUIViewExtension` 包含 `MakeBackgroundRed` 扩展方法的类。  这意味着，你现在可以在任何 `UIView` 子类上调用 "MakeBackgroundRed"，为你提供的功能与在目标 C 上所获得的功能相同。 在某些其他情况下，类别用于扩展系统类，但只是为了进行装饰而对功能进行组织。  类似于下面这样：
+以上将创建一个 `MyUIViewExtension` 包含 `MakeBackgroundRed` 扩展方法的类。  这意味着，你现在可以在任何 `UIView` 子类上调用 "MakeBackgroundRed"，为你提供的功能与在目标 C 上所获得的功能相同。 在某些其他情况下，类别用于扩展系统类，但只是为了进行装饰而对功能进行组织。  如：
 
 ```csharp
 @interface SocialNetworking (Twitter)
@@ -1027,7 +1027,7 @@ interface XyzPanel {
 
 |目标-C 类型名称|Xamarin Unified API 类型|
 |---|---|
-|`BOOL`、`GLboolean`|`bool`|
+|`BOOL`， `GLboolean`|`bool`|
 |`NSInteger`|`nint`|
 |`NSUInteger`|`nuint`|
 |`CFTimeInterval` / `NSTimeInterval`|`double`|
@@ -1036,12 +1036,12 @@ interface XyzPanel {
 |`CGRect`|`CGRect`|
 |`CGPoint`|`CGPoint`|
 |`CGSize`|`CGSize`|
-|`CGFloat`、`GLfloat`|`nfloat`|
+|`CGFloat`， `GLfloat`|`nfloat`|
 |CoreFoundation 类型（`CF*`）|`CoreFoundation.CF*`|
 |`GLint`|`nint`|
 |`GLfloat`|`nfloat`|
 |基础类型（`NS*`）|`Foundation.NS*`|
-|`id`|`Foundation`。`NSObject`|
+|`id`|`Foundation`.`NSObject`|
 |`NSGlyph`|`nint`|
 |`NSSize`|`CGSize`|
 |`NSTextAlignment`|`UITextAlignment`|
@@ -1053,7 +1053,7 @@ interface XyzPanel {
 
 <a name="Arrays" />
 
-### <a name="arrays"></a>数组
+### <a name="arrays"></a>阵列
 
 Xamarin 运行时自动处理将数组转换C#为 `NSArrays` 和执行转换的过程，例如，返回 `UIViews`的虚目标 C 方法 `NSArray`：
 

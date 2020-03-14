@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
 ms.openlocfilehash: c15dd4606a75cc3cdffbad71f15299568157213a
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78915969"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306511"
 ---
 # <a name="porter-duff-blend-modes"></a>Porter Duff 的混合模式
 
@@ -68,7 +68,7 @@ Skia 添加了一个称为 `Modulate` 的14种模式，该模式与 `Plus` 相�
 
 以下是 14 Porter Duff 模式 SkiaSharp 中定义。 下表显示如何颜色上图中的三个非空白区域的每个：
 
-| “模式”       | 目标 | 交集 | 源 |
+| 模式       | 目标 | 交集 | 源 |
 | ---------- |:-----------:|:------------:|:------:|
 | `Clear`    |             |              |        |
 | `Src`      |             | 源       | X      |
@@ -82,7 +82,7 @@ Skia 添加了一个称为 `Modulate` 的14种模式，该模式与 `Plus` 相�
 | `SrcATop`  | X           | 源       |        |
 | `DstATop`  |             | 目标  | X      |
 | `Xor`      | X           |              | X      |
-| `Plus`     | X           | SUM          | X      |
+| `Plus`     | X           | Sum          | X      |
 | `Modulate` |             | Products      |        | 
 
 这些混合模式是对称的。 可交换的源和目标，且所有的模式仍可用。
@@ -509,7 +509,7 @@ RGB 颜色预先乘以 alpha 值。 例如，如果**Sc**表示纯红色但**Sa*
 
 结果显示在带 alpha 通道的方括号中，RGB 颜色用逗号分隔： **[alpha，color]** 。 颜色为红色、 绿色和蓝色组件单独执行计算：
 
-| “模式”       | Operation |
+| 模式       | 操作 |
 | ---------- | --------- |
 | `Clear`    | [0，0]    |
 | `Src`      | [Sa，Sc]  |

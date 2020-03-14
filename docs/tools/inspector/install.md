@@ -7,11 +7,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
 ms.openlocfilehash: 19c4a15fb2490c7bace4798b0cb8e062b1379a04
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78917597"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306301"
 ---
 # <a name="inspector-installation-and-requirements"></a>检查器安装和要求
 
@@ -49,7 +49,7 @@ Live app 检查适用于企业客户。
 
 ### <a name="supported-app-platforms"></a>支持的应用平台
 
-|应用平台|IDE 支持|说明|
+|应用平台|IDE 支持|注意|
 |--- |--- |--- |
 |Mac|仅 Visual Studio for Mac 中支持|
 |iOS|在 Visual Studio 2017 和 Visual Studio for Mac 中受支持| 链接器行为必须设置为 "**不链接**" （在 " **iOS 生成**项目选项" 下） |

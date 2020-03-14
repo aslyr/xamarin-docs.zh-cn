@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
 ms.openlocfilehash: 13891100d3571f9e847243172aa974072f46e7fe
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78915174"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306253"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Xamarin 中的统一情节提要
 
@@ -112,23 +112,23 @@ UIImage icon = UIImage.FromFile("MonkeyImage.png");
 
 下面是开发人员在 iPhone 上可能看到的典型特征集合：
 
-|properties|值|
+|属性|值|
 |--- |--- |
 |`HorizontalSizeClass`|Compact|
-|`VerticalSizeClass`|常规|
-|`UserInterfaceIdom`|电话|
+|`VerticalSizeClass`|规则|
+|`UserInterfaceIdom`|Phone|
 |`DisplayScale`|2.0|
 
 上述集将表示完全限定的特征集，因为它具有其所有特征属性的值。
 
 还可以具有一个特征集合，其中缺少某些值（Apple 将其称为*未指定*）：
 
-|properties|值|
+|属性|值|
 |--- |--- |
 |`HorizontalSizeClass`|Compact|
-|`VerticalSizeClass`|“未指定”|
-|`UserInterfaceIdom`|“未指定”|
-|`DisplayScale`|“未指定”|
+|`VerticalSizeClass`|未指定|
+|`UserInterfaceIdom`|未指定|
+|`DisplayScale`|未指定|
 
 不过，通常情况下，当开发人员为特征集合请求特征环境时，它将返回完全限定的集合，如以上示例中所示。
 
@@ -214,9 +214,9 @@ IOS 8 中已更改的其中一个视图控制器类是 `UISplitViewController` �
 
 iOS 8 提供若干次回调，开发人员可以使用这些回调来参与特征更改，如下表所示：
 
-|阶段|回调|说明|
+|Phase|回拨|说明|
 |--- |--- |--- |
-|设置|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>此方法在特性集合设置为其新值之前在特征更改开始时调用。</li><li>当特征集合的值已更改，但在发生任何动画之前，将调用方法。</li></ul>|
+|安装|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>此方法在特性集合设置为其新值之前在特征更改开始时调用。</li><li>当特征集合的值已更改，但在发生任何动画之前，将调用方法。</li></ul>|
 |动画|`WillTransitionToTraitCollection`|传递给此方法的转换协调器具有 `AnimateAlongside` 属性，使开发人员能够添加将与默认动画一起执行的动画。|
 |清理|`WillTransitionToTraitCollection`|为开发人员提供一种方法，用于在发生过渡后包含自己的清理代码。|
 
@@ -751,7 +751,7 @@ Size 类选择器按钮位于 Design Surface 的左上角（位于视图附近�
 
 若要在 Xamarin 中查看动态启动屏幕的实现，请查看附加到此文档的[动态启动](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen)屏幕示例 iOS 8 应用程序。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文快速查看大小类及其在 iPhone 和 iPad 设备中的影响布局的方式。 它讨论了特征、特征环境和特征集如何与大小类结合使用，以创建统一的界面。 简单了解自适应视图控制器，以及它们如何使用统一接口内的大小类。 其中介绍了如何从C# Xamarin iOS 8 应用程序内的代码完全实现大小类和统一接口。
 

@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
 ms.openlocfilehash: 81a1f63078a5f7a2a70f731d1790f85f4283d22f
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78919144"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306277"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Xamarin 中的数据绑定和键/值编码
 
@@ -885,7 +885,7 @@ For more information on working with Collection Views, please see our [Collectio
 
 该行告诉我们，键 `Title` 在要绑定到的对象上不存在。 如果将绑定更改回 Interface Builder 中的 `Name`，保存、同步、重新生成和运行，则应用程序将按预期运行，而不会出现问题。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文详细介绍了如何在 Xamarin. Mac 应用程序中使用数据绑定和键值编码。 首先，它介绍了如何使用C#键/值编码（KVC）和键-值观察（KVO）向目标-C 公开一个类。 接下来，该示例演示如何使用 KVO 兼容类并将其绑定到 Xcode 的 Interface Builder 中的 UI 元素。 最后，它使用**数组控制器**和**树控制器**展示复杂的数据绑定。
 

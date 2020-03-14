@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
 ms.openlocfilehash: ce262faf2d79e6a2cc969df582446fdc2ec29bde
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78910888"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306121"
 ---
 # <a name="introduction-to-ios-10"></a>iOS 10 简介
 
@@ -28,7 +28,7 @@ Apple 在 iOS 10 中添加了几个新的 Api 和服务，并对现有功能进�
 
 Apple 的真正语气显示技术使用 iOS 设备中的环境光线传感器来动态调整显示器的颜色和强度，使其与当前照明条件相匹配。 iOS 10 提供了新的[UIWhitePointAdaptivityStyle](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW31)密钥，可将其添加到应用的 `Info.plist` 文件中，并控制 True 声调应用标准颜色转换的方式。 
 
-可用值如下：
+可用的值如下：
 
 - `UIWhitePointAdaptivityStyleStandard`**默认值**-使用标准的 adaptivity。
 - `UIWhitePointAdaptivityStyleReading`-用于读取重点应用。

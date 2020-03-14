@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2019
 ms.openlocfilehash: 9442f7878d9290946fabb7bfc5dee77a828228c7
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488163"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305929"
 ---
 # <a name="xamarinforms-collectionview-data"></a>Xamarin CollectionView 数据
 
@@ -330,7 +330,7 @@ collectionView.ItemTemplate = new DataTemplate(() =>
 
 有关 `SwipeView` 控件的详细信息，请参阅[SwipeView](~/xamarin-forms/user-interface/swipeview.md)。
 
-## <a name="pull-to-refresh"></a>下拉以刷新
+## <a name="pull-to-refresh"></a>请求刷新
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)支持通过 `RefreshView`拉取到刷新功能，这样就可以通过下拉项列表来刷新要显示的数据。 `RefreshView` 是一种容器控件，该控件提供向其子级提供刷新功能的拉取，前提是子级支持可滚动的内容。 因此，通过将 `CollectionView` 设置为 `RefreshView`的子项来实现对该的拉取：
 
@@ -424,6 +424,6 @@ void OnCollectionViewRemainingItemsThresholdReached(object sender, EventArgs e)
 - [CollectionView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 - [Xamarin. Forms RefreshView](~/xamarin-forms/user-interface/refreshview.md)
 - [Xamarin. Forms SwipeView](~/xamarin-forms/user-interface/swipeview.md)
-- [Xamarin. 窗体数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)
+- [Xamarin.Forms 数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [Xamarin. Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [创建 Xamarin. Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

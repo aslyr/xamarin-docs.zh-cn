@@ -9,11 +9,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
 ms.openlocfilehash: a26c83565e4cfa64272549e12a35206dff6ec3c0
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78911568"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306115"
 ---
 # <a name="xamarinios-errors"></a>Xamarin iOS 错误
 
@@ -324,7 +324,7 @@ Mtouch 无法识别错误消息中提到的命令行参数。
 
 ### <a name="mt0054-unable-to-canonicalize-the-path--"></a>MT0054：无法规范化路径 "\*"： \*
 
-这是内部错误。 如果看到此错误，请在[github](https://github.com/xamarin/xamarin-macios/issues/new)上发布新问题。
+这是一个内部错误。 如果看到此错误，请在[github](https://github.com/xamarin/xamarin-macios/issues/new)上发布新问题。
 
 <a name="MT0055" />
 
@@ -974,11 +974,11 @@ sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/m
 在以下情况下可能发生这种问题：
 
 - 你的应用程序具有当前预配配置文件不支持的权利。
-  可能的解决方法：
+  可能的解决方案：
   - 指定支持应用程序所需的权利的其他预配配置文件。
   - 删除当前预配配置文件中不支持的权利。
 - 你正在尝试部署到的设备未包含在你所使用的预配配置文件中。
-  可能的解决方法：
+  可能的解决方案：
   - 从 Xcode 中的模板创建新应用，选择相同的配置文件，并将其部署到相同的设备。 有时，Xcode 可以通过新设备自动刷新预配配置文件（在其他情况下，Xcode 会询问你要执行的操作）。
   -前往 iOS 开发人员中心，用新设备更新配置文件，然后将更新的预配配置文件下载到计算机。
 
@@ -2396,7 +2396,7 @@ Xamarin iOS 项目经常会动态引用本机符号，这意味着本机链接�
 - 从绑定项目（`[Field]` 属性）对静态链接库中的内存位置的字段引用。
 - 从绑定项目（使用增量生成时或者在不使用静态注册器时）从静态链接库引用的目标-C 类。
 
-可能的解决方法：
+可能的解决方案：
 
 - 启用托管链接器（如果可能，为所有程序集，而不是仅 SDK 程序集）。 这可能会删除动态符号的足够源，以便链接器的命令行不超过最大值。
 - 减少 P/Invoke、字段引用和/或目标-C 类的数目。
@@ -2775,8 +2775,8 @@ Xamarin iOS 项目经常会动态引用本机符号，这意味着本机链接�
 
 其中 * 可以是：
 
-- 字符串
-- array
+- string
+- 数组
 - dict
 - bool
 - real

@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/16/2018
 ms.openlocfilehash: 617c04e2f40af535fb381362a389524d693fad0b
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78913462"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305605"
 ---
 # <a name="local-notifications-on-android"></a>Android 中的本地通知
 
@@ -474,7 +474,7 @@ builder.SetLargeIcon (BitmapFactory.DecodeResource (Resources, Resource.Drawable
 
 此扩展的布局格式还包括通知底部的摘要文本。 *大文本*通知的最大高度为 256 dp。
 
-若要创建*大文本*通知，请像以前一样实例化 `NotificationCompat.Builder` 对象，然后实例化并将[BigTextStyle](xref:Android.App.Notification.BigTextStyle)对象添加到 `NotificationCompat.Builder` 对象。 以下是示例：
+若要创建*大文本*通知，请像以前一样实例化 `NotificationCompat.Builder` 对象，然后实例化并将[BigTextStyle](xref:Android.App.Notification.BigTextStyle)对象添加到 `NotificationCompat.Builder` 对象。 下面是一个示例：
 
 ```csharp
 // Instantiate the Big Text style:
@@ -570,7 +570,7 @@ builder.SetStyle (picStyle);
 
 ![展开的示例收件箱通知](local-notifications-images/21-inbox-expanded.png)
 
-若要创建*收件箱*通知，请先实例化 `NotificationCompat.Builder` 的对象，然后再将[InboxStyle](xref:Android.App.Notification.InboxStyle)对象添加到 `NotificationCompat.Builder`中。 以下是示例：
+若要创建*收件箱*通知，请先实例化 `NotificationCompat.Builder` 的对象，然后再将[InboxStyle](xref:Android.App.Notification.InboxStyle)对象添加到 `NotificationCompat.Builder`中。 下面是一个示例：
 
 ```csharp
 // Instantiate the Inbox style:
@@ -748,7 +748,7 @@ if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
 }
 ```
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了如何在 Android 中创建本地通知。 它介绍了通知剖析，并说明了如何使用 `NotificationCompat.Builder` 来创建通知，如何使用来创建通知，如何以大图标、*大文本*、*图像*和*收件箱*格式设置通知的样式、如何设置通知元数据设置（如优先级、可见性和类别）以及如何从通知启动活动。 本文还介绍了如何使用 Android 5.0 中引入的新的 "打印头更新"、"锁定屏幕" 和 "*请勿打扰*" 功能。 最后，你已了解如何使用 `NotificationCompat.Builder` 维护与早期版本 Android 的通知兼容性。
 

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/04/2019
 ms.openlocfilehash: 08fb22627ab6b40c94c17d94321ed0bac60beedd
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78915324"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306319"
 ---
 # <a name="dependency-injection"></a>依赖关系注入
 
@@ -163,7 +163,7 @@ _container.Register<LoginViewModel>().AsSingleton();
 > [!NOTE]
 > 注册为单一实例的类型会在容器被释放时释放。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 依赖关系注入将启用通过依赖于具体类型的代码来分离这些类型。 它通常使用一个容器，该容器包含一系列注册和接口与抽象类型间的映射以及实现或扩展这些类型的具体类型。
 

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/28/2020
 ms.openlocfilehash: 735a572f4aadfc224e545e371525b96f29c9552e
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77635902"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305683"
 ---
 # <a name="xamarinforms-carouselview-scrolling"></a>Xamarin CarouselView 滚动
 
@@ -132,7 +132,7 @@ carouselView.ScrollTo(monkey, position: ScrollToPosition.MakeVisible);
 > [!NOTE]
 > 默认情况下，如果在调用 `ScrollTo` 方法时未指定 `position` 参数，则默认情况下使用[`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition)成员。
 
-### <a name="start"></a>开始
+### <a name="start"></a>Start
 
 [`ScrollToPosition.Start`](xref:Xamarin.Forms.ScrollToPosition)成员指示该项应滚动到视图的开头：
 
@@ -228,7 +228,7 @@ CarouselView carouselView = new CarouselView
 > [!IMPORTANT]
 > 仅当[`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)属性设置为 `Mandatory`或 `MandatorySingle`时，才考虑[`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)属性的值。
 
-#### <a name="start"></a>开始
+#### <a name="start"></a>Start
 
 `SnapPointsAlignment.Start` 成员指示对齐点与项的开头边缘对齐。 下面的 XAML 示例演示如何设置此枚举成员：
 

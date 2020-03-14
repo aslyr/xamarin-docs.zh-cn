@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: dc71da512519cdd7fcc56df1ff987ffbc1354663
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78915294"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306331"
 ---
 # <a name="containerized-microservices"></a>容器化微服务
 
@@ -144,7 +144,7 @@ EShopOnContainers 移动应用与容器化后端微服务通信，并使用*直�
 
 有关事件总线实现的信息，请参阅[.Net 微服务：适用于容器化 .Net 应用程序的体系结构](https://aka.ms/microservicesebook)。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 微服务提供一种应用程序开发和部署的方法，可满足现代云应用程序的敏捷性、规模和可靠性要求。 微服务的主要优点之一是，它们可以独立地横向扩展，这意味着可以为了支持需求而扩展需要更多处理能力或网络带宽的特定功能区域，但不必扩展未出现需求增加的应用程序的所在区域。
 

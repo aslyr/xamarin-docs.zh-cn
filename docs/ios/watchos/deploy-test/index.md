@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
 ms.openlocfilehash: b9b4d201e02d60bd6131c8693d9ac6a233e4fe10
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78918738"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306211"
 ---
 # <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>部署和测试 Xamarin 的 watchOS 应用
 
@@ -100,7 +100,7 @@ ms.locfileid: "78918738"
 - iOS 应用项目
 - 监视扩展项目
 
-。![Info.plist 编辑器](images/entitlements-plist-sml.png)
+.![Info.plist 编辑器](images/entitlements-plist-sml.png)
 
 不要在 "监视应用项目"**中启用权利**。 不需要在监视本身上启用它。
 

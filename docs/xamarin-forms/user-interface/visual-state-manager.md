@@ -9,11 +9,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/21/2020
 ms.openlocfilehash: 0149806f3ab3772bc206cea9540a989d997c817b
-ms.sourcegitcommit: f43d5ecafd19cbc5cce39201916a83927a34617a
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78214989"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306541"
 ---
 # <a name="xamarinforms-visual-state-manager"></a>Xamarin. Forms 视觉对象状态管理器
 
@@ -408,9 +408,9 @@ VSM 标记的其余部分是与之前相同。
 | 类 | 状态 | 更多信息 |
 | ----- | ------ | ---------------- |
 | `Button` | `Pressed` | [按钮视觉状态](~/xamarin-forms/user-interface/button.md#button-visual-states) |
-| `CarouselView` | `DefaultItem`, `CurrentItem`, `PreviousItem`, `NextItem` | [CarouselView 视觉状态](~/xamarin-forms/user-interface/carouselview/interaction.md#define-visual-states) |
+| `CarouselView` | `DefaultItem`、`CurrentItem`、`PreviousItem`、`NextItem` | [CarouselView 视觉状态](~/xamarin-forms/user-interface/carouselview/interaction.md#define-visual-states) |
 | `ImageButton` | `Pressed` | [ImageButton 视觉状态](~/xamarin-forms/user-interface/imagebutton.md#imagebutton-visual-states) |
-| `VisualElement` | `Normal`, `Disabled`, `Focused`, `Selected` | [常见状态](#common-states) |
+| `VisualElement` | `Normal`、`Disabled`、`Focused`、`Selected` | [常见状态](#common-states) |
 
 每个状态都可以通过名为 `CommonStates`的视觉状态组进行访问。
 

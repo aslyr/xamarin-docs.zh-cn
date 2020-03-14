@@ -8,30 +8,30 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/04/2019
 ms.openlocfilehash: 7c6647a0299b5ece3caaaa1d322ec1a0efac3557
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490085"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305713"
 ---
 # <a name="xamarinforms-imagebutton"></a>Xamarin.Forms ImageButton
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
 
-_ImageButton 显示图像和响应点击或单击，将定向的应用程序来执行特定任务。_
+_ImageButton 会显示一个图像，并对指示应用程序的点击或单击进行响应，以执行特定任务。_
 
-`ImageButton`查看合并[ `Button` ](xref:Xamarin.Forms.Button)视图并[ `Image` ](xref:Xamarin.Forms.Image)视图，以创建其内容的一个按钮是一个图像。 用户按`ImageButton`用手指或用来指示应用程序来执行特定任务的鼠标单击。 但是，与不同`Button`视图中，`ImageButton`视图具有文本和文本外观的概念。
+`ImageButton` 视图将[`Button`](xref:Xamarin.Forms.Button)视图和[`Image`](xref:Xamarin.Forms.Image)视图组合在一起，以创建其内容为图像的按钮。 用户按下了手指或用鼠标单击 `ImageButton`，以指示应用程序执行特定任务。 但是，与 `Button` 视图不同，`ImageButton` 视图没有文本和文本外观的概念。
 
 > [!NOTE]
-> 虽然[ `Button` ](xref:Xamarin.Forms.Button)视图定义[ `Image` ](xref:Xamarin.Forms.Button.Image)属性，您可在显示的图像`Button`，此属性应显示一个小图标时使用下一步`Button`文本。
+> 虽然[`Button`](xref:Xamarin.Forms.Button)视图定义了一个[`Image`](xref:Xamarin.Forms.Button.Image)属性，该属性允许您在 `Button`上显示图像，但当在 `Button` 文本旁显示一个小图标时，将使用此属性。
 
 本指南中的代码示例摘自[FormsGallery 示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)。
 
 ## <a name="setting-the-image-source"></a>设置图像源
 
-`ImageButton` 定义`Source`属性应设置为图像显示在按钮中，图像源为文件、 URI、 资源或流。 了解如何从不同的源加载映像的详细信息，请参阅[Xamarin.Forms 中的映像](images.md)。
+`ImageButton` 定义一个 `Source` 属性，该属性应设置为要在按钮中显示的图像，图像源是文件、URI、资源或流。 有关从不同源加载图像的详细信息，请参阅[Xamarin 中的图像](images.md)。
 
-下面的示例演示如何实例化`ImageButton`在 XAML 中：
+下面的示例演示如何在 XAML 中实例化 `ImageButton`：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -51,11 +51,11 @@ _ImageButton 显示图像和响应点击或单击，将定向的应用程序来�
 </ContentPage>
 ```
 
-`Source`属性指定在显示的图像`ImageButton`。 在此示例中将它设置为本地文件将加载从每个平台项目，从而导致下面的屏幕截图：
+`Source` 属性指定显示在 `ImageButton`中的图像。 在此示例中将它设置为本地文件将加载从每个平台项目，从而导致下面的屏幕截图：
 
 [![基本 ImageButton](imagebutton-images/BasicImageButton.png "基本 ImageButton")](imagebutton-images/BasicImageButton-Large.png#lightbox "基本 ImageButton")
 
-默认情况下`ImageButton`都是矩形状，但可以通过使用进行舍入的 it 角`CornerRadius`属性。 有关详细信息`ImageButton`外观，请参阅[ImageButton 外观](#imagebutton-appearance)。
+默认情况下，`ImageButton` 是矩形，但您可以通过使用 `CornerRadius` 属性为其指定圆角。 有关 `ImageButton` 外观的详细信息，请参阅[ImageButton 外观](#imagebutton-appearance)。
 
 > [!NOTE]
 > 虽然 `ImageButton` 可以加载动态 GIF，但它只显示 GIF 的第一帧。
@@ -94,9 +94,9 @@ public class ImageButtonDemoPage : ContentPage
 
 ## <a name="handling-imagebutton-clicks"></a>处理 ImageButton 单击
 
-`ImageButton` 定义`Clicked`在用户点击时激发的事件`ImageButton`用手指或鼠标指针。 图面中释放手指或鼠标按钮时触发该事件`ImageButton`。 `ImageButton`必须具有其`IsEnabled`属性设置为`true`响应分流点。
+`ImageButton` 定义一个 `Clicked` 事件，当用户使用手指或鼠标指针点击 `ImageButton` 时，将触发该事件。 当从 `ImageButton`的表面释放手指或鼠标按钮时，将触发事件。 `ImageButton` 必须将其 `IsEnabled` 属性设置为 "`true`" 以响应点击。
 
-下面的示例演示如何实例化`ImageButton`XAML 和句柄中其`Clicked`事件：
+下面的示例演示如何在 XAML 中实例化 `ImageButton` 并处理其 `Clicked` 事件：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -123,7 +123,7 @@ public class ImageButtonDemoPage : ContentPage
 </ContentPage>
 ```
 
-`Clicked`事件设置为事件处理程序名为`OnImageButtonClicked`位于代码隐藏文件：
+`Clicked` 事件设置为一个名为 `OnImageButtonClicked` 的事件处理程序，该处理程序位于代码隐藏文件中：
 
 ```csharp
 public partial class ImageButtonDemoPage : ContentPage
@@ -143,9 +143,9 @@ public partial class ImageButtonDemoPage : ContentPage
 }
 ```
 
-当`ImageButton`点击，`OnImageButtonClicked`方法执行。 `sender`自变量是`ImageButton`负责此事件。 可以使用此访问`ImageButton`对象，或以区分多个`ImageButton`对象共享相同`Clicked`事件。
+点击 `ImageButton` 时，`OnImageButtonClicked` 方法执行。 `sender` 参数是负责此事件的 `ImageButton`。 您可以使用此访问 `ImageButton` 对象，或区分共享同一 `Clicked` 事件的多个 `ImageButton` 对象。
 
-此特定`Clicked`处理程序递增计数器，并显示中的计数器值[ `Label` ](xref:Xamarin.Forms.Label):
+此特定 `Clicked` 处理程序会递增计数器，并在[`Label`](xref:Xamarin.Forms.Label)中显示计数器值：
 
 [![基本 ImageButton 单击](imagebutton-images/ImageButton.png "基本 ImageButton 单击")](imagebutton-images/ImageButton-Large.png#lightbox "基本 ImageButton 单击")
 
@@ -206,48 +206,48 @@ public class ImageButtonDemoPage : ContentPage
 
 ## <a name="disabling-the-imagebutton"></a>禁用 ImageButton
 
-有时应用程序处于特定状态的特定`ImageButton`单击不是有效的操作。 在这些情况下，`ImageButton`应禁用通过设置其`IsEnabled`属性设置为`false`。
+有时，应用程序处于特定状态，其中特定 `ImageButton` 单击是无效操作。 在这些情况下，应通过将 `ImageButton` 的 `IsEnabled` 属性设置为 `false`来禁用。
 
 ## <a name="using-the-command-interface"></a>使用命令界面
 
-它是应用程序以响应`ImageButton`分流点无需处理`Clicked`事件。 `ImageButton`实现调用了替代通知机制_命令_或_命令_接口。 这包括两个属性：
+应用程序可以响应 `ImageButton` 点击，而不处理 `Clicked` 事件。 `ImageButton` 实现了一种称为_命令或命令_性接口_commanding_的替代通知机制。 这包括两个属性：
 
-- `Command` 类型的[ `ICommand` ](xref:System.Windows.Input.ICommand)，在中定义的接口[ `System.Windows.Input` ](xref:System.Windows.Input)命名空间。
-- `CommandParameter` 类型的属性[ `Object` ](xref:System.Object)。
+- [`ICommand`](xref:System.Windows.Input.ICommand)类型的 `Command`， [`System.Windows.Input`](xref:System.Windows.Input)命名空间中定义了一个接口。
+- [`Object`](xref:System.Object)类型的 `CommandParameter` 属性。
 
 尤其是在实现模型-视图-视图模型 (MVVM) 体系结构时，此方法非常适合与数据绑定和。
 
-有关使用命令界面的详细信息，请参阅[使用命令界面](button.md#using-the-command-interface)中[按钮](button.md)指南。
+有关使用命令界面的详细信息，请参阅在[按钮](button.md)指南中[使用命令界面](button.md#using-the-command-interface)。
 
 ## <a name="pressing-and-releasing-the-imagebutton"></a>按下和释放 ImageButton
 
-除了`Clicked`事件，`ImageButton`还定义了`Pressed`和`Released`事件。 `Pressed`手指按上时发生事件`ImageButton`，或使用指针置于其上按下鼠标按钮`ImageButton`。 `Released`松开手指或鼠标按钮时发生事件。 通常情况下，`Clicked`还在相同的时间触发事件`Released`事件，但如果手指或鼠标指针滑离开的面`ImageButton`之前被释放，`Clicked`事件可能会发生。
+除了 `Clicked` 事件，`ImageButton` 还定义 `Pressed` 和 `Released` 事件。 当鼠标按 `ImageButton`上，或在鼠标指针位于 `ImageButton`上并按下鼠标按钮时，将发生 `Pressed` 事件。 当鼠标右键或鼠标松开时，会发生 `Released` 事件。 通常情况下，`Clicked` 事件同时与 `Released` 事件同时触发，但是，如果手指或鼠标指针在被释放之前离开 `ImageButton` 表面，则 `Clicked` 事件可能不会发生。
 
-有关这些事件的详细信息，请参阅[按下并松开按钮](button.md#pressing-and-releasing-the-button)中[按钮](button.md)指南。
+有关这些事件的详细信息，请参阅[按下并松开](button.md#pressing-and-releasing-the-button)[按钮](button.md)指南中的按钮。
 
 ## <a name="imagebutton-appearance"></a>ImageButton 外观
 
-除了属性外，`ImageButton`继承自[ `View` ](xref:Xamarin.Forms.View)类，`ImageButton`还定义了多个会影响其外观的属性：
+除了 `ImageButton` 继承自[`View`](xref:Xamarin.Forms.View)类的属性以外，`ImageButton` 还定义了多个影响其外观的属性：
 
-- `Aspect` 是将如何缩放图像以适合显示区域。
-- `BorderColor` 是的周围区域的颜色`ImageButton`。
-- `BorderWidth` 为边框的宽度。
-- `CornerRadius` 是的圆角半径`ImageButton`。
+- `Aspect` 是调整图像大小以适应显示区域的方式。
+- `BorderColor` 是围绕 `ImageButton`的区域的颜色。
+- `BorderWidth` 是边框的宽度。
+- `CornerRadius` 是 `ImageButton`的角半径。
 
-`Aspect`属性可以设置为一个的成员[ `Aspect` ](xref:Xamarin.Forms.Aspect)枚举：
+`Aspect` 属性可以设置为[`Aspect`](xref:Xamarin.Forms.Aspect)枚举的成员之一：
 
-- [`Fill`](xref:Xamarin.Forms.Aspect.Fill) -拉伸图像以完全且完全填充`ImageButton`。 这可能会导致被扭曲图像。
-- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) -裁剪图像，以便它填充`ImageButton`同时保存纵横比。
-- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) -上下黑边映像 （如有必要），以便适应整个图像`ImageButton`，与添加到顶部/底部或根据该映像是高或宽的两侧的空格。 这是默认值[ `Aspect` ](xref:Xamarin.Forms.Aspect)枚举。
+- [`Fill`](xref:Xamarin.Forms.Aspect.Fill) -将图像拉伸到完全完全填充 `ImageButton`。 这可能会导致被扭曲图像。
+- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill)剪切图像，使其填充 `ImageButton`，同时保留纵横比。
+- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) -letterboxes 图像（如有必要），使整个图像适合 `ImageButton`，并根据图像的宽度或高度，将空白区域添加到顶部/底部或边缘。 这是[`Aspect`](xref:Xamarin.Forms.Aspect)枚举的默认值。
 
 > [!NOTE]
-> `ImageButton`类还具有[ `Margin` ](xref:Xamarin.Forms.View.Margin)并`Padding`控件的布局行为的属性`ImageButton`。 有关详细信息，请参阅[边距和填充](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)。
+> `ImageButton` 类还具有控制 `ImageButton`布局行为的[`Margin`](xref:Xamarin.Forms.View.Margin)和 `Padding` 属性。 有关详细信息，请参阅[边距和填充](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)。
 
 ## <a name="imagebutton-visual-states"></a>ImageButton 可视状态
 
-`ImageButton` 具有`Pressed` [ `VisualState` ](xref:Xamarin.Forms.VisualState)可用于启动到可视更改`ImageButton`时用户按下，前提启用了。
+`ImageButton` 具有 `Pressed` [`VisualState`](xref:Xamarin.Forms.VisualState) ，可用于在用户按下时启动对 `ImageButton` 的视觉更改（前提是已启用）。
 
-下面的 XAML 示例演示如何定义的可视状态`Pressed`状态：
+下面的 XAML 示例演示如何为 `Pressed` 状态定义可视状态：
 
 ```xaml
 <ImageButton Source="XamarinLogo.png"
@@ -273,9 +273,9 @@ public class ImageButtonDemoPage : ContentPage
 </ImageButton>
 ```
 
-`Pressed` [ `VisualState` ](xref:Xamarin.Forms.VisualState)指定当`ImageButton`按下时，其[ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)属性将更改从其默认值为 1 到 0.8。 `Normal` `VisualState`指定当`ImageButton`处于正常状态，其`Scale`属性将设置为 1。 因此，总体效果是，当`ImageButton`是按下时，它重新缩放为更略小，并且当`ImageButton`是发布，它将其重新缩放为其默认大小。
+`Pressed` [`VisualState`](xref:Xamarin.Forms.VisualState)指定在按下 `ImageButton` 时，其[`Scale`](xref:Xamarin.Forms.VisualElement.Scale)属性将从其默认值1更改为0.8。 `Normal` `VisualState` 指定当 `ImageButton` 处于正常状态时，其 `Scale` 属性将设置为1。 因此，整体效果是，在按下 `ImageButton` 时，重新缩放会略小一些，释放 `ImageButton` 时，它将被重新缩放为其默认大小。
 
-可视状态的详细信息，请参阅[Xamarin.Forms 视觉状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)。
+有关可视状态的详细信息，请参阅[Xamarin。窗体可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)。
 
 ## <a name="related-links"></a>相关链接
 
