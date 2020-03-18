@@ -1,6 +1,6 @@
 ---
 title: Android 上的位置服务
-description: 本指南介绍了如何在 Android 应用程序中了解位置，并说明了如何使用 Android 位置服务 API 获取用户的位置，并说明了 Google 位置服务 API 提供的随附位置提供商。
+description: 本指南介绍 Android 应用程序中的位置感知，并说明如何使用 Android 位置服务 API 以及 Google 位置服务 API 提供的融合位置提供程序来获取用户的位置。
 ms.prod: xamarin
 ms.assetid: 0008682B-6CEF-0C1D-3200-56ECF58F5D3C
 ms.technology: xamarin-android
@@ -8,58 +8,58 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2018
 ms.openlocfilehash: e027d41e98c26ef1659c27ab05df3052e19cc670
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027136"
 ---
 # <a name="location-services-on-android"></a>Android 上的位置服务
 
-_本指南介绍了如何在 Android 应用程序中了解位置，并说明了如何使用 Android 位置服务 API 获取用户的位置，并说明了 Google 位置服务 API 提供的随附位置提供商。_
+本指南介绍 Android 应用程序中的位置感知，并说明如何使用 Android 位置服务 API 以及 Google 位置服务 API 提供的融合位置提供程序来获取用户的位置  。
 
-Android 提供对各种位置技术（如单元塔位置、Wi-fi 和 GPS）的访问。 每个位置技术的详细信息是通过*位置提供程序*来抽象的，因此，无论使用哪种提供程序，应用程序都可以通过相同的方式获得位置。 本指南介绍了保险丝的位置提供程序，这是 Google Play Services 的一部分，它可以智能地根据提供的提供程序和设备的使用方式来确定设备位置的最佳方式。 Android 位置服务 API，并演示如何使用 `LocationManager`与系统位置服务通信。 本指南的第二部分将使用 `LocationManager`探讨 Android 位置服务 API。
+Android 提供了多种定位技术，例如蜂窝塔定位、Wi-Fi 和 GPS。 每种定位技术的详细信息都通过位置提供程序进行抽象化，以便无论使用何种提供程序，应用程序都能够以相同的方式获取位置  。 本指南介绍 Google Play Services 中的融合位置提供程序，它可根据可用的提供程序以及设备的使用方式，智能地确定获取设备位置的最佳方法。 Android 位置服务 API，并演示如何使用 `LocationManager` 与系统位置服务进行通信。 本指南的第二部分使用 `LocationManager` 介绍 Android 位置服务 API。
 
-一般的经验法则是，应用程序应该更倾向于使用带保险丝的位置提供程序，仅在必要时才回退较旧的 Android 位置服务 API。
+按照惯例，应用程序应优先使用融合位置提供程序，仅在必要时才会回退到较旧的 Android 位置服务 API。
 
 ## <a name="location-fundamentals"></a>位置基础知识
 
-在 Android 中，无论选择哪种 API 来处理位置数据，都有多个概念是相同的。 本部分介绍位置提供程序和与位置相关的权限。
+在 Android 中，无论选择使用何种 API 处理位置数据，有几个概念都是相同的。 本部分介绍位置提供程序和与位置相关的权限。
 
 ### <a name="location-providers"></a>位置提供程序
 
-在内部使用多种技术来确定用户的位置。 使用的硬件取决于为收集数据的作业选择的*位置提供程序*的类型。 Android 使用三个位置提供程序：
+在内部使用多种技术来确定用户的位置。 所使用的硬件取决于为收集数据而选择的位置提供程序的类型  。 Android 使用三种位置提供程序：
 
-- Gps**提供程序**&ndash; gps 提供最准确的位置，使用最强大的功能，并在户外工作。 此提供程序使用 GPS 和辅助 GPS （[aGPS](https://en.wikipedia.org/wiki/Assisted_GPS)）的组合，该组合可返回移动电话塔收集的 GPS 数据。
+- GPS 提供程序 &ndash; GPS 可提供最准确的位置，能耗最高，并且在户外使用效果最佳  。 该提供程序结合使用 GPS 和辅助 GPS ([aGPS](https://en.wikipedia.org/wiki/Assisted_GPS))，返回通过蜂窝塔收集的 GPS 数据。
 
-- **网络提供商**&ndash; 提供 WiFi 和蜂窝数据的组合，其中包括单元塔收集的 aGPS 数据。 它比 GPS 提供程序使用的能耗更少，但返回的位置数据具有不同的准确性。
+- 网络提供程序 &ndash; 同时提供 WiFi 和蜂窝数据，包括蜂窝塔收集的 aGPS 数据  。 与 GPS 提供程序相比，它的能耗更低，但是返回的位置数据的准确度不定。
 
-- **被动提供程序**&ndash; 使用其他应用程序或服务请求的提供程序在应用程序中生成位置数据的 "被使用" 选项。 这是一种不太可靠，但节能选项非常适用于不需要就地更新工作的应用程序。
+- 无源提供程序 &ndash; 一种“piggyback”选项，使用其他应用程序或服务请求的提供程序在应用程序中生成位置数据  。 此选项可靠性较差但能耗低，非常适用于无需持续位置更新的应用程序。
 
-位置提供程序并非始终可用。 例如，我们可能希望将 GPS 用于我们的应用程序，但在 "设置" 中可以关闭 GPS，或者设备根本没有 GPS。 如果特定的提供程序不可用，则选择该提供程序可能返回 `null`。
+位置提供程序并非始终可用。 例如，我们可能希望对应用程序使用 GPS，但是“设置”中可能关闭了 GPS，或者设备可能根本没有 GPS。 如果特定的提供程序不可用，则选择该提供程序可能会返回 `null`。
 
 ### <a name="location-permissions"></a>位置权限
 
-可识别位置的应用程序需要访问设备的硬件传感器来接收 GPS、Wi-fi 和蜂窝数据。 通过应用程序的 Android 清单中的适当权限控制访问权限。
-根据应用程序的要求以及所选的 API，有两个可用的权限 &ndash;：
+位置感知应用程序需要访问设备的硬件传感器以接收 GPS、Wi-Fi 和蜂窝数据。 通过应用程序的 Android 清单中的相应权限来控制访问权限。
+有两个可用的权限 &ndash; 根据应用程序的要求和选择的 API，将需要允许其中一种权限：
 
 - `ACCESS_FINE_LOCATION` &ndash; 允许应用程序访问 GPS。
-    对于*GPS 提供程序*和*被动提供*程序选项是必需的（*被动提供程序需要访问其他应用程序或服务收集的 GPS 数据的权限*）。 *网络提供程序*的可选权限。
+    针对 GPS 提供程序和无源提供程序选项，此权限为必选权限（无源提供程序需有权访问其他应用程序或服务收集的 GPS 数据）    。 对于网络提供程序，此权限为可选权限  。
 
-- `ACCESS_COARSE_LOCATION` &ndash; 允许应用程序访问手机网络和 Wi-fi 位置。 如果未设置 `ACCESS_FINE_LOCATION`，则为*网络提供程序*所必需。
+- `ACCESS_COARSE_LOCATION` &ndash; 允许应用程序访问蜂窝和 Wi-Fi 位置。 如果未设置 `ACCESS_FINE_LOCATION`，则对于网络提供程序，此权限为必选权限  。
 
-对于面向 API 版本21（Android 5.0 棒糖）或更高版本的应用，你可以启用 `ACCESS_FINE_LOCATION` 并仍在没有 GPS 硬件的设备上运行。 如果你的应用需要 GPS 硬件，则应将 `android.hardware.location.gps` `uses-feature` 元素显式添加到 Android 清单中。 有关详细信息，请参阅 Android[使用功能](https://developer.android.com/guide/topics/manifest/uses-feature-element.html)元素参考。
+对于面向 API 版本 21 (Android 5.0 Lollipop) 或更高版本的应用，可以启用 `ACCESS_FINE_LOCATION` 并继续在没有 GPS 硬件的设备上运行。 如果应用需要 GPS 硬件，则应在 Android 清单中显式添加 `android.hardware.location.gps` `uses-feature` 元素。 有关详细信息，请参阅 Android [uses-feature](https://developer.android.com/guide/topics/manifest/uses-feature-element.html) 元素引用。
 
-若要设置权限，请展开**Solution Pad**中的 "**属性**" 文件夹，然后双击 " **androidmanifest.xml**"。 权限将在 "**所需权限**" 下列出：
+要设置权限，请展开“Solution Pad”的“属性”文件夹，然后双击“AndroidManifest.xml”    。 这些权限将在“所需权限”下列出  ：
 
-[![Android 清单所需权限设置的屏幕截图](location-images/location-01-xs.png)](location-images/location-01-xs.png#lightbox)
+[![Android 清单“所需权限”设置的屏幕截图](location-images/location-01-xs.png)](location-images/location-01-xs.png#lightbox)
 
-设置其中任一权限会告诉 Android 应用程序需要用户的权限才能访问位置提供程序。 运行 API 级别22（Android 5.1）或更低版本的设备将要求用户在每次安装应用时授予这些权限。 在运行 API 级别23（Android 6.0）或更高版本的设备上，应用应在发出位置提供程序请求之前执行运行时权限检查。 
+设置这些权限中的任一权限都会告知 Android，应用程序需要用户的许可才能访问位置提供程序。 每次安装应用时，运行 API 级别 22 (Android 5.1) 或更低版本的设备都会要求用户授予这些权限。 在运行 API 级别 23 (Android 6.0) 或更高版本的设备上，应用应在向位置提供程序发出请求之前执行运行时权限检查。 
 
 > [!NOTE]
->注意：设置 `ACCESS_FINE_LOCATION` 表示对粗和精细位置数据的访问。 决不要设置这两个权限，只需设置应用程序运行所需的*最小*权限。
+>注意：设置 `ACCESS_FINE_LOCATION` 表示可同时访问粗略和精细的位置数据。 无需设置两个权限，仅设置应用运行所需的最低权限即可  。
 
-此代码段示例说明了如何检查应用是否具有 `ACCESS_FINE_LOCATION` 权限的权限：
+此代码片段示例演示了如何检查应用是否有权拥有 `ACCESS_FINE_LOCATION` 权限：
 
 ```csharp
  if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.AccessFineLocation) == Permission.Granted)
@@ -73,18 +73,18 @@ else
 }
 ```
 
-应用程序必须能够容忍用户不会授予权限（或废除了权限）的情况，并有适当的方式来处理这种情况。 请参阅[权限指南](~/android/app-fundamentals/permissions.md)，以了解有关在 Xamarin 中实施运行时权限检查的更多详细信息。
+应用必须能够容忍用户不授予任何权限（或已撤消权限）的情况，并有办法妥善处理这种情况。 有关如何在 Xamarin.Android 中实现运行时权限检查的更多详细信息，请参阅[权限指南](~/android/app-fundamentals/permissions.md)。
 
-## <a name="using-the-fused-location-provider"></a>使用带保险丝的位置提供程序
+## <a name="using-the-fused-location-provider"></a>使用融合位置提供程序
 
-带保险丝的位置提供程序是 Android 应用程序从设备接收位置更新的首选方式，因为它将在运行时有效地选择位置提供程序，以便以电池有效的方式提供最好的位置信息。 例如，在户外浏览的用户会获得最佳位置，并使用 GPS 阅读。 如果用户随后会走到室外，其中 GPS 的工作效果很差（如果根本如此），则已保险丝的位置提供商可能会自动切换到 WiFi，这会使室内工作更好。
+融合位置提供程序是 Android 应用程序从设备接收位置更新的首选方式，因为它会在运行时有效地选择位置提供程序，从而以省电的方式提供最佳位置信息。 例如，在户外行走的用户可以通过 GPS 获得最佳位置信息。 如果该用户随后走进室内，而 GPS 效果不佳（或者完全无效），则融合位置提供程序可能会自动切换到在室内效果更好的 WiFi。
 
-带保险丝的位置提供程序 API 提供各种其他工具来提供可识别位置的应用程序，包括地理围栏和活动监视。 在本部分中，我们将重点介绍设置 `LocationClient`、建立提供程序和获取用户位置的基本知识。
+融合位置提供程序 API 提供了多种其他工具来支持位置感知应用程序，包括地理围栏和活动监视。 在本部分中，我们将重点介绍设置 `LocationClient`、建立提供程序以及获取用户位置的基础知识。
 
-带保险丝的位置提供程序是[Google Play Services](https://developer.android.com/google/play-services/index.html)的一部分。
-在应用程序中，必须正确安装和配置 Google Play Services 包，才能使用带保险丝位置提供程序的 API，并且设备必须安装了 Google Play Services APK。
+融合位置提供程序是 [Google Play Services](https://developer.android.com/google/play-services/index.html) 的一部分。
+必须在应用程序中正确安装和配置 Google Play Services 包才能使融合位置提供程序 API 正常工作，并且设备必须安装 Google Play Services APK。
 
-在 Xamarin Android 应用程序可以使用带保险丝的位置提供程序之前，它必须将**GooglePlayServices**包添加到项目。 此外，以下 `using` 语句应添加到引用下述类的任何源文件中：
+在 Xamarin.Android 应用程序可以使用融合位置提供程序之前，必须向项目添加 Xamarin.GooglePlayServices.Maps 包  。 此外，还应在引用下述类的任何源文件中添加以下 `using` 语句：
 
 ```csharp
 using Android.Gms.Common;
@@ -93,9 +93,9 @@ using Android.Gms.Location;
 
 ### <a name="checking-if-google-play-services-is-installed"></a>检查是否已安装 Google Play Services
 
-如果在未安装（或过期） Google Play Services 时，Xamarin 将崩溃，如果尝试使用带保险丝的位置提供程序，则会发生运行时异常。  如果未安装 Google Play Services，则应用程序应回退到前面讨论的 Android 位置服务。 如果 Google Play Services 过期，应用程序可能会向用户显示一条消息，要求他们更新 Google Play Services 的已安装版本。
+在未安装 Google Play Services（或已过时）时，如果 Xamarin.Android 尝试使用融合位置提供程序，它将会崩溃，然后会发生运行时异常。  如果未安装 Google Play Services，则应用程序应回退到上述的 Android 位置服务。 如果 Google Play Services 已过时，则应用可能会向用户显示一条消息，要求他们更新已安装的 Google Play Services 版本。
 
-此代码片段举例说明了 Android 活动如何以编程方式检查是否安装了 Google Play Services：
+此代码片段示例演示了 Android 活动如何以编程方式检查是否已安装 Google Play Services：
 
 ```csharp
 bool IsGooglePlayServicesInstalled()
@@ -123,9 +123,9 @@ bool IsGooglePlayServicesInstalled()
 
 ### <a name="fusedlocationproviderclient"></a>FusedLocationProviderClient
 
-若要与带保险丝的位置提供程序交互，Xamarin Android 应用程序必须具有 `FusedLocationProviderClient`的实例。 此类公开了订阅位置更新和检索设备的最后一个已知位置所必需的方法。
+要与融合位置提供程序进行交互，Xamarin.Android 应用程序必须具有 `FusedLocationProviderClient` 的实例。 此类公开了订阅位置更新以及检索设备的最新已知位置的必要方法。
 
-活动的 `OnCreate` 方法是获取对 `FusedLocationProviderClient`的引用的合适位置，如以下代码片段所示：
+活动的 `OnCreate` 方法是获取对 `FusedLocationProviderClient` 的引用的合适位置，如以下代码片段所示：
 
 ```csharp
 public class MainActivity: AppCompatActivity
@@ -139,9 +139,9 @@ public class MainActivity: AppCompatActivity
 }
 ```
 
-### <a name="getting-the-last-known-location"></a>获取上一个已知位置
+### <a name="getting-the-last-known-location"></a>获取最新已知位置
 
-`FusedLocationProviderClient.GetLastLocationAsync()` 方法为 Xamarin Android 应用程序提供了一种简单、非阻止的方式，用于快速获取设备的最后一个已知位置，并具有最小编码开销。
+`FusedLocationProviderClient.GetLastLocationAsync()` 方法为 Xamarin.Android 应用程序提供了一种简单、顺畅的方式，可使用最少的编码开销快速获取设备的最新已知位置。
 
 此代码片段演示如何使用 `GetLastLocationAsync` 方法检索设备的位置：
 
@@ -166,15 +166,15 @@ async Task GetLastLocationFromDevice()
 
 ### <a name="subscribing-to-location-updates"></a>订阅位置更新
 
-Xamarin Android 应用程序还可以使用 `FusedLocationProviderClient.RequestLocationUpdatesAsync` 方法订阅带保险丝位置提供程序的位置更新，如以下代码片段所示：
+Xamarin.Android 应用程序还可以使用 `FusedLocationProviderClient.RequestLocationUpdatesAsync` 方法从融合位置提供程序订阅位置更新，如以下代码片段所示：
 
 ```csharp
 await fusedLocationProviderClient.RequestLocationUpdatesAsync(locationRequest, locationCallback);
 ```
 
-此方法采用两个参数：
+此方法采用以下两种参数：
 
-- `LocationRequest` 对象 &ndash; **`Android.Gms.Location.LocationRequest`** 是 Xamarin Android 应用程序如何传递参数，以说明如何在带保险丝的位置提供程序工作。 `LocationRequest` 保存一些信息，例如应进行请求的频率，或者精确位置更新的重要性。 例如，重要的位置请求会导致设备在确定位置时使用 GPS，并因此更强大。 此代码段演示如何为具有高准确性的位置创建 `LocationRequest`，每隔五分钟检查一次位置更新（但两次请求之间的间隔不能超过两分钟）。 在尝试确定设备位置时，已保险丝位置提供商将使用 `LocationRequest` 作为指导来使用的位置提供程序：
+- `Android.Gms.Location.LocationRequest` &ndash; `LocationRequest` 对象是指 Xamarin.Android 应用程序如何传递有关融合位置提供程序的工作方式的参数  。 `LocationRequest` 会保存一些信息，例如应发出请求的频率或准确的位置更新的重要性。 例如，重要的位置请求将导致设备在确定位置时使用 GPS，从而消耗更多电量。 此代码片段演示了如何针对某个位置创建高准确度的 `LocationRequest` - 大约每五分钟检查一次位置更新（但两次请求之间的间隔不得少于两分钟）。 融合位置提供程序将使用 `LocationRequest` 作为指导，用于在尝试确定设备位置时选择要使用的位置提供程序：
 
     ```csharp
     LocationRequest locationRequest = new LocationRequest()
@@ -183,14 +183,14 @@ await fusedLocationProviderClient.RequestLocationUpdatesAsync(locationRequest, l
                                       .SetFastestInterval(60 * 1000 * 2);
     ```
 
-- **`Android.Gms.Location.LocationCallback`** &ndash; 为了接收位置更新，Xamarin Android 应用程序必须将 `LocationProvider` 抽象类的子类。 此类公开了两个方法，这些方法可能由带保险丝的位置提供程序调用，用位置信息更新应用程序。 下面将更详细地讨论这一内容。
+- `Android.Gms.Location.LocationCallback` &ndash; 为了接收位置更新，Xamarin.Android 应用程序必须将 `LocationProvider` 抽象类作为子类  。 此类公开了两个方法，融合位置提供程序可能会调用这些方法，以更新应用的位置信息。 下面将更详细地讨论此内容。
 
-为了向 Xamarin 应用程序通知位置更新，带保险丝的位置提供程序将调用 `LocationCallBack.OnLocationResult(LocationResult result)`。 `Android.Gms.Location.LocationResult` 参数将包含更新位置信息。
+为通知 Xamarin.Android 应用程序位置更新信息，融合位置提供程序将调用 `LocationCallBack.OnLocationResult(LocationResult result)`。 `Android.Gms.Location.LocationResult` 参数将包含位置更新信息。
 
-当已保险丝的位置提供程序检测到位置数据的可用性变化时，它将调用 `LocationProvider.OnLocationAvailability(LocationAvailability
-locationAvailability)` 方法。 如果 `LocationAvailability.IsLocationAvailable` 属性返回 `true`，则假定 `OnLocationResult` 报告的设备位置结果应为准确，并且为 `LocationRequest`所需的最新状态。 如果 `IsLocationAvailable` 为 false，则 `OnLocationResult`将不会返回位置结果。
+当融合位置提供程序检测到位置数据的可用性发生变化时，它将调用 `LocationProvider.OnLocationAvailability(LocationAvailability
+locationAvailability)` 方法。 如果 `LocationAvailability.IsLocationAvailable` 属性返回 `true`，则可以假定 `OnLocationResult` 报告的设备位置结果符合 `LocationRequest` 所要求的准确性和时效性。 如果 `IsLocationAvailable` 为 false，则 `OnLocationResult` 将不会返回任何位置结果。
 
-此代码段是 `LocationCallback` 对象的示例实现：
+此代码片段示例演示如何实现 `LocationCallback` 对象：
 
 ```csharp
 public class FusedLocationProviderCallback : LocationCallback
@@ -222,50 +222,50 @@ public class FusedLocationProviderCallback : LocationCallback
 }
 ```
 
-## <a name="using-the-android-location-service-api"></a>使用 Android 定位服务 API
+## <a name="using-the-android-location-service-api"></a>使用 Android 位置服务 API
 
-Android 定位服务是一种使用 Android 上位置信息的旧版 API。 位置数据由硬件传感器收集和收集，系统服务在应用程序中使用 `LocationManager` 类和 `ILocationListener`进行访问。
+Android 位置服务是旧版 API，用于在 Android 上使用位置信息。 位置数据由硬件传感器和系统服务收集，可在应用程序中通过 `LocationManager` 类和 `ILocationListener` 进行访问。
 
-位置服务最适用于必须在未安装 Google Play Services 的设备上运行的应用程序。
+定位服务最适用于必须在未安装 Google Play Services 的设备上运行的应用程序。
 
-位置服务是由系统管理的一种特殊类型的[服务](https://developer.android.com/guide/components/services.html)。 系统服务与设备硬件进行交互，并且始终运行。 若要在应用程序中点击位置更新，我们将使用 `LocationManager` 和 `RequestLocationUpdates` 调用从系统位置服务订阅位置更新。
+位置服务是系统管理的一种特殊类型的[服务](https://developer.android.com/guide/components/services.html)。 系统服务与设备硬件进行交互，并且始终运行。 为利用应用程序中的位置更新，我们将使用 `LocationManager` 和 `RequestLocationUpdates` 调用从系统位置服务订阅位置更新。
 
-使用 Android 定位服务获取用户的位置涉及几个步骤：
+使用 Android 位置服务获取用户的位置涉及以下几个步骤：
 
 1. 获取对 `LocationManager` 服务的引用。
-2. 在位置更改时实现 `ILocationListener` 接口并处理事件。
-3. 使用 `LocationManager` 为指定的提供程序请求位置更新。 上一步中的 `ILocationListener` 将用于接收来自 `LocationManager`的回调。
+2. 实现 `ILocationListener` 接口，并在位置更改时处理事件。
+3. 使用 `LocationManager` 来请求指定提供程序的位置更新。 上一步骤中的 `ILocationListener` 将用于接收来自 `LocationManager` 的回调。
 4. 当应用程序不再适合接收更新时，停止位置更新。
 
 ### <a name="location-manager"></a>位置管理器
 
-我们可以使用 `LocationManager` 类的实例访问系统位置服务。 `LocationManager` 是一个特殊类，它允许我们与系统位置服务交互，并对其调用方法。 应用程序可以通过调用 `GetSystemService` 并传入服务类型来获取对 `LocationManager` 的引用，如下所示：
+我们可以使用 `LocationManager` 类的实例访问系统位置服务。 `LocationManager` 是一个特殊的类，支持与系统位置服务进行交互并在其上调用方法。 应用程序可以通过调用 `GetSystemService` 并传入“服务”类型来获取对 `LocationManager` 的引用，如下所示：
 
 ```csharp
 LocationManager locationManager = (LocationManager) GetSystemService(Context.LocationService);
 ```
 
-`OnCreate` 是获取对 `LocationManager`的引用的好地方。
-最好将 `LocationManager` 保留为类变量，以便我们可以在活动生命周期中的不同时间点调用它。
+`OnCreate` 是获取对 `LocationManager` 的引用的合适位置。
+最好将 `LocationManager` 保留为类变量，以便我们可以在活动生命周期的不同时间点调用它。
 
 ### <a name="request-location-updates-from-the-locationmanager"></a>从 LocationManager 请求位置更新
 
-应用程序引用 `LocationManager`后，需要告知 `LocationManager` 需要哪种类型的位置信息，以及该信息的更新频率。 为此，请对 `LocationManager` 对象调用 `RequestLocationUpdates`，并传入一些更新条件和将接收位置更新的回调。 此回调是必须实现 `ILocationListener` 接口的类型（本指南稍后将对此进行详细介绍）。
+应用程序引用 `LocationManager` 后，它需要告知 `LocationManager` 所需的位置信息类型以及该信息的更新频率。 为此，请调用 `LocationManager` 对象上的 `RequestLocationUpdates`，并传递一些更新条件和将接收位置更新的回调。 此回调是必须实现 `ILocationListener` 接口的类型（本指南稍后将对此进行详细介绍）。
 
-`RequestLocationUpdates` 方法告知系统位置服务应用程序要开始接收位置更新。 此方法允许您指定提供程序以及时间和距离阈值来控制更新频率。 例如，下面的方法每隔2000毫秒请求来自 GPS 位置提供程序的位置更新，并且仅当位置更改超过1个 metre 时：
+`RequestLocationUpdates` 方法会告知系统位置服务应用程序希望开始接收位置更新。 借助此方法，可指定提供程序以及时间和距离阈值以控制更新频率。 例如，以下方法每隔 2000 毫秒并且仅当位置更改超过 1 米时会向 GPS 位置提供程序请求位置更新：
 
 ```csharp
 // For this example, this method is part of a class that implements ILocationListener, described below
 locationManager.RequestLocationUpdates(LocationManager.GpsProvider, 2000, 1, this);
 ```
 
-应用程序应该请求仅在应用程序正常运行所需的位置更新。 这会保留电池寿命，并为用户创建更好的体验。
+应用程序应仅按其正常运行所需的频率请求位置更新。 这样可以延长电池寿命，并为用户创造更好的体验。
 
-### <a name="responding-to-updates-from-the-locationmanager"></a>响应 LocationManager 的更新
+### <a name="responding-to-updates-from-the-locationmanager"></a>从 LocationManager 响应更新
 
-在应用程序从 `LocationManager`请求更新后，它可以通过实现[`ILocationListener`](xref:Android.Locations.ILocationListener)接口从服务接收信息。 此接口提供了四种侦听位置服务和位置提供程序的方法，`OnLocationChanged`。 当用户的位置更改足以符合请求位置更新时设置的条件时，系统会调用 `OnLocationChanged`。 
+应用程序从 `LocationManager` 请求更新后，便可以通过实现 [`ILocationListener`](xref:Android.Locations.ILocationListener) 接口从服务接收信息。 此接口提供了四种方法来侦听位置服务和位置提供程序 `OnLocationChanged`。 当用户的位置更改足够大，满足请求位置更新时设置的位置更改条件时，系统将调用 `OnLocationChanged`。 
 
-下面的代码演示 `ILocationListener` 接口中的方法：
+以下代码演示了 `ILocationListener` 接口中的方法：
 
 ```csharp
 public class MainActivity : AppCompatActivity, ILocationListener
@@ -297,7 +297,7 @@ public class MainActivity : AppCompatActivity, ILocationListener
 
 ### <a name="unsubscribing-to-locationmanager-updates"></a>取消订阅 LocationManager 更新
 
-为了节省系统资源，应用程序应该尽快取消订阅位置更新。 `RemoveUpdates` 方法通知 `LocationManager` 停止将更新发送到我们的应用程序。  例如，活动可以在 `OnPause` 方法中调用 `RemoveUpdates`，这样当应用程序的活动不在屏幕上时，如果应用程序不需要位置更新，就可以节省电能：
+为了节省系统资源，应用程序应尽快取消订阅位置更新。 `RemoveUpdates` 方法会告知 `LocationManager` 停止向应用程序发送更新。  例如，活动可能会在 `OnPause` 方法中调用 `RemoveUpdates`，以便应用程序无需位置更新并且其活动不在屏幕上时，便可以节省电量：
 
 ```csharp
 protected override void OnPause ()
@@ -307,15 +307,15 @@ protected override void OnPause ()
 }
 ```
 
-如果应用程序需要在后台获取位置更新，则需要创建订阅系统位置服务的自定义服务。 有关详细信息，请参阅[后台处理 With Android 服务](~/android/app-fundamentals/services/index.md)指南。
+如果应用程序在后台运行时需要获取位置更新，则需要创建一个自定义服务来订阅系统位置服务。 有关详细信息，请参阅[使用 Android 服务进行后台操作](~/android/app-fundamentals/services/index.md)指南。
 
 ### <a name="determining-the-best-location-provider-for-the-locationmanager"></a>确定 LocationManager 的最佳位置提供程序
 
-以上应用程序将 GPS 设置为位置提供程序。 但是，GPS 在所有情况下都可能不可用，例如，如果设备为室内或没有 GPS 接收方。 如果是这种情况，则结果为提供程序的 `null` 返回。
+上面的应用程序将 GPS 设置为位置提供程序。 但是，GPS 可能并非在所有情况下都可用，例如设备在室内或没有 GPS 接收器。 如果是这种情况，则提供程序返回的结果为 `null`。
 
-若要使你的应用程序在 GPS 不可用时正常工作，请使用 `GetBestProvider` 方法在应用程序启动时要求提供最佳的（支持设备和用户的）位置提供程序。 您可以不传入特定提供程序，而是告诉 `GetBestProvider` 提供程序的要求，如[`Criteria` 对象](xref:Android.Locations.Criteria)的准确性和强大功能。 `GetBestProvider` 返回给定条件的最佳提供程序。
+要使应用在 GPS 不可用时正常工作，请使用 `GetBestProvider` 方法在应用程序启动时请求可用的（设备支持和用户已启用）最佳位置提供程序。 无需传递特定的提供程序，只需使用 [`Criteria` 对象](xref:Android.Locations.Criteria) `GetBestProvider` 告知提供程序的要求，例如准确度和耗电情况。 `GetBestProvider` 可针对给定条件返回最佳提供程序。
 
-下面的代码演示如何获取最佳的可用提供程序，并在请求位置更新时使用它：
+以下代码演示了如何获取可用的最佳提供程序，并在请求位置更新时使用它：
 
 ```csharp
 Criteria locationCriteria = new Criteria();   
@@ -335,26 +335,26 @@ else
 ```
 
 > [!NOTE]
-> 如果用户禁用了所有位置提供程序，`GetBestProvider` 将返回 `null`。 若要查看此代码如何在实际设备上运行，请确保在 Google Settings 下启用 GPS、Wi-fi 和移动网络， **> 位置 > 模式**，如以下屏幕截图所示：
+> 如果用户已禁用所有位置提供程序，则 `GetBestProvider` 将返回 `null`。 要查看此代码在实际设备上的工作方式，请确保在“Google 设置”>“位置”>“模式”下启用了 GPS、Wi-Fi 和蜂窝网络，如以下屏幕截图所示  ：
 >
-> [Android 手机上的![设置位置模式屏幕](location-images/location-02.png)](location-images/location-02.png#lightbox)
+> [![Android 手机上的“位置模式”设置屏幕](location-images/location-02.png)](location-images/location-02.png#lightbox)
 >
-> 下面的屏幕截图演示使用 `GetBestProvider`运行的位置应用程序：
+> 下面的屏幕截图演示了使用 `GetBestProvider` 运行的位置应用程序：
 >
-> [显示纬度、经度和提供商的![GetBestProvider 应用](location-images/location-03.png)](location-images/location-03.png#lightbox)
+> [![GetBestProvider 应用显示纬度、经度和提供程序](location-images/location-03.png)](location-images/location-03.png#lightbox)
 >
-> 请记住，`GetBestProvider` 不会动态更改提供程序。 相反，它会在活动生命周期内确定最佳的可用提供程序。 如果在设置提供程序状态后，提供程序状态发生更改，则该应用程序将要求 `ILocationListener` 方法中包含其他代码 &ndash; `OnProviderEnabled`、`OnProviderDisabled`和 `OnStatusChanged` &ndash; 来处理与提供程序开关相关的每个可能性。
+> 请记住，`GetBestProvider` 不会动态更改提供程序。 而是在活动生命周期内确定可用的最佳提供程序（一次）。 如果在设置提供程序后其状态发生更改，则该应用程序将需要在 `ILocationListener` 方法中包含其他代码 &ndash; `OnProviderEnabled`、`OnProviderDisabled` 和 `OnStatusChanged` &ndash;，用于处理与提供程序切换相关的所有可能发生的情况。
 
 ## <a name="summary"></a>总结
 
-本指南介绍了如何使用 Android 位置服务和来自 Google 位置服务 API 的带保险丝位置提供程序获取用户的位置。
+本指南介绍了如何使用 Android 位置服务和 Google 位置服务 API 中的融合位置提供程序获取用户的位置。
 
 ## <a name="related-links"></a>相关链接
 
 - [位置（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/location)
-- [FusedLocationProvider （示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/fusedlocationprovider)
+- [FusedLocationProvider（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/fusedlocationprovider)
 - [Google Play Services](https://developer.android.com/google/play-services/index.html)
-- [条件类](xref:Android.Locations.Criteria)
+- [Criteria 类](xref:Android.Locations.Criteria)
 - [LocationManager 类](xref:Android.Locations.LocationManager)
 - [LocationListener 类](xref:Android.Locations.ILocationListener)
 - [LocationClient API](https://developer.android.com/reference/com/google/android/gms/location/LocationClient.html)

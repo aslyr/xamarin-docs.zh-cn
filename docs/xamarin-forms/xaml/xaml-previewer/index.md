@@ -7,13 +7,13 @@ ms.assetid: 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2
 ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
-ms.date: 02/04/2019
-ms.openlocfilehash: b287d523101bb8ca7faca8ea95ee898ccf9c0bb1
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.date: 03/16/2020
+ms.openlocfilehash: 465783c0771b666a276d18f47cf5d3d458d52933
+ms.sourcegitcommit: 8df67f0d76ff762b517d27b8d4c217d3a3379a18
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306421"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423923"
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>适用于 Xamarin 的 XAML 预览器
 
@@ -29,11 +29,11 @@ XAML 预览器会显示你的 Xamarin. Forms XAML 页面在 iOS 和 Android 上�
 
 ### <a name="visual-studio-2019"></a>Visual Studio 2019
 
-可以通过单击 "拆分视图" 窗格中的箭头打开 XAML 预览器。 如果要更改默认拆分视图行为，请使用**工具 > 选项 > Xamarin > 窗体预览**器 "对话框。 在此对话框中，可以选择默认文档视图和拆分方向。
+可以通过单击 "拆分视图" 窗格中的箭头打开 XAML 预览器。 如果要更改默认拆分视图行为，请使用**工具 > 选项 > xamarin > XAMARIN XAML 预览**器对话框。 在此对话框中，可以选择默认文档视图和拆分方向。
 
 [![Visual Studio 中的 Xamarin 预览器选项](xaml-previewer-images/xamlp-options-vs-sm.png "Visual Studio 中的 Xamarin 预览器选项")](xaml-previewer-images/xamlp-options-vs-lg.png#lightbox)
 
-打开 XAML 文件时，编辑器将根据 "**工具" > 选项 "> Xamarin > 窗体预览**器" 对话框中选择的设置，打开预览器的完整大小或旁边的。 但是，可以在编辑器窗口中为每个文件更改拆分。
+当您打开一个 XAML 文件时，编辑器将根据 "**工具" > 选项 "> xamarin > XAMARIN XAML 预览**器" 对话框中选择的设置，打开完全大小的或旁边的预览程序。 但是，可以在编辑器窗口中为每个文件更改拆分。
 
 #### <a name="xaml-preview-controls"></a>XAML 预览控件
 
@@ -44,6 +44,10 @@ XAML 预览器会显示你的 Xamarin. Forms XAML 页面在 iOS 和 Android 上�
 您可以更改是垂直拆分屏幕还是水平拆分屏幕，或完全折叠一个窗格：
 
 [![Visual Studio 中的 Xamarin 预览窗格方向控件](xaml-previewer-images/xamlp-controls-orientation-vs-sm.png "Visual Studio 中的 Xamarin 预览窗格方向控件")](xaml-previewer-images/xamlp-controls-orientation-vs-lg.png#lightbox)
+
+#### <a name="enable-or-disable-the-xaml-previewer"></a>启用或禁用 XAML 预览器
+
+可以通过选择 "**默认 XML 编辑器" 将 "默认 XML 编辑器**" 设置为**默认的 XAML 编辑器**，将 "**工具" > 选项 "> > XAMARIN" > "Forms xaml 预览**器" 对话框中关闭 XAML 预览器。 这也会关闭文档大纲、属性面板和 XAML 工具箱。 若要重新打开 XAML 预览器和这些工具，请将**默认 XAML 编辑器**更改为**Xamarin。窗体预览**器。
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -56,6 +60,10 @@ XAML 预览器会显示你的 Xamarin. Forms XAML 页面在 iOS 和 Android 上�
 
 > [!NOTE]
 > 在较旧版本的 Visual Studio for Mac 中，"**预览**" 按钮位于窗口的右上方。
+
+#### <a name="enable-or-disable-the-xaml-previewer"></a>启用或禁用 XAML 预览器
+
+通过选择 "**默认 XML 编辑器**" 作为**默认的 XAML 编辑器**，可以在 VISUAL Studio 中关闭 Xaml 预览器 **> 首选项 > 文本编辑器 > XAML** "对话框。 这也会关闭文档大纲、属性面板和 XAML 工具箱。 若要重新打开 XAML 预览器和这些工具，请将**默认 XAML 编辑器**更改为**Xamarin。窗体预览**器。
 
 ::: zone-end
 

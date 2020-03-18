@@ -1,20 +1,20 @@
 ---
 title: 适用于 Xamarin 的 XAML 热重载
-description: 立即在正在运行的应用程序上重新加载对 XAML 文件所做的更改，以便在每次 XAML 更改后无需生成 Xamarin. Forms 项目。
+description: 立即在正在运行的应用程序上重新加载对 XAML 文件所做的更改，这样就无需在每次 XAML 更改后生成 Xamarin. Forms 项目。
 ms.prod: xamarin
 ms.assetid: E220F054-32EE-424C-A7E5-6156BE271519
 ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
-ms.date: 08/13/2019
-ms.openlocfilehash: d94f18d00ebf6eeec5f33343b5c0f985ba2a6ea8
-ms.sourcegitcommit: 9ab907e053c57fc96419149f83187bc3e8983a6b
+ms.date: 03/14/2020
+ms.openlocfilehash: 225b7dc7dc639031b3198a8fb9e7fe9fb9d7ee7f
+ms.sourcegitcommit: 8df67f0d76ff762b517d27b8d4c217d3a3379a18
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75655402"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423871"
 ---
-# <a name="xaml-hot-reload-for-xamarinforms-preview"></a>适用于 Xamarin 的 XAML 热重载（预览）
+# <a name="xaml-hot-reload-for-xamarinforms"></a>适用于 Xamarin 的 XAML 热重载
 
 XAML 热重载将插入现有的工作流，以提高工作效率并节省时间。 如果不使用 XAML 热重载，则必须在每次想要查看 XAML 更改时生成并部署应用。 如果是热重载，则保存 XAML 文件时，所做的更改将反映在正在运行的应用程序中。 此外，还将保留你的导航状态和数据，从而使你可以快速循环访问 UI，而不会丢失你在应用中的位置。 因此，通过 XAML 热重载，你将花费更少的时间来重新生成和部署应用，以验证 UI 更改。
 
@@ -23,7 +23,7 @@ XAML 热重载将插入现有的工作流，以提高工作效率并节省时间
 >
 > 适用于 Xamarin 的 XAML 热重载。 _forms 当前不适_用于 Xamarin. 窗体 UWP 项目。
 
-## <a name="system-requirements"></a>系统需求
+## <a name="system-requirements"></a>系统要求
 
 | IDE/框架 | 所需版本 |
 |------|------------------|
@@ -31,39 +31,54 @@ XAML 热重载将插入现有的工作流，以提高工作效率并节省时间
 Visual Studio 2019 for Mac | 8.4 或更高版本
 Xamarin.Forms | 4.1 或更高版本
 
-## <a name="use-xaml-hot-reload-for-xamarinforms"></a>使用适用于 Xamarin 的 XAML 热重载
+## <a name="enable-xaml-hot-reload-for-xamarinforms"></a>为 Xamarin 启用 XAML 热重载
 
-使用 XAML 热重载不需要额外的安装或设置。 它内置于 Visual Studio 中，并可在 IDE 设置中启用。 启用后，可以通过在模拟器、模拟器或物理设备上调试应用，开始使用 XAML 热重载。 目前，XAML 热重载仅适用于在 iOS 或 Android 上调试时的工作。
+如果从模板开始，则默认情况下将启用 XAML 热重载，并将项目配置为不使用其他设置。 在 Android 或 iOS 模拟器、模拟器或物理设备上调试应用程序，更改 XAML，并保存文件以触发 XAML 热重载。
 
-在 Windows 上，可以通过选中 "在 > **工具**上**启用 xamarin 热重载**" 复选框来启用 XAML 热重载 **，**  > **Xamarin** > "**热重载**"。
+如果你正在使用现有的 Xamarin Forms 解决方案，则无需进行其他安装即可使用 XAML 热重载，但你可能需要仔细检查你的配置以确保获得最佳体验。 首先，在 IDE 设置中启用它：
 
-在 Mac 上，可以通过选中 "在**Visual Studio**上**启用 Xamarin 热重载**" 复选框来启用 XAML 热重载 > **首选项** > **项目** > **Xamarin 热重载**。
+* 在 Windows 上，选中 "在 > **工具**上**启用 xamarin 热重载**" 复选框 **， > ** **Xamarin** > "**热重载**"。
+* 在 Mac 上，选中 "在**Visual Studio**上**启用 Xamarin 热重载**" 复选框， > **首选项** > **工具 "用于 Xamarin** > **XAML 热重载**"。
+  * 在早期版本的 Visual Studio for Mac 中，菜单位于**Visual Studio** > **首选项** > **项目** > **Xamarin 热重载**。
+
+然后，在 Android 和 iOS 生成设置中，检查链接器是否已设置为 "不链接" 或 "链接无"。 若要在物理 iOS 设备上使用 XAML 热重载，还必须选中 **"启用 Mono 解释**器（visual studio 16.4 及更高版本）或将**解释**器添加到**其他 Mtouch 参数**" （visual studio 16.3 及更低版本）。
+
+您可以使用以下流程图检查您的现有项目的设置，以便与 XAML 热重载一起使用：
+
+![XAML 热重载安装程序](hot-reload-images/hotreloadflowchart.png "XAML 热重载安装流程图")
 
 ## <a name="resilient-reloading"></a>复原重装
 
 如果进行了更改，则无法重新加载 XAML 热重载，它将使用 IntelliSense 显示错误消息。 这些更改称为 "强制编辑"，其中包括在 XAML 中键入的内容，或者将控件布线到不存在的事件处理程序。 即使使用强制编辑，也可以继续重新加载，而无需重新启动应用程序-在 XAML 文件中的其他位置进行另一个更改，然后点击 "保存"。 不会重新加载 "强制编辑"，但会继续应用其他更改。
 
-## <a name="known-limitations"></a>已知限制
+## <a name="reload-on-multiple-platforms-at-once"></a>一次在多个平台上重新加载
 
-- 在 XAML 热重载会话期间，无法添加、删除或重命名文件或 NuGet 包。 如果添加或删除文件或 NuGet 包，请重新生成并重新部署应用，以便继续使用 XAML 热重载。
-- 将链接器设置为 "**不链接**" 以获得最佳体验。 **仅限链接 SDK**设置工作正常，但在某些情况下可能会失败。
-- 在物理 iPhone 上调试需要解释器使用 XAML 热重载。 为此，请打开项目设置，选择 "iOS 生成" 选项卡，并确保启用 **"Mono 解释器"** 设置。 可能需要将属性页顶部的 "**平台**" 选项更改为 " **iPhone**"。
-- 通过使用 `x:Name` 值将控件分配给另一个字段或属性而创建的任何引用都不会重新加载。
-- 在**AppShell**中更新 Shell 应用程序的可视层次结构可能会导致应用程序的状态保持有问题。 重新生成应用程序以继续重新加载。
-- XAML 热重载无法重新C#加载代码，包括事件处理程序、自定义控件、页代码隐藏以及其他类。
-- 不适_用于其他_Xamarin。支持窗体的平台（如 mac OS 或 UWP）。
+XAML 热重载支持在 Visual Studio 中同时进行调试，并 Visual Studio for Mac。 你可以同时部署 Android 和 iOS 目标，以查看在两个平台上同时反映的更改。 若要在多个平台上进行调试，请参阅：
+* **Windows** [如何：设置多个启动项目](https://docs.microsoft.com/visualstudio/ide/how-to-set-multiple-startup-projects?view=vs-2019)
+* **Mac** [设置多个启动项目](https://docs.microsoft.com/visualstudio/mac/set-startup-projects?view=vsmac-2019)
 
-## <a name="migrate-from-the-private-preview"></a>从个人预览版迁移
+## <a name="known-limitations"></a>已知的限制
 
-如果你是个人预览版的一部分，则在 Visual Studio 更新时，你的 XAML 热重载扩展将自动更新。 如果你选择不更新 Visual Studio，你可以继续使用当前版本的 XAML 热重载，但你不会通过专用预览扩展源接收任何进一步的更新。
+* 尚*不*支持其他 Xamarin 目标（如 UWP 和 MacOS）。 可在[此处](https://developercommunity.visualstudio.com/idea/661682/xaml-hot-reload-for-xamarinforms-on-uwp.html)跟踪 UWP 支持的进度。
+* 在 XAML 热重载会话期间，无法添加、删除或重命名文件或 NuGet 包。 如果添加或删除文件或 NuGet 包，请重新生成并重新部署应用，以便继续使用 XAML 热重载。
+* 将链接器设置为 "无"**链接**或**链接**，以获得最佳体验。 **仅限链接 SDK**设置工作正常，但在某些情况下可能会失败。 可在 Android 和 iOS 生成选项中找到链接器设置。
+* 在物理 iPhone 上调试需要解释器使用 XAML 热重载。 为此，请打开项目设置，选择 "iOS 生成" 选项卡，并确保启用 **"Mono 解释器"** 设置。 可能需要将属性页顶部的 "**平台**" 选项更改为 " **iPhone**"。
+* 通过使用 `x:Name` 值将控件分配给另一个字段或属性而创建的任何引用都不会重新加载。
+* 在 AppShell 中更新 Shell 应用程序的可视层次结构可能会导致应用程序的状态保持有问题。 如果遇到问题，请重新生成应用程序以继续重新加载。
+* XAML 热重载无法重新C#加载代码，包括事件处理程序、自定义控件、页代码隐藏以及其他类。
+
+## <a name="more-resources"></a>更多资源
+
+* [XAML 热重载提示和技巧](https://devblogs.microsoft.com/xamarin/tips-tricks-xaml-hot-reload/)
+* [适用于 Xamarin 的 XAML 热重载。窗体深入： Xamarin Show](https://www.youtube.com/watch?v=crhjjPjzknk)
 
 ## <a name="troubleshooting"></a>故障排除
 
-- 如果 XAML 热重载未能初始化：
-  - 更新 Xamarin. Forms 版本。
-  - 确保你处于最新版本的 IDE。
-  - 将 Android 或 iOS 链接器设置设置为 "**不链接**项目的生成设置"。
-- 如果保存 XAML 文件后没有任何反应，请确保在 IDE 中启用了热重载。
-- 如果是在物理 iPhone 上进行调试，而应用程序无响应，请检查是否已启用解释器。 若要启用此设置，请打开项目设置，选择 "iOS 生成" 选项卡，然后选中 "**启用 Mono 解释**器" 设置。
+* 如果 XAML 热重载未能初始化：
+  * 更新 Xamarin. Forms 版本。
+  * 确保你处于最新版本的 IDE。
+  * 将 Android 或 iOS 链接器设置设置为 "**不链接**项目的生成设置"。
+* 如果保存 XAML 文件后没有任何反应，请确保在 IDE 中启用了 XAML 热重载。
+* 如果是在物理 iPhone 上进行调试，而应用程序无响应，请检查是否已启用解释器。 若要启用它，请选中 "在 iOS 生成设置中**启用 Mono 解释**器（visual studio 16.4/8.4 和更高版本）" 或 "向**其他 mtouch 参数**添加**解释**器" 字段（Visual studio 16.3/8.3 和更高版本）。
 
-若要报告 bug，请使用**帮助** > **发送反馈** > 在 Windows 上**报告问题**菜单，以及**帮助** > 报告 Mac 上**的问题**菜单。
+若要报告 bug，请使用**帮助** > **发送反馈** > 在 Windows 上**报告问题**，并**帮助** > 报告 Mac 上**的问题**。

@@ -5,12 +5,12 @@ ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 02/26/2020
-ms.openlocfilehash: a0d1e397725ca0a60eb68fb0e6b989ee22c3f56a
-ms.sourcegitcommit: 3d39bafe4c56b15cbb695b1f7f02b926e1033f58
+ms.openlocfilehash: 42cdfe6c54354f1616606c9b3a40de78446c5c39
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78155270"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910734"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -28,6 +28,7 @@ Android、iOS 和 UWP 提供了唯一的操作系统和平台 API，开发人员
 
 * [加速计](accelerometer.md?context=xamarin/xamarin-forms) – 检索设备在三个维空间中的加速数据。
 * [应用信息](app-information.md?context=xamarin/xamarin-forms) – 查找有关应用程序的信息。
+* [应用主题](app-theme.md?context=xamarin/xamarin-forms) – 检测为应用程序请求的当前主题。
 * [气压计](barometer.md?context=xamarin/xamarin-forms) – 监视气压计是否发生压力变化。
 * [电池](battery.md?context=xamarin/xamarin-forms) – 轻松检测电池电量、源和状态。
 * [剪贴板](clipboard.md?context=xamarin/xamarin-forms) – 快速方便地设置或读取剪贴板上的文本。

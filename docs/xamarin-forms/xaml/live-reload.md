@@ -8,21 +8,24 @@ author: pierceboggan
 ms.author: piboggan
 robots: noindex
 ms.date: 10/26/2018
-ms.openlocfilehash: a5a5a9acf47603601461660df689a7a5fa6aee00
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: e6c8e7b84ba8e3d0f6e6247798bb9164a3bc994d
+ms.sourcegitcommit: 8df67f0d76ff762b517d27b8d4c217d3a3379a18
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728338"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423897"
 ---
 # <a name="xamarin-live-reload-preview"></a>Xamarin Live 重载（预览版）
 
 > [!NOTE]
-> Xamarin Live 重装预览已结束，我们希望感谢每个人提供反馈和意见。 请阅读我们的 Visual Studio 2019[路线图](https://docs.microsoft.com/visualstudio/productinfo/vs-roadmap)，了解有关我们正在为 Xamarin 提供的新工作效率功能的详细信息。 此扩展仍适用于 Visual Studio 2017，但将不会接收到将来的更新。
+> Xamarin Live 重装预览已结束，我们希望感谢每个人提供反馈和意见。 
+>
+> 若要在应用运行时编辑 XAML，请使用[适用于 Xamarin 的 Xaml 热重载](~/xamarin-forms/xaml/hot-reload.md)。
+>
 
 Xamarin Live 重载使你能够**更改 XAML 并查看它们的实时，无需进行其他编译和部署**。 对 XAML 所做的任何更改将在保存时重新部署，并反映在部署目标上。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>要求
 
 * [Visual Studio 2017 版本15.7 或更高版本](https://visualstudio.microsoft.com/vs/)，附带 .net 工作负载的**移动开发**。
 * [Xamarin 3.0.0 或更高](https://www.nuget.org/packages/Xamarin.Forms/)版本。
@@ -105,7 +108,7 @@ public partial class App : Application
 
 ### <a name="does-it-require-debugging-the-app"></a>是否需要调试应用？ 
 
-No。 事实上，您甚至可以在任意数量的设备或模拟器/仿真器上启动所有受支持的应用程序目标（Android、iOS 和 UWP），并同时查看所有更新。 
+不是。 事实上，您甚至可以在任意数量的设备或模拟器/仿真器上启动所有受支持的应用程序目标（Android、iOS 和 UWP），并同时查看所有更新。 
 
 ## <a name="limitations"></a>限制
 
@@ -160,7 +163,7 @@ No。 事实上，您甚至可以在任意数量的设备或模拟器/仿真器�
 1. 删除文件夹**C:\Program Files （x86） \Microsoft Visual Studio\Preview\Enterprise\Common7\IDE\Extensions\Xamarin\LiveReload** （注意：请将 "Enterprise" 替换为已安装的版本，将 "Preview" 替换为 "2017" （如果已安装到稳定的 VS）
 2. 打开该 Visual Studio 的**开发人员命令提示符**并运行 `devenv /updateconfiguration`。 
 
-## <a name="tips--tricks"></a>提示和技巧
+## <a name="tips--tricks"></a>技巧 & 技巧
 
 * 只要实时重载设置不会更改（包括加密密钥，例如关闭**自动生成的加密密钥**）并从同一台计算机进行生成，则在初始部署后无需生成并部署应用，除非更改代码或依赖项。 你可以重新启动以前部署的应用，它将连接到所使用的最后一个主机。
 
