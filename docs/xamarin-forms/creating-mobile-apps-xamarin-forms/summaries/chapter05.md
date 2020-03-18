@@ -1,6 +1,6 @@
 ---
-title: 第 5 章的摘要。 处理大小
-description: 用 Xamarin 创建移动应用程序：第 5 章的摘要。 处理大小
+title: 摘要：第 5 章. 处理大小
+description: 使用 Xamarin.Forms 创建移动应用：摘要：第 5 章. 处理大小
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
@@ -8,88 +8,88 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: c082bdb10732e42b37511cf050e50f46990a5b5b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "70771145"
 ---
-# <a name="summary-of-chapter-5-dealing-with-sizes"></a>第 5 章的摘要。 处理大小
+# <a name="summary-of-chapter-5-dealing-with-sizes"></a>摘要：第 5 章. 处理大小
 
-[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05)
+[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05)
 
 > [!NOTE]
-> 此页上的说明表明其中 Xamarin.Forms 已脱离一书中介绍的内容的区域。
+> 此页上的“注意”指出了 Xamarin.Forms 与书中所述内容的不同之处。
 
-到目前为止已经遇到在 Xamarin.Forms 中的多个大小：
+到目前为止，在 Xamarin.Forms 中遇到了几种大小的尺寸：
 
-- IOS 状态条的高度为 20
-- `BoxView`默认宽度和高度为 40
-- 默认值`Padding`在`Frame`为 20
-- 默认值`Spacing`上`StackLayout`为 6
-- `Device.GetNamedSize`方法将返回数字的字体大小
+- iOS 状态栏的高度为 20
+- `BoxView` 的默认宽度和高度均为 40
+- `Frame` 中的默认 `Padding` 为 20
+- `StackLayout` 上的默认 `Spacing` 为 6
+- `Device.GetNamedSize` 方法返回数值形式的字体大小
 
-这些大小不是像素。 相反，它们是独立识别每个平台的设备无关单位。
+这些不是像素的大小。 相反，它们是每个平台独立识别的与设备无关的单元。
 
-## <a name="pixels-points-dps-dips-and-dius"></a>像素、 点、 分发点、 Dip 和 DIUs
+## <a name="pixels-points-dps-dips-and-dius"></a>像素、点、DPS、DIP、DIU
 
-在 Apple Mac 和 Microsoft Windows 的历史记录，早期程序员的工作以像素为单位。 但是，更高分辨率显示出现所需的屏幕坐标的更多虚拟化和抽象方法。 在 Mac 领域中，程序员的工作单位*点*、 传统上 1/72 英寸，而使用的 Windows 开发人员*设备无关的单位*(DIUs) 基于 1/96 英寸。
+在 Apple Mac 和 Microsoft Windows 初期，程序员在工作中使用像素作为单位。 但是，较高分辨率显示器的出现要求对屏幕坐标采用更加虚拟化和抽象的方法。 在 Mac 环境下，程序员在工作中以点  （传统意义上是 1/72 英寸）为单位，而 Windows 开发人员则使用基于 1/96 英寸的与设备无关的单位 (DIU)  。
 
-移动设备，但是，通常保留即将对人脸，并且具有较高的分辨率比桌面的屏幕，这意味着可以容忍较高的像素密度。
+但是，与桌面屏幕相比，移动设备通常更靠近脸部并且具有更高的分辨率，这意味着可以容忍更大的像素密度。
 
-程序员面向 Apple iPhone 和 iPad 设备继续工作单位*点*，但有 160 个点/英寸。 具体取决于该设备，可能有 1、 2 或 3 个像素到点。
+面向 Apple iPhone 和 iPad 设备的程序员在工作中仍以点为单位，但每英寸有 160 点。  对于不同的设备，点可能包含 1 个、2 个或 3 个像素不等。
 
-Android 是类似的。 程序员工作单位*密度无关的像素*(dps) 和为一英寸 160 dp 上基于 dps 和像素之间的关系。
+Android 也是类似的。 程序员通过与密度无关的像素  (DPS) 为单位开展工作，并且 DPS 和像素之间的关系为每英寸 160 DPS。
 
-Windows 手机和移动设备还已建立暗含接近 160 独立于设备的单位为一英寸的缩放比例。
+Windows 手机和移动设备还建立了一些比例因数，表示每英寸接近 160 的设备无关单位。
 
 > [!NOTE]
 > Xamarin.Forms 不再支持任何基于 Windows 的电话或移动设备。
 
-总之，面向手机和平板电脑的 Xamarin.Forms 程序员可以假定所有的度量单位基于以下条件：
+总之，面向手机和平板电脑的 Xamarin.Forms 程序员可以假设所有度量单位都基于以下标准：
 
-- 160 单位为一英寸，等效于
-- 64 单位为厘米
+- 每英寸 160 个单位，相当于
+- 每厘米 64 个单位
 
-只读[ `Width` ](xref:Xamarin.Forms.VisualElement.Width)并[ `Height` ](xref:Xamarin.Forms.VisualElement.Height)定义的属性`VisualElement`具有"模拟"的值的默认&ndash;1。 仅当大小元素并将其存储在布局时，才将这些属性可以反映设备无关的单位中的元素的实际大小。 此大小包括任何`Padding`元素上设置但不是`Margin`。
+由 `VisualElement` 定义的只读 [`Width`](xref:Xamarin.Forms.VisualElement.Width) 和 [`Height`](xref:Xamarin.Forms.VisualElement.Height) 属性的“模拟”值默认为 &ndash;1。 只有在调整了元素的大小并使其适合布局后，这些属性才会以与设备无关的单位反映元素的实际大小。 此大小包括在元素上设置的任何 `Padding`，而不是 `Margin`。
 
-可视元素激发[ `SizeChanged` ](xref:Xamarin.Forms.VisualElement.SizeChanged)事件时其`Width`或`Height`已更改。 [ **WhatSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/WhatSize)示例使用此事件来显示该程序的屏幕的大小。
+视觉对象元素在它的 `Width` 或 `Height` 发生更改时会触发 [`SizeChanged`](xref:Xamarin.Forms.VisualElement.SizeChanged) 事件。 [WhatSize  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/WhatSize) 示例使用此事件来显示程序屏幕的大小。
 
-## <a name="metrical-sizes"></a>度量的大小
+## <a name="metrical-sizes"></a>度量大小
 
-[ **MetricalBoxView** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/MetricalBoxView)使用[ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest)并[ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)显示`BoxView`一英寸高，另一个厘米宽。
+[MetricalBoxView  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/MetricalBoxView) 使用 [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) 和 [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) 显示一英寸高度和一厘米宽度的 `BoxView`。
 
-## <a name="estimated-font-sizes"></a>估计的字体大小
+## <a name="estimated-font-sizes"></a>估计字体大小
 
-[**纸张**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/FontSizes)示例演示如何使用 160 单位为英寸规则中点为单位指定字体大小。 在使用此技术平台的 visual 一致性优于`Device.GetNamedSize`。
+[FontSizes  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/FontSizes) 示例展示了如何使用 160 个单位/英寸规则以点为单位指定字体大小。 使用此技术的平台之间的视觉一致性优于 `Device.GetNamedSize`。
 
-## <a name="fitting-text-to-available-size"></a>调整的可用大小的文本
+## <a name="fitting-text-to-available-size"></a>使文本适合可用大小
 
-可以通过计算来适应特定矩形内的文本块`FontSize`的`Label`使用以下条件：
+通过使用以下条件计算 `Label` 的 `FontSize`，可以在特定矩形中容纳文本块：
 
-- 行距是 120%的字体大小 （在 Windows 平台上 130%)。
-- 平均字符宽度为字体大小的 50%。
+- 行距为字号的 120%（在 Windows 平台上为 130%）。
+- 平均字符宽度为字号的 50%。
 
-[ **EstimatedFontSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EstimatedFontSize)示例演示此技术。 此程序已编写之前[ `Margin` ](xref:Xamarin.Forms.View.Margin)属性都不可用，因此它使用[ `ContentView` ](xref:Xamarin.Forms.ContentView)与[ `Padding` ](xref:Xamarin.Forms.Layout.Padding)设置，以模拟边距。
+[EstimatedFontSize  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EstimatedFontSize) 示例展示了此技术。 在编写此程序时，[`Margin`](xref:Xamarin.Forms.View.Margin) 属性尚未提供，因此，此程序使用包含 [`Padding`](xref:Xamarin.Forms.Layout.Padding) 设置的 [`ContentView`](xref:Xamarin.Forms.ContentView) 来模拟边距。
 
-[![估计的字体大小的三个屏幕截图](images/ch05fg07-small.png "文本适应可用大小")](images/ch05fg07-large.png#lightbox "文本适应可用大小")
+[![估计字体大小的三倍屏幕截图](images/ch05fg07-small.png "使文本适合可用大小")](images/ch05fg07-large.png#lightbox "使文本适合可用大小")
 
-## <a name="a-fit-to-size-clock"></a>适合大小时钟
+## <a name="a-fit-to-size-clock"></a>大小适中的时钟
 
-[ **FitToSizeClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/FitToSizeClock)示例演示如何使用[ `Device.StartTimer` ](xref:Xamarin.Forms.Device.StartTimer(System.TimeSpan,System.Func{System.Boolean}))启动一个计时器，用于定期更新时钟的时间时通知应用程序。 字体大小设置为六分之一页宽，以使显示一样大。
+[FitToSizeClock  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/FitToSizeClock) 示例展示了如何使用 [`Device.StartTimer`](xref:Xamarin.Forms.Device.StartTimer(System.TimeSpan,System.Func{System.Boolean})) 启动计时器，以便定期通知应用程序更新时钟。 字号设置为页面宽度的六分之一，尽可能大地显示内容。
 
 ## <a name="accessibility-issues"></a>辅助功能问题
 
-**EstimatedFontSize**程序和**FitToSizeClock**程序都包含一个微妙的缺陷：如果用户在 Android 或 Windows 10 移动版上更改了手机的辅助功能设置，则程序将不再能够根据字号来估算文本的呈现大小。 [ **AccessibilityTest** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/AccessibilityTest)示例展示了此问题。
+EstimatedFontSize  程序和 FitToSizeClock  程序都包含一个细微的缺陷：如果用户在 Android 或 Windows 10 移动版上更改了手机的辅助功能设置，程序将无法再根据字号来估算文本的呈现大小。 [AccessibilityTest  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/AccessibilityTest) 示例展示了此问题。
 
-## <a name="empirically-fitting-text"></a>根据经验调整文本
+## <a name="empirically-fitting-text"></a>根据经验调整文本大小
 
-另一种方法，以适应一个矩形的文本是凭经验计算呈现的文本大小和向上或向下对其进行调整。 中的通讯簿调用程序[ `GetSizeRequest` ](xref:Xamarin.Forms.VisualElement.GetSizeRequest(System.Double,System.Double))上可视元素来获取该元素的所需的大小。 方法已被弃用，并应改为调用程序[ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags))。
+使文本适合矩形的另一种方法是根据经验计算呈现的文本大小，并相应调整。 本书中的程序调用视觉对象元素的 [`GetSizeRequest`](xref:Xamarin.Forms.VisualElement.GetSizeRequest(System.Double,System.Double))，以获取元素的所需大小。 这种方法已弃用，程序应改为调用 [`Measure`](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags))。
 
-有关`Label`，第一个参数应为 （以允许换行） 的容器的宽度，同时第二个参数应设置到`Double.PositiveInfinity`进行不受约束的高度。 [ **EmpiricalFontSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EmpiricalFontSize)示例演示此技术。
+对于 `Label`，第一个参数应为容器的宽度（以允许换行），第二个参数应设置为 `Double.PositiveInfinity` 以使高度不受限制。 [EmpiricalFontSize  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EmpiricalFontSize) 示例展示了此技术。
 
 ## <a name="related-links"></a>相关链接
 
 - [第 5 章全文 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch05-Apr2016.pdf)
-- [第 5 章： 示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05)
-- [第 5 章：F#示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/FS)
+- [第 5 章示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05)
+- [第 5 章 F# 示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/FS)

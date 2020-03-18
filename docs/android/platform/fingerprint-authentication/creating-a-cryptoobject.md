@@ -7,19 +7,19 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 871058d1c128b37a0f2e77b43587139efb433de1
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "75487771"
 ---
 # <a name="creating-a-cryptoobject"></a>创建 CryptoObject
 
-指纹身份验证结果的完整性对应用程序而言很重要 &ndash; 它是应用程序了解用户身份的方式。 理论上，第三方恶意软件可能会截获并篡改指纹扫描器返回的结果。 本部分将讨论一种保护指纹结果有效性的方法。 
+指纹身份验证结果的完整性对应用程序而言很重要 &ndash; 它使应用程序能够了解用户的身份。 从理论上讲，第三方恶意软件可能会拦截和篡改指纹扫描器返回的结果。 本节将介绍一种保护指纹结果有效性的方法。 
 
-`FingerprintManager.CryptoObject` 是围绕 Java 加密 Api 的包装器，由 `FingerprintManager` 用于保护身份验证请求的完整性。 通常，`Javax.Crypto.Cipher` 对象是用于对指纹扫描器的结果进行加密的机制。 `Cipher` 对象本身将使用应用程序使用 Android 密钥库 Api 创建的密钥。
+`FingerprintManager.CryptoObject` 是有关 Java 加密 API 的包装器，由 `FingerprintManager` 用于保护身份验证请求的完整性。 通常，`Javax.Crypto.Cipher` 对象是用于对指纹扫描器的结果进行加密的机制。 `Cipher` 对象本身将使用由应用程序使用 Android 密钥存储 API 创建的密钥。
 
-若要了解这些类的整体工作方式，让我们首先看看下面的代码，其中演示了如何创建 `CryptoObject`，并详细说明了：
+要了解这些类如何协同工作，让我们首先来看下面的代码，其中演示了如何创建 `CryptoObject`，并提供了详细说明：
 
 ```csharp
 public class CryptoObjectHelper
@@ -99,40 +99,40 @@ public class CryptoObjectHelper
 }
 ```
 
-示例代码将使用应用程序创建的键为每个 `CryptoObject`创建一个新的 `Cipher`。 该键由在 `CryptoObjectHelper` 类的开头设置的 `KEY_NAME` 变量标识。 方法 `GetKey` 将使用 Android 密钥库 Api 尝试并检索密钥。 如果该键不存在，则 `CreateKey` 方法将为应用程序创建新的密钥。
+上述示例代码将使用由应用程序创建的密钥为每个 `CryptoObject` 创建一个新的 `Cipher`。 该密钥由在 `CryptoObjectHelper` 类的开头设置的 `KEY_NAME` 变量标识。 `GetKey` 方法将使用 Android 密钥存储 API 尝试检索密钥。 如果密钥不存在，`CreateKey` 方法将为应用程序创建一个新密钥。
 
-使用对 `Cipher.GetInstance`的调用来实例化密码，并采用_转换_（告知密码如何加密和解密数据的字符串值）。 对 `Cipher.Init` 的调用将通过从应用程序提供密钥来完成密码初始化。 
+通过调用 `Cipher.GetInstance`，并采用“transformation”  （一个字符串值，该值告诉密码如何加密和解密数据）来实例化密码。 对 `Cipher.Init` 的调用将通过提供来自应用程序的密钥来完成密码初始化。 
 
 需要注意的是，在某些情况下，Android 可能会使密钥失效： 
 
-- 新指纹已注册到设备。
+- 已在设备中注册了新的指纹。
 - 未向设备注册任何指纹。
-- 用户已禁用屏幕锁。
-- 用户更改了屏幕锁（screenlock 的类型或使用的 PIN/模式）。
+- 用户已禁用屏幕锁定。
+- 用户更改了屏幕锁定（屏幕锁定的类型或已使用的 PIN/图案）。
 
-发生这种情况时，`Cipher.Init` 将引发[`KeyPermanentlyInvalidatedException`](https://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)。 上面的示例代码将捕获该异常，删除该密钥，然后创建一个新密钥。
+发生这种情况时，`Cipher.Init` 将引发 [`KeyPermanentlyInvalidatedException`](https://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)。 上面的示例代码将捕获该异常，删除密钥，然后创建一个新密钥。
 
-下一部分将讨论如何创建密钥并将其存储在设备上。
+下一节介绍如何创建密钥并将其存储在设备上。
 
 ## <a name="creating-a-secret-key"></a>创建密钥
 
-`CryptoObjectHelper` 类使用 Android [`KeyGenerator`](xref:Javax.Crypto.KeyGenerator)创建密钥，并将其存储在设备上。 `KeyGenerator` 类可以创建密钥，但需要一些与要创建的密钥类型有关的元数据。 此信息由[`KeyGenParameterSpec`](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html)类的实例提供。 
+`CryptoObjectHelper` 类使用 Android [`KeyGenerator`](xref:Javax.Crypto.KeyGenerator) 来创建密钥，并将其存储在设备上。 `KeyGenerator` 类可以创建密钥，但需要一些与要创建的密钥类型有关的元数据。 此信息由 [`KeyGenParameterSpec`](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html) 类的实例提供。 
 
-使用 `GetInstance` 工厂方法实例化 `KeyGenerator`。 示例代码使用[_高级加密标准_](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)（_AES_）作为加密算法。 AES 会将数据分解为固定大小的块，并加密每个块。
+使用 `GetInstance` 工厂方法实例化 `KeyGenerator`。 示例代码使用[  高级加密标准](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) (AES  ) 作为加密算法。 AES 会将数据分成固定大小的块，并对每个块进行加密。
 
-接下来，使用 `KeyGenParameterSpec.Builder`创建 `KeyGenParameterSpec`。 `KeyGenParameterSpec.Builder` 包装有关要创建的密钥的下列信息：
+接下来，使用 `KeyGenParameterSpec.Builder` 创建 `KeyGenParameterSpec`。 `KeyGenParameterSpec.Builder` 包装有关要创建的密钥的下列信息：
 
 - 密钥名称。
-- 密钥必须对加密和解密都有效。
-- 在示例代码中，`BLOCK_MODE` 设置为_密码块链_（`KeyProperties.BlockModeCbc`），这意味着每个块都与前一个块 XORed （创建每个块之间的依赖关系）。 
-- `CryptoObjectHelper` 使用[_公钥加密标准 #7_](https://tools.ietf.org/html/rfc2315) （_PKCS7_）来生成将填充块的字节，以确保它们都具有相同的大小。
-- `SetUserAuthenticationRequired(true)` 表示在使用密钥之前需要用户身份验证。
+- 该密钥对于加密和解密都必须有效。
+- 在示例代码中，`BLOCK_MODE` 设置为“加密块链接”  (`KeyProperties.BlockModeCbc`)，这表示每个块都与前一个块存在 XOR 关系（创建每个块之间的依赖关系）。 
+- `CryptoObjectHelper` 使用[公钥加密标准 #7  ](https://tools.ietf.org/html/rfc2315) (_PKCS7_) 生成用于填充块的字节，以确保它们都具有相同的大小。
+- `SetUserAuthenticationRequired(true)` 表示在使用密钥之前需要进行用户身份验证。
 
 创建 `KeyGenParameterSpec` 后，它将用于初始化 `KeyGenerator`，它将生成一个密钥并将其安全地存储在设备上。 
 
 ## <a name="using-the-cryptoobjecthelper"></a>使用 CryptoObjectHelper
 
-现在，示例代码已封装了许多用于创建 `CryptoWrapper` 到 `CryptoObjectHelper` 类的逻辑，接下来让我们重新访问本指南开头的代码，并使用 `CryptoObjectHelper` 创建密码并启动指纹扫描器： 
+现在，示例代码已将许多用于创建 `CryptoWrapper` 的逻辑封装到 `CryptoObjectHelper` 类中，我们再回头看看本指南开头的代码，并使用 `CryptoObjectHelper` 创建密码并启动指纹扫描器： 
 
 ```csharp
 protected void FingerPrintAuthenticationExample()
@@ -153,11 +153,11 @@ protected void FingerPrintAuthenticationExample()
 }
 ```
 
-现在，我们已经了解了如何创建 `CryptoObject`，接下来了解如何使用 `FingerprintManager.AuthenticationCallbacks` 将指纹扫描器服务的结果传输到 Android 应用程序。
+现在，我们已经了解了如何创建 `CryptoObject`，接下来看看如何使用 `FingerprintManager.AuthenticationCallbacks` 将指纹扫描器服务的结果传输到 Android 应用程序。
 
 ## <a name="related-links"></a>相关链接
 
-- [密码](xref:Javax.Crypto.Cipher)
+- [Cipher](xref:Javax.Crypto.Cipher)
 - [FingerprintManager.CryptoObject](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.CryptoObject.html)
 - [FingerprintManagerCompat.CryptoObject](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.CryptoObject.html)
 - [KeyGenerator](xref:Javax.Crypto.KeyGenerator)
@@ -166,4 +166,4 @@ protected void FingerPrintAuthenticationExample()
 - [KeyPermanentlyInvalidatedException](https://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)
 - [KeyProperties](https://developer.android.com/reference/android/security/keystore/KeyProperties.html)
 - [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
-- [RFC 2315-PCKS #7](https://tools.ietf.org/html/rfc2315)
+- [RFC 2315 - PCKS #7](https://tools.ietf.org/html/rfc2315)

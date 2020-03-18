@@ -7,58 +7,37 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.custom: video
-ms.date: 01/22/2019
-ms.openlocfilehash: bdc8366e75455755cbb2f533b6707f72e33436e2
-ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
+ms.date: 03/05/2020
+ms.openlocfilehash: f0612ca53bc54cf4b15982b7743c64b1997a4455
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425577"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79031070"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS 的自动预配
 
-Xamarin.iOS 成功安装后，iOS 开发的下一步是预配 iOS 设备。_本指南介绍如何使用自动签名请求开发证书和配置文件。_
+Xamarin.iOS 成功安装后，iOS 开发的下一步是预配 iOS 设备。  本指南介绍如何使用自动预配请求开发证书和配置文件。
 
 ## <a name="requirements"></a>要求
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+Visual Studio for Mac、Visual Studio 2019 和 Visual Studio 2017（版本 15.7 及更高版本）上提供了自动预配功能。 
 
-- Visual Studio for Mac 7.3 或更高版本
-- Xcode 9 或更高版本
+此外，必须拥有付费的 Apple 开发者帐户才能使用此功能。 有关 Apple 开发者帐户的详细信息，请参阅[设备预配](~/ios/get-started/installation/device-provisioning/index.md)指南。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+> [!NOTE]
+> 在开始之前，请务必先接受 [Apple 开发者门户](https://developer.apple.com/account/)或 [App Store Connect](https://appstoreconnect.apple.com/) 中的任何许可协议。
 
-- Visual Studio 2019
-- 或者 Visual Studio 2017 版本 15.7（或更高版本）
 
-必须与具备以下条件的 Mac 生成主机配对：
+## <a name="enable-automatic-provisioning"></a>启用自动设置
 
-- Xcode 10 或更高版本
+在开始自动签名过程之前，应确保已按 [Apple 帐户管理](~/cross-platform/macios/apple-account-management.md)指南中的说明将 Apple ID 添加到 Visual Studio 中。 
 
------
-
-## <a name="enabling-automatic-signing"></a>启用自动签名
-
-开始自动签名进程前，应确保 Apple ID 已添加到 Visual Studio 中，如 [Apple 帐户管理](~/cross-platform/macios/apple-account-management.md)指南所述。 一旦添加了 Apple ID，便可以使用任意相关联的团队  。 此操作可以指定团队的证书、配置文件和其他 ID。 团队 ID 还可用于创建预配配置文件中包含的应用 ID 的前缀。 Apple 可以通过此团队 ID 验证你的身份是否和你所述一致。
-
-> [!IMPORTANT]
-> 在开始之前，请确保登录 [iTunes Connect](https://itunesconnect.apple.com/) 或 [appleid.apple.com](https://appleid.apple.com) 以检查是否已接受最新的 Apple 帐户策略。 如果系统提示，请完成这些步骤以接受 Apple 的任何新帐户协议。 如果不接受自 2018 年 5 月起的隐私协议，那么在尝试预配设备时，将看到以下警报之一：
->
-> ```
-> Unexpected authentication failure. Reason: {
-> "authType" : "sa"
-> }
-> ```
->
-> or
->
-> ```
-> Authentication Service Is Unavailable
-> ```
+一旦添加了 Apple ID，便可以使用任意相关联的团队  。 此操作可以指定团队的证书、配置文件和其他 ID。 团队 ID 还可用于创建预配配置文件中包含的应用 ID 的前缀。 Apple 可以通过此团队 ID 验证你的身份是否和你所述一致。
 
 若要自动签名应用以在 iOS 设备上开发，请执行以下操作：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在 Visual Studio for Mac 中打开 iOS 项目。
 
@@ -76,32 +55,29 @@ Xamarin.iOS 成功安装后，iOS 开发的下一步是预配 iOS 设备。_本�
 
     如果自动签名失败，则“自动签名板”将显示错误的原因  。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 按照[与 Mac 配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南所述，将 Visual Studio 2019 与 Mac 配对。
+> [!NOTE]
+> 如果你使用的是 Visual Studio 2017 或 Visual Studio 2019（版本 16.4 及更早版本），需要先[配对到 Mac 生成主机](~/ios/get-started/installation/windows/connecting-to-mac/index.md)，然后才能继续操作。
 
-2. 在解决方案资源管理器中，右键单击项目名称，然后选择“属性”   。 然后，导航至“iOS 捆绑签名”选项卡  。
+1. 在“解决方案资源管理器”中，右键单击 iOS 项目名称，然后选择“属性”   。 然后，导航至“iOS 捆绑签名”选项卡  ：
 
-3. 选择“自动预配”方案  ：
+    ![iOS 属性中的“捆绑签名”页的屏幕截图。](automatic-provisioning-images/bundle-signing-win.png)
 
-    ![自动方案的选择](automatic-provisioning-images/prov4.png)
+2. 选择“自动预配”方案  。
 
-4. 从“团队”组合框中选择团队，然后开始自动签名进程  。
+3. 从“团队”下拉菜单中选择团队，启动自动签名过程  。 Visual Studio 将指示该过程是否已成功完成：
 
-    ![团队选择](automatic-provisioning-images/prov3.png)
-
-5. 这将启动自动签名进程。 然后，Visual Studio 尝试生成应用 ID、预配配置文件和签名标识来将这些项目用于签名。 可在生成输出中查看生成进程：
-
-    ![显示项目生成的生成输出](automatic-provisioning-images/prov5.png)
+    ![“捆绑签名”页的屏幕截图，其中突出显示消息“自动预配已成功完成”。](automatic-provisioning-images/signing-success-win.png)
 
 -----
 
-## <a name="triggering-automatic-provisioning"></a>触发自动预配
+## <a name="run-automatic-provisioning"></a>运行自动预配
 
-启用自动签名时，如果发生以下情况，Visual Studio for Mac 会在必要时更新项目：
+启用自动预配后，如果发生以下任何情况，Visual Studio 将在必要时重新运行该过程：
 
 - iOS 设备插入到 Mac
-  - 这会自动检查设备是否已在 Apple 开发人员门户中注册。 如果没有，则会添加该设备并生成包含该设备的新的预配配置文件。
+  - 这会自动检查设备是否已在 Apple 开发人员门户中注册。 如果未注册，则会添加该设备并生成包含该设备的新的预配配置文件。
 - 应用的捆绑 ID 发生更改
   - 这会更新应用 ID。 创建包含此应用 ID 的新预配配置文件。
 - 一个受支持的功能在 Entitlements.plist 文件中启用。
@@ -110,7 +86,7 @@ Xamarin.iOS 成功安装后，iOS 开发的下一步是预配 iOS 设备。_本�
 
 ## <a name="wildcard-app-ids"></a>通配符应用 ID
 
-从 Visual Studio for Mac 7.6 开始，自动预配将默认尝试创建并使用通配符应用 ID 和预配配置文件，而不是基于 Info.plist 中指定的捆绑包标识符的显式应用 ID   。 通配符应用 ID 可减少 Apple 开发人员门户中要维护的配置文件和 ID 的数量。
+在 Visual Studio for Mac 和 Visual Studio 2019（版本 16.5 或更高版本）中，自动预配将默认尝试创建并使用通配符应用 ID 和预配配置文件，而不是基于 Info.plist 中指定的捆绑包标识符的显式应用 ID   。 通配符应用 ID 可减少 Apple 开发人员门户中要维护的配置文件和 ID 的数量。
 
 在某些情况下，应用的权利需要显式应用 ID。 以下权利不支持通配符应用 ID：
 
@@ -128,10 +104,13 @@ Xamarin.iOS 成功安装后，iOS 开发的下一步是预配 iOS 设备。_本�
 - 推送通知
 - 无线附件配置
 
-若应用使用其中一种权利，Visual Studio for Mac 将尝试创建显式（而不是通配符）应用 ID。
+如果应用使用其中一种权利，Visual Studio 将尝试创建显式（而不是通配符）应用 ID。
 
-> [!NOTE]
-> 使用通配符应用 ID 的自动配置目前仅适用于 Visual Studio for Mac。
+## <a name="troubleshoot"></a>疑难解答 
+
+- 新的 Apple 开发者帐户可能需要几个小时才能获得批准。 在帐户获得批准之前，你将无法启用自动预配。
+- 如果自动预配过程失败，并显示错误消息 `Authentication Service Is Unavailable`，请登录到 [App Store Connect](https://appstoreconnect.apple.com/) 或 [appleid.apple.com](https://appleid.apple.com) 以检查是否已接受最新的服务协议。
+- 如果收到错误消息 `Authentication Error: Xcode 7.3 or later is required to continue developing with your Apple ID.`，请确保所选团队具有 Apple 开发者计划的有效付费成员资格。 若要使用付费的 Apple 开发者帐户，请参阅[免费预配 Xamarin.iOS 应用](~/ios/get-started/installation/device-provisioning/free-provisioning.md)指南。
 
 ## <a name="related-links"></a>相关链接
 
@@ -139,9 +118,3 @@ Xamarin.iOS 成功安装后，iOS 开发的下一步是预配 iOS 设备。_本�
 - [应用分发](~/ios/deploy-test/app-distribution/index.md)
 - [疑难解答](~/ios/deploy-test/troubleshooting.md)
 - [Apple - 应用分发指南](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
-
-## <a name="related-video"></a>相关视频
-
-> [!Video https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-Simplified-iOS-Provisioning-in-Visual-Studio-with-fastlane/player]
-
-[!include[](~/essentials/includes/xamarin-show-essentials.md)]
