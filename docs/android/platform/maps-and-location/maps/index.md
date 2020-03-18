@@ -1,6 +1,6 @@
 ---
-title: 如何将 Google Maps 和 Location 与 Xamarin 配合使用
-description: 本文介绍如何将 maps 和 location 与 Xamarin 一起使用。 其中包括利用内置地图应用程序直接使用 Google Maps Android API V2 的所有内容。
+title: 如何在 Xamarin.Android 中使用 Google Maps 和位置
+description: 本文讨论如何在 Xamarin.Android 中使用地图和位置。 其中涵盖了从利用内置地图应用程序到直接使用 Google Maps Android API V2 的所有内容。
 ms.prod: xamarin
 ms.assetid: 425E0ED2-5380-6EBE-7059-256B6E9128B8
 ms.technology: xamarin-android
@@ -8,31 +8,31 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
 ms.openlocfilehash: d877f415bb96024bb41edc2be9aec108ae248e88
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73020030"
 ---
-# <a name="how-to-use-google-maps-and-location-with-xamarinandroid"></a>如何将 Google Maps 和 Location 与 Xamarin 配合使用
+# <a name="how-to-use-google-maps-and-location-with-xamarinandroid"></a>如何在 Xamarin.Android 中使用 Google Maps 和位置
 
-_本文介绍如何将 maps 和 location 与 Xamarin 一起使用。其中包括利用内置地图应用程序直接使用 Google Maps Android API V2 的所有内容。_
+_本文讨论如何在 Xamarin.Android 中使用地图和位置。其中涵盖了从利用内置地图应用程序到直接使用 Google Maps Android API V2 的所有内容。_
 
-## <a name="maps-overview"></a>映射概述
+## <a name="maps-overview"></a>地图概述
 
-映射技术是移动设备的普遍补充。 台式计算机和便携式计算机不会在位置感知内置。 另一方面，移动设备使用此类应用程序来查找设备，并显示变化的位置信息。 Android 具有强大的内置技术，可在设备上使用可能提供的位置硬件显示地图上的位置数据。 本文介绍了在 Xamarin 中映射应用程序所需的各种功能，包括： 
+地图技术是对移动设备的普遍补充。 台式计算机和笔记本电脑通常不会内置位置感知功能。 另一方面，移动设备使用此类应用程序来定位设备并显示更改位置信息。 Android 具有功能强大的内置技术，可使用设备上可用的位置硬件在地图上显示位置数据。 本文介绍 Xamarin.Android 下的地图应用程序必须提供的内容，包括： 
 
-- 使用内置 maps 应用程序快速添加映射功能。
-- 使用 Maps API 控制地图的显示。
-- 使用多种技术来添加图形覆盖。
+- 使用内置地图应用程序快速添加地图功能。
+- 使用地图 API 来控制地图的显示。
+- 使用多种技术添加图形覆盖。
 
-本节中的主题涵盖各种映射功能。
-首先，他们将介绍如何利用 Android 的内置地图应用程序以及如何显示位置的全景街道视图。 然后讨论如何使用 Maps API 直接在应用程序中合并映射功能，同时涵盖如何控制地图的位置和显示，以及如何添加图形覆盖。
+本节中的主题涵盖了广泛的地图功能。
+首先，介绍如何利用 Android 的内置地图应用程序以及如何显示某个位置的全景街道视图。 然后，讨论如何使用地图 API 在应用程序内直接合并地图功能，涵盖如何控制地图的位置和显示以及如何添加图形覆盖。
 
 ## <a name="related-links"></a>相关链接
 
-- [MapsAndLocationDemo_v3 （示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/mapsandlocationdemo-v3)
+- [MapsAndLocationDemo_v3（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/mapsandlocationdemo-v3)
 - [活动生命周期](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [获取 Google Maps API 密钥](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [意向列表：调用 Android 设备上的 Google 应用程序](https://developer.android.com/guide/appendix/g-app-intents.html)
+- [意向列表：在 Android 设备上调用 Google 应用程序](https://developer.android.com/guide/appendix/g-app-intents.html)
 - [位置和地图](https://developer.android.com/guide/topics/location/index.html)

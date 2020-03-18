@@ -1,6 +1,6 @@
 ---
-title: 第 12 章的摘要。 样式
-description: 使用 Xamarin.Forms 创建移动应用：第 12 章的摘要。 样式
+title: 摘要：第 12 章. 样式
+description: 使用 Xamarin.Forms 创建移动应用：摘要：第 12 章. 样式
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 3EAE6BDC-8EFB-464B-A87B-1C35B8387BB3
@@ -8,75 +8,75 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: 408f171a3c7c690b700f7be21a3dcaff503467d9
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "65926908"
 ---
-# <a name="summary-of-chapter-12-styles"></a>第 12 章的摘要。 样式
+# <a name="summary-of-chapter-12-styles"></a>摘要：第 12 章. 样式
 
-[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12)
+[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12)
 
-在 Xamarin.Forms 中，样式允许多个视图来共享的属性设置的集合。 这减少了标记，并使维护一致的视觉主题。
+在 Xamarin.Forms 中，使用样式，多个视图可共享属性设置的集合。 这样可以减少标记，并能够保持一致的视觉主题。
 
-样式几乎总是定义，并在标记中使用。 类型的对象[ `Style` ](xref:Xamarin.Forms.Style)是在资源字典中实例化，然后设置为[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)的可视元素使用属性`StaticResource`或`DynamicResource`标记扩展插件。
+样式几乎总在标记中定义和使用。 在资源字典中实例化类型为 [`Style`](xref:Xamarin.Forms.Style) 的对象，然后使用 `StaticResource` 或 `DynamicResource` 标记扩展设置为可视元素的 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 属性。
 
 ## <a name="the-basic-style"></a>基本样式
 
-一个`Style`要求其[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)设置为适用于在可视对象的类型。 当`Style`实例化中的资源字典 （如很常见） 它还需要`x:Key`属性。
+`Style` 要求将其 [`TargetType`](xref:Xamarin.Forms.Style.TargetType) 设置为其所应用的视觉对象的类型。 在资源字典中实例化 `Style` 时（很常见），它还需要一个 `x:Key` 属性。
 
-`Style`具有内容类型的属性[ `Setters` ](xref:Xamarin.Forms.Style.Setters)，这是一系列[ `Setter` ](xref:Xamarin.Forms.Setter)对象。 每个`Setter`相关联[ `Property` ](xref:Xamarin.Forms.Setter.Property)与[ `Value` ](xref:Xamarin.Forms.Setter.Value)。
+`Style` 具有类型为 [`Setters`](xref:Xamarin.Forms.Style.Setters) 的内容属性，该属性是 [`Setter`](xref:Xamarin.Forms.Setter) 对象的集合。 每个 `Setter` 将 [`Property`](xref:Xamarin.Forms.Setter.Property) 与 [`Value`](xref:Xamarin.Forms.Setter.Value) 关联。
 
-在 XAML`Property`设置是 CLR 属性的名称 (如`Text`属性的`Button`)，但必须由可绑定的属性支持带样式的属性。 此外，必须将属性中指示的类定义`TargetType`设置，或由该类继承。
+在 XAML 中，`Property` 设置是 CLR 属性的名称（例如 `Button` 的 `Text` 属性），但是带样式的属性必须由可绑定属性提供支持。 同样，该属性必须在 `TargetType` 设置指示的类中定义，或者由该类继承。
 
-您可以指定`Value`设置使用属性元素`<Setter.Value>`。 这允许您设置`Value`中的文本字符串，或无法表示的对象`OnPlatform`对象，或者对对象实例化使用`x:Arguments`或`x:FactoryMethod`。 `Value`属性也可以设置与`StaticResource`到字典中的另一个项的表达式。
+可以使用属性元素 `<Setter.Value>` 指定 `Value` 设置。 这样，用户可以将 `Value` 设置为无法以文本字符串中表示的对象，或设置为 `OnPlatform` 对象或设置为使用 `x:Arguments` 或 `x:FactoryMethod` 实例化的对象。 也可以使用 `StaticResource` 表达式将 `Value` 属性设置为字典中的其他项。
 
-[ **BasicStyle** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/BasicStyle)程序演示了基本语法，并演示如何引用`Style`与`StaticResource`标记扩展：
+[BasicStyle  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/BasicStyle) 程序演示了基本语法，并显示了如何使用 `StaticResource` 标记扩展来引用 `Style`：
 
-[![基本样式的三个屏幕截图](images/ch12fg01-small.png "基本样式")](images/ch12fg01-large.png#lightbox "基本样式")
+[![基本样式的三倍屏幕截图](images/ch12fg01-small.png "基本样式")](images/ch12fg01-large.png#lightbox "基本样式")
 
-`Style`对象和在中创建任何对象`Style`对象作为`Value`引用的所有视图之间共享设置`Style`。 `Style`不能包含任何内容不能共享，如`View`派生类。
+`Style` 对象和任何在 `Style` 对象中作为 `Value` 设置创建的对象在引用该 `Style` 的所有视图之间共享。 `Style` 不能包含任何无法共享的内容，例如 `View` 导数。
 
-无法在事件处理程序中设置`Style`。 `GestureRecognizers`不能在中设置属性`Style`因为它不由可绑定的属性。
+无法在 `Style` 中设置事件处理程序。 无法在 `Style` 中设置 `GestureRecognizers` 属性，因为它不受可绑定属性支持。
 
-## <a name="styles-in-code"></a>在代码中的样式
+## <a name="styles-in-code"></a>代码中的样式
 
-虽然不常见，但可以实例化和初始化`Style`代码中的对象。 这可通过演示[ **BasicStyleCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/BasicStyleCode)示例。
+尽管不常见，但你可以在代码中实例化和初始化 `Style` 对象。 [BasicStyleCode  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/BasicStyleCode) 示例对此进行了演示。
 
 ## <a name="style-inheritance"></a>样式继承
 
-`Style` 具有[ `BasedOn` ](xref:Xamarin.Forms.Style.BasedOn)属性，可以将设置为`StaticResource`引用另一种样式的标记扩展。 这样，继承自上一个样式，以及添加或替换属性设置的样式。 [ **StyleInheritance** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/StyleInheritance)示例演示了这。
+`Style` 具有 [`BasedOn`](xref:Xamarin.Forms.Style.BasedOn) 属性，可以将其设置为引用其他样式的 `StaticResource` 标记扩展。 这样，允许从以前的样式继承样式，并添加或替换属性设置。 [StyleInheritance  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/StyleInheritance) 示例对此进行了演示。
 
-如果`Style2`基于`Style1`，则`TargetType`的`Style2`必须与相同`Style1`或派生自`Style1`。 在其中的资源字典`Style1`存储必须为相同的资源字典`Style2`或更高版本的可视化树中的资源字典。
+如果 `Style2` 基于 `Style1`，则 `Style2` 的 `TargetType` 必须与 `Style1` 相同或派生自 `Style1`。 存储 `Style1` 的资源字典必须与 `Style2` 是相同的资源字典，或者是可视化树中更高的资源字典。
 
 ## <a name="implicit-styles"></a>隐式样式
 
-如果`Style`中的资源字典不具有`x:Key`属性设置，它自动分配有一个字典键和`Style`对象将成为*隐式样式*。 不含视图`Style`设置，并且其类型与匹配`TargetType`完全会发现该样式中，名为[ **ImplicitStyle** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/ImplicitStyle)示例演示。
+如果资源字典中的 `Style` 没有 `x:Key` 属性设置，则会自动为其分配字典键，并且 `Style` 对象将成为隐式样式  。 如果视图没有 `Style` 设置且其类型与 `TargetType` 完全匹配，则该视图适用于该样式，如 [ImplicitStyle  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/ImplicitStyle) 示例所示。
 
-隐式样式可以派生自`Style`与`x:Key`设置，但不是在相反方向。 您不能显式引用的隐式样式。
+隐式样式可以从具有 `x:Key` 设置的 `Style` 派生，但不能反向派生。 不能显式引用隐式样式。
 
-您可以实现三种类型的层次结构中具有样式和`BasedOn`:
+可以使用样式和 `BasedOn` 实现三种类型的层次结构：
 
-- 从上定义的样式`Application`和`Page`到布局中的可视化树较低级别上定义的样式。
-- 从如定义基类的样式`VisualElement`和`View`到为特定的类定义的样式。
-- 从具有显式的字典键到隐式样式的样式。
+- 从在 `Application` 和 `Page` 上定义的样式到在可视化树中较低布局上定义的样式。
+- 从为 `VisualElement` 和 `View` 等基类定义的样式到为特定类定义的样式。
+- 从具有显式词典键的样式到隐式样式。
 
-这些层次结构所示[ **StyleHierarchy** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/StyleHierarchy)示例。
+这些层次结构在 [StyleHierarchy  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/StyleHierarchy) 示例中进行了演示。
 
 ## <a name="dynamic-styles"></a>动态样式
 
-可以通过引用的资源字典中的样式`DynamicResource`而非`StaticResource`。 这使得样式*动态样式*。 如果该样式将被替换的资源字典中由另一个样式为同一个键，引用与该样式的视图`DynamicResource`自动更改。 此外，如果没有具有指定键的字典项将导致`StaticResource`引发异常但不是`DynamicResource`。
+资源字典中的样式可以由 `DynamicResource` 而不是 `StaticResource` 引用。 这会使样式成为动态样式  。 如果该样式在资源字典中被另一个具有相同键的样式替换，则使用 `DynamicResource` 引用该样式的视图将自动更改。 此外，缺少具有指定键的字典项将导致 `StaticResource` 引发异常，但不会引发 `DynamicResource`。
 
-可以使用此方法需要随时动态更改样式或作为主题[ **DynamicStyles** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/DynamicStyles)示例演示。
+可以使用此方法动态更改样式或主题，如 [DynamicStyles  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/DynamicStyles) 示例所示。
 
-但是，不能设置`BasedOn`属性设置为`DynamicResource`构成扩展因为`BasedOn`可绑定的属性不支持。 若要动态派生一个样式，请不要设置`BasedOn`。 与此相反，设置[ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey)属性设置为你想要派生的样式的字典的键。 [ **DynamicStylesInheritance** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/DynaStylesInh)示例演示此技术。
+但是，不能将 `BasedOn` 属性设置为 `DynamicResource` 标记扩展，因为 `BasedOn` 不受可绑定属性支持。 若要动态派生样式，请不要设置 `BasedOn`。 而改为将 [`BaseResourceKey`](xref:Xamarin.Forms.Style.BaseResourceKey) 属性设置为要派生样式的字典键。 [DynamicStylesInheritance  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/DynaStylesInh) 示例对此方法进行了演示。
 
 ## <a name="device-styles"></a>设备样式
 
-[ `Device.Styles` ](xref:Xamarin.Forms.Device.Styles)嵌套的类定义使用六个样式的 12 个静态只读字段`TargetType`的`Label`，可以使用为常见类型的文本用法。
+[`Device.Styles`](xref:Xamarin.Forms.Device.Styles) 嵌套类使用 `Label` 的 `TargetType` 为六个样式定义了十二个静态只读字段，可用于常见类型的文本用法。
 
-这些字段的六个属于类型`Style`您可以直接设置`Style`在代码中的属性：
+其中六个字段的类型为 `Style`，可以在代码中直接将其设置为 `Style` 属性：
 
 - [`BodyStyle`](xref:Xamarin.Forms.Device.Styles.BodyStyle)
 - [`TitleStyle`](xref:Xamarin.Forms.Device.Styles.TitleStyle)
@@ -85,16 +85,16 @@ ms.locfileid: "65926908"
 - [`ListItemTextStyle`](xref:Xamarin.Forms.Device.Styles.ListItemTextStyle)
 - [`ListItemDetailTextStyle`](xref:Xamarin.Forms.Device.Styles.ListItemDetailTextStyle)
 
-其他六个字段是类型的`string`，可以用作动态样式的字典键：
+其他六个字段的类型为 `string`，可用作动态样式的字典键：
 
-- [`BodyStyleKey`](xref:Xamarin.Forms.Device.Styles.BodyStyleKey) 等于"BodyStyle"
-- [`TitleStyleKey`](xref:Xamarin.Forms.Device.Styles.TitleStyleKey) 等于"TitleStyle"
-- [`SubtitleStyleKey`](xref:Xamarin.Forms.Device.Styles.SubtitleStyleKey) 等于"SubtitleStyle"
-- [`CaptionStyleKey`](xref:Xamarin.Forms.Device.Styles.CaptionStyleKey) 等于"CaptionStyle"
-- [`ListItemTextStyleKey`](xref:Xamarin.Forms.Device.Styles.ListItemTextStyleKey) 等于"ListItemTextStyle"
-- [`ListItemDetailTextStyleKey`](xref:Xamarin.Forms.Device.Styles.ListItemDetailTextStyleKey) 等于"ListItemDetailTextStyle"
+- [`BodyStyleKey`](xref:Xamarin.Forms.Device.Styles.BodyStyleKey) 等于“BodyStyle”
+- [`TitleStyleKey`](xref:Xamarin.Forms.Device.Styles.TitleStyleKey) 等于“TitleStyle”
+- [`SubtitleStyleKey`](xref:Xamarin.Forms.Device.Styles.SubtitleStyleKey) 等于“SubtitleStyle”
+- [`CaptionStyleKey`](xref:Xamarin.Forms.Device.Styles.CaptionStyleKey) 等于“CaptionStyle”
+- [`ListItemTextStyleKey`](xref:Xamarin.Forms.Device.Styles.ListItemTextStyleKey) 等于“ListItemTextStyle”
+- [`ListItemDetailTextStyleKey`](xref:Xamarin.Forms.Device.Styles.ListItemDetailTextStyleKey) 等于“ListItemDetailTextStyle”
 
-这些样式所示[ **DeviceStylesList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/DeviceStylesList)示例。
+[DeviceStylesList  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/DeviceStylesList) 示例对这些样式进行了演示。
 
 ## <a name="related-links"></a>相关链接
 

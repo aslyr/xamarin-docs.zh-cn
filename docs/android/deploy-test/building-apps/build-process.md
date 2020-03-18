@@ -5,13 +5,13 @@ ms.assetid: 3BE5EE1E-3FF6-4E95-7C9F-7B443EE3E94C
 ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
-ms.date: 03/22/2019
-ms.openlocfilehash: 59f7ce953d7cf957529f5b22b2dfb549c0105f4a
-ms.sourcegitcommit: eea5b096ace7551ba64a470d0b78ccc56b6ef418
+ms.date: 03/06/2020
+ms.openlocfilehash: bce2b6f29129894ed446100c87b5e92d3572ed2f
+ms.sourcegitcommit: 60d2243809d8e980fca90b9f771e72f8c0e64d71
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78279907"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78946273"
 ---
 # <a name="build-process"></a>生成过程
 
@@ -61,13 +61,45 @@ Xamarin.Android 生成过程基于 MSBuild，它也是 Visual Studio for Mac 和
 
 - Build &ndash; 生成程序包  。
 
+- **BuildAndStartAotProfiling** &ndash; 使用嵌入的 AOT 探查器生成应用，将探查器 TCP 端口设置为 `$(AndroidAotProfilerPort)`，并启动默认活动。
+
+  默认的 TCP 端口为 `9999`。
+
+  在 Xamarin.Android 10.2 中新增。
+
 - Clean &ndash; 删除由生成过程生成的所有文件  。
+
+- **FinishAotProfiling** &ndash; 通过 TCP 端口 `$(AndroidAotProfilerPort)` 从设备或模拟器收集 AOT 探查器数据，并将其写入 `$(AndroidAotCustomProfilePath)`。
+
+  端口和自定义配置文件的默认值分别为 `9999` 和 `custom.aprof`。
+
+  若要将其他选项传递到 `aprofutil`，则从 `$(AProfUtilExtraOptions)` 属性中设置它们。
+
+  这等效于：
+
+  ```
+  aprofutil $(AProfUtilExtraOptions) -s -v -f -p $(AndroidAotProfilerPort) -o "$(AndroidAotCustomProfilePath)"
+  ```
+
+  在 Xamarin.Android 10.2 中新增。
 
 - Install &ndash; 将程序包安装到默认设备或虚拟设备  。
 
-- Uninstall &ndash; 从默认设备或虚拟设备中卸载程序包  。
-
 - SignAndroidPackage &ndash; 创建并对程序包进行签名 (`.apk`)  。 用于 `/p:Configuration=Release`，生成自包含的“发行”包。
+
+- **StartAndroidActivity** &ndash; 在设备或正在运行的模拟器上启动默认活动。 若要开始其他活动，则将 `$(AndroidLaunchActivity)` 属性设置为相应的活动名称。
+
+  这等效于 `adb shell am start @PACKAGE_NAME@/$(AndroidLaunchActivity)`。
+
+  在 Xamarin.Android 10.2 中新增。
+
+- **StopAndroidPackage** &ndash; 在设备或正在运行的模拟器上完全停止应用程序包。
+
+  这等效于 `adb shell am force-stop @PACKAGE_NAME@`。
+
+  在 Xamarin.Android 10.2 中新增。
+
+- Uninstall &ndash; 从默认设备或虚拟设备中卸载程序包  。
 
 - UpdateAndroidResources &ndash; 更新 `Resource.designer.cs` 文件  。 将新的资源添加到项目中时，这个目标通常由 IDE 调用。
 
@@ -133,9 +165,13 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 打包属性控制如何创建 Android 包，由 `Install` 和 `SignAndroidPackage` 目标使用。
 打包发布应用程序时，[签名属性](#Signing_Properties)也是相关的。
 
+- **AndroidAotProfiles** &ndash; 允许开发人员通过命令行添加 AOT 配置文件的字符串属性。 它是以分号或逗号分隔的绝对路径列表。
+
+  在 Xamarin.Android 10.1 中新增。
+
 - AndroidApkDigestAlgorithm &ndash; 此字符串值指定将用于 `jarsigner -digestalg` 的摘要算法  。
 
-  对于 APK，默认值为 `SHA1`，对于应用程序包，默认值为 `SHA-256`。
+  默认值为 `SHA-256`。 在 Xamarin.Android 10.0 以及更早的版本中，默认值为 `SHA1`。
 
   Added in Xamarin.Android 9.4。
 
@@ -145,7 +181,7 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
 - AndroidApkSigningAlgorithm &ndash; 该字符串值指定将用于 `jarsigner -sigalg` 的签名算法  。
 
-  对于 APK，默认值为 `md5withRSA`，对于应用程序包，默认值为 `SHA256withRSA`。
+  默认值为 `SHA256withRSA`。 在 Xamarin.Android 10.0 以及更早的版本中，默认值为 `md5withRSA`。
 
   在 Xamarin.Android 8.2 中新增。
 
@@ -159,11 +195,45 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
   已在 Xamarin.Android 6.1 中添加。
 
+- **AndroidBinUtilsPath** &ndash; 包含 Android [binutils][binutils]（如本机链接器 `ld` 和本机汇编程序 `as`）的目录路径。 这些工具是 Android NDK 的组成部分，Xamarin.Android 安装中也包含它们。
+
+  默认值为 `$(MonoAndroidBinDirectory)\ndk\`。
+
+  Added in Xamarin.Android 10.0。
+
+  [binutils]: https://android.googlesource.com/toolchain/binutils/
+
+- **AndroidBoundExceptionType** &ndash; 字符串值，当 Xamarin.Android 提供的类型根据 Java 类型实现 .NET 类型或接口时（例如 `Android.Runtime.InputStreamInvoker` 和 `System.IO.Stream`，或 `Android.Runtime.JavaDictionary` 和 `System.Collections.IDictionary`），此值会指定如何传播异常。
+
+  - `Java`：原样传播原始 Java 异常。
+
+    这表示，如果 `InputStreamInvoker` 未正确实现 `System.IO.Stream` API，可能会从 `Stream.Read()` 引发 `Java.IO.IOException`，而不是从 `System.IO.IOException` 引发。
+
+    在 Xamarin.Android 10.2 之前的所有版本中，异常传播行为都是如此。
+
+    这是 Xamarin.Android 10.2 中的默认值。
+
+  - `System`：捕获原始 Java 异常类型，并将其包装到适当的 .NET 异常类型中。
+
+    这表示，如果 `InputStreamInvoker` 正确实现 `System.IO.Stream`，`Stream.Read()` 将不会引发  `Java.IO.IOException` 实例。  （它可能会改为引发 `System.IO.IOException`，并将 `Java.IO.IOException` 作为 `Exception.InnerException` 值。）
+
+    这将成为 Xamarin.Android 11.0 中的默认值。
+
+  在 Xamarin.Android 10.2 中新增。
+
 -  AndroidBuildApplicationPackage &ndash; 此布尔值指示是否创建包 (.apk) 并为其签名。 将此值设置为 `True` 相当于使用 [SignAndroidPackage](#Build_Targets) 生成目标。
 
   在 Xamarin.Android 7.1 之后添加了对该属性的支持。
 
   该属性默认为 `False`。
+
+- **AndroidBundleConfigurationFile** &ndash; 指定一个文件名，以在生成 Android 应用程序捆绑包时用作 `bundletool` 的[配置文件][bundle-config-format]。 此文件从某些方面控制捆绑包如何生成 APK，例如从哪些维度拆分捆绑包来生成 APK。 请注意，Xamarin.Android 自动配置其中的部分设置，包括不要压缩的文件扩展名列表。
+
+  仅当 `$(AndroidPackageFormat)` 设置为 `aab` 时，此属性才是相关的。
+
+  在 Xamarin.Android 10.3 中新增。
+
+  [bundle-config-format]: https://developer.android.com/studio/build/building-cmdline#bundleconfig
 
 -  AndroidDexTool &ndash; 枚举样式的属性，有效值为 `dx` 或 `d8`。 指示在 Xamarin.Android 生成过程中使用的 Android [dex][dex] 编译器。
   当前默认为 `dx`。 有关详细信息，请参阅 [D8 和 R8][d8-r8] 相关文档。
@@ -231,6 +301,14 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
   Xamarin.Android 8.1 现已开始支持此属性。
 
   该属性默认为 `True`。
+
+- **AndroidExtraAotOptions** &ndash; 字符串属性，执行将 `$(AndroidEnableProfiledAot)` 或 `$(AotAssemblies)` 设置为 `true` 的项目的 `Aot` 任务时，可通过它将其他选项传递到 Mono 编译器。 调用 Mono 交叉编译器时，此属性的字符串值会添加到响应文件。
+
+  通常情况下，此属性应保留为空，但在某些特殊场景中，它可以提供有用的灵活性。
+
+  请注意，此属性不同于相关的 `$(AndroidAotAdditionalArguments)` 属性。 后面的属性将逗号分隔的参数置于 Mono 编译器的 `--aot` 选项。 相反，`$(AndroidExtraAotOptions)` 将完整独立的逗号分隔的选项（如 `--verbose` 或 `--debug`）传递到此编译器。
+
+  在 Xamarin.Android 10.2 中新增。
 
 - AndroidFastDeploymentType &ndash;`:`（冒号）分隔的值列表，`$(EmbedAssembliesIntoApk)` MSBuild 属性为 `False` 时可用于控制部署到目标设备上的[快速部署目录](#Fast_Deployment)的类型  。 如果资源是快速部署的，则  不会嵌入到生成的 `.apk` 中，这样做可以加快部署时间。 （部署的速度越快，`.apk` 需要重建的频率越低，安装过程可能会更快。）有效值包括：
 
@@ -349,6 +427,16 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
   在生成期间，将合并任何其他必要的值以生成实际的 `AndroidManifest.xml`。
   `$(AndroidManifest)` 必须在 `/manifest/@package` 属性中包含程序包名称。
 
+- **AndroidManifestMerger** &ndash; 指定用于合并 AndroidManifest.xml 文件的实现。  这是一个枚举样式的属性，其中 `legacy` 选择原始 C# 实现，`manifestmerger.jar` 选择 Google 的 Java 实现。
+
+  默认值当前为 `legacy`。 在未来版本中，此值将更改为 `manifestmerger.jar`，以使行为与 Android Studio 一致。
+
+  Google 的合并器启用了 `xmlns:tools="http://schemas.android.com/tools"` 支持，如 [Android 文档][manifest-merger]中所述。
+
+  在 Xamarin.Android 10.2 中引入
+
+  [manifest-merger]: https://developer.android.com/studio/build/manifest-merge
+
 - AndroidMultiDexClassListExtraArgs &ndash; 此符串属性使开发人员能够在生成 `multidex.keep` 文件时，向 `com.android.multidex.MainDexListBuilder` 传递额外的参数  。
 
   具体事例：是否在 `dx` 编译期间发生以下错误。
@@ -379,6 +467,14 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
   [apk]: https://en.wikipedia.org/wiki/Android_application_package
   [bundle]: https://developer.android.com/platform/technology/app-bundle
 
+- **AndroidPackageNamingPolicy** &ndash; 枚举样式的属性，用于指定生成的 Java 源代码的 Java 包名称。
+
+  在 Xamarin.Android 10.2 和更高版本中，仅支持值 `LowercaseCrc64`。
+
+  在 Xamarin.Android 10.1 中，过渡值 `LowercaseMD5` 曾可用于重新切换到原始 Java 包名称样式，Xamarin.Android 10.0 和更早版本中也是如此。 Xamarin.Android 10.2 删除了此选项，以便更好地与执行 FIPS 合规性的生成环境兼容。
+
+  在 Xamarin.Android 10.1 中新增。
+
 - AndroidR8JarPath &ndash; 指向 `r8.jar` 的路径，可与 R8 Dex 编译器和压缩器结合使用  。 默认为 Xamarin.Android 安装中的路径。 有关详细信息，请参阅 [D8 和 R8][d8-r8] 相关文档。
 
 - AndroidSdkBuildToolsVersion &ndash; Android SDK 生成工具包提供 aapt 和 zipalign 工具等    。 可以同时安装多个不同版本的生成工具包。 若要选择用于打包的生成工具包，请检查是否有“首选”生成工具版本。如果有，请使用它；如果没有  “首选”版本，请使用版本最高的已安装生成工具包。
@@ -408,9 +504,11 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
     这对应于 Visual Studio 属性页中的“Native TLS 1.2+”设置  。
 
-  - `legacy`：对于网络交互使用之前托管的 SSL 实现。 这  不支持 TLS 1.2。
+  - `legacy`：在 Xamarin.Android 10.1 和更早的版本中，对于网络交互使用之前托管的 SSL 实现。 这  不支持 TLS 1.2。
 
     这对应于 Visual Studio 属性页中的“托管 TLS 1.0”设置  。
+
+    在 Xamarin.Android 10.2 和更高版本中，将忽略此值并使用 `btls` 设置。
 
   - `default`：该值不太可能用于 Xamarin.Android 项目。 建议改用的值为空列表，它对应于 Visual Studio 属性页中的“默认”设置  。
 
@@ -423,6 +521,12 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 - AndroidUseApkSigner &ndash; 此布尔属性使开发人员能够使用 `apksigner` 工具，而不是 `jarsigner`  。
 
     在 Xamarin.Android 8.2 中新增。
+
+- **AndroidUseDefaultAotProfile** &ndash; 允许开发人员禁止使用默认 AOT 配置文件的布尔属性。
+
+  若要禁止使用默认 AOT 配置文件，则将此属性设置为 `false`。
+
+  在 Xamarin.Android 10.1 中新增。
 
 -  AndroidUseLegacyVersionCode &ndash; 此布尔属性允许开发人员将 versionCode 计算还原到先前的 Xamarin.Android 8.2 旧行为。 这只能适用于在 Google Play 商店中已发布应用程序的开发人员。 强烈建议使用新 `$(AndroidVersionCodePattern)` 属性。
 
@@ -482,6 +586,8 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
   该属性为 `False` 时，`$(AndroidFastDeploymentType)` MSBuild 属性还会控制嵌入到 `.apk` 中的内容，这会影响部署和重新生成时间。
 
 - EnableLLVM &ndash; 此布尔属性确定在将程序集预编译为本机代码时是否使用 LLVM  。
+
+  必须安装 Android NDK 才能生成启用了此属性的项目。
 
   Xamarin.Android 5.1 中增加了对该属性的支持。
 
@@ -632,15 +738,83 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
 - AndroidDebugKeyValidity &ndash; 指定要用于 `debug.keystore` 的默认有效期  。 默认值为 `10950`、`30 * 365` 或 `30 years`。
 
+- **AndroidDebugStoreType** &ndash; 指定用于 `debug.keystore` 的密钥存储文件格式。 默认为 `pkcs12`。
+
+  在 Xamarin.Android 10.2 中新增。
+
 - AndroidKeyStore &ndash; 此布尔值指示是否应使用自定义签名信息  。 默认值是 `False`，这意味着将使用默认的调试签名密钥来对包进行签名。
 
 - AndroidSigningKeyAlias &ndash; 指定密钥存储中密钥的别名  。 这是创建密钥存储时使用的 keytool -alias  值。
 
 - AndroidSigningKeyPass &ndash; 指定密钥存储文件中密钥的密码  。 这是在 `keytool` 要求“输入 $(AndroidSigningKeyAlias) 的密匙密码”  时输入的值。
 
+  在 Xamarin.Android 10.0 和更早的版本中，此属性仅支持纯文本密码。
+
+  在 Xamarin.Android 10.1 和更高版本中，此属性还支持 `env:` 和 `file:` 前缀，它们可用于指定包含密码的环境变量或文件。 通过这些选项，可以防止密码显示在生成日志中。
+
+  例如，使用名称为 AndroidSigningPassword 的环境变量： 
+
+  ```xml
+  <PropertyGroup>
+      <AndroidSigningKeyPass>env:AndroidSigningPassword</AndroidSigningKeyPass>
+  </PropertyGroup>
+  ```
+
+  使用位于 `C:\Users\user1\AndroidSigningPassword.txt` 的文件：
+
+  ```xml
+  <PropertyGroup>
+      <AndroidSigningKeyPass>file:C:\Users\user1\AndroidSigningPassword.txt</AndroidSigningKeyPass>
+  </PropertyGroup>
+  ```
+
+  > [!NOTE]
+  > `$(AndroidPackageFormat)` 设置为 `aab` 时，不支持 `env:` 前缀。
+
 - AndroidSigningKeyStore &ndash; 指定由 `keytool` 创建的密钥存储文件的文件名  。 这对应于提供给 keytool -keystore  选项的值。
 
 -  AndroidSigningStorePass &ndash; 指定 `$(AndroidSigningKeyStore)` 的密码。 这是在创建密钥存储文件并要求“输入密钥存储密码:”  时为 `keytool` 提供的值。
+
+  在 Xamarin.Android 10.0 和更早的版本中，此属性仅支持纯文本密码。
+
+  在 Xamarin.Android 10.1 和更高版本中，此属性还支持 `env:` 和 `file:` 前缀，它们可用于指定包含密码的环境变量或文件。 通过这些选项，可以防止密码显示在生成日志中。
+
+  例如，使用名称为 AndroidSigningPassword 的环境变量： 
+
+  ```xml
+  <PropertyGroup>
+      <AndroidSigningStorePass>env:AndroidSigningPassword</AndroidSigningStorePass>
+  </PropertyGroup>
+  ```
+
+  使用位于 `C:\Users\user1\AndroidSigningPassword.txt` 的文件：
+
+  ```xml
+  <PropertyGroup>
+      <AndroidSigningStorePass>file:C:\Users\user1\AndroidSigningPassword.txt</AndroidSigningStorePass>
+  </PropertyGroup>
+  ```
+
+  > [!NOTE]
+  > `$(AndroidPackageFormat)` 设置为 `aab` 时，不支持 `env:` 前缀。
+
+- **JarsignerTimestampAuthorityCertificateAlias** &ndash; 此属性允许指定时间戳颁发机构密钥存储中的别名。
+  有关详细信息，请参阅 Java [签名时间戳支持](https://docs.oracle.com/javase/8/docs/technotes/guides/security/time-of-signing.html)文档。
+
+  ```xml
+  <PropertyGroup>
+      <JarsignerTimestampAuthorityCertificateAlias>Alias</JarsignerTimestampAuthorityCertificateAlias>
+  </PropertyGroup>
+  ```
+
+- **JarsignerTimestampAuthorityUrl** &ndash; 此属性允许指定时间戳颁发机构服务的 URL。 这可确保 `.apk` 签名包含时间戳。
+  有关详细信息，请参阅 Java [签名时间戳支持](https://docs.oracle.com/javase/8/docs/technotes/guides/security/time-of-signing.html)文档。
+
+  ```xml
+  <PropertyGroup>
+      <JarsignerTimestampAuthorityUrl>http://example.tsa.url</JarsignerTimestampAuthorityUrl>
+  </PropertyGroup>
+  ```
 
 例如，请考虑以下 `keytool` 调用：
 
@@ -775,6 +949,14 @@ Enter key password for keystore.alias
   </AndroidResource>
 </ItemGroup>
 ```
+
+### <a name="androidresourceanalysisconfig"></a>AndroidResourceAnalysisConfig
+
+生成操作 `AndroidResourceAnalysisConfig` 将某个文件标记为 Xamarin Android Designer 布局诊断工具的严重性级别配置文件。 目前这仅已用于布局编辑器，未用于生成消息。
+
+有关详细信息，请参阅 [Android 资源分析文档](https://aka.ms/androidresourceanalysis)。
+
+在 Xamarin.Android 10.2 中新增。
 
 ### <a name="content"></a>内容
 

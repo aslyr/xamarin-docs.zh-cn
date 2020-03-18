@@ -1,6 +1,6 @@
 ---
-title: Xamarin Android 问题疑难解答
-description: 本部分中的文档涵盖了特定于 Android 的故障排除功能。
+title: 排查 Xamarin.Android 的问题
+description: 本节中的文档介绍排查 Android 问题所特有的功能。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 54583AB3-FE6D-4357-B4FC-CBC48B7EDEE4
@@ -9,32 +9,32 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/25/2018
 ms.openlocfilehash: 659545431a490f50224de3e7728b4d4d0c111d64
-ms.sourcegitcommit: b4c9eb94ae2b9eae852a24d126b39ac64a6d0ffb
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/02/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "74681322"
 ---
-# <a name="troubleshooting"></a>故障排除
+# <a name="troubleshooting"></a>疑难解答
 
-_本部分中的文档涵盖了特定于 Android 的故障排除功能。_
+_本节中的文档介绍排查 Android 问题所特有的功能。_
 
-## <a name="troubleshooting-tipsandroidtroubleshootingtroubleshootingmd"></a>[疑难解答提示](~/android/troubleshooting/troubleshooting.md)
+## <a name="troubleshooting-tips"></a>[疑难解答提示](~/android/troubleshooting/troubleshooting.md)
 
 故障排除提示和技巧。
 
-## <a name="frequently-asked-questionsquestionsindexmd"></a>[常见问题](questions/index.md)
+## <a name="frequently-asked-questions"></a>[常见问题](questions/index.md)
 
-常见问题解答常见问题解答。
+常见的 Xamarin.Android 故障排除问题。
 
-## <a name="resolving-library-installation-errorsandroidtroubleshootingresolving-library-installation-errorsmd"></a>[解决库安装错误](~/android/troubleshooting/resolving-library-installation-errors.md)
+## <a name="resolving-library-installation-errors"></a>[解决库安装错误](~/android/troubleshooting/resolving-library-installation-errors.md)
 
-本指南针对引用并自动下载 Android 支持库或 Google Play 服务时可能发生的一些常见错误提供了解决方法。
+本指南提供了一些变通办法，以解决在引用和自动下载 Android 支持库或 Google Play 服务时可能发生的一些常见错误。
 
-## <a name="changes-to-the-android-sdk-toolingandroidtroubleshootingsdk-cli-tooling-changesmd"></a>[对 Android SDK 工具的更改](~/android/troubleshooting/sdk-cli-tooling-changes.md)
+## <a name="changes-to-the-android-sdk-tooling"></a>[对 Android SDK 工具的更改](~/android/troubleshooting/sdk-cli-tooling-changes.md)
 
-从 Android SDK Tools 的26.0.1 开始，Google 已删除了新命令行工具的优选中的现有 AVD 和 SDK 管理器。
+从 Android SDK Tools 26.0.1 开始，Google 删除了现有的 AVD 和 SDK 管理器，转而使用新的命令行工具。
 
-## <a name="xamarinandroid-errors-referencexamarinandroiderrors-and-warnings"></a>[Xamarin.Android 错误参考](/xamarin/android/errors-and-warnings/)
+## <a name="xamarinandroid-errors-reference"></a>[Xamarin.Android 错误参考](/xamarin/android/errors-and-warnings/)
 
-错误参考指南，其中显示了在 Visual Studio 中使用 Xamarin 时可能会遇到的最常见错误
+错误参考指南，显示在 Visual Studio 中使用 Xamarin.Android 时可能遇到的最常见错误

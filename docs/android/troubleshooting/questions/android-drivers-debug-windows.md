@@ -8,25 +8,25 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
 ms.openlocfilehash: 21fd8eff64d374e52e64194524a8c096cdf4d90e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027041"
 ---
 # <a name="what-usb-drivers-do-i-need-to-debug-android-on-windows"></a>在 Windows 上调试 Android 需要哪些 USB 驱动程序？
 
 ## <a name="finding-usb-drivers"></a>查找 USB 驱动程序
 
-在 Windows 中进行开发时在 Android 设备上进行调试;需要安装兼容的 USB 驱动程序。 默认情况下，Android SDK 管理器包含 "Google USB 驱动程序"，它添加了对站点设备的支持，如下所述： [https://developer.android.com/sdk/win-usb.html](https://developer.android.com/sdk/win-usb.html)
+在 Windows 中进行开发时，若要在 Android 设备上进行调试，需要安装兼容的 USB 驱动程序。 默认情况下，Android SDK 管理器包含“Google USB 驱动程序”，这样就可以支持 Nexus 设备，如下所述：[https://developer.android.com/sdk/win-usb.html](https://developer.android.com/sdk/win-usb.html)
 
-其他设备需要由设备制造商专门发布的 USB 驱动程序。 本指南包含一些最常见制造商的链接： [https://developer.android.com/tools/extras/oem-usb.html](https://developer.android.com/tools/extras/oem-usb.html)
+其他设备需要使用设备制造商专门发布的 USB 驱动程序。 本指南中包含一些最常见制造商的链接：[https://developer.android.com/tools/extras/oem-usb.html](https://developer.android.com/tools/extras/oem-usb.html)
 
-## <a name="alternatives"></a>替代项
+## <a name="alternatives"></a>备选项
 
-根据 manfacturer，可能很难跟踪所需的确切 USB 驱动程序。 用于测试 Windows 中开发的 Android 应用的一些替代项，包括使用 Android 模拟器或使用外部测试服务。 其中包括：
+根据制造商的不同，可能很难找到所需的确切 USB 驱动程序。 测试在 Windows 中开发的 Android 应用的一些替代方法，包括使用 Android 仿真器或使用外部测试服务。 其中包括：
 
-- [App Center 测试](https://docs.microsoft.com/appcenter/test-cloud/)-云测试服务在数百个真实的 Android 设备上运行。
+- [App Center 测试](https://docs.microsoft.com/appcenter/test-cloud/) - 云测试服务可在数百种实际 Android 设备上运行。
 
 - [适用于 Android 的 Visual Studio 模拟器](https://visualstudio.microsoft.com/vs/msft-android-emulator/)
 
