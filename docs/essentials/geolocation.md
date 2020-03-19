@@ -6,11 +6,11 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 03/13/2019
 ms.openlocfilehash: 2ee4683bce02e95c52235afa823be21b89863208
-ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67558666"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303647"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials:地理位置
 
@@ -22,7 +22,7 @@ Geolocation 提供 API 以检索设备的当前地理位置坐标  。
 
 若要访问 Geolocation 功能，需要以下特定于平台的设置  ：
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 需要具有 Coarse 和 Fine Location 权限，并且必须在 Android 项目中进行配置。 此外，如果应用面向 Android 5.0（API 级别 21）或更高版本，则必须声明应用使用清单文件中的硬件功能。 可以通过以下方法添加此声明：
 
@@ -50,7 +50,7 @@ Geolocation 提供 API 以检索设备的当前地理位置坐标  。
 
 或右键单击 Android 项目并打开项目的属性。 在“Android 清单”下找到“所需权限:”区域，然后选中“ACCESS_COARSE_LOCATION”和“ACCESS_FINE_LOCATION”权限     。 这样会自动更新 AndroidManifest.xml 文件  。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 应用的 Info.plist 必须包含 `NSLocationWhenInUseUsageDescription` 密钥才能访问设备的位置  。
 
@@ -63,7 +63,7 @@ Geolocation 提供 API 以检索设备的当前地理位置坐标  。
 <string>Fill in a reason why your app needs access to location.</string>
 ```
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 必须设置应用程序的 `Location` 权限。 可以通过打开 Package.appxmanifest 并选择“功能”选项卡，然后选中“位置”来完成此设置    。
 
@@ -148,7 +148,7 @@ catch (Exception ex)
 
 ### <a name="lowest"></a>最低
 
-| 平台 | 距离（以米为单位） |
+| Platform | 距离（以米为单位） |
 | --- | --- |
 | Android | 500 |
 | iOS | 3000 |
@@ -156,7 +156,7 @@ catch (Exception ex)
 
 ### <a name="low"></a>低
 
-| 平台 | 距离（以米为单位） |
+| Platform | 距离（以米为单位） |
 | --- | --- |
 | Android | 500 |
 | iOS | 1000 |
@@ -172,7 +172,7 @@ catch (Exception ex)
 
 ### <a name="high"></a>高
 
-| 平台 | 距离（以米为单位） |
+| Platform | 距离（以米为单位） |
 | --- | --- |
 | Android | 0 - 100 |
 | iOS | 10 |
@@ -180,7 +180,7 @@ catch (Exception ex)
 
 ### <a name="best"></a>最佳
 
-| 平台 | 距离（以米为单位） |
+| Platform | 距离（以米为单位） |
 | --- | --- |
 | Android | 0 - 100 |
 | iOS | ~0 |

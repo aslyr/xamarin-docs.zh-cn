@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/29/2020
-ms.openlocfilehash: dfa452addd7cfb838091afdfb350484998d0cc9d
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+ms.openlocfilehash: 411c87c25701521bf27fbb863b02a90f8e523574
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77636082"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303785"
 ---
 # <a name="xamarinforms-shell-page-configuration"></a>Xamarin.Forms Shell 页面配置
 
@@ -112,7 +112,7 @@ ms.locfileid: "77636082"
 
 ## <a name="enable-navigation-bar-shadow"></a>启用导航栏阴影
 
-`Shell` 类型定义 `bool` 类型的 `NavBarHasShadow` 附加属性，用于控制导航栏是否有阴影。 默认情况下，属性的值为 `false`。
+`Shell` 类型定义 `bool` 类型的 `NavBarHasShadow` 附加属性，用于控制导航栏是否有阴影。 默认情况下，此属性的值为 `false`（对于 iOS）和 `true`（对于 Android）。
 
 虽然可以在子类 `Shell` 对象上设置此属性，但也可以在想要启用导航栏阴影的任何页面上设置。 例如，以下 XAML 演示如何从 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 启用导航栏阴影：
 

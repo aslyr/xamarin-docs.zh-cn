@@ -9,15 +9,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/27/2018
 ms.openlocfilehash: d73c72fa70a22bacf122f5c3957b789914dfd765
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78912377"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303551"
 ---
 # <a name="android-emulator-troubleshooting"></a>Android Emulator 疑难解答
 
-本文介绍配置和运行 Android Emulator 时最常见的警告消息和问题。此外，其中还介绍了这些错误的解决方案以及各种疑难解答提示，以帮助诊断仿真器出现的问题。
+本文介绍配置和运行 Android Emulator 时最常见的警告消息和问题。  此外，其中还介绍了这些错误的解决方案以及各种疑难解答提示，以帮助诊断仿真器出现的问题。
 
 ::: zone pivot="windows"
 

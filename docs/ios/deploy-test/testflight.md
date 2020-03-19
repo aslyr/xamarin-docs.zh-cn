@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 2f5d04b49658abe9d366e264d8f1a659732a2c33
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028491"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303593"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>使用 TestFlight 来分发 Xamarin.iOS 应用
 
@@ -22,7 +22,7 @@ Beta 测试是软件开发周期中不可分割的一部分，有许多跨平台
 
 TestFlight 是 Apple 向 iOS 应用推出的 Beta 测试服务，仅可通过 [iTunes Connect](https://itunesconnect.apple.com/) 访问。 它当前可用于 iOS 8.0 应用及更高版本。 TestFlight 允许对内部和外部用户进行 beta 测试，并且由于外部用户的 Beta 版应用审核，可在发布到 App Store 时的最终审核中大幅简化该过程。
 
-以前，二进制文件在 Visual Studio for Mac 中生成并上传到 TestFlightApp 网站以分发给测试员。 新进程有了大量改进，使用户可在 App Store 中拥有经过充分测试的优质应用。 例如:
+以前，二进制文件在 Visual Studio for Mac 中生成并上传到 TestFlightApp 网站以分发给测试员。 新进程有了大量改进，使用户可在 App Store 中拥有经过充分测试的优质应用。 例如：
 
 - 外部测试所需的 Beta 版应用审核可增加最终 App Store 审核的成功几率，因为两者都需要遵守 Apple 相关指南。
 - 上传之前，应用需要在 iTunes Connect 中进行注册。 这可确保配置文件、名称和证书之间完全匹配。
@@ -93,7 +93,7 @@ TestFlight 是 Apple 向 iOS 应用推出的 Beta 测试服务，仅可通过 [i
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ### <a name="create-an-archive"></a>创建存档
 
@@ -120,7 +120,7 @@ TestFlight 是 Apple 向 iOS 应用推出的 Beta 测试服务，仅可通过 [i
 
  有关这些步骤的详细信息，请参阅[将应用提交到 Apple](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md) 部分。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ### <a name="building-your-final-distributable"></a>生成最终可分发文件
  由于 Visual Studio 的 Xamarin 插件不支持存档 Xamarin.iOS 应用以发布到 App Store，因此可采用两种方式通过 Visual Studio 发布 iOS 应用程序。 这些是：

@@ -8,23 +8,23 @@ author: davidortinau
 ms.author: daortin
 ms.date: 07/02/2018
 ms.openlocfilehash: b646893d8bbe63aa537c973c90552e0367735e47
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021221"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303509"
 ---
 # <a name="signing-the-android-application-package"></a>对 Android 应用程序包进行签名
 
 在[做好应用程序发布准备](~/android/deploy-test/release-prep/index.md)中，使用了“存档管理器”以生成应用并将它放置在存档中以进行签名和发布  。 此部分说明如何创建 Android 签名标识、为 Android 应用程序创建新签名证书以及将存档应用即席  发布到磁盘。 生成的 APK 可以旁加载到 Android 设备中，而无需经过应用商店。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 在[存档以便进行发布](~/android/deploy-test/release-prep/index.md#archive)中，“分发渠道”  对话框提供了两种分发选择。 选择“即席”  ：
 
 [![“分发通道”对话框](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 在[存档以便进行发布](~/android/deploy-test/release-prep/index.md#archive)中，“签名和分发...”  对话框向我们提供了两种分发选择。 选择“即席”  ，然后单击“下一步”  ：
 
@@ -38,7 +38,7 @@ ms.locfileid: "73021221"
 
 ## <a name="create-a-new-certificate"></a>创建新证书
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 选择“即席”  之后，Visual Studio 会打开对话框的“签名标识”  页，如下一个屏幕截图所示。 若要发布 .APK，必须首先使用签名密钥（也称为证书）对它进行签名。
 
@@ -67,7 +67,7 @@ C:\\Users\\USERNAME\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\chimp\
 
 有关密钥存储的详细信息，请参阅[查找密钥存储的 MD5 或 SHA1 签名](~/android/deploy-test/signing/keystore-signature.md)。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 单击“即席”  之后，Visual Studio for Mac 会打开“Android 签名标识”  对话框，如下一个屏幕截图所示。 若要发布 .APK，必须首先使用签名密钥（也称为证书）对它进行签名。 如果证书已存在，则单击“导入现有密钥”  按钮以导入它，然后前进到[对 APK 进行签名](#sign-the-apk)。否则，单击“创建新密钥”  按钮以创建新证书：
 
@@ -94,7 +94,7 @@ C:\\Users\\USERNAME\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\chimp\
 
 ## <a name="sign-the-apk"></a>对 APK 进行签名
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 单击“创建”  时，新密钥存储（包含新证书）会进行保存并在“签名标识”  下列出，如下一个屏幕截图所示。 若要在 Google Play 上发布应用，请单击“取消”并转至[发布到 Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md)  。
 若要即席  发布，请选择要用于签名的签名标识并单击“另存为”  以发布应用以用于独立分发。 例如，在此屏幕截图中选择了 **chimp** 签名标识（在前面创建）：
@@ -118,7 +118,7 @@ C:\\Users\\USERNAME\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\chimp\
 
 [![Windows 资源管理器中显示的 APK](images/vs/09-generated-app-vs-sml.png)](images/vs/09-generated-app-vs.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 如此处所示，一个新证书已添加到密钥存储中。 若要在 Google Play 上发布应用，请单击“取消”并转至[发布到 Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md)  。
 否则，单击“下一步”  以即席  发布应用（对于独立分发），如此示例所示：

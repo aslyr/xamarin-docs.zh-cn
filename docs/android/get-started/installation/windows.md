@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
 ms.openlocfilehash: 0caea0c31275a7459286c143cc92ca90731dd93b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020703"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303575"
 ---
 # <a name="windows-installation"></a>Windows 安装
 
@@ -37,7 +37,7 @@ _本指南介绍了在 Windows 上安装 Xamarin.Android for Visual Studio 的�
 
 有关安装与 Windows 上的 Visual Studio 配合使用的 Xamarin 的详细信息，请参阅 [Windows 安装](~/get-started/installation/windows.md)指南。
 
-## <a name="configuration"></a>配置
+## <a name="configuration"></a>Configuration
 
 Xamarin.Android 使用 Java 开发工具包 (JDK) 和 Android SDK 生成应用。 在安装过程中，Visual Studio 安装程序会将这些工具放置在其默认位置，并使用适当的路径配置来配置开发环境。 可单击“工具”>“选项”>“Xamarin”>“Android 设置”查看和更改这些位置  ：
 
