@@ -85,7 +85,7 @@ AddCrayon (crayon: myCrayon, color: UIColor.Blue);
 例如，下面的代码包括 `UIKit` 命名空间，使该命名空间中的每个类均可用于实现：
 
 ```csharp
-using UIKit
+using UIKit;
 namespace MyAppNamespace
 {
     // implementation of classes
