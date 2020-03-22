@@ -8,12 +8,12 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2020
 ms.custom: video
-ms.openlocfilehash: f5266049e1498d902864185a61cba6d3730f9594
-ms.sourcegitcommit: 2836f2003a5b745b042ee6003a3d6a11b9139e44
+ms.openlocfilehash: 496251ec9596b9ef76fb34149acca184b5934c37
+ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77618865"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80070398"
 ---
 # <a name="resource-dictionaries"></a>资源字典
 
@@ -150,7 +150,7 @@ Xamarin 程序只包含一个派生自 `Application` 的类，但通常使用派
 
 ## <a name="stand-alone-resource-dictionaries"></a>独立资源字典
 
-派生自 `ResourceDictionary` 的类也可以在单独的独立文件中。 （更准确地说，派生自 `ResourceDictionary` 的类通常需要一_对_文件，因为资源是在 XAML 文件中定义的，但也需要具有 `InitializeComponent` 调用的代码隐藏文件。）然后，可以在应用程序之间共享结果文件。
+派生自 `ResourceDictionary` 的类也可以在单独的独立文件中。 然后，可以在应用程序间共享生成的文件。
 
 若要创建此类文件，请向项目中添加新的**内容视图**或**内容页**项（但不包含只包含C#文件的**内容视图**或**内容页**）。 在 XAML 文件和C#文件中，将基类的名称从 "`ContentView`" 或 "`ContentPage`" 更改为 "`ResourceDictionary`"。 在 XAML 文件中，基类的名称是顶级元素。
 
@@ -215,7 +215,7 @@ Xamarin 程序只包含一个派生自 `Application` 的类，但通常使用派
 </ContentPage>
 ```
 
-此语法不会实例化 `MyResourceDictionary` 类。 相反，它引用的 XAML 文件。 出于此原因，在设置[`Source`](xref:Xamarin.Forms.ResourceDictionary.Source)属性时，不需要代码隐藏文件（**MyResourceDictionary.xaml.cs**），并且可以从**MyResourceDictionary**文件的根标记中删除 `x:Class` 属性。 此外，使用此方法合并资源字典时，Xamarin 会自动实例化[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)，因此不需要外部 `ResourceDictionary` 标记。
+此语法不会实例化 `MyResourceDictionary` 类。 相反，它引用的 XAML 文件。 出于此原因，在设置[`Source`](xref:Xamarin.Forms.ResourceDictionary.Source)属性时，不需要代码隐藏文件，并且可以从**MyResourceDictionary**文件的根标记中删除 `x:Class` 属性。 此外，使用此方法合并资源字典时，Xamarin 会自动实例化[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)，因此不需要外部 `ResourceDictionary` 标记。
 
 > [!IMPORTANT]
 > 只能从 XAML 设置[`Source`](xref:Xamarin.Forms.ResourceDictionary.Source)属性。

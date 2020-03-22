@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/16/2020
-ms.openlocfilehash: c321884039674d3abb1a4b510ddfe2c062c28211
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+ms.openlocfilehash: 55fda0be2e260c5aa4a34ab2dcc1ac3cac33b92a
+ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77646730"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80070291"
 ---
 # <a name="tabbedpage-translucent-tab-bar-on-ios"></a>IOS 上的 TabbedPage 半透明选项卡栏
 
@@ -41,7 +41,7 @@ On<iOS>().SetTranslucencyMode(TranslucencyMode.Opaque);
 `TabbedPage.On<iOS>` 方法指定此平台特定的仅在 iOS 上运行。 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空间中的 `TabbedPage.SetTranslucencyMode` 方法用于通过指定以下 `TranslucencyMode` 枚举值之一来设置[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)上选项卡栏的半透明度模式：
 
 - `Default`，它将选项卡栏设置为其默认半透明度模式。 这是 `TabbedPage.TranslucencyMode` 属性的默认值。
-- `Transparent`，它将选项卡栏设置为半透明。
+- `Translucent`，它将选项卡栏设置为半透明。
 - `Opaque`，它将选项卡栏设置为不透明。
 
 此外，`GetTranslucencyMode` 方法可用于检索应用于[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)的 `TranslucencyMode` 枚举的当前值。
