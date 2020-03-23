@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/21/2018
-ms.openlocfilehash: 3ad3661ff50ad7f4be95421de57dc5017392a59f
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.openlocfilehash: 38052eee1b71ace9795f5c16bdf714f9538e353d
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "77495670"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303471"
 ---
 # <a name="platform-features"></a>平台功能
 
@@ -41,6 +41,10 @@ Android 3.0 引入了 Fragment 功能，展示如何支持针对手机和平板�
 ## <a name="app-linking"></a>[应用链接](~/android/platform/app-linking.md)
 
 本指南介绍 Android 6.0 如何支持应用链接，这是一种允许移动应用响应网站上的 URL 的技术  。 它将介绍如何在 Android 6.0 应用程序中实现应用链接，以及如何将网站配置为向移动应用授予权限以处理域的应用链接。
+
+## <a name="androidx"></a>[AndroidX](~/android/platform/androidx.md)
+
+本文概述如何在 Xamarin Android 项目中使用 AndroidX，并提供一些文档的链接，这些文档介绍如何将应用程序从 Android 支持库迁移到 AndroidX。
 
 ## <a name="android-10"></a>[Android 10](~/android/platform/android-10.md)
 

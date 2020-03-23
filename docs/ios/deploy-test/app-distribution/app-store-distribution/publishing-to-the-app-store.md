@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: 3803d7e14b161a7c166bcae37e3d9f46b7637984
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 822f2ae57241cd51f9e9c4eb2b63c75d30867d83
+ms.sourcegitcommit: c83b55f60ece20e9163b3e587130250fdf113a16
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026634"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79190335"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>将 Xamarin.iOS 应用发布到 App Store
 
@@ -91,13 +91,13 @@ iOS 使用预配配置文件  来控制特定应用程序生成的部署方式�
 
 新的 Xamarin.iOS 项目会自动设置“调试”和“发布”_生成配置_   。 若要正确地配置“发布”生成，请执行以下步骤  ：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 从 Solution Pad 打开 Info.plist   。 选择“手动预配”  。 保存并关闭文件。
 2. 在 Solution Pad 中右键单击“项目名称”，选择“选项”并导航至“iOS 生成”选项卡     。
 3. 将“配置”设为“发布”，并将“平台”设为“iPhone”     。
 4. 若要使用特定 iOS SDK 进行生成，请从“SDK 版本”列表中进行选择  。 如果不需要，则让此值保持为“默认”  。
-5. 通过链接，可去除未使用的代码，从而降低应用程序的整体大小。 在大多数情况下，“链接器行为”应设为默认值“仅链接框架 SDK”   。 在某些情况下，例如使用一些第三方库时，可能需要将此值设为“不链接”以避免删除所需代码  。 有关详细信息，请参阅[链接 Xamarin.iOS 应用](~/ios/deploy-test/linker.md)指南。
+5. 通过链接，可去除未使用的代码，从而降低应用程序的整体大小。 在大多数情况下，“链接器行为”应设为默认值“仅链接框架 SDK”   。 使用“不链接”  选项可能会导致 Apple 因后列原因而拒绝应用：Xamarin 中存在仅通过“仅链接 Framework SDK”  选项链接出去的非公共 iOS API。 应谨慎使用“链接全部”  选项，因为它会从项目中的所有程序集（包括第三方库）中去除代码，并可能去除第三方库仅通过链接器检测不到的反射来使用的代码，因为它执行静态代码分析来确定所使用的库代码。 应谨慎使用“链接全部”  ，因为可能需要手动保留某些类和/或方法等内容来避免由于缺少代码而导致运行时失败。 有关详细信息，请参阅[链接 Xamarin.iOS 应用](~/ios/deploy-test/linker.md)指南。
 6. 选中“优化 PNG 图像”以进一步降低应用程序的大小  。
 7. _不_应启用调试，因为这将使生成增加不必要的大小。
 8. 对于 iOS 11，请选择一个支持 ARM64 的设备体系结构  。 若要深入了解适用于 64 位 iOS 设备的生成，请参阅 [32/64 位平台注意事项](~/cross-platform/macios/32-and-64/index.md)文档中的“启用 Xamarin.iOS 应用的 64 位生成”部分  。
@@ -121,13 +121,13 @@ iOS 使用预配配置文件  来控制特定应用程序生成的部署方式�
 
 15. 单击“确定”，保存对项目属性所做的更改  。
 
-# <a name="visual-studio-2019tabwindows"></a>[Visual Studio 2019](#tab/windows)
+# <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/windows)
 
 1. 请确保 Visual Studio 2019 已[与 Mac 生成主机配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 2. 在“解决方案资源管理器”  中，右键单击“项目名称”  ，选择“属性”  。
 3. 导航到“iOS 生成”选项卡并将“配置”设置为“发布”，将“平台”设置为“iPhone”      。
 4. 若要使用特定 iOS SDK 进行生成，请从“SDK 版本”列表中进行选择  。 如果不需要，则让此值保持为“默认”  。
-5. 通过链接，可去除未使用的代码，从而降低应用程序的整体大小。 在大多数情况下，“链接器行为”应设为默认值“仅链接框架 SDK”   。 在某些情况下，例如使用一些第三方库时，可能需要将此值设为“不链接”以避免删除所需代码  。 有关详细信息，请参阅[链接 Xamarin.iOS 应用](~/ios/deploy-test/linker.md)指南。
+5. 通过链接，可去除未使用的代码，从而降低应用程序的整体大小。 在大多数情况下，“链接器行为”应设为默认值“仅链接框架 SDK”   。 使用“不链接”  选项可能会导致 Apple 因后列原因而拒绝应用：Xamarin 中存在仅通过“仅链接 Framework SDK”  选项链接出去的非公共 iOS API。 应谨慎使用“链接全部”  选项，因为它会从项目中的所有程序集（包括第三方库）中去除代码，并可能去除第三方库仅通过链接器检测不到的反射来使用的代码，因为它执行静态代码分析来确定所使用的库代码。 应谨慎使用“链接全部”  ，因为可能需要手动保留某些类和/或方法等内容来避免由于缺少代码而导致运行时失败。 有关详细信息，请参阅[链接 Xamarin.iOS 应用](~/ios/deploy-test/linker.md)指南。
 6. 选中“优化 PNG 图像”以进一步降低应用程序的大小  。
 7. 不应启用调试，因为这将使生成增加不必要的大小。
 8. 对于 iOS 11，请选择一个支持 ARM64 的设备体系结构  。 若要深入了解适用于 64 位 iOS 设备的生成，请参阅 [32/64 位平台注意事项](~/cross-platform/macios/32-and-64/index.md)文档中的“启用 Xamarin.iOS 应用的 64 位生成”部分  。
@@ -150,13 +150,13 @@ iOS 使用预配配置文件  来控制特定应用程序生成的部署方式�
 
 14. 保存生成配置并将其关闭。
 
-# <a name="visual-studio-2017tabwin-vs2017"></a>[Visual Studio 2017](#tab/win-vs2017)
+# <a name="visual-studio-2017"></a>[Visual Studio 2017](#tab/win-vs2017)
 
 1. 请确保 Visual Studio 2017 已[与 Mac 生成主机配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 2. 在“解决方案资源管理器”  中，右键单击“项目名称”  ，选择“属性”  。
 3. 导航到“iOS 生成”选项卡并将“配置”设置为“发布”，将“平台”设置为“iPhone”      。
 4. 若要使用特定 iOS SDK 进行生成，请从“SDK 版本”列表中进行选择  。 如果不需要，则让此值保持为“默认”  。
-5. 通过链接，可去除未使用的代码，从而降低应用程序的整体大小。 在大多数情况下，“链接器行为”应设为默认值“仅链接框架 SDK”   。 在某些情况下，例如使用一些第三方库时，可能需要将此值设为“不链接”以避免删除所需代码  。 有关详细信息，请参阅[链接 Xamarin.iOS 应用](~/ios/deploy-test/linker.md)指南。
+5. 通过链接，可去除未使用的代码，从而降低应用程序的整体大小。 在大多数情况下，“链接器行为”应设为默认值“仅链接框架 SDK”   。 使用“不链接”  选项可能会导致 Apple 因后列原因而拒绝应用：Xamarin 中存在仅通过“仅链接 Framework SDK”  选项链接出去的非公共 iOS API。 应谨慎使用“链接全部”  选项，因为它会从项目中的所有程序集（包括第三方库）中去除代码，并可能去除第三方库仅通过链接器检测不到的反射来使用的代码，因为它执行静态代码分析来确定所使用的库代码。 应谨慎使用“链接全部”  ，因为可能需要手动保留某些类和/或方法等内容来避免由于缺少代码而导致运行时失败。 有关详细信息，请参阅[链接 Xamarin.iOS 应用](~/ios/deploy-test/linker.md)指南。
 6. 选中“优化 PNG 图像”以进一步降低应用程序的大小  。
 7. 不应启用调试，因为这将使生成增加不必要的大小。
 8. 对于 iOS 11，请选择一个支持 ARM64 的设备体系结构  。 若要深入了解适用于 64 位 iOS 设备的生成，请参阅 [32/64 位平台注意事项](~/cross-platform/macios/32-and-64/index.md)文档中的“启用 Xamarin.iOS 应用的 64 位生成”部分  。
@@ -202,7 +202,7 @@ iOS 使用预配配置文件  来控制特定应用程序生成的部署方式�
 
 如果已正确配置生成设置，且 iTunes Connect 正在等待提交，则可生成应用并将其提交至 Apple。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在 Visual Studio for Mac 中，选择“发布”生成配置和一个作为生成目标的设备（不是模拟器）  。
 
@@ -237,7 +237,7 @@ iOS 使用预配配置文件  来控制特定应用程序生成的部署方式�
     >
     > 若要了解如何处理此错误，请参阅 [Xamarin 论坛中的这篇帖子](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1)。
 
-# <a name="visual-studio-2019tabwindows"></a>[Visual Studio 2019](#tab/windows)
+# <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/windows)
 
 > [!NOTE]
 > Visual Studio 2019 版本 16.3 及更高版本支持发布到 App Store。
@@ -263,7 +263,7 @@ iOS 使用预配配置文件  来控制特定应用程序生成的部署方式�
 
     ![输入 Apple ID 和应用专用密码的弹出窗口的屏幕截图。](publishing-to-the-app-store-images/connectInfo-win.png "输入 Apple ID 和应用专用密码的弹出窗口的屏幕截图。")
 
-# <a name="visual-studio-2017tabwin-vs2017"></a>[Visual Studio 2017](#tab/win-vs2017)
+# <a name="visual-studio-2017"></a>[Visual Studio 2017](#tab/win-vs2017)
 
 > [!NOTE]
 > Visual Studio 2017 不支持 Visual Studio for Mac 和 Visual Studio 2019 中的完整发布工作流。

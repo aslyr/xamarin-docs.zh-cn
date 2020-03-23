@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/15/2019
 ms.custom: video
-ms.openlocfilehash: c7d4e4f7ea27e150752b222e3ea4ce2c4256a43a
-ms.sourcegitcommit: 099b06e311a40c00eeea85465ff9b97867a5c5de
+ms.openlocfilehash: e812ab5b85db396ee3cb473f4a659ac188c9212f
+ms.sourcegitcommit: 98fdc3b4a7ef10d5b45167315dbffe94853af71a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78295399"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79497050"
 ---
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials:首选项
 
@@ -44,7 +44,7 @@ var myValue = Preferences.Get("my_key", "default_value");
 检查首选项中是否存在特定密钥  ：
 
 ```csharp
-bool hasKey = Preferences.HasKey("my_key");
+bool hasKey = Preferences.ContainsKey("my_key");
 ```
 
 从首选项删除密钥  ：
@@ -72,6 +72,15 @@ Preferences.Clear();
 - **long**
 - **string**
 - **DateTime**
+
+## <a name="integrate-with-system-settings"></a>与系统设置集成
+
+首选项以本机方式存储，这样用户可将自己的设置集成到本机系统设置。 按照平台文档和示例说明与平台进行集成：
+
+* Apple：[实现 iOS 设置捆绑](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html)
+* [iOS 应用程序首选项示例](https://docs.microsoft.com/samples/xamarin/ios-samples/appprefs/)
+* [watchOS 设置](https://developer.xamarin.com/guides/ios/watch/working-with/settings/)
+* Android：[设置屏幕入门](https://developer.android.com/guide/topics/ui/settings.html)
 
 ## <a name="implementation-details"></a>实现详细信息
 

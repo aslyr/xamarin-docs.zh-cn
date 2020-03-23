@@ -7,58 +7,131 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: f5b92bc202cbf9765a63219ad653442152c3eb24
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 72e0a2adc79796b3df7b6fb4eca62448f1a1a7a4
+ms.sourcegitcommit: 997f7b6a1a1bc50b98c3ca5bbc75d6875ba2ae9a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020718"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79510726"
 ---
 # <a name="set-up-device-for-development"></a>设置设备进行开发
 
 本文介绍了如何设置 Android 设备并将其连接到计算机，以便可以将该设备用于运行和调试 Xamarin.Android 应用程序  。
 
-在 Android 仿真器上进行测试后，需要查看并测试 Android 设备上运行的应用。 以下步骤涉及如何将设备连接到计算机以进行调试：
-
-1. **在设备上启用调试** - 默认情况下，无法在 Android 设备上调试应用程序。
-
-2. **安装 USB 驱动程序** - 对于 macOS 计算机，无需此步骤。 Windows 计算机可能需要安装 USB 驱动程序。
-
-3. **将设备连接到计算机** - 最后一步是通过 USB 或 WiFi 将设备连接到计算机。
+在 Android 仿真器上进行测试后，需要查看并测试 Android 设备上运行的应用。 需要启用调试，并将设备连接到计算机。
 
 上述每个步骤将在以下部分中详细介绍。
 
 ## <a name="enable-debugging-on-the-device"></a>在设备上启用调试
 
-可使用 Android 设备测试 Android 应用程序。 但是，必须先正确配置设备，才能开始调试。 所涉及的步骤略有不同，具体取决于设备上运行的 Android 版本。
+为了测试 Android 应用程序，需要为一台设备启用调试功能。 4\.2 及更高版本的 Android 上默认隐藏开发人员选项，启用这些选项的方式可能因 Android 版本而异。
 
-### <a name="android-40-to-android-41"></a>Android 4.0 到 Android 4.1
+### <a name="android-90"></a>Android 9.0+
 
-针对 Android 4.0.x 到 Android 4.1.x，请按照以下步骤启用调试：
+针对 Android 9.0 及更高版本，请按照以下步骤启用调试：
 
 1. 转到“设置”  屏幕。
-2. 选择“开发人员选项”  。
-3. 选中“USB 调试”  选项。
+2. 选择“关于电话”  。
+3. 点击“生成号”  7次，直到显示“你现在已经是开发人员了！”  选项为止。
 
-此屏幕截图显示运行 Android 4.0.3 的设备上的“开发人员选项”  屏幕：
+### <a name="android-80-and-android-81"></a>Android 8.0 和 Android 8.1
 
-[![开发人员选项](set-up-device-for-development-images/developer-options-sml.png)](set-up-device-for-development-images/developer-options.png#lightbox)
+1. 转到“设置”  屏幕。
+2. 选择“系统”  。
+3. 选择“关于电话” 
+4. 点击“生成号”  7次，直到显示“你现在已经是开发人员了！”  选项为止。
 
-### <a name="android-42-and-higher"></a>Android 4.2 及更高版本
+### <a name="android-71-and-lower"></a>Android 7.1 及更低版本
 
-从 Android 4.2 及更高版本开始，默认情况下，“开发人员选项”  是隐藏的。 若要启用，请转到“设置”>“关于手机”  ，然后点击七次“内部版本号”  项以显示“开发人员选项”  选项卡：
+1. 转到“设置”  屏幕。
+2. 选择“关于电话”  。
+3. 点击“生成号”  7次，直到显示“你现在已经是开发人员了！”  选项为止。
 
-[![内部版本号项](set-up-device-for-development-images/about-phone-sml.png)](set-up-device-for-development-images/about-phone.png#lightbox)
+[![Android 9.0 上的“开发人员选项”屏幕](set-up-device-for-development-images/build-version-sml.png)](set-up-device-for-development-images/build-version.png#lightbox)
+
+### <a name="verify-that-usb-debugging-is-enabled"></a>验证是否已启用 USB 调试
+
+在设备上启用开发人员模式后，需要确保在设备上启用了 USB 调试。 具体验证方法也取决于 Android 版本。
+
+### <a name="android-90"></a>Android 9.0+
+
+导航到“设置”>“系统”>“高级”>“开发人员选项”  ，并启用“USB 调试”  。
+
+### <a name="android-80-and-android-81"></a>Android 8.0 和 Android 8.1
+
+导航到“设置”>“系统”>“开发人员选项”  ，并启用“USB 调试”  。
+
+### <a name="android-71-and-lower"></a>Android 7.1 及更低版本
+
+导航到“设置”>“开发人员选项”  ，并启用“USB 调试”  。
 
 “开发人员选项”  选项卡可用后，请在“设置”>“系统”  下将其打开，以显示开发人员设置：
 
-[![开发人员设置屏幕](set-up-device-for-development-images/developer3.png)](set-up-device-for-development-images/developer3.png#lightbox)
+[![Android 9.0 上的“开发人员选项”屏幕](set-up-device-for-development-images/usb-debugging-sml.png)](set-up-device-for-development-images/usb-debugging.png#lightbox)
 
 从此处可启用开发人员选项，例如 USB 调试和保持唤醒状态模式。
 
+## <a name="connect-the-device-to-the-computer"></a>将设备连接到计算机
+
+最后一步是将设备连接到计算机。 最简单且可靠的方式是通过 USB 来连接。
+
+如果之前未用该计算机调试过，操作时会收到一个提示，询问设备是否要信任该计算机。 还可以选中“始终允许连接此计算机”  ，从而避免每次连接设备时都出现此提示。
+
+![](set-up-device-for-development-images/trust-computer-for-usb-debugging.png "Google USB")
+
+## <a name="alternate-connection-via-wifi"></a>其他连接方式：通过 Wifi
+
+可以通过 WiFi 将 Android 设备连接到计算机，无需使用 USB 线。 此方法需耗费更多工作量，但在设备距离计算机太远而不能持续通过电缆保持接通状态时很有用。 
+
+### <a name="connecting-over-wifi"></a>通过 WiFi 连接
+
+默认情况下，[Android Debug Bridge](https://developer.android.com/tools/help/adb.html) (*ADB*) 配置为通过 USB 与 Android 设备进行通信。 可将其重新配置为使用 TCP/IP，而不是使用 USB。 为此，设备和计算机必须处于同一 WiFi 网络上。 若要通过 WiFi 设置调试环境，请从命令行执行以下步骤：
+
+1. 确定 Android 设备的 IP 地址。 查找 IP 地址的一种方法是在“设置”>“网络和 Internet”>“Wi-Fi”  下查看，然后点击设备所连接的 WiFi 网络，接着点击“高级”  。 此时会打开一个下拉列表，显示网络连接的相关信息，类似下面的屏幕截图中所示：
+
+    [![IP 地址](set-up-device-for-development-images/ip-settings-sml.png)](set-up-device-for-development-images/ip-settings.png#lightbox)
+
+    某些版本的 Android 上不会列出 IP 地址，但可在“设置”>“关于手机”>“状态”下找到 IP 地址  。
+
+2. 通过 USB 将 Android 设备连接到计算机。
+
+3. 接下来，重启 ADB，以便可在端口 5555 上使用 TCP。 在命令提示符处，键入以下命令：
+
+    ```command
+    adb tcpip 5555
+    ```
+
+    发出此命令后，计算机不能侦听通过 USB 连接的设备。
+
+4. 断开将设备连接到计算机的 USB 线连接。
+
+5. 配置 ADB，使其可在上面步骤 1 中指定的端口上连接 Android 设备：
+
+    ```command
+    adb connect 192.168.1.28:5555
+    ```
+
+    此命令完成后，Android 设备即可通过 WiFi 连接到计算机。
+
+    通过 WiFi 完成调试后，可通过以下命令将 ADB 重置回 USB 模式：
+    
+    ```command
+    adb usb
+    ```
+    
+    可请求 ADB 列出连接到计算机的设备。 无论设备通过何种方式连接，可在命令提示符发出以下命令，查看连接的设备：
+    
+    ```command
+    adb devices
+    ```
+
+## <a name="troubleshooting"></a>疑难解答
+
+在某些情况下，可能会发现设备无法连接到计算机。 如果出现这种情况，可能需要验证是否已安装 USB 驱动程序。
+
 ## <a name="install-usb-drivers"></a>安装 USB 驱动程序
 
-对于 macOS，无需此步骤。只需通过 USB 线将设备连接到 Mac。
+对于 macOS，无需此步骤；只需通过 USB 线将设备连接到 Mac。
 
 可能需要先安装一些额外的驱动程序，Windows 计算机才能识别通过 USB 连接的 Android 设备。
 
@@ -76,9 +149,9 @@ Google Nexus 设备（Galaxy Nexus 除外）需要 Google USB 驱动程序。 Ga
 
 通过启动 Android SDK 管理器并展开“附加程序”  文件夹，安装 **Google USB 驱动程序**包，如下面的屏幕截图所示：
 
-[![选择的 Google USB 驱动程序包](set-up-device-for-development-images/usbdriverpackage.png)](set-up-device-for-development-images/usbdriverpackage.png#lightbox)
+![](set-up-device-for-development-images/google-usb-driver.png "Google USB driver selected")
 
-选中“Google USB 驱动程序”  框，然后单击“安装”  按钮。
+选中“Google USB 驱动程序”  框，然后单击“应用更改”  按钮。
 驱动程序文件将下载到以下位置：
 
 `[Android SDK install path]\extras\google\usb\_driver`
@@ -108,72 +181,6 @@ USB 驱动程序下载完成后，请将其安装。
 7. 单击“浏览”，找到 USB 驱动程序文件夹（Google USB 驱动程序位于 [Android SDK install path]\extras\google\usb_driver   ）。
 
 8. 单击“下一步”  安装驱动程序。
-
-### <a name="installing-unverified-drivers-in-windows-8"></a>在 Windows 8 中安装未经验证的驱动程序
-
-若要在 Windows 8 中安装未经验证的驱动程序，可能需要执行额外步骤。 以下步骤介绍如何安装 Galaxy Nexus 的驱动程序：
-
-1. **访问 Windows 8 高级启动选项** - 此步骤包括重启计算机以访问高级启动选项。 通过使用以下命令，启动命令行提示符和重启计算机：
-
-    ```command
-    shutdown.exe /r /o
-    ```
-
-2. **连接设备** - 将设备连接到计算机
-
-3. **启动设备管理器** -运行 devmgmt.msc；应该可看到你的设备已列出，其上有一个黄色的三角形  。
-
-4. **安装设备驱动程序** - 如上所述安装设备驱动程序。
-
-## <a name="connect-the-device-to-the-computer"></a>将设备连接到计算机
-
-最后一步是将设备连接到计算机。 有两种方法可以实现此目的：
-
-- **USB 线** -这是最简单、最常见的方式。 只需将 USB 线插入设备，然后插入计算机。
-
-- **WiFi** - 可以通过 WiFi 将 Android 设备连接到计算机，无需使用 USB 线。 此方法需耗费更多工作量，但在设备距离计算机太远而不能持续通过电缆保持接通状态时很有用。 下一部分中将介绍如何通过 WiFi 连接。
-
-### <a name="connecting-over-wifi"></a>通过 WiFi 连接
-
-默认情况下，[Android Debug Bridge](https://developer.android.com/tools/help/adb.html) (*ADB*) 配置为通过 USB 与 Android 设备进行通信。 可将其重新配置为使用 TCP/IP，而不是使用 USB。 为此，设备和计算机必须处于同一 WiFi 网络上。 若要通过 WiFi 设置调试环境，请从命令行执行以下步骤：
-
-1. 确定 Android 设备的 IP 地址。 查找 IP 地址的一种方法是在“设置”>“Wi-Fi”  下查看，然后点击设备所连接的 WiFi 网络。 此时会弹出设置屏幕，显示网络连接的相关信息，类似下面的屏幕截图中所示：
-
-    ![IP 地址](set-up-device-for-development-images/ip-settings.png)
-
-    某些版本的 Android 上不会列出 IP 地址，但可在“设置”>“关于手机”>“状态”下找到 IP 地址  。
-
-2. 通过 USB 将 Android 设备连接到计算机。
-
-3. 接下来，重启 ADB，以便可在端口 5555 上使用 TCP。 在命令提示符处，键入以下命令：
-
-    ```command
-    adb tcpip 5555
-    ```
-
-    发出此命令后，计算机不能侦听通过 USB 连接的设备。
-
-4. 断开将设备连接到计算机的 USB 线连接。
-
-5. 配置 ADB，使其可在上面步骤 1 中指定的端口上连接 Android 设备：
-
-    ```command
-    adb connect 192.168.1.28:5555
-    ```
-
-    此命令完成后，Android 设备即可通过 WiFi 连接到计算机。
-
-通过 WiFi 完成调试后，可通过以下命令将 ADB 重置回 USB 模式：
-
-```command
-adb usb
-```
-
-可要求 ADB 列出连接到计算机的设备。 无论设备通过何种方式连接，可在命令提示符发出以下命令，查看连接的设备：
-
-```command
-adb devices
-```
 
 ## <a name="summary"></a>总结
 

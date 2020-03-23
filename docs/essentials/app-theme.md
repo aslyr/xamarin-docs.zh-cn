@@ -5,16 +5,16 @@ ms.assetid: F6F6D496-A8A9-4B9A-AF1A-370D937E5073
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/06/2020
-ms.openlocfilehash: 39f650a73f03888e50c6259c1052e24dbea0a4f5
-ms.sourcegitcommit: ec62c7f28abc8e121656f1b93146657d90a4cab4
+ms.openlocfilehash: e31cae6ff639dbe261599a7cf78ae31fc09318b3
+ms.sourcegitcommit: c83b55f60ece20e9163b3e587130250fdf113a16
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77555665"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79190315"
 ---
 # <a name="xamarinessentials-app-theme"></a>Xamarin.Essentials:应用主题
 
-RequestedTheme  API 属于 [AppInfo](/app-information.md) 类，它提供了系统为正在运行的应用请求什么主题的信息。
+RequestedTheme  API 属于 [`AppInfo`](app-information.md) 类，它提供了系统为正在运行的应用请求什么主题的信息。
 
 ## <a name="get-started"></a>入门
 

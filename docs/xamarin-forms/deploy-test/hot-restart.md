@@ -4,15 +4,15 @@ description: 本文档介绍如何设置和使用 Xamarin 热重启来调试 iOS
 ms.prod: xamarin
 ms.assetid: 6BC62A88-9368-41BB-8494-760F2A4805DB
 ms.technology: xamarin-forms
-author: jimmgarrido
-ms.author: jigarrid
-ms.date: 01/14/2020
-ms.openlocfilehash: 1f87fffe99656cdc0d0bf0f0178413740a20aa75
-ms.sourcegitcommit: e9d88587aafc912124b87732d81c3910247ad811
+author: maddyleger1
+ms.author: maleger
+ms.date: 03/16/2020
+ms.openlocfilehash: cc5efffd4c3646fbff9cdb1ad1a30ec614cb4921
+ms.sourcegitcommit: 8df67f0d76ff762b517d27b8d4c217d3a3379a18
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78337274"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79429562"
 ---
 # <a name="xamarin-hot-restart-preview"></a>Xamarin 热重启（预览版）
 
@@ -21,13 +21,13 @@ ms.locfileid: "78337274"
 Xamarin 热重启使你可以在开发过程中快速测试对应用进行的更改，包括多文件代码编辑、资源和引用。 它将新更改推送到调试目标上的现有应用捆绑包，这会使生成和部署周期快得多。
 
 > [!IMPORTANT]
-> Xamarin 热重启当前在 Visual Studio 2019 版本 16.5 预览版中提供，并支持使用 Xamarin.Forms 的 iOS 应用。 对 Visual Studio for Mac 和非 Xamarin.Forms 应用的支持处于路线图上。
+> Xamarin 热重启当前在 Visual Studio 2019 16.5 版中提供，并支持使用 Xamarin.Forms 的 iOS 应用。 对 Visual Studio for Mac 和非 Xamarin.Forms 应用的支持处于路线图上。
 
 ## <a name="requirements"></a>要求
 
-- Visual Studio 2019 版本 16.5 预览版 3
+- Visual Studio 2019 版本 16.5
 - iTunes（64 位）
-- Apple 开发人员帐户
+- Apple 开发人员帐户和付费的 [Apple 开发人员计划](https://developer.apple.com/programs)合约
 
 
 ## <a name="initial-setup"></a>初始设置
@@ -45,7 +45,7 @@ Xamarin 热重启使你可以在开发过程中快速测试对应用进行的更
 
 3. 如果未安装 iTunes，请单击“下载 iTunes”  以下载安装程序。 iTunes 安装完成时单击“下一步”  。
 
-4. 将 iOS 设备连接到计算机。 检测到后，设备名称会显示在向导中。 单击 **“下一步”** 。
+4. 将 iOS 设备连接到计算机。 如果设备已接入电源，请断开电源，然后重新接入。 检测到后，设备名称会显示在向导中。 单击 **“下一步”** 。
 
 5. 输入 Apple 开发人员帐户凭据，然后单击“下一步”  。
 
@@ -64,15 +64,18 @@ Xamarin 热重启使你可以在开发过程中快速测试对应用进行的更
 还可以使用 `HOTRESTART` 预处理器符号来防止在使用 Xamarin 热重启进行调试时执行某些代码。
 
 ## <a name="limitations"></a>限制
+
 - 当前仅支持使用 Xamarin.Forms 和 iOS 设备生成的 iOS 应用。
+- 仅支持 64 位 iOS 设备。 从 iOS 11 开始，Apple 不再支持在 32 位体系结构（早于 iPhone 5s 的设备）上运行 iOS 应用。
 - 不支持情节提要和 XIB 文件，如果应用尝试在运行时加载这些文件，则应用可能会崩溃。 使用 `HOTRESTART` 预处理器符号可防止执行此代码。
 - 不支持静态 iOS 库和框架，如果应用尝试加载它们，则可能会看到运行时错误或崩溃。 使用 `HOTRESTART` 预处理器符号可防止执行此代码。 支持动态 iOS 库。
 - 无法使用 Xamarin 热重启创建应用捆绑包进行发布。 仍需要 Mac 计算机进行完整编译、签名和部署，以便将应用程序投入生产。
 
 ## <a name="troubleshoot"></a>疑难解答
+
 - 如果 iTunes 是通过 Microsoft Store 安装，则设置向导不会检测到 iTunes。 首先需要卸载该版本，然后[从 Apple下载安装程序](https://go.microsoft.com/fwlink/?linkid=2101014)。
 - 存在一个已知问题，即启用设备特定的生成会阻止应用进入调试模式。 解决方法是在“属性”>“iOS 版本”下禁用此项，然后重新尝试调试  。 此问题将在未来版本中得到解决。
 - 如果设备上已存在该应用，尝试使用热重启进行部署可能会失败，并出现 `AMDeviceStartHouseArrestService` 错误。 解决方法是在设备上卸载该应用，然后再次部署。
-- 输入不属于 Apple 开发人员计划的 Apple ID 将导致以下错误：`Authentication Error. Xcode 7.3 or later is required to continue developing with your Apple ID`。 必须具有有效的 Apple 开发人员帐户才能在 iOS 设备上使用 Xamarin 热重启。 
+- 输入不属于 Apple 开发人员计划的 Apple ID 可能导致以下错误：`Authentication Error. Xcode 7.3 or later is required to continue developing with your Apple ID`。 必须具有有效的 Apple 开发人员帐户才能在 iOS 设备上使用 Xamarin 热重启。 
 
 若要报告其他问题，请在[“帮助”>“发送反馈”>“报告问题”](/visualstudio/ide/feedback-options?view=vs-2019#report-a-problem)处使用反馈工具。
