@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 03/14/2020
-ms.openlocfilehash: 225b7dc7dc639031b3198a8fb9e7fe9fb9d7ee7f
-ms.sourcegitcommit: 8df67f0d76ff762b517d27b8d4c217d3a3379a18
+ms.openlocfilehash: a6cb5a0e3573ebf998bb2f81c08ff63c81678b54
+ms.sourcegitcommit: ec112800a76089ab1db66fe24b8bbcc510e067b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79423871"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80159803"
 ---
 # <a name="xaml-hot-reload-for-xamarinforms"></a>适用于 Xamarin 的 XAML 热重载
 
@@ -59,7 +59,7 @@ XAML 热重载支持在 Visual Studio 中同时进行调试，并 Visual Studio 
 
 ## <a name="known-limitations"></a>已知的限制
 
-* 尚*不*支持其他 Xamarin 目标（如 UWP 和 MacOS）。 可在[此处](https://developercommunity.visualstudio.com/idea/661682/xaml-hot-reload-for-xamarinforms-on-uwp.html)跟踪 UWP 支持的进度。
+* 尚*不*支持其他 Xamarin 目标（如 UWP 和 macOS）。 可在[此处](https://developercommunity.visualstudio.com/idea/661682/xaml-hot-reload-for-xamarinforms-on-uwp.html)跟踪 UWP 支持的进度。
 * 在 XAML 热重载会话期间，无法添加、删除或重命名文件或 NuGet 包。 如果添加或删除文件或 NuGet 包，请重新生成并重新部署应用，以便继续使用 XAML 热重载。
 * 将链接器设置为 "无"**链接**或**链接**，以获得最佳体验。 **仅限链接 SDK**设置工作正常，但在某些情况下可能会失败。 可在 Android 和 iOS 生成选项中找到链接器设置。
 * 在物理 iPhone 上调试需要解释器使用 XAML 热重载。 为此，请打开项目设置，选择 "iOS 生成" 选项卡，并确保启用 **"Mono 解释器"** 设置。 可能需要将属性页顶部的 "**平台**" 选项更改为 " **iPhone**"。

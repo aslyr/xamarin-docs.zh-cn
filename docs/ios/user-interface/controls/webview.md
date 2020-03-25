@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: a9dce962c35e5f9cfdcd674da9ad71cf8935e7d4
-ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
+ms.openlocfilehash: 7c469a011a70840cfe94a7f87ed77f03968a3525
+ms.sourcegitcommit: ec112800a76089ab1db66fe24b8bbcc510e067b4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80070320"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80159816"
 ---
 # <a name="web-views-in-xamarinios"></a>Xamarin 中的 Web 视图
 
@@ -146,7 +146,7 @@ Api 的弃用功能很常见。 Xamarin 使用自定义属性来向开发人员�
 
 #### <a name="support-for-ios-7x-or-earlier"></a>支持 iOS 7、windows （或更早版本）
 
-从 v2.0 起，`UIWebView` 已成为 iOS 的一部分。 最常见的替换 `WKWebView` （iOS 8）和 `SFSafariViewController` （iOS 9）。 如果你的应用程序仍然支持较旧的 iOS 版本，你应该考虑以下选项：
+从 v2.0 开始，`UIWebView` 属于 iOS。 最常见的替换 `WKWebView` （iOS 8）和 `SFSafariViewController` （iOS 9）。 如果你的应用程序仍然支持较旧的 iOS 版本，你应该考虑以下选项：
 
 * 使 iOS 8 成为最低目标版本（生成时间决策）。
 * 仅当应用在 iOS 8 + 上运行（运行时决策）时才使用 `WKWebView`。
