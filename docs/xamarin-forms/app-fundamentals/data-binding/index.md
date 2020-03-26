@@ -6,13 +6,13 @@ ms.assetid: 938E85C8-521D-43B9-92CB-D591A06D98A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/27/2019
-ms.openlocfilehash: fa92409b33717e528c3cfb83a24148c698836594
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.date: 03/23/2020
+ms.openlocfilehash: 9e3e602eda0d2fa78dd25905a2b6ccf3ce5a744d
+ms.sourcegitcommit: d83c6af42ed26947aa7c0ecfce00b9ef60f33319
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697144"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80247595"
 ---
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms 数据绑定
 
@@ -28,7 +28,7 @@ Xamarin.Forms 应用程序由一个或多个页面组成，每个页面通常包
 
 ## <a name="the-data-binding-solution"></a>数据绑定解决方案
 
-数据绑定自动执行此作业，无需使用事件处理程序。 （不过，由于数据绑定基础结构需使用这些事件，因此它们仍然是必要的。）可以通过代码或 XAML 实现数据绑定，但更常采用 XAML，这有助于缩小代码隐藏文件的大小。 通过使用声明性代码或标记替换事件处理程序中的过程代码，可简化应用程序，使其清晰明了。
+数据绑定自动执行此作业，无需使用事件处理程序。 可以通过代码或 XAML 实现数据绑定，但更常采用 XAML，这有助于缩小代码隐藏文件的大小。 通过使用声明性代码或标记替换事件处理程序中的过程代码，可简化应用程序，使其清晰明了。
 
 数据绑定涉及两个对象，其中一个几乎总是从 `View` 派生的元素，并构成页面可视界面的一部分。 另一个对象则是：
 
@@ -39,39 +39,39 @@ Xamarin.Forms 应用程序由一个或多个页面组成，每个页面通常包
 
 以下系列文章探讨了数据绑定：
 
-## <a name="basic-bindingsbasic-bindingsmd"></a>[基本绑定](basic-bindings.md)
+## <a name="basic-bindings"></a>[基本绑定](basic-bindings.md)
 
 了解数据绑定目标和源之间的区别，并查看以代码和 XAML 创建的简单数据绑定。
 
-## <a name="binding-modebinding-modemd"></a>[绑定模式](binding-mode.md)
+## <a name="binding-mode"></a>[绑定模式](binding-mode.md)
 
 了解绑定模式如何控制两个对象之间的数据流。
 
-## <a name="string-formattingstring-formattingmd"></a>[字符串格式设置](string-formatting.md)
+## <a name="string-formatting"></a>[字符串格式设置](string-formatting.md)
 
 使用数据绑定格式化对象并将其显示为字符串。
 
-## <a name="binding-pathbinding-pathmd"></a>[绑定路径](binding-path.md)
+## <a name="binding-path"></a>[绑定路径](binding-path.md)
 
 深入了解数据绑定的 `Path` 属性以访问子属性和集合成员。
 
-## <a name="binding-value-convertersconvertersmd"></a>[绑定值转换器](converters.md)
+## <a name="binding-value-converters"></a>[绑定值转换器](converters.md)
 
 使用绑定值转换器来更改数据绑定中的值。
 
-## <a name="relative-bindingsrelative-bindingsmd"></a>[相对绑定](relative-bindings.md)
+## <a name="relative-bindings"></a>[相对绑定](relative-bindings.md)
 
 使用相对绑定可设置相对于绑定目标位置的绑定源。
 
-## <a name="binding-fallbacksbinding-fallbacksmd"></a>[绑定回退](binding-fallbacks.md)
+## <a name="binding-fallbacks"></a>[绑定回退](binding-fallbacks.md)
 
 通过定义绑定过程失败时要使用的回退值，使数据绑定更加可靠。
 
-## <a name="the-command-interfacecommandingmd"></a>[命令界面](commanding.md)
+## <a name="the-command-interface"></a>[命令界面](commanding.md)
 
 使用数据绑定实现 `Command` 属性。
 
-## <a name="compiled-bindingscompiled-bindingsmd"></a>[编译的绑定](compiled-bindings.md)
+## <a name="compiled-bindings"></a>[编译的绑定](compiled-bindings.md)
 
 使用已编译的绑定来提高数据绑定性能。
 
