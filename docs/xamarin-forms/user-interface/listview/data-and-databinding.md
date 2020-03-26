@@ -6,23 +6,23 @@ ms.assetid: B5571660-1E82-4379-95C3-0725288CF5D9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/30/2018
-ms.openlocfilehash: aa968562470a1e3405bf68be7eb0294273970386
-ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
+ms.date: 03/23/2020
+ms.openlocfilehash: e51f0bd011750b030c0a11b9b89a2c2473f2a9ed
+ms.sourcegitcommit: d83c6af42ed26947aa7c0ecfce00b9ef60f33319
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "70998030"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80247582"
 ---
 # <a name="listview-data-sources"></a>ListView 数据源
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)
 
-Xamarin. Forms [`ListView`](xref:Xamarin.Forms.ListView)用于显示数据列表。 本文介绍如何`ListView`使用数据填充，以及如何将数据绑定到所选项目。
+Xamarin. Forms [`ListView`](xref:Xamarin.Forms.ListView)用于显示数据列表。 本文介绍如何使用数据填充 `ListView`，以及如何将数据绑定到所选项目。
 
 ## <a name="itemssource"></a>ItemsSource
 
-一个[ `ListView` ](xref:Xamarin.Forms.ListView)与使用数据填充[ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource)属性，它可以接受任何集合实现`IEnumerable`。 最简单的方法来填充`ListView`，需使用一个字符串数组：
+使用[`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource)属性填充数据的[`ListView`](xref:Xamarin.Forms.ListView) ，该属性可接受任何实现 `IEnumerable`的集合。 填充 `ListView` 的最简单方法涉及使用字符串数组：
 
 ```xaml
 <ListView>
@@ -42,7 +42,7 @@ Xamarin. Forms [`ListView`](xref:Xamarin.Forms.ListView)用于显示数据列表
 </ListView>
 ```
 
-等效的 C# 代码是：
+等效 C# 代码如下：
 
 ```csharp
 var listView = new ListView();
@@ -60,11 +60,11 @@ listView.ItemsSource = new string[]
 };
 ```
 
-![](data-and-databinding-images/itemssource-simple.png "ListView 显示的字符串列表")
+![](data-and-databinding-images/itemssource-simple.png "ListView Displaying List of Strings")
 
-此方法将`ListView`使用字符串列表填充。 默认情况下`ListView`将调用`ToString`并显示在结果`TextCell`每个行。 若要自定义数据的显示方式，请参阅[单元格的外观](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)。
+此方法将使用字符串列表填充 `ListView`。 默认情况下，`ListView` 将调用 `ToString` 并在每一行的 `TextCell` 中显示结果。 若要自定义数据的显示方式，请参阅[单元格外观](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)。
 
-因为`ItemsSource`已发送到一个数组中的内容不会更新为基础的列表或数组更改。 如果你想要自动更新，因为添加、 删除和更改的基础列表中的项时 ListView，您将需要使用`ObservableCollection`。 [`ObservableCollection`](xref:System.Collections.ObjectModel.ObservableCollection`1) 在中定义`System.Collections.ObjectModel`和类似于`List`，只不过它可以通知`ListView`的任何更改：
+由于已将 `ItemsSource` 发送到数组，因此当基础列表或数组发生变化时，内容将不会更新。 如果要在基础列表中添加、删除和更改项时，ListView 自动更新，则需要使用 `ObservableCollection`。 [`ObservableCollection`](xref:System.Collections.ObjectModel.ObservableCollection`1)在 `System.Collections.ObjectModel` 中定义，与 `List`一样，只不过它可以通知所有更改的 `ListView`：
 
 ```csharp
 ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
@@ -80,11 +80,11 @@ employees.Add(new Employee(){ DisplayName="Mr. Mono"});
 
 数据绑定的工作原理是在其绑定的值更改时保持对象的同步。 无需在每次更改控件值时都编写事件处理程序，只需在 viewmodel 中建立绑定并启用绑定。
 
-数据绑定的详细信息，请参阅[数据绑定基础知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)这四个是一部分[Xamarin.Forms XAML 基础知识文章系列](~/xamarin-forms/xaml/xaml-basics/index.md)。
+有关数据绑定的详细信息，请参阅[数据绑定基础知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)，这是 Xamarin 的第四部分[。表单 XAML 基础知识文章系列](~/xamarin-forms/xaml/xaml-basics/index.md)。
 
 ### <a name="binding-cells"></a>单元格绑定
 
-单元格 （和单元格的子项） 的属性可以绑定到对象中的属性`ItemsSource`。 例如， `ListView`可以使用来显示雇员列表。
+单元格（和单元格的子项）的属性可以绑定到 `ItemsSource`中的对象的属性。 例如，可以使用 `ListView` 来显示雇员列表。
 
 Employee 类：
 
@@ -95,7 +95,7 @@ public class Employee
 }
 ```
 
-创建，将设置`ListView` `ItemsSource`为，并使用数据填充列表： `ObservableCollection<Employee>`
+`ObservableCollection<Employee>` 将创建，并将其设置为 `ListView` `ItemsSource`，并使用数据填充列表：
 
 ```csharp
 ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
@@ -117,9 +117,9 @@ public EmployeeListPage()
 ```
 
 > [!WARNING]
-> `ObservableCollection`不是线程安全的。 `ObservableCollection`修改会导致 UI 更新在执行修改的同一线程上发生。 如果该线程不是主 UI 线程，则会引发异常。
+> 虽然 `ListView` 将更新以响应其基础 `ObservableCollection`中的更改，但如果将不同的 `ObservableCollection` 实例分配给原始 `ObservableCollection` 引用（例如 `employees = otherObservableCollection;`），则 `ListView` 不会更新。
 
-以下代码片段演示`ListView`绑定到的员工列表：
+以下代码片段演示了一个绑定到员工列表的 `ListView`：
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -139,13 +139,16 @@ public EmployeeListPage()
 </ContentPage>
 ```
 
-此 XAML 示例定义一个`ContentPage` `ListView`包含的。 数据源`ListView`通过设置`ItemsSource`属性。 在`ItemsSource` `ListView.ItemTemplate`元素中定义中每行的布局。 这会生成以下屏幕截图：
+此 XAML 示例定义包含 `ListView`的 `ContentPage`。 通过 `ItemsSource` 属性设置 `ListView` 的数据源。 `ItemsSource` 中每行的布局是在 `ListView.ItemTemplate` 元素中定义的。 这会生成以下屏幕截图：
 
-![](data-and-databinding-images/bound-data.png "使用数据绑定的 ListView")
+![](data-and-databinding-images/bound-data.png "ListView using Data Binding")
+
+> [!WARNING]
+> `ObservableCollection` 不是线程安全的。 修改 `ObservableCollection` 会导致 UI 更新在执行修改的同一线程上进行。 如果该线程不是主 UI 线程，则会引发异常。
 
 ### <a name="binding-selecteditem"></a>绑定 SelectedItem
 
-通常你会想要绑定到的所选的项`ListView`，而不是不是使用事件处理程序的更改进行响应。 若要执行此操作在 XAML 中，将绑定`SelectedItem`属性：
+通常，您需要绑定到 `ListView`的选定项，而不是使用事件处理程序来响应更改。 若要在 XAML 中执行此操作，请绑定 `SelectedItem` 属性：
 
 ```xaml
 <ListView x:Name="listView"
@@ -155,8 +158,8 @@ public EmployeeListPage()
 </ListView>
 ```
 
-`listView` `SomeLabel` `Text`假设是字符串列表，则会将其属性绑定到`SelectedItem`。 `ItemsSource`
+假定 `listView`的 `ItemsSource` 是字符串列表，`SomeLabel` 将其 `Text` 属性绑定到 `SelectedItem`。
 
 ## <a name="related-links"></a>相关链接
 
-- [两个双向绑定 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)
+- [双向绑定（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)
