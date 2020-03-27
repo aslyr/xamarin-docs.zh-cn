@@ -141,6 +141,8 @@
               href: user-interface/android-designer/alternative-layout-views.md
             - name: 材料设计功能
               href: user-interface/android-designer/material-design-features.md
+            - name: Android 布局诊断
+              href: user-interface/android-designer/diagnostics.md
         - name: 材料主题
           href: user-interface/material-theme.md
         - name: 用户配置文件
