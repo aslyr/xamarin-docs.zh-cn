@@ -6,13 +6,13 @@ ms.assetid: 58DFFA52-4057-49A8-8682-50A58C7E842C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/03/2019
-ms.openlocfilehash: 46d0b245246d9e93040cd8591dab8ed3a816268d
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.date: 03/23/2020
+ms.openlocfilehash: 712ca4f8f3441e0d3c2aede1b2510b07ca89f829
+ms.sourcegitcommit: d83c6af42ed26947aa7c0ecfce00b9ef60f33319
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487004"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80247608"
 ---
 # <a name="customizing-a-webview"></a>自定义 WebView
 
@@ -268,6 +268,15 @@ namespace CustomRenderer.iOS
         {
             ((HybridWebView)Element).InvokeAction(message.Body.ToString());
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                ((HybridWebView)Element).Cleanup();
+            }
+            base.Dispose(disposing);
+        }        
     }
 }
 ```
@@ -282,8 +291,8 @@ namespace CustomRenderer.iOS
 - 呈现器构造函数调用 [`WKUserContentController.AddScriptMessageHandler`](xref:WebKit.WKUserContentController.AddScriptMessageHandler(WebKit.IWKScriptMessageHandler,System.String)) 方法，以将名为 `invokeAction` 的脚本消息处理程序添加到 [`WKUserContentController`](xref:WebKit.WKUserContentController) 对象，这将导致 JavaScript 函数 `window.webkit.messageHandlers.invokeAction.postMessage(data)` 在使用 `WKUserContentController` 对象的所有 `WebView` 实例中的所有框架中定义。
 - 如果已将自定义呈现器附加到新的 Xamarin.Forms 元素：
   - [`WKWebView.LoadRequest`](xref:WebKit.WKWebView.LoadRequest(Foundation.NSUrlRequest)) 方法加载 `HybridWebView.Uri` 属性指定的 HTML 文件。 该代码指定该文件存储在 `Content` 项目的文件夹中。 显示网页后，`invokeCSharpAction` JavaScript 函数将注入到网页中。
-- 当呈现器附加到的元素产生更改时：
-  - 资源被释放。
+- 当呈现器附加到的元素发生更改时，便会发布资源。
+- 释放呈现器时，将清理 Xamarin 元素。
 
 > [!NOTE]
 > `WKWebView` 类仅支持 iOS 8 及更高版本。
@@ -332,6 +341,15 @@ namespace CustomRenderer.Droid
                 Control.LoadUrl($"file:///android_asset/Content/{((HybridWebView)Element).Uri}");
             }
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                ((HybridWebView)Element).Cleanup();
+            }
+            base.Dispose(disposing);
+        }        
     }
 }
 ```
@@ -363,8 +381,8 @@ public class JavascriptWebViewClient : WebViewClient
   - [`WebView.AddJavascriptInterface`](xref:Android.Webkit.WebView.AddJavascriptInterface*) 方法将新的 `JSBridge` 实例注入到 WebView 的 JavaScript 上下文的主框架中，并将其命名为 `jsBridge`。 这允许从 JavaScript 访问 `JSBridge` 类中的方法。
   - [`WebView.LoadUrl`](xref:Android.Webkit.WebView.LoadUrl*) 方法加载 `HybridWebView.Uri` 属性指定的 HTML 文件。 该代码指定该文件存储在 `Content` 项目的文件夹中。
   - 在 `JavascriptWebViewClient` 类中，页面加载完成后会将 `invokeCSharpAction` JavaScript 函数注入到网页中。
-- 当呈现器附加到的元素产生更改时：
-  - 资源被释放。
+- 当呈现器附加到的元素发生更改时，便会发布资源。
+- 释放呈现器时，将清理 Xamarin 元素。
 
 当执行 `invokeCSharpAction` JavaScript 函数时，它会调用 `JSBridge.InvokeAction` 方法，该方法如下面的代码示例所示：
 
@@ -441,6 +459,15 @@ namespace CustomRenderer.UWP
         {
             ((HybridWebView)Element).InvokeAction(e.Value);
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                ((HybridWebView)Element).Cleanup();
+            }
+            base.Dispose(disposing);
+        }        
     }
 }
 ```
@@ -452,8 +479,8 @@ namespace CustomRenderer.UWP
 - 如果已将自定义呈现器附加到新的 Xamarin.Forms 元素：
   - 已注册用于 `NavigationCompleted` 和 `ScriptNotify` 事件的事件处理程序。 当本机 `WebView` 控件已完成加载当前内容或导航失败时，将触发 `NavigationCompleted` 事件。 当本机 `WebView` 控件中的内容使用 JavaScript 传递字符串到应用程序时，会激发 `ScriptNotify` 事件。 网页在传递 `string` 参数时通过调用 `window.external.notify` 激发 `ScriptNotify` 事件。
   - `WebView.Source` 属性设置为 `HybridWebView.Uri` 属性指定的 HTML 文件的 URI。 该代码假定该文件存储在项目 `Content` 文件夹中。 显示网页后，会激发 `NavigationCompleted` 事件，并调用 `OnWebViewNavigationCompleted` 方法。 导航成功完成后，会使用 `WebView.InvokeScriptAsync` 方法将 `invokeCSharpAction` JavaScript 函数注入到网页。
-- 当呈现器附加到的元素产生更改时：
-  - 取消订阅事件。
+- 当呈现器附加到的元素更改时，取消订阅事件。
+- 释放呈现器时，将清理 Xamarin 元素。
 
 ## <a name="related-links"></a>相关链接
 

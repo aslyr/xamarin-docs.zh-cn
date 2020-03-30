@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 77fc4cbb15c47b87b0fa33e81b0b3749115af076
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 04e83fc68218216fe36cce67e43b83e8ad8feaa5
+ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021273"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80071023"
 ---
 # <a name="publishing-to-google-play"></a>发布到 Google Play
 
@@ -63,7 +63,7 @@ Google Play 并非全球可用。 一些区域可能不支持应用程序分发�
 
 启动器图标提示：
 
-1. **简单整洁** &ndash; 启动器图标应保持简单整洁。 这意味着图标中不应包含应用程序名称。 越简单的图标越容易记住，并且在尺寸较小的情况下也更易于识别。
+1. **简单整洁**&ndash; 启动器图标应保持简单整洁。 这意味着图标中不应包含应用程序名称。 越简单的图标越容易记住，并且在尺寸较小的情况下也更易于识别。
 
 1. 图标不应细窄 &ndash; 过窄的图标在所有背景上不易突出  。
 
@@ -79,7 +79,7 @@ Google Play 上的应用程序需要使用高保真版本的应用程序图标�
 
 [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/) 是非常有用的工具，可用于创建合适的启动器图标以及高分辨率应用程序图标。
 
-#### <a name="screen-shots"></a>屏幕截图
+#### <a name="screenshots"></a>屏幕截图
 
 对于每个应用程序，Google Play 需要至少 2 张，最多 8 张屏幕截图。 它们会显示在 Google Play 中的应用程序详细信息页面。
 
@@ -111,7 +111,7 @@ Google Play 上的应用程序需要使用高保真版本的应用程序图标�
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Xamarin Android 7.0 采用集成工作流，将应用从 Visual Studio 发布到 Google Play。 如果使用早于 7.0 版本的 Xamarin Android，则必须通过 Google Play 开发者控制台手动上传 APK。 此外，必须已至少上传 1 个 APK，才能使用此集成工作流。 如果尚未上传第一个 APK，则必须手动进行上传。 有关详细信息，请参阅[手动上传 APK](~/android/deploy-test/publishing/publishing-to-google-play/manually-uploading-the-apk.md)。
 
@@ -124,7 +124,7 @@ Xamarin Android 7.0 采用集成工作流，将应用从 Visual Studio 发布到
 5. 使用证书对应用进行签名。
 6. 将已签名应用发布到 Google Play。
 
-在 [归档以发布](~/android/deploy-test/release-prep/index.md#archive)中，“分发渠道”对话框显示两个分发选项  ：“临时”和“Google Play”   。 如果显示的是“签名标识”  对话框，请单击“返回”  ，返回到“分发渠道”  对话框。 选择“Google Play”  ，然后单击“下一步”  ：
+在 [归档以发布](~/android/deploy-test/release-prep/index.md#archive)中，“分发渠道”对话框显示两个分发选项  ：“临时”和“Google Play”   。 如果显示的是“签名标识”  对话框，请单击“返回”  ，返回到“分发渠道”  对话框。 选择“Google Play”  ：
 
 [![“分发通道”对话框](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png#lightbox)
 
@@ -142,7 +142,7 @@ Xamarin Android 7.0 采用集成工作流，将应用从 Visual Studio 发布到
 
 下一部分介绍如何新建 Google API 项目以及如何生成所需的_客户端 ID_ 和_客户端密码_。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 Visual Studio for Mac 采用集成工作流，将应用发布到 Google Play。
 
@@ -171,18 +171,19 @@ Visual Studio for Mac 采用集成工作流，将应用发布到 Google Play。
 
 首先，登录 [Google Play 开发者帐户](https://play.google.com/apps/publish)。
 如果尚没有 Google Play 开发者帐户，请参阅[发布入门](https://developer.android.com/distribute/googleplay/start.html)。
-此外，Google Play 开发者 API [入门](https://developers.google.com/android-publisher/getting_started)还介绍了如何使用 Google Play 开发者 API。 登录 Google Play 开发者控制台后，请单击“设置”  ：
+此外，Google Play 开发者 API [入门](https://developers.google.com/android-publisher/getting_started)还介绍了如何使用 Google Play 开发者 API。 登录 Google Play 开发者控制台后，请单击“创建应用程序”  ：
 
-[![“设置”图标](images/01-google-play-developer-console-sml.png)](images/01-google-play-developer-console.png#lightbox)
+[![“新建项目”按钮](images/01-create-new-project-sml.png)](images/01-create-new-project.png#lightbox)
 
-在“设置”  页上，选择“API 访问”  ，然后单击“新建项目”  按钮：
-
-[![“新建项目”按钮](images/02-create-new-project-sml.png)](images/02-create-new-project.png#lightbox)
-
-约一分钟后，新 API 项目会自动生成，并链接到 Google Play 开发者控制台帐户。
+创建新项目后，它将链接到你的 Google Play 开发者控制台帐户。
 
 下一步，为应用创建 OAuth 客户端（如果尚未创建）。 用户使用应用请求访问个人数据时，使用 OAuth 客户端 ID 对应用进行身份验证。
-单击“创建 OAuth 客户端”  ，创建新的 OAuth 客户端：
+
+转到“设置”页。 
+
+[![“设置”图标](images/02-google-play-developer-console-sml.png)](images/02-google-play-developer-console.png#lightbox)
+
+在“设置”页上，选择“API 访问权限”，然后单击“创建 OAUTH 客户端”以创建新的 OAuth 客户端    ：
 
 [![“创建 OAuth 客户端”按钮](images/03-create-oauth-client-sml.png)](images/03-create-oauth-client.png#lightbox)
 
@@ -198,7 +199,7 @@ OAuth 客户端的默认名称是 Google Play Android 开发者  。 可将其�
 
 [![显示的客户端 ID 和密码](images/06-client-id-and-secret-sml.png)](images/06-client-id-and-secret.png#lightbox)
 
-单击“保存”  以保存更改。 此操作会返回“凭据”  页面，在此处可通过单击“下载 JSON”  图标下载凭据：
+单击“保存”  以保存更改。 此操作会返回“凭据”页面，在此处可通过单击“下载 JSON”图标下载凭据   ：
 
 [![“下载 JSON”图标](images/07-download-json-sml.png)](images/07-download-json.png#lightbox)
 
@@ -206,7 +207,7 @@ OAuth 客户端的默认名称是 Google Play Android 开发者  。 可将其�
 
 #### <a name="register-google-api-access"></a>注册 Google API 访问权限
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 使用客户端 ID 和客户端密码填写 Visual Studio for Mac 中的“Google Play API 帐户”  对话框。 可以为帐户提供说明 &ndash; 这样可以注册多个 Google Play 帐户并可将以后的 APK 上传到其他 Google Play 帐户。 将客户端 ID 和客户端密码复制到此对话框，然后单击“注册”  ：
 
@@ -219,22 +220,23 @@ OAuth 客户端的默认名称是 Google Play Android 开发者  。 可将其�
 
 #### <a name="publish"></a>发布
 
-单击“允许”  后，浏览器会报告已接收验证码。即将关闭..._ ，且应用将被添加到 Visual Studio 中的 Google Play 帐户列表中。 在“Google Play 帐户”  对话框中，单击“继续”  ：
+单击“允许”  后，浏览器会报告已接收验证码。即将关闭...  ，且应用将被添加到 Visual Studio 中的 Google Play 帐户列表中。 在“Google Play 帐户”  对话框中，单击“继续”  ：
 
 [![已添加到 Google Play 帐户的帐户](images/vs/07-account-added-sml.png)](images/vs/07-account-added.png#lightbox)
 
-接下来，会显示“Google Play 轨道”  对话框。 Google Play 提供 4 个可用于上传应用的轨道：
+接下来，会显示“Google Play 轨道”  对话框。 Google Play 提供 5 个可用于上传应用的轨道：
 
+- **内部** &ndash; 用于快速分发应用以进行内部测试和质量保证检查。
 - **Alpha** &ndash; 用于将早期版本的应用上传到较小的测试员列表。
 - **Beta** &ndash; 用于将早期版本的应用上传到较大的测试员列表。
-- **Rollout** &ndash; 允许一定比例的用户接收应用的更新版本；这样可逐渐增加比例，例如，以 10% 的用户开始，消除 bug 后增加到 100% 用户。
-- **Production** &ndash; 准备好从 Google Play 应用商店全面分发应用时，请选择此轨道。
+- **生产** &ndash; 用于完整分发到 Google Play 商店。
+- **自定义** &ndash; 用于通过电子邮件地址创建测试人员列表，让特定用户测试应用的预发布版本。
 
-选择用于上传应用的 Google Play 轨道，然后单击“上传”  。 如果选择 **Rollout**，请确保输入百分比值：
+选择用于上传应用的 Google Play 轨道，然后单击“上传”  。
 
-[![选择 Alpha、Beta、Rollout 或 Production](images/vs/08-google-play-track-sml.png)](images/vs/08-google-play-track.png#lightbox)
+[![已添加到 Google Play 帐户的帐户](images/vs/08-google-play-track-sml.png)](images/vs/07-account-added.png#lightbox)
 
-有关 Google Play 测试和分步推出的详细信息，请参阅[设置 alpha/beta 测试](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en)。
+有关 Google Play 测试的详细信息，请参阅[设置开放式/封闭式/内部测试](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en)。
 
 接下来，在出现的对话框中输入签名证书密码。
 输入密码，然后单击“确定”  ：
@@ -251,50 +253,54 @@ OAuth 客户端的默认名称是 Google Play Android 开发者  。 可将其�
 
 ### <a name="troubleshooting"></a>疑难解答
 
+如果在选择 Google Play 轨道时未看到自定义轨道，请确保你已在 Google Play 开发者控制台上为该轨道创建了发布版本。 有关如何创建发布版本的说明，请参阅 [准备工作及发布版本](https://support.google.com/googleplay/android-developer/answer/7159011?hl=en)。
+
 请注意，使用**发布到 Google Play** 前，必须已经向 Google Play 应用商店提交了 1 个 APK。 如果尚未上传 APK，则“发布向导”会在“错误”  窗格中显示如下错误：
 
 [![必须手动上传此应用的首个 APK](images/vs/12-upload-error-sml.png)](images/vs/12-upload-error.png#lightbox)
 
-出现此错误时，请通过 Google Play 开发者控制台手动上传 APK（例如 Ad-Hoc 构建版本），并使用“分发渠道”  对话框进行后续 APK 更新。  有关详细信息，请参阅[手动上传 APK](~/android/deploy-test/publishing/publishing-to-google-play/manually-uploading-the-apk.md)。 每次上传时必须更改 APK 版本代码，否则会出现如下错误：
+出现此错误时，请通过 Google Play 开发者控制台手动上传 APK（例如 Ad Hoc 内部版本），并使用“分发渠道”对话框进行后续 APK 更新  。  有关详细信息，请参阅[手动上传 APK](~/android/deploy-test/publishing/publishing-to-google-play/manually-uploading-the-apk.md)。 每次上传时必须更改 APK 版本代码，否则会出现如下错误：
 
 [![已更新包含版本代码 (1) 的 APK](images/vs/13-version-code-error-sml.png)](images/vs/13-version-code-error.png#lightbox)
 
 若要解决此错误，请使用不同的版本号重新生成应用，然后通过“分发渠道”  对话框重新提交到 Google Play。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 使用客户端 ID 和客户端密码填写 Visual Studio for Mac 中的“Google Play API 帐户”  对话框。 可以为帐户提供说明 &ndash; 这样可以注册多个 Google Play 帐户并可将以后的 APK 上传到其他 Google Play 帐户。 将客户端 ID 和客户端密码复制到此对话框，然后单击“注册”  ：
 
-[![“授予访问权限”对话框](images/xs/10-register-sml.png)](images/xs/10-register.png#lightbox)
+[![“授予访问权限”对话框](images/xs/03-register-sml.png)](images/xs/03-register.png#lightbox)
 
 如果接受此客户端 ID 和客户端密码，则会显示“注册成功”  消息。 单击“下一步”  ：
 
-[![“注册成功”消息](images/xs/11-registration-successful-sml.png)](images/xs/11-registration-successful.png#lightbox)
+[![“注册成功”消息](images/xs/04-registration-successful-sml.png)](images/xs/04-registration-successful.png#lightbox)
 
 在“Google Play 帐户”  对话框中，选择用于上传应用程序的 Google 帐户和轨道：
 
-[![“选择 Google 帐户”对话框](images/xs/12-choose-google-account-sml.png)](images/xs/12-choose-google-account.png#lightbox)
+[![“选择 Google 帐户”对话框](images/xs/05-choose-google-account-sml.png)](images/xs/05-choose-google-account.png#lightbox)
 
-Google Play 提供 4 个可用于上传应用的轨道：
+Google Play 提供 5 个可用于上传应用的轨道：
 
+- **内部** &ndash; 用于快速分发应用以进行内部测试和质量保证检查。
 - **Alpha** &ndash; 用于将早期版本的应用上传到较小的测试员列表。
-
 - **Beta** &ndash; 用于将早期版本的应用上传到较大的测试员列表。
+- **生产** &ndash; 用于完整分发到 Google Play 商店。
+- **自定义** &ndash; 用于通过电子邮件地址创建测试人员列表，让特定用户测试应用的预发布版本。
 
-- **Rollout** &ndash; 允许一定比例的用户接收应用的更新版本；这样可逐渐增加比例，例如，以 10% 的用户开始，消除 bug 后增加到 100% 用户。
-
-- **Production** &ndash; 准备好从 Google Play 应用商店全面分发应用时，请选择此轨道。
-
-有关 Google Play 测试和分步推出的详细信息，请参阅[设置 alpha/beta 测试](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en)。
+有关 Google Play 测试的详细信息，请参阅[设置 alpha/beta 测试](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en)。
 
 接下来，选择用于对应用进行签名的签名标识。
 选择“使用现有密钥”以使用现有的签名标识；如果想详细了解如何创建新密钥，请参阅[创建新的证书](~/android/deploy-test/signing/index.md#newcert)指南  。 选择用于对应用程序进行签名的证书后，请单击“下一步”  ：
 
-[![“Android 签名标识”对话框](images/xs/13-android-signing-identity-sml.png)](images/xs/13-android-signing-identity.png#lightbox)
+[![“Android 签名标识”对话框](images/xs/06-android-signing-identity-sml.png)](images/xs/06-android-signing-identity.png#lightbox)
 
 此时可将应用上传到 Google Play。 “发布到 Google Play”  对话框汇总了应用的相关信息 &ndash; 单击“发布”  将应用发布到 Google Play：
 
-[![“发布到 Google Play”对话框](images/xs/14-publish-to-google-play-sml.png)](images/xs/14-publish-to-google-play.png#lightbox)
+[![“发布到 Google Play”对话框](images/xs/07-publish-to-google-play-sml.png)](images/xs/07-publish-to-google-play.png#lightbox)
+
+### <a name="troubleshooting"></a>疑难解答
+
+如果在选择 Google Play 轨道时未看到自定义轨道，请确保你已在 Google Play 开发者控制台上为该轨道创建了发布版本。 有关如何创建发布版本的说明，请参阅 [准备工作及发布版本](https://support.google.com/googleplay/android-developer/answer/7159011?hl=en)。
 
 请注意，使用**发布到 Google Play** 前，必须已经向 Google Play 应用商店提交了 1 个 APK。 如果尚未上传 APK，则可能出现如下错误：
 
@@ -304,6 +310,6 @@ or
 
 > 未找到给定包名称的应用程序。[404] 
 
-若要解决此错误，请通过 Google Play 开发者控制台手动上传 APK（例如 Ad-Hoc 构建版本），并使用“发布到 Google Play”  对话框进行后续 APK 更新。 有关如何手动上传 APK 的信息，请参阅[手动上传 APK](~/android/deploy-test/publishing/publishing-to-google-play/manually-uploading-the-apk.md)。
+若要解决此错误，请通过 Google Play 开发者控制台手动上传 APK（例如 Ad Hoc 内部版本），并使用“发布到 Google Play”对话框进行后续 APK 更新  。 有关如何手动上传 APK 的信息，请参阅[手动上传 APK](~/android/deploy-test/publishing/publishing-to-google-play/manually-uploading-the-apk.md)。
 
 -----

@@ -5,12 +5,12 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 03/13/2019
-ms.openlocfilehash: 2ee4683bce02e95c52235afa823be21b89863208
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 840aadcafea88ef08f53e16f535439be0862fee9
+ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79303647"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80070361"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials:地理位置
 
@@ -217,6 +217,24 @@ double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnits.Mi
 ```
 
 `Location` 构造函数具有按该顺序排列的纬度和经度参数。 正纬度值表示位于赤道以北，正经度值表示位于本初子午线以东。 使用 `CalculateDistance` 的最后一个参数指定单位为英里还是公里。 `UnitConverters` 类还定义了用于在两个单位之间进行转换的 `KilometersToMiles` 和 `MilesToKilometers` 方法。
+
+## <a name="platform-differences"></a>平台差异
+
+每个平台上计算海拔高度的方式不同。
+
+# <a name="android"></a>[Android](#tab/android)
+
+在 Android 上，[海拔高度](https://developer.android.com/reference/android/location/Location#getAltitude())（如果可用）返回高于 WGS 84 参考椭球的米数。 如果此位置没有海拔高度，则返回 0.0。
+
+# <a name="ios"></a>[iOS](#tab/ios)
+
+在 iOS 上，[海拔高度](https://developer.apple.com/documentation/corelocation/cllocation/1423820-altitude)以米为单位。 正值指示海拔高于海平面，而负值表明海拔低于海平面。
+
+# <a name="uwp"></a>[UWP](#tab/uwp)
+
+UWP 上以米为单位返回海拔高度。 有关详细信息，请参阅 [AltitudeReferenceSystem](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint.altitudereferencesystem#Windows_Devices_Geolocation_Geopoint_AltitudeReferenceSystem) 文档。
+
+-----
 
 ## <a name="api"></a>API
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2018
-ms.openlocfilehash: 8c21895918e4d4ac9a82804d4b140fbf7bf798fe
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: c9c6816115d89212ea720f027d51af6c990cfe8d
+ms.sourcegitcommit: 7fd88ada5b44a62390fe1a73ef08014e4d236a2d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79303521"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80261305"
 ---
 # <a name="preparing-an-application-for-release"></a>做好应用程序发布准备
 
@@ -27,7 +27,7 @@ ms.locfileid: "79303521"
 
 - **[保护应用程序](#protect_app)** &ndash; 通过禁用调试、模糊处理托管代码、添加防调试和防篡改以及使用本机编译，阻止用户或攻击者对应用程序进行调试、篡改或反向工程。
 
-- **[设置打包属性](#Set_Packaging_Properties)** &ndash; 打包属性控制 Android 应用程序包 (APK) 的创建。 此步骤会优化 APK，保护其资产并根据需要模块化打包。
+- **[设置打包属性](#Set_Packaging_Properties)** &ndash; 打包属性控制 Android 应用程序包 (APK) 的创建。 此步骤会优化 APK，保护其资产并根据需要模块化打包。 此外，你还可以为用户提供针对其设备进行了优化的 Android 应用程序包。
 
 - **[编译](#Compile)** &ndash; 此步骤编译代码和资产，以确认按发布模式生成。
 
@@ -268,6 +268,16 @@ LLVM 优化编译器  会创建更小更快速的编译代码，并将 AOT 编�
 应用可能未使用每个引用库中的每个方法；因此，ProGuard（见上文）等工具可能会将未使用的方法从代码中删除。 最佳做法是仅在绝对必要时启用“启用 Multi-Dex”  ，也就是说，即使使用 ProGuard，应用引用的 Java 方法仍然超过 65K。
 
 若要深入了解 Multi-Dex，请参阅[配置超出 64K 方法的应用](https://developer.android.com/tools/building/multidex.html)。
+
+### <a name="android-app-bundles"></a>Android 应用程序包
+
+应用程序包不同于 APK，因为它们不能直接部署到设备。 相反，它是一种旨在与所有已编译代码和资源一起上传的格式。 上传已签名的应用程序包后，Google Play 将获得构建和签署应用程序 APK 所需的一切内容，并使用动态交付功能将它们提供给客户。
+
+要启用对 Android 应用程序包的支持，你需要在 Android 项目选项中选择 Android 包格式属性的 `bundle` 值  。 执行此操作之前，请确保将项目更改为 `Release` 配置，因为应用程序包仅用于发布包。
+
+现在，你可以按照[存档流程](#archive)生成应用程序包。 这会为应用程序生成应用程序包。
+
+有关 Android 应用程序包的详细信息，请参阅 [Android 应用程序包](https://developer.android.com/guide/app-bundle/)。
 
 <a name="Compile" />
 
