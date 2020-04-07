@@ -43,7 +43,7 @@ MVVM 应用程序通常使用 `ListView` 来显示可选择的对象集合。
 
 ### <a name="data-binding-the-picker"></a>数据绑定 Picker
 
-`SelectedIndex` 属性受可绑定属性的支持（但 `Items` 不受支持），因此，对 `Picker` 使用数据绑定比较困难。 一种解决方法是将 `Picker` 与 [`ObjectToIndexConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ObjectToIndexConverter.cs) 结合使用（如 [Xamarin.FormsBook.Toolkit  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的项）。 **PickerBinding[** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/PickerBinding) 演示了其工作原理。
+`SelectedIndex` 属性受可绑定属性的支持（但 `Items` 不受支持），因此，对 `Picker` 使用数据绑定比较困难。 一种解决方法是将 `Picker` 与 [`ObjectToIndexConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ObjectToIndexConverter.cs) 结合使用（如 [Xamarin.FormsBook.Toolkit  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的项）。 [**PickerBinding**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/PickerBinding) 演示了其工作原理。
 
 > [!NOTE] 
 > Xamarin.Forms `Picker` 现包含支持数据绑定的 `ItemsSource` 和 `SelectedItem` 属性。 请参见 [Picker](~/xamarin-forms/user-interface/picker/index.md)。

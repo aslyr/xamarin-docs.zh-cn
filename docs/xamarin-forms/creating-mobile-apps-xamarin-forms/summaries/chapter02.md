@@ -141,7 +141,7 @@ Hello  PCL 项目的“引用”  部分包括以下 Xamarin.Forms 程序集：
 
 - [`iOS`](xref:Xamarin.Forms.TargetPlatform.iOS)
 - [`Android`](xref:Xamarin.Forms.TargetPlatform.Android)
-- [适用于 UWP 设备的 `Windows`](xref:Xamarin.Forms.TargetPlatform.Windows)。
+- 适用于 UWP 设备的 [`Windows`](xref:Xamarin.Forms.TargetPlatform.Windows)。
 
 现已弃用 `Device.OnPlatform` 方法、`Device.OS` 属性和 `TargetPlatform` 枚举。 请改用 [`Device.RuntimePlatform`](xref:Xamarin.Forms.Device.RuntimePlatform) 属性，并将 `string` 返回值与以下静态字段进行比较：
 
