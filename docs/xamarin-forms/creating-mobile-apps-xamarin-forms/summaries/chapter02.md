@@ -168,7 +168,7 @@ Hello  PCL 项目的“引用”  部分包括以下 Xamarin.Forms 程序集：
 
 可以将 `Label` 在 `Page` 内居中（或将其置于其他八个位置之一），方法是将 `Label` 的 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 属性设置为类型为 [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) 的值。 `LayoutOptions` 结构定义以下两个属性：
 
-- 类型为 [`LayoutAlignment`](xref:Xamarin.Forms.LayoutAlignment) 的 [`Alignment`](xref:Xamarin.Forms.LayoutOptions.Alignment) 属性，一个包含四个成员的枚举：[`Start`](xref:Xamarin.Forms.LayoutAlignment.Start)（意味着左侧或顶部，取决于方向）、[`Center`](xref:Xamarin.Forms.LayoutAlignment.Center)[`End`](xref:Xamarin.Forms.LayoutAlignment.End)（意味着右侧或底部，取决于方向）和 [`Fill`](xref:Xamarin.Forms.LayoutAlignment.Fill)。
+- 类型为 [`LayoutAlignment`](xref:Xamarin.Forms.LayoutAlignment) 的 [`Alignment`](xref:Xamarin.Forms.LayoutOptions.Alignment) 属性，一个包含四个成员的枚举：[`Start`](xref:Xamarin.Forms.LayoutAlignment.Start)（意味着左侧或顶部，取决于方向）、[`Center`](xref:Xamarin.Forms.LayoutAlignment.Center) [`End`](xref:Xamarin.Forms.LayoutAlignment.End)（意味着右侧或底部，取决于方向）和 [`Fill`](xref:Xamarin.Forms.LayoutAlignment.Fill)。
 
 - 类型为 `bool` 的 [`Expands`](xref:Xamarin.Forms.LayoutOptions.Expands) 属性。
 
