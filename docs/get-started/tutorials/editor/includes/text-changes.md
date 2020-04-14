@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: 653d3677f96d7da78af61531c535b1b7db684e7e
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "77135044"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. 在“MainPage.xaml”中，修改 [`Editor`](xref:Xamarin.Forms.Editor) 声明，以便为 [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) 和 [`Completed`](xref:Xamarin.Forms.Editor.Completed) 事件设置处理程序  ：
 
@@ -49,7 +49,7 @@ ms.locfileid: "77135044"
 
     有关 [`Editor`](xref:Xamarin.Forms.Editor) 事件的详细信息，请参阅 [Xamarin.Forms 编辑器](~/xamarin-forms/user-interface/text/editor.md)指南中的[交互](~/xamarin-forms/user-interface/text/editor.md#interactivity)。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. 在“MainPage.xaml”中，修改 [`Editor`](xref:Xamarin.Forms.Editor) 声明，以便为 [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) 和 [`Completed`](xref:Xamarin.Forms.Editor.Completed) 事件设置处理程序  ：
 

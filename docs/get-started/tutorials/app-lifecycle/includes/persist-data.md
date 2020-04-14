@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 5d9d5e4eb757d6afd1c13cb4851edd23feaa6e65
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "77135138"
 ---
 [`Application`](xref:Xamarin.Forms.Application) 子类具有静态 [`Properties`](xref:Xamarin.Forms.Application.Properties) 字典，可用于跨生命周期状态更改存储数据。 该字典使用 `string` 密钥并存储 `object` 值。 字典会自动保存到设备中，并在应用程序重启时重新填充。
@@ -13,7 +13,7 @@ ms.locfileid: "77135138"
 
 在本练习中，你将修改应用程序以在后台运行时保留 [`Entry`](xref:Xamarin.Forms.Entry) 中的文本，并在应用程序重启时将文本还原到 `Entry`。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. 在“解决方案资源管理器”的 AppLifecycleTutorial 项目中，展开 App.xaml，然后双击 App.xaml.cs 将其打开     。 然后在“App.xaml.cs”中，删除所有模板代码并替换为以下代码  ：
 
@@ -117,7 +117,7 @@ ms.locfileid: "77135138"
 
     有关将数据持久保存到属性字典的详细信息，请参阅 [Xamarin.Forms 应用类](~/xamarin-forms/app-fundamentals/application-class.md)指南中的[属性字典](~/xamarin-forms/app-fundamentals/application-class.md#properties-dictionary)。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. 在“Solution Pad”中的 AppLifecycleTutorial 项目中，展开 App.xaml 并双击 App.xaml.cs 以将其打开     。 然后在“App.xaml.cs”中，删除所有模板代码并替换为以下代码  ：
 

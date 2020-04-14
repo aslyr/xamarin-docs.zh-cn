@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: b11a5972c2aabace8a6991a82f5719f34450297d
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "67841463"
 ---
 在本练习中，你将向 LocalDatabaseTutorial 项目添加数据访问类，用于将人员相关数据保存到数据库中  。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. 在解决方案资源管理器的 LocalDatabaseTutorial 项目中，向该项目添加名为 `Person` 的新类   。 然后，在 Person.cs 中，删除所有模板代码，替换为以下代码  ：
 
@@ -120,7 +120,7 @@ ms.locfileid: "67841463"
 
 1. 生成解决方案，确保没有任何错误。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. 在 Solution Pad 的 LocalDatabaseTutorial 项目中，向该项目添加名为 `Person` 的新类   。 然后，在 Person.cs 中，删除所有模板代码，替换为以下代码  ：
 

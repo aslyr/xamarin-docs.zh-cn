@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: 48af50d31013f696879174a5cf108ab9fde92d0b
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "61343383"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
-1. 在 MainPage.xaml 中，修改 [`Entry`](xref:Xamarin.Forms.Entry) 声明以自定义其行为：
+1. 在 MainPage.xaml 中，修改 [`Entry`](xref:Xamarin.Forms.Entry) 声明以自定义其行为  ：
 
     ```xaml
     <Entry Placeholder="Enter password"
@@ -23,15 +23,15 @@ ms.locfileid: "61343383"
     > [!NOTE]
     > 对于某些文本输入场景（例如输入密码），拼写检查和文本预测提供的体验并不太好，因此应禁用它们。
 
-1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序。 在 [`Entry`](xref:Xamarin.Forms.Entry) 中输入文本，观察每个字符是否被替换成密码掩码字符并且可输入的最大字符数是否为 15：
+1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序  。 在 [`Entry`](xref:Xamarin.Forms.Entry) 中输入文本，观察每个字符是否被替换成密码掩码字符并且可输入的最大字符数是否为 15：
 
-    [![iOS 和 Android 上文本被密码字符屏蔽的条目的屏幕截图](../images/customize-behavior.png "包含掩码密码字符的条目")](../images/customize-behavior-large.png#lightbox "包含掩码密码字符的条目")
+    [![iOS 和 Android 上文本被密码字符屏蔽的文本的条目的屏幕截图](../images/customize-behavior.png "包含掩码密码字符的条目")](../images/customize-behavior-large.png#lightbox "包含掩码密码字符的条目")
 
     有关自定义 [`Entry`](xref:Xamarin.Forms.Entry) 行为的详细信息，请参阅 [Xamarin.Forms 输入](~/xamarin-forms/user-interface/text/entry.md)指南。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. 在 MainPage.xaml 中，修改 [`Entry`](xref:Xamarin.Forms.Entry) 声明以自定义其行为：
+1. 在 MainPage.xaml 中，修改 [`Entry`](xref:Xamarin.Forms.Entry) 声明以自定义其行为  ：
 
     ```xaml
     <Entry Placeholder="Enter password"
@@ -46,7 +46,7 @@ ms.locfileid: "61343383"
     > [!NOTE]
     > 对于某些文本输入场景（例如输入密码），拼写检查和文本预测提供的体验并不太好，因此应禁用它们。
 
-1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android Emulator 内的应用程序。 在 [`Entry`](xref:Xamarin.Forms.Entry) 中输入文本，观察每个字符是否被替换成密码掩码字符并且可输入的最大字符数是否为 15：
+1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android Emulator 内的应用程序  。 在 [`Entry`](xref:Xamarin.Forms.Entry) 中输入文本，观察每个字符是否被替换成密码掩码字符并且可输入的最大字符数是否为 15：
 
     [![iOS 和 Android 上文本被密码字符屏蔽的文本的条目的屏幕截图](../images/customize-behavior.png "包含掩码密码字符的条目")](../images/customize-behavior-large.png#lightbox "包含掩码密码字符的条目")
 
