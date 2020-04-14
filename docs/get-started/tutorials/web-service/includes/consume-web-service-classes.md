@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: 90f3f9ff5ed29a1ae2c93e355fc15bc6550d78dd
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "77135129"
 ---
 在本练习中，你将创建使用 `RestService` 类的用户界面，而该类将检索 [OpenWeatherMap](https://openweathermap.org/) Web API 的数据。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. 在“解决方案资源管理器”的 WebServiceTutorial 项目中，双击 MainPage.xaml 将其打开    。 然后在 MainPage.xaml 中，删除所有模板代码，替换为以下代码  ：
 
@@ -128,7 +128,7 @@ ms.locfileid: "77135129"
     > [!IMPORTANT]
     > 必须将个人 OpenWeatherMap API 密钥设置为 `Constants` 类中 `OpenWeatherMapAPIKey` 常数值。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. 在 Solution Pad 的 WebServiceTutorial 项目中，双击 MainPage.xaml 将其打开    。 然后在 MainPage.xaml 中，删除所有模板代码，替换为以下代码  ：
 

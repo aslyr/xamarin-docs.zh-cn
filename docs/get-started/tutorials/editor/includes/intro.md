@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 4416eddfab4bfcf2b3274054db9bcfc60ed8fdec
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "71059558"
 ---
 开始演练本教程的前提条件为已成功完成以下教程：
@@ -21,4 +21,4 @@ ms.locfileid: "71059558"
 
 你将使用 Visual Studio 2019 或 Visual Studio for Mac 创建一个简单的应用程序，演示如何自定义 [`Editor`](xref:Xamarin.Forms.Editor) 的行为。 以下屏幕截图显示了最终的应用程序：
 
-[![iOS 和 Android 上自动调整大小的编辑器屏幕截图](../images/customize-behavior.png "自动调整大小编辑器")](../images/customize-behavior-large.png#lightbox "自动调整大小编辑器")
+[![iOS 和 Android 上自动调整大小的编辑器屏幕截图](../images/customize-behavior.png "自动调整大小编辑器")](../images/customize-behavior-large.png#lightbox "自动调整大小的编辑器")

@@ -1,17 +1,17 @@
 ---
 ms.openlocfilehash: 87eb021e6cc571a9a5522697cde2aa11ee991308
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "66193784"
 ---
 
 Xamarin.Forms 有一个模式弹出窗口，称为操作工作表，可用于指导用户完成任务。 在本练习中，你将使用 [`Page`](xref:Xamarin.Forms.Page) 类中的 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) 方法来显示指导用户完成任务的操作工作表。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
-1. 在 MainPage.xaml 中，添加一个新的 [`Button`](xref:Xamarin.Forms.Button) 声明，该声明将显示一个操作工作表：
+1. 在 MainPage.xaml 中，添加一个新的 [`Button`](xref:Xamarin.Forms.Button) 声明，该声明将显示一个操作工作表  ：
 
     ```xaml
     <Button Text="Display action sheet"
@@ -20,7 +20,7 @@ Xamarin.Forms 有一个模式弹出窗口，称为操作工作表，可用于指
 
      [`Button.Text`](xref:Xamarin.Forms.Button.Text) 属性指定在 `Button` 中显示的文本。 此外，将 [`Clicked`](xref:Xamarin.Forms.Button.Clicked) 事件设置为名为 `OnDisplayActionSheetButtonClicked` 的事件处理程序，将在下一步中创建该处理程序。
 
-1. 在“解决方案资源管理器”的 PopupsTutorial 项目中，展开“MainPage.xaml”，然后双击“MainPage.xaml.cs”将其打开。 然后在 MainPage.xaml.cs 中，将 `OnDisplayActionSheetButtonClicked` 事件处理程序添加到类：
+1. 在“解决方案资源管理器”的 PopupsTutorial 项目中，展开“MainPage.xaml”，然后双击“MainPage.xaml.cs”将其打开     。 然后在 MainPage.xaml.cs 中，将 `OnDisplayActionSheetButtonClicked` 事件处理程序添加到类  ：
 
     ```csharp
     async void OnDisplayActionSheetButtonClicked(object sender, EventArgs e)
@@ -35,17 +35,17 @@ Xamarin.Forms 有一个模式弹出窗口，称为操作工作表，可用于指
     > [!IMPORTANT]
     > [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) 方法为异步方法，应始终使用 `await` 关键字等待。
 
-1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序。 然后点击添加到 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 的 [`Button`](xref:Xamarin.Forms.Button)：
+1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序  。 然后点击添加到 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 的 [`Button`](xref:Xamarin.Forms.Button)：
 
     [![iOS 和 Android 上的 Actionsheet 的屏幕截图](../images/actionsheet.png "指导用户完成任务的 Actionsheet")](../images/actionsheet-large.png#lightbox "指导用户完成任务的 Actionsheet")
 
-    注意，在操作表对话框中选择替代方案后，选择将输出到 Visual Studio“输出”窗口。
+    注意，在操作表对话框中选择替代方案后，选择将输出到 Visual Studio“输出”窗口  。
 
     若要详细了解如何显示操作工作表，请参阅[显示弹出窗口](~/xamarin-forms/user-interface/pop-ups.md)指南中的[引导用户完成任务](~/xamarin-forms/user-interface/pop-ups.md#guide-users-through-tasks)。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. 在 MainPage.xaml 中，添加一个新的 [`Button`](xref:Xamarin.Forms.Button) 声明，该声明将显示一个操作工作表：
+1. 在 MainPage.xaml 中，添加一个新的 [`Button`](xref:Xamarin.Forms.Button) 声明，该声明将显示一个操作工作表  ：
 
     ```xaml
     <Button Text="Display action sheet"
@@ -54,7 +54,7 @@ Xamarin.Forms 有一个模式弹出窗口，称为操作工作表，可用于指
 
     [`Button.Text`](xref:Xamarin.Forms.Button.Text) 属性指定在 `Button` 中显示的文本。 此外，将 [`Clicked`](xref:Xamarin.Forms.Button.Clicked) 事件设置为名为 `OnDisplayActionSheetButtonClicked` 的事件处理程序，将在下一步中创建该处理程序。
 
-1. 在 Solution Pad 的 PopupsTutorial 项目中，展开“MainPage.xaml”，然后双击“MainPage.xaml.cs”将其打开。 然后在 MainPage.xaml.cs 中，将 `OnDisplayActionSheetButtonClicked` 事件处理程序添加到类：
+1. 在 Solution Pad 的 PopupsTutorial 项目中，展开“MainPage.xaml”，然后双击“MainPage.xaml.cs”将其打开     。 然后在 MainPage.xaml.cs 中，将 `OnDisplayActionSheetButtonClicked` 事件处理程序添加到类  ：
 
     ```csharp
     async void OnDisplayActionSheetButtonClicked(object sender, EventArgs e)
@@ -69,10 +69,10 @@ Xamarin.Forms 有一个模式弹出窗口，称为操作工作表，可用于指
     > [!IMPORTANT]
     > [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) 方法为异步方法，应始终使用 `await` 关键字等待。
 
-1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android Emulator 内的应用程序。 然后点击添加到 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 的 [`Button`](xref:Xamarin.Forms.Button)：
+1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android Emulator 内的应用程序  。 然后点击添加到 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 的 [`Button`](xref:Xamarin.Forms.Button)：
 
     [![iOS 和 Android 上的 Actionsheet 的屏幕截图](../images/actionsheet.png "指导用户完成任务的 Actionsheet")](../images/actionsheet-large.png#lightbox "指导用户完成任务的 Actionsheet")
 
-    注意，在操作表对话框中选择替代方案后，选择将输出到 Visual Studio for Mac“应用程序输出”窗口。
+    注意，在操作表对话框中选择替代方案后，选择将输出到 Visual Studio for Mac“应用程序输出”窗口  。
 
     若要详细了解如何显示操作工作表，请参阅[显示弹出窗口](~/xamarin-forms/user-interface/pop-ups.md)指南中的[引导用户完成任务](~/xamarin-forms/user-interface/pop-ups.md#guide-users-through-tasks)。

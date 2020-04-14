@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: 9d78f0e9bf3b8d6d227f76b2729be849e5cdd3a6
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "72678707"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 若要完成本教程，应使用 Visual Studio 2019（最新版本），且安装了“使用 .NET 的移动开发”工作负载  。 此外，还需要一个匹配的 Mac，用于在 iOS 上生成教程应用程序。 有关安装 Xamarin 平台的信息，请参阅[安装 Xamarin](~/get-started/installation/index.md)。 有关将 Visual Studio 2019 连接到 Mac 生成主机的信息，请参阅[通过“与 Mac 配对”进行 Xamarin.iOS 开发](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 
@@ -37,7 +37,7 @@ ms.locfileid: "72678707"
 
     [![iOS 和 Android 上居中标签的屏幕截图](../images/create-label.png "居中标签")](../images/create-label-large.png#lightbox "居中标签")
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 若要完成本教程，应使用 Visual Studio for Mac（最新版），且安装了 iOS 和 Android 平台支持。 此外，还需要 Xcode（最新版）。 有关安装 Xamarin 平台的详细信息，请参阅[安装 Xamarin](~/get-started/installation/index.md)。
 

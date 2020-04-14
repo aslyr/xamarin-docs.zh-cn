@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: caee3eeda90a560f032c17657072ae5ba5023a69
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "77135126"
 ---
 在本练习中，你将创建一个用户界面来使用以前创建的数据访问类。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. 在“解决方案资源管理器”的 LocalDatabaseTutorial 项目中，双击 MainPage.xaml 将其打开    。 然后在 MainPage.xaml 中，删除所有模板代码，替换为以下代码  ：
 
@@ -78,7 +78,7 @@ ms.locfileid: "77135126"
 
     有关 Xamarin.Forms 中本地数据库的详细信息，请参阅 [Xamarin.Forms 本地数据库（指南）](~/xamarin-forms/data-cloud/data/databases.md)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. 在“Solution Pad”的 LocalDatabaseTutorial 项目中，双击 MainPage.xaml 将其打开    。 然后在 MainPage.xaml 中，删除所有模板代码，替换为以下代码  ：
 

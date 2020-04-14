@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 3b1603b6af5ebb5558c3cd764f41fdbe24351b9b
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "68669547"
 ---
 REST 请求是使用 HTTP 谓词通过 HTTP 发出的，该谓词与 Web 浏览器用于检索页面和将数据发送到服务器所使用的谓词相同。 在本练习中，你将创建一个使用 GET 谓词的类，以从 [OpenWeatherMap](https://openweathermap.org/) Web API 检索数据。 此 Web API 可用于检索指定位置的天气预报数据。 使用此 Web API 需要注册 API 密钥。
@@ -11,7 +11,7 @@ REST 请求是使用 HTTP 谓词通过 HTTP 发出的，该谓词与 Web 浏览�
 > [!div class="nextstepaction"]
 > [注册 API 密钥](https://home.openweathermap.org/users/sign_up)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. 在“解决方案资源管理器”的“WebServiceTutorial”项目中，向该项目添加名为 `Constants` 的新类   。 然后在“Constants.cs”中，删除所有模板代码并将其替换为以下代码  ：
 
@@ -131,7 +131,7 @@ REST 请求是使用 HTTP 谓词通过 HTTP 发出的，该谓词与 Web 浏览�
 
 1. 生成解决方案，确保没有任何错误。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. 在“Solution Pad”的“WebServiceTutorial”项目中，向该项目添加名为 `Constants` 的新类   。 然后在“Constants.cs”中，删除所有模板代码并将其替换为以下代码  ：
 
