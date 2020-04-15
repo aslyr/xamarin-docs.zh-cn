@@ -574,6 +574,8 @@
           href: ~/essentials/version-tracking.md?context=xamarin/ios
         - name: 振动
           href: ~/essentials/vibrate.md?context=xamarin/ios
+        - name: Web 验证器
+          href: ~/essentials/web-authenticator.md?context=xamarin/ios
         - name: Xamarin.Essentials 发行说明
           href: 'https://docs.microsoft.com/xamarin/essentials/release-notes/'
         - name: 疑难解答

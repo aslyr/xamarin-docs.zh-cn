@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: b505f4a4f7a8f50a6044d01a327eef76a7b1ce3b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70758026"
 ---
-|Property|说明|选项|
+|Property|描述|选项|
 |--- |--- |--- |
 |`abi.type`|ABI 类型  &ndash; 指定仿真设备的 ABI（应用程序二进制接口）类型。 x86  选项适用于通常被称为“x86”或“IA-32”的指令集。 x86_64  选项适用于 64 位 x86 指令集。 armeabi-v7a  选项适用于具有 v7-a ARM 扩展的 ARM 指令集。 arm64-v8a  选项适用于支持 AArch64 的 ARM 指令集。|x86、x86_64、armeabi-v7a、arm64-v8a|
 |`disk.cachePartition`|缓存分区  &ndash; 确定仿真设备是否将在设备上使用 /cache  分区。 /cache  分区（最初为空）是 Android 存储经常访问的数据和应用组件的位置。 如果设置为“否”  ，仿真器将不使用 /cache  分区，且其他的 `disk.cache` 设置将被忽略。|yes、no|
@@ -17,19 +17,19 @@ ms.locfileid: "70758026"
 |`disk.dataPartition.size`|数据分区大小  &ndash; 指定用户数据分区的大小（以字节为单位）。 如果此值为整数，它则以字节为单位指定大小。 还可以通过将 K、M 或 G 追加到值中来以 KB、MB 或 GB 为单位指定大小    。 最小大小为 9 M  ；最大为 1023 G  。||
 |`disk.ramdisk.path`|Ramdisk 路径  &ndash; 到启动分区 (ramdisk) 映像的路径。 ramdisk 映像是装载系统映像之前由内核加载的系统映像的子集。 ramdisk 映像通常包含启动时的二进制文件和初始化脚本。 如果未指定此选项，仿真器系统目录中的默认值为 ramdisk.img  。||
 |`disk.snapStorage.path`|快照存储路径  &ndash; 到存储所有快照的快照存储文件的路径。 在执行期间进行的所有快照将被保存到此文件。 只有被保存到此文件的快照在仿真器运行期间才能被还原。 如果未指定此选项，仿真器数据目录中的默认值为 snapshots.img。||
-|`disk.systemPartition.initPath`|系统分区初始路径  &ndash; 到系统映像文件的只读副本的路径；具体来说，是指包含系统二进制文件以及与 API 级别和任何变体相对应的数据的分区。 如果未指定此选项，仿真器系统目录中的默认值为 system.img。||
+|`disk.systemPartition.initPath`|系统分区初始路径  &ndash; 到系统映像文件的只读副本的路径；具体来说，是指包含系统库以及与 API 级别和任何变体相对应的数据的分区。 如果未指定此选项，仿真器系统目录中的默认值为 system.img。||
 |`disk.systemPartition.path`|系统分区路径  &ndash; 到读/写系统分区映像的路径。 如果未设置此路径，则将创建一个临时文件并从 `disk.systemPartition.initPath` 指定的文件内容初始化此文件。||
 |`disk.systemPartition.size`|系统分区大小  &ndash; 系统分区的理想大小（以字节为单位）。 如果实际的系统分区映像大于此设置，则会忽略此大小；否则，它指定系统分区文件可以增长到的最大大小。 如果此值为整数，它则以字节为单位指定大小。 还可以通过将 K、M 或 G 追加到值中来以 KB、MB 或 GB 为单位指定大小    。 最小大小为 9 M  ；最大为 1023 G  。||
 |`hw.accelerometer`|加速计  &ndash; 确定仿真设备是否包含一个加速度传感器。 加速计帮助设备确定方向（用于自动旋转）。 加速计报告设备沿着三个传感器轴的加速情况。|yes、no|
 |`hw.audioInput`|音频录制支持  &ndash; 确定仿真设备是否可以录制音频。|yes、no|
 |`hw.audioOutput`|音频播放支持  &ndash; 确定仿真设备是否可以播放音频。|yes、no|
-|`hw.battery`|电池支持  &ndash; 确定仿真设备是否可以通过电池运行。|yes、no|
-|`hw.camera`|照相机支持  &ndash; 确定仿真设备是否具有照相机。|yes、no|
-|`hw.camera.back`|后置照相机  &ndash; 配置后置照相机（镜头背朝用户的面部）。 如果在开发计算机上使用网络摄像头以模拟仿真设备上的后置照相机，必须将此值设置为 webcamn  ，其中 _n_ 选择的是网络摄像头（如果只有一个网络摄像头，则选择 webcam0  ）。 如果设置为“emulated”，仿真器将在软件中模拟照相机。 若要禁用后置照相机，请将此值设置为“none”。 如果启用后置照相机，请确保也要启用 `hw.camera`。|emulated、none、webcam0|
-|`hw.camera.front`|前置照相机  &ndash; 配置前置照相机（镜头面向用户）。 如果在开发计算机上使用网络摄像头以模拟仿真设备上的前置照相机，必须将此值设置为 webcamn  ，其中 n  选择的是网络摄像头（如果只有一个网络摄像头，则选择 webcam0  ）。 如果设置为“emulated”，仿真器将在软件中模拟照相机。 若要禁用前置照相机，请将此值设置为“none”。 如果启用前置照相机，请确保也要启用 `hw.camera`。|emulated、none、webcam0|
-|`hw.camera.maxHorizontalPixels`|最大的照相机水平像素  &ndash; 配置仿真设备照相机的最大水平分辨率（以像素为单位）。||
-|`hw.camera.maxVerticalPixels`|最大的照相机垂直像素  &ndash; 配置仿真设备照相机的最大垂直分辨率（以像素为单位）。||
-|`hw.cpu.arch`|CPU 体系结构  &ndash; 要由虚拟设备仿真的 CPU 体系结构。 如果使用 Intel HAXM 以进行硬件加速，请为 32 位 CPU 选择 x86  。 为 64 位 HAXM 加速的设备选择 x86_64  。 （请务必在 SDK 管理器中安装相应的 Intel x86 系统映像：例如，Intel x86 Atom 或 Intel x86 Atom_64。）若要模拟 ARM CPU，请为 32 位 ARM CPU 选择 arm  或者为 64 位选择 arm64  。 请记住，基于 ARM 的虚拟设备运行速度要比基于 x86 的那些虚拟设备慢得多，因为硬件加速不适用于 ARM。|x86、x86_64、arm、arm64|
+|`hw.battery`|电池支持  &ndash; 确定仿真设备是否可以使用电池运行。|yes、no|
+|`hw.camera`|相机支持  &ndash; 确定仿真设备是否具有相机。|yes、no|
+|`hw.camera.back`|后置相机  &ndash; 配置后置相机（镜头背朝用户的面部）。 如果在开发计算机上使用网络摄像头以模拟仿真设备上的后置照相机，必须将此值设置为 webcamn  ，其中 _n_ 选择的是网络摄像头（如果只有一个网络摄像头，则选择 webcam0  ）。 如果设置为“emulated”，仿真器将在软件中模拟照相机。 若要禁用后置照相机，请将此值设置为“none”。 如果启用后置照相机，请确保也要启用 `hw.camera`。|emulated、none、webcam0|
+|`hw.camera.front`|前置相机  &ndash; 配置前置相机（镜头面向用户）。 如果在开发计算机上使用网络摄像头以模拟仿真设备上的前置照相机，必须将此值设置为 webcamn  ，其中 n  选择的是网络摄像头（如果只有一个网络摄像头，则选择 webcam0  ）。 如果设置为“emulated”，仿真器将在软件中模拟照相机。 若要禁用前置照相机，请将此值设置为“none”。 如果启用前置照相机，请确保也要启用 `hw.camera`。|emulated、none、webcam0|
+|`hw.camera.maxHorizontalPixels`|相机的最大水平像素  &ndash; 配置仿真设备相机的最大水平分辨率（以像素为单位）。||
+|`hw.camera.maxVerticalPixels`|相机的最大垂直像素  &ndash; 配置仿真设备相机的最大垂直分辨率（以像素为单位）。||
+|`hw.cpu.arch`|CPU 体系结构  &ndash; 需要由虚拟设备仿真的 CPU 体系结构。 如果使用 Intel HAXM 以进行硬件加速，请为 32 位 CPU 选择 x86  。 为 64 位 HAXM 加速的设备选择 x86_64  。 （请务必在 SDK 管理器中安装相应的 Intel x86 系统映像：例如，Intel x86 Atom 或 Intel x86 Atom_64。）若要模拟 ARM CPU，请为 32 位 ARM CPU 选择 arm  或者为 64 位选择 arm64  。 请记住，基于 ARM 的虚拟设备运行速度要比基于 x86 的那些虚拟设备慢得多，因为硬件加速不适用于 ARM。|x86、x86_64、arm、arm64|
 |`hw.cpu.model`|CPU 型号  &ndash; 通常不会设置此值（如果未显式设置此值，它将被设置为派生自 `hw.cpu.arch` 的一个值）。 但是，可以将它设置为特定于仿真器的字符串以作实验性使用。||
 |`hw.dPad`|DPad 密钥  &ndash; 确定仿真设备是否支持方向键 (DPad) 密钥。 一个 DPad 通常具有四个密钥以指示方向控件。|yes、no|
 |`hw.gps`|GPS 支持  &ndash; 确定仿真设备是否具有 GPS（全球定位系统）接收器。|yes、no|
@@ -41,13 +41,13 @@ ms.locfileid: "70758026"
 |`hw.keyboard.charmap`|键盘字符映射名称  &ndash; 此设备的硬件字符映射的名称。 注意：此应始终为默认值 **qwerty2**，除非相应地修改了系统映像。 此名称会在启动时发送到内核。 使用不正确的名称将导致虚拟设备不可用。||
 |`hw.keyboard.lid`|键盘盖支持  &ndash; 在启用键盘支持的情况下，此设置确定是否可以关闭/隐藏或打开/显示全键盘。 如果“hw.keyboard”设置为“false”，则将忽略此设置。 注意：如果仿真设备面向 API 级别 12 或更高版本，默认值则为“false”。|yes、no|
 |`hw.lcd.backlight`|LCD 背光  &ndash; 确定 LCD 背光是否由仿真设备模拟。|yes、no|
-|`hw.lcd.density`|LCD 密度  &ndash; 仿真 LCD 显示的密度，以与密度无关的像素或 dp（dp 是一个虚拟像素单位）为单位测量。 当设置为 160 dp 时，每个 dp 将对应一个物理像素。 在运行时，Android 使用此值选择和缩放适当的资源/资产以进行正确的显示呈现。|120、160、240、213、320|
-|`hw.lcd.depth`|LCD 颜色深度  &ndash; 保留位图以驱动 LCD 显示的仿真帧缓冲区的颜色位深度。 此值可以为 16 位（65,536 种可能的颜色）或 32 位（16,777,216 种颜色和透明度）。 尽管 32 位设置使仿真器运行较为缓慢，但颜色准确度更高。|16, 32|
-|`hw.lcd.height`|LCD 像素高度  &ndash; 构成仿真 LCD 显示的垂直维度的像素数量。||
-|`hw.lcd.width`|LCD 像素宽度  &ndash; 构成仿真 LCD 显示的水平维度的像素数量。||
+|`hw.lcd.density`|LCD 密度  &ndash; 仿真 LCD 显示屏的密度，以与密度无关的像素或 dp（dp 是一个虚拟像素单位）为单位测量。 当设置为 160 dp 时，每个 dp 将对应一个物理像素。 在运行时，Android 使用此值选择和缩放适当的资源/资产以进行正确的显示呈现。|120、160、240、213、320|
+|`hw.lcd.depth`|LCD 颜色深度  &ndash; 保留位图以驱动 LCD 显示屏的仿真帧缓冲区的颜色位深度。 此值可以为 16 位（65,536 种可能的颜色）或 32 位（16,777,216 种颜色和透明度）。 尽管 32 位设置使仿真器运行较为缓慢，但颜色准确度更高。|16, 32|
+|`hw.lcd.height`|LCD 像素高度  &ndash; 构成仿真 LCD 显示屏的垂直维度的像素数量。||
+|`hw.lcd.width`|LCD 像素宽度  &ndash; 构成仿真 LCD 显示屏的水平维度的像素数量。||
 |`hw.mainKeys`|硬件返回/主页键  &ndash; 确定仿真设备是否支持硬件“返回”和“主页”导航按钮。 如果仅在软件中实现按钮，可以将此值设置为“yes”  。 如果将 `hw.mainKeys` 设置为“yes”  ，仿真器将不会在屏幕上显示导航按钮，但你可以使用仿真器侧面板来“按”这些按钮。|yes、no|
-|`hw.ramSize`|设备 RAM 大小  &ndash; 仿真器上的物理 RAM 量（以 MB 为单位）。 默认值将根据屏幕大小或外观版本来计算。 尽管增加大小可以提供更快的仿真器操作，但这将耗费开发计算机中更多的资源。||
-|`hw.screen`|触控屏类型  &ndash; 定义仿真器上的屏幕类型。 多点触控屏可以在触控界面上跟踪两根或更多的手指。 触控屏仅可以检测单个手指触控事件。 无触控屏不会检测触控事件。|touch、multi-touch、no-touch|
+|`hw.ramSize`|设备 RAM 大小  &ndash; 仿真设备上的物理 RAM 量（以 MB 为单位）。 默认值将根据屏幕大小或外观版本来计算。 尽管增加大小可以提供更快的仿真器操作，但这将耗费开发计算机中更多的资源。||
+|`hw.screen`|触控屏类型  &ndash; 定义仿真设备上的屏幕类型。 多点触控屏可以在触控界面上跟踪两根或更多的手指。 触控屏仅可以检测单个手指触控事件。 无触控屏不会检测触控事件。|touch、multi-touch、no-touch|
 |`hw.sdCard`|SDCard 支持  &ndash; 确定仿真设备是否支持插入和移除虚拟 SD（数字安全）卡。 仿真器使用存储在开发计算机上可装载的磁盘映像来模拟真实 SD 卡设备的分区（请参阅 hw.sdCard.path）。|yes、no|
 |`sdcard.size`|SDCard 大小  &ndash; 指定虚拟 SD 卡文件的大小（以字节为单位），此文件位于由设备上可用的 `hw.sdCard.path` 指定的位置 。 如果此值为整数，它则以字节为单位指定大小。 还可以通过将 K、M 或 G 追加到值中来以 KB、MB 或 GB 为单位指定大小    。 最小大小为 9 M  ；最大为 1023 G  。||
 |`hw.sdCard.path`|SDCard 映像路径  &ndash; 指定开发计算机上 SD 卡分区映像文件的文件名和路径。 例如，可以在 Windows 上将此路径设置为 C:\sd\sdcard.img  。||
@@ -61,7 +61,7 @@ ms.locfileid: "70758026"
 |`kernel.newDeviceNaming`|内核新设备命名  &ndash; 用于指定内核是否需要新的设备命名方案。 这通常与 Linux 3.10 内核和更高版本配合使用。 如果设置为“autodetect”  ，仿真器将自动检测内核是否需要新的设备命名方案。|autodetect、yes、no|
 |`kernel.parameters`|内核参数  &ndash; 指定 Linux 内核启动参数的字符串。 默认情况下，此设置将留空。||
 |`kernel.path`|内核路径  &ndash; 指定 Linux 内核的路径。 如果未指定此路径，仿真器会在仿真器系统目录中查找 kernel-ranchu。||
-|`kernel.supportsYaffs2`|YAFFS2 分区支持 **–** &ndash; 确定内核是否支持 YAFFS2 (Yet Another Flash File System 2) 分区。 通常情况下，这仅适用于 Linux 3.10 之前的内核。 如果设置为“autodetect”  ，仿真器将自动检测内核是否可以装载 YAFFS2 文件系统。|autodetect、yes、no|
+|`kernel.supportsYaffs2`|YAFFS2 分区支持  &ndash; 确定内核是否支持 YAFFS2 (Yet Another Flash File System 2) 分区。 通常情况下，这仅适用于 Linux 3.10 之前的内核。 如果设置为“autodetect”  ，仿真器将自动检测内核是否可以装载 YAFFS2 文件系统。|autodetect、yes、no|
 |`skin.name`|外观名称  &ndash; Android 仿真器外观的名称。 外观是定义仿真显示的视觉对象和控件元素的文件集合，描述了 AVD 的窗口在开发计算机上的外观。 外观描述屏幕大小、按钮和整体设计，但不会影响应用的操作。||
 |`skin.path`|外观路径  &ndash; 包含在 skin.name 中指定的仿真器外观文件的目录的路径。此目录包含 hardware.ini 布局文件以及外观显示元素的映像文件。||
 |`skin.dynamic`|外观动态  &ndash; 外观是否为动态的。 如果仿真器是基于指定的宽度和高度构造给定大小的外观，仿真器外观则为动态外观。|否|
