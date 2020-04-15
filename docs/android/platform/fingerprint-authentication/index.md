@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 4a4b6ee7a123683a9d5a140c46c0b3542767ffa3
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73027514"
 ---
 # <a name="fingerprint-authentication"></a>指纹身份验证
@@ -27,7 +27,7 @@ FingerprintManager API 适用于带指纹扫描仪的设备，FingerprintManager
 [FingerprintManager](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html)（及其 Support Library 所对应的 [FingerprintManagerCompat](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.html)）是使用指纹扫描硬件的主要类。 此类是针对系统级服务（管理与硬件本身的交互）的 Android SDK 包装器。 它负责启动指纹扫描仪并响应扫描程序的反馈。 此类的接口较简单，只包含三个成员：
 
 - `Authenticate` &ndash; 此方法将初始化硬件扫描仪并在后台启动服务，等待用户扫描其指纹  。
-- `EnrolledFingerprints` &ndash; 如果用户在设备中注册了一个或多个指纹，此属性将返回 `true`  。
+- `EnrolledFingerprints` &ndash; 如果用户在设备中注册了一个或多个指纹，此属性将返回 `true` 。
 - `HardwareDetected` &ndash; 此属性用于确定设备是否支持指纹扫描  。
 
 Android 应用程序使用 `FingerprintManager.Authenticate` 方法启动指纹扫描仪。 以下代码片段举例说明如何使用 Support Library 兼容性 API 调用它：

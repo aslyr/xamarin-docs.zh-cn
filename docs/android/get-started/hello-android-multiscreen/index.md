@@ -9,21 +9,21 @@ author: davidortinau
 ms.author: daortin
 ms.date: 12/02/2016
 ms.openlocfilehash: 199b9de670e424bdc21a05966cfdd73c7e2cbb42
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73020911"
 ---
 # <a name="hello-android-multiscreen"></a>了解 Android 多屏幕
 
 _本指南由两部分构成，在本指南中，用户将扩展在《了解 Android》指南中创建的 Phoneword 应用程序，以处理第二个屏幕。在此过程中，本指南将介绍基本 Android 应用程序构建基块，并随着更好地了解 Android 应用程序结构和功能来使用户深入了解 Android 体系结构。_
 
-## <a name="part-1-quickstartandroidget-startedhello-android-multiscreenhello-android-multiscreen-quickstartmd"></a>[第 1 部分：快速入门](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md)
+## <a name="part-1-quickstart"></a>[第 1 部分：快速入门](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md)
 
 在本指南的第一部分，用户将向 Phoneword 应用程序添加第二个屏幕，用于跟踪从应用呼叫的号码的历史记录。 最终的应用将显示第二个屏幕，其中将列出呼叫历史记录。
 
-## <a name="part-2-deep-diveandroidget-startedhello-android-multiscreenhello-android-multiscreen-deepdivemd"></a>[第 2 部分：深入了解](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md)
+## <a name="part-2-deep-dive"></a>[第 2 部分：深入了解](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md)
 
 在本文档的第二部分，用户将回顾已生成的应用，并讨论体系结构、导航以及此过程中遇到的其他 Android 新概念。
 

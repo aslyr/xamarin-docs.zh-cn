@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
 ms.openlocfilehash: 185aebf48b24a6abbdd8f56dbbfc32f6e99f6e63
-ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/30/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75545590"
 ---
 # <a name="the-xamarinforms-command-interface"></a>Xamarin.Forms 命令接口
@@ -758,7 +758,7 @@ public partial class MainPage : ContentPage
 
 构造函数还将页面的 `BindingContext` 设置为其自身，以便绑定在该类中引用 `NavigateCommand`。
 
-此构造函数中代码的顺序会产生一定影响：`InitializeComponent` 调用导致 XAML 得到解析，但此时无法解析与名为 `NavigateCommand` 的属性的绑定，因为 `BindingContext` 设置为 `null`。 如果于设置 `NavigateCommand` 之前在构造函数中设置了 `BindingContext`，则可在设置 `BindingContext` 时解析绑定，但此时 `NavigateCommand` 仍然是 `null`  。 在 `BindingContext` 之后设置 `NavigateCommand` 不会对绑定产生影响，因为更改 `NavigateCommand` 不会触发 `PropertyChanged` 事件，绑定不知道 `NavigateCommand` 现在是有效的。
+此构造函数中代码的顺序会产生一定影响：`InitializeComponent` 调用导致 XAML 得到解析，但此时无法解析与名为 `NavigateCommand` 的属性的绑定，因为 `BindingContext` 设置为 `null`。 如果于设置 `NavigateCommand` 之前在构造函数中设置了 `BindingContext`，则可在设置 `BindingContext` 时解析绑定，但此时 `NavigateCommand` 仍然是 `null` 。 在 `BindingContext` 之后设置 `NavigateCommand` 不会对绑定产生影响，因为更改 `NavigateCommand` 不会触发 `PropertyChanged` 事件，绑定不知道 `NavigateCommand` 现在是有效的。
 
 在调用 `InitializeComponent` 之前设置 `NavigateCommand` 和 `BindingContext`（按照任何顺序）均有效，因为在 XAML 解析器遇到绑定定义时设置了绑定的两个组件。
 

@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 9b9db3e6ae081a02d2b2297e70c216015dceade6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73026548"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Xamarin.iOS 应用的内部分发
@@ -124,11 +124,11 @@ Apple Developer Enterprise Program 证书将持续 3 年，配置文件将在 1 
 
 6. 单击“生成”  按钮，创建新的配置文件并完成该过程。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
  可能需要退出 Visual Studio for Mac，并让 Xcode 刷新可用签名标识和预配配置文件列表（按照[请求签名标识](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)部分中的说明操作），然后 Visual Studio for Mac 中才会有新的分发配置文件。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 可能需要退出 Visual Studio，并让 Xcode（位于生成主机的 Mac 上）刷新可用签名标识和配置文件列表（按照[请求签名标识](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)部分中的说明操作），然后 Visual Studio 中才会有新的分发配置文件可用。
 

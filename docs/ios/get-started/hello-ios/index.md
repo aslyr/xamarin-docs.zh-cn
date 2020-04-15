@@ -9,19 +9,19 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
 ms.openlocfilehash: af0b9b4a73a82afbaef314384b10d6b9465a4b29
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73022817"
 ---
 # <a name="sample-app-hello-ios"></a>示例应用：Hello，iOS
 
-## <a name="part-1-quickstartiosget-startedhello-ioshello-ios-quickstartmd"></a>[第 1 部分：快速入门](~/ios/get-started/hello-ios/hello-ios-quickstart.md)
+## <a name="part-1-quickstart"></a>[第 1 部分：快速入门](~/ios/get-started/hello-ios/hello-ios-quickstart.md)
 
 本指南的第一部分介绍如何创建一个应用程序，它将用户输入的字母数字电话号码转换为数字电话号码，然后呼叫该号码。
 
-## <a name="part-2-deep-diveiosget-startedhello-ioshello-ios-deepdivemd"></a>[第 2 部分：深入了解](~/ios/get-started/hello-ios/hello-ios-deepdive.md)
+## <a name="part-2-deep-dive"></a>[第 2 部分：深入了解](~/ios/get-started/hello-ios/hello-ios-deepdive.md)
 
 本文档的第二部分将回顾所生成的应用程序，并提供对 iOS 应用程序工作原理的基本了解。
 

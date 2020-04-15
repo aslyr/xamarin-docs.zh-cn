@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
 ms.openlocfilehash: 0520439b89458b7f73a025cd8d6b2cf8fc41dac0
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76940639"
 ---
 # <a name="building-abi-specific-apks"></a>构建特定于 ABI 的 APK
@@ -22,24 +22,24 @@ _本文讨论如何构建一个使用 Xamarin.Android 以单个 ABI 为目标的
 
 在某些情况下，应用程序拥有多个 APK 可能更有利 - 每个 APK 都使用相同的密钥存储进行签名，并共享相同的软件包名称，但它是针对特定设备或 Android 配置进行编译的。 这不是推荐的方法 - 拥有一个可以支持多种设备和配置的 APK 是非常简单的。 在某些情况下，创建多个 APK 可能很有用，例如：
 
-- 减小 APK 的大小 - Google Play 对 APK 文件强加了 100MB 大小的限制。 创建特定于设备的 APK 可以减小 APK 的大小，因为你只需为应用程序提供一部分资产和资源。
+-  减小 APK 的大小 - Google Play 对 APK 文件强加了 100MB 大小的限制。 创建特定于设备的 APK 可以减小 APK 的大小，因为你只需为应用程序提供一部分资产和资源。
 
-- 支持不同的 CPU 体系结构 - 如果你的应用程序具有特定 CPU 的共享库，则只能分发该 CPU 的共享库。
+-  支持不同的 CPU 体系结构 - 如果你的应用程序具有特定 CPU 的共享库，则只能分发该 CPU 的共享库。
 
-多个 APK 可能会使分发变得复杂 - 这是 Google Play 解决的问题。 Google Play 将确保根据应用程序的版本代码和 AndroidManifest.XML 中包含的其他元数据将正确的 APK 传递到设备。 有关 Google Play 如何支持应用程序多个 APK 的具体详细信息和限制，请查阅[关于多个 APK 支持的 Google 文档](https://developer.android.com/google/play/publishing/multiple-apks.html)。
+多个 APK 可能会使分发变得复杂 - 这是 Google Play 解决的问题。 Google Play 将确保根据应用程序的版本代码和  AndroidManifest.XML 中包含的其他元数据将正确的 APK 传递到设备。 有关 Google Play 如何支持应用程序多个 APK 的具体详细信息和限制，请查阅[关于多个 APK 支持的 Google 文档](https://developer.android.com/google/play/publishing/multiple-apks.html)。
 
 本指南介绍如何为 Xamarin.Android 应用程序构建多个 APK 的脚本，每个 APK 都针对一个特定的 ABI。 它包含以下主题：
 
-1. 为 APK 创建一个唯一的版本代码。
-1. 创建一个将用于此 APK 的 AndroidManifest.XML 的临时版本。
-1. 使用上一步中的 AndroidManifest.XML 构建应用程序。
+1. 为 APK 创建一个唯一的版本代码  。
+1. 创建一个将用于此 APK 的 AndroidManifest.XML  的临时版本。
+1. 使用上一步中的 AndroidManifest.XML  构建应用程序。
 1. 通过对 APK 进行签名并使用 zipalign 为其优化来准备发布。
 
 本指南最后将演示如何使用 [Rake](https://martinfowler.com/articles/rake.html) 编写这些步骤的脚本。
 
 ### <a name="creating-the-version-code-for-the-apk"></a>为 APK 创建版本代码
 
-Google 为使用七位数版本代码的版本代码推荐了一种特定算法（请参阅[多 APK 支持文档](https://developer.android.com/google/play/publishing/multiple-apks.html)中的“使用版本代码方案”一节）。
+Google 为使用七位数版本代码的版本代码推荐了一种特定算法（请参阅[多 APK 支持文档](https://developer.android.com/google/play/publishing/multiple-apks.html)中的“使用版本代码方案”  一节）。
 通过将此版本代码方案扩展为八位数字，可以将一些 ABI 信息包含在版本代码中，以确保 Google Play 将正确的 APK 分发到设备。 以下列表解释了这个八位数版本代码格式（从左到右编制索引）：
 
 - **索引 0**（下图中的红色）&ndash; ABI 的整数：
@@ -101,7 +101,7 @@ Google Play 确保根据 `versionCode` 和 APK 配置将正确的 APK 发送到�
 
 - `/p:IntermediateOutputPath=obj.<TARGET_ABI>/`&ndash; 这是保存作为版本一部分创建的中间文件的目录。 如果需要，Xamarin.Android 将创建一个以 ABI 命名的目录，例如 `obj.armeabi-v7a`。 建议为每个 ABI 使用一个文件夹，因为这样可以防止在版本之间“泄露”文件导致的问题。 请注意，此值以目录分隔符（在 OS X 的情况下为 `/`）结束。
 
-- `/p:AndroidManifest`&ndash; 此属性指定将在构建期间使用的 AndroidManifest.XML 文件的路径。
+- `/p:AndroidManifest`&ndash; 此属性指定将在构建期间使用的 AndroidManifest.XML  文件的路径。
 
 - `/p:OutputPath=bin.<TARGET_ABI>`&ndash; 这是容纳最终 APK 的目录。 Xamarin.Android 将创建一个以 ABI 命名的目录，例如 `bin.armeabi-v7a`。
 

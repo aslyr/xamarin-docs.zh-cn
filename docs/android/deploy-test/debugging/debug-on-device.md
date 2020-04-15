@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 3ca524e451a7a4eb838805c839b33c4b9dd6bddd
-ms.sourcegitcommit: 5821c9709bf5e06e6126233932f94f9cf3524577
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75556530"
 ---
 # <a name="debug-on-an-android-device"></a>在 Android 设备上调试
@@ -24,7 +24,7 @@ ms.locfileid: "75556530"
 
 设备连接到计算机后，即可采用与其他任何 Xamarin 产品或 .NET 应用程序相同的方式调试 Xamarin.Android 应用程序。 请务必在 IDE 中选择“调试”  配置和外部设备，确保必要的调试符号可用且 IDE 可连接到运行的应用程序： 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![已选中调试配置](debug-on-device-images/image1-vs.png)
 
@@ -36,7 +36,7 @@ ms.locfileid: "75556530"
 
 ![已到达断点](debug-on-device-images/image3-vs.png)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ![已选中调试配置](debug-on-device-images/image1-xs.png)
 

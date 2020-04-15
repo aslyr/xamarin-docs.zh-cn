@@ -6,10 +6,10 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: 5b155e4976a67bda36e66d2ca3565c9237fde3c6
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "68738869"
 ---
 # <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials:文件系统帮助程序
@@ -54,21 +54,21 @@ var mainDir = FileSystem.AppDataDirectory;
 
 ## <a name="platform-implementation-specifics"></a>平台实现细节
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 - **CacheDirectory** - 返回当前上下文的 [CacheDir](https://developer.android.com/reference/android/content/Context.html#getCacheDir)。
 - **AppDataDirectory** - 返回当前上下文的 [FilesDir](https://developer.android.com/reference/android/content/Context.html#getFilesDir)，并且是使用 API 23 及更高版本的[自动备份](https://developer.android.com/guide/topics/data/autobackup.html)进行备份的。
 
 将任何文件添加到 Android 项目中的 Assets 文件夹中，并将生成操作标记为 AndroidAsset 以将其与 `OpenAppPackageFileAsync` 一起使用   。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 - **CacheDirectory** - 返回 [Library/Caches](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) 目录。
 - **AppDataDirectory** - 返回由 iTunes 和 iCloud 备份的 [Library](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) 目录。
 
 将任何文件添加到 iOS 项目中的 Resources 文件夹中，并将生成操作标记为 BundledResource 以将其与 `OpenAppPackageFileAsync` 一起使用   。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 - **CacheDirectory** - 返回 [LocalCacheFolder](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localcachefolder#Windows_Storage_ApplicationData_LocalCacheFolder) 目录。
 - **AppDataDirectory** - 返回备份到云的 [LocalFolder](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder#Windows_Storage_ApplicationData_LocalFolder) 目录。

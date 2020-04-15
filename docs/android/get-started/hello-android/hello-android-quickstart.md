@@ -10,10 +10,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
 ms.openlocfilehash: ab401c24fc486ba69fe01aff76e1a9b7d53122d0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73028035"
 ---
 # <a name="hello-android-quickstart"></a>Hello, Android：快速入门
@@ -92,7 +92,7 @@ ms.locfileid: "73028035"
 
 [![添加大文本小组件](hello-android-quickstart-images/vs/04-large-text-w158-sml.png)](hello-android-quickstart-images/vs/04-large-text-w158.png#lightbox)
 
-在 Design Surface 上选中“文本(大)”控件的情况下，可使用“属性”窗格将“文本(大)”小组件的 `Text` 属性更改为 `Enter a Phoneword:`    ：
+在 Design Surface 上选中“文本(大)”控件的情况下，可使用“属性”窗格将“文本(大)”小组件的 `Text` 属性更改为 `Enter a Phoneword:`   ：
 
 [![设置大文本属性](hello-android-quickstart-images/vs/05-enter-a-phoneword-w158-sml.png)](hello-android-quickstart-images/vs/05-enter-a-phoneword-w158.png#lightbox)
 
@@ -112,11 +112,11 @@ ms.locfileid: "73028035"
 
 [![将“Translate”按钮拖至 Design Surface](hello-android-quickstart-images/vs/08-drag-button-w158-sml.png)](hello-android-quickstart-images/vs/08-drag-button-w158.png#lightbox)
 
-在 Design Surface 上选中“按钮”后，使用“属性”窗格将其 `Text` 属性更改为 `Translate`，将其 `Id` 属性更改为 `@+id/TranslateButton`   ：
+在 Design Surface 上选中“按钮”后，使用“属性”窗格将其 `Text` 属性更改为 `Translate`，将其 `Id` 属性更改为 `@+id/TranslateButton`  ：
 
 [![设置“Translate”按钮属性](hello-android-quickstart-images/vs/09-translate-button-w158-sml.png)](hello-android-quickstart-images/vs/09-translate-button-w158.png#lightbox)
 
-将一个“TextView”从“工具箱”拖动到 Design Surface 上，并将其置于“按钮”小组件下方    。 将“TextView”的 `Text` 属性更改为空字符串，并将其 `Id` 属性设置为 `@+id/TranslatedPhoneword`  ：
+将一个“TextView”从“工具箱”拖动到 Design Surface 上，并将其置于“按钮”小组件下方    。 将“TextView”的 `Text` 属性更改为空字符串，并将其 `Id` 属性设置为 `@+id/TranslatedPhoneword` ：
 
 [![在文本视图上设置属性。](hello-android-quickstart-images/vs/10-textview-properties-w158-sml.png)](hello-android-quickstart-images/vs/10-textview-properties-w158.png#lightbox)
 
@@ -515,7 +515,7 @@ namespace Phoneword
 
 为每个 mipmap- 文件夹重复执行这些步骤，直到 mipmap- Xamarin 应用图标文件夹的内容复制到其在 Phoneword 项目中对应的 mipmap- 文件夹为止     。
 
-在所有图标都复制到 Xamarin.Android 项目中后，在“Solution Pad”中右键单击项目，打开“项目选项”对话框   。 选择“生成”>“Android 应用程序”，然后从“应用程序图标”组合框中选择 `@mipmap/icon`   ：
+在所有图标都复制到 Xamarin.Android 项目中后，在“Solution Pad”中右键单击项目，打开“项目选项”对话框   。 选择“生成”>“Android 应用程序”，然后从“应用程序图标”组合框中选择 `@mipmap/icon`  ：
 
 [![设置项目图标](hello-android-quickstart-images/xs/28-set-project-icon-sml.png)](hello-android-quickstart-images/xs/28-set-project-icon.png#lightbox)
 

@@ -8,18 +8,18 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/13/2020
 ms.openlocfilehash: d5610a37d4700edb9cd2b9d8fb90a7506b66ca68
-ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75955697"
 ---
 # <a name="xamarinforms-templates"></a>Xamarin.Forms 模板
 
-## <a name="control-templatescontrol-templatemd"></a>[控件模板](control-template.md)
+## <a name="control-templates"></a>[控件模板](control-template.md)
 
 Xamarin.Forms 控件模板定义 [`ContentView`](xref:Xamarin.Forms.ContentView) 派生的自定义控件和 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 派生的页面的可视结构。
 
-## <a name="data-templatesdata-templatesindexmd"></a>[数据模板](data-templates/index.md)
+## <a name="data-templates"></a>[数据模板](data-templates/index.md)
 
 Xamarin.Forms 数据模板定义受支持控件上的数据表示形式。

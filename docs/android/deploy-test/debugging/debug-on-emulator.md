@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
 ms.openlocfilehash: 2bc8f82db29ed3c07c67293a83e6874f0cc6acb2
-ms.sourcegitcommit: 5821c9709bf5e06e6126233932f94f9cf3524577
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75556517"
 ---
 # <a name="debug-on-the-android-emulator"></a>在 Android Emulator 上调试
@@ -22,7 +22,7 @@ ms.locfileid: "75556517"
 
 ## <a name="using-a-pre-configured-virtual-device"></a>使用预配置的虚拟设备
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Visual Studio 包含预配置虚拟设备，可以在“设备”下拉菜单中查看。 例如，在下面的 Visual Studio 2017 屏幕截图中，多个预配置虚拟设备都可用：
 
@@ -45,7 +45,7 @@ Visual Studio 包含预配置虚拟设备，可以在“设备”下拉菜单中
 可以单击“更改最低 Android 目标”  ，更改项目的最低 Android 版本，使其与可用虚拟设备的 API 级别一致。 也可以使用 [Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md) 新建支持目标 API 级别的虚拟设备。
 必须先安装新 API 级别对应的系统映像（请参阅[设置用于 Xamarin.Android 的 Android SDK](~/android/get-started/installation/android-sdk.md)），然后才能为虚拟设备配置此 API 级别。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 Visual Studio for Mac 包含预配置虚拟设备，可在“设备”下拉菜单中查看这些设备。 例如，在下面的屏幕截图中，两个预配置虚拟设备都可用：
 
@@ -69,11 +69,11 @@ Visual Studio for Mac 包含预配置虚拟设备，可在“设备”下拉菜�
 
 在 Visual Studio 的顶部附近，有一个可用于选择“调试”或“发布”模式的下拉菜单   。 选择“调试”可在应用启动后将调试器附加到仿真器内运行的应用程序进程  。 选择“发布”模式可禁用调试器（但是，仍可运行应用并使用 LOG 语句进行调试）  。 在设备下拉菜单中选择虚拟设备后，选择“调试”或“发布”模式，然后单击“播放”按钮运行应用程序   ：
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![“调试”和“发布”模式以及“播放”按钮](debug-on-emulator-images/win/17-debug-release-sml.png)](debug-on-emulator-images/win/17-debug-release.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 [![“调试”和“发布”模式以及“播放”按钮](debug-on-emulator-images/mac/16-debug-release-sml.png)](debug-on-emulator-images/mac/16-debug-release.png#lightbox)
 

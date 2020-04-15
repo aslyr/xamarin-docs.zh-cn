@@ -7,15 +7,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/25/2017
 ms.openlocfilehash: c07032d63032eb59cc67712bc2419f74319ea107
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73016512"
 ---
 # <a name="performance-and-security"></a>性能和安全性
 
-## <a name="cross-platform-performancememory-perf-best-practicesmd"></a>[跨平台性能](memory-perf-best-practices.md)
+## <a name="cross-platform-performance"></a>[跨平台性能](memory-perf-best-practices.md)
 
 可通过多种方法提高使用 Xamarin 平台生成的应用程序的性能。 这些方法共同可以极大地降低由 CPU 执行的工作量和应用程序占用的内存量。
 
@@ -23,7 +23,7 @@ ms.locfileid: "73016512"
 - [iOS 性能](~/ios/deploy-test/performance.md?context=xamarin/cross-platform)
 - [Mac 性能](~/mac/deploy-test/performance.md?context=xamarin/cross-platform)
 
-## <a name="transport-layer-security-tlscross-platformapp-fundamentalstransport-layer-securitymd"></a>[传输层安全性 (TLS)](~/cross-platform/app-fundamentals/transport-layer-security.md)
+## <a name="transport-layer-security-tls"></a>[传输层安全性 (TLS)](~/cross-platform/app-fundamentals/transport-layer-security.md)
 
 请确保应用使用推荐的安全设置（如 TLS 1.2）。
 

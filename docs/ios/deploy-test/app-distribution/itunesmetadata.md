@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 63a5ed357a903700ea89d858bcde9798ddf97942
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76724615"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Xamarin.iOS 应用中的 iTunesMetadata.plist 文件
@@ -284,7 +284,7 @@ ms.locfileid: "76724615"
 
 ## <a name="creating-an-itunesmetadataplist-file"></a>创建 iTunesMetadata.plist 文件
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
  在 Visual Studio for Mac 中使用 `iTunesMetadata.plist` 文件时，有两种选择：
 
@@ -336,7 +336,7 @@ ms.locfileid: "76724615"
 6. 在“打开文件”对话框中，选择上面创建的 `iTunesMetadata.plist` 文件，然后单击“确定”  按钮。
 7. 将此文件的“生成操作”  保留设置为“无”  。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 由于面向 Visual Studio 的 Xamarin 插件仅支持 `Info.plist` 和 `Entitlement.plist` 文件的可视化编辑器，因此，需要在标准文本编辑器中创建 `iTunesMetadata.plist` 文件并将其手动包含在 Xamarin.iOS 项目中。
 

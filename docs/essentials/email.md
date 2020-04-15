@@ -6,10 +6,10 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 08/20/2019
 ms.openlocfilehash: cccbe5f539e2807e749433623e938438e67965e8
-ms.sourcegitcommit: 9a46ee759ec4a738da348e8f8904d0f482ef0f25
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70060092"
 ---
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials:电子邮件
@@ -86,15 +86,15 @@ await Email.ComposeAsync(message);
 
 ## <a name="platform-differences"></a>平台差异
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 并非所有适用于 Android 的电子邮件客户端都支持 `Html`，因为无法检测此差异，因此我们建议使用 `PlainText` 发送电子邮件。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 无平台差异。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 仅支持 `PlainText`，因为尝试发送 `Html` 的 `BodyFormat` 将引发 `FeatureNotSupportedException`。
 

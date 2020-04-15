@@ -1,10 +1,10 @@
 ---
 ms.topic: include
 ms.openlocfilehash: fedf918a2217a5fd1d5863ee5926057317fd3294
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70206213"
 ---
 Xamarin 可安装为新  Visual Studio 2017 安装的一部分，具体通过以下步骤操作：

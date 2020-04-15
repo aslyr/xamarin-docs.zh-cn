@@ -6,10 +6,10 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: 5a496fc06732be1cf104cfbaffa8ff4b68c8f564
-ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "69976428"
 ---
 # <a name="xamarinessentials-barometer"></a>Xamarin.Essentials:气压计
@@ -75,17 +75,17 @@ public class BarometerTest
 
 ## <a name="platform-implementation-specifics"></a>平台实现细节
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 无特定于平台的实现细节。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 此 API 使用 [CMAltimeter](https://developer.apple.com/documentation/coremotion/cmaltimeter#//apple_ref/occ/cl/CMAltimeter) 监视压力变化，这是已添加到 iPhone 6 及更高版本设备的硬件功能。 不支持高度计的设备将引发 `FeatureNotSupportedException`。
 
 不使用 `SensorSpeed`，因为它在 iOS 上不受支持。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 无特定于平台的实现细节。
 

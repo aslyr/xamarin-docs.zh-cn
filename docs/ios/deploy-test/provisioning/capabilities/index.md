@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/06/2018
 ms.openlocfilehash: 6250dfa24361601c2b9929d80fec3cc7a18cab2d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73028565"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>使用 Xamarin.iOS 中的功能
@@ -72,7 +72,7 @@ Apple 向开发人员提供了一些功能  ，这些功能通常称为应用服
 
 ## <a name="using-the-ide"></a>使用 IDE
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 功能添加到 Visual Studio for Mac 中的“Entitlements.plist”  。 若要添加功能，请使用以下步骤：
 
@@ -92,7 +92,7 @@ Apple 向开发人员提供了一些功能  ，这些功能通常称为应用服
 
     ![将功能添加到 entitlements.plist 文件](images/image18.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 功能随即添加到“Entitlements.plist”  。 若要在 Visual Studio 2019 中添加功能，请使用以下步骤：
 

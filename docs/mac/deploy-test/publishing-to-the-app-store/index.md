@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
 ms.openlocfilehash: 1a14bcc15299360a17b4c9e7a363b6d6e6f2e69a
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76725020"
 ---
 # <a name="publishing-xamarinmac-apps-to-the-mac-app-store"></a>将 Xamarin.Mac 应用发布到 Mac App Store
@@ -36,27 +36,27 @@ ms.locfileid: "76725020"
 > [!NOTE]
 > 此处所作的选择会影响到在配置开发人员帐户时一些屏幕出现的方式。 本文档中的说明和屏幕截图适用于**个人**开发人员帐户。 在**公司**开发人员帐户中，部分选项仅**团队管理员**用户可用。
 
-### <a name="certificates-and-identifiersmacdeploy-testpublishing-to-the-app-storecertificates-identifiersmd"></a>[证书和标识符](~/mac/deploy-test/publishing-to-the-app-store/certificates-identifiers.md)
+### <a name="certificates-and-identifiers"></a>[证书和标识符](~/mac/deploy-test/publishing-to-the-app-store/certificates-identifiers.md)
 
 本指南介绍如何创建发布 Xamarin.Mac 应用时所需的证书和标识符。
 
-### <a name="create-provisioning-profilemacdeploy-testpublishing-to-the-app-storeprofilesmd"></a>[创建配置文件](~/mac/deploy-test/publishing-to-the-app-store/profiles.md)
+### <a name="create-provisioning-profile"></a>[创建配置文件](~/mac/deploy-test/publishing-to-the-app-store/profiles.md)
 
 本指南介绍如何创建发布 Xamarin.Mac 应用所需的设置配置文件。
 
-### <a name="mac-app-configurationmacdeploy-testpublishing-to-the-app-storeapp-configurationmd"></a>[Mac 应用配置](~/mac/deploy-test/publishing-to-the-app-store/app-configuration.md)
+### <a name="mac-app-configuration"></a>[Mac 应用配置](~/mac/deploy-test/publishing-to-the-app-store/app-configuration.md)
 
 本指南介绍配置要发布的 Xamarin.Mac 应用。
 
-### <a name="sign-with-developer-idmacdeploy-testpublishing-to-the-app-storesigningmd"></a>[使用开发人员 ID 签名](~/mac/deploy-test/publishing-to-the-app-store/signing.md)
+### <a name="sign-with-developer-id"></a>[使用开发人员 ID 签名](~/mac/deploy-test/publishing-to-the-app-store/signing.md)
 
 本指南介绍使用开发人员 ID 对 Xamarin.Mac 应用进行签名，以便进行发布。
 
-### <a name="bundle-for-mac-app-storemacdeploy-testpublishing-to-the-app-storebundlingmd"></a>[Mac App Store 捆绑](~/mac/deploy-test/publishing-to-the-app-store/bundling.md)
+### <a name="bundle-for-mac-app-store"></a>[Mac App Store 捆绑](~/mac/deploy-test/publishing-to-the-app-store/bundling.md)
 
 本指南介绍将要发布的 Xamarin.Mac 应用捆绑到 Mac App Store。
 
-### <a name="upload-to-mac-app-storemacdeploy-testpublishing-to-the-app-storeuploadingmd"></a>[上传到 Mac App Store](~/mac/deploy-test/publishing-to-the-app-store/uploading.md)
+### <a name="upload-to-mac-app-store"></a>[上传到 Mac App Store](~/mac/deploy-test/publishing-to-the-app-store/uploading.md)
 
 本指南介绍将要发布的 Xamarin.Mac 应用上传到 Mac App Store。
 

@@ -9,10 +9,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2018
 ms.openlocfilehash: b601fc37cc75dcd43c3688de8d302f0a47a06b35
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73027418"
 ---
 # <a name="implementing-fragments---walkthrough"></a>实现片段 - 演练
@@ -42,7 +42,7 @@ ms.locfileid: "73027418"
 本演练分为两个指南。 [第一部分](./walkthrough.md)侧重于应用程序的核心部分。 将创建一组布局（为纵向模式进行了优化），以及两个片段和两个活动：
 
 1. `MainActivity` &nbsp; 这是应用的启动活动。
-1. `TitlesFragment` &nbsp; 此片段会显示威廉·莎士比亚所写戏剧的标题列表。 它会由 `MainActivity` 进行承载。
+1. `TitlesFragment` &nbsp; 此片段会显示威廉·莎士比亚所写戏剧的标题列表。 它会由 `MainActivity` 托管。
 1. `PlayQuoteActivity` &nbsp; `TitlesFragment` 会启动 `PlayQuoteActivity` 以响应用户在 `TitlesFragment` 中选择戏剧。
 1. `PlayQuoteFragment` &nbsp; 此片段会显示威廉·莎士比亚戏剧中的引言。 它会由 `PlayQuoteActivity` 进行承载。
 

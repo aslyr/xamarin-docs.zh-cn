@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/30/2018
 ms.openlocfilehash: 729dede97a9b153738ca72af499d4d1e9d77fae0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021444"
 ---
 # <a name="linking-on-android"></a>在 Android 上链接
@@ -19,7 +19,7 @@ Xamarin.Android 应用程序使用链接器  缩减应用程序大小。 链接�
 
 例如，[Hello，Android](https://docs.microsoft.com/samples/xamarin/monodroid-samples/hellom4a) 示例：
 
-|配置|1.2.0 大小|4.0.1 大小|
+|Configuration|1.2.0 大小|4.0.1 大小|
 |---|---|---|
 |在不链接的情况下进行发布：|14.0 MB|16.0 MB|
 |在链接的情况下进行发布：|4.2 MB|2.9 MB|
@@ -85,7 +85,7 @@ E/mono    (17755):   at (wrapper dynamic-method) object:95bb4fbe-bef8-4e5b-8e99-
 
 ### <a name="preserving-code"></a>保留代码
 
-链接器有时会删除你想要保留的代码。 例如:
+链接器有时会删除你想要保留的代码。 例如：
 
 - 你可能拥有通过 `System.Reflection.MemberInfo.Invoke` 动态调用的代码。
 

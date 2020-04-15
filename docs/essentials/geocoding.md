@@ -7,10 +7,10 @@ ms.author: jamont
 ms.date: 05/28/2019
 ms.custom: video
 ms.openlocfilehash: 157eb3116f09268790036f8983543114e7a58276
-ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "66354111"
 ---
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials:地理编码
@@ -23,15 +23,15 @@ Geocoding 类提供了 API，既可以将地标地理编码为位置坐标，又
 
 若要访问 Geocoding 功能，需要以下特定于平台的设置  。
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 无需其他设置。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 无需其他设置。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 需要必应地图 API 密钥才能使用地理编码功能。 注册免费的[必应地图](https://www.bingmapsportal.com/)帐户。 在“我的帐户”>“我的密钥”下创建一个新密钥，并根据你的应用程序类型（对于 UWP 应用，应该是公共 Windows 应用（UWP、8.x 及更早版本））填写信息   。
 

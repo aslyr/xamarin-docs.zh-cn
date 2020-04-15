@@ -9,10 +9,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/16/2019
 ms.openlocfilehash: b335533bfddf78e5fe2770356d29e27dbdccd0f2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73022770"
 ---
 # <a name="get-started-with-xamarinios"></a>Xamarin.iOS 入门
@@ -36,19 +36,19 @@ Xcode 的最新版可通过 [iOS 开发人员中心](https://developer.apple.com
 
 ## <a name="getting-started-series"></a>入门系列
 
-### <a name="setup-and-installationiosget-startedinstallationindexmd"></a>[设置和安装](~/ios/get-started/installation/index.md)
+### <a name="setup-and-installation"></a>[设置和安装](~/ios/get-started/installation/index.md)
 
 在 Visual Studio for Mac 或 Visual Studio 中设置并运行 Xamarin.iOS。 本部分介绍如何下载、使用 Xamarin 安装程序进行安装、使用 Microsoft 帐户进行登录、常见故障排除项、设备预配等内容。
 
-### <a name="hello-iosiosget-startedhello-iosindexmd"></a>[Hello，iOS](~/ios/get-started/hello-ios/index.md)
+### <a name="hello-ios"></a>[Hello，iOS](~/ios/get-started/hello-ios/index.md)
 
 本指南由两部分构成，将介绍如何使用 Visual Studio for Mac 或 Visual Studio 生成第一个 Xamarin.iOS 应用程序，并介绍使用 Xamarin 进行 iOS 应用程序开发的基础知识。 本指南还将介绍生成和部署 Xamarin.iOS 应用程序所需的工具、概念和步骤。
 
-### <a name="hello-ios-multiscreeniosget-startedhello-ios-multiscreenindexmd"></a>[了解 iOS 多屏显示](~/ios/get-started/hello-ios-multiscreen/index.md)
+### <a name="hello-ios-multiscreen"></a>[了解 iOS 多屏显示](~/ios/get-started/hello-ios-multiscreen/index.md)
 
 本指南由两部分构成，将探索如何扩展在《了解 iOS》指南中创建的应用程序，以处理第二个屏幕。 它介绍了“模型-视图-控制器”设计模式等概念，介绍了如何实现 iOS 导航，并更深入地介绍了 iOS 应用程序结构和功能。
 
-## <a name="xamarin-for-objective-c-developersobjective-c-developersindexmd"></a>[面向 Objective-C 开发人员的 Xamarin](objective-c-developers/index.md)
+## <a name="xamarin-for-objective-c-developers"></a>[面向 Objective-C 开发人员的 Xamarin](objective-c-developers/index.md)
 
 为 Objective-C 开发人员提供过渡到 Xamarin 平台的信息。
 

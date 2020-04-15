@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2018
 ms.openlocfilehash: 3bf1ab647faa4b6c4735585ddfeaeb704d7d3f41
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "79303761"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms 绑定模式
@@ -284,7 +284,7 @@ public class HslColorViewModel : INotifyPropertyChanged
 
 如果目标属性的默认绑定模式不适合特定的数据绑定，则可以通过将 `Binding` 的 [`Mode`](xref:Xamarin.Forms.BindingBase.Mode) 属性（或 `Binding` 标记扩展的 [`Mode`](xref:Xamarin.Forms.Xaml.BindingExtension.Mode) 属性）设置为 `BindingMode` 枚举的其中一个成员来替代它。
 
-但是，将 `Mode` 属性设置为 `TwoWay` 并不总是像你预期的那样有效。 例如，尝试修改“替代 XAML 绑定”XAML 文件，以在绑定定义中包含 `TwoWay`  ：
+但是，将 `Mode` 属性设置为 `TwoWay` 并不总是像你预期的那样有效。 例如，尝试修改“替代 XAML 绑定”XAML 文件，以在绑定定义中包含 `TwoWay` ：
 
 ```xaml
 <Label Text="TEXT"
@@ -298,7 +298,7 @@ public class HslColorViewModel : INotifyPropertyChanged
 
 这预计会将 `Slider` 初始化为 `Scale` 属性的初始值（即 1），但情况并不是这样。 初始化 `TwoWay` 绑定时，首先从源设置目标，这意味着会将 `Scale` 属性设置为 `Slider` 默认值 0。 对 `Slider` 设置 `TwoWay` 绑定时，最初会从源设置 `Slider`。
 
-可以在“替代 XAML 绑定”示例中将绑定模式设置为 `OneWayToSource`  ：
+可以在“替代 XAML 绑定”示例中将绑定模式设置为 `OneWayToSource` ：
 
 ```xaml
 <Label Text="TEXT"

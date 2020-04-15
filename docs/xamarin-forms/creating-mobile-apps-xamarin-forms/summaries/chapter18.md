@@ -1,6 +1,6 @@
 ---
-title: “第 18 章： MVVM”摘要
-description: 使用 Xamarin.Forms 创建移动应用：“第 18 章： MVVM”摘要
+title: “第 18 章： MVVM
+description: 使用 Xamarin.Forms 创建移动应用：“第 18 章： MVVM
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 6A774510-7709-4F60-8EF5-29D478176F8F
@@ -8,13 +8,13 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
 ms.openlocfilehash: 32c16409f30d6b6d502b7cc074eafb182898594a
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771073"
 ---
-# <a name="summary-of-chapter-18-mvvm"></a>“第 18 章： MVVM”摘要
+# <a name="summary-of-chapter-18-mvvm"></a>“第 18 章： MVVM
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
 

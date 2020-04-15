@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
 ms.openlocfilehash: cf5a97bca7c827101db951a440863839539c7e48
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76725255"
 ---
 # <a name="invoking-events-from-effects"></a>从效果调用事件
@@ -748,11 +748,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ### <a name="tracking-view-to-view-touch"></a>跟踪视图对视图触摸
 
-在创建 `TouchEffect` 或发生 `Pressed` 事件时，前面所有的示例都将 `TouchEffect` 的 `Capture` 属性设置为 `true`。 这可确保同一元素接收所有和首次按下视图的手指相关联的事件。 最后一个示例未将 `Capture` 设置为 `true`  。 当接触屏幕的手指从一个元素移动到另一个时，这将导致不同的行为。 手指移动的元素接收 `Type` 属性设置为 `TouchActionType.Exited` 的事件，第二个元素接收 `Type` 设置为 `TouchActionType.Entered` 的事件。
+在创建 `TouchEffect` 或发生 `Pressed` 事件时，前面所有的示例都将 `TouchEffect` 的 `Capture` 属性设置为 `true`。 这可确保同一元素接收所有和首次按下视图的手指相关联的事件。 最后一个示例未将 `Capture` 设置为 `true` 。 当接触屏幕的手指从一个元素移动到另一个时，这将导致不同的行为。 手指移动的元素接收 `Type` 属性设置为 `TouchActionType.Exited` 的事件，第二个元素接收 `Type` 设置为 `TouchActionType.Entered` 的事件。
 
 此类型的触摸处理对于音乐键盘非常有用。 键应该能够检测到按下的时间，以及当手指从一个键滑动到另一个键的时间。
 
-无提示键盘页定义派生自 [`Key`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/Key.cs) 的小 [`WhiteKey`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/WhiteKey.cs) 和 [`BlackKey`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/BlackKey.cs) 类，它派生自 `BoxView`  。
+无提示键盘页定义派生自 [`Key`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/Key.cs) 的小 [`WhiteKey`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/WhiteKey.cs) 和 [`BlackKey`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/BlackKey.cs) 类，它派生自 `BoxView` 。
 
 `Key` 类已准备好在实际音乐程序中使用。 它定义了名为 `IsPressed` 和 `KeyNumber` 的公共属性，旨在将其设置为由 MIDI 标准建立的密钥代码。 `Key` 还定义了名为 `StatusChanged` 的事件，该事件将在 `IsPressed` 属性更改时调用。
 

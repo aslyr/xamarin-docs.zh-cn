@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
 ms.openlocfilehash: 0fa717a775ff2f1ace9e248a8afde8d373e8a1f8
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76724342"
 ---
 # <a name="working-with-jni-and-xamarinandroid"></a>使用 JNI 和 Xamarin.Android
@@ -531,7 +531,7 @@ partial class ManagedAdder : Adder {
 
 1. 方法的 JNI 类型签名，在本例中为 `"(II)I"`。
 
-1. 连接器方法，在本例中为 `GetAddHandler`  。
+1. 连接器方法，在本例中为 `GetAddHandler` 。
     稍后将介绍连接器方法。
 
 前两个参数允许 ACW 生成过程生成方法声明来替代方法。 生成的 ACW 将包含以下一些代码：

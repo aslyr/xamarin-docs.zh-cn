@@ -1,6 +1,6 @@
 ---
-title: “第 26 章： 自定义布局”摘要
-description: 使用 Xamarin.Forms 创建移动应用：“第 26 章： 自定义布局”摘要
+title: “第 26 章： 自定义布局
+description: 使用 Xamarin.Forms 创建移动应用：“第 26 章： 自定义布局
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 2B7F4346-414E-49FF-97FB-B85E92D98A21
@@ -8,13 +8,13 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
 ms.openlocfilehash: 1eb5153f8ab295696e373f4fdb65a4f8820a05bc
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70770940"
 ---
-# <a name="summary-of-chapter-26-custom-layouts"></a>“第 26 章： 自定义布局”摘要
+# <a name="summary-of-chapter-26-custom-layouts"></a>“第 26 章： 自定义布局
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26)
 

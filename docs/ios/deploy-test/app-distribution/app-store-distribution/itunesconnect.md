@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: aefd649fe1859306e5499addc1c08f4e42b2b424
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73026684"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>在 iTunes Connect 中配置应用
@@ -136,7 +136,7 @@ Apple 建议在选择应用程序名称时遵照以下准则：
 - 确保名称符合应用程序的功能。
 - 在适当情况下，为外国市场提供本地化名称。
 
-### <a name="description"></a>说明
+### <a name="description"></a>描述
 
 应用程序及其功能的说明应简洁明了且信息丰富。 前几行最重要，这关系到用户的第一印象，以及是否能吸引用户。 描述应用程序的特点和相较于类似应用的优势。
 
@@ -348,7 +348,7 @@ Apple 允许提供应用程序的版权信息，并要求提供发布应用程�
 
 ## <a name="viewing-application-reviews"></a>查看应用程序评论
 
-应用程序发布到 App Store 之后，购买或免费下载应用程序的用户可撰写应用的评论，并评定星级。 使用此部分查看这些评论。 例如:
+应用程序发布到 App Store 之后，购买或免费下载应用程序的用户可撰写应用的评论，并评定星级。 使用此部分查看这些评论。 例如：
 
 [![](itunesconnect-images/reviews01.png "Viewing Application Reviews")](itunesconnect-images/reviews01.png#lightbox)
 

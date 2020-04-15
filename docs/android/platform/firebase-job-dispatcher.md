@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2018
 ms.openlocfilehash: 280fe11f935db0a364f3342b22bb9544cdda1e6d
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73020236"
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase 作业调度程序
@@ -20,20 +20,20 @@ ms.locfileid: "73020236"
 
 ## <a name="overview"></a>概述
 
-保持 Android 应用程序对用户响应的最佳方法之一是，确保在后台执行复杂或长期运行的工作。 但后台工作不能对用户使用设备的体验产生负面影响，这一点很重要。 
+让 Android 应用程序持续响应用户的最佳方法之一是，确保在后台执行复杂或长期工作。 然而，重要的是，后台工作不会对用户使用设备的体验产生负面影响。 
 
-例如，后台作业可能每三分钟或四分钟轮询一次网站，以查询对特定数据集的更改。 这似乎是良性循环，但会对电池寿命产生灾难性的影响。 应用程序将反复唤醒设备，将 CPU 提升到较高的电源状态，启动无线电，发出网络请求，然后处理结果。 由于设备不会立即断电并返回到低功耗空闲状态，因此情况变得更糟。 安排不当的后台工作可能会无意间使设备处于一种不必要的过度电源需求状态。 这种看似合理的活动（轮询网站）将使设备在相对较短的时间内无法使用。
+例如，后台作业可能每三到四分钟轮询一个网站，以查询对特定数据集的更改。 这似乎是良性的，但它会对电池使用时间产生灾难性影响。 应用程序将反复唤醒设备，将 CPU 提升到更高的功率状态，启动无线电，发出网络请求，然后处理结果。 由于设备不会立即断电，也不会回到低功耗空闲状态，因此情况变得更糟。 安排不当的后台工作可能会无意中让设备处于一种不必要的过度电源需求状态。 这种看似无害的活动（轮询网站）会导致设备在相对较短的时间内无法使用。
 
-Android 提供了以下 API 来帮助在后台执行工作，但它们本身不足以进行智能作业调度。 
+Android 提供了以下 API 来帮助在后台执行工作，但它们本身并不足以进行智能地计划作业。 
 
-- **[意向服务](~/android/app-fundamentals/services/creating-a-service/intent-services.md)** &ndash; 意向服务非常适合用于执行工作，不过，它们无法计划工作。
-- **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager.html)** &ndash; 这些 API 只允许计划工作，但不能实际执行工作。 此外，AlarmManager 只允许基于时间的约束，这说明在特定时间或经过一段时间后发出警报。 
+- **[意向服务](~/android/app-fundamentals/services/creating-a-service/intent-services.md)** &ndash; 意向服务非常适合执行工作，但无法计划工作。
+- **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager.html)** &ndash; 这些 API 只能计划工作，而无法实际执行工作。 此外，AlarmManager 只允许基于时间的约束，这说明在特定时间或经过一段时间后发出警报。 
 - **[JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html)** &ndash; JobSchedule 是一个很棒的 API，可与操作系统配合使用以计划作业。 不过，它只适用于目标 API 级别为 21 或更高级别的 Android 应用。 
 - **[广播接收器](~/android/app-fundamentals/broadcast-receivers.md)** &ndash; Android 应用可以设置广播接收方，以便在响应系统范围内的事件或意向时执行工作。 但是，广播接收方不对作业运行时间进行任何控制。 同时，Android 操作系统中的更改将限制广播接收方的工作时间或它们可以响应的工作类型。 
 
-可以使用两个关键功能有效地执行后台工作（有时称为“后台作业”或“作业”）   ：
+高效执行后台工作（有时亦称为“后台作业”  或“作业”  ）的关键功能有两个：
 
-1. **通过智能方式计划工作** &ndash; 需要重点关注应用程序何时在后台以良好的状态执行工作。 理想情况下，应用程序不能要求运行某个作业。 而是应指定作业可以运行之前必须满足的条件，然后计划在满足条件时要运行的工作。 这样的话，Android 就能智能地执行工作。 例如，可以批量处理网络请求以同时全部运行，从而最大程度地利用与网络相关的开销。
+1. **智能计划工作** &ndash; 重要的是，应用程序在后台以良好的状态执行工作。 理想情况下，应用程序不能要求运行某个作业。 而是应指定作业可以运行之前必须满足的条件，然后计划在满足条件时要运行的工作。 这样的话，Android 就能智能地执行工作。 例如，可以批量处理网络请求以同时全部运行，从而最大程度地利用与网络相关的开销。
 2. **封装工作** &ndash; 应将用于执行后台工作的代码封装在一个独立的组件中，该组件可以独立于用户接口运行，并且如果由于某种原因而无法完成工作，重新计划起来也相对容易。
 
 Firebase 作业调度程序是 Google 提供的一个库，它提供的 Fluent API 可以简化后台工作计划流程。 它旨在取代 Google Cloud Manager。 Firebase 作业调度程序包含以下 API：

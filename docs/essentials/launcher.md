@@ -6,10 +6,10 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 08/20/2019
 ms.openlocfilehash: 88c1450d28b4c94fe8079b8915503cf5de118644
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75488512"
 ---
 # <a name="xamarinessentials-launcher"></a>Xamarin.Essentials:启动器
@@ -56,11 +56,11 @@ public class LauncherTest
 
 ### <a name="additional-platform-setup"></a>其他平台设置
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 无其他设置。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 在 iOS 9 及更高版本中，Apple 强制实施应用程序可以对其进行查询的方案。 若要指定想要使用的方案，必须在 `Info.plist` 文件中指定 `LSApplicationQueriesSchemes`。
 
@@ -72,7 +72,7 @@ public class LauncherTest
 </array>
 ```
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 无其他设置。
 
@@ -97,11 +97,11 @@ await Launcher.OpenAsync(new OpenFileRequest
 
 ## <a name="platform-differences"></a>平台差异
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 立即完成从 `CanOpenAsync` 返回的任务。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 如果之前从未通过应用程序中的 `OpenAsync` 打开此设备上的目标应用程序，iOS 将提示一次用户允许你的应用将其打开。
 
@@ -109,7 +109,7 @@ await Launcher.OpenAsync(new OpenFileRequest
 
 [此处](xref:UIKit.UIApplication.CanOpenUrl*)提供了有关 iOS 实现的详细信息
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 无平台差异。
 

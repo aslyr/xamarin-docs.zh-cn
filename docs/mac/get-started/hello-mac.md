@@ -9,10 +9,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 09/02/2018
 ms.openlocfilehash: b56275ef903aa7def239a2e19980f52d83e6194f
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75489734"
 ---
 # <a name="hello-mac-walkthrough"></a>Hello, Mac – 演练
@@ -515,7 +515,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-请使用 `ViewDidLoad`，不要使用 `Initialize` 等其他方法，因为 OS 从 .storyboard 加载和实例化用户界面后会调用 `ViewDidLoad`   。 如果开发人员在 .storyboard 文件完全加载和实例化之前尝试访问标签控件，则会出现 `NullReferenceException` 错误，因为此时标签控件尚不存在  。
+请使用 `ViewDidLoad`，不要使用 `Initialize` 等其他方法，因为 OS 从 .storyboard 加载和实例化用户界面后会调用 `ViewDidLoad`  。 如果开发人员在 .storyboard 文件完全加载和实例化之前尝试访问标签控件，则会出现 `NullReferenceException` 错误，因为此时标签控件尚不存在  。
 
 下一步，添加代码以对用户点击按钮作出响应。 将下面的分部方法添加到 `ViewController` 类：
 

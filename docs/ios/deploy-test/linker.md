@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
 ms.openlocfilehash: 284705973f9c0ec606572170f7e927ed4745ddd1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73030223"
 ---
 # <a name="linking-xamarinios-apps"></a>链接 Xamarin.iOS 应用
@@ -26,13 +26,13 @@ ms.locfileid: "73030223"
 
 ## <a name="linker-behavior"></a>链接器行为
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 可以通过“项目选项”  中的链接器行为下拉菜单自定义链接过程。 若要访问此下拉菜单，请双击 iOS 项目，并浏览至“iOS 生成”>“链接器选项”  ，如下所示：
 
 [![](linker-images/image1.png "Linker Options")](linker-images/image1.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 可以通过 Visual Studio 中“项目属性”  中的链接器行为下拉菜单自定义链接过程。
 

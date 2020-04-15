@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
 ms.openlocfilehash: 42ad56a7ae34bcef638ed25bea267dcabd21e20c
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "77131092"
 ---
 # <a name="create-xamarinforms-behaviors"></a>创建 Xamarin.Forms 行为
@@ -164,7 +164,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 
 `NumericValidationBehavior` 类包含带有 `static` getter 和 setter 且名为 `AttachBehavior` 的附加属性，该属性控制将附加行为的控件添加和删除行为。 该附加属性注册属性值更改时执行的 `OnAttachBehaviorChanged` 方法。 该方法根据 `AttachBehavior` 附加属性的值向控件添加或移除行为。
 
-下面的代码示例显示使用 `AttachBehavior` 附加属性的 `NumericValidationBehavior` 的显式样式，该样式可应用于 [`Entry`](xref:Xamarin.Forms.Entry) 控件：
+下面的代码示例显示使用 `AttachBehavior` 附加属性的 `NumericValidationBehavior` 的显式样式，该样式可应用于 [`Entry`](xref:Xamarin.Forms.Entry) 控件  ：
 
 ```xaml
 <Style x:Key="NumericValidationStyle" TargetType="Entry">

@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: af90c286d2bb960a9f78547dd15c3d98a69529ae
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75487823"
 ---
 # <a name="app-linking-in-android"></a>Android 中的应用链接
@@ -55,12 +55,12 @@ Android 6.0 使用自动链接处理改进了这一点。 Android 可以自动�
 
 需要配置意向筛选器，用于将一个 URI （或者可能是一组 URI）从网站映射到 Android 应用程序中的活动。 在 Xamarin.Android 中，通过使用 [IntentFilterAttribute](xref:Android.App.IntentFilterAttribute) 修饰活动来建立此关系。 意向筛选器必须声明以下信息：
 
-- `Intent.ActionView`  &ndash; 这会注册意向筛选器以响应请求来查看信息
-- `Categories`  &ndash;  意向筛选器应注册 [Intent.CategoryBrowsable](xref:Android.Content.Intent.CategoryBrowsable)  和 [Intent.CategoryDefault](xref:Android.Content.Intent.CategoryDefault)  ，以便正确处理 Web URI。
-- `DataScheme`  &ndash; 意向筛选器必须声明 `http` 和/或 `https`。 这是唯一有效的两个方案。
-- `DataHost`  &ndash; 这是 URI 源自的域。
-- `DataPathPrefix`  &ndash; 这是网站上的资源的可选路径。
-- `AutoVerify`  &ndash; `autoVerify` 属性指示 Android 验证应用程序与网站之间的关系。 下面会对此进行更详细的讨论。
+- `Intent.ActionView` &ndash; 这会注册意向筛选器以响应请求来查看信息
+- `Categories` &ndash;  意向筛选器应注册 [Intent.CategoryBrowsable](xref:Android.Content.Intent.CategoryBrowsable)  和 [Intent.CategoryDefault](xref:Android.Content.Intent.CategoryDefault)  ，以便正确处理 Web URI。
+- `DataScheme` &ndash; 意向筛选器必须声明 `http` 和/或 `https`。 这是唯一有效的两个方案。
+- `DataHost` &ndash; 这是 URI 源自的域。
+- `DataPathPrefix` &ndash; 这是网站上的资源的可选路径。
+- `AutoVerify` &ndash; `autoVerify` 属性指示 Android 验证应用程序与网站之间的关系。 下面会对此进行更详细的讨论。
 
 下面的示例演示如何使用 [IntentFilterAttribute](xref:Android.App.IntentFilterAttribute) 处理来自 `https://www.recipe-app.com/recipes` 和 `http://www.recipe-app.com/recipes` 的链接：
 
@@ -173,9 +173,9 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
     $ adb shell dumpsys package domain-preferred-apps
     ```
 
-    - `Package`  &ndash; 应用程序的包名称。
-    - `Domain`  &ndash; 将由应用程序处理其 Web 链接的域（由空格分隔）
-    - `Status`  &ndash; 这是应用的当前链接处理状态。 值为 always  表示应用程序声明了 `android:autoVerify=true` 并且已通过系统验证。 它后面是一个十六进制数字，表示 Android 系统的首选项记录。
+    - `Package` &ndash; 应用程序的包名称。
+    - `Domain` &ndash; 将由应用程序处理其 Web 链接的域（由空格分隔）
+    - `Status` &ndash; 这是应用的当前链接处理状态。 值为 always  表示应用程序声明了 `android:autoVerify=true` 并且已通过系统验证。 它后面是一个十六进制数字，表示 Android 系统的首选项记录。
 
     例如：
 

@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 58fbe6d688ffb506db4316ee29d79a364f849a97
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73030425"
 ---
 # <a name="ipa-support-in-xamarinios"></a>Xamarin.iOS 中的 IPA 支持
@@ -54,7 +54,7 @@ ms.locfileid: "73030425"
 
 ## <a name="creating-an-ipa"></a>创建 IPA
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 创建 IPA 现已内置于新的发布工作流。 为此，请按照下面的指示存档应用、对其签名并保存 IPA。
 
@@ -133,7 +133,7 @@ ms.locfileid: "73030425"
     /Library/Frameworks/Mono.framework/Commands/msbuild YourSolution.sln /p:Configuration=Ad-Hoc /p:Platform=iPhone /p:BuildIpa=true
     ```
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 在创建并选择了预配配置文件、创建了可选的 iTunesMetadata.plist  文件，以及在 Visual Studio 中设置了 iTunes Artwork 后，便可以生成 IPA 以供分发。 接下来，需要配置项目。 请执行以下操作：
 
@@ -229,11 +229,11 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 
 新的 iOS 应用程序将显示在“我的应用”  部分，在其中右键单击应用程序即可获取它的相关信息：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
  ![](ipa-support-images/installxs01.png "The new iOS application in the My Apps section")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
  ![](ipa-support-images/installvs01.png "The new iOS application in the My Apps section")
 

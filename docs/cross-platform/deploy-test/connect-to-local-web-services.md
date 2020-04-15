@@ -7,10 +7,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/16/2019
 ms.openlocfilehash: 29261f2ef6366c0dac8ac82e63584366a5cca0b0
-ms.sourcegitcommit: 233aaa1ac3d8f40c09b6daf6d944ea0b4cbee381
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "74135281"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>从 iOS 模拟器和 Android 模拟器连接到本地 Web 服务
@@ -77,11 +77,11 @@ iOS 模拟器和 Android 模拟器均提供对本地计算机上运行的安全 
 iOS 模拟器使用主机网络。 因此，在此模拟器中运行的应用程序可以通过计算机 IP 地址或通过 `localhost` 主机名连接到在本地计算机中运行的 Web 服务。 例如，对于通过 `/api/todoitems/` 相对 URI 公开 GET 操作的本地安全 Web 服务，在 iOS 模拟器中运行的应用程序可以通过向 `https://localhost:<port>/api/todoitems/` 发送 GET 请求来使用操作。
 
 > [!NOTE]
-> 从 Windows 运行 iOS 模拟器中的移动应用程序时，此应用程序将显示在[用于 Windows 的远程 iOS 模拟器](~/tools/ios-simulator/index.md)中。 但是，此应用程序会在配对的 Mac 上运行。 因此，在 Mac 上运行的 iOS 应用程序无法对在 Windows 中运行的 Web 服务进行本地主机访问。
+> 从 Windows 运行 iOS 模拟器中的移动应用程序时，此应用程序将显示在[用于 Windows 的远程 iOS 模拟器](~/tools/ios-simulator/index.md)中。 但是，此应用程序会在配对的 Mac 上运行。 因此，在 Mac 上运行的 iOS应用程序无法对在 Windows 中运行的 Web 服务进行本地主机访问。
 
 ### <a name="android"></a>Android
 
-Android 模拟器的各个实例独立于开发计算机网络接口，在虚拟路由器的后方运行。 因此，模拟设备无法看到开发计算机或网络中的其他模拟器实例。
+Android模拟器的各个实例独立于开发计算机网络接口，在虚拟路由器的后方运行。 因此，模拟设备无法看到开发计算机或网络中的其他模拟器实例。
 
 但是，各个模拟器的虚拟路由器托管着一个包含预分配地址的特殊网络空间，其中 `10.0.2.2` 地址是主机环回接口的别名（在开发计算机上为 127.0.0.1）。 因此，对于通过 `/api/todoitems/` 相对 URI 公开 GET 操作的本地安全 Web 服务，在 Android 模拟器中运行的应用程序可以通过向 `https://10.0.2.2:<port>/api/todoitems/` 发送 GET 请求来使用操作。
 
@@ -97,7 +97,7 @@ public static string TodoItemsUrl = $"{BaseAddress}/api/todoitems/";
 
 ## <a name="bypass-the-certificate-security-check"></a>绕过证书安全检查
 
-如果试图从在 iOS 模拟器或 Android 模拟器中运行的应用程序调用本地安全 Web 服务，即使在各个平台上使用的是托管网络堆栈，也会引发 `HttpRequestException`。 因为本地 HTTPS 开发证书是自签名证书，而 iOS 或 Android 不信任自签名证书。
+如果试图从在 iOS 模拟器或 Android 模拟器中运行的应用程序调用本地安全 Web 服务，即使在各个平台上使用的是托管网络堆栈，也会引发 `HttpRequestException`。 因为本地 HTTPS 开发证书是自签名证书，而iOS 或 Android 不信任自签名证书。
 
 因此，当应用程序使用本地安全 Web 服务时，需忽略 SSL 错误。 用于实现此目的的机制当前在 iOS 和 Android 上有所不同。
 

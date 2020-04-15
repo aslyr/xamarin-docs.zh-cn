@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2020
-ms.openlocfilehash: e961dc537d8b793feb3587ec89b69c53ab821088
-ms.sourcegitcommit: 5b6d3bddf7148f8bb374de5657bdedc125d72ea7
+ms.openlocfilehash: 44f7701adbe742828d8ec33dec21c316d11bf93e
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78160567"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "80628284"
 ---
 # <a name="xamarinforms-dual-screen-layout"></a>Xamarin.Forms 双屏布局
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
 `TwoPaneView` 类表示一个带有两个视图的容器，这些视图会调整内容的大小且在可用空间内并排或按从上到下的顺序放置内容。 `TwoPaneView` 继承自 `Grid`，因此考虑这些属性时最简单的方式是看作它们要应用于网格。
 
@@ -73,4 +73,4 @@ ms.locfileid: "78160567"
 
 ## <a name="related-links"></a>相关链接
 
-- [（示例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)
+- [（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)

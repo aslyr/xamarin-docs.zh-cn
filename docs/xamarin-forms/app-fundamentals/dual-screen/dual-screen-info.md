@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2020
-ms.openlocfilehash: 8dda1960fceaf7738c44d58b10149b8c20fa543f
-ms.sourcegitcommit: 5b6d3bddf7148f8bb374de5657bdedc125d72ea7
+ms.openlocfilehash: 3393f8f4468b58289443af3d2eea558cca4588d2
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78160595"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "80628260"
 ---
 # <a name="xamarinforms-dual-screen-device-capabilities"></a>Xamarin.Forms 双屏设备功能
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
 `DualScreenInfo` 类可用于确定你的视图位于哪个窗格中、视图的大小如何、设备的放置方向如何，以及铰链的角度等等。
 
@@ -214,4 +214,4 @@ public partial class GridUsingDualScreenInfo : ContentPage
 
 ## <a name="related-links"></a>相关链接
 
-- [（示例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)
+- [（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)

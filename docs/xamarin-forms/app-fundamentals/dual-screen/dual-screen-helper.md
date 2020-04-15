@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2020
-ms.openlocfilehash: e16e926d9eb3c5f3ca04b7e1359f24624a971617
-ms.sourcegitcommit: 5b6d3bddf7148f8bb374de5657bdedc125d72ea7
+ms.openlocfilehash: 9ab6106b8b92660d416e8a22cc3b1bdf1b41c5cf
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78160564"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "80628269"
 ---
 # <a name="xamarinforms-dual-screen-platform-helpers"></a>Xamarin.Forms 双屏平台帮助程序
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/UserInterface/DualScreenDemos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
 `DualScreenHelper` 类可用于检测某设备是否支持画中画模式，然后使你能够在图片窗口中以图片的形式打开 `ContentPage`。 如果你在 Neo 设备上运行，则在撰写模式下，这将在 WonderBar 中打开页面。
 

@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2020
 ms.openlocfilehash: bce2b6f29129894ed446100c87b5e92d3572ed2f
-ms.sourcegitcommit: 60d2243809d8e980fca90b9f771e72f8c0e64d71
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "78946273"
 ---
 # <a name="build-process"></a>生成过程
@@ -189,7 +189,7 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
   在 Android 包中，可能只存在一个具有 `<AndroidApplication>True</AndroidApplication>` 的项目。 （遗憾的是，这点尚未得到验证，这可能会导致与 Android 资源有关的微妙和奇怪的错误。）
 
-- AndroidApplicationJavaClass &ndash; 完整 Java 类名称，用于在类继承自 [Android.App.Application](xref:Android.App.Application) 时替代 `android.app.Application`  。
+- AndroidApplicationJavaClass &ndash; 完整 Java 类名称，用于在类继承自 [Android.App.Application](xref:Android.App.Application) 时替代 `android.app.Application` 。
 
   该属性通常由其他属性设置，例如 `$(AndroidEnableMultiDex)` MSBuild 属性  。
 
@@ -261,7 +261,7 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
   如果设置为 `False`，将仅根据需要加载程序集。
   这样可以加快应用程序的启动速度，它更符合桌面 .NET 语义。  若要查看节省的时间，请将 `debug.mono.log` 系统属性设置为包含 `timing`，然后在 `Finished loading assemblies: preloaded` 中查找 `adb logcat` 消息。
 
-  如果使用依存关系注入的应用程序或库不需要应用程序捆绑包内的所有程序集，但它们反而要求 `AppDomain.CurrentDomain.GetAssemblies()` 返回所有的程序集，在这种情况下它们可能要求此属性为 `True`  。
+  如果使用依存关系注入的应用程序或库不需要应用程序捆绑包内的所有程序集，但它们反而要求 `AppDomain.CurrentDomain.GetAssemblies()` 返回所有的程序集，在这种情况下它们可能要求此属性为 `True` 。
 
   默认情况下，此值设置为 `True`。
 
@@ -282,7 +282,7 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
   该属性默认为 `False`。
 
 - AndroidErrorOnCustomJavaObject &ndash; 此布尔属性确定类型能否实现 `Android.Runtime.IJavaObject`
-  ，而无需同时继承自 `Java.Lang.Object` 或 `Java.Lang.Throwable`   ：
+  ，而无需同时继承自 `Java.Lang.Object` 或 `Java.Lang.Throwable`  ：
 
   ```csharp
   class BadType : IJavaObject {
@@ -402,7 +402,7 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
   <AndroidLinkSkip>Assembly1;Assembly2</AndroidLinkSkip>
   ```
 
-- AndroidLinkTool &ndash; 枚举样式的属性，有效值为 `proguard` 或 `r8`  。 指示用于 Java 代码的代码压缩器。 当前默认为空字符串；如果 `$(AndroidEnableProguard)` 是 `True`，则为 `proguard`。 有关详细信息，请参阅 [D8 和 R8][d8-r8] 相关文档。
+- AndroidLinkTool &ndash; 枚举样式的属性，有效值为 `proguard` 或 `r8` 。 指示用于 Java 代码的代码压缩器。 当前默认为空字符串；如果 `$(AndroidEnableProguard)` 是 `True`，则为 `proguard`。 有关详细信息，请参阅 [D8 和 R8][d8-r8] 相关文档。
 
   [d8-r8]: https://github.com/xamarin/xamarin-android/blob/master/Documentation/guides/D8andR8.md
 
@@ -456,7 +456,7 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
   在 Xamarin.Android 8.3 中新增。
 
-- AndroidPackageFormat &ndash; 枚举样式的属性，有效值为 `apk` 或 `aab`  。 该属性指示你希望将 Android 应用程序打包为 [APK 文件][apk]还是 [Android 应用程序包][bundle]。 应用程序包是一种新的格式，适用于要在 Google Play 上提交的 `Release` 版本。 该值当前默认为 `apk`。
+- AndroidPackageFormat &ndash; 枚举样式的属性，有效值为 `apk` 或 `aab` 。 该属性指示你希望将 Android 应用程序打包为 [APK 文件][apk]还是 [Android 应用程序包][bundle]。 应用程序包是一种新的格式，适用于要在 Google Play 上提交的 `Release` 版本。 该值当前默认为 `apk`。
 
   当 `$(AndroidPackageFormat)` 设置为 `aab` 时，系统将设置 Android 应用程序包所必需的其他 MSBuild 属性：
 
@@ -518,7 +518,7 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
   已在 Xamarin.Android 7.1 中添加。
 
-- AndroidUseApkSigner &ndash; 此布尔属性使开发人员能够使用 `apksigner` 工具，而不是 `jarsigner`  。
+- AndroidUseApkSigner &ndash; 此布尔属性使开发人员能够使用 `apksigner` 工具，而不是 `jarsigner` 。
 
     在 Xamarin.Android 8.2 中新增。
 
@@ -532,7 +532,7 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
   在 Xamarin.Android 8.2 中新增。
 
-- AndroidUseManagedDesignTimeResourceGenerator &ndash; 此布尔属性将设计时生成切换为使用受管理资源分析程序，而不是 `aapt`  。
+- AndroidUseManagedDesignTimeResourceGenerator &ndash; 此布尔属性将设计时生成切换为使用受管理资源分析程序，而不是 `aapt` 。
 
   在 Xamarin.Android 8.1 中新增。
 
@@ -604,7 +604,7 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
   如果 `True`，[ProguardConfiguration](#ProguardConfiguration) 文件将用于控制 `proguard` 的执行。
 
 - JavaMaximumHeapSize &ndash; 指定在打包过程中构建 `.dex` 文件时使用的 java 
-  `-Xmx` 参数值的值   。 如果未指定，则 `-Xmx` 选项向 java 提供值 `1G`  。 我们发现与其他平台相比，Windows 常常要求这样设置。
+  `-Xmx` 参数值的值   。 如果未指定，则 `-Xmx` 选项向 java 提供值 `1G` 。 我们发现与其他平台相比，Windows 常常要求这样设置。
 
   如果 [`_CompileDex` 目标引发 `java.lang.OutOfMemoryError`](https://bugzilla.xamarin.com/show_bug.cgi?id=18327)，则指定该属性是必需的。
 

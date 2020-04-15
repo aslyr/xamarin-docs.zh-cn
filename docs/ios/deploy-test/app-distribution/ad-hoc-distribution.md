@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 16ae440ec2fe3b5898c8f92d993279ef5e7e9794
-ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/02/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75607914"
 ---
 # <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Xamarin.iOS 应用的临时分发
@@ -109,11 +109,11 @@ Ad Hoc 分发需要应用程序使用包含代码签名信息的 Ad Hoc 配置�
 
 6. 单击“生成”  按钮，创建新的配置文件并完成该过程。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 可能需要退出 Visual Studio for Mac，并让 Xcode 刷新可用签名标识和预配配置文件列表（按照[在 Xcode 中下载配置文件和证书](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)部分中的说明操作），然后 Visual Studio for Mac 中才会有新的分发配置文件。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 可能需要退出 Visual Studio，并让 Xcode（在生成主机的 Mac 上）刷新可用签名标识和预配配置文件列表（按照[在 Xcode 中下载配置文件和证书](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)部分中的说明操作），然后 Visual Studio 中才会有新的分发配置文件。
 
@@ -125,7 +125,7 @@ Ad Hoc 分发需要应用程序使用包含代码签名信息的 Ad Hoc 配置�
 
 如果准备就绪可执行 Xamarin.iOS 应用程序的最终生成，请选择上面创建的分发配置文件。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
  在 Visual Studio for Mac 中，执行以下操作：
 
@@ -141,7 +141,7 @@ Ad Hoc 分发需要应用程序使用包含代码签名信息的 Ad Hoc 配置�
     ![选择“签名标识”和“分发配置文件”](ad-hoc-distribution-images/releasexs03.png)
 5. 单击“确定”  按钮保存更改。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
  在 Visual Studio 中，执行以下操作：
 
 1. 在“解决方案资源管理器  ”中，右键单击项目名称，然后选择“属性”  ，将其打开并进行编辑。

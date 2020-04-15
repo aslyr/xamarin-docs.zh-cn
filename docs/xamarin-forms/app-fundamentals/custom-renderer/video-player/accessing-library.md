@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: 2f9de881621b6634b95bdca56a0aa9e7b9f2bb98
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771852"
 ---
 # <a name="accessing-the-devices-video-library"></a>访问设备的视频库
@@ -229,7 +229,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="invoking-the-dependency-service"></a>调用依赖项服务
 
-[VideoPlayerDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 程序的“播放库视频”页面演示如何使用视频选取器依赖项服务   。 XAML 文件包含 `VideoPlayer` 实例和标记为“显示视频库”的 `Button`  ：
+[VideoPlayerDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 程序的“播放库视频”页面演示如何使用视频选取器依赖项服务   。 XAML 文件包含 `VideoPlayer` 实例和标记为“显示视频库”的 `Button` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

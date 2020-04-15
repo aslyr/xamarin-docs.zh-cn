@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/06/2018
 ms.openlocfilehash: 884b69b0cdecf4f979cec314b6440974c5bac97d
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73019800"
 ---
 # <a name="an-introduction-to-renderscript"></a>Renderscript 简介
@@ -46,7 +46,7 @@ Renderscript 例程有两个组件：
 
 2. **_计算核心_** &ndash; 也称为“根内核”  或“内核”  ，这是执行工作的例程。 内核非常类似于 C 函数；它是一个可并行化例程，将在已分配内存中的所有数据上运行。
 
-3. **已分配内存** &ndash; 数据通过[分配 _](xref:Android.Renderscripts.Allocation)_ 在内核中来回传输。 一个内核可以有一个输入和/或一个输出分配。
+3. **已分配内存** &ndash; 数据通过_分配 [](xref:Android.Renderscripts.Allocation)_ 在内核中来回传输。 一个内核可以有一个输入和/或一个输出分配。
 
 [Android.Renderscripts](xref:Android.Renderscripts) 命名空间包含用于与 Renderscript 运行时进行交互的类。 特别是，[`Renderscript`](xref:Android.Renderscripts.RenderScript) 类将管理 Renderscript 引擎的生命周期和资源。 Android 应用必须初始化一个或多个 [`Android.Renderscripts.Allocation`](xref:Android.Renderscripts.Allocation)
 对象。 分配是一个托管 API，负责分配和访问在 Android 应用与 Renderscript 运行时之间共享的内存。 通常，为输入创建一个分配，并根据需要创建另一个分配来保存内核的输出。 Renderscript 运行时引擎和关联的托管包装类将管理对分配所持有的内存的访问，无需 Android 应用开发人员执行任何其他工作。

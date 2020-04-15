@@ -6,10 +6,10 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: 2e4cf713f9ad7478c0d8e288fd3beff4b5015ef5
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70120119"
 ---
 # <a name="xamarinessentials-vibration"></a>Xamarin.Essentials:振动
@@ -22,7 +22,7 @@ Vibration 类使你能够在所需的时间内启动和停止振动功能  。
 
 若要访问 Vibration 功能，需要以下特定于平台的设置  。
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 需要具有 Vibrate 权限，并且必须在 Android 项目中进行配置。 可以通过以下方法添加此权限：
 
@@ -42,11 +42,11 @@ Vibration 类使你能够在所需的时间内启动和停止振动功能  。
 
 或右键单击 Android 项目并打开项目的属性。 在“Android 清单”下找到“所需权限:”区域，然后选中“VIBRATE”权限    。 这样会自动更新 AndroidManifest.xml 文件  。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 无需其他设置。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 无平台差异。
 
@@ -101,17 +101,17 @@ catch (Exception ex)
 
 ## <a name="platform-differences"></a>平台差异
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 无平台差异。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 - 仅在设备设置为“响铃时振动”时振动。
 - 振动时长始终为 500 毫秒。
 - 无法取消振动。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 无平台差异。
 

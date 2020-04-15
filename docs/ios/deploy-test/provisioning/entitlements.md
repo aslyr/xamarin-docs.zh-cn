@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/13/2018
 ms.openlocfilehash: f6a38aea1e46e1165bb36d83e75e24769de0a1e2
-ms.sourcegitcommit: 9ab907e053c57fc96419149f83187bc3e8983a6b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75655319"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>在 Xamarin.iOS 中使用权利
@@ -37,7 +37,7 @@ Entitlements.plist 文件用于指定权利以及对应用程序捆绑包进行�
 
 定义应用 ID 时，除了选择和配置所需的应用程序服务，还必须通过编辑“Info.plist”  和“Entitlements.plist”  文件在 Xamarin.iOS 项目中配置权利。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 若要在 Visual Studio for Mac 中配置权利，请执行以下操作：
 
@@ -54,7 +54,7 @@ Entitlements.plist 文件用于指定权利以及对应用程序捆绑包进行�
 5. 选择并配置 Xamarin.iOS 应用程序所需的任何权利，使其匹配创建应用 ID 时定义的设置。
 6. 保存对“Entitlements.plist”  文件的更改。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 若要在 Visual Studio 中配置权利，请执行以下操作：
 

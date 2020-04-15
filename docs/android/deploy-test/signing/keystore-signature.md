@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 49d67db46416584248a9b15db606538f5ebfba79
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021007"
 ---
 # <a name="finding-your-keystores-signature"></a>查找密钥存储的签名
@@ -21,7 +21,7 @@ Xamarin.Android 应用的 MD5 或 SHA1 签名取决于用于对 APK 进行签名
 
 Xamarin.Android 使用相同的 **debug.keystore** 文件对所有调试版本进行签名。 初次安装 Xamarin.Android 时会生成此文件。以下步骤详细介绍了默认 Xamarin.Android **debug.keystore** 文件的 MD5 或 SHA1 签名查找过程。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 找到用于对应用进行签名的 Xamarin **debug.keystore** 文件。 默认情况下，用于对 Xamarin.Android 应用程序调试版本进行签名的密钥存储位于以下位置：
 
@@ -59,7 +59,7 @@ Certificate fingerprints:
          Version: 3
 ```
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 找到用于对应用进行签名的 Xamarin **debug.keystore** 文件。 默认情况下，用于对 Xamarin.Android 应用程序调试版本进行签名的密钥存储位于以下位置：
 
@@ -112,7 +112,7 @@ KeyIdentifier [
 
 对于使用自定义 **.keystore** 文件签名的发布版本，过程与上述相同，将 Xamarin.Android 使用的 **debug.keystore** 文件替换为发布 **.keystore** 文件。 发布密钥存储文件创建后，替换为自己的密钥存储密码值和别名。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 使用 Visual Studio“分发”  向导对 Xamarin.Android 应用进行签名时，产生的密钥存储位于以下位置：
 
@@ -124,7 +124,7 @@ C:\\Users\\USERNAME\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\chimp\
 
 有关对 Xamarin.Android 应用进行签名的详细信息，请参阅[对 Android 应用程序包进行签名](~/android/deploy-test/signing/index.md)。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 通过 Visual Studio for Mac 的“签名并分发...”  向导对应用签名时，产生的密钥存储位于以下位置：
 

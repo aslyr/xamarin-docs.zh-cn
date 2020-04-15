@@ -6,27 +6,27 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: b94ba73b334ac68b256ca840956f987a4ef670ce
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58870100"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "61075555"
 ---
 # <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials:手电筒
 
-Flashlight 类，此类使你能够打开或关闭设备的照相机闪光灯，将其转换为一个手电筒。
+Flashlight 类，此类使你能够打开或关闭设备的照相机闪光灯，将其转换为一个手电筒  。
 
 ## <a name="get-started"></a>入门
 
 [!include[](~/essentials/includes/get-started.md)]
 
-若要访问 Flashlight 功能，需要以下特定于平台的设置。
+若要访问 Flashlight 功能，需要以下特定于平台的设置  。
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 需要具有 Flashlight 和 Camera 权限，并且必须在 Android 项目中进行配置。 可以通过以下方法添加权限：
 
-打开 Properties 文件夹下的 AssemblyInfo.cs 文件并添加：
+打开 Properties 文件夹下的 AssemblyInfo.cs 文件并添加   ：
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.Flashlight)]
@@ -35,14 +35,14 @@ Flashlight 类，此类使你能够打开或关闭设备的照相机闪光灯，
 
 或更新 Android 清单：
 
-打开 Properties 文件夹下的 AndroidManifest.xml 文件，并在“manifest”节点内添加以下代码。
+打开 Properties 文件夹下的 AndroidManifest.xml 文件，并在“manifest”节点内添加以下代码    。
 
 ```xml
 <uses-permission android:name="android.permission.FLASHLIGHT" />
 <uses-permission android:name="android.permission.CAMERA" />
 ```
 
-或右键单击 Android 项目并打开项目的属性。 在“Android 清单”下找到“所需权限:”区域，然后选中“FLASHLIGHT”和“CAMERA”权限。 这样会自动更新 AndroidManifest.xml 文件。
+或右键单击 Android 项目并打开项目的属性。 在“Android 清单”下找到“所需权限:”区域，然后选中“FLASHLIGHT”和“CAMERA”权限     。 这样会自动更新 AndroidManifest.xml 文件  。
 
 通过添加这些权限，[Google Play 将自动筛选出设备](https://developer.android.com/guide/topics/manifest/uses-feature-element.html#permissions-features)，而无需任何特定硬件。 可以通过将以下代码添加到 Android 项目中的 AssemblyInfo.cs 文件中来绕过此操作：
 
@@ -51,11 +51,11 @@ Flashlight 类，此类使你能够打开或关闭设备的照相机闪光灯，
 [assembly: UsesFeature("android.hardware.camera.autofocus", Required = false)]
 ```
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 无需其他设置。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 无需其他设置。
 
@@ -96,7 +96,7 @@ catch (Exception ex)
 
 ## <a name="platform-implementation-specifics"></a>平台实现细节
 
-### <a name="androidtabandroid"></a>[Android](#tab/android)
+### <a name="android"></a>[Android](#tab/android)
 
 Flashlight 类已根据设备的操作系统进行了优化。
 
@@ -108,11 +108,11 @@ Flashlight 类已根据设备的操作系统进行了优化。
 
 创建一个相机表面纹理以打开或关闭相机单元的 `FlashMode`。 
 
-### <a name="iostabios"></a>[iOS](#tab/ios)
+### <a name="ios"></a>[iOS](#tab/ios)
 
 [AVCaptureDevice](xref:AVFoundation.AVCaptureDevice) 用于打开和关闭设备的 Torch 和 Flash 模式。
 
-### <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+### <a name="uwp"></a>[UWP](#tab/uwp)
 
 [Lamp](https://docs.microsoft.com/uwp/api/windows.devices.lights.lamp) 用于检测设备背面的第一盏灯是否打开或关闭。
 

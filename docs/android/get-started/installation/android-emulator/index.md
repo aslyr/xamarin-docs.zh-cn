@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/27/2018
 ms.openlocfilehash: 148afe5354d7995f15dc19c6257ed2a1567162ec
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73027959"
 ---
 # <a name="android-emulator-setup"></a>Android 仿真器设置
@@ -26,19 +26,19 @@ ms.locfileid: "73027959"
 
 ## <a name="sections"></a>部分
 
-### <a name="hardware-acceleration-for-emulator-performanceandroidget-startedinstallationandroid-emulatorhardware-accelerationmd"></a>[通过硬件加速提高仿真器性能](~/android/get-started/installation/android-emulator/hardware-acceleration.md)
+### <a name="hardware-acceleration-for-emulator-performance"></a>[通过硬件加速提高仿真器性能](~/android/get-started/installation/android-emulator/hardware-acceleration.md)
 
 如何使用 Hyper-V 或 HAXM 虚拟化技术为计算机准备最大的 Android Emulator 性能。 由于在没有硬件加速的情况下 Android Emulator 的运行可能会极度缓慢，因此，建议在使用模拟器之前在计算机上启用硬件加速。
 
-### <a name="managing-virtual-devices-with-the-android-device-managerandroidget-startedinstallationandroid-emulatordevice-managermd"></a>[使用 Android Device Manager 管理虚拟设备](~/android/get-started/installation/android-emulator/device-manager.md)
+### <a name="managing-virtual-devices-with-the-android-device-manager"></a>[使用 Android Device Manager 管理虚拟设备](~/android/get-started/installation/android-emulator/device-manager.md)
 
 如何使用 Android Device Manager 创建和自定义虚拟设备。
 
-### <a name="editing-android-virtual-device-propertiesandroidget-startedinstallationandroid-emulatordevice-propertiesmd"></a>[编辑 Android 虚拟设备属性](~/android/get-started/installation/android-emulator/device-properties.md)
+### <a name="editing-android-virtual-device-properties"></a>[编辑 Android 虚拟设备属性](~/android/get-started/installation/android-emulator/device-properties.md)
 
 如何使用 Android Device Manager 编辑虚拟设备的配置文件属性。
 
-### <a name="android-emulator-troubleshootingandroidget-startedinstallationandroid-emulatortroubleshootingmd"></a>[Android Emulator 疑难解答](~/android/get-started/installation/android-emulator/troubleshooting.md)
+### <a name="android-emulator-troubleshooting"></a>[Android Emulator 疑难解答](~/android/get-started/installation/android-emulator/troubleshooting.md)
 
 本文介绍运行 Android Emulator 时最常见的警告消息和问题，以及解决方法和相关技巧。
 

@@ -7,10 +7,10 @@ ms.author: jamont
 ms.date: 01/08/2019
 ms.custom: video
 ms.openlocfilehash: c70510f7b47f93c6119532b6a1c06f6c2e9e56ea
-ms.sourcegitcommit: afe9d93373d66eb45d82cabefca83b5733969634
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/12/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "67855755"
 ---
 # <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials:连接性
@@ -23,7 +23,7 @@ ms.locfileid: "67855755"
 
 若要访问  Connectivity 功能，需要以下特定于平台的设置。
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 需要具有 `AccessNetworkState` 权限，并且必须在 Android 项目中进行配置。 可以通过以下方法添加此权限：
 
@@ -43,11 +43,11 @@ ms.locfileid: "67855755"
 
 或右键单击 Android 项目并打开项目的属性。 在  “Android 清单”下查找  “所需权限:”区域，然后选中  “访问网络状态”权限。 这样会自动更新 AndroidManifest.xml 文件  。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 无需其他设置。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 无需其他设置。
 

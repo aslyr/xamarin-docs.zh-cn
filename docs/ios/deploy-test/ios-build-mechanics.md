@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
 ms.openlocfilehash: 92bf7934b1ad4f6d959fc458f536cf3b3426df51
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73026371"
 ---
 # <a name="ios-build-mechanics"></a>iOS 生成机制
@@ -26,7 +26,7 @@ ms.locfileid: "73026371"
 
 ## <a name="timing-apps"></a>计时应用
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 若要在 Visual Studio for Mac 中启用诊断 MSBuild 输出：
 
@@ -38,7 +38,7 @@ ms.locfileid: "73026371"
 6. 清除并重新生成包
 7. 通过单击“生成输出”按钮，查看“Errors Pad”中的诊断输出（“视图”>“板”>“错误”）
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 若要在 Visual Studio 中启用诊断 MSBuild 输出：
 

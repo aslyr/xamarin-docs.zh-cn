@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: 5cfaeb8589514972dfcccd11009a02c00f95bfac
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "72696446"
 ---
 # <a name="xamarinforms-carousel-page"></a>Xamarin.Forms Carousel Page
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-carouselpage)
 
-_Xamarin.Forms CarouselPage 页就像一个库，用户可从一侧轻扫到另一侧以浏览内容页面。本文演示如何使用 CarouselPage 浏览页集合。 
+_Xamarin.Forms CarouselPage 页就像一个库，用户可从一侧轻扫到另一侧以浏览内容页面。本文演示如何使用 CarouselPage 浏览页集合。_
 
 > [!IMPORTANT]
 > [`CarouselView`](xref:Xamarin.Forms.CarouselView) 取代了 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)并提供一个可供用户轻扫浏览一系列项的可滚动布局。 有关 `CarouselView` 的详细信息，请参阅 [Xamarin.Forms CarouselView](~/xamarin-forms/user-interface/carouselview/index.md)。
@@ -48,7 +48,7 @@ _Xamarin.Forms CarouselPage 页就像一个库，用户可从一侧轻扫到另�
 
 可以使用两种方法创建 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)：
 
-- 使用子 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 实例集合[填充](#Populating_a_CarouselPage_with_a_Page_Collection) `CarouselPage`。
+- 使用子 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 实例集合[填充](#Populating_a_CarouselPage_with_a_Page_Collection)`CarouselPage`。
 - 将集合[分配](#Populating_a_CarouselPage_with_a_Template)给 [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) 属性并将 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 分配给 [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) 属性以返回集合中对象的 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 实例。
 
 使用这两种方法，`CarouselPage` 将依次显示每个页面，轻扫交互会移动到要显示的下一个页面。

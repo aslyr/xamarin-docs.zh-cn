@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/05/2018
 ms.openlocfilehash: 1438c012608b367c21ebcc401c058b186b917f53
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73027799"
 ---
 # <a name="working-with-the-android-manifest"></a>使用 Android 清单
@@ -166,7 +166,7 @@ public class MyActivity : Activity
 使用 Android 清单，可以描述活动的功能。 这是通过 [Intent](https://developer.android.com/guide/topics/manifest/intent-filter-element.html) 和自定义特性 [`[IntentFilter]`](xref:Android.App.IntentFilterAttribute)
 完成的。 可以使用 [`IntentFilter`](xref:Android.App.IntentFilterAttribute#ctor*) 构造函数来指定哪些操作适合你的活动，
 并使用 [`Categories`](xref:Android.App.IntentFilterAttribute.Categories) 属性来指定哪些类别适合
-。 至少必须提供一个活动（正因为此，活动是在构造函数中提供的）。 可以多次提供 `[IntentFilter]`，每次使用都会在 `<activity/>` 中生成单独的 `<intent-filter/>` 元素。 例如：
+属性。 至少必须提供一个活动（正因为此，活动是在构造函数中提供的）。 可以多次提供 `[IntentFilter]`，每次使用都会在 `<activity/>` 中生成单独的 `<intent-filter/>` 元素。 例如：
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true, Icon="@drawable/myicon")] 

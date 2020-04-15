@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2020
-ms.openlocfilehash: d8a57ac8688a0113ef267ea25fb54cbaaf562957
-ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
+ms.openlocfilehash: ab83869a4e865d1ce3b1fee83e84ce4e2fd913c6
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80070385"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "80628322"
 ---
 # <a name="xamarinforms-dual-screen-design-patterns"></a>Xamarin.Forms 双屏设计模式
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
 本指南介绍了我们为双屏设备推荐的设计模式，还有代码和示例来帮助你创建可提供工程和实用用户体验的界面。
 
@@ -270,5 +270,5 @@ ms.locfileid: "80070385"
 
 ## <a name="related-links"></a>相关链接
 
-- [双屏示例 (GitHub)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)
+- [（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 - [创建适合双屏设备的应用](index.md)

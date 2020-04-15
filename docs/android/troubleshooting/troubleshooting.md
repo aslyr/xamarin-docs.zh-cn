@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2018
 ms.openlocfilehash: 6d83afa47c459633506736b2497a82c444352c90
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "79303515"
 ---
 # <a name="troubleshooting-tips"></a>疑难解答指南
@@ -342,7 +342,7 @@ Android 包 `<uses-library/>` 元素指定需要哪些共享库。 如果目标�
 
 若要确定所需的共享库，请查看生成的 AndroidManifest.xml 文件（例如obj\\Debug\\android\\AndroidManifest.xml），并查找 `<uses-library/>` 元素    。 可以在项目的 Properties\\AndroidManifest.xml 文件中，通过 [UsesLibraryAttribute 自定义属性](xref:Android.App.UsesLibraryAttribute)手动添加 `<uses-library/>` 元素  。
 
-例如，添加对 Mono.Android.Google Maps.dll 的程序集引用将隐式地为 Google Maps 共享库添加 `<uses-library/>`  。
+例如，添加对 Mono.Android.Google Maps.dll 的程序集引用将隐式地为 Google Maps 共享库添加 `<uses-library/>` 。
 
 ## <a name="install_failed_update_incompatible-when-installing-a-package"></a>安装包时，系统提示 INSTALL\_FAILED\_UPDATE\_INCOMPATIBLE
 
@@ -369,7 +369,7 @@ E/PackageManager(  146): Package [PackageName] signatures do not match the previ
 ## <a name="install_failed_uid_changed-when-installing-a-package"></a>安装包时，系统提示 INSTALL\_FAILED\_UID\_CHANGED
 
 安装 Android 包时，系统会为其分配一个“用户 ID”(UID)  。
-有时，由于当前未知的原因，在已安装的应用上安装包时，安装将失败，系统提示 `INSTALL_FAILED_UID_CHANGED`  ：
+有时，由于当前未知的原因，在已安装的应用上安装包时，安装将失败，系统提示 `INSTALL_FAILED_UID_CHANGED` ：
 
 ```shell
 ERROR [2015-03-23 11:19:01Z]: ANDROID: Deployment failed
@@ -380,7 +380,7 @@ Mono.AndroidTools.InstallFailedException: Failure [INSTALL_FAILED_UID_CHANGED]
    at System.Threading.Tasks.Task.Execute()
 ```
 
-若要暂时避开此问题，请完全卸载 Android 包，方法是从 Android 目标的 GUI 安装应用，或者使用 `adb`  ：
+若要暂时避开此问题，请完全卸载 Android 包，方法是从 Android 目标的 GUI 安装应用，或者使用 `adb` ：
 
 ```shell
 $ adb uninstall @PACKAGE_NAME@
