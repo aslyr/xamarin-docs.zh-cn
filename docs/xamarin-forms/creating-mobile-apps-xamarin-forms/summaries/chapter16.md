@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
 ms.openlocfilehash: 2d61413fb1d8c28a3957da53601d0ad682f35518
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771103"
 ---
 # <a name="summary-of-chapter-16-data-binding"></a>第 16 章摘要。 数据绑定
@@ -113,7 +113,7 @@ MVVM 场景中可能成为数据绑定目标的属性的 `DefaultBindingMode` �
 
 如果目标属性是 `string` 类型，可以使用 `BindingBase` 定义的 [`StringFormat`](xref:Xamarin.Forms.BindingBase.StringFormat) 属性将源转换为 `string`。 将 `StringFormat` 属性设置为 .NET 格式设置字符串，该字符串将与静态 [`String.Format`](xref:System.String.Format(System.String,System.Object)) 格式一起用于显示对象。 在标记扩展中使用此格式设置字符串时，用单引号将它括起来，以免大括号被误以为是嵌入的标记扩展。
 
-[ShowViewValues](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ShowViewValues) 示例演示如何在 XAML 中使用 `StringFormat`  。
+[ShowViewValues](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ShowViewValues) 示例演示如何在 XAML 中使用 `StringFormat` 。
 
 [WhatSizeBindings](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/WhatSizeBindings) 示例演示如何绑定 `ContentPage` 的 `Width` 和 `Height` 属性以显示页面的大小  。
 
@@ -125,7 +125,7 @@ MVVM 场景中可能成为数据绑定目标的属性的 `DefaultBindingMode` �
 
 如果绑定的源属性和目标属性是不同类型，可以使用绑定转换器在类型之间进行转换。 这个类可实现 [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 接口，且包含两个方法：将源转换为目标的 [`Convert`](xref:Xamarin.Forms.IValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo))，以及将目标转换为源的 [`ConvertBack`](xref:Xamarin.Forms.IValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo))。
 
-[Xamarin.FormsBook.Toolkit](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的 [`IntToBoolConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/IntToBoolConverter.cs) 类是将 `int` 转换为 `bool` 的示例  。 [ButtonEnabler](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ButtonEnabler) 示例对此进行了演示，该示例在 `Entry` 中至少已键入一个字符时才启用 `Button`  。
+[Xamarin.FormsBook.Toolkit](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的 [`IntToBoolConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/IntToBoolConverter.cs) 类是将 `int` 转换为 `bool` 的示例  。 [ButtonEnabler](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ButtonEnabler) 示例对此进行了演示，该示例在 `Entry` 中至少已键入一个字符时才启用 `Button` 。
 
 [`BoolToStringConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BoolToStringConverter.cs) 类将 `bool` 转换为 `string`，并定义两个属性以指定应针对 `false` 和 `true` 值而返回的文本。
 [`BoolToColorConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BoolToColorConverter.cs) 类似。 [SwitchText](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/SwitchText) 示例演示如何使用这两个转换器基于 `Switch` 设置以不同颜色显示不同文本  。

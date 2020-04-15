@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
 ms.openlocfilehash: b86f2d7216a6344b14fc4d8c538ea68871eda5ae
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70760535"
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>“第 25 章： 页面种类”摘要
@@ -23,7 +23,7 @@ ms.locfileid: "70760535"
 - [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)：管理两个页面，即母版页和详细信息页
 - [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)：管理通过选项卡访问的多个子页
 
-这些页面类型提供了比[第 24 章：页面导航](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter24.md)中讨论的 `NavagationPage` 更复杂的导航选项。
+这些页面类型提供了比[第 24 章：页面导航](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter24.md)中讨论的  更复杂的导航选项。
 
 ## <a name="master-and-detail"></a>母版页和详细信息页
 
