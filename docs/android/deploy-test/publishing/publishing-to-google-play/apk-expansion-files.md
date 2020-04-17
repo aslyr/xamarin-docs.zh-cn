@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 712322435614966348fc5c10cabf724870c307e4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021293"
 ---
 # <a name="apk-expansion-files"></a>APK 扩展文件
@@ -36,8 +36,8 @@ Google Play 不允许向现有 APK 上传扩展文件或者不允许上传现有
 
 文件下载到设备后，会存储在 shared-store/Android/obb/package-name 中   ：
 
--  shared-store &ndash; 这是 `Android.OS.Environment.ExternalStorageDirectory` 指定的目录。
--  package-name &ndash; 这是应用程序 Java 样式的包名称。
+-   shared-store &ndash; 这是 `Android.OS.Environment.ExternalStorageDirectory` 指定的目录。
+-   package-name &ndash; 这是应用程序 Java 样式的包名称。
 
 下载完成后，不应移动、更改、重命名扩展文件或从设备上的位置中删除扩展文件。 否则会导致再次下载扩展文件，这样会删除旧文件。 此外，扩展文件目录应仅包含扩展包文件。
 

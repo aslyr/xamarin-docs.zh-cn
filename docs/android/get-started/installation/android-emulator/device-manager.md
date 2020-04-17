@@ -10,10 +10,10 @@ ms.author: daortin
 ms.custom: video
 ms.date: 01/22/2019
 ms.openlocfilehash: 64e637648b03dff81468f2d7ad072c7acc50868b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021152"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>使用 Android Device Manager 管理虚拟设备
@@ -90,7 +90,7 @@ ms.locfileid: "73021152"
 
 [![设备管理器的“新建设备”屏幕](device-manager-images/win/09-new-device-editor-sml.png)](device-manager-images/win/09-new-device-editor.png#lightbox)
 
-若要在“新建设备”中配置新设备，请使用以下步骤  ：
+若要在“新建设备”屏幕中配置新设备，请使用以下步骤  ：
 
 1. 为设备提供新名称。 在下面的示例中，新设备名为“Pixel_API_27”  ：
 
@@ -171,19 +171,19 @@ ms.locfileid: "73021152"
 
 附加选项菜单中包含以下项：
 
-- **复制和编辑** &ndash; 复制当前所选的设备，并会在“新建设备”屏幕中使用不同的唯一名称打开  。 例如，选择“Pixel_API_27”并单击“复制和编辑”可将计数器追加到名称中   ：
+- 复制和编辑  &ndash; 复制当前所选的设备，并会在“新建设备”屏幕中使用不同的唯一名称将其打开  。 例如，选择“Pixel_API_27”并单击“复制和编辑”可将计数器追加到名称中   ：
 
   [![“复制和编辑”屏幕](device-manager-images/win/25-dupe-and-edit-sml.png)](device-manager-images/win/25-dupe-and-edit.png#lightbox)
 
-- **在资源管理器中展现** &ndash; 在包含用于虚拟设备的文件的文件夹中打开“Windows 资源管理器”窗口。 例如，选择“Pixel_API_27”并单击“在资源管理器中展现”以打开一个窗口，如下所示   ：
+- 在资源管理器中展现  &ndash; 在包含用于虚拟设备的文件的文件夹中打开“Windows 资源管理器”窗口。 例如，选择“Pixel_API_27”并单击“在资源管理器中展现”以打开一个窗口，如下所示   ：
 
   [![单击“在资源管理器中展现”的结果](device-manager-images/win/26-reveal-in-explorer-sml.png)](device-manager-images/win/26-reveal-in-explorer.png#lightbox)
 
-- **恢复出厂设置**  &ndash; 将所选设备重置为其默认设置，擦除用户在此设备运行时对其内部状态进行的任何更改（这也会擦除当前[快速启动](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)快照（如果有））。 此更改不会影响在创建和编辑期间对虚拟设备做出的修改。 将出现提醒此重置无法被撤消的一个对话框。 单击“恢复出厂设置”，确认重置  ：
+- 恢复出厂设置  &ndash; 将所选设备重置为其默认设置，擦除用户在此设备运行时对其内部状态进行的任何更改（这也会擦除当前[快速启动](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)快照（如果有））。 此更改不会影响在创建和编辑期间对虚拟设备做出的修改。 将出现提醒此重置无法被撤消的一个对话框。 单击“恢复出厂设置”，确认重置  ：
 
   ![“恢复出厂设置”对话框](device-manager-images/win/27-factory-reset.png)
 
-- **删除** &ndash; 永久删除所选的虚拟设备。 将出现提醒删除设备无法被撤消的一个对话框。 如果确定要删除设备，请单击“删除”  。
+- 删除  &ndash; 永久删除所选的虚拟设备。 将出现提醒删除设备无法被撤消的一个对话框。 如果确定要删除设备，请单击“删除”  。
 
   ![“删除设备”对话框](device-manager-images/win/28-delete-device-w158.png)
 
@@ -337,21 +337,21 @@ Xamarin Studio 与 Android Device Manager 不兼容。
 
 附加选项菜单中包含以下项：
 
-- **编辑** &ndash; 在设备编辑器中打开当前所选设备，如之前所述。
+- 编辑  &ndash; 在设备编辑器中打开当前所选设备，如之前所述。
 
-- **复制和编辑** &ndash; 复制当前所选的设备，并会在“新建设备”屏幕中使用不同的唯一名称打开  。 例如，选择“Pixel 2 API 28”并单击“复制和编辑”可将计数器追加到名称中   ：
+- 复制和编辑  &ndash; 复制当前所选的设备，并会在“新建设备”屏幕中使用不同的唯一名称将其打开  。 例如，选择“Pixel 2 API 28”并单击“复制和编辑”可将计数器追加到名称中   ：
 
   [![“复制和编辑”屏幕](device-manager-images/mac/25-dupe-and-edit-sml.png)](device-manager-images/mac/25-dupe-and-edit.png#lightbox)
 
-- **在查找器中展现** &ndash; 在包含用于虚拟设备的文件的文件夹中打开 macOS Finder 窗口。 例如，选择“Pixel 2 API 28”并单击“在查找器中展现”以打开一个窗口，如下所示   ：
+- 在查找器中展现  &ndash; 在包含用于虚拟设备的文件的文件夹中打开 macOS Finder 窗口。 例如，选择“Pixel 2 API 28”并单击“在查找器中展现”以打开一个窗口，如下所示   ：
 
   [![单击“在查找器中展现”的结果](device-manager-images/mac/26-reveal-in-finder-sml.png)](device-manager-images/mac/26-reveal-in-finder.png#lightbox)
 
-- **恢复出厂设置**  &ndash; 将所选设备重置为其默认设置，擦除用户在此设备运行时对其内部状态进行的任何更改（这也会擦除当前[快速启动](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)快照（如果有））。 此更改不会影响在创建和编辑期间对虚拟设备做出的修改。 将出现提醒此重置无法被撤消的一个对话框。 单击“恢复出厂设置”以确认重置  。
+- 恢复出厂设置  &ndash; 将所选设备重置为其默认设置，擦除用户在此设备运行时对其内部状态进行的任何更改（这也会擦除当前[快速启动](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)快照（如果有））。 此更改不会影响在创建和编辑期间对虚拟设备做出的修改。 将出现提醒此重置无法被撤消的一个对话框。 单击“恢复出厂设置”以确认重置  。
 
   ![“恢复出厂设置”对话框](device-manager-images/mac/27-factory-reset-m76.png)
 
-- **删除** &ndash; 永久删除所选的虚拟设备。 将出现提醒删除设备无法被撤消的一个对话框。 如果确定要删除设备，请单击“删除”  。
+- 删除  &ndash; 永久删除所选的虚拟设备。 将出现提醒删除设备无法被撤消的一个对话框。 如果确定要删除设备，请单击“删除”  。
 
   ![“删除设备”对话框](device-manager-images/mac/28-delete-device-m76.png)
 
@@ -365,7 +365,7 @@ Xamarin Studio 与 Android Device Manager 不兼容。
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ### <a name="android-sdk-in-non-standard-location"></a>Android SDK 位于非标准位置
 
@@ -383,7 +383,7 @@ C:\\Program Files (x86)\\Android\\android-sdk
 
    ![Android Device Manager 日志文件位置](device-manager-images/win/30-log-files.png)
 
-2. 双击以打开某个日志文件，并找到“配置文件路径”  。 例如:
+2. 双击以打开某个日志文件，并找到“配置文件路径”  。 例如：
 
    [![日志文件中的“配置文件路径”](device-manager-images/win/31-config-file-path-sml.png)](device-manager-images/win/31-config-file-path.png#lightbox)
 
@@ -429,7 +429,7 @@ C:\\Program Files (x86)\\Android\\android-sdk
 
 进行这些更改后，AVD 将在允许 Wi-Fi 重新工作的状态下重新启动。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ### <a name="wrong-version-of-android-sdk-tools"></a>错误版本的 Android SDK Tools
 
@@ -467,13 +467,13 @@ C:\\Program Files (x86)\\Android\\android-sdk
 
 ### <a name="generating-a-bug-report"></a>生成 Bug 报表
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 如果发现 Android Device Manager 出现问题，但无法使用上述疑难解答提示解决，请右键单击标题栏并选择“生成 Bug 报告”，提交该 bug 报告  ：
 
 [![提交 bug 报告的菜单项位置](device-manager-images/win/34-bug-report-sml.png)](device-manager-images/win/34-bug-report.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 如果发现 Android Device Manager 出现问题，但无法使用上述疑难解答提示解决，请单击“帮助”>“报告问题”，提交该 Bug 报告  ：
 

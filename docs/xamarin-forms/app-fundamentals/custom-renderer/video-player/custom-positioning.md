@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: 12633b728240c2f90d0265fe7b9efb65ea49bf1f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "68650648"
 ---
 # <a name="custom-video-positioning"></a>自定义视频定位
@@ -475,7 +475,7 @@ UWP [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) 的文档�
 
 第一个省略号 (···) 隐藏 `ActivityIndicator`；与上一个“自定义传输”页面中的省略号相同  。 请注意两个显示 `Position` 和 `TimeToEnd` 属性的 `Label` 元素。 这两个 `Label` 元素之间的省略号隐藏“自定义传输”页面中显示的“播放”、“暂停”和“停止”的两个 `Button` 元素  。 代码隐藏逻辑也与“自定义传输”页面相同  。
 
-[![自定义定位](custom-positioning-images/custompositioning-small.png "Custom Positioning")](custom-positioning-images/custompositioning-large.png#lightbox "Custom Positioning")
+[![自定义定位](custom-positioning-images/custompositioning-small.png "自定义定位")](custom-positioning-images/custompositioning-large.png#lightbox "自定义定位")
 
 关于 `VideoPlayer` 的讨论到此为止。
 

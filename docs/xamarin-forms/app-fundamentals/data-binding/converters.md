@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
 ms.openlocfilehash: 05ad12de77e8895a23cd364b90abfbfb567ac573
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771612"
 ---
 # <a name="xamarinforms-binding-value-converters"></a>Xamarin.Forms 绑定值转换器
@@ -97,7 +97,7 @@ public class IntToBoolConverter : IValueConverter
 
 启用按钮页面演示了当 `Button` 基于用户在 `Entry` 视图中键入的文本执行操作时的常见需求  。 如果用户没有在 `Entry` 中键入任何内容，则应禁用 `Button`。 每个 `Button` 都包含其 `IsEnabled` 属性的数据绑定。 数据绑定源是相应 `Entry` 的 `Text` 属性的 `Length` 属性。 如果 `Length`属性不是 0，则值转换器返回 `true` 并启用 `Button`：
 
-[![启用按钮](converters-images/enablebuttons-small.png "Enable Buttons")](converters-images/enablebuttons-large.png#lightbox "Enable Buttons")
+[![启用按钮](converters-images/enablebuttons-small.png "启用按钮")](converters-images/enablebuttons-large.png#lightbox "启用按钮")
 
 请注意，每个 `Entry` 中的 `Text` 属性都将初始化为空字符串。 默认情况下 `Text` 属性为 `null`，且在此情况下不会运行数据绑定。
 
@@ -238,7 +238,7 @@ public class BoolToObjectConverter<T> : IValueConverter
 
 在三个 `Switch` 和 `Label` 对中的最后一个对中，泛型参数被设为 `Style`，并且为 `TrueObject` 和 `FalseObject` 的值提供了整个 `Style` 对象。 这些替代了资源字典中设置的 `Label` 的隐式样式，因此该样式中的属性被显式分配给 `Label`。 切换 `Switch` 会导致相应的 `Label` 对此更改作出反应：
 
-[![切换指示器](converters-images/switchindicators-small.png "Switch Indicators")](converters-images/switchindicators-large.png#lightbox "Switch Indicators")
+[![切换指示器](converters-images/switchindicators-small.png "切换指示器")](converters-images/switchindicators-large.png#lightbox "切换指示器")
 
 它也可以使用 [`Triggers`](~/xamarin-forms/app-fundamentals/triggers.md) 在基于其他视图的用户界面中实现类似的更改。
 
@@ -396,7 +396,7 @@ binding.ConverterParameter = 255;
 
 为此，上述的值转换器包含一个单独的 `GetParameter` 方法，该方法用于处理 `parameter` 属于类型 `double`、`int` 或 `string` 的情况。  
 
-RGB 颜色选择器页面遵照两个隐式样式的定义在其资源字典中实例化 `DoubleToIntConverter`  ：
+RGB 颜色选择器页面遵照两个隐式样式的定义在其资源字典中实例化 `DoubleToIntConverter` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -462,7 +462,7 @@ RGB 颜色选择器页面遵照两个隐式样式的定义在其资源字典中�
 
 结果如下：
 
-[![RGB 颜色选择器](converters-images/rgbcolorselector-small.png "RGB Color Selector")](converters-images/rgbcolorselector-large.png#lightbox "RGB Color Selector")
+[![RGB 颜色选择器](converters-images/rgbcolorselector-small.png "RGB 颜色选择器")](converters-images/rgbcolorselector-large.png#lightbox "RGB 颜色选择器")
 
 ## <a name="related-links"></a>相关链接
 

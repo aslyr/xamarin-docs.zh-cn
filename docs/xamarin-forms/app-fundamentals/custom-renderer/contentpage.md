@@ -8,23 +8,23 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
 ms.openlocfilehash: 64367ded8dcd173f7c9e57cfc234aa66712aefd4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70772015"
 ---
 # <a name="customizing-a-contentpage"></a>自定义 ContentPage
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)
 
-ContentPage 是一个可视元素，它显示单个视图并占据大部分屏幕区域。本文演示了如何为 ContentPage 页面创建自定义呈现器，使开发人员能够使用自己特定于平台的自定义呈现替代默认本机呈现。_
+ContentPage 是一个可视元素，它显示单个视图并占据大部分屏幕区域。本文演示了如何为 ContentPage 页面创建自定义呈现器，使开发人员能够使用自己特定于平台的自定义呈现替代默认本机呈现。 
 
 每个 Xamarin.Forms 控件都有一个附带的呈现器，适用于创建本机控件实例的各个平台。 当 Xamarin.Forms 应用程序呈现 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 时，将在 iOS 中实例化 `PageRenderer` 类，而该操作又会实例化本机 `UIViewController` 控件。 在 Android 平台上，`PageRenderer` 类实例化 `ViewGroup` 控件。 在通用 Windows 平台 (UWP) 上，`PageRenderer` 类实例化 `FrameworkElement` 控件。 有关 Xamarin.Forms 控件映射到的呈现器和本机控件类的详细信息，请参阅[呈现器基类和本机控件](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
 下图说明了 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 和实现它的相应本机控件之间的关系：
 
-![](contentpage-images/contentpage-classes.png "ContentPage 类和实现本机控件之间的关系")
+![](contentpage-images/contentpage-classes.png "Relationship Between ContentPage Class and Implementing Native Controls")
 
 通过在每个平台上为 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 创建自定义呈现器，可以利用呈现过程来实现特定于平台的自定义。 执行此操作的过程如下：
 
@@ -105,11 +105,11 @@ async void OnTakePhotoButtonClicked (object sender, EventArgs e)
 
 下图说明了示例应用程序中每个项目的职责，以及它们之间的关系：
 
-![](contentpage-images/solution-structure.png "CameraPage 自定义呈现器项目的职责")
+![](contentpage-images/solution-structure.png "CameraPage Custom Renderer Project Responsibilities")
 
 `CameraPage` 实例由平台特定的 `CameraPageRenderer` 类呈现，它们均派生自该平台的 `PageRenderer` 类。 这会导致使用实时摄像头源呈现 `CameraPage` 实例，如下面的屏幕截图中所示：
 
-![](contentpage-images/screenshots.png "每个平台上的 CameraPage")
+![](contentpage-images/screenshots.png "CameraPage on each Platform")
 
 `PageRenderer` 类会公开 `OnElementChanged` 方法，此方法会在创建 Xamarin.Forms 页面时被调用以呈现相应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素   。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `CameraPage` 实例的引用。
 

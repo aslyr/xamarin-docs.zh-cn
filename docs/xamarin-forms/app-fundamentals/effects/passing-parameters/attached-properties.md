@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
 ms.openlocfilehash: 2fcfbfa8a1780a9da4e9bfe187dc99a5172e95f0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771487"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>将效果参数作为附加属性传递
@@ -35,11 +35,11 @@ _附加属性可用于定义响应运行时属性更改的效果参数。本文�
 
 示例应用程序展示了向 [`Label`](xref:Xamarin.Forms.Label) 控件显示的文本添加阴影的 `ShadowEffect`。 此外，可在运行时更改阴影的颜色。 下图说明了示例应用程序中每个项目的职责，以及它们之间的关系：
 
-![](attached-properties-images/shadow-effect.png "阴影效果项目职责")
+![](attached-properties-images/shadow-effect.png "Shadow Effect Project Responsibilities")
 
 `HomePage` 上的 [`Label`](xref:Xamarin.Forms.Label) 控件由特定于平台的各项目中的 `LabelShadowEffect` 自定义。 参数通过 `ShadowEffect` 类中的附加属性传递给每个 `LabelShadowEffect`。 每个 `LabelShadowEffect` 类均派生自各平台的 `PlatformEffect` 类。 这就使阴影被添加到 `Label` 控件显示的文本中，如以下屏幕截图所示：
 
-![](attached-properties-images/screenshots.png "各平台上的阴影效果")
+![](attached-properties-images/screenshots.png "Shadow Effect on each Platform")
 
 ## <a name="creating-effect-parameters"></a>创建效果参数
 

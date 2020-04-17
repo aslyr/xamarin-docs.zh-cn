@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
 ms.openlocfilehash: 288ff00b35c369581e50b8e8777f85b7b6119590
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021303"
 ---
 # <a name="publishing-to-the-amazon-app-store"></a>发布到 Amazon 应用商店
@@ -25,10 +25,10 @@ Amazon 不限制 APK 的大小。 但是，如果 APK 大于 30 MB，则会使�
 
 将应用程序提交到 Amazon 应用商店的过程与将应用程序提交到 Google Play 的过程类似。 通过 Amazon 分发的应用程序需要以下资产： 
 
-- **图标** &ndash; 这是一个带有透明背景的 114 x 114 .png 文件。 这是必需项。
-- **缩略图** &ndash; 这是上述图标的更大版本。 其像素为 512 x 512，透明背景。 此图标也是必需项。
-- **屏幕截图** &ndash; Amazon 需要至少 3 个、最多 10 个屏幕截图。 屏幕截图必须为 1024w x 600h 像素或 800w x 480h 像素。 支持 .png 和 .jpg 两种格式。
-- **促销图像** &ndash; 为在促销位置（如主页）上推出应用程序，可能需要提交促销图像（可选）。 该图像应为横向放置的 .png 或 .jpg 文件，像素为 1024w x 500h。 可能没有任何动画。
+- 图标  &ndash; 这是一个带有透明背景的 114 x 114 .png 文件。 这是必需项。
+- 缩略图  &ndash; 这是上述图标的更大版本。 其像素为 512 x 512，透明背景。 此图标也是必需项。
+- 屏幕截图  &ndash; Amazon 需要至少 3 个、最多 10 个屏幕截图。 屏幕截图必须为 1024w x 600h 像素或 800w x 480h 像素。 支持 .png 和 .jpg 两种格式。
+- 促销图像  &ndash; 为在促销位置（如主页）上推出应用程序，可能需要提交促销图像（可选）。 该图像应为横向放置的 .png 或 .jpg 文件，像素为 1024w x 500h。 可能没有任何动画。
 - 可能提供 5 个视频的更新内容。
 
 ## <a name="approval-process"></a>审批过程

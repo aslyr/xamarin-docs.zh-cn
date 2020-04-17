@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 28a0b894d6230810f99ffaec4b93d9d87120e30f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c864f5d97e72a58e4b3c28fdeb97b7cfaea75992
+ms.sourcegitcommit: 89b3e383a37db5b940f0c63bbfe9cb806dc7d5d1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "67277115"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389964"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -42,7 +42,7 @@ ms.locfileid: "67277115"
     </ContentPage>
     ```
 
-    此代码以声明方式定义页面的用户界面，该界面由 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`ListView`](xref:Xamarin.Forms.Image) 组成。 [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 属性指定要显示的在字符串数组中定义的项。
+    此代码以声明方式定义页面的用户界面，该界面由 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`ListView`](xref:Xamarin.Forms.ListView) 组成。 [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 属性指定要显示的在字符串数组中定义的项。
 
 1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序  ：
 
@@ -84,7 +84,7 @@ ms.locfileid: "67277115"
     </ContentPage>
     ```
 
-    此代码以声明方式定义页面的用户界面，该界面由 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`ListView`](xref:Xamarin.Forms.Image) 组成。 [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 属性指定要显示的在字符串数组中定义的项。
+    此代码以声明方式定义页面的用户界面，该界面由 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`ListView`](xref:Xamarin.Forms.ListView) 组成。 [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 属性指定要显示的在字符串数组中定义的项。
 
 1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android 模拟器内的应用程序  ：
 

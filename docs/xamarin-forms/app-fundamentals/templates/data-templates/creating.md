@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
 ms.openlocfilehash: 399f411acd497b9d55ca81f670556430fe5f5503
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771285"
 ---
 # <a name="creating-a-xamarinforms-datatemplate"></a>创建 Xamarin.Forms DataTemplate
@@ -28,7 +28,7 @@ _可通过内联方式创建数据模板，也可在 ResourceDictionary 中或�
 
 无论使用何种技术，结果都是 [`ListView`](xref:Xamarin.Forms.ListView) 中每个单元的外观由 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 定义，如以下屏幕截图所示：
 
-![](creating-images/data-template-appearance.png "使用 DataTemplate 的 ListView")
+![](creating-images/data-template-appearance.png "ListView with a DataTemplate")
 
 <a name="inline" />
 

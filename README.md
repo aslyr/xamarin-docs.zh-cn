@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: c2a49af1a2d55011ef3579ddfe994e5455fed303
-ms.sourcegitcommit: 19b37f33b0eb9a927633a3198574b779374775ff
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50301222"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "60857440"
 ---
 # <a name="xamarin-documentation"></a>Xamarin 文档
 
-此存储库中的文档托管在 [ **docs.microsoft.com/xamarin**](https://docs.microsoft.com/xamarin)。
+此存储库中的文档托管在 [**docs.microsoft.com/xamarin**](https://docs.microsoft.com/xamarin)。
 
 ## <a name="microsoft-open-source-code-of-conduct"></a>Microsoft 开放源行为准则
 
@@ -23,11 +23,11 @@ ms.locfileid: "50301222"
 
 阅读有关[参与流程](CONTRIBUTING.md)的信息，并确定以下哪种方式最适合你的情况  ：
 
-* **社区 - 次要更新**：如果要出于善意提供次要更新，可以在此存储库中或在 [https://docs.microsoft.com/xamarin](https://docs.microsoft.com/xamarin) 访问对应文章，然后单击文章中的“编辑”链接，转到 GitHub 源  。 然后，使用 GitHub 网站执行更新即可。 或者，还可以[对存储库进行分叉](CONTRIBUTING.md)并通过分叉提交更新。
+* 社区 - 次要更新  ：如果要出于善意提供次要更新，可以在此存储库中或在 [https://docs.microsoft.com/xamarin](https://docs.microsoft.com/xamarin) 访问对应文章，然后单击文章中的“编辑”链接，转到 GitHub 源  。 然后，使用 GitHub 网站执行更新即可。 或者，还可以[对存储库进行分叉](CONTRIBUTING.md)并通过分叉提交更新。
 
-* **社区 - 新文章**：如果你是 Xamarin 社区成员并且想要创建新文章，则需要求助工作人员，他们将结合使用公共存储库和专用存储库来帮助你推出该内容。 首先需在存储库中提出 [GitHub 问题](https://github.com/MicrosoftDocs/xamarin-docs/issues)，概述你建议的内容。
+* 社区 - 新文章  ：如果你是 Xamarin 社区成员并且想要创建新文章，则需要求助工作人员，他们将结合使用公共存储库和专用存储库来帮助你推出该内容。 首先需在存储库中提出 [GitHub 问题](https://github.com/MicrosoftDocs/xamarin-docs/issues)，概述你建议的内容。
 
-* **员工**：如果你是技术撰稿人、项目经理或 Xamarin 产品的产品团队开发人员，并且参与或创作技术文章是你的职责，则应使用专用存储库 (https://github.com/MicrosoftDocs/xamarin-docs-pr) 。 如果需要对现有文章进行重大更改、添加或更改图像或贡献新文章，则需对此存储库进行分叉，安装 Git和一个 markdown 编辑器，然后了解一些 git 命令。 有关详细信息，请参阅[内部参与者指南](https://review.docs.microsoft.com/help/contribute/?branch=master)。
+* 员工  ：如果你是技术撰稿人、项目经理或 Xamarin 产品的产品团队开发人员，并且参与或创作技术文章是你的职责，则应使用专用存储库 (https://github.com/MicrosoftDocs/xamarin-docs-pr) )。 如果需要对现有文章进行重大更改、添加或更改图像或贡献新文章，则需对此存储库进行分叉，安装 Git和一个 markdown 编辑器，然后了解一些 git 命令。 有关详细信息，请参阅[内部参与者指南](https://review.docs.microsoft.com/help/contribute/?branch=master)。
 
 ## <a name="legal-notices"></a>法律声明
 

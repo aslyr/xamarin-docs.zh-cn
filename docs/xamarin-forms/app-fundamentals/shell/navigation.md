@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
 ms.openlocfilehash: 70f8f630558730f6074373eb3a814209921235de
-ms.sourcegitcommit: 2798da316a3e9d9de3ea36ff6444f60f60553424
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "71674570"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Xamarin.Forms Shell 导航
@@ -156,7 +156,7 @@ await Shell.Current.GoToAsync("monkeydetails");
 
 此外，还支持以下相对路由格式：
 
-| 格式 | 说明 |
+| 格式 | 描述 |
 | --- | --- |
 | //route  | 将从当前显示的路由向上搜索路由层次结构来获取指定的路由。 |
 | ///route  | 将从当前显示的路由向下搜索路由层次结构来获取指定的路由。 |
@@ -192,7 +192,7 @@ bears
 
 一些 Shell 类通过 `DebuggerDisplayAttribute` 修饰，它指定调试程序如何显示类或字段。 这可以通过显示与导航请求相关的数据来帮助调试导航请求。 例如，下面的屏幕截图显示了 `Shell.Current` 对象的 `CurrentItem` 和 `CurrentState` 属性：
 
-![调试程序屏幕截图](navigation-images/debugger.png "调试程序")
+![调试程序的屏幕截图](navigation-images/debugger.png "调试器")
 
 在本例中，类型为 `FlyoutItem` 的 `CurrentItem` 属性显示了 `FlyoutItem` 对象的标题和路由。 同样，类型为 `ShellNavigationState` 的 `CurrentState` 属性显示了 Shell 应用程序中显示的路由的 URI。
 
@@ -211,7 +211,7 @@ bears
 
 `Shell` 类定义 `Navigating` 事件，该事件在即将执行导航时触发，原因可能是编程导航或用户交互。 随附 `Navigating` 事件的 `ShellNavigatingEventArgs` 对象提供以下属性：
 
-| 属性 | 类型 | 说明 |
+| Property | 类型 | 描述 |
 |---|---|---|
 | `Current` | `ShellNavigationState` | 当前页的 URI。 |
 | `Source` | `ShellNavigationSource` | 发生的导航类型。 |
@@ -226,7 +226,7 @@ bears
 
 `Shell` 类还定义 `Navigated` 事件，该事件在导航完成时触发。 随附 `Navigating` 事件的 `ShellNavigatedEventArgs` 对象提供以下属性：
 
-| 属性 | 类型 | 说明 |
+| Property | 类型 | 描述 |
 |---|---|---|
 | `Current` | `ShellNavigationState` | 当前页的 URI。 |
 | `Previous`| `ShellNavigationState` | 上一页的 URI。 |
@@ -335,7 +335,7 @@ Shell.SetBackButtonBehavior(this, new BackButtonBehavior
 
 将 `Command` 属性设置为按下“后退”按钮时执行的 `ICommand`，将 `IconOverride` 属性设置为用于“后退”按钮的图标：
 
-[![iOS 和 Android 上 Shell“后退”按钮图标重写的屏幕截图](navigation-images/back-button.png "Shell back button icon override")](navigation-images/back-button-large.png#lightbox "Shell 后退按钮图标重写")
+[![iOS 和 Android 上 Shell“后退”按钮图标重写的屏幕截图](navigation-images/back-button.png "Shell 后退按钮图标重写")](navigation-images/back-button-large.png#lightbox "Shell 后退按钮图标重写")
 
 ## <a name="related-links"></a>相关链接
 

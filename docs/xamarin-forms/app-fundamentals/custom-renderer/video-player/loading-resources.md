@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: 4573d58f80b9c168f5d0a8a3f72beb64c29b1703
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771839"
 ---
 # <a name="loading-application-resource-videos"></a>加载应用程序资源视频
@@ -177,7 +177,7 @@ VideoPlayerDemos 解决方案中的“播放视频资源”页使用 `OnPlatform
 
 下面是该页面的运行结果：
 
-[![播放视频资源](loading-resources-images/playvideoresource-small.png "Play Video Resource")](loading-resources-images/playvideoresource-large.png#lightbox "Play Video Resource")
+[![播放视频资源](loading-resources-images/playvideoresource-small.png "播放视频资源")](loading-resources-images/playvideoresource-large.png#lightbox "播放视频资源")
 
 现在，已了解如何[从 Web URI 中加载视频](web-videos.md)和如何播放嵌入的资源。 此外，还可[从设备的视频库中加载视频](accessing-library.md)。
 

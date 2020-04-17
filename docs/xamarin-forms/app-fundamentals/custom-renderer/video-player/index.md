@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: 28e424f4946d05798b9ba309891845d9eab998b1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771811"
 ---
 # <a name="implementing-a-video-player"></a>实现视频播放器
@@ -38,31 +38,31 @@ ms.locfileid: "70771811"
 
 以下系列文章逐步演示如何生成平台呈现器和支持类：
 
-## <a name="creating-the-platform-video-playersplayer-creationmd"></a>[创建平台视频播放器](player-creation.md)
+## <a name="creating-the-platform-video-players"></a>[创建平台视频播放器](player-creation.md)
 
 每个平台都需要 `VideoPlayerRenderer` 类，用于创建和维护平台支持的视频播放器控件。 本文介绍了呈现器类的结构，以及创建播放器的方式。
 
-## <a name="playing-a-web-videoweb-videosmd"></a>[播放 Web 视频](web-videos.md)
+## <a name="playing-a-web-video"></a>[播放 Web 视频](web-videos.md)
 
 Internet 或许是视频播放器最常见的视频来源。 本文介绍如何引用 Web 视频并将其用作视频播放器的源。
 
-## <a name="binding-video-sources-to-the-playersource-bindingsmd"></a>[将视频源绑定到播放器](source-bindings.md)
+## <a name="binding-video-sources-to-the-player"></a>[将视频源绑定到播放器](source-bindings.md)
 
 本文使用 `ListView` 提供要播放的视频集合。 一个程序显示代码隐藏文件如何设置视频播放器的视频源；而另一个程序显示如何在 `ListView` 和视频播放器之间使用数据绑定。
 
-## <a name="loading-application-resource-videosloading-resourcesmd"></a>[加载应用程序资源视频](loading-resources.md)
+## <a name="loading-application-resource-videos"></a>[加载应用程序资源视频](loading-resources.md)
 
 视频可作为资源嵌入到平台项目中。 本文介绍如何存储这些资源，然后将其加载到将使用视频播放器播放的程序中。
 
-## <a name="accessing-the-devices-video-libraryaccessing-librarymd"></a>[访问设备的视频库](accessing-library.md)
+## <a name="accessing-the-devices-video-library"></a>[访问设备的视频库](accessing-library.md)
 
 使用设备摄像头创建视频后，视频文件将存储在设备的图像库中。 本文介绍如何访问设备的图像选取器并选择视频，然后使用视频播放器进行播放。
 
-## <a name="custom-video-transport-controlscustom-transportmd"></a>[自定义视频传输控件](custom-transport.md)
+## <a name="custom-video-transport-controls"></a>[自定义视频传输控件](custom-transport.md)
 
 虽然每个平台上的视频播放器都提供自己的传输控件（即“播放”和“暂停”按钮），但你可以不使用这些按钮并提供自己的按钮   。 本文介绍如何进行此操作。
 
-## <a name="custom-video-positioningcustom-positioningmd"></a>[自定义视频定位](custom-positioning.md)
+## <a name="custom-video-positioning"></a>[自定义视频定位](custom-positioning.md)
 
 每个平台视频播放器都具备定位条，用于显示视频进度并可跳过或返回特定位置。 本文演示如何使用自定义控件替换定位条。
 

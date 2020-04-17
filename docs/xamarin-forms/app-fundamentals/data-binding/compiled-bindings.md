@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/18/2019
 ms.openlocfilehash: 531d9719eb4bf5c23001ebe4260254e13f9989eb
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "72697157"
 ---
 # <a name="xamarinforms-compiled-bindings"></a>Xamarin.Forms 已编译绑定
@@ -128,7 +128,7 @@ ms.locfileid: "72697157"
 
 首次运行应用程序时，[`ListView`](xref:Xamarin.Forms.ListView) 由 `NamedColor` 实例填充。 选中 `ListView` 中的项时，[`BoxView.Color`](xref:Xamarin.Forms.BoxView.Color) 属性被设置为 `ListView` 中所选项的颜色：
 
-[![已编译的颜色列表](compiled-bindings-images/compiledcolorlist-small.png "已编译的颜色列表]")](compiled-bindings-images/compiledcolorlist-large.png#lightbox "Compiled Color List")
+[![已编译的颜色列表](compiled-bindings-images/compiledcolorlist-small.png "已编译的颜色列表]")](compiled-bindings-images/compiledcolorlist-large.png#lightbox "已编译的颜色列表")
 
 选择 [`ListView`](xref:Xamarin.Forms.BoxView) 中的其他项会更新 [`BoxView`](xref:Xamarin.Forms.BoxView) 的颜色。
 

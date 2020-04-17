@@ -9,10 +9,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
 ms.openlocfilehash: a6eb3167fd0880984a74245c4653642ea3979354
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "72678840"
 ---
 # <a name="right-to-left-localization"></a>从右到左本地化
@@ -44,7 +44,7 @@ ms.locfileid: "72678840"
 
 ## <a name="respecting-device-flow-direction"></a>遵循设备流方向
 
-遵循基于所选语言和区域的设备流动方向是开发人员的选择，不会自动发生。 可以通过将页或根布局上的 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 属性设置为 `static`[`Device.FlowDirection`](xref:Xamarin.Forms.Device.FlowDirection) 值来实现：
+遵循基于所选语言和区域的设备流动方向是开发人员的选择，不会自动发生。 可以通过将页或根布局上的 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 属性设置为 `static` [`Device.FlowDirection`](xref:Xamarin.Forms.Device.FlowDirection) 值来实现：
 
 ```xaml
 <ContentPage ... FlowDirection="{x:Static Device.FlowDirection}"> />
@@ -83,7 +83,7 @@ this.FlowDirection = Device.FlowDirection;
 
 ### <a name="android"></a>Android
 
-应更新应用的“AndroidManifest.xml”文件，使 `<uses-sdk>` 节点将 `android:minSdkVersion` 属性设置为 17，`<application>` 节点将 `android:supportsRtl` 属性设置为 `true`  ：
+应更新应用的“AndroidManifest.xml”文件，使 `<uses-sdk>` 节点将 `android:minSdkVersion` 属性设置为 17，`<application>` 节点将 `android:supportsRtl` 属性设置为 `true` ：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -122,7 +122,7 @@ using System.Resources;
 
 Xamarin.Forms 从右到左本地化当前有许多限制：
 
-- [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 按钮位置、工具栏项的位置和转换动画都是由设备区域设置控制，而不是由 [`FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) 属性控制。
+- [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 按钮位置、工具栏项的位置和转换动画都是由设备区域设置控制，而不是由 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 属性控制。
 - [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 轻扫方向不翻转。
 - [`Image`](xref:Xamarin.Forms.Image) 可视内容不翻转。
 - [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)) 和 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])) 方向由设备区域设置控制，而不是由 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 属性控制。

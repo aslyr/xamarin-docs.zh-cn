@@ -8,23 +8,23 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/26/2018
 ms.openlocfilehash: dccc47d8ee69686fe2ac7409f75284c64c99a2d4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70772002"
 ---
 # <a name="customizing-an-entry"></a>自定义 Entry
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-entry)
 
-Xamarin.Forms Entry 控件允许对单行文本进行编辑。本文演示了如何为 Entry 控件创建自定义呈现器，使开发人员能够使用自己特定于平台的自定义呈现替代默认本机呈现。_
+Xamarin.Forms Entry 控件允许对单行文本进行编辑。本文演示了如何为 Entry 控件创建自定义呈现器，使开发人员能够使用自己特定于平台的自定义呈现替代默认本机呈现。 
 
 每个 Xamarin.Forms 控件都有一个附带的呈现器，适用于创建本机控件实例的各个平台。 Xamarin.Forms 应用程序呈现 [`Entry`](xref:Xamarin.Forms.Entry) 控件时，在 iOS 中实例化 `EntryRenderer` 类，进而实例化本机 `UITextField` 控件。 在 Android 平台上，`EntryRenderer` 类实例化 `EditText` 控件。 在通用 Windows 平台 (UWP) 上，`EntryRenderer` 类实例化 `TextBox` 控件。 有关 Xamarin.Forms 控件映射到的呈现器和本机控件类的详细信息，请参阅[呈现器基类和本机控件](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
 下图说明了 [`Entry`](xref:Xamarin.Forms.Entry) 控件和实现它的相应本机控件之间的关系：
 
-![](entry-images/entry-classes.png " 控件和实现的本机控件之间的关系")
+![](entry-images/entry-classes.png "Relationship Between Entry Control and Implementing Native Controls")
 
 通过在每个平台上为 [`Entry`](xref:Xamarin.Forms.Entry) 控件创建自定义呈现器，可以利用呈现过程来实现特定于平台的自定义。 执行此操作的过程如下：
 
@@ -111,11 +111,11 @@ public class MainPage : ContentPage
 
 下图说明了示例应用程序中每个项目的职责，以及它们之间的关系：
 
-![](entry-images/solution-structure.png "MyEntry 自定义呈现器项目的职责")
+![](entry-images/solution-structure.png "MyEntry Custom Renderer Project Responsibilities")
 
 `MyEntry` 控件由平台特定的 `MyEntryRenderer` 类呈现，这些类均派生自各平台的 `EntryRenderer` 类。 这导致每个 `MyEntry` 控件都使用特定于平台的背景色呈现，如下面的屏幕截图所示：
 
-![](entry-images/screenshots.png "每个平台上的 MyEntry 控件")
+![](entry-images/screenshots.png "MyEntry Control on each Platform")
 
 `EntryRenderer` 类公开 `OnElementChanged` 方法，创建 Xamarin.Forms 控件时调用此方法以呈现相应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素   。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `MyEntry` 控件的引用。
 

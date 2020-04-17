@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/16/2018
 ms.openlocfilehash: 67fd8070ae36bdc1a90b8a33b25f13369d8d995d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "68650202"
 ---
 # <a name="xamarinforms-binding-fallbacks"></a>Xamarin.Forms 绑定回退
@@ -48,7 +48,7 @@ MonkeyDetail 页说明了设置 [`FallbackValue`](xref:Xamarin.Forms.BindingBase
 
 下面是正在运行的程序：
 
-![FallbackValue 绑定](binding-fallbacks-images/bindingunavailable-detail-cropped.png "FallbackValue Binding")
+![FallbackValue 绑定](binding-fallbacks-images/bindingunavailable-detail-cropped.png "FallbackValue 绑定")
 
 如果未在绑定表达式中设置 `FallbackValue` 属性且未解析绑定路径或路径的一部分，则会在目标上设置 [`BindableProperty.DefaultValue`](xref:Xamarin.Forms.BindableProperty.DefaultValue)。 但是，当设置了 `FallbackValue` 属性，且未解析绑定路径或部分路径，则会在目标上设置 `FallbackValue` 值属性的值。 因此，在 **MonkeyDetail**页面上，[`Label`](xref:Xamarin.Forms.Label) 显示“人口大小未知”，因为绑定对象缺少 `Population` 属性。
 
@@ -57,7 +57,7 @@ MonkeyDetail 页说明了设置 [`FallbackValue`](xref:Xamarin.Forms.BindingBase
 
 ## <a name="defining-a-null-replacement-value"></a>定义 null 替换值
 
-[`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 属性允许定义替换值，该值将在解析绑定源时使用，但值为 `null`  。 设置此属性的常见方案是绑定到绑定集合中可能为 `null` 的源属性。
+[`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 属性允许定义替换值，该值将在解析绑定源时使用，但值为 `null` 。 设置此属性的常见方案是绑定到绑定集合中可能为 `null` 的源属性。
 
 **Monkeys** 页说明了设置 [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 属性的方法：
 
@@ -97,7 +97,7 @@ MonkeyDetail 页说明了设置 [`FallbackValue`](xref:Xamarin.Forms.BindingBase
 
 下面是正在运行的程序：
 
-[![TargetNullValue 绑定](binding-fallbacks-images/bindingunavailable-small.png "TargetNullValue Binding")](binding-fallbacks-images/bindingunavailable-large.png#lightbox "TargetNullValue Binding")
+[![TargetNullValue 绑定](binding-fallbacks-images/bindingunavailable-small.png "TargetNullValue 绑定")](binding-fallbacks-images/bindingunavailable-large.png#lightbox "TargetNullValue 绑定")
 
 如果未在绑定表达式中设置 `TargetNullValue` 属性，则在定义了值转换器时将转换源值 `null`，如果定义了 `StringFormat` 则将其格式化，然后在目标上设置结果。 但是，当设置了 `TargetNullValue` 属性时，如果定义了值转换器，则将转换源值 `null`，如果转换后它仍为 `null`，则会在目标上设置 `TargetNullValue` 属性的值。
 

@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: 3dfdb83f99e7b15866abcc4980473ddf075dff69
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771768"
 ---
 # <a name="binding-video-sources-to-the-player"></a>将视频源绑定到播放器
@@ -75,7 +75,7 @@ namespace VideoPlayerDemos
 
 首次加载页面时，未选择 `ListView` 中的任何项，因此必须选择一个视频开始播放：
 
-[![选择 Web 视频](source-bindings-images/selectwebvideo-small.png "Select Web Video")](source-bindings-images/selectwebvideo-large.png#lightbox "Select Web Video")
+[![选择 Web 视频](source-bindings-images/selectwebvideo-small.png "选择 Web 视频")](source-bindings-images/selectwebvideo-large.png#lightbox "选择 Web 视频")
 
 `VideoPlayer` 的 `Source` 属性由可绑定属性支持，这意味着它可以是数据绑定的目标。 这通过“绑定到视频播放器”页进行演示  。 BindToVideoPlayer.xaml 文件中的标记由以下封装视频标题和相应 `VideoSource` 对象的类支持  ：
 

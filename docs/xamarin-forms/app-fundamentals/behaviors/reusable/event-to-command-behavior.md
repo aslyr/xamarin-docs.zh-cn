@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/09/2018
 ms.openlocfilehash: 292a6aaaea4fb0f84138e04c88f001c72ddd096d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "68650903"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>可重用 EventToCommandBehavior
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 
-行为可用于将命令与非旨在与命令交互的控件相关联。本文演示了如何创建 Xamarin.Forms 行为并在事件触发后使用它来调用命令。_
+行为可用于将命令与非旨在与命令交互的控件相关联。本文演示了如何创建 Xamarin.Forms 行为并在事件触发后使用它来调用命令。 
 
 ## <a name="overview"></a>概述
 
@@ -198,7 +198,7 @@ selectedItemLabel.SetBinding(Label.TextProperty, "SelectedItemText");
 
 在运行时，该行为将响应与控件的交互。 在 [`ListView`](xref:Xamarin.Forms.ListView) 中选定一个项目时，将触发 [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) 事件，该事件将在 ViewModel 中执行 `OutputAgeCommand`。 反过来，这又会更新 [`Label`](xref:Xamarin.Forms.Label) 绑定到的 ViewModel `SelectedItemText` 属性，如以下屏幕截图所示：
 
-[![](event-to-command-behavior-images/screenshots-sml.png "使用 EventToCommandBehavior 的示例应用程序")](event-to-command-behavior-images/screenshots.png#lightbox "Sample Application with EventToCommandBehavior")
+[![](event-to-command-behavior-images/screenshots-sml.png "Sample Application with EventToCommandBehavior")](event-to-command-behavior-images/screenshots.png#lightbox "Sample Application with EventToCommandBehavior")
 
 在事件触发时使用此行为执行命令的优点是，命令可与非旨在与命令交互的控件相关联。 此外，还可从代码隐藏文件中删除冗余重复事件处理代码。
 

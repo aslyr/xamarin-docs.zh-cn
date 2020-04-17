@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: 7a4c67f067b73873c3d1de4499abda2703217ddf
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70760827"
 ---
 # <a name="xamarinforms-modal-pages"></a>Xamarin.Forms 模式页面
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-modal)
 
-Xamarin.Forms 支持模式页面。模式页面鼓励用户完成独立任务，在完成或取消该任务之前，不允许导航离开该任务。本文演示如何导航到模式页面。_
+Xamarin.Forms 支持模式页面。模式页面鼓励用户完成独立任务，在完成或取消该任务之前，不允许导航离开该任务。本文演示如何导航到模式页面。 
 
 本文讨论以下主题：
 
@@ -29,11 +29,11 @@ Xamarin.Forms 支持模式页面。模式页面鼓励用户完成独立任务，
 
 模式页面可以是 Xamarin.Forms 支持的任何 [页面](~/xamarin-forms/user-interface/controls/pages.md)类型。 若要显示模式页面，应用程序会将页面推送到模式堆栈中，在堆栈中，该页面会变为活动页面，如下图所示：
 
-![](modal-images/pushing.png "将页面推送到模式堆栈")
+![](modal-images/pushing.png "Pushing a Page to the Modal Stack")
 
 若要返到回前一页，应用程序会从模式堆栈弹出当前页面，而使最顶层的新页面成为活动页面，如下图所示：
 
-![](modal-images/popping.png "从模式堆栈中弹出页面")
+![](modal-images/popping.png "Popping a Page from the Modal Stack")
 
 <a name="Performing_Navigation" />
 
@@ -65,7 +65,7 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 
 这会导致 `ModalPage` 实例被推送到模式堆栈中，在该堆栈中，该实例将变为活动页面，前提是已在 `MainPage` 实例上的 [`ListView`](xref:Xamarin.Forms.ListView) 中选择了一个项目。 `ModalPage` 实例如以下屏幕截图中所示：
 
-![](modal-images/modalpage.png "模式页面示例")
+![](modal-images/modalpage.png "Modal Page Example")
 
 调用 [`PushModalAsync`](xref:Xamarin.Forms.INavigation.PushModalAsync*) 时，会发生以下事件：
 

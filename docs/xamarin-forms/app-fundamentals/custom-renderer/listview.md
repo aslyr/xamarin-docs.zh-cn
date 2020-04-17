@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
 ms.openlocfilehash: 384ad20cc1456f3de01ddbe241bf2d8b58de387f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771934"
 ---
 # <a name="customizing-a-listview"></a>自定义 ListView
@@ -24,7 +24,7 @@ _Xamarin.Forms ListView 是以垂直列表的形式显示数据集合的视图�
 
 下图说明了 [`ListView`](xref:Xamarin.Forms.ListView) 控件和实现它的相应本机控件之间的关系：
 
-![](listview-images/listview-classes.png "ListView 控件和实现的本机控件之间的关系")
+![](listview-images/listview-classes.png "Relationship Between the ListView Control and the Implementing Native Controls")
 
 通过在每个平台上为 [`ListView`](xref:Xamarin.Forms.ListView) 创建自定义呈现器，可以利用呈现过程来实现特定于平台的自定义。 执行此操作的过程如下：
 
@@ -155,11 +155,11 @@ public class MainPageCS : ContentPage
 
 下图说明了示例应用程序中每个项目的职责，以及它们之间的关系：
 
-![](listview-images/solution-structure.png "NativeListView 自定义呈现器项目的职责")
+![](listview-images/solution-structure.png "NativeListView Custom Renderer Project Responsibilities")
 
 `NativeListView` 自定义控件由特定于平台的呈现器类呈现，这些类全都派生自各平台的 `ListViewRenderer` 类。 这导致每个 `NativeListView` 自定义控件都使用特定于平台的列表控件和本机单元布局呈现，如以下屏幕截图所示：
 
-![](listview-images/screenshots.png "每个平台上的 NativeListView")
+![](listview-images/screenshots.png "NativeListView on each Platform")
 
 `ListViewRenderer` 类公开 `OnElementChanged` 方法，创建 Xamarin.Forms 自定义控件时调用此方法以呈现对应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素   。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `NativeListView` 实例的引用。
 

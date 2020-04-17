@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 9d78f0e9bf3b8d6d227f76b2729be849e5cdd3a6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 1bcd808221ee319fa2818563418d2362b146e354
+ms.sourcegitcommit: 89b3e383a37db5b940f0c63bbfe9cb806dc7d5d1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "72678707"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389954"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -31,7 +31,7 @@ ms.locfileid: "72678707"
     </ContentPage>
     ```
 
-    此代码以声明方式定义页面的用户界面，该界面由 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`Label`](xref:Xamarin.Forms.Label) 组成。 [`Label.Text`](xref:Xamarin.Forms.Button.Text) 属性指定显示的文本，[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 属性指定 `Label` 将水平居中。
+    此代码以声明方式定义页面的用户界面，该界面由 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`Label`](xref:Xamarin.Forms.Label) 组成。 [`Label.Text`](xref:Xamarin.Forms.Label.Text) 属性指定显示的文本，[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 属性指定 `Label` 将水平居中。
 
 1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序  ：
 
@@ -62,7 +62,7 @@ ms.locfileid: "72678707"
     </ContentPage>
     ```
 
-    此代码以声明方式定义页面的用户界面，该界面由 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`Label`](xref:Xamarin.Forms.Label) 组成。 [`Label.Text`](xref:Xamarin.Forms.Button.Text) 属性指定显示的文本，[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 属性指定文本将水平居中。
+    此代码以声明方式定义页面的用户界面，该界面由 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`Label`](xref:Xamarin.Forms.Label) 组成。 [`Label.Text`](xref:Xamarin.Forms.Label.Text) 属性指定显示的文本，[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 属性指定文本将水平居中。
 
 1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android 模拟器内的应用程序  ：
 

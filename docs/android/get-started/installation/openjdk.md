@@ -8,11 +8,11 @@ author: vyedin
 ms.author: vyedin
 ms.date: 07/22/2018
 ms.openlocfilehash: a24edbc10d529878092b474df7f186d14049d5e0
-ms.sourcegitcommit: f8e22a3b0642179bf44a312e9a2fac0fbad8683c
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57239108"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "60955061"
 ---
 # <a name="microsofts-mobile-openjdk-distribution"></a>Microsoft 分发的 Mobile OpenJDK
 
@@ -20,7 +20,7 @@ _本指南介绍切换到 OpenJDK 内部分发的步骤。此分发适用于移�
 
 ## <a name="overview"></a>概述
 
-自 Visual Studio 15.9 和 Visual Studio for Mac 7.7 起，Visual Studio Tools for Xamarin 已从 Oracle JDK 迁移到仅用于 Android 开发的 OpenJDK 轻型版本。 此次迁移是必需的，因为 Oracle 将于 2019 年终止对 JDK 8 的商业分发的支持，而 JDK 8 是所有 Android 开发的必需依赖项。
+自 Visual Studio 15.9 和 Visual Studio for Mac 7.7 起，Visual Studio Tools for Xamarin 已从 Oracle JDK 迁移到仅用于 Android 开发的 OpenJDK 轻型版本  。 此次迁移是必需的，因为 Oracle 将于 2019 年终止对 JDK 8 的商业分发的支持，而 JDK 8 是所有 Android 开发的必需依赖项。
 
 此迁移带来以下优势：
 
@@ -46,16 +46,16 @@ _本指南介绍切换到 OpenJDK 内部分发的步骤。此分发适用于移�
 
 检查是否已在计算机上的正确位置安装 OpenJDK：
 
-- Mac &ndash; $HOME/Library/Developer/Xamarin/jdk/microsoft_dist_openjdk_1.8.0.x
-- Windows &ndash; C:\\Program Files\\Android\\jdk\\microsoft_dist_openjdk_1.8.0.x
+- Mac  &ndash; $HOME/Library/Developer/Xamarin/jdk/microsoft_dist_openjdk_1.8.0.x 
+- Windows &ndash; C:\\Program Files\\Android\\jdk\\microsoft_dist_openjdk_1.8.0.x  
 
 将 IDE 定目标到新 JDK：
 
-- **Mac** &ndash; 依次单击“工具 > SDK 管理器 > 位置”，并将“Java SDK (JDK)位置”更改为 OpenJDK 安装的完整路径。 在以下示例中，此路径设置为 $HOME/Library/Developer/Xamarin/jdk/microsoft_dist_openjdk_1.8.0.9，但你的版本可能更新。
+- Mac  &ndash; 依次单击“工具 > SDK 管理器 > 位置”  ，并将“Java SDK (JDK)位置”  更改为 OpenJDK 安装的完整路径。 在以下示例中，此路径设置为 $HOME/Library/Developer/Xamarin/jdk/microsoft_dist_openjdk_1.8.0.9，但你的版本可能更新  。
 
 ![在 Mac 上设置 Microsoft 分发的 Mobile OpenJDK 的 JDK 路径](openjdk-images/vsm.png)
 
-- **Windows** &ndash; 依次单击“工具 > 选项 > Xamarin > Android 设置”，并将“Java 开发工具包位置”设置为 OpenJDK 安装的完整路径。 在以下示例中，此路径设置为 C:\\Program Files\\Android\\jdk\\microsoft_dist_openjdk_1.8.0.9：
+- Windows  &ndash; 依次单击“工具 > 选项 > Xamarin > Android 设置”  ，并将“Java 开发工具包位置”  设置为 OpenJDK 安装的完整路径。 在以下示例中，此路径设置为 C:\\Program Files\\Android\\jdk\\microsoft_dist_openjdk_1.8.0.9  ：
 
 ![在 Windows 上设置 Microsoft 分发的 Mobile OpenJDK 的 JDK 路径](openjdk-images/vs.png)
 

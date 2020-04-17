@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
 ms.openlocfilehash: c93feb9527892b7b4c60c9d213361d19d3bc4b93
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771734"
 ---
 # <a name="implementing-a-view"></a>实现视图
@@ -24,7 +24,7 @@ _Xamarin.Forms 自定义用户界面控件应派生自视图类，该类用于�
 
 下图说明了 [`View`](xref:Xamarin.Forms.View) 和实现它的相应本机控件之间的关系：
 
-![](view-images/view-classes.png "视图类及其实现本机类之间的关系")
+![](view-images/view-classes.png "Relationship Between the View Class and its Implementing Native Classes")
 
 通过在每个平台上为 [`View`](xref:Xamarin.Forms.View) 创建自定义呈现器，可以使用呈现过程来实现特定于平台的自定义。 执行此操作的过程如下：
 
@@ -121,11 +121,11 @@ public class MainPageCS : ContentPage
 
 下图说明了示例应用程序中每个项目的职责，以及它们之间的关系：
 
-![](view-images/solution-structure.png "CameraPreview 自定义呈现器项目的职责")
+![](view-images/solution-structure.png "CameraPreview Custom Renderer Project Responsibilities")
 
 `CameraPreview` 自定义控件由特定于平台的呈现器类呈现，这些类全都派生自各平台的 `ViewRenderer` 类。 这导致每个 `CameraPreview` 自定义控件都使用特定于平台的控件呈现，如以下屏幕截图所示：
 
-![](view-images/screenshots.png "每个平台上的 CameraPreview")
+![](view-images/screenshots.png "CameraPreview on each Platform")
 
 `ViewRenderer` 类公开 `OnElementChanged` 方法，创建 Xamarin.Forms 自定义控件时调用此方法以呈现对应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素   。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `CameraPreview` 实例的引用。
 

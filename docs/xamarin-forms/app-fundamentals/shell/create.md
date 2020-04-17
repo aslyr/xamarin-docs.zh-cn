@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/24/2019
 ms.openlocfilehash: eec20ff6ceb4aee7e8fde59992576899690616c3
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/02/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "68739311"
 ---
 # <a name="create-a-xamarinforms-shell-application"></a>创建 Xamarin.Forms Shell 应用程序

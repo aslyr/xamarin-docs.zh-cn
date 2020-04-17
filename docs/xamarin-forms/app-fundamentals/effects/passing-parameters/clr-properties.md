@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
 ms.openlocfilehash: 04d96dad455cbcf8360f12ee97a0540e7e746d62
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771472"
 ---
 # <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>将效果参数作为公共语言运行时属性传递
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 
-公共语言运行时 (CLR) 属性可用于定义不响应运行时属性更改的效果参数。本文演示如何使用 CLR 属性将参数传递给效果。_
+公共语言运行时 (CLR) 属性可用于定义不响应运行时属性更改的效果参数。本文演示如何使用 CLR 属性将参数传递给效果。 
 
 创建不响应运行时属性更改的效果参数的过程如下：
 
@@ -30,11 +30,11 @@ ms.locfileid: "70771472"
 
 示例应用程序展示了向 [`Label`](xref:Xamarin.Forms.Label) 控件显示的文本添加阴影的 `ShadowEffect`。 下图说明了示例应用程序中每个项目的职责，以及它们之间的关系：
 
-![](clr-properties-images/shadow-effect.png "阴影效果项目职责")
+![](clr-properties-images/shadow-effect.png "Shadow Effect Project Responsibilities")
 
 `HomePage` 上的 [`Label`](xref:Xamarin.Forms.Label) 控件由特定于平台的各项目中的 `LabelShadowEffect` 自定义。 参数通过 `ShadowEffect` 类中的属性传递给每个 `LabelShadowEffect`。 每个 `LabelShadowEffect` 类均派生自各平台的 `PlatformEffect` 类。 这就使阴影被添加到 `Label` 控件显示的文本中，如以下屏幕截图所示：
 
-![](clr-properties-images/screenshots.png "各平台上的阴影效果")
+![](clr-properties-images/screenshots.png "Shadow Effect on each Platform")
 
 ## <a name="creating-effect-parameters"></a>创建效果参数
 

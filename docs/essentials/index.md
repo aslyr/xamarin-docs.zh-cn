@@ -5,12 +5,12 @@ ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 02/26/2020
-ms.openlocfilehash: 42cdfe6c54354f1616606c9b3a40de78446c5c39
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.openlocfilehash: 1d68203e80e0bc28e7060d5873c122db8c2ff960
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78910734"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "80387200"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -61,6 +61,7 @@ Android、iOS 和 UWP 提供了唯一的操作系统和平台 API，开发人员
 * [单位转换器](unit-converters.md?context=xamarin/xamarin-forms) - 转换单位的帮助程序方法。
 * [版本跟踪](version-tracking.md?context=xamarin/xamarin-forms) – 跟踪应用程序版本和内部版本号。
 * [振动](vibrate.md?context=xamarin/xamarin-forms) – 使振动设备。
+* [Web Authenticator](web-authenticator.md?context=xamarin/xamarin-forms) - 启动 Web 身份验证流并侦听回调。
 
 ## <a name="troubleshooting"></a>[疑难解答](troubleshooting.md?context=xamarin/xamarin-forms)
 

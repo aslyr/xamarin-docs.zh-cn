@@ -9,10 +9,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
 ms.openlocfilehash: 4acbfe810abefd9a25721ddf59c9f4f197afdf28
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73020982"
 ---
 # <a name="hello-android-multiscreen-deep-dive"></a>了解 Android 多屏显示：深入了解
@@ -33,9 +33,9 @@ Android 应用程序由特殊 Android 类的集合组成，这些类称为应用
 
 应用程序块组成 Android 应用程序的主干，因为它们使你可以执行使用常规类通常无法完成的操作。 两个最重要的块是 _活动_ 和 _服务_ ：
 
-- **活动** &ndash; 活动与具有用户界面的屏幕对应，在概念上类似于 Web 应用程序中的网页。 例如，在新闻源应用程序中，登录屏幕会是第一个活动，新闻项的可滚动列表会是另一个活动，而每个项的详细信息页面会是第三个活动。 可以在[活动生命周期](~/android/app-fundamentals/activity-lifecycle/index.md)指南中了解有关活动的详细信息。
+- 活动  &ndash; 活动与具有用户界面的屏幕对应，在概念上类似于 Web 应用程序中的网页。 例如，在新闻源应用程序中，登录屏幕会是第一个活动，新闻项的可滚动列表会是另一个活动，而每个项的详细信息页面会是第三个活动。 可以在[活动生命周期](~/android/app-fundamentals/activity-lifecycle/index.md)指南中了解有关活动的详细信息。
 
-- **服务** &ndash; Android 服务通过接管长时间运行的任务并在后台运行它们来支持活动。 服务没有用户界面，用于处理未绑定到屏幕的任务 &ndash; 例如，在后台播放歌曲或将照片上传到服务器。 有关服务的详细信息，请参阅[创建服务](~/android/app-fundamentals/services/index.md)和 [Android 服务](~/android/app-fundamentals/services/index.md)指南。
+- 服务  &ndash; Android 服务通过接管长时间运行的任务并在后台运行它们来支持活动。 服务没有用户界面，用于处理未绑定到屏幕的任务 &ndash; 例如，在后台播放歌曲或将照片上传到服务器。 有关服务的详细信息，请参阅[创建服务](~/android/app-fundamentals/services/index.md)和 [Android 服务](~/android/app-fundamentals/services/index.md)指南。
 
 Android 应用程序可能不会使用所有类型的块，通常具有一种类型的多个块。 例如，来自 [Hello，Android 快速入门](~/android/get-started/hello-android/hello-android-quickstart.md)的 Phoneword 应用程序只由一个活动（屏幕）和一些资源文件组成。 简单音乐播放器应用可能具有多个活动以及一个用于在应用处于后台时播放音乐的服务。
 
@@ -81,7 +81,7 @@ translationHistoryButton.Click += (sender, e) =>
 
 Phoneword 应用程序引入了多个本指南中未提及的概念。 这些概念包括：
 
-**字符串资源** &ndash; 在 Phoneword 应用程序中，`TranslationHistoryButton` 的文本设置为 `"@string/translationHistory"`。 `@string` 语法表示字符串的值存储在 _字符串资源文件_ (**Strings.xml**) 中。 `translationHistory` 字符串的以下值已添加到 **Strings.xml** 中：
+字符串资源  &ndash; 在 Phoneword 应用程序中，`TranslationHistoryButton` 的文本设置为 `"@string/translationHistory"`。 `@string` 语法表示字符串的值存储在 _字符串资源文件_ (**Strings.xml**) 中。 `translationHistory` 字符串的以下值已添加到 **Strings.xml** 中：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -92,7 +92,7 @@ Phoneword 应用程序引入了多个本指南中未提及的概念。 这些概
 
 有关字符串资源和其他 Android 资源的详细信息，请参阅 [Android 资源指南](~/android/app-fundamentals/resources-in-android/index.md)。
 
-**ListView 和 ArrayAdapter** &ndash; _ListView_ 是一个 UI 组件，它提供了显示行的滚动列表的简单方法。 `ListView` 实例需要 _适配器_ ，以向它馈送行视图中包含的数据。 下面的代码行用于填充 `TranslationHistoryActivity` 的用户界面：
+ListView 和 ArrayAdapter  &ndash; ListView  是一个 UI 组件，它提供了显示行的滚动列表的简单方法。 `ListView` 实例需要 _适配器_ ，以向它馈送行视图中包含的数据。 下面的代码行用于填充 `TranslationHistoryActivity` 的用户界面：
 
 ```csharp
 this.ListAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, phoneNumbers);

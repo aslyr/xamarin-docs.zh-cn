@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: 702ec35bca051f7255c5c9d67d2dc68d4f89ca52
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "68645954"
 ---
 # <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms 母版-详细信息页
@@ -24,7 +24,7 @@ _Xamarin.Forms MasterDetailPage 页面用于管理两个相关信息页，其中
 
 母版页通常会显示项列表，如以下屏幕截图中所示：
 
-[![](master-detail-page-images/masterpage-components.png "母版页组件")](master-detail-page-images/masterpage-components-large.png#lightbox "Master Page Components")
+[![](master-detail-page-images/masterpage-components.png "Master Page Components")](master-detail-page-images/masterpage-components-large.png#lightbox "Master Page Components")
 
 每个平台上的项列表的位置是相同的，选择某一项将导航到相关的详细信息页。 此外，母版页还提导航栏功能，包含一个可用于导航到活动详细信息页的按钮：
 
@@ -34,7 +34,7 @@ _Xamarin.Forms MasterDetailPage 页面用于管理两个相关信息页，其中
 
 详细信息页显示和母版页上选择的项相关的数据，且以下屏幕截图中展示了详细信息页的主要组件：
 
-![](master-detail-page-images/detailpage-components.png "详细信息页组件")
+![](master-detail-page-images/detailpage-components.png "Detail Page Components")
 
 详细信息页包含内容依赖于平台的导航栏：
 
@@ -210,11 +210,11 @@ public class MasterPageCS : ContentPage
 
 以下屏幕截图显示每个平台上的母版页：
 
-![](master-detail-page-images/masterpage.png "母版页示例")
+![](master-detail-page-images/masterpage.png "Master Page Example")
 
 ### <a name="creating-and-displaying-the-detail-page"></a>创建并显示详细信息页
 
-`MasterPage` 实例包含公开其 [`ListView`](xref:Xamarin.Forms.ListView) 实例的 `ListView` 属性，以便 `MainPage`[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 实例可以注册事件处理程序以处理 [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) 事件。 这使 `MainPage` 实例能够将 [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) 属性设置为表示所选 `ListView` 项的页面。 以下代码示例演示事件处理程序：
+`MasterPage` 实例包含公开其 [`ListView`](xref:Xamarin.Forms.ListView) 实例的 `ListView` 属性，以便 `MainPage` [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 实例可以注册事件处理程序以处理 [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) 事件。 这使 `MainPage` 实例能够将 [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) 属性设置为表示所选 `ListView` 项的页面。 以下代码示例演示事件处理程序：
 
 ```csharp
 public partial class MainPage : MasterDetailPage
@@ -245,7 +245,7 @@ public partial class MainPage : MasterDetailPage
 
 以下屏幕截图显示了 `ContactPage` 详细信息页，在母版页上选择它后将显示：
 
-![](master-detail-page-images/detailpage.png "详细信息页示例")
+![](master-detail-page-images/detailpage.png "Detail Page Example")
 
 <a name="Controlling_the_Detail_Page_Display_Behavior" />
 

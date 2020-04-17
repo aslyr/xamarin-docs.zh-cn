@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
 ms.openlocfilehash: dee49d556173ec0b9544820f129eef8a9cce404f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021311"
 ---
 # <a name="publishing-independently"></a>独立发布
@@ -23,9 +23,9 @@ ms.locfileid: "73021311"
 
 - Visual Studio Community &ndash; 面向使用 Windows 的学生、小型团队和 OSS 开发者  。
 
-- **Visual Studio Professional** &ndash; 面向独立开发者或小型团队（仅限 Windows）。 该许可证提供标准订阅或云订阅，并且没有使用限制。
+- Visual Studio Professional  &ndash; 面向独立开发者或小型团队（仅限 Windows）。 该许可证提供标准订阅或云订阅，并且没有使用限制。
 
-- **Visual Studio Enterprise** &ndash; 面向任何规模的团队（仅限 Windows）。 此许可包括企业功能（标准或云订阅）。
+- Visual Studio Enterprise  &ndash; 面向任何规模的团队（仅限 Windows）。 此许可包括企业功能（标准或云订阅）。
 
 若要下载社区版或深入了解如何购买 Professional 版和 Enterprise 版，请访问 [visualstudio.com](https://visualstudio.microsoft.com/xamarin/)。
 
@@ -54,8 +54,8 @@ ms.locfileid: "73021311"
 
 手动安装是安装应用程序的第 3 个选择。 若要手动安装应用程序：
 
-1. **向用户分发 APK 副本** &ndash; 例如可通过 CD 或 U 盘分发此副本。
-1. **（用户）在 Android 设备上安装应用程序** &ndash; 使用命令行 *Android Debug Bridge* (**adb**) 工具。 **adb** 是一种多功能的命令行工具，支持与仿真器实例或 Android 设备进行通信。 Android SDK 内附有 adb；其位于 \<sdk>/platform-tools/ 目录中   。
+1. 向用户分发 APK 副本  &ndash; 例如可通过 CD 或 U 盘分发此副本。
+1. （用户）在 Android 设备上安装应用程序  &ndash; 使用命令行 Android Debug Bridge  (adb  ) 工具。 **adb** 是一种多功能的命令行工具，支持与仿真器实例或 Android 设备进行通信。 Android SDK 内附有 adb；其位于 \<sdk>/platform-tools/ 目录中   。
 
 Android 设备必须使用 USB 接口线连接到计算机。
 Windows 计算机可能还需要电话供应商提供额外的 USB 驱动程序，使其能够被 adb 识别  。 本文未介绍其他 USB 驱动程序的安装说明。

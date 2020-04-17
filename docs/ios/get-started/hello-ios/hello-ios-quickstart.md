@@ -10,10 +10,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
 ms.openlocfilehash: 5dcc37730008e6e39b96128bc1368f022daa2d06
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73022997"
 ---
 # <a name="hello-ios--quickstart"></a>Hello，iOS - 快速入门
@@ -68,7 +68,7 @@ Xamarin.iOS 适用于以下设置：
 
     ![](hello-ios-quickstart-images/image4new.png "Choose Single View Application")
 
-3. 配置应用。 为其提供名称  `Phoneword_iOS`，并使其他项保留为默认值。 单击“下一步”  ：
+3. 配置应用。 将其命名为  `Phoneword_iOS`，并将其他项保留为默认值。 单击“下一步”  ：
 
     ![](hello-ios-quickstart-images/image5new.png "Enter the app name")
 
@@ -347,7 +347,7 @@ Xamarin.iOS 适用于以下设置：
 
     ![](hello-ios-quickstart-images/vs-image18.png "Add some code to translate phone numbers from alphanumeric to numeric")
 
-1. 在“添加新项”对话框（右键单击项目，选择“添加”>“新建项...”）中，选择“Apple”>“类”，然后将新文件命名为 `PhoneTranslator`   ：
+1. 在“添加新项”对话框（右键单击项目，选择“添加”>“新建项...”）中，选择“Apple”>“类”，然后将新文件命名为 `PhoneTranslator`  ：
 
     ![](hello-ios-quickstart-images/vs-image19.w157.png "Add a new class named PhoneTranslator")
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2018
-ms.openlocfilehash: e027d41e98c26ef1659c27ab05df3052e19cc670
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.openlocfilehash: 0fc74ae2307ffd14f8c52515c93993a51455997a
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "73027136"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "80805950"
 ---
 # <a name="location-services-on-android"></a>Android 上的位置服务
 
@@ -84,7 +84,7 @@ else
 融合位置提供程序是 [Google Play Services](https://developer.android.com/google/play-services/index.html) 的一部分。
 必须在应用程序中正确安装和配置 Google Play Services 包才能使融合位置提供程序 API 正常工作，并且设备必须安装 Google Play Services APK。
 
-在 Xamarin.Android 应用程序可以使用融合位置提供程序之前，必须向项目添加 Xamarin.GooglePlayServices.Maps 包  。 此外，还应在引用下述类的任何源文件中添加以下 `using` 语句：
+在 Xamarin.Android 应用程序可以使用融合位置提供程序之前，必须向项目添加 Xamarin.GooglePlayServices.Location 包  。 此外，还应在引用下述类的任何源文件中添加以下 `using` 语句：
 
 ```csharp
 using Android.Gms.Common;
