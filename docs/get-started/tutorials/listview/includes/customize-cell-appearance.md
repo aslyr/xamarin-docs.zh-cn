@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3c88b71cea834f5e6ef20d43332904c052c6e3a6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 04d2a244482c92a615c3eec2130cec1df8aaaf1f
+ms.sourcegitcommit: 89b3e383a37db5b940f0c63bbfe9cb806dc7d5d1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "61037431"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389965"
 ---
 以前，使用数据绑定为 [`ListView`](xref:Xamarin.Forms.ListView) 填充数据。 但是，尽管数据绑定到每个对象都定义了多个数据项的集合，但每个对象只显示一个数据项（`Monkey` 对象的 `Name` 属性）。
 
@@ -12,7 +12,7 @@ ms.locfileid: "61037431"
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
-1. 在 MainPage.xaml 中，修改 [`ListView`](xref:Xamarin.Forms.Image) 声明以自定义每行的外观  ：
+1. 在 MainPage.xaml 中，修改 [`ListView`](xref:Xamarin.Forms.ListView) 声明以自定义每行的外观  ：
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}"
@@ -62,7 +62,7 @@ ms.locfileid: "61037431"
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. 在 MainPage.xaml 中，修改 [`ListView`](xref:Xamarin.Forms.Image) 声明以自定义每行的外观  ：
+1. 在 MainPage.xaml 中，修改 [`ListView`](xref:Xamarin.Forms.ListView) 声明以自定义每行的外观  ：
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}"

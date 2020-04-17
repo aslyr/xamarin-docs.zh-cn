@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e03d0ada982cbf1d2954f4b677accc7ce7da793e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c1eeece93d5da3092f1bd46c82c98e2304d25139
+ms.sourcegitcommit: 89b3e383a37db5b940f0c63bbfe9cb806dc7d5d1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "69541427"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389939"
 ---
 使用 `IEnumerable` 类型的 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 属性为 [`ListView`](xref:Xamarin.Forms.ListView) 填充数据。 上一步骤使用 XAML 为 `ListView` 填充了一个字符串数组。 然而，我们通常从在代码隐藏中定义的实现 `IEnumerable` 的集合为 `ListView` 填充数据。
 
@@ -177,7 +177,7 @@ ms.locfileid: "69541427"
     > [!IMPORTANT]
     > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 属性通过可视化树继承。 已在 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 对象上设置了该属性，所以 `ContentPage` 的子对象继承它的值，包括 [`ListView`](xref:Xamarin.Forms.ListView)。
 
-1. 在 MainPage.xaml 中，修改 [`ListView`](xref:Xamarin.Forms.Image) 声明，将 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 属性设置为 `Monkeys` 集合  ：
+1. 在 MainPage.xaml 中，修改 [`ListView`](xref:Xamarin.Forms.ListView) 声明，将 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 属性设置为 `Monkeys` 集合  ：
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}" />
@@ -358,7 +358,7 @@ ms.locfileid: "69541427"
     > [!IMPORTANT]
     > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 属性通过可视化树继承。 已在 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 对象上设置了该属性，所以 `ContentPage` 的子对象继承它的值，包括 [`ListView`](xref:Xamarin.Forms.ListView)。
 
-1. 在 MainPage.xaml 中，修改 [`ListView`](xref:Xamarin.Forms.Image) 声明，将 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 属性设置为 `Monkeys` 集合  ：
+1. 在 MainPage.xaml 中，修改 [`ListView`](xref:Xamarin.Forms.ListView) 声明，将 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 属性设置为 `Monkeys` 集合  ：
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}" />

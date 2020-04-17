@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4fc6c50b5aa2ce502b4157ca2b15f0d33a68ecd1
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 2b524c657a95035773d18fb17bb86308a78ce37c
+ms.sourcegitcommit: 89b3e383a37db5b940f0c63bbfe9cb806dc7d5d1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "60896655"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389929"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -19,7 +19,7 @@ ms.locfileid: "60896655"
            HorizontalOptions="Center" />
     ```
 
-    此代码设置更改 [`Label`](xref:Xamarin.Forms.Label) 视觉外观的属性。 [`TextColor`](xref:Xamarin.Forms.Label.TextColor) 属性设置 `Button` 文本的颜色。 [`FontAttributes`](xref:Xamarin.Forms.Label.FontAttributes) 属性将标签的字体设置为斜体，[`FontSize`](xref:Xamarin.Forms.Label.FontSize) 属性设置字号。 此外，通过设置 [`TextDecorations`](xref:Xamarin.Forms.Label.TextDecorations) 属性向 `Label` 应用下划线文本效果，并通过将 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 属性设置为 [`Center`](xref:Xamarin.Forms.LayoutOptions.Center) 使其水平居中。
+    此代码设置更改 [`Label`](xref:Xamarin.Forms.Label) 视觉外观的属性。 [`TextColor`](xref:Xamarin.Forms.Label.TextColor) 属性设置 `Label` 文本的颜色。 [`FontAttributes`](xref:Xamarin.Forms.Label.FontAttributes) 属性将标签的字体设置为斜体，[`FontSize`](xref:Xamarin.Forms.Label.FontSize) 属性设置字号。 此外，通过设置 [`TextDecorations`](xref:Xamarin.Forms.Label.TextDecorations) 属性向 `Label` 应用下划线文本效果，并通过将 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 属性设置为 [`Center`](xref:Xamarin.Forms.LayoutOptions.Center) 使其水平居中。
 
 1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序  。 请注意，[`Label`](xref:Xamarin.Forms.Label) 的外观已更改：
 
@@ -40,7 +40,7 @@ ms.locfileid: "60896655"
            HorizontalOptions="Center" />
     ```
 
-    此代码设置更改 [`Label`](xref:Xamarin.Forms.Label) 视觉外观的属性。 [`TextColor`](xref:Xamarin.Forms.Label.TextColor) 属性设置 `Button` 文本的颜色。 [`FontAttributes`](xref:Xamarin.Forms.Label.FontAttributes) 属性将标签的字体设置为斜体，[`FontSize`](xref:Xamarin.Forms.Label.FontSize) 属性设置字号。 此外，通过设置 [`TextDecorations`](xref:Xamarin.Forms.Label.TextDecorations) 属性向 `Label` 应用下划线文本效果，并通过将 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 属性设置为 [`Center`](xref:Xamarin.Forms.LayoutOptions.Center) 使其水平居中。
+    此代码设置更改 [`Label`](xref:Xamarin.Forms.Label) 视觉外观的属性。 [`TextColor`](xref:Xamarin.Forms.Label.TextColor) 属性设置 `Label` 文本的颜色。 [`FontAttributes`](xref:Xamarin.Forms.Label.FontAttributes) 属性将标签的字体设置为斜体，[`FontSize`](xref:Xamarin.Forms.Label.FontSize) 属性设置字号。 此外，通过设置 [`TextDecorations`](xref:Xamarin.Forms.Label.TextDecorations) 属性向 `Label` 应用下划线文本效果，并通过将 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 属性设置为 [`Center`](xref:Xamarin.Forms.LayoutOptions.Center) 使其水平居中。
 
 1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android Emulator 内的应用程序  。 请注意，[`Label`](xref:Xamarin.Forms.Label) 的外观已更改：
 
