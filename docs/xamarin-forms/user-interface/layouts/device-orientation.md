@@ -1,60 +1,56 @@
 ---
 title: 设备方向
-description: 此文章介绍了如何查找在纵向和横向方向上出色的布局 Xamarin.Forms 应用程序。
+description: 本文介绍了如何布局 Xamarin，以及在纵向和横向方向上非常美观的窗体应用程序。
 ms.prod: xamarin
 ms.assetid: 11A1D327-2DF3-4F3B-810D-6C95B71D27B2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/09/2015
-ms.openlocfilehash: f7526b6cecebadd30e95718b7e537026a6557adf
-ms.sourcegitcommit: f43d5ecafd19cbc5cce39201916a83927a34617a
+ms.date: 04/24/2020
+ms.openlocfilehash: e3df0cadcfdc97baccd8fa2a183d6c418077f171
+ms.sourcegitcommit: 1fb87ff74560d4d7c89f80018cc010c07646461c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78214991"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82139081"
 ---
 # <a name="device-orientation"></a>设备方向
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
 
-请务必要考虑将如何使用你的应用程序和如何合并横向方向以改善用户体验。 可以设计单独的布局以容纳多个方向和最佳使用的可用空间。 在应用程序级别，可以禁用或启用旋转。
+请务必考虑应用程序的使用方式以及如何合并横向方向以改善用户体验。 可以设计各个布局来容纳多个方向并最好地使用可用空间。 在应用程序级别，可以禁用或启用旋转。
 
 <a name="Controlling_Orientation" />
 
 ## <a name="controlling-orientation"></a>控制方向
 
-使用 Xamarin.Forms 时, 控制设备方向的受支持的方法是为每个单独的项目使用的设置。
+使用 Xamarin 时，受支持的设备方向控制方法是使用每个单独项目的设置。
 
 ### <a name="ios"></a>iOS
 
-在 iOS 上，使用**info.plist**文件为应用程序配置设备方向。 如果该应用包含它作为目标，此文件将包含的 iPhone 和 iPod，方向设置，以及适用于 iPad 的设置。 以下是对 IDE 的特定说明。 在本文档的顶部使用 IDE 选项选择你想要看到的说明进行操作：
+在 iOS 上，使用**info.plist**文件为应用程序配置设备方向。 使用本文档顶部的 IDE 选项选择要查看的说明：
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-在 Visual Studio 中，打开 iOS 项目并打开**info.plist**。 该文件将打开到配置面板中，从 iPhone 部署信息选项卡开始：
+在 Visual Studio 中，打开 iOS 项目并打开**info.plist**。 文件将从 "iPhone 部署信息" 选项卡开始打开配置面板：
 
-![iPhone Visual Studio 中的部署信息](device-orientation-images/orientation-vs-iphone.png)
-
-若要配置 iPad 方向，请选择面板左上角的 " **Ipad 部署信息**" 选项卡，并从可用方向中进行选择：
-
-![在 Visual Studio 中支持的设备方向](device-orientation-images/orientation-vs-ipad.png)
+![Visual Studio 中的 iPhone 部署信息](device-orientation-images/orientation-vs.png)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 在 Visual Studio for Mac 中，打开 iOS 项目并打开**info.plist**。 在 "**应用程序**" 选项卡下，可以使用以下各节设置方向：
 
-![iPhone 部署信息在 Visual Studio for Mac](device-orientation-images/orientation-xam-ui.png)
+![Visual Studio for Mac 中的 iPhone 部署信息](device-orientation-images/orientation-vsmac.png)
 
 如果希望使用键值编辑器界面编辑值，请选择屏幕底部的 "**源**>" 选项卡：
 
-![在 Visual Studio for Mac 支持设备方向](device-orientation-images/orientation-xam-source.png)
+![Visual Studio for Mac 中支持的设备方向](device-orientation-images/orientation-source-vsmac.png)
 
 -----
 
 ### <a name="android"></a>Android
 
-若要控制 Android 方向，请打开**MainActivity.cs** ，并使用修饰 `MainActivity` 类的属性设置方向：
+若要控制 Android 方向，请打开**MainActivity.cs** ，并使用修饰`MainActivity`类的属性设置方向：
 
 ```csharp
 namespace MyRotatingApp.Droid
@@ -66,38 +62,38 @@ namespace MyRotatingApp.Droid
 ...
 ```
 
-Xamarin.Android 支持多个选项用于指定方向：
+Xamarin 支持指定方向的几个选项：
 
-- 无论传感器数据如何，**横向**&ndash; 都可强制应用程序方向为横向。
-- **纵向**&ndash; 强制应用程序方向为纵向，而不考虑传感器数据。
-- **用户**&ndash; 会导致使用用户首选的方向呈现应用程序。
-- &ndash;**后**，应用程序的方向与其后[活动](xref:Android.App.Activity)的方向相同。
-- **传感器**&ndash; 会使应用程序的方向由传感器确定，即使用户已禁用自动旋转也是如此。
-- **SensorLandscape** &ndash; 会导致应用程序在使用传感器数据时使用横向方向，以更改屏幕的方向（以使屏幕不会出现倒置）。
-- 当使用传感器数据更改屏幕的方向时， **SensorPortrait** &ndash; 会导致应用程序使用纵向（以便屏幕看起来不到倒置）。
-- **ReverseLandscape** &ndash; 会使应用程序使用横向方向，使其与普通方向相对相反，因此显示 "倒置"。
-- **ReversePortrait** &ndash; 会使应用程序使用纵向方向，使其与平时方向相反，因此显示 "倒置"。
-- **FullSensor** &ndash; 会使应用程序依赖传感器数据来选择正确的方向（不可能为4个）。
-- **FullUser** &ndash; 会使应用程序使用用户的方向首选项。 如果启用自动旋转，则可以使用所有 4 个方向。
-- **UserLandscape** &ndash; _\[不受支持\]_ 会使应用程序使用横向方向，除非用户启用了自动旋转，在这种情况下，它将使用传感器来确定方向。 此选项将中断编译。
-- **UserPortrait** &ndash; _\[不受支持\]_ 会使应用程序使用纵向，除非用户启用了自动旋转，在这种情况下，它将使用传感器来确定方向。 此选项将中断编译。
-- **锁定**&ndash; _\[不受支持\]_ 会使应用程序在启动时使用屏幕方向，而不会响应设备物理方向的变化。 此选项将中断编译。
+- 无论传感器数据如何，**横向** &ndash;都强制应用程序方向为横向。
+- **纵向** &ndash;强制应用程序方向为纵向，而不考虑传感器的数据。
+- **用户** &ndash;会使应用程序使用用户的首选方向进行呈现。
+- **之后** &ndash; ，应用程序的方向与其后[活动](xref:Android.App.Activity)的方向相同。
+- **传感器** &ndash;会使应用程序的方向由传感器决定，即使用户已禁用自动旋转也是如此。
+- **SensorLandscape** &ndash;使应用程序在使用传感器数据时使用横向方向来更改屏幕的方向（以使屏幕看起来不像向下）。
+- **SensorPortrait** &ndash;使应用程序在使用传感器数据更改屏幕的方向时，使用纵向，使屏幕看起来不到倒置。
+- **ReverseLandscape** &ndash;使应用程序使用横向方向，使其像平时方向相反，因此显示 "倒置"。
+- **ReversePortrait** &ndash;使应用程序使用纵向方向，使其相对于普通方向，因此显示 "倒置"。
+- **FullSensor** &ndash;使应用程序依赖传感器数据来选择正确的方向（不可能为4个）。
+- **FullUser** &ndash;使应用程序使用用户的方向首选项。 如果启用了自动旋转，则可以使用所有4个方向。
+- **UserLandscape** &ndash; _UserLandscape \[不支持\] _会导致应用程序使用横向方向，除非用户启用了自动旋转，在这种情况下，它将使用传感器来确定方向。 此选项将中断编译。
+- **UserPortrait** &ndash; _UserPortrait \[不支持\] _导致应用程序使用纵向，除非用户启用了自动旋转，在这种情况下，它将使用传感器来确定方向。 此选项将中断编译。
+- " _ \[不支持\] _ **锁定** &ndash; " 会导致应用程序在启动时使用屏幕方向，而不会响应设备物理方向的变化。 此选项将中断编译。
 
-请注意，本机 Android Api 提供了很多方向的管理方式的控制，包括显式与用户相矛盾的选项以表示首选项。
+请注意，本机 Android Api 提供了很多控制方向的管理方式，其中包括显式矛盾用户表达首选项的选项。
 
 ### <a name="universal-windows-platform"></a>通用 Windows 平台
 
-在通用 Windows 平台（UWP）上，支持的方向是在**appxmanifest.xml**文件中设置的。 打开清单，将显示在其中选择支持的方向配置面板。
+在通用 Windows 平台（UWP）上，支持的方向是在**appxmanifest.xml**文件中设置的。 打开清单将显示一个配置面板，可以在其中选择支持的方向。
 
 <a name="Reacting_to_Changes_in_Orientation" />
 
-## <a name="reacting-to-changes-in-orientation"></a>对方向中的更改作出反应
+## <a name="reacting-to-changes-in-orientation"></a>对方向变化做出反应
 
-Xamarin.Forms 不提供任何本机事件用于通知的共享代码中的方向更改您的应用程序。 但是，[Xamarin](~/essentials/index.md)包含一个提供方向更改通知的 [`DeviceDisplay`] 类。
+Xamarin 不提供用于向应用程序通知共享代码中的方向更改的任何本机事件。 但是，[Xamarin](~/essentials/index.md)包含一个提供方向更改`DeviceDisplay`通知的 [] 类。
 
-若要检测没有 Xamarin 的方向，请监视 `Page`的 `SizeChanged` 事件，此事件在 `Page` 的宽度或高度发生更改时激发。 当 `Page` 的宽度大于高度时，设备处于横向模式。 有关详细信息，请参阅[基于屏幕方向显示图像](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)。
+若要检测没有 Xamarin 的方向，请监视`SizeChanged`的事件`Page`，该事件在的宽度或高度`Page`发生更改时激发。 当的`Page`宽度大于高度时，设备处于横向模式。 有关详细信息，请参阅[基于屏幕方向显示图像](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)。
 
-或者，可以覆盖 `Page`上的[`OnSizeAllocated`](xref:Xamarin.Forms.Page.OnSizeAllocated*)方法，并在其中插入任何布局更改逻辑。 只要 `Page` 分配新大小，就会调用 `OnSizeAllocated` 方法，只要设备旋转就会发生这种情况。 请注意，`OnSizeAllocated` 的基实现执行重要的布局功能，因此在重写中调用基实现非常重要：
+或者，可以重写[`OnSizeAllocated`](xref:Xamarin.Forms.Page.OnSizeAllocated*) `Page`中的方法，并在其中插入任何布局更改逻辑。 只要`OnSizeAllocated` `Page`分配新大小，就会调用方法，只要设备旋转，就会发生这种情况。 请注意，的`OnSizeAllocated`基实现执行重要的布局函数，因此在重写中调用基实现非常重要：
 
 ```csharp
 protected override void OnSizeAllocated(double width, double height)
@@ -106,9 +102,9 @@ protected override void OnSizeAllocated(double width, double height)
 }
 ```
 
-未能执行该步骤将导致非正常运行的页面。
+如果无法执行该步骤，将导致无法正常工作的页面。
 
-请注意，在旋转设备时，可能会多次调用 `OnSizeAllocated` 方法。 每次更改你的布局是一种浪费的资源，并可能会导致闪烁。 请考虑使用在页面内的一个实例变量跟踪是否方向为横向或纵向，并只重绘更改时：
+请注意， `OnSizeAllocated`在旋转设备时，可能会多次调用此方法。 每次更改布局会浪费资源，并可能导致闪烁。 请考虑使用页面中的实例变量来跟踪横向还是纵向方向，并在发生更改时仅重绘：
 
 ```csharp
 private double width = 0;
@@ -126,7 +122,7 @@ protected override void OnSizeAllocated(double width, double height)
 }
 ```
 
-后检测到在设备方向更改，你可能想要添加或删除与用户界面的可用空间的更改做出反应的其他视图。 例如，考虑纵向时的每个平台上内置的计算器：
+检测到设备方向发生变化后，你可能需要在用户界面中添加或删除其他视图，以响应可用空间的更改。 例如，考虑每个纵向平台上的内置计算器：
 
 ![](device-orientation-images/calculator-portrait.png "Calculator Application in Portrait")
 
@@ -134,25 +130,25 @@ protected override void OnSizeAllocated(double width, double height)
 
 ![](device-orientation-images/calculator-landscape.png "Calculator Application in Landscape")
 
-请注意，应用程序通过添加更多的功能在环境中充分利用可用空间。
+请注意，应用会通过在横向添加更多功能来利用可用空间。
 
 <a name="Responsive_Layout" />
 
 ## <a name="responsive-layout"></a>响应式布局
 
-就可以使用内置的布局，以便适当地过渡旋转设备时的设计界面。 设计将继续响应方向中的更改时很吸引人的接口时请考虑以下一般规则：
+可以使用内置布局设计接口，使其在设备旋转时正常转换。 设计在响应方向变化时仍有吸引力的接口时，请考虑以下一般规则：
 
-- 请**注意，** 方向 &ndash; 变化的变化可能会导致在对比率产生某些假设时出现问题。 例如，一个视图，它会在 1/3 的纵向时的屏幕的垂直空间中具有足够的空间可能无法放入 1/3 的环境中的垂直空间。
-- 请**注意绝对值**&ndash; 绝对值（像素）值，这些值在人像上非常有意义。 如果绝对值是必需的使用嵌套的布局隔离它们的影响。 例如，如果项模板具有有保证的统一高度，则可以在 `TableView` `ItemTemplate` 中使用绝对值。
+- 请**注意，** &ndash;方向变化的比率变化可能会在某些假设与比率有关时导致问题。 例如，在纵向屏幕垂直空间的1/3 中具有大量空间的视图可能无法适应横向垂直空间的1/3。
+- 请注意，在纵向意义上**非常有** &ndash;意义的绝对值（像素）值可能没有意义。 如果需要绝对值，请使用嵌套布局来找出它们的影响。 例如， `TableView` `ItemTemplate`如果项模板具有有保证的统一高度，则在中使用绝对值是合理的。
 
-上述规则同样适用时通常实现接口，用于多个屏幕大小以及被视为最佳做法。 本指南的其余部分将介绍在 Xamarin.Forms 中使用上述每种主要布局的响应式布局的具体示例。
+在为多个屏幕大小实现接口时，上述规则也适用，通常被视为最佳做法。 本指南的其余部分将介绍使用 Xamarin 中的每个主要布局的响应式布局的特定示例。
 
 > [!NOTE]
-> 为清楚起见，以下部分演示了如何一次只使用一种类型的 `Layout` 实现响应式布局。 在实践中，混用 `Layout`来使用每个组件的更简单或最直观的 `Layout` 来实现所需的布局通常更为简单。
+> 为清楚起见，以下部分演示了如何一次只使用一种类型`Layout`实现响应式布局。 在实践中，使用每个组件的`Layout`简单或最直观`Layout`地混合来实现所需布局通常更为简单。
 
 ### <a name="stacklayout"></a>StackLayout
 
-请考虑以下应用程序，在纵向显示：
+请考虑以下应用程序，纵向显示：
 
 ![](device-orientation-images/photo-stack-portrait.png "Photo Application in Portrait")
 
@@ -160,7 +156,7 @@ protected override void OnSizeAllocated(double width, double height)
 
 ![](device-orientation-images/photo-stack-landscape.png "Photo Application in Landscape")
 
-这是使用以下 XAML 来实现：
+这是通过以下 XAML 实现的：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -203,7 +199,7 @@ Title="Stack Photo Editor - XAML">
 </ContentPage>
 ```
 
-某些C#用于根据设备方向更改 `outerStack` 的方向：
+某些 c # 用于根据设备方向更改的`outerStack`方向：
 
 ```csharp
 protected override void OnSizeAllocated (double width, double height){
@@ -220,13 +216,13 @@ protected override void OnSizeAllocated (double width, double height){
 }
 ```
 
-注意以下各项：
+注意以下事项：
 
-- 调整 `outerStack` 以根据方向将图像和控件呈现为水平或垂直堆栈，以最好地利用可用空间。
+- `outerStack`进行调整后，根据方向，将图像和控件呈现为水平或垂直堆栈，以最好地利用可用空间。
 
 ### <a name="absolutelayout"></a>AbsoluteLayout
 
-请考虑以下应用程序，在纵向显示：
+请考虑以下应用程序，纵向显示：
 
 ![](device-orientation-images/photo-abs-portrait.png "Photo Application in Portrait")
 
@@ -234,7 +230,7 @@ protected override void OnSizeAllocated (double width, double height){
 
 ![](device-orientation-images/photo-abs-landscape.png "Photo Application in Landscape")
 
-这是使用以下 XAML 来实现：
+这是通过以下 XAML 实现的：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -271,14 +267,14 @@ Title="AbsoluteLayout - XAML" BackgroundImageSource="deer.jpg">
 </ContentPage>
 ```
 
-注意以下各项：
+注意以下事项：
 
-- 由于页面布局的方式，不是需要程序代码引入响应能力。
-- 该 `ScrollView` 用于允许标签可见，即使屏幕的高度小于按钮和图像的固定高度的和也是如此。
+- 由于页面布局的方式，无需执行过程代码来引入响应能力。
+- `ScrollView`将用于允许标签可见，即使屏幕的高度小于按钮和图像的固定高度之和也是如此。
 
 ### <a name="relativelayout"></a>RelativeLayout
 
-请考虑以下应用程序，在纵向显示：
+请考虑以下应用程序，纵向显示：
 
 ![](device-orientation-images/photo-rel-portrait.png "Photo Application in Portrait")
 
@@ -286,7 +282,7 @@ Title="AbsoluteLayout - XAML" BackgroundImageSource="deer.jpg">
 
 ![](device-orientation-images/photo-rel-landscape.png "Photo Application in Landscape")
 
-这是使用以下 XAML 来实现：
+这是通过以下 XAML 实现的：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -362,14 +358,14 @@ BackgroundImageSource="deer.jpg">
 
 ```
 
-注意以下各项：
+注意以下事项：
 
-- 由于页面布局的方式，不是需要程序代码引入响应能力。
-- 该 `ScrollView` 用于允许标签可见，即使屏幕的高度小于按钮和图像的固定高度的和也是如此。
+- 由于页面布局的方式，无需执行过程代码来引入响应能力。
+- `ScrollView`将用于允许标签可见，即使屏幕的高度小于按钮和图像的固定高度之和也是如此。
 
-### <a name="grid"></a>网格
+### <a name="grid"></a>Grid
 
-请考虑以下应用程序，在纵向显示：
+请考虑以下应用程序，纵向显示：
 
 ![](device-orientation-images/photo-grid-portrait.png "Photo Application in Portrait")
 
@@ -377,7 +373,7 @@ BackgroundImageSource="deer.jpg">
 
 ![](device-orientation-images/photo-grid-landscape.png "Photo Application in Landscape")
 
-这是使用以下 XAML 来实现：
+这是通过以下 XAML 实现的：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -433,7 +429,7 @@ Title="Grid - XAML">
 </ContentPage>
 ```
 
-以下过程与代码一起处理旋转更改：
+以及以下过程代码来处理旋转变化：
 
 ```csharp
 private double width;
@@ -465,9 +461,9 @@ protected override void OnSizeAllocated (double width, double height){
 }
 ```
 
-注意以下各项：
+注意以下事项：
 
-- 页面布局的方式，因此没有方法来更改网格放置控件。
+- 由于页面布局的方式，有一种方法可以更改控件的网格位置。
 
 ## <a name="related-links"></a>相关链接
 
