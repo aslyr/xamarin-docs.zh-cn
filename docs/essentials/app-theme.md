@@ -5,12 +5,12 @@ ms.assetid: F6F6D496-A8A9-4B9A-AF1A-370D937E5073
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/06/2020
-ms.openlocfilehash: e31cae6ff639dbe261599a7cf78ae31fc09318b3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f322855f26d7a57acc06e97e0c97ab201c3fa586
+ms.sourcegitcommit: a9280318bf7bb69e4e5744ee739e76a9cba36b28
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79190315"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82047395"
 ---
 # <a name="xamarinessentials-app-theme"></a>Xamarin.Essentials:应用主题
 
@@ -62,7 +62,7 @@ Android 使用配置模式来指定要向用户请求的主题类型。 它可�
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-默认情况下，应用使用用户在 Windows 设置（“设置”>“个性化”>“颜色”>“选择默认应用模式”  ）中设置的主题来运行。 可以将应用的 RequestedTheme 属性设置为覆盖用户默认设置，并指定使用哪个主题。
+UWP 应用程序将在 RUWP App.xaml 中的 RequestedTheme 下反映出你的设置  。 如果将它设置为特定主题，则 Xamarin.Essentials 将始终返回此设置。 要使用操作系统的动态主题，请从应用程序中删除此节点，然后在应用运行时，它将返回用户在 Windows 设置中（“设置”>“个性化”>“颜色”>“选择默认应用模式”）设置的主题  。
 
 有关详细信息，请参阅 [UWP RequestedTheme 文档](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.requestedtheme)。
 

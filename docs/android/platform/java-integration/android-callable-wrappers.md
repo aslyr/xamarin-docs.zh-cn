@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 7278fd624bb3147c2e1a1a1a79adde68813a9888
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: ef2f8e0375786ba7b627fdf75545cbb48318c1aa
+ms.sourcegitcommit: 854798de42566750d9c70b6d0539b7ee73ff6ddc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73020157"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646601"
 ---
 # <a name="android-callable-wrappers-for-xamarinandroid"></a>Xamarin.Android 的 Android 可调用包装器
 
@@ -74,7 +74,7 @@ Xamarin.Android 5.0 中引入了基于 MD5SUM 的 ACW 命名。 若要详细了�
 
 有时，可能需要实现 Android 接口，如 [Android.Content.IComponentCallbacks](xref:Android.Content.IComponentCallbacks)。 由于所有 Android 类和接口都扩展了 [Android.Runtime.IJavaObject](xref:Android.Runtime.IJavaObject) 接口，因此会出现以下问题：如何实现 `IJavaObject`？ 
 
-上文已经回答了这个问题：所有 Android 类型都需要实现 `IJavaObject` 的原因是，这样 Xamarin.Android 就可以有提供给 Android 的 Android 可调用包装器，即给定类型的 Java 代理。 由于 monodroid.exe  仅查找 `Java.Lang.Object` 子类，且 `Java.Lang.Object` 实现 `IJavaObject,`，因此答案非常明显：子类 `Java.Lang.Object`： 
+上文已经回答了这个问题：所有 Android 类型都需要实现 `IJavaObject` 的原因是，这样 Xamarin.Android 就可以有提供给 Android 的 Android 可调用包装器，即给定类型的 Java 代理。 由于 monodroid.exe 仅查找 `Java.Lang.Object` 子类，且 `Java.Lang.Object` 实现 `IJavaObject`，因此答案很明显，就是子类 `Java.Lang.Object` ： 
 
 ```csharp
 class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbacks {

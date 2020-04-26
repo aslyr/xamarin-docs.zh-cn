@@ -5,12 +5,12 @@ ms.assetid: B3342772-FB88-4B7F-BC15-8BC78EED749E
 author: JonDouglas
 ms.author: jodou
 ms.date: 09/17/2019
-ms.openlocfilehash: c19c9e5bd279824ea2d3e4e9f88857388f786a2c
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: b26d99c131e9759da3077a767476de38712bcb18
+ms.sourcegitcommit: a9280318bf7bb69e4e5744ee739e76a9cba36b28
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73612270"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82047568"
 ---
 # <a name="android-10-with-xamarin"></a>结合使用 Android 10 和 Xamarin
 
@@ -78,7 +78,7 @@ Xamarin.Android 10.0 为 Android 10 提供支持。 若要详细了解对 Androi
 
 ### <a name="configure-a-device-or-emulator"></a>配置设备或仿真器
 
-如果你使用的是物理设备（如 Pixel），可以在手机的设置中转到“`System`” > “`System update`” > “`Check for update`”，下载 Android 10 更新。 如果倾向于刷机，请参阅有关将[出厂映像](https://developers.google.com/android/images)或 [OTA 映像](https://developers.google.com/android/ota)更新到设备的说明。
+如果你使用的是物理设备（如 Pixel），可在手机的设置中转到“系统”>“系统更新”>“检查更新”，来下载 Android 10 更新。 如果倾向于刷机，请参阅有关将[出厂映像](https://developers.google.com/android/images)或 [OTA 映像](https://developers.google.com/android/ota)更新到设备的说明。
 
 如果使用的是仿真器，请为 API 级别 29 创建虚拟设备，并选择基于 x86 的映像。 有关使用 Android 设备管理器创建和管理虚拟设备的信息，请参阅[使用 Android 设备管理器管理虚拟设备](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/device-manager)。 有关使用 Android 仿真器进行测试和调试的信息，请参阅 [Android 仿真器调试](https://docs.microsoft.com/xamarin/android/deploy-test/debugging/debug-on-emulator)。
 
