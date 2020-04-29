@@ -1,34 +1,34 @@
 ---
-title: Xamarin.Forms 设备类
-description: 本文介绍如何使用 Xamarin.Forms Device 类，实现对功能和布局的细粒度控制，根据每个平台。
+title: Xamarin Forms 设备类
+description: 本文介绍如何使用 Xamarin Forms 设备类对每个平台的功能和布局进行精细控制。
 ms.prod: xamarin
 ms.assetid: 2F304AEC-8612-4833-81E5-B2F3F469B2DF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/12/2019
-ms.openlocfilehash: 25ddbea75d0fd6858f848499281da5d5f0b68171
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.date: 04/17/2020
+ms.openlocfilehash: d0f0fa7dd68e8852dd7a72486c155ec064540644
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306427"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82517071"
 ---
-# <a name="xamarinforms-device-class"></a>Xamarin.Forms 设备类
+# <a name="xamarinforms-device-class"></a>Xamarin Forms 设备类
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
 
 [`Device`](xref:Xamarin.Forms.Device)类包含多个属性和方法，可帮助开发人员基于每个平台自定义布局和功能。
 
-除了用于特定硬件类型和大小的代码的方法和属性以外，`Device` 类还包括可用于与后台线程中的 UI 控件交互的方法。 有关详细信息，请参阅[从后台线程与 UI 交互](#interact-with-the-ui-from-background-threads)。
+除了使用特定硬件类型和大小的代码的方法和属性以外， `Device`类还包括可用于与后台线程中的 UI 控件交互的方法。 有关详细信息，请参阅[从后台线程与 UI 交互](#interact-with-the-ui-from-background-threads)。
 
-## <a name="providing-platform-specific-values"></a>提供特定于平台的值
+## <a name="provide-platform-specific-values"></a>提供特定于平台的值
 
-在2.3.4 之前运行应用程序的平台，可以通过检查[`Device.OS`](xref:Xamarin.Forms.Device.OS)属性并将其与[`TargetPlatform.iOS`](xref:Xamarin.Forms.TargetPlatform.iOS)、 [`TargetPlatform.Android`](xref:Xamarin.Forms.TargetPlatform.Android)、 [`TargetPlatform.WinPhone`](xref:Xamarin.Forms.TargetPlatform.WinPhone)和[`TargetPlatform.Windows`](xref:Xamarin.Forms.TargetPlatform.Windows)枚举值进行比较来获取运行该应用程序的平台。 同样，其中一个[`Device.OnPlatform`](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action))重载可用于向控件提供平台特定的值。
+在2.3.4 之前，运行应用程序的平台[`Device.OS`](xref:Xamarin.Forms.Device.OS)可以通过检查属性，并将其与[`TargetPlatform.iOS`](xref:Xamarin.Forms.TargetPlatform.iOS)、 [`TargetPlatform.Android`](xref:Xamarin.Forms.TargetPlatform.Android)、 [`TargetPlatform.WinPhone`](xref:Xamarin.Forms.TargetPlatform.WinPhone)和[`TargetPlatform.Windows`](xref:Xamarin.Forms.TargetPlatform.Windows)枚举值进行比较来获得。 同样，其中一个[`Device.OnPlatform`](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action))重载可用于向控件提供平台特定的值。
 
-但是，因为 Xamarin.Forms 2.3.4 这些 Api 已弃用并替换。 [`Device`](xref:Xamarin.Forms.Device)类现在包含用于标识平台的公共字符串常量（ [`Device.iOS`](xref:Xamarin.Forms.Device.iOS)、 [`Device.Android`](xref:Xamarin.Forms.Device.Android)、`Device.WinPhone`（弃用）、`Device.WinRT` （不推荐使用）、 [`Device.UWP`](xref:Xamarin.Forms.Device.UWP)和[`Device.macOS`](xref:Xamarin.Forms.Device.macOS)。 同样， [`Device.OnPlatform`](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action))重载已替换为[`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1)和[`On`](xref:Xamarin.Forms.On) api。
+不过，由于 Xamarin. Forms 2.3.4，这些 Api 已弃用并已替换。 [`Device`](xref:Xamarin.Forms.Device)该类现在包含用于标识平台的公共字符串常量– [`Device.iOS`](xref:Xamarin.Forms.Device.iOS)、 [`Device.Android`](xref:Xamarin.Forms.Device.Android)、 `Device.WinPhone`（已弃用） `Device.WinRT` 、（不推荐[`Device.UWP`](xref:Xamarin.Forms.Device.UWP)使用） [`Device.macOS`](xref:Xamarin.Forms.Device.macOS)、和。 同样， [`Device.OnPlatform`](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action))重载已替换为[`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1)和[`On`](xref:Xamarin.Forms.On) api。
 
-在C#中，可以通过在[`Device.RuntimePlatform`](xref:Xamarin.Forms.Device.RuntimePlatform)属性上创建 `switch` 语句，并为所需平台提供 `case` 语句，来提供特定于平台的值：
+在 c # 中，可以通过在`switch` [`Device.RuntimePlatform`](xref:Xamarin.Forms.Device.RuntimePlatform)属性上创建一个语句，然后为所需的平台提供`case`语句，来提供特定于平台的值：
 
 ```csharp
 double top;
@@ -60,27 +60,27 @@ layout.Margin = new Thickness(5, top, 5, 0);
 </StackLayout>
 ```
 
-[`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1)类是一个泛型类，必须使用与目标类型匹配的 `x:TypeArguments` 属性对其进行实例化。 在[`On`](xref:Xamarin.Forms.On)类中， [`Platform`](xref:Xamarin.Forms.On.Platform)属性可以接受单个 `string` 值或多个以逗号分隔的 `string` 值。
+[`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1)类是一个泛型类，必须使用与目标类型匹配`x:TypeArguments`的属性对其进行实例化。 在[`On`](xref:Xamarin.Forms.On)类中， [`Platform`](xref:Xamarin.Forms.On.Platform)特性可以接受单个`string`值或多个以逗号分隔`string`的值。
 
 > [!IMPORTANT]
-> 在 `On` 类中提供不正确的 `Platform` 属性值不会导致错误。 相反，该代码将执行且不应用任何特定于平台的值。
+> 在`On`类中`Platform`提供不正确的属性值不会导致错误。 相反，代码将在不应用特定于平台的值的情况下执行。
 
-另外，还可以在 XAML 中使用 `OnPlatform` 标记扩展，根据每个平台自定义 UI 外观。 有关详细信息，请参阅[OnPlatform 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)。
+此外，还`OnPlatform`可以在 XAML 中使用标记扩展来根据每个平台自定义 UI 外观。 有关详细信息，请参阅[OnPlatform 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)。
 
-## <a name="deviceidiom"></a>Device.Idiom
+## <a name="deviceidiom"></a>Device。
 
-`Device.Idiom` 属性可用于根据应用程序运行的设备更改布局或功能。 [`TargetIdiom`](xref:Xamarin.Forms.TargetIdiom)枚举包含以下值：
+`Device.Idiom`属性可用于根据应用程序运行的设备更改布局或功能。 [`TargetIdiom`](xref:Xamarin.Forms.TargetIdiom)枚举包含以下值：
 
 - **手机**– IPhone、iPod Touch 和 Android 设备的范围低于600
 - **Tablet** -IPad、Windows 设备和 Android 设备，宽于600
-- **桌面**–仅在 Windows 10 台式计算机上的[UWP 应用](~/xamarin-forms/platform/windows/installation/index.md)中返回（在移动 Windows 设备上返回 `Phone`，包括在 Continuum 方案中）
+- **桌面**–仅在 Windows 10 台式计算机上的[UWP 应用](~/xamarin-forms/platform/windows/installation/index.md)中返回`Phone` （在移动 Windows 设备上返回，包括在 Continuum 方案中）
 - **电视**– TIZEN 的电视设备
 - **手表**– Tizen Watch 设备
 - **不支持**–未使用
 
 *^ dip 不一定是物理像素计数*
 
-`Idiom` 属性对于构建利用较大屏幕的布局特别有用，如下所示：
+`Idiom`属性对于构建利用较大屏幕的布局特别有用，如下所示：
 
 ```csharp
 if (Device.Idiom == TargetIdiom.Phone) {
@@ -105,25 +105,25 @@ if (Device.Idiom == TargetIdiom.Phone) {
 </StackLayout>
 ```
 
-[`OnIdiom`](xref:Xamarin.Forms.OnPlatform`1)类是一个泛型类，必须使用与目标类型匹配的 `x:TypeArguments` 属性对其进行实例化。
+[`OnIdiom`](xref:Xamarin.Forms.OnPlatform`1)类是一个泛型类，必须使用与目标类型匹配`x:TypeArguments`的属性对其进行实例化。
 
-另外，还可以在 XAML 中使用 `OnIdiom` 标记扩展，根据应用程序运行所在的设备的用法来自定义 UI 外观。 有关详细信息，请参阅[OnIdiom 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onidiom)。
+此外，还`OnIdiom`可以在 XAML 中使用标记扩展，根据应用程序运行的设备的用法来自定义 UI 外观。 有关详细信息，请参阅[OnIdiom 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onidiom)。
 
-## <a name="deviceflowdirection"></a>Device.FlowDirection
+## <a name="deviceflowdirection"></a>System.windows.flowdirection>
 
-[`Device.FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)值将检索表示设备当前正在使用的流动方向的[`FlowDirection`](xref:Xamarin.Forms.FlowDirection)枚举值。 流方向是指页面 UI 元素的浏览方向。 枚举值为：
+[`Device.FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)值检索表示设备[`FlowDirection`](xref:Xamarin.Forms.FlowDirection)当前使用的流动方向的枚举值。 流方向是指页面 UI 元素的浏览方向。 枚举值为：
 
 - [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight)
 - [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
 - [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)
 
-在 XAML 中，可以通过使用 `x:Static` 标记扩展来检索[`Device.FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)值：
+在 XAML 中， [`Device.FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)可以使用`x:Static`标记扩展来检索值：
 
 ```xaml
 <ContentPage ... FlowDirection="{x:Static Device.FlowDirection}"> />
 ```
 
-中的等效代码C#是：
+C # 中的等效代码是：
 
 ```csharp
 this.FlowDirection = Device.FlowDirection;
@@ -131,9 +131,9 @@ this.FlowDirection = Device.FlowDirection;
 
 有关流方向的详细信息，请参阅[从右到左的本地化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)。
 
-## <a name="devicestyles"></a>Device.Styles
+## <a name="devicestyles"></a>设备样式
 
-[`Styles` 属性](~/xamarin-forms/user-interface/styles/index.md)包含可应用于某些控件（如 `Label`） `Style` 属性的内置样式定义。 可用的样式包括：
+属性包含可应用于某些控件（例如`Label`） `Style`属性的内置样式定义。 [ `Styles` ](~/xamarin-forms/user-interface/styles/index.md) 可用样式包括：
 
 - BodyStyle
 - CaptionStyle
@@ -142,9 +142,9 @@ this.FlowDirection = Device.FlowDirection;
 - SubtitleStyle
 - TitleStyle
 
-## <a name="devicegetnamedsize"></a>Device.GetNamedSize
+## <a name="devicegetnamedsize"></a>GetNamedSize
 
-在代码中C#设置[`FontSize`](~/xamarin-forms/user-interface/text/fonts.md)时可以使用 `GetNamedSize`：
+`GetNamedSize`可在 c # 代码[`FontSize`](~/xamarin-forms/user-interface/text/fonts.md)中设置时使用：
 
 ```csharp
 myLabel.FontSize = Device.GetNamedSize (NamedSize.Small, myLabel);
@@ -155,9 +155,54 @@ someLabel.FontSize = Device.OnPlatform (
 );
 ```
 
-## <a name="devicestarttimer"></a>Device.StartTimer
+## <a name="devicegetnamedcolor"></a>GetNamedColor
 
-`Device` 类还具有一个 `StartTimer` 方法，该方法提供了一种简单的方法来触发 Xamarin 中的依赖于时间的任务 .NET Standard。 传递 `TimeSpan` 以设置时间间隔并返回 `true`，以使计时器运行或 `false` 在当前调用之后将其停止。
+Xamarin 4.6 引入了对命名颜色的支持。 命名颜色是一种颜色，它具有不同的值，具体取决于设备上处于活动状态的系统模式（例如，亮或暗）。 在 Android 上，可以通过[R. Color](https://developer.android.com/reference/android/R.color#constants_2)类访问已命名的颜色。 在 iOS 上，命名颜色称为[系统颜色](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/#system-colors)。 在通用 Windows 平台上，名为的颜色称为[XAML 主题资源](/windows/uwp/design/controls-and-patterns/xaml-theme-resources)。
+
+`GetNamedColor`方法可用于检索 Android、IOS 和 UWP 上的命名颜色。 方法采用`string`参数并返回[`Color`](xref:Xamarin.Forms.Color)：
+
+```csharp
+// Retrieve an Android named color
+Color color = Device.GetNamedColor(NamedPlatformColor.HoloBlueBright);
+```
+
+`Color.Default`当找不到颜色名称或`GetNamedColor`在不受支持的平台上调用时，将返回。
+
+> [!NOTE]
+> 由于`GetNamedColor`方法返回`Color`特定于平台的，因此通常应将其与[`Device.RuntimePlatform`](xref:Xamarin.Forms.Device.RuntimePlatform)属性结合使用。
+
+`NamedPlatformColor`类包含定义适用于 Android、IOS 和 UWP 的命名颜色的常数：
+
+| Android | iOS | UWP |
+| --- | --- | --- |
+| `BackgroundDark` | `Label` | `SystemAltHighColor` |
+| `BackgroundLight` | `Link` | `SystemAltLowColor` |
+| `Black` | `OpaqueSeparator` | `SystemAltMediumColor` |
+| `DarkerGray` | `PlaceholderText` | `SystemAltMediumHighColor` |
+| `HoloBlueBright` | `QuaternaryLabel` | `SystemAltMediumLowColor` |
+| `HoloBlueDark` | `SecondaryLabel` | `SystemBaseHighColor` |
+| `HoloBlueLight` | `Separator` | `SystemBaseLowColor` |
+| `HoloGreenDark` | `SystemBlue` | `SystemBaseMediumColor` |
+| `HoloGreenLight` | `SystemGray` | `SystemBaseMediumHighColor` |
+| `HoloOrangeDark` | `SystemGray2` | `SystemBaseMediumLowColor` |
+| `HoloOrangeLight` | `SystemGray3` | `SystemChromeAltLowColor` |
+| `HoloPurple` | `SystemGray4` | `SystemChromeBlackHighColor` |
+| `HoloRedDark` | `SystemGray5` | `SystemChromeBlackLowColor` |
+| `HoloRedLight` | `SystemGray6` | `SystemChromeBlackMediumColor` |
+| `TabIndicatorText` | `SystemGreen` | `SystemChromeBlackMediumLowColor` |
+| `Transparent` | `SystemIndigo` | `SystemChromeDisabledHighColor` |
+| `White` | `SystemListLowColor` | `SystemChromeDisabledLowColor` |
+| `WidgetEditTextDark` | `SystemListMediumColor` | `SystemChromeHighColor` |
+| | `SystemPink` | `SystemChromeLowColor` |
+| | `SystemPurple` | `SystemChromeMediumColor` |
+| | `SystemRed` | `SystemChromeMediumLowColor` |
+| | `SystemTeal` | `SystemChromeWhiteColor` |
+| | `SystemYellow` |
+| | `TertiaryLabel` |
+
+## <a name="devicestarttimer"></a>StartTimer
+
+`Device`类还提供了一`StartTimer`种方法，该方法提供了一种简单的方法来触发 Xamarin 中的依赖于时间的任务。 Forms 通用代码，包括 .NET Standard 库。 传递`TimeSpan`以设置间隔并返回`true` ，使计时器保持运行状态，或`false`在当前调用后停止计时器。
 
 ```csharp
 Device.StartTimer (new TimeSpan (0, 0, 60), () =>
@@ -167,10 +212,10 @@ Device.StartTimer (new TimeSpan (0, 0, 60), () =>
 });
 ```
 
-如果计时器内的代码与用户界面交互（例如设置 `Label` 的文本或显示警报），则应在 `BeginInvokeOnMainThread` 表达式中完成此操作（见下文）。
+如果计时器内的代码与用户界面交互（如设置`Label`或显示警报的文本），则应在`BeginInvokeOnMainThread`表达式内完成此操作（请参阅下文）。
 
 > [!NOTE]
-> `System.Timers.Timer` 和 `System.Threading.Timer` 类是使用 `Device.StartTimer` 方法的 .NET Standard 替代项。
+> `System.Timers.Timer`和`System.Threading.Timer`类是使用`Device.StartTimer`方法的 .NET Standard 替代项。
 
 ## <a name="interact-with-the-ui-from-background-threads"></a>从后台线程与 UI 交互
 
@@ -178,18 +223,18 @@ Device.StartTimer (new TimeSpan (0, 0, 60), () =>
 
 应用程序有时会使用后台线程来执行可能长时间运行的操作，例如从 web 服务检索数据。 如果后台线程上运行的代码需要访问用户界面元素，则必须在主线程上运行该代码。
 
-`Device` 类包含以下 `static` 方法，这些方法可用于与背景线程中的用户界面元素进行交互：
+此`Device`类包括以下`static`方法，可用于与背景线程中的用户界面元素进行交互：
 
-| 方法 | 参数 | 返回 | 目的 |
+| 方法 | 自变量 | 返回 | 目的 |
 |---|---|---|---|
-| `BeginInvokeOnMainThread` | `Action` | `void` | 在主线程上调用 `Action`，而不会等待它完成。 |
+| `BeginInvokeOnMainThread` | `Action` | `void` | `Action`在主线程上调用，而不会等待它完成。 |
 | `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | 在主线程上调用 `Func<T>`，并等待其完成。 |
 | `InvokeOnMainThreadAsync` | `Action` | `Task` | 在主线程上调用 `Action`，并等待其完成。 |
 | `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | 在主线程上调用 `Func<Task<T>>`，并等待其完成。 |
 | `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | 在主线程上调用 `Func<Task>`，并等待其完成。 |
 | `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | 返回主线程的 `SynchronizationContext`。 |
 
-下面的代码演示了使用 `BeginInvokeOnMainThread` 方法的示例：
+下面的代码显示使用`BeginInvokeOnMainThread`方法的示例：
 
 ```csharp
 Device.BeginInvokeOnMainThread (() =>
@@ -202,4 +247,4 @@ Device.BeginInvokeOnMainThread (() =>
 
 - [设备示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
 - [样式示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
-- [设备](xref:Xamarin.Forms.Device)
+- [设备 API](xref:Xamarin.Forms.Device)

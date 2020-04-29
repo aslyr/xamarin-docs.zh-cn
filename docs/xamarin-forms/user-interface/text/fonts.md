@@ -1,36 +1,36 @@
 ---
-title: Xamarin 中的字体。
-description: 本文介绍如何指定在 Xamarin.Forms 应用程序中显示文本的控件上的字体信息。
+title: Xamarin 中的字体
+description: 本文介绍如何在 Xamarin. Forms 应用程序中指定显示文本的控件的字体信息。
 ms.prod: xamarin
 ms.assetid: 49DD2249-C575-41AE-AE06-08F890FD6031
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2020
-ms.openlocfilehash: ca4d3b242fcc73bb73e8d6ab1f817eefcc2ade4d
-ms.sourcegitcommit: 89b3e383a37db5b940f0c63bbfe9cb806dc7d5d1
+ms.openlocfilehash: 160cbbfa99114d74fa5fdaa5f92b8397ea7d3367
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81388806"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82516483"
 ---
-# <a name="fonts-in-xamarinforms"></a>Xamarin 中的字体。
+# <a name="fonts-in-xamarinforms"></a>Xamarin 中的字体
 
 [![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfonts)
 
-本文介绍了 Xamarin.Forms 如何允许您在显示文本的控件上指定字体属性（包括粗细和大小）。 字体信息可以在[代码中指定](#Setting_Font_in_Code)或在[XAML 中指定](#Setting_Font_in_Xaml)。 也可以使用[自定义字体](#use-a-custom-font)和[显示字体图标](#display-font-icons)。
+本文介绍如何通过 Xamarin 来指定显示文本的控件的字体特性（包括权重和大小）。 字体信息可以[在代码中指定](#Setting_Font_in_Code)，也可以[在 XAML 中指定](#Setting_Font_in_Xaml)。 它还可以使用[自定义字体](#use-a-custom-font)并[显示字体图标](#display-font-icons)。
 
 <a name="Setting_Font_in_Code" />
 
-## <a name="set-the-font-in-code"></a>在代码中设置字体
+## <a name="set-the-font-in-code"></a>设置代码中的字体
 
 使用显示文本的任何控件的三个与字体相关的属性：
 
-- **字体系列**&ndash;字体`string`名称。
-- **字体将**&ndash;字体大小调整为`double`。
-- **Fontattributes 一**&ndash;个字符串，指定样式信息（如*斜体*和**粗体**（使用 C# 中的枚`FontAttributes`举）。
+- **FontFamily** &ndash; FontFamily `string`字体名称。
+- 将字体大小**FontSize** &ndash;为`double`。
+- **FontAttributes** &ndash;指定样式信息（如*斜体*和**粗体**）的字符串（ `FontAttributes`使用 c # 中的枚举）。
 
-此代码演示如何创建标签并指定要显示的字体大小和粗细：
+此代码演示如何创建标签，并指定要显示的字体大小和粗细：
 
 ```csharp
 var about = new Label
@@ -45,35 +45,35 @@ var about = new Label
 
 ### <a name="font-size"></a>字号
 
-属性`FontSize`可以设置为双精度值，例如：
+`FontSize`属性可以设置为双精度值，例如：
 
 ```csharp
 label.FontSize = 24;
 ```
 
-大小值以与设备无关的单位度量。 有关详细信息，请参阅[度量单位](~/xamarin-forms/user-interface/controls/common-properties.md#units-of-measurement)。
+大小值以与设备无关的单位来度量。 有关详细信息，请参阅[测量单位](~/xamarin-forms/user-interface/controls/common-properties.md#units-of-measurement)。
 
-Xamarin.Forms 还定义枚举中[`NamedSize`](xref:Xamarin.Forms.NamedSize)表示特定字体大小的字段。 有关命名字体大小的详细信息，请参阅[命名字体大小](#named-font-sizes)。
+Xamarin 还会在[`NamedSize`](xref:Xamarin.Forms.NamedSize)枚举中定义表示特定字体大小的字段。 有关命名字体大小的详细信息，请参阅[命名字体大小](#named-font-sizes)。
 
 <a name="FontAttributes" />
 
-### <a name="font-attributes"></a>字体属性
+### <a name="font-attributes"></a>字体特性
 
-可以在`FontAttributes`属性上设置粗**体**和*斜体*等字体样式。 当前支持以下值：
+可以在`FontAttributes`属性上设置**粗体**和*斜体*等字体样式。 目前支持以下值：
 
 - **无**
-- **大胆**
-- **斜**
+- **Bold**
+- **字体**
 
-枚`FontAttribute`举可以如下所示（您可以一起指定单个属性或`OR`它们）：
+可以`FontAttribute`按如下所示使用枚举（可以指定单个属性，也`OR`可以将它们一起指定）：
 
 ```csharp
 label.FontAttributes = FontAttributes.Bold | FontAttributes.Italic;
 ```
 
-### <a name="set-font-info-per-platform"></a>设置每个平台的字体信息
+### <a name="set-font-info-per-platform"></a>为每个平台设置字体信息
 
-或者，`Device.RuntimePlatform`该属性可用于在每个平台上设置不同的字体名称，如以下代码所示：
+或者，可以`Device.RuntimePlatform`使用属性在每个平台上设置不同的字体名称，如以下代码所示：
 
 ```csharp
 label.FontFamily = Device.RuntimePlatform == Device.iOS ? "MarkerFelt-Thin" :
@@ -82,20 +82,20 @@ label.FontSize = Device.RuntimePlatform == Device.iOS ? 24 :
    Device.RuntimePlatform == Device.Android ? Device.GetNamedSize(NamedSize.Medium, label) : Device.GetNamedSize(NamedSize.Large, label);
 ```
 
-iOS 的字体信息来源[iosfonts.com。](http://iosfonts.com)
+IOS 的字体信息的良好源是[iosfonts.com](http://iosfonts.com)。
 
 <a name="Setting_Font_in_Xaml" />
 
-## <a name="set-the-font-in-xaml"></a>在 XAML 中设置字体
+## <a name="set-the-font-in-xaml"></a>设置 XAML 中的字体
 
-显示文本的 Xamarin.Forms 控件都`FontSize`具有可在 XAML 中设置的属性。 在 XAML 中设置字体的最简单方法是使用命名的大小枚举值，如以下示例所示：
+用于显示文本的窗体控件都具有可`FontSize`在 XAML 中设置的属性。 若要在 XAML 中设置字体，最简单的方法是使用已命名大小的枚举值，如以下示例中所示：
 
 ```xaml
 <Label Text="Login" FontSize="Large"/>
 <Label Text="Instructions" FontSize="Small"/>
 ```
 
-属性有一个内置转换器`FontSize`，允许在 XAML 中将所有字体设置表示为字符串值。 此外，`FontAttributes`该属性可用于指定字体属性：
+有一个用于`FontSize`属性的内置转换器，该转换器允许在 XAML 中将所有字体设置表示为字符串值。 此外， `FontAttributes`属性可用于指定字体属性：
 
 ```xaml
 <Label Text="Italics are supported" FontAttributes="Italic" />
@@ -103,7 +103,7 @@ iOS 的字体信息来源[iosfonts.com。](http://iosfonts.com)
 <Label Text="Use size 72" FontSize="72" />
 ```
 
-该[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-specific-values)属性还可用于 XAML 中，以在每个平台上呈现不同的字体。 下面的示例在每个平台上使用不同的字体：
+[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#provide-platform-specific-values)属性还可以在 XAML 中用于在每个平台上呈现不同的字体。 以下示例在每个平台上使用不同的字体：
 
 ```xaml
 <Label Text="Hello Forms with XAML">
@@ -119,7 +119,7 @@ iOS 的字体信息来源[iosfonts.com。](http://iosfonts.com)
 
 ## <a name="named-font-sizes"></a>命名字号
 
-Xamarin.Forms 在枚举中[`NamedSize`](xref:Xamarin.Forms.NamedSize)定义表示特定字体大小的字段。 下表显示了`NamedSize`iOS、Android 和通用 Windows 平台 （UWP） 上的成员及其默认大小：
+Xamarin。 Forms 定义[`NamedSize`](xref:Xamarin.Forms.NamedSize)枚举中的字段，这些字段表示特定字体大小。 下表显示了成员`NamedSize`以及它们在 IOS、Android 和通用 WINDOWS 平台（UWP）上的默认大小：
 
 | 成员 | iOS | Android | UWP |
 | --- | --- | --- | --- |
@@ -134,28 +134,28 @@ Xamarin.Forms 在枚举中[`NamedSize`](xref:Xamarin.Forms.NamedSize)定义表�
 | `Subtitle` | 22 | 16 | 20 |
 | `Caption` | 12 | 12 | 12 |
 
-大小值以与设备无关的单位度量。 有关详细信息，请参阅[度量单位](~/xamarin-forms/user-interface/controls/common-properties.md#units-of-measurement)。
+大小值以与设备无关的单位来度量。 有关详细信息，请参阅[测量单位](~/xamarin-forms/user-interface/controls/common-properties.md#units-of-measurement)。
 
-命名字体大小可以通过 XAML 和代码进行设置。 此外，`Device.GetNamedSize`还可以调用 方法以返回表示命名字体`double`大小的 的 。
+可以通过 XAML 和代码设置命名字体大小。 此外，还可以`Device.GetNamedSize`调用方法返回`double`表示命名字体大小的：
 
 ```csharp
 label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
 ```
 
 > [!NOTE]
-> 在 iOS 和 Android 上，命名字体大小将根据操作系统辅助功能选项自动缩放。 此行为可以在 iOS 上使用特定于平台的 iOS 禁用。 有关详细信息，请参阅[iOS 上命名字体大小的辅助功能缩放](~/xamarin-forms/platform/ios/named-font-size-scaling.md)。
+> 在 iOS 和 Android 上，基于操作系统的辅助功能选项，命名字体大小将自动缩放。 可以在使用特定于平台的 iOS 上禁用此行为。 有关详细信息，请参阅[iOS 上命名字体大小的辅助功能缩放](~/xamarin-forms/platform/ios/named-font-size-scaling.md)。
 
 ## <a name="use-a-custom-font"></a>使用自定义字体
 
-自定义字体可以添加到 Xamarin.Forms 共享项目中，并由平台项目使用，而无需任何其他工作。 完成此目的的过程如下所示：
+自定义字体可以添加到 Xamarin 共享项目中，并可由平台项目使用，无需任何其他操作。 完成此目的的过程如下所示：
 
-1. 将字体添加到 Xamarin.Forms 共享项目中作为嵌入式资源（**生成操作：嵌入式资源**）。
-1. 使用`ExportFont`属性在**AssemblyInfo.cs**等文件中向程序集注册字体文件。 也可以指定可选别名。
+1. 将该字体作为嵌入资源添加到 Xamarin. Forms 共享项目中（**生成操作： EmbeddedResource**）。
+1. 使用`ExportFont`属性在文件（如**AssemblyInfo.cs**）中将字体文件注册到程序集。 还可以指定可选别名。
 
 > [!IMPORTANT]
-> 嵌入字体需要使用 Xamarin.窗体 4.5.0.530 或更高版本。
+> 嵌入字体需要使用 Xamarin. Forms 4.5.0.530 或更高版本。
 
-下面的示例显示了在程序集中注册的龙虾常规字体以及别名：
+下面的示例显示了向程序集注册的 Lobster 常规字体以及别名：
 
 ```csharp
 using Xamarin.Forms;
@@ -164,9 +164,9 @@ using Xamarin.Forms;
 ```
 
 > [!NOTE]
-> 字体可以驻留在共享项目中的任何文件夹中，而无需在向程序集注册字体时指定文件夹名称。
+> 该字体可以驻留在共享项目的任何文件夹中，而无需在向程序集注册字体时指定文件夹名称。
 
-然后，通过引用其名称，无需文件扩展名，可以在每个平台上使用字体：
+然后，可以在每个平台上使用该字体，只需引用其名称，无需文件扩展名：
 
 ```xaml
 <!-- Use font name -->
@@ -174,7 +174,7 @@ using Xamarin.Forms;
        FontFamily="Lobster-Regular" />
 ```
 
-或者，可以通过引用其别名在每个平台上使用它：
+或者，通过引用其别名，可以在每个平台上使用它：
 
 ```xaml
 <!-- Use font alias -->
@@ -200,28 +200,28 @@ Label label2 = new Label
 };
 ```
 
-以下屏幕截图显示了自定义字体：
+以下屏幕截图显示自定义字体：
 
-[![iOS 和 Android 上的自定义字体](fonts-images/custom-sml.png "自定义字体示例")](fonts-images/custom.png#lightbox "自定义字体示例")
+[![IOS 和 Android 上的自定义字体](fonts-images/custom-sml.png "自定义字体示例")](fonts-images/custom.png#lightbox "自定义字体示例")
 
 > [!IMPORTANT]
-> 在 Windows 上，字体文件名和字体名称可能不同。 要在 Windows 上发现字体名称，请右键单击 .ttf 文件并选择 **"预览**"。 然后可以从预览窗口中确定字体名称。
+> 在 Windows 上，字体文件的名称和字体名称可能不同。 若要在 Windows 上发现字体名称，请右键单击 .ttf 文件并选择 "**预览**"。 然后，可以从预览窗口确定字体名称。
 
 ## <a name="display-font-icons"></a>显示字体图标
 
-Xamarin.Forms 应用程序可以通过指定`FontImageSource`对象中的字体图标数据来显示字体图标。 此类派生自类[`ImageSource`](xref:Xamarin.Forms.ImageSource)，具有以下属性：
+Xamarin 可以通过在`FontImageSource`对象中指定字体图标数据来显示字体图标。 此类派生自[`ImageSource`](xref:Xamarin.Forms.ImageSource)类，具有以下属性：
 
-- `Glyph`• 字体图标的单码字符值，指定为`string`。
-- `Size`•`double`指示呈现字体图标的大小（以设备无关单位）的值。 默认值为 30。 此外，此属性可以设置为命名字体大小。
-- `FontFamily`•`string`表示字体图标所属的字体系列。
-- `Color`• 显示[`Color`](xref:Xamarin.Forms.Color)字体图标时要使用的可选值。
+- `Glyph`–指定为的`string`字体图标的 unicode 字符值。
+- `Size`–一个`double`值，该值指示呈现的字体图标的大小（以与设备无关的单位表示）。 默认值为 30。 此外，此属性可以设置为命名字体大小。
+- `FontFamily`– `string`表示字体图标所属的字体系列的。
+- `Color`–显示字体[`Color`](xref:Xamarin.Forms.Color)图标时要使用的可选值。
 
-此数据用于创建 PNG，该 PNG 可以由可以显示 的任何视图显示`ImageSource`。 此方法允许字体图标（如表情符号）由多个视图显示，而不是将字体图标显示限制为单个文本呈现视图（如[`Label`](xref:Xamarin.Forms.Label)）。
+此数据用于创建一个 PNG，可以通过任何可显示的视图来显示该 PNG `ImageSource`。 此方法允许多个视图显示字体图标（如表情符号），而不是将字体图标显示限制为单个文本显示视图，例如[`Label`](xref:Xamarin.Forms.Label)。
 
 > [!IMPORTANT]
-> 字体图标目前只能由其单码字符表示形式指定。
+> 字体图标当前只能由其 unicode 字符表示形式指定。
 
-以下 XAML 示例有一个视图显示的[`Image`](xref:Xamarin.Forms.Image)字体图标：
+下面的 XAML 示例显示一个由[`Image`](xref:Xamarin.Forms.Image)视图显示的字体图标：
 
 ```xaml
 <Image BackgroundColor="#D1D1D1">
@@ -233,7 +233,7 @@ Xamarin.Forms 应用程序可以通过指定`FontImageSource`对象中的字体�
 </Image>
 ```
 
-此代码在[`Image`](xref:Xamarin.Forms.Image)视图中显示来自 Ionicon 字体系列的 XBox 图标。 请注意，虽然此图标的单码字符是`\uf30c`，但它必须在 XAML 中转义，因此变为`&#xf30c;`。 等效 C# 代码如下：
+此代码在[`Image`](xref:Xamarin.Forms.Image)视图中显示 Ionicons 字体系列的 XBox 图标。 请注意，虽然此图标的 unicode 字符是`\uf30c`，但它必须在 XAML 中进行转义，因此`&#xf30c;`会变得如此。 等效 C# 代码如下：
 
 ```csharp
 Image image = new Image { BackgroundColor = Color.FromHex("#D1D1D1") };
@@ -245,13 +245,13 @@ image.Source = new FontImageSource
 };
 ```
 
-以下屏幕截图（来自[可绑定布局示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)）显示了可绑定布局显示的几个字体图标：
+下面的屏幕截图中，从 "可[绑定](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)布局" 示例中，显示了多个字体图标，可通过可绑定布局显示：
 
-![在 iOS 和 Android 上显示的字体图标的屏幕截图](fonts-images/font-image-source.png "图像视图中显示的字体图标")
+![在 iOS 和 Android 上显示的字体图标屏幕截图](fonts-images/font-image-source.png "在图像视图中显示的字体图标")
 
 ## <a name="related-links"></a>相关链接
 
-- [字体示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfonts)
+- [FontsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfonts)
 - [文本（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [可绑定布局（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
 - [可绑定的布局](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)
