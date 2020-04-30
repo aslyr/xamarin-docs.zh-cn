@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/26/2018
-ms.openlocfilehash: dccc47d8ee69686fe2ac7409f75284c64c99a2d4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 86714c2041edcd98c2bdd7b740a897dab8069752
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70772002"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82516466"
 ---
 # <a name="customizing-an-entry"></a>自定义 Entry
 
@@ -35,7 +35,7 @@ Xamarin.Forms Entry 控件允许对单行文本进行编辑。本文演示了如
 现在将依次讨论每个项，以在每个平台上实现具有不同背景颜色的 [`Entry`](xref:Xamarin.Forms.Entry) 控件。
 
 > [!IMPORTANT]
-> 本文介绍如何创建简单的自定义呈现器。 但是，要在每个平台上实现具有不同背景色的 `Entry`，无需创建自定义呈现器。 这可以通过使用 [`Device`](xref:Xamarin.Forms.Device) 类或 `OnPlatform` 标记扩展来轻松实现，以提供特定于平台的值。 有关详细信息，请参阅[提供特定于平台的值](~/xamarin-forms/platform/device.md#providing-platform-specific-values)和 [OnPlatform 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)。
+> 本文介绍如何创建简单的自定义呈现器。 但是，要在每个平台上实现具有不同背景色的 `Entry`，无需创建自定义呈现器。 这可以通过使用 [`Device`](xref:Xamarin.Forms.Device) 类或 `OnPlatform` 标记扩展来轻松实现，以提供特定于平台的值。 有关详细信息，请参阅[提供特定于平台的值](~/xamarin-forms/platform/device.md#provide-platform-specific-values)和 [OnPlatform 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)。
 
 <a name="Creating_the_Custom_Entry_Control" />
 
