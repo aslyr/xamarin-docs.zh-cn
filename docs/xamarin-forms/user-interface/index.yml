@@ -9,13 +9,13 @@ metadata:
   ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
   author: davidbritch
   ms.author: dabritch
-  ms.date: 12/30/2019
-  ms.openlocfilehash: bbe7fd52581cd77ed7e7d910dd16264641c15abf
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  ms.date: 03/19/2020
+  ms.openlocfilehash: 334c6afaffdec3ccc99d251bfc021edaa0cd9d2a
+  ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "77480599"
+  ms.lasthandoff: 04/29/2020
+  ms.locfileid: "82517438"
 landingContent:
 - title: 控件引用
   linkLists:
@@ -35,12 +35,20 @@ landingContent:
       url: controls/common-properties.md
     - text: 第三方控件
       url: controls/thirdparty.md
+- title: C# 中的声明性 UI
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: C# 标记
+      url: csharp-markup.md
 - title: 用于演示的视图
   linkLists:
   - linkListType: concept
     links:
     - text: BoxView
       url: boxview.md
+    - text: Expander
+      url: expander.md
     - text: 图像
       url: images.md
     - text: Label
@@ -59,6 +67,8 @@ landingContent:
       url: button.md
     - text: ImageButton
       url: imagebutton.md
+    - text: RadioButton
+      url: radiobutton.md
     - text: RefreshView
       url: refreshview.md
     - text: 搜索栏

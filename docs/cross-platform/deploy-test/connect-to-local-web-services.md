@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/16/2019
-ms.openlocfilehash: 29261f2ef6366c0dac8ac82e63584366a5cca0b0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.date: 04/29/2020
+ms.openlocfilehash: 3dc1a2cb99c5ef018807a8ac81139a6cace3c66f
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "74135281"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82516490"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>从 iOS 模拟器和 Android 模拟器连接到本地 Web 服务
 
@@ -60,9 +60,7 @@ dotnet dev-certs https --help
 
 ### <a name="ios"></a>iOS
 
-在 iOS 上运行的 Xamarin 应用程序可以使用托管网络堆栈，或使用本机 `CFNetwork` 或 `NSUrlSession` 网络堆栈。 默认情况下，新 iOS 平台项目使用 `NSUrlSession` 网络堆栈，以支持 TLS 1.2，并使用本机 API，以便提高性能并减小可执行文件大小。
-
-但是，当应用程序需要连接到本地运行的安全 Web 服务时，对于开发人员测试过程而言，使用托管网络堆栈更为简便。 因此，建议将调试模拟器版本配置文件设置为使用托管网络堆栈，将发行版本配置文件设置为使用 `NSUrlSession` 网络堆栈。 可以通过编程方式或通过项目选项中的选择器设置各个网络堆栈。 有关详细信息，请参阅 [iOS/macOS 的 HttpClient 和 SSL/TLS 实现选择器](~/cross-platform/macios/http-stack.md)。
+在 iOS 上运行的 Xamarin 应用程序可以使用托管网络堆栈，或使用本机 `CFNetwork` 或 `NSUrlSession` 网络堆栈。 默认情况下，新 iOS 平台项目使用 `NSUrlSession` 网络堆栈，以支持 TLS 1.2，并使用本机 API，以便提高性能并减小可执行文件大小。 有关详细信息，请参阅 [iOS/macOS 的 HttpClient 和 SSL/TLS 实现选择器](~/cross-platform/macios/http-stack.md)。
 
 ### <a name="android"></a>Android
 
@@ -97,38 +95,14 @@ public static string TodoItemsUrl = $"{BaseAddress}/api/todoitems/";
 
 ## <a name="bypass-the-certificate-security-check"></a>绕过证书安全检查
 
-如果试图从在 iOS 模拟器或 Android 模拟器中运行的应用程序调用本地安全 Web 服务，即使在各个平台上使用的是托管网络堆栈，也会引发 `HttpRequestException`。 因为本地 HTTPS 开发证书是自签名证书，而iOS 或 Android 不信任自签名证书。
-
-因此，当应用程序使用本地安全 Web 服务时，需忽略 SSL 错误。 用于实现此目的的机制当前在 iOS 和 Android 上有所不同。
-
-### <a name="ios"></a>iOS
-
-使用托管网络堆栈时，将 `ServicePointManager.ServerCertificateValidationCallback` 属性设置为忽略对本地 HTTPS 开发证书的证书安全检查结果的回调，可以在 iOS 上忽略本地安全 Web 服务的 SSL 错误：
+如果试图从在 iOS 模拟器或 Android 模拟器中运行的应用程序调用本地安全 Web 服务，即使在各个平台上使用的是托管网络堆栈，也会引发 `HttpRequestException`。 因为本地 HTTPS 开发证书是自签名证书，而iOS 或 Android 不信任自签名证书。 因此，当应用程序使用本地安全 Web 服务时，需忽略 SSL 错误。 在 iOS 和 Android 上使用托管和本机网络堆栈时，这可以通过以下操作实现：将 `HttpClientHandler` 对象上的 `ServerCertificateCustomValidationCallback` 属性设置为忽略对本地 HTTPS 开发证书的证书安全检查结果的回调：
 
 ```csharp
-#if DEBUG
-    System.Net.ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) =>
-    {
-        if (certificate.Issuer.Equals("CN=localhost"))
-            return true;
-        return sslPolicyErrors == System.Net.Security.SslPolicyErrors.None;
-    };
-#endif
-```
-
-在此代码示例中，如果待验证的证书不是 `localhost` 证书，会返回服务器证书验证结果。 如果是此证书，将忽略验证结果，并返回 `true`，以指示证书有效。 在调用 `LoadApplication(new App())` 方法之前，对于 iOS，应将此代码添加到 `AppDelegate.FinishedLaunching` 方法。
-
-> [!NOTE]
-> iOS 中的本机网络堆栈不会连接到 `ServerCertificateValidationCallback`。
-
-### <a name="android"></a>Android
-
-使用托管和本机 `AndroidClientHandler` 网络堆栈时，将 `HttpClientHandler` 对象上的 `ServerCertificateCustomValidationCallback` 属性设置为忽略对本地 HTTPS 开发证书的证书安全检查结果的回调，可以在 Android 上忽略本地安全 Web 服务的 SSL 错误：
-
-```csharp
+// This method must be in a class in a platform project, even if
+// the HttpClient object is constructed in a shared project.
 public HttpClientHandler GetInsecureHandler()
 {
-    var handler = new HttpClientHandler();
+    HttpClientHandler handler = new HttpClientHandler();
     handler.ServerCertificateCustomValidationCallback = (message, cert, chain, errors) =>
     {
         if (cert.Issuer.Equals("CN=localhost"))

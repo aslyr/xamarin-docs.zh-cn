@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2018
-ms.openlocfilehash: c9c6816115d89212ea720f027d51af6c990cfe8d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 5f0b72772a386aa71d4ceec25b88546930b06f4f
+ms.sourcegitcommit: 51006a4eed7bf99b563df6fc1cea9074d0218448
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80261305"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82166334"
 ---
 # <a name="preparing-an-application-for-release"></a>做好应用程序发布准备
 
@@ -212,11 +212,11 @@ Visual Studio 2017 附带了 Dotfuscator CE。
 
 ### <a name="bundle-assemblies-into-native-code"></a>将程序集捆绑到本机代码
 
-此选项启用时，程序集会捆绑到本机共享库中。 此选项使代码保持安全；它通过在本机二进制文件中嵌入这些托管程序集来保护它们。
+此选项启用时，程序集会捆绑到本机共享库中。 这样便可以对程序集进行压缩，减小 `.apk` 文件的大小。 程序集压缩还提供最小形式的模糊处理；此类模糊处理不应作为依据  。
 
 此选项需要 Enterprise 许可证，仅当“使用快速部署”  禁用时才可用。 “将程序集捆绑到本机代码”  在默认情况下处于禁用状态。
 
-请注意，“捆绑到本机代码”  选项执行不  意味着程序集会编译到本机代码中。 无法使用 [**AOT 编译**](#aot)将程序集编译到本机代码中（当前只是试验性功能，不用于生产用途）。
+请注意，“捆绑到本机代码”  选项执行不  意味着程序集会编译到本机代码中。 无法使用 [AOT 编译](#aot)将程序集编译为本机代码  。
 
 <a name="aot" />
 

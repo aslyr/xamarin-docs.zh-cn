@@ -6,13 +6,13 @@ ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/21/2020
-ms.openlocfilehash: bf9c06dae0df7da1cc69a85d8436376494039959
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.date: 04/17/2020
+ms.openlocfilehash: b4eeb776cafa131f13eb70aca5bd20df6eafa07f
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303833"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82516731"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms 触发器
 
@@ -341,7 +341,7 @@ Device.SetFlags(new string[]{ "StateTriggers_Experimental" });
 
 [`StateTrigger`](xref:Xamarin.Forms.StateTrigger) 类派生自 [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) 类，包含 [`IsActive`](xref:Xamarin.Forms.StateTrigger.IsActive) 可绑定属性。 当 `IsActive` 属性值更改时，`StateTrigger` 触发 [`VisualState`](xref:Xamarin.Forms.VisualState) 更改。
 
-[`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) 类是所有状态触发器的基类，包含 [`IsActive`](xref:Xamarin.Forms.StateTriggerBase.IsActive) 属性和 [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged) 事件。 只要 [`VisualState`](xref:Xamarin.Forms.VisualState) 更改，就会触发此事件。
+[`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) 类是所有状态触发器的基类，包含 [`IsActive`](xref:Xamarin.Forms.StateTriggerBase.IsActive) 属性和 [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged) 事件。 只要 [`VisualState`](xref:Xamarin.Forms.VisualState) 更改，就会触发此事件。 此外，`StateTriggerBase` 类包含可重写的 `OnAttached` 和 `OnDetached` 方法。
 
 > [!IMPORTANT]
 > [`StateTrigger.IsActive`](xref:Xamarin.Forms.StateTrigger.IsActive) 可绑定属性隐藏继承的 [`StateTriggerBase.IsActive`](xref:Xamarin.Forms.StateTriggerBase.IsActive) 属性。
@@ -405,7 +405,7 @@ Unchecked state active: True
 ```
 
 > [!NOTE]
-> 自定义状态触发器可以通过派生自 [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) 类来创建。
+> 可以通过以下方法创建自定义状态触发器：从 [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) 类派生，并重写 `OnAttached` 和 `OnDetached` 方法来执行任何所需注册和清理。
 
 ### <a name="adaptive-trigger"></a>自适应触发器
 

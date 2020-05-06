@@ -6,13 +6,13 @@ ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/14/2018
-ms.openlocfilehash: 11ad1fb18d1263eb77ef037350a3633510934c42
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.date: 03/10/2020
+ms.openlocfilehash: 984f54698ccdee54c0b8670a50cb1f4432327977
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303821"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82517282"
 ---
 # <a name="hierarchical-navigation"></a>分层导航
 
@@ -44,7 +44,7 @@ NavigationPage 类提供分层导航体验，用户可以随心所欲地向前�
 - 在 Android 中，页面顶部有一个显示标题、图标的导航栏，其上有一个“Back”按钮，可以返回前一页  。 在 `[Activity]` 属性中定义图标，该属性修饰特定于 Android 平台的项目中的 `MainActivity` 类。
 - 在通用 Windows 平台上，显示标题的页面顶部有一个导航栏。
 
-在所有平台上，[`Page.Title`](xref:Xamarin.Forms.Page.Title) 属性的值将显示为页面标题。
+在所有平台上，[`Page.Title`](xref:Xamarin.Forms.Page.Title) 属性的值将显示为页面标题。 此外，`IconColor` 属性可以设置为应用于导航栏中的图标的 [`Color`](xref:Xamarin.Forms.Color)。
 
 > [!NOTE]
 > 建议只使用 `ContentPage` 实例填充 `NavigationPage`。

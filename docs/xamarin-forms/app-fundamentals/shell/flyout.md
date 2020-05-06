@@ -6,13 +6,13 @@ ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/05/2019
-ms.openlocfilehash: 4049b3bdfdd6077dcfa151df9553722e63def0ba
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.date: 04/22/2020
+ms.openlocfilehash: cd5ee471385761cad9f99c4b78103b9773415ddb
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303869"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82517084"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms Shell 浮出控件
 
@@ -350,64 +350,84 @@ Shell 具有隐式转换运算符，可以简化 Shell 的视觉层次结构，�
 
 [![iOS 和 Android 上模板化的 FlyoutItem 对象的屏幕截图](flyout-images/flyoutitem-templated.png "Shell 模板化的 FlyoutItem 对象")](flyout-images/flyoutitem-templated-large.png#lightbox "Shell 模板化的 FlyoutItem 对象")
 
-
 `Shell.ItemTemplate` 是一个附加属性，因此可将不同的模板附加到特定的 `FlyoutItem` 对象。
 
 > [!NOTE]
 > Shell 向 `ItemTemplate` 的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 提供 `Title` 和 `FlyoutIcon` 属性。
 
+此外，Shell 还包括三个可自动应用于 `FlyoutItem` 对象的样式类。 有关详细信息，请参阅 [FlyoutItem 和 MenuItem 样式类](#flyoutitem-and-menuitem-style-classes)。
 
-### <a name="default-template-for-flyoutitems-and-menuitems"></a>FlyoutItem 和 MenuItem 的默认模板
-Shell 在内部使用下列模板进行其默认实现。 如果你只想对现有布局进行一些细微调整，这是一个很棒的起点。 这还演示了浮出控件项的可视状态管理器功能。 该模板也可用于 MenuItem
+### <a name="default-template-for-flyoutitems"></a>FlyoutItem 的默认模板
+
+用于每个 `FlyoutItem` 的默认 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 如下所示：
 
 ```xaml
-<DataTemplate x:Key="FlyoutTemplates">
-    <Grid HeightRequest="{x:OnPlatform Android=50}">
+<DataTemplate x:Key="FlyoutTemplate">
+    <Grid x:Name="FlyoutItemLayout"
+          HeightRequest="{x:OnPlatform Android=50}"
+          ColumnSpacing="{x:OnPlatform UWP=0}"
+          RowSpacing="{x:OnPlatform UWP=0}">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroupList>
                 <VisualStateGroup x:Name="CommonStates">
-                    <VisualState x:Name="Normal">
-                    </VisualState>
+                    <VisualState x:Name="Normal" />
                     <VisualState x:Name="Selected">
                         <VisualState.Setters>
-                            <Setter Property="BackgroundColor" Value="#F2F2F2" />
+                            <Setter Property="BackgroundColor"
+                                    Value="{x:OnPlatform Android=#F2F2F2, iOS=#F2F2F2}" />
                         </VisualState.Setters>
                     </VisualState>
                 </VisualStateGroup>
             </VisualStateGroupList>
         </VisualStateManager.VisualStateGroups>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="{x:OnPlatform Android=54, iOS=50}"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="{x:OnPlatform Android=54, iOS=50, UWP=Auto}" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Image Source="{Binding FlyoutIcon}"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"
-            HeightRequest="{x:OnPlatform Android=24, iOS=22}"
-            WidthRequest="{x:OnPlatform Android=24, iOS=22}">
+        <Image x:Name="FlyoutItemImage"
+               Source="{Binding FlyoutIcon}"
+               VerticalOptions="Center"
+               HorizontalOptions="{x:OnPlatform Default=Center, UWP=Start}"
+               HeightRequest="{x:OnPlatform Android=24, iOS=22, UWP=16}"
+               WidthRequest="{x:OnPlatform Android=24, iOS=22, UWP=16}">
+            <Image.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <OnPlatform.Platforms>
+                        <On Platform="UWP"
+                            Value="12,0,12,0" />
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </Image.Margin>
         </Image>
-        <Label VerticalOptions="Center"
-                Text="{Binding Title}"
-                FontSize="{x:OnPlatform Android=14, iOS=Small}"
-                FontAttributes="Bold" Grid.Column="1">
+        <Label x:Name="FlyoutItemLabel"
+               Grid.Column="1"
+               Text="{Binding Title}"
+               FontSize="{x:OnPlatform Android=14, iOS=Small}"
+               HorizontalOptions="{x:OnPlatform UWP=Start}"
+               HorizontalTextAlignment="{x:OnPlatform UWP=Start}"
+               FontAttributes="{x:OnPlatform iOS=Bold}"
+               VerticalTextAlignment="Center">
             <Label.TextColor>
                 <OnPlatform x:TypeArguments="Color">
                     <OnPlatform.Platforms>
-                        <On Platform="Android" Value="#D2000000" />
+                        <On Platform="Android"
+                            Value="#D2000000" />
                     </OnPlatform.Platforms>
                 </OnPlatform>
             </Label.TextColor>
             <Label.Margin>
                 <OnPlatform x:TypeArguments="Thickness">
                     <OnPlatform.Platforms>
-                        <On Platform="Android" Value="20, 0, 0, 0" />
+                        <On Platform="Android"
+                            Value="20, 0, 0, 0" />
                     </OnPlatform.Platforms>
                 </OnPlatform>
             </Label.Margin>
             <Label.FontFamily>
                 <OnPlatform x:TypeArguments="x:String">
                     <OnPlatform.Platforms>
-                        <On Platform="Android" Value="sans-serif-medium" />
+                        <On Platform="Android"
+                            Value="sans-serif-medium" />
                     </OnPlatform.Platforms>
                 </OnPlatform>
             </Label.FontFamily>
@@ -415,6 +435,13 @@ Shell 在内部使用下列模板进行其默认实现。 如果你只想对现�
     </Grid>
 </DataTemplate>
 ```
+
+此模板可用作对现有浮出控件布局进行更改的基础，还显示了为浮出控件项实现的视觉状态。
+
+此外，[`Grid`](xref:Xamarin.Forms.Grid)、[`Image`](xref:Xamarin.Forms.Image) 和 [`Label`](xref:Xamarin.Forms.Label) 元素都具有 `x:Name` 值，因此它们可作为可视状态管理器的目标。 有关详细信息，请参阅[设置多个元素的状态](~/xamarin-forms/user-interface/visual-state-manager.md#set-state-on-multiple-elements)。
+
+> [!NOTE]
+> 还可将同一模板用于 `MenuItem` 对象。
 
 ## <a name="flyoutitem-tab-order"></a>FlyoutItem Tab 键顺序
 
@@ -569,12 +596,50 @@ Shell.Current.CurrentItem = aboutItem;
 </Shell>
 ```
 
+此示例会将 Shell 级别的 `MenuItemTemplate` 附加到第一个 `MenuItem` 对象，并将内联的 `MenuItemTemplate` 附加到第二个 `MenuItem`。
 
 > [!NOTE]
-> 用于 [浮出控件项](#default-template-for-flyoutitems-and-menuitems) 的模板也可用于菜单项。
+> `FlyoutItem` 对象的默认模板还可用于 `MenuItem` 对象。 有关详细信息，请参阅 [FlyoutItem 的默认模板](#default-template-for-flyoutitems)。
 
-此示例会将 Shell 级别的 `MenuItemTemplate` 附加到第一个 `MenuItem` 对象，并将内联的 `MenuItemTemplate` 附加到第二个 `MenuItem`。
+## <a name="flyoutitem-and-menuitem-style-classes"></a>FlyoutItem 和 MenuItem 样式类
+
+Shell 包括三个可自动应用于 `FlyoutItem` 和 `MenuItem` 对象的样式类。 样式类名为：
+
+- `FlyoutItemLabelStyle`
+- `FlyoutItemImageStyle`
+- `FlyoutItemLayoutStyle`
+
+以下 XAML 演示一个示例，该示例定义了这些样式类的样式：
+
+```xaml
+<Style TargetType="Label"
+       Class="FlyoutItemLabelStyle">
+    <Setter Property="TextColor"
+            Value="Black" />
+    <Setter Property="HeightRequest"
+            Value="100" />
+</Style>
+
+<Style TargetType="Image"
+       Class="FlyoutItemImageStyle">
+    <Setter Property="Aspect"
+            Value="Fill" />
+</Style>
+
+<Style TargetType="Layout"
+       Class="FlyoutItemLayoutStyle"
+       ApplyToDerivedTypes="True">
+    <Setter Property="BackgroundColor"
+            Value="Teal" />
+</Style>
+```
+
+这些样式可自动应用于 `FlyoutItem` 和 `MenuItem` 对象，而无需将其 [`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass) 属性设置为样式类名。
+
+此外，还可以定义自定义样式类并将其应用于 `FlyoutItem` 和 `MenuItem` 对象。 有关样式类的详细信息，请参阅 [Xamarin.Forms 样式类](~/xamarin-forms/user-interface/styles/xaml/style-class.md)。
 
 ## <a name="related-links"></a>相关链接
 
 - [Xaminals（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+- [Xamarin.Forms 样式类](~/xamarin-forms/user-interface/styles/xaml/style-class.md)
+- [Xamarin.Forms 视觉对象状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)

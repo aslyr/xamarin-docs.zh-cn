@@ -6,13 +6,13 @@ ms.assetid: 57079D89-D1CB-48BD-9FEE-539CEC29EABB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: 70f8f630558730f6074373eb3a814209921235de
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.date: 04/02/2020
+ms.openlocfilehash: a40a2dc01c37773539089287d561f4c52ef7f6de
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "71674570"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82516517"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Xamarin.Forms Shell 导航
 
@@ -173,6 +173,36 @@ bears
 ```
 
 当显示 `monkeys` 路由的注册页时，导航到 `details` 路由将显示 `monkeys/details` 路由的注册页。 同样，当显示 `bears` 路由的注册页时，导航到 `details` 路由将显示 `bears/details` 路由的注册页。 有关如何注册本示例中的路由的信息，请参阅[注册页面路由](#register-page-routes)。
+
+### <a name="backwards-navigation"></a>向后导航
+
+向后导航可以通过将“..”指定为 `GotoAsync` 方法的参数来执行：
+
+```csharp
+await Shell.Current.GoToAsync("..");
+```
+
+通过“..”执行的向后导航还可与路由结合使用，如下所示：
+
+```csharp
+await Shell.Current.GoToAsync("../route");
+```
+
+在此示例中，总体效果是向后导航，然后导航到指定路由。
+
+> [!IMPORTANT]
+> 仅当向后导航将你置于路由层次结构中的当前位置以导航到指定路由时，才可在向后导航后导航到指定路由。
+
+同样，可以向后导航多次，然后导航到指定路由：
+
+```csharp
+await Shell.Current.GoToAsync("../../route");
+```
+
+在此示例中，总体效果是向后导航两次，然后导航到指定路由。
+
+> [!NOTE]
+> 使用“..”导航时也可以传递数据。 有关详细信息，请参阅[传递数据](#pass-data)。
 
 ### <a name="invalid-routes"></a>无效路由
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/03/2019
-ms.openlocfilehash: b87e713f89951d03408fa559bcf6e02cdae65e28
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 04d40aa4cafe663113957d31bdb8a6463ba58ba5
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "74824239"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82516460"
 ---
 # <a name="xamarinforms-custom-renderers"></a>Xamarin.Forms 自定义呈现器
 
@@ -34,7 +34,7 @@ Xamarin.Forms [`Entry`](xref:Xamarin.Forms.Entry) 控件允许对单行文本进
 
 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 是一个可视元素，它显示单个视图并占据大部分屏幕区域。 本文演示了如何为 `ContentPage` 页面创建自定义呈现器，使开发人员能够使用自己特定于平台的自定义呈现替代默认本机呈现。
 
-## <a name="customizing-a-map"></a>[自定义地图](map/index.md)
+## <a name="customizing-a-map-pin"></a>[自定义图钉](map-pin.md)
 
 Xamarin.Forms.Maps 提供跨平台抽象，用于显示在每个平台上使用本机地图 API 的地图，为用户提供快速且熟悉的地图体验。 本主题演示了如何为 `Map` 控件创建自定义呈现器，使开发人员能够使用自己特定于平台的自定义呈现替代默认本机呈现。
 
