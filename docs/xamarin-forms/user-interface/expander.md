@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/15/2020
-ms.openlocfilehash: f47dc08d11a97598966ba7af620cfc81e5fe284f
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.openlocfilehash: b1e573a6070a637ef2fdfa65bb0fc1375522fc3c
+ms.sourcegitcommit: 443ecd9146fe2a7bbb9b5ab6d33c835876efcf1f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82532885"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82852504"
 ---
 # <a name="xamarinforms-expander"></a>Xamarin 窗体扩展器
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)
 
 Xamarin `Expander`控件提供可扩展容器来托管任何内容。 控件具有标题和内容，并通过点击`Expander`标题显示或隐藏内容。 仅显示`Expander`标头时， `Expander`会*折叠*。 如果`Expander`内容可见， `Expander`则*展开*。
 
@@ -26,6 +26,8 @@ Xamarin `Expander`控件提供可扩展容器来托管任何内容。 控件具�
 
 > [!IMPORTANT]
 > `Expander`当前为试验性，只能通过设置`Expander_Experimental`标志来使用。 有关详细信息，请参阅[实验标志](~/xamarin-forms/internals/experimental-flags.md)。
+>
+> 此外， `Expander`控件完全在`Xamarin.Forms`命名空间中实现。 因此，它在 Xamarin 支持的所有平台上可用。
 
 `Expander`控件定义以下属性：
 

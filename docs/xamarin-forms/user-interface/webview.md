@@ -6,17 +6,17 @@ ms.assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/11/2020
-ms.openlocfilehash: 7a2671c47a6d2fceaf2b444cfa8988b4bb8c249c
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.date: 05/06/2020
+ms.openlocfilehash: 31b705a51e405285cc5eaae391dd0794bfacfd9c
+ms.sourcegitcommit: 443ecd9146fe2a7bbb9b5ab6d33c835876efcf1f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517264"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82852490"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin. 窗体 Web 视图
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
 
 [`WebView`](xref:Xamarin.Forms.WebView)是用于在应用程序中显示 web 和 HTML 内容的视图：
 
@@ -554,11 +554,13 @@ webView.Source = new UrlWebViewSource { Url = uri.ToString() };
 
 此操作的先决条件包括：
 
-- Xamarin **. forms 4.5 或更高** &ndash;版本的 xamarin. forms 4.5 可以使用。
-- **Xamarin 13.10.0.17 或更高** &ndash;版本检查[Visual Studio 中](~/cross-platform/troubleshooting/questions/version-logs.md#version-information)的 Xamarin 版本。 Visual Studio for Mac dbms-guide-8.4.1 和 Visual Studio 16.4.3 中随附了此版本的 Xamarin。
-- **删除`UIWebView` **对&ndash;你的代码的引用时，不应`UIWebView`具有对或使用的`UIWebView`任何类的引用。
+- **Xamarin. Forms 4.5 或更高版本**。 如果你的应用程序使用材料视觉对象，则需要 Xamarin. Forms 4.6 或更高版本。
+- **Xamarin 13.10.0.17 或更高版本**。 检查[Visual Studio 中](~/cross-platform/troubleshooting/questions/version-logs.md#version-information)的 Xamarin 版本。 Visual Studio for Mac dbms-guide-8.4.1 和 Visual Studio 16.4.3 中随附了此版本的 Xamarin。
+- **删除对`UIWebView`的引用**。 你的代码不应引用任何`UIWebView`或任何使用的`UIWebView`类。
 
-### <a name="configure-the-linker-preview"></a>配置链接器预览版
+有关检测和删除`UIWebView`引用的详细信息，请参阅[UIWebView 弃用](~/ios/user-interface/controls/webview.md#uiwebview-deprecation)。
+
+### <a name="configure-the-linker"></a>配置链接器
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -575,7 +577,7 @@ webView.Source = new UrlWebViewSource { Url = uri.ToString() };
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-请按照以下步骤来删除`UIWebView`引用
+请按照以下步骤来删除`UIWebView`引用：
 
 1. **打开 "ios 项目选项** &ndash; " 右键单击 ios 项目，然后选择 "**选项**"。
 1. **导航到 "ios 生成" 部分** &ndash; ，选择 " **ios 生成**" 部分。
@@ -594,3 +596,4 @@ webView.Source = new UrlWebViewSource { Url = uri.ToString() };
 
 - [使用 Web 视图（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
 - [Web 视图（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-webview)
+- [UIWebView 弃用](~/ios/user-interface/controls/webview.md#uiwebview-deprecation)
