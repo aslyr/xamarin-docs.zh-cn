@@ -5,12 +5,12 @@ ms.assetid: 34062D84-3E55-4AF7-A688-8551068B1E57
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/06/2020
-ms.openlocfilehash: 21f2079ace4adae6fd84d89426e5d66692af2a0a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 3d61267ae78a4b84907a2bcf6e944eb286b113dd
+ms.sourcegitcommit: 8b94b2af2ac69e4a60e210ddc764f4d276c8d88d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "78289798"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82605441"
 ---
 # <a name="xamarinessentials-permissions"></a>Xamarin.Essentials:权限
 
@@ -37,6 +37,8 @@ var status = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>()
 ```
 
 如果相应权限未声明，`PermissionException` 则会抛出。
+
+在请求权限之前，最好检查权限的状态。 如果系统从不提示用户，则每个操作系统会返回不同的默认状态。 iOS 会返回 `Unknown`，而其他系统返回 `Denied`。
 
 ## <a name="requesting-permissions"></a>请求权限
 
@@ -96,7 +98,7 @@ Xamarin.Essentials 尝试提取尽可能多的权限，但每个操作系统都�
 下面介绍了权限的一般处理模式。
 
 ```csharp
-public async Task<PermissionStatus> CheckAndRequestPermissionAsync<TPermission>()
+public async Task<PermissionStatus> CheckAndRequestLocationPermission()
 {
     var status = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>();
     if (status != PermissionStatus.Granted)

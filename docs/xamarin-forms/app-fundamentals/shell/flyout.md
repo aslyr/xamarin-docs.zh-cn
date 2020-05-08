@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/22/2020
-ms.openlocfilehash: cd5ee471385761cad9f99c4b78103b9773415ddb
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.openlocfilehash: 5e5c50a9195ceb2716e3ca5306b72654fedc46e8
+ms.sourcegitcommit: 443ecd9146fe2a7bbb9b5ab6d33c835876efcf1f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517084"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82852467"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms Shell 浮出控件
 
@@ -480,7 +480,13 @@ Shell 具有隐式转换运算符，可以简化 Shell 的视觉层次结构，�
 
 此代码将名为 `aboutItem` 的 `ShellContent` 对象设置为 `CurrentItem` 属性，从而显示该属性。 在此示例中，隐式转换用于将 `ShellContent` 对象包装在 `Tab` 对象中，`Tab` 对象包装在 `FlyoutItem` 对象中。
 
-等效 C# 代码如下：
+假设 `ShellContent` 名为 `aboutItem`，则等效的 C# 代码为：
+
+```csharp
+CurrentItem = aboutItem;
+```
+
+在此示例中，`CurrentItem` 属性是在设为子类的 `Shell` 类中设置的。 或者，可通过 `Shell.Current` 静态属性在任何类中设置 `CurrentItem` 属性：
 
 ```csharp
 Shell.Current.CurrentItem = aboutItem;

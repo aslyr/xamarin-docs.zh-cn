@@ -6,12 +6,12 @@ ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/29/2020
-ms.openlocfilehash: 3dc1a2cb99c5ef018807a8ac81139a6cace3c66f
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.openlocfilehash: 29875b3f6c747d5dc2f45eb876a269d2bc7e85c6
+ms.sourcegitcommit: 443ecd9146fe2a7bbb9b5ab6d33c835876efcf1f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82516490"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82852459"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>从 iOS 模拟器和 Android 模拟器连接到本地 Web 服务
 
@@ -113,7 +113,16 @@ public HttpClientHandler GetInsecureHandler()
 }
 ```
 
-在此代码示例中，如果待验证的证书不是 `localhost` 证书，会返回服务器证书验证结果。 如果是此证书，将忽略验证结果，并返回 `true`，以指示证书有效。 生成的 `HttpClientHandler` 对象应作为参数传递到 `HttpClient` 构造函数。
+在此代码示例中，如果待验证的证书不是 `localhost` 证书，会返回服务器证书验证结果。 如果是此证书，将忽略验证结果，并返回 `true`，以指示证书有效。 生成的 `HttpClientHandler` 对象应作为参数传递到调试版本的 `HttpClient` 构造函数：
+
+```csharp
+#if DEBUG
+    HttpClientHandler insecureHandler = GetInsecureHandler();
+    HttpClient client = new HttpClient(insecureHandler);
+#else
+    HttpClient client = new HttpClient();
+#endif
+```
 
 ## <a name="related-links"></a>相关链接
 

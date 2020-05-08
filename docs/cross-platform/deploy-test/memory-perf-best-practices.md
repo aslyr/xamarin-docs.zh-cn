@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: d0b195b90bb57b6d0717c0fb06d0202857851fe7
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f99b64b67f4f1cabf3a5884fabb1301e5ee39eee
+ms.sourcegitcommit: 06043f6a5628a7326ac6690eb62ead8e4780f4a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73016530"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82738798"
 ---
 # <a name="cross-platform-performance"></a>跨平台性能
 
@@ -264,6 +264,8 @@ SGen 利用以下三个堆中的一个来为对象分配空间：
 - **大型对象空间** – 在此处保存需要超过 8000 个字节的对象。 大型对象不会在小堆中分配，而是在此堆中分配。
 
 SGen 的一个优点是：执行次要垃圾回收所需时间与自上次执行次要垃圾回收以来所创建新活动对象的数目成正比。 这可降低垃圾回收对应用程序性能的影响，因为次要垃圾回收比主要垃圾回收所需时间更少。 主要垃圾回收仍会发生，但频率较低。
+
+SGen 是 Xamarin.iOS 9.2.1 及更高版本中的默认垃圾回收器，因此系统将自动使用它。 请注意，无法再在更高版本的 Visual Studio 中更改垃圾回收器。 有关详细信息，请参阅[新的引用计数系统](~/ios/internals/newrefcount.md)。
 
 ### <a name="reducing-pressure-on-the-garbage-collector"></a>减轻垃圾回收器的压力
 
