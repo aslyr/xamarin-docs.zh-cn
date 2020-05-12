@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
 ms.openlocfilehash: 43061272f3d3486926f38af792ee3b9df0c53670
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73027231"
 ---
 # <a name="kitkat-features"></a>KitKat 功能
@@ -71,18 +71,18 @@ alarmManager.SetWindow (AlarmType.Rtc, AlarmManager.IntervalHalfHour, AlarmManag
 alarmManager.SetExact (AlarmType.Rtc, AlarmManager.IntervalDay, pendingIntent);
 ```
 
-KitKat 不再允许设置确切的重复警报。 使用 [`SetRepeating`](xref:Android.App.AlarmManager.SetRepeating*)
+KitKat 不再允许设置确切的重复警报。 使用 [`SetRepeating`](xref:Android.App.AlarmManager.SetRepeating*) 
 并需要确切的警报才能工作的应用程序现在需要手动触发每个警报。
 
 ### <a name="external-storage"></a>外部存储
 
 外部存储现在划分为两种类型，即应用程序独有的存储以及多个应用程序共享的数据。 在外部存储上读取和写入应用的特定位置不需要特殊权限。 与共享存储上的数据交互现在需要 `READ_EXTERNAL_STORAGE` 或 `WRITE_EXTERNAL_STORAGE` 权限。 这两种类型可以分类为：
 
-- 如果是通过对 `Context` 调用方法来获取文件或目录路径（例如 [`GetExternalFilesDir`](xref:Android.Content.Context.GetExternalFilesDir*)
+- 如果是通过对 `Context` 调用方法来获取文件或目录路径（例如 [`GetExternalFilesDir`](xref:Android.Content.Context.GetExternalFilesDir*) 
   或 [`GetExternalCacheDirs`](xref:Android.Content.Context.GetExternalCacheDirs)），
   - 你的应用不需要额外的权限。
 
-- 如果是通过访问属性或对 `Environment` 调用方法来获取文件或目录路径（例如 [`GetExternalStorageDirectory`](xref:Android.OS.Environment.ExternalStorageDirectory)
+- 如果是通过访问属性或对 `Environment` 调用方法来获取文件或目录路径（例如 [`GetExternalStorageDirectory`](xref:Android.OS.Environment.ExternalStorageDirectory) 
   或 [`GetExternalStoragePublicDirectory`](xref:Android.OS.Environment.GetExternalStoragePublicDirectory*)），
   你的应用需要 `READ_EXTERNAL_STORAGE` 或 `WRITE_EXTERNAL_STORAGE` 权限。
 
@@ -109,7 +109,7 @@ KitKat 附带了几个新的 API 来增强用户体验，其中包括用于处�
 
 #### <a name="simple-property-animation"></a>简单的属性动画
 
-新的 Android 转换库简化了属性动画的代码。 通过框架，可以使用最少的代码执行简单的动画。 例如，以下代码示例使用 [`TransitionManager.BeginDelayedTransition`](xref:Android.Transitions.TransitionManager.BeginDelayedTransition*)
+新的 Android 转换库简化了属性动画的代码。 通过框架，可以使用最少的代码执行简单的动画。 例如，以下代码示例使用 [`TransitionManager.BeginDelayedTransition`](xref:Android.Transitions.TransitionManager.BeginDelayedTransition*) 
 来对显示和隐藏 `TextView` 进行动画处理：
 
 ```csharp
@@ -389,7 +389,7 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 }
 ```
 
-请注意，[`ContentResolver.OpenOutputStream(Android.Net.Uri)`](xref:Android.Content.ContentResolver.OpenOutputStream*)
+请注意，[`ContentResolver.OpenOutputStream(Android.Net.Uri)`](xref:Android.Content.ContentResolver.OpenOutputStream*) 
 返回 `System.IO.Stream`，因此可以使用 .NET 编写整个流式传输过程。
 
 有关使用存储访问框架加载、创建和编辑内容的详细信息，请参阅 [Android 的存储访问框架文档](https://developer.android.com/guide/topics/providers/document-provider.html)。
@@ -495,7 +495,7 @@ void PrintPage ()
 }
 ```
 
-`Print` 将以下内容作为参数：打印作业的名称（在本示例中为“MyWebPage”）、从内容生成打印文档的 [`PrintDocumentAdapter`](xref:Android.Print.PrintDocumentAdapter)
+`Print` 将以下内容作为参数：打印作业的名称（在本示例中为“MyWebPage”）、从内容生成打印文档的 [`PrintDocumentAdapter`](xref:Android.Print.PrintDocumentAdapter) 
 以及 [`PrintAttributes`](xref:Android.Print.PrintAttributes)
 （在上面的示例中为 `null`）。 你可以指定 `PrintAttributes` 来帮助在打印页面上布局内容，尽管默认属性应该可以处理大多数情况。
 
@@ -531,7 +531,7 @@ HCE 要求将 HCE 功能和 `Nfc` 权限都注册到应用程序的 `AndroidMani
 
 - ProcessCommandApdu - 应用程序协议数据单元 (APDU) 是在 NFC 读卡器和 HCE 服务之间发送的内容  。 此方法使用读卡器中的 ADPU，并返回响应中的数据单位。
 
-- OnDeactivated - 当 HCE 服务不再与 NFC 读卡器通信时，将停用此 `HostAdpuService`  。
+- OnDeactivated - 当 HCE 服务不再与 NFC 读卡器通信时，将停用此 `HostAdpuService` 。
 
 还需要在应用程序清单中注册 HCE 服务，并使用适当的权限、意向筛选器和元数据对其进行修饰。 下面的代码是使用 `Service` 属性注册到 Android 清单的 `HostApduService` 的示例（有关属性的详细信息，请参阅 Xamarin 的[使用 Android 清单](~/android/platform/android-manifest.md)指南）：
 
@@ -671,13 +671,13 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 - 自定义通知 - 通过 [`NotificationListenerService`](xref:Android.Service.Notification.NotificationListenerService) 获取有关系统通知的其他详细信息 
   。 这使你能够以不同的方式在应用中显示信息。
 
-- 对可绘制资源进行镜像处理 - 可绘制资源具有新的 [`autoMirrored`](https://developer.android.com/reference/android/R.attr.html#autoMirrored) 
+- 对可绘制资源进行镜像处理 - 可绘制资源具有新的 [`autoMirrored`](https://developer.android.com/reference/android/R.attr.html#autoMirrored)  
   属性，该属性告知系统为需要左右翻转的图像创建镜像版本。
 
 - 暂停动画 - 暂停和继续通过 [`Animator`](xref:Android.Animation.Animator) 类创建的 
-  的动画。
+  类的新实例。
 
-- 读取动态更改的文本 - 使用新的 [`accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion) 
+- 读取动态更改的文本 - 使用新的 [`accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)  
   属性将用新文本动态更新的 UI 部分表示为“活动区域”，以便在辅助功能模式下自动读取新文本。
 
 - 增强音频体验 - 通过 [`LoudnessEnhancer`](xref:Android.Media.Audiofx.LoudnessEnhancer) 使曲目声音更响亮  ，
@@ -689,7 +689,7 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 - 区分控制器 - 在 KitKat 中，为控制器分配了唯一的整数标识符，这些标识符可通过设备的 `ControllerNumber` 属性进行访问  。 这样就可以更轻松地在游戏中区分玩家。
 
 - 远程控制 - 通过硬件和软件端的一些更改，KitKat 允许使用 `ConsumerIrService` 将配备 IR 发送器的设备转换为远程控制，并使用新的 [`RemoteController`](xref:Android.Media.RemoteController)  API 与外围设备进行
-  交互。
+  访问。
 
 有关上述 API 更改的详细信息，请参阅 Google [Android 4.4 API](https://developer.android.com/about/versions/android-4.4.html) 概述。
 

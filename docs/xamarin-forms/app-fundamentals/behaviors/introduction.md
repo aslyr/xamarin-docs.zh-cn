@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
 ms.openlocfilehash: d62ba6b025b2fe9865df8279a5e98eba254bb5a2
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70772052"
 ---
 # <a name="introduction-to-behaviors"></a>行为简介
 
-通过行为可将功能添加到用户界面控件，且无需将其子类化。功能是在行为类中实现的，并附加到控件上，就像它本身就是控件的一部分。本文介绍行为。_
+通过行为可将功能添加到用户界面控件，且无需将其子类化。功能是在行为类中实现的，并附加到控件上，就像它本身就是控件的一部分。本文介绍行为。 
 
 行为使开发人员可以实现那些通常必须以代码隐藏形式编写的代码，因为它直接与控件的 API 进行交互，这样便可简洁地将其附加到控件，并打包以便跨多个应用程序重用。 它们可以用于为控件提供一系列完整的功能，例如：
 

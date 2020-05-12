@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
 ms.openlocfilehash: 7d16eef4fe5422fb5cf3c039c66d1b0f113727fd
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "77131121"
 ---
 # <a name="attached-behaviors"></a>附加行为
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)
 
-“附加行为是具有一个或多个附加属性的静态类。本文演示如何创建和使用附加行为。”
+“附加行为是具有一个或多个附加属性的静态类。本文演示如何创建和使用附加行为。” 
 
 ## <a name="overview"></a>概述
 

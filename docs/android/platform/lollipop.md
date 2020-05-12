@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 297c7806ce8a880d65c38ef0e4672e41fee5acfe
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76724440"
 ---
 # <a name="lollipop-features"></a>Lollipop 功能
@@ -125,7 +125,7 @@ Android 5.0 使用新的 Android 运行时 (ART) 作为默认运行时，而不�
 
 有关在 Android 中创建通知的信息，请参阅[本地通知](~/android/app-fundamentals/notifications/local-notifications.md)。
 
-## <a name="material-theme"></a>Material Theme
+## <a name="material-theme"></a>材料主题
 
 新的 Android 5.0 Material Theme 使 Android UI 的外观发生了巨大变化。 视觉对象元素现在使用触觉表面，这些表面具有醒目的图形、排版和色彩明艳的印刷型设计。 以下屏幕截图展示了 Material Theme 的示例：
 
@@ -452,7 +452,7 @@ Android 5.0 引入了一个新的 `JobScheduler` API，它可以将某些任务�
 
 本文概述了 Android 5.0 中适用于 Xamarin.Android 应用开发人员的重要新功能：
 
-- Material Theme
+- 材料主题
 
 - 动画
 
