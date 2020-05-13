@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ae5962de05190ad914c86ceb0a9b52edb72232dc
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: cb03ad89c4fa7a8bed876a7210add68be06cf4a3
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71107180"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83343388"
 ---
 祝贺你完成了本教程的学习，在本教程中你学习了如何：
 
@@ -24,7 +24,7 @@ ms.locfileid: "71107180"
 ## <a name="related-links"></a>相关链接
 
 - [StackLayoutTutorial（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-stacklayouttutorial/)
-- [Xamarin.Forms StackLayout（指南）](~/xamarin-forms/user-interface/layouts/stack-layout.md)
+- [Xamarin.Forms StackLayout（指南）](~/xamarin-forms/user-interface/layouts/stacklayout.md)
 - [边距和填充（指南）](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)
 - [Xamarin.Forms 中的布局选项（指南）](~/xamarin-forms/user-interface/layouts/layout-options.md)
 - [StackLayout API](xref:Xamarin.Forms.StackLayout)

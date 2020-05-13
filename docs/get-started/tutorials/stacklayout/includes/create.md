@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b2e1f11579e8647593e20e7d56936e8e75661e78
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 45a387690792074af6a18fe3c639692863cdf4be
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80634705"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83343401"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -41,7 +41,7 @@ ms.locfileid: "80634705"
 
     [![iOS 和 Android 上 StackLayout 中子视图的屏幕截图](../images/create-stacklayout.png "包含标签实例的 StackLayout")](../images/create-stacklayout-large.png#lightbox "包含标签实例的 StackLayout")
 
-    有关 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 的详细信息，请参阅 [Xamarin.Forms StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)。
+    有关 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 的详细信息，请参阅 [Xamarin.Forms StackLayout](~/xamarin-forms/user-interface/layouts/stacklayout.md)。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -78,4 +78,4 @@ ms.locfileid: "80634705"
 
     [![iOS 和 Android 上 StackLayout 中子视图的屏幕截图](../images/create-stacklayout.png "包含标签实例的 StackLayout")](../images/create-stacklayout-large.png#lightbox "包含标签实例的 StackLayout")
 
-    有关 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 的详细信息，请参阅 [Xamarin.Forms StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)。
+    有关 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 的详细信息，请参阅 [Xamarin.Forms StackLayout](~/xamarin-forms/user-interface/layouts/stacklayout.md)。
