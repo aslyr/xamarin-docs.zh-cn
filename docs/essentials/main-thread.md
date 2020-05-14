@@ -3,14 +3,15 @@ title: Xamarin.Essentials:MainThread
 description: MainThread 类允许应用程序在主执行线程上运行代码。
 ms.assetid: CD6D51E7-D933-4FE7-A7F7-392EF27812E1
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 08/20/2019
-ms.openlocfilehash: 9109e7bff4cfe60479e711240d290d77b60a9af6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: dfef9fc5d1b8e4acaec8d9e1d653b141b04cead6
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70060118"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83150063"
 ---
 # <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials:MainThread
 
@@ -110,3 +111,9 @@ _但是，不需要执行此检查。_ `BeginInvokeOnMainThread` 的平台实现
 
 - [MainThread 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/MainThread)
 - [MainThread API 文档](xref:Xamarin.Essentials.MainThread)
+
+## <a name="related-video"></a>相关视频
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Main-Thread-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]
