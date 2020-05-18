@@ -4,13 +4,14 @@ description: 本文档介绍了 Xamarin.Essentials 中的 Permissions 类，它�
 ms.assetid: 34062D84-3E55-4AF7-A688-8551068B1E57
 author: jamesmontemagno
 ms.author: jamont
+ms.custom: video
 ms.date: 01/06/2020
-ms.openlocfilehash: 3d61267ae78a4b84907a2bcf6e944eb286b113dd
-ms.sourcegitcommit: 8b94b2af2ac69e4a60e210ddc764f4d276c8d88d
+ms.openlocfilehash: fbce02300363c3ec68c35c11afb25342f06f4be1
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82605441"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83150067"
 ---
 # <a name="xamarinessentials-permissions"></a>Xamarin.Essentials:权限
 
@@ -19,6 +20,8 @@ Permissions  类提供了检查和请求运行时权限的功能。
 ## <a name="get-started"></a>入门
 
 [!include[](~/essentials/includes/get-started.md)]
+
+[!include[](~/essentials/includes/android-permissions.md)]
 
 ## <a name="using-permissions"></a>使用 Permissions
 
@@ -38,23 +41,23 @@ var status = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>()
 
 如果相应权限未声明，`PermissionException` 则会抛出。
 
-在请求权限之前，最好检查权限的状态。 如果系统从不提示用户，则每个操作系统会返回不同的默认状态。 iOS 会返回 `Unknown`，而其他系统返回 `Denied`。
+在请求权限之前，最好先检查权限的状态。 如果系统从不提示用户，则每个操作系统会返回不同的默认状态。 iOS 会返回 `Unknown`，而其他系统返回 `Denied`。
 
 ## <a name="requesting-permissions"></a>请求权限
 
-若要向用户请求权限，请使用 `RequestAsync` 方法以及要请求的特定权限。 如果用户先前授予了权限，并且没有撤销它，此方法会立即返回 `Granted`，而不会显示对话框。 
+若要向用户请求权限，请使用 `RequestAsync` 方法以及要请求的特定权限。 如果用户先前已经授予了权限，并且没有撤销它，此方法会立即返回 `Granted`，而不会显示对话框。
 
 ```csharp
 var status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
 ```
 
-如果相应权限未声明，`PermissionException` 则会抛出。 
+如果相应权限未声明，`PermissionException` 则会抛出。
 
-请注意，在某些平台上，权限请求只能激活一次。 开发人员必须处理其他提示，以检查权限是否处于 `Denied` 状态，并要求用户手动启用它。
+请注意，在某些平台上，权限请求只能激活一次。 开发人员必须处理其他提示，以检查权限是否处于 `Denied` 状态，并要求用户手动启用。
 
 ## <a name="permission-status"></a>权限状态
 
-如果使用的是 `CheckStatusAsync` 或 `RequestAsync`，将返回用于确定后续步骤的 `PermissionStatus`。
+如果使用 `CheckStatusAsync` 或 `RequestAsync`，将返回 `PermissionStatus` 用于确定后续步骤：
 
 * Unknown - 权限处于未知状态
 * Denied - 用户拒绝了权限请求
@@ -64,7 +67,7 @@ var status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
 
 ## <a name="available-permissions"></a>可用权限
 
-Xamarin.Essentials 尝试提取尽可能多的权限，但每个操作系统都有一组不同的运行时权限。 此外，在能否为某些权限提供单个 API 方面也存在差异。 下面是当前可用权限的指南：
+Xamarin.Essentials 会尝试将尽可能多的权限抽象化。 但是，每个操作系统都有一组不同的运行时权限。 此外，在能否为某些权限提供单个 API 方面也存在差异。 下面是当前可用权限的指南：
 
 图标指南：
 
@@ -72,7 +75,7 @@ Xamarin.Essentials 尝试提取尽可能多的权限，但每个操作系统都�
 * ![不支持](~/media/shared/no.png "不支持或不需要") - 不支持/不需要
 
 | 权限 | Android | iOS | UWP | watchOS | tvOS | Tizen |
-| --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: 
+| --- | :---: | :---: | :---: | :---: | :---: | :---: | :---:
 | CalendarRead   | ![支持 Android](~/media/shared/yes.png "支持 Android") | ![支持 iOS](~/media/shared/yes.png "支持 iOS") | ![UWP 不支持](~/media/shared/no.png "UWP 不支持") | ![支持 watchOS](~/media/shared/yes.png "支持 watchOS") | ![不支持 tvOS](~/media/shared/no.png "不支持 tvOS") | ![不支持 Tizen](~/media/shared/no.png "不支持 Tizen") |
 | CalendarWrite | ![支持 Android](~/media/shared/yes.png "支持 Android") | ![支持 iOS](~/media/shared/yes.png "支持 iOS") | ![UWP 不支持](~/media/shared/no.png "UWP 不支持") | ![支持 watchOS](~/media/shared/yes.png "支持 watchOS") | ![不支持 tvOS](~/media/shared/no.png "不支持 tvOS") | ![不支持 Tizen](~/media/shared/no.png "不支持 Tizen") |
 | 照相机 | ![支持 Android](~/media/shared/yes.png "支持 Android") | ![支持 iOS](~/media/shared/yes.png "支持 iOS") | ![UWP 不支持](~/media/shared/no.png "UWP 不支持") | ![不支持 watchOS](~/media/shared/no.png "不支持 watchOS") | ![不支持 tvOS](~/media/shared/no.png "不支持 tvOS") | ![Tizen 支持](~/media/shared/yes.png "支持 Tizen") |
@@ -142,7 +145,7 @@ public async Task<PermissionStatus> CheckAndRequestPermissionAsync<T>(T permissi
 
 ## <a name="extending-permissions"></a>扩展 Permissions
 
-Permissions API 灵活且可扩展，可用于需要额外验证或权限的应用，而这些验证或权限未包含在 Xamarin.Essentials 中。 新建继承自 `BasePermission` 的类，并实现相应抽象方法。 Then 
+Permissions API 灵活且可扩展，可用于需要额外验证或权限的应用，而这些验证或权限未包含在 Xamarin.Essentials 中。 新建继承自 `BasePermission` 的类，并实现相应抽象方法。 Then
 
 ```csharp
 public class MyPermission : BasePermission
@@ -167,7 +170,35 @@ public class MyPermission : BasePermission
 }
 ```
 
-在特定平台中实现权限时，可以继承自 `BasePlatformPermission` 类。 这提供了额外的平台帮助程序方法，用于自动检查声明。
+在特定平台中实现权限时，可以继承自 `BasePlatformPermission` 类。 这提供了额外的平台帮助程序方法，用于自动检查声明。 这在创建自定义权限并进行分组时很有用。 例如，可以使用以下自定义权限请求对 Android 上存储的读写访问权限。
+
+在当前请求权限的项目中创建一个新权限。
+
+```csharp
+public partial class ReadWriteStoragePermission  : Xamarin.Essentials.Permissions.BasePlatformPermission
+{
+
+}
+```
+
+在 Android 项目中，将权限扩展为想要请求的权限。
+
+```csharp
+public partial class ReadWriteStoragePermission : Xamarin.Essentials.Permissions.BasePlatformPermission
+{
+    public override (string androidPermission, bool isRuntime)[] RequiredPermissions => new List<(string androidPermission, bool isRuntime)>
+    {
+        (Android.Manifest.Permission.ReadExternalStorage, true),
+        (Android.Manifest.Permission.WriteExternalStorage, true)
+    }.ToArray();
+}
+```
+
+然后，你可以从共享逻辑请求新权限。
+
+```csharp
+await Permissions.RequestAsync<ReadWriteStoragePermission>();
+```
 
 ## <a name="platform-implementation-specifics"></a>平台实现细节
 
@@ -179,7 +210,7 @@ Permissions 必须在 Android 清单文件中设置匹配的属性。
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-Permissions 必须在 `Info.plist` 文件中有匹配字符串。 在权限获得请求并遭拒后，如果第二次请求权限，将不再显示弹出窗口。 必须提示用户在 iOS 的“应用设置”屏幕中手动调整设置。
+Permissions 必须在 `Info.plist` 文件中有匹配字符串。 请求某个权限并遭拒后，如果再次请求该权限，将不再显示弹出窗口。 必须提示用户在 iOS 的“应用设置”屏幕中手动调整设置。
 
 有关详细信息，请参阅 [iOS 安全和隐私功能](https://docs.microsoft.com/xamarin/ios/app-fundamentals/security-privacy)文档。
 
@@ -196,3 +227,9 @@ Permissions 必须有在包清单中声明的匹配功能。
 - [Permissions 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Permissions)
 - [Permissions API 文档](xref:Xamarin.Essentials.Permissions)
 
+
+## <a name="related-video"></a>相关视频
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Permissions-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

@@ -3,14 +3,15 @@ title: Xamarin.Essentials:指南针
 description: 本文档介绍 Xamarin.Essentials 中的 Compass 类，此类使你能够监视设备的磁北航向。
 ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 55dd10bff21b7d082b225277d0100232d5efd4f3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 54ce725a319e0222179945ece558338c8a152653
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61356872"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83150131"
 ---
 # <a name="xamarinessentials-compass"></a>Xamarin.Essentials:指南针
 
@@ -80,11 +81,11 @@ Android 不提供用于检索罗盘航向的 API。 我们使用 Google 推荐�
 
 在极少数情况下，可能会看到不一致的结果，因为需要校准传感器，这就涉及到以 8 字形来移动设备。 进行此操作的最佳方式是打开 Google 地图，点击你所在的位置点，然后选择“校准罗盘”  。
 
-请注意，同时从应用运行多个传感器可能需要调整传感器速度。
+同时从应用运行多个传感器可能会调整传感器速度。
 
 ## <a name="low-pass-filter"></a>低通筛选器
 
-根据 Android 罗盘值的更新和计算方式，可能需要平滑处理这些值。 可以应用一个低通筛选器来平均角度的正弦和余弦值，并且可以使用接受 `Start` 参数的 `bool applyLowPassFilter` 方法来启用此筛选器  ：
+根据 Android 罗盘值的更新和计算方式，可能需要平滑处理这些值。 可以应用一个低通滤波器来平均角度的正弦和余弦值，并且可以使用接受 `Start` 参数的 `bool applyLowPassFilter` 方法重载来启用此滤波器  ：
 
 ```csharp
 Compass.Start(SensorSpeed.UI, applyLowPassFilter: true);
@@ -98,3 +99,9 @@ Compass.Start(SensorSpeed.UI, applyLowPassFilter: true);
 
 - [Compass 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Compass)
 - [Campass API 文档](xref:Xamarin.Essentials.Compass)
+
+## <a name="related-video"></a>相关视频
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Compass-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

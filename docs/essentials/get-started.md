@@ -5,13 +5,13 @@ ms.assetid: B2669C48-B659-4854-BD80-FEB0E876F5B9
 author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
-ms.date: 07/10/2019
-ms.openlocfilehash: 251c1b8102327093fcb142ca056743f00618f81b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.date: 05/11/2020
+ms.openlocfilehash: 944b01d67fb09f9a21a19fb2ede9eb217d89732a
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "78214968"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83149986"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Xamarin.Essentials 入门
 
@@ -51,11 +51,13 @@ Xamarin.Essentials 可用作 NuGet 包并包含在 Visual Studio 的每个新项
 
     # <a name="android"></a>[Android](#tab/android)
 
-    Xamarin.Essentials 支持最低 Android 版本 4.4（对应于 API 级别 19），但用于编译的目标 Android 版本必须为 9.0（对应于 API 级别 28）。 （在 Visual Studio 中，已在“Android 清单”选项卡中的 Android 项目的“项目属性”对话框中设置这两个版本。在 Visual Studio for Mac 中，已在“Android 应用程序”选项卡中的 Android 项目的“项目选项”对话框中设置这两个版本。）
+    Xamarin.Essentials 支持 Android 版本 4.4（对应于 API 级别 19）及更高版本，但用于编译的目标 Android 版本必须为 9.0 或 10.0（对应于 API 级别 28 和 29）。 （在 Visual Studio 中，已在“Android 清单”选项卡中的 Android 项目的“项目属性”对话框中设置这两个版本。在 Visual Studio for Mac 中，已在“Android 应用程序”选项卡中的 Android 项目的“项目选项”对话框中设置这两个版本。）
 
-    Xamarin.Essentials 安装所需的 Xamarin.Android.Support 库版本 28.0.0.3。 还应使用 NuGet 包管理器将应用所需的其他任何 Xamarin.Android.Support 库更新到版本 28.0.0.3。 应用使用的所有 Xamarin.Android.Support 库都应相同，且版本不得低于 28.0.0.3。 如果在解决方案中添加 Xamarin.Essentials NuGet 或更新 Nuget 时遇到问题，请参阅[疑难解答页面](troubleshooting.md)。
+    针对 Android 9.0 进行编译时，Xamarin.Essentials 将安装必需的 28.0.0.3 版 Xamarin.Android.Support 库。 还应使用 NuGet 包管理器将应用所需的其他任何 Xamarin.Android.Support 库更新到版本 28.0.0.3。 应用使用的所有 Xamarin.Android.Support 库都应相同，且版本不得低于 28.0.0.3。 如果在解决方案中添加 Xamarin.Essentials NuGet 或更新 Nuget 时遇到问题，请参阅[疑难解答页面](troubleshooting.md)。
 
-    在 Android 项目的 `MainLauncher` 或任何启动的 `Activity` 中，必须在 `OnCreate` 方法中初始化 Xamarin.Essentials：
+    从版本 1.5.0 开始，在针对 Android 10.0 进行编译时，Xamarin.Essentials 将安装必需的 AndroidX 支持库。 如果尚未转换，请阅读 [AndroidX 文档](https://docs.microsoft.com/xamarin/android/platform/androidx)。
+
+    在 Android 项目的 `MainLauncher` 或任何已启动的 `Activity` 中，必须在 `OnCreate` 方法中初始化 Xamarin.Essentials：
 
     ```csharp
     protected override void OnCreate(Bundle savedInstanceState) {

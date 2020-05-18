@@ -3,14 +3,15 @@ title: Xamarin.Essentials:电子邮件
 description: Xamarin.Essentials 中的 Email 类使应用程序能够打开包含主题、正文和收件人（TO、CC、BCC）等指定信息的默认电子邮件应用程序。
 ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 08/20/2019
-ms.openlocfilehash: cccbe5f539e2807e749433623e938438e67965e8
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 77fcadf3ec58a38acac5eca14b43d937414a4a60
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70060092"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83150100"
 ---
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials:电子邮件
 
@@ -64,7 +65,7 @@ public class EmailTest
 
 ## <a name="file-attachments"></a>文件附件
 
-借助此功能，应用可以在设备上的电子邮件客户端中通过电子邮件发送文件。 Xamarin.Essentials 将自动检测文件类型 (MIME) 并请求以附件形式添加文件。 每个电子邮件客户端都不同，可能只支持特定文件扩展名或不支持任何文件扩展名。
+借助此功能，应用可以在设备上的电子邮件客户端中通过电子邮件发送文件。 Xamarin.Essentials 将自动检测文件类型 (MIME) 并请求以附件形式添加文件。 每个电子邮件客户端都不同，可能只支持特定文件扩展名，也可能不支持任何文件扩展名。
 
 以下是将文本写入磁盘并将其作为电子邮件附件添加的示例：
 
@@ -106,3 +107,9 @@ await Email.ComposeAsync(message);
 
 - [Email 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Email)
 - [Email API 文档](xref:Xamarin.Essentials.Email)
+
+## <a name="related-video"></a>相关视频
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Email-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

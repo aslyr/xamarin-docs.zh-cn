@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: 26c4c2487bf2ec32ade3ceef9db73b4809053fec
-ms.sourcegitcommit: 154a3e7aec775327565bb54eda1a610976af1d6f
+ms.openlocfilehash: 715b9872642dfa8d5426c2967c62e82643def34d
+ms.sourcegitcommit: 9ca07644710e5919c7bc684c1ce144471611d5df
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82624717"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82974482"
 ---
 # <a name="xamarinessentials-browser"></a>Xamarin.Essentials:浏览者
 
@@ -70,7 +70,7 @@ await Browser.OpenAsync(uri, new BrowserLaunchOptions
 
 ## <a name="system-preferred"></a>系统首选
 
-[Chrome 自定义选项卡](https://developer.chrome.com/multidevice/android/customtabs)将尝试用于加载 URI 并保持导航识别。
+[自定义选项卡](https://developer.chrome.com/multidevice/android/customtabs)将尝试用于加载 URI 并保持导航识别。
 
 ## <a name="external"></a>外部
 
