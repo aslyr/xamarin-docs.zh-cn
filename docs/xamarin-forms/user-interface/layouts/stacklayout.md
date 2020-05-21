@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/11/2020
-ms.openlocfilehash: 56da2b137475ef258d780fba0a7cdec3c91323b8
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+ms.openlocfilehash: 2535a92814181c5039256ea1e42b06419ed427aa
+ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83152329"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426036"
 ---
 # <a name="xamarinforms-stacklayout"></a>Xamarin. Forms StackLayout
 
@@ -210,7 +210,7 @@ public class StackLayoutSpacingPageCS : ContentPage
 > [!TIP]
 > 除非需要，否则不要设置的 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 属性 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 `LayoutOptions.Fill` 和 `LayoutOptions.FillAndExpand` 的默认值可以实现最佳布局优化。 更改这些属性将会产生费用，甚至会消耗内存，即使在将它们设置回默认值时也是如此。
 
-### <a name="alignment"></a>符合方式
+### <a name="alignment"></a>对齐方式
 
 下面的 XAML 示例在中的每个子视图上设置了对齐首选项 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ：
 
@@ -240,12 +240,12 @@ public class StackLayoutSpacingPageCS : ContentPage
 
 [![已设置对齐选项的 StackLayout 的屏幕截图](stacklayout-images/alignment.png "带对齐选项的 StackLayout")](stacklayout-images/alignment-large.png#lightbox "带对齐选项的 StackLayout")
 
-在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 子视图上，只考虑与方向相反方向的对齐首选项 `StackLayout` 。 因此， [`Label`](xref:Xamarin.Forms.Label) 垂直方向中的子视图会 `StackLayout` 将其 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 属性设置为一个对齐字段：
+[`StackLayout`](xref:Xamarin.Forms.StackLayout) 仅遵循与 `StackLayout` 方向相反的子视图的对齐方式首选项。 因此，垂直方向的 `StackLayout` 中的 [`Label`](xref:Xamarin.Forms.Label) 子视图将其 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 属性设置为对齐方式字段中的其中一种：
 
 - [`Start`](xref:Xamarin.Forms.LayoutOptions.Start)，它将定位在的 [`Label`](xref:Xamarin.Forms.Label) 左侧 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。
-- [`Center`](xref:Xamarin.Forms.LayoutOptions.Center)，它 [`Label`](xref:Xamarin.Forms.Label) 在中居中 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。
+- [`Center`](xref:Xamarin.Forms.LayoutOptions.Center)，它将 [`Label`](xref:Xamarin.Forms.Label) 置于 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中心。
 - [`End`](xref:Xamarin.Forms.LayoutOptions.End)，它将定位在 [`Label`](xref:Xamarin.Forms.Label) 右侧 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。
-- [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill)，它可确保 [`Label`](xref:Xamarin.Forms.Label) 填充的宽度 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。
+- [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill)，确保 [`Label`](xref:Xamarin.Forms.Label) 填充到 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 的宽度。
 
 等效 C# 代码如下：
 
@@ -310,7 +310,7 @@ public class AlignmentPageCS : ContentPage
 
 [![已设置扩展选项的 StackLayout 的屏幕截图](stacklayout-images/expansion.png "具有扩展选项的 StackLayout")](stacklayout-images/expansion-large.png#lightbox "具有扩展选项的 StackLayout")
 
-[`StackLayout`](xref:Xamarin.Forms.StackLayout)只能按其方向方向展开子视图。 因此，垂直方向 `StackLayout` 可以展开 [`Label`](xref:Xamarin.Forms.Label) 子视图，将其 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 属性设置为其中一个展开字段。 这意味着，对于垂直对齐方式，每个 `Label` 在 `StackLayout` 内占据相同的空间量。 但是，只有最后一个 `Label` 将其属性设置 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 为 [`FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) 不同的大小。
+[`StackLayout`](xref:Xamarin.Forms.StackLayout) 只能按照其方向展开子视图。 因此，垂直方向的 `StackLayout` 可以扩展 [`Label`](xref:Xamarin.Forms.Label) 子视图，该视图将 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 属性设置为其中一个扩展字段。 这意味着，对于垂直对齐方式，每个 `Label` 在 `StackLayout` 内占据相同的空间量。 但是，只有最后一个 `Label`（可将 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 属性设置为 [`FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand)）具有不同的大小。
 
 > [!TIP]
 > 使用时 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ，请确保只将一个子视图设置为 [`LayoutOptions.Expands`](xref:Xamarin.Forms.LayoutOptions.Expands) 。 此属性可确保指定子级会占用 `StackLayout` 可以向它提供的最大空间，而多次执行这些计算比较浪费。
@@ -341,7 +341,7 @@ public ExpansionPageCS()
 ```
 
 > [!IMPORTANT]
-> 当使用中的所有空格时 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ，扩展首选项不起作用。
+> 使用 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的所有空间时，扩展首选项不起作用。
 
 有关对齐方式和扩展的详细信息，请参阅 [Xamarin.Forms 中的布局选项](layout-options.md)。
 
@@ -398,7 +398,7 @@ public ExpansionPageCS()
 [![嵌套 StackLayout 对象的屏幕截图](stacklayout-images/combined.png "嵌套 StackLayouts")](stacklayout-images/combined-large.png#lightbox "嵌套 StackLayouts")
 
 > [!IMPORTANT]
-> `StackLayout`由于所需的布局计算量的原因，嵌套太多对象可能会导致不可性能的页。 有关详细信息，请参阅[选择正确的布局](~/xamarin-forms/deploy-test/performance.md#choose-the-correct-layout)。
+> 嵌套 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 对象和其他布局的深度越多，嵌套布局就会影响性能。 有关详细信息，请参阅[选择正确的布局](~/xamarin-forms/deploy-test/performance.md#choose-the-correct-layout)。
 
 等效 C# 代码如下：
 

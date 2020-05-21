@@ -1,54 +1,54 @@
 ---
-title: 安装 Windows 项目
-description: 较旧的 Xamarin.Forms 解决方案 （或在 macOS 上创建的那些） 未使用通用 Windows 平台项目，因此此文章介绍了如何将新的 UWP 项目添加到现有的 Xamarin.Forms 解决方案。
+title: 设置 Windows 项目
+description: 旧的 Xamarin. Forms 解决方案（或在 macOS 上创建的解决方案）将不通用 Windows 平台项目，因此本文介绍如何将新的 UWP 项目添加到现有的 Xamarin 窗体解决方案。
 ms.prod: xamarin
 ms.assetid: A0774D2E-6994-4D91-84E8-DAB66FC92320
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: b0f06cf15d3a3ec7eae4742d5d037e233be46d08
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5d2d9c8c2104e96f16c3a3ff169f795068605f59
+ms.sourcegitcommit: 7011303ff1868f3dd3858415706f4b5732ee44f1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60857573"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83696083"
 ---
-# <a name="setup-windows-projects"></a>安装 Windows 项目
+# <a name="setup-windows-projects"></a>设置 Windows 项目
 
-_将新的 Windows 项目添加到现有的 Xamarin.Forms 解决方案_
+_向现有 Xamarin 窗体解决方案中添加新的 Windows 项目_
 
-较旧的 Xamarin.Forms 解决方案 （或在 macOS 上创建的那些） 将具有通用 Windows 平台 (UWP) 应用程序项目。 因此，您将需要手动添加一个 UWP 项目以构建的 Windows 10 (UWP) 应用。
+旧的 Xamarin. Forms 解决方案（或在 macOS 上创建的解决方案）将不包含通用 Windows 平台（UWP）应用项目。 因此，您需要手动添加 UWP 项目来构建 Windows 10 （UWP）应用。
 
 ## <a name="add-a-universal-windows-platform-app"></a>添加通用 Windows 平台应用
 
-**Visual Studio 2019**上**Windows 10**建议生成 UWP 应用。 有关通用 Windows 平台的详细信息，请参阅[通用 Windows 平台简介](/windows/uwp/get-started/universal-application-platform-guide/)。
+建议使用**Windows 10**上的**Visual STUDIO 2019**生成 UWP 应用。 有关通用 Windows 平台的详细信息，请参阅[通用 Windows 平台简介](/windows/uwp/get-started/universal-application-platform-guide/)。
 
-UWP 是推出 Xamarin.Forms 2.1 及更高版本，且 Xamarin.Forms.Maps 支持 Xamarin.Forms 2.2 及更高版本。
+UWP 在 Xamarin. Forms 2.1 及更高版本中提供，xamarin. Forms 2.2 和更高版本支持 Xamarin。
 
-检查<a href="#troubleshooting">故障排除</a>有用提示和技巧的部分。
+请查看<a href="#troubleshooting">故障排除</a>部分，了解相关帮助。
 
-按照这些说明添加将在 Windows 10 手机、 平板电脑和台式计算机运行的 UWP 应用：
+按照以下说明添加将在 Windows 10 手机、平板电脑和台式机上运行的 UWP 应用：
 
- 1 . 右键单击解决方案并选择**添加 > 新建项目...** 并添加**空白应用 (通用 Windows)** 项目：
+ 2. 右键单击该解决方案，然后选择 "**添加" > "新建项目 ...** " 并添加**空白应用（通用 Windows）** 项目：
 
-  ![](universal-images/add-wu.png "添加新项目对话框")
+  ![](universal-images/add-wu.png "Add New Project Dialog")
 
- 2 . 在中**新的通用 Windows 平台项目**对话框中，选择应用程序将在运行的 Windows 10 的最小值和目标版本：
+ pps-2. 在 "**新建通用 Windows 平台项目**" 对话框中，选择应用将在其上运行的 Windows 10 的最低版本和目标版本：
 
-  ![](universal-images/target-version.png "新建通用 Windows 平台项目对话框")
+  ![](universal-images/target-version.png "New Universal Windows Platform Project Dialog")
 
- 3 . 右键单击 UWP 项目并选择**管理 NuGet 包...** 并添加**Xamarin.Forms**包。 请确保该解决方案中的其他项目也将更新为相同版本的 Xamarin.Forms 包。
+ 三维空间. 右键单击 "UWP" 项目，然后选择 "**管理 NuGet 包 ...** " 并添加**Xamarin**包。 确保解决方案中的其他项目也更新为同一版本的 Xamarin. Forms 包。
 
- 4 . 请确保将中生成新的 UWP 项目**生成 > Configuration Manager**窗口 （发生此情况可能不会是默认情况下）。 刻度线**构建**并**部署**通用项目对应的框：
+ 4. 请确保在 "**生成 >" Configuration Manager** "窗口中生成新的 UWP 项目（默认情况下可能不会发生这种情况）。 勾选通用项目的 "**生成**" 和 "**部署**" 框：
 
-  [![](universal-images/configuration-sml.png "配置管理器窗口")](universal-images/configuration.png#lightbox "配置管理器窗口")
+  [![](universal-images/configuration-sml.png "Configuration Manager Window")](universal-images/configuration.png#lightbox "Configuration Manager Window")
 
- 5 . 右键单击项目并选择**添加 > 引用**并创建对 Xamarin.Forms 应用程序项目 （.NET Standard 或共享项目） 的引用。
+ 5. 右键单击该项目，然后选择 "**添加 > 引用**"，然后创建对 Xamarin 应用程序项目的引用（.NET Standard 或共享项目）。
 
-  ![](universal-images/addref-sml.png "引用管理器对话框")
+  ![](universal-images/addref-sml.png "Reference Manager Dialog")
 
- 6 . 在 UWP 项目中，编辑**App.xaml.cs**包括`Init`方法调用置于`OnLaunched`方法在第 52 行：
+ 共. 在 UWP 项目中，编辑**App.xaml.cs** ，使其在 `Init` 方法内包含 `OnLaunched` 第52行的方法调用：
 
 ```csharp
 // under this line
@@ -57,15 +57,15 @@ rootFrame.NavigationFailed += OnNavigationFailed;
 Xamarin.Forms.Forms.Init (e); // requires the `e` parameter
 ```
 
- 7 . 在 UWP 项目中，编辑**MainPage.xaml**通过删除`Grid`中包含`Page`元素。
+ 全天候. 在 UWP 项目中，通过**MainPage.xaml**删除 `Grid` 元素中包含的来编辑 MainPage。 `Page`
 
- 8 . 在中**MainPage.xaml**，添加一个新`xmlns`条目`Xamarin.Forms.Platform.UWP`:
+ 8. 在**MainPage**中，为添加新 `xmlns` 条目 `Xamarin.Forms.Platform.UWP` ：
 
 ```csharp
 xmlns:forms="using:Xamarin.Forms.Platform.UWP"
 ```
 
- 9 . 在中**MainPage.xaml**，更改根`<Page`元素`<forms:WindowsPage`:
+ 900. 在**MainPage**中，将根元素更改 `<Page` 为 `<forms:WindowsPage` ：
 
 ```xaml
 <forms:WindowsPage
@@ -75,13 +75,13 @@ xmlns:forms="using:Xamarin.Forms.Platform.UWP"
 </forms:WindowsPage>
 ```
 
- 10 . 在 UWP 项目中，编辑**MainPage.xaml.cs**若要删除`: Page`继承的类名的说明符 (因为它现在将从继承`WindowsPage`由于上一步中所做的更改):
+ 万. 在 UWP 项目中，编辑**MainPage.xaml.cs**以删除 `: Page` 类名的继承说明符（因为在 `WindowsPage` 上一步中所做的更改，它现在将从继承）：
 
 ```csharp
 public sealed partial class MainPage  // REMOVE ": Page"
 ```
 
- 11 . 在中**MainPage.xaml.cs**，添加`LoadApplication`调用中`MainPage`构造函数，以启动 Xamarin.Forms 应用程序：
+ 11x17. 在**MainPage.xaml.cs**中，在 `LoadApplication` 构造函数中添加调用 `MainPage` 以启动 Xamarin. Forms 应用：
 
 ```csharp
 // below this existing line
@@ -89,6 +89,9 @@ this.InitializeComponent();
 // add this line
 LoadApplication(new YOUR_NAMESPACE.App());
 ```
+
+> [!NOTE]
+> 方法的参数 `LoadApplication` 是 `Xamarin.Forms.Application` 在 .net standard 项目中定义的实例。
 
 <!--
 11 . Double-click **Package.appxmanifest** to set these capabilities
@@ -100,19 +103,19 @@ LoadApplication(new YOUR_NAMESPACE.App());
   * Location
 -->
 
-12 . 添加任何本地资源 （例如。 图像文件） 从现有平台项目所需的。
+10. 添加任何本地资源（例如 图像文件）的文件。
 
 ## <a name="troubleshooting"></a>疑难解答
 
 <a name="target-invocation-exception" />
 
-### <a name="target-invocation-exception-when-using-compile-with-net-native-tool-chain"></a>"目标调用异常"时使用"使用.NET 本机工具链编译"
+### <a name="target-invocation-exception-when-using-compile-with-net-native-tool-chain"></a>使用 "使用 .NET Native 工具链编译" 时的 "目标调用异常"
 
-如果你的 UWP 应用引用的多个程序集 （例如第三方控件库，或您的应用程序本身拆分成多个库），Xamarin.Forms 可能无法从这些程序集 （如自定义呈现器） 加载对象。
+如果 UWP 应用引用多个程序集（例如，第三方控件库，或应用本身拆分为多个库），则 Xamarin 可能无法从这些程序集（如自定义呈现器）加载对象。
 
-这可能会使用时可能发生**使用.NET Native 工具链汇编**这是一个用于 UWP 应用中的选项**属性 > 生成 > 常规**项目窗口。
+使用**带有 .NET Native 工具链的编译**时可能会发生这种情况，这是在项目的 "**生成 > 常规**" 窗口的 > 属性中的 UWP 应用的选项。
 
-可以通过使用的特定于 UWP 的重载来修复此问题`Forms.Init`调用中的**App.xaml.cs**下面的代码中所示 (应替换`ClassInOtherAssembly`实际类与您的代码引用):
+您可以使用 App.xaml.cs 中的调用的 UWP 特定重载来解决此问题， `Forms.Init` 如下面的代码所示（应将替换为您的**App.xaml.cs** `ClassInOtherAssembly` 代码引用的实际类）：
 
 ```csharp
 // You'll need to add `using System.Reflection;`
@@ -126,13 +129,13 @@ Xamarin.Forms.Forms.Init(e, assembliesToInclude);
 // replaces Xamarin.Forms.Forms.Init(e);
 ```
 
-已添加的解决方案资源管理器中，通过直接引用或 NuGet 引用为每个程序集添加一个条目。
+通过直接引用或 NuGet，为已添加为解决方案资源管理器中的引用的每个程序集添加一个条目。
 
-#### <a name="dependency-services-and-net-native-compilation"></a>依赖关系服务和.NET Native 编译
+#### <a name="dependency-services-and-net-native-compilation"></a>依赖项服务和 .NET Native 编译
 
-使用.NET Native 编译发布版本可能无法解析外部的主应用程序可执行文件 （例如在单独的项目或库） 定义的依赖关系服务。
+使用 .NET Native 编译的发布版本可能无法解析在主应用可执行文件（例如，单独的项目或库）外部定义的依赖项服务。
 
-使用`DependencyService.Register<T>()`方法来手动注册依赖关系服务类。 根据上面的示例中，添加此类的 register 方法：
+使用 `DependencyService.Register<T>()` 方法可手动注册依赖项服务类。 根据上面的示例，添加 register 方法，如下所示：
 
 ```csharp
 Xamarin.Forms.Forms.Init(e, assembliesToInclude);
