@@ -161,7 +161,7 @@ Xamarin.Forms 从右到左本地化当前有许多限制：
    internal extern static IntPtr IntPtr_objc_msgSend(IntPtr receiver, IntPtr selector, UISemanticContentAttribute arg1);
    ```
 
-1. 从 `FinshedLaunching` 方法返回之前，从 `FinishedLaunching` 方法调用 `IntPtr_objc_msgSend` 函数：
+1. 从 `FinishedLaunching` 方法返回之前，从 `FinishedLaunching` 方法调用 `IntPtr_objc_msgSend` 函数：
 
    ```csharp
    bool result = base.FinishedLaunching(app, options);
