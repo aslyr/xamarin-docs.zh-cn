@@ -6,22 +6,22 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: f8e5a31b855158e1f801354c66f3d3d255eca559
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 41d9efa66318f4c3f5315351d3c1f51b4e503521
+ms.sourcegitcommit: 44c44ad60c5c880a39006493aedd2d7aa834a27e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75488486"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83550895"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials:安全存储
 
- SecureStorage 类有助于安全地存储简单的键/值对。
+SecureStorage 类有助于安全地存储简单的键/值对。
 
 ## <a name="get-started"></a>入门
 
 [!include[](~/essentials/includes/get-started.md)]
 
-若要访问  SecureStorage 功能，需要以下特定于平台的设置：
+若要访问 SecureStorage 功能，需要以下特定于平台的设置：
 
 # <a name="android"></a>[Android](#tab/android)
 
@@ -43,7 +43,7 @@ ms.locfileid: "75488486"
 ### <a name="selective-backup"></a>选择性备份
 可以将自动备份配置为禁止备份特定内容。 可以创建自定义规则集以禁止备份 `SecureStore` 项。
 
-1. 在你的  AndroidManifest.xml 中设置 `android:fullBackupContent` 属性：
+1. 在你的 AndroidManifest.xml 中设置 `android:fullBackupContent` 属性：
 
     ```xml
     <application ...
@@ -51,7 +51,7 @@ ms.locfileid: "75488486"
     </application>
     ```
 
-2. 使用 AndroidResource  的生成操作在  Resources/xml 目录中创建名为  auto_backup_rules.xml 的新 XML 文件。 然后设置以下内容，包括除 `SecureStorage` 以外的所有共享首选项：
+2. 使用 AndroidResource 的生成操作在 Resources/xml 目录中创建名为 auto_backup_rules.xml 的新 XML 文件。 然后设置以下内容，包括除 `SecureStorage` 以外的所有共享首选项：
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -63,11 +63,11 @@ ms.locfileid: "75488486"
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-在 iOS 模拟器  上开发时，启用  密钥链权利，并为应用程序的捆绑包标识符添加密钥链访问组。 
+在 iOS 模拟器上开发时，启用密钥链权利，并为应用程序的捆绑包标识符添加密钥链访问组。 
 
-打开 iOS 项目中的  Entitlements.plist，查找  密钥链权利并启用它。 这样会自动将应用程序的标识符添加为一个组。
+打开 iOS 项目中的 Entitlements.plist，查找密钥链权利并启用它。 这样会自动将应用程序的标识符添加为一个组。
 
-在“iOS 捆绑包签名”下的“项目属性”中，将“自定义权利”设置为“Entitlements.plist”    。
+在“iOS 捆绑包签名”下的“项目属性”中，将“自定义权利”设置为“Entitlements.plist”  。
 
 > [!TIP]
 > 部署到 iOS 设备时，此权利不是必需的，应将其删除。
@@ -86,7 +86,7 @@ ms.locfileid: "75488486"
 using Xamarin.Essentials;
 ```
 
-将给定密钥  的值保存在安全存储中：
+将给定密钥的值保存在安全存储中：
 
 ```csharp
 try
@@ -131,21 +131,21 @@ SecureStorage.RemoveAll();
 
 # <a name="android"></a>[Android](#tab/android)
 
-[Android 密钥存储](https://developer.android.com/training/articles/keystore.html)用来存储用于在将值保存到文件名为 **[你的应用包 ID].xamarinessentials** 的[共享首选项](https://developer.android.com/training/data-storage/shared-preferences.html)中之前加密值的加密密钥。  共享首选项文件中所使用的键（非加密密钥，指值的密钥）是传递到 `SecureStorage` API 的密钥的 MD5 哈希。   
+[Android 密钥存储](https://developer.android.com/training/articles/keystore.html)用来存储用于在将值保存到文件名为 **[你的应用包 ID].xamarinessentials** 的[共享首选项](https://developer.android.com/training/data-storage/shared-preferences.html)中之前加密值的加密密钥。  共享首选项文件中所使用的键（非加密密钥，指值的密钥）是传递到 `SecureStorage` API 的密钥的 MD5 哈希。  
 
-## <a name="api-level-23-and-higher"></a>API 级别 23 及更高版本
+**API 级别 23 及更高版本**
 
-在较新的 API 级别上，  AES 密钥是从 Android 密钥存储中获得的，并与  AES/GCM/NoPadding 密码结合使用以在将值存储在共享首选项文件中之前加密值。
+在较新的 API 级别上，AES 密钥是从 Android 密钥存储中获得的，并与 AES/GCM/NoPadding 密码结合使用以在将值存储在共享首选项文件中之前加密值。
 
-## <a name="api-level-22-and-lower"></a>API 级别 22 及更高版本
+**API 级别 22 及更高版本**
 
-在较旧的 API 级别上，Android 密钥存储仅支持存储  RSA 密钥，这些密钥与  RSA/ECB/PKCS1Padding 密码结合使用以加密  AES 密钥（运行时随机生成），并且存储在密钥 SecureStorageKey  下的共享首选项文件中（如果尚未生成一个）。
+在较旧的 API 级别上，Android 密钥存储仅支持存储 RSA 密钥，这些密钥与 RSA/ECB/PKCS1Padding 密码结合使用以加密 AES 密钥（运行时随机生成），并且存储在密钥 SecureStorageKey 下的共享首选项文件中（如果尚未生成一个）。
 
- SecureStorage 使用[首选项](preferences.md) API，并遵循[首选项](preferences.md#persistence)文档中所述的相同数据持久性。 如果设备从 API 级别 22 或更低级别升级到 API 级别 23 及更高版本，则将继续使用此类型的加密，除非卸载该应用或调用 RemoveAll  。
+SecureStorage 使用[首选项](preferences.md) API，并遵循[首选项](preferences.md#persistence)文档中所述的相同数据持久性。 如果设备从 API 级别 22 或更低级别升级到 API 级别 23 及更高版本，则将继续使用此类型的加密，除非卸载该应用或调用 RemoveAll。
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-[密钥链](xref:Security.SecKeyChain)用于在 iOS 设备上安全地存储值。  用于存储值的 `SecRecord` 具有设置为  [你的应用捆绑包 ID].xamarinessentials 的 `Service` 值。
+[密钥链](xref:Security.SecKeyChain)用于在 iOS 设备上安全地存储值。  用于存储值的 `SecRecord` 具有设置为 [你的应用捆绑包 ID].xamarinessentials 的 `Service` 值。
 
 在某些情况下，密钥链数据与 iCloud 同步，卸载应用程序可能不会从用户的 iCloud 和其他设备中删除安全值。
 
@@ -153,9 +153,9 @@ SecureStorage.RemoveAll();
 
 [DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) 用于在 UWP 设备上对值进行安全地加密。
 
-加密值存储在名为  [你的应用 ID].xamarinessentials 的容器内的 `ApplicationData.Current.LocalSettings` 中。
+加密值存储在名为 [你的应用 ID].xamarinessentials 的容器内的 `ApplicationData.Current.LocalSettings` 中。
 
- SecureStorage 使用[首选项](preferences.md) API，并遵循[首选项](preferences.md#persistence)文档中所述的相同数据持久性。 它还使用 `LocalSettings`，存在以下限制：每个设置的名称长度最多可为 255 个字符。 每个设置的大小最多可为 8K 字节，每个复合设置的大小最多可为 64K 字节。
+SecureStorage 使用[首选项](preferences.md) API，并遵循[首选项](preferences.md#persistence)文档中所述的相同数据持久性。 它还使用 `LocalSettings`，存在以下限制：每个设置的名称长度最多可为 255 个字符。 每个设置的大小最多可为 8K 字节，每个复合设置的大小最多可为 64K 字节。
 
 -----
 
