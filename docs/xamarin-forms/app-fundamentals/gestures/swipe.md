@@ -1,24 +1,27 @@
 ---
-title: 添加轻扫手势识别器
-description: 本文介绍如何识别视图上的轻扫手势。
-ms.prod: xamarin
-ms.assetid: 164976C2-1429-49FB-9EB6-621E2681C19B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/14/2018
-ms.openlocfilehash: ae9b5eb5b768b50ddcbc199040074de855f220de
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 03663803313c870a3361c6e1ffc85cf1f8999068
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "68649448"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137862"
 ---
 # <a name="adding-a-swipe-gesture-recognizer"></a>添加轻扫手势识别器
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture)
 
-“手指在水平或垂直方向上滑过屏幕即产生轻扫手势，该手势通常用于启动内容导航。在本文中的代码示例摘自[轻扫手势](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture)示例。 
+“手指在水平或垂直方向上滑过屏幕即产生轻扫手势，该手势通常用于启动内容导航。在本文中的代码示例摘自[轻扫手势](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture)示例。
 
 若要使 [`View`](xref:Xamarin.Forms.View) 识别轻扫手势，请创建 [`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer) 实例，将 [`Direction`](xref:Xamarin.Forms.SwipeGestureRecognizer.Direction) 属性设置为 [`SwipeDirection`](xref:Xamarin.Forms.SwipeDirection) 枚举值（`Left`、`Right`、`Up` 或 `Down`），或者根据需要设置 [`Threshold`](xref:Xamarin.Forms.SwipeGestureRecognizer.Threshold) 属性、处理 [`Swiped`](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped) 事件，以及将新的笔势识别器添加到视图上的 [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) 集合。 下面的代码示例显示附加到 [`BoxView`](xref:Xamarin.Forms.BoxView) 上的 `SwipeGestureRecognizer`：
 

@@ -1,23 +1,26 @@
 ---
-title: 安装 Xamarin
-description: 本部分概述可用于在 Visual Studio 上设置 Xamarin 的安装和设置的做法。
-zone_pivot_groups: platform-dev16
-ms.prod: xamarin
-ms.assetid: 0f813a14-2f0c-415d-8667-4563f3dc06e8
-author: conceptdev
-ms.author: crdun
-ms.custom: video
-ms.date: 05/23/2019
-ms.openlocfilehash: cf54d4a6d8cdedc4ddde0beedeaadd361356990a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+zone_pivot_groups: ''
+ms.prod: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.custom: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 928a8f9ca1792fa79f3c5995959e6407c23649f4
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "66252323"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84133050"
 ---
 # <a name="installing-xamarin"></a>安装 Xamarin
 
-如何设置 Visual Studio 和 Xamarin 以开始使用 .NET 生成移动应用  。
+如何设置 Visual Studio 和 Xamarin 以开始使用 .NET 生成移动应用。
 
 ::: zone pivot="windows"
 

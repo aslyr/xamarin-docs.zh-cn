@@ -1,22 +1,25 @@
 ---
-title: 将参数传递给效果
-description: 可以通过属性定义效果参数，使效果能够重复使用。 在实例化效果时，为每个属性指定值可将参数传递给效果。
-ms.prod: xamarin
-ms.assetid: F6429859-6EF7-48BE-A0CB-8F42B8A75215
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/06/2016
-ms.openlocfilehash: f7d8c8f7d3a3778afdae64039a9614c02c261156
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 42d3943b00fc2ae5385343f946d9d96743e955cd
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771428"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138835"
 ---
 # <a name="passing-parameters-to-an-effect"></a>将参数传递给效果
 
-可以通过属性定义效果参数，使效果能够重复使用。  在实例化效果时，为每个属性指定值可将参数传递给效果。
+可以通过属性定义效果参数，使效果能够重复使用。在实例化效果时，为每个属性指定值可将参数传递给效果。
 
 ## <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>[将效果参数作为公共语言运行时属性传递](clr-properties.md)
 

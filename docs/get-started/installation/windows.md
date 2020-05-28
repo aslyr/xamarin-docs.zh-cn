@@ -1,17 +1,20 @@
 ---
-title: 在 Visual Studio 2019 中安装 Xamarin
-description: 本文档介绍了如何在 Visual Studio 2019 中安装 Xamarin。 其中讨论了相关要求、安装过程以及如何验证安装。
-ms.prod: xamarin
-ms.assetid: E20D4463-368E-4B60-A059-F50DB8C5552D
-author: conceptdev
-ms.author: crdun
-ms.date: 08/28/2018
-ms.openlocfilehash: 970985e419c5710699b6bdda49da8b59ef3c6cb6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 39cf115ad80dd8cdd3ddb298ce87c065663d6cb2
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "71119263"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84132673"
 ---
 # <a name="installing-xamarin-in-visual-studio-2019"></a>在 Visual Studio 2019 中安装 Xamarin
 
@@ -23,11 +26,11 @@ ms.locfileid: "71119263"
 
 [!include[](~/cross-platform/includes/install-xamarin-windows-2019.md)]
 
-在 Visual Studio 2019 中，通过单击“帮助”菜单来验证是否安装了 Xamarin  。 如果安装了 Xamarin，应该看到 Xamarin 菜单项，如此屏幕截图所示  ：
+在 Visual Studio 2019 中，通过单击“帮助”菜单来验证是否安装了 Xamarin。 如果安装了 Xamarin，应该看到 Xamarin 菜单项，如此屏幕截图所示：
 
 ![“帮助”菜单上的 Xamarin 菜单项](windows-images/12-xamarin-menu-item.png "“帮助”菜单上的 Xamarin 菜单项")
 
-也可单击“帮助”>“关于 Microsoft Visual Studio”，滚动浏览已安装的产品列表，查看是否已安装 Xamarin  ：
+也可单击“帮助”>“关于 Microsoft Visual Studio”，滚动浏览已安装的产品列表，查看是否已安装 Xamarin：
 
 ![显示 Visual Studio 2019 已安装产品的屏幕](windows-images/13-xamarin-is-installed.png "显示 Visual Studio 2019 已安装产品的屏幕")
 
@@ -39,7 +42,7 @@ ms.locfileid: "71119263"
 
 ### <a name="ios"></a>iOS
 
-有关详细信息，请参阅[在 Windows 上安装 Xamarin.iOS](~/ios/get-started/installation/windows/index.md) 指南。 
+有关详细信息，请参阅[在 Windows 上安装 Xamarin.iOS](~/ios/get-started/installation/windows/index.md) 指南。
 
 1. [安装 Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation)
 2. [将 Visual Studio 连接到 Mac 生成主机](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
