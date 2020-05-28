@@ -1,34 +1,37 @@
 ---
-title: SkiaSharp 映像筛选器
-description: 了解如何使用映像筛选器来创建模糊和投影。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 173E7B22-AEC8-4F12-B657-1C0CEE01AD63
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/27/2018
-ms.openlocfilehash: f93f0462d476daaaa551833391b1be1865795476
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: eedbca080fce9f3001a7b1e2358845fd63c6121b
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770541"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136339"
 ---
-# <a name="skiasharp-image-filters"></a>SkiaSharp 映像筛选器
+# <a name="skiasharp-image-filters"></a>SkiaSharp 图像筛选器
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-映像筛选器是在所有构成图像的像素的颜色位操作的效果。 它们是掩码筛选器，仅对 alpha 通道，如本文所述的功能更多[ **SkiaSharp 掩码筛选器**](mask-filters.md)。 若要使用的映像筛选器，设置[ `ImageFilter` ](xref:SkiaSharp.SKPaint.ImageFilter)的属性`SKPaint`对象的类型[ `SKImageFilter` ](xref:SkiaSharp.SKImageFilter)已通过调用类的静态方法之一创建了。
+图像筛选器是对构成图像的所有颜色位进行操作的效果。 这些筛选器比掩码筛选器更通用，只在 alpha 通道上操作，如[**SkiaSharp mask 筛选器**](mask-filters.md)一文中所述。 若要使用图像筛选器，请将的 [`ImageFilter`](xref:SkiaSharp.SKPaint.ImageFilter) 属性设置 `SKPaint` 为 [`SKImageFilter`](xref:SkiaSharp.SKImageFilter) 通过调用类的静态方法之一创建的类型的对象。
 
-熟悉掩码筛选器的最佳方法是通过使用这些静态方法。 可以使用掩码筛选器进行模糊处理整个位图：
+熟悉掩码筛选器的最佳方式是通过试验这些静态方法。 您可以使用掩码筛选器来模糊整个位图：
 
-![使示例变得模糊](image-filters-images/ImageFilterExample.png "模糊示例")
+![模糊示例](image-filters-images/ImageFilterExample.png "模糊示例")
 
-本文还演示如何使用映像筛选器创建放置阴影，并在浮雕和雕刻效果。
+本文还演示了如何使用图像筛选器创建投影，以及如何使用浮雕和 engraving 效果。
 
 ## <a name="blurring-vector-graphics-and-bitmaps"></a>模糊矢量图形和位图
 
-[`SKImageFilter.CreateBlur`](xref:SkiaSharp.SKImageFilter.CreateBlur*)静态方法创建的模糊效果与[`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter)类中的模糊方法相比具有明显的优势：图像筛选器可以对整个位图进行模糊。 该方法具有以下语法：
+静态方法创建的模糊效果与 [`SKImageFilter.CreateBlur`](xref:SkiaSharp.SKImageFilter.CreateBlur*) 类中的模糊方法相比具有明显的优势 [`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter) ：图像筛选器可以对整个位图进行模糊。 方法具有以下语法：
 
 ```csharp
 public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
@@ -36,9 +39,9 @@ public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
                                                   SKImageFilter.CropRect cropRect = null);
 ```
 
-该方法具有两个 sigma 值&mdash;第一个针对在水平方向和垂直方向的第二个中的模糊程度。 可以通过指定为可选的第三个参数的另一个映像筛选器进行级联的映像筛选器。 此外可以指定裁剪矩形。
+此方法具有两个西格玛值 &mdash; ：第一个用于水平方向的模糊范围，第二个值用于垂直方向。 您可以通过将其他图像筛选器指定为可选的第三个参数来层叠图像筛选器。 还可以指定裁剪矩形。
 
-**图像模糊试验**页面[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)包含两个`Slider`视图，可设置不同级别的模糊试验：
+[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)中的 "**图像模糊试验**" 页包含两个 `Slider` 视图，可让您试验设置各种模糊级别：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -75,7 +78,7 @@ public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
 </ContentPage>
 ```
 
-代码隐藏文件使用两个`Slider`值调用`SKImageFilter.CreateBlur`为`SKPaint`对象，用于显示文本和位图：
+代码隐藏文件使用两个 `Slider` 值来调用 `SKImageFilter.CreateBlur` `SKPaint` 用于显示文本和位图的对象：
 
 ```csharp
 public partial class ImageBlurExperimentPage : ContentPage
@@ -135,15 +138,15 @@ public partial class ImageBlurExperimentPage : ContentPage
 }
 ```
 
-三个屏幕截图显示了各项设置`sigmaX`和`sigmaY`设置：
+这三个屏幕截图显示了和设置的各种设置 `sigmaX` `sigmaY` ：
 
-[![图像模糊实验](image-filters-images/ImageBlurExperiment.png "图像模糊实验")](image-filters-images/ImageBlurExperiment-Large.png#lightbox)
+[![图像模糊试验](image-filters-images/ImageBlurExperiment.png "图像模糊试验")](image-filters-images/ImageBlurExperiment-Large.png#lightbox)
 
-若要使在不同的显示大小和分辨率之间一致变得模糊，设置`sigmaX`和`sigmaY`为不变得模糊应用于图像的呈现的像素大小成正比的值。
+为了使不同显示大小和分辨率中的模糊保持一致，请将 `sigmaX` 和设置为与应用了模糊的图像的 `sigmaY` 呈现像素大小成正比的值。
 
 ## <a name="drop-shadow"></a>投影
 
-[ `SKImageFilter.CreateDropShadow` ](xref:SkiaSharp.SKImageFilter.CreateDropShadow*)静态方法创建`SKImageFilter`投影的对象：
+[`SKImageFilter.CreateDropShadow`](xref:SkiaSharp.SKImageFilter.CreateDropShadow*)静态方法 `SKImageFilter` 为投影创建一个对象：
 
 ```csharp
 public static SKImageFilter CreateDropShadow (float dx, float dy,
@@ -154,17 +157,17 @@ public static SKImageFilter CreateDropShadow (float dx, float dy,
                                               SKImageFilter.CropRect cropRect = null);
 ```
 
-此对象设置为`ImageFilter`属性的`SKPaint`对象，以及任何绘制并将该对象将具有其背后的投影。
+将此对象设置为 `ImageFilter` 对象的属性 `SKPaint` ，并且使用该对象绘制的任何内容将在其后面放置一个阴影。
 
-`dx`和`dy`参数表示以像素为单位从图形对象的阴影的水平和垂直偏移量。 2D 图形中的约定是光源来自左上方，这意味着这些两个参数应为正数来定位下方和右侧的图形对象的阴影。
+`dx`和 `dy` 参数指示阴影的水平和垂直偏移量（以像素为单位）。 2D 图形中的约定是假设从左上方开始的光源，这表示这两个参数都应为正值，以将阴影放置在图形对象的下方和右侧。
 
-`sigmaX`和`sigmaY`参数越来越模糊投影的因素。
+`sigmaX`和 `sigmaY` 参数是投影的模糊因数。
 
-`color`参数是投影的颜色。 这`SKColor`值可以包括透明度。 一种可能性是颜色值`SKColors.Black.WithAlpha(0x80)`变暗任何颜色背景。
+`color`参数是投影的颜色。 此 `SKColor` 值可以包含透明度。 一种可能的颜色值是将 `SKColors.Black.WithAlpha(0x80)` 任何颜色背景变暗。
 
 最后两个参数是可选的。
 
-**删除卷影试验**程序的允许您使用的值进行试验`dx`， `dy`， `sigmaX`，并`sigmaY`以显示使用了投影的文本字符串。 XAML 文件实例化四个`Slider`视图来设置这些值：
+**Drop shadow 试验**程序允许您试验 `dx` 、、和的值 `dy` ， `sigmaX` `sigmaY` 以显示带有投影的文本字符串。 XAML 文件实例化四个 `Slider` 视图以设置这些值：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -224,7 +227,7 @@ public static SKImageFilter CreateDropShadow (float dx, float dy,
 </ContentPage>
 ```
 
-代码隐藏文件使用这些值上的蓝色文本字符串创建红色投影：
+代码隐藏文件使用这些值在蓝色文本字符串上创建红色投影：
 
 ```csharp
 public partial class DropShadowExperimentPage : ContentPage
@@ -281,15 +284,15 @@ public partial class DropShadowExperimentPage : ContentPage
 }
 ```
 
-下面是运行的程序：
+下面是正在运行的程序：
 
-[![删除卷影实验](image-filters-images/DropShadowExperiment.png "删除卷影实验")](image-filters-images/DropShadowExperiment-Large.png#lightbox)
+[![删除阴影试验](image-filters-images/DropShadowExperiment.png "删除阴影试验")](image-filters-images/DropShadowExperiment-Large.png#lightbox)
 
-在最右侧通用 Windows 平台的屏幕截图中的负偏移量的值会导致卷影才会出现上面和左侧的文本。 这表明光源右下方，不是计算机图形中的约定。 但这似乎不以任何方式，错误可能是因为卷影也将非常模糊，似乎比大多数投影更重在修饰。
+最右侧通用 Windows 平台屏幕截图中的负偏移量值会导致阴影显示在文本的上方和左侧。 这会推荐右下方的光源，这并不是计算机图形的约定。 但这种方法似乎并不是错误的，可能是因为阴影的效果也很模糊，并看起来比大多数投影 ornamental。
 
-## <a name="lighting-effects"></a>光照效果
+## <a name="lighting-effects"></a>照明效果
 
-`SKImageFilter`类定义使用类似的名称和参数，此处的不断增加的复杂性顺序列出的六种方法：
+此 `SKImageFilter` 类定义了六个具有相似名称和参数的方法，这些方法在此处按递增复杂度的顺序列出：
 
 - [`CreateDistantLitDiffuse`](xref:SkiaSharp.SKImageFilter.CreateDistantLitDiffuse*)
 - [`CreateDistantLitSpecular`](xref:SkiaSharp.SKImageFilter.CreateDistantLitSpecular*)
@@ -298,13 +301,13 @@ public partial class DropShadowExperimentPage : ContentPage
 - [`CreateSpotLitDiffuse`](xref:SkiaSharp.SKImageFilter.CreateSpotLitDiffuse*)
 - [`CreateSpotLitSpecular`](xref:SkiaSharp.SKImageFilter.CreateSpotLitSpecular*)
 
-这些方法创建映像筛选器，以模仿三维图面上的不同类型的光效果。 生成的图像筛选器照亮二维对象，如同它们存在在 3D 空间中，这可能导致提升权限或凹陷出现这些对象，或使用反射照明。
+这些方法创建的图像筛选器模拟三维表面上不同种类的光的效果。 生成的图像筛选器会将二维对象视为3D 空间中存在的对象，这可能会导致这些对象显示为升高或凹陷，或具有镜面突出显示。
 
-`Distant`浅方法假定光线来自远距离。 为了人大开眼界对象，假定光线按一个方向一致类似于地球的较小区域上 Sun 三维空间中点。 `Point`浅方法模拟定位在 3D 空间中的所有方向发光灯泡。 `Spot` Light 具有位置和方向，类似于手电筒。
+`Distant`灯光方法假设光源来自远处。 用于照亮对象的情况下，光源被认为是三维空间中的一个一致方向，非常类似于地球上的一个小区域。 `Point`灯光方法模拟三维空间中放置光线的灯泡。 `Spot`光源具有位置和方向，与闪光灯非常类似。
 
-位置和方向在 3D 空间中的所指定的值与[ `SKPoint3` ](xref:SkiaSharp.SKPoint3)结构，它是类似于`SKPoint`具有名为三个属性，但`X`， `Y`，和`Z`。
+三维空间中的位置和方向都是用结构的值指定的 [`SKPoint3`](xref:SkiaSharp.SKPoint3) ，它类似于 `SKPoint` 但具有三个名为 `X` 、和的属性 `Y` `Z` 。
 
-数量和复杂程度对这些方法的参数进行试验与其困难。 若要开始，**存有一定距离 Light 试验**页中，可以试验参数`CreateDistantLightDiffuse`方法：
+这些方法的参数的数量和复杂性使得它们的试验非常困难。 为了使你开始，"**远处轻型实验**" 页可让你体验方法的参数 `CreateDistantLightDiffuse` ：
 
 ```csharp
 public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
@@ -315,9 +318,9 @@ public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
                                                      SKImageFilter.CropRect cropRect = null);
 ```
 
-页面不会使用最后两个可选参数。
+页面不使用最后两个可选参数。
 
-三个`Slider`XAML 中的视图文件的允许您选择`Z`坐标`SKPoint3`值，`surfaceScale`参数，和`kd`"漫射照明常量"作为 API 文档中定义的参数：
+`Slider`XAML 文件中的三个视图允许选择 `Z` `SKPoint3` 值、参数和参数的坐标，该 `surfaceScale` `kd` 参数在 API 文档中定义为 "漫射照明常量"：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -368,7 +371,7 @@ public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
 </ContentPage>
 ```
 
-代码隐藏文件获取这三个值，并使用它们来创建一个映像筛选器来显示文本字符串：
+代码隐藏文件获取这三个值，并使用它们创建一个图像筛选器以显示文本字符串：
 
 ```csharp
 public partial class DistantLightExperimentPage : ContentPage
@@ -426,19 +429,19 @@ public partial class DistantLightExperimentPage : ContentPage
 }
 ```
 
-第一个参数`SKImageFilter.CreateDistantLitDiffuse`是光的方向。 正 X 和 Y 坐标指示光是向右和向下指向。 在屏幕的正 Z 坐标点。 XAML 文件允许您选择负 Z 值，但这只是为了您可以看到发生了什么情况：从概念上讲，负 Z 坐标使光源指向屏幕。 用于任何其他然后小负值，光照效果将停止工作。
+的第一个参数 `SKImageFilter.CreateDistantLitDiffuse` 是光的方向。 正 X 和 Y 坐标指示光向右和向下指向。 正 Z 坐标指向屏幕。 XAML 文件允许您选择负 Z 值，但这只是为了您可以看到发生了什么变化：从概念上讲，负 Z 坐标使光源指向屏幕。 对于除小负值以外的其他任何值，灯光效果都将停止工作。
 
-`surfaceScale`自变量的范围可以介于-1 到 1。 （高或较低的值不会进一步影响。）这些是在 Z 轴相对指示画布图面中的图形对象 （在此情况下，文本字符串） 的偏移量的值。 使用负值引发在画布的图面上面的文本字符串和正值按其下进画布。
+`surfaceScale`参数的范围为-1 到1。 （较高或较低的值没有进一步的影响。）这些是 Z 轴中的相对值，指示画布图面上图形对象（在本例中为文本字符串）的位移。 使用负值可引发画布表面上方的文本字符串和正值，以将其插入画布中。
 
-`lightConstant`值应为正数。 （该程序允许负值以便您可以看到，它们会导致要停止工作的效果。）较高的值会导致更强烈的光。
+`lightConstant`值应为正数。 （该程序允许负值，以便您可以看到它们会导致效果停止工作。）较高的值会导致更高的强度。
 
-这些因素可平衡获取浮雕时生效`surfaceScale`为负数 （与 iOS 和 Android 的屏幕截图中） 和阳文时生效`surfaceScale`为正，作为与右侧的 UWP 屏幕快照：
+当为负时，可以平衡这些因素以获得浮雕效果 `surfaceScale` （与 iOS 和 Android 屏幕截图相同），并在为正时使用阴文效果， `surfaceScale` 如右侧的 UWP 屏幕截图所示：
 
-[![远处的光源实验](image-filters-images/DistantLightExperiment.png "远处的光源实验")](image-filters-images/DistantLightExperiment-Large.png#lightbox)
+[![远光源试验](image-filters-images/DistantLightExperiment.png "远光源试验")](image-filters-images/DistantLightExperiment-Large.png#lightbox)
 
-Android 屏幕快照具有 Z 值为 0，这意味着向下和向右仅指向光线。 在后台不点亮，照亮的文本字符串的图面并不是。 光只影响非常细微效果的文本的边缘。
+Android 屏幕截图的 Z 值为0，这意味着该光源只指向向下和向右。 背景未亮起，并且文本字符串的图面未亮起。 光源只会影响文本边缘，使其变得非常微妙。
 
-[转换转换](../transforms/translate.md)中介绍了一种用于浮凸和阴文文本的替代方法：文本字符串将显示两次，颜色分别偏移不同的颜色。
+下面演示了 "[转换转换](../transforms/translate.md)" 一文中的一种替代方法：文本字符串显示两次，不同颜色的偏移量略有不同。
 
 ## <a name="related-links"></a>相关链接
 

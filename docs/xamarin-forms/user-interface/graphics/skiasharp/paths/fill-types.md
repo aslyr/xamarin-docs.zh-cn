@@ -1,18 +1,21 @@
 ---
-title: 路径填充类型
-description: 这篇文章检查不同的效果可能使用 SkiaSharp 路径填充类型，并演示此示例代码。
-ms.prod: xamarin
-ms.assetid: 57103A7A-49A2-46AE-894C-7C2664682644
-ms.technology: xamarin-skiasharp
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/10/2017
-ms.openlocfilehash: 98081ed1a9aef1260150671d4fd026dd64c20b62
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c8c54f3d3815e418d2f71960dc7733711cb40ae2
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76723637"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139043"
 ---
 # <a name="the-path-fill-types"></a>路径填充类型
 
@@ -20,22 +23,22 @@ ms.locfileid: "76723637"
 
 _发现 SkiaSharp 路径填充类型可能产生的不同效果_
 
-在路径中的两个分布图可以重叠，并构成了单个轮廓的行可以重叠。 可能可以填充任何封闭的区域，但可能不想要填充所有封闭的区域。 以下是一个示例：
+路径中的两个轮廓可以重叠，构成单个等高线的线条可能会重叠。 任何封闭区域都可以进行填充，但您可能不希望填写所有包含的区域。 下面是一个示例：
 
 ![](fill-types-images/filltypeexample.png "Five-pointed star partially filles")
 
-你可以这样的一些控制。 填充算法由 `SKPath`的[`SKFillType`](xref:SkiaSharp.SKPath.FillType)属性控制，该属性设置为[`SKPathFillType`](xref:SkiaSharp.SKPathFillType)枚举的成员：
+对此有一些控制。 填充算法由的 [`SKFillType`](xref:SkiaSharp.SKPath.FillType) 属性控制 `SKPath` ，您可以将其设置为枚举的成员 [`SKPathFillType`](xref:SkiaSharp.SKPathFillType) ：
 
-- `Winding`，默认值为
+- `Winding`（默认值）
 - `EvenOdd`
 - `InverseWinding`
 - `InverseEvenOdd`
 
-缠绕和奇偶算法确定任何封闭的区域是填充还是不根据从该区域绘制为无穷大的假设直线填充。 该行超过构成路径的一个或多个边界行。 环绕模式下，如果不是在一个方向取得均衡的另一个方向，然后在区域中绘制的行数绘制边界行数填充。 否则填充区域。 如果边界行数为奇数，则奇偶算法填充一块区域。
+缠绕和偶奇算法都确定是否根据从该区域绘制的假设直线填充任何封闭区域。 该行跨越了一个或多个构成路径的边界线。 在缠绕模式下，如果在一个方向上绘制的边界线的数量与另一个方向上绘制的行数的平衡，则不填充该区域。 否则，将填充该区域。 如果边界行数为奇数，则奇数算法将填充区域。
 
-很多例行路径环绕的算法通常填充路径的所有封闭的区域。 奇偶算法通常会产生更有趣的结果。
+对于许多例程路径，缠绕算法通常会填充路径的所有封闭区域。 偶-奇算法通常产生更有趣的结果。
 
-典型示例是一个五向星形，如**五星星形**页中所示。 [**FivePointedStarPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FivePointedStarPage.xaml)文件实例化两个 `Picker` 视图，以选择路径填充类型以及路径是描边还是实心，或者按何种顺序进行：
+典型示例是一个五向星形，如**五星星形**页中所示。 [**FivePointedStarPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FivePointedStarPage.xaml)文件实例化两个 `Picker` 视图以选择路径填充类型，并确定路径是描边还是填充，或按何种顺序进行：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -102,7 +105,7 @@ _发现 SkiaSharp 路径填充类型可能产生的不同效果_
 </ContentPage>
 ```
 
-代码隐藏文件使用这两个 `Picker` 值绘制一个五角星：
+代码隐藏文件使用这两个 `Picker` 值来绘制五角星：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -168,18 +171,18 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-通常，路径填充类型只会影响填充，而不会影响笔划，但这两种 `Inverse` 模式会影响填充和笔划。 对于填充，这两个 `Inverse` 类型填充区域 oppositely，以使星形外的区域填满。 对于笔划，两个 `Inverse` 类型均为除笔触之外的所有内容。 使用这些反向填充类型会产生一些奇怪的效果，如 iOS 屏幕截图中所示：
+通常，路径填充类型只会影响填充，而不会影响笔划，但这两种 `Inverse` 模式会影响填充和笔划。 对于填充，两种 `Inverse` 类型填充区域 oppositely，以使星形外的区域填满。 对于笔划，这两种 `Inverse` 类型的颜色都与笔划不同。 使用这些反转填充类型可能会产生一些奇怪的效果，如 iOS 屏幕截图所示：
 
 [![](fill-types-images/fivepointedstar-small.png "Triple screenshot of the Five-Pointed Star page")](fill-types-images/fivepointedstar-large.png#lightbox "Triple screenshot of the Five-Pointed Star page")
 
 Android 屏幕快照显示了典型的偶数和缠绕效果，但笔划和填充的顺序也会影响结果。
 
-缠绕算法是依赖于绘制行的方向。 通常当你要创建一个路径，您可以控制该方向按你指定的行来自一个点到另一个。 但是，`SKPath` 类还定义了绘制整个轮廓的 `AddRect` 和 `AddCircle` 等方法。 若要控制如何绘制这些对象，方法包括类型[`SKPathDirection`](xref:SkiaSharp.SKPathDirection)的参数，该参数具有两个成员：
+缠绕算法依赖于绘制线条的方向。 通常，在创建路径时，可以在指定从一个点到另一个点绘制线条时控制该方向。 但是， `SKPath` 类还定义 `AddRect` `AddCircle` 绘制整个轮廓的方法，如和。 若要控制这些对象的绘制方式，方法包含类型的参数 [`SKPathDirection`](xref:SkiaSharp.SKPathDirection) ，该参数具有两个成员：
 
 - `Clockwise`
 - `CounterClockwise`
 
-包含 `SKPathDirection` 参数 `SKPath` 中的方法为其提供默认值 `Clockwise`。
+中 `SKPath` 包含参数的方法 `SKPathDirection` 为其指定了默认值 `Clockwise` 。
 
 "**重叠圆圈**" 页将创建一个路径，该路径包含四个具有偶数类路径填充类型的重叠圆圈：
 
@@ -221,7 +224,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-它是代码的使用最少创建一个有趣图像：
+使用最少的代码创建了一个有趣的图像：
 
 [![](fill-types-images/overlappingcircles-small.png "Triple screenshot of the Overlapping Circles page")](fill-types-images/overlappingcircles-large.png#lightbox "Triple screenshot of the Overlapping Circles page")
 

@@ -1,32 +1,35 @@
 ---
-title: 在 Xamarin.Forms 中的样式继承
-description: 样式可以继承其他样式以减少重复和使重复使用。 本文介绍如何在 Xamarin.Forms 应用程序中执行的样式继承。
-ms.prod: xamarin
-ms.assetid: 67A3A39C-8CC0-446D-8162-FFA73582D3B8
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/17/2016
-ms.openlocfilehash: 24f6eac93dd3095df70bbb326388cd9ed47f395c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: 样式继承Xamarin.Forms
+description: 样式可以从其他样式继承，以减少重复并实现重复使用。 本文介绍如何在应用程序中执行样式继承 Xamarin.Forms 。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 80cc419ae098f4a0cbbd782785c0ec5ba03fa703
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657061"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138952"
 ---
-# <a name="style-inheritance-in-xamarinforms"></a>在 Xamarin.Forms 中的样式继承
+# <a name="style-inheritance-in-xamarinforms"></a>样式继承Xamarin.Forms
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
-_样式可以继承其他样式以减少重复和使重复使用。_
+_样式可以从其他样式继承，以减少重复并实现重复使用。_
 
 ## <a name="style-inheritance-in-xaml"></a>XAML 中的样式继承
 
-通过设置执行的样式继承[ `Style.BasedOn` ](xref:Xamarin.Forms.Style.BasedOn)属性设置为现有[ `Style` ](xref:Xamarin.Forms.Style)。 在 XAML，这通过设置来实现`BasedOn`属性设置为`StaticResource`引用以前创建的标记扩展`Style`。 在 C# 中，这通过设置来实现`BasedOn`属性设置为`Style`实例。
+样式继承是通过将属性设置 [`Style.BasedOn`](xref:Xamarin.Forms.Style.BasedOn) 为现有来执行的 [`Style`](xref:Xamarin.Forms.Style) 。 在 XAML 中，这是通过将 `BasedOn` 属性设置为 `StaticResource` 引用前面创建的的标记扩展来 `Style` 实现的。 在 c # 中，这是通过将 `BasedOn` 属性设置为 `Style` 实例实现的。
 
-继承自基样式的样式可以包括[ `Setter` ](xref:Xamarin.Forms.Setter)实例的新属性，或使用它们来重写基准样式的样式。 此外，相同类型或派生自基本样式所针对的类型的类型，必须针对继承自基样式的样式。 例如，如果基本样式面向[ `View` ](xref:Xamarin.Forms.View)实例，可以针对基于的基本样式的样式`View`实例或派生的类型`View`类，如[ `Label`](xref:Xamarin.Forms.Label)并[ `Button` ](xref:Xamarin.Forms.Button)实例。
+继承自基样式的样式可以包含 [`Setter`](xref:Xamarin.Forms.Setter) 新属性的实例，也可以使用这些实例从基本样式中重写样式。 此外，从基本样式继承的样式必须以相同的类型或派生自基样式的目标类型的类型为目标。 例如，如果基样式面向 [`View`](xref:Xamarin.Forms.View) 实例，则基于基样式的样式可以将 `View` 派生自类的实例或类型（ `View` 如和实例）作为目标 [`Label`](xref:Xamarin.Forms.Label) [`Button`](xref:Xamarin.Forms.Button) 。
 
-下面的代码演示*显式*设置在 XAML 页面中的样式继承：
+下面的代码演示了 XAML 页中的*显式*样式继承：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.StyleInheritancePage" Title="Inheritance" IconImageSource="xaml.png">
@@ -62,22 +65,22 @@ _样式可以继承其他样式以减少重复和使重复使用。_
 </ContentPage>
 ```
 
-`baseStyle`目标[ `View` ](xref:Xamarin.Forms.View)实例，并设置[ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)并[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)属性。 `baseStyle`未直接在任何控件上设置。 相反，`labelStyle`和`buttonStyle`从它继承，设置其他可绑定属性值。 `labelStyle`并`buttonStyle`然后应用于[ `Label` ](xref:Xamarin.Forms.Label)实例并[ `Button` ](xref:Xamarin.Forms.Button)实例，通过设置其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)属性。 这会导致下面的屏幕截图中所示的外观：
+`baseStyle`目标 [`View`](xref:Xamarin.Forms.View) 实例，并设置 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 属性。 `baseStyle`未在任何控件上直接设置。 相反， `labelStyle` 并 `buttonStyle` 从其继承，设置其他可绑定的属性值。 `labelStyle` `buttonStyle` 然后 [`Label`](xref:Xamarin.Forms.Label) ，通过设置这些实例和实例的属性来将和应用到实例和 [`Button`](xref:Xamarin.Forms.Button) 实例 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 。 这会导致如以下屏幕截图中所示的外观：
 
 [![](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png#lightbox)
 
 > [!NOTE]
-> 隐式样式可以派生自显式样式，但不能被显式样式派生的隐式样式。
+> 隐式样式可以从显式样式派生，但无法从隐式样式派生显式样式。
 
 ### <a name="respecting-the-inheritance-chain"></a>遵循继承链
 
-一种样式只能继承自同一级别或更高版本，样式中的视图层次结构。 这表示：
+在视图层次结构中，style 只能从同一级别或更高级别的样式继承。 这表示：
 
-- 应用程序级资源只能从其他应用程序级别资源继承。
-- 页级别资源可以从应用程序级别资源及其他页级别资源继承。
-- 控制级别的资源可以从应用程序级别资源、 页级别资源和其他控制级别资源继承。
+- 应用程序级别资源只能从其他应用程序级别资源继承。
+- 页面级别资源可从应用程序级别资源和其他页面级别资源继承。
+- 控件级别资源可从应用程序级别资源、页级别资源和其他控件级别资源继承。
 
-在下面的代码示例演示此继承链：
+下面的代码示例演示了此继承链：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.StyleInheritancePage" Title="Inheritance" IconImageSource="xaml.png">
@@ -106,11 +109,11 @@ _样式可以继承其他样式以减少重复和使重复使用。_
 </ContentPage>
 ```
 
-在此示例中，`labelStyle`并`buttonStyle`是控制级别的资源，而`baseStyle`是一个页级别资源。 然而，尽管`labelStyle`并`buttonStyle`继承`baseStyle`，不可能`baseStyle`继承`labelStyle`或`buttonStyle`，因为视图层次结构中其各自的位置。
+在此示例中， `labelStyle` 和 `buttonStyle` 是控件级别的资源，而 `baseStyle` 是页面级别资源。 但是，当 `labelStyle` 和 `buttonStyle` 从继承时 `baseStyle` ，不能 `baseStyle` 从或继承， `labelStyle` 原因是 `buttonStyle` 它们在视图层次结构中的相应位置。
 
-## <a name="style-inheritance-in-c35"></a>C 中的样式继承&#35;
+## <a name="style-inheritance-in-c35"></a>C&#35; 中的样式继承
 
-等效的 C# 页上，其中[ `Style` ](xref:Xamarin.Forms.Style)实例直接分配给[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)必选控件的属性下面的代码示例中所示：
+在 [`Style`](xref:Xamarin.Forms.Style) 下面的代码示例中显示了将实例直接分配给 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 所需控件的属性的等效 c # 页：
 
 ```csharp
 public class StyleInheritancePageCS : ContentPage
@@ -153,13 +156,13 @@ public class StyleInheritancePageCS : ContentPage
 }
 ```
 
-`baseStyle`目标[ `View` ](xref:Xamarin.Forms.View)实例，并设置[ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)并[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)属性。 `baseStyle`未直接在任何控件上设置。 相反，`labelStyle`和`buttonStyle`从它继承，设置其他可绑定属性值。 `labelStyle`并`buttonStyle`然后应用于[ `Label` ](xref:Xamarin.Forms.Label)实例并[ `Button` ](xref:Xamarin.Forms.Button)实例，通过设置其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)属性。
+`baseStyle`目标 [`View`](xref:Xamarin.Forms.View) 实例，并设置 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 属性。 `baseStyle`未在任何控件上直接设置。 相反， `labelStyle` 并 `buttonStyle` 从其继承，设置其他可绑定的属性值。 `labelStyle` `buttonStyle` 然后 [`Label`](xref:Xamarin.Forms.Label) ，通过设置这些实例和实例的属性来将和应用到实例和 [`Button`](xref:Xamarin.Forms.Button) 实例 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 。
 
 ## <a name="related-links"></a>相关链接
 
 - [XAML 标记扩展](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [基本样式 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
-- [使用样式 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
+- [基本样式（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+- [使用样式（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 - [样式](xref:Xamarin.Forms.Style)
-- [资源库](xref:Xamarin.Forms.Setter)
+- [](xref:Xamarin.Forms.Setter)Setter

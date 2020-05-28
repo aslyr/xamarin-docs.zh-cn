@@ -1,22 +1,25 @@
 ---
-title: Xamarin 中的 AndroidX 迁移
-description: 本文介绍 AndroidX 存在的原因，以及如何在 Xamarin 应用程序中迁移到 AndroidX。
-ms.prod: xamarin
-ms.assetid: 98884003-E65A-4EB4-842D-66CFE27344A4
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 01/22/2020
-ms.openlocfilehash: 13fb802dec326cdb82bac8825ca84343ef85b13e
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+title: AndroidX 迁移Xamarin.Forms
+description: 本文介绍 AndroidX 存在的原因，以及如何在应用中迁移到 AndroidX Xamarin.Forms 。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c2df309a8a12a05a4b492bb66977aa2411142850
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77646652"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138263"
 ---
-# <a name="androidx-migration-in-xamarinforms"></a>Xamarin 中的 AndroidX 迁移
+# <a name="androidx-migration-in-xamarinforms"></a>AndroidX 迁移Xamarin.Forms
 
-AndroidX 替换 Android 支持库。 本文介绍了 AndroidX 的原因、其对 Xamarin 的影响，以及如何将应用程序迁移为使用 AndroidX 库。
+AndroidX 替换 Android 支持库。 本文介绍了 AndroidX 存在的原因、它 Xamarin.Forms 的影响，以及如何将应用程序迁移为使用 AndroidX 库。
 
 ## <a name="history-of-androidx"></a>AndroidX 的历史记录
 
@@ -24,8 +27,8 @@ AndroidX 替换 Android 支持库。 本文介绍了 AndroidX 的原因、其对
 
 虽然支持库最初是单个二进制文件，但它已发展并发展为一组库，这对于新式应用程序的开发几乎非常重要。 以下是支持库中的一些常用功能：
 
-- `Fragment` 支持类。
-- 用于管理长列表的 `RecyclerView`。
+- `Fragment`支持类。
+- `RecyclerView`用于管理长列表的。
 - Multidex 对具有超过65536方法的应用的支持。
 - `ActivityCompat` 类。
 
@@ -33,16 +36,16 @@ AndroidX 是支持库的替代，不再维护-所有新的库开发将在 Androi
 
 Google 使用 AndroidX 创建了一个名为 Jetifier 的迁移过程。 Jetifier 将检查生成过程中的 jar 字节码，并在应用程序代码和依赖项中对其 AndroidX 等效项支持库引用。
 
-在 Xamarin 应用程序中，就像在 Android Java 应用程序中一样，jar 依赖项必须迁移到 AndroidX。 但是，Xamarin 绑定还必须迁移，以指向正确的底层 jar 文件。 Xamarin. 添加了对版本4.5 中自动 AndroidX 迁移的支持。
+在 Xamarin.Forms 应用程序中，就像在 Android Java 应用程序中一样，jar 依赖项必须迁移到 AndroidX。 但是，Xamarin 绑定还必须迁移，以指向正确的底层 jar 文件。 Xamarin.Forms添加了4.5 版中自动 AndroidX 迁移的支持。
 
 有关 AndroidX 的详细信息，请参阅 developer.android.com 上的[AndroidX 概述](https://developer.android.com/jetpack/androidx)。
 
-## <a name="automatic-migration-in-xamarinforms"></a>Xamarin 中的自动迁移
+## <a name="automatic-migration-in-xamarinforms"></a>自动迁移Xamarin.Forms
 
-若要自动迁移到 AndroidX，Xamarin. Forms 项目必须：
+若要自动迁移到 AndroidX， Xamarin.Forms 项目必须：
 
 - 面向 Android API 版本29或更高版本。
-- 使用 Xamarin 版本4.5 或更高版本。
+- 使用 Xamarin.Forms 版本4.5 或更高版本。
 
 在项目中确认这些设置后，在 Visual Studio 2019 中生成 Android 应用。 在生成过程中，将检查中间语言（IL），并支持库依赖项和绑定与 AndroidX 依赖关系交换。 如果你的应用程序具有生成所需的所有 AndroidX 依赖项，则你将注意到生成过程没有任何区别。
 
@@ -64,7 +67,7 @@ You can also copy and paste the following snippit into your .csproj file:
  <PackageReference Include="Xamarin.AndroidX.Legacy.Support.V4" Version="1.0.0-rc1" />
 ```
 
-缺少的 NuGet 包可以通过 Visual Studio 中的 NuGet 包管理器进行安装，也可以通过编辑你的 Android .csproj 文件来安装，以包含错误中列出的 `PackageReference` XML 项。
+缺少的 NuGet 包可以通过 Visual Studio 中的 NuGet 包管理器进行安装，也可以通过编辑你的 Android .csproj 文件来安装，以包含 `PackageReference` 错误中列出的 XML 项。
 
 解析缺少的包后，重新生成项目将加载缺少的包，项目将使用 AndroidX 依赖项而不是支持库依赖项进行编译。
 

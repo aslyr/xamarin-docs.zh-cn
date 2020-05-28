@@ -1,24 +1,27 @@
 ---
-title: Xamarin 网格
-description: Xamarin 网格是一种布局，可将其子级组织到单元格的行和列中。
-ms.prod: xamarin
-ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/15/2020
-ms.openlocfilehash: 4f1d9d0f2d597018b9832d918bbec3f0b2594773
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: Xamarin.Forms格
+description: Xamarin.Forms网格是一种布局，可将其子级组织到单元格的行和列中。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c4e63d6c1701d9eb247ecb7c52188e5dbc045934
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425951"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138068"
 ---
-# <a name="xamarinforms-grid"></a>Xamarin 网格
+# <a name="xamarinforms-grid"></a>Xamarin.Forms格
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
 
-[![Xamarin 网格](grid-images/layouts.png "Xamarin 网格")](grid-images/layouts-large.png#lightbox "Xamarin 网格")
+[![Xamarin.Forms格](grid-images/layouts.png "[!基金.无 LOC （Xamarin）] 网格")](grid-images/layouts-large.png#lightbox "[!基金.无 LOC （Xamarin）] 网格")
 
 [`Grid`](xref:Xamarin.Forms.Grid)是一个布局，它将其子级组织为行和列，这些行和列的大小可以是比例或绝对值。 默认情况下， `Grid` 包含一行和一列。 此外，还 `Grid` 可用作包含其他子布局的父布局。
 
@@ -735,6 +738,6 @@ public class ColorSlidersGridPageCS : ContentPage
 ## <a name="related-links"></a>相关链接
 
 - [网格演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
-- [Xamarin 中的布局选项](layout-options.md)
-- [选择 "Xamarin" 布局](choose-layout.md)
-- [提高 Xamarin.Forms 应用性能](~/xamarin-forms/deploy-test/performance.md)
+- [布局选项Xamarin.Forms](layout-options.md)
+- [选择 Xamarin.Forms 布局](choose-layout.md)
+- [提高 Xamarin.Forms 应用程序性能](~/xamarin-forms/deploy-test/performance.md)

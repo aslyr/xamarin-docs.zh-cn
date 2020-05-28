@@ -1,18 +1,21 @@
 ---
-title: 对企业应用进行单元测试
-description: 本章介绍了如何在 eShopOnContainers 移动应用中执行单元测试。
-ms.prod: xamarin
-ms.assetid: 4af82e52-f99b-4cad-b278-1745f190c240
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/07/2017
-ms.openlocfilehash: 0fb63c650e73bce5a08b204f942f0c19583e4899
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a05de34089fdf6ad90740067b88edea0b62f55a7
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770688"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84134649"
 ---
 # <a name="unit-testing-enterprise-apps"></a>对企业应用进行单元测试
 
@@ -35,7 +38,7 @@ ms.locfileid: "70770688"
 
 ## <a name="dependency-injection-and-unit-testing"></a>依赖关系注入和单元测试
 
-采用松耦合体系结构的动机之一是它有利于单元测试。 向 Autofac 注册的类型之一是`OrderService`类。 下面的代码示例演示了此类的大纲：
+采用松耦合体系结构的动机之一是它有利于单元测试。 向 Autofac 注册的类型之一是 `OrderService` 类。 下面的代码示例演示了此类的大纲：
 
 ```csharp
 public class OrderDetailViewModel : ViewModelBase  
@@ -50,17 +53,17 @@ public class OrderDetailViewModel : ViewModelBase
 }
 ```
 
-类依赖于容器在实例化`OrderDetailViewModel`对象时解析的类型。`IOrderService` `OrderDetailViewModel` 但是，不是创建`OrderService`对象对`OrderDetailViewModel`类进行单元测试，而是将`OrderService`对象替换为模拟，以用于测试目的。 图10-1 说明了这种关系。
+`OrderDetailViewModel`类依赖于 `IOrderService` 容器在实例化对象时解析的类型 `OrderDetailViewModel` 。 但是，不是创建 `OrderService` 对象对类进行单元测试，而是将 `OrderDetailViewModel` 对象替换 `OrderService` 为模拟，以用于测试目的。 图10-1 说明了这种关系。
 
-![](unit-testing-images/unittesting.png "实现 IOrderService 接口的类")
+![](unit-testing-images/unittesting.png "Classes that implement the IOrderService interface")
 
 **图10-1：** 实现 IOrderService 接口的类
 
-此方法允许`OrderService`在运行时将对象传入`OrderDetailViewModel`类，并且在可测试性的兴趣情况下，它允许`OrderMockService`将类传入`OrderDetailViewModel`类中的测试时间。 此方法的主要优点是，它可以实现单元测试，而无需使用难于处理的资源（如 web 服务或数据库）。
+此方法允许在 `OrderService` 运行时将对象传入 `OrderDetailViewModel` 类，并且在可测试性的兴趣情况下，它允许将 `OrderMockService` 类传入类中的 `OrderDetailViewModel` 测试时间。 此方法的主要优点是，它可以实现单元测试，而无需使用难于处理的资源（如 web 服务或数据库）。
 
 ## <a name="testing-mvvm-applications"></a>测试 MVVM 应用程序
 
-从 MVVM 应用程序测试模型和查看模型与测试任何其他类相同，并且可以使用相同的工具和技术（如单元测试和模拟）。 但是，模型和视图模型类具有一些典型模式，特定的单元测试技术可能对这些模式有益。
+从 MVVM 应用程序测试模型和查看模型与测试任何其他类相同，并且可以使用相同的工具和技术（如单元测试和模拟）。 但有些模式通常是模型和视图模型类的典型模式，这些模式可受益于特定单元测试技术。
 
 > [!TIP]
 > 对每个单元测试进行测试。 不要让单元测试执行单元的行为的多个方面。 这样做会导致难以读取和更新的测试。 它还可能在解释失败时导致混淆。
@@ -70,7 +73,7 @@ EShopOnContainers 移动应用使用[xUnit](https://xunit.github.io/)来执行�
 - 事实是始终为 true 的测试，用于测试固定条件。
 - 理论是仅适用于一组特定数据的测试。
 
-EShopOnContainers 移动应用随附的单元测试是事实测试，因此每个单元测试方法都是用`[Fact]`特性修饰的。
+EShopOnContainers 移动应用随附的单元测试是事实测试，因此每个单元测试方法都是用特性修饰的 `[Fact]` 。
 
 > [!NOTE]
 > xUnit 测试由测试运行程序执行。 若要执行测试运行程序，请运行所需平台的 eShopOnContainers. TestRunner 项目。
@@ -93,15 +96,15 @@ public async Task OrderPropertyIsNotNullAfterViewModelInitializationTest()
 }
 ```
 
-此单元测试检查`Order`在调用`InitializeAsync`方法后`OrderDetailViewModel`实例的属性是否具有值。 当导航到视图模型的相应视图时，将调用方法。`InitializeAsync` 有关导航的详细信息，请参阅[导航](~/xamarin-forms/enterprise-application-patterns/navigation.md)。
+此单元测试检查在 `Order` `OrderDetailViewModel` 调用方法后实例的属性是否具有值 `InitializeAsync` 。 `InitializeAsync`当导航到视图模型的相应视图时，将调用方法。 有关导航的详细信息，请参阅[导航](~/xamarin-forms/enterprise-application-patterns/navigation.md)。
 
-创建实例时，它`OrderService`需要将实例指定为参数。 `OrderDetailViewModel` 但是， `OrderService`从 web 服务检索数据。 因此， `OrderMockService`实例（ `OrderService`该类的模拟版本）被指定`OrderDetailViewModel`为构造函数的参数。 然后，调用视图模型的`InitializeAsync`方法（该方法调用`IOrderService`操作）时，将检索模拟数据，而不是与 web 服务进行通信。
+`OrderDetailViewModel`创建实例时，它需要 `OrderService` 将实例指定为参数。 但是， `OrderService` 从 web 服务检索数据。 因此， `OrderMockService` 实例（该类的模拟版本 `OrderService` ）被指定为 `OrderDetailViewModel` 构造函数的参数。 然后，调用视图模型的 `InitializeAsync` 方法（该方法调用 `IOrderService` 操作）时，将检索模拟数据，而不是与 web 服务进行通信。
 
 ### <a name="testing-inotifypropertychanged-implementations"></a>测试 INotifyPropertyChanged 实现
 
-通过实现`INotifyPropertyChanged`接口，视图可以对源自视图模型和模型的更改做出反应。 这些更改并不限于控件中显示的数据–它们还用于控制视图，例如，查看模型状态导致动画启动或禁用控件。
+通过实现 `INotifyPropertyChanged` 接口，视图可以对源自视图模型和模型的更改做出反应。 这些更改并不限于控件中显示的数据–它们还用于控制视图，例如，查看模型状态导致动画启动或禁用控件。
 
-可以通过将事件处理程序附加到`PropertyChanged`事件，并检查为属性设置新值后是否引发事件，来测试可通过单元测试直接更新的属性。 下面的代码示例演示了此类测试：
+可以通过将事件处理程序附加到 `PropertyChanged` 事件，并检查为属性设置新值后是否引发事件，来测试可通过单元测试直接更新的属性。 下面的代码示例演示了此类测试：
 
 ```csharp
 [Fact]  
@@ -123,11 +126,11 @@ public async Task SettingOrderPropertyShouldRaisePropertyChanged()
 }
 ```
 
-此单元测试将调用`InitializeAsync` `OrderViewModel`类的方法，这将导致其`Order`属性被更新。 如果对`PropertyChanged` `Order`属性引发了事件，则单元测试将通过。
+此单元测试将调用 `InitializeAsync` 类的方法 `OrderViewModel` ，这将导致其 `Order` 属性被更新。 如果对属性引发了事件，则单元测试将通过 `PropertyChanged` `Order` 。
 
 ### <a name="testing-message-based-communication"></a>测试基于消息的通信
 
-如下面的代码示例[`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)中所示，可以通过订阅正在进行的代码所发送的消息，查看使用类在松耦合类之间进行通信的视图模型。
+[`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)如下面的代码示例中所示，可以通过订阅正在进行的代码所发送的消息，查看使用类在松耦合类之间进行通信的视图模型。
 
 ```csharp
 [Fact]  
@@ -148,7 +151,7 @@ public void AddCatalogItemCommandSendsAddProductMessageTest()
 }
 ```
 
-此单元测试检查`CatalogViewModel`是否`AddProduct`发布消息以响应其`AddCatalogItemCommand`正在执行。 由于类支持多路广播消息订阅，因此单元测试可以订阅该`AddProduct`消息并执行回调委托以响应接收它。 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 指定为 lambda 表达式的此回调委托将设置一个`boolean`字段，该字段由该`Assert`语句用来验证测试的行为。
+此单元测试检查是否 `CatalogViewModel` 发布 `AddProduct` 消息以响应其 `AddCatalogItemCommand` 正在执行。 由于 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 类支持多路广播消息订阅，因此单元测试可以订阅该 `AddProduct` 消息并执行回调委托以响应接收它。 指定为 lambda 表达式的此回调委托将设置一个 `boolean` 字段，该字段由该 `Assert` 语句用来验证测试的行为。
 
 ### <a name="testing-exception-handling"></a>测试异常处理
 
@@ -168,16 +171,16 @@ public void InvalidEventNameShouldThrowArgumentExceptionText()
 }
 ```
 
-此单元测试将引发异常，因为该[`ListView`](xref:Xamarin.Forms.ListView)控件没有名为`OnItemTapped`的事件。 方法是泛型方法，其中`T`是预期异常的类型。 `Assert.Throws<T>` 传递给`Assert.Throws<T>`方法的参数是将引发异常的 lambda 表达式。 因此，单元测试将会传递，前提是 lambda 表达式引发`ArgumentException`。
+此单元测试将引发异常，因为该 [`ListView`](xref:Xamarin.Forms.ListView) 控件没有名为的事件 `OnItemTapped` 。 `Assert.Throws<T>`方法是泛型方法，其中 `T` 是预期异常的类型。 传递给方法的参数 `Assert.Throws<T>` 是将引发异常的 lambda 表达式。 因此，单元测试将会传递，前提是 lambda 表达式引发 `ArgumentException` 。
 
 > [!TIP]
 > 避免编写检查异常消息字符串的单元测试。 异常消息字符串可能会随时间而变化，因此依赖于其存在的单元测试被视为脆弱。
 
 ### <a name="testing-validation"></a>测试验证
 
-测试验证实现有两个方面：测试是否正确实现了任何验证规则，并测试`ValidatableObject<T>`类是否按预期执行。
+测试验证实现有两个方面：测试是否正确实现了任何验证规则，并测试 `ValidatableObject<T>` 类是否按预期执行。
 
-验证逻辑通常是很简单的测试，因为它通常是一个自包含进程，其中的输出取决于输入。 对于至少具有一个关联的验证规则的每`Validate`个属性，应在其上调用方法的结果，如以下代码示例所示：
+验证逻辑通常是很简单的测试，因为它通常是一个自包含进程，其中的输出取决于输入。 对于 `Validate` 至少具有一个关联的验证规则的每个属性，应在其上调用方法的结果，如以下代码示例所示：
 
 ```csharp
 [Fact]  
@@ -193,9 +196,9 @@ public void CheckValidationPassesWhenBothPropertiesHaveDataTest()
 }
 ```
 
-如果`ValidatableObject<T>` 实例`MockViewModel`中的两个属性都具有数据，则此单元测试将检查验证是否成功。
+如果实例中的两个 `ValidatableObject<T>` 属性都具有数据，则此单元测试将检查验证是否成功 `MockViewModel` 。
 
-除了检查验证是否成功外，验证单元测试还应检查`Value`每个`ValidatableObject<T>`实例的、 `IsValid`和`Errors`属性的值，以验证类是否按预期执行。 下面的代码示例演示了执行此操作的单元测试：
+除了检查验证是否成功外，验证单元测试还应检查 `Value` `IsValid` 每个实例的、和属性的值， `Errors` `ValidatableObject<T>` 以验证类是否按预期执行。 下面的代码示例演示了执行此操作的单元测试：
 
 ```csharp
 [Fact]  
@@ -216,7 +219,7 @@ public void CheckValidationFailsWhenOnlyForenameHasDataTest()
 }
 ```
 
-此单元测试检查`Surname`在的`MockViewModel`属性没有任何数据，且每个`ValidatableObject<T>`实例的`Value`、 `IsValid`和`Errors`属性设置正确时，验证是否失败。
+此单元测试检查在 `Surname` 的属性没有 `MockViewModel` 任何数据，且 `Value` `IsValid` `Errors` 每个实例的、和属性 `ValidatableObject<T>` 设置正确时，验证是否失败。
 
 ## <a name="summary"></a>总结
 
@@ -224,7 +227,7 @@ public void CheckValidationFailsWhenOnlyForenameHasDataTest()
 
 可以通过将依赖对象替换为模拟依赖对象的行为的 mock 对象，来隔离受测对象的行为。 这样，就可以执行单元测试，而无需的资源（如 web 服务或数据库）。
 
-测试 MVVM 应用程序的模型和视图模型与测试任何其他类的方式相同，可以使用相同的工具和方法。
+从 MVVM 应用程序测试模型和查看模型与测试任何其他类相同，并且可以使用相同的工具和技术。
 
 ## <a name="related-links"></a>相关链接
 

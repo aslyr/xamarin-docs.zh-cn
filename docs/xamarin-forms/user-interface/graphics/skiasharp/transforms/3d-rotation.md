@@ -1,38 +1,41 @@
 ---
-title: SkiaSharp 中的三维旋转
-description: 此文介绍了如何使用非仿射转换来旋转 3D 空间中的 2D 对象，此示例代码进行了演示。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/14/2017
-ms.openlocfilehash: 60f09b2e60708df6b1e6b68be7ce0792bc8cd9b0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3706139a2c15d01af67203c2bd09b281de80ed52
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759186"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84140200"
 ---
 # <a name="3d-rotations-in-skiasharp"></a>SkiaSharp 中的三维旋转
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_非仿射转换用于旋转 3D 空间中的 2D 对象。_
+_使用非仿射转换在三维空间中旋转2D 对象。_
 
-非仿射转换的一个常见的应用程序可以模拟三维空间中的 2D 对象的旋转：
+非仿射转换的一个常见应用是模拟3D 空间中2D 对象的旋转：
 
-![](3d-rotation-images/3drotationsexample.png "在 3D 空间中旋转的文本字符串")
+![](3d-rotation-images/3drotationsexample.png "A text string rotated in 3D space")
 
-此工作涉及使用三维旋转，然后派生非仿射`SKMatrix`执行这些三维旋转的转换。
+此作业涉及使用三维旋转，然后派生执行这些3D 旋转的非仿射 `SKMatrix` 转换。
 
-很难开发这`SKMatrix`转换仅在两个维度中工作。 在此 3 x 3 矩阵派生自用于在三维图中的 4-4 矩阵时，该作业变得容易。 SkiaSharp 包括[ `SKMatrix44` ](xref:SkiaSharp.SKMatrix44)类达到此目的，但在三维图中的一些背景知识是了解 3D 旋转和 4-4 转换矩阵的必要条件。
+很难开发此转换， `SKMatrix` 只在两个维度中进行。 当使用三维图形中的 4 x 4 矩阵派生时，该作业就变得更加容易。 SkiaSharp 包括 [`SKMatrix44`](xref:SkiaSharp.SKMatrix44) 类用于实现此目的，但3d 图形中的某些背景是了解3d 旋转和 4 x 4 转换矩阵的必要。
 
-三维坐标系添加第三条坐标轴，称为 Z.从概念上讲，Z 轴是在屏幕上成直角。 在 3D 空间中的坐标点的三个数字来指示: （x，y，z）。 在 3D 在本文中，增加的 X 值中使用的坐标系统是向右和增加的 Y 值下降，就像两个维度中一样。 从屏幕里增加正 Z 值。 左上角，就像 2D 图形一样，是起点。 可以在屏幕视为与对此平面成直角 Z 轴 XY 平面。
+三维坐标系统添加了名为 Z 的第三个轴。从概念上讲，Z 轴与屏幕直角。 三维空间中的坐标点用三个数字表示：（x，y，z）。 在本文使用的3D 坐标系中，X 的增加值为向右和递增的 Y 值，就像在两个维度中一样。 增大正 Z 值将出现在屏幕上。 原点为左上角，就像在2D 图形中一样。 你可以将屏幕视为 XY 平面，其中 Z 轴与此平面的位置相同。
 
-这称为左侧坐标系统。 如果点的 X 坐标 （右侧），正方向左手食指右手食指的增大 Y 方向 （向下） 进行协调，您的拇指指向中增加 Z 坐标的方向，从扩展出屏幕。
+这称为左侧坐标系统。 如果将左侧的食指捏向右指的是正 X 坐标（向右）的方向，中间指的是 Y 坐标（向下）的上升方向，则在 Z 坐标增加的方向上，你的拇指将从屏幕延伸。
 
-在三维图中，转换基于 4-4 矩阵。 下面是 4-4 恒等矩阵：
+在三维图形中，转换基于 4 x 4 矩阵。 下面是4四个标识矩阵：
 
 <pre>
 |  1  0  0  0  |
@@ -41,7 +44,7 @@ _非仿射转换用于旋转 3D 空间中的 2D 对象。_
 |  0  0  0  1  |
 </pre>
 
-在使用 4-4 矩阵，是可以方便地使用他们的行和列号标识的单元：
+使用4个 4 x 4 的矩阵时，可以方便地识别包含行号和列号的单元格：
 
 <pre>
 |  M11  M12  M13  M14  |
@@ -50,9 +53,9 @@ _非仿射转换用于旋转 3D 空间中的 2D 对象。_
 |  M41  M42  M43  M44  |
 </pre>
 
-但是，SkiaSharp`Matrix44`类是稍有不同。 设置或获取各个单元格的值的唯一办法`SKMatrix44`是使用[ `Item` ](xref:SkiaSharp.SKMatrix44.Item(System.Int32,System.Int32))索引器。 行和列索引是从零开始而不是基于 1 和换行和列。 使用索引器访问在上图中的单元格 M14`[3, 0]`在`SKMatrix44`对象。
+但是，SkiaSharp `Matrix44` 类略有不同。 在中设置或获取单个单元格值的唯一方式 `SKMatrix44` 是使用 [`Item`](xref:SkiaSharp.SKMatrix44.Item(System.Int32,System.Int32)) 索引器。 行索引和列索引是从零开始的，而不是从1开始的，并交换行和列。 使用对象中的索引器访问上图中的单元 M14 `[3, 0]` `SKMatrix44` 。
 
-在 3D 图形系统中，三维点 （x，y，z） 转换为 1-4 4-4 转换矩阵相乘的矩阵：
+在三维图形系统中，三维点（x，y，z）转换为 1 x 4 的矩阵，以便乘以 4 x 4 的转换矩阵：
 
 <pre>
                  |  M11  M12  M13  M14  |
@@ -61,7 +64,7 @@ _非仿射转换用于旋转 3D 空间中的 2D 对象。_
                  |  M41  M42  M43  M44  |
 </pre>
 
-类似于 2D 转换发生在三个维度，3D 转换假定采用四个维度中的位置。 第四个维度被称为 W，并假定 3D 空间存在 W 坐标是等于 1 的 4d 空间内。 转换公式如下所示：
+与在三个维度中发生的2D 转换类似，3D 变换假设在四个维度中进行。 第四个维度称为 W，而3D 空间则假定存在于4D 空间中，其中 W 坐标等于1。 转换公式如下所示：
 
 `x' = M11·x + M21·y + M31·z + M41`
 
@@ -71,9 +74,9 @@ _非仿射转换用于旋转 3D 空间中的 2D 对象。_
 
 `w' = M14·x + M24·y + M34·z + M44`
 
-可通过转换公式的单元格`M11`， `M22`，`M33`缩放因素中的 X、 Y 和 Z 的说明，和`M41`， `M42`，和`M43`是 X、 Y 和 Z 翻译因素方向。
+从转换公式可以看出，单元格 `M11` `M22` `M33` 是 x、y 和 z 方向的缩放因子，且 `M41` `M42` 和 `M43` 是 x、y 和 z 方向的平移因子。
 
-若要将这些坐标转换回三维空间其中 W 等于 1，则 x，y，和 z 坐标所有除以 w:
+若要将这些坐标转换回三维空间，其中 W 等于1，x "，y" 和 "z" 坐标全部除以 w "：
 
 `x" = x' / w'`
 
@@ -83,9 +86,9 @@ _非仿射转换用于旋转 3D 空间中的 2D 对象。_
 
 `w" = w' / w' = 1`
 
-该除数 w 提供在 3D 空间中的观点。 如果 w 等于 1，则会不出现任何透视。
+这种按 w 划分的会在三维空间中提供透视。 如果 w 等于1，则不会发生透视。
 
-在 3D 空间中的旋转可能相当复杂，但最简单的旋转是绕 X、 Y 和 Z 轴。 角度 α 绕 X 轴的旋转是此矩阵：
+三维空间的旋转可能非常复杂，但最简单的旋转是围绕 X、Y 和 Z 轴的旋转。 围绕 X 轴旋转角度α是此矩阵：
 
 <pre>
 |  1     0       0     0  |
@@ -94,7 +97,7 @@ _非仿射转换用于旋转 3D 空间中的 2D 对象。_
 |  0     0       0     1  |
 </pre>
 
-X 值保持不变时受制于此转换。 绕 Y 轴的旋转离开保持不变的 Y 值：
+对于此转换，X 的值将保持不变。 绕 Y 轴旋转将 Y 值保持不变：
 
 <pre>
 |  cos(α)  0  –sin(α)  0  |
@@ -103,7 +106,7 @@ X 值保持不变时受制于此转换。 绕 Y 轴的旋转离开保持不变�
 |    0     0     0     1  |
 </pre>
 
-绕 Z 轴的旋转是与二维图形中的相同：
+围绕 Z 轴的旋转与2D 图形相同：
 
 <pre>
 |  cos(α)  sin(α)  0  0  |
@@ -112,24 +115,24 @@ X 值保持不变时受制于此转换。 绕 Y 轴的旋转离开保持不变�
 |    0       0     0  1  |
 </pre>
 
-旋转的方向被隐含的坐标系统的左右手使用习惯。 这是惯用左手系统，因此，如果您指向越来越多的特定轴的值在左侧的滚动块 — 绕 X 轴旋转的右侧向下绕 Y 轴，并面向使用者绕 Z 轴旋转的旋转，然后的曲线 yo其他手指指示正角度的旋转的方向。
+旋转方向是指坐标系统的左右手使用习惯。 这是一种左手系统，因此，如果您将左侧的值向左旋转到 X 轴并向右旋转绕 Y 轴旋转，并向您旋转围绕 Z 轴的旋转，则另一根手指的曲线会指示旋转方向为正角。
 
-`SKMatrix44` 已通用化静态[ `CreateRotation` ](xref:SkiaSharp.SKMatrix44.CreateRotation(System.Single,System.Single,System.Single,System.Single))并[ `CreateRotationDegrees` ](xref:SkiaSharp.SKMatrix44.CreateRotationDegrees(System.Single,System.Single,System.Single,System.Single)) ，可以指定发生围绕其旋转的轴方法：
+`SKMatrix44`具有通用 [`CreateRotation`](xref:SkiaSharp.SKMatrix44.CreateRotation(System.Single,System.Single,System.Single,System.Single)) 的静态 [`CreateRotationDegrees`](xref:SkiaSharp.SKMatrix44.CreateRotationDegrees(System.Single,System.Single,System.Single,System.Single)) 方法和方法，使您可以指定旋转发生的轴：
 
 ```csharp
 public static SKMatrix44 CreateRotationDegrees (Single x, Single y, Single z, Single degrees)
 ```
 
-绕 X 轴的旋转，将设置为 1，0，0 的前三个参数。 对于绕 Y 轴的旋转，将其设置为 0、 1、 0，并围绕 Z 轴旋转，请将其设置为 0，0，1。
+若要绕 X 轴旋转，请将前三个参数设置为1，0，0。 若要绕 Y 轴旋转，请将其设置为0、1、0，并绕 Z 轴旋转，将其设置为0，0，1。
 
-透视是 4 的 4 的第四个列。 `SKMatrix44`没有用于创建透视转换的方法，但您可以创建一个自己使用以下代码：
+4 x 4 的第四列适用于透视。 没有 `SKMatrix44` 用于创建透视转换的方法，但你可以使用以下代码自行创建：
 
 ```csharp
 SKMatrix44 perspectiveMatrix = SKMatrix44.CreateIdentity();
 perspectiveMatrix[3, 2] = -1 / depth;
 ```
 
-参数名称的原因`depth`很快就会明显。 该代码创建的矩阵。
+参数名称的原因 `depth` 很快就会变。 该代码将创建矩阵：
 
 <pre>
 |  1  0  0      0     |
@@ -138,21 +141,21 @@ perspectiveMatrix[3, 2] = -1 / depth;
 |  0  0  0      1     |
 </pre>
 
-转换公式会导致以下计算的 w:
+转换公式导致计算 w "：
 
 `w' = –z / depth + 1`
 
-这不仅减少 X 和 Y 坐标，Z 值小于零时 （从概念上讲背后的 XY 平面） 时，增加正 Z 值的 X 和 Y 坐标。当 Z 坐标等于`depth`、 然后 w 为零，又无限坐标。 三维图形系统围绕照相机的隐喻，构建和`depth`此处的值表示从坐标系统的原点的照相机的距离。 图形对象是否有 Z 坐标，它是`depth`单位从原点，它从概念上讲触摸的相机镜头和变得可无限大。
+这适用于以下情况：当 Z 的值小于零（在概念上位于 XY 平面后面）时，减少 X 和 Y 坐标，并为正值 Z 的正值增加 X 和 Y 坐标。当 Z 坐标为等于 `depth` ，then w 为零时，坐标变为无限大。 三维图形系统围绕照相机比喻构建， `depth` 此处的值表示相机与坐标系统原点的距离。 如果图形对象的 Z 坐标为 `depth` 从原点开始的单位，则它会在概念上触及相机的镜头，并将会无限大。
 
-请记住，您可以使用此`perspectiveMatrix`结合旋转矩阵的值。 如果要轮换的图形对象具有 X 或 Y 坐标大于`depth`，则此对象在三维空间中旋转是可能会涉及到 Z 坐标大于`depth`。 必须避免此操作 ！ 创建时`perspectiveMatrix`你想要设置`depth`为足够大，不管如何旋转的图形对象中的所有坐标的值。 这可确保永远不会有任何除数为零。
+请记住，您可能会将此 `perspectiveMatrix` 值与旋转矩阵结合使用。 如果旋转的图形对象的 X 或 Y 坐标大于 `depth` ，则此对象在三维空间中的旋转可能涉及 Z 坐标大于 `depth` 。 必须避免此情况！ 当创建时 `perspectiveMatrix` ， `depth` 无论绘图对象的旋转方式如何，都要将其设置为一个足够大的值。 这可确保永远不会有零除。
 
-结合使用 3D 旋转和角度来看要求 4-4 矩阵相乘。 为此，`SKMatrix44`定义串联的方法。 如果`A`并`B`是`SKMatrix44`对象，则下面的代码设置等到 × b:
+结合3D 旋转和透视需要将 4 x 4 个矩阵相乘。 出于此目的， `SKMatrix44` 定义了串联方法。 如果 `A` 和 `B` 是 `SKMatrix44` 对象，则以下代码会将设置为等于 a × B：
 
 ```csharp
 A.PostConcat(B);
 ```
 
-2D 图形系统中使用 4-4 转换矩阵时，它被应用于 2D 对象。 这些对象是固定的并且假定具有为零的 Z 坐标。 转换乘法会稍微简单一点比前面所示的转换：
+当二维图形系统中使用 4 x 4 转换矩阵时，它将应用于2D 对象。 这些对象是平面的，假定 Z 坐标为零。 转换乘法比之前所示的转换简单得多：
 
 <pre>
                  |  M11  M12  M13  M14  |
@@ -161,27 +164,27 @@ A.PostConcat(B);
                  |  M41  M42  M43  M44  |
 </pre>
 
-Z 结果并不涉及任何第三个矩阵的行中的单元格的转换公式中的 0 值：
+对于 z 值，该值为0时，转换的公式不涉及矩阵的第三行中的任何单元格：
 
-x' = M11·x + M21·y + M41
+x ' = M11 · x + M21 · y + M41
 
-y = M12·x + M22·y + M42
+y ' = M12 · x + M22 · y + M42
 
-z = M13·x + M23·y + M43
+z "= M13 · x + M23 · y + M43
 
-w = M14·x + M24·y + M44
+w ' = M14 · x + M24 · y + M44
 
-此外，z 坐标也不相关此处。 2D 图形系统中将显示一个三维对象，当它处于折叠状态到二维对象通过忽略 Z 坐标值。 转换公式是实际上只是这两个：
+此外，z 坐标也不相关。 当三维对象显示在2D 图形系统中时，它通过忽略 Z 坐标值折叠为二维对象。 转换公式实际上只是这两个公式：
 
 `x" = x' / w'`
 
 `y" = y' / w'`
 
-这意味着，第三个行*和*4-4 矩阵的第三列可以被忽略。
+这意味着，可以忽略 4 x 4 矩阵的第三行*和*第三列。
 
-但如果是这样，为什么是 4-4 矩阵甚至需要第一个位置中？
+但如果是这样，那么为什么第一次只需要4个矩阵的矩阵？
 
-尽管第三行和第三列的 4 通过 4 是二维转换、 第三个行和列不相关*做*发挥作用之前，当各种`SKMatrix44`值将全部相乘。 例如，假设乘绕 Y 轴透视转换的旋转：
+尽管 4 x 4 的第三行和第三列与二维转换无关，但在将各种值相乘后，第三行和第三*列就会扮演一个*角色 `SKMatrix44` 。 例如，假设您将围绕 Y 轴的旋转与透视转换相乘：
 
 <pre>
 |  cos(α)  0  –sin(α)  0  |   |  1  0  0      0     |   |  cos(α)  0  –sin(α)   sin(α)/depth  |
@@ -190,7 +193,7 @@ w = M14·x + M24·y + M44
 |    0     0     0     1  |   |  0  0  0      1     |   |    0     0     0           1        |
 </pre>
 
-在产品中，该单元格`M14`现在包含透视值。 如果你想要将该矩阵应用到 2D 对象，将消除第三个行和列将转换成 3 x 3 矩阵：
+在产品中，该单元 `M14` 现在包含一个透视值。 如果要将该矩阵应用于2D 对象，则会取消第三行和列，以将其转换为 3 x 3 矩阵：
 
 <pre>
 |  cos(α)  0  sin(α)/depth  |
@@ -198,7 +201,7 @@ w = M14·x + M24·y + M44
 |    0     0       1        |
 </pre>
 
-现在它可以用于转换的 2D 点：
+现在，它可用于转换2D 点：
 
 <pre>
                 |  cos(α)  0  sin(α)/depth  |
@@ -206,7 +209,7 @@ w = M14·x + M24·y + M44
                 |    0     0       1        |
 </pre>
 
-转换公式是：
+转换公式为：
 
 `x' = cos(α)·x`
 
@@ -214,17 +217,17 @@ w = M14·x + M24·y + M44
 
 `z' = (sin(α)/depth)·x + 1`
 
-现在将所有内容除以 z:
+现在，将所有内容除以 z "：
 
 `x" = cos(α)·x / ((sin(α)/depth)·x + 1)`
 
 `y" = y / ((sin(α)/depth)·x + 1)`
 
-X 值时使用一个正的角度绕 Y 轴，然后正旋转 2D 对象 recede 到后台，而负 X 值转到前台。 X 值看起来更接近于 Y 轴 （它所依据的余弦值） 作为最远的地方 Y 轴坐标变得更小或变复杂，因为他们远离观察者或更接近于查看器。
+当围绕 Y 轴旋转二维对象时，recede 到背景的正值 X 值，而负 X 值将位于前台。 X 值看起来与 Y 轴（由余弦值控制）更近，因为 Y 轴上的坐标从查看器进一步移动或更接近查看器。
 
-使用时`SKMatrix44`，执行所有的三维旋转和透视操作乘以各种`SKMatrix44`值。 然后您可以从 4 通过 4 提取二维的 3 x 3 矩阵使用矩阵[ `Matrix` ](xref:SkiaSharp.SKMatrix44.Matrix)属性的`SKMatrix44`类。 此属性返回熟悉`SKMatrix`值。
+使用时 `SKMatrix44` ，通过将各种值相乘来执行所有3d 旋转和透视操作 `SKMatrix44` 。 然后，可以使用类的属性，从 4 x 4 矩阵提取二维 3 x 3 矩阵 [`Matrix`](xref:SkiaSharp.SKMatrix44.Matrix) `SKMatrix44` 。 此属性返回一个熟悉的 `SKMatrix` 值。
 
-**旋转 3D**页的允许您对三维旋转进行试验。 [ **Rotation3DPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml)文件实例化的四个滑块设置绕 X、 Y 和 Z 轴，旋转以及设置深度值：
+**旋转三维**页面使您可以体验3d 旋转。 [**Rotation3DPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml)文件实例化四个滑块，用于设置围绕 X、Y 和 Z 轴的旋转，并设置一个深度值：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -303,9 +306,9 @@ X 值时使用一个正的角度绕 Y 轴，然后正旋转 2D 对象 recede 到
 </ContentPage>
 ```
 
-请注意，`depthSlider`使用初始化`Minimum`250 的值。 这意味着此处要轮换的 2D 对象已限制为定义 250 像素半径沿原点的圆形的 X 和 Y 坐标。 此对象在 3D 空间中的任何旋转将始终导致坐标值小于 250。
+请注意， `depthSlider` 初始化时的 `Minimum` 值为250。 这意味着，此处旋转的2D 对象的 X 和 Y 坐标限制为围绕原点的250像素的半径定义的圆。 此对象在三维空间中的任何旋转都将始终导致坐标值小于250。
 
-[ **Rotation3DPage.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml.cs)代码隐藏文件加载位图为 300 像素正方形中：
+[**Rotation3DPage.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml.cs)代码隐藏文件在300像素正方形的位图中加载：
 
 ```csharp
 public partial class Rotation3DPage : ContentPage
@@ -336,9 +339,9 @@ public partial class Rotation3DPage : ContentPage
 }
 ```
 
-如果在此位图上居中的 3D 转换，然后 X 和 Y 坐标介于 –150 和 150，虽然边角 212 像素从中心，以便所有内容都是 250 像素半径内。
+如果3D 变换在此位图上居中，则 X 和 Y 坐标范围为–150到150之间，而角则为从中心212像素，因此所有内容都在250像素半径内。
 
-`PaintSurface`处理程序将创建`SKMatrix44`对象基于滑块，并将其一起使用相乘`PostConcat`。 `SKMatrix`从最后提取值`SKMatrix44`对象括起来的转换转换可以在屏幕的中心旋转的中心：
+`PaintSurface`处理程序根据 `SKMatrix44` 滑块创建对象，并使用将它们相乘 `PostConcat` 。 `SKMatrix`从最后一个对象中提取的值 `SKMatrix44` 会被转换为在屏幕中心旋转旋转，以使旋转居中：
 
 ```csharp
 public partial class Rotation3DPage : ContentPage
@@ -407,11 +410,11 @@ public partial class Rotation3DPage : ContentPage
 }
 ```
 
-尝试使用第四个滑块时，您将注意到不同的深度设置不会移动进一步从查看器中，该对象，但改为更改的角度来看影响程度：
+当您试验第四个滑块时，您会注意到不同的深度设置并不从查看器进一步移动对象，而是更改透视效果的范围：
 
-[![](3d-rotation-images/rotation3d-small.png "三重的旋转 3D 页屏幕截图")](3d-rotation-images/rotation3d-large.png#lightbox "带来三倍的旋转 3D 页屏幕截图")
+[![](3d-rotation-images/rotation3d-small.png "Triple screenshot of the Rotation 3D page")](3d-rotation-images/rotation3d-large.png#lightbox "Triple screenshot of the Rotation 3D page")
 
-**经过动画处理的旋转 3D**还使用`SKMatrix44`进行动画处理 3D 空间中的文本字符串。 `textPaint`对象设置为一个字段使用构造函数中，以确定文本的边界：
+**动画旋转三维**也使用 `SKMatrix44` 对三维空间中的文本字符串进行动画处理。 `textPaint`将对象设置为字段在构造函数中用于确定文本的界限：
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
@@ -443,7 +446,7 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-`OnAppearing`替代定义三个 Xamarin.Forms`Animation`对象进行动画处理`xRotationDegrees`， `yRotationDegrees`，和`zRotationDegrees`字段不同的速率。 请注意，这些动画的段设置为素数数字 （5 秒、 7 秒和 11 秒），方便整体组合仅重复的每个 385 秒或超过 10 分钟：
+`OnAppearing`重写定义了三个 Xamarin.Forms `Animation` 对象 `xRotationDegrees` ，以 `yRotationDegrees` 不同速率对、和字段进行动画处理 `zRotationDegrees` 。 请注意，这些动画的时间段设置为质数（5秒、7秒和11秒），因此总体组合仅每385秒重复一次，或超过10分钟：
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
@@ -477,7 +480,7 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-上一个程序，如中所示`PaintCanvas`处理程序将创建`SKMatrix44`值旋转和角度来看，并将其一起相乘：
+与上一程序一样， `PaintCanvas` 处理程序将创建 `SKMatrix44` 旋转和透视的值，并将它们相乘：
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
@@ -531,9 +534,9 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-此 3D 旋转放在多个 2D 转换将旋转中心移到屏幕上，在中心和缩放的文本字符串的大小，以便它在屏幕的宽度相同：
+此3D 旋转围绕着几个2D 变换，将旋转中心移动到屏幕的中心，并缩放文本字符串的大小，使其宽度与屏幕相同：
 
-[![](3d-rotation-images/animatedrotation3d-small.png "经过动画处理的旋转 3D 页面的三个屏幕截图")](3d-rotation-images/animatedrotation3d-large.png#lightbox "带来三倍的经过动画处理的旋转 3D 页屏幕截图")
+[![](3d-rotation-images/animatedrotation3d-small.png "Triple screenshot of the Animated Rotation 3D page")](3d-rotation-images/animatedrotation3d-large.png#lightbox "Triple screenshot of the Animated Rotation 3D page")
 
 ## <a name="related-links"></a>相关链接
 

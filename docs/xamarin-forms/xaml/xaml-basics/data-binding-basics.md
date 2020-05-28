@@ -1,42 +1,45 @@
 ---
-title: 第 4 部分。 数据绑定基础知识
-description: 数据绑定使两个用于链接，这样一个导致更改中的其他对象的属性。
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/25/2017
-ms.openlocfilehash: 7b34e7658ad38f80cffa22d99eea42901a905a38
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 08be571d3ba69891a56c08efd556a999e51431c8
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767617"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139849"
 ---
 # <a name="part-4-data-binding-basics"></a>第 4 部分。 数据绑定基础知识
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
-_数据绑定使两个用于链接，这样一个导致更改中的其他对象的属性。这是一个非常有价值的工具，并可以完全在代码中定义数据绑定，而 XAML 提供快捷方式和便利。因此，在 Xamarin.Forms 中最重要的标记扩展之一绑定。_
+_数据绑定允许对两个对象的属性进行链接，以便其中一个对象的更改会导致另一个对象发生变化。这是一个非常有用的工具，而数据绑定可以完全在代码中定义，XAML 提供快捷方式和便利性。因此，中最重要的标记扩展之一 Xamarin.Forms 是绑定。_
 
 ## <a name="data-bindings"></a>数据绑定
 
-数据绑定连接两个对象，调用的属性*源*并*目标*。 在代码中，需要执行两个步骤：必须`BindingContext`将目标对象的属性设置为源对象， `SetBinding`并且必须在目标对象上调用方法（通常与`Binding`类结合使用），以将该对象的属性绑定到源的属性对象.
+数据绑定连接两个对象（称为 "*源*" 和 "*目标*"）的属性。 在代码中，需要两个步骤： `BindingContext` 目标对象的属性必须设置为源对象，并且 `SetBinding` 必须在目标对象上调用方法（通常与类结合使用 `Binding` ），以将该对象的属性绑定到源对象的属性。
 
-目标属性必须是可绑定属性，这意味着目标对象必须派生自`BindableObject`。 联机 Xamarin.Forms 文档将指示哪个属性是可绑定属性。 属性`Label`如`Text`与可绑定属性关联`TextProperty`。
+目标属性必须是可绑定属性，这意味着目标对象必须派生自 `BindableObject` 。 联机 Xamarin.Forms 文档指示哪些属性是可绑定属性。 等的属性 `Label` `Text` 与可绑定属性关联 `TextProperty` 。
 
-在标记中，您还必须执行相同的两个步骤所需在代码中，只不过`Binding`标记扩展可以代替`SetBinding`调用和`Binding`类。
+在标记中，你还必须在代码中执行所需的两个步骤，只不过 `Binding` 标记扩展将取代 `SetBinding` 调用和 `Binding` 类。
 
-但是，在 XAML 中定义数据绑定时，有多种方法来设置`BindingContext`的目标对象。 有时从代码隐藏文件中，有时使用设置`StaticResource`或`x:Static`标记扩展的内容有时`BindingContext`属性元素标记。
+但是，当您在 XAML 中定义数据绑定时，可以通过多种方式设置 `BindingContext` 目标对象的。 有时，它是从代码隐藏文件（有时使用 `StaticResource` 或 `x:Static` 标记扩展）设置的，有时是 `BindingContext` 属性元素标记的内容。
 
-绑定最常使用与基础数据模型，通常在 MVVM （模型-视图-视图） 的应用程序体系结构、 实现连接程序的视觉对象中所述[第 5 部分。从数据绑定到 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)，但可能会出现其他情形。
+绑定最常用于将程序的视觉对象连接到基础数据模型，这通常是为了实现 MVVM （ViewModel）应用程序体系结构，如第[5 部分所述。从数据绑定到 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)，但可以实现其他方案。
 
-## <a name="view-to-view-bindings"></a>视图-视图绑定
+## <a name="view-to-view-bindings"></a>视图到视图绑定
 
-您可以定义要链接的同一页面上的两个视图的属性的数据绑定。 在这种情况下，设置`BindingContext`的目标对象使用`x:Reference`标记扩展。
+您可以定义数据绑定，以便链接同一页上两个视图的属性。 在这种情况下，可以 `BindingContext` 使用标记扩展设置目标对象的 `x:Reference` 。
 
-下面是包含的 XAML 文件`Slider`和两个`Label`视图，其中之一旋转`Slider`值，其中显示了另一个`Slider`值：
+下面是一个 XAML 文件，其中包含一个 `Slider` 和两个 `Label` 视图，其中一个视图由值旋转， `Slider` 另一个显示 `Slider` 值：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -67,9 +70,9 @@ _数据绑定使两个用于链接，这样一个导致更改中的其他对象�
 </ContentPage>
 ```
 
-`Slider`包含`x:Name`这两个引用的属性`Label`视图使用`x:Reference`标记扩展。
+`Slider`包含 `x:Name` `Label` 使用标记扩展的两个视图所引用的特性 `x:Reference` 。
 
-`x:Reference`绑定扩展定义名为的属性`Name`若要在这种情况下设置为引用的元素的名称`slider`。 但是，`ReferenceExtension`定义的类`x:Reference`标记扩展还定义`ContentProperty`属性`Name`，这意味着它不是明确要求。 仅针对各种，第一个`x:Reference`包括"名称 ="，但第二个不：
+`x:Reference`绑定扩展定义了一个名为的属性，该属性 `Name` 设置为所引用元素的名称（在本例中为） `slider` 。 不过， `ReferenceExtension` 定义标记扩展的类 `x:Reference` 还会定义的 `ContentProperty` 属性 `Name` ，这意味着它不是显式必需的。 仅针对各种种类，第一个 `x:Reference` 包括 "Name ="，但第二个包括：
 
 ```xaml
 BindingContext="{x:Reference Name=slider}"
@@ -77,7 +80,7 @@ BindingContext="{x:Reference Name=slider}"
 BindingContext="{x:Reference slider}"
 ```
 
-`Binding`标记扩展本身可以有多个属性，就像`BindingBase`和`Binding`类。 `ContentProperty`有关`Binding`是`Path`，但"路径 ="可以省略标记扩展的一部分，如果路径中的第一项`Binding`标记扩展。 第一个示例具有"路径 ="，但第二个示例省略它：
+`Binding`标记扩展本身可具有多个属性，就像 `BindingBase` 和类一样 `Binding` 。 的 `ContentProperty` 为 `Binding` `Path` ，但如果路径为标记扩展中的第一项，则可以省略标记扩展的 "路径 =" 部分 `Binding` 。 第一个示例具有 "Path ="，但第二个示例省略它：
 
 ```xaml
 Rotation="{Binding Path=Value}"
@@ -85,16 +88,16 @@ Rotation="{Binding Path=Value}"
 Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 ```
 
-属性可以是在同一行或分成多行：
+这些属性可以位于一行上，也可以分为多行：
 
 ```xaml
 Text="{Binding Value,
                StringFormat='The angle is {0:F0} degrees'}"
 ```
 
-执行任何方便。
+执行任何操作都很方便。
 
-请注意`StringFormat`在第二个属性`Binding`标记扩展。 在 Xamarin.Forms 中，绑定不执行任何隐式类型转换，并且如果您需要将非字符串对象显示为一个字符串，你必须提供类型转换器或使用`StringFormat`。 在后台，静态`String.Format`方法用于实现`StringFormat`。 这可能是问题，因为.NET 格式规范涉及大括号，还用来分隔标记扩展。 这将创建令人混乱 XAML 分析器的风险。 若要避免这种情况，请用单引号引起来将整个的格式设置字符串：
+请注意 `StringFormat` 第二个标记扩展中的属性 `Binding` 。 在中 Xamarin.Forms ，绑定不会执行任何隐式类型转换，并且如果需要以字符串形式显示非字符串对象，则必须提供类型转换器或使用 `StringFormat` 。 在后台， `String.Format` 使用静态方法实现 `StringFormat` 。 这可能是一个问题，因为 .NET 格式设置规范涉及大括号，后者还用于分隔标记扩展。 这会造成混淆 XAML 分析器的风险。 若要避免出现这种情况，请将整个格式设置字符串放在单引号中：
 
 ```xaml
 Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
@@ -106,19 +109,19 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 ## <a name="the-binding-mode"></a>绑定模式
 
-单个视图对其几个属性具有数据绑定。 但是，每个视图只能有一个`BindingContext`，因此，在该视图上的多个数据绑定必须全部引用同一对象的属性。
+单个视图可以具有其多个属性的数据绑定。 但是，每个视图只能有一个 `BindingContext` ，因此该视图上的多个数据绑定必须是同一对象的所有引用属性。
 
-向此服务器和其他问题的解决方案涉及`Mode`属性设置为的成员`BindingMode`枚举：
+此问题和其他问题的解决方案涉及到 `Mode` 属性，该属性设置为枚举的成员 `BindingMode` ：
 
 - `Default`
-- `OneWay` -值从源传输到目标
-- `OneWayToSource` -值从目标传输到源
-- `TwoWay` -值传输源和目标之间的这两种方式
-- `OneTime`-数据从源到目标进行，但仅当`BindingContext`发生更改时，
+- `OneWay`-值从源传输到目标
+- `OneWayToSource`-值从目标传输到源
+- `TwoWay`-源和目标之间的双向传输值
+- `OneTime`-数据从源到目标进行，但仅当 `BindingContext` 发生更改时，
 
-下面的程序说明的一个常见用途`OneWayToSource`和`TwoWay`绑定模式。 四个`Slider`视图都为了控制`Scale`， `Rotate`， `RotateX`，并`RotateY`属性的`Label`。 首先，它看起来像的这四个属性`Label`应为数据绑定目标，因为每个所设置`Slider`。 但是，`BindingContext`的`Label`可以是只有一个对象，并且有四个不同的滑块。
+下面的程序演示了 `OneWayToSource` 和绑定模式的一个常见用法 `TwoWay` 。 四个 `Slider` 视图旨在控制的 `Scale` 、、 `Rotate` `RotateX` 和 `RotateY` 属性 `Label` 。 最初，似乎这四个属性 `Label` 应为数据绑定目标，因为每个属性都是由设置的 `Slider` 。 但是， `BindingContext` 的只能 `Label` 是一个对象，有四个不同的滑块。
 
-出于此原因，所有绑定都以看似向后的方式设置：四个滑块中每个滑块的均设置`Label`为，并在滑块的`Value`属性上设置绑定。 `BindingContext` 通过使用`OneWayToSource`和`TwoWay`模式下，这些`Value`属性可以设置的源属性，即`Scale`， `Rotate`， `RotateX`，并`RotateY`的属性`Label`:
+出于此原因，所有绑定都以看似向后的方式进行设置： `BindingContext` 四个滑块的每个滑块的都设置为 `Label` ，并在滑块的属性中设置绑定 `Value` 。 通过使用 `OneWayToSource` 和 `TwoWay` 模式，这些 `Value` 属性可以设置源属性，这些属性是 `Scale` 的、、 `Rotate` `RotateX` 和 `RotateY` 属性 `Label` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -197,28 +200,28 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 </ContentPage>
 ```
 
-对其中三个绑定`Slider`视图是`OneWayToSource`，这意味着，`Slider`值的属性中将导致更改其`BindingContext`，即`Label`名为`label`。 这三个`Slider`视图会改变`Rotate`， `RotateX`，和`RotateY`的属性`Label`。
+这三个视图的绑定 `Slider` 都是 `OneWayToSource` ，这意味着 `Slider` 该值会导致其的属性的更改 `BindingContext` ，这是 `Label` 名为的 `label` 。 这三个 `Slider` 视图将导致 `Rotate` 的、 `RotateX` 和属性 `RotateY` `Label` 发生更改。
 
-但是，对于绑定`Scale`属性是`TwoWay`。 这是因为`Scale`属性具有默认值为 1，并使用`TwoWay`绑定的原因`Slider`初始值设置为 1 而不是 0。 如果该绑定`OneWayToSource`，则`Scale`属性将最初设置为从 0`Slider`默认值。 `Label`会显示，并向用户可能导致一些混淆。
+但是，属性的绑定 `Scale` 为 `TwoWay` 。 这是因为 `Scale` 属性的默认值为1，而使用 `TwoWay` 绑定会导致 `Slider` 初始值设置为1而不是0。 如果该绑定为 `OneWayToSource` ，则 `Scale` 从默认值开始，属性最初设置为 0 `Slider` 。 将 `Label` 不可见，这可能会对用户造成一些混淆。
 
  [![向后绑定](data-binding-basics-images/slidertransforms.png)](data-binding-basics-images/slidertransforms-large.png#lightbox)
 
  > [!NOTE]
- > [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)类还具有[ `ScaleX` ](xref:Xamarin.Forms.VisualElement.ScaleX)并[ `ScaleY` ](xref:Xamarin.Forms.VisualElement.ScaleY)属性，缩放`VisualElement`x 轴和 y 轴上分别。
+ > [`VisualElement`](xref:Xamarin.Forms.VisualElement)类还具有 [`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX) 和 [`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY) 属性，它们 `VisualElement` 分别在 x 轴和 y 轴上缩放。
 
 ## <a name="bindings-and-collections"></a>绑定和集合
 
-执行任何操作演示如何将优于模板化的 XAML 和数据绑定功能`ListView`。
+XAML 和数据绑定的强大功能比模板更好 `ListView` 。
 
-`ListView` 定义`ItemsSource`类型的属性`IEnumerable`，和它在该集合中显示的项。 这些项可以是任何类型的对象。 默认情况下`ListView`使用`ToString`方法的每个项来显示该项。 有时这是正是您所希望，但在许多情况下，`ToString`返回对象的完全限定的类名称。
+`ListView`定义 `ItemsSource` 类型的属性 `IEnumerable` ，并显示该集合中的项。 这些项可以是任何类型的对象。 默认情况下， `ListView` 使用 `ToString` 每个项的方法来显示该项。 有时这只是所需的内容，但在许多情况下， `ToString` 只返回对象的完全限定类名。
 
-但是中的项`ListView`集合可以显示希望使用的方式*模板*，其中包括派生的类`Cell`。 在模板中每个项目都会被克隆`ListView`，并在模板已设置的数据绑定被传输到单个的克隆。
+但是， `ListView` 可以通过使用*模板*以任何所需的方式显示集合中的项，这涉及派生自的类 `Cell` 。 将为中的每个项克隆模板 `ListView` ，对模板设置的数据绑定会传输到各个克隆。
 
-通常，你将想要创建使用这些项的自定义单元格`ViewCell`类。 此过程是太好理解在代码中，但在 XAML 中变得非常简单。
+通常，您需要使用类为这些项创建自定义单元格 `ViewCell` 。 此过程在代码中有些混乱，但在 XAML 中很简单。
 
-XamlSamples 中包含的项目是一个名为类`NamedColor`。 每个`NamedColor`对象具有`Name`并`FriendlyName`类型的属性`string`，和一个`Color`类型的属性`Color`。 此外，`NamedColor`具有 141 静态只读字段的类型`Color`对应于 Xamarin.Forms 中定义的颜色`Color`类。 静态构造函数创建`IEnumerable<NamedColor>`集合，其中包含`NamedColor`对象对应于这些静态字段，并将其分配给它的公共静态`All`属性。
+XamlSamples 项目包含一个名为的类 `NamedColor` 。 每个 `NamedColor` 对象都具有 `Name` `FriendlyName` 类型的和属性以及 `string` `Color` 类型的属性 `Color` 。 此外， `NamedColor` 具有141类型的静态只读字段，它们 `Color` 对应于类中定义的颜色 Xamarin.Forms `Color` 。 静态构造函数创建一个 `IEnumerable<NamedColor>` 集合，该集合包含 `NamedColor` 与这些静态字段对应的对象，并将其分配给其公共静态 `All` 属性。
 
-设置静态`NamedColor.All`属性设置为`ItemsSource`的`ListView`轻松使用`x:Static`标记扩展：
+`NamedColor.All`使用标记扩展将静态属性设置为 `ItemsSource` 的 `ListView` 非常简单 `x:Static` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -232,13 +235,13 @@ XamlSamples 中包含的项目是一个名为类`NamedColor`。 每个`NamedColo
 </ContentPage>
 ```
 
-结果显示建立的类型的真正项`XamlSamples.NamedColor`:
+生成的显示将确定项确实属于类型 `XamlSamples.NamedColor` ：
 
 [![绑定到集合](data-binding-basics-images/listview1.png)](data-binding-basics-images/listview1-large.png#lightbox)
 
-它不是太多信息，但`ListView`是可滚动和可选择。
+这不是很多信息，但 `ListView` 可滚动和可选择。
 
-若要定义的项模板，您需要跳出`ItemTemplate`属性设置为属性元素中，将其设置为`DataTemplate`，然后引用`ViewCell`。 向`View`属性的`ViewCell`可以定义一个或多个视图以显示每个项的布局。 下面是一个简单的示例：
+若要为项定义模板，需要将 `ItemTemplate` 属性作为属性元素进行分解，并将其设置为 `DataTemplate` ，然后引用 `ViewCell` 。 对于 `View` 的属性， `ViewCell` 可以定义一个或多个视图的布局，以显示每个项。 下面是一个简单示例：
 
 ```xaml
 <ListView ItemsSource="{x:Static local:NamedColor.All}">
@@ -255,13 +258,13 @@ XamlSamples 中包含的项目是一个名为类`NamedColor`。 每个`NamedColo
 ```
 
 > [!NOTE]
-> 单元格的绑定源和单元格的子元素是`ListView.ItemsSource`集合。
+> 单元格的绑定源和单元格的子元素是 `ListView.ItemsSource` 集合。
 
-`Label`元素设置为`View`属性的`ViewCell`。 (`ViewCell.View`不需要标记，因为`View`属性是 content 属性`ViewCell`。)此标记将显示`FriendlyName`每个属性`NamedColor`对象：
+`Label`元素设置为 `View` 的属性 `ViewCell` 。 （ `ViewCell.View` 由于 `View` 属性是的内容属性，因此不需要标记 `ViewCell` 。）此标记显示 `FriendlyName` 每个对象的 `NamedColor` 属性：
 
 [![绑定到具有 System.windows.datatemplate> 的集合](data-binding-basics-images/listview2.png)](data-binding-basics-images/listview2-large.png#lightbox)
 
-好多了。 现在需要的是项模板的详细信息和实际颜色条理。 若要支持此模板，某些值的对象定义和页面的资源字典中：
+好多了。 现在只需修饰项模板，其中包含详细信息和实际颜色。 为了支持此模板，已在页面的资源字典中定义了一些值和对象：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -333,13 +336,13 @@ XamlSamples 中包含的项目是一个名为类`NamedColor`。 每个`NamedColo
 </ContentPage>
 ```
 
-请注意，使用`OnPlatform`来定义的大小`BoxView`和的高度`ListView`行。 尽管所有平台的值是相同的标记可能容易就可以调整为其他值，以微调显示。
+请注意，使用 `OnPlatform` 定义的大小 `BoxView` 和行的高度 `ListView` 。 尽管所有平台的值都是相同的，但可以轻松地改编标记以使其他值微调显示。
 
 ## <a name="binding-value-converters"></a>绑定值转换器
 
-以前**ListView 演示**XAML 文件显示各个`R`， `G`，并`B`Xamarin.Forms 属性`Color`结构。 这些属性属于类型`double`和 0 到 1 范围。 如果你想要显示的十六进制值，不能只使用`StringFormat`与格式规范"X2"。 仅用于范围内的整数，而，除了`double`需要乘以 255 的值。
+前面的**ListView 演示**XAML 文件显示结构的单个 `R` 、 `G` 和 `B` 属性 Xamarin.Forms `Color` 。 这些属性的类型为 `double` ，范围为0到1。 如果希望显示十六进制值，则不能只使用 `StringFormat` 带有 "X2" 格式规范的。 这仅适用于整数，并且 `double` 值需要乘以255。
 
-这个小问题已解决了与*值转换器*，也称为*绑定转换器*。 这是一个类实现`IValueConverter`接口，这意味着它具有两个方法名为`Convert`和`ConvertBack`。 `Convert`值从源传输到目标; 当调用方法`ConvertBack`方法调用进行传输从目标到源中`OneWayToSource`或`TwoWay`绑定：
+此小问题已通过*值转换器*解决，也称为*绑定转换器*。 这是实现接口的类 `IValueConverter` ，这意味着它有两个名为和的方法 `Convert` `ConvertBack` 。 `Convert`当值从源传输到目标时，将调用方法; `ConvertBack` 从目标到源的传输或绑定中将调用方法 `OneWayToSource` `TwoWay` ：
 
 ```csharp
 using System;
@@ -375,17 +378,17 @@ namespace XamlSamples
 }
 ```
 
-`ConvertBack`因为绑定仅一种方法从源到目标方法无法在此程序中播放一个角色。
+`ConvertBack`此方法不会在此程序中起作用，因为绑定只是源到目标的一种方法。
 
-绑定引用绑定转换器，且有`Converter`属性。 绑定转换器还可以接受使用指定的参数`ConverterParameter`属性。 对于一些更加通用，这是如何指定乘数。 绑定转换器检查是否存在有效的转换器参数`double`值。
+绑定使用属性引用绑定转换器 `Converter` 。 绑定转换器也可以接受使用属性指定的参数 `ConverterParameter` 。 对于某些通用性，这是乘数的指定方式。 绑定转换器检查转换器参数的值是否有效 `double` 。
 
-转换器是实例化资源字典中，因此它可以在多个绑定之间共享：
+转换器在资源字典中实例化，因此它可以在多个绑定之间共享：
 
 ```xaml
 <local:DoubleToIntConverter x:Key="intConverter" />
 ```
 
-三个数据绑定引用此单一实例。 请注意，`Binding`标记扩展包含一个嵌入`StaticResource`标记扩展：
+三个数据绑定引用此单实例。 请注意， `Binding` 标记扩展包含嵌入的 `StaticResource` 标记扩展：
 
 ```xaml
 <Label Text="{Binding Color.R,
@@ -394,22 +397,22 @@ namespace XamlSamples
                       StringFormat='R={0:X2}'}" />
 ```
 
-下面是结果：
+结果如下：
 
 [![绑定到具有 System.windows.datatemplate> 和转换器的集合](data-binding-basics-images/listview3.png)](data-binding-basics-images/listview3-large.png#lightbox)
 
-`ListView`中处理动态如果执行某些步骤在基础数据，但是仅限中可能出现的更改非常完善。 如果项的集合分配给`ItemsSource`的属性`ListView`在运行时更改 — 的是，如果可以将项添加到或从集合中移除 — 使用`ObservableCollection`这些项的类。 `ObservableCollection` 实现`INotifyCollectionChanged`接口，并`ListView`将安装的处理程序`CollectionChanged`事件。
+`ListView`在处理可能会动态出现在基础数据中的更改时，它非常复杂，只是在执行某些步骤时。 如果在运行时中分配给的属性的项的集合 `ItemsSource` `ListView` （即，如果可以在集合中添加或移除项），请将 `ObservableCollection` 类用于这些项。 `ObservableCollection`实现 `INotifyCollectionChanged` 接口，并 `ListView` 将安装该事件的处理程序 `CollectionChanged` 。
 
-如果在运行时，更改项目本身的属性，则集合中的项应实现`INotifyPropertyChanged`对使用的属性值的接口和信号更改`PropertyChanged`事件。 在本系列的下一部分对此进行了演示[第 5 部分。从数据绑定到 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
+如果项的属性在运行时本身发生了更改，则集合中的项应实现 `INotifyPropertyChanged` 接口，并使用事件对属性值进行信号更改 `PropertyChanged` 。 本系列的下一部分中对此进行了说明，第[5 部分。从数据绑定到 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
 
 ## <a name="summary"></a>总结
 
-数据绑定提供了用于链接在页面内的两个对象之间或视觉对象之间的属性和基础数据的强大机制。 但在应用程序开始使用数据源时, 常用的应用程序体系结构模式开始显现出来，它作为一种有用的模式。 中对此进行了[第 5 部分。从数据绑定到 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
+数据绑定提供一种功能强大的机制，用于在页面内的两个对象之间或在视觉对象与基础数据之间链接属性。 但当应用程序开始使用数据源时，常用的应用程序体系结构模式就会成为一种非常有用的范例。 第5部分对此进行了介绍[。从数据绑定到 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
 
 ## <a name="related-links"></a>相关链接
 
 - [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
-- [第 1 部分：开始使用 XAML （示例）](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
-- [第 2 部分：基本 XAML 语法 （示例）](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
-- [第 3 部分：XAML 标记扩展 （示例）](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [第 5 部分：从数据绑定到 MVVM （示例）](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
+- [第1部分。入门 with XAML （示例）](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
+- [第2部分。基本 XAML 语法（示例）](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
+- [第3部分。XAML 标记扩展（示例）](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+- [第5部分。从数据绑定到 MVVM （示例）](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)

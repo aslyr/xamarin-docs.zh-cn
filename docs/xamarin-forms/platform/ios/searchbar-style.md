@@ -1,24 +1,27 @@
 ---
-title: IOS 上的 SearchBar 样式
-description: 平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用特定于 iOS 平台的来控制 SearchBar 是否具有背景。
-ms.prod: xamarin
-ms.assetid: 3D512DD6-078E-4BC6-926E-62BA6F4DE640
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/05/2020
-ms.openlocfilehash: 7d95a90e96f868b6d8368054659f978555bc28ac
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e02ef600af761915d05c912b586e409dd6f46b85
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82532951"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137080"
 ---
 # <a name="searchbar-style-on-ios"></a>IOS 上的 SearchBar 样式
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 iOS 平台特定控制是否[`SearchBar`](xref:Xamarin.Forms.SearchBar)具有背景。 它通过将可`SearchBar.SearchBarStyle`绑定的属性设置为`UISearchBarStyle`枚举的值，在 XAML 中使用：
+此 iOS 平台特定控制是否 [`SearchBar`](xref:Xamarin.Forms.SearchBar) 具有背景。 它通过将 `SearchBar.SearchBarStyle` 可绑定的属性设置为枚举的值，在 XAML 中使用 `UISearchBarStyle` ：
 
 ```xaml
 <ContentPage ...
@@ -42,19 +45,19 @@ SearchBar searchBar = new SearchBar { Placeholder = "Enter search term" };
 searchBar.On<iOS>().SetSearchBarStyle(UISearchBarStyle.Minimal);
 ```
 
-`SearchBar.On<iOS>`方法指定此平台特定的仅在 iOS 上运行。 命名空间中的`SearchBar.SetSearchBarStyle`方法用于控制是否[`SearchBar`](xref:Xamarin.Forms.SearchBar)具有背景。 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) `UISearchBarStyle`枚举提供了三个可能的值：
+`SearchBar.On<iOS>`方法指定此平台特定的仅在 iOS 上运行。 `SearchBar.SetSearchBarStyle`命名空间中的方法 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 用于控制是否 [`SearchBar`](xref:Xamarin.Forms.SearchBar) 具有背景。 `UISearchBarStyle`枚举提供了三个可能的值：
 
-- `Default`指示[`SearchBar`](xref:Xamarin.Forms.SearchBar)具有默认样式。 这是可`SearchBar.SearchBarStyle`绑定属性的默认值。
-- `Prominent`指示[`SearchBar`](xref:Xamarin.Forms.SearchBar)具有半透明背景，搜索字段不透明。
-- `Minimal`[`SearchBar`](xref:Xamarin.Forms.SearchBar)指示没有背景，搜索字段为半透明。
+- `Default`指示 [`SearchBar`](xref:Xamarin.Forms.SearchBar) 具有默认样式。 这是可绑定属性的默认值 `SearchBar.SearchBarStyle` 。
+- `Prominent`指示 [`SearchBar`](xref:Xamarin.Forms.SearchBar) 具有半透明背景，搜索字段不透明。
+- `Minimal`指示没有 [`SearchBar`](xref:Xamarin.Forms.SearchBar) 背景，搜索字段为半透明。
 
-此外， `SearchBar.GetSearchBarStyle`方法可用于返回`UISearchBarStyle`应用于的。 `SearchBar`
+此外， `SearchBar.GetSearchBarStyle` 方法可用于返回 `UISearchBarStyle` 应用于的 `SearchBar` 。
 
-结果是将指定`UISearchBarStyle`的成员应用于[`SearchBar`](xref:Xamarin.Forms.SearchBar)，后者控制是否`SearchBar`具有背景：
+结果是将指定的 `UISearchBarStyle` 成员应用于 [`SearchBar`](xref:Xamarin.Forms.SearchBar) ，后者控制是否 `SearchBar` 具有背景：
 
 ![IOS 上的 SearchBar 样式屏幕截图](searchbar-style-images/searchbar-styles.png "IOS 上的 SearchBar 样式")
 
-以下屏幕截图显示了`UISearchBarStyle`应用于其[`SearchBar`](xref:Xamarin.Forms.SearchBar) `BackgroundColor`属性集的对象的成员：
+以下屏幕截图显示了 `UISearchBarStyle` 应用于 [`SearchBar`](xref:Xamarin.Forms.SearchBar) 其属性集的对象的成员 `BackgroundColor` ：
 
 ![IOS 上具有背景色的 SearchBar 样式屏幕截图](searchbar-style-images/searchbar-background-styles.png "IOS 上带有背景色的 SearchBar 样式")
 

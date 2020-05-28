@@ -1,33 +1,37 @@
 ---
-title: 添加 AppCompat 和材料设计
-description: 本文介绍如何转换现有的 Xamarin. Android 应用程序以使用 AppCompat 和材料设计。
-ms.prod: xamarin
-ms.assetid: 045FBCDF-4D45-48BB-9911-BD3938C87D58
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 06/27/2017
-ms.openlocfilehash: 36c5733c347e3493b5ed423c52766c7e33fbdb3d
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+title: ''
+description: 本文介绍如何转换现有 Xamarin.Forms Android 应用程序以使用 AppCompat 和材料设计。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 24206f6d6764c73f13a4b06fb44fa746f9d353af
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728325"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135702"
 ---
 # <a name="adding-appcompat-and-material-design"></a>添加 AppCompat 和材料设计
 
-_请按照以下步骤转换现有 Xamarin。 Android 应用程序以使用 AppCompat 和材料设计_
+_请按照以下步骤将现有 Xamarin.Forms Android 应用转换为使用 AppCompat 和材料设计_
 
 <!-- source https://gist.github.com/jassmith/a3b2a543f99126782936
 https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ -->
 
 ## <a name="overview"></a>概述
 
-这些说明解释了如何更新现有的 Xamarin. Forms Android 应用程序以使用 AppCompat 库，并在 Android 版本的 Xamarin. Forms 应用中启用材料设计。
+这些说明解释了如何更新现有 Xamarin.Forms Android 应用程序以使用 AppCompat 库，并在 Android 版本的应用中启用材料设计 Xamarin.Forms 。
 
-### <a name="1-update-xamarinforms"></a>1. 更新 Xamarin. Forms
+### <a name="1-update-xamarinforms"></a>1. 更新Xamarin.Forms
 
-确保解决方案使用的是 Xamarin. Forms 2.0 或更高版本。 如果需要，请将 Xamarin NuGet 包更新为2.0。
+确保解决方案使用 Xamarin.Forms 2.0 或更高版本。 更新Xamarin.Forms
+  NuGet 包到2.0 （如果需要）。
 
 ### <a name="2-check-android-version"></a>2. 检查 Android 版本
 
@@ -39,7 +43,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 
 在 Android 项目中创建以下三个文件，并粘贴以下内容。 Google 提供了[样式指南](https://www.google.com/design/spec/style/color.html#color-color-palette)和[调色板生成器](https://www.materialpalette.com/)，可帮助你为指定的配色方案选择一个替代配色方案。
 
-**Resources/values/colors.xml**
+**资源/值/颜色 .xml**
 
 ```xml
 <resources>
@@ -50,7 +54,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 </resources>
 ```
 
-**Resources/values/style.xml**
+**资源/值/样式 .xml**
 
 ```xml
 <resources>
@@ -68,7 +72,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 
 在 Android 棒糖和更高版本上运行时，必须在**v21**文件夹中包含附加样式，以应用特定属性。
 
-**Resources/values-v21/style.xml**
+**Resources/values-v21/style .xml**
 
 ```xml
 <resources>
@@ -84,7 +88,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 
 若要确保使用这一新的主题信息，请在**androidmanifest.xml**文件中添加 "主题"，方法是添加 `android:theme="@style/MyTheme"` （保留 XML 的其余部分）。
 
-**Properties/AndroidManifest.xml**
+**Properties/Androidmanifest.xml**
 
 ```xml
 ...
@@ -97,7 +101,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 
 在**资源/布局**目录中创建**选项卡栏 main.axml**和**main.axml**文件，并粘贴以下内容：
 
-**Resources/layout/Tabbar.axml**
+**Resources/layout/选项卡栏. main.axml**
 
 ```xml
 <android.support.design.widget.TabLayout
@@ -113,10 +117,10 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
     app:tabMode="fixed" />
 ```
 
-已设置选项卡的几个属性，包括选项卡的重心到 `fill` 和模式 `fixed`。
+已设置选项卡的几个属性，其中包括 tab 的重力到 `fill` 和模式 `fixed` 。
 如果有很多选项卡，你可能想要将此选项卡切换到可滚动-通过 Android [TabLayout 文档](https://developer.android.com/reference/android/support/design/widget/TabLayout.html)阅读，以了解详细信息。
 
-**Resources/layout/Toolbar.axml**
+**资源/布局/工具栏. main.axml**
 
 ```xml
 <android.support.v7.widget.Toolbar
@@ -135,9 +139,9 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 在这些文件中，我们将为你的应用程序的工具栏创建特定主题。
 请参阅[Hello 工具栏](https://blog.xamarin.com/android-tips-hello-toolbar-goodbye-action-bar/)博客文章了解详细信息。
 
-### <a name="6-update-the-mainactivity"></a>6. 更新 `MainActivity`
+### <a name="6-update-the-mainactivity"></a>6. 更新`MainActivity`
 
-在现有 Xamarin. Forms 应用中， **MainActivity.cs**类将从 `FormsApplicationActivity`继承。 必须将其替换为 `FormsAppCompatActivity`，才能启用新的功能。
+在现有 Xamarin.Forms 应用中， **MainActivity.cs**类将从继承 `FormsApplicationActivity` 。 必须将其替换 `FormsAppCompatActivity` 为才能启用新功能。
 
 **MainActivity.cs**
 
@@ -145,7 +149,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 public class MainActivity : FormsAppCompatActivity  // was FormsApplicationActivity
 ```
 
-最后，从 `OnCreate` 方法的步骤5中的新布局 "向上连接"，如下所示：
+最后，将方法中的步骤5的新布局 "连接到" `OnCreate` ，如下所示：
 
 ```csharp
 protected override void OnCreate(Bundle bundle)

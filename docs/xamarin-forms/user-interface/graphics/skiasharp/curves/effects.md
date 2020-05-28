@@ -1,59 +1,62 @@
 ---
-title: SkiaSharp 中的路径效果
-description: 本文介绍了各种 SkiaSharp 路径效果，路径用于进行描边，并填充，并演示此示例代码。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/29/2017
-ms.openlocfilehash: 82755a6a87ec0a47c10aac7078beeab6e14c218d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f3a5a581ffb4ca2acf1d4209b8b7a744f0daa5eb
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759384"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84128037"
 ---
 # <a name="path-effects-in-skiasharp"></a>SkiaSharp 中的路径效果
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_发现允许路径用于进行描边，并填充的不同路径效果_
+_发现允许将路径用于描边和填充的各种路径效果_
 
-一个*路径效果*的一个实例[ `SKPathEffect` ](xref:SkiaSharp.SKPathEffect)使用八个由类定义的静态创建方法之一创建的类。 `SKPathEffect`对象设置为[ `PathEffect` ](xref:SkiaSharp.SKPaint.PathEffect)属性[ `SKPaint` ](xref:SkiaSharp.SKPaint)对象的有趣的效果，例如，有多种描画一条线较小的复制路径:
+*路径效果*是 [`SKPathEffect`](xref:SkiaSharp.SKPathEffect) 类的一个实例，该类是使用类定义的8个静态创建方法中的一种创建的。 然后，将 `SKPathEffect` 对象的属性设置为 [`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect) [`SKPaint`](xref:SkiaSharp.SKPaint) 对象的属性，以获得各种有趣的效果，例如，使用较小的复制路径对线条进行描边：
 
 ![链接链示例](effects-images/patheffectsample.png)
 
-路径效果使您能够：
+路径效果允许：
 
-- 绘制一个行，其中点和短划线
-- 绘制一个行，其中已填充的任何路径
-- 填充区域的阴影线条
-- 填充区域的平铺的路径
-- 使尖锐角舍入
-- 添加随机"抖动"到直线和曲线
+- 使用圆点和短划线绘制线条
+- 使用任意填充路径为线条描边
+- 使用影线线条填充区域
+- 使用平铺路径填充区域
+- 使尖角圆角
+- 向直线和曲线添加随机 "抖动"
 
-此外，你可以组合两个或多个路径效果。
+此外，您可以将两个或多个路径效果组合在一起。
 
-本文还演示了如何使用[ `GetFillPath` ](xref:SkiaSharp.SKPaint.GetFillPath*)方法`SKPaint`若要通过应用的属性将一条路径转换为另一个路径`SKPaint`，其中包括`StrokeWidth`和`PathEffect`。 这会导致一些有趣的技术，例如获取是另一个路径的大纲的路径。 `GetFillPath` 技术还有助于与路径效果。
+本文还演示了如何使用 [`GetFillPath`](xref:SkiaSharp.SKPaint.GetFillPath*) 的方法 `SKPaint` 将一个路径转换为另一个路径，方法是应用的属性 `SKPaint` ，包括 `StrokeWidth` 和 `PathEffect` 。 这会产生一些有趣的技巧，如获取作为另一个路径轮廓的路径。 `GetFillPath`在与路径效果建立连接时也有帮助。
 
 ## <a name="dots-and-dashes"></a>点和短划线
 
-利用[ `PathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single))一文中所述方法[**点和短划线**](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md)。 该方法的第一个参数是一个数组，包含两个或多个值，交替使用短划线的长度，以及连续的短划线的长度为偶数：
+[`PathEffect.CreateDash`](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single))文章[**点和短划线**](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md)中介绍了方法的用法。 该方法的第一个参数是一个数组，该数组包含一个偶数个两个或更多值，在短划线的长度和短划线之间的间隔长度之间交替：
 
 ```csharp
 public static SKPathEffect CreateDash (Single[] intervals, Single phase)
 ```
 
-这些值是*不*相对于描边宽度。 例如，如果笔划宽度为 10，并且你想行组成方形短划线和正方形的间隙，设置`intervals`数组为 {10，10}。 `phase`参数指示虚线样式内行开始的位置。 在此示例中，如果你想要以开头的方形差距的行，设置`phase`为 10。
+这些值与笔划宽度*无关*。 例如，如果笔划宽度为10，并且您需要包含正方形虚线和正方形间隙的线条，请将 `intervals` 数组设置为 {10，10}。 `phase`自变量指示行的开始位置。 在此示例中，如果希望行以正方形间隙开头，请将设置 `phase` 为10。
 
-受影响的短划线结束`StrokeCap`属性的`SKPaint`。 对于宽描边宽度，它是很常见，若要将此属性设置为`SKStrokeCap.Round`要舍入短划线结尾。 在此情况下中的值`intervals`数组进行*不*包括舍入导致的额外长度。 这一事实意味着循环点要求指定的宽度为零。 笔划宽度为 10，若要创建具有圆点和相同的直径的点之间间隙的行，使用`intervals`数组 {0，20}。
+虚线的末尾受的 `StrokeCap` 属性的影响 `SKPaint` 。 对于宽笔划宽度，将此属性设置为 `SKStrokeCap.Round` 以舍入虚线的末尾非常常见。 在这种情况下，数组中的值 `intervals` *不*包括舍入所得的额外长度。 这种情况意味着圆点需要指定宽度为零。 若要将笔划宽度为10，若要在同一直径的点之间创建具有圆点和间隙的线条，请使用 `intervals` 数组 {0，20}。
 
-**经过动画处理的以点分隔的文本**页是类似于**轮廓文本**文章中所述的页面[**集成文本和图形**](~/xamarin-forms/user-interface/graphics/skiasharp/basics/text.md)中它将显示通过设置概述文本字符`Style`的属性`SKPaint`对象传递给`SKPaintStyle.Stroke`。 此外，**经过动画处理的以点分隔的文本**使用`SKPathEffect.CreateDash`为提供此概述的以点分隔的外观和程序还进行动画处理`phase`自变量的`SKPathEffect.CreateDash`进行似乎旅行文本周围的点的方法字符。 以下是在横向模式中的页：
+**动态虚线文本**页类似于通过将对象的属性设置为来显示分级文本字符一[**文中**](~/xamarin-forms/user-interface/graphics/skiasharp/basics/text.md)所**述的文本**页面 `Style` `SKPaint` `SKPaintStyle.Stroke` 。 此外，**动态虚线文本**使用 `SKPathEffect.CreateDash` 为此轮廓提供虚线外观，并且该程序还对该方法的参数进行了动画处理， `phase` `SKPathEffect.CreateDash` 以使点看起来像是文本字符。 页面处于横向模式：
 
 [![动态虚线文本页的三向屏幕截图](effects-images/animateddottedtext-small.png)](effects-images/animateddottedtext-large.png#lightbox)
 
-[ `AnimatedDottedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs)类首先定义一些常量，并且还重写`OnAppearing`和`OnDisappearing`动画的方法：
+[`AnimatedDottedTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs)类从定义一些常量开始，还会替代动画的 `OnAppearing` 和 `OnDisappearing` 方法：
 
 ```csharp
 public class AnimatedDottedTextPage : ContentPage
@@ -95,7 +98,7 @@ public class AnimatedDottedTextPage : ContentPage
 }
 ```
 
-`PaintSurface`处理程序首先创建`SKPaint`对象显示的文本。 `TextSize`根据屏幕的宽度调整属性：
+`PaintSurface`处理程序首先创建一个 `SKPaint` 用于显示文本的对象。 根据 `TextSize` 屏幕的宽度调整属性：
 
 ```csharp
 public class AnimatedDottedTextPage : ContentPage
@@ -149,19 +152,19 @@ public class AnimatedDottedTextPage : ContentPage
 }
 ```
 
-该方法末尾`SKPathEffect.CreateDash`使用调用方法`dashArray`定义为一个字段，并经过动画处理`phase`值。 `SKPathEffect`实例设置为`PathEffect`属性的`SKPaint`对象显示的文本。
+在方法的末尾， `SKPathEffect.CreateDash` 使用 `dashArray` 定义为字段的和经过动画处理的值调用方法 `phase` 。 `SKPathEffect`实例设置为 `PathEffect` `SKPaint` 要显示文本的对象的属性。
 
-或者，可以设置`SKPathEffect`对象传递给`SKPaint`之前测量文本和集中的页上的对象。 在这种情况下，但是，动画的点和短划线呈现文本的大小会导致一些变体，并且文本可能有点振动。 （试试看 ！）
+或者，您可以在 `SKPathEffect` 测量文本之前将对象设置为 `SKPaint` 对象，并在页面上居中。 但是，在这种情况下，动态点和虚线会导致呈现文本的大小变化，而文本往往振动。 （试试看！）
 
-您会注意到，作为文本字符四周的动画的点圆圈，没有已关闭的各段曲线中的某一点点似乎弹入和移出存在。 这是定义字符轮廓路径的开始和结束位置。 如果路径长度不是短划线图案 （在这种情况下 20 像素为单位），长度的整数倍，则该模式的唯一部分可容纳在路径的末尾。
+你还会注意到，在文本字符的周围有围绕的圆点，在每个闭合曲线中都有特定的点，这些点看起来好像是弹入和退出。 这是定义字符轮廓的路径的开始和结束位置。 如果路径长度不是短划线模式（在本例中为20个像素）长度的整数倍，则仅该模式的一部分可容纳在路径的末尾。
 
-可以调整以适应路径，短划线图案的长度，但需要确定路径的文章中介绍的技术的长度[**路径信息和枚举**](information.md).
+可以调整虚线模式的长度以适合路径长度，但这需要确定路径的长度，这是一种在项目[**路径信息和枚举**](information.md)中介绍的技术。
 
-**Dot / 短划线 Morph**程序之间进行动画处理的短划线模式本身，以便短划线似乎将划分为点，再次将到窗体短划线组合：
+**点/虚线平滑**计划对虚线模式本身进行动画处理，使虚线看起来像是一个点，这将再次组合起来以形成破折号：
 
 [![点划线平滑页面的三向屏幕截图](effects-images/dotdashmorph-small.png)](effects-images/dotdashmorph-large.png#lightbox)
 
-[ `DotDashMorphPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs)类重写`OnAppearing`并`OnDisappearing`方法就像上一个程序一样，但该类定义`SKPaint`对象作为字段：
+[`DotDashMorphPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) `OnAppearing` 与上一程序一样，类会重写和 `OnDisappearing` 方法，但类将对象定义 `SKPaint` 为字段：
 
 ```csharp
 public class DotDashMorphPage : ContentPage
@@ -243,11 +246,11 @@ public class DotDashMorphPage : ContentPage
 }
 ```
 
-`PaintSurface`处理程序将创建基于页的大小的椭圆路径并执行一长段代码，用于设置`dashArray`和`phase`变量。 为动画变量`t`范围是从 0 到 1，`if`块分解成四个季度，并在每个这些季度，该时间`tsub`也介于 0 到 1。 最后，在该程序创建`SKPathEffect`并将其设置为`SKPaint`对象以进行绘制。
+`PaintSurface`处理程序基于页面大小创建一个椭圆路径，并执行用于设置和变量的长代码段 `dashArray` `phase` 。 由于动画变量的 `t` 范围介于0和1之间，因此 `if` 块会将时间分解为四个季度，其中每个季度的 `tsub` 范围也从0到1。 最后，程序将创建， `SKPathEffect` 并将其设置为 `SKPaint` 用于绘制的对象。
 
-## <a name="from-path-to-path"></a>从路径的路径
+## <a name="from-path-to-path"></a>从路径到路径
 
-[ `GetFillPath` ](xref:SkiaSharp.SKPaint.GetFillPath(SkiaSharp.SKPath,SkiaSharp.SKPath,System.Single))方法`SKPaint`将转换为另一个基于中设置一条路径`SKPaint`对象。 若要阐释其工作方式，将为`canvas.DrawPath`调用在上一程序中使用以下代码：
+[`GetFillPath`](xref:SkiaSharp.SKPaint.GetFillPath(SkiaSharp.SKPath,SkiaSharp.SKPath,System.Single))方法 `SKPaint` 根据对象中的设置将一个路径转换为另一个路径 `SKPaint` 。 若要查看其工作原理，请将 `canvas.DrawPath` 上一个程序中的调用替换为以下代码：
 
 ```csharp
 SKPath newPath = new SKPath();
@@ -260,15 +263,15 @@ canvas.DrawPath(newPath, newPaint);
 
 ```
 
-在此新代码中，`GetFillPath`调用转换`ellipsePath`（这是只需一个椭圆） 到`newPath`，然后显示与`newPaint`。 `newPaint`使用所有默认属性设置创建对象，只不过`Style`属性设置基于上一个布尔值，返回值从`GetFillPath`。
+在此新代码中， `GetFillPath` 调用会将 `ellipsePath` （只是一个椭圆）转换为 `newPath` ，然后将显示 `newPaint` 。 `newPaint`对象是用所有默认属性设置创建的，只不过 `Style` 属性是基于的布尔返回值设置的 `GetFillPath` 。
 
-视觉对象是相同的颜色，在中设置除外`ellipsePaint`但不是`newPaint`。 而不是在中定义的简单椭圆`ellipsePath`，`newPath`包含定义的点和短划线系列的大量路径分布图。 这是应用的各种属性的结果`ellipsePaint`(具体而言， `StrokeWidth`， `StrokeCap`，和`PathEffect`) 到`ellipsePath`置于生成的路径和`newPath`。 `GetFillPath`方法返回一个布尔值，该值指示是否目标路径为要填充; 在此示例中，返回值是`true`用于填充的路径。
+除颜色外，视觉对象完全相同，但在中设置的颜色除外 `ellipsePaint` `newPaint` 。 不是在中定义的简单 `ellipsePath` 椭圆 `newPath` 包含多个用于定义点和短划线序列的路径轮廓。 这是将 `ellipsePaint` （具体而言，、和）的各种属性应用于 `StrokeWidth` 并将 `StrokeCap` `PathEffect` `ellipsePath` 生成的路径放在中 `newPath` 的结果。 `GetFillPath`方法返回一个布尔值，指示是否要填充目标路径; 在此示例中，返回值 `true` 用于填充路径。
 
-请尝试更改`Style`中设置`newPaint`到`SKPaintStyle.Stroke`，您将看到一个像素宽度行所述的各个路径分布。
+尝试将上的 `Style` 设置更改 `newPaint` 为 `SKPaintStyle.Stroke` ，你将看到以一像素宽度行为分级显示的各个路径轮廓。
 
-## <a name="stroking-with-a-path"></a>使用路径描画
+## <a name="stroking-with-a-path"></a>使用路径进行描边
 
-[ `SKPathEffect.Create1DPath` ](xref:SkiaSharp.SKPathEffect.Create1DPath(SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPath1DPathEffectStyle))方法是从概念上讲类似于`SKPathEffect.CreateDash`只是指定一个路径而不是短划线和间隙的模式。 此路径将复制到笔划直线或曲线多次。
+[`SKPathEffect.Create1DPath`](xref:SkiaSharp.SKPathEffect.Create1DPath(SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPath1DPathEffectStyle))方法在概念上类似于， `SKPathEffect.CreateDash` 只不过您指定了一个路径，而不是短划线和间隙的模式。 此路径将被多次复制，以对直线或曲线进行描边。
 
 语法为：
 
@@ -277,17 +280,17 @@ public static SKPathEffect Create1DPath (SKPath path, Single advance,
                                          Single phase, SKPath1DPathEffectStyle style)
 ```
 
-通常，您将传递到的路径`Create1DPath`将很小，围绕点 （0，0） 居中。 `advance`参数指示的路径中的中心之间的距离，作为路径复制在行上。 通常情况下，路径的大致宽度到需要设置此参数。 `phase`与它相同此处的角色中执行的自变量完美`CreateDash`方法。
+通常，您传递给的路径将很 `Create1DPath` 小，并将围绕点（0，0）居中。 `advance`参数指示路径中心之间的距离，因为在线条上复制路径。 通常将此参数设置为路径的大致宽度。 `phase`与在方法中一样，自变量在此处扮演相同的角色 `CreateDash` 。
 
-[ `SKPath1DPathEffectStyle` ](xref:SkiaSharp.SKPath1DPathEffectStyle)有三个成员：
+[`SKPath1DPathEffectStyle`](xref:SkiaSharp.SKPath1DPathEffectStyle)有三个成员：
 
 - `Translate`
 - `Rotate`
 - `Morph`
 
-`Translate`成员会导致要保留在相同方向，如复制根据直线或曲线的路径。 有关`Rotate`，路径根据为曲线的切线旋转。 路径都有其正常方向为水平线条。 `Morph` 类似于`Rotate`不同之处在于路径本身也曲线以匹配正在描边的行的曲率。
+该 `Translate` 成员会使路径在沿直线或曲线复制时保持相同的方向。 对于 `Rotate` ，该路径将根据曲线的切线旋转。 该路径的水平线条方向相同。 `Morph`类似于， `Rotate` 不同之处在于路径本身也是弯曲的，以匹配所绘制线条的曲率。
 
-**1 D 路径效果**页演示这三个选项。 [ **OneDimensionalPathEffectPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml)文件定义包含对应于枚举的三个成员的三个项的选取器：
+" **1D 路径效果**" 页演示了这三个选项。 [**OneDimensionalPathEffectPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml)文件定义一个选取器，其中包含与枚举的三个成员相对应的三个项：
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -325,7 +328,7 @@ public static SKPathEffect Create1DPath (SKPath path, Single advance,
 </ContentPage>
 ```
 
-[ **OneDimensionalPathEffectPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml.cs)代码分离文件定义了三个`SKPathEffect`作为字段的对象。 这些创建使用`SKPathEffect.Create1DPath`与`SKPath`对象创建使用`SKPath.ParseSvgPathData`。 第一种是简单的框中，第二个是一个菱形，第三个是一个矩形。 这些用于演示三个效果样式：
+[**OneDimensionalPathEffectPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml.cs)代码隐藏文件将三个 `SKPathEffect` 对象定义为字段。 这些都是通过使用 `SKPathEffect.Create1DPath` 创建的对象创建的 `SKPath` `SKPath.ParseSvgPathData` 。 第一个是简单的框，第二个是菱形形状，第三个是矩形。 它们用于演示三种效果样式：
 
 ```csharp
 public partial class OneDimensionalPathEffectPage : ContentPage
@@ -396,35 +399,35 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 }
 ```
 
-`PaintSurface`处理程序将创建循环继续本身，并访问选取器来确定哪些的贝塞尔曲线`PathEffect`应该用于绘制它。 三个选项 — `Translate`， `Rotate`，和`Morph`— 从左到右显示：
+`PaintSurface`处理程序创建一条贝塞尔曲线，该曲线会循环其自身，并访问选取器来确定 `PathEffect` 应该使用哪个曲线来对其进行描边。 这三个选项（ `Translate` 、 `Rotate` 和 `Morph` ）从左到右显示：
 
 [![1D 路径效果页面的三向屏幕截图](effects-images/1dpatheffect-small.png)](effects-images/1dpatheffect-large.png#lightbox)
 
-中指定的路径`SKPathEffect.Create1DPath`始终填充方法。 中指定的路径`DrawPath`方法始终为描边，如果`SKPaint`对象都有其`PathEffect`属性设置为 1 D 路径效果。 请注意，`pathPaint`对象没有`Style`设置，它通常默认为`Fill`，但路径为无论描边。
+始终填充方法中指定的路径 `SKPathEffect.Create1DPath` 。 `DrawPath`如果 `SKPaint` 对象的 `PathEffect` 属性设置为1d 路径效果，则方法中指定的路径始终为描边。 请注意， `pathPaint` 对象没有任何 `Style` 设置，这通常默认为 `Fill` ，但不考虑该路径。
 
-在中使用的框`Translate`示例中为 20 像素正方形，和`advance`参数设置为 24。 这种差异会导致差异时行大致是水平还是垂直的但对应的框有点重叠时由于框的对角线为 28.3 像素行是沿对角方向的框。
+示例中使用的框 `Translate` 是20像素正方形， `advance` 参数设置为24。 这种差异会导致线条的水平或垂直之间出现间隔，但当线条为对角时，它们会重叠一点，因为框的对角线为28.3 像素。
 
-中的菱形形状`Rotate`示例也是 20 个像素宽。 `advance` ，以便继续触摸，因为菱形旋转以及行的曲度点设置为 20。
+示例中的菱形形状的 `Rotate` 宽度也为20个像素。 `advance`设置为20，这样，点就会继续触摸，因为菱形与直线的曲率一起旋转。
 
-中的矩形形状`Morph`示例是使用宽 50 像素`advance`55 设置以使它们弯曲的情况下绕贝塞尔曲线的矩形之间一小段时间间隙。
+该示例中的矩形形状 `Morph` 为50像素宽， `advance` 设置为55可在矩形之间进行较小的间隔，因为它们在贝塞尔曲线周围弯曲。
 
-如果`advance`参数小于大小的路径，则复制的路径可以重叠。 这可能导致一些有趣的效果。 **链接链**页显示的重叠圆圈看起来类似于一个链接的链，挂起 catenary 的独特形状中的一系列：
+如果 `advance` 参数小于路径大小，则复制的路径可能会重叠。 这可能会导致一些有趣的效果。 "**链接链**" 页显示一系列重叠的圆，它们看起来像是一个链接链，它在 catenary 的独特形状中挂起：
 
 [![链接链页面的三向屏幕截图](effects-images/linkedchain-small.png)](effects-images/linkedchain-large.png#lightbox)
 
-看起来非常接近，将看到这些并不实际圆圈。 链中的每个链接是两个弧，大小调整和定位使它们看起来与相邻的链接进行连接。
+看起来非常接近，你会发现这些并不是真正的圆。 链中的每个链接都是两个弧形、调整大小和定位，因此它们看起来像是通过相邻链接连接的。
 
-链或电缆的统一权重分配挂起 catenary 窗体中。 内置的倒排 catenary 窗体的体系结构利用压力从体系结构的权重相等分布。 Catenary 具有看似简单的数学说明：
+均匀权重分布的链或电缆以 catenary 的形式挂起。 以 catenary 的形式生成的一种形式是从一个拱的权重的压力分布中获益。 Catenary 具有看似简单的数学说明：
 
 `y = a · cosh(x / a)`
 
-*Cosh*是双曲余弦值函数。 有关*x*等于 0， *cosh*为零并*y*等于。 这是 catenary 的中心。 像*余弦*函数， *cosh*称为*甚至*，这意味着， *cosh(–x)* 等于*cosh(x)* ，并增加正或负参数值增加。 这些值描述窗体的 catenary 边的曲线。
+*Cosh*是双曲余弦函数。 如果*x*等于0，则*cosh*为零， *y*等于 *。* 这就是 catenary 的中心。 与*余弦*函数一样， *cosh*也称为，这意味着*cosh （– x）* 等于*cosh （x）*，*值将增加*以增加正值或负参数。 这些值描述构成 catenary 边的曲线。
 
-查找适当的值以适应到手机的页的尺寸 catenary 不是直接计算。 如果*w*并*h*宽度和高度的矩形的最佳值满足以下公式：
+查找*适当的值，使*其适应手机页面尺寸的 catenary 不是直接计算。 如果*w*和*h*是矩形的宽度和高度，*则的最佳值满足以下*公式：
 
 `cosh(w / 2 / a) = 1 + h / a`
 
-中的以下方法[ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs)类包含该相等性指两个表达式左侧和右侧的等号作为`left`和`right`。 值较小，`left`大于`right`; 对于较大的值，`left`是小于`right`。 `while`用于限制中的循环上的一个最佳值:
+类中的以下方法 [`LinkedChainPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs) 通过引用等号左侧和右侧的两个表达式来合并此相等性 `left` `right` 。 对于的较小*值*， `left` 大于 `right` ; 对于的较大值， *a* `left` 小于 `right` 。 该 `while` 循环缩小*了的*最佳值：
 
 ```csharp
 float FindOptimumA(float width, float height)
@@ -453,7 +456,7 @@ float FindOptimumA(float width, float height)
 }
 ```
 
-`SKPath`类的构造函数，并且所产生的中创建链接对象`SKPathEffect`然后将对象设置为`PathEffect`属性的`SKPaint`作为字段存储的对象：
+`SKPath`链接的对象是在类的构造函数中创建的，然后将生成的 `SKPathEffect` 对象设置为 `PathEffect` `SKPaint` 存储为字段的对象的属性：
 
 ```csharp
 public class LinkedChainPage : ContentPage
@@ -501,7 +504,7 @@ public class LinkedChainPage : ContentPage
 }
 ```
 
-主要工作`PaintSurface`处理程序是创建 catenary 本身的路径。 确定最佳之后并将其存储在`optA`变量时，它还需要计算从窗口顶部的偏移量。 然后，它可能会累积一系列`SKPoint`成一个路径中，打开的和绘制并用先前创建的路径值 catenary`SKPaint`对象：
+处理程序的主要工作 `PaintSurface` 是为 catenary 本身创建一个路径。 确定最佳*a*并将其存储在变量中后 `optA` ，它还需要计算从窗口顶部的偏移量。 然后，它可以累积 catenary 的值的集合，将其 `SKPoint` 转换为路径，并使用以前创建的对象绘制路径 `SKPaint` ：
 
 ```csharp
 public class LinkedChainPage : ContentPage
@@ -545,15 +548,15 @@ public class LinkedChainPage : ContentPage
 }
 ```
 
-此程序定义中使用的路径`Create1DPath`具有其 （0，0） 中的中心点。 这似乎是合理因为 （0，0） 路径的终结点对齐线或它所装饰的曲线。 但是，可以使用非居中 （0，0），为一些特殊效果点。
+此程序定义中使用的路径，使 `Create1DPath` 其位于中心（0，0）。 这似乎是合理的，因为路径的（0，0）点与它装饰的线条或曲线对齐。 不过，您可以将非居中（0，0）点用于某些特殊效果。
 
-**传送带**页创建类似于曲线的顶部和底部大小调整窗口的尺寸为外型传送带的路径。 该路径使用简单描边`SKPaint`对象 20 像素宽和彩色的灰色，然后能与另一个再次描边`SKPaint`对象`SKPathEffect`对象引用类似于较小范围的路径：
+**传送带**会创建一个路径，该路径类似于椭圆形传送带，其上凸和下凸，大小为窗口的尺寸。 该路径以一个简单的 `SKPaint` 对象为20个像素宽和灰色着色，然后再次使用对象（ `SKPaint` 该对象 `SKPathEffect` 引用类似于小 bucket 的路径）对另一个对象进行描边：
 
 [![传送带页面的三向屏幕截图](effects-images/conveyorbelt-small.png)](effects-images/conveyorbelt-large.png#lightbox)
 
-（0，0） 存储桶路径的终结点是句柄，因此，在`phase`参数进行动画处理、 存储桶似乎围绕传送带，可能会在底部的水 scooping 和顶部转储一下。
+Bucket 路径的（0，0）点是句柄，因此，在对 `phase` 参数进行动画处理时，bucket 看起来像是围绕传送带旋转的，可能会在底部 scooping，并将其转储到顶部。
 
-[ `ConveyorBeltPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConveyorBeltPage.cs)类实现动画的重写`OnAppearing`和`OnDisappearing`方法。 在页面的构造函数中定义的存储桶的路径：
+[`ConveyorBeltPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConveyorBeltPage.cs)类实现的动画具有和方法的重写 `OnAppearing` `OnDisappearing` 。 Bucket 的路径在页的构造函数中定义：
 
 ```csharp
 public class ConveyorBeltPage : ContentPage
@@ -621,9 +624,9 @@ public class ConveyorBeltPage : ContentPage
     ...
 ```
 
-存储桶创建代码完成两个转换，使稍大一些的存储桶和侧向打开它。 应用这些转换是比调整前面的代码中的所有坐标更容易。
+Bucket 创建代码完成了两个变换，使 bucket 变大，使其侧向旋转。 应用这些转换比调整前面代码中的所有坐标更容易。
 
-`PaintSurface`处理程序首先定义传送带本身的路径。 这是只需一对行和一对以绘制有 20 个像素宽暗灰色线的圆圈：
+`PaintSurface`处理程序首先定义传送带的路径。 这只是一对线条和一对用20个像素宽暗灰色线条绘制的半圆圈：
 
 ```csharp
 public class ConveyorBeltPage : ContentPage
@@ -680,15 +683,15 @@ public class ConveyorBeltPage : ContentPage
 }
 ```
 
-在横向模式下并不适用于绘制传送带的逻辑。
+用于绘制传送带的逻辑在横向模式下不起作用。
 
-应大约为 200 像素相隔传送带上分布的存储桶。 但是，传送带可能并不是 200 像素长，这意味着为倍数`phase`自变量的`SKPathEffect.Create1DPath`是进行动画处理，存储桶将弹入和移出是否存在。
+在传送带上，bucket 的间距应约为200像素。 但是，传送带的长度可能不是200像素的倍数，这意味着，作为的 `phase` 自变量 `SKPathEffect.Create1DPath` 进行动画处理时，存储桶将弹出和退出存在。
 
-出于此原因，程序会先计算名为的值`length`即传送带的长度。 传送带组成的直线和以圆，因为这是一个简单的计算。 接下来，存储桶数的计算除以`length`通过 200。 这舍入为最接近的整数，而数量则是划分成`length`。 结果是不可或缺的存储桶数的间距。 `phase`参数是只是的一小部分。
+出于此原因，程序首先计算一个名为 `length` 的值，它是传送带的长度。 因为传送带包含直线和半圆，所以这是一个简单的计算。 接下来，使用除以200计算存储桶的数目 `length` 。 此值舍入为最接近的整数，然后将该数值分成 `length` 。 结果是整数 bucket 的间距。 `phase`参数只是的一小部分。
 
-## <a name="from-path-to-path-again"></a>从再次路径的路径
+## <a name="from-path-to-path-again"></a>再次从路径到路径
 
-在底部`DrawSurface`处理程序中的**传送带**，注释掉`canvas.DrawPath`调用并替换为以下代码：
+在 `DrawSurface` **传送带**中处理程序的底部，注释掉 `canvas.DrawPath` 调用并将其替换为以下代码：
 
 ```csharp
 SKPath newPath = new SKPath();
@@ -700,21 +703,21 @@ SKPaint newPaint = new SKPaint
 canvas.DrawPath(newPath, newPaint);
 ```
 
-与前面的示例一样`GetFillPath`，您将看到的结果都是相同颜色除外。 执行后`GetFillPath`，则`newPath`对象包含的存储桶路径的多个副本，每个定位在同一个发现，动画的优势，它们在调用时。
+与前面的示例一样 `GetFillPath` ，你会看到除颜色之外的结果是相同的。 执行后 `GetFillPath` ，该 `newPath` 对象包含存储桶路径的多个副本，每个副本都位于动画将其置于调用时的相同位置。
 
-## <a name="hatching-an-area"></a>阴影区域
+## <a name="hatching-an-area"></a>为面积影线
 
-[ `SKPathEffect.Create2DLines` ](xref:SkiaSharp.SKPathEffect.Create2DLine(System.Single,SkiaSharp.SKMatrix))方法填充平行直线，通常称为在区域*阴影线*。 该方法具有以下语法：
+[`SKPathEffect.Create2DLines`](xref:SkiaSharp.SKPathEffect.Create2DLine(System.Single,SkiaSharp.SKMatrix))方法使用平行线填充区域，通常称为*阴影线*。 方法具有以下语法：
 
 ```csharp
 public static SKPathEffect Create2DLine (Single width, SKMatrix matrix)
 ```
 
-`width`参数指定的阴影线条的笔划宽度。 `matrix`参数是缩放和可选旋转的组合。 比例因子指示 Skia 使用空间的阴影线条的像素增量。 线之间的分离是减去的缩放因子`width`参数。 比例因子是否小于或等于`width`值之间的阴影线条，将有没有空间和区域将显示要填充。 指定的水平和垂直缩放相同的值。
+`width`参数指定阴影线的笔划宽度。 `matrix`参数是缩放和可选旋转的组合。 缩放系数指示 Skia 用来对阴影线进行间距调整的像素增量。 线条之间的分隔是缩放系数减去 `width` 自变量。 如果缩放系数小于或等于 `width` 值，阴影线之间将不会有空格，并且区域将显示为已填充。 为水平和垂直缩放指定相同的值。
 
-默认情况下，阴影线条是水平的。 如果`matrix`参数包含旋转，沿顺时针方向旋转的阴影线条。
+默认情况下，阴影线是水平的。 如果 `matrix` 参数包含旋转，则为阴影线顺时针旋转。
 
-**阴影填充**页说明此路径效果。 [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs)类为字段定义三个路径效果，它们是为水平的阴影线条宽度为 3 个像素使用一个缩放系数，该值指示第一个分布相隔 6 个像素。 因此，行之间的分离是三个像素。 第二个路径效果是垂直的阴影线条宽度为 6 个像素夹角 24 像素相隔 （因此分离为 18 个像素），以及第三个是否是对角线阴影线 12 像素宽间距 36 像素相隔的。
+"**阴影填充**" 页演示了此路径效果。 [`HatchFillPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs)类将三个路径效果定义为字段，将第一个用于宽度为3个像素、比例因子为3个像素的水平影线线，指示它们之间相隔6个像素的间距。 因此，各行之间的分离是三个像素。 第二个路径效果适用于宽度为六个像素、间距为24个像素（因此分隔为18像素）的垂直阴影线，而第三个路径效果用于相隔36像素的对角影线线条。
 
 ```csharp
 public class HatchFillPage : ContentPage
@@ -745,9 +748,9 @@ public class HatchFillPage : ContentPage
 }
 ```
 
-请注意，矩阵`Multiply`方法。 水平和垂直缩放比例是相同的因为在其中缩放和旋转矩阵相乘的顺序并不重要。
+请注意 matrix `Multiply` 方法。 由于水平和垂直比例因子相同，因此缩放和旋转矩阵的乘法顺序并不重要。
 
-`PaintSurface`处理程序使用三个不同颜色结合使用这些三个路径效果`fillPaint`以填充圆角的矩形调整为适合页面大小。 `Style`属性上设置`fillPaint`将被忽略; 当`SKPaint`对象包含从创建一个路径效果`SKPathEffect.Create2DLine`，而不考虑填充的区域：
+`PaintSurface`处理程序将这三个具有三种不同颜色的路径效果结合起来使用 `fillPaint` ，以填充经过调整大小以适合页面的圆角矩形。 `Style`忽略设置的属性 `fillPaint` ; 当 `SKPaint` 对象包括从创建的路径效果时，将 `SKPathEffect.Create2DLine` 填充区域，而不考虑：
 
 ```csharp
 public class HatchFillPage : ContentPage
@@ -794,27 +797,27 @@ public class HatchFillPage : ContentPage
 }
 ```
 
-如果您仔细看一下结果，您将看到红色和蓝色阴影线不局限精确于圆角矩形。 （这是很明显的特征基础 Skia 代码。）如果这不满意，则会为绿色对角影线线显示一种替代方法：圆角矩形用作剪切路径，在整个页面上绘制阴影线。
+如果你仔细查看结果，你会看到红色和蓝色阴影线不会精确地限制为圆角矩形。 （这显然是基础 Skia 代码的特征。）如果这不满意，则会为绿色对角影线线条显示一种替代方法：圆角矩形用作剪切路径，在整个页面上绘制阴影线。
 
-`PaintSurface`处理程序结束调用来只需绘制圆角的矩形，以便您可以看到红色和蓝色阴影线条与差异：
+`PaintSurface`处理程序会通过调用来结束，只需对圆角矩形进行笔划，这样您就可以看到红和蓝影线线条的差异：
 
 [!["阴影填充" 页的三向屏幕截图](effects-images/hatchfill-small.png)](effects-images/hatchfill-large.png#lightbox)
 
-Android 屏幕并不真正如下所示：屏幕截图的缩放导致了细的红线和细的空格，以将其合并到看似更宽的红线和更宽的空间。
+Android 屏幕并不真正类似于：屏幕截图的缩放导致了细的红线和细的空格，以将其合并到看似更宽的红线和更宽的空间。
 
-## <a name="filling-with-a-path"></a>填充的路径
+## <a name="filling-with-a-path"></a>使用路径填充
 
-[ `SKPathEffect.Create2DPath` ](xref:SkiaSharp.SKPathEffect.Create2DPath(SkiaSharp.SKMatrix,SkiaSharp.SKPath))实际上允许您以填充区域的水平或垂直地复制路径平铺区域：
+[`SKPathEffect.Create2DPath`](xref:SkiaSharp.SKPathEffect.Create2DPath(SkiaSharp.SKMatrix,SkiaSharp.SKPath))利用，您可以使用水平和垂直复制的路径填充区域，这会使区域平铺：
 
 ```csharp
 public static SKPathEffect Create2DPath (SKMatrix matrix, SKPath path)
 ```
 
-`SKMatrix`缩放比例指示复制路径的水平和垂直间距。 但不能旋转在路径中使用这`matrix`自变量; 如果你想旋转，路径旋转路径本身使用`Transform`方法定义的`SKPath`。
+`SKMatrix`缩放系数指示复制路径的水平和垂直间距。 但不能使用此参数来旋转路径 `matrix` ; 如果要旋转路径，则使用 `Transform` 由定义的方法来旋转路径本身 `SKPath` 。
 
-复制的路径通常与屏幕而不是所填充的区域的左侧和顶部边缘对齐。 可以通过提供介于 0 和缩放的比例来指定从左侧和顶部边的水平和垂直偏移量的平移因数重写此行为。
+复制的路径通常与屏幕的左边缘和上边缘对齐，而不是与要填充的区域对齐。 您可以通过提供0和比例因子之间的转换因子来重写此行为，以指定从左到右的水平和垂直偏移量。
 
-**路径磁贴填充**页说明此路径效果。 使用用于平铺区域的路径定义为中的字段[ `PathTileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs)类。 水平和垂直坐标范围从 –40 到 40，这意味着此路径是 80 像素方形：
+**路径磁贴填充**页演示了此路径效果。 用于平铺区域的路径定义为类中的字段 [`PathTileFillPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs) 。 水平和垂直坐标范围为–40到40，这表示此路径为80像素正方形：
 
 ```csharp
 public class PathTileFillPage : ContentPage
@@ -850,29 +853,29 @@ public class PathTileFillPage : ContentPage
 }
 ```
 
-在中`PaintSurface`处理程序，`SKPathEffect.Create2DPath`调用设置为 64 导致 80 像素方形磁贴以重叠的水平和垂直间距。 幸运的是，该路径类似于填数游戏块，可以很好地结合使用相邻的磁贴：
+在 `PaintSurface` 处理程序中， `SKPathEffect.Create2DPath` 调用将水平间距和垂直间距设置为64，以使80像素的方块重叠。 幸运的是，该路径类似于谜题，结合与相邻磁贴非常相似：
 
 [![路径磁贴填充页的三向屏幕截图](effects-images/pathtilefill-small.png)](effects-images/pathtilefill-large.png#lightbox)
 
-原始的屏幕截图中缩放导致某些扭曲，特别是在 Android 屏幕上。
+从原始屏幕快照进行缩放会导致某种变形，特别是在 Android 屏幕上。
 
-请注意，这些磁贴始终显示整个并永远不会被截断。 在前两个屏幕截图不甚至明显所填充的区域是一个圆角的矩形。 如果你想要截断这些磁贴的特定区域，使用剪切路径。
+请注意，这些磁贴始终显示为整体，并且永远不会被截断。 在前两个屏幕截图上，很明显，要填充的区域是一个圆角矩形。 如果要将这些磁贴截断到特定区域，请使用剪切路径。
 
-请尝试设置`Style`属性`SKPaint`对象传递给`Stroke`，可以看到各个磁贴所述，而不是填充。
+尝试将 `Style` 对象的属性设置 `SKPaint` 为 `Stroke` ，您将看到各个磁贴已列出，而不是填充。
 
-它还有可能以填充区域与平铺的位图，如本文中所示[ **SkiaSharp 位图平铺**](../effects/shaders/bitmap-tiling.md)。
+还可以使用平铺位图填充区域，如[**SkiaSharp 位图平铺**](../effects/shaders/bitmap-tiling.md)一文中所示。
 
-## <a name="rounding-sharp-corners"></a>舍入尖角
+## <a name="rounding-sharp-corners"></a>圆角尖角
 
-**舍入 Heptagon**中提供程序[**绘制弧线的三个方法**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)文章使用正切弧线曲线的点的七个面图。 **另一个舍入 Heptagon**页显示更简单的方法使用从创建一个路径效果[ `SKPathEffect.CreateCorner` ](xref:SkiaSharp.SKPathEffect.CreateCorner(System.Single))方法：
+这三种方法中提供了**圆角 Heptagon**程序，用于[**绘制弧形文章，这三种方法**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)使用相切圆弧曲线绘制出七个点的点。 **另一个圆形 Heptagon**页面显示了一种更简单的方法，该方法使用从方法创建的路径效果 [`SKPathEffect.CreateCorner`](xref:SkiaSharp.SKPathEffect.CreateCorner(System.Single)) ：
 
 ```csharp
 public static SKPathEffect CreateCorner (Single radius)
 ```
 
-尽管单个参数名为`radius`，必须将其设置为半个所需的圆角半径。 （这是基础 Skia 代码的特征）。
+虽然单个参数名为 `radius` ，但必须将其设置为所需的角半径一半。 （这是基础 Skia 代码的特征。）
 
-下面是`PaintSurface`处理程序中的[ `AnotherRoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AnotherRoundedHeptagonPage.cs)类：
+下面是 `PaintSurface` 类中的处理程序 [`AnotherRoundedHeptagonPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AnotherRoundedHeptagonPage.cs) ：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -925,29 +928,29 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-可以使用这种效果与描画或基于填充`Style`属性的`SKPaint`对象。 运行此处：
+您可以将此效果用于描边，或根据对象的 `Style` 属性进行填充 `SKPaint` 。 此处运行的是：
 
 [![另一个圆形 Heptagon 页面的三向屏幕截图](effects-images/anotherroundedheptagon-small.png)](effects-images/anotherroundedheptagon-large.png#lightbox)
 
-您将看到此圆角的 heptagon 等同于早期版本的程序。 如果需要更可信的圆角半径真正为 100 而不是 50 中指定`SKPathEffect.CreateCorner`调用时，您可以取消注释最后一条语句在程序就会看到一个 100 radius 圆角上叠加。
+你会看到此舍入 heptagon 与之前的程序相同。 如果需要更好地说服角半径确实为100，而不是调用中指定的 50 `SKPathEffect.CreateCorner` ，则可以取消注释程序中的最后一个语句，并查看叠加在角上的100半径圆圈。
 
 ## <a name="random-jitter"></a>随机抖动
 
-有时计算机图形中的完美直线不了您的需求，并且需要一些随机性。 在这种情况下，您将想要尝试[ `SKPathEffect.CreateDiscrete` ](xref:SkiaSharp.SKPathEffect.CreateDiscrete(System.Single,System.Single,System.UInt32))方法：
+有时，计算机图形的完美直行并不是您想要的，并且需要一些随机性。 在这种情况下，需要尝试 [`SKPathEffect.CreateDiscrete`](xref:SkiaSharp.SKPathEffect.CreateDiscrete(System.Single,System.Single,System.UInt32)) 方法：
 
 ```csharp
 public static SKPathEffect CreateDiscrete (Single segLength, Single deviation, UInt32 seedAssist)
 ```
 
-用于描画或填充，可以使用此路径效果。 行分到多个已连接的网段 — 由指定的近似长度`segLength`— 和扩展在不同的方向。 指定的原始行偏离程度`deviation`。
+可以将此路径效果用于描边或填充。 行分为连接段（由指定的大致长度 `segLength` ），并按不同方向扩展。 与原始行的偏差的范围由指定 `deviation` 。
 
-最后一个参数是用于生成使用效果的伪随机序列的种子。 抖动效果看起来稍有不同的不同的种子。 自变量具有默认值为零，这意味着只要您运行该程序，效果都相同。 如果您希望不同抖动，每当重新绘制屏幕时，您可以设置为种子`Millisecond`属性的`DataTime.Now`值 （例如）。
+最终参数是用于生成用于效果的伪随机序列的种子。 对于不同的种子，抖动效果看起来会稍有不同。 自变量的默认值为零，这意味着每次运行程序时，效果都是相同的。 如果需要在每次重绘屏幕时使用不同的抖动，可以将种子设置为 `Millisecond` 值的属性 `DataTime.Now` （例如）。
 
-**抖动试验**页面允许您试验描画矩形中的不同值：
+通过 "**抖动实验**" 页，您可以在一个矩形的描边内尝试不同的值：
 
 [![JitterExperiment 页面的三向屏幕截图](effects-images/jitterexperiment-small.png)](effects-images/jitterexperiment-large.png#lightbox)
 
-该程序非常简单。 [ **JitterExperimentPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml)文件实例化两个`Slider`元素和一个`SKCanvasView`:
+程序非常简单。 [**JitterExperimentPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml)文件实例化两个 `Slider` 元素和一个 `SKCanvasView` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -1003,7 +1006,7 @@ public static SKPathEffect CreateDiscrete (Single segLength, Single deviation, U
 </ContentPage>
 ```
 
-`PaintSurface`处理程序中的[ **JitterExperimentPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml.cs)调用代码隐藏文件每当`Slider`值发生更改。 它将调用`SKPathEffect.CreateDiscrete`使用两个`Slider`值，并使用其绘制一个矩形：
+`PaintSurface`只要值发生更改，就会调用[**JitterExperimentPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml.cs)代码隐藏文件中的处理程序 `Slider` 。 它 `SKPathEffect.CreateDiscrete` 使用两个值调用， `Slider` 并使用它来对矩形进行笔画操作：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -1034,7 +1037,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-您可以使用这种效果用于填充，填充区域的轮廓的这种情况下受到这些随机偏差。 **抖动文本**页演示了如何使用此路径效果显示的文本。 中的代码的大部分`PaintSurface`处理程序[ `JitterTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterTextPage.cs)类专门致力于大小调整和居中文本：
+您也可以使用此效果进行填充，在这种情况下，填充区域的轮廓服从这些随机偏差。 "**抖动文本**" 页演示了如何使用此路径效果来显示文本。 类的处理程序中的大部分代码 `PaintSurface` [`JitterTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterTextPage.cs) 专用于调整文本的大小和居中：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -1069,13 +1072,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-此处它在横向模式下运行：
+它在横向模式下运行：
 
 [![JitterText 页面的三向屏幕截图](effects-images/jittertext-small.png)](effects-images/jittertext-large.png#lightbox)
 
 ## <a name="path-outlining"></a>路径大纲显示
 
-您所见的两个小示例[ `GetFillPath` ](xref:SkiaSharp.SKPaint.GetFillPath*)方法的`SKPaint`，其中存在两个版本：
+您已经看到了的两个方法示例 [`GetFillPath`](xref:SkiaSharp.SKPaint.GetFillPath*) `SKPaint` ，其中有两个版本：
 
 ```csharp
 public Boolean GetFillPath (SKPath src, SKPath dst, Single resScale = 1)
@@ -1083,13 +1086,13 @@ public Boolean GetFillPath (SKPath src, SKPath dst, Single resScale = 1)
 public Boolean GetFillPath (SKPath src, SKPath dst, SKRect cullRect, Single resScale = 1)
 ```
 
-只有前两个参数是必需的。 方法访问引用的路径`src`自变量，修改基于中的笔划属性的路径数据`SKPaint`对象 (包括`PathEffect`属性)，然后将结果转换为`dst`路径。 `resScale`参数允许的精度来创建较小的目标路径，减少和`cullRect`参数可以消除外部矩形轮廓。
+只有前两个参数是必需的。 方法访问参数所引用的路径 `src` ，根据对象中的笔划属性 `SKPaint` （包括属性）修改路径数据 `PathEffect` ，然后将结果写入 `dst` 路径中。 `resScale`参数允许减少精度以创建较小的目标路径，并且 `cullRect` 参数可以消除矩形外的轮廓。
 
-此方法的一个基本用途根本不涉及路径效果：`SKPaintStyle.Stroke` `GetFillPath` `PathEffect`如果对象的属性设置为，并且没有其集，则创建一个路径，该路径表示源路径的轮廓，就像它已被`Style` `SKPaint`绘制属性。
+此方法的一个基本用途根本不涉及路径效果：如果 `SKPaint` 对象的 `Style` 属性设置为 `SKPaintStyle.Stroke` ，并且*没有*其 `PathEffect` 设置，则会 `GetFillPath` 创建一个路径，该路径表示源路径的*轮廓*，就像它已被绘制属性描边一样。
 
-例如，如果`src`路径是一个简单的圆形的半径 500，并`SKPaint`对象指定的笔划宽度为 100，则`dst`路径将成为一个半径为 550 一个半径为 450，另两个同心环。 调用的方法`GetFillPath`因为填充这`dst`路径是相同描画`src`路径。 但您还可以绘制笔画`dst`路径以查看路径轮廓。
+例如，如果该 `src` 路径是一个简单的半径为500的圆，而该 `SKPaint` 对象指定的笔划宽度为100，则该 `dst` 路径将变成两个同心圆，一个半径为450，另一个半径为550。 调用方法是 `GetFillPath` 因为填充此路径与为 `dst` 路径描边的路径相同 `src` 。 但您也可以通过笔划 `dst` 路径来查看路径轮廓。
 
-**点击到大纲路径**此进行了演示。 `SKCanvasView`并`TapGestureRecognizer`进行实例化[ **TapToOutlineThePathPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml)文件。 [ **TapToOutlineThePathPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml.cs)代码分离文件定义了三个`SKPaint`对象作为字段，两个用于描画与描边宽度为 100 和 20 和第三个填充：
+**点击以对路径进行分级**演示。 `SKCanvasView`和 `TapGestureRecognizer` 在[**TapToOutlineThePathPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml)文件中实例化。 [**TapToOutlineThePathPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml.cs)代码隐藏文件将三个 `SKPaint` 对象定义为字段，两个用于描边宽度为100和20的描边，第三个对象用于填充：
 
 ```csharp
 public partial class TapToOutlineThePathPage : ContentPage
@@ -1130,7 +1133,7 @@ public partial class TapToOutlineThePathPage : ContentPage
 }
 ```
 
-如果屏幕未被点击，`PaintSurface`处理程序使用`blueFill`和`redThickStroke`绘制对象以便呈现循环路径：
+如果未点击屏幕， `PaintSurface` 处理程序将使用 `blueFill` 和 `redThickStroke` paint 对象呈现循环路径：
 
 ```csharp
 public partial class TapToOutlineThePathPage : ContentPage
@@ -1170,28 +1173,28 @@ public partial class TapToOutlineThePathPage : ContentPage
 }
 ```
 
-该圆形填充区域和描边按预期的方式：
+该圆形会按预期方式填充和描边：
 
 [![正常点击以概述路径页面的三向屏幕截图](effects-images/taptooutlinethepathnormal-small.png)](effects-images/taptooutlinethepathnormal-large.png#lightbox)
 
-点击屏幕上，当`outlineThePath`设置为`true`，并`PaintSurface`处理程序将创建全新`SKPath`对象，并将其用作对的调用中的目标路径`GetFillPath`上`redThickStroke`绘制对象。 然后填充区域和描边与该目标路径`redThinStroke`，这会导致在下面的示例：
+点击屏幕时，将 `outlineThePath` 设置为 `true` ，并且 `PaintSurface` 处理程序将创建一个新的 `SKPath` 对象，并将其用作对 `GetFillPath` paint 对象的调用中的目标路径 `redThickStroke` 。 然后，将填充该目标路径并将其与相交，这会 `redThinStroke` 导致以下结果：
 
 [![边框点击以概述 "路径" 页的三向屏幕截图](effects-images/taptooutlinethepathoutlined-small.png)](effects-images/taptooutlinethepathoutlined-large.png#lightbox)
 
-两个红色圆圈清楚地表示原始循环路径的已转换为两个循环分布图。
+这两个红色圆圈清楚地表明原循环路径已转换为两个圆形等高线。
 
-此方法可以是在开发用于路径中非常有用`SKPathEffect.Create1DPath`方法。 复制路径时，始终填充这些方法中指定的路径。 如果不想要填充的完整路径，则必须仔细定义轮廓。
+此方法在开发用于方法的路径时非常有用 `SKPathEffect.Create1DPath` 。 在这些方法中指定的路径在复制路径时始终会被填充。 如果您不希望填充整个路径，则必须仔细定义轮廓。
 
-例如，在**链接链**示例链接定义一系列的四个弧线，其中每个对基于两个半径概述要填充的路径的区域。 可以在中的代码替换为`LinkedChainPage`类来执行稍有不同。
+例如，在**链接链**示例中，链接是使用一系列四个弧定义的，每对都基于两个半径来勾勒要填充的路径区域。 可以将类中的代码替换为 `LinkedChainPage` 略有不同。
 
-首先，你将想要重新定义`linkRadius`常量：
+首先，需要重新定义 `linkRadius` 常量：
 
 ```csharp
 const float linkRadius = 27.5f;
 const float linkThickness = 5;
 ```
 
-`linkPath`现在只需要两个基于该单个 radius，与所需的弧线开始角度和扫描角度：
+`linkPath`现在，只有两个基于该半径的弧形，具有所需的起始角度和扫描角度：
 
 ```csharp
 using (SKPath linkPath = new SKPath())
@@ -1220,13 +1223,13 @@ using (SKPath linkPath = new SKPath())
 }
 ```
 
-`outlinePath`对象，即边框的收件人`linkPath`描中指定的属性时`strokePaint`。
+`outlinePath`对象在 `linkPath` 与中指定的属性进行描边时，为大纲的接收方 `strokePaint` 。
 
-使用此方法的另一个示例接下来的一种方法中使用的路径。
+使用此方法的另一个示例是在方法中使用的路径的下一个示例。
 
 ## <a name="combining-path-effects"></a>组合路径效果
 
-两种最终静态创建方法`SKPathEffect`都[ `SKPathEffect.CreateSum` ](xref:SkiaSharp.SKPathEffect.CreateSum(SkiaSharp.SKPathEffect,SkiaSharp.SKPathEffect))并[ `SKPathEffect.CreateCompose` ](xref:SkiaSharp.SKPathEffect.CreateCompose(SkiaSharp.SKPathEffect,SkiaSharp.SKPathEffect)):
+的两个最终静态创建方法 `SKPathEffect` 是 [`SKPathEffect.CreateSum`](xref:SkiaSharp.SKPathEffect.CreateSum(SkiaSharp.SKPathEffect,SkiaSharp.SKPathEffect)) 和 [`SKPathEffect.CreateCompose`](xref:SkiaSharp.SKPathEffect.CreateCompose(SkiaSharp.SKPathEffect,SkiaSharp.SKPathEffect)) ：
 
 ```csharp
 public static SKPathEffect CreateSum (SKPathEffect first, SKPathEffect second)
@@ -1234,15 +1237,15 @@ public static SKPathEffect CreateSum (SKPathEffect first, SKPathEffect second)
 public static SKPathEffect CreateCompose (SKPathEffect outer, SKPathEffect inner)
 ```
 
-这两种方法合并两个路径效果来创建复合路径效果。 `CreateSum`方法创建路径效果类似于分别应用的两个路径效果虽然`CreateCompose`应用一个路径效果 ( `inner`)，然后应用`outer`到的。
+这两种方法组合了两个路径效果来创建复合路径效果。 `CreateSum`方法创建的路径效果类似于分别应用的两个路径效果，同时 `CreateCompose` 应用一个路径效果（ `inner` ），然后将应用 `outer` 到。
 
-您已经看到如何`GetFillPath`方法`SKPaint`可以将一条路径转换为另一个路径基于`SKPaint`属性 (包括`PathEffect`)，不应将其*太*神秘方式`SKPaint`对象可以执行该操作两次，在指定的两个路径效果`CreateSum`或`CreateCompose`方法。
+您已经了解了的 `GetFillPath` 方法如何 `SKPaint` 根据属性（包括）将一个路径转换为另一个路径， `SKPaint` `PathEffect` 因此它不应*太*神秘， `SKPaint` 对象如何使用或方法中指定的两个路径效果两次执行该操作 `CreateSum` `CreateCompose` 。
 
-一个明显的用途`CreateSum`是定义`SKPaint`对象，它使用一条路径的效果，填充路径和描边与另一个路径效果的路径。 了这一点**框架中的猫**示例，显示带圆齿形边缘的范围内的猫数组：
+的一个明显用途 `CreateSum` 是定义一个 `SKPaint` 对象，该对象使用一个路径效果填充路径，并使用另一个路径效果来描边路径。 "**帧中的猫**" 示例演示了这种情况，它在具有相框边缘的帧中显示猫数组：
 
 [![框架页中猫的三向屏幕截图](effects-images/catsinframe-small.png)](effects-images/catsinframe-large.png#lightbox)
 
-[ `CatsInFramePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CatsInFramePage.cs)类首先定义多个字段。 你可能会识别中的第一个字段[ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs)类派生[ **SVG 路径数据**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)一文。 第二个路径基于行和弧线的帧扇贝模式：
+[`CatsInFramePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CatsInFramePage.cs)类首先定义多个字段。 您可以 [`PathDataCatPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) 通过[**SVG 路径数据**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)一文中的类来识别第一个字段。 第二个路径基于帧的 scallop 模式的直线和弧线：
 
 ```csharp
 public class CatsInFramePage : ContentPage
@@ -1284,9 +1287,9 @@ public class CatsInFramePage : ContentPage
 }
 ```
 
-`catPath`中可以使用`SKPathEffect.Create2DPath`方法如果`SKPaint`对象`Style`属性设置为`Stroke`。 但是，如果`catPath`直接在此程序中，然后整个猫头中将填充，并须线甚至不会显示使用。 （试试看 ！）需要获取该路径的轮廓和使用中的大纲`SKPathEffect.Create2DPath`方法。
+`catPath` `SKPathEffect.Create2DPath` 如果 `SKPaint` 对象 `Style` 属性设置为，则可在方法中使用 `Stroke` 。 但是，如果 `catPath` 直接在此程序中使用，则将填充 cat 的整个 head，并且须线甚至不可见。 （试试看！）需要获取该路径的轮廓，并在方法中使用该轮廓 `SKPathEffect.Create2DPath` 。
 
-构造函数完成此作业。 它会先应用到两个转换`catPath`移动 （0，0） 到中心点和缩小规模的大小。 `GetFillPath` 获取的分布图中的所有大纲`outlinedCatPath`，并且在使用该对象`SKPathEffect.Create2DPath`调用。 的缩放因素`SKMatrix`值是稍大于水平和垂直猫提供磁贴，虽然转换因子之间的小缓冲区大小派生的某种程度上根据经验，以便完全 cat 中是可见的左上角的帧：
+构造函数执行此作业。 第一种方法是将两个转换应用到 `catPath` ，将（0，0）点移动到中心，并将其向下减小。 `GetFillPath`获取中的轮廓的所有轮廓 `outlinedCatPath` ，并在调用中使用该对象 `SKPathEffect.Create2DPath` 。 值中的缩放系数 `SKMatrix` 略微大于 cat 的水平和垂直大小，以在图块之间提供小的缓冲，而平移因子则衍生为一些凭经验，以便完全猫在帧的左上角显示：
 
 ```csharp
 public class CatsInFramePage : ContentPage
@@ -1329,9 +1332,9 @@ public class CatsInFramePage : ContentPage
 }
 ```
 
-然后，构造函数调用`SKPathEffect.Create1DPath`圆齿形帧。 请注意，路径的宽度为 100 个像素，但提前为 75 像素，以便复制的路径重叠在框架四周。 构造函数调用的最后一个语句`SKPathEffect.CreateSum`合并两个路径效果并将结果设置为`SKPaint`对象。
+然后，构造函数调用 `SKPathEffect.Create1DPath` 相框帧。 请注意，该路径的宽度为100像素，但前进量为75像素，以便复制的路径与帧重叠。 构造函数的最后一条语句调用 `SKPathEffect.CreateSum` 来合并这两个路径效果，并将结果设置为 `SKPaint` 对象。
 
-所有这些工作允许`PaintSurface`处理程序是非常简单。 它只需定义一个矩形，并使其使用`framePaint`:
+所有这些工作都允许 `PaintSurface` 处理程序非常简单。 它只需定义一个矩形并使用绘制它 `framePaint` ：
 
 ```csharp
 public class CatsInFramePage : ContentPage
@@ -1352,11 +1355,11 @@ public class CatsInFramePage : ContentPage
 }
 ```
 
-路径效果背后的算法始终会导致用于描画或填充来显示，这可能导致一些视觉对象显示该矩形之外的整个路径。 `ClipRect`之前调用`DrawRect`调用允许为得更简洁的视觉对象。 （就可以试试不经剪辑 ！）
+路径效果后面的算法始终导致显示用于描边或填充的整个路径，这可能会导致某些视觉对象出现在矩形外。 `ClipRect`调用之前的调用 `DrawRect` 允许视觉对象变得更加整洁。 （尝试不要剪辑！）
 
-它是通常使用`SKPathEffect.CreateCompose`将一些抖动添加到另一个路径效果。 您当然可以体验靠您自己，但下面是一个略有不同的示例：
+通常使用 `SKPathEffect.CreateCompose` 向另一个路径效果添加一些抖动。 当然，您可以自行试验，但下面的示例有点不同：
 
-**虚线阴影线条**用虚线表示的阴影线条填充椭圆。 中的工作的大部分[ `DashedHatchLinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DashedHatchLinesPage.cs)执行类直接在字段定义中的。 这些字段定义短划线效果和阴影效果。 它们定义为`static`因为中然后引用它们`SKPathEffect.CreateCompose`调用中`SKPaint`定义：
+**虚线阴影线**使用变成虚线的影线线条填充椭圆。 类中的大部分工作 [`DashedHatchLinesPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DashedHatchLinesPage.cs) 均在字段定义中直接执行。 这些字段定义短划线效果和阴影效果。 它们定义为， `static` 因为随后会在定义的调用中引用它们 `SKPathEffect.CreateCompose` `SKPaint` ：
 
 ```csharp
 public class DashedHatchLinesPage : ContentPage
@@ -1384,7 +1387,7 @@ public class DashedHatchLinesPage : ContentPage
 }
 ```
 
-`PaintSurface`处理程序需要包含仅标准开销加上一次调用`DrawOval`:
+`PaintSurface`处理程序只需包含标准开销和一个对的调用 `DrawOval` ：
 
 ```csharp
 public class DashedHatchLinesPage : ContentPage
@@ -1406,11 +1409,11 @@ public class DashedHatchLinesPage : ContentPage
 }
 ```
 
-如您所发现，阴影线不是精确地限制为内部的区域，并在此示例中，它们始终以在整个短划线左侧：
+正如您已发现的，阴影线并未精确地限制在区域的内部，在此示例中，它们始终以整破折号开头：
 
 [![虚线影线线条页面的三向屏幕截图](effects-images/dashedhatchlines-small.png)](effects-images/dashedhatchlines-large.png#lightbox)
 
-现在，您所见，范围从简单的点和短划线到奇怪的组合路径效果，使用您的想象力，并查看可以创建。
+现在，您已经看到了从简单点和短划线到奇怪组合的路径效果，可以使用您的想像并了解您可以创建的内容。
 
 ## <a name="related-links"></a>相关链接
 

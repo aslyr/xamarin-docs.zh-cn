@@ -1,45 +1,48 @@
 ---
-title: Xamarin。窗体 MenuItem
-description: MenuItem 类用于为菜单项（如 ListView 项上下文菜单和 Shell 应用程序飞出菜单）创建菜单项。
-ms.prod: xamarin
-ms.assetId: 62655C21-6053-466D-A7F4-DE2BE36538F5
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 08/01/2019
-ms.openlocfilehash: b4690feb6444405d090a0b2bafd6c8615b2ffa8b
-ms.sourcegitcommit: 6d86aac422d6ce2131930d18ada161d117c8c61b
+title: Xamarin.Forms项
+description: ''
+ms.prod: ''
+ms.assetId: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: de8c6bff2c9dc72821692708f5852cd874c31ede
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/24/2020
-ms.locfileid: "77567060"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139199"
 ---
-# <a name="xamarinforms-menuitem"></a>Xamarin。窗体 MenuItem
+# <a name="xamarinforms-menuitem"></a>Xamarin.Forms项
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-menuitemdemos/)
 
-Xamarin [`MenuItem`](xref:Xamarin.Forms.MenuItem)类定义菜单的菜单项，如 `ListView` 项上下文菜单和 Shell 应用程序飞出菜单。
+Xamarin.Forms [`MenuItem`](xref:Xamarin.Forms.MenuItem) 类定义菜单的菜单项 `ListView` ，如项上下文菜单和 Shell 应用程序飞出菜单。
 
-以下屏幕截图显示 iOS 和 Android 上 `ListView` 上下文菜单中的 `MenuItem` 对象：
+以下屏幕截图显示 `MenuItem` `ListView` IOS 和 Android 上上下文菜单中的对象：
 
 [!["IOS 和 Android 上的菜单项"](menuitem-images/menuitem-demo-cropped.png "IOS 和 Android 上的菜单项")](menuitem-images/menuitem-demo-full.png#lightbox "IOS 和 Android 完整映像上的菜单项")
 
-`MenuItem` 类定义以下属性：
+`MenuItem`类定义以下属性：
 
-* [`Command`](xref:Xamarin.Forms.MenuItem.Command)是一种允许将用户操作（如指指点击或单击）绑定到 viewmodel 上定义的命令的 `ICommand`。
-* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)是指定应传递到 `Command`的参数的 `object`。
-* [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource)是定义显示图标的 `ImageSource` 值。
-* [`IsDestructive`](xref:Xamarin.Forms.MenuItem.IsDestructive)是一个 `bool` 值，该值指示 `MenuItem` 是否从列表中删除其关联的 UI 元素。
-* [`IsEnabled`](xref:Xamarin.Forms.MenuItem.IsEnabled)是一个 `bool` 值，该值指示此对象是否响应用户输入。
-* [`Text`](xref:Xamarin.Forms.MenuItem.Text)是指定显示文本的 `string` 值。
+* [`Command`](xref:Xamarin.Forms.MenuItem.Command)是一个 `ICommand` ，它允许将用户操作（如指指单击或单击）绑定到在 viewmodel 上定义的命令。
+* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)`object`指定应传递到的参数的 `Command` 。
+* [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource)`ImageSource`定义显示图标的值。
+* [`IsDestructive`](xref:Xamarin.Forms.MenuItem.IsDestructive)一个 `bool` 值，该值指示是否 `MenuItem` 从列表中移除其关联的 UI 元素。
+* [`IsEnabled`](xref:Xamarin.Forms.MenuItem.IsEnabled)一个 `bool` 值，该值指示此对象是否响应用户输入。
+* [`Text`](xref:Xamarin.Forms.MenuItem.Text)`string`指定显示文本的值。
 
-这些属性由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)对象支持，因此 `MenuItem` 实例可以是数据绑定的目标。
+这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，因此， `MenuItem` 实例可以是数据绑定的目标。
 
 ## <a name="create-a-menuitem"></a>创建 MenuItem
 
-`MenuItem` 对象可在 `ListView` 对象项的上下文菜单中使用。 最常见的模式是在 `ViewCell` 实例中创建 `MenuItem` 对象，该实例用作 `ListView``ItemTemplate`的 `DataTemplate` 对象。 填充 `ListView` 对象时，它会使用 `DataTemplate`创建每个项，并在为项激活上下文菜单时公开 `MenuItem` 选项。
+`MenuItem`对象可用于对象项的上下文菜单中 `ListView` 。 最常见的模式是 `MenuItem` 在实例中创建对象 `ViewCell` ，该对象用作的 `DataTemplate` 对象 `ListView` `ItemTemplate` 。 `ListView`填充对象时，它将使用创建每个项，并在为 `DataTemplate` `MenuItem` 项激活上下文菜单时公开选项。
 
-下面的示例演示 `ListView` 对象的上下文中 `MenuItem` 实例化：
+下面的示例显示了 `MenuItem` 对象在对象上下文中的实例化 `ListView` ：
 
 ```xaml
 <ListView>
@@ -56,7 +59,7 @@ Xamarin [`MenuItem`](xref:Xamarin.Forms.MenuItem)类定义菜单的菜单项，�
 </ListView>
 ```
 
-还可以在代码中创建 `MenuItem`：
+`MenuItem`也可以在代码中创建：
 
 ```csharp
 // A function returns a ViewCell instance that
@@ -96,7 +99,7 @@ ListView listView = new ListView
 
 ## <a name="define-menuitem-behavior-with-events"></a>定义包含事件的 MenuItem 行为
 
-`MenuItem` 类会公开 `Clicked` 事件。 可以将事件处理程序附加到此事件，以响应在 XAML 中单击或单击 `MenuItem` 实例：
+`MenuItem` 类会公开 `Clicked` 事件。 可以将事件处理程序附加到此事件，以响应在 XAML 中的点击或单击 `MenuItem` 实例：
 
 ```xaml
 <MenuItem ...
@@ -110,7 +113,7 @@ MenuItem item = new MenuItem { ... }
 item.Clicked += OnItemClicked;
 ```
 
-前面的示例引用 `OnItemClicked` 事件处理程序。 下面的代码演示实现示例：
+前面的示例引用了 `OnItemClicked` 事件处理程序。 下面的代码演示实现示例：
 
 ```csharp
 void OnItemClicked(object sender, EventArgs e)
@@ -127,7 +130,7 @@ void OnItemClicked(object sender, EventArgs e)
 
 ## <a name="define-menuitem-behavior-with-mvvm"></a>通过 MVVM 定义 MenuItem 行为
 
-`MenuItem` 类通过[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)对象和 `ICommand` 接口支持模型-视图-VIEWMODEL （MVVM）模式。 以下 XAML 显示了绑定到 viewmodel 上定义的命令的 `MenuItem` 实例：
+`MenuItem`类通过 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象和接口支持模型-视图-VIEWMODEL （MVVM）模式 `ICommand` 。 以下 XAML 显示了 `MenuItem` 绑定到 viewmodel 上定义的命令的实例：
 
 ```xaml
 <ContentPage.BindingContext>
@@ -157,7 +160,7 @@ void OnItemClicked(object sender, EventArgs e)
 </StackLayout>
 ```
 
-在前面的示例中，两个 `MenuItem` 对象均由其 `Command` 和绑定到 viewmodel 上命令的 `CommandParameter` 属性定义。 Viewmodel 包含 XAML 中引用的命令：
+在前面的示例中，定义了两个 `MenuItem` 对象，并将其 `Command` 和 `CommandParameter` 属性绑定到 viewmodel 上的命令。 Viewmodel 包含 XAML 中引用的命令：
 
 ```csharp
 public class ListPageViewModel : INotifyPropertyChanged
@@ -176,7 +179,7 @@ public class ListPageViewModel : INotifyPropertyChanged
 }
 ```
 
-示例应用程序包括一个 `DataService` 类，该类用于获取用于填充 `ListView` 对象的项的列表。 使用 `DataService` 类中的项来实例化 viewmodel，并将其设置为代码隐藏中的 `BindingContext`：
+示例应用程序包含一个 `DataService` 类，该类用于获取用于填充对象的项的列表 `ListView` 。 使用类中的项来实例化 viewmodel， `DataService` 并将其设置为 `BindingContext` 代码隐藏中的：
 
 ```csharp
 public MenuItemXamlMvvmPage()
@@ -189,29 +192,29 @@ public MenuItemXamlMvvmPage()
 ## <a name="menuitem-icons"></a>MenuItem 图标
 
 > [!WARNING]
-> `MenuItem` 对象只显示 Android 上的图标。 在其他平台上，只会显示 `Text` 属性指定的文本。
+> `MenuItem`对象只显示 Android 上的图标。 在其他平台上，仅显示由属性指定的文本 `Text` 。
 
- 图标是使用 `IconImageSource` 属性指定的。 如果指定了图标，则不会显示 `Text` 属性指定的文本。 以下屏幕截图显示了 Android 上带有图标的 `MenuItem`：
+ 图标是使用属性指定的 `IconImageSource` 。 如果指定了图标，则不会显示由属性指定的文本 `Text` 。 以下屏幕截图显示 `MenuItem` Android 上带有图标的：
 
 !["Android 上的 MenuItem 图标屏幕截图"](menuitem-images/menuitem-android-icon.png "Android 上菜单菜单的屏幕截图")
 
-有关在 Xamarin 中使用图像的详细信息，请参阅[xamarin 中的图像](~/xamarin-forms/user-interface/images.md)。
+有关使用中的图像的详细信息 Xamarin.Forms ，请参阅[中的 Xamarin.Forms 图像](~/xamarin-forms/user-interface/images.md)。
 
 ## <a name="enable-or-disable-a-menuitem-at-runtime"></a>在运行时启用或禁用 MenuItem
 
-若要启用在运行时禁用 `MenuItem`，请将其 `Command` 属性绑定到 `ICommand` 实现，并确保 `canExecute` 委托根据需要启用和禁用 `ICommand`。
+若要 `MenuItem` 在运行时启用，请将其 `Command` 属性绑定到 `ICommand` 实现，并确保 `canExecute` 委托启用和禁用 `ICommand` 相应的。
 
 > [!IMPORTANT]
-> 使用 `Command` 属性启用或禁用 `MenuItem`时，不要将 `IsEnabled` 属性绑定到另一个属性。
+> `IsEnabled`使用 `Command` 属性启用或禁用时，不要将属性绑定到另一个属性 `MenuItem` 。
 
-下面的示例演示一个 `MenuItem`，其 `Command` 属性绑定到名为 `MyCommand`的 `ICommand`：
+下面的示例演示了 `MenuItem` 一个 `Command` 属性绑定到一个 `ICommand` 命名的 `MyCommand` ：
 
 ```xaml
 <MenuItem Text="My menu item"
           Command="{Binding MyCommand}" />
 ```
 
-`ICommand` 实现需要一个 `canExecute` 委托，该委托返回 `bool` 属性的值以启用和禁用 `MenuItem`：
+`ICommand`实现需要一个 `canExecute` 委托，该委托返回属性的值 `bool` 以启用和禁用 `MenuItem` ：
 
 ```csharp
 public class MyViewModel : INotifyPropertyChanged
@@ -240,17 +243,17 @@ public class MyViewModel : INotifyPropertyChanged
 }
 ```
 
-在此示例中，除非设置了 `IsMenuItemEnabled` 属性，否则将禁用 `MenuItem`。 发生这种情况时，将调用 `Command.ChangeCanExecute` 方法，这将导致重新计算 `MyCommand` 的 `canExecute` 委托。
+在此示例中，在 `MenuItem` 设置属性之前，将禁用 `IsMenuItemEnabled` 。 发生这种情况时，将 `Command.ChangeCanExecute` 调用方法，这将导致 `canExecute` `MyCommand` 重新计算的委托。
 
 ## <a name="cross-platform-context-menu-behavior"></a>跨平台上下文菜单行为
 
 上下文菜单在每个平台上以不同的方式进行访问和显示。
 
-在 Android 上，通过长时间按列表项激活上下文菜单。 上下文菜单替换标题和导航栏区域，`MenuItem` 选项显示为水平按钮。
+在 Android 上，通过长时间按列表项激活上下文菜单。 上下文菜单替换标题和导航栏区域， `MenuItem` 选项显示为水平按钮。
 
 !["Android 上上下文菜单的屏幕截图"](menuitem-images/menuitem-android-icon.png "Android 上上下文菜单的屏幕截图")
 
-在 iOS 上，通过在列表项上轻扫激活上下文菜单。 上下文菜单将显示在列表项上，并且 `MenuItems` 将显示为水平按钮。
+在 iOS 上，通过在列表项上轻扫激活上下文菜单。 上下文菜单显示在列表项上，并 `MenuItems` 显示为水平按钮。
 
 !["IOS 上上下文菜单的屏幕截图"](menuitem-images/menuitem-ios-contextmenu.png "IOS 上上下文菜单的屏幕截图")
 
@@ -261,4 +264,4 @@ public class MyViewModel : INotifyPropertyChanged
 ## <a name="related-links"></a>相关链接
 
 * [MenuItem 演示](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-menuitemdemos/)
-* [Xamarin 中的图像](~/xamarin-forms/user-interface/images.md)
+* [中的映像Xamarin.Forms](~/xamarin-forms/user-interface/images.md)

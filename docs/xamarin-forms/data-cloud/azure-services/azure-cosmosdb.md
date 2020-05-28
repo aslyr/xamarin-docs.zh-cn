@@ -1,71 +1,74 @@
 ---
-title: 在 Xamarin 中使用 Azure Cosmos DB 文档数据库
-description: 此文章介绍了如何使用 Azure Cosmos DB.NET Standard 客户端库将 Azure Cosmos DB 文档数据库集成到 Xamarin.Forms 应用程序。
-ms.prod: xamarin
-ms.assetid: 7C0605D9-9B7F-4002-9B60-2B5DAA3EA30C
-ms.technology: xamarin-forms
-ms.custom: xamu-video
-author: davidbritch
-ms.author: dabritch
-ms.date: 06/16/2017
-ms.openlocfilehash: 13abfa9789cee32ed2c7cd2401c1402d9c7c3886
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+title: 在中使用 Azure Cosmos DB 文档数据库Xamarin.Forms
+description: 本文介绍如何使用 Azure Cosmos DB .NET Standard 客户端库将 Azure Cosmos DB 文档数据库集成到 Xamarin.Forms 应用程序中。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+ms.custom: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 47b35d394eab339a8e9a1f81880e6de4233f29b6
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489773"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84127078"
 ---
-# <a name="consume-an-azure-cosmos-db-document-database-in-xamarinforms"></a>在 Xamarin 中使用 Azure Cosmos DB 文档数据库
+# <a name="consume-an-azure-cosmos-db-document-database-in-xamarinforms"></a>在中使用 Azure Cosmos DB 文档数据库Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdb)
 
-_Azure Cosmos DB 文档数据库是一种 NoSQL 数据库，可提供对 JSON 文档的低延迟访问，为需要无缝缩放和全局复制的应用程序提供快速、高度可用、可缩放的数据库服务。本文介绍如何使用 Azure Cosmos DB .NET Standard 客户端库将 Azure Cosmos DB 文档数据库集成到 Xamarin 应用程序中。_
+_Azure Cosmos DB 文档数据库是一种 NoSQL 数据库，可提供对 JSON 文档的低延迟访问，为需要无缝缩放和全局复制的应用程序提供快速、高度可用、可缩放的数据库服务。本文介绍如何使用 Azure Cosmos DB .NET Standard 客户端库将 Azure Cosmos DB 文档数据库集成到 Xamarin.Forms 应用程序中。_
 
 > [!VIDEO https://youtube.com/embed/BoVH12igmbg]
 
 **Microsoft Azure Cosmos DB 视频**
 
-可以使用 Azure 订阅预配 Azure Cosmos DB 文档数据库帐户。 每个数据库帐户可以有零个或多个数据库。 Azure Cosmos DB 中的文档数据库是适用于文档集合和用户的逻辑容器。
+可以使用 Azure 订阅预配 Azure Cosmos DB 文档数据库帐户。 每个数据库帐户可以有零个或多个数据库。 Azure Cosmos DB 中的文档数据库是文档集合和用户的逻辑容器。
 
-Azure Cosmos DB 文档数据库可能包含零个或多个文档集合。 每个文档集合可以具有不同的性能级别，允许更大的吞吐量为经常访问的集合，指定和更少不常访问的集合的吞吐量。
+Azure Cosmos DB 文档数据库可包含零个或多个文档集合。 每个文档集合都可以具有不同的性能级别，从而为经常访问的集合指定更多的吞吐量，并减少不常访问的集合的吞吐量。
 
-每个文档集合包含的零个或多个 JSON 文档。 集合中的文档是无架构的因此不需要共享相同的结构或字段。 文档添加到文档集合，Cosmos DB 会自动编制索引以及它们会变得可供查询。
+每个文档集合包含零个或多个 JSON 文档。 集合中的文档是无架构的，因此不需要共享相同的结构或字段。 将文档添加到文档集合时，Cosmos DB 会自动为它们编制索引，并使它们可供查询。
 
-出于开发目的，文档数据库也可以使用通过仿真程序。 使用模拟器，应用程序可以进行开发和测试本地，而无需创建 Azure 订阅，也不会产生任何费用。 有关模拟器的详细信息，请参阅[使用 Azure Cosmos DB 模拟器进行本地开发](/azure/cosmos-db/local-emulator/)。
+出于开发目的，还可以通过模拟器使用文档数据库。 使用模拟器，可以在本地开发和测试应用程序，而无需创建 Azure 订阅，也不会产生任何费用。 有关模拟器的详细信息，请参阅[在本地开发 Azure Cosmos DB 模拟器](/azure/cosmos-db/local-emulator/)。
 
-本文中，以及随附的示例应用程序，演示其中这些任务存储在 Azure Cosmos DB 文档数据库中的待办事项列表应用程序。 有关示例应用程序的详细信息，请参阅[了解示例](~/xamarin-forms/data-cloud/web-services/introduction.md)。
+本文和随附的示例应用程序演示了一个待办事项列表应用程序，其中的任务存储在 Azure Cosmos DB 的文档数据库中。 有关示例应用程序的详细信息，请参阅[了解示例](~/xamarin-forms/data-cloud/web-services/introduction.md)。
 
 有关 Azure Cosmos DB 的详细信息，请参阅[Azure Cosmos DB 文档](/azure/cosmos-db/)。
 
 > [!NOTE]
 > 如果还没有 [Azure 订阅](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，可以在开始前创建一个[免费帐户](https://aka.ms/azfree-docs-mobileapps)。
 
-## <a name="setup"></a>安装
+## <a name="setup"></a>设置
 
-将 Azure Cosmos DB 文档数据库集成到 Xamarin.Forms 应用程序的过程如下所示：
+将 Azure Cosmos DB 文档数据库集成到应用程序的过程 Xamarin.Forms 如下所示：
 
 1. 创建 Cosmos DB 帐户。 有关详细信息，请参阅[创建 Azure Cosmos DB 帐户](/azure/cosmos-db/sql-api-dotnetcore-get-started#create-an-azure-cosmos-account)。
-1. 添加[Azure Cosmos DB.NET Standard 客户端库](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)到 Xamarin.Forms 解决方案中的平台项目的 NuGet 包。
-1. 添加`using`指令`Microsoft.Azure.Documents`， `Microsoft.Azure.Documents.Client`，和`Microsoft.Azure.Documents.Linq`到将访问 Cosmos DB 帐户的类的命名空间。
+1. 将[Azure Cosmos DB .NET Standard 客户端库](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)NuGet 包添加到解决方案中的平台项目 Xamarin.Forms 。
+1. 向 `using` `Microsoft.Azure.Documents` `Microsoft.Azure.Documents.Client` `Microsoft.Azure.Documents.Linq` 将访问 Cosmos DB 帐户的类添加、和命名空间的指令。
 
-执行这些步骤后，可以使用 Azure Cosmos DB.NET Standard 客户端库进行配置和执行针对文档数据库的请求。
+执行这些步骤后，可以使用 Azure Cosmos DB .NET Standard 客户端库来针对文档数据库配置和执行请求。
 
 > [!NOTE]
-> Azure Cosmos DB.NET Standard 客户端库只能安装到平台项目中，并不到可移植类库 (PCL) 项目。 因此，示例应用程序是共享访问项目 (SAP) 以避免代码重复。 但是，`DependencyService`类可用于在 PCL 项目中调用特定于平台的项目中包含的 Azure Cosmos DB.NET Standard 客户端库代码。
+> Azure Cosmos DB .NET Standard 客户端库只能安装到平台项目中，而不能安装到可移植类库（PCL）项目中。 因此，示例应用程序是一个共享访问项目（SAP），以避免代码重复。 但是， `DependencyService` 可以在 PCL 项目中使用类来调用特定于平台的项目中包含的 .NET Standard 客户端库代码 Azure Cosmos DB。
 
 ## <a name="consuming-the-azure-cosmos-db-account"></a>使用 Azure Cosmos DB 帐户
 
-`DocumentClient`类型封装终结点、 凭据和连接策略用来访问 Azure Cosmos DB 帐户，并用于配置和执行针对帐户的请求。 下面的代码示例演示如何创建此类的实例：
+`DocumentClient`类型封装用于访问 Azure Cosmos DB 帐户的终结点、凭据和连接策略，并用于针对帐户配置和执行请求。 下面的代码示例演示如何创建此类的实例：
 
 ```csharp
 DocumentClient client = new DocumentClient(new Uri(Constants.EndpointUri), Constants.PrimaryKey);
 ```
 
-Cosmos DB Uri 和主密钥必须提供给`DocumentClient`构造函数。 可以从 Azure 门户获取这些。 有关详细信息，请参阅[连接到 Azure Cosmos DB 帐户](/azure/cosmos-db/sql-api-dotnetcore-get-started#Connect)。
+必须为构造函数提供 Cosmos DB Uri 和主密钥 `DocumentClient` 。 可从 Azure 门户获取这些。 有关详细信息，请参阅[连接到 Azure Cosmos DB 帐户](/azure/cosmos-db/sql-api-dotnetcore-get-started#Connect)。
 
 ### <a name="creating-a-database"></a>创建数据库
 
-文档数据库是适用于文档集合和用户的逻辑容器，并且可以创建在 Azure 门户中，或以编程方式使用`DocumentClient.CreateDatabaseIfNotExistsAsync`方法：
+文档数据库是文档集合和用户的逻辑容器，可以在 Azure 门户中创建，也可以使用方法以编程方式创建 `DocumentClient.CreateDatabaseIfNotExistsAsync` ：
 
 ```csharp
 public async Task CreateDatabase(string databaseName)
@@ -79,14 +82,14 @@ public async Task CreateDatabase(string databaseName)
 }
 ```
 
-`CreateDatabaseIfNotExistsAsync`方法指定`Database`对象作为参数，与`Database`对象，指定数据库名称作为其`Id`属性。 `CreateDatabaseIfNotExistsAsync`方法创建数据库; 如果不存在，如果它已存在，则返回的数据库。 但是，示例应用程序将忽略返回任何数据`CreateDatabaseIfNotExistsAsync`方法。
+`CreateDatabaseIfNotExistsAsync`方法将对象指定 `Database` 为参数， `Database` 对象将数据库名称指定为其 `Id` 属性。 `CreateDatabaseIfNotExistsAsync`如果数据库不存在，则该方法将创建数据库，如果数据库已存在，则返回该数据库。 但是，示例应用程序将忽略方法返回的任何数据 `CreateDatabaseIfNotExistsAsync` 。
 
 > [!NOTE]
-> `CreateDatabaseIfNotExistsAsync`方法将返回`Task<ResourceResponse<Database>>`可以检查以确定是否创建了数据库，或返回现有数据库对象，并在响应的状态代码。
+> `CreateDatabaseIfNotExistsAsync`方法返回一个 `Task<ResourceResponse<Database>>` 对象，可以检查响应的状态代码以确定数据库是否已创建，或者是否返回了现有的数据库。
 
 ### <a name="creating-a-document-collection"></a>创建文档集合
 
-文档集合是 JSON 文档的容器，并且可以创建在 Azure 门户中，或以编程方式使用`DocumentClient.CreateDocumentCollectionIfNotExistsAsync`方法：
+文档集合是 JSON 文档的容器，可以在 Azure 门户中创建，也可以使用方法以编程方式创建 `DocumentClient.CreateDocumentCollectionIfNotExistsAsync` ：
 
 ```csharp
 public async Task CreateDocumentCollection(string databaseName, string collectionName)
@@ -107,21 +110,21 @@ public async Task CreateDocumentCollection(string databaseName, string collectio
 }
 ```
 
-`CreateDocumentCollectionIfNotExistsAsync`方法需要两个强制性参数 – 数据库名称指定为`Uri`，和一个`DocumentCollection`对象。 `DocumentCollection`对象表示与指定其名称的文档集合`Id`属性。 `CreateDocumentCollectionIfNotExistsAsync`方法创建文档集合; 如果不存在，如果它已存在，则返回的文档集合。 但是，示例应用程序将忽略返回任何数据`CreateDocumentCollectionIfNotExistsAsync`方法。
+此 `CreateDocumentCollectionIfNotExistsAsync` 方法需要两个强制参数–指定为的数据库名称 `Uri` 和 `DocumentCollection` 对象。 `DocumentCollection`对象表示一个文档集合，其名称是使用属性指定的 `Id` 。 `CreateDocumentCollectionIfNotExistsAsync`如果文档集不存在，则该方法将创建它，如果文档集合已存在，则返回该集合。 但是，示例应用程序将忽略方法返回的任何数据 `CreateDocumentCollectionIfNotExistsAsync` 。
 
 > [!NOTE]
-> `CreateDocumentCollectionIfNotExistsAsync`方法将返回`Task<ResourceResponse<DocumentCollection>>`检查对象，并在响应的状态代码以确定是否已创建一个文档集合，或返回现有的文档集合。
+> `CreateDocumentCollectionIfNotExistsAsync`方法返回一个 `Task<ResourceResponse<DocumentCollection>>` 对象，可以检查响应的状态代码，以确定文档集合是否已创建，或者是否返回了现有文档集。
 
-（可选）`CreateDocumentCollectionIfNotExistsAsync`方法还可以指定`RequestOptions`对象，封装到 Cosmos DB 帐户发出的请求可以指定的选项。 `RequestOptions.OfferThroughput`属性用于定义文档集合的性能级别和在示例应用程序中，设置为每秒 400 个请求单位。 此值应增加或减少具体取决于是否将频繁或不常访问集合。
+此外，该 `CreateDocumentCollectionIfNotExistsAsync` 方法还可以指定一个 `RequestOptions` 对象，该对象封装可为颁发给 Cosmos DB 帐户的请求指定的选项。 `RequestOptions.OfferThroughput`属性用于定义文档集合的性能级别，在示例应用程序中，设置为每秒400请求单位数。 此值应增加或减少，具体取决于是否经常访问集合。
 
 > [!IMPORTANT]
-> 请注意，`CreateDocumentCollectionIfNotExistsAsync`方法将创建一个新集合使用保留的吞吐量，它牵涉定价。
+> 请注意，该 `CreateDocumentCollectionIfNotExistsAsync` 方法将创建具有保留吞吐量的新集合，这会产生定价影响。
 
 <a name="document_query" />
 
 ### <a name="retrieving-document-collection-documents"></a>检索文档集合文档
 
-可以通过创建并执行文档查询检索文档集合中的内容。 使用创建文档查询`DocumentClient.CreateDocumentQuery`方法：
+可以通过创建和执行文档查询来检索文档集合的内容。 使用方法创建文档查询 `DocumentClient.CreateDocumentQuery` ：
 
 ```csharp
 public async Task<List<TodoItem>> GetTodoItemsAsync()
@@ -137,17 +140,17 @@ public async Task<List<TodoItem>> GetTodoItemsAsync()
 }
 ```
 
-此查询以异步方式从指定集合中检索所有文档，并将在文档`List<TodoItem>`显示的集合。
+此查询以异步方式检索指定集合中的所有文档，并将文档放入 `List<TodoItem>` 集合中以供显示。
 
-`CreateDocumentQuery<T>`方法指定`Uri`表示应查询的文档的集合的参数。 在此示例中，`collectionLink`变量是类级字段，用于指定`Uri`，表示要检索来自文档的文档集合：
+`CreateDocumentQuery<T>`方法指定一个 `Uri` 参数，该参数表示应为文档查询的集合。 在此示例中， `collectionLink` 变量是一个类级字段，它指定 `Uri` 表示要从中检索文档的文档集合的。
 
 ```csharp
 Uri collectionLink = UriFactory.CreateDocumentCollectionUri(Constants.DatabaseName, Constants.CollectionName);
 ```
 
-`CreateDocumentQuery<T>`方法创建一个查询，以同步方式，执行并返回`IQueryable<T>`对象。 但是，`AsDocumentQuery`方法将`IQueryable<T>`对象传递给`IDocumentQuery<T>`可以异步执行的对象。 与执行异步查询`IDocumentQuery<T>.ExecuteNextAsync`方法，检索结果，文档数据库中的下一页面进行`IDocumentQuery<T>.HasMoreResults`，该值指示是否有更多结果，以从查询返回的属性。
+`CreateDocumentQuery<T>`方法创建一个同步执行的查询，并返回一个 `IQueryable<T>` 对象。 但是， `AsDocumentQuery` 方法将对象转换 `IQueryable<T>` 为 `IDocumentQuery<T>` 可异步执行的对象。 异步查询是通过方法执行的 `IDocumentQuery<T>.ExecuteNextAsync` ，该方法用于从文档数据库检索下一页结果， `IDocumentQuery<T>.HasMoreResults` 属性指示是否存在要从查询返回的其他结果。
 
-文档可以是由包括筛选服务器端`Where`中查询，筛选谓词应用于针对文档集合的查询子句：
+文档可以通过在查询中包含子句来筛选服务器端 `Where` ，这会将筛选谓词应用于针对文档集合的查询：
 
 ```csharp
 var query = client.CreateDocumentQuery<TodoItem>(collectionLink)
@@ -155,13 +158,13 @@ var query = client.CreateDocumentQuery<TodoItem>(collectionLink)
           .AsDocumentQuery();
 ```
 
-此查询检索所有记录集合从其`Done`属性等于`false`。
+此查询从其属性等于的集合中检索所有文档 `Done` `false` 。
 
 <a name="inserting_document" />
 
-### <a name="inserting-a-document-into-a-document-collection"></a>将文档插入到文档集合
+### <a name="inserting-a-document-into-a-document-collection"></a>将文档插入文档集合
 
-文档是用户定义 JSON 内容和可以插入到文档集合与`DocumentClient.CreateDocumentAsync`方法：
+文档是用户定义的 JSON 内容，可以使用方法插入到文档集合中 `DocumentClient.CreateDocumentAsync` ：
 
 ```csharp
 public async Task SaveTodoItemAsync(TodoItem item, bool isNewItem = false)
@@ -172,11 +175,11 @@ public async Task SaveTodoItemAsync(TodoItem item, bool isNewItem = false)
 }
 ```
 
-`CreateDocumentAsync`方法指定`Uri`表示应将文档插入到，该集合的参数和一个`object`参数表示要插入的文档。
+`CreateDocumentAsync`方法指定一个 `Uri` 参数，该参数表示文档应插入到的集合，以及一个 `object` 表示要插入的文档的参数。
 
 ### <a name="replacing-a-document-in-a-document-collection"></a>替换文档集合中的文档
 
-可以使用文档集合中替换文档`DocumentClient.ReplaceDocumentAsync`方法：
+文档可以在文档集合中替换为 `DocumentClient.ReplaceDocumentAsync` 以下方法：
 
 ```csharp
 public async Task SaveTodoItemAsync(TodoItem item, bool isNewItem = false)
@@ -187,13 +190,13 @@ public async Task SaveTodoItemAsync(TodoItem item, bool isNewItem = false)
 }
 ```
 
-`ReplaceDocumentAsync`方法指定`Uri`表示应替换为集合中的文档的参数和一个`object`表示更新后的文档数据的参数。
+`ReplaceDocumentAsync`方法指定一个 `Uri` 参数，该参数表示应替换的集合中的文档，以及一个 `object` 表示更新后的文档数据的参数。
 
 <a name="deleting_document" />
 
-### <a name="deleting-a-document-from-a-document-collection"></a>文档集合中删除文档
+### <a name="deleting-a-document-from-a-document-collection"></a>从文档集合中删除文档
 
-可以从使用文档集合中删除一个文档`DocumentClient.DeleteDocumentAsync`方法：
+可以使用方法从文档集合中删除文档 `DocumentClient.DeleteDocumentAsync` ：
 
 ```csharp
 public async Task DeleteTodoItemAsync(string id)
@@ -204,35 +207,35 @@ public async Task DeleteTodoItemAsync(string id)
 }
 ```
 
-`DeleteDocumentAsync`方法指定`Uri`表示应删除的集合中的文档的参数。
+`DeleteDocumentAsync`方法指定一个 `Uri` 参数，该参数表示集合中应删除的文档。
 
 ### <a name="deleting-a-document-collection"></a>删除文档集合
 
-可以使用数据库中删除文档集合`DocumentClient.DeleteDocumentCollectionAsync`方法：
+可以使用方法从数据库中删除文档集合 `DocumentClient.DeleteDocumentCollectionAsync` ：
 
 ```csharp
 await client.DeleteDocumentCollectionAsync(collectionLink);
 ```
 
-`DeleteDocumentCollectionAsync`方法指定`Uri`表示要删除的文档集合参数。 请注意，调用此方法也会删除存储在集合中的文档。
+`DeleteDocumentCollectionAsync`方法指定一个 `Uri` 参数，该参数表示要删除的文档集合。 请注意，调用此方法还将删除存储在集合中的文档。
 
 ### <a name="deleting-a-database"></a>删除数据库
 
-可以使用 Cosmos DB 数据库帐户中删除某个数据库`DocumentClient.DeleteDatabaesAsync`方法：
+可以使用方法从 Cosmos DB 数据库帐户中删除数据库 `DocumentClient.DeleteDatabaesAsync` ：
 
 ```csharp
 await client.DeleteDatabaseAsync(UriFactory.CreateDatabaseUri(Constants.DatabaseName));
 ```
 
-`DeleteDatabaseAsync`方法指定`Uri`参数表示要删除的数据库。 请注意，调用此方法也会删除存储在数据库中，文档集合和文档集合中存储的文档。
+`DeleteDatabaseAsync`方法指定一个 `Uri` 参数，该参数表示要删除的数据库。 请注意，调用此方法还将删除存储在数据库中的文档集，以及存储在文档集合中的文档。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
-本文介绍了如何使用 Azure Cosmos DB.NET Standard 客户端库将 Azure Cosmos DB 文档数据库集成到 Xamarin.Forms 应用程序。 Azure Cosmos DB 文档数据库是提供低延迟访问产品/服务面向需要无缝缩放和全局复制的应用程序的快速、 高度可用、 可缩放数据库服务的 JSON 文档的 NoSQL 数据库。
+本文介绍了如何使用 Azure Cosmos DB .NET Standard 客户端库将 Azure Cosmos DB 文档数据库集成到 Xamarin.Forms 应用程序中。 Azure Cosmos DB 文档数据库是一种 NoSQL 数据库，可提供对 JSON 文档的低延迟访问，为需要无缝缩放和全局复制的应用程序提供快速、高度可用、可缩放的数据库服务。
 
 ## <a name="related-links"></a>相关链接
 
 - [Todo Azure Cosmos DB （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdb)
 - [Azure Cosmos DB 文档](/azure/cosmos-db/)
-- [Azure Cosmos DB.NET Standard 客户端库](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
+- [Azure Cosmos DB .NET Standard 客户端库](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
 - [Azure Cosmos DB API](https://docs.microsoft.com/dotnet/api/overview/azure/cosmosdb/client?view=azure-dotnet)

@@ -1,24 +1,27 @@
 ---
-title: Android 上的 SwipeView 滑动过渡模式
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 平台特定的来控制打开 SwipeView 时所使用的转换。
-ms.prod: xamarin
-ms.assetid: 6B1F8213-9D62-4C40-9F04-881F1371B5AA
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/11/2019
-ms.openlocfilehash: 077d4a8a9530bf074fde710dd08c1fbea49668ef
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c420fe65b020067169230dd06dbcd5ce65c036ab
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490474"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84128617"
 ---
 # <a name="swipeview-swipe-transition-mode-on-android"></a>Android 上的 SwipeView 滑动过渡模式
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 Android 平台特定的控制打开 `SwipeView`时使用的转换。 它通过将 `SwipeView.SwipeTransitionMode` 可绑定属性设置为 `SwipeTransitionMode` 枚举的值，在 XAML 中使用：
+此 Android 平台特定的控制打开时使用的转换 `SwipeView` 。 它通过将 `SwipeView.SwipeTransitionMode` 可绑定的属性设置为枚举的值，在 XAML 中使用 `SwipeTransitionMode` ：
 
 ```xaml
 <ContentPage ...
@@ -39,7 +42,7 @@ ms.locfileid: "75490474"
 </ContentPage>
 ```
 
-或者，可以使用它从 C# 使用 fluent API:
+此外，还可以使用 Fluent API 从 c # 使用该方法：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -51,14 +54,14 @@ swipeView.On<Android>().SetSwipeTransitionMode(SwipeTransitionMode.Drag);
 // ...
 ```
 
-`SwipeView.On<Android>`方法指定仅将在 Android 上运行此特定于平台的。 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空间中的 `SwipeView.SetSwipeTransitionMode` 方法用于控制打开 `SwipeView`时使用的转换。 `SwipeTransitionMode` 枚举提供两个可能的值：
+`SwipeView.On<Android>`方法指定此平台特定的仅在 Android 上运行。 `SwipeView.SetSwipeTransitionMode`命名空间中的方法 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 用于控制打开时使用的转换 `SwipeView` 。 `SwipeTransitionMode`枚举提供了两个可能的值：
 
-- `Reveal` 指示 `SwipeView` 内容为 "重击" 时，将显示滑动项，这是 `SwipeView.SwipeTransitionMode` 属性的默认值。
-- `Drag` 指示 `SwipeView` 内容为重击，则会将滑动项拖动到视图中。
+- `Reveal`指示将在内容为 "重击" 的情况下显示滑动项 `SwipeView` ，并为属性的默认值 `SwipeView.SwipeTransitionMode` 。
+- `Drag`指示当内容为重击时，将在视图中拖动滑动项 `SwipeView` 。
 
-此外，`SwipeView.GetSwipeTransitionMode` 方法可用于返回应用于 `SwipeView`的 `SwipeTransitionMode`。
+此外， `SwipeView.GetSwipeTransitionMode` 方法可用于返回 `SwipeTransitionMode` 应用于的 `SwipeView` 。
 
-结果就是将指定 `SwipeTransitionMode` 值应用于 `SwipeView`，该控制打开 `SwipeView`时使用的转换：
+结果是将指定的 `SwipeTransitionMode` 值应用于 `SwipeView` ，后者控制打开时使用的转换 `SwipeView` ：
 
 [![Android 上的 SwipeView SwipeTransitionModes 的屏幕截图](swipeview-swipetransitionmode-images/swipetransitionmode.png "Android 上的 SwipeTransitionModes")](swipeview-swipetransitionmode-images/swipetransitionmode-large.png#lightbox "Android 上的 SwipeTransitionModes")
 

@@ -1,46 +1,49 @@
 ---
-title: Xamarin.Forms RelativeLayout
-description: 本文介绍如何使用 Xamarin.Forms RelativeLayout 类来创建扩展以适应任何屏幕大小的 Ui。
-ms.prod: xamarin
-ms.assetid: 2530BCB8-01B8-4C4F-BF14-CA53659F1B5A
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/25/2015
-ms.openlocfilehash: d8c2cc4f31b148ee3181629e5b3b5faf01016617
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: Xamarin.FormsRelativeLayout
+description: 本文介绍如何使用 Xamarin.Forms RelativeLayout 类来创建可进行缩放以适合任何屏幕大小的 ui。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f250b109f759bcf6bb7fa4ac0573743ac12c4bc1
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772529"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84127184"
 ---
-# <a name="xamarinforms-relativelayout"></a>Xamarin.Forms RelativeLayout
+# <a name="xamarinforms-relativelayout"></a>Xamarin.FormsRelativeLayout
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
-`RelativeLayout` 使用位置和大小视图相对于布局或同级视图的属性。 与不同`AbsoluteLayout`，`RelativeLayout`不具有移动定位点的概念并不具有用于定位的元素相对于底部或布局的右边缘的功能。 `RelativeLayout` 支持其自己的边界的定位元素。
+`RelativeLayout`用于相对于布局或同级视图的属性定位和调整视图的大小。 与不同的是 `AbsoluteLayout` ，没有 `RelativeLayout` 移动锚的概念，并且没有用于相对于布局的下边缘或右边缘定位元素的工具。 `RelativeLayout`支持将元素定位在其自身的边界之外。
 
-[![](relative-layout-images/layouts-sml.png "Xamarin.Forms 布局")](relative-layout-images/layouts.png#lightbox "Xamarin.Forms 布局")
+[![](relative-layout-images/layouts-sml.png "Xamarin.Forms Layouts")](relative-layout-images/layouts.png#lightbox "Xamarin.Forms Layouts")
 
-## <a name="purpose"></a>目标
+## <a name="purpose"></a>目的
 
-`RelativeLayout` 可用来定位在屏幕上相对于整体的布局或到其他视图的视图。
+`RelativeLayout`可用于相对于整体布局或其他视图将视图定位在屏幕上。
 
-![](relative-layout-images/flag.png "RelativeLayout 探索")
+![](relative-layout-images/flag.png "RelativeLayout Exploration")
 
-## <a name="usage"></a>用法
+## <a name="usage"></a>使用情况
 
 ### <a name="understanding-constraints"></a>了解约束
 
-定位和调整大小内的某个视图`RelativeLayout`通过约束。 约束表达式可以包含以下信息：
+使用约束对中的视图进行定位和调整大小 `RelativeLayout` 。 约束表达式可以包含以下信息：
 
-- **类型**&ndash;约束是相对于父级或另一个视图。
-- **属性**&ndash;要作为基础用于约束的属性。
-- **身份**&ndash;要应用到的属性值的系数。
-- **常量**&ndash;要用作值的偏移量的值。
-- **ElementName** &ndash;的约束是相对于视图的名称。
+- **类型** &ndash;约束是相对于父项还是其他视图。
+- **属性** &ndash;要用作约束的基准的属性。
+- **因素** &ndash;要应用于属性值的因子。
+- **常量** &ndash;要用作值偏移量的值。
+- **ElementName** &ndash;与约束相关的视图的名称。
 
-在 XAML 中，约束都表示为`ConstraintExpression`s。 请看下面的示例：
+在 XAML 中，约束表示为 `ConstraintExpression` s。 请考虑以下示例：
 
 ```xaml
 <BoxView Color="Green" WidthRequest="50" HeightRequest="50"
@@ -56,7 +59,7 @@ ms.locfileid: "70772529"
                              Constant=-100}" />
 ```
 
-在C#，约束稍有不同，使用表示函数而不是表达式在视图上。 约束被指定为参数的布局`Add`方法：
+在 c # 中，约束的表达方式稍有不同，但使用函数而不是视图的表达式。 约束指定为布局的方法的参数 `Add` ：
 
 ```csharp
 layout.Children.Add(box, Constraint.RelativeToParent((parent) =>
@@ -70,19 +73,19 @@ layout.Children.Add(box, Constraint.RelativeToParent((parent) =>
     Constraint.Constant(50), Constraint.Constant(50));
 ```
 
-请注意上述布局的以下方面：
+请注意以上布局的以下方面：
 
-- `x`和`y`具有其自己的约束指定约束。
-- 在C#，相对约束被定义为函数。 概念喜欢`Factor`不存在，但可以手动实现。
-- 该框的`x`坐标被定义为父代、-100 宽度的一半。
-- 该框的`y`坐标被定义为父代、-100 的高度。
+- `x`和 `y` 约束用它们自己的约束来指定。
+- 在 c # 中，相对约束定义为函数。 类似于 `Factor` 的概念，但可以手动实现。
+- 该框的 `x` 坐标定义为父级的一半宽度-100。
+- 此框的 `y` 坐标定义为父级，-100 的一半高度。
 
 > [!NOTE]
-> 由于定义的约束的方式，它是可以进行更复杂的布局，在C#不是可以使用 XAML 中指定。
+> 由于定义约束的方式，可以在 c # 中创建更复杂的布局，而不能与 XAML 一起指定。
 
-这两个上面的示例定义与约束`RelativeToParent` &ndash; ，即它们的值是相对于父元素。 还有可能要相对于另一个视图中定义的约束。 这允许针对 （向开发人员） 更直观的布局，并可以使布局代码的意图更容易看出来。
+上述两个示例都定义约束 `RelativeToParent` &ndash; ，即它们的值相对于父元素。 还可以定义相对于另一视图的约束。 这允许更直观（面向开发人员）布局，并使布局代码的意图更容易体现出来。
 
-请考虑需要为 20 像素比另一个更小的一个元素的布局。 如果这两个元素定义的常量值，可以让越低及其`Y`约束定义为一个常量，它是大于 20 像素`Y`更高版本的元素的约束。 这种方法显现不足如果更高版本放置该元素所使用的比例，以便像素大小不已知。 在这种情况下，约束基于另一个元素的位置的元素是更可靠：
+请考虑一种布局，其中一个元素需要小于另一个元素20个像素。 如果这两个元素都定义了常量值，则下限可能会将其 `Y` 约束定义为一个常数，该常数大于 `Y` 更高元素的约束。 如果使用比例定位较高的元素，使像素大小未知，则该方法将会很短。 在这种情况下，根据另一个元素的位置约束元素更可靠：
 
 ```xaml
 <RelativeLayout>
@@ -105,7 +108,7 @@ layout.Children.Add(box, Constraint.RelativeToParent((parent) =>
 </RelativeLayout>
 ```
 
-若要完成相同的布局中C#:
+若要在 c # 中完成同一布局：
 
 ```csharp
 layout.Children.Add (redBox, Constraint.RelativeToParent ((parent) => {
@@ -128,23 +131,23 @@ layout.Children.Add (blueBox, Constraint.RelativeToView (redBox, (Parent, siblin
     }));
 ```
 
-这将产生以下输出，具有确定的蓝色框的位置_相对_到红色框的位置：
+这将生成以下输出，其中蓝色框的位置_相对_于红色框的位置确定：
 
-![](relative-layout-images/red-blue-box.png "使用红色和蓝色 BoxViews RelativeLayout")
+![](relative-layout-images/red-blue-box.png "RelativeLayout with Red and Blue BoxViews")
 
 ### <a name="sizing"></a>大小调整
 
-布局视图`RelativeLayout`有两个选项用于指定其大小：
+布局的视图 `RelativeLayout` 具有两个用于指定其大小的选项：
 
 - `HeightRequest & WidthRequest`
 - `RelativeLayout.WidthConstraint` & `RelativeLayout.HeightConstraint`
 
-`HeightRequest` 和`WidthRequest`指定预期的高度和宽度的视图，但可能会根据需要覆盖的布局。 `WidthConstraint` 和`HeightConstraint`支持将高度和宽度设置为相对于布局的或另一个视图的属性值或常量的值。
+`HeightRequest`并 `WidthRequest` 指定视图的预期高度和宽度，但可根据需要进行调整。 `WidthConstraint`和 `HeightConstraint` 支持将高度和宽度设置为相对于布局的或其他视图属性的值，或设置为常量值。
 
-## <a name="exploring-a-complex-layout"></a>浏览复杂的布局
-每个布局具有的优势和劣势为特定布局的创建。 在本系列的布局文章，整个示例应用程序已创建具有相同的页面布局使用三个不同的布局实现。
+## <a name="exploring-a-complex-layout"></a>探索复杂布局
+每个布局都具有用于创建特定布局的优点和缺点。 在此系列布局文章中，已创建了一个使用三个不同布局实现的相同页面布局的示例应用。
 
-请考虑以下 XAML:
+请考虑以下 XAML：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -221,13 +224,13 @@ Title="RelativeLayout">
 </ContentPage>
 ```
 
-上面的代码会导致以下布局：
+上面的代码将生成以下布局：
 
-![](relative-layout-images/relative.png "复杂 RelativeLayout")
+![](relative-layout-images/relative.png "Complex RelativeLayout")
 
-请注意， `RelativeLayouts`s 嵌套的因为在某些情况下嵌套布局可能会比提供相同的布局中的所有元素。 此外请注意，某些元素是`RelativeToView`，因为视图之间的关系指导定位时，可实现更轻松、 更直观的布局。
+请注意 `RelativeLayouts` ，s 是嵌套的，因为在某些情况下，嵌套布局比在同一布局中呈现所有元素更容易。 另请注意，某些元素是 `RelativeToView` ，因为当视图指南定位时，这允许更简单、更直观的布局。
 
 ## <a name="related-links"></a>相关链接
 
-- [布局 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
-- [BusinessTumble 示例 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)
+- [布局（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [BusinessTumble 示例（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

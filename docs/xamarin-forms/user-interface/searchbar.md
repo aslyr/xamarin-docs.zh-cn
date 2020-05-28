@@ -1,24 +1,27 @@
 ---
-title: Xamarin.Forms SearchBar
-description: Xamarin SearchBar 是用于启动搜索的用户输入控件。 SearchBar 控件支持占位符文本、查询输入、执行和取消。 本文介绍如何使用 XAML 和代码中的 SearchBar。
-ms.prod: xamarin
-ms.assetId: F5EFEA72-CB23-4DD6-9545-D9BB755AF3CB
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 11/04/2019
-ms.openlocfilehash: 9162e89768aefe761111a02b80932231a6fe759f
-ms.sourcegitcommit: da15fb3b593a3e01ced9f8a1df572348d01d42ea
+title: Xamarin.FormsSearchBar
+description: Xamarin.FormsSearchBar 是用于启动搜索的用户输入控件。 SearchBar 控件支持占位符文本、查询输入、执行和取消。 本文介绍如何使用 XAML 和代码中的 SearchBar。
+ms.prod: ''
+ms.assetId: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d8ceb139b1b9cd77aa922f98c80884d5c3e1a474
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83844187"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84127538"
 ---
-# <a name="xamarinforms-searchbar"></a>Xamarin.Forms SearchBar
+# <a name="xamarinforms-searchbar"></a>Xamarin.FormsSearchBar
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
 
-Xamarin [`SearchBar`](xref:Xamarin.Forms.SearchBar) 是用于启动搜索的用户输入控件。 `SearchBar`控件支持占位符文本、查询输入、搜索执行和取消。 以下屏幕截图显示了一个 `SearchBar` 查询，其中显示了中的结果 `ListView` ：
+Xamarin.Forms [`SearchBar`](xref:Xamarin.Forms.SearchBar) 是用于启动搜索的用户输入控件。 `SearchBar`控件支持占位符文本、查询输入、搜索执行和取消。 以下屏幕截图显示了一个 `SearchBar` 查询，其中显示了中的结果 `ListView` ：
 
 [![IOS 和 Android 上 SearchBar 的屏幕截图](searchbar-images/device-searchbars-cropped.png "IOS 和 Android 上的 SearchBar")](searchbar-images/device-searchbars.png#lightbox "IOS 和 Android 上的 SearchBar")
 
@@ -38,7 +41,7 @@ Xamarin [`SearchBar`](xref:Xamarin.Forms.SearchBar) 是用于启动搜索的用�
 * [`Text`](xref:Xamarin.Forms.InputView.Text)是 `string` 包含中的查询文本的 `SearchBar` 。
 * [`TextColor`](xref:Xamarin.Forms.InputView.TextColor)`Color`定义查询文本颜色的。
 
-这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着 `SearchBar` 可以对进行自定义，并使其成为数据绑定的目标。 在上指定的字体属性 `SearchBar` 与自定义其他[Xamarin](~/xamarin-forms/user-interface/text/index.md)上的文本一致。 有关详细信息，请参阅[Xamarin 中的字体](~/xamarin-forms/user-interface/text/fonts.md)。
+这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着 `SearchBar` 可以对进行自定义，并使其成为数据绑定的目标。 指定上的字体属性 `SearchBar` 与自定义其他[ Xamarin.Forms 文本控件](~/xamarin-forms/user-interface/text/index.md)上的文本一致。 有关详细信息，请参阅[中 Xamarin.Forms 的字体](~/xamarin-forms/user-interface/text/fonts.md)。
 
 ## <a name="create-a-searchbar"></a>创建 SearchBar
 
@@ -87,7 +90,7 @@ SearchBar searchBar = new SearchBar
 [![IOS 和 Android 上自定义 SearchBar 的屏幕截图](searchbar-images/device-searchbars-styled-cropped.png "IOS 和 Android 上的自定义 SearchBar")](searchbar-images/device-searchbars-styled.png#lightbox "IOS 和 Android 上的自定义 SearchBar")
 
 > [!NOTE]
-> 在 iOS 上， `SearchBarRenderer` 类包含可重写的 `UpdateCancelButton` 方法。 此方法控制 "取消" 按钮的显示时间，并可在自定义呈现器中被重写。 有关自定义呈现器的详细信息，请参阅[Xamarin。窗体自定义呈现](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)器。
+> 在 iOS 上， `SearchBarRenderer` 类包含可重写的 `UpdateCancelButton` 方法。 此方法控制 "取消" 按钮的显示时间，并可在自定义呈现器中被重写。 有关自定义呈现器的详细信息，请参阅[ Xamarin.Forms 自定义呈现](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)器。
 
 ## <a name="perform-a-search-with-event-handlers"></a>使用事件处理程序执行搜索
 
@@ -185,11 +188,11 @@ public class SearchViewModel : INotifyPropertyChanged
 
 此示例将设置 `BindingContext` 为类的实例 `SearchViewModel` 。 它将 `SearchCommand` 属性绑定到 `PerformSearch` `ICommand` viewmodel 中的，并将属性绑定 `SearchBar` `Text` 到 `SearchCommandParameter` 属性。 `ListView.ItemsSource`属性绑定到 `SearchResults` viewmodel 的属性。
 
-有关 `ICommand` 接口和绑定的详细信息，请参阅[Xamarin。 Forms 数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)和[ICommand 接口](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)。
+有关 `ICommand` 接口和绑定的详细信息，请参阅[ Xamarin.Forms 数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)和[ICommand 接口](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)。
 
 ## <a name="related-links"></a>相关链接
 
 * [SearchBar 演示](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
-* [Xamarin. Forms 文本控件](~/xamarin-forms/user-interface/text/index.md)
-* [Xamarin 中的字体](~/xamarin-forms/user-interface/text/fonts.md)
-* [Xamarin. 窗体数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)
+* [Xamarin.Forms文本控件](~/xamarin-forms/user-interface/text/index.md)
+* [字体Xamarin.Forms](~/xamarin-forms/user-interface/text/fonts.md)
+* [Xamarin.Forms数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)

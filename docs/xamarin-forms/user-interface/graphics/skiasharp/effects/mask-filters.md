@@ -1,49 +1,52 @@
 ---
-title: SkiaSharp 掩码筛选器
-description: 了解如何使用掩码筛选器创建的模糊及其他 alpha 的效果。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 940422A1-8BC0-4039-8AD7-26C61320F858
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/27/2018
-ms.openlocfilehash: 36a8b5c32261d4f508c82feea1e6127574db6a20
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 10192e93d2e20f9aa58ca95dd81c07f560193905
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198245"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136404"
 ---
 # <a name="skiasharp-mask-filters"></a>SkiaSharp 掩码筛选器
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-掩码筛选器是操作几何图形和 alpha 通道的图形对象的效果。 若要使用掩码筛选器，设置[ `MaskFilter` ](xref:SkiaSharp.SKPaint.MaskFilter)的属性`SKPaint`对象的类型[ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter)已通过调用之一创建了`SKMaskFilter`静态方法。
+掩码筛选器是操作图形对象的几何和 alpha 通道的效果。 若要使用掩码筛选器，请将的 [`MaskFilter`](xref:SkiaSharp.SKPaint.MaskFilter) 属性设置 `SKPaint` 为 [`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter) 通过调用静态方法之一创建的类型的对象 `SKMaskFilter` 。
 
-熟悉掩码筛选器的最佳方法是通过使用这些静态方法。 最有用的掩码筛选器创建模糊：
+熟悉掩码筛选器的最佳方式是通过试验这些静态方法。 最有用的掩码筛选器可创建模糊：
 
-![使示例变得模糊](mask-filters-images/MaskFilterExample.png "模糊示例")
+![模糊示例](mask-filters-images/MaskFilterExample.png "模糊示例")
 
-这是本文中所述的唯一掩码筛选器功能。 在下一篇文章[ **SkiaSharp 映像筛选器**](image-filters.md)还介绍了你可能更倾向于此的模糊效果。 
+这是本文中所述的唯一掩码筛选器功能。 下一篇有关[**SkiaSharp 图像筛选器**](image-filters.md)的文章还介绍了您可能更喜欢这一点的模糊效果。 
 
-静态[ `SKMaskFilter.CreateBlur` ](xref:SkiaSharp.SKMaskFilter.CreateBlur(SkiaSharp.SKBlurStyle,System.Single))方法具有以下语法：
+静态 [`SKMaskFilter.CreateBlur`](xref:SkiaSharp.SKMaskFilter.CreateBlur(SkiaSharp.SKBlurStyle,System.Single)) 方法具有以下语法：
 
 ```csharp
 public static SKMaskFilter CreateBlur (SKBlurStyle blurStyle, float sigma);
 ```
 
-重载允许指定用来创建模糊和一个矩形，以避免模糊将与其他图形对象所覆盖的区域中的算法的标志。
+重载允许为用于创建模糊的算法指定标志，并使用矩形避免在将被其他图形对象覆盖的区域中模糊。
 
-[`SKBlurStyle`](xref:SkiaSharp.SKBlurStyle) 是一个枚举，包含下列成员：
+[`SKBlurStyle`](xref:SkiaSharp.SKBlurStyle)是具有以下成员的枚举：
 
 - `Normal`
 - `Solid`
 - `Outer`
 - `Inner`
 
-以下示例中显示了这些样式的效果。 `sigma`参数指定的模糊程度。 在较旧版本的 Skia，radius 值指出了模糊程度。 如果为应用程序适合的半径值，则静态[ `SKMaskFilter.ConvertRadiusToSigma` ](xref:SkiaSharp.SKMaskFilter.ConvertRadiusToSigma*)可以从另一个转换的方法。 该方法乘以 0.57735 半径，并将 0.5。
+下面的示例演示了这些样式的效果。 `sigma`参数指定模糊的范围。 在较旧版本的 Skia 中，使用半径值指示模糊的范围。 如果某个 radius 值适用于你的应用程序，则可以使用一个静态 [`SKMaskFilter.ConvertRadiusToSigma`](xref:SkiaSharp.SKMaskFilter.ConvertRadiusToSigma*) 方法，从一个转换到另一个。 方法将半径乘以0.57735 并添加0.5。
 
-**掩码模糊试验**页面[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例允许用户体验与模糊样式和 sigma 的值。 XAML 文件实例化`Picker`具有四个`SKBlurStyle`枚举成员和一个`Slider`函数指定 sigma 值：
+[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例中的 "**屏蔽模糊试验**" 页允许您试验模糊样式和 sigma 值。 XAML 文件实例化一个 `Picker` 具有四个 `SKBlurStyle` 枚举成员的，一个 `Slider` 用于指定 sigma 值：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -89,7 +92,7 @@ public static SKMaskFilter CreateBlur (SKBlurStyle blurStyle, float sigma);
 </ContentPage>
 ```
 
-代码隐藏文件使用这些值以创建`SKMaskFilter`对象，并将其设置为`MaskFilter`属性的`SKPaint`对象。 这`SKPaint`对象用于绘制文本字符串和位图：
+代码隐藏文件使用这些值来创建 `SKMaskFilter` 对象并将其设置为 `MaskFilter` 对象的属性 `SKPaint` 。 此 `SKPaint` 对象用于绘制文本字符串和位图：
 
 ```csharp
 public partial class MaskBlurExperimentPage : ContentPage
@@ -157,40 +160,40 @@ public partial class MaskBlurExperimentPage : ContentPage
 }
 ```
 
-下面是在 iOS、 Android 和与通用 Windows 平台 (UWP) 上运行的程序`Normal`模糊样式和增加`sigma`级别：
+下面是在 iOS、Android 和通用 Windows 平台（UWP）上运行的程序，具有 `Normal` 模糊样式和增加的 `sigma` 级别：
 
-[![屏蔽模糊试验-Normal](mask-filters-images/MaskBlurExperiment-Normal.png "掩码模糊处理实验-正常")](mask-filters-images/MaskBlurExperiment-Normal-Large.png#lightbox)
+[![屏蔽模糊试验-正常](mask-filters-images/MaskBlurExperiment-Normal.png "屏蔽模糊试验-正常")](mask-filters-images/MaskBlurExperiment-Normal-Large.png#lightbox)
 
-您会注意到，位图边缘受变得模糊。 `SKMaskFilter`类不是要使用如果你想要使整个位图图像模糊的正确效果。 为此，你将想要使用[ `SKImageFilter` ](xref:SkiaSharp.SKImageFilter)类，如在下一篇文章中所述[ **SkiaSharp 映像筛选器**](image-filters.md)。
+你会注意到，只有位图的边缘受模糊的影响。 `SKMaskFilter`如果要对整个位图图像进行模糊，则该类不是要使用的正确效果。 为此，你将需要使用 [`SKImageFilter`](xref:SkiaSharp.SKImageFilter) 下一篇有关[**SkiaSharp 映像筛选器**](image-filters.md)的文章中所述的类。
 
-为增加方向的更模糊文本`sigma`参数。 在与此程序的试验，你会注意到，为特定`sigma`值，是 Windows 10 桌面版上更极端变得模糊。 这种差异是因为像素密度较低比移动设备上的桌面监视器上，并且因此较低的文本框高度以像素为单位。 `sigma`值成正比在模糊程度上，以像素为单位，因此，对于给定`sigma`值的效果是更极端上较低分辨率显示。 在生产应用程序中，您可能需要计算`sigma`是图形的大小成正比的值。 
+该文本的变得越来越多，增加了 `sigma` 参数的值。 在试验此程序时，你会注意到，对于特定 `sigma` 值，模糊在 Windows 10 桌面上更极端。 出现这种差异的原因在于，桌面监视器上的像素密度比移动设备上的更低，因此，文本高度以像素为单位。 `sigma`该值与模糊范围成正比（以像素为单位），因此对于给定 `sigma` 值，该效果更极端地显示在较低的分辨率上。 在生产应用程序中，您可能需要计算与 `sigma` 图形大小成正比的值。 
 
-在你的应用程序将查找最佳的模糊级别确定之前尝试几个值。 例如，在**掩码模糊实验**页上，请尝试设置`sigma`如下所示：
+在以最适合您的应用程序的模糊级别进行结算之前，尝试多个值。 例如，在 "**屏蔽模糊实验**" 页上，尝试设置， `sigma` 如下所示：
 
 ```csharp
 sigma = paint.TextSize / 18;
 paint.MaskFilter = SKMaskFilter.CreateBlur(blurStyle, sigma);
 ```
 
-现在`Slider`不起作用，但在平台之间保持一致的模糊程度：
+现在 `Slider` ，不会有任何影响，但这些平台之间的模糊程度是一致的：
 
 [![屏蔽模糊试验-一致](mask-filters-images/MaskBlurExperiment-Consistent.png "屏蔽模糊试验-一致")](mask-filters-images/MaskBlurExperiment-Consistent-Large.png#lightbox)
 
-所有屏幕截图到目前为止显示了使用创建的模糊`SKBlurStyle.Normal`枚举成员。 以下屏幕截图显示的效果`Solid`， `Outer`，和`Inner`模糊样式：
+到目前为止，所有屏幕截图都使用枚举成员创建了模糊 `SKBlurStyle.Normal` 。 以下屏幕截图显示了 `Solid` 、 `Outer` 和模糊样式的效果 `Inner` ：
 
-[![屏蔽模糊实验](mask-filters-images/MaskBlurExperiment.png "屏蔽模糊实验")](mask-filters-images/MaskBlurExperiment-Large.png#lightbox)
+[![屏蔽模糊试验](mask-filters-images/MaskBlurExperiment.png "屏蔽模糊试验")](mask-filters-images/MaskBlurExperiment-Large.png#lightbox)
 
-IOS 屏幕快照显示`Solid`样式:文本字符仍以纯黑色笔划形式出现, 并且模糊将添加到这些文本字符的外部。 
+IOS 屏幕快照显示 `Solid` 样式：文本字符仍以纯黑色笔划形式出现，并且模糊将添加到这些文本字符之外。 
 
-中间的 Android 屏幕截图显示`Outer`样式:将消除字符笔划本身 (如位图), 模糊会将文本字符出现的空白区域环绕在空白区域。 
+中间的 Android 屏幕截图显示 `Outer` 样式：字符笔划本身会被消除（如位图），模糊将环绕空白区域，其中显示文本字符。 
 
-UWP 上正确显示的屏幕截图`Inner`样式。 模糊被限制为文本字符通常占用的区域。
+右侧的 UWP 屏幕截图显示 `Inner` 样式。 模糊限制为通常由文本字符占用的区域。
 
-[ **SkiaSharp 线性渐变**](shaders/linear-gradient.md#transparency-and-gradients)一文所述**反射渐变**使用线性渐变和一个转换来模拟的文本字符串的反射程序：
+[**SkiaSharp 线性渐变**](shaders/linear-gradient.md#transparency-and-gradients)文章介绍了使用线性渐变和转换来模拟文本字符串反射的**反射梯度**计划：
 
 [![反射渐变](shaders/linear-gradient-images/ReflectionGradient.png "反射渐变")](shaders/linear-gradient-images/ReflectionGradient-Large.png#lightbox)
 
-**模糊反射**页会将一条语句添加到该代码：
+**模糊反射**页面向该代码添加单个语句：
 
 ```csharp
 public class BlurryReflectionPage : ContentPage
@@ -261,15 +264,15 @@ public class BlurryReflectionPage : ContentPage
 }
 ```
 
-新的语句将添加文本大小为基础的反射文本的模糊筛选的器：
+新语句为基于文本大小的反射文本添加模糊筛选器：
 
 ```csharp
 paint.MaskFilter = SKMaskFilter.CreateBlur(SKBlurStyle.Normal, paint.TextSize / 36);
 ```
 
-此模糊筛选器会导致看起来更实际的反射：
+此模糊筛选器使反射看起来更加真实：
 
-[![模糊反射](mask-filters-images/BlurryReflection.png "模糊的反射")](mask-filters-images/BlurryReflection-Large.png#lightbox)
+[![模糊反射](mask-filters-images/BlurryReflection.png "模糊反射")](mask-filters-images/BlurryReflection-Large.png#lightbox)
 
 ## <a name="related-links"></a>相关链接
 

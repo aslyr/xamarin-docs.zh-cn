@@ -1,22 +1,25 @@
 ---
-title: Android 生成错误– LinkAssemblies 任务意外失败
-ms.topic: troubleshooting
-ms.prod: xamarin
-ms.assetid: EB3BE685-CB72-48E3-89D7-C845E76B9FA2
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/07/2019
-ms.openlocfilehash: a90c56102f77e3f64d9333eec03b025d24888977
-ms.sourcegitcommit: a3b7e016fb25584dbf57bae89b64a9f98031e7c9
+title: ''
+ms.topic: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9c0403203345ed78fae9f30c623c3e501f24ea0e
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76549983"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135897"
 ---
 # <a name="android-build-error--the-linkassemblies-task-failed-unexpectedly"></a>Android 生成错误– LinkAssemblies 任务意外失败
 
-生成使用窗体的 Xamarin Android 项目时，可能会 `The "LinkAssemblies" task failed unexpectedly` 显示错误消息。 当链接器处于活动状态时（通常在*发布*版本上），会发生这种情况，以减小应用包的大小;这种情况发生是因为 Android 目标不会更新为最新框架。 （详细信息： [Xamarin. Forms 支持的平台](~/get-started/supported-platforms.md#android-platform-support)）
+`The "LinkAssemblies" task failed unexpectedly`生成使用窗体的 Xamarin Android 项目时，可能会看到一条错误消息。 当链接器处于活动状态时（通常在*发布*版本上），会发生这种情况，以减小应用包的大小;这种情况发生是因为 Android 目标不会更新为最新框架。 （详细信息： [ Xamarin.Forms 支持的平台](~/get-started/supported-platforms.md#android-platform-support)）
 
 此问题的解决方法是确保具有最新的受支持的 Android SDK 版本，并将**目标框架**设置为最新安装的平台。 此外，建议将**目标 Android 版本**设置为最新安装的平台，将**最低 android 版本**设置为 API 19 或更高版本。 这被视为受支持的配置。
 

@@ -1,53 +1,56 @@
 ---
-title: 适用于 Xamarin 的 XAML 预览器
-description: 本文介绍如何使用 XAML 预览器来查看你的 Xamarin。 Forms 布局在你键入时呈现。 Visual Studio 2019 和 Visual Studio 2019 for Mac 中提供了 XAML 预览器。
-zone_pivot_groups: platform
-ms.prod: xamarin
-ms.assetid: 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2
-ms.technology: xamarin-forms
-author: maddyleger1
-ms.author: maleger
-ms.date: 03/16/2020
-ms.openlocfilehash: 465783c0771b666a276d18f47cf5d3d458d52933
-ms.sourcegitcommit: 8df67f0d76ff762b517d27b8d4c217d3a3379a18
+title: 的 XAML 预览器Xamarin.Forms
+description: 本文介绍如何使用 XAML 预览器来查看你 Xamarin.Forms 键入时呈现的布局。 Visual Studio 2019 和 Visual Studio 2019 for Mac 中提供了 XAML 预览器。
+zone_pivot_groups: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6916d5fde688c5b1162f12db0d36bc3ca27156d8
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79423923"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137314"
 ---
-# <a name="xaml-previewer-for-xamarinforms"></a>适用于 Xamarin 的 XAML 预览器
+# <a name="xaml-previewer-for-xamarinforms"></a>的 XAML 预览器Xamarin.Forms
 
-_在键入时查看所呈现的 Xamarin 布局_
+_查看在 Xamarin.Forms 键入时呈现的布局_
 
 ## <a name="overview"></a>概述
 
-XAML 预览器会显示你的 Xamarin. Forms XAML 页面在 iOS 和 Android 上的外观。 当你对 XAML 进行更改时，你会看到它们会立即与你的代码一起预览。 Visual Studio 和 Visual Studio for Mac 中提供了 XAML 预览器。
+XAML 预览器显示 Xamarin.Forms xaml 页面在 iOS 和 Android 上的外观。 当你对 XAML 进行更改时，你会看到它们会立即与你的代码一起预览。 Visual Studio 和 Visual Studio for Mac 中提供了 XAML 预览器。
 
-## <a name="getting-started"></a>入门
+## <a name="getting-started"></a>开始使用
 
 ::: zone pivot="windows"
 
 ### <a name="visual-studio-2019"></a>Visual Studio 2019
 
-可以通过单击 "拆分视图" 窗格中的箭头打开 XAML 预览器。 如果要更改默认拆分视图行为，请使用**工具 > 选项 > xamarin > XAMARIN XAML 预览**器对话框。 在此对话框中，可以选择默认文档视图和拆分方向。
+可以通过单击 "拆分视图" 窗格中的箭头打开 XAML 预览器。 如果要更改默认拆分视图行为，请使用**工具 > 选项 "> Xamarin > Xamarin.Forms XAML 预览**器" 对话框。 在此对话框中，可以选择默认文档视图和拆分方向。
 
-[![Visual Studio 中的 Xamarin 预览器选项](xaml-previewer-images/xamlp-options-vs-sm.png "Visual Studio 中的 Xamarin 预览器选项")](xaml-previewer-images/xamlp-options-vs-lg.png#lightbox)
+[![Xamarin.FormsVisual Studio 中的预览器选项](xaml-previewer-images/xamlp-options-vs-sm.png "[!基金.Visual Studio 中的非 LOC （Xamarin）] 预览器选项")](xaml-previewer-images/xamlp-options-vs-lg.png#lightbox)
 
-当您打开一个 XAML 文件时，编辑器将根据 "**工具" > 选项 "> xamarin > XAMARIN XAML 预览**器" 对话框中选择的设置，打开完全大小的或旁边的预览程序。 但是，可以在编辑器窗口中为每个文件更改拆分。
+打开 XAML 文件时，编辑器将根据 "**工具" > 选项 "> Xamarin > Xamarin.Forms XAML 预览**器" 对话框中选择的设置，打开预览器的完整大小或旁边的。 但是，可以在编辑器窗口中为每个文件更改拆分。
 
 #### <a name="xaml-preview-controls"></a>XAML 预览控件
 
 选择是否要查看代码和/或 XAML 预览器，方法是在 "拆分视图" 窗格中选择这些按钮。 中间按钮交换预览器和代码的位置：
 
-[![Xamarin。窗体预览器控件用于在 Visual Studio 中的设计、源和拆分视图之间切换](xaml-previewer-images/xamlp-controls-splitview-vs-sm.png "Xamarin。窗体预览器控件用于在 Visual Studio 中的设计、源和拆分视图之间切换")](xaml-previewer-images/xamlp-controls-splitview-vs-lg.png#lightbox)
+[![Xamarin.Forms在 Visual Studio 中的 "设计"、"源" 和 "拆分" 视图之间切换的预览器控件](xaml-previewer-images/xamlp-controls-splitview-vs-sm.png "[!基金.无 LOC （Xamarin）：在 Visual Studio 中的 "设计"、"源" 和 "拆分" 视图之间切换的控件")](xaml-previewer-images/xamlp-controls-splitview-vs-lg.png#lightbox)
 
 您可以更改是垂直拆分屏幕还是水平拆分屏幕，或完全折叠一个窗格：
 
-[![Visual Studio 中的 Xamarin 预览窗格方向控件](xaml-previewer-images/xamlp-controls-orientation-vs-sm.png "Visual Studio 中的 Xamarin 预览窗格方向控件")](xaml-previewer-images/xamlp-controls-orientation-vs-lg.png#lightbox)
+[![Xamarin.FormsVisual Studio 中的 "预览器" 窗格方向控件](xaml-previewer-images/xamlp-controls-orientation-vs-sm.png "[!基金.无 LOC （Xamarin）] 在 Visual Studio 中预览窗格方向控件")](xaml-previewer-images/xamlp-controls-orientation-vs-lg.png#lightbox)
 
 #### <a name="enable-or-disable-the-xaml-previewer"></a>启用或禁用 XAML 预览器
 
-可以通过选择 "**默认 XML 编辑器" 将 "默认 XML 编辑器**" 设置为**默认的 XAML 编辑器**，将 "**工具" > 选项 "> > XAMARIN" > "Forms xaml 预览**器" 对话框中关闭 XAML 预览器。 这也会关闭文档大纲、属性面板和 XAML 工具箱。 若要重新打开 XAML 预览器和这些工具，请将**默认 XAML 编辑器**更改为**Xamarin。窗体预览**器。
+您可以通过选择 "**默认 XML 编辑器**" **，将 "****工具" > Xamarin.Forms "工具" > Xamarin >** 这也会关闭文档大纲、属性面板和 XAML 工具箱。 若要打开 XAML 预览器并重新打开这些工具，请将**默认 XAML 编辑器**更改为** Xamarin.Forms 预览**器。
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -56,14 +59,14 @@ XAML 预览器会显示你的 Xamarin. Forms XAML 页面在 iOS 和 Android 上�
 
 当您打开 XAML 页时，"**预览**" 按钮将显示在编辑器中。 按任意 XAML 文档窗口左下角的 "**预览**" 或 "**拆分**" 按钮显示或隐藏预览器：
 
-[![通过 "预览" 或 "拆分" 按钮启用的窗体预览器](xaml-previewer-images/xamlp-list-sml.png)](xaml-previewer-images/xamlp-list.png#lightbox)
+[![Xamarin.Forms用预览或拆分按钮启用的预览器](xaml-previewer-images/xamlp-list-sml.png)](xaml-previewer-images/xamlp-list.png#lightbox)
 
 > [!NOTE]
 > 在较旧版本的 Visual Studio for Mac 中，"**预览**" 按钮位于窗口的右上方。
 
 #### <a name="enable-or-disable-the-xaml-previewer"></a>启用或禁用 XAML 预览器
 
-通过选择 "**默认 XML 编辑器**" 作为**默认的 XAML 编辑器**，可以在 VISUAL Studio 中关闭 Xaml 预览器 **> 首选项 > 文本编辑器 > XAML** "对话框。 这也会关闭文档大纲、属性面板和 XAML 工具箱。 若要重新打开 XAML 预览器和这些工具，请将**默认 XAML 编辑器**更改为**Xamarin。窗体预览**器。
+通过选择 "**默认 XML 编辑器**" 作为**默认的 XAML 编辑器**，可以在 VISUAL Studio 中关闭 Xaml 预览器 **> 首选项 > 文本编辑器 > XAML** "对话框。 这也会关闭文档大纲、属性面板和 XAML 工具箱。 若要打开 XAML 预览器并重新打开这些工具，请将**默认 XAML 编辑器**更改为** Xamarin.Forms 预览**器。
 
 ::: zone-end
 
@@ -79,7 +82,7 @@ XAML 预览器会显示你的 Xamarin. Forms XAML 页面在 iOS 和 Android 上�
 
 ## <a name="detect-design-mode"></a>检测设计模式
 
-静态[`DesignMode.IsDesignModeEnabled`](xref:Xamarin.Forms.DesignMode.IsDesignModeEnabled)属性告诉你应用程序是否正在预览程序中运行。 使用它，你可以指定仅在应用程序处于或未在预览程序中运行时执行的代码：
+静态 [`DesignMode.IsDesignModeEnabled`](xref:Xamarin.Forms.DesignMode.IsDesignModeEnabled) 属性告诉你应用程序是否正在预览程序中运行。 使用它，你可以指定仅在应用程序处于或未在预览程序中运行时执行的代码：
 
 ```csharp
 if (DesignMode.IsDesignModeEnabled)
@@ -103,10 +106,10 @@ if (!DesignMode.IsDesignModeEnabled)
 
 * 预览器启动可能需要一些时间，你会看到 "正在初始化呈现"，直到它就绪。
 * 尝试关闭并重新打开该 XAML 文件。
-* 确保 `App` 类具有无参数的构造函数。
-* 检查 Xamarin. Forms 版本-它至少必须为 Xamarin. Forms 3.6。 可以通过 NuGet 更新到最新的 Xamarin 版本。
+* 确保你的 `App` 类具有无参数的构造函数。
+* 检查 Xamarin.Forms 版本-必须至少为 Xamarin.Forms 3.6。 可以通过 NuGet 更新到最新 Xamarin.Forms 版本。
 * 检查 JDK 安装-预览 Android 至少需要[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html)。
-* 尝试在 `if (!DesignMode.IsDesignModeEnabled)`的隐藏页面的C#代码中包装任何已初始化的类。
+* 尝试在中隐藏页的 c # 代码中的任何已初始化的类 `if (!DesignMode.IsDesignModeEnabled)` 。
 
 ### <a name="custom-controls-arent-rendering"></a>自定义控件不呈现
 

@@ -1,31 +1,34 @@
 ---
-title: 在 Xamarin.Forms 中的图形
-description: 本指南介绍如何将图形和游戏引擎视觉对象合并到 Xamarin.Forms 应用程序，使用 CocosSharp、 SkiaShap 和 UrhoSharp。
-ms.prod: xamarin
-ms.assetid: 167ec01a-fb9e-431e-a44d-a10eaf62bf39
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/01/2018
-ms.openlocfilehash: 38b06c26208613baed45f40a8f0933f10496c467
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+title: 图形在Xamarin.Forms
+description: 本指南说明如何 Xamarin.Forms 使用 CocosSharp、SkiaShap 和 UrhoSharp 将图形和游戏引擎视觉对象合并到应用程序中。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 227bb3f0971bb8e3ceef7015f8fffb9994ccc36b
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61399226"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84129319"
 ---
-# <a name="graphics-in-xamarinforms"></a>在 Xamarin.Forms 中的图形
+# <a name="graphics-in-xamarinforms"></a>图形在Xamarin.Forms
 
-_如何将图形和游戏引擎视觉对象合并到 Xamarin.Forms 应用程序。_
+_如何将图形和游戏引擎视觉对象纳入到 Xamarin.Forms 应用程序中。_
 
-## <a name="using-cocossharp-in-xamarinformscocossharpmd"></a>[在 Xamarin.Forms 中使用 CocosSharp](cocossharp.md)
+## <a name="using-cocossharp-in-xamarinformscocossharpmd"></a>[使用 CocosSharpXamarin.Forms](cocossharp.md)
 
-如何添加 CocosSharp 要包含在 Xamarin.Forms 应用程序中的确切形状、 图像和文本呈现。
+如何添加 CocosSharp 以在应用程序中包含精确的形状、图像和文本呈现 Xamarin.Forms 。
 
-## <a name="using-skiasharp-in-xamarinformsskiasharpindexmd"></a>[在 Xamarin.Forms 中使用 SkiaSharp](skiasharp/index.md)
+## <a name="using-skiasharp-in-xamarinformsskiasharpindexmd"></a>[使用 SkiaSharpXamarin.Forms](skiasharp/index.md)
 
-了解如何将 SkiaSharp 添加到 Xamarin.Forms 应用程序并使用它来绘制 2D 矢量图形、 图像和文本。
+如何将 SkiaSharp 添加到 Xamarin.Forms 应用程序，并使用它绘制2d 矢量图形、图像和文本。
 
-## <a name="using-urhosharp-in-xamarinformsurhosharpmd"></a>[在 Xamarin.Forms 中使用 UrhoSharp](urhosharp.md)
+## <a name="using-urhosharp-in-xamarinformsurhosharpmd"></a>[使用 UrhoSharpXamarin.Forms](urhosharp.md)
 
-如何添加 UrhoSharp 要包括在 Xamarin.Forms 应用程序中的三维可视化效果。
+如何添加 UrhoSharp 以在应用程序中包括三维可视化效果 Xamarin.Forms 。

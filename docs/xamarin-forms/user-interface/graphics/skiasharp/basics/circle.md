@@ -1,39 +1,42 @@
 ---
-title: SkiaSharp 绘制一个简单的圆圈
-description: 本文说明 SkiaSharp 绘制，在 Xamarin.Forms 应用程序中包括画布和绘制对象的基础知识，并演示此示例代码。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/10/2017
-ms.openlocfilehash: a0ab6a965c2507c01f5b7ebdc3670e6661ca481e
-ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
+title: ''
+description: 本文介绍了 SkiaSharp 的基础知识，包括画布和画图对象（在应用程序中）， Xamarin.Forms 并通过示例代码对此进行了演示。
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fb873102bfb8568b8298a39ea2429fb6c27af175
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/30/2019
-ms.locfileid: "75545629"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137717"
 ---
-# <a name="drawing-a-simple-circle-in-skiasharp"></a>SkiaSharp 绘制一个简单的圆圈
+# <a name="drawing-a-simple-circle-in-skiasharp"></a>在 SkiaSharp 中绘制简单圆圈
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_了解 SkiaSharp 绘制，包括画布的基础知识和绘制对象_
+_了解 SkiaSharp 的基础知识，包括画布和画图对象_
 
-本文介绍在 Xamarin.Forms 中使用 SkiaSharp，包括创建绘制图形的概念`SKCanvasView`对象以承载图形，处理`PaintSurface`事件，以及如何使用`SKPaint`要指定颜色和其他图形对象特性。
+本文介绍如何使用 SkiaSharp 中的绘制图形的概念 Xamarin.Forms ，包括创建 `SKCanvasView` 用于承载图形的对象、处理事件以及 `PaintSurface` 使用 `SKPaint` 对象指定颜色和其他绘制属性。
 
-[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序包含本系列的 SkiaSharp 文章的所有示例代码。 第一页是已获授权**简单的圆圈**，并调用 page 类[ `SimpleCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)。 此代码演示如何在一个半径为 100 像素的页的中心绘制一个圆。 圆的边框为红色，并内部的圆圈将显示为蓝色。
+[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序包含此系列 SkiaSharp 文章的所有示例代码。 第一页的标题为**简单圆圈**，并调用 page 类 [`SimpleCirclePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs) 。 此代码演示如何在页面中心绘制一个圆，半径为100像素。 圆圈的轮廓为红色，圆的内部为蓝色。
 
 ![](circle-images/circleexample.png "A blue circle outlined in red")
 
-[ `SimpleCircle` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs) Page 类派生自`ContentPage`和包含两个`using`SkiaSharp 命名空间指令：
+[`SimpleCircle`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)Page 类派生自 `ContentPage` ，其中包含 `using` SkiaSharp 命名空间的两个指令：
 
 ```csharp
 using SkiaSharp;
 using SkiaSharp.Views.Forms;
 ```
 
-以下类的构造函数创建[ `SKCanvasView` ](xref:SkiaSharp.Views.Forms.SKCanvasView)对象，将附加的处理程序[ `PaintSurface` ](xref:SkiaSharp.Views.Forms.SKCanvasView.PaintSurface)事件，并设置`SKCanvasView`对象作为页面的内容：
+下面的类构造函数创建一个 [`SKCanvasView`](xref:SkiaSharp.Views.Forms.SKCanvasView) 对象，附加该事件的处理程序， [`PaintSurface`](xref:SkiaSharp.Views.Forms.SKCanvasView.PaintSurface) 并将该 `SKCanvasView` 对象设置为该页面的内容：
 
 ```csharp
 public SimpleCirclePage()
@@ -46,9 +49,9 @@ public SimpleCirclePage()
 }
 ```
 
-`SKCanvasView`占用页面的整个内容区域。 或者，你可以组合`SKCanvasView`与其他 Xamarin.Forms`View`派生类，你将看到在其他示例。
+`SKCanvasView`占据页面的整个内容区域。 您也可以 `SKCanvasView` 将与其他 Xamarin.Forms `View` 派生项合并，如您将在其他示例中所见。
 
-`PaintSurface`事件处理程序完成所有绘制的。 此方法可以多次调用应用程序运行时，这样它应保持的所有信息重新创建所需的图形显示：
+`PaintSurface`您可以在事件处理程序中执行所有绘图操作。 当程序运行时，可以多次调用此方法，因此它应保留重新创建图形显示所需的所有信息：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -58,16 +61,16 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-[ `SKPaintSurfaceEventArgs` ](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs)伴随该事件的对象具有两个属性：
+[`SKPaintSurfaceEventArgs`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs)事件附带的对象有两个属性：
 
-- [`SKImageInfo`](xref:SkiaSharp.SKImageInfo) 类型的 [`Info`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Info)
-- [`SKSurface`](xref:SkiaSharp.SKSurface) 类型的 [`Surface`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Surface)
+- [`Info`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Info)类型为[`SKImageInfo`](xref:SkiaSharp.SKImageInfo)
+- [`Surface`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Surface)类型为[`SKSurface`](xref:SkiaSharp.SKSurface)
 
-`SKImageInfo`结构包含信息的绘图图面，最重要的是，其宽度和高度 （像素）。 `SKSurface`对象表示的绘图图面本身。 在此程序中的绘图图面是视频显示，但在其他程序`SKSurface`对象还可以表示使用 SkiaSharp 上绘制的位图。
+`SKImageInfo`结构包含有关绘制图面的信息，最重要的是，它的宽度和高度（以像素为单位）。 `SKSurface`对象表示绘图图面本身。 在此程序中，绘图图面为视频显示，但在其他程序中， `SKSurface` 对象还可以表示使用 SkiaSharp 在上进行绘制的位图。
 
-最重要的属性`SKSurface`是[ `Canvas` ](xref:SkiaSharp.SKSurface.Canvas)类型的[ `SKCanvas` ](xref:SkiaSharp.SKCanvas)。 此类是绘图上下文用于执行实际绘制的图形。 `SKCanvas`对象将封装图形状态，其中包括图形转换和剪辑。
+的最重要的属性 `SKSurface` [`Canvas`](xref:SkiaSharp.SKSurface.Canvas) 的类型为 [`SKCanvas`](xref:SkiaSharp.SKCanvas) 。 此类是一个图形绘图上下文，用于执行实际绘图。 `SKCanvas`对象封装图形状态，其中包括图形转换和剪辑。
 
-下面是典型的开始部分`PaintSurface`事件处理程序：
+下面是 `PaintSurface` 事件处理程序的典型启动：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -82,9 +85,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-[ `Clear` ](xref:SkiaSharp.SKCanvas.Clear)方法清除在画布上添加透明的颜色。 重载允许您指定背景色的画布。
+[`Clear`](xref:SkiaSharp.SKCanvas.Clear)方法使用透明颜色清除画布。 重载允许您为画布指定背景色。
 
-此处的目标是绘制用蓝色填充的红色圆圈。 由于这一特定图形图像包含两个不同的颜色，因此需要在两个步骤中完成的作业。 第一步是绘制圆的轮廓。 若要指定颜色和其他特征的行，创建并初始化[ `SKPaint` ](xref:SkiaSharp.SKPaint)对象：
+此处的目标是绘制一个蓝色实心圆圈。 由于此特定图形包含两种不同的颜色，因此需要执行两个步骤。 第一步是绘制圆形的轮廓。 若要指定线条的颜色和其他特性，可以创建和初始化 [`SKPaint`](xref:SkiaSharp.SKPaint) 对象：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -100,19 +103,19 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-[ `Style` ](xref:SkiaSharp.SKPaint.Style)属性指示你想要的*笔划*行 （在本例中的圆大纲） 而非*填充*内部。 三个成员[ `SKPaintStyle` ](xref:SkiaSharp.SKPaintStyle)枚举如下所示：
+[`Style`](xref:SkiaSharp.SKPaint.Style)属性指示您要对线条（在本例中为圆圈的轮廓）进行*描边*，而不是*填充*内部。 枚举的三个成员 [`SKPaintStyle`](xref:SkiaSharp.SKPaintStyle) 如下：
 
 - [`Fill`](xref:SkiaSharp.SKPaintStyle.Fill)
 - [`Stroke`](xref:SkiaSharp.SKPaintStyle.Stroke)
 - [`StrokeAndFill`](xref:SkiaSharp.SKPaintStyle.StrokeAndFill)
 
-默认值为 `Fill`。 第三个选项用于绘制线条笔画和内部填充颜色相同。
+默认值为 `Fill`。 使用第三个选项可以为线条描边，并使用相同的颜色填充内部。
 
-设置[ `Color` ](xref:SkiaSharp.SKPaint.Color)属性的值类型[ `SKColor` ](xref:SkiaSharp.SKColor)。 一种方法来获取`SKColor`值是通过将转换 Xamarin.Forms`Color`值设置为`SKColor`值使用扩展方法[ `ToSKColor` ](xref:SkiaSharp.Views.Forms.Extensions.ToSKColor*)。 [ `Extensions` ](xref:SkiaSharp.Views.Forms.Extensions)类中`SkiaSharp.Views.Forms`命名空间包含的其他方法的 Xamarin.Forms 值和 SkiaSharp 值之间进行转换。
+将 [`Color`](xref:SkiaSharp.SKPaint.Color) 属性设置为类型的值 [`SKColor`](xref:SkiaSharp.SKColor) 。 获取值的一种方法 `SKColor` 是 Xamarin.Forms `Color` 使用扩展方法将值转换为 `SKColor` 值 [`ToSKColor`](xref:SkiaSharp.Views.Forms.Extensions.ToSKColor*) 。 [`Extensions`](xref:SkiaSharp.Views.Forms.Extensions)命名空间中的类 `SkiaSharp.Views.Forms` 包括在 Xamarin.Forms 值和 SkiaSharp 值之间进行转换的其他方法。
 
-[ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth)属性指示的行宽度。 此处它被设置为 25 像素。
+[`StrokeWidth`](xref:SkiaSharp.SKPaint.StrokeWidth)属性指示线条的粗细。 此处设置为25像素。
 
-使用该`SKPaint`对象来绘制圆：
+使用该 `SKPaint` 对象绘制圆形：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -123,11 +126,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-相对于显示器表面的左上角坐标来指定坐标。 X 坐标向右增加和 Y 坐标增加停止运行。 在讨论有关图形中，通常的数学表示法 （x，y） 用于表示一个点。 点 （0，0） 是显示器表面的左上角，通常称为*原点*。
+相对于显示图面的左上角指定坐标。 X 坐标向右增加，Y 坐标增加。 在讨论图形时，通常使用数学表示法（x，y）表示一个点。 点（0，0）是显示图面的左上角，通常称为*原点*。
 
-前两个参数的`DrawCircle`表示圆的中心的 X 和 Y 坐标。 这些被分配给一半的宽度和高度显示图面以放置在显示器表面的中心圆的中心。 第三个参数指定圆的半径，并最后一个参数是`SKPaint`对象。
+的前两个参数 `DrawCircle` 指示圆圈中心的 X 和 Y 坐标。 它们被分配到显示图面的宽度和高度的一半，以将圆圈中心置于显示图面的中心。 第三个参数指定圆的半径，最后一个参数是 `SKPaint` 对象。
 
-若要填充的圆形内部，可以更改的两个属性`SKPaint`对象，并调用`DrawCircle`试。 此代码还显示了替代方法以获取`SKColor`之一的许多字段的值[ `SKColors` ](xref:SkiaSharp.SKColors)结构：
+若要填充圆的内部，可以更改对象的两个属性 `SKPaint` ，并再次调用 `DrawCircle` 。 此代码还介绍了一种 `SKColor` 从结构的多个字段中获取值的另一种方法 [`SKColors`](xref:SkiaSharp.SKColors) ：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -139,24 +142,24 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-这一次，`DrawCircle`调用填充使用的新属性的圆圈`SKPaint`对象。
+这次，该 `DrawCircle` 调用使用对象的新属性来填充圆圈 `SKPaint` 。
 
 下面是在 iOS 和 Android 上运行的程序：
 
 [![](circle-images/simplecircle-small.png "Triple screenshot of the Simple Circle page")](circle-images/simplecircle-large.png#lightbox "Triple screenshot of the Simple Circle page")
 
-时自行运行该程序，可以打开手机或模拟器侧向若要查看如何重绘图形。 每次需要重绘图形`PaintSurface`再次调用事件处理程序。
+当你自行运行该程序时，你可以将手机或模拟器侧向旋转，以查看图形的重绘方式。 每次需要重绘图形时， `PaintSurface` 都会再次调用事件处理程序。
 
-还有可能的颜色渐变或位图磁贴图形对象。 上一部分中讨论了这些选项[ **SkiaSharp 着色器**](../effects/shaders/index.md)。
+还可以通过渐变或位图图块为图形对象着色。 [**SkiaSharp 着色**](../effects/shaders/index.md)器部分讨论了这些选项。
 
-`SKPaint`对象是略高于图形绘制属性的集合。 这些对象是轻量。 可以重用`SKPaint`对象，如此程序执行，也可以创建多个`SKPaint`对象的绘制属性的各种组合。 可以创建并初始化这些对象之外`PaintSurface`事件处理程序，并且您可以将其保存为字段页类中。
+`SKPaint`对象只是图形绘图属性的集合。 这些对象为轻型对象。 您可以 `SKPaint` 像此程序一样重复使用对象，也可以 `SKPaint` 为各种绘图属性组合创建多个对象。 您可以在事件处理程序外部创建和初始化这些对象 `PaintSurface` ，并可以将它们保存为页类中的字段。
 
 > [!NOTE]
-> `SKPaint`类定义[ `IsAntialias` ](xref:SkiaSharp.SKPaint.IsAntialias)若要启用在图形的呈现抗锯齿。 抗锯齿通常导致直观地平滑边缘，因此您可能需要将此属性设置为`true`中的大多数您`SKPaint`对象。 为了简单起见，此属性是_不_设置中的大多数示例页面。
+> `SKPaint`类定义 [`IsAntialias`](xref:SkiaSharp.SKPaint.IsAntialias) 以在呈现图形时启用抗锯齿。 消除锯齿通常会导致视觉对象更光滑，因此您可能希望 `true` 在大多数对象中将此属性设置为 `SKPaint` 。 为了简单起见，在大多数示例页中均_未_设置此属性。
 
-尽管圆的轮廓的宽度指定为 25 像素&mdash;或四分之一圆的半径&mdash;似乎更精细，并且没有充分的理由： 在行宽度的一半的蓝色圆圈将被遮盖。 参数`DrawCircle`方法定义一个圆形的抽象几何坐标。 蓝色的内部大小调整为该维度与最接近像素，但 25 个像素宽大纲跨越几何圆圈&mdash;一半内部和外部的下半部分上。
+尽管圆轮廓的宽度指定为25像素 &mdash; 或圆圈半径的四分之一 &mdash; ，但有充分的理由需要：线条宽度的一半被蓝色圆圈所遮盖的部分的宽度为一半。 方法的参数 `DrawCircle` 定义圆的抽象几何坐标。 蓝色内部的大小调整为该尺寸到最接近的像素，但25个像素宽的轮廓跨越在外部的 &mdash; 内侧和一半上的几何圆一半。
 
-中的下一个示例[与 Xamarin.Forms 集成](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)文章演示是以可视方式。
+[与 Xamarin.Forms 文章集成](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)一文中的下一个示例演示了这一点。
 
 ## <a name="related-links"></a>相关链接
 

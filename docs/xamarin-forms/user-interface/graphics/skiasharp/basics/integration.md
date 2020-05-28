@@ -1,33 +1,36 @@
 ---
-title: 与 Xamarin.Forms 集成
-description: 本文介绍如何创建响应触摸的 SkiaSharp 图形和 Xamarin.Forms 元素，并演示此示例代码。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 288224F1-7AEE-4148-A88D-A70C03F83D7A
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/09/2017
-ms.openlocfilehash: 33ed7f3477f44662f3392d2125b61818b3ed885f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: 与集成Xamarin.Forms
+description: 本文介绍如何创建响应触控和元素的 SkiaSharp 图形 Xamarin.Forms ，并通过示例代码对此进行演示。
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9e763184f38719cda4526eb0a2dfdf39b2191a03
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759453"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137691"
 ---
-# <a name="integrating-with-xamarinforms"></a>与 Xamarin.Forms 集成
+# <a name="integrating-with-xamarinforms"></a>与集成Xamarin.Forms
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_创建响应触摸和 Xamarin.Forms 元素 SkiaSharp 图形_
+_创建响应触摸和元素的 SkiaSharp 图形 Xamarin.Forms_
 
-SkiaSharp 图形可以与 Xamarin.Forms 中通过多种方法的其余部分集成。 你可以结合 SkiaSharp 画布和 Xamarin.Forms 元素在同一页上，并甚至定位 SkiaSharp 画布顶部的 Xamarin.Forms 元素：
+SkiaSharp 图形可通过多种方式与的其余部分集成 Xamarin.Forms 。 可以将 SkiaSharp 画布和元素合并到 Xamarin.Forms 同一个页面上，甚至将 Xamarin.Forms 元素放置在 SkiaSharp 画布的顶部：
 
-![](integration-images/integrationexample.png "选择与滑块的颜色")
+![](integration-images/integrationexample.png "Selecting a color with sliders")
 
-在 Xamarin.Forms 中创建交互式 SkiaSharp 图形的另一种方法是通过触摸屏输入。
-中的第二页[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序有权使用**点击切换填充**。 一个简单的圆形两种方法，它可绘制&mdash;没有填充和填充了&mdash;通过点击切换。 [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs)类显示了如何改变 SkiaSharp 图形以响应用户输入。
+在中创建交互式 SkiaSharp 图形的另一种方法 Xamarin.Forms 是通过触摸。
+[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)计划中的第二页有权**点击 "切换填充**"。 它绘制一个简单的圆点 &mdash; ，无需填充，并 &mdash; 通过点击切换填充。 [`TapToggleFillPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs)类显示如何更改 SkiaSharp 图形以响应用户输入。
 
-此页上，对于`SKCanvasView`类中实例化[TapToggleFill.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml)文件，还会设置 Xamarin.Forms [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)在视图上：
+对于此页，在 `SKCanvasView` [TapToggleFill](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml)文件中实例化类，该文件还在 Xamarin.Forms [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) 视图上设置了：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -44,9 +47,9 @@ SkiaSharp 图形可以与 Xamarin.Forms 中通过多种方法的其余部分集�
 </ContentPage>
 ```
 
-请注意`skia`XML 命名空间声明。
+请注意 `skia` XML 命名空间声明。
 
-`Tapped`处理程序`TapGestureRecognizer`对象只需切换的值的布尔型字段，并调用[ `InvalidateSurface` ](xref:SkiaSharp.Views.Forms.SKCanvasView.InvalidateSurface)方法`SKCanvasView`:
+`Tapped`对象的处理程序 `TapGestureRecognizer` 只是切换布尔字段的值并调用的 [`InvalidateSurface`](xref:SkiaSharp.Views.Forms.SKCanvasView.InvalidateSurface) 方法 `SKCanvasView` ：
 
 ```csharp
 bool showFill = true;
@@ -58,7 +61,7 @@ void OnCanvasViewTapped(object sender, EventArgs args)
 }
 ```
 
-在调用`InvalidateSurface`有效地生成调用`PaintSurface`处理程序，它使用`showFill`字段填充或不填充该圆圈：
+调用可 `InvalidateSurface` 有效生成对处理程序的调用 `PaintSurface` ，该处理程序使用 `showFill` 字段填充或不填充圆：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -86,23 +89,23 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`StrokeWidth`已设置属性为 50 地突出显示不同之处。 您还可以通过首先绘制内部，，然后概要中查看整个线条宽度。 默认情况下，图形图表的更高版本中绘制`PaintSurface`事件处理程序会掩盖与前面的处理程序中绘制。
+该 `StrokeWidth` 属性已设置为50，强调设计差异。 您还可以通过先绘制内部，然后绘制轮廓来查看整个线条宽度。 默认情况下，在事件处理程序中的后面绘制的图形图会 `PaintSurface` 掩盖之前在处理程序中绘制的图形。
 
-**颜色浏览**页演示了如何，您还可以在与其他 Xamarin.Forms 元素中，集成 SkiaSharp 图形，并且还演示用于在 SkiaSharp 中定义的颜色的两个替代方法之间的差异。 静态[ `SKColor.FromHsl` ](xref:SkiaSharp.SKColor.FromHsl(System.Single,System.Single,System.Single,System.Byte))方法创建`SKColor`值基于色调-饱和度-亮度模型：
+"**颜色浏览**" 页演示了如何将 SkiaSharp 图形与其他 Xamarin.Forms 元素集成，还演示了在 SkiaSharp 中定义颜色的两种替代方法之间的差异。 静态 [`SKColor.FromHsl`](xref:SkiaSharp.SKColor.FromHsl(System.Single,System.Single,System.Single,System.Byte)) 方法 `SKColor` 基于 "色调-饱和度-亮度" 模型创建值：
 
 ```csharp
 public static SKColor FromHsl (Single h, Single s, Single l, Byte a)
 ```
 
-静态[ `SKColor.FromHsv` ](xref:SkiaSharp.SKColor.FromHsv(System.Single,System.Single,System.Single,System.Byte))方法创建`SKColor`值基于类似的色调-饱和度-值模型：
+静态 [`SKColor.FromHsv`](xref:SkiaSharp.SKColor.FromHsv(System.Single,System.Single,System.Single,System.Byte)) 方法 `SKColor` 基于类似的色调-饱和度值模型创建值：
 
 ```csharp
 public static SKColor FromHsv (Single h, Single s, Single v, Byte a)
 ```
 
-在这两种情况下，`h`参数范围是从 0 到 360。 `s`， `l`，和`v`参数范围从 0 到 100。 `a` （alpha 或不透明度） 参数范围是从 0 到 255 之间。
+在这两种情况下， `h` 自变量的范围介于0到360之间。 `s`、 `l` 和参数的 `v` 范围为0到100。 `a`（Alpha 或不透明度）参数的范围为0到255。
 
-[ **ColorExplorePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml)文件将创建两个`SKCanvasView`中的对象`StackLayout`与并行`Slider`和`Label`的视图，以便用户选择 HSL 和 HSV颜色值：
+[**ColorExplorePage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml)文件将并行创建两个 `SKCanvasView` 对象 `StackLayout` `Slider` 以及 `Label` 允许用户选择 HSL 和 HSV 颜色值的视图：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -182,9 +185,9 @@ public static SKColor FromHsv (Single h, Single s, Single v, Byte a)
 </ContentPage>
 ```
 
-这两个`SKCanvasView`元素位于单个单元格`Grid`与`Label`您坐在顶部显示的结果的 RGB 颜色值。
+这两个 `SKCanvasView` 元素位于单个单元格内， `Grid` 并且位于顶部， `Label` 用于显示生成的 RGB 颜色值。
 
-[ **ColorExplorePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml.cs)代码隐藏文件是相对简单。 共享`ValueChanged`处理程序，三`Slider`元素只是使两者`SKCanvasView`元素。 `PaintSurface`处理程序所指示的颜色与清除画布`Slider`元素，并且还设置`Label`坐的`SKCanvasView`元素：
+[**ColorExplorePage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml.cs)代码隐藏文件相对简单。 这 `ValueChanged` 三个元素的共享处理程序 `Slider` 只是使这两个 `SKCanvasView` 元素失效。 `PaintSurface`处理程序将使用元素指示的颜色清除画布 `Slider` ，并设置 `Label` 元素的上方 `SKCanvasView` ：
 
 ```csharp
 public partial class ColorExplorePage : ContentPage
@@ -229,15 +232,15 @@ public partial class ColorExplorePage : ContentPage
 }
 ```
 
-在 HSL 和 HSV 颜色模型中的色调值介于 0 到 360，并指示主导颜色色调的。 都是出喷薄彩虹的传统颜色： 红色、 橙色、 黄色、 绿色、 蓝色、 indigo、 紫色和后在圆圈中的为红色。
+在 HSL 和 HSV 颜色模型中，色相值的范围为0到360，表示颜色的主导色调。 下面是彩虹的传统颜色：红色、橙色、黄色、绿色、蓝色、靛蓝色、紫色，并返回到红色。
 
-在 HSL 模型中，亮度的 0 值始终为黑色、 和 100 的值始终为白色。 饱和度值为 0，介于 0 和 100 之间的亮度值时，种灰色底纹。 增加饱和度将添加更多颜色。 （这些都是使用一个组件等于 255，另一个等于 0，且第三个范围从 0 到 255 的 RGB 值） 的纯颜色饱和度为 100，发生亮度为 50。
+在 HSL 模型中，"亮度" 的值始终为黑色，100值始终为白色。 当饱和度值为0时，介于0到100之间的亮度值为灰色阴影。 增加饱和度会增加颜色。 纯色（这是 RGB 值，其中一个组件等于255，另一个组件等于0，第三个范围为0到255）在饱和度为100且亮度为50时出现。
 
-HSV 模型中的饱和度和值是 100 时，将导致纯颜色。 值为 0，而不考虑任何其他设置时的颜色为黑色。 饱和度是 0 和值的范围从 0 到 100 时，会出现灰色底纹。
+在 HSV 模型中，饱和度和值均为100时，纯颜色会产生结果。 当 Value 为0时，无论是否有任何其他设置，颜色都为黑色。 当饱和度为0并且值范围从0到100时，将发生灰色阴影。
 
-但是，若要了解的两个模型的最佳方法是尝试使用它们自己：
+但若要了解这两种模型，最好的方法是自行试验：
 
-[![](integration-images/colorexplore-large.png "颜色浏览页面的三个屏幕截图")](integration-images/colorexplore-small.png#lightbox "颜色浏览页面的三个屏幕截图")
+[![](integration-images/colorexplore-large.png "Triple screenshot of the Color Explore page")](integration-images/colorexplore-small.png#lightbox "Triple screenshot of the Color Explore page")
 
 ## <a name="related-links"></a>相关链接
 

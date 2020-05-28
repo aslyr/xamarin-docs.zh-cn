@@ -1,22 +1,25 @@
 ---
-title: 为什么我的 Xamarin. Maps Android 项目失败，并出现 COMPILETODALVIK 意外的顶级错误？
-ms.topic: troubleshooting
-ms.prod: xamarin
-ms.assetid: C0251EB1-F509-47AD-98D6-846AF46425E5
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/25/2017
-ms.openlocfilehash: 2872cc7b54e26d07b388f08d650048e8d3861930
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: 为什么要这样做 Xamarin.Forms 。地图 Android 项目失败，出现 COMPILETODALVIK 意外顶级错误？
+ms.topic: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e29535e71cb77b05da41c043c6fd932ae4f5ce95
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759965"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135845"
 ---
-# <a name="why-does-my-xamarinformsmaps-android-project-fail-with-compiletodalvik-unexpected-top-level-error"></a>为什么我的 Xamarin. Maps Android 项目失败，并出现 COMPILETODALVIK 意外的顶级错误？
+# <a name="why-does-my-xamarinformsmaps-android-project-fail-with-compiletodalvik-unexpected-top-level-error"></a>为什么要这样做 Xamarin.Forms 。地图 Android 项目失败，出现 COMPILETODALVIK 意外顶级错误？
 
-此错误可能出现在 Visual Studio for Mac 的错误板中，或在 Visual Studio 的 "生成输出" 窗口中。使用 Xamarin 的 Android 项目。
+此错误可能出现在 Visual Studio for Mac 的错误板中，或在 Visual Studio 的 "生成输出" 窗口中。在 Android 项目中使用 Xamarin.Forms 。地图.
 
 最常见的解决方法是增加你的 Xamarin Android 项目的 Java 堆大小。 请按照以下步骤提高堆大小：
 

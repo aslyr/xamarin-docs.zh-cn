@@ -1,56 +1,59 @@
 ---
-title: SkiaSharp 曲线和路径
-description: 此文介绍了如何使用 SkiaSharp 绘制曲线和 Xamarin.Forms 应用程序中使用路径功能，此示例代码进行了演示。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 781937AA-AA1C-469C-AA92-D42D08B58635
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/24/2017
-ms.openlocfilehash: 49888dd32ee1cbfed6f9c9268c8dc7a106bec83e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: ''
+description: 本文介绍如何使用 SkiaSharp 在应用程序中绘制曲线和使用路径功能 Xamarin.Forms ，并使用示例代码对此进行演示。
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7d5a4fc818cef77671b6cabddc56de8234cb858d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770580"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84127798"
 ---
 # <a name="skiasharp-curves-and-paths"></a>SkiaSharp 曲线和路径
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _了解如何使用 SkiaSharp 绘制曲线和使用路径功能_
 
-探索[ `SKPath` ](xref:SkiaSharp.SKPath)方法和属性中已开始[ **SkiaSharp 线和路径**](../paths/index.md)一文。 下面的文章继续方法添加到曲线`SKPath`对象，并利用功能强大的路径的其他功能。 您将看到如何简洁的文本字符串中指定完整路径、 如何使用路径的效果，以及如何深入探讨路径内部结构。
+在 [`SKPath`](xref:SkiaSharp.SKPath) [**SkiaSharp 行和路径**](../paths/index.md)一文中开始探索方法和属性。 此处的文章继续使用向对象添加曲线 `SKPath` 并利用其他强大路径功能的方法。 你将了解如何在简洁文本字符串中指定整个路径，如何使用路径效果，以及如何深入了解路径内部。
 
-在本部分中的所有示例程序都可在**SkiaSharp 曲线和路径**页[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序，然后在[ **曲线**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves)解决方案的文件夹。
+本节中的所有示例程序都可在[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序的 " **SkiaSharp 曲线和路径**" 页中找到，也可在解决方案的 "[**曲线**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves)" 文件夹中找到。
 
-## <a name="three-ways-to-draw-an-arcarcsmd"></a>[绘制弧线的三个方法](arcs.md)
+## <a name="three-ways-to-draw-an-arc"></a>[绘制弧线的三个方法](arcs.md)
 
-了解如何使用 SkiaSharp 弧线定义三个不同的方式。
+了解如何使用 SkiaSharp 以三种不同的方式定义弧线。
 
-## <a name="three-types-of-bzier-curvesbeziersmd"></a>[贝塞尔曲线的三种类型](beziers.md)
+## <a name="three-types-of-bzier-curves"></a>[贝塞尔曲线的三种类型](beziers.md)
 
-了解如何使用 SkiaSharp 呈现三次方、 二次，和圆锥贝塞尔曲线
+了解如何使用 SkiaSharp 呈现立方、二次和圆锥次贝塞尔曲线
 
-## <a name="svg-path-datapath-datamd"></a>[SVG 路径数据](path-data.md)
+## <a name="svg-path-data"></a>[SVG 路径数据](path-data.md)
 
-定义使用可缩放矢量图形格式的文本字符串的路径
+使用可缩放矢量图形格式的文本字符串定义路径
 
-## <a name="clipping-with-paths-and-regionsclippingmd"></a>[按路径和区域进行剪裁](clipping.md)
+## <a name="clipping-with-paths-and-regions"></a>[按路径和区域进行剪裁](clipping.md)
 
-使用剪辑图形路径指向的特定区域，并创建区域。
+使用路径将图形剪辑到特定区域，以及创建区域。
 
-## <a name="path-effectseffectsmd"></a>[路径效果](effects.md)
+## <a name="path-effects"></a>[路径效果](effects.md)
 
-了解允许用于进行描边，并填充的路径的不同路径效果。
+发现各种路径效果，这些效果允许将路径用于描边和填充。
 
-## <a name="paths-and-texttext-pathsmd"></a>[路径和文本](text-paths.md)
+## <a name="paths-and-text"></a>[路径和文本](text-paths.md)
 
-了解之处的路径和文本
+探索路径和文本的交集
 
-## <a name="path-information-and-enumerationinformationmd"></a>[路径信息和枚举](information.md)
+## <a name="path-information-and-enumeration"></a>[路径信息和枚举](information.md)
 
-获取有关路径的信息和枚举的内容
+获取有关路径和枚举内容的信息
 
 ## <a name="related-links"></a>相关链接
 

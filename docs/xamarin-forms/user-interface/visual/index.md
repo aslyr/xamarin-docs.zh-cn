@@ -1,25 +1,28 @@
 ---
-title: Xamarin.Forms 视觉对象
-description: Xamarin.Forms Visual 使呈现器将有选择地应用于 VisualElement 对象，而不必子类 Xamarin.Forms 视图。
-ms.prod: xamarin
-ms.assetid: 69228A9C-39C4-46AE-A803-C38EED6FB965
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/05/2019
-ms.openlocfilehash: d440c6e95788fc876d6b0aa094f5bc2fce84bfb0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+title: Xamarin.FormsC
+description: Xamarin.Forms通过视觉对象，可以有选择地将呈现器应用到 VisualElement 对象，而无需为视图提供子类 Xamarin.Forms 。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5c0afcaa75029288d527fac2a2b21bcd614fd4dc
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61023440"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84127122"
 ---
-# <a name="xamarinforms-visual"></a>Xamarin.Forms 视觉对象
+# <a name="xamarinforms-visual"></a>Xamarin.FormsC
 
-## <a name="xamarinforms-material-visualmaterial-visualmd"></a>[Xamarin.Forms 材料视觉对象](material-visual.md)
+## <a name="xamarinforms-material-visualmaterial-visualmd"></a>[Xamarin.Forms材料视觉对象](material-visual.md)
 
-Xamarin.Forms 材料视觉对象可以用于创建 iOS 和 Android 上 Xamarin.Forms 应用程序看起来完全相同，或大致相同。
+Xamarin.Forms材料视觉对象可用于创建 Xamarin.Forms 在 iOS 和 Android 上看起来完全相同或大致相同的应用程序。
 
-## <a name="create-a-xamarinforms-visual-renderercreatemd"></a>[创建 Xamarin.Forms 视觉对象呈现器](create.md)
+## <a name="create-a-xamarinforms-visual-renderercreatemd"></a>[创建 Xamarin.Forms 可视化呈现器](create.md)
 
-Xamarin.Forms Visual 使呈现器有选择地应用于[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)对象，而不必子类 Xamarin.Forms 视图。
+Xamarin.Forms通过视觉对象，可以有选择性地将呈现器应用于 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 对象，而无需为视图提供子类 Xamarin.Forms 。

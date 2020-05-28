@@ -1,24 +1,27 @@
 ---
-title: 在 Android 上 ListView 快速滚动
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 平台特定的, 以便能够快速滚动 ListView 中的数据。
-ms.prod: xamarin
-ms.assetid: 37D95A2D-74AC-488A-B903-2BDD799EAA5C
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/10/2018
-ms.openlocfilehash: ce51483da9599cf049cf005ae18b35d110aa325b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 30e6a39b1a7649fbb9e09dfeeb85ee889da68fc1
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649980"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84128799"
 ---
 # <a name="listview-fast-scrolling-on-android"></a>在 Android 上 ListView 快速滚动
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 Android 平台特定用于启用快速滚动查看中的[`ListView`](xref:Xamarin.Forms.ListView)数据。 设置使用在 XAML`ListView.IsFastScrollEnabled`附加属性设置为`boolean`值：
+此 Android 平台特定用于启用快速滚动查看中的数据 [`ListView`](xref:Xamarin.Forms.ListView) 。 它通过将 `ListView.IsFastScrollEnabled` 附加属性设置为值在 XAML 中使用 `boolean` ：
 
 ```xaml
 <ContentPage ...
@@ -35,7 +38,7 @@ ms.locfileid: "68649980"
 </ContentPage>
 ```
 
-或者，可以使用它从 C# 使用 fluent API:
+此外，还可以使用 Fluent API 从 c # 使用该方法：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -48,15 +51,15 @@ listView.GroupDisplayBinding = new Binding("Key");
 listView.On<Android>().SetIsFastScrollEnabled(true);
 ```
 
-`ListView.On<Android>`方法指定仅将在 Android 上运行此特定于平台的。 `ListView.SetIsFastScrollEnabled`方法，请在[ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)命名空间，用于启用通过中的数据快速滚动[ `ListView` ](xref:Xamarin.Forms.ListView)。 此外，`SetIsFastScrollEnabled`方法可用于切换通过调用快速滚动`IsFastScrollEnabled`方法以返回指示是否启用快速滚动：
+`ListView.On<Android>`方法指定此平台特定的仅在 Android 上运行。 `ListView.SetIsFastScrollEnabled`命名空间中的方法 [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) 用于启用快速滚动浏览中的数据 [`ListView`](xref:Xamarin.Forms.ListView) 。 此外， `SetIsFastScrollEnabled` 通过调用方法返回快速滚动是否启用，方法可用于切换快速滚动 `IsFastScrollEnabled` ：
 
 ```csharp
 listView.On<Android>().SetIsFastScrollEnabled(!listView.On<Android>().IsFastScrollEnabled());
 ```
 
-结果是通过中的数据的快速滚动[ `ListView` ](xref:Xamarin.Forms.ListView)可以启用，这将更改滚动块的大小：
+结果是，可以在中快速滚动浏览数据 [`ListView`](xref:Xamarin.Forms.ListView) ，这将更改滚动块的大小：
 
-[![](listview-fast-scrolling-images/fastscroll.png "ListView FastScroll 平台专属")](listview-fast-scrolling-images/fastscroll-large.png#lightbox "ListView FastScroll 特定于平台的")
+[![](listview-fast-scrolling-images/fastscroll.png "ListView FastScroll Platform-Specific")](listview-fast-scrolling-images/fastscroll-large.png#lightbox "ListView FastScroll Platform-Specific")
 
 ## <a name="related-links"></a>相关链接
 

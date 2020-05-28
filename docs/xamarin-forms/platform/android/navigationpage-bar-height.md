@@ -1,24 +1,27 @@
 ---
-title: Android 上的 NavigationPage 栏高度
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 平台特定的来设置 NavigationPage 上导航栏的高度。
-ms.prod: xamarin
-ms.assetid: C8A73B64-FE70-408A-A72E-8AF147F0C52C
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/10/2018
-ms.openlocfilehash: 501ea85a12a6e9b8b4198e0391e7ec8a16605069
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2dcabe3c0067734250834c2927fd4cbb83906943
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649994"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84128786"
 ---
 # <a name="navigationpage-bar-height-on-android"></a>Android 上的 NavigationPage 栏高度
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 Android 平台特定的设置上[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)导航栏的高度。 设置使用在 XAML [ `NavigationPage.BarHeight` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.BarHeightProperty)可绑定属性设置为一个整数值：
+此 Android 平台特定的设置上导航栏的高度 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 。 它通过将 [`NavigationPage.BarHeight`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.BarHeightProperty) 可绑定的属性设置为整数值，在 XAML 中使用：
 
 ```xaml
 <NavigationPage ...
@@ -28,7 +31,7 @@ ms.locfileid: "68649994"
 </NavigationPage>
 ```
 
-或者，可以使用它从 C# 使用 fluent API:
+此外，还可以使用 Fluent API 从 c # 使用该方法：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -44,11 +47,11 @@ public class AndroidNavigationPageCS : Xamarin.Forms.NavigationPage
 }
 ```
 
-`NavigationPage.On<Android>`方法指定仅将在应用程序兼容性 Android 上运行此特定于平台的。 [ `NavigationPage.SetBarHeight` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.SetBarHeight(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.NavigationPage},System.Int32))方法，在[ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)命名空间，用于设置在导航栏的高度[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)。 此外， [ `NavigationPage.GetBarHeight` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.GetBarHeight(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.NavigationPage}))方法可用于返回在导航栏的高度`NavigationPage`。
+`NavigationPage.On<Android>`方法指定此平台特定的仅在应用程序兼容 Android 上运行。 [ `NavigationPage.SetBarHeight` ] （X： Xamarin.Forms 。PlatformConfiguration. AndroidSpecific. AppCompat. SetBarHeight （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。NavigationPage}，System.object）方法， [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat) 用于在上设置导航栏的高度（& e） [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 。 此外，[ `NavigationPage.GetBarHeight` ] （x： Xamarin.Forms 。PlatformConfiguration. AndroidSpecific. AppCompat. GetBarHeight （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。NavigationPage}））方法可用于返回中导航栏的高度 `NavigationPage` 。
 
-结果是，在导航栏的高度[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)可以设置：
+结果就是可以设置上导航栏的高度 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ：
 
-![](navigationpage-bar-height-images/navigationpage-barheight.png "NavigationPage 导航栏高度")
+![](navigationpage-bar-height-images/navigationpage-barheight.png "NavigationPage navigation bar height")
 
 ## <a name="related-links"></a>相关链接
 

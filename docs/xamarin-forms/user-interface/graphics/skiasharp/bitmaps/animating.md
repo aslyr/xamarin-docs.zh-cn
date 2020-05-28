@@ -1,46 +1,49 @@
 ---
-title: SkiaSharp 位图进行动画处理
-description: 了解如何： 按顺序显示一系列的位图，并呈现动画的 GIF 文件执行位图动画。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 97142ADC-E2FD-418C-8A09-9C561AEE5BFD
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/12/2018
-ms.openlocfilehash: 33e17a01d8a13fcdaee27e5857c554a4a232c534
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 763f44c26d653aa32429b2aa764989e18e8b8078
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305671"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139966"
 ---
-# <a name="animating-skiasharp-bitmaps"></a>SkiaSharp 位图进行动画处理
+# <a name="animating-skiasharp-bitmaps"></a>动画处理 SkiaSharp 位图
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-对 SkiaSharp 图形进行动画处理的应用程序通常会按固定速率（通常每16毫秒）调用 `SKCanvasView` 上的 `InvalidateSurface`。 使图面失效将触发对 `PaintSurface` 处理程序的调用以重绘显示。 当每秒 60 次重新绘制视觉对象，它们显示以顺利进行动画处理。
+对 SkiaSharp 图形进行动画处理的应用程序通常会按 `InvalidateSurface` `SKCanvasView` 固定速率（通常每16毫秒）调用。 使图面失效将触发对 `PaintSurface` 处理程序的调用以重绘显示。 当视觉对象每秒重绘60次时，它们看起来非常平滑。
 
-但是，如果图形过于复杂，需要呈现在 16 毫秒，动画会抖动。 程序员可能会选择刷新频率减少到 30 倍或 15 次第二个，但有时甚至这是不足够。 有时图形很复杂，它们只是无法呈现实时。
+但是，如果图形过于复杂而无法在16毫秒内呈现，动画可能会抖动。 程序员可能会选择将刷新频率减少到30次，或一秒15次，但有时甚至是不够的。 有时，图形很复杂，以致于无法实时呈现。
 
-一种解决方案是动画的通过呈现位图的一系列上的各个帧事先做好动画。 若要显示动画，它只是用来按顺序显示这些位图，则会每秒 60 次。
+一种解决方法是在一系列位图上呈现动画的各个帧，以便预先准备好动画。 若要显示动画，只需按60次一秒的顺序显示这些位图。
 
-当然，这可能是大量的位图，但这就是如何大预算 3D 动画的影视进行。 3D 图形是得太复杂，无法在真实时间中呈现。 需要大量处理时间来呈现每个帧。 观看电影时看到的内容是位图的实质上是位图的一系列。
+当然，这可能会产生大量的位图，但这就是如何进行大范围三维动画播放的。 三维图形太复杂，无法实时呈现。 渲染每个帧需要大量的处理时间。 观看电影时看到的内容实质上是一系列位图。
 
-您可以执行类似 SkiaSharp 中的操作。 本文演示了两种类型的位图动画。 第一个示例是一个动画的 Mandelbrot 集：
+可以在 SkiaSharp 中执行类似操作。 本文介绍两种类型的位图动画。 第一个示例是 Mandelbrot 集的动画：
 
 ![动画采样](animating-images/AnimatingSample.png "动画采样")
 
-第二个示例演示如何使用 SkiaSharp 呈现动画的 GIF 文件。
+第二个示例演示如何使用 SkiaSharp 来呈现动态 GIF 文件。
 
 ## <a name="bitmap-animation"></a>位图动画
 
-Mandelbrot 集是以可视方式有吸引力，但 computionally 耗时较长。 （有关在此处使用的 Mandelbrot 集和数学的讨论，请参阅从第666页开始[_创建具有 Xamarin 的移动应用_的第20章。](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf) 以下说明假定该背景知识）。
+Mandelbrot 集在视觉上沉迷但 computionally 长。 （有关在此处使用的 Mandelbrot 集和数学的讨论，请参阅从第666页开始[_创建具有 Xamarin 的移动应用_的第20章。](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf) 以下说明假定你具有背景知识。）
 
-[**Mandelbrot 动画**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-mandelanima)示例使用位图动画来模拟 Mandelbrot 集中固定点的连续缩放。 放大后跟缩小，，然后重复这一循环下去，或者直到结束程序。
+[**Mandelbrot 动画**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-mandelanima)示例使用位图动画来模拟 Mandelbrot 集中固定点的连续缩放。 放大之后会进行缩小，然后循环会持续重复或直到你结束该程序。
 
-通过创建最多 50 位图，它在应用程序本地存储中存储此动画准备程序。 每个位图包含一半的宽度和高度的复平面与以前的位图。 （在程序中，这些位图称为表示整数_缩放级别_。）然后按顺序显示位图。 提供从一个位图的平滑过渡到另一个的动画的每个位图缩放。
+该程序通过最多创建50个在应用程序本地存储中存储的位图来准备此动画。 每个位图的宽度和高度都是上一个位图的复杂平面的一半。 （在程序中，这些位图称为表示整数_缩放级别_。）然后按顺序显示位图。 每个位图的缩放都进行了动画处理，以提供从一个位图到另一个位图的平滑进度。
 
-与_使用 Xamarin 创建移动应用_一章中所述的最后一个程序一样， **Mandelbrot 动画**中 Mandelbrot 集的计算是一个具有八个参数的异步方法。 参数包括复杂的中心点，以及宽度和高度复平面围绕该中心点。 接下来三个参数是像素宽度和要创建位图的高度和最大递归计算的迭代数。 `progress` 参数用于显示此计算的进度。 此程序中未使用 `cancelToken` 参数：
+与_使用 Xamarin 创建移动应用_一章中所述的最后一个程序一样， **Mandelbrot 动画**中 Mandelbrot 集的计算是一个具有八个参数的异步方法。 参数包括复杂中心点以及围绕该中心点的复杂平面的宽度和高度。 接下来的三个参数是要创建的位图的像素宽度和高度，以及递归计算的最大迭代数。 `progress`参数用于显示此计算的进度。 `cancelToken`此程序中未使用参数：
 
 ```csharp
 static class Mandelbrot
@@ -107,7 +110,7 @@ static class Mandelbrot
 }
 ```
 
-方法返回 `BitmapInfo` 类型的对象，该对象提供用于创建位图的信息：
+方法返回类型为的对象 `BitmapInfo` ，该对象提供创建位图的信息：
 
 ```csharp
 class BitmapInfo
@@ -127,7 +130,7 @@ class BitmapInfo
 }
 ```
 
-**Mandelbrot 动画**XAML 文件包括两个 `Label` 视图、`ProgressBar`和 `Button` 以及 `SKCanvasView`：
+**Mandelbrot 动画**XAML 文件包括两个 `Label` 视图 `ProgressBar` ：和和 `Button` `SKCanvasView` ：
 
 ```csharp
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -159,7 +162,7 @@ class BitmapInfo
 </ContentPage>
 ```
 
-代码隐藏文件开头定义三个重要的常量和位图的数组：
+代码隐藏文件首先定义三个关键常量和一组位图：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -179,11 +182,11 @@ public partial class MainPage : ContentPage
 }
 ```
 
-在某些时候，你可能需要将 `COUNT` 值更改为50，以查看动画的全部范围。 大于 50 的值不是很有用。 围绕 48 左右的缩放级别，双精度浮点数中的解决方法就无法满足的 Mandelbrot 集计算。 _创建具有 Xamarin 的移动应用_的684页讨论了此问题。
+在某些时候，你可能需要将 `COUNT` 值更改为50，以查看动画的全部范围。 大于50的值将不起作用。 相对于48或更高的缩放级别，对双精度浮点数的解析对于 Mandelbrot 集计算来说是不够的。 _创建具有 Xamarin 的移动应用_的684页讨论了此问题。
 
-`center` 值非常重要。 这是动画缩放的焦点。 文件中的三个值是在第20章使用_Xamarin 创建移动应用_程序的第20个屏幕截图中所使用的值。窗体，但你可以在684第一章中尝试使用一个你自己的值。
+`center`值非常重要。 这是动画缩放的焦点。 文件中的三个值是在第20章使用_Xamarin 创建移动应用_程序的第20个屏幕截图中所使用的值。窗体，但你可以在684第一章中尝试使用一个你自己的值。
 
-**Mandelbrot 动画**示例将这些 `COUNT` 位图存储在本地应用程序存储中。 50 个位图需要超过 20 兆字节的存储在设备上，因此你可能想要知道多少存储空间占用这些位图，并在某些时候，可能想要删除所有这些。 这就是 `MainPage` 类底部的两种方法的用途：
+**Mandelbrot 动画**示例将这些 `COUNT` 位图存储在本地应用程序存储中。 50位图需要在你的设备上存储超过 20 mb 的存储空间，因此你可能想要知道这些位图占用了多少存储空间，并且在某些时候，你可能想要将其全部删除。 这就是这两个方法在类的底部 `MainPage` ：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -213,11 +216,11 @@ public partial class MainPage : ContentPage
 }
 ```
 
-因为该程序将它们保留在内存中，该程序动画处理这些相同的位图时，可以删除本地存储区中的位图。 但在下次运行该程序，它将需要重新创建位图。
+您可以删除本地存储区中的位图，同时程序会将这些位图动态保存在内存中。 但下次运行该程序时，将需要重新创建位图。
 
-存储在本地应用程序存储中的位图将 `center` 值纳入其文件名中，因此，如果更改 `center` 设置，则不会在存储中替换现有的位图，并将继续占用空间。
+存储在本地应用程序存储中的位图 `center` 会将值纳入其文件名，因此，如果更改此 `center` 设置，则在存储中将不会替换现有的位图，并将继续占用空间。
 
-下面是 `MainPage` 用来构造文件名的方法，以及用于根据颜色组件定义像素值的 `MakePixel` 方法：
+下面是 `MainPage` 用来构造文件名的方法，以及 `MakePixel` 用于根据颜色组件定义像素值的方法：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -238,9 +241,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-要 `FilePath` 的 `zoomLevel` 参数的范围为0到 `COUNT` 常量减1。
+`zoomLevel`参数的 `FilePath` 范围为0到 `COUNT` 常数减1之间的范围。
 
-`MainPage` 构造函数调用 `LoadAndStartAnimation` 方法：
+`MainPage`构造函数调用 `LoadAndStartAnimation` 方法：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -256,7 +259,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-`LoadAndStartAnimation` 方法负责访问应用程序本地存储，以便加载在以前运行程序时可能创建的任何位图。 它循环遍历0到 `COUNT``zoomLevel` 值。 如果该文件存在，它会将其加载到 `bitmaps` 数组。 否则，需要通过调用 `Mandelbrot.CalculateAsync`为特定的 `center` 和 `zoomLevel` 值创建位图。 该方法获取每个像素，此方法将颜色转换为迭代计数：
+此 `LoadAndStartAnimation` 方法负责访问应用程序本地存储，以便加载在以前运行程序时可能创建的任何位图。 它会遍历 `zoomLevel` 0 到之间的值 `COUNT` 。 如果该文件存在，它将加载到 `bitmaps` 数组中。 否则，需要通过调用为特定的 `center` 和值创建位图 `zoomLevel` `Mandelbrot.CalculateAsync` 。 此方法获取每个像素的迭代次数，此方法会将此方法转换为颜色：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -374,13 +377,13 @@ public partial class MainPage : ContentPage
 }
 ```
 
-请注意，该程序将存储这些位图中本地应用程序存储，而不是设备的照片库中。 .NET Standard 2.0 库允许为此任务使用熟悉的 `File.OpenRead` 和 `File.WriteAllBytes` 方法。
+请注意，该程序将这些位图存储在本地应用程序存储中，而不是存储在设备的照片库中。 .NET Standard 2.0 库允许 `File.OpenRead` 为此任务使用熟悉的和 `File.WriteAllBytes` 方法。
 
-创建所有位图或将其加载到内存中后，该方法将启动一个 `Stopwatch` 对象并调用 `Device.StartTimer`。 每16毫秒调用一次 `OnTimerTick` 方法。
+创建所有位图或将其加载到内存中后，该方法将启动一个 `Stopwatch` 对象并调用 `Device.StartTimer` 。 `OnTimerTick`每16毫秒调用一次方法。
 
-`OnTimerTick` 计算的 `time` 值（以毫秒为单位），范围为从0到6000次 `COUNT`，这 apportions 6 秒，用于显示每个位图。 `progress` 值使用 `Math.Sin` 值来创建正弦动画，该动画在循环开始时速度较慢，结束时速度较慢。
+`OnTimerTick`计算介于 `time` 0 到6000次之间的值（以毫秒为单位） `COUNT` ，每个位图的显示时间为6秒 apportions。 `progress`该值使用 `Math.Sin` 值创建正弦动画，该动画在循环开始时速度较慢，结束时速度较慢。
 
-`progress` 值的范围为0到 `COUNT`。 这意味着 `progress` 的整数部分是 `bitmaps` 数组的索引，而 `progress` 的小数部分则表示该特定位图的缩放级别。 这些值存储在 "`bitmapIndex`" 和 "`bitmapProgress`" 字段中，由 XAML 文件中的 `Label` 和 `Slider` 显示。 `SKCanvasView` 失效，因此无法更新位图显示：
+此 `progress` 值的范围为0到 `COUNT` 。 这意味着的整数部分 `progress` 是数组的索引 `bitmaps` ，而的小数部分 `progress` 指示该特定位图的缩放级别。 这些值存储在 `bitmapIndex` 和字段中 `bitmapProgress` ，并由 `Label` 和显示 `Slider` 在 XAML 文件中。 `SKCanvasView`无效，以更新位图显示：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -421,7 +424,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-最后，`SKCanvasView` 的 `PaintSurface` 处理程序计算一个目标矩形，以便在保持纵横比的同时尽可能大地显示位图。 源矩形基于 `bitmapProgress` 值。 当 `bitmapProgress` 为0时，此处计算的 `fraction` 值范围从0到显示整个位图，0.25 时为，当 `bitmapProgress` 为1时，显示位图的宽度和高度的一半，有效地放大：
+最后， `PaintSurface` 的处理程序 `SKCanvasView` 计算一个目标矩形，以尽可能大地显示位图，同时保持纵横比。 源矩形基于 `bitmapProgress` 值。 `fraction`此处计算的值范围从0到0时，如果为0，则 `bitmapProgress` 显示整个位图; 如果为1，则为 0.25 `bitmapProgress` ; 如果为1，则显示位图的宽度和高度的一半，有效地放大：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -465,11 +468,11 @@ public partial class MainPage : ContentPage
 
 [![Mandelbrot 动画](animating-images/MandelbrotAnimation.png "Mandelbrot 动画")](animating-images/MandelbrotAnimation-Large.png#lightbox)
 
-## <a name="gif-animation"></a>动画 GIF
+## <a name="gif-animation"></a>GIF 动画
 
-图形交换格式 (GIF) 规范包括一个功能，使单个的 GIF 文件可以包含可连续，通常在循环中显示场景的多个连续帧。 这些文件称为_动画 gif_。 Web 浏览器可以播放动画的 Gif 和 SkiaSharp 允许应用程序从动画 GIF 文件中提取的帧并按顺序显示它们。
+图形交换格式（GIF）规范包括一项功能，该功能允许单个 GIF 文件包含多个连续帧，这种情况通常会出现在循环中。 这些文件称为_动画 gif_。 Web 浏览器可以播放动态 Gif，SkiaSharp 允许应用程序从动画 GIF 文件中提取帧并按顺序显示。
 
-[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例包含一个名为**Newtons_cradle_animation_book_2 .GIF**的动画 gif 资源，该资源由 DemonDeLuxe 创建并从维基百科的[牛顿底座](https://en.wikipedia.org/wiki/Newton%27s_cradle)页面下载。 **动画 GIF**页面包含一个 XAML 文件，该文件提供该信息并实例化一个 `SKCanvasView`：
+[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例包含一个名为**Newtons_cradle_animation_book_2 .GIF**的动画 gif 资源，该资源由 DemonDeLuxe 创建并从维基百科的[牛顿底座](https://en.wikipedia.org/wiki/Newton%27s_cradle)页面下载。 **动画 GIF**页面包含一个 XAML 文件，该文件提供该信息并实例化 `SKCanvasView` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -496,19 +499,19 @@ public partial class MainPage : ContentPage
 </ContentPage>
 ```
 
-代码隐藏文件未通用化播放任何动画的 GIF 文件。 它会忽略的一些信息不可用，具体而言，一个重复计数，且只需播放在循环中的动态 gif 文件。
+代码隐藏文件未通用化为播放任何动画 GIF 文件。 它将忽略某些可用的信息（特别是重复计数），只需在循环中播放动画 GIF 即可。
 
-SkisSharp 提取的帧的动画 GIF 文件使用似乎不记录任何位置，因此下面的代码的说明是比平常更多详细：
+使用 SkisSharp 来提取动画 GIF 文件的帧似乎未记录在任何位置，因此下面的代码说明比平时更详细：
 
-动画 GIF 文件解码出现在页面的构造函数中，要求使用引用位图的 `Stream` 对象创建 `SKManagedStream` 对象，然后使用[`SKCodec`](xref:SkiaSharp.SKCodec)对象。 [`FrameCount`](xref:SkiaSharp.SKCodec.FrameCount)属性指示构成动画的帧数。
+经过动画处理的 GIF 文件解码出现在页的构造函数中，要求 `Stream` 使用引用位图的对象创建 `SKManagedStream` 对象，然后使用对象 [`SKCodec`](xref:SkiaSharp.SKCodec) 。 [`FrameCount`](xref:SkiaSharp.SKCodec.FrameCount)属性指示构成动画的帧数。
 
-这些帧最终将另存为单独的位图，因此构造函数使用 `FrameCount` 分配 `SKBitmap` 类型的数组，并在每个帧的持续时间内分配两个 `int` 数组，并将累积的持续时间（以简化动画逻辑）。
+这些帧最终将另存为单独的位图，因此构造函数使用在 `FrameCount` `SKBitmap` 每个帧的持续时间内分配一个类型为的数组和两个 `int` 数组（以简化动画逻辑）累计的持续时间。
 
-`SKCodec` 类的[`FrameInfo`](xref:SkiaSharp.SKCodec.FrameInfo)属性是[`SKCodecFrameInfo`](xref:SkiaSharp.SKCodecFrameInfo)值的数组，每个帧对应一个值，但是此程序采用的唯一内容是帧的[`Duration`](xref:SkiaSharp.SKCodecFrameInfo.Duration) ，以毫秒为单位。
+[`FrameInfo`](xref:SkiaSharp.SKCodec.FrameInfo)类的属性 `SKCodec` 是值的数组 [`SKCodecFrameInfo`](xref:SkiaSharp.SKCodecFrameInfo) ，每个帧一个值的数组，但此程序从该结构中获取的唯一内容是帧的 [`Duration`](xref:SkiaSharp.SKCodecFrameInfo.Duration) （以毫秒为单位）。
 
-`SKCodec` 定义[`SKImageInfo`](xref:SkiaSharp.SKImageInfo)类型的名为[`Info`](xref:SkiaSharp.SKCodec.Info)的属性，但 `SKImageInfo` 值指示该颜色类型 `SKColorType.Index8`（至少为此图像），这意味着每个像素是颜色类型的索引。 为了避免麻烦使用颜色表，该程序使用[`Width`](xref:SkiaSharp.SKImageInfo.Width) ，并[`Height`](xref:SkiaSharp.SKImageInfo.Height)该结构中的信息来构造自己的全颜色 `ImageInfo` 值。 每个 `SKBitmap` 都是从创建的。
+`SKCodec`定义一个类型为 [`Info`](xref:SkiaSharp.SKCodec.Info) 的属性 [`SKImageInfo`](xref:SkiaSharp.SKImageInfo) ，但 `SKImageInfo` 该值指示（至少对于此图像） color 类型为 `SKColorType.Index8` ，这意味着每个像素是一个颜色类型的索引。 为了避免麻烦使用颜色表，该程序使用该 [`Width`](xref:SkiaSharp.SKImageInfo.Width) [`Height`](xref:SkiaSharp.SKImageInfo.Height) 结构中的和信息来构造自己的全颜色 `ImageInfo` 值。 每个 `SKBitmap` 都是从创建的。
 
-`SKBitmap` 的 `GetPixels` 方法返回引用该位图的像素位的 `IntPtr`。 尚未设置这些像素位。 该 `IntPtr` 传递到 `SKCodec`的[`GetPixels`](xref:SkiaSharp.SKCodec.GetPixels(SkiaSharp.SKImageInfo,System.IntPtr,SkiaSharp.SKCodecOptions))方法之一。 该方法将帧从 GIF 文件复制到 `IntPtr`引用的内存空间中。 [`SKCodecOptions`](xref:SkiaSharp.SKCodecOptions)构造函数指示帧数：
+的 `GetPixels` 方法 `SKBitmap` 返回 `IntPtr` 引用该位图的像素位的。 尚未设置这些像素位。 `IntPtr`传递给的 [`GetPixels`](xref:SkiaSharp.SKCodec.GetPixels(SkiaSharp.SKImageInfo,System.IntPtr,SkiaSharp.SKCodecOptions)) 方法之一 `SKCodec` 。 该方法将帧从 GIF 文件复制到所引用的内存空间中 `IntPtr` 。 [`SKCodecOptions`](xref:SkiaSharp.SKCodecOptions)构造函数指示帧数：
 
 ```csharp
 public partial class AnimatedGifPage : ContentPage
@@ -576,11 +579,11 @@ public partial class AnimatedGifPage : ContentPage
 }
 ```
 
-尽管 `IntPtr` 值，但不需要 `unsafe` 代码，因为 `IntPtr` 决不会转换为C#指针值。
+尽管 `IntPtr` 值不 `unsafe` 是必需的，但不需要任何代码，因为决不会 `IntPtr` 转换为 c # 指针值。
 
-在提取每个帧后，构造函数注册的所有帧，持续时间进行合计，然后初始化累计持续时间的另一个数组。
+提取每个帧后，构造函数将合计所有帧的持续时间，然后用累计持续时间初始化另一个数组。
 
-代码隐藏文件的其余部分专用于动画。 `Device.StartTimer` 方法用于启动计时器，`OnTimerTick` 回调使用 `Stopwatch` 对象确定运行时间（以毫秒为单位）。 循环遍历的累计持续时间数组就足以查找当前帧：
+代码隐藏文件的其余部分专用于动画。 `Device.StartTimer`方法用于启动计时器， `OnTimerTick` 回调使用 `Stopwatch` 对象来确定所用的时间（以毫秒为单位）。 遍历累计持续时间数组足以找到当前帧：
 
 ```csharp
 public partial class AnimatedGifPage : ContentPage
@@ -651,11 +654,11 @@ public partial class AnimatedGifPage : ContentPage
 }
 ```
 
-每次 `currentframe` 变量发生变化时，`SKCanvasView` 会失效，并显示新帧：
+每次 `currentframe` 变量更改时， `SKCanvasView` 都会失效，并显示新帧：
 
 [![动画 GIF](animating-images/AnimatedGif.png "动画 GIF")](animating-images/AnimatedGif-Large.png#lightbox)
 
-当然，你将想要运行该程序自己，查看动画。
+当然，您需要自己运行程序以查看动画。
 
 ## <a name="related-links"></a>相关链接
 

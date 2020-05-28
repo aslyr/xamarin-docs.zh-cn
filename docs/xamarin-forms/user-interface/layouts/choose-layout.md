@@ -1,28 +1,31 @@
 ---
-title: 选择 "Xamarin" 布局
-description: Xamarin. Forms 布局类允许您在应用程序中排列和分组 UI 控件。
-ms.prod: xamarin
-ms.assetid: 05A39752-A174-447E-A30D-3CC9EF98CB96
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/21/2018
-ms.openlocfilehash: 14e48d04696bb758a2010bd1d56ecaa125bbd30a
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+title: 选择 Xamarin.Forms 布局
+description: Xamarin.Forms布局类使你能够在应用程序中排列和分组 UI 控件。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 16a48423d05ce1cede75c0020bf18f4f398f5adc
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83150002"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138497"
 ---
-# <a name="choose-a-xamarinforms-layout"></a>选择 "Xamarin" 布局
+# <a name="choose-a-xamarinforms-layout"></a>选择 Xamarin.Forms 布局
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
-Xamarin. Forms 布局类允许您在应用程序中排列和分组 UI 控件。 选择布局类需要了解布局是如何定位其子元素的，以及布局如何调整其子元素的大小。 此外，可能还需要嵌套布局以创建所需的布局。
+Xamarin.Forms布局类使你能够在应用程序中排列和分组 UI 控件。 选择布局类需要了解布局是如何定位其子元素的，以及布局如何调整其子元素的大小。 此外，可能还需要嵌套布局以创建所需的布局。
 
-下图显示了可通过主 Xamarin. Forms 布局类实现的典型布局：
+下图显示了可通过主布局类实现的典型布局 Xamarin.Forms ：
 
-[![Xamarin 中的主要布局类](images/layouts.png "Xamarin. Forms 布局类")](images/layouts-large.png#lightbox "Xamarin. Forms 布局类")
+[![中的主要布局类Xamarin.Forms](images/layouts.png "[!基金.非 LOC （Xamarin）] 布局类")](images/layouts-large.png#lightbox "[!基金.非 LOC （Xamarin）] 布局类")
 
 ## <a name="stacklayout"></a>StackLayout
 
@@ -73,7 +76,7 @@ Xamarin. Forms 布局类允许您在应用程序中排列和分组 UI 控件。 
 > [!TIP]
 > 使用时 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ，请确保只将一个子元素设置为 [`LayoutOptions.Expands`](xref:Xamarin.Forms.LayoutOptions.Expands) 。 此属性可确保指定子级会占用 `StackLayout` 可以向它提供的最大空间，而多次执行这些计算比较浪费。
 
-有关详细信息，请参阅[Xamarin. Forms StackLayout](stacklayout.md)。
+有关详细信息，请参阅[ Xamarin.Forms StackLayout](stacklayout.md)。
 
 ## <a name="grid"></a>网格
 
@@ -118,7 +121,7 @@ Xamarin. Forms 布局类允许您在应用程序中排列和分组 UI 控件。 
 > [!CAUTION]
 > 尝试确保尽可能少的行和列设置为 [`Auto`](xref:Xamarin.Forms.GridLength.Auto) 大小。 每个自动调整大小的行或列都会导致布局引擎执行额外布局计算。 而是应在可能时使用固定大小的行和列。 另外，还可以设置行和列，使其与枚举值占用比例的空间 [`GridUnitType.Star`](xref:Xamarin.Forms.GridUnitType.Star) 。
 
-有关详细信息，请参阅[Xamarin Grid](grid.md)。
+有关详细信息，请参阅[ Xamarin.Forms Grid](grid.md)。
 
 ## <a name="flexlayout"></a>FlexLayout
 
@@ -142,7 +145,7 @@ Xamarin. Forms 布局类允许您在应用程序中排列和分组 UI 控件。 
 - [`AlignItems`](xref:Xamarin.Forms.FlexLayout.AlignItems)属性设置为 `Center` ，这会使每个项在水平居中。
 - 将 [`JustifyContent`](xref:Xamarin.Forms.FlexLayout.JustifyContent) 属性设置为 `SpaceEvenly` ，这将在所有项之间、在第一项的上方和最后一项的下方分配所有剩余的垂直空间。
 
-有关详细信息，请参阅[Xamarin. Forms FlexLayout](flex-layout.md)。
+有关详细信息，请参阅[ Xamarin.Forms FlexLayout](flex-layout.md)。
 
 ## <a name="relativelayout"></a>RelativeLayout
 
@@ -191,7 +194,7 @@ Xamarin. Forms 布局类允许您在应用程序中排列和分组 UI 控件。 
 > [!WARNING]
 > 尽可能避免使用 `RelativeLayout`。 它会导致 CPU 不得不执行显著更多的工作。
 
-有关详细信息，请参阅[Xamarin. Forms RelativeLayout](relative-layout.md)。
+有关详细信息，请参阅[ Xamarin.Forms RelativeLayout](relative-layout.md)。
 
 ## <a name="absolutelayout"></a>AbsoluteLayout
 
@@ -231,7 +234,7 @@ Xamarin. Forms 布局类允许您在应用程序中排列和分组 UI 控件。 
 > [!CAUTION]
 > 请尽可能避免使用 [`AbsoluteLayout.AutoSize`](xref:Xamarin.Forms.AbsoluteLayout.AutoSize) 属性，因为这会导致布局引擎执行其他布局计算。
 
-有关详细信息，请参阅[Xamarin. Forms AbsoluteLayout](absolute-layout.md)。
+有关详细信息，请参阅[ Xamarin.Forms AbsoluteLayout](absolute-layout.md)。
 
 ## <a name="input-transparency"></a>输入透明度
 
@@ -248,11 +251,11 @@ Xamarin. Forms 布局类允许您在应用程序中排列和分组 UI 控件。 
 ## <a name="related-links"></a>相关链接
 
 - [布局（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
-- [Xamarin 格式布局（视频）](https://youtu.be/4HlLjTZQzjM)
-- [Xamarin. Forms StackLayout](stacklayout.md)
-- [Xamarin 网格](grid.md)
-- [Xamarin. Forms FlexLayout](flex-layout.md)
-- [Xamarin. Forms AbsoluteLayout](absolute-layout.md)
-- [Xamarin. Forms RelativeLayout](relative-layout.md)
+- [Xamarin.Forms布局（视频）](https://youtu.be/4HlLjTZQzjM)
+- [Xamarin.FormsStackLayout](stacklayout.md)
+- [Xamarin.Forms格](grid.md)
+- [Xamarin.FormsFlexLayout](flex-layout.md)
+- [Xamarin.FormsAbsoluteLayout](absolute-layout.md)
+- [Xamarin.FormsRelativeLayout](relative-layout.md)
 - [优化布局性能](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)
 - [布局压缩](layout-compression.md)

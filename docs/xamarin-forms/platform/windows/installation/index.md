@@ -1,30 +1,33 @@
 ---
-title: 设置 Windows 项目
-description: 旧的 Xamarin. Forms 解决方案（或在 macOS 上创建的解决方案）将不通用 Windows 平台项目，因此本文介绍如何将新的 UWP 项目添加到现有的 Xamarin 窗体解决方案。
-ms.prod: xamarin
-ms.assetid: A0774D2E-6994-4D91-84E8-DAB66FC92320
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/10/2018
-ms.openlocfilehash: 5d2d9c8c2104e96f16c3a3ff169f795068605f59
-ms.sourcegitcommit: 7011303ff1868f3dd3858415706f4b5732ee44f1
+title: ''
+description: 旧 Xamarin.Forms 解决方案（或在 macOS 上创建的解决方案）将不通用 Windows 平台项目，因此本文介绍如何向现有解决方案添加新的 UWP 项目 Xamarin.Forms 。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 87ad78e97046eef7fd6c2e062fa9f84d92c11b38
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83696083"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84132205"
 ---
 # <a name="setup-windows-projects"></a>设置 Windows 项目
 
-_向现有 Xamarin 窗体解决方案中添加新的 Windows 项目_
+_向现有解决方案中添加新的 Windows 项目 Xamarin.Forms_
 
-旧的 Xamarin. Forms 解决方案（或在 macOS 上创建的解决方案）将不包含通用 Windows 平台（UWP）应用项目。 因此，您需要手动添加 UWP 项目来构建 Windows 10 （UWP）应用。
+旧 Xamarin.Forms 解决方案（或在 macOS 上创建的解决方案）将不包含通用 Windows 平台（UWP）应用项目。 因此，您需要手动添加 UWP 项目来构建 Windows 10 （UWP）应用。
 
 ## <a name="add-a-universal-windows-platform-app"></a>添加通用 Windows 平台应用
 
 建议使用**Windows 10**上的**Visual STUDIO 2019**生成 UWP 应用。 有关通用 Windows 平台的详细信息，请参阅[通用 Windows 平台简介](/windows/uwp/get-started/universal-application-platform-guide/)。
 
-UWP 在 Xamarin. Forms 2.1 及更高版本中提供，xamarin. Forms 2.2 和更高版本支持 Xamarin。
+UWP 在 Xamarin.Forms 2.1 和更高版本以及和更高版本中可用 Xamarin.Forms 。Xamarin.Forms2.2 及更高版本支持映射。
 
 请查看<a href="#troubleshooting">故障排除</a>部分，了解相关帮助。
 
@@ -38,13 +41,13 @@ UWP 在 Xamarin. Forms 2.1 及更高版本中提供，xamarin. Forms 2.2 和更�
 
   ![](universal-images/target-version.png "New Universal Windows Platform Project Dialog")
 
- 三维空间. 右键单击 "UWP" 项目，然后选择 "**管理 NuGet 包 ...** " 并添加**Xamarin**包。 确保解决方案中的其他项目也更新为同一版本的 Xamarin. Forms 包。
+ 三维空间. 右键单击 "UWP" 项目，然后选择 "**管理 NuGet 包 ...** " 并添加 **Xamarin.Forms** 包。 确保解决方案中的其他项目也更新为同一版本的 Xamarin.Forms 包。
 
  4. 请确保在 "**生成 >" Configuration Manager** "窗口中生成新的 UWP 项目（默认情况下可能不会发生这种情况）。 勾选通用项目的 "**生成**" 和 "**部署**" 框：
 
   [![](universal-images/configuration-sml.png "Configuration Manager Window")](universal-images/configuration.png#lightbox "Configuration Manager Window")
 
- 5. 右键单击该项目，然后选择 "**添加 > 引用**"，然后创建对 Xamarin 应用程序项目的引用（.NET Standard 或共享项目）。
+ 5. 右键单击该项目，然后选择 "**添加 > 引用**"，然后创建对 Xamarin.Forms 应用程序项目的引用（.NET Standard 或共享项目）。
 
   ![](universal-images/addref-sml.png "Reference Manager Dialog")
 
@@ -81,7 +84,7 @@ xmlns:forms="using:Xamarin.Forms.Platform.UWP"
 public sealed partial class MainPage  // REMOVE ": Page"
 ```
 
- 11x17. 在**MainPage.xaml.cs**中，在 `LoadApplication` 构造函数中添加调用 `MainPage` 以启动 Xamarin. Forms 应用：
+ 11x17. 在**MainPage.xaml.cs**中，在 `LoadApplication` 构造函数中添加调用 `MainPage` 以启动 Xamarin.Forms 应用程序：
 
 ```csharp
 // below this existing line
@@ -105,13 +108,13 @@ LoadApplication(new YOUR_NAMESPACE.App());
 
 10. 添加任何本地资源（例如 图像文件）的文件。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 <a name="target-invocation-exception" />
 
 ### <a name="target-invocation-exception-when-using-compile-with-net-native-tool-chain"></a>使用 "使用 .NET Native 工具链编译" 时的 "目标调用异常"
 
-如果 UWP 应用引用多个程序集（例如，第三方控件库，或应用本身拆分为多个库），则 Xamarin 可能无法从这些程序集（如自定义呈现器）加载对象。
+如果 UWP 应用引用多个程序集（例如，第三方控件库，或应用本身拆分为多个库），则 Xamarin.Forms 可能无法从这些程序集（如自定义呈现器）加载对象。
 
 使用**带有 .NET Native 工具链的编译**时可能会发生这种情况，这是在项目的 "**生成 > 常规**" 窗口的 > 属性中的 UWP 应用的选项。
 

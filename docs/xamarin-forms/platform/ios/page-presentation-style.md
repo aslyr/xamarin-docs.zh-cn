@@ -1,18 +1,21 @@
 ---
-title: IOS 上的模式页呈现样式
-description: 平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 平台特定的来设置模式页面的表示形式。
-ms.prod: xamarin
-ms.assetid: C791F7CF-330A-44BA-987A-4CFCCBB9278B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/02/2020
-ms.openlocfilehash: 19175a6d97afb9d2d985d8a1bf8e1ce4c0179242
-ms.sourcegitcommit: 87035b654434c22ca1b0d70ee8d2496dcb63b365
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2abc255964df35fbdfeb4191911c57df9be99fd9
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83546501"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84128006"
 ---
 # <a name="modal-page-presentation-style-on-ios"></a>IOS 上的模式页呈现样式
 
@@ -60,7 +63,7 @@ public class iOSModalFormSheetPageCS : ContentPage
 [![](page-presentation-style-images/modal-presentation-style-small.png "Modal Presentation Styles")](page-presentation-style-images/modal-presentation-style-large.png#lightbox "Modal Presentation Styles")
 
 > [!NOTE]
-> 使用此特定于平台的的页面设置模式呈现样式必须使用模式导航。 有关详细信息，请参阅[Xamarin. Forms 模式页面](~/xamarin-forms/app-fundamentals/navigation/modal.md)。
+> 使用此特定于平台的的页面设置模式呈现样式必须使用模式导航。 有关详细信息，请参阅[ Xamarin.Forms 模式页面](~/xamarin-forms/app-fundamentals/navigation/modal.md)。
 
 ## <a name="related-links"></a>相关链接
 

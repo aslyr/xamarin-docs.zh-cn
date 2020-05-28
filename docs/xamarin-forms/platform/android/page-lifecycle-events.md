@@ -1,29 +1,32 @@
 ---
-title: Android 上的页面生命周期事件
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 平台特定的, 该平台可分别禁用应用程序暂停和恢复的消失和显示页事件。
-ms.prod: xamarin
-ms.assetid: F6E3759C-D347-407A-91A2-CF9B3B7D4CBD
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/10/2018
-ms.openlocfilehash: 1745f137f2eeb04c0894c57bb0e45e5c43be7d0b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 76724ff17613fcebe35cb68518a1c932eee8aad7
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649936"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84128719"
 ---
 # <a name="page-lifecycle-events-on-android"></a>Android 上的页面生命周期事件
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 Android 平台特定用于对使用 AppCompat 的应用[`Disappearing`](xref:Xamarin.Forms.Page.Appearing)程序[`Appearing`](xref:Xamarin.Forms.Page.Appearing)分别禁用和页面事件。 此外，它包含控件的功能是否软键盘显示在恢复，如果它显示了上暂停，前提是软键盘的操作模式设置为[ `WindowSoftInputModeAdjust.Resize` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize)。
+此 Android 平台特定用于对 [`Disappearing`](xref:Xamarin.Forms.Page.Appearing) [`Appearing`](xref:Xamarin.Forms.Page.Appearing) 使用 AppCompat 的应用程序分别禁用和页面事件。 此外，它还可以控制是否在恢复时显示软键盘（如果它在暂停时显示），前提是软键盘的操作模式设置为 [`WindowSoftInputModeAdjust.Resize`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize) 。
 
 > [!NOTE]
-> 请注意默认情况下启用这些事件是以保留现有的应用程序依赖于事件的行为。 禁用这些事件将使匹配预 AppCompat 事件周期 AppCompat 事件周期。
+> 请注意，默认情况下将启用这些事件，以便为依赖于事件的应用程序保留现有行为。 禁用这些事件会使 AppCompat 事件周期与 AppCompat 事件周期匹配。
 
-此特定于平台的可供在 XAML 中设置[ `Application.SendDisappearingEventOnPause` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPauseProperty)， [ `Application.SendAppearingEventOnResume` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResumeProperty)，以及[ `Application.ShouldPreserveKeyboardOnResume` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResumeProperty) 到附加属性`boolean`值：
+此特定于平台的可在 XAML 中使用，方法是将 [`Application.SendDisappearingEventOnPause`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPauseProperty) 、 [`Application.SendAppearingEventOnResume`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResumeProperty) 和 [`Application.ShouldPreserveKeyboardOnResume`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResumeProperty) 附加属性设置为 `boolean` 值：
 
 ```xaml
 <Application ...
@@ -36,7 +39,7 @@ ms.locfileid: "68649936"
 </Application>
 ```
 
-或者，可以使用它从 C# 使用 fluent API:
+此外，还可以使用 Fluent API 从 c # 使用该方法：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -51,11 +54,11 @@ Xamarin.Forms.Application.Current.On<Android>()
      .ShouldPreserveKeyboardOnResume(true);
 ```
 
-`Application.Current.On<Android>`方法指定仅将在 Android 上运行此特定于平台的。 [ `Application.SendDisappearingEventOnPause` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPause(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application},System.Boolean))方法，在[ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)命名空间，用于启用或禁用激发[ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing)页面事件，当应用程序进入背景。 [ `Application.SendAppearingEventOnResume` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResume(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application},System.Boolean))方法用于启用或禁用激发[ `Appearing` ](xref:Xamarin.Forms.Page.Appearing)页面事件时，如果应用程序将继续在后台从。 [ `Application.ShouldPreserveKeyboardOnResume` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResume(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application},System.Boolean))方法用于控制是否软键盘显示在恢复，如果它已暂停，显示提供的软键盘的操作模式设置为[ `WindowSoftInputModeAdjust.Resize` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize).
+`Application.Current.On<Android>`方法指定此平台特定的仅在 Android 上运行。 [ `Application.SendDisappearingEventOnPause` ] （X： Xamarin.Forms 。PlatformConfiguration. AndroidSpecific. SendDisappearingEventOnPause （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。应用程序}，System.object）方法， [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat) 用于在 [`Disappearing`](xref:Xamarin.Forms.Page.Appearing) 应用程序进入后台时启用或禁用触发页面事件。 [ `Application.SendAppearingEventOnResume` ] （X： Xamarin.Forms 。PlatformConfiguration. AndroidSpecific. SendAppearingEventOnResume （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。应用程序}，System.object）方法用于启用或禁用 [`Appearing`](xref:Xamarin.Forms.Page.Appearing) 在应用程序从后台恢复页面事件时引发。 [ `Application.ShouldPreserveKeyboardOnResume` ] （X： Xamarin.Forms 。PlatformConfiguration. AndroidSpecific. ShouldPreserveKeyboardOnResume （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。应用程序}，System.object）方法控制是否在恢复时显示软键盘（如果它是在暂停时显示的），前提是软键盘的操作模式设置为 [`WindowSoftInputModeAdjust.Resize`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize) 。
 
-结果是， [ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing)并[ `Appearing` ](xref:Xamarin.Forms.Page.Appearing)页面事件不会触发应用程序暂停和恢复，并且，如果软键盘是后显示应用程序已暂停，它还会显示该应用程序恢复运行时：
+结果是，不会 [`Disappearing`](xref:Xamarin.Forms.Page.Appearing) [`Appearing`](xref:Xamarin.Forms.Page.Appearing) 在应用程序暂停并分别恢复时触发和页面事件，并且如果在应用程序暂停时显示软键盘，则当应用程序恢复时，也会显示该事件：
 
-[![](page-lifecycle-events-images/keyboard-on-resume.png "平台特有的生命周期事件")](page-lifecycle-events-images/keyboard-on-resume-large.png#lightbox "生命周期事件特定于平台的")
+[![](page-lifecycle-events-images/keyboard-on-resume.png "Lifecycle Events Platform-Specific")](page-lifecycle-events-images/keyboard-on-resume-large.png#lightbox "Lifecycle Events Platform-Specific")
 
 ## <a name="related-links"></a>相关链接
 

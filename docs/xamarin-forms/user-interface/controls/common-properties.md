@@ -1,22 +1,25 @@
 ---
-title: Xamarin.Forms 公共控件属性、方法和事件
-description: 本文介绍了在 VisualElement 类中定义的、通常用于派生类的常见属性、方法和事件。
-ms.prod: xamarin
-ms.assetId: 85A0CCF5-C1D8-40BB-927F-A4D944E5534D
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 08/21/2019
-ms.openlocfilehash: 7d8f5309d14c2a99afff0998a7013a9ebec338c1
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: Xamarin.Forms公共控件属性、方法和事件
+description: ''
+ms.prod: ''
+ms.assetId: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: deb894cccd5b6a2a9d908ef8967de91f00e7d297
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425837"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136417"
 ---
-# <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Forms 公共控件属性、方法和事件
+# <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Forms公共控件属性、方法和事件
 
-Xamarin `VisualElement` 类是 xamarin 应用程序中使用的大多数控件的基类。 `VisualElement`类定义了许多用于派生类的[属性](#properties)、[方法](#methods)和[事件](#events)。
+Xamarin.Forms `VisualElement` 类是应用程序中使用的大多数控件的基类 Xamarin.Forms 。 `VisualElement`类定义了许多用于派生类的[属性](#properties)、[方法](#methods)和[事件](#events)。
 
 ## <a name="properties"></a>属性
 
@@ -36,15 +39,15 @@ Xamarin `VisualElement` 类是 xamarin 应用程序中使用的大多数控件�
 
 ### [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors)
 
-`Behaviors`属性是对象的 `List` `Behavior` 。 利用行为，你可以通过将可重用的功能添加到列表来将它们附加到元素 `Behaviors` 。 有关类的详细信息 `Behavior` ，请参阅[Xamarin. Forms 行为](~/xamarin-forms/app-fundamentals/behaviors/index.md)。
+`Behaviors`属性是对象的 `List` `Behavior` 。 利用行为，你可以通过将可重用的功能添加到列表来将它们附加到元素 `Behaviors` 。 有关类的详细信息 `Behavior` ，请参阅[ Xamarin.Forms 行为](~/xamarin-forms/app-fundamentals/behaviors/index.md)。
 
 ### [`Bounds`](xref:Xamarin.Forms.VisualElement.Bounds)
 
-`Bounds`属性是一个只读 `Rectangle` 对象，它表示控件占用的空间。 `Bounds`属性值在布局周期期间分配。 `Rectangle` `struct` 包含用于测试矩形的交集和包容的有用属性和方法。 有关详细信息，请参阅[Xamarin 矩形 API](xref:Xamarin.Forms.Rectangle)。
+`Bounds`属性是一个只读 `Rectangle` 对象，它表示控件占用的空间。 `Bounds`属性值在布局周期期间分配。 `Rectangle` `struct` 包含用于测试矩形的交集和包容的有用属性和方法。 有关详细信息，请参阅[ Xamarin.Forms 矩形 API](xref:Xamarin.Forms.Rectangle)。
 
 ### [`Effects`](xref:Xamarin.Forms.Element.Effects)
 
-`Effects`属性是对象的 `List` `Effect` ，继承自 `Element` （x： Xamarin）类。 效果允许自定义本机控件，通常用于小样式更改。 有关类的详细信息 `Effect` ，请参阅[Xamarin。窗体效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
+`Effects`属性是 `List` `Effect` 从 `Element` （x：）继承的对象的 Xamarin.Forms 。元素）类。 效果允许自定义本机控件，通常用于小样式更改。 有关类的详细信息 `Effect` ，请参阅[ Xamarin.Forms 效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
 
 ### [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)
 
@@ -130,11 +133,11 @@ Xamarin `VisualElement` 类是 xamarin 应用程序中使用的大多数控件�
 
 ### [`Style`](xref:Xamarin.Forms.NavigableElement.Style)
 
-`Style` 属性继承自 `NavigableElement` 类。 此属性是类的实例 `Style` 。 `Style`类包含用于定义可视元素外观和行为的触发器、setter 和行为。 有关详细信息，请参阅[Xamarin. FORMS XAML 样式](~/xamarin-forms/user-interface/styles/xaml/index.md)。
+`Style` 属性继承自 `NavigableElement` 类。 此属性是类的实例 `Style` 。 `Style`类包含用于定义可视元素外观和行为的触发器、setter 和行为。 有关详细信息，请参阅[ Xamarin.Forms XAML 样式](~/xamarin-forms/user-interface/styles/xaml/index.md)。
 
 ### [`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass)
 
-`StyleClass`属性是 `string` 对象的列表，这些对象表示类的名称 `Style` 。 此属性继承自 `NavigableElement` 类。 `StyleClass`属性允许将多个样式属性应用到 `VisualElement` 实例。 有关详细信息，请参阅[Xamarin. Forms 样式类](~/xamarin-forms/user-interface/styles/xaml/style-class.md)。
+`StyleClass`属性是 `string` 对象的列表，这些对象表示类的名称 `Style` 。 此属性继承自 `NavigableElement` 类。 `StyleClass`属性允许将多个样式属性应用到 `VisualElement` 实例。 有关详细信息，请参阅[ Xamarin.Forms 样式类](~/xamarin-forms/user-interface/styles/xaml/style-class.md)。
 
 ### [`TabIndex`](xref:Xamarin.Forms.VisualElement.TabIndex)
 
@@ -144,21 +147,21 @@ Xamarin `VisualElement` 类是 xamarin 应用程序中使用的大多数控件�
 
 `TranslationX`属性是 `double` 定义要在 X 轴上应用的增量转换的值。 平移在布局之后应用，通常用于应用动画。 将元素转换为其父容器的边界外，我会阻止输入工作。
 
-有关详细信息，请参阅[Xamarin 中的动画](~/xamarin-forms/user-interface/animation/index.md)。
+有关详细信息，请参阅[中 Xamarin.Forms 的动画](~/xamarin-forms/user-interface/animation/index.md)。
 
 ### [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY)
 
 `TranslationY`属性是一个 `double` 值，用于定义要在 Y 轴上应用的增量转换。 平移在布局之后应用，通常用于应用动画。 将元素转换为其父容器的边界外，我会阻止输入工作。
 
-有关详细信息，请参阅[Xamarin 中的动画](~/xamarin-forms/user-interface/animation/index.md)。
+有关详细信息，请参阅[中 Xamarin.Forms 的动画](~/xamarin-forms/user-interface/animation/index.md)。
 
 ### [`Triggers`](xref:Xamarin.Forms.VisualElement.Triggers)
 
-`Triggers`属性是对象的只读 `List` `TriggerBase` 。 触发器允许应用程序开发人员在 XAML 中表达操作，这些操作更改控件的视觉外观，以响应事件或属性更改。 有关详细信息，请参阅[Xamarin。窗体触发器](~/xamarin-forms/app-fundamentals/triggers.md)。
+`Triggers`属性是对象的只读 `List` `TriggerBase` 。 触发器允许应用程序开发人员在 XAML 中表达操作，这些操作更改控件的视觉外观，以响应事件或属性更改。 有关详细信息，请参阅[ Xamarin.Forms 触发器](~/xamarin-forms/app-fundamentals/triggers.md)。
 
 ### [`Visual`](xref:Xamarin.Forms.VisualElement.Visual)
 
-`Visual`属性是一个 `IVisual` 实例，该实例允许创建呈现器并有选择地应用于 `VisualElement` 实例。 `Visual`设置属性以匹配其父级，因此，在组件上定义呈现器也适用于该组件的任何子级。 如果未对控件或其上级设置自定义呈现器，则将使用默认的 Xamarin 呈现器。 有关详细信息，请参阅[Xamarin。 Forms 视觉对象](~/xamarin-forms/user-interface/visual/index.md)。
+`Visual`属性是一个 `IVisual` 实例，该实例允许创建呈现器并有选择地应用于 `VisualElement` 实例。 `Visual`设置属性以匹配其父级，因此，在组件上定义呈现器也适用于该组件的任何子级。 如果未对控件或其上级设置自定义呈现器，则 Xamarin.Forms 将使用默认呈现器。 有关详细信息，请参阅[ Xamarin.Forms 视觉对象](~/xamarin-forms/user-interface/visual/index.md)。
 
 ### [`Width`](xref:Xamarin.Forms.VisualElement.Width)
 
@@ -212,11 +215,11 @@ public void Unfocus ()
 
 ## <a name="events"></a>事件
 
-以下事件在类上可用 `VisualElement` 。 有关完整列表，请参阅[Xamarin VisualElement 事件](xref:Xamarin.Forms.VisualElement#events)。
+以下事件在类上可用 `VisualElement` 。 有关完整列表，请参阅[ Xamarin.Forms VisualElement 事件](xref:Xamarin.Forms.VisualElement#events)。
 
 ### [`Focused`](xref:Xamarin.Forms.VisualElement.Focused)
 
-`Focused`只要 `VisualElement` 实例接收到焦点，就会引发事件。 此事件不是通过 Xamarin stack 冒泡，而是直接从本机控件接收的。 此事件由 [`IsFocused`](#isfocused) 属性 setter 发出。
+`Focused`只要 `VisualElement` 实例接收到焦点，就会引发事件。 此事件不是通过堆栈冒泡 Xamarin.Forms ，而是直接从本机控件接收的。 此事件由 [`IsFocused`](#isfocused) 属性 setter 发出。
 
 ### [`SizeChanged`](xref:Xamarin.Forms.VisualElement.SizeChanged)
 
@@ -224,11 +227,11 @@ public void Unfocus ()
 
 ### [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused)
 
-`Unfocused`只要实例失去焦点，就会引发事件 `VisualElement` 。 此事件不是通过 Xamarin stack 冒泡，而是直接从本机控件接收的。 此事件由 [`IsFocused`](#isfocused) 属性 setter 发出。
+`Unfocused`只要实例失去焦点，就会引发事件 `VisualElement` 。 此事件不是通过堆栈冒泡 Xamarin.Forms ，而是直接从本机控件接收的。 此事件由 [`IsFocused`](#isfocused) 属性 setter 发出。
 
 ## <a name="units-of-measurement"></a>度量单位
 
-Android、iOS 和 UWP 平台都有不同的度量单位，它们在不同的设备上可能有所不同。 Xamarin 使用独立于平台的度量单位，在设备和平台之间规范化单元。 Xamarin 中每英寸有160单位，即每厘米64单位。
+Android、iOS 和 UWP 平台都有不同的度量单位，它们在不同的设备上可能有所不同。 Xamarin.Forms使用独立于平台的度量单位，在设备和平台之间规范化单元。 每英寸有160单位，或每厘米64单位 Xamarin.Forms 。
 
 ## <a name="request-properties"></a>请求属性
 
@@ -261,7 +264,7 @@ Android、iOS 和 UWP 平台都有不同的度量单位，它们在不同的设�
 
 ### <a name="minimum-properties-within-a-grid"></a>网格内的最小属性
 
-`Grid`布局具有其自己的系统，用于相对调整行和列的大小。 `MinimumWidthRequest` `MinimumHeightRequest` 在布局中使用或 `Grid` 不会产生效果。 有关详细信息，请参阅[Xamarin Grid](~/xamarin-forms/user-interface/layouts/grid.md)。
+`Grid`布局具有其自己的系统，用于相对调整行和列的大小。 `MinimumWidthRequest` `MinimumHeightRequest` 在布局中使用或 `Grid` 不会产生效果。 有关详细信息，请参阅[ Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md)。
 
 ## <a name="related-links"></a>相关链接
 

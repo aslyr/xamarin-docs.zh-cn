@@ -1,24 +1,27 @@
 ---
-title: Android 上的条目输入法编辑器选项
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 平台特定的, 它为输入的软键盘设置输入法编辑器选项。
-ms.prod: xamarin
-ms.assetid: 7909C738-04B2-4476-9A3B-A6D79BC3B9B2
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/10/2018
-ms.openlocfilehash: 3711e85bd30deb06f351f4539c5ffc7e4236efb6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: bb77e9fafe39bf76a7d4290dba0bc658cd15094f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653600"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84140031"
 ---
 # <a name="entry-input-method-editor-options-on-android"></a>Android 上的条目输入法编辑器选项
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 Android 平台特定用于设置的软键盘[`Entry`](xref:Xamarin.Forms.Entry)的输入法编辑器 (IME) 选项。 这包括在角的软键盘和与之间的交互来设置用户操作按钮`Entry`。 设置使用在 XAML [ `Entry.ImeOptions` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.ImeOptionsProperty)附加属性的值为[ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags)枚举：
+此 Android 平台特定用于设置的软键盘的输入法编辑器（IME）选项 [`Entry`](xref:Xamarin.Forms.Entry) 。 这包括设置软键盘右下角的 "用户操作" 按钮，以及与的交互 `Entry` 。 它通过将 [`Entry.ImeOptions`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.ImeOptionsProperty) 附加属性设置为枚举的值，在 XAML 中使用 [`ImeFlags`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) ：
 
 ```xaml
 <ContentPage ...
@@ -30,7 +33,7 @@ ms.locfileid: "68653600"
 </ContentPage>
 ```
 
-或者，可以使用它从 C# 使用 fluent API:
+此外，还可以使用 Fluent API 从 c # 使用该方法：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -40,25 +43,25 @@ using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 entry.On<Android>().SetImeOptions(ImeFlags.Send);
 ```
 
-`Entry.On<Android>`方法指定仅将在 Android 上运行此特定于平台的。 [ `Entry.SetImeOptions` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.SetImeOptions(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Entry},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags))方法，在[ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)命名空间，用于设置的软键盘输入的法操作选项[ `Entry` ](xref:Xamarin.Forms.Entry)，与[ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags)枚举提供以下值：
+`Entry.On<Android>`方法指定此平台特定的仅在 Android 上运行。 [ `Entry.SetImeOptions` ] （X： Xamarin.Forms 。PlatformConfiguration. AndroidSpecific. SetImeOptions （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。Entry}， Xamarin.Forms 。PlatformConfiguration. AndroidSpecific. ImeFlags））方法， [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) 用于设置的软键盘的输入法操作选项 [`Entry`](xref:Xamarin.Forms.Entry) ，其中的 [`ImeFlags`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) 枚举提供以下值：
 
-- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Default) -指示没有特定操作的键是必需的并且基础控件将生成其自己如果它可以。 这将是`Next`或`Done`。
-- [`None`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.None) -指示没有操作项会使可用。
-- [`Go`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Go) – 指示操作键将执行"转到"操作，它们使到文本的目标用户类型。
-- [`Search`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Search) – 指示操作键执行"搜索"操作，它们使用户的搜索文本结果具有类型化。
-- [`Send`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Send) – 指示操作键将执行一个"发送"操作，将文本传递到其目标。
-- [`Next`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Next) – 指示操作键将执行"下一步"操作，使用户为将接受文本的下一个字段。
-- [`Done`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Done) – 指示操作键将执行一个"done"的操作，关闭软键盘。
-- [`Previous`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Previous) – 指示操作键将执行"上一个"操作，使用户将接受文本的上一个字段。
-- [`ImeMaskAction`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.ImeMaskAction) – 若要选择操作选项的掩码。
-- [`NoPersonalizedLearning`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoPersonalizedLearning) – 指示，拼写检查器将既不了解从用户，也不提供根据用户以前已如何键入更正建议。
-- [`NoFullscreen`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoFullscreen) – 指示在 UI 不应处于全屏。
-- [`NoExtractUi`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoExtractUi) -指示对于提取的文本将不显示 UI。
-- [`NoAccessoryAction`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoAccessoryAction) -指示没有 UI，将显示用于自定义操作。
+- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Default)–指示无需特定操作键，并且基础控件将自行生成。 此为 `Next` 或 `Done` 。
+- [`None`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.None)-指示将不会提供操作密钥。
+- [`Go`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Go)–指示操作密钥将执行 "执行" 操作，使用户进入其所键入文本的目标。
+- [`Search`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Search)–指示操作键执行 "搜索" 操作，使用户能够搜索其所键入的文本。
+- [`Send`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Send)–指示操作密钥将执行 "发送" 操作，并将文本传递到其目标。
+- [`Next`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Next)–指示操作键将执行 "下一步" 操作，并将用户带到将接受文本的下一个字段。
+- [`Done`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Done)–指示操作键将执行 "完成" 操作，并关闭软键盘。
+- [`Previous`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Previous)–指示操作键将执行 "上一步" 操作，并将用户带到将接受文本的上一个字段。
+- [`ImeMaskAction`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.ImeMaskAction)–用于选择操作选项的掩码。
+- [`NoPersonalizedLearning`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoPersonalizedLearning)–指示拼写检查器不会从用户学习，也不会根据用户以前键入的内容来建议更正。
+- [`NoFullscreen`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoFullscreen)–指示 UI 不应转为全屏。
+- [`NoExtractUi`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoExtractUi)-指示不会为提取的文本显示任何 UI。
+- [`NoAccessoryAction`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoAccessoryAction)-指示不会为自定义操作显示任何 UI。
 
-结果是，指定[ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags)值将应用于软键盘[ `Entry` ](xref:Xamarin.Forms.Entry)，用于设置输入的法编辑器选项：
+结果是，将指定的 [`ImeFlags`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) 值应用于的软键盘 [`Entry`](xref:Xamarin.Forms.Entry) ，这将设置输入法编辑器选项：
 
-[![条目输入方法编辑器平台专属](entry-ime-options-images/entry-imeoptions.png "条目输入方法编辑器平台特定")](entry-ime-options-images/entry-imeoptions-large.png#lightbox "条目输入方法编辑器特定于平台的")
+[![条目输入法编辑器特定于平台](entry-ime-options-images/entry-imeoptions.png "条目输入法编辑器特定于平台")](entry-ime-options-images/entry-imeoptions-large.png#lightbox "条目输入法编辑器特定于平台")
 
 ## <a name="related-links"></a>相关链接
 

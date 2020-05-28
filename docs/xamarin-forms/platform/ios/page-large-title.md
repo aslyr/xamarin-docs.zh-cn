@@ -1,24 +1,27 @@
 ---
-title: IOS 上的大型页面标题
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 平台特定的, 它在 NavigationPage 的导航栏上以大标题显示页面标题。
-ms.prod: xamarin
-ms.assetid: 45FD9145-8319-452C-9AE6-624431A4D43C
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: ab9becf2f7363674346abf004c1748cb06eb0d31
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0db20620870340386ccd0cedf7f98cb2975527ba
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655415"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84128026"
 ---
 # <a name="large-page-titles-on-ios"></a>IOS 上的大型页面标题
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 iOS 平台特定用于在的导航栏[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)上将页面标题显示为大标题, 适用于使用 iOS 11 或更高版本的设备。 大型标题左对齐和使用的较大的图标，并将转换为标准标题当用户开始滚动的内容，以便有效地使用屏幕空间。 但是，在横向方向，标题将返回到导航栏来优化内容布局的中心。 设置使用在 XAML`NavigationPage.PrefersLargeTitles`附加属性设置为`boolean`值：
+此 iOS 平台特定用于在的导航栏上将页面标题显示为大标题 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ，适用于使用 iOS 11 或更高版本的设备。 当用户开始滚动内容时，较大的标题将左对齐并使用较大的字体，并转换为标准标题，以便有效地使用屏幕房地产。 但在横向方向，标题将返回到导航栏的中心，以优化内容布局。 它通过将 `NavigationPage.PrefersLargeTitles` 附加属性设置为值在 XAML 中使用 `boolean` ：
 
 ```xaml
 <NavigationPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -30,7 +33,7 @@ ms.locfileid: "68655415"
 </NavigationPage>
 ```
 
-或者可以使用它从 C# 使用 fluent API:
+或者，可以使用 Fluent API 从 c # 使用它：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -41,9 +44,9 @@ var navigationPage = new Xamarin.Forms.NavigationPage(new iOSLargeTitlePageCS())
 navigationPage.On<iOS>().SetPrefersLargeTitles(true);
 ```
 
-`NavigationPage.On<iOS>`方法指定仅将在 iOS 上运行此特定于平台的。 `NavigationPage.SetPrefersLargeTitle`方法，请在[ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空间中，控制是否启用大标题。
+`NavigationPage.On<iOS>`方法指定此平台特定的仅在 iOS 上运行。 `NavigationPage.SetPrefersLargeTitle`命名空间中的方法 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 控制是否启用大型标题。
 
-前提是大标题上启用[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)，在导航堆栈中的所有页面将都显示大标题。 可以通过设置页上写此行为`Page.LargeTitleDisplay`附加属性的值为`LargeTitleDisplayMode`枚举：
+如果在上启用了大标题 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ，则导航堆栈中的所有页面都将显示大标题。 通过将 `Page.LargeTitleDisplay` 附加属性设置为枚举的值，可以在页面上覆盖此行为 `LargeTitleDisplayMode` ：
 
 ```xaml
 <ContentPage ...
@@ -54,7 +57,7 @@ navigationPage.On<iOS>().SetPrefersLargeTitles(true);
 </ContentPage>
 ```
 
-或者，可以从使用 fluent API 通过 C# 重写页面行为：
+或者，可以使用 Fluent API 从 c # 重写页面行为：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -72,13 +75,13 @@ public class iOSLargeTitlePageCS : ContentPage
 }
 ```
 
-`Page.On<iOS>`方法指定仅将在 iOS 上运行此特定于平台的。 `Page.SetLargeTitleDisplay`方法，请在[ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空间，在控制大标题行为[ `Page` ](xref:Xamarin.Forms.Page)，与`LargeTitleDisplayMode`提供三个可能的枚举值：
+`Page.On<iOS>`方法指定此平台特定的仅在 iOS 上运行。 `Page.SetLargeTitleDisplay`命名空间中的方法 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 控制中的大型标题行为 [`Page`](xref:Xamarin.Forms.Page) ， `LargeTitleDisplayMode` 枚举提供三个可能的值：
 
-- `Always` – 强制的导航栏和字体大小，以使用较大的格式。
-- `Automatic` – 相同的样式 （大或小） 用作导航堆栈中的上一项。
-- `Never` – 强制使用正则、 小型格式导航栏。
+- `Always`–强制导航栏和字体大小使用大格式。
+- `Automatic`–使用与导航堆栈中的上一项相同的样式（大或小）。
+- `Never`–强制使用常规的小格式导航栏。
 
-此外，`SetLargeTitleDisplay`方法可用于切换的枚举值通过调用`LargeTitleDisplay`方法，返回当前`LargeTitleDisplayMode`:
+此外，该 `SetLargeTitleDisplay` 方法可用于通过调用返回当前的方法来切换枚举值 `LargeTitleDisplay` `LargeTitleDisplayMode` ：
 
 ```csharp
 switch (On<iOS>().LargeTitleDisplay())
@@ -95,9 +98,9 @@ switch (On<iOS>().LargeTitleDisplay())
 }
 ```
 
-结果是，指定`LargeTitleDisplayMode`应用于[ `Page` ](xref:Xamarin.Forms.Page)，它可以控制大标题行为：
+因此，指定的 `LargeTitleDisplayMode` 将应用于 [`Page`](xref:Xamarin.Forms.Page) ，后者控制大标题行为：
 
-![](page-large-title-images/large-title.png "模糊效果特定于平台")
+![](page-large-title-images/large-title.png "Blur Effect Platform-Specific")
 
 ## <a name="related-links"></a>相关链接
 

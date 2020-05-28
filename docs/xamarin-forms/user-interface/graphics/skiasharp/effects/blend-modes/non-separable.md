@@ -1,57 +1,174 @@
 ---
-title: 非可分离的混合模式
-description: 使用非可分离的混合模式更改色调、 饱和度和亮度。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 97FA2730-87C0-4914-8C9F-C64A02CF9EEF
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/23/2018
-ms.openlocfilehash: 9054539b08da89c0f7d8a93150866fb1b41e63f1
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 52be7641ac3b2983f537e11bccd76f2a5b52574d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642778"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84130177"
 ---
-# <a name="the-non-separable-blend-modes"></a>非可分离的混合模式
+# <a name="the-non-separable-blend-modes"></a>非分离混合模式
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-本文中所示[ **SkiaSharp 可分离混合模式**](separable.md)，可分离的混合模式单独执行的红色、 绿色和蓝色通道上的操作。 非可分离的混合模式不适用。 对颜色的色调、 饱和度和亮度级别进行操作，非可分离的混合模式可以更改颜色以有趣的方式：
+正如您在[**SkiaSharp 分离混合模式**](separable.md)一文中看到的那样，分离混合模式分别对红色、绿色和蓝色通道执行操作。 非分离混合模式不能。 通过在颜色的色调、饱和度和发光度上操作，不可分离的混合模式可以以有趣的方式改变颜色：
 
-![非可分离示例](non-separable-images/NonSeparableSample.png "非可分离示例")
+![不可分离的示例](non-separable-images/NonSeparableSample.png "不可分离的示例")
 
-## <a name="the-hue-saturation-luminosity-model"></a>色调-饱和度-亮度模型
+## <a name="the-hue-saturation-luminosity-model"></a>色调-饱和度-明度模型
 
-若要了解非可分离的混合模式，它是所需的目标和源像素视为色调-饱和度-亮度模型中的颜色。 （亮度是也称为亮度。）
+若要理解非分离混合模式，必须将目标和源像素视为色调-饱和度-明度模型中的颜色。 （发光度也称为亮度。）
 
-HSL 颜色模型一文中介绍过[**与 Xamarin.Forms 集成**](../../basics/integration.md)和一个示例程序，该文章中的允许使用 HSL 颜色的试验。 您可以创建`SKColor`值使用具有静态色调、 饱和度和亮度值[ `SKColor.FromHsl` ](xref:SkiaSharp.SKColor.FromHsl*)方法。
+HSL 颜色模型已在 "[**与 Xamarin.Forms 集成**](../../basics/integration.md)" 和 "示例程序" 一文中讨论，它允许使用 HSL 颜色进行试验。 您可以通过 `SKColor` 静态方法使用色调、饱和度和亮度值创建值 [`SKColor.FromHsl`](xref:SkiaSharp.SKColor.FromHsl*) 。
 
-色调表示颜色的主波长。 色调值介于0到360之间, 并循环到累加和 subtractive 主副本:红色为值 0, 黄色为 60, 绿色表示 120, 青色表示 180, 蓝色表示 240, 洋红色为 300, 循环恢复为红色。
+色调表示颜色的主导波长。 色调值介于0到360之间，并循环到加法和 subtractive 主副本： Red 为值0，黄色为60，绿色表示120，青色为180，蓝色表示240，洋红色为300，循环返回到红色（在360）。
 
-如果没有主色&mdash;例如，颜色是白色或黑色或灰影&mdash;然后色调是未定义，且通常设置为 0。 
+例如，如果没有主颜色 &mdash; （例如，颜色为白色或黑色）或灰色阴影，则不 &mdash; 定义色相，通常将其设置为0。 
 
-饱和度值可以介于 0 和 100，并指定颜色的纯度。 虽然值低于 100 会导致要变得更 grayish 的颜色，饱和度值为 100 是最纯粹的颜色。 饱和度值为 0 会导致为灰色阴影。
+饱和度值的范围为0到100，表示颜色的纯度。 饱和度值100是最纯粹颜色，而小于100的值会导致颜色变得更 grayish。 饱和度值为0时会产生灰色阴影。
 
-亮度 （或亮度） 值指示如何明亮的颜色是。 亮度值 0 为黑色而不考虑其他设置。 同样，100 的亮度值为白色。 
+亮度（或亮度）值指示颜色的亮度。 亮度值0为黑色，而不考虑其他设置。 同样，发光度值100为白色。 
 
-HSL 值 （0、 100，50） 是纯红色显示的 RGB 值 (FF，00，00)。 RGB 值 (00，FF，FF)，纯青色 HSL 值 （180，100，50）。 饱和度减小时，因为主色组件会减少，而其他组件会增加。 在饱和度级别为 0，所有组件都都相同，颜色是灰色阴影。 降低亮度，以转到黑色;若要转到空白的亮度会增加。
+HSL 值（0，100，50）是 RGB 值（FF，00，00），这是纯红色。 HSL 值（180，100，50）是 RGB 值（00，FF，FF），纯青色。 当饱和度降低时，主导色组件会减少，并增加其他组件。 如果饱和度级别为0，则所有组件都是相同的，颜色为灰色阴影。 降低亮度以转为黑色;增加亮度以转为白。
 
-## <a name="the-blend-modes-in-detail"></a>在详细信息中的混合模式
+## <a name="the-blend-modes-in-detail"></a>混合模式详细信息
 
-像其他混合模式下，四个非可分离的混合模式涉及 （这通常是位图图像） 的目标和源，这通常是一种颜色或渐变。 混合模式组合来自目标和源的色调、 饱和度和亮度值：
+与其他混合模式一样，四个非分离混合模式都涉及目标（通常是位图图像）和源（通常是一种颜色或渐变）。 混合模式结合了目标和源中的色相、饱和度和明度值：
 
-| 混合模式   | 源中的组件 | 从目标组件 |
-| ------------ | ---------------------- | --------------------------- |
-| `Hue`        | 色调                    | 饱和度和亮度   |
-| `Saturation` | 饱和度             | 色调和亮度          |
-| `Color`      | 色调和饱和度     | 亮度                  | 
-| `Luminosity` | 亮度             | 色调和饱和度          | 
+| 混合模式   | 来自源的组件 | 目标中的组件 |
+| ---
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-请参阅 W3C [**合成和混合级别 1** ](https://www.w3.org/TR/compositing-1/)算法规范。
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-**Blend 的非可分离模式**页包含`Picker`若要选择其中一种混合模式和三个`Slider`视图选择 HSL 颜色：
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+------ |---标题：说明： ms. 生产： assetid： author： author： ms-chap：不是-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+----------- |---标题：说明： ms. 生产： assetid： author： author： ms-chap：不是-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-------------- | |`Hue`        |色调 |饱和度和发光度 | |`Saturation` |饱和度 |色调和发光度 | |`Color`      |色调和饱和度 |发光度 | |`Luminosity` |发光度 |色调和饱和度 | 
+
+请参阅算法的 W3C[**合成和混合等级 1**](https://www.w3.org/TR/compositing-1/)规范。
+
+**非分离混合模式**页面包含 `Picker` 用于选择其中一个混合模式的，三个 `Slider` 视图用于选择 HSL 颜色：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -111,9 +228,9 @@ HSL 值 （0、 100，50） 是纯红色显示的 RGB 值 (FF，00，00)。 RGB 
 </ContentPage>
 ```
 
-为节省空间，这三个`Slider`视图不会标识该程序的用户界面中。 你将需要记住的顺序是色调、 饱和度和亮度。 两个`Label`视图页的底部显示 HSL 和 RGB 颜色值。
+为了节省空间，在 `Slider` 程序的用户界面中不会标识这三个视图。 您需要记住，顺序是色调、饱和度和发光度。 页面底部的两个 `Label` 视图显示 HSL 和 RGB 颜色值。
 
-代码隐藏文件加载一个位图资源、 显示在画布上尽可能大地，然后涵盖在画布上添加一个矩形。 矩形颜色基于三个`Slider`视图和混合模式是中选定的一个`Picker`:
+代码隐藏文件加载一个位图资源，在画布上将其显示为尽可能大，然后使用矩形覆盖画布。 矩形颜色基于三个 `Slider` 视图，混合模式是在中选择的一种 `Picker` ：
 
 ```csharp
 public partial class NonSeparableBlendModesPage : ContentPage
@@ -176,51 +293,51 @@ public partial class NonSeparableBlendModesPage : ContentPage
 }
 ```
 
-请注意该程序不会显示所选择的三个滑块 HSL 颜色值。 相反，它从这些滑块创建一个颜色值，然后使用[ `ToHsl` ](xref:SkiaSharp.SKColor.ToHsl*)方法以获取色调、 饱和度和亮度值。 这是因为`FromHsl`方法将 HSL 颜色转换为的 RGB 颜色，存储在内部在`SKColor`结构。 `ToHsl`方法将从 RGB 转换为 HSL，但结果不会总是原始值。 
+请注意，该程序不显示由三个滑块选定的 HSL 颜色值。 相反，它会从这些滑块创建颜色值，然后使用 [`ToHsl`](xref:SkiaSharp.SKColor.ToHsl*) 方法来获取色相、饱和度和发光度值。 这是因为 `FromHsl` 方法会将 HSL 颜色转换为 RGB 颜色，这是在结构内部存储的 `SKColor` 。 `ToHsl`方法将从 RGB 转换为 HSL，但结果不会始终是原始值。 
 
-例如， `FromHsl` HSL 值 （180、 50，0） 转换为代表 RGB 颜色 （0，0，0），因为`Luminosity`为零。 `ToHsl`方法： 将 RGB 颜色 （0，0，0） 转换为 HSL 颜色 （0，0，0），因为色调和饱和度值是否无关。 当使用此程序时，它是更好地查看程序正在使用而不使用滑块指定 HSL 颜色的表示形式。
+例如， `FromHsl` 将 HSL 值（180，50，0）转换为 RGB 颜色（0，0，0），因为 `Luminosity` 为零。 `ToHsl`方法将 RGB 颜色（0，0，0）转换为 HSL 颜色（0，0，0），因为色相和饱和度值无关。 使用此程序时，您可以看到该程序正在使用的 HSL 颜色的表示形式，而不是您使用滑块指定的那个颜色。
 
-`SKBlendModes.Hue`混合模式下保留目标的饱和度和亮度级别的同时使用 Hue 级别的源。 测试此混合模式时，饱和度和亮度滑块必须设置为 0 或 100 以外因为在这些情况下，Hue 没有唯一定义。
+`SKBlendModes.Hue`混合模式使用源的色调级别，同时保留目标的饱和度和发光度级别。 在测试此混合模式时，饱和度和发光度滑块必须设置为0或100以外的内容，因为在这些情况下，不会唯一定义色调。
 
-[![非可分离的混合模式-Hue](non-separable-images/NonSeparableBlendModes-Hue.png "非可分离的混合模式-Hue")](non-separable-images/NonSeparableBlendModes-Hue-Large.png#lightbox)
+[![非分离混合模式-色调](non-separable-images/NonSeparableBlendModes-Hue.png "非分离混合模式-色调")](non-separable-images/NonSeparableBlendModes-Hue-Large.png#lightbox)
 
-当你使用 （如与左侧的 iOS 屏幕截图） 将滑块设置为 0，则，所有内容变为红色。 但这并不意味着该图像是完全不存在的绿色和蓝色。 显然是在结果中存在的仍灰色底纹。 例如，代表 RGB 颜色 （40，40，C0） 等同于 HSL 颜色 （240、 50，50）。 Hue 是蓝色，但饱和度值 50 指示有红色和绿色组件以及。 如果设置为 0 而色调`SKBlendModes.Hue`，HSL 颜色是 （0，50，50），它代表 RGB 颜色 (C0，40，40)。 仍蓝色和绿色组件，但现在的主流组件为红色。
+当使用 "将滑块设置为 0" 时，所有内容都将变为 "reddish"。 但这并不意味着图像完全没有绿色和蓝色。 显然，结果中仍存在灰色阴影。 例如，RGB 颜色（40，40，C0）等效于 HSL 颜色（240、50、50）。 色调为蓝色，但饱和度值为50，表示还存在红色和绿色组件。 如果色相设置为 0 `SKBlendModes.Hue` ，则 HSL 颜色为（0，50，50），这是 RGB 颜色（c0，40，40）。 还有蓝色和绿色的组件，但现在主导组件为红色。
 
-`SKBlendModes.Saturation`混合模式将源的饱和度级别与色调和目标的亮度相结合。 如色调、 饱和度定义不完善如果亮度是 0 或 100。 从理论上讲，任何两个极端之间的亮度设置应起作用。 但是，似乎会影响结果超过了预期的亮度设置。 亮度设置为 50，并可以查看图片的饱和度级别的设置方式：
+`SKBlendModes.Saturation`混合模式将源的饱和度级别与目标的色调和发光度组合在一起。 与色调一样，如果亮度为0或100，则饱和度不会定义得很好。 理论上，这两个极端之间的任何发光度设置都应该有效。 但是，发光度设置似乎会影响结果的影响。 将亮度设置为50，你可以了解如何设置图片的饱和度级别：
 
-[![非可分离的混合模式-饱和度](non-separable-images/NonSeparableBlendModes-Saturation.png "非可分离的混合模式-饱和度")](non-separable-images/NonSeparableBlendModes-Saturation-Large.png#lightbox)
+[![非分离混合模式-饱和度](non-separable-images/NonSeparableBlendModes-Saturation.png "非分离混合模式-饱和度")](non-separable-images/NonSeparableBlendModes-Saturation-Large.png#lightbox)
 
-可以使用此混合模式以提高颜色饱和度的乏味的映像，或可以为生成的图像组成仅灰色底纹减少到零 （例如，在左侧的 iOS 屏幕快照） 的饱和度。
+您可以使用这种混合模式增加单调图像的颜色饱和度，或者可以将饱和度减小到零（如在左侧的 iOS 屏幕截图中），以获取仅由灰色阴影组成的结果图像。
 
-`SKBlendModes.Color`混合模式下保留目标的亮度，但使用色调和饱和度的源。 同样，这意味着亮度滑块极端之间的某个位置的任何设置应起作用。 
+`SKBlendModes.Color`混合模式保留目标的发光度，但使用源的色调和饱和度。 同样，这意味着，极端情况下的亮度滑块的任何设置都应能正常工作。 
 
-[![非可分离的混合模式-颜色](non-separable-images/NonSeparableBlendModes-Color.png "非可分离的混合模式的颜色")](non-separable-images/NonSeparableBlendModes-Color-Large.png#lightbox)
+[![非分离混合模式-颜色](non-separable-images/NonSeparableBlendModes-Color.png "非分离混合模式-颜色")](non-separable-images/NonSeparableBlendModes-Color-Large.png#lightbox)
 
-稍后您将看到此混合模式下的应用程序。
+稍后，你将看到此混合模式的应用程序。
 
-最后，`SKBlendModes.Luminosity`混合模式与相反`SKBlendModes.Color`。 它保留色调和饱和度的目标，但使用源的亮度。 `Luminosity`混合模式是该批的最神秘的模式:"色调" 和 "饱和度" 滑块会影响图像, 但是即使在中等亮度, 图像也不是不同的:
+最后， `SKBlendModes.Luminosity` blend 模式与相反 `SKBlendModes.Color` 。 它保留目标的色相和饱和度，但使用源的发光度。 `Luminosity`混合模式是批处理中最神秘的模式： "色调" 和 "饱和度" 滑块会影响图像，但是即使在中等亮度，图像也不是不同的：
 
-[![非可分离的混合模式-亮度](non-separable-images/NonSeparableBlendModes-Luminosity.png "非可分离的混合模式-亮度")](non-separable-images/NonSeparableBlendModes-Luminosity-Large.png#lightbox)
+[![非分离混合模式-亮度](non-separable-images/NonSeparableBlendModes-Luminosity.png "非分离混合模式-亮度")](non-separable-images/NonSeparableBlendModes-Luminosity-Large.png#lightbox)
 
-从理论上讲，增加或减少的图像的亮度应使其较浅或变暗。 有趣的是，[亮度示例中 Skia **SkBlendMode 引用**](https://skia.org/user/api/SkBlendMode_Reference#Luminosity)非常相似。
+理论上，增加或减少图像发光度应使其变得更浅或更暗。 有趣的是， [Skia **SkBlendMode 引用**中的发光度示例](https://skia.org/user/api/SkBlendMode_Reference#Luminosity)非常类似。
 
-它通常是不需要一个非可分离的混合模式使用包含的一种颜色应用于整个目标图像的源的情况。 结果是只是过大。 你将想要限制对该映像的一部分的效果。 在这种情况下，源可能会合并 transparancy，或可能是源将被限制为一个较小图形。
+通常情况下，您可能不希望使用一种不可分离的混合模式，其中的源包含应用于整个目标图像的单个颜色。 效果只是太棒了。 你需要将效果限制为图像的一个部分。 在这种情况下，源可能会纳入 transparancy，或者可能会将源限制为较小的图形。
 
-## <a name="a-matte-for-a-separable-mode"></a>对于可分离模式亚光效果
+## <a name="a-matte-for-a-separable-mode"></a>分离模式的遮罩
 
-下面是一个包含为中的资源的位图[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例。 文件名是**Banana.jpg**:
+下面是[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例中作为一项资源包含的位图。 文件名为**香蕉**：
 
-![香蕉 Monkey](non-separable-images/Banana.jpg "香蕉 Monkey")
+![香蕉猴子](non-separable-images/Banana.jpg "香蕉猴子")
 
-它是可以创建包含只香蕉亚光效果。 这也是中的资源[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例。 文件名是**BananaMatte.png**:
+可以创建只包含香蕉的遮罩。 这也是[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例中的资源。 文件名为**BananaMatte**：
 
-![香蕉遮罩](non-separable-images/BananaMatte.png "香蕉亚光效果")
+![香蕉遮罩](non-separable-images/BananaMatte.png "香蕉遮罩")
 
-除了黑色香蕉图形位图的其余部分是透明的。
+除了黑色香蕉形状外，位图的其余部分也是透明的。
 
-**蓝色香蕉**页面使用该亚光效果来更改色调和饱和度持有 monkey，香蕉的但若要在映像中的其他不进行任何更改。 
+**Blue 香蕉**页面使用该遮罩改变猴子所持有的香蕉的色调和饱和度，但不更改图像中的任何其他内容。 
 
-在下面的示例`BlueBananaPage`类， **Banana.jpg**位图加载为一个字段。 构造函数加载**BananaMatte.png**位图作为`matteBitmap`对象，但它不会保留在构造函数之外的对象。 相反，第三个位图的名为`blueBananaBitmap`创建。 `matteBitmap`上绘制`blueBananaBitmap`跟`SKPaint`使用其`Color`设置为蓝色并将其`BlendMode`设置为`SKBlendMode.SrcIn`。 `blueBananaBitmap`透明，但与纯蓝色实线映像香蕉的相比大部分保持：
+在下面的 `BlueBananaPage` 类中，**香蕉**位图作为一个字段加载。 构造函数将**BananaMatte**位图作为 `matteBitmap` 对象加载，但它不会将该对象保留在构造函数之外。 而是创建一个名为的第三个位图 `blueBananaBitmap` 。 `matteBitmap`绘制 `blueBananaBitmap` 后跟一个， `SKPaint` 其 `Color` 设置为蓝色，其 `BlendMode` 设置为 `SKBlendMode.SrcIn` 。 `blueBananaBitmap`通常是透明的，但具有纯纯蓝色的香蕉图像：
 
 ```csharp
 public class BlueBananaPage : ContentPage
@@ -283,11 +400,11 @@ public class BlueBananaPage : ContentPage
 }
 ```
 
-`PaintSurface`处理程序与持有香蕉 monkey 绘制位图。 此代码后跟的显示`blueBananaBitmap`与`SKBlendMode.Color`。 通过香蕉的图面，每个像素的色调和饱和度将替换为蓝色，对应于色调值为 240 以及饱和度值为 100。 亮度，但是，保持不变，这意味着香蕉继续拥有不管其新颜色的真实纹理：
+`PaintSurface`处理程序将用保存香蕉的猴子来绘制位图。 此代码后跟的显示为 `blueBananaBitmap` `SKBlendMode.Color` 。 在香蕉的表面上，每个像素的色调和饱和度均替换为纯色，这对应于色相值240，饱和度值为100。 不过，发光度仍保持不变，这意味着香蕉仍具有逼真的纹理，而不管其新颜色：
 
-[![蓝色香蕉](non-separable-images/BlueBanana.png "蓝色香蕉")](non-separable-images/BlueBanana-Large.png#lightbox)
+[![Blue 香蕉](non-separable-images/BlueBanana.png "Blue 香蕉")](non-separable-images/BlueBanana-Large.png#lightbox)
 
-请尝试更改到混合模式`SKBlendMode.Saturation`。 香蕉仍保持为黄色，但它是一个更强烈的黄色。 在现实生活应用程序中，这可能是相对于启用香蕉蓝色更为理想效果。
+尝试将混合模式更改为 `SKBlendMode.Saturation` 。 香蕉是黄色的，但它的黄色更明显。 在实际应用程序中，这可能比将香蕉变为蓝色更为理想。
 
 ## <a name="related-links"></a>相关链接
 

@@ -1,40 +1,43 @@
 ---
-title: Xamarin. Forms RefreshView
-description: Xamarin RefreshView 是一个容器控件，为可滚动的内容提供拉取到刷新功能。
-ms.prod: xamarin
-ms.assetId: 58DBD23B-ADB9-40DA-B331-4DDB6E698990
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 09/19/2019
-ms.openlocfilehash: e38987006025dad1c2ff49c3ea8916e2075d61d7
-ms.sourcegitcommit: d1d4700b3b1b417a9d7b7da85ab5d28f8e8e599d
+title: Xamarin.FormsRefreshView
+description: Xamarin.FormsRefreshView 是一个容器控件，为可滚动的内容提供拉取到刷新功能。
+ms.prod: ''
+ms.assetId: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d84e6bb6ed41f2fbc213cd15051d071521f588cd
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73649299"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84127590"
 ---
-# <a name="xamarinforms-refreshview"></a>Xamarin. Forms RefreshView
+# <a name="xamarinforms-refreshview"></a>Xamarin.FormsRefreshView
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
 
-`RefreshView` 是一个容器控件，该控件为可滚动的内容提供请求刷新功能。 因此，`RefreshView` 的子级必须是可滚动的控件，如[`ScrollView`](xref:Xamarin.Forms.ScrollView)、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)或[`ListView`](xref:Xamarin.Forms.ListView)。
+`RefreshView`是一个容器控件，它为可滚动的内容提供了拉取到刷新功能。 因此，的子级 `RefreshView` 必须是可滚动的控件，如 [`ScrollView`](xref:Xamarin.Forms.ScrollView) 、 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 或 [`ListView`](xref:Xamarin.Forms.ListView) 。
 
-`RefreshView` 定义以下属性：
+`RefreshView` 定义以下属性:
 
-- `ICommand` 类型的 `Command`，将在触发刷新时执行。
+- `Command`，类型为 `ICommand` ，在触发刷新时执行。
 - `CommandParameter`，属于 `object` 类型，是传递给 `Command` 的参数。
-- `bool` 类型的 `IsRefreshing`，指示 `RefreshView` 的当前状态。
-- `Color` 类型的 `RefreshColor`，将在刷新过程中出现的进度圆圈的颜色。
+- `IsRefreshing`，类型为 `bool` ，指示的当前状态 `RefreshView` 。
+- `RefreshColor`，类型为 `Color` ，在刷新过程中显示的进度圆圈的颜色。
 
-这些属性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)对象支持的，这意味着它们可以是数据绑定的目标和样式。
+这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
 
 > [!NOTE]
-> 在通用 Windows 平台上，可以使用特定于平台的来设置 `RefreshView` 的请求方向。 有关详细信息，请参阅[RefreshView 拉取方向](~/xamarin-forms/platform/windows/refreshview-pulldirection.md)。
+> 在通用 Windows 平台上，的拉取方向 `RefreshView` 可以设置为特定于平台的。 有关详细信息，请参阅[RefreshView 拉取方向](~/xamarin-forms/platform/windows/refreshview-pulldirection.md)。
 
 ## <a name="create-a-refreshview"></a>创建 RefreshView
 
-下面的示例演示如何在 XAML 中实例化 `RefreshView`：
+下面的示例演示如何 `RefreshView` 在 XAML 中实例化：
 
 ```xaml
 <RefreshView IsRefreshing="{Binding IsRefreshing}"
@@ -50,7 +53,7 @@ ms.locfileid: "73649299"
 </RefreshView>
 ```
 
-还可以在代码中创建 `RefreshView`：
+`RefreshView`也可以在代码中创建：
 
 ```csharp
 RefreshView refreshView = new RefreshView();
@@ -68,43 +71,43 @@ scrollView.Content = flexLayout;
 refreshView.Content = scrollView;
 ```
 
-在此示例中，`RefreshView` 向刷新功能提供对其子为[`FlexLayout`](xref:Xamarin.Forms.FlexLayout)的[`ScrollView`](xref:Xamarin.Forms.ScrollView)的请求。 `FlexLayout` 使用可绑定布局，通过绑定到项集合来生成其内容，并使用[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)设置每个项的外观。 有关可绑定布局的详细信息，请参阅[Xamarin 中的可绑定布局](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)。
+在此示例中，将 `RefreshView` 向刷新功能提供对 [`ScrollView`](xref:Xamarin.Forms.ScrollView) 子级为的的请求 [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) 。 `FlexLayout`通过绑定到项的集合，使用可绑定布局生成其内容，并使用设置每个项的外观 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。 有关可绑定布局的详细信息，请参阅[中 Xamarin.Forms 的可绑定布局](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)。
 
-`RefreshView.IsRefreshing` 属性的值指示 `RefreshView`的当前状态。 用户触发刷新时，此属性会自动转换为 `true`。 刷新完成后，应将属性重置为 `false`。
+属性的值 `RefreshView.IsRefreshing` 指示的当前状态 `RefreshView` 。 当用户触发刷新时，此属性将自动转换为 `true` 。 刷新完成后，应将属性重置为 `false` 。
 
-当用户启动刷新时，将执行 `Command` 属性定义的 `ICommand`，该属性应刷新正在显示的项。 刷新发生时，会显示刷新可视化效果，其中包含动画进度圆：
+当用户启动刷新时，将 `ICommand` 执行由属性定义的 `Command` ，这会刷新正在显示的项。 刷新发生时，会显示刷新可视化效果，其中包含动画进度圆：
 
 [![IOS 和 Android 上 RefreshView 刷新数据的屏幕截图](refreshview-images/default-progress-circle.png "RefreshView 刷新数据")](refreshview-images/default-progress-circle-large.png#lightbox "RefreshView 刷新数据")
 
 > [!NOTE]
-> 手动将 `IsRefreshing` 属性设置为 `true` 将触发刷新可视化，并将执行 `Command` 属性定义的 `ICommand`。
+> 手动将 `IsRefreshing` 属性设置为 `true` 将触发刷新可视化，并将执行 `ICommand` 属性定义的 `Command` 。
 
 ## <a name="refreshview-appearance"></a>RefreshView 外观
 
-除了 `RefreshView` 继承自[`VisualElement`](xref:Xamarin.Forms.VisualElement)类的属性以外，`RefreshView` 还会定义 `RefreshColor` 属性。 此属性可设置为定义在刷新过程中出现的进度圆圈的颜色：
+除了 `RefreshView` 从类继承的属性之外 [`VisualElement`](xref:Xamarin.Forms.VisualElement) ， `RefreshView` 还定义 `RefreshColor` 属性。 此属性可设置为定义在刷新过程中出现的进度圆圈的颜色：
 
 ```xaml
 <RefreshView RefreshColor="Teal"
              ... />
 ```
 
-以下屏幕截图显示了具有 `RefreshColor` 属性集的 `RefreshView`：
+以下屏幕截图显示了 `RefreshView` 具有 `RefreshColor` 属性集的：
 
 [![IOS 和 Android 上带有蓝绿色进度圆圈的 RefreshView 屏幕截图](refreshview-images/teal-progress-circle.png "带有蓝绿色进度圆的 RefreshView")](refreshview-images/teal-progress-circle-large.png#lightbox "带有蓝绿色进度圆的 RefreshView")
 
-此外，`BackgroundColor` 属性可以设置为表示进度圆背景色的[`Color`](xref:Xamarin.Forms.Color) 。
+此外，还 `BackgroundColor` 可以将属性设置为 [`Color`](xref:Xamarin.Forms.Color) 表示进度圆背景色的。
 
 > [!NOTE]
-> 在 iOS 上，`BackgroundColor` 属性设置包含进度圆圈的 `UIView` 的背景色。
+> 在 iOS 上， `BackgroundColor` 属性设置包含进度圆圈的的背景色 `UIView` 。
 
 ## <a name="disable-a-refreshview"></a>禁用 RefreshView
 
-应用程序可以输入状态，请求刷新的状态不是有效的操作。 在这种情况下，可以通过将 `RefreshView` 的 `IsEnabled` 属性设置为 `false` 来禁用。 这会阻止用户触发请求刷新。
+应用程序可以输入状态，请求刷新的状态不是有效的操作。 在这种情况下， `RefreshView` 可以通过将其 `IsEnabled` 属性设置为来禁用 `false` 。 这会阻止用户触发请求刷新。
 
-或者，在定义 `Command` 属性时，可以指定 `ICommand` 的 `CanExecute` 委托，以启用或禁用该命令。
+或者，在定义 `Command` 属性时， `CanExecute` 可以指定的委托 `ICommand` 来启用或禁用该命令。
 
 ## <a name="related-links"></a>相关链接
 
 - [RefreshView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
-- [Xamarin 中的可绑定布局](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)
+- [可绑定布局Xamarin.Forms](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)
 - [RefreshView 拉取方向平台特定](~/xamarin-forms/platform/windows/refreshview-pulldirection.md)

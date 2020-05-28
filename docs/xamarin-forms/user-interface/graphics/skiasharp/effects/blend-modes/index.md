@@ -1,18 +1,21 @@
 ---
-title: SkiaSharp blend 模式
-description: 使用 blend 模式来定义图形对象层叠在一起时所发生的情况。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: CE1B222E-A2D0-4016-A532-EC1E59EE3D6B
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/23/2018
-ms.openlocfilehash: 829d764f03dd77c6126c2f4bced750ae570a3bc6
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b5b03779b9f0847621456b25582fb8ea04f8386d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425694"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84131698"
 ---
 # <a name="skiasharp-blend-modes"></a>SkiaSharp blend 模式
 
@@ -29,20 +32,60 @@ SkiaSharp blend 模式与 W3C[**合成和 Blend Level 1**](https://www.w3.org/TR
 枚举的29个成员 `SKBlendMode` 可以分为三个类别：
 
 | Porter-Duff | 可分离    | 不可分离 |
-| ----------- | ------------ | ------------- |
-| `Clear`     | `Modulate`   | `Hue`         |
-| `Src`       | `Screen`     | `Saturation`  |
-| `Dst`       | `Overlay`    | `Color`       |
-| `SrcOver`   | `Darken`     | `Luminosity`  |
-| `DstOver`   | `Lighten`    |               |
-| `SrcIn`     | `ColorDodge` |               |
-| `DstIn`     | `ColorBurn`  |               |
-| `SrcOut`    | `HardLight`  |               |
-| `DstOut`    | `SoftLight`  |               |
-| `SrcATop`   | `Difference` |               |
-| `DstATop`   | `Exclusion`  |               |
-| `Xor`       | `Multiply`   |               |
-| `Plus`      |              |               |
+| ---
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+------ |---标题：说明： ms. 生产： assetid： author： author： ms-chap：不是-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+------ |---标题：说明： ms. 生产： assetid： author： author： ms-chap：不是-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+------- | | `Clear`     | `Modulate`   | `Hue`         | | `Src`       | `Screen`     | `Saturation`  | | `Dst`       | `Overlay`    | `Color`       | | `SrcOver`   | `Darken`     | `Luminosity`  | | `DstOver`   | `Lighten`    |               | | `SrcIn`     | `ColorDodge` |               | | `DstIn`     | `ColorBurn`  |               | | `SrcOut`    | `HardLight`  |               | | `DstOut`    | `SoftLight`  |               | | `SrcATop`   | `Difference` |               | | `DstATop`   | `Exclusion`  |               | | `Xor`       | `Multiply`   |               | | `Plus`      |              |               |
 
 这三个类别的名称将在以下讨论中采用更多含义。 此处列出成员的顺序与枚举定义中的顺序相同 `SKBlendMode` 。 第一列中的13个枚举成员的整数值为0到12。 第二列是对应于整数13到24的枚举成员，第三列中的成员的值为25到28。
 
@@ -62,7 +105,7 @@ canvas.Clear();
 
 此方法用透明黑色像素替换画布的所有像素，等效于 `new SKColor(0, 0, 0, 0)` 或整数0x00000000。 所有像素的所有字节都初始化为零。
 
-`SKCanvas`在处理程序中获取的的绘制图面 `PaintSurface` 可能看起来具有白色背景，但这只是因为 `SKCanvasView` 本身具有透明背景，而页面具有白色背景。 你可以通过将 Xamarin 的 "窗体" 属性设置为 Xamarin，来演示此事实 `BackgroundColor` `SKCanvasView` 。窗体颜色：
+`SKCanvas`在处理程序中获取的的绘制图面 `PaintSurface` 可能看起来具有白色背景，但这只是因为 `SKCanvasView` 本身具有透明背景，而页面具有白色背景。 您可以通过将的 Xamarin.Forms `BackgroundColor` 属性设置 `SKCanvasView` 为颜色来演示这一事实 Xamarin.Forms ：
 
 ```csharp
 canvasView.BackgroundColor = Color.Red;
