@@ -151,7 +151,7 @@ catch (Exception ex)
 
 ### <a name="lowest"></a>最低
 
-| Platform | 距离（以米为单位） |
+| 平台 | 距离（以米为单位） |
 | --- | --- |
 | Android | 500 |
 | iOS | 3000 |
@@ -159,7 +159,7 @@ catch (Exception ex)
 
 ### <a name="low"></a>低
 
-| Platform | 距离（以米为单位） |
+| 平台 | 距离（以米为单位） |
 | --- | --- |
 | Android | 500 |
 | iOS | 1000 |
@@ -175,7 +175,7 @@ catch (Exception ex)
 
 ### <a name="high"></a>高
 
-| Platform | 距离（以米为单位） |
+| 平台 | 距离（以米为单位） |
 | --- | --- |
 | Android | 0 - 100 |
 | iOS | 10 |
@@ -183,7 +183,7 @@ catch (Exception ex)
 
 ### <a name="best"></a>最佳
 
-| Platform | 距离（以米为单位） |
+| 平台 | 距离（以米为单位） |
 | --- | --- |
 | Android | 0 - 100 |
 | iOS | ~0 |
