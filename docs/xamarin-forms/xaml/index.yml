@@ -10,12 +10,15 @@ metadata:
   author: davidbritch
   ms.author: dabritch
   ms.date: 12/27/2019
-  ms.openlocfilehash: 5f01b3ecf914d6c7c5c36378511c0fd7e30c952c
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  no-loc:
+  - Xamarin.Forms
+  - Xamarin.Essentials
+  ms.openlocfilehash: 6e40cb17a6ea852d5bc5e3ae31b0983773105d5a
+  ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "75679683"
+  ms.lasthandoff: 05/28/2020
+  ms.locfileid: "84138380"
 landingContent:
 - title: 入门
   linkLists:
@@ -61,6 +64,8 @@ landingContent:
       url: resource-dictionaries.md
     - text: 传递参数
       url: passing-arguments.md
+    - text: 泛型
+      url: generics.md
     - text: 字段修饰符
       url: field-modifiers.md
     - text: 在运行时加载 XAML
