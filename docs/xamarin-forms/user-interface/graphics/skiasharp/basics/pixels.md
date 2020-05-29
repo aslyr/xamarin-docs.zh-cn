@@ -1,40 +1,43 @@
 ---
-title: 像素和与设备无关的单位
-description: 本文探讨了 SkiaSharp 坐标和 Xamarin.Forms 坐标之间的差异，并演示此示例代码。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/09/2017
-ms.openlocfilehash: d6011175a735eb81f83a023f7d32fccd6feadd47
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: ''
+description: 本文探讨了 SkiaSharp 坐标和坐标之间的差异 Xamarin.Forms ，并通过示例代码对此进行了演示。
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6d01018f4393ac5562220fa1f9524bc0d9872c67
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759476"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137665"
 ---
 # <a name="pixels-and-device-independent-units"></a>像素和与设备无关的单位
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_了解 SkiaSharp 坐标和 Xamarin.Forms 坐标之间的差异_
+_探索 SkiaSharp 坐标和坐标之间的差异 Xamarin.Forms_
 
-本文探讨了 SkiaSharp 和 Xamarin.Forms 中使用的坐标系统中的差异。 你可以获取信息以两个坐标系统之间进行转换，并还绘制填充特定区域的图形：
+本文探讨了 SkiaSharp 和中使用的坐标系统之间的差异 Xamarin.Forms 。 您可以获取信息以在两个坐标系统之间进行转换，还可以绘制填充特定区域的图形：
 
-![](pixels-images/screenfillexample.png "椭圆的填充屏幕")
+![](pixels-images/screenfillexample.png "An oval that fills the screen")
 
-如果您已的编程在 Xamarin.Forms 中一段时间，可能必须了解 Xamarin.Forms 坐标和大小。 绘制两个先前的文章中的圆圈可能看起来有点小给你。
+如果已在中进行了 Xamarin.Forms 一段时间的编程，则可能会有 Xamarin.Forms 坐标和大小。 前面的两篇文章中所画的圆可能对您而言有些小。
 
-这些圆圈*是*Xamarin.Forms 大小很小。 默认情况下，SkiaSharp 绘制的像素为单位而 Xamarin.Forms 根据基础平台建立一个独立于设备的单元的坐标和大小。 (Xamarin.Forms 坐标系统的详细信息可在[第 5 章。处理大小](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter05.md)一书*使用 Xamarin.Forms 创建移动应用*。)
+与大小相比，这些圆圈*很*小 Xamarin.Forms 。 默认情况下，SkiaSharp 在 Xamarin.Forms 基础平台建立的与设备无关的单位上，以像素为单位绘制。 （有关坐标系统的详细信息， Xamarin.Forms 请参阅[第5章。处理](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter05.md)*通过 Xamarin.Forms 创建移动应用*的书籍的大小。）
 
-中的页[ **SkewSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序资格**图面大小**使用 SkiaSharp 文本输出以显示来自三个不同源的显示图面大小：
+[**SkewSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序中名为 "**表面大小**" 的页面使用 SkiaSharp 文本输出来显示三个不同源的显示图面大小：
 
-- 正常的 Xamarin.Forms [ `Width` ](xref:Xamarin.Forms.VisualElement.Width)并[ `Height` ](xref:Xamarin.Forms.VisualElement.Height)的属性`SKCanvasView`对象。
-- [ `CanvasSize` ](xref:SkiaSharp.Views.Forms.SKCanvasView.CanvasSize)属性的`SKCanvasView`对象。
-- [ `Size` ](xref:SkiaSharp.SKImageInfo.Size)的属性`SKImageInfo`值，该值与一致`Width`和`Height`在前面的两个页中使用的属性。
+- 对象的正常 Xamarin.Forms [`Width`](xref:Xamarin.Forms.VisualElement.Width) 和 [`Height`](xref:Xamarin.Forms.VisualElement.Height) 属性 `SKCanvasView` 。
+- [`CanvasSize`](xref:SkiaSharp.Views.Forms.SKCanvasView.CanvasSize)对象的属性 `SKCanvasView` 。
+- [`Size`](xref:SkiaSharp.SKImageInfo.Size)值的属性 `SKImageInfo` ，它与 `Width` `Height` 前两页中使用的和属性一致。
 
-[ `SurfaceSizePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SurfaceSizePage.cs)类演示了如何显示这些值。 构造函数保存`SKCanvasView`对象作为字段，以便它可以访问在`PaintSurface`事件处理程序：
+[`SurfaceSizePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SurfaceSizePage.cs)类显示如何显示这些值。 构造函数将 `SKCanvasView` 对象保存为字段，因此可以在事件处理程序中对其进行访问 `PaintSurface` ：
 
 ```csharp
 SKCanvasView canvasView;
@@ -49,17 +52,17 @@ public SurfaceSizePage()
 }
 ```
 
-`SKCanvas` 包括六个不同`DrawText`方法，但这[ `DrawText` ](xref:SkiaSharp.SKCanvas.DrawText(System.String,System.Single,System.Single,SkiaSharp.SKPaint))是最简单的方法：
+`SKCanvas`包含六种不同 `DrawText` 的方法，但此 [`DrawText`](xref:SkiaSharp.SKCanvas.DrawText(System.String,System.Single,System.Single,SkiaSharp.SKPaint)) 方法是最简单的方法：
 
 ```csharp
 public void DrawText (String text, Single x, Single y, SKPaint paint)
 ```
 
-指定文本字符串，X 和 Y 坐标开始，文本的位置和一个`SKPaint`对象。 X 坐标指定文本左侧的位置，但观察：Y 坐标指定文本*基线*的位置。 如果您曾经编写过手动加下划线的纸张上，在基线是在哪个字符 sit，及更低的下行字母 （例如与字母 g、 p、 q 和 y） 降的行。
+指定文本字符串、要开始文本的 X 和 Y 坐标以及 `SKPaint` 对象。 X 坐标指定文本左侧的位置，但要注意： Y 坐标指定了文本*基线*的位置。 如果您曾经在手写纸上手写，则基准是字符所在的行，并且低于下行字母（如字母 g、p、q 和 y）。
 
-`SKPaint`对象允许你指定的文本、 字体系列和文本大小的颜色。 默认情况下[ `TextSize` ](xref:SkiaSharp.SKPaint.TextSize)属性具有值为 12，这会导致在手机等高分辨率设备上的小文本。 在除最简单的应用程序，您还需要在大小上都显示的文本的一些信息。 `SKPaint`类定义[ `FontMetrics` ](xref:SkiaSharp.SKPaint.FontMetrics)属性和一些[ `MeasureText` ](xref:SkiaSharp.SKPaint.MeasureText(System.String))方法，但对于较少花哨的需求， [ `FontSpacing` ](xref:SkiaSharp.SKPaint.FontSpacing)属性提供间距连续文本行的建议的值。
+`SKPaint`对象用于指定文本的颜色、字体系列和文本大小。 默认情况下， [`TextSize`](xref:SkiaSharp.SKPaint.TextSize) 属性的值为12，这会导致高分辨率设备（如手机）上出现细小文本。 除了最简单的应用程序之外，您还需要一些有关所显示文本大小的信息。 `SKPaint`类定义了一个 [`FontMetrics`](xref:SkiaSharp.SKPaint.FontMetrics) 属性和几个 [`MeasureText`](xref:SkiaSharp.SKPaint.MeasureText(System.String)) 方法，但对于不太复杂的需求， [`FontSpacing`](xref:SkiaSharp.SKPaint.FontSpacing) 属性提供了一个建议的值，用于对连续的文本行进行间距。
 
-以下`PaintSurface`处理程序将创建`SKPaint`对象`TextSize`的 40 像素，这是所需的下行字母的底部到顶部升部的文本的垂直高度。 `FontSpacing`值的`SKPaint`对象返回比的大约 47 像素有点大。
+下面的 `PaintSurface` 处理程序将为40像素的创建一个 `SKPaint` 对象，该对象 `TextSize` 是从升部顶部到下行底部的文本的所需垂直高度。 `FontSpacing`对象返回的值 `SKPaint` 比此值小一些，约47像素。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -97,27 +100,27 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-该方法的开头 （适用于在左侧的小边距） 20 X 坐标和 Y 坐标的文本的第一行`fontSpacing`，这是更多，而不是所需的显示图面顶部显示完整的第一个文本行的高度。 每次调用后`DrawText`，由一个或两个为增量增加的 Y 坐标`fontSpacing`。
+此方法在第一行文本的 X 坐标为20（左侧为小边距）和 Y 坐标（在 `fontSpacing` 显示图面顶部显示第一行文本的最大高度所需的时间）的 X 坐标。 每次调用后 `DrawText` ，Y 坐标会按的一或两个增量递增 `fontSpacing` 。
 
-下面是运行的程序：
+下面是正在运行的程序：
 
-[![](pixels-images/surfacesize-small.png "三重的面大小页面的屏幕截图")](pixels-images/surfacesize-large.png#lightbox "面大小页面的三个屏幕截图")
+[![](pixels-images/surfacesize-small.png "Triple screenshot of the Surface Size  page")](pixels-images/surfacesize-large.png#lightbox "Triple screenshot of the Surface Size  page")
 
-正如您所看到的`CanvasSize`的属性`SKCanvasView`并`Size`属性的`SKImageInfo`值是否一致中报告的像素尺寸。 `Height`并`Width`的属性`SKCanvasView`是 Xamarin.Forms 属性，并报告以与设备无关单位平台定义的视图的大小。
+正如您所看到的， `CanvasSize` 的属性 `SKCanvasView` 和 `Size` 值的属性 `SKImageInfo` 在报告像素维度时是一致的。 的 `Height` 和 `Width` 属性 `SKCanvasView` 是 Xamarin.Forms 属性，并报告了平台定义的与设备无关的单位中的视图大小。
 
-在左侧七个 iOS 模拟器的两个像素由每个与设备无关单位和 Android 的 Nexus 5，中心中的三个像素由每个单位。 这就是为什么前面所示的简单圆圈在不同平台上具有不同的大小。
+左侧的 iOS 7 在每个与设备无关的单位上有两个像素，而中心的 Android 结点5的每个单位为三个像素。 这就是前面显示的简单圆圈在不同平台上具有不同大小的原因。
 
-如果您希望完全在设备无关的单位中工作，就可以做到设置`IgnorePixelScaling`的属性`SKCanvasView`到`true`。 但是，您可能不喜欢结果。 SkiaSharp 呈现图形的较小的设备图面，与设备无关的单位中视图的大小相等的像素大小。 （例如，SkiaSharp 会使用 360 x 512 像素的显示器表面上 Nexus 5。）它然后增加的大小，从而导致明显的位图 jaggies 该映像。
+如果希望完全使用与设备无关的单位，可以通过将 `IgnorePixelScaling` 的属性设置为来执行此操作 `SKCanvasView` `true` 。 不过，您可能不喜欢结果。 SkiaSharp 在更小的设备表面上呈现图形，并且像素大小等于与设备无关的单位中的视图大小。 （例如，SkiaSharp 将在结点5上使用 360 x 512 像素的显示图面。）然后，它会放大该图像大小，从而导致 jaggies 的位图。
 
-若要维护相同的图像分辨率，更好的解决方案是编写您自己的简单函数将两个坐标系统之间转换。
+为了保持相同的图像分辨率，更好的解决方案是编写自己的简单函数以便在两个坐标系统之间进行转换。
 
-除了`DrawCircle`方法，`SKCanvas`还定义了两个`DrawOval`绘制椭圆的方法。 由两个半径而不是单个 radius 定义一个椭圆。 这些参数称为*主要 radius*并*次要 radius*。 `DrawOval`方法绘制一个具有两个半径的椭圆平行的 X 和 Y 轴。 (如果您需要具有不与 X 和 Y 轴平行的轴绘制一个椭圆，如本文所述，可以使用旋转转换[**旋转转换**](../transforms/rotate.md)或中所述的图形路径文章[**绘制弧线的三个方法**](../curves/arcs.md))。 此重载[ `DrawOval` ](xref:SkiaSharp.SKCanvas.DrawOval(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint))方法的名称的两个半径参数`rx`和`ry`以指示它们是并行的 X 和 Y 轴：
+除了 `DrawCircle` 方法之外， `SKCanvas` 还定义了两种 `DrawOval` 方法来绘制椭圆。 椭圆是通过两个半径而不是单个半径来定义的。 这称为*主要半径*和*次 radius*。 `DrawOval`方法绘制一个椭圆，其中两个半径平行于 X 轴和 Y 轴。 （如果您需要绘制一个椭圆，其中的轴与 X 轴和 Y 轴不平行，则可以使用旋转[**转换**](../transforms/rotate.md)一文中所述的旋转转换或图形路径[**一文中所述）。**](../curves/arcs.md) 此方法的重载 [`DrawOval`](xref:SkiaSharp.SKCanvas.DrawOval(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint)) 将两个半径参数命名 `rx` `ry` 为并指示它们平行于 X 轴和 Y 轴：
 
 ```csharp
 public void DrawOval (Single cx, Single cy, Single rx, Single ry, SKPaint paint)
 ```
 
-是否可以绘制椭圆的填充的显示图面？ **椭圆填充**页说明如何。 `PaintSurface`中的事件处理程序[ **EllipseFillPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/EllipseFillPage.xaml.cs)类中减去从一半笔划宽度`xRadius`和`yRadius`值以适合整个椭圆并将其概述了中的显示图面：
+是否可以绘制填充显示图面的椭圆？ "**椭圆填充**" 页演示了如何操作。 `PaintSurface` [**EllipseFillPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/EllipseFillPage.xaml.cs)类中的事件处理程序从和值减去半个笔划宽度， `xRadius` `yRadius` 以适应显示图面中的整个椭圆及其轮廓：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -142,18 +145,18 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-运行此处：
+此处运行的是：
 
-[![](pixels-images/ellipsefill-small.png "三重的面大小页面的屏幕截图")](pixels-images/ellipsefill-large.png#lightbox "面大小页面的三个屏幕截图")
+[![](pixels-images/ellipsefill-small.png "Triple screenshot of the Surface Size  page")](pixels-images/ellipsefill-large.png#lightbox "Triple screenshot of the Surface Size  page")
 
-另[ `DrawOval` ](xref:SkiaSharp.SKCanvas.DrawOval(SkiaSharp.SKRect,SkiaSharp.SKPaint))方法有[ `SKRect` ](xref:SkiaSharp.SKRect)参数，它是根据其左上角和右下角的 X 和 Y 坐标定义一个矩形。 该椭圆填充该矩形，这表明它可以将其用于**椭圆填充**如下页：
+另一 [`DrawOval`](xref:SkiaSharp.SKCanvas.DrawOval(SkiaSharp.SKRect,SkiaSharp.SKPaint)) 种方法具有 [`SKRect`](xref:SkiaSharp.SKRect) 参数，该参数是根据其左上角和右下角的 X 和 Y 坐标定义的矩形。 该椭圆将填充该矩形，这表示可以在 "**椭圆形填充**" 页中使用它，如下所示：
 
 ```csharp
 SKRect rect = new SKRect(0, 0, info.Width, info.Height);
 canvas.DrawOval(rect, paint);
 ```
 
-但是，，将截断所有四个边椭圆的边框边缘。 您需要调整所有`SKRect`构造函数参数基于`strokeWidth`以便正确正常工作：
+但是，这四个边截断椭圆轮廓的所有边缘。 你需要根据提供的所有 `SKRect` 构造函数参数进行调整 `strokeWidth` ，使此工作正确：
 
 ```csharp
 SKRect rect = new SKRect(strokeWidth / 2,

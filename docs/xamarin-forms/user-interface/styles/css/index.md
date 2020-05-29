@@ -1,27 +1,30 @@
 ---
-title: 使用级联样式表设置 Xamarin.Forms 应用的样式 (CSS)
-description: Xamarin 支持使用级联样式表（CSS）对视觉元素进行样式设置。
-ms.prod: xamarin
-ms.assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2
-ms.technology: xamarin-forms
-ms.custom: xamu-video
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/17/2020
-ms.openlocfilehash: 182bd088ba169dad6bdbbb4315a033925964f64e
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: Xamarin.Forms使用级联样式表设置应用样式（CSS）
+description: Xamarin.Forms支持使用级联样式表（CSS）对视觉元素进行样式设置。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+ms.custom: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3e333fcdca12a6bd2f71a1ecbeeb1fd3d5f5be13
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517566"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84140135"
 ---
-# <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>使用级联样式表（CSS）设置 Xamarin 格式的 Xamarin 应用程序
+# <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>Xamarin.Forms使用级联样式表设置应用样式（CSS）
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
 
 _Xamarin 支持使用级联样式表（CSS）对视觉元素进行样式设置。_
 
-Xamarin. 窗体应用程序可使用 CSS 进行样式设计。 样式表由规则列表组成，每个规则包含一个或多个选择器和一个声明块。 声明块包含用括号括起来的声明列表，每个声明都包含一个属性、一个冒号和一个值。 当块中有多个声明时，分号将插入为分隔符。 下面的代码示例演示了一些与 Xamarin 兼容的 CSS：
+Xamarin.Forms可使用 CSS 对应用程序进行样式设计。 样式表由规则列表组成，每个规则包含一个或多个选择器和一个声明块。 声明块包含用括号括起来的声明列表，每个声明都包含一个属性、一个冒号和一个值。 当块中有多个声明时，分号将插入为分隔符。 下面的代码示例演示了一些 Xamarin.Forms 兼容的 CSS：
 
 ```css
 navigationpage {
@@ -71,10 +74,10 @@ stacklayout>image {
 }
 ```
 
-在 Xamarin 中，CSS 样式表在运行时进行分析和计算，而不是在编译时进行分析，并在使用时重新分析样式表。
+在中 Xamarin.Forms ，CSS 样式表在运行时进行分析和计算，而不是编译时，并且在使用时重新分析样式表。
 
 > [!NOTE]
-> 目前，无法通过 CSS 对 XAML 样式设置进行任何设置。 但是，可以使用 XAML 样式来补充 Xamarin. Forms 当前不支持的属性的 CSS。 有关 XAML 样式的详细信息，请参阅[使用 XAML 样式设置 Xamarin.Forms 应用的样式](~/xamarin-forms/user-interface/styles/xaml/index.md)。
+> 目前，无法通过 CSS 对 XAML 样式设置进行任何设置。 但 XAML 样式可用于对当前不支持的属性的 CSS 进行补充 Xamarin.Forms 。 有关 XAML 样式的详细信息，请[参阅 Xamarin.Forms 使用 Xaml 样式设置应用样式](~/xamarin-forms/user-interface/styles/xaml/index.md)。
 
 [MonkeyAppCSS](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)示例演示如何使用 CSS 为简单应用程序进行样式，并在以下屏幕截图中所示：
 
@@ -98,7 +101,7 @@ stacklayout>image {
 
 ### <a name="xaml"></a>XAML
 
-在将样式表添加到之前，可以使用[`StyleSheet`](xref:Xamarin.Forms.StyleSheets.StyleSheet)类对其进行加载和[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)分析：
+在将样式表添加到之前，可以使用类对其进行加载和分析 [`StyleSheet`](xref:Xamarin.Forms.StyleSheets.StyleSheet) [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ：
 
 ```xaml
 <Application ...>
@@ -108,12 +111,12 @@ stacklayout>image {
 </Application>
 ```
 
-[`StyleSheet.Source`](xref:Xamarin.Forms.Xaml.StyleSheetExtension.Source)属性将样式表指定为相对于封闭 XAML 文件位置的 URI，如果 uri 以开头，则为相对于项目根`/`。
+[`StyleSheet.Source`](xref:Xamarin.Forms.Xaml.StyleSheetExtension.Source)属性将样式表指定为相对于封闭 XAML 文件位置的 URI，如果 uri 以开头，则为相对于项目根 `/` 。
 
 > [!WARNING]
 > 如果 CSS 文件的生成操作未设置为**EmbeddedResource**，则该文件将无法加载。
 
-此外，还可以使用[`StyleSheet`](xref:Xamarin.Forms.StyleSheets.StyleSheet)类加载和分析样式表，然后再将其添加到[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) `CDATA`部分：
+此外，还可以使用类加载和分析样式表， [`StyleSheet`](xref:Xamarin.Forms.StyleSheets.StyleSheet) 然后再将其添加到 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) `CDATA` 部分：
 
 ```xaml
 <ContentPage ...>
@@ -134,7 +137,7 @@ stacklayout>image {
 
 ### <a name="c"></a>C\#
 
-在 c # 中，可以从加载样式表， `StringReader`并将其添加[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)到中：
+在 c # 中，可以从加载样式表， `StringReader` 并将其添加到中 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ：
 
 ```csharp
 public partial class MyPage : ContentPage
@@ -151,7 +154,7 @@ public partial class MyPage : ContentPage
 }
 ```
 
-`StyleSheet.FromReader`方法的参数是已读取样式`TextReader`表的。
+方法的参数 `StyleSheet.FromReader` 是 `TextReader` 已读取样式表的。
 
 ## <a name="selecting-elements-and-applying-properties"></a>选择元素和应用属性
 
@@ -164,7 +167,7 @@ CSS 使用属性对选定元素进行样式。 每个属性都具有一组可能
 
 ### <a name="selecting-elements-by-type"></a>按类型选择元素
 
-可视化树中的元素可以由类型选择，不区分`element`大小写选择器：
+可视化树中的元素可以由类型选择，不区分大小写 `element` 选择器：
 
 ```css
 stacklayout {
@@ -172,14 +175,14 @@ stacklayout {
 }
 ```
 
-此选择器标识[`StackLayout`](xref:Xamarin.Forms.StackLayout)页面上使用样式表的任何元素，并将其边距设置为统一的宽度（20）。
+此选择器标识 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 页面上使用样式表的任何元素，并将其边距设置为统一的宽度（20）。
 
 > [!NOTE]
 > `element`选择器不标识指定类型的子类。
 
 ### <a name="selecting-elements-by-base-class"></a>按基类选择元素
 
-使用不区分`^base`大小写选择器的基类可以选择可视化树中的元素：
+使用不区分大小写选择器的基类可以选择可视化树中的元素 `^base` ：
 
 ```css
 ^contentpage {
@@ -187,14 +190,14 @@ stacklayout {
 }
 ```
 
-此选择器标识[`ContentPage`](xref:Xamarin.Forms.ContentPage)使用样式表的任何元素，并将其背景色设置`lightgray`为。
+此选择器标识 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 使用样式表的任何元素，并将其背景色设置为 `lightgray` 。
 
 > [!NOTE]
-> `^base`选择器特定于 Xamarin，不属于 CSS 规范。
+> `^base`选择器特定于 Xamarin.Forms ，而不是 CSS 规范的一部分。
 
 ### <a name="selecting-an-element-by-name"></a>按名称选择元素
 
-可以通过区分大小写`#id`选择器选择可视化树中的单个元素：
+可以通过区分大小写选择器选择可视化树中的单个元素 `#id` ：
 
 ```css
 #listView {
@@ -202,7 +205,7 @@ stacklayout {
 }
 ```
 
-此选择器标识其[`StyleId`](xref:Xamarin.Forms.Element.StyleId)属性设置为`listView`的元素。 但是，如果未`StyleId`设置该属性，则选择器将回退到使用元素`x:Name`的。 因此，在下面的 XAML 示例中， `#listView`选择器将标识[`ListView`](xref:Xamarin.Forms.ListView)其`x:Name`特性设置为`listView`的，并将其背景色设置为`lightgray`。
+此选择器标识其 [`StyleId`](xref:Xamarin.Forms.Element.StyleId) 属性设置为的元素 `listView` 。 但是，如果 `StyleId` 未设置该属性，则选择器将回退到使用 `x:Name` 元素的。 因此，在下面的 XAML 示例中， `#listView` 选择器将标识 [`ListView`](xref:Xamarin.Forms.ListView) 其 `x:Name` 特性设置为的 `listView` ，并将其背景色设置为 `lightgray` 。
 
 ```xaml
 <ContentPage ...>
@@ -219,7 +222,7 @@ stacklayout {
 
 ### <a name="selecting-elements-with-a-specific-class-attribute"></a>选择具有特定类特性的元素
 
-可以使用区分大小写`.class`选择器选择具有特定类属性的元素：
+可以使用区分大小写选择器选择具有特定类属性的元素 `.class` ：
 
 ```css
 .detailPageTitle {
@@ -234,7 +237,7 @@ stacklayout {
 }
 ```
 
-可以通过将元素的[`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass)属性设置为 css 类名称，将 CSS 类赋给 XAML 元素。 因此， `.detailPageTitle`在下面的 XAML 示例中，将类定义的样式分配给第一个[`Label`](xref:Xamarin.Forms.Label)，同时将`.detailPageSubtitle`类定义的样式分配给第二个。 `Label`
+可以通过将 [`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass) 元素的属性设置为 css 类名称，将 CSS 类赋给 XAML 元素。 因此，在下面的 XAML 示例中，将类定义的样式 `.detailPageTitle` 分配给第一个 [`Label`](xref:Xamarin.Forms.Label) ，同时将类定义的样式 `.detailPageSubtitle` 分配给第二个 `Label` 。
 
 ```xaml
 <ContentPage ...>
@@ -253,7 +256,7 @@ stacklayout {
 
 ### <a name="selecting-child-elements"></a>选择子元素
 
-可视化树中的子元素可以用不区分`element element`大小写的选择器进行选择：
+可视化树中的子元素可以用不区分大小写的 `element element` 选择器进行选择：
 
 ```css
 listview image {
@@ -262,7 +265,7 @@ listview image {
 }
 ```
 
-此选择器标识[`Image`](xref:Xamarin.Forms.Image)作为[`ListView`](xref:Xamarin.Forms.ListView)元素的子元素的所有元素，并将其高度和宽度设置为60。 因此，在下面的 XAML 示例中， `listview image`选择器将标识[`Image`](xref:Xamarin.Forms.Image)为的子[`ListView`](xref:Xamarin.Forms.ListView)，并将其高度和宽度设置为60。
+此选择器标识 [`Image`](xref:Xamarin.Forms.Image) 作为元素的子元素的所有元素 [`ListView`](xref:Xamarin.Forms.ListView) ，并将其高度和宽度设置为60。 因此，在下面的 XAML 示例中， `listview image` 选择器将标识为的 [`Image`](xref:Xamarin.Forms.Image) 子 [`ListView`](xref:Xamarin.Forms.ListView) ，并将其高度和宽度设置为60。
 
 ```xaml
 <ContentPage ...>
@@ -292,7 +295,7 @@ listview image {
 
 ### <a name="selecting-direct-child-elements"></a>选择直接子元素
 
-可以在可视化树中选择直接子元素，不区分`element>element`大小写选择器：
+可以在可视化树中选择直接子元素，不区分大小写 `element>element` 选择器：
 
 ```css
 stacklayout>image {
@@ -301,7 +304,7 @@ stacklayout>image {
 }
 ```
 
-此选择器标识[`Image`](xref:Xamarin.Forms.Image)作为[`StackLayout`](xref:Xamarin.Forms.StackLayout)元素的直接子元素的任何元素，并将其高度和宽度设置为200。 因此，在下面的 XAML 示例中， `stacklayout>image`选择器将标识[`Image`](xref:Xamarin.Forms.Image)为的直接子项[`StackLayout`](xref:Xamarin.Forms.StackLayout)，并将其高度和宽度设置为200。
+此选择器标识 [`Image`](xref:Xamarin.Forms.Image) 作为元素的直接子元素的任何元素 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ，并将其高度和宽度设置为200。 因此，在下面的 XAML 示例中， `stacklayout>image` 选择器将标识为的 [`Image`](xref:Xamarin.Forms.Image) 直接子项 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ，并将其高度和宽度设置为200。
 
 ```xaml
 <ContentPage ...>
@@ -323,25 +326,25 @@ stacklayout>image {
 
 ## <a name="selector-reference"></a>选择器引用
 
-Xamarin 支持以下 CSS 选择器。 Forms：
+支持以下 CSS 选择器 Xamarin.Forms ：
 
 |选择器|示例|说明|
 |---|---|---|
-|`.class`|`.header`|选择属性包含 "标`StyleClass`头" 的所有元素。 请注意，此选择器区分大小写。|
-|`#id`|`#email`|选择`StyleId`设置为`email`的所有元素。 如果`StyleId`未设置，则回退到`x:Name`。 使用 XAML 时， `x:Name`优先于`StyleId`。 请注意，此选择器区分大小写。|
+|`.class`|`.header`|选择 `StyleClass` 属性包含 "标头" 的所有元素。 请注意，此选择器区分大小写。|
+|`#id`|`#email`|选择 `StyleId` 设置为的所有元素 `email` 。 如果 `StyleId` 未设置，则回退到 `x:Name` 。 使用 XAML 时， `x:Name` 优先于 `StyleId` 。 请注意，此选择器区分大小写。|
 |`*`|`*`|选择所有元素。|
-|`element`|`label`|选择类型`Label`的所有元素，但不选择子类。 请注意，此选择器不区分大小写。|
-|`^base`|`^contentpage`|选择`ContentPage`作为基类的所有元素，包括`ContentPage`自身。 请注意，此选择器不区分大小写，并且不是 CSS 规范的组成部分。|
-|`element,element`|`label,button`|选择所有`Button`元素和所有`Label`元素。 请注意，此选择器不区分大小写。|
-|`element element`|`stacklayout label`|选择中`Label`的`StackLayout`所有元素。 请注意，此选择器不区分大小写。|
-|`element>element`|`stacklayout>label`|选择作为`Label`直接父`StackLayout`元素的所有元素。 请注意，此选择器不区分大小写。|
-|`element+element`|`label+entry`|直接选择`Entry`后面的`Label`所有元素。 请注意，此选择器不区分大小写。|
-|`element~element`|`label~entry`|选择前面`Entry`有一个`Label`的所有元素。 请注意，此选择器不区分大小写。|
+|`element`|`label`|选择类型的所有元素 `Label` ，但不选择子类。 请注意，此选择器不区分大小写。|
+|`^base`|`^contentpage`|选择作为基类的所有元素 `ContentPage` ，包括 `ContentPage` 自身。 请注意，此选择器不区分大小写，并且不是 CSS 规范的组成部分。|
+|`element,element`|`label,button`|选择所有 `Button` 元素和所有 `Label` 元素。 请注意，此选择器不区分大小写。|
+|`element element`|`stacklayout label`|选择 `Label` 中的所有元素 `StackLayout` 。 请注意，此选择器不区分大小写。|
+|`element>element`|`stacklayout>label`|选择 `Label` 作为直接父元素的所有元素 `StackLayout` 。 请注意，此选择器不区分大小写。|
+|`element+element`|`label+entry`|直接选择 `Entry` 后面的所有元素 `Label` 。 请注意，此选择器不区分大小写。|
+|`element~element`|`label~entry`|选择 `Entry` 前面有一个的所有元素 `Label` 。 请注意，此选择器不区分大小写。|
 
 具有匹配选择器的样式按定义顺序连续应用。 在特定项上定义的样式始终是最后应用的。
 
 > [!TIP]
-> 选择器可以组合而不受限制， `StackLayout>ContentView>label.email`例如。
+> 选择器可以组合而不受限制，例如 `StackLayout>ContentView>label.email` 。
 
 当前不支持以下选择器：
 
@@ -354,57 +357,57 @@ Xamarin 支持以下 CSS 选择器。 Forms：
 
 ## <a name="property-reference"></a>属性参考
 
-Xamarin 支持以下 CSS 属性。窗体（在 "**值**" 列中，类型为 "_斜体_"，字符串文本`gray`为）：
+支持以下 CSS 属性 Xamarin.Forms （在 "**值**" 列中，类型为 "_斜体_"，字符串文本为 `gray` ）：
 
 |properties|适用于|值|示例|
 |---|---|---|---|
 |`align-content`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial` |`align-content: space-between;`|
 |`align-items`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial` |`align-items: flex-start;`|
 |`align-self`|`VisualElement`| `auto` \| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial`|`align-self: flex-end;`|
-|`background-color`|`VisualElement`|_颜色_ \|`initial` |`background-color: springgreen;`|
-|`background-image`|`Page`|_字符串_ \|`initial` |`background-image: bg.png;`|
-|`border-color`|`Button`, `Frame`, `ImageButton`|_颜色_ \|`initial`|`border-color: #9acd32;`|
-|`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_double_ \| `initial` |`border-radius: 10;`|
-|`border-width`|`Button`, `ImageButton`|_double_ \| `initial` |`border-width: .5;`|
-|`color`|`ActivityIndicator`, `BoxView`, `Button`, `CheckBox`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `ProgressBar`, `SearchBar`, `Switch`, `TimePicker`|_颜色_ \|`initial` |`color: rgba(255, 0, 0, 0.3);`|
-|`column-gap`|`Grid`|_double_ \| `initial`|`column-gap: 9;`|
+|`background-color`|`VisualElement`|_color_ \| `initial` |`background-color: springgreen;`|
+|`background-image`|`Page`|_字符串_ \| `initial` |`background-image: bg.png;`|
+|`border-color`|`Button`, `Frame`, `ImageButton`|_color_ \| `initial`|`border-color: #9acd32;`|
+|`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_Double_ \| `initial` |`border-radius: 10;`|
+|`border-width`|`Button`, `ImageButton`|_Double_ \| `initial` |`border-width: .5;`|
+|`color`|`ActivityIndicator`, `BoxView`, `Button`, `CheckBox`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `ProgressBar`, `SearchBar`, `Switch`, `TimePicker`|_color_ \| `initial` |`color: rgba(255, 0, 0, 0.3);`|
+|`column-gap`|`Grid`|_Double_ \| `initial`|`column-gap: 9;`|
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|
 |`flex-direction`|`FlexLayout`| `column` \| `columnreverse` \| `row` \| `rowreverse` \| `row-reverse` \| `column-reverse` \| `initial`|`flex-direction: column-reverse;`|
-|`flex-basis`|`VisualElement`|_float_ \| float `auto` 。 \| `initial` 此外，可使用`%`符号指定范围介于0% 到100% 之间的百分比。|`flex-basis: 25%;`|
-|`flex-grow`|`VisualElement`|_FLOAT_ \| `initial`|`flex-grow: 1.5;`|
-|`flex-shrink`|`VisualElement`|_FLOAT_ \| `initial`|`flex-shrink: 1;`|
+|`flex-basis`|`VisualElement`|_float_ \|`auto` \| `initial`. 此外，可使用符号指定范围介于0% 到100% 之间的百分比 `%` 。|`flex-basis: 25%;`|
+|`flex-grow`|`VisualElement`|_float_ \|`initial`|`flex-grow: 1.5;`|
+|`flex-shrink`|`VisualElement`|_float_ \|`initial`|`flex-shrink: 1;`|
 |`flex-wrap`|`VisualElement`| `nowrap` \| `wrap` \| `reverse` \| `wrap-reverse` \| `initial`|`flex-wrap: wrap-reverse;`|
-|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_字符串_ \|`initial` |`font-family: Consolas;`|
-|`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_双_\| _namedsize_ namedsize \|  `initial` |`font-size: 12;`|
+|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_字符串_ \| `initial` |`font-family: Consolas;`|
+|`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_double_ \|_namedsize_ \|  `initial` |`font-size: 12;`|
 |`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
-|`height`|`VisualElement`|_double_ \| `initial` |`min-height: 250;`|
+|`height`|`VisualElement`|_Double_ \| `initial` |`min-height: 250;`|
 |`justify-content`|`FlexLayout`| `start` \| `center` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial`|`justify-content: flex-end;`|
-|`letter-spacing`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `SearchHandler`, `Span`, `TimePicker`|_double_ \| `initial`|`letter-spacing: 2.5;`|
-|`line-height`|`Label`, `Span`|_double_ \| `initial` |`line-height: 1.8;`|
+|`letter-spacing`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `SearchHandler`, `Span`, `TimePicker`|_Double_ \| `initial`|`letter-spacing: 2.5;`|
+|`line-height`|`Label`, `Span`|_Double_ \| `initial` |`line-height: 1.8;`|
 |`margin`|`View`|_粗细_ \|`initial` |`margin: 6 12;`|
 |`margin-left`|`View`|_粗细_ \|`initial` |`margin-left: 3;`|
 |`margin-top`|`View`|_粗细_ \|`initial` |`margin-top: 2;`|
 |`margin-right`|`View`|_粗细_ \|`initial` |`margin-right: 1;`|
 |`margin-bottom`|`View`|_粗细_ \|`initial` |`margin-bottom: 6;`|
 |`max-lines`|`Label`|_int_ \| `initial`|`max-lines: 2;`|
-|`min-height`|`VisualElement`|_double_ \| `initial` |`min-height: 50;`|
-|`min-width`|`VisualElement`|_double_ \| `initial` |`min-width: 112;`|
-|`opacity`|`VisualElement`|_double_ \| `initial` |`opacity: .3;`|
+|`min-height`|`VisualElement`|_Double_ \| `initial` |`min-height: 50;`|
+|`min-width`|`VisualElement`|_Double_ \| `initial` |`min-width: 112;`|
+|`opacity`|`VisualElement`|_Double_ \| `initial` |`opacity: .3;`|
 |`order`|`VisualElement`|_int_ \| `initial`|`order: -1;`|
 |`padding`|`Button`, `ImageButton`, `Layout`, `Page`|_粗细_ \|`initial` |`padding: 6 12 12;`|
-|`padding-left`|`Button`, `ImageButton`, `Layout`, `Page`|_double_ \| `initial`|`padding-left: 3;`|
-|`padding-top`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \| `initial` |`padding-top: 4;`|
-|`padding-right`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \| `initial` |`padding-right: 2;`|
-|`padding-bottom`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \| `initial` |`padding-bottom: 6;`|
+|`padding-left`|`Button`, `ImageButton`, `Layout`, `Page`|_Double_ \| `initial`|`padding-left: 3;`|
+|`padding-top`|`Button`, `ImageButton`, `Layout`, `Page`| _Double_ \| `initial` |`padding-top: 4;`|
+|`padding-right`|`Button`, `ImageButton`, `Layout`, `Page`| _Double_ \| `initial` |`padding-right: 2;`|
+|`padding-bottom`|`Button`, `ImageButton`, `Layout`, `Page`| _Double_ \| `initial` |`padding-bottom: 6;`|
 |`position`|`FlexLayout`| `relative` \| `absolute` \| `initial`|`position: absolute;`|
-|`row-gap`|`Grid`| _double_ \| `initial`|`row-gap: 12;`|
-|`text-align`| `Entry`, `EntryCell`, `Label`, `SearchBar`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`. `left`在`right`从右到左的环境中，应该避免。| `text-align: right;`|
+|`row-gap`|`Grid`| _Double_ \| `initial`|`row-gap: 12;`|
+|`text-align`| `Entry`, `EntryCell`, `Label`, `SearchBar`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`. `left``right`在从右到左的环境中，应该避免。| `text-align: right;`|
 |`text-decoration`|`Label`, `Span`|`none` \| `underline` \| `strikethrough` \| `line-through` \| `initial`|`text-decoration: underline, line-through;`|
 |`transform`|`VisualElement`| `none`, `rotate`, `rotateX`, `rotateY`, `scale`, `scaleX`, `scaleY`, `translate`, `translateX`, `translateY`, `initial` |`transform: rotate(180), scaleX(2.5);`|
 |`transform-origin`|`VisualElement`| _double_、 _double_ \|`initial` |`transform-origin: 7.5, 12.5;`|
 |`vertical-align`|`Label`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`|`vertical-align: bottom;`|
 |`visibility`|`VisualElement`|`true` \| `visible` \| `false` \| `hidden` \| `collapse` \| `initial`|`visibility: hidden;`|
-|`width`|`VisualElement`|_double_ \| `initial`|`min-width: 320;`|
+|`width`|`VisualElement`|_Double_ \| `initial`|`min-width: 320;`|
 
 > [!NOTE]
 > `initial`是所有属性的有效值。 它清除了从另一种样式设置的值（重置为默认值）。
@@ -413,65 +416,65 @@ Xamarin 支持以下 CSS 属性。窗体（在 "**值**" 列中，类型为 "_�
 
 - `all: initial`.
 - 布局属性（框或网格）。
-- 速记属性，如`font`、和。 `border`
+- 速记属性，如 `font` 、和 `border` 。
 
-此外，没有任何`inherit`值，因此不支持继承。 因此，您不能这样做，例如`font-size` ，在布局上设置属性，并[`Label`](xref:Xamarin.Forms.Label)期望布局中的所有实例继承值。 一个例外是`direction`属性，该属性的默认值为`inherit`。
+此外，没有任何值， `inherit` 因此不支持继承。 因此，您不能这样做，例如，在 `font-size` 布局上设置属性，并 [`Label`](xref:Xamarin.Forms.Label) 期望布局中的所有实例继承值。 一个例外是 `direction` 属性，该属性的默认值为 `inherit` 。
 
-目标`Span`元素有一个已知问题，即元素和名称（使用`#`符号）阻止范围成为 CSS 样式的目标。 `Span`元素派生自`GestureElement`，它不具有`StyleClass`属性，因此不支持 CSS 类定位。 有关详细信息，请参阅[无法将 CSS 样式应用于跨控件](https://github.com/xamarin/Xamarin.Forms/issues/5979)。
+目标 `Span` 元素有一个已知问题，即元素和名称（使用符号）阻止范围成为 CSS 样式的目标 `#` 。 `Span`元素派生自 `GestureElement` ，它不具有 `StyleClass` 属性，因此不支持 CSS 类定位。 有关详细信息，请参阅[无法将 CSS 样式应用于跨控件](https://github.com/xamarin/Xamarin.Forms/issues/5979)。
 
-### <a name="xamarinforms-specific-properties"></a>Xamarin 特定于窗体的属性
+### <a name="xamarinforms-specific-properties"></a>Xamarin.Forms特定属性
 
-以下 Xamarin. 还支持特定于窗体的 CSS 属性（在 "**值**" 列中，类型为_斜体_，而`gray`字符串文字为）：
+Xamarin.Forms还支持以下特定 CSS 属性（在 "**值**" 列中，类型为 "_斜体_"，字符串文本为 `gray` ）：
 
 |properties|适用于|值|示例|
 |---|---|---|---|
-|`-xf-bar-background-color`|`NavigationPage`, `TabbedPage`|_颜色_ \|`initial` |`-xf-bar-background-color: teal;`|
-|`-xf-bar-text-color`|`NavigationPage`, `TabbedPage`|_颜色_ \|`initial` |`-xf-bar-text-color: gray`|
+|`-xf-bar-background-color`|`NavigationPage`, `TabbedPage`|_color_ \| `initial` |`-xf-bar-background-color: teal;`|
+|`-xf-bar-text-color`|`NavigationPage`, `TabbedPage`|_color_ \| `initial` |`-xf-bar-text-color: gray`|
 |`-xf-horizontal-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-horizontal-scroll-bar-visibility: never;`|
 |`-xf-max-length`|`Entry`, `Editor`, `SearchBar`|_int_ \| `initial` |`-xf-max-length: 20;`|
-|`-xf-max-track-color`|`Slider`|_颜色_ \|`initial` |`-xf-max-track-color: red;`|
-|`-xf-min-track-color`|`Slider`|_颜色_ \|`initial` |`-xf-min-track-color: yellow;`|
-|`-xf-orientation`|`ScrollView`, `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`. `both`仅在上受支持`ScrollView`。 |`-xf-orientation: horizontal;`|
+|`-xf-max-track-color`|`Slider`|_color_ \| `initial` |`-xf-max-track-color: red;`|
+|`-xf-min-track-color`|`Slider`|_color_ \| `initial` |`-xf-min-track-color: yellow;`|
+|`-xf-orientation`|`ScrollView`, `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`. `both`仅在上受支持 `ScrollView` 。 |`-xf-orientation: horizontal;`|
 |`-xf-placeholder`|`Entry`, `Editor`, `SearchBar`|_带引号文本_ \|`initial` |`-xf-placeholder: Enter name;`|
-|`-xf-placeholder-color`|`Entry`, `Editor`, `SearchBar`|_颜色_ \|`initial` |`-xf-placeholder-color: green;`|
-|`-xf-spacing`|`StackLayout`|_double_ \| `initial` |`-xf-spacing: 8;`|
-|`-xf-thumb-color`|`Slider`, `Switch`|_颜色_ \|`initial` |`-xf-thumb-color: limegreen;`|
+|`-xf-placeholder-color`|`Entry`, `Editor`, `SearchBar`|_color_ \| `initial` |`-xf-placeholder-color: green;`|
+|`-xf-spacing`|`StackLayout`|_Double_ \| `initial` |`-xf-spacing: 8;`|
+|`-xf-thumb-color`|`Slider`, `Switch`|_color_ \| `initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-vertical-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-vertical-scroll-bar-visibility: always;`|
 |`-xf-vertical-text-alignment`|`Label`| `start` \| `center` \| `end` \| `initial`|`-xf-vertical-text-alignment: end;`|
-|`-xf-visual`|`VisualElement`|_字符串_ \|`initial` |`-xf-visual: material;`|
+|`-xf-visual`|`VisualElement`|_字符串_ \| `initial` |`-xf-visual: material;`|
 
-### <a name="xamarinforms-shell-specific-properties"></a>Xamarin.Forms Shell 特定属性
+### <a name="xamarinforms-shell-specific-properties"></a>Xamarin.FormsShell 特定属性
 
-以下 Xamarin. 还支持 Forms Shell 特定 CSS 属性（在 "**值**" 列中，类型为_斜体_，而字符串文字为`gray`）：
+Xamarin.Forms还支持以下 Shell 特定 CSS 属性（在 "**值**" 列中，类型为 "_斜体_"，字符串文本为 `gray` ）：
 
 |properties|适用于|值|示例|
 |---|---|---|---|
-|`-xf-flyout-background`|`Shell`|_颜色_ \|`initial` |`-xf-flyout-background: red;`|
-|`-xf-shell-background`|`Element`|_颜色_ \|`initial` |`-xf-shell-background: green;`|
-|`-xf-shell-disabled`|`Element`|_颜色_ \|`initial` |`-xf-shell-disabled: blue;`|
-|`-xf-shell-foreground`|`Element`|_颜色_ \|`initial` |`-xf-shell-foreground: yellow;`|
-|`-xf-shell-tabbar-background`|`Element`|_颜色_ \|`initial` |`-xf-shell-tabbar-background: white;`|
-|`-xf-shell-tabbar-disabled`|`Element`|_颜色_ \|`initial` |`-xf-shell-tabbar-disabled: black;`|
-|`-xf-shell-tabbar-foreground`|`Element`|_颜色_ \|`initial` |`-xf-shell-tabbar-foreground: gray;`|
-|`-xf-shell-tabbar-title`|`Element`|_颜色_ \|`initial` |`-xf-shell-tabbar-title: lightgray;`|
-|`-xf-shell-tabbar-unselected`|`Element`|_颜色_ \|`initial` |`-xf-shell-tabbar-unselected: cyan;`|
-|`-xf-shell-title`|`Element`|_颜色_ \|`initial` |`-xf-shell-title: teal;`|
-|`-xf-shell-unselected`|`Element`|_颜色_ \|`initial` |`-xf-shell-unselected: limegreen;`|
+|`-xf-flyout-background`|`Shell`|_color_ \| `initial` |`-xf-flyout-background: red;`|
+|`-xf-shell-background`|`Element`|_color_ \| `initial` |`-xf-shell-background: green;`|
+|`-xf-shell-disabled`|`Element`|_color_ \| `initial` |`-xf-shell-disabled: blue;`|
+|`-xf-shell-foreground`|`Element`|_color_ \| `initial` |`-xf-shell-foreground: yellow;`|
+|`-xf-shell-tabbar-background`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-background: white;`|
+|`-xf-shell-tabbar-disabled`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-disabled: black;`|
+|`-xf-shell-tabbar-foreground`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-foreground: gray;`|
+|`-xf-shell-tabbar-title`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-title: lightgray;`|
+|`-xf-shell-tabbar-unselected`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-unselected: cyan;`|
+|`-xf-shell-title`|`Element`|_color_ \| `initial` |`-xf-shell-title: teal;`|
+|`-xf-shell-unselected`|`Element`|_color_ \| `initial` |`-xf-shell-unselected: limegreen;`|
 
 ### <a name="color"></a>颜色
 
-支持以下`color`值：
+支持以下 `color` 值：
 
-- `X11`[颜色](https://en.wikipedia.org/wiki/X11_color_names)与 CSS 颜色、UWP 预定义颜色和 Xamarin 颜色匹配。 请注意，这些颜色值不区分大小写。
-- 十六进制颜色： `#rgb`、 `#argb`、 `#rrggbb`、`#aarrggbb`
-- rgb 颜色： `rgb(255,0,0)`、 `rgb(100%,0%,0%)`。 值介于0-255 到 0%-100% 之间。
-- rgba 颜色： `rgba(255, 0, 0, 0.8)`、 `rgba(100%, 0%, 0%, 0.8)`。 不透明度值介于 0.0-1.0 之间。
-- hsl 颜色： `hsl(120, 100%, 50%)`。 H 值的范围为0-360，而 s 和 l 介于 0%-100% 范围内。
-- hsla 颜色： `hsla(120, 100%, 50%, .8)`。 不透明度值介于 0.0-1.0 之间。
+- `X11`[颜色](https://en.wikipedia.org/wiki/X11_color_names)与 CSS 颜色、UWP 预定义颜色和 Xamarin.Forms 颜色匹配。 请注意，这些颜色值不区分大小写。
+- 十六进制颜色： `#rgb` 、 `#argb` 、 `#rrggbb` 、`#aarrggbb`
+- rgb 颜色： `rgb(255,0,0)` 、 `rgb(100%,0%,0%)` 。 值介于0-255 到 0%-100% 之间。
+- rgba 颜色： `rgba(255, 0, 0, 0.8)` 、 `rgba(100%, 0%, 0%, 0.8)` 。 不透明度值介于 0.0-1.0 之间。
+- hsl 颜色： `hsl(120, 100%, 50%)` 。 H 值的范围为0-360，而 s 和 l 介于 0%-100% 范围内。
+- hsla 颜色： `hsla(120, 100%, 50%, .8)` 。 不透明度值介于 0.0-1.0 之间。
 
 ### <a name="thickness"></a>Thickness
 
-支持一个、两个、三个`thickness`或四个值，每个值由空格分隔：
+支持一个、两个、三个或四个 `thickness` 值，每个值由空格分隔：
 
 - 单个值指示均匀宽度。
 - 两个值指示垂直和水平宽度。
@@ -479,11 +482,11 @@ Xamarin 支持以下 CSS 属性。窗体（在 "**值**" 列中，类型为 "_�
 - 四个值指示 "上"、"右"、"下" 和 "左" 粗细。
 
 > [!NOTE]
-> CSS `thickness`值与 XAML [`Thickness`](xref:Xamarin.Forms.Thickness)值不同。 例如，在 XAML 中，两个值`Thickness`指示水平和垂直粗细，而四个值`Thickness`指示左、上、右、下宽度。 此外，XAML `Thickness`值用逗号分隔。
+> CSS `thickness` 值与 XAML [`Thickness`](xref:Xamarin.Forms.Thickness) 值不同。 例如，在 XAML 中，两个值 `Thickness` 指示水平和垂直粗细，而四个值 `Thickness` 指示左、上、右、下宽度。 此外，XAML `Thickness` 值用逗号分隔。
 
 ### <a name="namedsize"></a>NamedSize
 
-支持以下不区分`namedsize`大小写的值：
+支持以下不区分大小写的 `namedsize` 值：
 
 - `default`
 - `micro`
@@ -491,16 +494,16 @@ Xamarin 支持以下 CSS 属性。窗体（在 "**值**" 列中，类型为 "_�
 - `medium`
 - `large`
 
-每个`namedsize`值的确切含义取决于平台和视图相关。
+每个值的确切含义 `namedsize` 取决于平台和视图相关。
 
-## <a name="css-in-xamarinforms-with-xamarinuniversity"></a>采用 Xamarin 的 Xamarin 形式的 CSS。
+## <a name="css-in-xamarinforms-with-xamarinuniversity"></a>Xamarin.Forms用 Xamarin 大学提供的 CSS
 
 > [!VIDEO https://youtube.com/embed/va-Vb7vtan8]
 
-**Xamarin 3.0 CSS 视频**
+**Xamarin.Forms3.0 CSS 视频**
 
 ## <a name="related-links"></a>相关链接
 
 - [MonkeyAppCSS （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
 - [资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [使用 XAML 样式设置 Xamarin.Forms 应用的样式](~/xamarin-forms/user-interface/styles/xaml/index.md)
+- [Xamarin.Forms使用 XAML 样式设置应用样式](~/xamarin-forms/user-interface/styles/xaml/index.md)

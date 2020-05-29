@@ -1,24 +1,27 @@
 ---
-title: 为 Xamarin.Forms 应用程序设置主题
-description: Xamarin。窗体应用程序通过为每个主题创建 ResourceDictionary 并使用 DynamicResource 标记扩展加载资源来支持主题。
-ms.prod: xamarin
-ms.assetId: BF92AEDD-EF23-4D08-A972-B089066E75F9
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/22/2020
-ms.openlocfilehash: 5988437b40ac875b8b59f9af0f25d4b5c60ded97
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: 主题 Xamarin.Forms 应用程序
+description: Xamarin.Forms应用程序通过为每个主题创建 ResourceDictionary 并使用 DynamicResource 标记扩展加载资源来支持主题。
+ms.prod: ''
+ms.assetId: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 80660ae7d3af0fe5948a5ae4ffdb35d2f9c2a40f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517128"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136131"
 ---
-# <a name="theming-a-xamarinforms-application"></a>主题： Xamarin 应用程序
+# <a name="theming-a-xamarinforms-application"></a>主题 Xamarin.Forms 应用程序
 
 ## <a name="theme-an-application"></a>[主题应用程序](theming.md)
 
-可以通过[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)为每个主题创建，然后使用`DynamicResource`标记扩展加载资源，在 Xamarin 应用程序中实现主题。
+可以 Xamarin.Forms 通过 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 为每个主题创建，然后使用标记扩展加载资源，在应用程序中实现主题 `DynamicResource` 。
 
 ## <a name="respond-to-system-theme-changes"></a>[响应系统主题更改](system-theme-changes.md)
 

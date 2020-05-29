@@ -1,20 +1,23 @@
 ---
-title: Xamarin。可绑定窗体属性
-description: 本文介绍了可绑定的属性，并演示了如何创建和使用它们。
-ms.prod: xamarin
-ms.assetid: 1EE869D8-6FE1-45CA-A0AD-26EC7D032AD7
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/16/2020
-ms.openlocfilehash: 4151ac6f8cd9d860251ce1f27c7b342e0caa465c
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: Xamarin.Forms可绑定属性
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 33b3763075b64ea8af615465825313a527d20db2
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425779"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138172"
 ---
-# <a name="xamarinforms-bindable-properties"></a>Xamarin。可绑定窗体属性
+# <a name="xamarinforms-bindable-properties"></a>Xamarin.Forms可绑定属性
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 
@@ -28,7 +31,7 @@ ms.locfileid: "83425779"
 - 验证属性的值。
 - 监视属性更改。
 
-Xamarin 的示例可绑定的属性包括 [`Label.Text`](xref:Xamarin.Forms.Label.Text) 、 [`Button.BorderRadius`](xref:Xamarin.Forms.Button.BorderRadius) 和 [`StackLayout.Orientation`](xref:Xamarin.Forms.StackLayout.Orientation) 。 每个可绑定属性都具有一个对应的 `public static readonly` 类型字段 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，该字段在同一类上公开，这是可绑定属性的标识符。 例如，属性对应的可绑定属性标识符 `Label.Text` 是 [`Label.TextProperty`](xref:Xamarin.Forms.Label.TextProperty) 。
+可绑定的属性的示例 Xamarin.Forms 包括 [`Label.Text`](xref:Xamarin.Forms.Label.Text) 、 [`Button.BorderRadius`](xref:Xamarin.Forms.Button.BorderRadius) 和 [`StackLayout.Orientation`](xref:Xamarin.Forms.StackLayout.Orientation) 。 每个可绑定属性都具有一个对应的 `public static readonly` 类型字段 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，该字段在同一类上公开，这是可绑定属性的标识符。 例如，属性对应的可绑定属性标识符 `Label.Text` 是 [`Label.TextProperty`](xref:Xamarin.Forms.Label.TextProperty) 。
 
 ## <a name="create-a-bindable-property"></a>创建可绑定属性
 
@@ -43,14 +46,14 @@ Xamarin 的示例可绑定的属性包括 [`Label.Text`](xref:Xamarin.Forms.Labe
 
 若要创建 `BindableProperty` 实例，包含类必须派生自 [`BindableObject`](xref:Xamarin.Forms.BindableObject) 类。 但是，类 `BindableObject` 层次结构中的类很高，因此，用于用户界面功能的大多数类都支持可绑定属性。
 
-可以通过声明类型的属性来创建可绑定的属性 `public static readonly` [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。 可绑定的属性应设置为方法重载之一的返回值 [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) 。 声明应位于派生类的正文中 [`BindableObject`](xref:Xamarin.Forms.BindableObject) ，但在任何成员定义的外部。
+可以通过声明类型的属性来创建可绑定的属性 `public static readonly` [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。 可绑定的属性应设置为 [ `BindableProperty.Create` ] （x：）之一的返回值 Xamarin.Forms 。BindableProperty （System.string，System.string，system.web，，system.object， Xamarin.Forms ，，System.windows.data.bindingmode>、 Xamarin.Forms 。BindableProperty. ValidateValueDelegate， Xamarin.Forms 。BindableProperty. BindingPropertyChangedDelegate， Xamarin.Forms 。BindableProperty. BindingPropertyChangingDelegate， Xamarin.Forms 。BindableProperty. CoerceValueDelegate， Xamarin.Forms 。BindableProperty. CreateDefaultValueDelegate））方法重载。 声明应位于派生类的正文中 [`BindableObject`](xref:Xamarin.Forms.BindableObject) ，但在任何成员定义的外部。
 
 创建时，必须至少指定标识符 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 以及以下参数：
 
 - 的名称 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。
 - 属性类型。
 - 所属对象的类型。
-- 属性的默认值。 这可确保属性在未设置时始终返回特定的默认值，并且它可以与属性类型的默认值不同。 在可 [`ClearValue`](xref:Xamarin.Forms.BindableObject.ClearValue(Xamarin.Forms.BindableProperty)) 绑定属性上调用方法时，将还原默认值。
+- 属性的默认值。 这可确保属性在未设置时始终返回特定的默认值，并且它可以与属性类型的默认值不同。 当 [ `ClearValue` ] （x：）时，将还原默认值 Xamarin.Forms 。Msds-bindableobject. System.windows.dependencyobject.clearvalue （ Xamarin.Forms 。BindableProperty））方法在可绑定属性上调用。
 
 下面的代码演示一个可绑定属性的示例，其中包含四个必需参数的标识符和值：
 
@@ -72,7 +75,7 @@ public static readonly BindableProperty EventNameProperty =
 
 ### <a name="create-accessors"></a>创建访问器
 
-属性访问器需要使用属性语法来访问可绑定属性。 `Get`取值函数应返回相应的可绑定属性中包含的值。 为此，可以调用 [`GetValue`](xref:Xamarin.Forms.BindableObject.GetValue(Xamarin.Forms.BindableProperty)) 方法，传递要获取值的可绑定属性标识符，然后将结果转换为所需的类型。 `Set`访问器应设置相应的可绑定属性的值。 为此，可以调用 [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) 方法，传入要设置值的可绑定属性标识符，以及要设置的值。
+属性访问器需要使用属性语法来访问可绑定属性。 `Get`取值函数应返回相应的可绑定属性中包含的值。 这可以通过调用 [ `GetValue` ] （x：）来实现 Xamarin.Forms 。Msds-bindableobject （ Xamarin.Forms 。BindableProperty））方法，传递要获取其值的可绑定属性标识符，然后将结果转换为所需的类型。 `Set`访问器应设置相应的可绑定属性的值。 这可以通过调用 [ `SetValue` ] （x：）来实现 Xamarin.Forms 。Msds-bindableobject （ Xamarin.Forms 。BindableProperty，System.object）方法，传递要在其上设置值的可绑定属性标识符和要设置的值。
 
 下面的代码示例演示可绑定属性的访问器 `EventName` ：
 
@@ -123,7 +126,7 @@ listView.Behaviors.Add (new EventToCommandBehavior
 
 ### <a name="detect-property-changes"></a>检测属性更改
 
-`static`通过指定方法的参数，可将属性更改的回调方法注册到可绑定属性 `propertyChanged` [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) 。 当可绑定属性的值发生更改时，将调用指定的回调方法。
+`static`通过为 `propertyChanged` [ `BindableProperty.Create` ] （x：）指定参数，可将属性更改的回调方法注册到可绑定的属性 Xamarin.Forms 。BindableProperty （System.string，System.string，system.web，，system.object， Xamarin.Forms ，，System.windows.data.bindingmode>、 Xamarin.Forms 。BindableProperty. ValidateValueDelegate， Xamarin.Forms 。BindableProperty. BindingPropertyChangedDelegate， Xamarin.Forms 。BindableProperty. BindingPropertyChangingDelegate， Xamarin.Forms 。BindableProperty. CoerceValueDelegate， Xamarin.Forms 。BindableProperty. CreateDefaultValueDelegate））方法。 当可绑定属性的值发生更改时，将调用指定的回调方法。
 
 下面的代码示例演示了可 `EventName` 绑定的属性如何将 `OnEventNameChanged` 方法注册为属性更改的回调方法：
 
@@ -143,7 +146,7 @@ static void OnEventNameChanged (BindableObject bindable, object oldValue, object
 
 ### <a name="validation-callbacks"></a>验证回调
 
-`static`通过指定方法的参数，可以向可绑定的属性注册验证回调方法 `validateValue` [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) 。 如果设置了可绑定属性的值，则将调用指定的回调方法。
+`static`通过为 `validateValue` [ `BindableProperty.Create` ] （x：）指定参数，可以向可绑定的属性注册验证回调方法 Xamarin.Forms 。BindableProperty （System.string，System.string，system.web，，system.object， Xamarin.Forms ，，System.windows.data.bindingmode>、 Xamarin.Forms 。BindableProperty. ValidateValueDelegate， Xamarin.Forms 。BindableProperty. BindingPropertyChangedDelegate， Xamarin.Forms 。BindableProperty. BindingPropertyChangingDelegate， Xamarin.Forms 。BindableProperty. CoerceValueDelegate， Xamarin.Forms 。BindableProperty. CreateDefaultValueDelegate））方法。 如果设置了可绑定属性的值，则将调用指定的回调方法。
 
 下面的代码示例演示了可 `Angle` 绑定的属性如何将 `IsValidValue` 方法注册为验证回叫方法：
 
@@ -164,7 +167,7 @@ static bool IsValidValue (BindableObject view, object value)
 
 ### <a name="coerce-value-callbacks"></a>强制值回调
 
-`static`通过指定方法的参数，可将强制值回调方法注册到可绑定属性 `coerceValue` [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) 。 当可绑定属性的值发生更改时，将调用指定的回调方法。
+`static`通过为 `coerceValue` [ `BindableProperty.Create` ] （x：）指定参数，可以向可绑定的属性注册强制值回叫方法 Xamarin.Forms 。BindableProperty （System.string，System.string，system.web，，system.object， Xamarin.Forms ，，System.windows.data.bindingmode>、 Xamarin.Forms 。BindableProperty. ValidateValueDelegate， Xamarin.Forms 。BindableProperty. BindingPropertyChangedDelegate， Xamarin.Forms 。BindableProperty. BindingPropertyChangingDelegate， Xamarin.Forms 。BindableProperty. CoerceValueDelegate， Xamarin.Forms 。BindableProperty. CreateDefaultValueDelegate））方法。 当可绑定属性的值发生更改时，将调用指定的回调方法。
 
 > [!IMPORTANT]
 > 该 `BindableObject` 类型具有一个 `CoerceValue` 方法，通过调用该方法的 `BindableProperty` 强制值回调，可以调用该方法来强制重新计算其参数的值。
@@ -210,7 +213,7 @@ public static readonly BindableProperty SizeProperty =
   defaultValueCreator: bindable => Device.GetNamedSize (NamedSize.Large, (Label)bindable));
 ```
 
-`defaultValueCreator`参数设置为 `Func` ，它调用 [`Device.GetNamedSize`](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,System.Type)) 方法以返回一个 `double` ，该对象表示在本机平台上用于的字体的命名大小 [`Label`](xref:Xamarin.Forms.Label) 。
+`defaultValueCreator`参数设置为 `Func` 调用 [ `Device.GetNamedSize` ] （x：）的 Xamarin.Forms 。GetNamedSize （ Xamarin.Forms 。NamedSize，System.object）返回一个 `double` ，它表示在本机平台上用于的字体的命名大小 [`Label`](xref:Xamarin.Forms.Label) 。
 
 ## <a name="related-links"></a>相关链接
 

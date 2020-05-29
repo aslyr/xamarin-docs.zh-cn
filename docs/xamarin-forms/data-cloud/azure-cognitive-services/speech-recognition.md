@@ -1,20 +1,23 @@
 ---
-title: 使用语音服务 API 的语音识别
-description: 本文介绍如何使用 Azure 语音服务 API 将语音转录应用程序中的文本。
-ms.prod: xamarin
-ms.assetid: B435FF6B-8785-48D9-B2D9-1893F5A87EA1
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 01/14/2020
-ms.openlocfilehash: c10b8feea5fbec21fc127262c3f1bfda50beba7f
-ms.sourcegitcommit: ba83c107c87b015dbcc9db13964fe111a0573dca
+title: ''
+description: 本文介绍如何使用 Azure Speech Service API 将语音转录到应用程序中的文本 Xamarin.Forms 。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 171ecc02fda304135e5f535c3e798067595d7047
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76265137"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139316"
 ---
-# <a name="speech-recognition-using-azure-speech-service"></a>使用 Azure Speech Service 的语音识别
+# <a name="speech-recognition-using-azure-speech-service"></a>使用 Azure Speech Service 进行语音识别
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-cognitivespeechservice)
 
@@ -25,9 +28,9 @@ Azure Speech Service 是一种基于云的 API，它提供以下功能：
 - **语音翻译**为语音到文本和语音到语音转换启用了实时、多语言翻译。
 - **语音助手**可为应用程序创建类似于用户的对话接口。
 
-本文介绍如何使用 Azure Speech Service 在示例 Xamarin. Forms 应用程序中实现语音到文本。 以下屏幕截图显示了 iOS 和 Android 上的示例应用程序：
+本文介绍如何 Xamarin.Forms 使用 Azure 语音服务在示例应用程序中实现语音到文本。 以下屏幕截图显示了 iOS 和 Android 上的示例应用程序：
 
-[iOS 和 Android 上的示例应用程序 ![屏幕截图](speech-recognition-images/speech-recognition-cropped.png)](speech-recognition-images/speech-recognition.png#lightbox "IOS 和 Android 上的示例应用程序的屏幕截图")
+[![IOS 和 Android 上的示例应用程序的屏幕截图](speech-recognition-images/speech-recognition-cropped.png)](speech-recognition-images/speech-recognition.png#lightbox "IOS 和 Android 上的示例应用程序的屏幕截图")
 
 ## <a name="create-an-azure-speech-service-resource"></a>创建 Azure 语音服务资源
 
@@ -63,7 +66,7 @@ public static class Constants
 
 ## <a name="create-an-imicrophoneservice-interface"></a>创建 IMicrophoneService 接口
 
-每个平台都需要有权访问麦克风。 示例项目在共享项目中提供 `IMicrophoneService` 接口，并使用 Xamarin `DependencyService` 来获取接口的平台实现。
+每个平台都需要有权访问麦克风。 示例项目 `IMicrophoneService` 在共享项目中提供了一个接口，并使用 Xamarin.Forms `DependencyService` 来获取接口的平台实现。
 
 ```csharp
 public interface IMicrophoneService
@@ -75,7 +78,7 @@ public interface IMicrophoneService
 
 ## <a name="create-the-page-layout"></a>创建页面布局
 
-示例项目定义了**MainPage**文件中的基本页面布局。 键布局元素是一个 `Button`，用于启动脚本过程、包含转录文本的 `Label`，以及在运行脚本时要显示的 `ActivityIndicator`：
+示例项目定义了**MainPage**文件中的基本页面布局。 键布局元素是一个 `Button` ，它启动脚本过程、 `Label` 包含转录文本的，以及一个要在脚本 `ActivityIndicator` 进行过程中显示的：
 
 ```xaml
 <ContentPage ...>
@@ -101,7 +104,7 @@ public interface IMicrophoneService
 
 **MainPage.xaml.cs**代码隐藏文件包含用于从 Azure Speech Service 发送音频和接收转录文本的所有逻辑。
 
-`MainPage` 构造函数从 `DependencyService`获取 `IMicrophoneService` 接口的实例：
+`MainPage`构造函数从获取接口的实例 `IMicrophoneService` `DependencyService` ：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -121,7 +124,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-点击 `transcribeButton` 实例时，将调用 `TranscribeClicked` 方法：
+`TranscribeClicked`当点击实例时，将调用方法 `transcribeButton` ：
 
 ```csharp
 async void TranscribeClicked(object sender, EventArgs e)
@@ -184,12 +187,12 @@ async void TranscribeClicked(object sender, EventArgs e)
 `TranscribeClicked` 方法执行以下操作：
 
 1. 检查应用程序是否有权访问麦克风，如果不是，则提前退出。
-1. 创建 `SpeechRecognizer` 类的实例（如果它尚不存在）。
+1. 创建类的实例（ `SpeechRecognizer` 如果它尚不存在）。
 1. 如果正在进行，则停止运行。
 1. 插入时间戳，如果未在进行，则启动连续脚本。
 1. 通知应用程序基于新应用程序状态更新其外观。
 
-`MainPage` 类方法的其余部分是用于显示应用程序状态的帮助器：
+类方法的其余部分 `MainPage` 是用于显示应用程序状态的帮助程序：
 
 ```csharp
 void UpdateTranscription(string newText)
@@ -229,15 +232,15 @@ void UpdateDisplayState()
 }
 ```
 
-`UpdateTranscription` 方法将提供的 `newText` `string` 写入名为 `transcribedText`的 `Label` 元素。 它强制在 UI 线程上进行此更新，以便在不引发异常的情况下从任何上下文中进行调用。 `InsertDateTimeRecord` 将当前日期和时间写入 `transcribedText` 实例，以标记新脚本的开头。 最后，`UpdateDisplayState` 方法更新 `Button` 和 `ActivityIndicator` 元素，以反映脚本是否正在进行。
+`UpdateTranscription`方法将提供的写入名为的 `newText` `string` `Label` 元素 `transcribedText` 。 它强制在 UI 线程上进行此更新，以便在不引发异常的情况下从任何上下文中进行调用。 将 `InsertDateTimeRecord` 当前日期和时间写入 `transcribedText` 实例，以标记新脚本的开头。 最后， `UpdateDisplayState` 方法更新 `Button` 和 `ActivityIndicator` 元素以反映脚本是否正在进行。
 
 ## <a name="create-platform-microphone-services"></a>创建平台麦克风服务
 
-应用程序必须具有用于收集语音数据的麦克风访问权限。 要使应用程序正常运行，必须在每个平台上实现并向 `DependencyService` 注册 `IMicrophoneService` 接口。
+应用程序必须具有用于收集语音数据的麦克风访问权限。 `IMicrophoneService`接口必须在 `DependencyService` 每个平台上实现并注册，才能让应用程序正常工作。
 
 ### <a name="android"></a>Android
 
-示例项目定义了适用于 Android 的 `IMicrophoneService` 实现 `AndroidMicrophoneService`：
+示例项目定义了一个 `IMicrophoneService` 名为的 Android 实现 `AndroidMicrophoneService` ：
 
 ```csharp
 [assembly: Dependency(typeof(AndroidMicrophoneService))]
@@ -301,14 +304,14 @@ namespace CognitiveSpeechService.Droid.Services
 }
 ```
 
-`AndroidMicrophoneService` 具有以下功能：
+`AndroidMicrophoneService`具有以下功能：
 
-1. `Dependency` 特性向 `DependencyService`注册该类。
-1. `GetPermissionAsync` 方法根据 Android SDK 版本检查是否需要权限，并在尚未授予权限的情况下调用 `RequestMicPermissions`。
-1. `RequestMicPermissions` 方法使用 `Snackbar` 类向用户请求权限（如果需要基本原理），否则它会直接请求音频录制权限。
-1. 如果用户已对权限请求做出响应，则使用 `bool` 结果调用 `OnRequestPermissionResult` 方法。
+1. `Dependency`特性向注册该类 `DependencyService` 。
+1. `GetPermissionAsync`方法根据 Android SDK 版本检查是否需要权限，并在 `RequestMicPermissions` 尚未授予权限的情况下调用。
+1. `RequestMicPermissions`方法使用 `Snackbar` 类从用户请求权限（如果需要基本原理），否则它会直接请求音频录制权限。
+1. `OnRequestPermissionResult` `bool` 当用户对权限请求作出响应后，将使用结果调用方法。
 
-自定义 `MainActivity` 类，以便在完成权限请求时更新 `AndroidMicrophoneService` 实例：
+`MainActivity`自定义类，以便 `AndroidMicrophoneService` 在完成权限请求时更新实例：
 
 ```csharp
 public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
@@ -342,7 +345,7 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 }
 ```
 
-`MainActivity` 类定义了一个名为 `Instance`的静态引用，该引用在请求权限时由 `AndroidMicrophoneService` 对象要求。 它将重写 `OnRequestPermissionsResult` 方法，以便在用户批准或拒绝权限请求时更新 `AndroidMicrophoneService` 对象。
+`MainActivity`类定义了一个名为的静态引用 `Instance` ， `AndroidMicrophoneService` 对象在请求权限时需要该引用。 `OnRequestPermissionsResult` `AndroidMicrophoneService` 当用户批准或拒绝了权限请求时，它将重写方法以更新对象。
 
 最后，Android 应用程序必须包括在**androidmanifest.xml**文件中录制音频的权限：
 
@@ -355,7 +358,7 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 
 ### <a name="ios"></a>iOS
 
-示例项目定义了一个名为 `iOSMicrophoneService`的 iOS `IMicrophoneService` 实现：
+示例项目定义了一个 `IMicrophoneService` 名为的 iOS 实现 `iOSMicrophoneService` ：
 
 ```csharp
 [assembly: Dependency(typeof(iOSMicrophoneService))]
@@ -389,14 +392,14 @@ namespace CognitiveSpeechService.iOS.Services
 }
 ```
 
-`iOSMicrophoneService` 具有以下功能：
+`iOSMicrophoneService`具有以下功能：
 
-1. `Dependency` 特性向 `DependencyService`注册该类。
-1. `GetPermissionAsync` 方法调用 `RequestMicPermissions` 来请求设备用户的权限。
-1. `RequestMicPermissions` 方法使用共享 `AVAudioSession` 实例来请求录制权限。
-1. `OnRequestPermissionResult` 方法用提供的 `bool` 值更新 `TaskCompletionSource` 实例。
+1. `Dependency`特性向注册该类 `DependencyService` 。
+1. `GetPermissionAsync`方法调用 `RequestMicPermissions` 来请求设备用户的权限。
+1. `RequestMicPermissions`方法使用共享 `AVAudioSession` 实例来请求录制权限。
+1. `OnRequestPermissionResult`方法 `TaskCompletionSource` 用提供的值更新实例 `bool` 。
 
-最后，iOS 应用**信息。 info.plist**必须包含一条消息，告知用户应用请求访问麦克风的原因。 编辑 info.plist 文件，以在 `<dict>` 元素中包括以下标记：
+最后，iOS 应用**信息。 info.plist**必须包含一条消息，告知用户应用请求访问麦克风的原因。 编辑 info.plist 文件，以在元素中包含以下标记 `<dict>` ：
 
 ```xml
 <plist>
@@ -410,7 +413,7 @@ namespace CognitiveSpeechService.iOS.Services
 
 ### <a name="uwp"></a>UWP
 
-示例项目定义了一个名为 `UWPMicrophoneService`的 UWP `IMicrophoneService` 实现：
+示例项目定义了一个 `IMicrophoneService` 名为的 UWP 实现 `UWPMicrophoneService` ：
 
 ```csharp
 [assembly: Dependency(typeof(UWPMicrophoneService))]
@@ -449,19 +452,19 @@ namespace CognitiveSpeechService.UWP.Services
 }
 ```
 
-`UWPMicrophoneService` 具有以下功能：
+`UWPMicrophoneService`具有以下功能：
 
-1. `Dependency` 特性向 `DependencyService`注册该类。
-1. `GetPermissionAsync` 方法尝试初始化 `MediaCapture` 实例。 如果此操作失败，则会启动用户请求以启用麦克风。
-1. 存在的 `OnRequestPermissionResult` 方法可满足接口，但 UWP 实现不需要此方法。
+1. `Dependency`特性向注册该类 `DependencyService` 。
+1. 此 `GetPermissionAsync` 方法尝试初始化 `MediaCapture` 实例。 如果此操作失败，则会启动用户请求以启用麦克风。
+1. 此 `OnRequestPermissionResult` 方法存在以满足接口，但不是 UWP 实现所必需的。
 
 最后，UWP **Package. appxmanifest.xml**必须指定应用程序使用麦克风。 双击 appxmanifest.xml 文件，并在 Visual Studio 2019 的 "**功能**" 选项卡上选择 "**麦克风**" 选项：
 
-[Visual Studio 2019 中清单的 ![屏幕截图](speech-recognition-images/package-manifest-cropped.png)](speech-recognition-images/package-manifest.png#lightbox "Visual Studio 2019 中的清单屏幕截图")
+[![Visual Studio 2019 中的清单屏幕截图](speech-recognition-images/package-manifest-cropped.png)](speech-recognition-images/package-manifest.png#lightbox "Visual Studio 2019 中的清单屏幕截图")
 
 ## <a name="test-the-application"></a>测试应用程序
 
-运行应用，然后单击 "**转录**" 按钮。 应用应请求麦克风访问并开始脚本过程。 `ActivityIndicator` 将动画显示，并显示脚本处于活动状态。 在说话时，应用程序会将音频数据流式传输到 Azure 语音服务资源，该资源将以转录文本响应。 转录文本将显示在收到的 `Label` 元素中。
+运行应用，然后单击 "**转录**" 按钮。 应用应请求麦克风访问并开始脚本过程。 `ActivityIndicator`将动画显示，并显示脚本处于活动状态。 在说话时，应用程序会将音频数据流式传输到 Azure 语音服务资源，该资源将以转录文本响应。 转录文本将在收到时显示在 `Label` 元素中。
 
 > [!NOTE]
 > Android 仿真程序无法加载和初始化语音服务库。 对于 Android 平台，建议使用物理设备进行测试。
@@ -471,4 +474,4 @@ namespace CognitiveSpeechService.UWP.Services
 - [Azure 语音服务示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-cognitivespeechservice)
 - [Azure 语音服务概述](https://docs.microsoft.com/azure/cognitive-services/speech-service/overview)
 - [创建认知服务资源](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account)
-- [快速入门：从麦克风识别语音](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/speech-to-text-from-microphone)
+- [快速入门：识别来自麦克风的语音](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/speech-to-text-from-microphone)

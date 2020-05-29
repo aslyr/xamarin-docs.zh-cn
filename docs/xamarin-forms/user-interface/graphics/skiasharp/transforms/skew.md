@@ -1,48 +1,51 @@
 ---
-title: 倾斜转换
-description: 本文介绍如何倾斜转换可以在 SkiaSharp 中, 创建倾斜的图形对象，并演示此示例代码。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: FDD16186-E3B7-4FF6-9BC2-8A2974BFF616
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/20/2017
-ms.openlocfilehash: c3d7e6e0c0e3230c11e2e96baa9efa57ac988c83
-ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 207b16f062a5c2137ac5fc3c21775d2486fda57d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/30/2019
-ms.locfileid: "75545656"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135858"
 ---
 # <a name="the-skew-transform"></a>倾斜转换
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_请参阅如何倾斜转换可以在 SkiaSharp 中创建倾斜的图形对象_
+_了解倾斜变换如何在 SkiaSharp 中创建倾斜的图形对象_
 
-SkiaSharp 中, 倾斜转换将倾斜图形对象，如在此图中的阴影：
+在 SkiaSharp 中，倾斜变换会倾斜图形对象，如此图中的阴影：
 
 ![](skew-images/skewexample.png "An example of skewing from the Skew Shadow Text program")
 
-倾斜将转换为一个平行四边形的矩形，但偏斜的椭圆仍是一个椭圆。
+倾斜会将矩形变为平行四边形，但倾斜的椭圆仍是一个椭圆。
 
-虽然 Xamarin.Forms 定义平移、 缩放和旋转的属性，但没有对应的属性中 Xamarin.Forms 偏差。
+尽管 Xamarin.Forms 为转换、缩放和旋转定义属性，但中没有相应 Xamarin.Forms 的属性用于倾斜。
 
-[ `Skew` ](xref:SkiaSharp.SKCanvas.Skew(System.Single,System.Single))方法的`SKCanvas`接受倾斜的水平扭曲和垂直两个参数：
+的 [`Skew`](xref:SkiaSharp.SKCanvas.Skew(System.Single,System.Single)) 方法 `SKCanvas` 接受两个自变量用于水平倾斜和垂直倾斜：
 
 ```csharp
 public void Skew (Single xSkew, Single ySkew)
 ```
 
-第二个[ `Skew` ](xref:SkiaSharp.SKCanvas.Skew(SkiaSharp.SKPoint))方法结合了这些参数在单个`SKPoint`值：
+第二种 [`Skew`](xref:SkiaSharp.SKCanvas.Skew(SkiaSharp.SKPoint)) 方法将这些参数合并为一个 `SKPoint` 值：
 
 ```csharp
 public void Skew (SKPoint skew)
 ```
 
-但是，不太可能，您将这两种方法之一中使用隔离。
+但是，不太可能使用这两种方法中的一种。
 
-**倾斜试验**页可让您体验偏差值的 – 10 和 10 之间的范围。 使用来自两个偏差值在页上，在窗口左上角中定位文本字符串`Slider`元素。 下面是`PaintSurface`处理程序中的[ `SkewExperimentPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewExperimentPage.xaml.cs)类：
+"**倾斜试验**" 页允许您试验介于-10 和10之间的倾斜值。 文本字符串位于页面的左上角，其中包含从两个元素获得的倾斜值 `Slider` 。 下面是 `PaintSurface` 类中的处理程序 [`SkewExperimentPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewExperimentPage.xaml.cs) ：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -70,27 +73,27 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-值`xSkew`参数转变底部的文本适合正值或负值的左侧。 值`ySkew`对于正值或负值进行向下移动文本右侧：
+参数的值将 `xSkew` 向右移动文本右侧的正值或向左移动负值。 `ySkew`对于正值，将向下移动文本右侧的值; 对于负值，则为负值：
 
 [![](skew-images/skewexperiment-small.png "Triple screenshot of the Skew Experiment page")](skew-images/skewexperiment-large.png#lightbox "Triple screenshot of the Skew Experiment page")
 
-如果 `xSkew` 值为 `ySkew` 值的负值，则结果为 "旋转"，但在某种程度上也进行了缩放。
+如果 `xSkew` 该值为值的负值，则 `ySkew` 结果是旋转，但也会在某种程度上进行缩放。
 
 转换公式如下所示：
 
-x = x + xSkew 推荐配置y
+x ' = x + xSkew ·误差
 
-y = ySkew 推荐配置x + y
+y ' = ySkew ·x + y
 
-例如，对于一个正`xSkew`值，已转换`x'`值随着`y`会增加。 这就是哪些因素会导致倾斜。
+例如，对于正值 `xSkew` ，转换后的值将 `x'` 增加 `y` 。 这就是导致倾斜的原因。
 
-如果三角形 200 像素宽和高 100 像素定位时，点 （0，0） 在其左上角和使用呈现`xSkew`值为 1.5，以下的平行四边形结果：
+如果三角形的200像素宽和100像素高，则定位在点（0，0）的左上角，并呈现为 `xSkew` 1.5 值，下面的平行四边形结果：
 
 ![](skew-images/skeweffect.png "The effect of the skew transform on a rectangle")
 
-下边缘坐标的`y`值为 100，因此它是向右移动 150 像素。
+下边缘的坐标 `y` 值为100，因此它向右移位150像素。
 
-有关的值为非零`xSkew`或`ySkew`、 仅点 （0，0） 保持不变。 该点可被视为倾斜的中心。 如果需要中心的倾斜为其他内容 （这通常都是如此），则没有`Skew`提供，它的方法。 你将需要进行显式结合`Translate`使用调用`Skew`调用。 居中在倾斜`px`和`py`，进行以下调用：
+对于或的非零值 `xSkew` `ySkew` ，只有点（0，0）保持不变。 可以将该点视为倾斜中心。 如果需要将扭曲中心作为其他内容（通常是这种情况），则没有 `Skew` 方法可提供此功能。 你需要通过调用显式合并 `Translate` 调用 `Skew` 。 若要在 `px` 和中居中倾斜 `py` ，请进行以下调用：
 
 ```csharp
 canvas.Translate(px, py);
@@ -98,21 +101,21 @@ canvas.Skew(xSkew, ySkew);
 canvas.Translate(-px, -py);
 ```
 
-复合转换公式是：
+复合转换公式为：
 
-x = x + xSkew 推荐配置（y – 上一年度）
+x ' = x + xSkew ·（y – py）
 
-y = ySkew 推荐配置(x – px) + y
+y ' = ySkew ·（x – px） + y
 
-如果`ySkew`为零，则`px`不使用值。 值是不相关的以及同样`ySkew`和`py`。
+如果 `ySkew` 为零，则 `px` 不使用该值。 值不相关，并且 `ySkew` 与和类似 `py` 。
 
-您可能更喜欢指定倾斜的角度的倾斜，如在此图中的角度 α 作为：
+您可能更愿意将倾斜指定为倾斜角度，如此图中的α角度：
 
 ![](skew-images/skewangleeffect.png "The effect of the skew transform on a rectangle with a skewing angle indicated")
 
-为 100 像素垂直 150 像素 shift 的比率为在此示例中该角度的正切值 56.3 度。
+150像素移位到100像素垂直的比率是该角度的正切值，在此示例中为56.3 度。
 
-XAML 文件**倾斜角度实验**页是类似于**倾斜角度**页上，不同之处在于`Slider`元素范围 – 90 度到 90 度。 [ `SkewAngleExperiment` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs)代码隐藏文件中心页上的文本，并使用`Translate`设置中心的倾斜到页面的中心。 一小段`SkewDegrees`方法底部的代码将转换为角度，若要倾斜值：
+"**倾斜角度试验**" 页的 XAML 文件类似于 "**倾斜角度**" 页，只不过 `Slider` 元素范围为–90度到90度。 [`SkewAngleExperiment`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs)代码隐藏文件使页面上的文本居中，并使用将 `Translate` 倾斜中心设置到页面中心。 `SkewDegrees`代码底部的简短方法将角度转换为倾斜值：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -153,11 +156,11 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 }
 ```
 
-随着角度接近正或负 90 度，正切值接近无穷大，但最多约 80 度或操作的角度可使用：
+当角度接近正面或负90度时，相切接近，但最多可使用大约80度的角度：
 
 [![](skew-images/skewangleexperiment-small.png "Triple screenshot of the Skew Angle Experiment page")](skew-images/skewangleexperiment-large.png#lightbox "Triple screenshot of the Skew Angle Experiment page")
 
-较小的负水平扭曲可模拟倾斜或斜体文本作为**倾斜文本**页说明。 [ `ObliqueTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs)类显示了如何执行操作：
+如果**倾斜文本**页面说明，较小的负水平倾斜可以模拟倾斜或倾斜文本。 [`ObliqueTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs)类显示操作的完成方式：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -189,11 +192,11 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 }
 ```
 
-`TextAlign`的属性`SKPaint`设置为`Center`。 不涉及任何转换，`DrawText`调用使用的坐标 （0，0） 将放置在左上角的文本的水平居中的基线。 `SkewDegrees`相对于基线的 20 度水平扭曲文本。 `Translate`调用将水平居中的文本的基线移到画布的中心：
+的 `TextAlign` 属性 `SKPaint` 设置为 `Center` 。 如果没有任何转换，则 `DrawText` 具有（0，0）坐标的调用会将文本与基线的水平中心置于左上角。 相对于基线，将 `SkewDegrees` 文本水平倾斜20度。 `Translate`调用将文本基线的水平中心移动到画布中心：
 
 [![](skew-images/obliquetext-small.png "Triple screenshot of the Oblique Text page")](skew-images/obliquetext-large.png#lightbox "Triple screenshot of the Oblique Text page")
 
-**倾斜阴影文字**页演示了如何使用组合的 45 度倾斜和垂直缩放以便使其远离文字将倾斜文本阴影。 以下是相关的部分`PaintSurface`处理程序：
+"**倾斜阴影文本**" 页演示了如何结合使用45度倾斜和垂直缩放来使文本阴影远离文本。 下面是处理程序的相关部分 `PaintSurface` ：
 
 ```csharp
 using (SKPaint textPaint = new SKPaint())
@@ -222,22 +225,22 @@ using (SKPaint textPaint = new SKPaint())
 }
 ```
 
-阴影是显示第一个，然后选择文本：
+影子首先显示，然后是文本：
 
 [![](skew-images/skewshadowtext1-small.png "Triple screenshot of the Skew Shadow Text page")](skew-images/skewshadowtext1-large.png#lightbox "Triple screenshot of the Skew Shadow Text page")
 
-垂直坐标传递到`DrawText`方法指示的位置相对于基线的文本。 这是用于倾斜的中心的相同垂直坐标。 如果文本字符串包含下行字母，此方法将无法工作。 例如，将"古怪"一词替换为"影子"，下面是结果：
+传递给方法的垂直坐标 `DrawText` 指示文本相对于基线的位置。 这是用于倾斜的中心的同一垂直坐标。 如果文本字符串包含下行字母，此方法将不起作用。 例如，用 "古怪" 一词替换 "阴影"，结果如下：
 
 [![](skew-images/skewshadowtext2-small.png "Triple screenshot of the Skew Shadow Text page with an alternative word with descenders")](skew-images/skewshadowtext2-large.png#lightbox "Triple screenshot of the Skew Shadow Text page with an alternative word with descenders")
 
-卷影和文本仍对齐的基线，但效果只是看起来有错误。 若要修复此错误，您需要获取文本边界：
+阴影和文本仍在基线上对齐，但效果却出现错误。 若要修复此问题，需要获取文本边界：
 
 ```csharp
 SKRect textBounds = new SKRect();
 textPaint.MeasureText(text, ref textBounds);
 ```
 
-`Translate`调用需要进行调整的下行字母的高度：
+`Translate`调用需要按照下行字母的高度进行调整：
 
 ```csharp
 canvas.Translate(xText, yText + textBounds.Bottom);
@@ -246,7 +249,7 @@ canvas.Scale(1, 3);
 canvas.Translate(-xText, -yText - textBounds.Bottom);
 ```
 
-现在阴影扩展从这些下行字母的底部：
+现在，阴影从下行伸的底部延伸：
 
 [![](skew-images/skewshadowtext3-small.png "Triple screenshot of the Skew Shadow Text page with adjustments for descenders")](skew-images/skewshadowtext3-large.png#lightbox "Triple screenshot of the Skew Shadow Text page with adjustments for descenders")
 

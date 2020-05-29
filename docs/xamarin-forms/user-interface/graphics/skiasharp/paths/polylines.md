@@ -1,48 +1,51 @@
 ---
-title: 折线和参数等式
-description: 本文介绍如何到使用 SkiaSharp 呈现任何行，可以定义与参数方程确定，此示例代码进行了演示。
-ms.prod: xamarin
-ms.assetid: 85AEBB33-E954-4364-A6E1-808FAB197BEE
-ms.technology: xamarin-skiasharp
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/10/2017
-ms.openlocfilehash: f635e6e20a4cec9b8cc735bc733b678263cd024a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b435e99180791b64e0a8ad975527fb3cb5316b7d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759178"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84140213"
 ---
 # <a name="polylines-and-parametric-equations"></a>折线和参数等式
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_使用 SkiaSharp 呈现可以定义与参数化的等式的任何行_
+_使用 SkiaSharp 呈现可以使用参数化公式定义的任何行_
 
-在中[ **SkiaSharp 曲线和路径**](../curves/index.md)部分的本指南中，您将看到的各种方法的[ `SKPath` ](xref:SkiaSharp.SKPath)定义来呈现某些类型的曲线。 但是，它，有时需要绘制曲线并不直接支持的一种`SKPath`。 在这种情况下，可以使用 polyline （一系列相互连接的直线） 绘制数学上可以定义任何曲线。 如果使各条线足够小，并且许多足够结果看起来类似于一条曲线。 此循环是实际 3,600 较短的行：
+在本指南的 " [**SkiaSharp 曲线和路径**](../curves/index.md)" 部分中，您将看到 [`SKPath`](xref:SkiaSharp.SKPath) 定义用于呈现特定曲线类型的各种方法。 但是，有时需要绘制不直接支持的曲线类型 `SKPath` 。 在这种情况下，您可以使用折线（一系列连接的线）绘制您可以数学定义的任何曲线。 如果使线条足够小并且足够大，结果将显示为曲线。 此螺旋实际上是3600小行：
 
-![](polylines-images/spiralexample.png "螺旋")
+![](polylines-images/spiralexample.png "A spiral")
 
-通常最好是定义根据参数方程确定一对曲线。 它们是 X 和 Y 坐标表示的公式依赖于第三个变量，有时称为`t`的时间。 例如，以下参数方程确定为定义的中心点 （0，0） 的 1 半径的圆形*t*从 0 到 1:
+通常，最好按照一对参数方程来定义曲线。 它们是 X 和 Y 坐标的等式，它们依赖于第三个变量（有时称为 "时间"） `t` 。 例如，下面的参数方程定义一个圆，其半径为1，中心为0到1之间的*t* （0，0）：
 
 `x = cos(2πt)`
 
 `y = sin(2πt)`
 
- 如果你想 radius 大于 1，只需正弦和余弦值乘以该 radius 并如果你需要将中心移动到另一个位置添加这些值：
+ 如果希望半径大于1，则只需将正弦值与余弦值相乘即可，如果需要将中心移动到另一个位置，请添加这些值：
 
 `x = xCenter + radius·cos(2πt)`
 
 `y = yCenter + radius·sin(2πt)`
 
-有关使用到的水平和垂直轴并行一个椭圆，涉及两个半径：
+对于其轴平行于水平和垂直的椭圆，将涉及两个半径：
 
 `x = xCenter + xRadius·cos(2πt)`
 
 `y = yCenter + yRadius·sin(2πt)`
 
-然后可以将等效 SkiaSharp 代码放在一个循环，用于计算各个点并将添加到路径中。 下面的 SkiaSharp 代码创建`SKPath`填充显示器表面的椭圆的对象。 循环直接周期通过 360 度。 中心是一半的宽度和高度显示图面，并因此是两个半径：
+然后，你可以将等效的 SkiaSharp 代码放在一个循环中，该循环计算各个点并将这些点添加到一个路径中。 下面的 SkiaSharp 代码将 `SKPath` 为填充显示图面的椭圆创建一个对象。 循环直接循环使用360度。 中心是显示图面的宽度和高度的一半，因此，这两个半径如下：
 
 ```csharp
 SKPath path = new SKPath();
@@ -65,11 +68,11 @@ for (float angle = 0; angle < 360; angle += 1)
 path.Close();
 ```
 
-这会导致 360 较短的行定义的椭圆。 当呈现时，它将显示平滑。
+这会生成一个由360小直线定义的椭圆。 呈现时，它看起来平滑。
 
-当然，您无需创建使用一条折线，因为一个椭圆`SKPath`包括`AddOval`会为您的方法。 但你可能想要绘制视觉对象不由提供的`SKPath`。
+当然，您无需使用折线创建椭圆，因为其中 `SKPath` 包括 `AddOval` 用于执行此过程的方法。 但您可能需要绘制一个不由提供的视觉对象 `SKPath` 。
 
-**Archimedean 螺旋**页有代码，类似于椭圆代码，但有重要差异。 它循环继续 360 度圆的 10 次，持续调整 radius:
+**Archimedean 螺旋线**页面包含类似于椭圆代码的代码，但差别很重。 它会围绕圆的360度循环10次，并持续调整半径：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -115,11 +118,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-也称为结果*算术螺旋*因为每个循环之间的偏移量是常量：
+结果也称为*算术螺旋*，因为每个循环之间的偏移是常量：
 
-[![](polylines-images/archimedeanspiral-small.png "三重 Archimedean 螺旋页屏幕截图")](polylines-images/archimedeanspiral-large.png#lightbox "Archimedean 螺旋页面的三个屏幕截图")
+[![](polylines-images/archimedeanspiral-small.png "Triple screenshot of the Archimedean Spiral page")](polylines-images/archimedeanspiral-large.png#lightbox "Triple screenshot of the Archimedean Spiral page")
 
-请注意，`SKPath`中创建`using`块。 这`SKPath`消耗的内存比`SKPath`对象中的上一个程序，建议的`using`块是更适合释放任何非托管的资源。
+请注意， `SKPath` 是在块中创建的 `using` 。 这会 `SKPath` 占用比 `SKPath` 上一个程序中的对象更多的内存，这表明 `using` 更适合使用块来释放任何非托管资源。
 
 ## <a name="related-links"></a>相关链接
 

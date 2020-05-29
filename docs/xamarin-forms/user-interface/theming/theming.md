@@ -1,26 +1,29 @@
 ---
-title: 为 Xamarin 应用程序主题
-description: 可以通过为每个主题创建 ResourceDictionary，然后使用 DynamicResource 标记扩展加载资源，在 Xamarin 应用程序中实现主题。
-ms.prod: xamarin
-ms.assetId: B7B17F66-4E37-4B50-9A57-351B62BE4FED
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/07/2019
-ms.openlocfilehash: 2f751549bdbd54b920a99b04d0068ab726600336
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: 主题 Xamarin.Forms 应用程序
+description: 在 Xamarin.Forms 应用程序中，可以通过为每个主题创建 ResourceDictionary 并使用 DynamicResource 标记扩展来加载资源，来实现主题。
+ms.prod: ''
+ms.assetId: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3341ada6c5605917eeec79aac96e38cb99b40fc4
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425797"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138198"
 ---
-# <a name="theme-a-xamarinforms-application"></a>为 Xamarin 应用程序主题
+# <a name="theme-a-xamarinforms-application"></a>主题 Xamarin.Forms 应用程序
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
 
-Xamarin。窗体应用程序可以使用标记扩展在运行时动态响应样式更改 `DynamicResource` 。 此标记扩展类似于 `StaticResource` 标记扩展，因为这两种方法都使用字典键从中提取值 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 。 但是，当 `StaticResource` 标记扩展执行单个字典查找时， `DynamicResource` 标记扩展将保留指向字典键的链接。 因此，如果替换与该键关联的值，则更改将应用到 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。 这使运行时主题可以在 Xamarin. Forms 应用程序中实现。
+Xamarin.Forms应用程序可以使用标记扩展在运行时动态响应样式更改 `DynamicResource` 。 此标记扩展类似于 `StaticResource` 标记扩展，因为这两种方法都使用字典键从中提取值 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 。 但是，当 `StaticResource` 标记扩展执行单个字典查找时， `DynamicResource` 标记扩展将保留指向字典键的链接。 因此，如果替换与该键关联的值，则更改将应用到 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。 这样就可以在应用程序中实现运行时主题 Xamarin.Forms 。
 
-用于实现 Xamarin 中的运行时主题的过程如下所示：
+在应用程序中实现运行时主题的过程如下所示 Xamarin.Forms ：
 
 1. 定义中每个主题的资源 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 。
 1. 使用标记扩展在应用程序中使用主题资源 `DynamicResource` 。
@@ -182,7 +185,7 @@ Xamarin。窗体应用程序可以使用标记扩展在运行时动态响应样�
 
 当直接使用主题资源时，应使用标记扩展来使用该资源 `DynamicResource` 。 但是，如果使用标记扩展的样式使用 `DynamicResource` ，则应使用标记扩展来使用该样式 `StaticResource` 。
 
-有关样式的详细信息，请参阅[使用 XAML 样式设置 Xamarin 样式样式](~/xamarin-forms/user-interface/styles/xaml/index.md)。 有关标记扩展的详细信息 `DynamicResource` ，请参阅[Xamarin 中的动态样式](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)。
+有关样式的详细信息，请[参阅 Xamarin.Forms 使用 XAML 样式设置应用样式](~/xamarin-forms/user-interface/styles/xaml/index.md)。 有关标记扩展的详细信息 `DynamicResource` ，请参阅[ Xamarin.Forms 中的动态样式](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)。
 
 ## <a name="load-a-theme-at-runtime"></a>在运行时加载主题
 
@@ -225,5 +228,5 @@ void OnPickerSelectionChanged(object sender, EventArgs e)
 - [主题（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
 - [响应系统主题更改](system-theme-changes.md)
 - [资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [Xamarin 中的动态样式](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)
-- [使用 XAML 样式设置 Xamarin.Forms 应用的样式](~/xamarin-forms/user-interface/styles/xaml/index.md)
+- [中的动态样式Xamarin.Forms](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)
+- [Xamarin.Forms使用 XAML 样式设置应用样式](~/xamarin-forms/user-interface/styles/xaml/index.md)

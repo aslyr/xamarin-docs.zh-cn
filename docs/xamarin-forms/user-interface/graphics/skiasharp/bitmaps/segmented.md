@@ -1,50 +1,53 @@
 ---
-title: SkiaSharp 位图的分段的显示
-description: 显示 SkiaSharp 位图，以便某些区域被拉伸并不是某些区域。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 79AE2033-C41C-4447-95A6-76D22E913D19
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/17/2018
-ms.openlocfilehash: ca6c8fafe4352bac83e5ae60b43627d4c7fdc10f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5c3909271580d0568d7c603de0d434ff5b3f3bc4
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648671"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138666"
 ---
-# <a name="segmented-display-of-skiasharp-bitmaps"></a>SkiaSharp 位图的分段的显示
+# <a name="segmented-display-of-skiasharp-bitmaps"></a>SkiaSharp 位图的分段显示
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-SkiaSharp`SKCanvas`对象定义一个名为方法`DrawBitmapNinePatch`和两个方法名为`DrawBitmapLattice`非常相似。 两个这些方法呈现到目标矩形的大小的位图，但而不是均匀拉伸位图，它们在其像素大小显示位图的部分和延伸位图的其他部分，使其适应矩形：
+SkiaSharp `SKCanvas` 对象定义了一个名为 `DrawBitmapNinePatch` 的方法和两个名为的方法，这种方法 `DrawBitmapLattice` 非常相似。 这两种方法都将位图呈现给目标矩形的大小，而不是以统一方式拉伸位图，而是以像素尺寸显示位图的各个部分，并拉伸位图的其他部分，使其适应矩形：
 
-![分段示例](segmented-images/SegmentedSample.png "分段示例")
+![分段样本](segmented-images/SegmentedSample.png "分段样本")
 
-这些方法通常用于呈现用户界面对象，如按钮的组成部分的位图。 在设计按钮时，通常您希望用于基于内容的按钮的按钮的大小，但你可能希望该按钮的边框是相同的宽度，而不考虑该按钮的内容。 这是理想的应用程序`DrawBitmapNinePatch`。
+这些方法通常用于呈现构成部分用户界面对象（如按钮）的位图。 设计按钮时，通常希望按钮的大小基于按钮的内容，但您可能希望按钮的边框与按钮的内容相同，而不管按钮的内容如何。 这是的理想应用 `DrawBitmapNinePatch` 。
 
-`DrawBitmapNinePatch` 是一种特殊情况的`DrawBitmapLattice`但更简单的两种方法来使用和了解。
+`DrawBitmapNinePatch`是一种特殊情况， `DrawBitmapLattice` 但使用和理解这种方法更为简单。
 
-## <a name="the-nine-patch-display"></a>包含 9 个修补程序显示 
+## <a name="the-nine-patch-display"></a>九修补程序显示 
 
-从概念上讲， [ `DrawBitmapNinePatch` ](xref:SkiaSharp.SKCanvas.DrawBitmapNinePatch(SkiaSharp.SKBitmap,SkiaSharp.SKRectI,SkiaSharp.SKRect,SkiaSharp.SKPaint))将位图划分为九个矩形：
+从概念上讲， [`DrawBitmapNinePatch`](xref:SkiaSharp.SKCanvas.DrawBitmapNinePatch(SkiaSharp.SKBitmap,SkiaSharp.SKRectI,SkiaSharp.SKRect,SkiaSharp.SKPaint)) 将位图分为九个矩形：
 
-![九个修补程序](segmented-images/NinePatch.png "九个修补程序")
+![九修补程序](segmented-images/NinePatch.png "九修补程序")
 
-在四个角的矩形将显示在其像素大小。 箭头表示，如位图的边缘上的其他区域将被拉伸水平或垂直到目标矩形的区域。 水平和垂直拉伸中心中的矩形。 
+四个角的矩形以像素大小显示。 当箭头指示时，位图边缘上的其他区域会水平或垂直拉伸到目标矩形的区域。 中心矩形沿水平方向和垂直方向拉伸。 
 
-如果要在其像素尺寸显示甚至四个角的目标矩形中没有足够的空间，然后它们可向下缩放到的可用大小和执行任何操作，但会显示四个角。
+如果目标矩形中的空间不足以显示其像素尺寸中的四个角，则将其缩小到可用大小，而不会显示四个角。
 
-若要将位图划分为以下九个矩形，它只是用来指定在中心的矩形。 这是语法的`DrawBitmapNinePatch`方法：
+若要将位图分割成这九个矩形，只需在中心指定矩形。 下面是方法的语法 `DrawBitmapNinePatch` ：
 
 ```csharp
 canvas.DrawBitmapNinePatch(bitmap, centerRectangle, destRectangle, paint);
 ```
 
-Center 矩形是相对于位图。 它是`SKRectI`值 (整数新版`SKRect`) 和所有坐标和大小都都以像素为单位。 目标矩形是相对于显示图面。 `paint` 自变量是可选的。
+中心矩形相对于位图。 它是一个 `SKRectI` 值（的整数版本 `SKRect` ），并且所有坐标和大小都以像素为单位。 目标矩形相对于显示图面。 `paint` 参数是可选的。
 
-**九个修补程序显示**页面[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例首先使用静态构造函数来创建类型的公共静态属性`SKBitmap`:
+[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例中的 "**九修补程序显示**" 页首先使用静态构造函数来创建类型的公共静态属性 `SKBitmap` ：
 
 ```csharp
 public partial class NinePatchDisplayPage : ContentPage
@@ -72,11 +75,11 @@ public partial class NinePatchDisplayPage : ContentPage
 }
 ```
 
-在本文中的两个其他页面使用该相同的位图。 位图为 500 像素方形，并包含 25 圆圈的数组的所有相同大小，每个都占据 100 像素正方形区域：
+本文中的两个其他页使用同一位图。 位图为500像素正方形，由25个圆圈组成，每个圆形大小均为100像素的正方形面积：
 
-![圈出网格](segmented-images/CircleGrid.png "圆形网格")
+![圆圈网格](segmented-images/CircleGrid.png "圆圈网格")
 
-该程序的实例构造函数创建`SKCanvasView`与`PaintSurface`处理程序，它使用`DrawBitmapNinePatch`显示拉伸到其整个显示器表面的位图：
+该程序的实例构造函数创建一个 `SKCanvasView` 带有 `PaintSurface` 处理程序的，该处理程序使用 `DrawBitmapNinePatch` 将位图拉伸到其整个显示图面：
 
 ```csharp
 public class NinePatchDisplayPage : ContentPage
@@ -105,13 +108,13 @@ public class NinePatchDisplayPage : ContentPage
 }
 ```
 
-`centerRect`矩形包含 16 圆的中心数组。 角中的圆圈显示在其像素大小，并相应地拉伸的其他所有内容：
+该 `centerRect` 矩形包含16个圆圈的中心数组。 角中的圆以像素尺寸显示，并相应地拉伸所有其他内容：
 
-[![包含 9 个修补程序显示](segmented-images/NinePatchDisplay.png "包含 9 个修补程序显示")](segmented-images/NinePatchDisplay-Large.png#lightbox)
+[![九显示修补程序](segmented-images/NinePatchDisplay.png "九显示修补程序")](segmented-images/NinePatchDisplay-Large.png#lightbox)
 
-UWP 页恰好为 500 像素宽，并因此将顶部和底部行显示为一系列的圆的大小相同。 否则，所有不在角中的圆圈将拉伸到窗体省略号。
+UWP 页的宽度为500像素，因此以一系列大小相同的圆显示顶行和后行。 否则，不在拐角内的所有圆圈都将拉伸以构成椭圆。
 
-对于对象包含的圆角和椭圆组合的奇怪显示，请尝试定义 center 矩形，以便它与重叠圆圈的行和列：
+对于包含圆圈和省略号组合的对象，可尝试定义中心矩形，使其与圆圈的行和列重叠：
 
 ```csharp
 SKRectI centerRect = new SKRectI(150, 150, 350, 350);
@@ -119,31 +122,31 @@ SKRectI centerRect = new SKRectI(150, 150, 350, 350);
 
 ## <a name="the-lattice-display"></a>点阵显示
 
-这两个`DrawBitmapLattice`方法都是类似于`DrawBitmapNinePatch`，但它们通用于所有的水平或垂直分割数。 这些部门定义对应于像素为单位的整数数组的数组。 
+这两种 `DrawBitmapLattice` 方法类似于 `DrawBitmapNinePatch` ，但它们已通用化为任意数量的水平或垂直除法。 这些划分由对应于像素的整数数组定义。 
 
-[ `DrawBitmapLattice` ](xref:SkiaSharp.SKCanvas.DrawBitmapLattice(SkiaSharp.SKBitmap,System.Int32[],System.Int32[],SkiaSharp.SKRect,SkiaSharp.SKPaint))具有参数的整数中的这些阵列的方法似乎不起作用。 [ `DrawBitmapLattice` ](xref:SkiaSharp.SKCanvas.DrawBitmapLattice(SkiaSharp.SKBitmap,SkiaSharp.SKLattice,SkiaSharp.SKRect,SkiaSharp.SKPaint))具有类型参数的方法`SKLattice`的工作原理，这是在如下所示的示例中使用。
+此 [`DrawBitmapLattice`](xref:SkiaSharp.SKCanvas.DrawBitmapLattice(SkiaSharp.SKBitmap,System.Int32[],System.Int32[],SkiaSharp.SKRect,SkiaSharp.SKPaint)) 整数数组的带参数的方法似乎不起作用。 [`DrawBitmapLattice`](xref:SkiaSharp.SKCanvas.DrawBitmapLattice(SkiaSharp.SKBitmap,SkiaSharp.SKLattice,SkiaSharp.SKRect,SkiaSharp.SKPaint))带有类型的参数的方法 `SKLattice` 确实有效，这是在下面所示的示例中使用的方法。
 
-[ `SKLattice` ](xref:SkiaSharp.SKLattice)结构定义四个属性：
+[`SKLattice`](xref:SkiaSharp.SKLattice)结构定义四个属性：
 
-- [`XDivs`](xref:SkiaSharp.SKLattice.XDivs)一个整数数组
-- [`YDivs`](xref:SkiaSharp.SKLattice.YDivs)一个整数数组
-- [`Flags`](xref:SkiaSharp.SKLattice.Flags)一个数组`SKLatticeFlags`，枚举类型
-- [`Bounds`](xref:SkiaSharp.SKLattice.Bounds) 类型的`Nullable<SKRectI>`指定位图中的一个可选源矩形
+- [`XDivs`](xref:SkiaSharp.SKLattice.XDivs)，整数数组
+- [`YDivs`](xref:SkiaSharp.SKLattice.YDivs)，整数数组
+- [`Flags`](xref:SkiaSharp.SKLattice.Flags)，数组 `SKLatticeFlags` ，枚举类型
+- [`Bounds`](xref:SkiaSharp.SKLattice.Bounds)`Nullable<SKRectI>`指定位图中的可选源矩形的类型为的
 
-`XDivs`数组分成垂直条带位图的宽度。 第一条从像素延伸 0 左侧到`XDivs[0]`。 此带呈现其像素宽度。 从第二个条带延伸`XDivs[0]`到`XDivs[1]`，并且拉伸。 从第三个条带延伸`XDivs[1]`到`XDivs[2]`和呈现其像素宽度。 最后一条从数组的最后一个元素扩展到位图的右边缘。 如果数组具有偶数数目的元素，则它会显示在其像素宽度。 否则，它的拉伸。 垂直条带线的总数是一个数组中的元素数。
+该 `XDivs` 数组将位图的宽度分成竖线。 第一个条带从左侧的像素0向扩展 `XDivs[0]` 。 此带以像素宽度呈现。 第二个块将从扩展 `XDivs[0]` 到 `XDivs[1]` ，并进行延伸。 第三个块从扩展 `XDivs[1]` 到 `XDivs[2]` ，并以其像素宽度呈现。 最后一个块从数组的最后一个元素到位图的右边缘进行扩展。 如果数组有偶数个元素，则它将以其像素宽度显示。 否则，它会被拉伸。 垂直条带总数比数组中的元素数多一个。
 
-`YDivs`数组是类似。 它会将该数组的高度划分为水平条带中。
+`YDivs`数组类似。 它将数组的高度划分为水平条带。
 
-共同`XDivs`和`YDivs`数组将位图划分为矩形。 矩形的数量等于水平条带线的数目和垂直条带线的数目的乘积。
+同时， `XDivs` 和 `YDivs` 数组将位图拆分为矩形。 矩形的数目等于水平条纹数和垂直条纹数的乘积。
 
-根据 Skia 文档`Flags`数组包含一个元素的每个矩形，第一次的顶行是矩形，然后第二行等。 `Flags`数组类型是[ `SKLatticeFlags` ](xref:SkiaSharp.SKLatticeFlags)，具有以下成员的枚举：
+根据 Skia 文档，该 `Flags` 数组包含一个用于每个矩形的元素，首先是矩形的首行，然后是第二行，依此类推。 `Flags`数组的类型为 [`SKLatticeFlags`](xref:SkiaSharp.SKLatticeFlags) ，具有以下成员的枚举：
 
-- `Default` 使用值为 0
-- `Transparent` 值为 1
+- `Default`值为0
+- `Transparent`值为1
 
-但是，这些标志看起来不够，无法发挥作用，他们应该，和最好是将其忽略。 未设置，但`Flags`属性设置为`null`。 将其设置为一个数组`SKLatticeFlags`值大小足以包含矩形的总数。
+不过，这些标志看起来不像期望的那样工作，因此最好忽略这些标志。 但不要将 `Flags` 属性设置为 `null` 。 将其设置为一个 `SKLatticeFlags` 足够大的值数组，使其包含矩形的总数量。
 
-**点阵九个修补**页上使用`DrawBitmapLattice`模拟`DrawBitmapNinePatch`。 它使用相同的位图中创建`NinePatchDisplayPage`:
+**点阵9修补程序**页使用 `DrawBitmapLattice` 来模拟 `DrawBitmapNinePatch` 。 它使用在中创建的相同位图 `NinePatchDisplayPage` ：
 
 ```csharp
 public class LatticeNinePatchPage : ContentPage
@@ -175,13 +178,13 @@ public class LatticeNinePatchPage : ContentPage
 }
 ```
 
-同时`XDivs`和`YDivs`属性设置为仅使用两个整数，将位图划分为三个条，水平和垂直两个数组的数组： 从像素 0 到 100 （呈现的像素大小） 像素从像素 100 到 400 像素 （拉伸） 和从 400 像素到像素 500 （像素大小）。 共同`XDivs`并`YDivs`定义的大小是 9 矩形总计的`Flags`数组。 只需创建该数组就足以创建的数组`SKLatticeFlags.Default`值。
+`XDivs`和 `YDivs` 属性都设置为仅包含两个整数的数组，将位图拆分为三个垂直方向和垂直方向：从像素0到像素100（以像素大小显示）、从像素100到像素400（拉伸）以及从像素400到像素500（像素大小）。 同时 `XDivs` `YDivs` 定义总计9个矩形，即数组的大小 `Flags` 。 只需创建数组即可创建 `SKLatticeFlags.Default` 值数组。
 
-显示等同于上一个程序：
+此显示与以前的程序相同：
 
-[![包含 9 个修补程序点阵](segmented-images/LatticeNinePatch.png "点阵包含 9 个修补程序")](segmented-images/LatticeNinePatch-Large.png#lightbox)
+[![点阵 9-修补程序](segmented-images/LatticeNinePatch.png "点阵 9-修补程序")](segmented-images/LatticeNinePatch-Large.png#lightbox)
 
-**点阵显示**页将位图划分为 16 矩形：
+**点阵显示**页将位图分成16个矩形：
 
 ```csharp
 public class LatticeDisplayPage : ContentPage
@@ -217,13 +220,13 @@ public class LatticeDisplayPage : ContentPage
 }
 ```
 
-`XDivs`和`YDivs`数组是略有不同，从而导致显示不被完全与前面的示例为对称：
+`XDivs`和 `YDivs` 数组稍有不同，导致显示与前面的示例不完全相同：
 
-[![显示点阵](segmented-images/LatticeDisplay.png "点阵显示")](segmented-images/LatticeDisplay-Large.png#lightbox)
+[![点阵显示](segmented-images/LatticeDisplay.png "点阵显示")](segmented-images/LatticeDisplay-Large.png#lightbox)
 
-在 iOS 和 Android 映像在左侧，仅的较小圆圈来呈现其像素大小。 其他所有内容的拉伸。
+在左侧的 iOS 和 Android 映像中，只有较小的圆圈以其像素大小呈现。 其余所有内容都将被拉伸。
 
-**点阵显示**页可创建通用化`Flags`数组，从而可以试验`XDivs`和`YDivs`更轻松地。 具体而言，你将想要看到设置的第一个元素时，会发生什么情况`XDivs`或`YDivs`为 0 的数组。 
+**点阵显示**页通用化创建 `Flags` 数组，使您可以 `XDivs` `YDivs` 更轻松地进行试验。 特别是，您将需要查看将或数组的第一个元素设置为0时所发生的情况 `XDivs` `YDivs` 。 
 
 ## <a name="related-links"></a>相关链接
 

@@ -1,26 +1,29 @@
 ---
-title: Windows 上的 ListView SelectionMode
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用特定于 Windows 平台的来控制 ListView 中的项目是否可以响应点击手势。
-ms.prod: xamarin
-ms.assetid: 57EF3A7F-1407-4B31-AE21-D149293D4228
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: f6a90a8a0397db99a245f706450e7dc83097a45e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6c73f46d2845be7bb54e24cd02ec22f3c2cd386d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656901"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137237"
 ---
 # <a name="listview-selectionmode-on-windows"></a>Windows 上的 ListView SelectionMode
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-在通用 Windows 平台上，默认情况下，Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView)使用本机`ItemClick`事件响应交互，而不是本机`Tapped`事件。 这提供了可访问性功能，以便 Windows 讲述人和键盘可以与交互`ListView`。 但是，它还会呈现在任何点击手势`ListView`不可操作。
+在通用 Windows 平台上，默认情况下， Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 使用本机 `ItemClick` 事件来响应交互，而不是本机 `Tapped` 事件。 这提供了辅助功能，使 Windows 讲述人和键盘可以与进行交互 `ListView` 。 但是，它还会在不可操作的内呈现任何点击手势 `ListView` 。
 
-此通用 Windows 平台平台特定的控制中[`ListView`](xref:Xamarin.Forms.ListView)的项是否可响应点击手势, 并因此是否`ListView`引发`ItemClick`或`Tapped`事件。 设置使用在 XAML [ `ListView.SelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListView.SelectionModeProperty)附加属性的值为[ `ListViewSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode)枚举：
+此通用 Windows 平台平台特定的控制中的项是否 [`ListView`](xref:Xamarin.Forms.ListView) 可响应点击手势，并因此是否 `ListView` 引发 `ItemClick` 或 `Tapped` 事件。 它通过将 [`ListView.SelectionMode`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListView.SelectionModeProperty) 附加属性设置为枚举的值，在 XAML 中使用 [`ListViewSelectionMode`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode) ：
 
 ```xaml
 <ContentPage ...
@@ -33,7 +36,7 @@ ms.locfileid: "68656901"
 </ContentPage>
 ```
 
-或者，可以使用它从 C# 使用 fluent API:
+此外，还可以使用 Fluent API 从 c # 使用该方法：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -43,17 +46,17 @@ using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 listView.On<Windows>().SetSelectionMode(ListViewSelectionMode.Inaccessible);
 ```
 
-`ListView.On<Windows>`方法指定仅将在通用 Windows 平台上运行此特定于平台的。 [ `ListView.SetSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListView.SetSelectionMode(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.ListView},Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode))方法，在[ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)命名空间，是否用于控制中的项[ `ListView` ](xref:Xamarin.Forms.ListView)可响应的点击手势，[ `ListViewSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode)枚举提供两个可能值：
+`ListView.On<Windows>`方法指定此平台特定的仅在通用 Windows 平台上运行。 [ `ListView.SetSelectionMode` ] （X： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. SetSelectionMode （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。ListView}， Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. ListViewSelectionMode））方法在 [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) 命名空间中，用于控制中的项是否 [`ListView`](xref:Xamarin.Forms.ListView) 可以响应点击的笔势，并使用 [`ListViewSelectionMode`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode) 枚举提供两个可能的值：
 
-- [`Accessible`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode.Accessible) – 指示`ListView`将触发本机`ItemClick`事件处理的交互，并因此提供可访问性功能。 因此，Windows 讲述人和键盘可以与交互`ListView`。 但是中的项`ListView`无法响应点击手势。 这是默认行为`ListView`通用 Windows 平台上的实例。
-- [`Inaccessible`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode.Inaccessible) – 指示`ListView`将触发本机`Tapped`事件用于处理的交互。 因此中的项`ListView`可响应点击手势。 但是，没有可访问性功能，因此 Windows 讲述人和键盘不能与交互`ListView`。
+- [`Accessible`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode.Accessible)-指示 `ListView` 将激发本机 `ItemClick` 事件来处理交互，因此提供了辅助功能。 因此，Windows 讲述人和键盘可以与进行交互 `ListView` 。 但是，中的项 `ListView` 无法响应点击手势。 这是通用 Windows 平台上的实例的默认行为 `ListView` 。
+- [`Inaccessible`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode.Inaccessible)-指示 `ListView` 将激发本机 `Tapped` 事件来处理交互。 因此，中的项 `ListView` 可以响应点击手势。 但是，没有可访问的功能，因此 Windows 讲述人和键盘无法与交互 `ListView` 。
 
 > [!NOTE]
-> `Accessible`并`Inaccessible`选择模式是互斥的并且将需要选择可访问[ `ListView` ](xref:Xamarin.Forms.ListView)或`ListView`可响应的点击手势。
+> `Accessible`和 `Inaccessible` 选择模式是互斥的，你将需要在 [`ListView`](xref:Xamarin.Forms.ListView) `ListView` 可响应点击手势的可访问或之间进行选择。
 
-此外， [ `GetSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListView.GetSelectionMode(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.ListView}))方法可用于返回当前[ `ListViewSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode)。
+此外，[ `GetSelectionMode` ] （x： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. GetSelectionMode （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。ListView}））方法可用于返回当前 [`ListViewSelectionMode`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode) 。
 
-结果是，指定[ `ListViewSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode)应用于[ `ListView` ](xref:Xamarin.Forms.ListView)，哪些控件是否中的项`ListView`可响应点击手势，并因此是否本机`ListView`激发`ItemClick`或`Tapped`事件。
+结果是，指定的 [`ListViewSelectionMode`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode) 将应用于 [`ListView`](xref:Xamarin.Forms.ListView) ，后者控制中的项是否 `ListView` 可响应点击手势，并因此是否 `ListView` 引发 `ItemClick` 或 `Tapped` 事件。
 
 ## <a name="related-links"></a>相关链接
 

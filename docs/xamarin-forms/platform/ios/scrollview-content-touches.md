@@ -1,24 +1,27 @@
 ---
-title: ScrollView 内容涉及 iOS
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用特定于 iOS 平台的来控制 ScrollView 是否处理触摸手势或将其传递给其内容。
-ms.prod: xamarin
-ms.assetid: 99F823DB-B379-40F0-A343-A9783C341120
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: 154666cce4ad6c53949952fa93f5ad7dc89824ab
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9b8f743b2c3d7f4b38feb4cfc5015b1113620562
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651764"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137093"
 ---
 # <a name="scrollview-content-touches-on-ios"></a>ScrollView 内容涉及 iOS
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-触摸手势中开始时触发的隐式计时器[ `ScrollView` ](xref:Xamarin.Forms.ScrollView)在 iOS 上和`ScrollView`决定是否应处理手势，也可以将其传递给其内容基于计时器的范围内中的用户操作。 默认情况下，iOS`ScrollView`延迟内容的收尾工作了，但这可能会问题导致在某些情况下使用`ScrollView`不应获胜手势的内容。 因此，此特定于平台的控件是否`ScrollView`处理触摸手势或将其传递给其内容。 设置使用在 XAML`ScrollView.ShouldDelayContentTouches`附加属性设置为`boolean`值：
+当触摸手势在 [`ScrollView`](xref:Xamarin.Forms.ScrollView) iOS 上开始，并根据 `ScrollView` 计时器范围内的用户操作确定时，将触发隐式计时器，不管是处理手势还是将其传递到其内容。 默认情况下，iOS `ScrollView` 延迟内容的发生，但在某些情况下，这可能会导致问题，其中的 `ScrollView` 内容不会在其应该时获胜。 因此，此特定于平台的控制是否 `ScrollView` 处理触摸手势或将其传递给其内容。 它通过将 `ScrollView.ShouldDelayContentTouches` 附加属性设置为值在 XAML 中使用 `boolean` ：
 
 ```xaml
 <MasterDetailPage ...
@@ -39,7 +42,7 @@ ms.locfileid: "68651764"
 </MasterDetailPage>
 ```
 
-或者，可以使用它从 C# 使用 fluent API:
+此外，还可以使用 Fluent API 从 c # 使用该方法：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -49,15 +52,15 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 scrollView.On<iOS>().SetShouldDelayContentTouches(false);
 ```
 
-`ScrollView.On<iOS>`方法指定仅将在 iOS 上运行此特定于平台的。 `ScrollView.SetShouldDelayContentTouches`方法，请在[ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空间，是否用于控制[ `ScrollView` ](xref:Xamarin.Forms.ScrollView)处理触摸手势或将其传递给其内容。 此外，`SetShouldDelayContentTouches`方法可用于切换通过调用延迟内容收尾工作了`ShouldDelayContentTouches`方法以返回是否延迟内容收尾工作了：
+`ScrollView.On<iOS>`方法指定此平台特定的仅在 iOS 上运行。 `ScrollView.SetShouldDelayContentTouches`命名空间中的方法 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 用于控制是否 [`ScrollView`](xref:Xamarin.Forms.ScrollView) 处理触摸手势或将其传递给其内容。 此外， `SetShouldDelayContentTouches` 可以通过调用 `ShouldDelayContentTouches` 方法来返回内容接触是否延迟，使用方法来切换延迟内容润色：
 
 ```csharp
 scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDelayContentTouches());
 ```
 
-结果是， [ `ScrollView` ](xref:Xamarin.Forms.ScrollView)可以禁用延迟接收内容收尾工作了，因此，在这种情况下[ `Slider` ](xref:Xamarin.Forms.Slider)接收手势而不是[ `Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail)页的[ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage):
+结果是 [`ScrollView`](xref:Xamarin.Forms.ScrollView) 可以禁止延迟接收内容的接收，因此，在此方案中，会 [`Slider`](xref:Xamarin.Forms.Slider) 接收该笔势，而不是接收的 [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) 页面 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) ：
 
-[![](scrollview-content-touches-images/scrollview-delay-content-touches.png "ScrollView 延迟内容涉及特定于平台的")](scrollview-content-touches-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView 延迟内容涉及特定于平台的")
+[![](scrollview-content-touches-images/scrollview-delay-content-touches.png "ScrollView Delay Content Touches Platform-Specific")](scrollview-content-touches-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView Delay Content Touches Platform-Specific")
 
 ## <a name="related-links"></a>相关链接
 

@@ -1,28 +1,31 @@
 ---
-title: Xamarin.Forms 布局
-description: Xamarin. 窗体布局用于将用户界面控件组合到可视结构中。 本文列出了 Xamarin. Forms 中包含的布局。
-ms.prod: xamarin
-ms.assetid: F4180997-BA21-453A-9958-D1E2940DF050
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/21/2018
-ms.openlocfilehash: fa08c5012adf74a17852a72b8faf2c0311d16cfa
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+title: Xamarin.Forms布局
+description: Xamarin.Forms布局用于将用户界面控件组合到可视结构中。 本文列出了中包含的布局 Xamarin.Forms 。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c39bf29feceaf598ac8fd38e6af3d227b6deddc0
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83150040"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137301"
 ---
-# <a name="xamarinforms-layouts"></a>Xamarin.Forms 布局
+# <a name="xamarinforms-layouts"></a>Xamarin.Forms布局
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
 
 _Xamarin. 窗体布局用于将用户界面控件组成可视结构。_
 
-[`Layout`](xref:Xamarin.Forms.Layout) [`Layout<T>`](xref:Xamarin.Forms.Layout`1) Xamarin 中的和类是视图的专用化子类型，用作视图和其他布局的容器。 `Layout`类本身派生自 [`View`](views.md) 。 `Layout`派生通常包含在 Xamarin. Forms 应用程序中设置子元素位置和大小的逻辑。
+[`Layout`](xref:Xamarin.Forms.Layout)和 [`Layout<T>`](xref:Xamarin.Forms.Layout`1) 中的类 Xamarin.Forms 是视图的专用化子类型，用作视图和其他布局的容器。 `Layout`类本身派生自 [`View`](views.md) 。 `Layout`派生通常包含用于在应用程序中设置子元素的位置和大小的逻辑 Xamarin.Forms 。
 
-[![Xamarin Forms 布局类型](layouts-images/layouts-sml.png "Xamarin Forms 布局类型")](layouts-images/layouts.png#lightbox "Xamarin Forms 布局类型")
+[![Xamarin.Forms布局类型](layouts-images/layouts-sml.png "[!基金.非 LOC （Xamarin）] 布局类型")](layouts-images/layouts.png#lightbox "[!基金.非 LOC （Xamarin）] 布局类型")
 
 派生自的类 `Layout` 可以分为两个类别：
 
@@ -116,6 +119,6 @@ _Xamarin. 窗体布局用于将用户界面控件组成可视结构。_
 
 ## <a name="related-links"></a>相关链接
 
-- [Xamarin FormsGallery 示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
-- [Xamarin.Forms 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
-- [Xamarin.Forms API 文档](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)
+- [Xamarin.FormsFormsGallery 示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
+- [Xamarin.Forms范例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- [Xamarin.FormsAPI 文档](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

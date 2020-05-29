@@ -1,50 +1,53 @@
 ---
-title: SkiaSharp 效果
-description: 了解如何更改正常显示的图形使用渐变、 位图平铺、 混合模式、 模糊和其他效果。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: B3E06572-8E2A-49FA-90D1-444C394CD516
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/22/2018
-ms.openlocfilehash: da923a3542a57b6150e536ecb6649140e57c81e1
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d9fa710f5dfc61c2892b8fc409a39b37cf449018
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655358"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136300"
 ---
 # <a name="skiasharp-effects"></a>SkiaSharp 效果
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-SkiaSharp [ `SKPaint` ](xref:SkiaSharp.SKPaint)类定义了六个可以下的常规术语分类的属性_效果_。 这些是更改的图形以某种方式正常显示的属性。 SkiaSharp 效果划分为六个类别：
+SkiaSharp [`SKPaint`](xref:SkiaSharp.SKPaint) 类定义了六个属性，这些属性可根据一般的_效果_进行分类。 这些是以某种方式更改图形的正常显示方式的属性。 SkiaSharp 效果分为六类：
 
-## <a name="path-effectscurveseffectsmd"></a>[路径效果](../curves/effects.md)
+## <a name="path-effects"></a>[路径效果](../curves/effects.md)
 
-设置[ `PathEffect` ](xref:SkiaSharp.SKPaint.PathEffect)的属性`SKPaint`对象的类型[ `SKPathEffect` ](xref:SkiaSharp.SKPathEffect)显示虚线，或者要绘制笔画，或从路径中创建的图案填充的区域。 路径效果前面中本系列文章中所涉及[ **SkiaSharp 中的路径效果**](../curves/effects.md)。
+将的 [`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect) 属性设置为 `SKPaint` 类型的对象 [`SKPathEffect`](xref:SkiaSharp.SKPathEffect) 可以显示虚线，或使用从路径创建的模式来描边或填充区域。 在 SkiaSharp 的文章[**路径效果**](../curves/effects.md)中，此系列中介绍了该路径效果。
 
-## <a name="shadersshadersindexmd"></a>[着色器](shaders/index.md)
+## <a name="shaders"></a>[着色器](shaders/index.md)
 
-设置[ `Shader` ](xref:SkiaSharp.SKPaint.Shader)的属性`SKPaint`对象的类型[ `SKShader` ](xref:SkiaSharp.SKShader)显示线性或循环渐变、 平铺的位图和 Perlin 噪音模式。
+将的 [`Shader`](xref:SkiaSharp.SKPaint.Shader) 属性设置 `SKPaint` 为类型的对象， [`SKShader`](xref:SkiaSharp.SKShader) 以显示线性或圆形渐变、平铺位图和 Perlin 干扰模式。
 
-## <a name="blend-modesblend-modesindexmd"></a>[混合模式](blend-modes/index.md)
+## <a name="blend-modes"></a>[混合模式](blend-modes/index.md)
 
-设置[ `BlendMode` ](xref:SkiaSharp.SKPaint.BlendMode)的属性`SKPaint`成员[ `SKBlendMode` ](xref:SkiaSharp.SKBlendMode)枚举来控制源图形显示在目标上时，会发生什么情况。 SkiaSharp 支持所有 CSS 组合的情况下，混合模式，包括 Porter Duff 模式、 可分离的混合模式和非可分离的混合模式。
+将的 [`BlendMode`](xref:SkiaSharp.SKPaint.BlendMode) 属性设置 `SKPaint` 为枚举的成员 [`SKBlendMode`](xref:SkiaSharp.SKBlendMode) ，以控制当目标图形显示在目标图形时所发生的情况。 SkiaSharp 支持所有 CSS 组合和混合模式，包括 Porter 模式、分离混合模式和非分离混合模式。
 
-## <a name="mask-filtersmask-filtersmd"></a>[掩码筛选器](mask-filters.md)
+## <a name="mask-filters"></a>[掩码筛选器](mask-filters.md)
 
-设置[ `MaskFilter` ](xref:SkiaSharp.SKPaint.MaskFilter)的属性`SKPaint`对象的类型[ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter)模糊和其他 alpha 的效果。
+将的 [`MaskFilter`](xref:SkiaSharp.SKPaint.MaskFilter) 属性设置 `SKPaint` 为类型的对象，以 [`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter) 提供模糊和其他 alpha 效果。
 
-## <a name="image-filtersimage-filtersmd"></a>[映像筛选器](image-filters.md)
+## <a name="image-filters"></a>[图像筛选器](image-filters.md)
 
-设置[ `ImageFilter` ](xref:SkiaSharp.SKPaint.ImageFilter)的属性`SKPaint`对象的类型[ `SKImageFilter` ](xref:SkiaSharp.SKImageFilter)模糊的位图和创建投影、 浮雕或雕刻效果。
+将的 [`ImageFilter`](xref:SkiaSharp.SKPaint.ImageFilter) 属性设置 `SKPaint` 为一个类型为的对象，以 [`SKImageFilter`](xref:SkiaSharp.SKImageFilter) 对位图进行模糊处理并创建投影、浮雕或 engraving 效果。
 
-## <a name="color-filterscolor-filtersmd"></a>[颜色筛选器](color-filters.md)
+## <a name="color-filters"></a>[颜色筛选器](color-filters.md)
 
-设置[ `ColorFilter` ](xref:SkiaSharp.SKPaint.ColorFilter)的属性`SKPaint`对象的类型[ `SKColorFilter` ](xref:SkiaSharp.SKColorFilter)更改颜色使用表或矩阵转换。
+[`ColorFilter`](xref:SkiaSharp.SKPaint.ColorFilter) `SKPaint` 使用表或矩阵转换将的属性设置为类型的对象 [`SKColorFilter`](xref:SkiaSharp.SKColorFilter) ，从而更改颜色。
 
-这些文章是中的所有示例都代码[ **SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)。 在主页上，选择**SkiaSharp 效果**。
+这些文章的所有示例代码都位于[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)中。 从主页中，选择 " **SkiaSharp 效果**"。
 
 ## <a name="related-links"></a>相关链接
 

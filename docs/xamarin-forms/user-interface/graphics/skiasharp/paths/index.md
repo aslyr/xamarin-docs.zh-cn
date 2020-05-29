@@ -1,52 +1,55 @@
 ---
-title: SkiaSharp 线和路径
-description: 此文介绍了如何使用 SkiaSharp 绘制 Xamarin.Forms 应用程序中的行和图形路径，此示例代码进行了演示。
-ms.prod: xamarin
-ms.assetid: 316A15FE-383D-4D06-8641-BAC7EE7474CA
-ms.technology: xamarin-skiasharp
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/10/2017
-ms.openlocfilehash: f9964d68e33e84dff789a4ad34443782f22ea821
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: ''
+description: 本文介绍如何使用 SkiaSharp 在应用程序中绘制线条和图形路径 Xamarin.Forms ，并使用示例代码对此进行演示。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 97c7305e59a023e65535186bbbe39a9c2b7d4c26
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759165"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138991"
 ---
 # <a name="skiasharp-lines-and-paths"></a>SkiaSharp 线和路径
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用 SkiaSharp 绘制线条和图形路径_
 
-[上一节](~/xamarin-forms/user-interface/graphics/skiasharp/basics/index.md)所示的 SkiaSharp`SKCanvas`类包括几种方法来绘制圆、 椭圆、 矩形、 圆角的矩形、 文本和位图。 此部分和更高版本的部分介绍各种类连接与创建和呈现*图形路径*。
+[上一部分](~/xamarin-forms/user-interface/graphics/skiasharp/basics/index.md)演示了 SkiaSharp `SKCanvas` 类包含若干方法，用于绘制圆、椭圆、矩形、圆角矩形、文本和位图。 本节和更高部分介绍了与创建和呈现*图形路径*相关的各种类。
 
-图形路径是到绘制的直线和曲线 SkiaSharp 中的最通用的方法。 本部分介绍如何使用[ `SKPath` ](xref:SkiaSharp.SKPath)对象绘制的直线，并使用一系列小直线，直线 (称为*折线*) 绘制可以从算法上定义的曲线。 在后面的部分[ **SkiaSharp 曲线和路径**](../curves/index.md)讨论了各种类型的支持的曲线`SKPath`。
+图形路径是在 SkiaSharp 中绘制直线和曲线的最通用方法。 本部分介绍如何使用 [`SKPath`](xref:SkiaSharp.SKPath) 对象绘制直线，并使用一组小直线直线（称为*折线*）绘制可定义算法的曲线。 后面的有关[**SkiaSharp 曲线和路径**](../curves/index.md)的部分介绍了支持的各种曲线种类 `SKPath` 。
 
-在本部分中的所有示例程序都显示在标题下**线和路径**中的主页[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序，然后在[**路径**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths)该解决方案的文件夹。
+此部分中的所有示例程序显示在[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序主页的标题**行和路径**下，以及该解决方案的 "[**路径**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths)" 文件夹下。
 
-## <a name="lines-and-stroke-capslinesmd"></a>[线和笔划大写字母](lines.md)
+## <a name="lines-and-stroke-caps"></a>[线和笔划大写字母](lines.md)
 
-了解如何使用 SkiaSharp 绘制不同笔划大写字母的线条。
+了解如何使用 SkiaSharp 来绘制具有不同笔划帽的线条。
 
-## <a name="path-basicspathsmd"></a>[路径基础知识](paths.md)
+## <a name="path-basics"></a>[路径基础知识](paths.md)
 
-了解 SkiaSharp`SKPath`组合的直线和曲线的对象。
+浏览 `SKPath` 用于组合线条和曲线的 SkiaSharp 对象。
 
-## <a name="the-path-fill-typesfill-typesmd"></a>[路径填充类型](fill-types.md)
+## <a name="the-path-fill-types"></a>[路径填充类型](fill-types.md)
 
-发现不同的效果可能使用 SkiaSharp 路径填充类型。
+发现 SkiaSharp 路径填充类型可能产生的不同效果。
 
-## <a name="polylines-and-parametric-equationspolylinesmd"></a>[折线和参数等式](polylines.md)
+## <a name="polylines-and-parametric-equations"></a>[折线和参数等式](polylines.md)
 
-使用 SkiaSharp 来呈现可以定义与参数方程确定任何行。
+使用 SkiaSharp 可呈现可以使用参数化公式定义的任何行。
 
-## <a name="dots-and-dashesdotsmd"></a>[点和短划线](dots.md)
+## <a name="dots-and-dashes"></a>[点和短划线](dots.md)
 
-主中 SkiaSharp 绘制点线和虚线线条的复杂性。
+主要是在 SkiaSharp 中绘制虚线和虚线的复杂性。
 
-## <a name="finger-paintingfinger-paintmd"></a>[手指绘图](finger-paint.md)
+## <a name="finger-painting"></a>[手指绘图](finger-paint.md)
 
 使用手指在画布上绘制。
 

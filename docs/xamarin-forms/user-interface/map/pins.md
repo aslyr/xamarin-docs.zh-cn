@@ -1,43 +1,46 @@
 ---
-title: Xamarin Map 引脚
-description: 本文介绍如何在 Xamarin. Forms 地图上创建 pin。
-ms.prod: xamarin
-ms.assetid: F8FC081B-A811-4FBB-B8F8-30D6FD36BD40
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/23/2019
-ms.openlocfilehash: 3df78a7c8eaf12306ade182f134f8d294d203af5
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: Xamarin.Forms映射 Pin
+description: 本文介绍如何在地图上创建 pin Xamarin.Forms 。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5e22888291a430863b8e45ee21d359a5acec750f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517587"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138432"
 ---
-# <a name="xamarinforms-map-pins"></a>Xamarin Map 引脚
+# <a name="xamarinforms-map-pins"></a>Xamarin.Forms映射 Pin
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
-Xamarin [`Map`](xref:Xamarin.Forms.Maps.Map)控件允许将位置标记为[`Pin`](xref:Xamarin.Forms.Maps.Pin)对象。 `Pin`是在点击时打开信息窗口的地图标记：
+Xamarin.Forms [`Map`](xref:Xamarin.Forms.Maps.Map) 控件允许用对象标记位置 [`Pin`](xref:Xamarin.Forms.Maps.Pin) 。 `Pin`是在点击时打开信息窗口的地图标记：
 
 [![IOS 和 Android 上的地图 pin 及其信息窗口的屏幕截图](pins-images/pin-and-information-window.png "用信息窗口映射 pin")](pins-images/pin-and-information-window-large.png#lightbox "用信息窗口映射 pin")
 
-将[`Pin`](xref:Xamarin.Forms.Maps.Pin)对象添加到[`Map.Pins`](xref:Xamarin.Forms.Maps.Pin)集合时，会在地图上呈现该固定。
+将 [`Pin`](xref:Xamarin.Forms.Maps.Pin) 对象添加到 [`Map.Pins`](xref:Xamarin.Forms.Maps.Pin) 集合时，会在地图上呈现该固定。
 
 [`Pin`](xref:Xamarin.Forms.Maps.Pin)类具有以下属性：
 
-- [`Address`](xref:Xamarin.Forms.Maps.Pin.Address)，类型`string`为，通常表示 pin 位置的地址。 但是，它可以是任何`string`内容，而不仅仅是地址。
-- [`Label`](xref:Xamarin.Forms.Maps.Pin.Label)，类型`string`为，通常表示 pin 标题。
-- [`Position`](xref:Xamarin.Forms.Maps.Pin.Position)，类型[`Position`](xref:Xamarin.Forms.Maps.Position)为，表示 pin 的纬度和经度。
-- [`Type`](xref:Xamarin.Forms.Maps.Pin.Type)，类型[`PinType`](xref:Xamarin.Forms.Maps.PinType)为，表示 pin 类型。
+- [`Address`](xref:Xamarin.Forms.Maps.Pin.Address)，类型为 `string` ，通常表示 pin 位置的地址。 但是，它可以是任何 `string` 内容，而不仅仅是地址。
+- [`Label`](xref:Xamarin.Forms.Maps.Pin.Label)，类型为 `string` ，通常表示 pin 标题。
+- [`Position`](xref:Xamarin.Forms.Maps.Pin.Position)，类型为 [`Position`](xref:Xamarin.Forms.Maps.Position) ，表示 pin 的纬度和经度。
+- [`Type`](xref:Xamarin.Forms.Maps.Pin.Type)，类型为 [`PinType`](xref:Xamarin.Forms.Maps.PinType) ，表示 pin 类型。
 
-这些属性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)对象支持的，这意味着`Pin`可以是数据绑定的目标。 有关数据绑定`Pin`对象的详细信息，请参阅[显示固定的集合](#display-a-pin-collection)。
+这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着 `Pin` 可以是数据绑定的目标。 有关数据绑定对象的详细信息 `Pin` ，请参阅[显示固定的集合](#display-a-pin-collection)。
 
-此外， [`Pin`](xref:Xamarin.Forms.Maps.Pin)类还定义`MarkerClicked`和`InfoWindowClicked`事件。 点击`MarkerClicked`某个 pin 时，将触发该事件，并在`InfoWindowClicked`点击信息窗口时激发该事件。 同时`PinClickedEventArgs`提供两个事件的对象具有类型`HideInfoWindow` `bool`为的单个属性。
+此外，类还 [`Pin`](xref:Xamarin.Forms.Maps.Pin) 定义 `MarkerClicked` 和 `InfoWindowClicked` 事件。 `MarkerClicked`点击某个 pin 时，将触发该事件，并在 `InfoWindowClicked` 点击信息窗口时激发该事件。 `PinClickedEventArgs`同时提供两个事件的对象具有 `HideInfoWindow` 类型为的单个属性 `bool` 。
 
 ## <a name="display-a-pin"></a>显示 pin
 
-[`Pin`](xref:Xamarin.Forms.Maps.Pin)可以[`Map`](xref:Xamarin.Forms.Maps.Map)在 XAML 中将添加到：
+[`Pin`](xref:Xamarin.Forms.Maps.Pin)可以 [`Map`](xref:Xamarin.Forms.Maps.Map) 在 XAML 中将添加到：
 
 ```xaml
 <ContentPage ...
@@ -77,7 +80,7 @@ Xamarin [`Map`](xref:Xamarin.Forms.Maps.Map)控件允许将位置标记为[`Pin`
 </ContentPage>
 ```
 
-此 XAML 将创建[`Map`](xref:Xamarin.Forms.Maps.Map)一个对象，该对象显示[`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)对象指定的区域。 `MapSpan`对象在由[`Position`](xref:Xamarin.Forms.Maps.Position)对象表示的纬度和经度上居中，这会延长0.01 的纬度和经度度。 [`Pin`](xref:Xamarin.Forms.Maps.Pin)对象将添加到[`Map.Pins`](xref:Xamarin.Forms.Maps.Pin)集合中，并在上`Map`的[`Position`](xref:Xamarin.Forms.Maps.Pin.Position)属性所指定的位置绘制。 有关[`Position`](xref:Xamarin.Forms.Maps.Position)结构的信息，请参阅[地图位置和距离](position-distance.md)。 有关将 XAML 中的参数传递给缺少默认构造函数的对象的信息，请参阅[在 xaml 中传递参数](~/xamarin-forms/xaml/passing-arguments.md)。
+此 XAML 将创建一个 [`Map`](xref:Xamarin.Forms.Maps.Map) 对象，该对象显示对象指定的区域 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) 。 `MapSpan`对象在由对象表示的纬度和经度上居中 [`Position`](xref:Xamarin.Forms.Maps.Position) ，这会延长0.01 的纬度和经度度。 [`Pin`](xref:Xamarin.Forms.Maps.Pin)对象将添加到 [`Map.Pins`](xref:Xamarin.Forms.Maps.Pin) 集合中，并在上的 `Map` 属性所指定的位置绘制 [`Position`](xref:Xamarin.Forms.Maps.Pin.Position) 。 有关结构的信息 [`Position`](xref:Xamarin.Forms.Maps.Position) ，请参阅[地图位置和距离](position-distance.md)。 有关将 XAML 中的参数传递给缺少默认构造函数的对象的信息，请参阅[在 xaml 中传递参数](~/xamarin-forms/xaml/passing-arguments.md)。
 
 等效 C# 代码如下：
 
@@ -99,7 +102,7 @@ map.Pins.Add(pin);
 ```
 
 > [!WARNING]
-> 如果将[`Pin.Label`](xref:Xamarin.Forms.Maps.Pin.Label)属性设置为，则在将`ArgumentException`添加到时[`Pin`](xref:Xamarin.Forms.Maps.Pin) ，将导致引发[`Map`](xref:Xamarin.Forms.Maps.Map)。
+> 如果将属性设置为，则在将 [`Pin.Label`](xref:Xamarin.Forms.Maps.Pin.Label) `ArgumentException` 添加到时，将导致引发 [`Pin`](xref:Xamarin.Forms.Maps.Pin) [`Map`](xref:Xamarin.Forms.Maps.Map) 。
 
 此示例代码会导致在地图上呈现一个插针：
 
@@ -107,15 +110,15 @@ map.Pins.Add(pin);
 
 ## <a name="interact-with-a-pin"></a>与 pin 交互
 
-默认情况下，当[`Pin`](xref:Xamarin.Forms.Maps.Pin)点击其信息窗口时，将显示：
+默认情况下，当 [`Pin`](xref:Xamarin.Forms.Maps.Pin) 点击其信息窗口时，将显示：
 
 [![IOS 和 Android 上的地图 pin 及其信息窗口的屏幕截图](pins-images/pin-and-information-window.png "用信息窗口映射 pin")](pins-images/pin-and-information-window-large.png#lightbox "用信息窗口映射 pin")
 
 点击地图上的其他位置会关闭信息窗口。
 
-[`Pin`](xref:Xamarin.Forms.Maps.Pin)类定义一个`MarkerClicked`事件，该事件在点击时`Pin`被触发。 不需要处理此事件以显示信息窗口。 相反，当需要通知已点击特定 pin 时，应处理此事件。
+[`Pin`](xref:Xamarin.Forms.Maps.Pin)类定义一个 `MarkerClicked` 事件，该事件在点击时被触发 `Pin` 。 不需要处理此事件以显示信息窗口。 相反，当需要通知已点击特定 pin 时，应处理此事件。
 
-[`Pin`](xref:Xamarin.Forms.Maps.Pin)类还定义在点击`InfoWindowClicked`信息窗口时触发的事件。 当需要通知已点击特定信息窗口时，应处理此事件。
+[`Pin`](xref:Xamarin.Forms.Maps.Pin)类还定义 `InfoWindowClicked` 在点击信息窗口时触发的事件。 当需要通知已点击特定信息窗口时，应处理此事件。
 
 下面的代码显示了处理这些事件的示例：
 
@@ -150,31 +153,31 @@ wharfPin.InfoWindowClicked += async (s, args) =>
 };
 ```
 
-同时`PinClickedEventArgs`提供两个事件的对象具有类型`HideInfoWindow` `bool`为的单个属性。 如果将此属性设置为`true`事件处理程序内部，将隐藏信息窗口。
+`PinClickedEventArgs`同时提供两个事件的对象具有 `HideInfoWindow` 类型为的单个属性 `bool` 。 如果将此属性设置为 `true` 事件处理程序内部，将隐藏信息窗口。
 
 ## <a name="pin-types"></a>固定类型
 
-[`Pin`](xref:Xamarin.Forms.Maps.Pin)对象包括类型[`Type`](xref:Xamarin.Forms.Maps.Pin.Type) [`PinType`](xref:Xamarin.Forms.Maps.PinType)为的属性，表示 pin 类型。 `PinType` 枚举定义下列成员：
+[`Pin`](xref:Xamarin.Forms.Maps.Pin)对象包括 [`Type`](xref:Xamarin.Forms.Maps.Pin.Type) 类型为的属性 [`PinType`](xref:Xamarin.Forms.Maps.PinType) ，表示 pin 类型。 `PinType` 枚举定义下列成员：
 
 - `Generic`表示泛型 pin。
 - `Place`表示位置的 pin。
 - `SavedPin`表示保存位置的 pin。
 - `SearchResult`表示搜索结果的 pin。
 
-但是，将[`Pin.Type`](xref:Xamarin.Forms.Maps.Pin.Type)属性设置为任何[`PinType`](xref:Xamarin.Forms.Maps.PinType)成员不会更改呈现的 pin 的外观。 相反，您必须创建自定义呈现器来自定义 pin 外观。 有关详细信息，请参阅[自定义地图 pin](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)。
+但是，将 [`Pin.Type`](xref:Xamarin.Forms.Maps.Pin.Type) 属性设置为任何 [`PinType`](xref:Xamarin.Forms.Maps.PinType) 成员不会更改呈现的 pin 的外观。 相反，您必须创建自定义呈现器来自定义 pin 外观。 有关详细信息，请参阅[自定义地图 pin](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)。
 
 ## <a name="display-a-pin-collection"></a>显示固定集合
 
 [`Map`](xref:Xamarin.Forms.Maps.Map)类定义以下属性：
 
-- [`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)，类型`IEnumerable`为，它指定要显示的`IEnumerable`项的集合。
-- [`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate)，类型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)为，它指定要[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)应用于显示的项集合中的每个项的。
-- `ItemTemplateSelector`，类型[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)为，它指定[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)将用于在运行时[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)为项选择。
+- [`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)，类型为 `IEnumerable` ，它指定 `IEnumerable` 要显示的项的集合。
+- [`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate)，类型为 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ，它指定 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 要应用于显示的项集合中的每个项的。
+- `ItemTemplateSelector`，类型为 [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) ，它指定 [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) 将用于 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 在运行时为项选择。
 
 > [!IMPORTANT]
-> 当[`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate)设置了`ItemTemplate`和`ItemTemplateSelector`属性时，属性将优先。
+> [`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate)当设置了和属性时，属性将优先 `ItemTemplate` `ItemTemplateSelector` 。
 
-[`Map`](xref:Xamarin.Forms.Maps.Map)可以通过使用数据绑定将其[`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)属性绑定到`IEnumerable`集合来填充 pin：
+[`Map`](xref:Xamarin.Forms.Maps.Map)可以通过使用数据绑定将其属性绑定到集合来填充 pin [`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource) `IEnumerable` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -198,17 +201,17 @@ wharfPin.InfoWindowClicked += async (s, args) =>
 </ContentPage>
 ```
 
-[`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)属性数据绑定到连接的`Locations` viewmodel 的属性，该属性返回对象`ObservableCollection`的`Location` ，这是一个自定义类型。 每`Location`个对象`Address`都`Description`定义类型的和`string`属性，并`Position`定义类型[`Position`](xref:Xamarin.Forms.Maps.Position)的属性和属性。
+[`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)属性数据绑定到连接的 `Locations` viewmodel 的属性，该属性返回 `ObservableCollection` `Location` 对象的，这是一个自定义类型。 每个对象都定义类型的 `Location` `Address` 和 `Description` 属性，并定义类型的 `string` `Position` 属性和属性 [`Position`](xref:Xamarin.Forms.Maps.Position) 。
 
-`IEnumerable`通过将[`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate)属性设置为[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ，可以定义集合中每个项的外观，方法是将[`Pin`](xref:Xamarin.Forms.Maps.Pin)属性设置为，其中包含数据绑定到相应属性的对象。
+`IEnumerable`通过将属性设置为，可以定义集合中每个项的外观，方法是将 [`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate) 属性设置为 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ，其中包含 [`Pin`](xref:Xamarin.Forms.Maps.Pin) 数据绑定到相应属性的对象。
 
-以下屏幕截图显示了[`Map`](xref:Xamarin.Forms.Maps.Map)使用数据[`Pin`](xref:Xamarin.Forms.Maps.Pin)绑定显示集合的内容：
+以下屏幕截图显示了 [`Map`](xref:Xamarin.Forms.Maps.Map) [`Pin`](xref:Xamarin.Forms.Maps.Pin) 使用数据绑定显示集合的内容：
 
 [![在 iOS 和 Android 上带有数据绑定插针的地图屏幕截图](pins-images/pins-itemsource.png "具有数据绑定插针的映射")](pins-images/pins-itemsource-large.png#lightbox "具有数据绑定插针的映射")
 
 ### <a name="choose-item-appearance-at-runtime"></a>在运行时选择项外观
 
-可以在运行时根据项值`IEnumerable`选择集合中每个项的外观，方法是将`ItemTemplateSelector`属性设置为： [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)
+`IEnumerable`可以在运行时根据项值选择集合中每个项的外观，方法是将 `ItemTemplateSelector` 属性设置为 [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) ：
 
 ```xaml
 <ContentPage ...
@@ -244,7 +247,7 @@ wharfPin.InfoWindowClicked += async (s, args) =>
 </ContentPage>
 ```
 
-下面的示例演示了`MapItemTemplateSelector`类：
+下面的示例演示了 `MapItemTemplateSelector` 类：
 
 ```csharp
 public class MapItemTemplateSelector : DataTemplateSelector
@@ -259,16 +262,16 @@ public class MapItemTemplateSelector : DataTemplateSelector
 }
 ```
 
-`MapItemTemplateSelector`类定义`DefaultTemplate`了并`XamarinTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)将属性设置为不同的数据模板。 `OnSelectTemplate`方法返回`XamarinTemplate`，当在点击时将 "Xamarin" 作为标签`Pin`显示，当项的地址包含 "旧金山" 时。 如果项没有包含 "旧金山" 的地址，则该`OnSelectTemplate`方法将返回。 `DefaultTemplate`
+`MapItemTemplateSelector`类定义了 `DefaultTemplate` 并 `XamarinTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 将属性设置为不同的数据模板。 `OnSelectTemplate`方法返回 `XamarinTemplate` ，当在点击时将 "Xamarin" 作为标签显示 `Pin` ，当项的地址包含 "旧金山" 时。 如果项没有包含 "旧金山" 的地址，则该 `OnSelectTemplate` 方法将返回 `DefaultTemplate` 。
 
 > [!NOTE]
-> 此功能的一个用例是基于子类型将子归类[`Pin`](xref:Xamarin.Forms.Maps.Pin)对象的属性绑定到不同的`Pin`属性。
+> 此功能的一个用例是基于子类型将子归类对象的属性绑定 [`Pin`](xref:Xamarin.Forms.Maps.Pin) 到不同的属性 `Pin` 。
 
-有关数据模板选择器的详细信息，请参阅[创建 Xamarin。窗体并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
+有关数据模板选择器的详细信息，请参阅[创建 Xamarin.Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
 
 ## <a name="related-links"></a>相关链接
 
 - [地图示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 - [映射自定义呈现器](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)
 - [在 XAML 中传递参数](~/xamarin-forms/xaml/passing-arguments.md)
-- [创建 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
+- [创建 Xamarin.Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

@@ -1,24 +1,27 @@
 ---
-title: Windows 上的 Web 视图 JavaScript 警报
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用特定于 Windows 平台的, 使 Web 视图能够在 UWP 消息对话框中显示 JavaScript 警报。
-ms.prod: xamarin
-ms.assetid: 95A153A1-72A0-4C0B-A452-ACE966BB12CB
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: 2bddf8ad314c49d8865863f6e67fc90a2bf80eb7
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b7d039d26895b50f937392941e42a92a6e51f322
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656825"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137483"
 ---
 # <a name="webview-javascript-alerts-on-windows"></a>Windows 上的 Web 视图 JavaScript 警报
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此特定于平台的支持[ `WebView` ](xref:Xamarin.Forms.WebView) UWP 消息对话框中显示 JavaScript 警报。 设置使用在 XAML [ `WebView.IsJavaScriptAlertEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.WebView.IsJavaScriptAlertEnabledProperty)附加到属性`boolean`值：
+此平台特定用于在 [`WebView`](xref:Xamarin.Forms.WebView) UWP 消息对话框中显示 JavaScript 警报。 它通过将 [`WebView.IsJavaScriptAlertEnabled`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.WebView.IsJavaScriptAlertEnabledProperty) 附加属性设置为值在 XAML 中使用 `boolean` ：
 
 ```xaml
 <ContentPage ...
@@ -30,7 +33,7 @@ ms.locfileid: "68656825"
 </ContentPage>
 ```
 
-或者，可以使用它从 C# 使用 fluent API:
+此外，还可以使用 Fluent API 从 c # 使用该方法：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -47,15 +50,15 @@ var webView = new Xamarin.Forms.WebView
 webView.On<Windows>().SetIsJavaScriptAlertEnabled(true);
 ```
 
-`WebView.On<Windows>`方法指定仅将在通用 Windows 平台上运行此特定于平台的。 [ `WebView.SetIsJavaScriptAlertEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.WebView.SetIsJavaScriptAlertEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.WebView},System.Boolean))方法，在[ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)命名空间，用于控制是否启用了 JavaScript 警报。 此外，`WebView.SetIsJavaScriptAlertEnabled`方法可用于通过调用切换 JavaScript 警报[ `IsJavaScriptAlertEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.WebView.IsJavaScriptAlertEnabled*)方法以返回是否已启用：
+`WebView.On<Windows>`方法指定此平台特定的仅在通用 Windows 平台上运行。 [ `WebView.SetIsJavaScriptAlertEnabled` ] （X： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific SetIsJavaScriptAlertEnabled （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。Web 视图}，System.object）方法， [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) 用于控制是否启用 JavaScript 警报。 此外，该 `WebView.SetIsJavaScriptAlertEnabled` 方法还可用于通过调用 [`IsJavaScriptAlertEnabled`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.WebView.IsJavaScriptAlertEnabled*) 方法返回是否已启用 JavaScript 警报来切换这些警报：
 
 ```csharp
 _webView.On<Windows>().SetIsJavaScriptAlertEnabled(!_webView.On<Windows>().IsJavaScriptAlertEnabled());
 ```
 
-结果是，可以 JavaScript 警报显示在 UWP 消息对话框：
+结果就是，JavaScript 警报可以显示在 UWP 消息对话框中：
 
-![Web 视图 JavaScript 警报平台专属](webview-javascript-alert-images/webview-javascript-alert.png "web 视图 JavaScript 警报特定于平台的")
+![Web 视图 JavaScript 特定于平台的警报](webview-javascript-alert-images/webview-javascript-alert.png "Web 视图 JavaScript 特定于平台的警报")
 
 ## <a name="related-links"></a>相关链接
 

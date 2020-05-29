@@ -1,37 +1,40 @@
 ---
-title: 'Xamarin c # 标记'
-description: 'C # 标记是一组用于简化的帮助器方法和类，以简化在 c # 中生成声明性 Xamarin 的过程。'
-ms.prod: xamarin
-ms.assetid: D41B9DCD-5C34-4C2F-B177-FC082AB2E9E0
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/15/2020
-ms.openlocfilehash: 4fa8397dafbbdd836f88193081720b4960f1ce5d
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: 'Xamarin.FormsC # 标记'
+description: 'C # 标记是一组乐观的帮助器方法和类，用于简化 Xamarin.Forms 在 c # 中生成声明性用户界面的过程。'
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 939727d3dd8d419cdc020d33d3e7241dcedb8158
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425811"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137740"
 ---
-# <a name="xamarinforms-c-markup"></a>Xamarin c # 标记
+# <a name="xamarinforms-c-markup"></a>Xamarin.FormsC # 标记
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 
-C # 标记是一组用于简化的帮助器方法和类，以简化在 c # 中生成声明性 Xamarin 的过程。 命名空间中提供了 c # 标记提供的 Fluent API `Xamarin.Forms.Markup` 。
+C # 标记是一组乐观的帮助器方法和类，用于简化 Xamarin.Forms 在 c # 中生成声明性用户界面的过程。 命名空间中提供了 c # 标记提供的 Fluent API `Xamarin.Forms.Markup` 。
 
 与 XAML 一样，c # 标记可实现 UI 标记和 UI 逻辑之间的完全分离。 这可以通过将 UI 标记和 UI 逻辑分成不同的分部类文件来实现。 例如，对于登录页，UI 标记将位于名为*LoginPage.cs*的文件中，而 ui 逻辑位于名为*LoginPage.logic.cs*的文件中。
 
-C # 标记可通过 Xamarin. Forms 4.6 提供。 但是，当前正在试验，只能通过将以下代码行添加到*App.cs*文件中来使用：
+C # 标记在4.6 中提供 Xamarin.Forms 。 但是，当前正在试验，只能通过将以下代码行添加到*App.cs*文件中来使用：
 
 ```csharp
 Device.SetFlags(new string[]{ "Markup_Experimental" });
 ```
 
 > [!NOTE]
-> C # 标记在 Xamarin 支持的所有平台上可用。
+> C # 标记在支持的所有平台上可用 Xamarin.Forms 。
 
 ## <a name="basic-example"></a>基本示例
 
@@ -89,7 +92,7 @@ Content = new Grid
 
 ## <a name="data-binding"></a>数据绑定
 
-C # 标记包含一个 `Bind` 扩展方法以及一些重载，用于在视图可绑定属性和指定属性之间创建数据绑定。 `Bind`方法知道 Xamarin 中包含的大部分控件的默认可绑定属性。 因此，在使用此方法时，通常不需要指定目标属性。 但是，还可以为其他控件注册默认的可绑定属性：
+C # 标记包含一个 `Bind` 扩展方法以及一些重载，用于在视图可绑定属性和指定属性之间创建数据绑定。 `Bind`方法为中包含的大多数控件识别默认的可绑定属性 Xamarin.Forms 。 因此，在使用此方法时，通常不需要指定目标属性。 但是，还可以为其他控件注册默认的可绑定属性：
 
 ```csharp
 using Xamarin.Forms.Markup;

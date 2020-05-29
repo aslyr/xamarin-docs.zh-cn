@@ -1,24 +1,27 @@
 ---
-title: Windows 上的默认图像目录
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用特定于 Windows 平台的来定义将从其加载图像资产的项目中的目录。
-ms.prod: xamarin
-ms.assetid: 537A032B-74DD-4D43-864E-7D7113286D0D
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/16/2020
-ms.openlocfilehash: 52197b980726936f4368ef1e4507ea671c9e70b1
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d5c5e6db8ddcf3cef32bde5c387adc378afd0058
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77646658"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135569"
 ---
 # <a name="default-image-directory-on-windows"></a>Windows 上的默认图像目录
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此通用 Windows 平台特定于平台的定义了将从其加载图像资产的项目中的目录。 它在 XAML 中使用，方法是将 `Application.ImageDirectory` 设置为表示包含图像资产的项目目录的 `string`：
+此通用 Windows 平台特定于平台的定义了将从其加载图像资产的项目中的目录。 它在 XAML 中使用，方法是将设置 `Application.ImageDirectory` 为 `string` 表示包含图像资产的项目目录的：
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
@@ -30,7 +33,7 @@ ms.locfileid: "77646658"
 </Application>
 ```
 
-或者，可以使用它从 C# 使用 fluent API:
+此外，还可以使用 Fluent API 从 c # 使用该方法：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -39,7 +42,7 @@ using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 Application.Current.On<Windows>().SetImageDirectory("Assets");
 ```
 
-`Application.On<Windows>` 方法指定此平台特定的仅在通用 Windows 平台上运行。 [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)命名空间中的 `Application.SetImageDirectory` 方法用于指定将从其加载图像的项目目录。 此外，`GetImageDirectory` 方法可用于返回表示包含应用程序映像资产的项目目录的 `string`。
+`Application.On<Windows>`方法指定此平台特定的仅在通用 Windows 平台上运行。 `Application.SetImageDirectory`命名空间中的方法 [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) 用于指定将从其加载图像的项目目录。 此外，该 `GetImageDirectory` 方法可用于返回一个 `string` ，它表示包含应用程序映像资产的项目目录。
 
 结果就是，应用程序中使用的所有映像都将从指定的项目目录中加载。
 

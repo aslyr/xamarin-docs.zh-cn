@@ -1,39 +1,42 @@
 ---
-title: Xamarin 中的颜色
-description: Xamarin 提供了一个灵活的跨平台颜色类。 本文介绍了 Color 类提供的功能，以及如何使用它。
-ms.prod: xamarin
-ms.assetid: 22288ABF-57BE-47A9-ACC3-AC604D787C46
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/02/2020
-ms.openlocfilehash: 42b532b8565d2d8e0289b8fd446e1dd7762a09ac
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: 颜色Xamarin.Forms
+description: Xamarin.Forms提供灵活的跨平台颜色类。 本文介绍了 Color 类提供的功能，以及如何使用它。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a02fe7451702367d85d322b756df4a547a009454
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517023"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137340"
 ---
-# <a name="colors-in-xamarinforms"></a>Xamarin 中的颜色
+# <a name="colors-in-xamarinforms"></a>颜色Xamarin.Forms
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithcolors)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithcolors)
 
 _Xamarin 提供了一个灵活的跨平台颜色类。_
 
-本文介绍了如何在 Xamarin 中[`Color`](xref:Xamarin.Forms.Color)使用类的各种方法。
+本文介绍 [`Color`](xref:Xamarin.Forms.Color) 可在中使用类的各种方法 Xamarin.Forms 。
 
-[`Color`](xref:Xamarin.Forms.Color)类提供多种方法来生成`Color`实例：
+[`Color`](xref:Xamarin.Forms.Color)类提供多种方法来生成 `Color` 实例：
 
-- **命名颜色**-常见命名颜色的集合，包括`Red`、 `Green`和。 `Blue`
+- **命名颜色**-常见命名颜色的集合，包括 `Red` 、 `Green` 和 `Blue` 。
 - `FromHex`-与 HTML 中使用的语法类似的字符串值，例如 "00FF00"。 可以选择将 Alpha 指定为第一对字符（"CC00FF00"）。
-- `FromHsla`-色调、饱和度和发光度`double`值，具有可选的 alpha 值（0.0-1.0）。
-- `FromHsv`-色调、饱和度和值`int` `double` 。
-- `FromHsva`-色调、饱和度和值`int` `double` 。
-- `FromRgb`-红色、绿色和蓝色`int`值（0-255）。
-- `FromRgba`-红色、绿色、蓝色和 alpha `int`值（0-255）。
-- `FromUint`-设置表示`double` **argb**的单个值。
+- `FromHsla`-色调、饱和度和发光度 `double` 值，具有可选的 alpha 值（0.0-1.0）。
+- `FromHsv`-色调、饱和度和值 `int` `double` 。
+- `FromHsva`-色调、饱和度和值 `int` `double` 。
+- `FromRgb`-红色、绿色和蓝色 `int` 值（0-255）。
+- `FromRgba`-红色、绿色、蓝色和 alpha `int` 值（0-255）。
+- `FromUint`-设置 `double` 表示**argb**的单个值。
 
-下面是一些示例颜色，分配给`BackgroundColor`某些标签的，其中使用了允许语法的不同变体：
+下面是一些示例颜色，分配给某些标签的，其中 `BackgroundColor` 使用了允许语法的不同变体：
 
 ```csharp
 var red    = new Label { Text = "Red",   BackgroundColor = Color.Red };
@@ -49,15 +52,15 @@ var @default = new Label    { Text = "Default",    BackgroundColor = Color.Defau
 var accent = new Label      { Text = "Accent",     BackgroundColor = Color.Accent };
 ```
 
-以下各平台显示了这些颜色。 请注意，最终颜色`Accent`是适用于 IOS 和 Android 的路子颜色;此值由 Xamarin 定义。
+以下各平台显示了这些颜色。 请注意，最终颜色 `Accent` 是适用于 iOS 和 Android 的路子颜色; 此值由定义 Xamarin.Forms 。
 
  [![颜色演示](colors-images/colors-sml.png "颜色演示")](colors-images/colors.png#lightbox "颜色演示")
 
 ## <a name="colordefault"></a>Color。默认值
 
-`Default`使用将颜色值设置（或重新设置）到平台默认值（了解每个属性的每个平台上的基础颜色都不同）。
+使用将 `Default` 颜色值设置（或重新设置）到平台默认值（了解每个属性的每个平台上的基础颜色都不同）。
 
-开发人员可以使用此值来设置`Color`属性，但**不**应为其组件 RGB 值查询此实例（它们都设置为-1）。
+开发人员可以使用此值来设置 `Color` 属性，但**不**应为其组件 RGB 值查询此实例（它们都设置为-1）。
 
 ## <a name="colortransparent"></a>Color。透明
 
@@ -71,16 +74,16 @@ var accent = new Label      { Text = "Accent",     BackgroundColor = Color.Accen
 
 [`Color`](xref:Xamarin.Forms.Color)实例包括以下附加方法：
 
-- `AddLuminosity`- `Color`通过用提供的增量修改发光度来返回。
-- `MultiplyAlpha`- `Color`通过修改 alpha 返回，并将其乘以提供的 alpha 值。
-- `ToHex`-返回的十六进制`string`表示形式`Color`。
-- `WithHue`-返回`Color`，将色相替换为提供的值。
-- `WithLuminosity`-返回`Color`，将发光度替换为提供的值。
-- `WithSaturation`-返回`Color`，将饱和度替换为提供的值。
+- `AddLuminosity`-通过用 `Color` 提供的增量修改发光度来返回。
+- `MultiplyAlpha`- `Color` 通过修改 alpha 返回，并将其乘以提供的 alpha 值。
+- `ToHex`-返回的十六进制 `string` 表示形式 `Color` 。
+- `WithHue`-返回 `Color` ，将色相替换为提供的值。
+- `WithLuminosity`-返回 `Color` ，将发光度替换为提供的值。
+- `WithSaturation`-返回 `Color` ，将饱和度替换为提供的值。
 
 ## <a name="implicit-conversions"></a>隐式转换
 
-可以执行与`System.Drawing.Color`类型`Xamarin.Forms.Color`之间的隐式转换：
+`Xamarin.Forms.Color`可以执行与类型之间的隐式转换 `System.Drawing.Color` ：
 
 ```csharp
 Xamarin.Forms.Color xfColor = Xamarin.Forms.Color.FromRgb(0, 72, 255);
@@ -95,7 +98,7 @@ Xamarin.Forms.Color xfColor2 = sdColor;
 
 ## <a name="deviceruntimeplatform"></a>RuntimePlatform
 
-此代码片段使用`Device.RuntimePlatform`属性有选择地设置的颜色： `ActivityIndicator`
+此代码片段使用 `Device.RuntimePlatform` 属性有选择地设置的颜色 `ActivityIndicator` ：
 
 ```csharp
 ActivityIndicator activityIndicator = new ActivityIndicator

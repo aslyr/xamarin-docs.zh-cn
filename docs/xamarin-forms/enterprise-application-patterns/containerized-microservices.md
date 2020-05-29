@@ -1,18 +1,21 @@
 ---
-title: 容器化微服务
-description: 本章介绍了如何使用微服务和容器来构建灵活、可缩放且可靠的新式云应用程序。
-ms.prod: xamarin
-ms.assetid: 5872ad92-04e0-4f1a-9691-79d5602f5683
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/07/2017
-ms.openlocfilehash: dc71da512519cdd7fcc56df1ff987ffbc1354663
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a05090c18039f9d3a7f9376285ce2863e0482903
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306331"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139251"
 ---
 # <a name="containerized-microservices"></a>容器化微服务
 
@@ -58,7 +61,7 @@ ms.locfileid: "79306331"
 
 ## <a name="containerization"></a>容器化
 
-容器化是一种软件开发方法，其中，应用程序及其版本控制的依赖项，以及作为部署清单文件提取的环境配置将作为容器映像打包在一起，作为一个单元进行测试，然后部署到主机操作系统。
+容器化是软件开发的一种方法，在该方法中，应用程序及其版本控制的依赖项以及部署清单文件抽象的环境配置将作为容器映像一起打包，作为一个单元进行测试，并将其部署到主机操作系统。
 
 容器是一个独立的、资源控制的、可移植的操作环境，在此环境中，应用程序可以运行，而无需接触其他容器或主机的资源。 因此，容器的外观和作用类似于新安装的物理计算机或虚拟机。
 
@@ -144,9 +147,9 @@ EShopOnContainers 移动应用与容器化后端微服务通信，并使用*直�
 
 有关事件总线实现的信息，请参阅[.Net 微服务：适用于容器化 .Net 应用程序的体系结构](https://aka.ms/microservicesebook)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
-微服务提供一种应用程序开发和部署的方法，可满足现代云应用程序的敏捷性、规模和可靠性要求。 微服务的主要优点之一是，它们可以独立地横向扩展，这意味着可以为了支持需求而扩展需要更多处理能力或网络带宽的特定功能区域，但不必扩展未出现需求增加的应用程序的所在区域。
+微服务提供适用于应用程序开发和部署的方法，适用于现代云应用程序的灵活性、规模和可靠性要求。 微服务的主要优点之一是可以独立横向扩展，这意味着可以扩展特定功能区域，以便需要更多的处理能力或网络带宽来支持需求，而无需在未增加需求的情况下调整应用程序区域。
 
 容器是一个独立的、资源控制的、可移植的操作环境，在此环境中，应用程序可以运行，而无需接触其他容器或主机的资源。 在实现基于微服务的应用程序时，企业越来越采用容器，而 Docker 已经成为了大多数软件平台和云供应商采用的标准容器实现。
 

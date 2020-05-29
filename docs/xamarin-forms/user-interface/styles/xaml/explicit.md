@@ -1,30 +1,33 @@
 ---
-title: 在 Xamarin.Forms 中的显式样式
-description: 显式样式是指通过设置其样式属性有选择地应用于控件。 本文介绍如何使用 Xamarin.Forms 应用程序中的显式样式。
-ms.prod: xamarin
-ms.assetid: C0DF9F8F-B431-4374-A574-325BC3C41A3B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/17/2016
-ms.openlocfilehash: b7888ea29dd02733059346bca21fec0a4c510c2e
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+title: 显式样式Xamarin.Forms
+description: 显式样式是通过设置控件的样式属性有选择地应用于控件的样式。 本文介绍如何在应用程序中使用显式样式 Xamarin.Forms 。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 62b84a5028c17c28a69a887a832028c2064fa78d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227996"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136261"
 ---
-# <a name="explicit-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的显式样式
+# <a name="explicit-styles-in-xamarinforms"></a>显式样式Xamarin.Forms
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
-_显式样式是指通过设置其样式属性有选择地应用于控件。_
+_显式样式是通过设置控件的样式属性有选择地应用于控件的样式。_
 
 ## <a name="create-an-explicit-style-in-xaml"></a>在 XAML 中创建显式样式
 
-若要声明[ `Style` ](xref:Xamarin.Forms.Style)级别的页[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)必须添加到页面，然后一个或多个`Style`声明可以包含在`ResourceDictionary`。 一个`Style`由*显式*其声明，从而`x:Key`属性中为其提供描述性密钥`ResourceDictionary`。 *显式*样式必须然后将应用到特定的可视元素通过设置其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)属性。
+若要 [`Style`](xref:Xamarin.Forms.Style) 在页级别声明， [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 则必须将添加到页，然后一个或多个 `Style` 声明可以包含在中 `ResourceDictionary` 。 `Style`通过为其声明提供一个特性来使成为*显式*的 `x:Key` ，这将在中为其提供一个描述性键 `ResourceDictionary` 。 然后，必须通过设置*显式*样式的属性，将其应用于特定的视觉对象 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 。
 
-下面的代码示例演示*显式*中页面的 XAML 中声明样式`ResourceDictionary`并应用于页面的[ `Label` ](xref:Xamarin.Forms.Label)实例：
+下面的代码示例演示*explicit*在页的中 `ResourceDictionary` ，并将其应用于页面实例的显式样式 [`Label`](xref:Xamarin.Forms.Label) ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ExplicitStylesPage" Title="Explicit" IconImageSource="xaml.png">
@@ -64,15 +67,15 @@ _显式样式是指通过设置其样式属性有选择地应用于控件。_
 </ContentPage>
 ```
 
-[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)定义三个*显式*样式应用于页面的[ `Label` ](xref:Xamarin.Forms.Label)实例。 每个`Style`用于显示文本以不同的颜色，同时也要设置字体大小和水平和垂直布局选项。 每个`Style`应用到不同`Label`通过设置其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)属性使用`StaticResource`标记扩展。 这会导致如以下屏幕截图中所示的外观：
+[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)定义了三种应用于页面实例的*显式*样式 [`Label`](xref:Xamarin.Forms.Label) 。 每个 `Style` 用于以不同的颜色显示文本，同时还可设置字号和水平和垂直布局选项。 每个 `Style` 都 `Label` 通过 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 使用标记扩展设置其属性来应用于不同的 `StaticResource` 。 这会导致如以下屏幕截图中所示的外观：
 
 [![显式样式示例](explicit-images/explicit-styles.png)](explicit-images/explicit-styles-large.png#lightbox)
 
-此外，最终[ `Label` ](xref:Xamarin.Forms.Label)具有[ `Style` ](xref:Xamarin.Forms.Style)应用于它，但也会覆盖[ `TextColor` ](xref:Xamarin.Forms.Label.TextColor)属性设置为不同`Color`值。
+此外，最后 [`Label`](xref:Xamarin.Forms.Label) 一个 [`Style`](xref:Xamarin.Forms.Style) 应用于它，但也将该属性重写 [`TextColor`](xref:Xamarin.Forms.Label.TextColor) 为其他 `Color` 值。
 
 ### <a name="create-an-explicit-style-at-the-control-level"></a>在控件级别创建显式样式
 
-除了创建之外*显式*页面级别的样式，则可以也在创建这些控件级别，如下面的代码示例中所示：
+除了在页面级别创建*显式*样式以外，还可以在控件级别创建它们，如下面的代码示例所示：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ExplicitStylesPage" Title="Explicit" IconImageSource="xaml.png">
@@ -93,13 +96,13 @@ _显式样式是指通过设置其样式属性有选择地应用于控件。_
 </ContentPage>
 ```
 
-在此示例中，*显式* [ `Style` ](xref:Xamarin.Forms.Style)实例分配给[ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources)系列[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)控件。 然后可以将样式应用于控件及其子项。
+在此示例中，将*显式* [`Style`](xref:Xamarin.Forms.Style) 实例分配给 [`Resources`](xref:Xamarin.Forms.VisualElement.Resources) 控件的集合 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 然后，可以将样式应用于控件及其子控件。
 
-有关创建在应用程序的样式信息[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，请参阅[全局样式](~/xamarin-forms/user-interface/styles/application.md)。
+有关在应用程序中创建样式的信息 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ，请参阅[全局样式](~/xamarin-forms/user-interface/styles/application.md)。
 
 ## <a name="create-an-explicit-style-in-c35"></a>在 C 中创建显式样式&#35;
 
-[`Style`](xref:Xamarin.Forms.Style) 实例可以添加到页面的[ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) C# 中通过创建一个新的集合[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，然后通过将添加`Style`实例到`ResourceDictionary`，如中所示下面的代码示例：
+[`Style`](xref:Xamarin.Forms.Style)可以 [`Resources`](xref:Xamarin.Forms.VisualElement.Resources) 通过以下代码示例中所示，通过创建新的，然后将实例添加到来将实例添加到页的集合中 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) `Style` `ResourceDictionary` ，如下面的代码示例所示：
 
 ```csharp
 public class ExplicitStylesPageCS : ContentPage
@@ -147,9 +150,9 @@ public class ExplicitStylesPageCS : ContentPage
 }
 ```
 
-构造函数定义三个*显式*应用于页面的样式[ `Label` ](xref:Xamarin.Forms.Label)实例。 每个*显式* [ `Style` ](xref:Xamarin.Forms.Style)添加到[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)使用[ `Add` ](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object))方法中，指定`key`字符串来指代`Style`实例。 每个`Style`应用到不同`Label`通过设置其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)属性。
+构造函数定义了三种应用于页面实例的*显式*样式 [`Label`](xref:Xamarin.Forms.Label) 。 使用方法将每个*显式* [`Style`](xref:Xamarin.Forms.Style) 添加到，并 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) [`Add`](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) 指定 `key` 要引用实例的字符串 `Style` 。 每个 `Style` 都 `Label` 通过设置其属性应用于不同的 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 。
 
-但是，没有使用没有优势[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)此处。 相反， [ `Style` ](xref:Xamarin.Forms.Style)实例可以直接分配给[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)所需的可视元素的属性和`ResourceDictionary`可删除，在下面的示例所示代码示例：
+不过，使用这里没有任何优势 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 。 相反， [`Style`](xref:Xamarin.Forms.Style) 可以直接将实例分配给 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 所需的视觉对象的属性，并且 `ResourceDictionary` 可以将其移除，如下面的代码示例所示：
 
 ```csharp
 public class ExplicitStylesPageCS : ContentPage
@@ -179,13 +182,13 @@ public class ExplicitStylesPageCS : ContentPage
 }
 ```
 
-构造函数定义三个*显式*应用于页面的样式[ `Label` ](xref:Xamarin.Forms.Label)实例。 每个`Style`用于显示文本以不同的颜色，同时也要设置字体大小和水平和垂直布局选项。 每个`Style`应用到不同`Label`通过设置其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)属性。 此外，最终`Label`已`Style`应用，但也会覆盖`TextColor`属性设置为不同`Color`值。
+构造函数定义了三种应用于页面实例的*显式*样式 [`Label`](xref:Xamarin.Forms.Label) 。 每个 `Style` 用于以不同的颜色显示文本，同时还可设置字号和水平和垂直布局选项。 每个 `Style` 都 `Label` 通过设置其属性来应用于不同的 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 。 此外，最后 `Label` 一个 `Style` 应用于它，但也将该属性重写 `TextColor` 为其他 `Color` 值。
 
 ## <a name="related-links"></a>相关链接
 
 - [XAML 标记扩展](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [基本样式 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
-- [使用样式 （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
+- [基本样式（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+- [使用样式（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 - [样式](xref:Xamarin.Forms.Style)
-- [资源库](xref:Xamarin.Forms.Setter)
+- [](xref:Xamarin.Forms.Setter)Setter

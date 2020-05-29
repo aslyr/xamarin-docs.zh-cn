@@ -1,29 +1,32 @@
 ---
-title: Xamarin FlexLayout
-description: 使用 FlexLayout 来堆积或包装子视图的集合。
-ms.prod: xamarin
-ms.assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8
-ms.technology: xamarin-forms
-ms.custom: xamu-video
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/07/2018
-ms.openlocfilehash: 507f78bf887d8d11e93a5a6a1f7d074c55e69360
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+title: Xamarin.FormsFlexLayout
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+ms.custom: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 031a846b7546c204d45c7437acd829d6cb49bfbb
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83149974"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137201"
 ---
-# <a name="the-xamarinforms-flexlayout"></a>Xamarin FlexLayout
+# <a name="the-xamarinforms-flexlayout"></a>Xamarin.FormsFlexLayout
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)
 
 _使用 FlexLayout 来堆积或包装子视图的集合。_
 
-Xamarin [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) 是 xamarin 版本3.0 中的新增形式。 它基于 "CSS[挠性方框布局" 模块](https://www.w3.org/TR/css-flexbox-1/)（通常称为 "_弹性布局_" 或 "_弹性_"），因为它包含多个灵活的选项来排列布局中的子级。
+Xamarin.Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) 是版本3.0 中的新增 Xamarin.Forms 版本。 它基于 "CSS[挠性方框布局" 模块](https://www.w3.org/TR/css-flexbox-1/)（通常称为 "_弹性布局_" 或 "_弹性_"），因为它包含多个灵活的选项来排列布局中的子级。
 
-`FlexLayout`类似于 Xamarin [`StackLayout`](~/xamarin-forms/user-interface/layouts/stacklayout.md) ，因为它可以在堆栈中水平和垂直排列子控件。 但是， `FlexLayout` 如果在单个行或列中容纳太多项，还可以包装其子级，还可以选择多个用于方向、对齐和适应各种屏幕大小的选项。
+`FlexLayout`类似于 Xamarin.Forms [`StackLayout`](~/xamarin-forms/user-interface/layouts/stacklayout.md) ，它可以在堆栈中水平和垂直排列子元素。 但是， `FlexLayout` 如果在单个行或列中容纳太多项，还可以包装其子级，还可以选择多个用于方向、对齐和适应各种屏幕大小的选项。
 
 `FlexLayout`派生自 [`Layout<View>`](xref:Xamarin.Forms.Layout`1) 并继承 [`Children`](xref:Xamarin.Forms.Layout`1.Children) 类型的属性 `IList<View>` 。
 
@@ -68,7 +71,7 @@ Xamarin [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) 是 xamarin 版本3.0 中�
 
 `FlexLayout` **SimpleStackPage**文件中显示了的三个属性：
 
-- [`Direction`](xref:Xamarin.Forms.FlexLayout.Direction)属性设置为枚举的值 [`FlexDirection`](xref:Xamarin.Forms.FlexDirection) 。 默认为 `Row`。 如果将属性设置为， `Column` 则会 `FlexLayout` 在单个项列中排列的子级。
+- [`Direction`](xref:Xamarin.Forms.FlexLayout.Direction)属性设置为枚举的值 [`FlexDirection`](xref:Xamarin.Forms.FlexDirection) 。 默认值为 `Row`。 如果将属性设置为， `Column` 则会 `FlexLayout` 在单个项列中排列的子级。
 
     如果中的项 `FlexLayout` 排列在列中， `FlexLayout` 则称其为垂直_主轴_和水平_交叉轴_。
 
@@ -609,11 +612,11 @@ FlexLayout.SetBasis(label, new FlexBasis(0.25f, true));
 
 ## <a name="css-styling-with-flexlayout"></a>具有 FlexLayout 的 CSS 样式
 
-你可以使用与 Xamarin. Forms 3.0 一起引入的[CSS 样式](~/xamarin-forms/user-interface/styles/css/index.md) `FlexLayout` 功能。 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 示例的 " **CSS 目录项**" 页复制 "**目录项**" 页的布局，但包含许多样式的 css 样式表：
+您可以使用随3.0 一起引入的[CSS 样式](~/xamarin-forms/user-interface/styles/css/index.md)功能 Xamarin.Forms 与进行连接 `FlexLayout` 。 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 示例的 " **CSS 目录项**" 页复制 "**目录项**" 页的布局，但包含许多样式的 css 样式表：
 
 [!["CSS 目录项" 页](flex-layout-images/CssCatalogItems.png ""CSS 目录项" 页")](flex-layout-images/CssCatalogItems-Large.png#lightbox)
 
-原始**CatalogItemsPage**文件的 `Style` 部分中具有 `Resources` 15 个 `Setter` 对象。 在**CssCatalogItemsPage**文件中，已减少为 `Style` 仅包含四个对象的两个定义 `Setter` 。 以下样式对 Xamarin CSS 样式功能当前不支持的属性的 CSS 样式表进行了补充：
+原始**CatalogItemsPage**文件的 `Style` 部分中具有 `Resources` 15 个 `Setter` 对象。 在**CssCatalogItemsPage**文件中，已减少为 `Style` 仅包含四个对象的两个定义 `Setter` 。 以下样式对 Xamarin.Forms css 样式功能当前不支持的属性的 CSS 样式表进行了补充：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -738,7 +741,7 @@ button {
 
 > [!VIDEO https://youtube.com/embed/Ng3sel_5D_0]
 
-**Xamarin 3.0 Flex 布局视频**
+**Xamarin.Forms3.0 Flex 布局视频**
 
 ## <a name="related-links"></a>相关链接
 

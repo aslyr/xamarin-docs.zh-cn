@@ -1,38 +1,41 @@
 ---
-title: Xamarin 中的泛型形式 XAML
-description: Xamarin。窗体 XAML 通过将泛型约束指定为类型参数，为使用泛型 CLR 类型提供支持。
-ms.prod: xamarin
-ms.assetid: 97B73048-4F90-41AD-AB48-8EB804C4998B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/28/2020
-ms.openlocfilehash: 9cda08a3bab0e25db2315c9795721e25d47d2429
-ms.sourcegitcommit: 154a3e7aec775327565bb54eda1a610976af1d6f
+title: XAML 中的泛型 Xamarin.Forms
+description: Xamarin.FormsXAML 通过将泛型约束指定为类型参数，为使用泛型 CLR 类型提供支持。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 814e622a822e2eb1cf07f71bfb1da1d6eac5631f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82624704"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138107"
 ---
-# <a name="generics-in-xamarinforms-xaml"></a>Xamarin 中的泛型形式 XAML
+# <a name="generics-in-xamarinforms-xaml"></a>XAML 中的泛型 Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-generics/)
 
-Xamarin。窗体 XAML 通过将泛型约束指定为类型参数，为使用泛型 CLR 类型提供支持。 此支持由`x:TypeArguments`指令提供，该指令将泛型的约束类型参数传递到泛型类型的构造函数。
+Xamarin.FormsXAML 通过将泛型约束指定为类型参数，为使用泛型 CLR 类型提供支持。 此支持由 `x:TypeArguments` 指令提供，该指令将泛型的约束类型参数传递到泛型类型的构造函数。
 
 > [!IMPORTANT]
-> 不支持在 Xamarin. Forms XAML 中定义泛型类`x:TypeArguments`和指令。
+> 不 Xamarin.Forms 支持用指令定义 XAML 中的泛型类 `x:TypeArguments` 。
 
-类型参数指定为字符串，通常带有前缀，例如`sys:String`和。 `sys:Int32` 前缀是必需的，因为 CLR 泛型约束的典型类型来自未映射到默认 Xamarin 命名空间的库。 但是，XAML 2009 内置类型（例如`x:String`和`x:Int32`）也可以指定为类型参数，其中`x`是 xaml 2009 的 xaml 语言命名空间。 有关 XAML 2009 内置类型的详细信息，请参阅[xaml 2009 语言基元](/dotnet/desktop-wpf/xaml-services/types-for-primitives#xaml-2009-language-primitives)。
+类型参数指定为字符串，通常带有前缀，例如 `sys:String` 和 `sys:Int32` 。 前缀是必需的，因为 CLR 泛型约束的典型类型来自未映射到默认命名空间的库 Xamarin.Forms 。 但是，XAML 2009 内置类型（例如 `x:String` 和 `x:Int32` ）也可以指定为类型参数，其中 `x` 是 XAML 2009 的 xaml 语言命名空间。 有关 XAML 2009 内置类型的详细信息，请参阅[xaml 2009 语言基元](/dotnet/desktop-wpf/xaml-services/types-for-primitives#xaml-2009-language-primitives)。
 
 可以使用逗号分隔符指定多个类型参数。 此外，如果泛型约束使用泛型类型，则嵌套约束类型参数应包含在括号中。
 
 > [!NOTE]
-> `x:Type`标记扩展提供泛型类型的 CLR 类型引用，并在 c # 中具有与`typeof`运算符类似的函数。 有关详细信息，请参阅[x:Type 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#type)。
+> `x:Type`标记扩展提供泛型类型的 CLR 类型引用，并 `typeof` 在 c # 中具有与运算符类似的函数。 有关详细信息，请参阅[x:Type 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#type)。
 
 ## <a name="single-primitive-type-argument"></a>单个基元类型参数
 
-可以使用`x:TypeArguments`指令将单个基元类型参数指定为带前缀的字符串参数：
+可以使用指令将单个基元类型参数指定为带前缀的字符串参数 `x:TypeArguments` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -55,9 +58,9 @@ Xamarin。窗体 XAML 通过将泛型约束指定为类型参数，为使用泛�
 </ContentPage>
 ```
 
-在此示例中`System.Collections.Generic` ，定义为`scg` XAML 命名空间。 使用`CollectionView.ItemsSource` XAML 2009 内置`x:String`类型将`List<T>`属性设置为使用`string`类型参数实例化的。 `List<string>`集合已初始化为包含多`string`个项。
+在此示例中， `System.Collections.Generic` 定义为 `scg` XAML 命名空间。 `CollectionView.ItemsSource` `List<T>` `string` 使用 XAML 2009 内置类型将属性设置为使用类型参数实例化的 `x:String` 。 `List<string>`集合已初始化为包含多个 `string` 项。
 
-此外，也可以通过 CLR `List<T>` `String`类型实例化集合，但这等效于：
+此外，也 `List<T>` 可以通过 CLR 类型实例化集合，但这等效于 `String` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -83,7 +86,7 @@ Xamarin。窗体 XAML 通过将泛型约束指定为类型参数，为使用泛�
 
 ## <a name="single-object-type-argument"></a>单个对象类型参数
 
-可以使用`x:TypeArguments`指令将单个对象类型参数指定为带前缀的字符串参数：
+可以使用指令将单个对象类型参数指定为带前缀的字符串参数 `x:TypeArguments` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -136,11 +139,11 @@ Xamarin。窗体 XAML 通过将泛型约束指定为类型参数，为使用泛�
 </ContentPage>
 ```
 
-在此示例中`GenericsDemo.Models` ，将定义为`models` xaml 命名空间， `System.Collections.Generic`并将定义为`scg` xaml 命名空间。 `CollectionView.ItemsSource`属性设置为`List<T>`使用`Monkey`类型参数实例化的。 使用`List<Monkey>`多`Monkey`个项初始化集合，并[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)将定义每个`Monkey`对象的外观的设置为`ItemTemplate`的。 [`CollectionView`](xref:Xamarin.Forms.CollectionView)
+在此示例中， `GenericsDemo.Models` 将定义为 `models` xaml 命名空间，并 `System.Collections.Generic` 将定义为 `scg` xaml 命名空间。 `CollectionView.ItemsSource`属性设置为 `List<T>` 使用类型参数实例化的 `Monkey` 。 `List<Monkey>`使用多个项初始化集合 `Monkey` ，并 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 将定义每个对象的外观的 `Monkey` 设置为 `ItemTemplate` 的 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 。
 
 ## <a name="multiple-type-arguments"></a>多个类型参数
 
-可以使用`x:TypeArguments`指令将多个类型自变量指定为带前缀的字符串参数（用逗号分隔）。 当泛型约束使用泛型类型时，嵌套约束类型参数包含在括号中：
+可以使用指令将多个类型自变量指定为带前缀的字符串参数（用逗号分隔） `x:TypeArguments` 。 当泛型约束使用泛型类型时，嵌套约束类型参数包含在括号中：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -205,7 +208,7 @@ Xamarin。窗体 XAML 通过将泛型约束指定为类型参数，为使用泛�
 </ContentPage    
 ```
 
-在此示例中`GenericsDemo.Models` ，将定义为`models` xaml 命名空间， `System.Collections.Generic`并将定义为`scg` xaml 命名空间。 该`CollectionView.ItemsSource`属性`List<T>`设置为一个实例化的，它使用`KeyValuePair<TKey, TValue>`约束和内部约束类型参数`string`和`Monkey`进行实例化。 使用`List<KeyValuePair<string,Monkey>>`非`KeyValuePair`默认`KeyValuePair`构造函数将集合初始化为多个项，并[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)将定义每`Monkey`个对象的外观的设置为`ItemTemplate`的。 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 有关将参数传递给非默认构造函数的信息，请参阅[传递构造函数参数](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments)。
+在此示例中， `GenericsDemo.Models` 将定义为 `models` xaml 命名空间，并 `System.Collections.Generic` 将定义为 `scg` xaml 命名空间。 该 `CollectionView.ItemsSource` 属性设置为一个 `List<T>` 实例化的，它使用 `KeyValuePair<TKey, TValue>` 约束和内部约束类型参数和进行实例化 `string` `Monkey` 。 `List<KeyValuePair<string,Monkey>>`使用非默认构造函数将集合初始化为多个 `KeyValuePair` 项， `KeyValuePair` 并 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 将定义每个对象的外观的 `Monkey` 设置为 `ItemTemplate` 的 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 。 有关将参数传递给非默认构造函数的信息，请参阅[传递构造函数参数](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments)。
 
 ## <a name="related-links"></a>相关链接
 

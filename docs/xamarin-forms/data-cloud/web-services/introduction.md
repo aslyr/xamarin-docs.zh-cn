@@ -1,26 +1,29 @@
 ---
-title: Xamarin. Forms Web 服务简介
-description: 本指南提供了一个示例，演示如何与不同的 web 服务通信。 虽然每个 web 服务使用单独的示例应用程序，但它们在功能上类似并共享公共类。
-ms.prod: xamarin
-ms.assetid: A3FEB262-0D79-42E6-8F8B-A565618C490B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/28/2017
-ms.openlocfilehash: bbeab6a6ab0d4a9d0e3a962240317fc0d54f9e25
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+title: Xamarin.FormsWeb 服务简介
+description: 本指南提供了 Xamarin.Forms 演示如何与不同 web 服务通信的示例应用程序的演练。 虽然每个 web 服务使用单独的示例应用程序，但它们在功能上类似并共享公共类。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d714b4c9d598d8cca26ae992abf3f15df703d11b
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68656644"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139173"
 ---
-# <a name="xamarinforms-web-services-introduction"></a>Xamarin. Forms Web 服务简介
+# <a name="xamarinforms-web-services-introduction"></a>Xamarin.FormsWeb 服务简介
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 
-_本主题提供了一个示例，演示如何与不同的 web 服务通信。虽然每个 web 服务使用单独的示例应用程序，但它们在功能上类似并共享公共类。_
+_本主题提供了 Xamarin.Forms 演示如何与不同 web 服务通信的示例应用程序的演练。虽然每个 web 服务使用单独的示例应用程序，但它们在功能上类似并共享公共类。_
 
-下面介绍的示例待办事项列表应用程序用于演示如何使用 Xamarin 访问不同类型的 web 服务后端。 它提供以下功能：
+下面介绍的示例待办事项列表应用程序用于演示如何使用访问不同类型的 web 服务后端 Xamarin.Forms 。 它提供以下功能：
 
 - 查看任务的列表。
 - 添加、编辑和删除任务。
@@ -40,26 +43,26 @@ _本主题提供了一个示例，演示如何与不同的 web 服务通信。�
 
 每个示例应用程序的共享代码项目由三个主要文件夹组成：
 
-|文件夹|目标|
+|文件夹|目的|
 |--- |--- |
-|数据|包含用于管理数据项以及与 web 服务进行通信的类和接口。 至少，这包括 `TodoItemManager` 类，该类通过 `App` 类中的属性公开以调用 web 服务操作。|
+|数据|包含用于管理数据项以及与 web 服务进行通信的类和接口。 其中至少包括 `TodoItemManager` 类，该类通过类中的属性公开， `App` 用于调用 web 服务操作。|
 |模型|包含应用程序的数据模型类。 其中至少包括 `TodoItem` 类，该类对应用程序使用的单个数据项建模。 此文件夹还可以包含用于对用户数据建模的任何其他类。|
-|Views|包含应用程序的页面。 这通常由 `TodoListPage` 和 `TodoItemPage` 类以及用于身份验证的任何其他类组成。|
+|视图|包含应用程序的页面。 这通常由 `TodoListPage` 和类以及 `TodoItemPage` 用于身份验证的任何其他类组成。|
 
 每个应用程序的共享代码项目还包含若干重要文件：
 
-|文件|目标|
+|文件|目的|
 |--- |--- |
-|Constants.cs|@No__t_0 类，它指定应用程序用来与 web 服务进行通信的任何常量。 这些常量要求更新以访问在提供程序上创建的个人后端服务。|
-|ITextToSpeech.cs|@No__t_0 接口，指定 `Speak` 方法必须由任何实现类提供。|
-|Todo.cs|@No__t_0 类，该类负责实例化将由应用程序在每个平台上显示的第一页，以及用于调用 web 服务操作的 `TodoItemManager` 类。|
+|Constants.cs|`Constants`类，它指定应用程序用来与 web 服务进行通信的任何常量。 这些常量要求更新以访问在提供程序上创建的个人后端服务。|
+|ITextToSpeech.cs|`ITextToSpeech`接口，该接口指定 `Speak` 方法必须由任何实现类提供。|
+|Todo.cs|`App`一个类，该类负责实例化将由应用程序在每个平台上显示的第一页，以及 `TodoItemManager` 用于调用 web 服务操作的类。|
 
 ### <a name="view-pages"></a>查看页面
 
 大多数示例应用程序包含至少两个页面：
 
-- **TodoListPage** –此页显示 `TodoItem` 实例的列表，如果 `TodoItem.Done` 属性 `true`，则显示勾选标记图标。 单击某项会导航到 `TodoItemPage`。 此外，还可以通过单击 *+* 符号来创建新项。
-- **TodoItemPage** –此页显示所选 `TodoItem` 的详细信息，并允许对其进行编辑、保存、删除和朗读。
+- **TodoListPage** –此页显示 `TodoItem` 实例列表，如果属性为，则显示勾选标记图标 `TodoItem.Done` `true` 。 单击某项会导航到 `TodoItemPage` 。 此外，还可以通过单击符号来创建新项 *+* 。
+- **TodoItemPage** –此页显示所选的详细信息 `TodoItem` ，并允许对其进行编辑、保存、删除和朗读。
 
 此外，某些示例应用程序还包含用于管理用户身份验证过程的其他页面。
 
@@ -77,19 +80,19 @@ public class TodoItem
 }
 ```
 
-@No__t_0 属性用于唯一标识每个 `TodoItem` 实例，每个 web 服务使用该属性来标识要更新或删除的数据。
+`ID`属性用于唯一标识每个 `TodoItem` 实例，每个 web 服务使用该属性来标识要更新或删除的数据。
 
 ### <a name="invoke-web-service-operations"></a>调用 web 服务操作
 
-Web 服务操作通过 `TodoItemManager` 类进行访问，类的实例可以通过 `App.TodoManager` 属性进行访问。 @No__t_0 类提供以下方法来调用 web 服务操作：
+Web 服务操作通过 `TodoItemManager` 类访问，类的实例可以通过属性进行访问 `App.TodoManager` 。 `TodoItemManager`类提供以下方法来调用 web 服务操作：
 
-- **GetTasksAsync** –此方法用于使用从 web 服务检索 `TodoItem` 实例来填充 `TodoListPage` 上的 `ListView` 控件。
-- **SaveTaskAsync** –此方法用于创建或更新 web 服务上的 `TodoItem` 实例。
-- **DeleteTaskAsync** –此方法用于删除 web 服务上的 `TodoItem` 实例。
+- **GetTasksAsync** –此方法用于使用 `ListView` `TodoListPage` `TodoItem` 从 web 服务检索的实例填充上的控件。
+- **SaveTaskAsync** –此方法用于创建或更新 `TodoItem` web 服务上的实例。
+- **DeleteTaskAsync** –此方法用于删除 `TodoItem` web 服务上的实例。
 
-此外，某些示例应用程序包含 `TodoItemManager` 类中的其他方法，这些方法用于管理用户身份验证过程。
+此外，某些示例应用程序包含类中的其他方法 `TodoItemManager` ，这些方法用于管理用户身份验证过程。
 
-@No__t_0 方法对注入 `TodoItemManager` 构造函数的依赖类调用方法，而不是直接调用 web 服务操作。 例如，一个示例应用程序将 `RestService` 类注入到 `TodoItemManager` 构造函数中，以提供使用 REST Api 访问数据的实现。
+`TodoItemManager`方法对注入构造函数的依赖类调用方法，而不是直接调用 web 服务操作 `TodoItemManager` 。 例如，一个示例应用程序将 `RestService` 类注入 `TodoItemManager` 构造函数，以提供使用 REST api 访问数据的实现。
 
 ## <a name="related-links"></a>相关链接
 

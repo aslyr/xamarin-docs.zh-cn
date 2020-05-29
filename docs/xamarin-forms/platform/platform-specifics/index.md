@@ -1,18 +1,21 @@
 ---
-title: 平台特定内容
-description: 平台特定信息，可使用的功能仅适用于特定的平台，而无需实现自定义呈现器或效果。 本文介绍如何使用和创建平台细节。
-ms.prod: xamarin
-ms.assetid: 4729DB9C-8800-4E29-9D66-3BE13C5F8C94
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/01/2018
-ms.openlocfilehash: f6190b9c0d29d57d6d509bdff25e2ce3572e3a3c
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8478db85bd9904ee6c5cfeab9b2af390e7d3096d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305731"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139498"
 ---
 # <a name="platform-specifics"></a>平台特定内容
 
@@ -20,50 +23,50 @@ ms.locfileid: "79305731"
 
 _平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。_
 
-使用特定于平台的通过 XAML，或通过 fluent 代码 API 的过程如下所示：
+通过 XAML 使用特定于平台的过程，或通过流畅的代码 API 执行的过程如下所示：
 
-1. 为[`Xamarin.Forms.PlatformConfiguration`](xref:Xamarin.Forms.PlatformConfiguration)命名空间添加 `xmlns` 声明或 `using` 指令。
-1. 为包含特定于平台的功能的命名空间添加 `xmlns` 声明或 `using` 指令：
-    1. 在 iOS 上，这是[`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空间。
-    1. 在 Android 上，这是[`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)命名空间。 对于 Android AppCompat，这是[`Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)命名空间。
-    1. 在通用 Windows 平台上，这是[`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)命名空间。
-1. 从 XAML 应用特定于平台的，或使用 `On<T>` Fluent API 的代码。 `T` 的值可以是[`Xamarin.Forms.PlatformConfiguration`](xref:Xamarin.Forms.PlatformConfiguration)命名空间中的[`iOS`](xref:Xamarin.Forms.PlatformConfiguration.iOS)、 [`Android`](xref:Xamarin.Forms.PlatformConfiguration.Android)或[`Windows`](xref:Xamarin.Forms.PlatformConfiguration.Windows)类型。
+1. `xmlns` `using` 为命名空间添加声明或指令 [`Xamarin.Forms.PlatformConfiguration`](xref:Xamarin.Forms.PlatformConfiguration) 。
+1. `xmlns` `using` 为包含特定于平台的功能的命名空间添加声明或指令：
+    1. 在 iOS 上，这是 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 命名空间。
+    1. 在 Android 上，这是 [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) 命名空间。 对于 Android AppCompat，这是 [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat) 命名空间。
+    1. 在通用 Windows 平台上，这是 [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) 命名空间。
+1. 从 XAML 应用特定于平台的，或使用 Fluent API 的代码 `On<T>` 。 的值 `T` 可以是 [`iOS`](xref:Xamarin.Forms.PlatformConfiguration.iOS) [`Android`](xref:Xamarin.Forms.PlatformConfiguration.Android) [`Windows`](xref:Xamarin.Forms.PlatformConfiguration.Windows) 命名空间中的、或类型 [`Xamarin.Forms.PlatformConfiguration`](xref:Xamarin.Forms.PlatformConfiguration) 。
 
 > [!NOTE]
-> 请注意，尝试使用特定于平台的是不可用的平台上不会导致错误。 相反，该代码将执行而无需特定于平台的应用。
+> 请注意，尝试在其不可用的平台上使用特定于平台的将不会导致错误。 相反，代码将在不应用特定于平台的情况下执行。
 
-通过 `On<T>` 熟知的代码 API 使用的平台细节返回[`IPlatformElementConfiguration`](xref:Xamarin.Forms.IPlatformElementConfiguration`2)对象。 这允许多个平台特定信息以与方法级联在同一对象上调用。
+通过流畅代码 API 使用的平台详细信息 `On<T>` 返回 [`IPlatformElementConfiguration`](xref:Xamarin.Forms.IPlatformElementConfiguration`2) 对象。 这允许在方法级联的同一对象上调用多个平台细节。
 
-有关 Xamarin 提供的平台细节的详细信息，请参阅[IOS 平台说明](~/xamarin-forms/platform/ios/index.md)、 [Android 平台细节](~/xamarin-forms/platform/android/index.md)和[Windows 平台细节](~/xamarin-forms/platform/windows/index.md)。
+有关提供的平台细节的详细信息 Xamarin.Forms ，请参阅[IOS 平台说明](~/xamarin-forms/platform/ios/index.md)、 [Android 平台细节](~/xamarin-forms/platform/android/index.md)和[Windows 平台细节](~/xamarin-forms/platform/windows/index.md)。
 
 ## <a name="creating-platform-specifics"></a>创建平台细节
 
-供应商可以创建自己的平台说明和效果。 影响提供特定功能，然后通过特定于平台的公开。 结果是通过 XAML，并通过 fluent 代码 API 可以更轻松地使用的效果。
+供应商可以创建自己的平台说明和效果。 效果提供特定功能，然后通过特定于平台的进行公开。 其结果是可以更轻松地通过 XAML 使用，通过流畅的代码 API 使用。
 
 创建平台特定的过程如下所示：
 
-1. 实现的特定功能的影响方式。 有关详细信息，请参阅[创建效果](~/xamarin-forms/app-fundamentals/effects/creating.md)。
-1. 创建一个特定于平台的类将公开效果。 有关详细信息，请参阅[创建平台特定的类](#creating-a-platform-specific-class)。
-1. 特定于平台的类中实现以允许特定于平台的使用通过 XAML 附加的属性。 有关详细信息，请参阅[添加附加属性](#adding-an-attached-property)。
-1. 在特定于平台的类中，实现了扩展方法，以允许特定于平台的使用通过 fluent 代码 API。 有关详细信息，请参阅[添加扩展方法](#adding-extension-methods)。
-1. 修改效果实现，以便当在已为的效果，在同一平台上调用特定于平台的效果才适用。 有关详细信息，请参阅[创建效果](#creating-the-effect)。
+1. 实现特定功能。 有关详细信息，请参阅[创建效果](~/xamarin-forms/app-fundamentals/effects/creating.md)。
+1. 创建平台特定的类，该类将公开效果。 有关详细信息，请参阅[创建平台特定的类](#creating-a-platform-specific-class)。
+1. 在特定于平台的类中，实现附加属性，以允许通过 XAML 使用特定于平台的。 有关详细信息，请参阅[添加附加属性](#adding-an-attached-property)。
+1. 在特定于平台的类中，实现扩展方法，使平台特定的能够通过流畅的代码 API 使用。 有关详细信息，请参阅[添加扩展方法](#adding-extension-methods)。
+1. 修改效果实现，以便仅当在与效果相同的平台上调用了平台特定时才应用该效果。 有关详细信息，请参阅[创建效果](#creating-the-effect)。
 
-公开平台特定的效果的结果是，效果可以更轻松地使用通过 XAML 和 fluent 代码 API。
+将效果公开为特定于平台的结果是可以更轻松地通过 XAML 和通过流畅的代码 API 使用该效果。
 
 > [!NOTE]
-> 它是按设想供应商将使用此技术来创建其自己平台特定信息，以便于用户的消耗。 尽管用户可以选择创建自己的平台特定信息，但应该指出，它需要比创建和使用效果更多代码。
+> 设想，供应商将使用此技术来创建自己的平台细节，以方便用户消费。 尽管用户可以选择创建自己的平台细节，但应注意，它需要更多的代码，而不是创建和使用效果。
 
-该[示例应用程序](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific)演示 `Shadow` 平台特定的，它将阴影添加到[`Label`](xref:Xamarin.Forms.Label)控件所显示的文本：
+该[示例应用程序](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific)演示了一个 `Shadow` 特定于平台的，它将阴影添加到控件所显示的文本 [`Label`](xref:Xamarin.Forms.Label) ：
 
 ![](images/screenshots.png "Shadow Platform-Specific")
 
-该[示例应用程序](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific)在每个平台上实现特定于平台的 `Shadow`，以便于理解。 但是，除了每个特定于平台的效果实现中，卷影类的实现是为每个平台大致相同。 因此，本指南重点介绍卷影类和关联的影响单一平台的实现。
+该[示例应用程序](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific) `Shadow` 在每个平台上实现特定于平台的，以便于理解。 但除每个平台特定的效果实现外，影子类的实现在很大程度上与每个平台相同。 因此，本指南重点介绍了影子类的实现，并对单个平台产生关联的影响。
 
 有关效果的详细信息，请参阅[自定义具有效果的控件](~/xamarin-forms/app-fundamentals/effects/index.md)。
 
 ### <a name="creating-a-platform-specific-class"></a>创建平台特定的类
 
-平台特定的作为 `public static` 类创建：
+平台特定的创建为 `public static` 类：
 
 ```csharp
 namespace MyCompany.Forms.PlatformConfiguration.iOS
@@ -79,7 +82,7 @@ namespace MyCompany.Forms.PlatformConfiguration.iOS
 
 #### <a name="adding-an-attached-property"></a>添加附加属性
 
-必须将附加属性添加到 `Shadow` 平台特定的，以允许通过 XAML 使用：
+附加的属性必须添加到特定于 `Shadow` 平台的，以允许通过 XAML 使用：
 
 ```csharp
 namespace MyCompany.Forms.PlatformConfiguration.iOS
@@ -152,16 +155,16 @@ namespace MyCompany.Forms.PlatformConfiguration.iOS
 }
 ```
 
-`IsShadowed` 附加属性用于将 `MyCompany.LabelShadowEffect` 效果添加到 `Shadow` 类附加到的控件，并将其从中移除。 该附加属性注册属性值更改时执行的 `OnIsShadowedPropertyChanged` 方法。 反过来，此方法会调用 `AttachEffect` 或 `DetachEffect` 方法，以便根据 `IsShadowed` 附加属性的值添加或删除效果。 通过修改控件的[`Effects`](xref:Xamarin.Forms.Element.Effects)集合，可以在控件中添加或删除该效果。
+`IsShadowed`附加属性用于向 `MyCompany.LabelShadowEffect` 类附加到的控件添加效果，并将其从中移除 `Shadow` 。 该附加属性注册属性值更改时执行的 `OnIsShadowedPropertyChanged` 方法。 反过来，此方法会调用 `AttachEffect` 或 `DetachEffect` 方法，以根据附加属性的值添加或删除效果 `IsShadowed` 。 通过修改控件的集合，将该效果添加到控件中或从该控件中移除 [`Effects`](xref:Xamarin.Forms.Element.Effects) 。
 
 > [!NOTE]
-> 请注意，被指定为解析组名称和指定效果实现的唯一标识符的串联的值解析效果。 有关详细信息，请参阅[创建效果](~/xamarin-forms/app-fundamentals/effects/creating.md)。
+> 请注意，通过指定一个值，此值是解析组名称与在效果实现中指定的唯一标识符的串联。 有关详细信息，请参阅[创建效果](~/xamarin-forms/app-fundamentals/effects/creating.md)。
 
 有关附加属性的详细信息，请参阅[附加属性](~/xamarin-forms/xaml/attached-properties.md)。
 
 #### <a name="adding-extension-methods"></a>添加扩展方法
 
-扩展方法必须添加到 `Shadow` 平台特定的，以允许通过流畅的代码 API 使用：
+扩展方法必须添加到特定于 `Shadow` 平台的，以允许通过流畅的代码 API 使用：
 
 ```csharp
 namespace MyCompany.Forms.PlatformConfiguration.iOS
@@ -189,11 +192,11 @@ namespace MyCompany.Forms.PlatformConfiguration.iOS
 }
 ```
 
-`IsShadowed` 和 `SetIsShadowed` 扩展方法分别调用 `IsShadowed` 附加属性的 get 和 set 访问器。 每个扩展方法都对 `IPlatformElementConfiguration<iOS, FormsElement>` 类型进行操作，该类型指定平台特定的可从 iOS [`Label`](xref:Xamarin.Forms.Label)实例上调用。
+`IsShadowed`和 `SetIsShadowed` 扩展方法分别调用附加属性的 get 和 set 访问器 `IsShadowed` 。 每个扩展方法都对 `IPlatformElementConfiguration<iOS, FormsElement>` 类型进行操作，该类型指定平台特定的可在 [`Label`](xref:Xamarin.Forms.Label) iOS 实例上调用。
 
 #### <a name="creating-the-effect"></a>创建效果
 
-特定于平台的 `Shadow` 将 `MyCompany.LabelShadowEffect` 添加到[`Label`](xref:Xamarin.Forms.Label)，并将其删除。 以下代码示例展示了 iOS 项目的 `LabelShadowEffect` 实现：
+`Shadow`特定于平台的将添加 `MyCompany.LabelShadowEffect` 到 [`Label`](xref:Xamarin.Forms.Label) ，并将其删除。 以下代码示例展示了 iOS 项目的 `LabelShadowEffect` 实现：
 
 ```csharp
 [assembly: ResolutionGroupName("MyCompany")]
@@ -246,15 +249,15 @@ namespace ShadowPlatformSpecific.iOS
 }
 ```
 
-`UpdateShadow` 方法将 `Control.Layer` 属性设置为创建阴影，前提是将 `IsShadowed` 附加属性设置为 `true`，并假定已在为其实现该效果的同一平台上调用 `Shadow` 了特定于平台的。 此检查通过 `OnThisPlatform` 方法执行。
+`UpdateShadow`方法设置 `Control.Layer` 属性以创建阴影，前提是 `IsShadowed` 附加属性设置为 `true` ，并且 `Shadow` 已在实现了该效果的同一平台上调用了平台特定的。 将通过方法执行此检查 `OnThisPlatform` 。
 
-如果 `Shadow.IsShadowed` 附加属性值在运行时更改，则此效果需要通过删除阴影来做出响应。 因此，`OnElementPropertyChanged` 方法的重写版本用于通过调用 `UpdateShadow` 方法来响应可绑定的属性更改。
+如果 `Shadow.IsShadowed` 附加属性值在运行时更改，则此效果需要通过删除阴影来做出响应。 因此，方法的重写版本 `OnElementPropertyChanged` 用于通过调用方法来响应可绑定的属性更改 `UpdateShadow` 。
 
 有关创建效果的详细信息，请参阅[创建效果](~/xamarin-forms/app-fundamentals/effects/creating.md)和将[效果参数作为附加属性传递](~/xamarin-forms/app-fundamentals/effects/passing-parameters/attached-properties.md)。
 
 ### <a name="consuming-the-platform-specific"></a>使用特定于平台的
 
-XAML 中的 `Shadow` 平台特定通过将 `Shadow.IsShadowed` 附加属性设置为 `boolean` 值来使用：
+`Shadow`通过将 `Shadow.IsShadowed` 附加属性设置为一个值，在 XAML 中使用特定于平台的 `boolean` ：
 
 ```xaml
 <ContentPage xmlns:ios="clr-namespace:MyCompany.Forms.PlatformConfiguration.iOS" ...>
@@ -264,7 +267,7 @@ XAML 中的 `Shadow` 平台特定通过将 `Shadow.IsShadowed` 附加属性设�
 </ContentPage>
 ```
 
-或者，可以使用它从 C# 使用 fluent API:
+此外，还可以使用 Fluent API 从 c # 使用该方法：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;

@@ -1,18 +1,21 @@
 ---
-title: 企业应用程序开发简介
-description: 本章介绍了企业应用程序开发，并介绍了 eShopOnContainers 移动应用。
-ms.prod: xamarin
-ms.assetid: cbce0659-fa03-447a-86ec-140438143230
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/07/2017
-ms.openlocfilehash: 9bde1140f6590daa4b1d40a8b56edec314bfc66d
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 12582c567a439cf4e0236724bd373c3508f18748
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70760226"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139347"
 ---
 # <a name="introduction-to-enterprise-app-development"></a>企业应用程序开发简介
 
@@ -34,9 +37,9 @@ ms.locfileid: "70760226"
 - 它提高了重用性，并完全分离了应用的水平功能（例如身份验证和数据访问）和垂直功能（如特定于应用的业务功能）之间的问题。 这允许更轻松地管理应用程序组件之间的依赖关系和交互。
 - 它通过允许不同的个人或团队根据自己的专业知识来重点关注特定的任务或功能，帮助维护角色分离。 特别是，它提供用户界面和应用程序的业务逻辑之间的更清晰分隔。
 
-但是，将应用分区为分离松耦合组件时，必须解决许多问题。 这些方法包括：
+但是，将应用分区为分离松耦合组件时，必须解决许多问题。 其中包括：
 
-- 确定如何在用户界面控件与其逻辑之间提供清晰的问题分离。 创建 Xamarin 时，最重要的决策之一是在代码隐藏文件中放置业务逻辑，还是在用户界面控件与其逻辑之间创建完全分离的问题，以使应用更维护性和可测试性。 有关详细信息，请参阅[ViewModel](~/xamarin-forms/enterprise-application-patterns/mvvm.md)。
+- 确定如何在用户界面控件与其逻辑之间提供清晰的问题分离。 创建企业应用程序时，最重要的决策之一 Xamarin.Forms 是是在代码隐藏文件中放置业务逻辑，还是在用户界面控件与其逻辑之间创建完全分离的问题，从而使应用程序更易于维护和可测试。 有关详细信息，请参阅[ViewModel](~/xamarin-forms/enterprise-application-patterns/mvvm.md)。
 - 确定是否要使用依赖关系注入容器。 依赖关系注入容器通过提供一项功能来构造类的实例并注入依赖关系，从而减少对象之间的依赖关系，并基于容器的配置来管理其生存期。 有关详细信息，请参阅[依赖关系注入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)。
 - 在平台之间选择提供的事件和松散耦合的组件之间基于消息的通信，不方便地通过对象和类型引用进行链接。 有关详细信息，请参阅[松散耦合组件之间的通信](~/xamarin-forms/enterprise-application-patterns/communicating-between-loosely-coupled-components.md)简介。
 - 确定如何在页之间导航，包括如何调用导航以及导航逻辑应驻留的位置。 有关详细信息，请参阅[导航](~/xamarin-forms/enterprise-application-patterns/navigation.md)。
@@ -45,7 +48,7 @@ ms.locfileid: "70760226"
 - 确定如何从 web 服务访问远程数据，包括如何可靠地检索数据以及如何缓存数据。 有关详细信息，请参阅[访问远程数据](~/xamarin-forms/enterprise-application-patterns/accessing-remote-data.md)。
 - 确定测试应用程序的方法。 有关详细信息，请参阅[单元测试](~/xamarin-forms/enterprise-application-patterns/unit-testing.md)。
 
-本指南提供了有关这些问题的指导，并重点介绍使用 Xamarin 构建跨平台企业应用程序的核心模式和体系结构。 本指南旨在帮助生成可自适应、可维护且可测试的代码，通过解决常见的 Xamarin。 Forms enterprise 应用开发方案，并通过对模型-视图-ViewModel （MVVM）模式。
+本指南提供了有关这些问题的指导，并重点介绍使用构建跨平台企业应用程序的核心模式和体系结构 Xamarin.Forms 。 本指南旨在帮助生成可自适应的、可维护且可测试的代码，通过解决常见的 Xamarin.Forms 企业应用开发方案，以及通过对模型-ViewModel （MVVM）模式的支持分离演示、表示逻辑和实体的问题。
 
 ## <a name="sample-application"></a>示例应用程序
 
@@ -70,7 +73,7 @@ ms.locfileid: "70760226"
 
 - 使用 ASP.NET Core 开发的 MVC 应用程序。
 - 使用角度2和 Typescript 开发的单页面应用程序（SPA）。 对于 web 应用程序，这种方法可避免跨每个操作执行到服务器的往返过程。
-- 用 Xamarin 开发的移动应用，支持 iOS、Android 和通用 Windows 平台（UWP）。
+- 使用开发的移动应用 Xamarin.Forms ，支持 iOS、Android 和通用 Windows 平台（UWP）。
 
 有关 web 应用程序的信息，请参阅[用 ASP.NET Core 和 Microsoft Azure 构建和开发新式 Web 应用程序](https://aka.ms/WebAppEbook)。
 
@@ -87,7 +90,7 @@ ms.locfileid: "70760226"
 
 ### <a name="mobile-app"></a>移动应用
 
-本指南重点介绍如何使用 Xamarin 构建跨平台的企业应用，并使用 eShopOnContainers 移动应用作为示例。 图1-2 显示了 eShopOnContainers 移动应用中的页面，其中提供了前面概述的功能。
+本指南重点介绍如何使用生成跨平台的企业应用 Xamarin.Forms ，并使用 eShopOnContainers 移动应用作为示例。 图1-2 显示了 eShopOnContainers 移动应用中的页面，其中提供了前面概述的功能。
 
 [![](introduction-images/screenshots.png "The eShopOnContainers mobile app")](introduction-images/screenshots-large.png#lightbox "The eShopOnContainers mobile app")
 
@@ -95,10 +98,10 @@ ms.locfileid: "70760226"
 
 移动应用使用 eShopOnContainers 引用应用程序提供的后端服务。 但是，可以将其配置为使用模拟服务中的数据，以避免部署后端服务。
 
-EShopOnContainers 移动应用会演练以下 Xamarin 功能：
+EShopOnContainers 移动应用 Xamarin.Forms 执行以下功能：
 
 - XAML
-- 控件
+- 控制
 - 绑定
 - 转换器
 - 样式
@@ -111,7 +114,7 @@ EShopOnContainers 移动应用会演练以下 Xamarin 功能：
 - MessagingCenter
 - 自定义控件
 
-有关此功能的详细信息，请参阅[xamarin 文档](~/xamarin-forms/index.yml)和[用 Xamarin 创建移动应用](https://aka.ms/xamebook)。
+有关此功能的详细信息，请参阅[ Xamarin.Forms 文档](~/xamarin-forms/index.yml)和[创建 Xamarin.Forms 移动应用](https://aka.ms/xamebook)。
 
 此外，还为 eShopOnContainers 移动应用中的一些类提供单元测试。
 
@@ -119,7 +122,7 @@ EShopOnContainers 移动应用会演练以下 Xamarin 功能：
 
 EShopOnContainers 移动应用解决方案将源代码和其他资源组织到项目中。 所有项目都使用文件夹将源代码和其他资源组织到类别中。 下表概述了组成 eShopOnContainers 移动应用的项目：
 
-|项目|描述|
+|Project|说明|
 |--- |--- |
 |eShopOnContainers|此项目是可移植类库（PCL）项目，其中包含共享代码和共享 UI。|
 |eShopOnContainers. Droid|此项目包含 Android 特定的代码，是 Android 应用的入口点。|
@@ -130,29 +133,29 @@ EShopOnContainers 移动应用解决方案将源代码和其他资源组织到�
 |eShopOnContainers. TestRunner|此项目是 eShopOnContainers Run-unittests 项目的通用 Windows 平台测试运行程序。|
 |eShopOnContainers. Run-unittests|此项目包含 eShopOnContainers 项目的单元测试。|
 
-EShopOnContainers 移动应用中的类可在任何 Xamarin 应用程序中重复使用，几乎不需要修改。
+EShopOnContainers 移动应用中的类可在任何应用程序中重复使用 Xamarin.Forms ，几乎不需要修改。
 
 ##### <a name="eshoponcontainerscore-project"></a>eShopOnContainers 项目
 
 EShopOnContainers PCL 项目包含以下文件夹：
 
-|文件夹|描述|
+|文件夹|说明|
 |--- |--- |
 |动画|包含使动画可在 XAML 中使用的类。|
 |行为|包含向视图类公开的行为。|
-|控件|包含应用程序使用的自定义控件。|
+|控制|包含应用程序使用的自定义控件。|
 |转换器|包含将自定义逻辑应用于绑定的值转换器。|
-|效果|包含 `EntryLineColorEffect` 类，该类用于更改特定 `Entry` 控件的边框颜色。|
-|异常|包含自定义 `ServiceAuthenticationException`。|
-|扩展|包含 `VisualElement` 和 `IEnumerable` 类的扩展方法。|
+|效果|包含 `EntryLineColorEffect` 类，该类用于更改特定控件的边框颜色 `Entry` 。|
+|例外|包含自定义 `ServiceAuthenticationException` 。|
+|扩展|包含和类的扩展 `VisualElement` 方法 `IEnumerable` 。|
 |帮助程序|包含应用程序的帮助器类。|
 |模型|包含应用程序的模型类。|
-|属性|包含 .NET 程序集元数据文件 `AssemblyInfo.cs`。|
-|Services|包含接口和类，这些接口和类实现提供给应用程序的服务。|
-|触发器|包含用于在 XAML 中调用动画的 `BeginAnimation` 触发器。|
+|属性|包含 `AssemblyInfo.cs` .net 程序集元数据文件。|
+|服务|包含接口和类，这些接口和类实现提供给应用程序的服务。|
+|触发器|包含 `BeginAnimation` 触发器，该触发器用于调用 XAML 中的动画。|
 |验证|包含用于验证数据输入的类。|
 |ViewModels|包含公开给页面的应用程序逻辑。|
-|Views|包含应用的页面。|
+|视图|包含应用的页面。|
 
 ##### <a name="platform-projects"></a>平台项目
 
@@ -160,7 +163,7 @@ EShopOnContainers PCL 项目包含以下文件夹：
 
 ## <a name="summary"></a>总结
 
-Xamarin 的跨平台移动应用开发工具和平台为 B2E、B2B 和 B2C 移动客户端应用提供全面的解决方案，提供跨所有目标平台（iOS、Android 和 Windows）共享代码的功能，并帮助降低总拥有成本。 应用可以共享其用户界面和应用逻辑代码，同时保留本机平台的外观。
+Xamarin 的跨平台移动应用开发工具和平台提供 B2E、B2B 和 B2C 移动客户端应用的综合性解决方案，提供跨所有目标平台（iOS、Android 和 Windows）共享代码的功能，并有助于降低总拥有成本。 应用可以共享其用户界面和应用逻辑代码，同时保留本机平台的外观。
 
 企业应用程序的开发者面临着几个难题，可以在开发过程中更改应用程序的体系结构。 因此，生成应用以便在一段时间内修改或扩展应用程序非常重要。 设计此类适应性很困难，但通常会将应用分区为分离、松散耦合的组件，这些组件可以轻松集成到应用中。
 
