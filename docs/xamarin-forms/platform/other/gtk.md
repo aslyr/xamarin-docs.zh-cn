@@ -1,44 +1,32 @@
 ---
-title: 'GTK # 平台设置'
-description: 'Xamarin。窗体现在为 GTK # 平台提供预览版支持'
-ms.prod: xamarin
-ms.assetid: 3417FB95-3E4B-47DA-85D0-F34832747236
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/10/2018
-ms.openlocfilehash: cbc3bceffacd9669c1e2e667faadc2939fd4aa1f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73005930"
+标题： "GTK # Platform 安装程序" 说明： " Xamarin.Forms 现在为 GTK # 平台提供预览版支持" ms-chap： xamarin assetid：3417FB95-3E4B-47DA-85D0-F34832747236： xamarin： xamarin： davidbritch：： dabritch ms. 日期：04/10/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="gtk-platform-setup"></a>GTK # 平台设置
 
 ![预览](~/media/shared/preview.png)
 
-Xamarin。窗体现在支持 GTK # 应用的预览。 GTK # 是一个图形用户界面工具包，它链接了 GTK + 工具包和各种 GNOME 库，允许使用 Mono 和 .NET 开发完全本机的 GNOME 图形应用程序。 本文演示如何向 Xamarin 解决方案添加 GTK # 项目。
+Xamarin.Forms现在为 GTK # 应用提供预览版支持。 GTK # 是一个图形用户界面工具包，它链接了 GTK + 工具包和各种 GNOME 库，允许使用 Mono 和 .NET 开发完全本机的 GNOME 图形应用程序。 本文演示如何将 GTK # 项目添加到 Xamarin.Forms 解决方案。
 
 > [!IMPORTANT]
-> 适用于 GTK # 的窗体支持是由社区提供的。 有关详细信息，请参阅[Xamarin。窗体平台支持](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support)。
+> Xamarin.Forms支持 GTK # 由社区提供。 有关详细信息，请参阅[ Xamarin.Forms 平台支持](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support)。
 
-在开始之前，请创建新的 Xamarin. Forms 解决方案，或使用现有的 Xamarin Forms 解决方案，例如[**GameOfLife**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-gameoflife)。
+在开始之前，请创建新的 Xamarin.Forms 解决方案，或使用现有 Xamarin.Forms 解决方案，例如[**GameOfLife**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-gameoflife)。
 
 > [!NOTE]
-> 尽管本文重点介绍如何将 GTK # 应用添加到 VS2017 和 Visual Studio for Mac 中的 Xamarin 解决方案，但也可以在适用于 Linux 的[MonoDevelop](https://www.monodevelop.com/)中执行此应用。
+> 尽管本文重点介绍如何将 GTK # 应用添加到 Xamarin.Forms VS2017 和 Visual Studio for Mac 中的解决方案，但也可以在适用于 Linux 的[MonoDevelop](https://www.monodevelop.com/)中执行此应用。
 
 ## <a name="adding-a-gtk-app"></a>添加 GTK # 应用
 
 适用于 macOS 和 Linux 的 GTK # 作为[Mono](https://www.mono-project.com/download/stable/)的一部分进行安装。 适用于 .NET 的 GTK # 可在具有[GTK # 安装程序](https://www.mono-project.com/download/stable/#download-win)的 Windows 上安装。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 按照以下说明添加将在 Windows 桌面上运行的 GTK # 应用：
 
-1. 在 Visual Studio 2019 中，右键单击 "**解决方案资源管理器**中的解决方案名称，然后选择"**添加 > "新建项目 ...** "。
+1. 在 Visual Studio 2019 中，右键单击 "**解决方案资源管理器**中的解决方案名称，然后选择"**添加 > "新建项目 ...**"。
 
-2. 在 "**新建项目**" 窗口中，在左侧选择 "**视觉对象C#** 和**Windows 经典桌面**"。 在项目类型列表中，选择 "类库 **（.NET Framework）** "，并确保 "**框架**" 下拉列表设置为最小 .NET Framework 4.7。
+2. 在 "**新建项目**" 窗口中，在左侧选择 " **Visual c #** 和**Windows 经典桌面**"。 在项目类型列表中，选择 "类库 **（.NET Framework）**"，并确保 "**框架**" 下拉列表设置为最小 .NET Framework 4.7。
 
 3. 使用**gtk**扩展键入项目的名称，例如**GameOfLife**。 单击 "**浏览**" 按钮，选择包含其他平台项目的文件夹，然后按 "**选择文件夹**"。 这会将 GTK 项目与解决方案中的其他项目放在同一目录中。
 
@@ -46,25 +34,25 @@ Xamarin。窗体现在支持 GTK # 应用的预览。 GTK # 是一个图形用�
 
     按 **"确定"** 按钮创建项目。
 
-4. 在**解决方案资源管理器**中，右键单击新的 GTK 项目，然后选择 "**管理 NuGet 包**"。 选择 "**浏览**" 选项卡，然后搜索 " **Xamarin. Forms** 3.0 或更高版本"。
+4. 在**解决方案资源管理器**中，右键单击新的 GTK 项目，然后选择 "**管理 NuGet 包**"。 选择 "**浏览**" 选项卡，然后搜索 **Xamarin.Forms** 3.0 或更高版本。
 
-    ![选择 "Xamarin" NuGet 包](gtk-images/win/select-forms-nuget-package.png "选择 "Xamarin" NuGet 包")
-
-    选择该包，然后单击 "**安装**" 按钮。
-
-5. 现在搜索**Xamarin** 3.0 包或更高版本。
-
-    ![选择 "Xamarin" NuGet 包](gtk-images/win/select-forms-platform-nuget-package.png "选择 "Xamarin" NuGet 包")
+    ![选择 Xamarin.Forms NuGet 包](gtk-images/win/select-forms-nuget-package.png "选择 [！基金.无 LOC （Xamarin）] NuGet 包")
 
     选择该包，然后单击 "**安装**" 按钮。
 
-6. 在**解决方案资源管理器**中，右键单击解决方案名称，然后选择 "**管理解决方案的 NuGet 包**"。 选择 "**更新**" 选项卡和 " **Xamarin** " 包。 选择所有项目，并将其更新到由 GTK 项目使用的相同 Xamarin 版本。
+5. 现在搜索** Xamarin.Forms 。Platform.string** 3.0 包或更高版本。
+
+    ![选择 Xamarin.Forms 。Platform.string NuGet 包](gtk-images/win/select-forms-platform-nuget-package.png "选择 [！基金.非 LOC （Xamarin）]。Platform.string NuGet 包")
+
+    选择该包，然后单击 "**安装**" 按钮。
+
+6. 在**解决方案资源管理器**中，右键单击解决方案名称，然后选择 "**管理解决方案的 NuGet 包**"。 选择 "**更新**" 选项卡和 **Xamarin.Forms** 包。 选择所有项目，并将其更新为 Xamarin.Forms GTK 项目使用的同一版本。
 
 7. 在**解决方案资源管理器**中，右键单击 GTK 项目中的**引用**。 在 "**引用管理器**" 对话框中，选择左侧的 "**项目**"，然后选中 .NET Standard 或共享项目旁边的复选框：
 
     ![引用共享项目](gtk-images/win/reference-shared-project.png "引用共享项目")
 
-8. 在 "**引用管理器**" 对话框中，按 "**浏览**" 按钮并浏览到**C:\Program Files （x86） \GtkSharp\2.12\lib**文件夹，然后选择 " **atk-sharp**"、" **gdk-sharp**"、" **glade-sharp**"、 **glib-sharp**、 **gtk-dotnet**、 **gtk-sharp**文件。
+8. 在 "**引用管理器**" 对话框中，按 "**浏览**" 按钮并浏览到**C:\Program files （x86） \GtkSharp\2.12\lib**文件夹，然后选择 " **atk-sharp**"、" **gdk-sharp**"、" **glade-sharp**"、 **"glib-sharp"**、"gtk-dotnet **"、"** **gtk-sharp"** 、""、""。
 
     ![引用 GTK # 库](gtk-images/win/reference-gtk-libraries.png "引用 GTK # 库")
 
@@ -101,7 +89,7 @@ Xamarin。窗体现在支持 GTK # 应用的预览。 GTK # 是一个图形用�
     }
     ```
 
-    此代码初始化 GTK # 和 Xamarin，创建应用程序窗口，并运行应用。
+    此代码初始化 GTK # 并 Xamarin.Forms 创建应用程序窗口，并运行应用。
 
 11. 在**解决方案资源管理器**中，右键单击 GTK 项目，然后选择 "**属性**"。
 
@@ -113,27 +101,27 @@ Xamarin。窗体现在支持 GTK # 应用的预览。 GTK # 是一个图形用�
 
     ![GTK # 生活游戏](gtk-images/win/gtk-gameoflife.png "GTK # 生活游戏")
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 按照以下说明添加将在 Mac 桌面上运行的 GTK # 应用：
 
-1. 在 Visual Studio for Mac 中，右键单击 Xamarin 解决方案，然后选择 "**添加 > 添加新项目 ...** "。
+1. 在 Visual Studio for Mac 中，右键单击 Xamarin.Forms 解决方案，然后选择 "**添加 > 添加新项目 ...**"。
 
 2. 在 "**新建项目**" 窗口中，选择 "**其他 > .net > Gtk # 2.0 项目**，然后按"**下一步**"。
 
 3. 键入具有**GTK**扩展的项目的名称，例如**GameOfLife**，并按 "**创建**"。
 
-4. 在**Solution Pad**中，右键单击 > 为 GTK 项目**添加包 ...** "的包，然后添加 Xamarin. Forms 3.0 预发行 NuGet 包或更高版本。
+4. 在**Solution Pad**中，右键单击 "包" > 为 GTK 项目**添加包 ...** "，并添加 Xamarin.Forms 3.0 预发行版 NuGet 包或更高版本。
 
-    ![选择 "Xamarin" NuGet 包](gtk-images/mac/select-forms-nuget-package.png "选择 "Xamarin" NuGet 包")
+    ![选择 Xamarin.Forms NuGet 包](gtk-images/mac/select-forms-nuget-package.png "选择 [！基金.无 LOC （Xamarin）] NuGet 包")
 
-5. 在**Solution Pad**中，右键单击 "包" > 为 GTK 项目**添加包 ...** "，并添加" Xamarin 3.0 预发行版 "NuGet 包或更高版本。
+5. 在**Solution Pad**中，右键单击 > 为 GTK 项目**添加包 ...** "的包，然后添加 Xamarin.Forms 。Platform.string 3.0 预发行 NuGet 包或更高版本。
 
-    ![选择 "Xamarin" NuGet 包](gtk-images/mac/select-forms-platform-nuget-package.png "选择 "Xamarin" NuGet 包")
+    ![选择 Xamarin.Forms 。Platform.string NuGet 包](gtk-images/mac/select-forms-platform-nuget-package.png "选择 [！基金.非 LOC （Xamarin）]。Platform.string NuGet 包")
 
-6. 更新其他平台项目，以使用 GTK 项目使用的相同 Xamarin 版本。
+6. 更新其他平台项目，以使用 GTK 项目使用的相同 Xamarin.Forms 版本。
 
-7. 在**Solution Pad**中，右键单击 "引用" > GTK 项目的 "**编辑引用 ...** "，并添加对 Xamarin 项目的引用（.NET Standard 或共享项目）。
+7. 在**Solution Pad**中，右键单击 "引用" > GTK 项目的 "**编辑引用 ...** "，然后添加对项目的引用 Xamarin.Forms （.NET Standard 或共享项目）。
 
     ![引用共享项目](gtk-images/mac/reference-shared-project.png "引用共享项目")
 
@@ -166,7 +154,7 @@ Xamarin。窗体现在支持 GTK # 应用的预览。 GTK # 是一个图形用�
     }
     ```
 
-    此代码初始化 GTK # 和 Xamarin，创建应用程序窗口，并运行应用。
+    此代码初始化 GTK # 并 Xamarin.Forms 创建应用程序窗口，并运行应用。
 
 9. 在**Solution Pad**中，右键单击 GTK 项目，然后选择 "**设为启动项目**"。
 
@@ -180,9 +168,9 @@ Xamarin。窗体现在支持 GTK # 应用的预览。 GTK # 是一个图形用�
 
 ### <a name="platform-specifics"></a>平台特定信息
 
-可以通过 XAML 或代码确定 Xamarin 应用程序应用程序在哪个平台上运行。 这使你可以更改在 GTK # 上运行时的程序特征。 在代码中，将 `Device.RuntimePlatform` 的值与 `Device.GTK` 常量（等于字符串 "GTK"）进行比较。 如果有匹配项，则应用程序在 GTK # 上运行。
+您可以 Xamarin.Forms 通过 XAML 或代码确定您的应用程序在哪个平台上运行。 这使你可以更改在 GTK # 上运行时的程序特征。 在代码中，将的值 `Device.RuntimePlatform` 与 `Device.GTK` 常量（等于字符串 "GTK"）进行比较。 如果有匹配项，则应用程序在 GTK # 上运行。
 
-在 XAML 中，可以使用 `OnPlatform` 标记来选择特定于该平台的属性值：
+在 XAML 中，可以使用 `OnPlatform` 标记来选择特定于平台的属性值：
 
 ```xaml
 <Button.TextColor>
@@ -205,7 +193,7 @@ window.SetApplicationIcon("icon.png");
 
 ### <a name="themes"></a>主题
 
-有多种可用于 GTK # 的主题，这些主题可从 Xamarin 应用程序中使用：
+有多种可用于 GTK # 的主题，可以在应用中使用这些主题 Xamarin.Forms ：
 
 ```csharp
 GtkThemes.Init ();
@@ -214,7 +202,7 @@ GtkThemes.LoadCustomTheme ("Themes/gtkrc");
 
 ### <a name="native-forms"></a>本机窗体
 
-本机窗体允许使用 Xamarin. 窗体[`ContentPage`](xref:Xamarin.Forms.ContentPage)派生的页（包括 GTK # 项目）。 这可以通过使用 `CreateContainer` 扩展方法创建[`ContentPage`](xref:Xamarin.Forms.ContentPage)派生页面的实例并将其转换为本机 GTK # 类型来实现：
+本机窗体允许 Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) 派生的页面由本机项目使用，包括 GTK # 项目。 这可以通过 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 使用扩展方法创建派生页面的实例并将其转换为本机 GTK # 类型来实现 `CreateContainer` ：
 
 ```csharp
 var settingsView = new SettingsView().CreateContainer();

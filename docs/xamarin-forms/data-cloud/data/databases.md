@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms本地数据库
-description: Xamarin.Forms使用 SQLite 数据库引擎支持数据库驱动的应用程序，这样就可以在共享代码中加载和保存对象。 本文介绍 Xamarin.Forms 应用程序如何使用 SQLite.Net 将数据读取和写入本地 SQLite 数据库。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 04d813baae5796da68ea27389df33738af5cde3e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130996"
+标题： " Xamarin.Forms 本地数据库" 说明： " Xamarin.Forms 使用 SQLite 数据库引擎支持数据库驱动的应用程序，这样就可以在共享代码中加载和保存对象。 本文介绍 Xamarin.Forms 应用程序如何使用 SQLite.Net 将数据读取和写入本地 SQLite 数据库。
+ms-chap： xamarin assetid： F687B24B-7DF0-4F8E-A21A-A9BB507480EB： xamarin 窗体作者： profexorgeek： jusjohns ms. 日期：12/05/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-local-databases"></a>Xamarin.Forms本地数据库
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
@@ -39,7 +25,7 @@ SQLite 数据库引擎允许 Xamarin.Forms 应用程序加载和保存共享代�
 
 许多 NuGet 包都有着类似的名称。 正确的包具有以下属性：
 
-- **创建者：** Frank A. Krueger
+- **创建者：** Frank Krueger （praeclarum）
 - **ID：** sqlite 网络-pcl
 - **NuGet 链接：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 

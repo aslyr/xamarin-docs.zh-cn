@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 12582c567a439cf4e0236724bd373c3508f18748
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139347"
+标题： "企业应用开发简介" 说明： "本章节介绍了企业应用开发，并介绍了 eShopOnContainers 移动应用。"
+ms-chap： xamarin assetid： cbce0659-fa03-447a-86ec-140438143230。技术： xamarin 窗体作者： davidbritch 毫秒. 作者： dabritch 毫秒。日期：08/07/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="introduction-to-enterprise-app-development"></a>企业应用程序开发简介
 
 无论采用何种平台，企业应用程序的开发人员都面临着几个难题：
@@ -101,7 +87,7 @@ ms.locfileid: "84139347"
 EShopOnContainers 移动应用 Xamarin.Forms 执行以下功能：
 
 - XAML
-- 控制
+- 控件
 - 绑定
 - 转换器
 - 样式
@@ -114,7 +100,7 @@ EShopOnContainers 移动应用 Xamarin.Forms 执行以下功能：
 - MessagingCenter
 - 自定义控件
 
-有关此功能的详细信息，请参阅[ Xamarin.Forms 文档](~/xamarin-forms/index.yml)和[创建 Xamarin.Forms 移动应用](https://aka.ms/xamebook)。
+有关此功能的详细信息，请参阅[ Xamarin.Forms 文档](~/xamarin-forms/index.yml)和[创建 Xamarin.Forms 移动应用](https://aka.ms/xamformsebook)。
 
 此外，还为 eShopOnContainers 移动应用中的一些类提供单元测试。
 
@@ -143,10 +129,10 @@ EShopOnContainers PCL 项目包含以下文件夹：
 |--- |--- |
 |动画|包含使动画可在 XAML 中使用的类。|
 |行为|包含向视图类公开的行为。|
-|控制|包含应用程序使用的自定义控件。|
+|控件|包含应用程序使用的自定义控件。|
 |转换器|包含将自定义逻辑应用于绑定的值转换器。|
 |效果|包含 `EntryLineColorEffect` 类，该类用于更改特定控件的边框颜色 `Entry` 。|
-|例外|包含自定义 `ServiceAuthenticationException` 。|
+|异常|包含自定义 `ServiceAuthenticationException` 。|
 |扩展|包含和类的扩展 `VisualElement` 方法 `IEnumerable` 。|
 |帮助程序|包含应用程序的帮助器类。|
 |模型|包含应用程序的模型类。|

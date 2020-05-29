@@ -1,20 +1,9 @@
 ---
-title: 安装步骤-通过 Apple for Xamarin 进行登录
-description: 根据移动应用程序目标的不同平台，用 Apple 安装程序登录。
-ms.prod: xamarin
-ms.assetid: 8F712802-395B-469B-B5BE-C927AD1A8391
-ms.technology: xamarin-forms
-author: davidortinau
-ms.author: daortin
-ms.date: 09/10/2019
-ms.openlocfilehash: c1f75f4872d787e261ab6bbac3624e31538c6ff0
-ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71206539"
+标题： "设置步骤-通过 Apple 登录 Xamarin.Forms " 说明： "基于移动应用程序目标的不同平台，用 apple 安装程序登录。"
+ms-chap： xamarin assetid：8F712802-395B-469B-B5BE-C927AD1A8391： xamarin 窗体作者： davidortinau： daortin ms. 日期：09/10/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
-# <a name="setup-sign-in-with-apple-for-xamarinforms"></a>安装通过 Apple for Xamarin 进行登录。 Forms
+
+# <a name="setup-sign-in-with-apple-for-xamarinforms"></a>安装程序登录Xamarin.Forms
 
 本指南介绍了设置跨平台应用程序以使用 Apple 进行登录高级操作所需的一系列步骤。 Apple 开发人员门户中的 Apple 安装程序是直接的，而在 Android 和 Apple 之间创建安全关系则需要执行其他步骤。 
 
@@ -33,14 +22,14 @@ ms.locfileid: "71206539"
 ![注册域表单](sign-in-images/readme-signin-domain-more.png)
 
 > [!NOTE]
-> 如果你看到关于域不符合 SPF 规范的错误，则需要将 SPF DNS TXT 记录添加到域并等待其传播，然后再继续：SPF TXT 的外观可能如下所示：`v=spf1 a a:myapp.com -all`
+> 如果你看到关于域不符合 SPF 规范的错误，则需要将 SPF DNS TXT 记录添加到域并等待其传播，然后再继续： SPF TXT 可能如下所示：`v=spf1 a a:myapp.com -all`
 
-接下来，你将需要通过单击 "**下载**" 以检索`apple-developer-domain-association.txt`该文件，然后将其`.well-known`上传到域网站的文件夹来验证域的所有权。
+接下来，你将需要通过单击 "**下载**" 以检索该 `apple-developer-domain-association.txt` 文件，然后将其上传到域网站的文件夹来验证域的所有权 `.well-known` 。
 
-文件上传并可访问后，可以单击 "验证" 以使用 Apple 验证域所有权。 `.well-known/apple-developer-domain-association.txt`
+`.well-known/apple-developer-domain-association.txt`文件上传并可访问后，可以单击 "**验证**" 以使用 Apple 验证域所有权。
 
 > [!NOTE]
-> Apple 将验证的`https://`所有权。 确保设置了 SSL，并通过安全的 URL 访问该文件。
+> Apple 将验证的所有权 `https://` 。 确保设置了 SSL，并通过安全的 URL 访问该文件。
 
 在继续操作之前成功完成此过程。
 
@@ -62,7 +51,7 @@ ms.locfileid: "71206539"
 
 ![创建新的服务 ID](sign-in-images/readme-serviceid-create.png)
 
-为服务 ID 指定说明和标识符。  此标识符将是你`ServerId`的。  请确保启用**Apple 的登录**。
+为服务 ID 指定说明和标识符。  此标识符将是你的 `ServerId` 。  请确保启用**Apple 的登录**。
 
 继续下一步之前，请单击启用的 "_通过 Apple 登录_" 选项旁的 "**配置**"。
 
@@ -70,10 +59,10 @@ ms.locfileid: "71206539"
 
 接下来，选择以前配置的**Web 域**。
 
-最后，添加一个或多个**返回 url**。  以后`redirect_uri`使用的任何内容都必须在此处严格注册。  输入时，请确保`http://` URL `https://`中包含或。
+最后，添加一个或多个**返回 url**。  以后使用的任何内容都 `redirect_uri` 必须在此处严格注册。  输入时，请确保 `http://` `https://` URL 中包含或。
 
 > [!NOTE]
-> 出于测试目的，不能使用`127.0.0.1`或`localhost`，但可以`local.test`使用其他域，如。  如果选择执行此操作，则可以编辑计算机的`hosts`文件，将此虚构域解析为本地 IP 地址。
+> 出于测试目的，不能使用 `127.0.0.1` 或 `localhost` ，但可以使用其他域，如 `local.test` 。  如果选择执行此操作，则可以编辑计算机的文件， `hosts` 将此虚构域解析为本地 IP 地址。
 
 ![配置 Apple 登录](sign-in-images/readme-serviceid-configure.png)
 
@@ -93,13 +82,13 @@ ms.locfileid: "71206539"
 
 单击 "**继续**"，然后单击 "**注册**" 以创建新密钥。
 
-接下来，你将只有一个机会下载刚刚生成的密钥。  单击 **“下载”** 。
+接下来，你将只有一个机会下载刚刚生成的密钥。  单击“下载”  。
 
 ![下载密钥](sign-in-images/readme-key-download.png)
 
-此外，请在此步骤中记下**密钥 ID** 。 `KeyId`稍后将对此进行使用。
+此外，请在此步骤中记下**密钥 ID** 。 稍后将对此进行使用 `KeyId` 。
 
-你将下载一个`.p8`密钥文件。  可以在记事本或 VSCode 中打开此文件以查看文本内容。  它们应该如下所示：
+你将下载一个 `.p8` 密钥文件。  可以在记事本或 VSCode 中打开此文件以查看文本内容。  它们应该如下所示：
 
 ```
 -----BEGIN PRIVATE KEY-----
@@ -110,11 +99,11 @@ DHF5Svq0
 -----END PRIVATE KEY-----
 ```
 
-命名此密钥`P8FileContents`并将其保存在安全的位置。 将此服务集成到移动应用程序时将使用它。
+命名此密钥 `P8FileContents` 并将其保存在安全的位置。 将此服务集成到移动应用程序时将使用它。
 
 ## <a name="summary"></a>总结
 
-本文介绍了使用 Apple 进行登录所需的步骤，以便在 Xamarin 中使用。
+本文介绍了在应用程序中使用 Apple 进行登录以供使用的必要步骤 Xamarin.Forms 。
 
 ## <a name="related-links"></a>相关链接
 

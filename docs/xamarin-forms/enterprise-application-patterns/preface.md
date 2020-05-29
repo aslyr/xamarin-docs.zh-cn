@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本章使用来提供企业应用程序模式的前缀 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b587bd8cacda9024103757a585c11fba2ed09fda
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130827"
+标题： "在企业应用程序开发之前：" 说明： "本部分提供了有关使用的企业应用程序模式的" 前言 " Xamarin.Forms 。
+ms-chap： xamarin assetid： fbf32a44-1d33-4e16-a904-dc7ee5991e7c： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/07/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="preface-to-enterprise-app-development"></a>到企业应用开发
 
 此电子书提供有关使用生成跨平台企业应用程序的指导 Xamarin.Forms 。 Xamarin.Forms是一个跨平台 UI 工具包，使开发人员能够轻松创建可在各种平台（包括 iOS、Android 和通用 Windows 平台（UWP））之间共享的本机用户界面布局。 它为企业到员工（B2E）、企业到企业（B2B）和企业对消费者（B2C）应用提供综合性解决方案，提供跨所有目标平台共享代码的功能，并有助于降低总拥有成本（TCO）。
@@ -27,7 +13,7 @@ ms.locfileid: "84130827"
 
 ## <a name="whats-left-out-of-this-guides-scope"></a>本指南范围的剩余内容
 
-本指南面向已熟悉的读者 Xamarin.Forms 。 有关的详细介绍 Xamarin.Forms ，请参阅[ Xamarin.Forms 文档](~/xamarin-forms/index.yml)和[ Xamarin.Forms 使用创建移动应用](https://aka.ms/xamebook)。
+本指南面向已熟悉的读者 Xamarin.Forms 。 有关的详细介绍 Xamarin.Forms ，请参阅[ Xamarin.Forms 文档](~/xamarin-forms/index.yml)和[ Xamarin.Forms 使用创建移动应用](https://aka.ms/xamformsebook)。
 
 本指南是[针对容器化 .Net 应用程序的 .Net 微服务体系结构](https://aka.ms/microservicesebook)的补充，重点介绍如何开发和部署容器化微服务。 其他一些需要阅读的指南包括：利用[ASP.NET Core 和 Microsoft Azure 构建和开发新式 Web 应用](https://aka.ms/WebAppEbook)程序，以及[Microsoft 平台和工具的容器化 Docker 应用程序生命周期](https://aka.ms/dockerlifecycleebook)，以及[用于移动应用程序开发的 microsoft 平台和工具](https://aka.ms/MobAppDev/StndPDF)。
 

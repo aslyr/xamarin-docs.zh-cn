@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms布局
-description: Xamarin.Forms布局用于将用户界面控件组合到可视结构中。 本文列出了中包含的布局 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c39bf29feceaf598ac8fd38e6af3d227b6deddc0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137301"
+标题： " Xamarin.Forms 布局" 说明： " Xamarin.Forms 用于将用户界面控件组合到可视结构中的布局。 本文列出了中包含的布局 Xamarin.Forms 。
+ms-chap： xamarin assetid： F4180997-BA21-453A-9958-D1E2940DF050 毫秒： xamarin 窗体作者： davidbritch 毫秒. 作者： dabritch 毫秒。日期：05/21/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-layouts"></a>Xamarin.Forms布局
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
@@ -44,7 +30,7 @@ _Xamarin. 窗体布局用于将用户界面控件组成可视结构。_
 
 <a named="frame" />
 
-### <a name="frame"></a>帧
+### <a name="frame"></a>Frame
 
 |     |     |
 | --- | --- |
@@ -57,7 +43,7 @@ _Xamarin. 窗体布局用于将用户界面控件组成可视结构。_
 
 |     |     |
 | --- | --- |
-| [`ScrollView`](xref:Xamarin.Forms.ScrollView)能否滚动其内容。 将 [`Content`](xref:Xamarin.Forms.ScrollView.Content) 属性设置为视图或布局太大，无法在屏幕上容纳。 （的内容 `ScrollView` 通常是 [`StackLayout`](#stackLayout) 。）设置 [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) 属性以指示滚动应为垂直、水平还是同时为两者。<br /><br />[API 文档](xref:Xamarin.Forms.ScrollView)  / [指南](~/xamarin-forms/user-interface/layouts/scroll-view.md)  / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![ScrollView 示例](layouts-images/ScrollView.png "ScrollView 示例")](layouts-images/ScrollView-Large.png#lightbox "ScrollView 示例")<br />[此页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ScrollViewDemoPage.cs)  /  的 c # 代码[XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ScrollViewDemoPage.xaml) |
+| [`ScrollView`](xref:Xamarin.Forms.ScrollView)能否滚动其内容。 将 [`Content`](xref:Xamarin.Forms.ScrollView.Content) 属性设置为视图或布局太大，无法在屏幕上容纳。 （的内容 `ScrollView` 通常是 [`StackLayout`](#stackLayout) 。）设置 [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) 属性以指示滚动应为垂直、水平还是同时为两者。<br /><br />[API 文档](xref:Xamarin.Forms.ScrollView)  / [指南](~/xamarin-forms/user-interface/layouts/scrollview.md)  / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![ScrollView 示例](layouts-images/ScrollView.png "ScrollView 示例")](layouts-images/ScrollView-Large.png#lightbox "ScrollView 示例")<br />[此页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ScrollViewDemoPage.cs)  /  的 c # 代码[XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ScrollViewDemoPage.xaml) |
 |     |     |
 
 ### <a name="templatedview"></a>TemplatedView
@@ -89,7 +75,7 @@ _Xamarin. 窗体布局用于将用户界面控件组成可视结构。_
 
 <a name="grid" />
 
-### <a name="grid"></a>网格
+### <a name="grid"></a>Grid
 
 |     |     |
 | --- | --- |

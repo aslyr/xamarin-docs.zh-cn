@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms快速呈现器
-description: 本文介绍快速呈现器， Xamarin.Forms 通过平展生成的本机控件层次结构，减少了 Android 上控件的通货膨胀和呈现成本。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3f25f4c2da5b2a426673b49045b5d2d05b0c6ac4
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139069"
+title： " Xamarin.Forms Fast 呈现器" 说明： "本文介绍了快速呈现器， Xamarin.Forms 通过平展生成的本机控件层次结构，减少了 Android 上控件的通货膨胀和呈现成本。"
+ms-chap： xamarin assetid：097f87f2-d891-4f3c-be02-fb7d195a481a： xamarin 窗体作者： davidbritch： dabritch ms. 日期：05/28/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-fast-renderers"></a>Xamarin.Forms快速呈现器
 
 通常，Android 上的大多数原始控件呈现器都由两个视图组成：
@@ -31,9 +17,10 @@ ms.locfileid: "84139069"
 快速呈现器适用于 Android 上的以下控件 Xamarin.Forms ：
 
 - [`Button`](xref:Xamarin.Forms.Button)
+- [`Frame`](xref:Xamarin.Forms.Frame)
 - [`Image`](xref:Xamarin.Forms.Image)
 - [`Label`](xref:Xamarin.Forms.Label)
-- [`Frame`](xref:Xamarin.Forms.Frame)
+- [`MediaElement`](xref:Xamarin.Forms.MediaElement)
 
 在功能上，这些快速呈现器与旧版呈现器没有什么不同。 从 Xamarin.Forms 4.0 开始，默认情况下，所有应用程序 `FormsAppCompatActivity` 都将使用这些快速呈现器。 所有新控件（包括和）的呈现器都 [`ImageButton`](xref:Xamarin.Forms.ImageButton) [`CollectionView`](xref:Xamarin.Forms.CollectionView) 使用快速呈现器方法。
 
