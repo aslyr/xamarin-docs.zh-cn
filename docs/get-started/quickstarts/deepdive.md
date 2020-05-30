@@ -496,7 +496,7 @@ Xamarin.Forms 应用程序通常包含多个具有相同外观的视觉对象元
             <Setter Property="BarBackgroundColor"
                     Value="{OnPlatform iOS={StaticResource iOSNavigationBarColor},
                                        Android={StaticResource AndroidNavigationBarColor}}" />
-             <Setter Property="BarTextColor"
+            <Setter Property="BarTextColor"
                     Value="{OnPlatform iOS={StaticResource iOSNavigationBarTextColor},
                                        Android={StaticResource AndroidNavigationBarTextColor}}" />           
         </Style>
