@@ -59,7 +59,7 @@ ms.locfileid: "77068730"
             <Style TargetType="{x:Type NavigationPage}">
                 <Setter Property="BarBackgroundColor"
                         Value="{StaticResource NavigationBarColor}" />
-                 <Setter Property="BarTextColor"
+                <Setter Property="BarTextColor"
                         Value="{StaticResource NavigationBarTextColor}" />           
             </Style>
 
