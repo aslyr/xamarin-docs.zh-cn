@@ -1,18 +1,21 @@
 ---
-title: 自定义视频定位
+title: ''
 description: 本文介绍如何使用 Xamarin.Forms 在视频播放器应用程序中实现自定义定位条。
-ms.prod: xamarin
-ms.assetid: 6D792264-30FF-46F7-8C1B-2FEF9D277DF4
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/12/2018
-ms.openlocfilehash: 12633b728240c2f90d0265fe7b9efb65ea49bf1f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 97d32a03ee10e2f3b0a7442d1d70dab9236059b4
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "68650648"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135078"
 ---
 # <a name="custom-video-positioning"></a>自定义视频定位
 
@@ -70,7 +73,7 @@ namespace FormsVideoLibrary
 
 另请注意，本文稍后将介绍调用名为 `SetTimeToEnd` 方法的属性更改处理程序。
 
-设置 `VideoPlayer` 的 `Source` 属性后，无法立即获取视频持续时间  。 必须先下载部分视频文件，然后基础视频播放器才能确定其持续时间。
+设置 `VideoPlayer` 的 `Source` 属性后，无法立即获取视频持续时间。 必须先下载部分视频文件，然后基础视频播放器才能确定其持续时间。
 
 下面是每个平台呈现器获取视频持续时间的方法：
 
@@ -418,7 +421,7 @@ UWP [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) 的文档�
 
 这是很好的建议，但是这三个 `VideoPlayerRenderer` 类已经间接地使用计时器来更新 `Position` 属性了。 `Position` 属性在 `UpdateStatus` 事件的处理程序中更改，其每秒仅触发 10 次。
 
-因此，`VideoPlayer` 的 `Position` 属性可以绑定到 `PositionSlider` 的 `Position` 属性上，而且不存在性能问题，如“自定义定位条”页面中所示  ：
+因此，`VideoPlayer` 的 `Position` 属性可以绑定到 `PositionSlider` 的 `Position` 属性上，而且不存在性能问题，如“自定义定位条”页面中所示：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -473,7 +476,7 @@ UWP [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) 的文档�
 </ContentPage>
 ```
 
-第一个省略号 (···) 隐藏 `ActivityIndicator`；与上一个“自定义传输”页面中的省略号相同  。 请注意两个显示 `Position` 和 `TimeToEnd` 属性的 `Label` 元素。 这两个 `Label` 元素之间的省略号隐藏“自定义传输”页面中显示的“播放”、“暂停”和“停止”的两个 `Button` 元素  。 代码隐藏逻辑也与“自定义传输”页面相同  。
+第一个省略号 (···) 隐藏 `ActivityIndicator`；与上一个“自定义传输”页面中的省略号相同。 请注意两个显示 `Position` 和 `TimeToEnd` 属性的 `Label` 元素。 这两个 `Label` 元素之间的省略号隐藏“自定义传输”页面中显示的“播放”、“暂停”和“停止”的两个 `Button` 元素。 代码隐藏逻辑也与“自定义传输”页面相同。
 
 [![自定义定位](custom-positioning-images/custompositioning-small.png "自定义定位")](custom-positioning-images/custompositioning-large.png#lightbox "自定义定位")
 

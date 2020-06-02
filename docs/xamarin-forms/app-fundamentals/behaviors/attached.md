@@ -1,24 +1,27 @@
 ---
-title: 附加行为
-description: 附加行为是具有一个或多个附加属性的静态类。 本文演示如何创建和使用附加行为。
-ms.prod: xamarin
-ms.assetid: ECEE6AEC-44FA-4AF7-BAD0-88C6EE48422E
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/06/2016
-ms.openlocfilehash: 7d16eef4fe5422fb5cf3c039c66d1b0f113727fd
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 08b1c738dc87bb9373436a3fd96486eb15341112
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77131121"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139420"
 ---
 # <a name="attached-behaviors"></a>附加行为
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)
 
-“附加行为是具有一个或多个附加属性的静态类。本文演示如何创建和使用附加行为。” 
+“附加行为是具有一个或多个附加属性的静态类。本文演示如何创建和使用附加行为。”
 
 ## <a name="overview"></a>概述
 
@@ -29,7 +32,7 @@ ms.locfileid: "77131121"
 1. `propertyChanged` 委托将控件引用（接收为 [`BindableObject`](xref:Xamarin.Forms.BindableObject)）强制转换为旨在增强行为的控制类型。
 1. `propertyChanged` 委托修改控件属性、调用控件方法，或为控件公开的事件注册事件处理程序，以实现核心行为功能。
 
-附加行为存在一个问题，即它们使用 `static` 属性和方法在 `static` 类中进行定义。 这使得创建具有状态的附加行为变得困难。 此外，Xamarin.Forms 行为已替代附加行为，成为了行为构建的首选方法。 有关 Xamarin.Forms 行为的更多信息，请参阅 [Xamarin.Forms 行为](~/xamarin-forms/app-fundamentals/behaviors/creating.md)和[可重用行为](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md)。
+附加行为存在一个问题，即它们使用 `static` 属性和方法在 `static` 类中进行定义。 这使得创建具有状态的附加行为变得困难。 此外，Xamarin.Forms 行为已替代附加行为，成为了行为构造的首选方法。 有关 Xamarin.Forms 行为的详细信息，请参阅 [Xamarin.Forms 行为](~/xamarin-forms/app-fundamentals/behaviors/creating.md)和[可重用行为](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md)。
 
 ## <a name="creating-an-attached-behavior"></a>创建附加行为
 

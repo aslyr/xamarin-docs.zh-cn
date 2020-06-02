@@ -1,18 +1,22 @@
 ---
-title: “第 23 章： 触发器和行为”摘要
-description: 使用 Xamarin.Forms 创建移动应用：“第 23 章： 触发器和行为”摘要
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 19E84B5D-46B4-4B6D-A255-87BEFB011261
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/07/2017
-ms.openlocfilehash: 8a1274a8447f49ce39f9c92703bbaec9e875b9e9
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 23. Triggers and behaviors''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9a0206354254f79756e29f834c85837240736eca
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70760594"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136651"
 ---
 # <a name="summary-of-chapter-23-triggers-and-behaviors"></a>“第 23 章： 触发器和行为”摘要
 
@@ -55,11 +59,11 @@ ms.locfileid: "70760594"
 - `BindableProperty` 类型的 [`Property`](xref:Xamarin.Forms.Setter.Property)
 - `Object` 类型的 [`Value`](xref:Xamarin.Forms.Setter.Value)
 
-[EntryPop  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/EntryPop) 示例展示了应用于 `Entry` 的 `Trigger` 如何在 `Entry` 的 `IsFocused` 属性为 `true` 时通过 `Scale` 属性增加 `Entry` 的大小。
+[EntryPop](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/EntryPop) 示例展示了应用于 `Entry` 的 `Trigger` 如何在 `Entry` 的 `IsFocused` 属性为 `true` 时通过 `Scale` 属性增加 `Entry` 的大小。
 
-可以在代码中设置 `Trigger`（如 [EntryPopCode  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/EntryPopCode) 示例所示），尽管并不常见。
+可以在代码中设置 `Trigger`（如 [EntryPopCode](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/EntryPopCode) 示例所示），尽管并不常见。
 
-[StyledTriggers  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/StyledTriggers) 示例展示了如何在 `Style` 中设置 `Trigger` 以应用于多个 `Entry` 元素。
+[StyledTriggers](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/StyledTriggers) 示例展示了如何在 `Style` 中设置 `Trigger` 以应用于多个 `Entry` 元素。
 
 ### <a name="trigger-actions-and-animations"></a>触发器操作和动画
 
@@ -70,26 +74,26 @@ ms.locfileid: "70760594"
 
 若要使用此类，需要编写派生自 [`TriggerAction<T>`](xref:Xamarin.Forms.TriggerAction`1) 的类（通常为 `TriggerAction<VisualElement>`）。 可以在此类中定义属性。 这些是普通 CLR 属性，而不是可绑定属性，因为 `TriggerAction` 不是派生自 `BindableObject`。 必须重写在操作调用时调用的 [`Invoke`](xref:Xamarin.Forms.TriggerAction`1.Invoke*) 方法。 参数是目标元素。
 
-以 [Xamarin.FormsBook.Toolkit  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的 [`ScaleAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ScaleAction.cs) 类为例。 它调用 `ScaleTo` 属性来为元素的 `Scale` 属性添加动画效果。 由于其中一个属性的类型为 `Easing`，因此 [`EasingConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/EasingConverter.cs) 类可便于在 XAML 中使用标准 `Easing` 静态字段。
+以 [Xamarin.FormsBook.Toolkit](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的 [`ScaleAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ScaleAction.cs) 类为例。 它调用 `ScaleTo` 属性来为元素的 `Scale` 属性添加动画效果。 由于其中一个属性的类型为 `Easing`，因此 [`EasingConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/EasingConverter.cs) 类可便于在 XAML 中使用标准 `Easing` 静态字段。
 
-[EntrySwell  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/EntrySwell) 示例展示了如何从监视 `Focused` 和 `Unfocused` 事件的 `EventTrigger` 对象调用 `ScaleAction`。
+[EntrySwell](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/EntrySwell) 示例展示了如何从监视 `Focused` 和 `Unfocused` 事件的 `EventTrigger` 对象调用 `ScaleAction`。
 
-[CustomEasingSwell  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/CustomEasingSwell) 示例展示了如何在代码隐藏文件中为 `ScaleAction` 定义自定义缓动函数。
+[CustomEasingSwell](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/CustomEasingSwell) 示例展示了如何在代码隐藏文件中为 `ScaleAction` 定义自定义缓动函数。
 
 也可以使用 `Trigger`（与 `EventTrigger` 不同）调用操作。 这就要求知道 `TriggerBase` 定义了两个集合：
 
 - `IList<TriggerAction>` 类型的 [`EnterActions`](xref:Xamarin.Forms.TriggerBase.EnterActions)
 - `IList<TriggerAction>` 类型的 [`ExitActions`](xref:Xamarin.Forms.TriggerBase.ExitActions)
 
-[EnterExitSwell  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/EnterExitSwell) 示例展示了如何使用这些集合。
+[EnterExitSwell](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/EnterExitSwell) 示例展示了如何使用这些集合。
 
 ### <a name="more-event-triggers"></a>更多事件触发器
 
-[Xamarin.FormsBook.Toolkit  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的 [`ScaleUpAndDownAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ScaleUpAndDownAction.cs) 类调用 `ScaleTo` 两次可进行纵向扩展和缩减。 [ButtonGrowth  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/ButtonGrowth) 示例在样式化 `EventTrigger` 中使用此类，以在用户按下 `Button` 时提供视觉反馈。 这种双重动画也可以通过在 [`DelayedScaleAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DelayedScaleAction.cs) 类型的集合中使用两个操作来实现
+[Xamarin.FormsBook.Toolkit](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的 [`ScaleUpAndDownAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ScaleUpAndDownAction.cs) 类调用 `ScaleTo` 两次可进行纵向扩展和缩减。 [ButtonGrowth](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/ButtonGrowth) 示例在样式化 `EventTrigger` 中使用此类，以在用户按下 `Button` 时提供视觉反馈。 这种双重动画也可以通过在 [`DelayedScaleAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DelayedScaleAction.cs) 类型的集合中使用两个操作来实现
 
-Xamarin.FormsBook.Toolkit  库中的 [`ShiverAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ShiverAction.cs) 类定义了可自定义的抖动操作。 [ShiverButtonDemo  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/ShiverButtonDemo) 示例对此进行了展示。
+Xamarin.FormsBook.Toolkit 库中的 [`ShiverAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ShiverAction.cs) 类定义了可自定义的抖动操作。 [ShiverButtonDemo](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/ShiverButtonDemo) 示例对此进行了展示。
 
-Xamarin.FormsBook.Toolkit  库中的 [`NumericValidationAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NumericValidationAction.cs) 类仅限于 `Entry` 元素，并在 `Text` 属性不是 `double` 时将 `TextColor` 属性设置为红色。 [TriggerEntryValidation  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/TriggerEntryValidation) 示例对此进行了展示。
+Xamarin.FormsBook.Toolkit 库中的 [`NumericValidationAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NumericValidationAction.cs) 类仅限于 `Entry` 元素，并在 `Text` 属性不是 `double` 时将 `TextColor` 属性设置为红色。 [TriggerEntryValidation](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/TriggerEntryValidation) 示例对此进行了展示。
 
 ### <a name="data-triggers"></a>数据触发器
 
@@ -101,11 +105,11 @@ Xamarin.FormsBook.Toolkit  库中的 [`NumericValidationAction`](https://github.
 - `Object` 类型的 [`Value`](xref:Xamarin.Forms.DataTrigger.Value)
 - `IList<SetterBase>` 类型的 [`Setters`](xref:Xamarin.Forms.DataTrigger.Setters)
 
-[GenderColors  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/GenderColors) 示例需要 [SchoolOfFineArt  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/SchoolOfFineArt) 库，并根据 `Sex` 属性将学生姓名的颜色设置为蓝色或粉色：
+[GenderColors](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/GenderColors) 示例需要 [SchoolOfFineArt](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/SchoolOfFineArt) 库，并根据 `Sex` 属性将学生姓名的颜色设置为蓝色或粉色：
 
 [![性别颜色的三倍屏幕截图](images/ch23fg04-small.png "性别颜色")](images/ch23fg04-large.png#lightbox "性别颜色")
 
-[ButtonEnabler  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/ButtonEnabler) 示例在 `Entry` 的 `Text` 属 性的 `Length` 属性等于 0 时，将 `Entry` 的 `IsEnabled` 属性设置为 `False`。 请注意，`Text` 属性初始化为空字符串；它默认为 `null`，`DataTrigger` 无法正常运行。
+[ButtonEnabler](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/ButtonEnabler) 示例在 `Entry` 的 `Text` 属 性的 `Length` 属性等于 0 时，将 `Entry` 的 `IsEnabled` 属性设置为 `False`。 请注意，`Text` 属性初始化为空字符串；它默认为 `null`，`DataTrigger` 无法正常运行。
 
 ### <a name="combining-conditions-in-the-multitrigger"></a>在 MultiTrigger 中合并条件
 
@@ -119,11 +123,11 @@ Xamarin.FormsBook.Toolkit  库中的 [`NumericValidationAction`](https://github.
 - [`PropertyCondition`](xref:Xamarin.Forms.Condition)：像 `Trigger` 一样有 [`Property`](xref:Xamarin.Forms.PropertyCondition.Property) 和 [`Value`](xref:Xamarin.Forms.PropertyCondition.Value) 属性
 - [`BindingCondition`](xref:Xamarin.Forms.BindingCondition)：像 `DataTrigger` 一样有 [`Binding`](xref:Xamarin.Forms.BindingCondition.Binding) 和 [`Value`](xref:Xamarin.Forms.BindingCondition.Value) 属性
 
-在 [AndConditions  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/AndConditions) 示例中，仅当四个 `Switch` 元素都处于启用状态时，才会为 `BoxView` 着色。
+在 [AndConditions](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/AndConditions) 示例中，仅当四个 `Switch` 元素都处于启用状态时，才会为 `BoxView` 着色。
 
-[OrConditions  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/OrConditions) 示例展示了如何在四个 `Switch` 元素中任何一个  处于启用状态时为 `BoxView` 着色。 这需要应用德·摩根定律，并完全逆反逻辑。
+[OrConditions](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/OrConditions) 示例展示了如何在四个 `Switch` 元素中任何一个处于启用状态时为 `BoxView` 着色。 这需要应用德·摩根定律，并完全逆反逻辑。
 
-合并 AND 和 OR 逻辑并不容易，通常需要不可见的 `Switch` 元素来实现中间结果。 [XorConditions  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/XorConditions) 示例展示了 `Button` 如何在两个 `Entry` 元素之一中有某文本键入（而不是两个元素都有）时启用。
+合并 AND 和 OR 逻辑并不容易，通常需要不可见的 `Switch` 元素来实现中间结果。 [XorConditions](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/XorConditions) 示例展示了 `Button` 如何在两个 `Entry` 元素之一中有某文本键入（而不是两个元素都有）时启用。
 
 ## <a name="behaviors"></a>行为
 
@@ -134,55 +138,55 @@ Xamarin.FormsBook.Toolkit  库中的 [`NumericValidationAction`](https://github.
 
 参数是行为附加到的元素。 通常情况下，`OnAttachedTo` 方法附加一些事件处理程序，而 `OnDetachingFrom` 则将它们拆离开来。 由于这样的类通常会保存某种状态，因此通常无法在 `Style` 中共享。
 
-[BehaviorEntryValidation  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/BehaviorEntryValidation) 示例类似于 TriggerEntryValidation  ，区别在于前者使用行为 &mdash;，即 [Xamarin.FormsBook.Toolkit  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的 [`NumericValidationBehavior`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NumericValidationBehavior.cs) 类。
+[BehaviorEntryValidation](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/BehaviorEntryValidation) 示例类似于 TriggerEntryValidation，区别在于前者使用行为 &mdash;，即 [Xamarin.FormsBook.Toolkit](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的 [`NumericValidationBehavior`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NumericValidationBehavior.cs) 类。
 
 ### <a name="behaviors-with-properties"></a>包含属性的行为
 
 `Behavior<T>` 派生自 `Behavior`，而后者又派生自 `BindableObject`，因此可以对行为定义可绑定属性。 这些属性在数据绑定中可以是活动的。
 
-[EmailValidationDemo  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/EmailValidationDemo) 程序对此进行了展示，它使用 [Xamarin.FormsBook.Toolkit  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的 [`ValidEmailBehavior`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ValidEmailBehavior.cs) 类。 `ValidEmailBehavior` 有只读的可绑定属性，并用作数据绑定中的源。
+[EmailValidationDemo](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/EmailValidationDemo) 程序对此进行了展示，它使用 [Xamarin.FormsBook.Toolkit](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的 [`ValidEmailBehavior`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ValidEmailBehavior.cs) 类。 `ValidEmailBehavior` 有只读的可绑定属性，并用作数据绑定中的源。
 
-[EmailValidationConv  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/EmailValidationConv) 示例使用此相同行为来显示另一种类型的指示器，以指明电子邮件地址是有效的。
+[EmailValidationConv](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/EmailValidationConv) 示例使用此相同行为来显示另一种类型的指示器，以指明电子邮件地址是有效的。
 
-[EmailValidationTrigger  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/EmailValidationTrigger) 示例是上一示例的变体。 ButtonGlide 结合使用 `DataTrigger` 与相应行为。
+[EmailValidationTrigger](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/EmailValidationTrigger) 示例是上一示例的变体。 ButtonGlide 结合使用 `DataTrigger` 与相应行为。
 
 ### <a name="toggles-and-check-boxes"></a>切换和复选框
 
-可以在类（如 [Xamarin.FormsBook.Toolkit  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的 [`ToggleBehavior`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ToggleBehavior.cs)）中封装切换按钮的行为，然后完全在 XAML 中定义切换的所有视觉对象。
+可以在类（如 [Xamarin.FormsBook.Toolkit](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的 [`ToggleBehavior`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ToggleBehavior.cs)）中封装切换按钮的行为，然后完全在 XAML 中定义切换的所有视觉对象。
 
-[ToggleLabel  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/ToggleLabel) 示例结合使用 `ToggleBehavior` 与 `DataTrigger`，以将包含两个文本字符串的 `Label` 用于切换。
+[ToggleLabel](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/ToggleLabel) 示例结合使用 `ToggleBehavior` 与 `DataTrigger`，以将包含两个文本字符串的 `Label` 用于切换。
 
-[FormattedTextToggle  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/FormattedTextToggle) 示例通过在两个 `FormattedString` 对象之间切换，扩展了此概念。
+[FormattedTextToggle](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/FormattedTextToggle) 示例通过在两个 `FormattedString` 对象之间切换，扩展了此概念。
 
-Xamarin.FormsBook.Toolkit  库中的 [`ToggleBase`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ToggleBase.cs) 类派生自 `ContentView`，定义了 `IsToggled` 属性，并为切换逻辑合并了 `ToggleBehavior`。 这样，就可以更轻松地在 XAML 中定义切换按钮，如 [TraditionalCheckBox  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/TraditionalCheckBox) 示例所示。
+Xamarin.FormsBook.Toolkit 库中的 [`ToggleBase`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ToggleBase.cs) 类派生自 `ContentView`，定义了 `IsToggled` 属性，并为切换逻辑合并了 `ToggleBehavior`。 这样，就可以更轻松地在 XAML 中定义切换按钮，如 [TraditionalCheckBox](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/TraditionalCheckBox) 示例所示。
 
-[SwitchCloneDemo  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/SwitchCloneDemo) 包括派生自 `ToggleBase` 的 [`SwitchClone`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter23/SwitchCloneDemo/SwitchCloneDemo/SwitchCloneDemo/SwitchClone.cs) 类，并使用 [`TranslateAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/TranslateAction.cs) 类构造类似于 Xamarin.Forms `Switch` 的切换按钮。
+[SwitchCloneDemo](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/SwitchCloneDemo) 包括派生自 `ToggleBase` 的 [`SwitchClone`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter23/SwitchCloneDemo/SwitchCloneDemo/SwitchCloneDemo/SwitchClone.cs) 类，并使用 [`TranslateAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/TranslateAction.cs) 类构造类似于 Xamarin.Forms `Switch` 的切换按钮。
 
-Xamarin.FormsBook.Toolkit  中的 [`RotateAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/RotateAction.cs) 提供了动画，用于在 [LeverToggle  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/LeverToggle) 示例中创建动画控制杆。
+Xamarin.FormsBook.Toolkit 中的 [`RotateAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/RotateAction.cs) 提供了动画，用于在 [LeverToggle](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/LeverToggle) 示例中创建动画控制杆。
 
 ### <a name="responding-to-taps"></a>响应点击
 
-`EventTrigger` 的一个缺点是，无法将它附加到 `TapGestureRecognizer` 来响应点击。 [Xamarin.FormsBook.Toolkit  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 中的 [`TapBehavior`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/TapBehavior.cs) 旨在解决此问题
+`EventTrigger` 的一个缺点是，无法将它附加到 `TapGestureRecognizer` 来响应点击。 [Xamarin.FormsBook.Toolkit](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 中的 [`TapBehavior`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/TapBehavior.cs) 旨在解决此问题
 
-[BoxViewTapShiver  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/BoxViewTapShiver) 示例使用 `TapBehavior`，以对点击的 `BoxView` 元素使用前面的 `ShiverAction`。
+[BoxViewTapShiver](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/BoxViewTapShiver) 示例使用 `TapBehavior`，以对点击的 `BoxView` 元素使用前面的 `ShiverAction`。
 
-[ShiverViews  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/ShiverViews) 示例展示了如何通过封装 `ShiverView` 类来减少标记。
+[ShiverViews](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/ShiverViews) 示例展示了如何通过封装 `ShiverView` 类来减少标记。
 
 ### <a name="radio-buttons"></a>单选按钮
 
-[Xamarin.FormsBook.Toolkit  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中还有 [`RadioBehavior`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/RadioBehavior.cs) 类，用于创建按 `string` 组名分组的单选按钮。
+[Xamarin.FormsBook.Toolkit](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中还有 [`RadioBehavior`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/RadioBehavior.cs) 类，用于创建按 `string` 组名分组的单选按钮。
 
-[RadioLabels  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioLabels) 程序对其单选按钮使用文本字符串。 [RadioStyle  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioStyle) 示例使用 `Style` 实现选中按钮和未选中按钮的外观差异。 [RadioImages  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioImages) 示例对其单选按钮使用分格图像：
+[RadioLabels](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioLabels) 程序对其单选按钮使用文本字符串。 [RadioStyle](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioStyle) 示例使用 `Style` 实现选中按钮和未选中按钮的外观差异。 [RadioImages](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioImages) 示例对其单选按钮使用分格图像：
 
 [![单选按钮图像的三倍屏幕截图](images/ch23fg17-small.png "单选按钮图像")](images/ch23fg17-large.png#lightbox "单选按钮图像")
 
-[TraditionalRadios  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/TraditionalRadios) 示例绘制传统外观的单选按钮，即圆里面有点。
+[TraditionalRadios](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/TraditionalRadios) 示例绘制传统外观的单选按钮，即圆里面有点。
 
 ### <a name="fades-and-orientation"></a>淡化和方向
 
-最后一个示例 [MultiColorSliders  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/MultiColorSliders) 允许使用单选按钮在三种不同的颜色选择视图之间切换。 这三个视图使用 [Xamarin.FormsBook.Toolkit  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的 [`FadeEnableAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/FadeEnableAction.cs) 淡入和淡出。
+最后一个示例 [MultiColorSliders](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/MultiColorSliders) 允许使用单选按钮在三种不同的颜色选择视图之间切换。 这三个视图使用 [Xamarin.FormsBook.Toolkit](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的 [`FadeEnableAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/FadeEnableAction.cs) 淡入和淡出。
 
-此程序还使用 Xamarin.FormsBook.Toolkit  库中的 [`GridOrientationBehavior`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/GridOrientationBehavior.cs) 来响应方向更改（即在纵向和横向之间变化）。
+此程序还使用 Xamarin.FormsBook.Toolkit 库中的 [`GridOrientationBehavior`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/GridOrientationBehavior.cs) 来响应方向更改（即在纵向和横向之间变化）。
 
 ## <a name="related-links"></a>相关链接
 

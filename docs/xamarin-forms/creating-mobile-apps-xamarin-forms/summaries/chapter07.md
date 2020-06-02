@@ -1,27 +1,31 @@
 ---
-title: “第 7 章： XAML 与代码”摘要
-description: 使用 Xamarin.Forms 创建移动应用：“第 7 章： XAML 与代码”摘要
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: E91F387B-CE90-481C-8D90-CB25519BFD2B
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/19/2018
-ms.openlocfilehash: ce4dde3716176daf826678809339afb84c25d84a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 7. XAML vs. code''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0b92988e1e838072fca0d8a284455a62db05e757
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61334724"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136848"
 ---
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>“第 7 章： XAML 与代码”摘要
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)
 
 > [!NOTE]
-> 此页上的“注意”指出了 Xamarin.Forms 与本电子图书中材料有出入的地方。
+> 此页上的“注意”指出了 Xamarin.Forms 与书中所述内容的不同之处。
 
-Xamarin.Forms 支持一种基于 XML 的标记语言，称为“Extensible Application Markup Language (XAML)”（读作“zammel”）。 若要定义 Xamarin.Forms 应用程序的用户界面布局，以及定义用户界面元素与基础数据之间的绑定，除了 C# 之外，还可以使用 XAML。
+Xamarin.Forms 支持一种基于 XML 的标记语言，称为“Extensible Application Markup Language (XAML)”（读作“zammel”）。 若要定义 Xamarin.Forms 应用程序的用户界面布局，以及定义用户界面元素与基础数据之间的绑定，除了 C#，还可以使用 XAML。
 
 ## <a name="properties-and-attributes"></a>属性和特性
 
@@ -33,9 +37,9 @@ Xamarin.Forms 类和结构成为 XAML 中的 XML 元素，这些类和结构的�
 
 ## <a name="property-element-syntax"></a>属性元素语法
 
-在 XAML 中，类以及用它们创建的对象表示为 XML 元素。 这些称为“对象元素”  。 这些对象的大多数属性都表示为 XML 特性。 这些称为“属性特性”  。
+在 XAML 中，类以及用它们创建的对象表示为 XML 元素。 这些称为“对象元素”。 这些对象的大多数属性都表示为 XML 特性。 这些称为“属性特性”。
 
-有时，必须将属性设置为无法用简单字符串表示的对象。 在这种情况下，XAML 支持称为“属性元素”  的标记，它是由用句点分隔的类名和属性名称组成。 然后，对象元素就可以出现在属性元素标记对中。
+有时，必须将属性设置为无法用简单字符串表示的对象。 在这种情况下，XAML 支持称为“属性元素”的标记，它是由用句点分隔的类名和属性名称组成。 然后，对象元素就可以出现在属性元素标记对中。
 
 ## <a name="adding-a-xaml-page-to-your-project"></a>向项目添加 XAML 页
 
@@ -44,13 +48,13 @@ Xamarin.Forms 可移植类库在首次创建时可以包含 XAML 页，你也可
 > [!NOTE]
 > 自本章节撰写后，Visual Studio 选项已更改。
 
-创建了两个文件：一个是文件扩展名为 .xaml 的 XAML 文件，另一个是扩展名为 .xaml.cs 的 C# 文件。 C# 文件通常是指 XAML 代码隐藏  文件。 代码隐藏文件是派生自 `ContentPage` 的分部类定义。 在生成时，不仅会分析 XAML，还会为相同的类生成另一个分部类定义。 生成的这个类包含 `InitializeComponent` 方法，它是从代码隐藏文件的构造函数中调用。
+创建了两个文件：一个是文件扩展名为 .xaml 的 XAML 文件，另一个是扩展名为 .xaml.cs 的 C# 文件。 C# 文件通常是指 XAML 代码隐藏文件。 代码隐藏文件是派生自 `ContentPage` 的分部类定义。 在生成时，不仅会分析 XAML，还会为相同的类生成另一个分部类定义。 生成的这个类包含 `InitializeComponent` 方法，它是从代码隐藏文件的构造函数中调用。
 
 运行时期间，在 `InitializeComponent` 调用结束时，XAML 文件的所有元素都已实例化和初始化，就像已在 C# 代码中创建一样。
 
 XAML 文件中的根元素是 `ContentPage`。 根标记包含至少两个 XML 命名空间声明，一个用于 Xamarin.Forms 元素，另一个用于为所有 XAML 实现的内部元素和特性定义 `x` 前缀。 根标记还包含 `x:Class` 特性，它指明了派生自 `ContentPage` 的类的命名空间和名称。 这与代码隐藏文件中的命名空间和类名一致。
 
-[CodePlusXaml  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07) 示例展示了如何结合使用 XAML 和代码。
+[CodePlusXaml](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07) 示例展示了如何结合使用 XAML 和代码。
 
 ## <a name="the-xaml-compiler"></a>XAML 编译器
 
@@ -62,7 +66,7 @@ Xamarin.Forms 包含 XAML 编译器，但要视需要根据 [`XamlCompilationAtt
 
 自本书出版后，`OnPlatform` 的用法已更改。 最初，它是与 `iOS`、`Android` 和 `WinPhone` 属性一起使用。 现在，它是与 [`On`](xref:Xamarin.Forms.On) 子对象一起使用。 将 [`Platform`](xref:Xamarin.Forms.On.Platform) 属性设置为，与 [`Device`](xref:Xamarin.Forms.Device) 类的公共字段 `const` 一致的字符串。 将 [`Value`](xref:Xamarin.Forms.On.Value) 属性设置为，与 `OnPlatform` 标记的 `x:TypeArguments` 特性一致的值。
 
-[ScaryColorList  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/ScaryColorList) 示例展示了 `OnPlatform`，之所以这样命名是因为它包含几乎完全相同的 XAML 块。 这种重复标记的存在表明应使用技术来减少这种情况。
+[ScaryColorList](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/ScaryColorList) 示例展示了 `OnPlatform`，之所以这样命名是因为它包含几乎完全相同的 XAML 块。 这种重复标记的存在表明应使用技术来减少这种情况。
 
 ## <a name="the-content-property-attributes"></a>内容属性特性
 
@@ -74,7 +78,7 @@ Xamarin.Forms 包含 XAML 编译器，但要视需要根据 [`XamlCompilationAtt
 
 ## <a name="formatted-text"></a>带格式文本
 
-[TextVariations  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/TextVariations) 示例举了多个例子来展示如何设置 `Label` 的 `Text` 和 `FormattedText` 属性。 在 XAML 中，`Span` 对象显示为 `FormattedString` 对象的子元素。
+[TextVariations](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/TextVariations) 示例举了多个例子来展示如何设置 `Label` 的 `Text` 和 `FormattedText` 属性。 在 XAML 中，`Span` 对象显示为 `FormattedString` 对象的子元素。
 
  当多行字符串设置为 `Text` 属性时，行尾字符转换为空格字符；但当多行字符串显示为 `Label` 或 `Label.Text` 标记的内容时，将保留行尾字符：
 

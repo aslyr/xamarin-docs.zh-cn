@@ -1,18 +1,21 @@
 ---
-title: 分层导航
-description: 本文演示如何使用 NavigationPage 类在后进先出 (LIFO) 页面的堆栈中执行导航。
-ms.prod: xamarin
-ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/10/2020
-ms.openlocfilehash: 984f54698ccdee54c0b8670a50cb1f4432327977
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 92774cffdfed7412bdb4d44993dc221993ad56c8
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517282"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137860"
 ---
 # <a name="hierarchical-navigation"></a>分层导航
 
@@ -40,8 +43,8 @@ NavigationPage 类提供分层导航体验，用户可以随心所欲地向前�
 
 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 的布局取决于平台：
 
-- 在 iOS 中，页面顶部有一个显示标题的导航栏，其上有一个“Back”按钮，可以返回前一页  。
-- 在 Android 中，页面顶部有一个显示标题、图标的导航栏，其上有一个“Back”按钮，可以返回前一页  。 在 `[Activity]` 属性中定义图标，该属性修饰特定于 Android 平台的项目中的 `MainActivity` 类。
+- 在 iOS 中，页面顶部有一个显示标题的导航栏，其上有一个“Back”按钮，可以返回前一页。
+- 在 Android 中，页面顶部有一个显示标题、图标的导航栏，其上有一个“Back”按钮，可以返回前一页。 在 `[Activity]` 属性中定义图标，该属性修饰特定于 Android 平台的项目中的 `MainActivity` 类。
 - 在通用 Windows 平台上，显示标题的页面顶部有一个导航栏。
 
 在所有平台上，[`Page.Title`](xref:Xamarin.Forms.Page.Title) 属性的值将显示为页面标题。 此外，`IconColor` 属性可以设置为应用于导航栏中的图标的 [`Color`](xref:Xamarin.Forms.Color)。
@@ -51,7 +54,7 @@ NavigationPage 类提供分层导航体验，用户可以随心所欲地向前�
 
 ### <a name="creating-the-root-page"></a>创建根页
 
-添加到导航堆栈中的第一页称为应用程序的根  页，以下代码示例显示了实现此过程的方法：
+添加到导航堆栈中的第一页称为应用程序的根页，以下代码示例显示了实现此过程的方法：
 
 ```csharp
 public App ()
@@ -88,14 +91,14 @@ async void OnNextPageButtonClicked (object sender, EventArgs e)
 - 要导航到的页面会调用其 [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) 替代。
 - `PushAsync` 任务完成。
 
-但是，这些事件发生的确切顺序取决于平台。 有关详细信息，请参阅 Charles Petzold 所著 Xamarin.Forms 书籍的[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)。
+但是，这些事件发生的确切顺序取决于平台。 有关详细信息，请参阅 Charles Petzold 所著的 Xamarin.Forms 书籍的[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)。
 
 > [!NOTE]
 > 不能将对 [`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing) 和 [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) 替代的调用视为绝对的页面导航指示。 例如，在 iOS 上，应用程序终止后，将对活动页面调用 `OnDisappearing` 替代。
 
 ### <a name="popping-pages-from-the-navigation-stack"></a>从导航堆栈中弹出页面
 
-通过设备上的返回  按钮（无论是设备上的物理按钮还是屏幕按钮），可以从导航堆栈中弹出活动页。
+通过设备上的返回按钮（无论是设备上的物理按钮还是屏幕按钮），可以从导航堆栈中弹出活动页。
 
 若要以编程方式返回原始页，`Page2Xaml` 实例必须调用 [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync) 方法，如以下代码示例所示：
 
@@ -112,7 +115,7 @@ async void OnPreviousPageButtonClicked (object sender, EventArgs e)
 - 要返回到的页面会调用其 [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) 替代。
 - `PopAsync` 任务返回。
 
-但是，这些事件发生的确切顺序取决于平台。 有关详细信息，请参阅 Charles Petzold 所著 Xamarin.Forms 书籍的[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)。
+但是，这些事件发生的确切顺序取决于平台。 有关详细信息，请参阅 Charles Petzold 所著的 Xamarin.Forms 书籍的[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)。
 
 除了 [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) 和 [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync) 方法之外，每个页面的 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 属性还提供了 [`PopToRootAsync`](xref:Xamarin.Forms.NavigationPage.PopToRootAsync) 方法，如下面的代码示例所示：
 
@@ -308,7 +311,7 @@ async void OnLoginButtonClicked (object sender, EventArgs e)
 
 ## <a name="displaying-views-in-the-navigation-bar"></a>在导航栏中显示视图
 
-所有 Xamarin.Forms [`View`](xref:Xamarin.Forms.View) 都可以显示在 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 的导航栏中。 这是通过将 [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 附加属性设置为 `View` 来实现的。 此附加属性可以在任何 [`Page`](xref:Xamarin.Forms.Page) 上设置，当 `Page` 被推送到 `NavigationPage` 上后，`NavigationPage` 会遵守属性的值。
+所有 Xamarin.Forms[`View`](xref:Xamarin.Forms.View) 都可以显示在 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 的导航栏中。 这是通过将 [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 附加属性设置为 `View` 来实现的。 此附加属性可以在任何 [`Page`](xref:Xamarin.Forms.Page) 上设置，当 `Page` 被推送到 `NavigationPage` 上后，`NavigationPage` 会遵守属性的值。
 
 下面的示例取自[标题视图示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-titleview)，演示如何从 XAML 中设置 [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 附加属性：
 

@@ -1,17 +1,20 @@
 ---
 title: 什么是 Xamarin.Forms？
 description: 本文介绍 Xamarin.Forms 和相关库。
-ms.prod: xamarin
-ms.assetid: C1E24DB9-3099-4F79-BB88-10AABF7D4614
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 09/18/2019
-ms.openlocfilehash: aaceb6089a5b7e5f0551dafe9ef1fe50d01433d9
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b65be3cd552cf6a4fb094d59c44fa43de3deddcd
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77374018"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139186"
 ---
 # <a name="what-is-xamarinforms"></a>什么是 Xamarin.Forms？
 
@@ -19,9 +22,9 @@ ms.locfileid: "77374018"
 
 Xamarin.Forms 是一个开放源代码 UI 框架。 Xamarin.Forms 使开发人员可以从单个共享基本代码生成 Android、iOS 和 Windows 应用程序。
 
-Xamarin.Forms 使开发人员可以 C# 中通过代码隐藏在 XAML 中创建用户界面。 这些界面在每个平台上呈现为高性能本机控件。
+Xamarin.Forms 使开发人员可以在 C# 中通过代码隐藏在 XAML 中创建用户界面。 这些界面在每个平台上呈现为高性能本机控件。
 
-## <a name="who-xamarinforms-is-for"></a>Xamarin.Forms 的适用对象
+## <a name="who-xamarinforms-is-for"></a>Xamarin.Forms 适用对象
 
 Xamarin.Forms 适用于具有以下目标的开发人员：
 
@@ -31,7 +34,7 @@ Xamarin.Forms 适用于具有以下目标的开发人员：
 
 ## <a name="how-xamarinforms-works"></a>Xamarin.Forms 的工作原理
 
-![Xamarin.Forms 体系结构关系图](what-is-xamarin-forms-images/xamarin-forms-architecture.png)
+![Xamarin.Forms 体系结构图](what-is-xamarin-forms-images/xamarin-forms-architecture.png)
 
 Xamarin.Forms 提供了一个一致的 API，用于跨平台创建 UI 元素。 此 API 可以在 XAML 或 C# 中实现，支持针对模型-视图-视图模型 (MVVM) 等模式的数据绑定。
 
@@ -45,7 +48,7 @@ Xamarin.Forms 使用 Xamarin 跨平台本机运行 .NET 应用程序。 有关 X
 
 Xamarin.Forms 包含一个大型 NuGet 包生态系统，可向应用程序添加各种功能。 本部分介绍几个常用 NuGet 包。
 
-### <a name="xamarinessentials"></a>Xamarin.Essentials
+### Xamarin.Essentials
 
 Xamarin.Essentials 是一个库，可为本机设备功能提供跨平台 API。 与 Xamarin 本身一样，Xamarin.Essentials 是一种简化本机实用工具访问过程的抽象。 Xamarin.Essentials 提供的实用工具的一些示例包括：
 
@@ -87,7 +90,7 @@ Xamarin.Forms 材料视觉对象用于将材料设计规则应用于 Xamarin.For
 
 ## <a name="related-links"></a>相关链接
 
-- [Xamarin.Forms 入门](~/xamarin-forms/index.yml)
+- [开始使用 Xamarin.Forms](~/xamarin-forms/index.yml)
 - [Xamarin.Essentials](~/essentials/index.md)
 - [Xamarin.Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md)
 - [Xamarin.Forms 材料视觉对象](~/xamarin-forms/user-interface/visual/material-visual.md)

@@ -1,24 +1,27 @@
 ---
-title: 自定义呈现器简介
-description: 本文介绍了自定义呈现器，并概述了创建自定义呈现器的过程。
-ms.prod: xamarin
-ms.assetid: 264314BE-1C5C-4727-A14E-F6F98151CDBD
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/19/2016
-ms.openlocfilehash: ad2868a82f662f45066a6111a1dd3bd2aacad671
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e2bed4d5e8f89efa2997fb085278c4b549870245
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771883"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135316"
 ---
 # <a name="introduction-to-custom-renderers"></a>自定义呈现器简介
 
-“自定义呈现器为自定义 Xamarin.Forms 控件的外观和行为提供了一种功能强大的方法。可使用它们进行细微的样式更改，也可进行复杂的特定于平台的布局和行为自定义。本文介绍了自定义呈现器，并概述了创建自定义呈现器的过程。” 
+“自定义呈现器为自定义 Xamarin.Forms 控件的外观和行为提供了一种功能强大的方法。可使用它们进行细微的样式更改，也可进行复杂的特定于平台的布局和行为自定义。本文介绍了自定义呈现器，并概述了创建自定义呈现器的过程。”
 
-Xamarin.Forms [页、布局和控件](~/xamarin-forms/user-interface/controls/index.md)提供常见的 API，用于描述跨平台的移动用户界面。 通过 `Renderer` 类可以在每个平台上以不同方式呈现每个页面、布局和控件，反过来又可以创建本机控件（对应于 Xamarin.Forms 表示），在屏幕上排列该控件，并添加共享代码中指定的行为。
+Xamarin.Forms [页面、布局和控件](~/xamarin-forms/user-interface/controls/index.md)提供常见的 API，用于描述跨平台的移动用户界面。 通过 `Renderer` 类可以在每个平台上以不同方式呈现每个页面、布局和控件，反过来又可以创建本机控件（对应于 Xamarin.Forms 表示形式），在屏幕上排列该控件，并添加共享代码中指定的行为。
 
 开发人员可以实现自定义 `Renderer` 类，以自定义控件的外观和/或行为。 可以将给定类型的自定义呈现器添加到一个应用程序项目中，以便在同一个位置自定义控件，同时允许其他平台上的默认行为，或者将不同的自定义呈现器添加到每个应用程序项目中，以便在 iOS、Android 和通用 Windows 平台 (UWP) 上创建不同的外观和感觉。 但是，实现自定义呈现器类以执行简单的控件自定义通常是大型响应。 Effects 可简化此过程，并通常用于较小的样式更改。 有关详细信息，请参阅[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
 
@@ -52,7 +55,7 @@ public class MyEntry : Entry
 `local` 命名空间前缀可以是任何内容。 但是，`namespace` 和 `assembly` 值必须与自定义控件的详细信息相匹配。 声明命名空间后，前缀用于引用自定义控件。
 
 > [!NOTE]
-> 在 .NET Standard 库项目中定义 `xmlns` 比在共享项目中定义简单得多。 由于 .NET Standard 库已编译到程序集中，因此可以轻松确定 `assembly=CustomRenderer` 值。 使用共享项目时，所有共享资产（包括 XAML）都编译到每个引用项目中，这意味着如果 iOS、Android 和 UWP 项目有自己的程序集名称，则不能写入 `xmlns` 声明，因为每个应用程序需要不同的值  。 XAML 中的共享项目的自定义控件将需要每个应用程序项目用相同的程序集名称来配置。
+> 在 .NET Standard 库项目中定义 `xmlns` 比在共享项目中定义简单得多。 由于 .NET Standard 库已编译到程序集中，因此可以轻松确定 `assembly=CustomRenderer` 值。 使用共享项目时，所有共享资产（包括 XAML）都编译到每个引用项目中，这意味着如果 iOS、Android 和 UWP 项目有自己的程序集名称，则不能写入 `xmlns` 声明，因为每个应用程序需要不同的值。 XAML 中的共享项目的自定义控件将需要每个应用程序项目用相同的程序集名称来配置。
 
 然后在每个平台上呈现背景为灰色的 `MyEntry` 自定义控件，如以下屏幕截图中所示：
 
@@ -69,7 +72,7 @@ public class MyEntry : Entry
 1. 向自定义呈现器类添加 `ExportRenderer` 属性，以指定其将用于呈现 Xamarin.Forms 控件。 此属性用于向 Xamarin.Forms 注册自定义呈现器。
 
 > [!NOTE]
-> 对大多数 Xamarin.Forms 元素来说，可以选择在每个平台项目中提供自定义呈现器。 如果未注册自定义呈现器，将使用控件基类的默认呈现器。 但是，呈现 [View](xref:Xamarin.Forms.View) 或 [ViewCell](xref:Xamarin.Forms.ViewCell) 元素时，每个平台项目中都需要自定义呈现器。
+> 对于大多数 Xamarin.Forms 元素，都可选择在每个平台项目中提供自定义呈现器。 如果未注册自定义呈现器，将使用控件基类的默认呈现器。 但是，呈现 [View](xref:Xamarin.Forms.View) 或 [ViewCell](xref:Xamarin.Forms.ViewCell) 元素时，每个平台项目中都需要自定义呈现器。
 
 本系列的主题将提供针对不同 Xamarin.Forms 元素的此过程的演示和解释。
 

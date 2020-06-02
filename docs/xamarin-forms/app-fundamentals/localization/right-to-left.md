@@ -1,25 +1,28 @@
 ---
-title: 从右到左本地化
+title: ''
 description: 从右到左本地化为 Xamarin.Forms 应用程序添加了对从右到左流方向的支持。
-ms.prod: xamarin
-ms.assetid: 90E0CB16-C42A-4CC8-A70E-0C2CFB64A429
-ms.technology: xamarin-forms
-ms.custom: xamu-video
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/07/2018
-ms.openlocfilehash: a6eb3167fd0880984a74245c4653642ea3979354
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+ms.custom: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 212674472706a36c66436a3955ab7b988f8e246b
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "72678840"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137548"
 ---
 # <a name="right-to-left-localization"></a>从右到左本地化
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)
 
-从右到左本地化为 Xamarin.Forms 应用程序添加了对从右到左流方向的支持  。
+从右到左本地化为 Xamarin.Forms 应用程序添加了对从右到左流方向的支持。
 
 > [!NOTE]
 > 从右到左本地化需要使用 iOS 9 或更高版本，或者 Android 版 API 17 或更高版本。
@@ -62,7 +65,7 @@ this.FlowDirection = Device.FlowDirection;
 
 ### <a name="ios"></a>iOS
 
-所需的从右向左的区域设置应作为支持语言添加到 Info.plist 中的 `CFBundleLocalizations` 键的数组项  。 下面的示例显示阿拉伯语已添加到 `CFBundleLocalizations` 键的数组：
+所需的从右向左的区域设置应作为支持语言添加到 Info.plist 中的 `CFBundleLocalizations` 键的数组项。 下面的示例显示阿拉伯语已添加到 `CFBundleLocalizations` 键的数组：
 
 ```xml
 <key>CFBundleLocalizations</key>
@@ -76,14 +79,14 @@ this.FlowDirection = Device.FlowDirection;
 
 有关详细信息，请参阅[ iOS 中的本地化基础知识](https://docs.microsoft.com/xamarin/ios/app-fundamentals/localization/#localization-basics-in-ios)。
 
-然后可以通过将设备/模拟器上的语言和区域更改为 Info.plist 中指定的从右向左的区域设置，以测试从右到左的本地化  。
+然后可以通过将设备/模拟器上的语言和区域更改为 Info.plist 中指定的从右向左的区域设置，以测试从右到左的本地化。
 
 > [!WARNING]
-> 请注意，在 iOS 上将语言和区域更改为从右向左的区域设置时，如果未包括区域设置所需资源，任何 [`DatePicker`](xref:Xamarin.Forms.DatePicker) 视图都将引发异常。 例如，测试具有 `DatePicker` 的阿拉伯语应用时，请确保选中“iOS 生成”窗格的“国际化”部分中的“中东”    。
+> 请注意，在 iOS 上将语言和区域更改为从右向左的区域设置时，如果未包括区域设置所需资源，任何 [`DatePicker`](xref:Xamarin.Forms.DatePicker) 视图都将引发异常。 例如，测试具有 `DatePicker` 的阿拉伯语应用时，请确保选中“iOS 生成”窗格的“国际化”部分中的“中东”  。
 
 ### <a name="android"></a>Android
 
-应更新应用的“AndroidManifest.xml”文件，使 `<uses-sdk>` 节点将 `android:minSdkVersion` 属性设置为 17，`<application>` 节点将 `android:supportsRtl` 属性设置为 `true` ：
+应更新应用的“AndroidManifest.xml”文件，使 `<uses-sdk>` 节点将 `android:minSdkVersion` 属性设置为 17，`<application>` 节点将 `android:supportsRtl` 属性设置为 `true`：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -94,11 +97,11 @@ this.FlowDirection = Device.FlowDirection;
 </manifest>
 ```
 
-通过将设备/模拟器更改为使用从右到左的语言，或者通过启用“设置”>“开发人员选项”中的“强制执行 RTL 布局方向”，可以测试从右向左的本地化   。
+通过将设备/模拟器更改为使用从右到左的语言，或者通过启用“设置”>“开发人员选项”中的“强制执行 RTL 布局方向”，可以测试从右向左的本地化 。
 
 ### <a name="universal-windows-platform-uwp"></a>通用 Windows 平台 (UWP)
 
-应在“Package.appxmanifest”文件的 `<Resources>` 节点中指定所需语言资源  。 下面的示例显示阿拉伯语已添加到 `<Resources>` 节点中：
+应在“Package.appxmanifest”文件的 `<Resources>` 节点中指定所需语言资源。 下面的示例显示阿拉伯语已添加到 `<Resources>` 节点中：
 
 ```xml
 <Resources>
@@ -152,7 +155,7 @@ Xamarin.Forms 从右到左本地化当前有许多限制：
 
 ### <a name="ios"></a>iOS
 
-通过修改 AppDelegate 类，可以强制 Xamarin iOS 应用程序始终使用从右到左的布局，如下所示  ：
+通过修改 AppDelegate 类，可以强制 Xamarin iOS 应用程序始终使用从右到左的布局，如下所示：
 
 1. 将 `IntPtr_objc_msgSend` 函数声明为 `AppDelegate` 类中的第一行：
 
@@ -161,7 +164,7 @@ Xamarin.Forms 从右到左本地化当前有许多限制：
    internal extern static IntPtr IntPtr_objc_msgSend(IntPtr receiver, IntPtr selector, UISemanticContentAttribute arg1);
    ```
 
-1. 从 `FinishedLaunching` 方法返回之前，从 `FinishedLaunching` 方法调用 `IntPtr_objc_msgSend` 函数：
+1. 从 `FinshedLaunching` 方法返回之前，从 `FinishedLaunching` 方法调用 `IntPtr_objc_msgSend` 函数：
 
    ```csharp
    bool result = base.FinishedLaunching(app, options);
@@ -178,7 +181,7 @@ Xamarin.Forms 从右到左本地化当前有许多限制：
 
 ### <a name="android"></a>Android
 
-要强制 Xamarin Android 应用程序始终使用从右到左的布局，可修改 MainActivity 类，使其包含以下行  ：
+要强制 Xamarin Android 应用程序始终使用从右到左的布局，可修改 MainActivity 类，使其包含以下行：
 
 ```csharp
 Window.DecorView.LayoutDirection = LayoutDirection.Rtl;

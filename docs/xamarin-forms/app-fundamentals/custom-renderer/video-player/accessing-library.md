@@ -1,19 +1,11 @@
 ---
-title: 访问设备的视频库
-description: 本文说明如何使用 Xamarin.Forms 在视频播放器应用程序中访问设备的视频库。
-ms.prod: xamarin
-ms.assetid: 364C1D43-EAAE-45B9-BE24-0DA5AE74C4D9
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/12/2018
-ms.openlocfilehash: 2f9de881621b6634b95bdca56a0aa9e7b9f2bb98
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771852"
+title: description:'本文说明如何使用 Xamarin.Forms 在视频播放器应用程序中访问设备的视频库。'
+ms.prod: ms.assetid: ms.technology: author: ms.author: ms.date: no-loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
+
 # <a name="accessing-the-devices-video-library"></a>访问设备的视频库
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
@@ -22,7 +14,7 @@ ms.locfileid: "70771852"
 
 ## <a name="the-photo-picker-dependency-service"></a>照片选取器依赖项服务
 
-每个平台都包含允许用户从设备图片库中选择照片或视频的工具。 从设备图片库播放视频的第一步是构建在每个平台上调用该图片选取器的依赖项服务。 下面描述的依赖项服务非常类似于[从图片库选取照片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)一文中所描述的依赖项服务，除了视频选取器返回的是文件名，而不是 `Stream` 对象  。
+每个平台都包含允许用户从设备图片库中选择照片或视频的工具。 从设备图片库播放视频的第一步是构建在每个平台上调用该图片选取器的依赖项服务。 下面描述的依赖项服务非常类似于[从图片库选取照片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)一文中所描述的依赖项服务，除了视频选取器返回的是文件名，而不是 `Stream` 对象。
 
 .NET Standard 库项目为依赖项服务定义名为 `IVideoPicker` 的接口：
 
@@ -146,7 +138,7 @@ namespace VideoPlayerDemos.Droid
 }
 ```
 
-`MainActivity` 中的 `OnCreate` 方法将自己的实例存储在静态 `Current` 属性中。 这使得 `IVideoPicker` 的实现可以获得 `MainActivity` 实例，以启动“选择视频”选择器  ：
+`MainActivity` 中的 `OnCreate` 方法将自己的实例存储在静态 `Current` 属性中。 这使得 `IVideoPicker` 的实现可以获得 `MainActivity` 实例，以启动“选择视频”选择器：
 
 ```csharp
 using System;
@@ -188,7 +180,7 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-添加到 `MainActivity` 对象的部分是 [VideoPlayerDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 解决方案中惟一的代码，在该方案中需更改常规应用程序代码以支持 `FormsVideoLibrary` 类  。
+添加到 `MainActivity` 对象的部分是 [VideoPlayerDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 解决方案中惟一的代码，在该方案中需更改常规应用程序代码以支持 `FormsVideoLibrary` 类。
 
 ### <a name="the-uwp-video-picker"></a>UWP 视频选取器
 
@@ -229,7 +221,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="invoking-the-dependency-service"></a>调用依赖项服务
 
-[VideoPlayerDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 程序的“播放库视频”页面演示如何使用视频选取器依赖项服务   。 XAML 文件包含 `VideoPlayer` 实例和标记为“显示视频库”的 `Button` ：
+[VideoPlayerDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 程序的“播放库视频”页面演示如何使用视频选取器依赖项服务 。 XAML 文件包含 `VideoPlayer` 实例和标记为“显示视频库”的 `Button`：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

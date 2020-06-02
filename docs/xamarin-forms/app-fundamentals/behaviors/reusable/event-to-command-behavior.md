@@ -1,28 +1,31 @@
 ---
-title: 可重用 EventToCommandBehavior
+title: ''
 description: 行为可用于将命令与非旨在与命令交互的控件相关联。 本文演示了如何创建 Xamarin.Forms 行为并在事件触发后使用它来调用命令。
-ms.prod: xamarin
-ms.assetid: EC7F6556-9776-40B8-9424-A8094482A2F3
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/09/2018
-ms.openlocfilehash: 292a6aaaea4fb0f84138e04c88f001c72ddd096d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 46d1566c89de763a469f30ce8ed2c6ef919f1426
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "68650903"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135793"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>可重用 EventToCommandBehavior
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 
-行为可用于将命令与非旨在与命令交互的控件相关联。本文演示了如何创建 Xamarin.Forms 行为并在事件触发后使用它来调用命令。 
+行为可用于将命令与非旨在与命令交互的控件相关联。本文演示了如何创建 Xamarin.Forms 行为并在事件触发后使用它来调用命令。
 
 ## <a name="overview"></a>概述
 
-`EventToCommandBehavior` 类是可重用的 Xamarin.Forms 自定义行为，它执行命令以响应任何  事件触发。 默认情况下，事件的事件参数被传递给命令，并且可以通过 [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 实现进行选择性转换。
+`EventToCommandBehavior` 类是可重用的 Xamarin.Forms 自定义行为，它执行命令以响应任何事件触发。 默认情况下，事件的事件参数被传递给命令，并且可以通过 [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 实现进行选择性转换。
 
 必须设置以下行为属性才能使用该行为：
 
@@ -32,7 +35,7 @@ ms.locfileid: "68650903"
 还可以设置以下可选行为属性：
 
 - **CommandParameter** - 要传递给命令的 `object`。
-- **Converter** - 一种 [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 实现，当绑定引擎在源和目标之间传递事件参数数据时，该实现将改变该数据的格式   。
+- **Converter** - 一种 [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 实现，当绑定引擎在源和目标之间传递事件参数数据时，该实现将改变该数据的格式 。
 
 > [!NOTE]
 > `EventToCommandBehavior` 是一个自定义类，它可以位于 [EventToCommand Behavior 示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)中，但并不属于 Xamarin.Forms。
@@ -41,7 +44,7 @@ ms.locfileid: "68650903"
 
 `EventToCommandBehavior` 类从 `BehaviorBase<T>` 派生类，而后者又从 [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) 类派生。 `BehaviorBase<T>` 类的目的是为任何需要将行为的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 设置为附加控件的 Xamarin.Forms 行为提供基类。 这可确保在使用行为时，行为可以绑定到并执行 `Command` 属性指定的 `ICommand`。
 
-`BehaviorBase<T>` 类提供一个可替代的 [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) 方法（用于设置行为的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)）以及一个可替代的 [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) 方法（用于清理 `BindingContext`）。 此外，该类还在 `AssociatedObject` 属性中存储对附加控件的引用。
+`BehaviorBase<T>` 类提供可重写的 [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) method that sets the [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) of the behavior and an overridable [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) 方法来清除 `BindingContext`。 此外，该类还在 `AssociatedObject` 属性中存储对附加控件的引用。
 
 ### <a name="implementing-bindable-properties"></a>实现可绑定属性
 
@@ -69,11 +72,11 @@ public class EventToCommandBehavior : BehaviorBase<View>
 
 使用 `EventToCommandBehavior` 类时，`Command` 属性应该是绑定到 `ICommand` 的数据，以响应 `EventName` 属性中定义的事件触发。 该行为期望在附加控件的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 上找到 `ICommand`。
 
-默认情况下，事件的事件参数被传递给命令。 当绑定引擎在源和目标之间传递该数据时，可以通过指定 [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 实现作为 `Converter` 属性值来选择性地转换该数据   。 或者，可以通过指定 `CommandParameter` 属性值将参数传递给命令。
+默认情况下，事件的事件参数被传递给命令。 当绑定引擎在源和目标之间传递该数据时，可以通过指定 [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 实现作为 `Converter` 属性值来选择性地转换该数据 。 或者，可以通过指定 `CommandParameter` 属性值将参数传递给命令。
 
 ### <a name="implementing-the-overrides"></a>实现替代
 
-`EventToCommandBehavior` 类替代 `BehaviorBase<T>` 类的 [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) 和 [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) 方法，如以下代码示例所示：
+`EventToCommandBehavior` 类将重写 `BehaviorBase<T>` 的 [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) and [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) 方法，如下面的代码示例所示：
 
 ```csharp
 public class EventToCommandBehavior : BehaviorBase<View>
@@ -94,7 +97,7 @@ public class EventToCommandBehavior : BehaviorBase<View>
 }
 ```
 
-[`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) 方法通过调用 `RegisterEvent` 方法执行设置，将 `EventName` 属性的值作为参数传递。 [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) 方法通过调用 `DeregisterEvent` 方法执行清理，将 `EventName` 属性的值作为参数传递。
+[`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) method performs setup by calling the `RegisterEvent` method, passing in the value of the `EventName` property as a parameter. The [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) 方法通过调用 `DeregisterEvent` 方法执行清理，并将 `EventName` 属性的值作为参数传入。
 
 ### <a name="implementing-the-behavior-functionality"></a>实现行为功能
 
@@ -147,12 +150,12 @@ public class EventToCommandBehavior : BehaviorBase<View>
 执行 `OnEvent` 方法以响应在 `EventName` 属性中定义的事件触发。 如果 `Command` 属性引用有效的 `ICommand`，则该方法尝试检索要传递给 `ICommand` 的参数，如下所示：
 
 - 如果 `CommandParameter` 属性定义参数，则检索它。
-- 除此以外，如果 `Converter` 属性定义 [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 实现，则会执行转换器，并且当绑定引擎在源和目标之间传递事件参数数据时，转换器会转换该数据   。
+- 除此以外，如果 `Converter` 属性定义 [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 实现，则会执行转换器，并且当绑定引擎在源和目标之间传递事件参数数据时，转换器会转换该数据 。
 - 否则，事件实参被认定为形参。
 
 然后，执行绑定 `ICommand` 的数据，将参数传递给命令，前提是 [`CanExecute`](xref:Xamarin.Forms.Command.CanExecute(System.Object)) 方法返回 `true`。
 
-虽然此处未显示，但 `EventToCommandBehavior` 还包含由 [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) 方法执行的 `DeregisterEvent` 方法。 `DeregisterEvent` 方法用于查找和注销 `EventName` 属性中定义的事件，以清除任何潜在的内存泄漏。
+尽管此处未显示，但 `EventToCommandBehavior` 还包括由 [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) method. The `DeregisterEvent` method is used to locate and deregister the event defined in the `EventName` 属性执行的`DeregisterEvent` 方法，用于清理任何可能的内存泄漏。
 
 ## <a name="consuming-the-behavior"></a>使用行为
 

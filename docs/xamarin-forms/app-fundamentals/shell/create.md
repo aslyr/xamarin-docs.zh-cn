@@ -1,19 +1,11 @@
 ---
-title: 创建 Xamarin.Forms Shell 应用程序
-description: 创建 Xamarin.Forms Shell 应用程序的过程包括创建可创建 Shell 类的子类的 XAML 文件，将应用程序的 App 类的 MainPage 属性设置为子类 Shell 对象，然后描述子类 Shell 类中的应用程序的视觉层次结构。
-ms.prod: xamarin
-ms.assetid: 2A51D78F-6CD5-4BC4-A62E-11CEFA799987
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/24/2019
-ms.openlocfilehash: eec20ff6ceb4aee7e8fde59992576899690616c3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "68739311"
+title:'创建 Xamarin.Forms Shell 应用程序' description:“创建 XXamarin.Forms Shell 应用程序的过程包括创建可创建 Shell 类的子类的 XAML 文件，将应用程序的 App 类的 MainPage 属性设置为子类 Shell 对象，然后描述子类 Shell 类中的应用程序的视觉层次结构。”
+ms.prod: ms.assetid: ms.technology: author: ms.author: ms.date: no-loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
+
 # <a name="create-a-xamarinforms-shell-application"></a>创建 Xamarin.Forms Shell 应用程序
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
@@ -27,7 +19,7 @@ ms.locfileid: "68739311"
 
 ## <a name="subclass-the-shell-class"></a>创建 Shell 类的子类
 
-创建 Xamarin.Forms Shell 应用程序的第一步是将 XAML 文件添加到可创建 `Shell` 类的子类的共享代码项目。 此文件可以命名为任何名称，但建议使用 AppShell  。 以下代码示例显示了新创建的 AppShell.xaml  文件：
+创建 Xamarin.Forms Shell 应用程序的第一步是将 XAML 文件添加到可创建 `Shell` 类的子类的共享代码项目。 此文件可以命名为任何名称，但建议使用 AppShell。 以下代码示例显示了新创建的 AppShell.xaml 文件：
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
@@ -37,7 +29,7 @@ ms.locfileid: "68739311"
 </Shell>
 ```
 
-以下示例显示了代码隐藏文件 AppShell.xaml.cs  ：
+以下示例显示了代码隐藏文件 AppShell.xaml.cs：
 
 ```csharp
 using Xamarin.Forms;

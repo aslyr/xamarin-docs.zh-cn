@@ -1,21 +1,24 @@
 ---
 title: Xamarin.Essentials 颜色转换器
 description: Xamarin.Essentials 中的 ColorConverters 类提供了几种帮助程序方法和扩展方法，以使用 System.Drawing.Color。
-ms.assetid: B10428D6-89E2-4714-A39F-7E6E626391B2
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/06/2020
-ms.custom: video
-ms.openlocfilehash: 159add7ee83f3c65d791fc49ee3a85ddaaabae1d
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+ms.custom: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 57b85a909855594c70bfd529d7a794b4bd7bca7e
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150144"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84130216"
 ---
-# <a name="xamarinessentials-color-converters"></a>Xamarin.Essentials:颜色转换器
+# <a name="xamarinessentials-color-converters"></a>Xamarin.Essentials：颜色转换器
 
-Xamarin.Essentials 中的 ColorConverters 类为 System.Drawing.Color 提供了几种帮助程序方法  。
+Xamarin.Essentials 中的 ColorConverters 类为 System.Drawing.Color 提供了几种帮助程序方法。
 
 ## <a name="get-started"></a>入门
 
@@ -23,7 +26,7 @@ Xamarin.Essentials 中的 ColorConverters 类为 System.Drawing.Color 提供了�
 
 ## <a name="using-color-converters"></a>使用颜色转换器
 
-在你的类中添加对 Xamarin.Essentials 的引用：
+在类中添加对 Xamarin.Essentials 的引用：
 
 ```csharp
 using Xamarin.Essentials;

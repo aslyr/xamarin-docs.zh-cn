@@ -1,18 +1,21 @@
 ---
 title: 创建 Xamarin.Forms 行为
 description: Xamarin.Forms 行为是通过从行为或行为 <T> 类派生来创建的。 本文演示如何创建和使用 Xamarin.Forms 行为。
-ms.prod: xamarin
-ms.assetid: 300C16FE-A7E0-445B-9099-8E93ABB6F73D
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/06/2016
-ms.openlocfilehash: 42ad56a7ae34bcef638ed25bea267dcabd21e20c
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 67db30b5caadce75a41755530db2b245562d0304
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77131092"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135819"
 ---
 # <a name="create-xamarinforms-behaviors"></a>创建 Xamarin.Forms 行为
 
@@ -25,8 +28,8 @@ _Xamarin.Forms 行为是通过从 Behavior 或 Behavior&lt;T&gt; 类派生来创
 创建 Xamarin.Forms 行为的过程如下所示：
 
 1. 创建一个继承自 [`Behavior`](xref:Xamarin.Forms.Behavior) 或 [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) 类的类，其中 `T` 是施加该行为的控件类型。
-1. 重写 [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) 方法以执行任何所需设置。
-1. 重写 [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) 方法以执行任何所需清理。
+1. 重写 [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) 方法以执行任何所需的设置。
+1. 重写 [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) 方法以执行任何所需的清理。
 1. 实现行为的核心功能。
 
 这将导致以下代码示例所示的结构：
@@ -52,7 +55,7 @@ public class CustomBehavior : Behavior<View>
 
 [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) 方法在行为附加到控件后立即触发。 此方法接收对其附加的控件的引用，并可用于注册事件处理程序或执行支持行为功能所需的其他设置。 例如，你可以订阅控件上的事件。 然后，行为功能将在事件的事件处理程序中实现。
 
-当行为从控件中移除时，将触发 [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) 方法。 此方法接收对其附加的控件的引用，并用于执行任何所需的清理。 例如，可以取消订阅控件上的事件，以防止内存泄漏。
+[`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) 方法在从控件中删除行为时触发。 此方法接收对其附加的控件的引用，并用于执行任何所需的清理。 例如，可以取消订阅控件上的事件，以防止内存泄漏。
 
 然后，可以通过将其附加到相应控件的 [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) 集合来使用该行为。
 
@@ -84,7 +87,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 }
 ```
 
-`NumericValidationBehavior` 派生自 [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) 类，其中 `T` 是 [`Entry`](xref:Xamarin.Forms.Entry)。 [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) 方法注册 [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) 事件的事件处理程序，并使用 [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) 方法注销 `TextChanged` 事件以防止内存泄漏。 该行为的核心功能由 `OnEntryTextChanged` 方法提供，该方法将用户输入的值解析为 `Entry`，如果该值不是 `double`，则将 [`TextColor`](xref:Xamarin.Forms.InputView.TextColor) 属性设置为红色。
+`NumericValidationBehavior` 派生自 [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) 类，其中 `T` 是 [`Entry`](xref:Xamarin.Forms.Entry)。 [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) method registers an event handler for the [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) event, with the [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) 方法取消注册 `TextChanged` 事件以防止内存泄漏。 该行为的核心功能由 `OnEntryTextChanged` 方法提供，该方法将用户输入的值解析为 `Entry`，如果该值不是 `double`，则将 [`TextColor`](xref:Xamarin.Forms.InputView.TextColor) 属性设置为红色。
 
 > [!NOTE]
 > Xamarin.Forms 不会设置行为的 `BindingContext`，因为可以通过样式共享行为并将其应用于多个控件。
@@ -164,7 +167,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 
 `NumericValidationBehavior` 类包含带有 `static` getter 和 setter 且名为 `AttachBehavior` 的附加属性，该属性控制将附加行为的控件添加和删除行为。 该附加属性注册属性值更改时执行的 `OnAttachBehaviorChanged` 方法。 该方法根据 `AttachBehavior` 附加属性的值向控件添加或移除行为。
 
-下面的代码示例显示使用 `AttachBehavior` 附加属性的 `NumericValidationBehavior` 的显式样式，该样式可应用于 [`Entry`](xref:Xamarin.Forms.Entry) 控件  ：
+下面的代码示例显示使用 `AttachBehavior` 附加属性的 `NumericValidationBehavior` 的显式样式，该样式可应用于 [`Entry`](xref:Xamarin.Forms.Entry) 控件：
 
 ```xaml
 <Style x:Key="NumericValidationStyle" TargetType="Entry">
@@ -187,7 +190,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 
 ### <a name="removing-a-behavior-from-a-control"></a>从控件中删除行为
 
-当从控件中删除某个行为时，将触发 [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) 方法，该方法用于执行任何所需的清理，例如取消对事件的订阅，以防止内存泄漏。 但是，除非控件的 [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) 集合被 `Remove` 或 `Clear` 方法修改，否则行为不会从控件中隐式删除。 以下代码示例演示了如何从控件的 `Behaviors` 集合中删除特定的行为：
+[`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) method is fired when a behavior is removed from a control, and is used to perform any required cleanup such as unsubscribing from an event to prevent a memory leak. However, behaviors are not implicitly removed from controls unless the control's [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) collection is modified by a `Remove` or `Clear` method. The following code example demonstrates removing a specific behavior from a control's `Behaviors` 集合：
 
 ```csharp
 var toRemove = entry.Behaviors.FirstOrDefault (b => b is NumericValidationBehavior);
@@ -213,4 +216,4 @@ entry.Behaviors.Clear();
 - [Xamarin.Forms 行为（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
 - [通过样式应用的 Xamarin.Forms 行为（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehaviorstyle)
 - [行为](xref:Xamarin.Forms.Behavior)
-- [Behavior\<T>](xref:Xamarin.Forms.Behavior`1)
+- [行为\<T>](xref:Xamarin.Forms.Behavior`1)

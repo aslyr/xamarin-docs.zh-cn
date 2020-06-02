@@ -1,20 +1,24 @@
 ---
-title: 摘要：第 1 章. Xamarin.Forms 可以起到什么作用？
-description: 使用 Xamarin.Forms 创建移动应用：摘要：第 1 章. Xamarin.Forms 可以起到什么作用？
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/19/2018
-ms.openlocfilehash: 6dfa473bdfb4c1dd88ca833dbf5011a0bbdec42a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: 摘要：第 1 章. Xamarin.Forms 适合什么场景？
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 1. How does Xamarin.Forms fit in?''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 48b2fb429d206f6582886c94d4d99839d790dc8d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73032884"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136920"
 ---
-# <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>摘要：第 1 章. Xamarin.Forms 可以起到什么作用？
+# <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>摘要：第 1 章. Xamarin.Forms 适合什么场景？
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01)
 
@@ -40,7 +44,7 @@ Xamarin 目前提供面向使用 C# 和 .NET 的本机 Mac、iOS 和 Android API
 > [!NOTE]
 > 可移植类库已替换为 .NET Standard 库。 书中的所有示例代码都已转换为使用 .NET Standard 库。
 
-## <a name="introducing-xamarinforms"></a>推出 Xamarin.Forms
+## <a name="introducing-xamarinforms"></a>Xamarin.Forms 简介
 
 面向多个移动平台时，Xamarin.Forms 允许更多的代码共享。 为 Xamarin.Forms 编写的单个程序可以面向以下平台：
 
@@ -49,7 +53,7 @@ Xamarin 目前提供面向使用 C# 和 .NET 的本机 Mac、iOS 和 Android API
 - 面向 Windows 10 的通用 Windows 平台
 
 > [!NOTE]
-> Xamarin 不再支持 Windows 8.1、Windows Phone 8.1 或 Windows 10 移动版，但 Xamarin.Forms 应用程序在 Windows 10 桌面上运行。 此外，还提供对 [Mac](~/xamarin-forms/platform/other/mac.md)、[WPF](~/xamarin-forms/platform/other/wpf.md)、[GTK#](~/xamarin-forms/platform/other/gtk.md) 和 [Tizen](~/xamarin-forms/platform/other/tizen.md) 平台的预览支持。
+> Xamarin.Forms 不再支持 Windows 8.1、Windows Phone 8.1 或 Windows 10 移动版，但 Xamarin.Forms 应用程序可在 Windows 10 桌面上运行。 此外，还提供对 [Mac](~/xamarin-forms/platform/other/mac.md)、[WPF](~/xamarin-forms/platform/other/wpf.md)、[GTK#](~/xamarin-forms/platform/other/gtk.md) 和 [Tizen](~/xamarin-forms/platform/other/tizen.md) 平台的预览支持。
 
 库或 SAP 中存在大量 Xamarin.Forms 程序。 每个平台都包含调用此共享代码的小型应用程序存根。
 
@@ -59,11 +63,11 @@ Xamarin.Forms API 映射到每个平台的本机控件，使每个平台都保�
 
 从左到右的屏幕截图显示 iPhone 和 Android 手机：
 
-在每个屏幕上，页面都包含一个显示文本的 Xamarin.Forms [`Label`](xref:Xamarin.Forms.Label)、启动操作的 [`Button`](xref:Xamarin.Forms.Button)、选择打开/关闭值的 [`Switch`](xref:Xamarin.Forms.Switch) 以及在连续范围内指定一个值的 [`Slider`](xref:Xamarin.Forms.Slider)。 这四个视图都是 [`ContentPage`](xref:Xamarin.Forms.ContentPage)上的 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 的子项。
+在每个屏幕上，页面都包含一个用于显示文本的 Xamarin.Forms [`Label`](xref:Xamarin.Forms.Label)、用于启动操作的 [`Button`](xref:Xamarin.Forms.Button)、用于选择“开启/关闭”值的 [`Switch`](xref:Xamarin.Forms.Switch) 以及用于在连续范围内指定一个值的 [`Slider`](xref:Xamarin.Forms.Slider)。 这四个视图都是 [`ContentPage`](xref:Xamarin.Forms.ContentPage)上的 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 的子项。
 
 页面还附带 Xamarin.Forms 工具栏，其中包含几个 [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) 对象。 这些对象在 iOS 和 Android 屏幕顶部以及 Windows 10 移动版屏幕底部作为图标显示。
 
-Xamarin 还支持 XAML，这是 Microsoft 为多个应用程序平台开发的 Extensible Application Markup Language。 上述程序的所有视觉对象都在 XAML 中定义，如 [PlatformVisuals  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01/PlatformVisuals) 示例中所示。
+Xamarin.Forms 还支持 XAML，这是 Microsoft 为多个应用程序平台开发的 Extensible Application Markup Language。 上述程序的所有视觉对象都在 XAML 中定义，如 [PlatformVisuals](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01/PlatformVisuals) 示例中所示。
 
 Xamarin.Forms 程序可以确定运行它的平台，并相应地执行不同代码。 更有力的是，开发人员可以为各种平台编写自定义代码，并以独立于平台的方式从 Xamarin.Forms 程序运行该代码。 开发人员还可以通过为每个平台编写呈现器来创建其他控件。
 

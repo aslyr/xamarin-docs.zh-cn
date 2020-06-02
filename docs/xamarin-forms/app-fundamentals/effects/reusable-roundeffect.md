@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms 可重用 RoundEffect
-description: RoundEffect 是一种可重用的效果，可应用于任何从 VisualElement 派生的控件，以将控件呈现为圆形。
-ms.prod: xamarin
-ms.assetid: B5DE7507-B565-4EE5-9897-27E5733FD173
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 10/25/2019
-ms.openlocfilehash: 851ed7a2ad1c416b4d03d583b9d0aeb7f7774eea
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fc3776934a4c109b2527132b11c6c6a93b7d9f9e
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73055938"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138848"
 ---
 # <a name="xamarinforms-reusable-roundeffect"></a>Xamarin.Forms 可重用 RoundEffect
 
@@ -183,7 +186,7 @@ public class RoundEffect : PlatformEffect
 }
 ```
 
-`CalculateRadius` 方法根据 Xamarin.Forms 元素 `Element` 的最小尺寸来计算半径。 将效果附加到控件时，将调用 `OnAttached` 方法，并更新层的 `CornerRadius` 属性。 它将 `ClipToBounds` 属性设置为 `true`，以便将溢出的元素剪裁到控件的边框。 当从控件中删除效果并反转这些更改以还原原始角半径时，将调用 `OnDetatched` 方法。
+`CalculateRadius` 方法根据 Xamarin.Forms `Element` 的最小尺寸来计算半径。 将效果附加到控件时，将调用 `OnAttached` 方法，并更新层的 `CornerRadius` 属性。 它将 `ClipToBounds` 属性设置为 `true`，以便将溢出的元素剪裁到控件的边框。 当从控件中删除效果并反转这些更改以还原原始角半径时，将调用 `OnDetatched` 方法。
 
 > [!NOTE]
 > `Control` 属性可以为 null，也可以不为 null，具体取决于元素类型。 如果 `Control` 属性不为 null，则可以直接将圆角应用于控件。 但是，如果该属性为 null，则必须将圆角应用于 `Container` 对象。 `effectTarget` 字段允许将该效果应用于相应的对象。
@@ -217,7 +220,7 @@ image.Effects.Add(new RoundEffect());
 `RoundEffect` 类可以应用于派生自 `VisualElement` 的任何控件。
 
 > [!NOTE]
-> 对于计算正确半径的效果，所应用的控件必须能够显式调整大小。 因此，应定义 `HeightRequest` 和 `WidthRequest` 属性。 如果受影响的控件出现在 `StackLayout` 中，则其 `HorizontalOptions` 属性不应使用 `LayoutOptions.CenterAndExpand` 等 Expand 值，否则它将没有准确的尺寸  。
+> 对于计算正确半径的效果，所应用的控件必须能够显式调整大小。 因此，应定义 `HeightRequest` 和 `WidthRequest` 属性。 如果受影响的控件出现在 `StackLayout` 中，则其 `HorizontalOptions` 属性不应使用 `LayoutOptions.CenterAndExpand` 等 Expand 值，否则它将没有准确的尺寸。
 
 ## <a name="related-links"></a>相关链接
 

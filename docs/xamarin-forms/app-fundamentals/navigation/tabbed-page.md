@@ -1,33 +1,36 @@
 ---
 title: Xamarin.Forms TabbedPage
-description: Xamarin.Forms TabbedPage 包含一系列选项卡和较大的详细信息区域，其中每个选项卡都将内容加载到详细信息区域。 本文演示如何使用 TabbedPage 浏览页集合。
-ms.prod: xamarin
-ms.assetid: C946057F-C77C-412D-82A0-DAF475A24EF5
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/07/2019
-ms.openlocfilehash: 986045a4be352da0e439de87fdc70e2958b48d36
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: Xamarin.Forms TabbedPage 包含一系列选项卡和较大的详细信息区域，其中每个选项卡都可将内容加载到详细信息区域。 本文演示如何使用 TabbedPage 浏览页集合。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 38389867ba52e63d8310e3b59d7838f58e8cf488
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303803"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137509"
 ---
 # <a name="xamarinforms-tabbedpage"></a>Xamarin.Forms TabbedPage
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 
-Xamarin.Forms [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 包含一系列选项卡和较大的详细信息区域，其中每个选项卡都将内容加载到详细信息区域。 以下屏幕截图显示 iOS 和 Android 上的 `TabbedPage`：
+Xamarin.Forms [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 包含一系列选项卡和较大的详细信息区域，其中每个选项卡都可将内容加载到详细信息区域。 以下屏幕截图显示 iOS 和 Android 上的 `TabbedPage`：
 
 [![iOS 和 Android 上包含三个选项卡的 TabbedPage 的屏幕截图](tabbed-page-images/tabbedpage-today.png "带有三个选项卡的 TabbedPage")](tabbed-page-images/tabbedpage-today-large.png#lightbox "带有三个选项卡的 TabbedPage")
 
-在 iOS 上，选项卡的列表显示在屏幕的底部，而详细信息区域显示在上方。 每个选项卡都包含一个标题和一个图标，该图标应为带有 alpha 通道的 PNG 文件。 在纵向方向，选项卡栏图标显示在选项卡标题上方。 在横向方向，图标和标题并排显示。 此外，可以根据设备和方向显示常规或精简选项卡栏。 如果有五个以上的选项卡，会显示“更多”选项卡，可用于访问其他选项卡  。 有关图标要求的信息，请参阅 developer.apple.com 上的[选项卡栏图标大小](https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/custom-icons#tab-bar-icon-size)。
+在 iOS 上，选项卡的列表显示在屏幕的底部，而详细信息区域显示在上方。 每个选项卡都包含一个标题和一个图标，该图标应为带有 alpha 通道的 PNG 文件。 在纵向方向，选项卡栏图标显示在选项卡标题上方。 在横向方向，图标和标题并排显示。 此外，可以根据设备和方向显示常规或精简选项卡栏。 如果有五个以上的选项卡，会显示“更多”选项卡，可用于访问其他选项卡。 有关图标要求的信息，请参阅 developer.apple.com 上的[选项卡栏图标大小](https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/custom-icons#tab-bar-icon-size)。
 
 > [!TIP]
 > `TabbedRenderer` for iOS 有可替代的 `GetIcon` 方法，可以用来从指定的源加载选项卡图标。 使用此替代方法可以将 SVG 图像用作 `TabbedPage` 上的图标。 此外，可以提供选定和未选定版本的图标。
 
-在 Android 上，选项卡列表显示在屏幕顶部，详细信息区域显示在下方。 每个选项卡都包含一个标题和一个图标，该图标应为带有 alpha 通道的 PNG 文件。 但是，可以使用特定于平台布局将选项卡移动至屏幕底部。 如果有五个以上的选项卡，并且选项卡列表位于屏幕底部，会显示“更多”选项卡，可用于访问其他选项卡  。 有关图标要求的信息，请参阅 material.io 上的[选项卡](https://material.io/components/tabs/#)和 developer.android.com 上的[支持不同的像素密度](https://developer.android.com/training/multiscreen/screendensities)。 有关将选项卡移动到屏幕底部的信息，请参阅[设置 TabbedPage 工具栏位置和颜色](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md)。
+在 Android 上，选项卡列表显示在屏幕顶部，详细信息区域显示在下方。 每个选项卡都包含一个标题和一个图标，该图标应为带有 alpha 通道的 PNG 文件。 但是，可以使用特定于平台布局将选项卡移动至屏幕底部。 如果有五个以上的选项卡，并且选项卡列表位于屏幕底部，会显示“更多”选项卡，可用于访问其他选项卡。 有关图标要求的信息，请参阅 material.io 上的[选项卡](https://material.io/components/tabs/#)和 developer.android.com 上的[支持不同的像素密度](https://developer.android.com/training/multiscreen/screendensities)。 有关将选项卡移动到屏幕底部的信息，请参阅[设置 TabbedPage 工具栏位置和颜色](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md)。
 
 > [!TIP]
 > `TabbedPageRenderer` for Android AppCompat 有可替代的 `GetIconDrawable` 方法，可以用来从自定义 `Drawable` 加载选项卡图标。 使用此替代方法可以将 SVG 图像用作 `TabbedPage` 上的图标，并且可以使用顶部和底部选项卡。 或者，可替代的 `SetTabIcon` 方法可用于从顶部标签栏的自定义 `Drawable` 加载选项卡图标。
@@ -106,7 +109,7 @@ public class MainPageCS : TabbedPage
 
 [![iOS 和 Android 上包含选项卡的 TabbedPage 的屏幕截图](tabbed-page-images/tabbedpage-week.png "带有选项卡的 TabbedPage")](tabbed-page-images/tabbedpage-week-large.png#lightbox "带有选项卡的 TabbedPage")
 
-在“计划”  选项卡上，[`ContentPage`](xref:Xamarin.Forms.ContentPage) 对象包装在 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 对象中。
+在“计划”选项卡上，[`ContentPage`](xref:Xamarin.Forms.ContentPage) 对象包装在 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 对象中。
 
 > [!WARNING]
 > 虽然 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 可以放置在 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 中，但不建议将 `TabbedPage` 放置到 `NavigationPage` 中。 这是因为，在 iOS 上，`UITabBarController` 始终充当 `UINavigationController` 的包装器。 有关详细信息，请参阅 iOS 开发人员库中的[组合的视图控制器接口](https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewControllerCatalog/Chapters/CombiningViewControllers.html)。

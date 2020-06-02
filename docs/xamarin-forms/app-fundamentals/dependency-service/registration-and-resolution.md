@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms DependencyService 注册和解析
 description: 本文介绍如何使用 Xamarin.Forms DependencyService 类调用本机平台功能。
-ms.prod: xamarin
-ms.assetid: 5d019604-4f6f-4932-9b26-1fce3b4d88f8
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 06/05/2019
-ms.openlocfilehash: 6e666c16c9b1afc3478f524cae2f84d6704319c2
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 50d77e9ba41767aa1f676bf21994431844fc4530
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70199221"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138767"
 ---
 # <a name="xamarinforms-dependencyservice-registration-and-resolution"></a>Xamarin.Forms DependencyService 注册和解析
 
@@ -122,7 +125,7 @@ DeviceOrientation orientation = DependencyService.Get<IDeviceOrientationService>
 
 ### <a name="resolve-using-the-resolvelttgt-method"></a>使用 Resolve&lt;T&gt; 方法解析
 
-[`Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*) 方法在运行时使用 [`DependencyResolver`](xref:Xamarin.Forms.Internals.DependencyResolver) 类注入到 Xamarin.Forms 的依赖项解析方法检索接口 `T` 的平台实现。 若未将依赖项解析方法注入到 Xamarin.Forms，`Resolve<T>` 方法将回退到调用 [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) 方法，来检索平台实现。 有关将依赖项解析方法注入到 Xamarin.Forms 的详细信息，请参阅 [Xamarin.Forms 中的依赖项解析](~/xamarin-forms/internals/dependency-resolution.md)。
+[`Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*) 方法在运行时使用 [`DependencyResolver`](xref:Xamarin.Forms.Internals.DependencyResolver) 类注入到 Xamarin.Forms 的依赖项解析方法检索接口 `T` 的平台实现。 如果未将依赖项解析方法注入到 Xamarin.Forms，`Resolve<T>` 方法将回退到调用 [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) 方法，以检索平台实现。 有关将依赖项解析方法注入到 Xamarin.Forms 的详细信息，请参阅 [Xamarin.Forms 中的依赖项解析](~/xamarin-forms/internals/dependency-resolution.md)。
 
 下面的代码示例说明了如何调用 [`Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*) 方法解析 `IDeviceOrientationService` 接口并调用 `GetOrientation` 方法：
 

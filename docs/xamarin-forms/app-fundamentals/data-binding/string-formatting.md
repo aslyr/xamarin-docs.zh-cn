@@ -1,20 +1,23 @@
 ---
-title: Xamarin.Forms 字符串格式
-description: 本文介绍如何使用 Xamarin.FOrms 数据绑定设置对象格式并将对象显示为字符串。 通过将绑定的字符串格式设置为带有占位符的标准 .NET 格式设置字符串，可实现实现此操作。
-ms.prod: xamarin
-ms.assetid: 978C85B7-CB58-4483-A131-21B381A865E0
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/05/2018
-ms.openlocfilehash: bdd28e1ce6d36a0a025ac43a709af2e38a313526
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.Forms 字符串格式设置
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d08a89d5394a227e3cee76603e4e97d2cf9495e0
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76940382"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135754"
 ---
-# <a name="xamarinforms-string-formatting"></a>Xamarin.Forms 字符串格式
+# <a name="xamarinforms-string-formatting"></a>Xamarin.Forms 字符串格式设置
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -39,7 +42,7 @@ ms.locfileid: "76940382"
 
 将在[绑定路径](binding-path.md)中的下一篇文章中看到，数据绑定可能会变得相当复杂且费解。 调试这些数据绑定时，可以将 `Label` 添加到带 `StringFormat` 的 XAML 文件中以显示某些中间结果。 即使仅用于显示对象类型，这仍然非常有用。
 
-字符串格式页面说明了 `StringFormat` 属性的多种用法  ：
+字符串格式页面说明了 `StringFormat` 属性的多种用法：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -129,7 +132,7 @@ XAML 文件的下一部分是 `StackLayout`，其中 `BindingContext` 设置为�
 
 当使用 `Label` 和 `StringFormat` 显示同为 ViewModel 目标的视图的值时，可以将绑定定义为从视图到 `Label` 或从 ViewModel 到 `Label`。 一般情况下第二种方法最佳，因为它验证了试图和 ViewModel 之间的绑定是否正常运作。
 
-此方法展示在更好的颜色选择器示例中，其中使用与[绑定模式](binding-mode.md)一文中展示的简单颜色选择器程序使用的相同 ViewModel    ：
+此方法展示在更好的颜色选择器示例中，其中使用与[绑定模式](binding-mode.md)一文中展示的简单颜色选择器程序使用的相同 ViewModel  ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -180,11 +183,11 @@ XAML 文件的下一部分是 `StackLayout`，其中 `BindingContext` 设置为�
 
 你可能想知道如何在传统的两位数十六进制格式中显示 RGB（红、绿、蓝）值。 这些整数值不是从 `Color` 结构中直接提供的。 一种解决方案是计算 ViewModel 中的颜色组件的整数值，并将其作为属性公开。 然后可以使用 `X2` 格式规范对这些值进行格式设置。
 
-另一种方法更常用：可以编写一个绑定值转换器  ，在后文[**绑定值转换器**](converters.md)中有所描述。
+另一种方法更常用：可以编写一个绑定值转换器，在后文[**绑定值转换器**](converters.md)中有所描述。
 
-但下一篇文章更详细地探讨了[绑定路径](binding-path.md)并展示了如何使用它来引用子属性和集合中的项  。
+但下一篇文章更详细地探讨了[绑定路径](binding-path.md)并展示了如何使用它来引用子属性和集合中的项。
 
 ## <a name="related-links"></a>相关链接
 
 - [数据绑定演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
-- [Xamarin.Forms 书中的数据绑定章节](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Xamarin.Forms 书籍中的数据绑定章节](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

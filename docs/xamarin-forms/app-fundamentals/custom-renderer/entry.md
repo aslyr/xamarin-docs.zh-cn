@@ -1,26 +1,29 @@
 ---
-title: 自定义 Entry
+title: ''
 description: Xamarin.Forms Entry 控件允许对单行文本进行编辑。 本文演示了如何为 Entry 控件创建自定义呈现器，使开发人员能够使用自己特定于平台的自定义呈现替代默认本机呈现。
-ms.prod: xamarin
-ms.assetid: 7B5DD10D-0411-424F-88D8-8A474DF16D8D
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/26/2018
-ms.openlocfilehash: 86714c2041edcd98c2bdd7b740a897dab8069752
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 61bd66fd25b7aea3e5be346f79e63d410164b002
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82516466"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138978"
 ---
 # <a name="customizing-an-entry"></a>自定义 Entry
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-entry)
 
-Xamarin.Forms Entry 控件允许对单行文本进行编辑。本文演示了如何为 Entry 控件创建自定义呈现器，使开发人员能够使用自己特定于平台的自定义呈现替代默认本机呈现。 
+Xamarin.Forms Entry 控件允许对单行文本进行编辑。本文演示了如何为 Entry 控件创建自定义呈现器，使开发人员能够使用自己特定于平台的自定义呈现替代默认本机呈现。
 
-每个 Xamarin.Forms 控件都有一个附带的呈现器，适用于创建本机控件实例的各个平台。 Xamarin.Forms 应用程序呈现 [`Entry`](xref:Xamarin.Forms.Entry) 控件时，在 iOS 中实例化 `EntryRenderer` 类，进而实例化本机 `UITextField` 控件。 在 Android 平台上，`EntryRenderer` 类实例化 `EditText` 控件。 在通用 Windows 平台 (UWP) 上，`EntryRenderer` 类实例化 `TextBox` 控件。 有关 Xamarin.Forms 控件映射到的呈现器和本机控件类的详细信息，请参阅[呈现器基类和本机控件](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
+每个 Xamarin.Forms 控件都有一个附带的呈现器，适用于创建本机控件实例的各个平台。 Xamarin.Forms 应用程序呈现 [`Entry`](xref:Xamarin.Forms.Entry) 控件时，在 iOS 中实例化 `EntryRenderer` 类，而该操作又会实例化本机 `UITextField` 控件。 在 Android 平台上，`EntryRenderer` 类实例化 `EditText` 控件。 在通用 Windows 平台 (UWP) 上，`EntryRenderer` 类实例化 `TextBox` 控件。 有关 Xamarin.Forms 控件映射到的呈现器和本机控件类的详细信息，请参阅[呈现器基类和本机控件](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
 下图说明了 [`Entry`](xref:Xamarin.Forms.Entry) 控件和实现它的相应本机控件之间的关系：
 
@@ -117,11 +120,11 @@ public class MainPage : ContentPage
 
 ![](entry-images/screenshots.png "MyEntry Control on each Platform")
 
-`EntryRenderer` 类公开 `OnElementChanged` 方法，创建 Xamarin.Forms 控件时调用此方法以呈现相应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素   。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `MyEntry` 控件的引用。
+`EntryRenderer` 类公开 `OnElementChanged` 方法，创建 Xamarin.Forms 控件时调用此方法以呈现对应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素 。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `MyEntry` 控件的引用。
 
 `MyEntryRenderer` 类中 `OnElementChanged` 方法的替代版本可执行本机控件自定义。 可以通过 `Control` 属性访问平台上使用的对本机控件的类型化引用。 此外，可以通过 `Element` 属性获取对正在呈现的 Xamarin.Forms 控件的引用，尽管它没有在示例应用程序中使用。
 
-每个自定义呈现器类均用 `ExportRenderer` 属性修饰，该属性向 Xamarin.Forms 注册呈现器。 属性采用两个参数 - 正在呈现的 Xamarin.Forms 控件的类型名称和自定义呈现器的类型名称。 属性的 `assembly` 前缀指示属性适用于整个程序集。
+每个自定义呈现器类均用 `ExportRenderer` 属性修饰，该属性向 Xamarin.Forms 注册呈现器。 该属性采用两个参数：要呈现的 Xamarin.Forms 控件的类型名称和自定义呈现器的类型名称。 属性的 `assembly` 前缀指示属性适用于整个程序集。
 
 以下各部分讨论每个平台特定的 `MyEntryRenderer` 自定义呈现器类的实现。
 

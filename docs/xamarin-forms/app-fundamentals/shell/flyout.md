@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms Shell 浮出控件
-description: 浮出控件是 Shell 应用程序的根菜单，可通过图标或从屏幕一侧轻扫进行访问。 浮出控件由可选标头、浮出控件项和可选菜单项组成。
-ms.prod: xamarin
-ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/22/2020
-ms.openlocfilehash: 5e5c50a9195ceb2716e3ca5306b72654fedc46e8
-ms.sourcegitcommit: 443ecd9146fe2a7bbb9b5ab6d33c835876efcf1f
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b336a594fa7525000e119333b56284368a23cc03
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82852467"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84134948"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms Shell 浮出控件
 
@@ -648,4 +651,4 @@ Shell 包括三个可自动应用于 `FlyoutItem` 和 `MenuItem` 对象的样式
 
 - [Xaminals（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 - [Xamarin.Forms 样式类](~/xamarin-forms/user-interface/styles/xaml/style-class.md)
-- [Xamarin.Forms 视觉对象状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)

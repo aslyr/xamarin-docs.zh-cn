@@ -1,24 +1,27 @@
 ---
 title: Xamarin.Forms 绑定路径
 description: 本文介绍如何使用 Xamarin.Forms 数据绑定通过 Binding 类的 Path 属性访问子属性和集合成员。
-ms.prod: xamarin
-ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/05/2018
-ms.openlocfilehash: 79d8df3300b302512a7de4140968dbc4c8e79abc
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0657f39d0584405ea1a6d7611ac789488817770f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76940345"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139733"
 ---
 # <a name="xamarinforms-binding-path"></a>Xamarin.Forms 绑定路径
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-在前面的所有数据绑定示例中，`Binding` 类的 [`Path`](xref:Xamarin.Forms.Binding.Path) 属性（或 `Binding` 标记扩展的 [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) 属性）已设置为单个属性。 实际上，可以将 `Path` 设置为“子属性”（属性的属性），也可以设置为集合的成员  。
+在前面的所有数据绑定示例中，`Binding` 类的 [`Path`](xref:Xamarin.Forms.Binding.Path) 属性（或 `Binding` 标记扩展的 [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) 属性）已设置为单个属性。 实际上，可以将 `Path` 设置为“子属性”（属性的属性），也可以设置为集合的成员。
 
 例如，假定你的页面包含 `TimePicker`：
 
@@ -35,7 +38,7 @@ ms.locfileid: "76940345"
 
 `Time` 属性的类型是 `TimeSpan`，该类型具有 `TotalSeconds` 属性。 `Time` 和 `TotalSeconds` 属性之间仅用一个句点连接。 `Path` 字符串中的项始终引用属性，而不是这些属性的类型。
 
-“路径变化”页中显示了该示例和其他几个示例  ：
+“路径变化”页中显示了该示例和其他几个示例：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -95,7 +98,7 @@ ms.locfileid: "76940345"
 
 ## <a name="paths-with-indexers"></a>使用索引器的路径
 
-“路径变化”页中的第三个 `Label` 中的绑定引用 `System.Globalization` 命名空间中的 [`CultureInfo`](xref:System.Globalization.CultureInfo) 类  ：
+“路径变化”页中的第三个 `Label` 中的绑定引用 `System.Globalization` 命名空间中的 [`CultureInfo`](xref:System.Globalization.CultureInfo) 类：
 
 ```xaml
 <Label Text="{Binding Source={x:Static globe:CultureInfo.CurrentCulture},
@@ -166,4 +169,4 @@ ms.locfileid: "76940345"
 ## <a name="related-links"></a>相关链接
 
 - [数据绑定演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
-- [Xamarin.Forms 书中的数据绑定章节](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Xamarin.Forms 书籍中的数据绑定章节](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

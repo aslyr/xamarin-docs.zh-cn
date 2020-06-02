@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms 绑定回退
-description: 本文介绍了如何通过定义绑定失败时将使用的回退值来使绑定更加可靠。
-ms.prod: xamarin
-ms.assetid: 637ACD9D-3E5D-4014-86DE-A77D1FEF238A
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/16/2018
-ms.openlocfilehash: 67fd8070ae36bdc1a90b8a33b25f13369d8d995d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f3aadef1960618731c3749507233933b8bf7630e
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "68650202"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84133453"
 ---
 # <a name="xamarinforms-binding-fallbacks"></a>Xamarin.Forms 绑定回退
 
@@ -25,9 +28,9 @@ ms.locfileid: "68650202"
 
 ## <a name="defining-a-fallback-value"></a>定义一个回退值
 
-[`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 属性允许定义在无法解析绑定源时使用的回退值  。 设置此属性的常见方案是绑定到可能不存在于异类类型的绑定集合中的所有对象上的源属性。
+[`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 属性允许定义在无法解析绑定源时使用的回退值。 设置此属性的常见方案是绑定到可能不存在于异类类型的绑定集合中的所有对象上的源属性。
 
-MonkeyDetail 页说明了设置 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 属性的方法  ：
+MonkeyDetail 页说明了设置 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 属性的方法：
 
 ```xaml
 <Label Text="{Binding Population, FallbackValue='Population size unknown'}"
@@ -57,7 +60,7 @@ MonkeyDetail 页说明了设置 [`FallbackValue`](xref:Xamarin.Forms.BindingBase
 
 ## <a name="defining-a-null-replacement-value"></a>定义 null 替换值
 
-[`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 属性允许定义替换值，该值将在解析绑定源时使用，但值为 `null` 。 设置此属性的常见方案是绑定到绑定集合中可能为 `null` 的源属性。
+[`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 属性允许定义替换值，该值将在解析绑定源时使用，但值为 `null`。 设置此属性的常见方案是绑定到绑定集合中可能为 `null` 的源属性。
 
 **Monkeys** 页说明了设置 [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 属性的方法：
 

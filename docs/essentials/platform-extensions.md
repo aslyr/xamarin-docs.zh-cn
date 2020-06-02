@@ -1,20 +1,23 @@
 ---
 title: Xamarin.Essentials 平台扩展
 description: 必须使用矩形、大小和点等平台类型时，Xamarin.Essentials 提供了几种平台扩展方法。
-ms.assetid: AB4D198A-4FD7-479E-8627-01F887A6D056
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 03/13/2019
-ms.openlocfilehash: 4e43159fb9cae6646be54d8efc24c334bc071477
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3266d3870dc0d1ddef747168b2ac6b4d397a7c33
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77545147"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135351"
 ---
-# <a name="xamarinessentials-platform-extensions"></a>Xamarin.Essentials:平台扩展
+# <a name="xamarinessentials-platform-extensions"></a>Xamarin.Essentials：平台扩展
 
-必须使用矩形、大小和点等平台类型时，Xamarin.Essentials 提供了几种平台扩展方法。 这意味着可以针对其 iOS、Android 和 UWP 特定类型在这些类型的 `System` 版本之间进行转换。 
+必须使用矩形、大小和点等平台类型时，Xamarin.Essentials 提供了几种平台扩展方法。 这意味着可以针对其 iOS、Android 和 UWP 特定类型在这些类型的 `System` 版本之间进行转换。
 
 ## <a name="get-started"></a>入门
 
@@ -22,7 +25,7 @@ ms.locfileid: "77545147"
 
 ## <a name="using-platform-extensions"></a>使用平台扩展
 
-在你的类中添加对 Xamarin.Essentials 的引用：
+在类中添加对 Xamarin.Essentials 的引用：
 
 ```csharp
 using Xamarin.Essentials;

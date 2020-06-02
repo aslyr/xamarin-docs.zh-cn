@@ -1,26 +1,29 @@
 ---
 title: Xamarin.Essentials
 description: 本文档链接到介绍可为开发人员提供其移动应用程序的跨平台 API 的 Xamarin.Essentials 的各个指南。
-ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 02/26/2020
-ms.openlocfilehash: 1d68203e80e0bc28e7060d5873c122db8c2ff960
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 27421ecc8b089321cd2331829d87365f3cf37a65
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80387200"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139459"
 ---
-# <a name="xamarinessentials"></a>Xamarin.Essentials
+# Xamarin.Essentials
 
 Xamarin.Essentials 可为开发人员提供其移动应用程序的跨平台 API。
 
-Android、iOS 和 UWP 提供了唯一的操作系统和平台 API，开发人员可以利用 Xamarin 访问 C# 中的所有 API。 Xamarin.Essentials 提供了适用于任何 Xamarin.Forms、Android、iOS 或 UWP 应用程序的单个跨平台 API，不管如何创建用户界面，都可以通过共享代码进行访问。
+Android、iOS 和 UWP 提供了唯一的操作系统和平台 API，开发人员可以利用 Xamarin 访问 C# 中的所有 API。 Xamarin.Essentials 提供了适用于任何 Xamarin.Forms、Android、iOS 或 UWP 应用程序的单一跨平台 API，不管如何创建用户界面，都可以通过共享代码进行访问。
 
-## <a name="get-started-with-xamarinessentials"></a>[Xamarin.Essentials 入门](get-started.md?context=xamarin/xamarin-forms)
+## <a name="get-started-with-xamarinessentialsget-startedmdcontextxamarinxamarin-forms"></a>[Xamarin.Essentials 入门](get-started.md?context=xamarin/xamarin-forms)
 
-按照[入门指南](get-started.md)将 **Xamarin.Essentials** NuGet 包安装到现有或新的 Xamarin.Forms、Android、iOS 或 UWP 项目中。
+按照[入门指南](get-started.md)将 Xamarin.Essentials NuGet 包安装到现有或新的 Xamarin.Forms、Android、iOS 或 UWP 项目中。
 
 ## <a name="feature-guides"></a>功能指南
 

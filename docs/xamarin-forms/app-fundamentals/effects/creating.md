@@ -1,24 +1,27 @@
 ---
-title: 创建效果
-description: 效果简化了控件的自定义。 本文演示如何创建效果，在指向 Entry 控件时更改其背景颜色。
-ms.prod: xamarin
-ms.assetid: 9E2C8DB0-36A2-4F13-8E3C-A66D7021DB13
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2016
-ms.openlocfilehash: c07848b808d023439c88117924e69c336984630b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0ed11ccacec73dd3c5c220c41bffd090af6c5b27
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771511"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139381"
 ---
 # <a name="creating-an-effect"></a>创建效果
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-focuseffect)
 
-_效果简化了控件的自定义。本文演示如何创建效果，在指向 Entry 控件时更改其背景颜色。 
+_效果简化了控件的自定义。本文演示如何创建效果，在指向 Entry 控件时更改其背景颜色。
 
 在每个特定于平台的项目中创建效果的过程如下：
 

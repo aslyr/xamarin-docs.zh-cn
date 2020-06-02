@@ -1,24 +1,27 @@
 ---
-title: 生成第一个 Xamarin.Forms 应用
+title: 生成首个 Xamarin.Forms 应用
 description: 视频指南介绍如何在 Visual Studio 中生成你的第一个 Xamarin.Forms 应用程序。
-zone_pivot_groups: platform-dev16
-ms.prod: xamarin
-ms.assetid: 72B6AF82-4D98-47E5-AB54-0A35B3253468
-ms.technology: xamarin-forms
-ms.custom: video
-author: conceptdev
-ms.author: crdun
-ms.date: 05/23/2019
-ms.openlocfilehash: fd2fcf6ebe11df27444f2ecc1d89955debf56cb4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+zone_pivot_groups: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+ms.custom: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: da56bde956a0ff7730ef6737e2802c3723d6d716
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75502795"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84133456"
 ---
 # <a name="build-your-first-xamarinforms-app"></a>生成第一个 Xamarin.Forms 应用
 
-观看此视频，然后按照视频中的步骤使用 Xamarin.Forms 创建第一个移动应用  。
+观看此视频，然后按照视频中的步骤使用 Xamarin.Forms 创建第一个移动应用Xamarin.Forms。
 
 ::: zone pivot="windows"
 
@@ -30,11 +33,11 @@ ms.locfileid: "75502795"
 
 请按照以下步骤以及上面的视频操作：
 
-1. 选择“文件”>“新建”>“项目...”  ，或按“创建新项目...”  按钮：
+1. 选择“文件”>“新建”>“项目...”，或按“创建新项目...”按钮：
 
     [![创建新项目](images/win-2019/01-sml.png)](images/win-2019/01.png#lightbox)
 
-2. 搜索“Xamarin”或从“项目类型”  菜单中选择“移动”  。 选择“移动应用(Xamarin.Forms)”  项目类型：
+2. 搜索“Xamarin”或从“项目类型”菜单中选择“移动”。 选择“移动应用(Xamarin.Forms)”项目类型：
 
     [![Xamarin 项目的筛选器](images/win-2019/02-sml.png)](images/win-2019/02.png#lightbox)
 
@@ -42,29 +45,29 @@ ms.locfileid: "75502795"
 
     [![选择项目名称](images/win-2019/03-sml.png)](images/win-2019/03.png#lightbox)
 
-4. 单击“空白”  项目类型，确保选择了“Android”  和“iOS”  ：
+4. 单击“空白”项目类型，确保选择了“Android”和“iOS”：
 
     [![Android 和 iOS 以及 .NET Standard](images/win-2019/04-sml.png)](images/win-2019/04.png#lightbox)
 
 5. 等到 NuGet 包还原（状态栏中将出现“还原已完成”消息）。
 
-6. 新 Visual Studio 2019 安装不会配置 Android 模拟器。 单击“调试”  按钮上的下拉箭头，然后选择“创建 Android Emulator”  以启动仿真器创建屏幕：
+6. 新 Visual Studio 2019 安装不会配置 Android 模拟器。 单击“调试”按钮上的下拉箭头，然后选择“创建 Android Emulator”以启动仿真器创建屏幕：
 
     ![“创建 Android Emulator”下拉菜单](images/win-2019/debug-dropdown.png)
 
-7. 在仿真器创建屏幕中，使用默认设置并单击“创建”  按钮：
+7. 在仿真器创建屏幕中，使用默认设置并单击“创建”按钮：
 
     [![Android 仿真器创建屏幕](images/win-2019/create-emulator-sml.png)](images/win-2019/create-emulator.png#lightbox)
 
-8. 创建仿真器会使你返回“设备管理器”窗口。 单击“启动”  按钮以启动新仿真器：
+8. 创建仿真器会使你返回“设备管理器”窗口。 单击“启动”按钮以启动新仿真器：
 
     ![“设备管理器”中的 Android 仿真器](images/win-2019/start-emulator.png)
 
-9. Visual Studio 2019 现在应在“调试”  按钮上显示新仿真器的名称：
+9. Visual Studio 2019 现在应在“调试”按钮上显示新仿真器的名称：
 
     ![“调试”按钮上的 Android 仿真器名称](images/win-2019/debug-emulator-name.png)
 
-10. 单击“调试”  按钮以生成应用程序并将其部署到 Android 仿真器：
+10. 单击“调试”按钮以生成应用程序并将其部署到 Android 仿真器：
 
     ![显示应用程序的 Android 仿真器](images/win-2019/android-emulator.png)
 
@@ -72,13 +75,13 @@ ms.locfileid: "75502795"
 
 可以自定义应用程序以添加交互功能。 执行以下步骤可向应用程序添加用户交互：
 
-1. 编辑 MainPage.xaml，在 `</StackLayout>` 结束之前添加此 XAML  ：
+1. 编辑 MainPage.xaml，在 `</StackLayout>` 结束之前添加此 XAML：
 
     ```xaml
     <Button Text="Click Me" Clicked="Button_Clicked" />
     ```
 
-2. 编辑 MainPage.xaml.cs，将此代码添加到类的末尾  ：
+2. 编辑 MainPage.xaml.cs，将此代码添加到类的末尾：
 
     ```csharp
     int count = 0;
@@ -115,25 +118,25 @@ ms.locfileid: "75502795"
 
 请按照以下步骤以及上面的视频操作：
 
-1. 选择“文件”>“新建”>“项目...”或按“创建新项目...”按钮，然后选择“Visual C#”>“跨平台”>“移动应用(Xamarin.Forms)”    ：
+1. 选择“文件”>“新建”>“项目...”或按“创建新项目...”按钮，然后选择“Visual C#”>“跨平台”>“移动应用(Xamarin.Forms)”  ：
 
     [![移动应用(Xamarin.Forms)](images/win/01-sml.png)](images/win/01.png#lightbox)
 
-2. 请确保选中“Android”和“iOS”且勾选了“.NET Standard”代码共享策略    ：
+2. 请确保选中“Android”和“iOS”且勾选了“.NET Standard”代码共享策略  ：
 
     [![Android 和 iOS 以及 .NET Standard](images/win/02-sml.png)](images/win/02.png#lightbox)
 
 3. 等到 NuGet 包还原（状态栏中将出现“还原已完成”消息）。
 
-4. 按调试按钮（或“调试”>“开始调试”菜单项）启动 Android Emulator  。
+4. 按调试按钮（或“调试”>“开始调试”菜单项）启动 Android Emulator。
 
-5. 编辑 MainPage.xaml，在 `</StackLayout>` 结束之前添加此 XAML  ：
+5. 编辑 MainPage.xaml，在 `</StackLayout>` 结束之前添加此 XAML：
 
     ```xaml
     <Button Text="Click Me" Clicked="Button_Clicked" />
     ```
 
-6. 编辑 MainPage.xaml.cs，将此代码添加到类的末尾  ：
+6. 编辑 MainPage.xaml.cs，将此代码添加到类的末尾：
 
     ```csharp
     int count = 0;
@@ -162,11 +165,11 @@ ms.locfileid: "75502795"
 
 请按照以下步骤以及上面的视频操作：
 
-1. 选择“文件”>“新建解决方案...”或按“新建项目...”按钮，然后选择“多平台”>“应用”>“空白窗体应用”    ：
+1. 选择“文件”>“新建解决方案...”或按“新建项目...”按钮，然后选择“多平台”>“应用”>“空白窗体应用”  ：
 
     [![空白窗体应用](images/01-sml.png)](images/01.png#lightbox)
 
-2. 请确保选中“Android”和“iOS”且勾选了“.NET Standard”代码共享策略    ：
+2. 请确保选中“Android”和“iOS”且勾选了“.NET Standard”代码共享策略  ：
 
     [![Android 和 iOS 以及 .NET Standard](images/02-sml.png)](images/02.png#lightbox)
 
@@ -174,15 +177,15 @@ ms.locfileid: "75502795"
 
     ![Android 应用](images/03-sml.png)
 
-4. 按调试按钮（或“运行”>“开始调试”）启动 Android Emulator  。
+4. 按调试按钮（或“运行”>“开始调试”）启动 Android Emulator。
 
-5. 编辑 MainPage.xaml，在 `</StackLayout>` 结束之前添加此 XAML  ：
+5. 编辑 MainPage.xaml，在 `</StackLayout>` 结束之前添加此 XAML：
 
     ```xaml
     <Button Text="Click Me" Clicked="Handle_Clicked" />
     ```
 
-6. 编辑 MainPage.xaml.cs，将此代码添加到类的末尾  ：
+6. 编辑 MainPage.xaml.cs，将此代码添加到类的末尾：
 
     ```csharp
     int count = 0;
@@ -197,7 +200,7 @@ ms.locfileid: "75502795"
 
     ![Android 应用](images/07-sml.png)
 
-8. 右键单击，将 iOS 设置为“启动项目”  ：
+8. 右键单击，将 iOS 设置为“启动项目”：
 
     [![将启动项目设置为 IOS](images/08-sml.png)](images/08.png#lightbox)
 

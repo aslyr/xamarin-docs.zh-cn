@@ -1,25 +1,29 @@
 ---
-title: 第 9 章摘要。 特定于平台的 API 调用
-description: 使用 Xamarin.Forms 创建移动应用：第 9 章摘要。 特定于平台的 API 调用
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 4FFA1BD4-B3ED-461C-9B00-06ABF70D471D
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/19/2018
-ms.openlocfilehash: 3aec84ec6598a45bb989d4bbc1705fd797382755
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 9. Platform-specific API calls''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e8feb636057f1e11c7df90236dee44697203d51c
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61334460"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136846"
 ---
 # <a name="summary-of-chapter-9-platform-specific-api-calls"></a>第 9 章摘要。 特定于平台的 API 调用
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09)
 
 > [!NOTE] 
-> 此页上的注释指出了 Xamarin.Forms 与书中提供的内容不同的地方。
+> 此页上的“注意”指出了 Xamarin.Forms 与书中所述内容的不同之处。
 
 有时需要运行一些因平台而异的代码。 本章将探讨这些方法。
 
@@ -40,7 +44,7 @@ Xamarin.Forms 共享资产项目可使用 C# 预处理器指令（`#if`、`#elif
 > [!NOTE] 
 > 可移植类库已替换为 .NET Standard 库。 书中的所有示例代码都已转换为使用 .NET Standard 库。
 
-库通常不能访问应用程序项目中的类。 此限制似乎会阻止在库中使用 PlatInfoSap2 中显示的方法  。 不过，Xamarin 包含一个名为 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 的类，该类使用 .NET 反射从库中访问应用程序项目中的公共类。
+库通常不能访问应用程序项目中的类。 此限制似乎会阻止在库中使用 PlatInfoSap2 中显示的方法。 不过，Xamarin.Forms 包含一个名为 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 的类，该类使用 .NET 反射从库中访问应用程序项目中的公共类。
 
 库必须定义一个 `interface`，其中包含需要在每个平台中使用的成员。 然后，每个平台都要包含该接口的实现。 用于实现接口的类必须在程序集级别使用 [DependencyAttribute](xref:Xamarin.Forms.DependencyAttribute) 进行标识。
 
@@ -50,7 +54,7 @@ Xamarin.Forms 共享资产项目可使用 C# 预处理器指令（`#if`、`#elif
 
 ## <a name="platform-specific-sound-generation"></a>特定于平台的声音生成
 
-[**MonkeyTapWithSound**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/MonkeyTapWithSound) 示例通过访问每个平台中的声音生成功能，将蜂鸣声添加到 MonkeyTap 程序中  。
+[**MonkeyTapWithSound**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/MonkeyTapWithSound) 示例通过访问每个平台中的声音生成功能，将蜂鸣声添加到 MonkeyTap 程序中。
 
 ## <a name="related-links"></a>相关链接
 

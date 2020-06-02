@@ -1,24 +1,16 @@
 ---
-title: 自定义 ViewCell
-description: Xamarin.Forms ViewCell 是可以添加到 ListView 或 TableView 中的单元，它包含开发人员定义的视图。 本文演示如何为 Xamarin.Forms ListView 控件中托管的 ViewCell 创建自定义呈现器。
-ms.prod: xamarin
-ms.assetid: 61F378C9-6DEF-436B-ACC3-2324B25D404E
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/07/2016
-ms.openlocfilehash: 5cd0a1ec43f0e56ec1ec72ebd614a7e0a5fa2225
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70998048"
+title: description:'Xamarin.Forms ViewCell 是可以添加到 ListView 或 TableView 中的单元，它包含开发人员定义的视图。 本文演示如何为 Xamarin.Forms ListView 控件中托管的 ViewCell 创建自定义呈现器。'
+ms.prod: ms.assetid: ms.technology: author: ms.author: ms.date: no-loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
+
 # <a name="customizing-a-viewcell"></a>自定义 ViewCell
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
 
-_Xamarin.Forms ViewCell 是可以添加到 ListView 或 TableView 中的单元，它包含开发人员定义的视图。本文演示如何为 Xamarin.Forms ListView 控件中托管的 ViewCell 创建自定义呈现器。这可防止在 ListView 滚动期间重复调用 Xamarin.Forms 布局计算。_
+Xamarin.Forms ViewCell 是可以添加到 ListView 或 TableView 中的单元，它包含开发人员定义的视图。本文演示如何为 Xamarin.Forms ListView 控件中托管的 ViewCell 创建自定义呈现器。这可防止在 ListView 滚动期间重复调用 Xamarin.Forms 布局计算。
 
 每个 Xamarin.Forms 单元都有一个附带的呈现器，适用于创建本机控件实例的各个平台。 当 Xamarin.Forms 应用程序呈现 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 时，将在 iOS 中实例化 `ViewCellRenderer` 类，而该操作又会实例化本机 `UITableViewCell` 控件。 在 Android 平台上，`ViewCellRenderer` 类实例化本机 `View` 控件。 在通用 Windows 平台 (UWP) 上，`ViewCellRenderer` 类实例化本机 `DataTemplate`。 有关 Xamarin.Forms 控件映射到的呈现器和本机控件类的详细信息，请参阅[呈现器基类和本机控件](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
@@ -163,7 +155,7 @@ Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 控件用于显示数据
 1. 向自定义呈现器类添加 `ExportRenderer` 属性，以指定其将用于呈现 Xamarin.Forms 自定义单元。 此属性用于向 Xamarin.Forms 注册自定义呈现器。
 
 > [!NOTE]
-> 对大多数 Xamarin.Forms 元素来说，可以选择在每个平台项目中提供自定义呈现器。 如果未注册自定义呈现器，将使用控件基类的默认呈现器。 但是，呈现 [ViewCell](xref:Xamarin.Forms.ViewCell) 元素时，每个平台项目中都需要自定义呈现器。
+> 对于大多数 Xamarin.Forms 元素，都可选择在每个平台项目中提供自定义呈现器。 如果未注册自定义呈现器，将使用控件基类的默认呈现器。 但是，呈现 [ViewCell](xref:Xamarin.Forms.ViewCell) 元素时，每个平台项目中都需要自定义呈现器。
 
 下图说明了示例应用程序中每个项目的职责，以及它们之间的关系：
 

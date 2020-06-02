@@ -1,20 +1,23 @@
 ---
-title: Xamarin.Forms DependencyService 介绍
+title: Xamarin.Forms DependencyService 简介
 description: 本文介绍如何使用 Xamarin.Forms DependencyService 类调用本机平台功能。
-ms.prod: xamarin
-ms.assetid: 5d019604-4f6f-4932-9b26-1fce3b4d88f8
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 06/12/2019
-ms.openlocfilehash: b27b4b0c3c5662c6cc1c2c151dd9ebe1523da3a4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f4d43a0c9c4878733d65b170c27e744b397aa4d0
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "71198513"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138354"
 ---
-# <a name="xamarinforms-dependencyservice-introduction"></a>Xamarin.Forms DependencyService 介绍
+# <a name="xamarinforms-dependencyservice-introduction"></a>Xamarin.Forms DependencyService 简介
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 
@@ -24,7 +27,7 @@ ms.locfileid: "71198513"
 
 1. 在共享代码中创建本机平台功能的接口。 有关详细信息，请参阅[创建接口](#create-an-interface)。
 1. 在所需的平台项目中实现此接口。 有关详细信息，请参阅[在各个平台上实现接口](#implement-the-interface-on-each-platform)。
-1. 通过 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 注册平台实现。 这样 Xamarin.Forms 即可以在运行时找到平台实现。 有关详细信息，请参阅[注册平台实现](#register-the-platform-implementations)。
+1. 通过 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 注册平台实现。 这使得 Xamarin.Forms 可以在运行时找到平台实现。 有关详细信息，请参阅[注册平台实现](#register-the-platform-implementations)。
 1. 从共享代码解析平台实现，并调用它们。 有关详细信息，请参阅[解析平台实现](#resolve-the-platform-implementations)。
 
 下图说明了如何在 Xamarin.Forms 应用程序中调用本机平台功能：

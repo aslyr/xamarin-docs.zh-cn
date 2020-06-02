@@ -1,19 +1,11 @@
 ---
-title: 从图片库中选取照片
-description: 本文介绍如何使用 Xamarin.Forms DependencyService 类从手机的图片库中选取照片。
-ms.prod: xamarin
-ms.assetid: 4F51B0E7-6A63-403C-B488-500CCBCE75DD
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/06/2017
-ms.openlocfilehash: 6669dbaff3cfb5b929261352b8db046b35ec5b4f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76020703"
+title: description:'本文介绍如何使用 Xamarin.Forms DependencyService 类从手机的图片库中选取照片。'
+ms.prod: ms.assetid: ms.technology: author: ms.author: ms.date: no-loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
+
 # <a name="picking-a-photo-from-the-picture-library"></a>从图片库中选取照片
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
@@ -40,7 +32,7 @@ namespace DependencyServiceDemos
 
 ## <a name="ios-implementation"></a>iOS 实现
 
-`IPhotoPickerService` 接口的 iOS 实现使用 [`UIImagePickerController`](xref:UIKit.UIImagePickerController)，正如[“从库中选择照片”](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)方案和[示例代码](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)中描述那样  。
+`IPhotoPickerService` 接口的 iOS 实现使用 [`UIImagePickerController`](xref:UIKit.UIImagePickerController)，正如[“从库中选择照片”](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)方案和[示例代码](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)中描述那样。
 
 iOS 实现包含在示例代码的 iOS 项目中的 [`PhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.iOS/Services/PhotoPickerService.cs) 类中。 为了使该类对 `DependencyService` 管理器可见，此类必须被标识为 `Dependency` 类型的 [`assembly`] 属性，且该类必须是公共的，并显式地实现 `IPhotoPickerService` 接口：
 
@@ -151,7 +143,7 @@ iOS 应用程序需要用户的许可才能访问手机的照片库。 将以下
 
 ## <a name="android-implementation"></a>Android 实现
 
-Android 实现使用[选择图像](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)方案和[示例代码](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)中描述的技术  。 但是，如果用户已选择图片库中的图像，则调用的方法是派生自 `Activity` 的类中的 `OnActivityResult` 替代。 因此，Android 项目中的常规 [`MainActivity`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.Android/MainActivity.cs) 类补充了一个字段、一个属性和 `OnActivityResult` 方法的一个替代：
+Android 实现使用[选择图像](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)方案和[示例代码](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)中描述的技术。 但是，如果用户已选择图片库中的图像，则调用的方法是派生自 `Activity` 的类中的 `OnActivityResult` 替代。 因此，Android 项目中的常规 [`MainActivity`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.Android/MainActivity.cs) 类补充了一个字段、一个属性和 `OnActivityResult` 方法的一个替代：
 
 ```csharp
 public class MainActivity : FormsAppCompatActivity

@@ -1,20 +1,23 @@
 ---
-title: 将数据存储在本地 SQLite.NET 数据库中
-description: 本文说明如何将数据存储在本地 SQLite.NET 数据库中。
-zone_pivot_groups: platform
-ms.topic: quickstart
-ms.prod: xamarin
-ms.assetid: 5BF901BD-FDE8-4B74-B4AB-418E81745A3B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/01/2019
-ms.openlocfilehash: 2cd4726566e73aece5d0deef90ad1feedefaa2d8
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+zone_pivot_groups: ''
+ms.topic: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2864c7edabde18faec06c2c42042168d3e6c9671
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "71249681"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139797"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>将数据存储在本地 SQLite.NET 数据库中
 
@@ -40,11 +43,11 @@ ms.locfileid: "71249681"
 
 1. 启动 Visual Studio 并打开 Notes 解决方案。
 
-2. 在“解决方案资源管理器”中，选择“Notes”项目，然后右键单击并选择“管理 NuGet 包…”    ：
+2. 在“解决方案资源管理器”中，选择“Notes”项目，然后右键单击并选择“管理 NuGet 包…”  ：
 
     ![](database-images/vs/add-nuget-packages.png "Add NuGet Packages")    
 
-3. 在“NuGet 包管理器”中，选择“浏览”选项卡，搜索“sqlite-net-pcl”NuGet 包，选择它，然后单击“安装”按钮将其添加到项目     ：
+3. 在“NuGet 包管理器”中，选择“浏览”选项卡，搜索“sqlite-net-pcl”NuGet 包，选择它，然后单击“安装”按钮将其添加到项目   ：
 
     ![](database-images/vs/add-package.png "Add Package")
 
@@ -58,7 +61,7 @@ ms.locfileid: "71249681"
 
     此包将用于将数据库操作合并到应用程序。
 
-4. 在“解决方案资源管理器”  的“Notes”  项目中，打开“Models”  文件夹中的“Note.cs”  ，并将现有代码替换为以下代码：
+4. 在“解决方案资源管理器”的“Notes”项目中，打开“Models”文件夹中的“Note.cs”，并将现有代码替换为以下代码：
 
     ```csharp
     using System;
@@ -78,16 +81,16 @@ ms.locfileid: "71249681"
 
     此类定义一个 `Note` 模型，该模型将在应用程序中存储有关每个便笺的数据。 使用 `PrimaryKey` 和 `AutoIncrement` 特性标记 `ID` 属性，以确保 SQLite.NET 数据库中的每个 `Note` 实例均具有 SQLite.NET 提供的唯一 ID。
 
-    通过按 Ctrl+S  ，保存对 Note.cs  所做的更改，然后关闭文件。
+    通过按 Ctrl+S，保存对 Note.cs 所做的更改，然后关闭文件。
 
     > [!WARNING]
     > 尝试在此时构建应用程序将导致要在后续步骤中修复的错误。
 
-5. 在“解决方案资源管理器”  中，将名为“Data”  的新文件夹添加到“Notes”  项目。
+5. 在“解决方案资源管理器”中，将名为“Data”的新文件夹添加到“Notes”项目。
 
-6. 在“解决方案资源管理器”  的“Notes”  项目中，将名为“NoteDatabase”  的新类添加到“Data”  文件夹。
+6. 在“解决方案资源管理器”的“Notes”项目中，将名为“NoteDatabase”的新类添加到“Data”文件夹。
 
-7. 在 NoteDatabase.cs  中，将现有代码替换为以下代码：
+7. 在 NoteDatabase.cs 中，将现有代码替换为以下代码：
 
     ```csharp
     using System.Collections.Generic;
@@ -141,12 +144,12 @@ ms.locfileid: "71249681"
 
     此类包含用于创建数据库、从中读取数据、向其写入数据以及从中删除数据的代码。 代码使用将数据库操作移动到后台线程的异步 SQLite.NET API。 此外，`NoteDatabase` 构造函数将数据库文件的路径作为参数。 在下一步中，此路径由 `App` 类提供。
 
-    通过按 Ctrl+S  ，保存对 NoteDatabase.cs  所做的更改，然后关闭文件。
+    通过按 Ctrl+S，保存对 NoteDatabase.cs 所做的更改，然后关闭文件。
 
     > [!WARNING]
     > 尝试在此时构建应用程序将导致要在后续步骤中修复的错误。
 
-8. 在“解决方案资源管理器”的“Notes”项目中，双击“App.xaml.cs”将其打开    。 然后将现有代码替换为以下代码：
+8. 在“解决方案资源管理器”的“Notes”项目中，双击“App.xaml.cs”将其打开  。 然后将现有代码替换为以下代码：
 
     ```csharp
     using System;
@@ -196,14 +199,14 @@ ms.locfileid: "71249681"
     }
     ```
 
-    此代码定义一个 `Database` 属性，该属性以单一实例的形式创建新 `NoteDatabase` 实例，将数据库的文件名作为参数传入 `NoteDatabase` 构造函数。 以单一实例的形式公开数据库的优势是，所创建的单一数据库连接在应用程序运行时保持打开状态，因此避免了每次执行数据库操作时打开和关闭数据库文件所产生的性能开销。
+    此代码定义一个 `Database` 属性，该属性以单一实例的形式创建新 `NoteDatabase` 实例，将数据库的文件名作为参数传入 `NoteDatabase` 构造函数。 以单一实例的形式公开数据库的优势是，所创建的单一数据库连接在应用程序运行时保持打开状态，因此避免了每次执行数据库操作时打开和关闭数据库文件所产生的费用。
 
     通过按 **Ctrl+S**，保存对 **App.xaml.cs** 所做的更改，然后关闭文件。
 
     > [!WARNING]
     > 尝试在此时构建应用程序将导致要在后续步骤中修复的错误。
 
-9. 在“解决方案资源管理器”的“Notes”项目中，双击“NotesPage.xaml.cs”将其打开    。 然后将 `OnAppearing` 方法替换为以下代码：
+9. 在“解决方案资源管理器”的“Notes”项目中，双击“NotesPage.xaml.cs”将其打开  。 然后将 `OnAppearing` 方法替换为以下代码：
 
     ```csharp
     protected override async void OnAppearing()
@@ -216,12 +219,12 @@ ms.locfileid: "71249681"
 
     此代码使用存储在数据库中的任何便笺填充 [`ListView`](xref:Xamarin.Forms.ListView)。
 
-    通过按 Ctrl+S  ，保存对 NotesPage.xaml.cs  所做的更改，然后关闭文件。
+    通过按 Ctrl+S，保存对 NotesPage.xaml.cs 所做的更改，然后关闭文件。
 
     > [!WARNING]
     > 尝试在此时构建应用程序将导致要在后续步骤中修复的错误。
 
-10. 在“解决方案资源管理器”  中，双击“NoteEntryPage.xaml.cs”  将其打开。 然后将 `OnSaveButtonClicked` 和 `OnDeleteButtonClicked` 替换为以下代码：
+10. 在“解决方案资源管理器”中，双击“NoteEntryPage.xaml.cs”将其打开。 然后将 `OnSaveButtonClicked` 和 `OnDeleteButtonClicked` 替换为以下代码：
 
       ```csharp
       async void OnSaveButtonClicked(object sender, EventArgs e)
@@ -242,11 +245,11 @@ ms.locfileid: "71249681"
 
       `NoteEntryPage` 将 `Note` 实例（表示单个便笺）存储在页面的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 中。 执行 `OnSaveButtonClicked` 事件处理程序时，`Note` 实例会保存到数据库中，并且应用程序会导航回上一页。 执行 `OnDeleteButtonClicked` 事件处理程序时，`Note` 实例会从数据库中删除，并且应用程序会导航回上一页。
 
-      通过按 Ctrl+S  ，保存对 NoteEntryPage.xaml.cs  所做的更改，然后关闭文件。
+      通过按 Ctrl+S，保存对 NoteEntryPage.xaml.cs 所做的更改，然后关闭文件。
 
 11. 在每个平台上生成并运行项目。 有关详细信息，请参阅[生成快速入门](single-page.md#building-the-quickstart)。
 
-    在 NotesPage  上，按 +  按钮以导航到 NoteEntryPage  并输入便笺。 保存便笺之后，应用程序会导航回 NotesPage  。
+    在 NotesPage 上，按 + 按钮以导航到 NoteEntryPage 并输入便笺。 保存便笺之后，应用程序会导航回 NotesPage。
 
     输入一些不同长度的便笺，以观察应用程序行为。
 
@@ -257,11 +260,11 @@ ms.locfileid: "71249681"
 
 1. 启动 Visual Studio for Mac 并打开“Notes”项目。
 
-2. 在“Solution Pad”中，选择“Notes”项目，然后右键单击并选择“添加”>“添加 NuGet 包…”    ：
+2. 在“Solution Pad”中，选择“Notes”项目，然后右键单击并选择“添加”>“添加 NuGet 包…”  ：
 
     ![](database-images/vsmac/add-nuget-packages.png "Add NuGet Packages")    
 
-3. 在“添加包”窗口中，搜索“sqlite-net-pcl”NuGet 包，选择它，然后单击“添加包”按钮将其添加到项目    ：
+3. 在“添加包”窗口中，搜索“sqlite-net-pcl”NuGet 包，选择它，然后单击“添加包”按钮将其添加到项目  ：
 
     ![](database-images/vsmac/add-package.png "Add Package")
 
@@ -275,7 +278,7 @@ ms.locfileid: "71249681"
 
     此包将用于将数据库操作合并到应用程序。
 
-4. 在“Solution Pad”  的“Notes”  项目中，打开“Models”  文件夹中的“Note.cs”  ，并将现有代码替换为以下代码：
+4. 在“Solution Pad”的“Notes”项目中，打开“Models”文件夹中的“Note.cs”，并将现有代码替换为以下代码：
 
     ```csharp
     using System;
@@ -295,16 +298,16 @@ ms.locfileid: "71249681"
 
     此类定义一个 `Note` 模型，该模型将在应用程序中存储有关每个便笺的数据。 使用 `PrimaryKey` 和 `AutoIncrement` 特性标记 `ID` 属性，以确保 SQLite.NET 数据库中的每个 `Note` 实例均具有 SQLite.NET 提供的唯一 ID。
 
-    通过选择“文件”>“保存”  ，或按 &#8984; + S  ，保存对 Note.cs  所做的更改，然后关闭文件。
+    通过选择“文件”>“保存”，或按 &#8984; + S，保存对 Note.cs 所做的更改，然后关闭文件。
 
     > [!WARNING]
     > 尝试在此时构建应用程序将导致要在后续步骤中修复的错误。
 
-5. 在“Solution Pad”  中，将名为“Data”  的新文件夹添加到“Notes”  项目。
+5. 在“Solution Pad”中，将名为“Data”的新文件夹添加到“Notes”项目。
 
-6. 在“Solution Pad”  的“Notes”  项目中，将名为“NoteDatabase”  的新类添加到“Data”  文件夹。
+6. 在“Solution Pad”的“Notes”项目中，将名为“NoteDatabase”的新类添加到“Data”文件夹。
 
-7. 在 NoteDatabase.cs  中，将现有代码替换为以下代码：
+7. 在 NoteDatabase.cs 中，将现有代码替换为以下代码：
 
     ```csharp
     using System.Collections.Generic;
@@ -358,12 +361,12 @@ ms.locfileid: "71249681"
 
     此类包含用于创建数据库、从中读取数据、向其写入数据以及从中删除数据的代码。 代码使用将数据库操作移动到后台线程的异步 SQLite.NET API。 此外，`NoteDatabase` 构造函数将数据库文件的路径作为参数。 在下一步中，此路径由 `App` 类提供。
 
-    通过选择“文件”>“保存”  ，或按 &#8984; + S  ，保存对 NoteDatabase.cs  所做的更改，然后关闭文件。
+    通过选择“文件”>“保存”，或按 &#8984; + S，保存对 NoteDatabase.cs 所做的更改，然后关闭文件。
 
     > [!WARNING]
     > 尝试在此时构建应用程序将导致要在后续步骤中修复的错误。
 
-8. 在“Solution Pad”的“Notes”项目中，双击“App.xaml.cs”将其打开    。 然后将现有代码替换为以下代码：
+8. 在“Solution Pad”的“Notes”项目中，双击“App.xaml.cs”将其打开  。 然后将现有代码替换为以下代码：
 
     ```csharp
     using System;
@@ -413,14 +416,14 @@ ms.locfileid: "71249681"
     }
     ```
 
-    此代码定义一个 `Database` 属性，该属性以单一实例的形式创建新 `NoteDatabase` 实例，将数据库的文件名作为参数传入 `NoteDatabase` 构造函数。 以单一实例的形式公开数据库的优势是，所创建的单一数据库连接在应用程序运行时保持打开状态，因此避免了每次执行数据库操作时打开和关闭数据库文件所产生的性能开销。
+    此代码定义一个 `Database` 属性，该属性以单一实例的形式创建新 `NoteDatabase` 实例，将数据库的文件名作为参数传入 `NoteDatabase` 构造函数。 以单一实例的形式公开数据库的优势是，所创建的单一数据库连接在应用程序运行时保持打开状态，因此避免了每次执行数据库操作时打开和关闭数据库文件所产生的费用。
 
-    通过选择“文件”>“保存”  ，或按 **&#8984; + S**，保存对 **App.xaml.cs** 所做的更改，然后关闭文件。
+    通过选择“文件”>“保存”，或按 **&#8984; + S**，保存对 **App.xaml.cs** 所做的更改，然后关闭文件。
 
     > [!WARNING]
     > 尝试在此时构建应用程序将导致要在后续步骤中修复的错误。
 
-9. 在“Solution Pad”的“Notes”项目中，双击“NotesPage.xaml.cs”将其打开    。 然后将 `OnAppearing` 方法替换为以下代码：
+9. 在“Solution Pad”的“Notes”项目中，双击“NotesPage.xaml.cs”将其打开  。 然后将 `OnAppearing` 方法替换为以下代码：
 
     ```csharp
     protected override async void OnAppearing()
@@ -433,12 +436,12 @@ ms.locfileid: "71249681"
 
     此代码使用存储在数据库中的任何便笺填充 [`ListView`](xref:Xamarin.Forms.ListView)。
 
-    通过选择“文件”>“保存”  ，或按 &#8984; + S  ，保存对 NotesPage.xaml.cs  所做的更改，然后关闭文件。
+    通过选择“文件”>“保存”，或按 &#8984; + S，保存对 NotesPage.xaml.cs 所做的更改，然后关闭文件。
 
     > [!WARNING]
     > 尝试在此时构建应用程序将导致要在后续步骤中修复的错误。
 
-10. 在“Solution Pad”  中，双击“NoteEntryPage.xaml.cs”  将其打开。 然后将 `OnSaveButtonClicked` 和 `OnDeleteButtonClicked` 替换为以下代码：
+10. 在“Solution Pad”中，双击“NoteEntryPage.xaml.cs”将其打开。 然后将 `OnSaveButtonClicked` 和 `OnDeleteButtonClicked` 替换为以下代码：
 
       ```csharp
       async void OnSaveButtonClicked(object sender, EventArgs e)
@@ -459,11 +462,11 @@ ms.locfileid: "71249681"
 
       `NoteEntryPage` 将 `Note` 实例（表示单个便笺）存储在页面的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 中。 执行 `OnSaveButtonClicked` 事件处理程序时，`Note` 实例会保存到数据库中，并且应用程序会导航回上一页。 执行 `OnDeleteButtonClicked` 事件处理程序时，`Note` 实例会从数据库中删除，并且应用程序会导航回上一页。
 
-      通过选择“文件”>“保存”  ，或按 &#8984; + S  ，保存对 NoteEntryPage.xaml.cs  所做的更改，然后关闭文件。
+      通过选择“文件”>“保存”，或按 &#8984; + S，保存对 NoteEntryPage.xaml.cs 所做的更改，然后关闭文件。
 
 11. 在每个平台上生成并运行项目。 有关详细信息，请参阅[生成快速入门](single-page.md#building-the-quickstart)。
 
-    在 NotesPage  上，按 +  按钮以导航到 NoteEntryPage  并输入便笺。 保存便笺之后，应用程序会导航回 NotesPage  。
+    在 NotesPage 上，按 + 按钮以导航到 NoteEntryPage 并输入便笺。 保存便笺之后，应用程序会导航回 NotesPage。
 
     输入一些不同长度的便笺，以观察应用程序行为。
 

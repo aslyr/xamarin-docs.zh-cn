@@ -1,20 +1,23 @@
 ---
-title: Xamarin.Forms 应用程序生命周期
-description: 此文章介绍了如何响应应用程序生命周期，包括生命周期方法、页面通知事件和模式导航事件。
-ms.prod: xamarin
-ms.assetid: 69B416CF-B243-4790-AB29-F030B32465BE
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/31/2018
-ms.openlocfilehash: 41e8d073982bf7963b3a77a939bf28e52e86feaa
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.Forms 应用生命周期
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3793a54f04b2c028752e18e2a5a238c275c2958a
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "67675178"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84129670"
 ---
-# <a name="xamarinforms-app-lifecycle"></a>Xamarin.Forms 应用程序生命周期
+# <a name="xamarinforms-app-lifecycle"></a>Xamarin.Forms 应用生命周期
 
 [`Application`](xref:Xamarin.Forms.Application) 基类提供下列功能：
 
@@ -33,7 +36,7 @@ ms.locfileid: "67675178"
 - `OnResume` - 应用程序发送到后台后恢复时调用。
 
 > [!NOTE]
->  没有终止应用程序的方法。 在正常情况下（即不崩溃），应用程序终止将从 OnSleep 状态发生，并且没有对代码的其他任何通知  。
+> 没有终止应用程序的方法。 在正常情况下（即不崩溃），应用程序终止将从 OnSleep 状态发生，并且没有对代码的其他任何通知。
 
 若要观察何时调用这些方法，请在每个平台上实现 `WriteLine` 调用（如下所示）并进行测试。
 

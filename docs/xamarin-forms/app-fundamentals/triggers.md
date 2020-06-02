@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms 触发器
 description: 此文章介绍了如何使用 Xamarin.Forms 触发器来响应 XAML 的用户界面更改。 触发器允许你在根据事件或属性更改更改控件外观的 XAML 中以声明的方式表达操作。
-ms.prod: xamarin
-ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/17/2020
-ms.openlocfilehash: b4eeb776cafa131f13eb70aca5bd20df6eafa07f
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f92ad47ae883f4b1b413ae5192a9add83045bb77
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82516731"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136950"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms 触发器
 
@@ -251,8 +254,8 @@ XAML 如下所示。 请注意下面的示例与第一个触发器示例之间�
 </Button>
 ```
 
-这些屏幕截图显示了上述两个多触发器示例之间的差异。 在屏幕的顶部，仅一个 `Entry` 中的文本输入便足以启用“保存”按钮  。
-在屏幕的底部，“登录”按钮在两个字段均包含数据迁保持非活动状态  。
+这些屏幕截图显示了上述两个多触发器示例之间的差异。 在屏幕的顶部，仅一个 `Entry` 中的文本输入便足以启用“保存”按钮。
+在屏幕的底部，“登录”按钮在两个字段均包含数据迁保持非活动状态。
 
 ![](triggers-images/multi-requireall.png "MultiTrigger Examples")
 
@@ -265,7 +268,7 @@ XAML 如下所示。 请注意下面的示例与第一个触发器示例之间�
 > [!NOTE]
 > [`EventTrigger`](xref:Xamarin.Forms.EventTrigger) 类将忽略 `EnterActions` 和 `ExitActions` 集合中定义的 [`TriggerAction`](xref:Xamarin.Forms.TriggerAction) 对象。    
 
-可以在触发器中同时提供 `EnterActions` 和 `ExitActions`，以及 `Setter`，但注意，将立即调用 `Setter`（它们不等待 `EnterAction` 或 `ExitAction` 完成）  。 或者，可以在代码中执行所有内容，根本无需使用 `Setter`。
+可以在触发器中同时提供 `EnterActions` 和 `ExitActions`，以及 `Setter`，但注意，将立即调用 `Setter`（它们不等待 `EnterAction` 或 `ExitAction` 完成）。 或者，可以在代码中执行所有内容，根本无需使用 `Setter`。
 
 ```xaml
 <Entry Placeholder="enter job title">
@@ -316,7 +319,7 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
 
 ## <a name="state-triggers"></a>状态触发器
 
-状态触发器已在 Xamarin.Forms 4.5 中引入，这是一组专门的触发器，定义了在哪些条件下应该应用 [`VisualState`](xref:Xamarin.Forms.VisualState)。 不过，它们目前还处于试验阶段，只能通过在 App.xaml.cs  文件中添加以下代码行来使用：
+状态触发器已在 Xamarin.Forms 4.5 中引入，这是一组专门的触发器，定义了在哪些条件下应该应用 [`VisualState`](xref:Xamarin.Forms.VisualState)。 不过，它们目前还处于试验阶段，只能通过在 App.xaml.cs 文件中添加以下代码行来使用：
 
 ```csharp
 Device.SetFlags(new string[]{ "StateTriggers_Experimental" });
@@ -335,7 +338,7 @@ Device.SetFlags(new string[]{ "StateTriggers_Experimental" });
 > [!NOTE]
 > 状态触发器可以在 [`Style`](xref:Xamarin.Forms.Style) 中设置，也可以直接对元素设置。
 
-若要详细了解视觉对象状态，请参阅 [Xamarin.Forms 视觉对象状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)。
+若要详细了解可视状态，请参阅 [Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)。
 
 ### <a name="state-trigger"></a>状态触发器
 
@@ -625,5 +628,5 @@ Unchecked state active: True
 ## <a name="related-links"></a>相关链接
 
 - [触发器示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
-- [Xamarin.Forms 视觉对象状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)
 - [Xamarin.Forms 触发器 API](xref:Xamarin.Forms.TriggerAction`1)

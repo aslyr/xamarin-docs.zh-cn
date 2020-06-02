@@ -1,22 +1,25 @@
 ---
-title: 呈现器基类和本机控件
+title: ''
 description: 每个 Xamarin.Forms 控件都有一个附带的呈现器，适用于创建本机控件实例的各个平台。 本文列出了用于实现每个 Xamarin.Forms 页面、布局、视图和单元的呈现器和本机控件类。
-ms.prod: xamarin
-ms.assetid: A8909AE3-ED0E-4D24-BF96-B49E732E3B93
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/17/2020
-ms.openlocfilehash: 986b1f7dce05451b96a78e4b39b0091309d93973
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a56f05f8ff4eb8ece43a9f4f38a669cfdc85c4be
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517474"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135182"
 ---
 # <a name="renderer-base-classes-and-native-controls"></a>呈现器基类和本机控件
 
-“每个 Xamarin.Forms 控件都有一个附带的呈现器，适用于创建本机控件实例的各个平台。本文列出了用于实现每个 Xamarin.Forms 页面、布局、视图和单元的呈现器和本机控件类。” 
+每个 Xamarin.Forms 控件都有一个附带的呈现器，适用于创建本机控件实例的各个平台。本文列出了用于实现每个 Xamarin.Forms 页面、布局、视图和单元的呈现器和本机控件类。
 
 除 `MapRenderer` 类以外，可以在以下命名空间中找到特定于平台的呈现器：
 

@@ -1,18 +1,21 @@
 ---
-title: 播放 Web 视频
+title: ''
 description: 本文说明如何使用 Xamarin.Forms 在视频播放器应用程序中播放 Web 视频。
-ms.prod: xamarin
-ms.assetid: 75781A10-865D-4BA8-8D6B-E3DA012922BC
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/12/2018
-ms.openlocfilehash: 107b2a970041c70bb021b03dd98f8c91eaea8d34
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b4269b768d6dd9a0eadbbe557f701f8a43b74c99
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771764"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84133674"
 ---
 # <a name="playing-a-web-video"></a>播放 Web 视频
 
@@ -190,7 +193,7 @@ namespace FormsVideoLibrary
 
 ### <a name="the-ios-video-source"></a>iOS 视频源
 
-`VideoPlayerRenderer` 的两个节与设置视频播放器的视频源有关。 当 Xamarin.Forms 首次创建类型为 `VideoPlayer` 的对象时，将调用 `OnElementChanged` 方法，并将 arguments 对象的 `NewElement` 属性设置为该 `VideoPlayer`。 `OnElementChanged` 方法调用 `SetSource`：
+`VideoPlayerRenderer` 的两个节与设置视频播放器的视频源有关。 当 Xamarin.Forms 首次创建类型为 `VideoPlayer` 的对象时，将调用 `OnElementChanged` 方法，并会将 arguments 对象的 `NewElement` 属性设置为该 `VideoPlayer`。 `OnElementChanged` 方法调用 `SetSource`：
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -449,7 +452,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="setting-a-url-source"></a>设置 URL 源
 
-通过在三个呈现器中实现这些属性，可以播放来自 URL 源的视频。 [**VideoPlayDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 程序中的“播放 Web 视频”页由以下 XAML 文件定义  ：
+通过在三个呈现器中实现这些属性，可以播放来自 URL 源的视频。 [**VideoPlayDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 程序中的“播放 Web 视频”页由以下 XAML 文件定义：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -463,7 +466,7 @@ namespace FormsVideoLibrary.UWP
 </ContentPage>
 ```
 
-`VideoSourceConverter` 类将字符串转换为 `UriVideoSource`。 导航到“播放 Web 视频”页时，视频会开始加载，并在下载和缓冲足够数量的数据后开始播放  。 视频时长约为 10 分钟：
+`VideoSourceConverter` 类将字符串转换为 `UriVideoSource`。 导航到“播放 Web 视频”页时，视频会开始加载，并在下载和缓冲足够数量的数据后开始播放。 视频时长约为 10 分钟：
 
 [![播放 Web 视频](web-videos-images/playwebvideo-small.png "播放 Web 视频")](web-videos-images/playwebvideo-large.png#lightbox "播放 Web 视频")
 
@@ -476,7 +479,7 @@ namespace FormsVideoLibrary.UWP
                    AutoPlay="false" />
 ```
 
-需要按“播放”按钮才能启动视频  。
+需要按“播放”按钮才能启动视频。
 
 同样，可以通过将 `AreTransportControlsEnabled` 属性设置为 `false` 来禁止显示传输控件：
 

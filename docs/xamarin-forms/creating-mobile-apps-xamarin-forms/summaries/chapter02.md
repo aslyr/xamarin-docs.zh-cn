@@ -1,18 +1,22 @@
 ---
-title: 摘要：第 2 章. 应用剖析
-description: 使用 Xamarin.Forms 创建移动应用：摘要：第 2 章. 应用剖析
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/17/2018
-ms.openlocfilehash: f900cb1532ba4415127c95b07e777881e1d74994
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 2. Anatomy of an app''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 78da3ed91acea0c056074d712d368de70b251392
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76724983"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136911"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>摘要：第 2 章. 应用剖析
 
@@ -21,32 +25,32 @@ ms.locfileid: "76724983"
 > [!NOTE]
 > 此页上的“注意”指出了 Xamarin.Forms 与书中所述内容的不同之处。
 
-在 Xamarin.Forms 应用程序中，占据屏幕空间的对象称为视觉对象元素  ，由 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 类封装。 视觉对象元素可以分为与以下类对应的三个类别：
+在 Xamarin.Forms 应用程序中，占据屏幕空间的对象称为视觉对象元素，由 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 类封装。 视觉对象元素可以分为与以下类对应的三个类别：
 
 - [页](xref:Xamarin.Forms.Page)
 - [布局](xref:Xamarin.Forms.Layout)
 - [视图](xref:Xamarin.Forms.View)
 
-`Page` 导数占据整个屏幕，或几乎占据整个屏幕。 通常，页面的子级是组织视觉对象子元素的 `Layout` 导数。 `Layout` 的子级可以是其他 `Layout` 类或 `View` 导数（通常称为元素  ），它们是诸如文本、位图、滑块、按钮、列表框等的较为熟悉的对象。
+`Page` 导数占据整个屏幕，或几乎占据整个屏幕。 通常，页面的子级是组织视觉对象子元素的 `Layout` 导数。 `Layout` 的子级可以是其他 `Layout` 类或 `View` 导数（通常称为元素），它们是诸如文本、位图、滑块、按钮、列表框等的较为熟悉的对象。
 
 本章将演示如何通过 [`Label`](xref:Xamarin.Forms.Label)（它是显示文本的 `View` 导数）来创建应用程序。
 
 ## <a name="say-hello"></a>例如 Hello
 
-安装 Xamarin 平台后，可以在 Visual Studio 或 Visual Studio for Mac 中创建新的 Xamarin.Forms 解决方案。 [Hello  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello) 解决方案为通用代码使用可移植类库。
+安装 Xamarin 平台后，可以在 Visual Studio 或 Visual Studio for Mac 中创建新的 Xamarin.Forms 解决方案。 [Hello](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello) 解决方案为通用代码使用可移植类库。
 
 > [!NOTE]
 > 可移植类库已替换为 .NET Standard 库。 书中的所有示例代码都已转换为使用 .NET Standard 库。
 
 此示例将演示如何在 Visual Studio 中创建 Xamarin.Forms 解决方案，而无需进行任何修改。 解决方案由四个项目组成：
 
-- [Hello  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello)，一个由其他项目共享的可移植类库 (PCL)
-- [Hello.Droid  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Droid)，一个适用于 Android 的应用程序项目
-- [Hello.iOS  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.iOS)，一个适用于 iOS 的应用程序项目
-- [Hello.UWP  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.UWP)，一个适用于通用 Windows 平台（Windows 10 和 Windows 10 移动版）的应用程序项目
+- [Hello](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello)，一个由其他项目共享的可移植类库 (PCL)
+- [Hello.Droid](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Droid)，一个适用于 Android 的应用程序项目
+- [Hello.iOS](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.iOS)，一个适用于 iOS 的应用程序项目
+- [Hello.UWP](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.UWP)，一个适用于通用 Windows 平台（Windows 10 和 Windows 10 移动版）的应用程序项目
 
 > [!NOTE]
-> Xamarin 不再支持 Windows 8.1、Windows Phone 8.1 或 Windows 10 移动版，但 Xamarin.Forms 应用程序在 Windows 10 桌面上运行。
+> Xamarin.Forms 不再支持 Windows 8.1、Windows Phone 8.1 或 Windows 10 移动版，但 Xamarin.Forms 应用程序可在 Windows 10 桌面上运行。
 
 可以将这些应用程序项目中的任何一个作为启动项目，然后在设备或模拟器上生成并运行该程序。
 
@@ -54,30 +58,30 @@ ms.locfileid: "76724983"
 
 ## <a name="inside-the-files"></a>在文件内
 
-Hello  程序显示的视觉对象是在 [`App`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello/App.cs) 类的构造函数中定义的。 `App` 派生自 Xamarin.Forms 类 [`Application`](xref:Xamarin.Forms.Application)。
+Hello 程序显示的视觉对象是在 [`App`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello/App.cs) 类的构造函数中定义的。 `App` 派生自 Xamarin.Forms 类 [`Application`](xref:Xamarin.Forms.Application)。
 
 > [!NOTE]
 > 适用于 Xamarin.Forms 的 Visual Studio 解决方案模板创建带有 XAML 文件的页面。 在本书[第 7 章](chapter07.md)之前不会涉及 XAML。
 
-Hello  PCL 项目的“引用”  部分包括以下 Xamarin.Forms 程序集：
+Hello PCL 项目的“引用”部分包括以下 Xamarin.Forms 程序集 ：
 
-- **Xamarin.Forms.Core**
-- **Xamarin.Forms.Xaml**
-- **Xamarin.Forms.Platform**
+- Xamarin.Forms.Core
+- Xamarin.Forms.Xaml
+- Xamarin.Forms.Platform
 
-五个应用程序项目的“引用”  部分包括适用于各个平台的其他程序集：
+五个应用程序项目的“引用”部分包括适用于各个平台的其他程序集：
 
-- **Xamarin.Forms.Platform.Android**
-- **Xamarin.Forms.Platform.iOS**
-- **Xamarin.Forms.Platform.UWP**
-- **Xamarin.Forms.Platform.WinRT**
-- **Xamarin.Forms.Platform.WinRT.Tablet**
-- **Xamarin.Forms.Platform.WinRT.Phone**
+- Xamarin.Forms.Platform.Android
+- Xamarin.Forms.Platform.iOS
+- Xamarin.Forms.Platform.UWP
+- Xamarin.Forms.Platform.WinRT
+- Xamarin.Forms.Platform.WinRT.Tablet
+- Xamarin.Forms.Platform.WinRT.Phone
 
 > [!NOTE]
-> 这些项目的“引用”  部分不再列出程序集。 相反，项目文件包含引用 Xamarin.Forms NuGet 包的 PackageReference  标记。 Visual Studio 中的“引用”  部分列出了 Xamarin.Forms  包，而不是 Xamarin.Forms 程序集。
+> 这些项目的“引用”部分不再列出程序集。 相反，项目文件包含引用 Xamarin.Forms NuGet 包的 PackageReference 标记。 Visual Studio 中的“引用”部分列出了 Xamarin.Forms 包，而不是 Xamarin.Forms 程序集 。
 
-每个应用程序项目都包含对 `Xamarin.Forms` 名称空间中的静态 `Forms.Init` 方法的调用。 这会初始化 Xamarin.Forms 库。 为每个平台定义了不同版的 `Forms.Init`。 在以下类中可以找到对该方法的调用：
+每个应用程序项目都包含对 `Xamarin.Forms` 名称空间中的静态 `Forms.Init` 方法的调用。 这将初始化 Xamarin.Forms 库。 为每个平台定义了不同版的 `Forms.Init`。 在以下类中可以找到对该方法的调用：
 
 - iOS：[`AppDelegate`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.iOS/AppDelegate.cs)
 - Android：[`MainActivity`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
@@ -93,14 +97,14 @@ Hello  PCL 项目的“引用”  部分包括以下 Xamarin.Forms 程序集：
 
 ## <a name="pcl-or-sap"></a>PCL 或 SAP？
 
-可以使用可移植类库 (PCL) 或 Shared Asset Project (SAP) 中的通用代码创建 Xamarin.Forms 解决方案。 若要创建 SAP 解决方案，请在 Visual Studio 中选择“共享”选项。 HelloSap[  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/HelloSap) 解决方案演示了未经修改的 SAP 模板。
+可以使用可移植类库 (PCL) 或 Shared Asset Project (SAP) 中的通用代码创建 Xamarin.Forms 解决方案。 若要创建 SAP 解决方案，请在 Visual Studio 中选择“共享”选项。 HelloSap[](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/HelloSap) 解决方案演示了未经修改的 SAP 模板。
 
 > [!NOTE]
 > 可移植类库已替换为 .NET Standard 库。 书中的所有示例代码都已转换为使用 .NET Standard 库。 否则，PCL 和 .NET Standard 库在概念上非常相似。
 
 库方法将所有通用代码捆绑在平台应用程序项目引用的库项目中。 借助 SAP 方法，通用代码实际上存在于所有平台应用程序项目中，并在它们之间共享。
 
-大多数 Xamarin.Forms 开发人员更愿意使用库方法。 在本书中，大多数解决方案都使用一个库。 使用 SAP 的用户在项目名称中包含一个 Sap  后缀。
+大多数 Xamarin.Forms 开发人员更愿意使用库方法。 在本书中，大多数解决方案都使用一个库。 使用 SAP 的用户在项目名称中包含一个 Sap 后缀。
 
 借助 SAP 方法，共享项目中的代码可以通过使用具有以下预定义标识符的 C# 预处理程序指令（`#if`#`elif` 和 `#endif`）为各种平台执行不同的代码：
 
@@ -112,7 +116,7 @@ Hello  PCL 项目的“引用”  部分包括以下 Xamarin.Forms 程序集：
 
 ## <a name="labels-for-text"></a>文本标签
 
-[Greetings  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Greetings) 解决方案演示了如何向 Greetings  项目添加新的 C# 文件。 该文件定义一个名为 `GreetingsPage` 的类，该类派生自 `ContentPage`。 在本书中，大多数项目都包含单个 `ContentPage` 导数，其名称是带有后缀 `Page` 的项目名称。
+[Greetings](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Greetings) 解决方案演示了如何向 Greetings 项目添加新的 C# 文件。 该文件定义一个名为 `GreetingsPage` 的类，该类派生自 `ContentPage`。 在本书中，大多数项目都包含单个 `ContentPage` 导数，其名称是带有后缀 `Page` 的项目名称。
 
 `GreetingsPage` 构造函数实例化一个 [`Label`](xref:Xamarin.Forms.Label) 视图，该视图是显示文本的 Xamarin.Forms 视图。 [`Text`](xref:Xamarin.Forms.Label.Text) 属性设置为 `Label` 显示的文本。 该程序将 `Label` 设置为 `ContentPage` 的 `Content`属性。 然后，`App` 类的构造函数实例化 `GreetingsPage` 并将其设置为 `MainPage` 属性。
 
@@ -131,7 +135,7 @@ Hello  PCL 项目的“引用”  部分包括以下 Xamarin.Forms 程序集：
 
 ### <a name="solution-2-include-padding-just-for-ios-sap-only"></a>解决方案 2. 包括仅适用于 iOS 的填充（仅 SAP）
 
-仅在 iOS 上使用带有 C# 预处理器指令的 SAP 设置“填充”属性。 [GreetingsSap  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/GreetingsSap) 解决方案对此进行了演示。
+仅在 iOS 上使用带有 C# 预处理器指令的 SAP 设置“填充”属性。 [GreetingsSap](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/GreetingsSap) 解决方案对此进行了演示。
 
 ### <a name="solution-3-include-padding-just-for-ios-pcl-or-sap"></a>解决方案 3. 包括仅适用于 iOS 的填充（PCL 或 SAP）
 
@@ -183,7 +187,7 @@ Hello  PCL 项目的“引用”  部分包括以下 Xamarin.Forms 程序集：
 - [`LayoutOptions.EndAndExpand`](xref:Xamarin.Forms.LayoutOptions.EndAndExpand)
 - [`LayoutOptions.FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand)
 
-`HorizontalOptions` 和 `VerticalOptions` 是 Xamarin.Forms 布局中最重要的属性，将在以下章节中进行更详细地讨论：[第 4 章.  滚动堆栈](chapter04.md)。
+`HorizontalOptions` 和 `VerticalOptions` 是 Xamarin.Forms 布局中最重要的属性，将在以下章节中进行更详细地讨论：[**第 4 章.** 滚动堆栈](chapter04.md)。
 
 下面介绍将 `Label` 的 `HorizontalOptions` 和 `VerticalOptions` 属性都设置为 `LayoutOptions.Center` 的结果：
 

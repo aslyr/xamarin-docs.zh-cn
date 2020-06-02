@@ -1,21 +1,14 @@
 ---
-title: Xamarin.Essentials:加速计
-description: Xamarin.Essentials 中的 Accelerometer 类可用于监视设备的加速计传感器，指示设备在三维空间内的加速度。
-ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 04/02/2019
-ms.custom: video
-ms.openlocfilehash: dd99d09f227809bf8834eea9749c4d5379abebdb
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70765049"
----
-# <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials:加速计
+title: ''Xamarin.Essentials:Accelerometer'' description:'Xamarin.Essentials 中的 Accelerometer 类可用于监视设备的加速计传感器，指示设备在三维空间内的加速度。'
+ms.assetid: author: ms.author: ms.date: ms.custom: no-loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-Accelerometer  类可用于监视设备的加速计传感器，指示设备在三维空间内的加速度。
+---
+
+# <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials：加速计
+
+Accelerometer 类可用于监视设备的加速计传感器，指示设备在三维空间内的加速度。
 
 ## <a name="get-started"></a>入门
 
@@ -23,7 +16,7 @@ Accelerometer  类可用于监视设备的加速计传感器，指示设备在�
 
 ## <a name="using-accelerometer"></a>使用 Accelerometer
 
-在你的类中添加对 Xamarin.Essentials 的引用：
+在类中添加对 Xamarin.Essentials 的引用：
 
 ```csharp
 using Xamarin.Essentials;

@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms 绑定值转换器
 description: 此文章介绍了如何通过实现值转换器（也称为绑定转换器或绑定值转换器）来强制转换或转换 Xamarin.Forms 数据绑定中的值。
-ms.prod: xamarin
-ms.assetid: 02B1BBE6-D804-490D-BDD4-8ACED8B70C92
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/05/2018
-ms.openlocfilehash: 05ad12de77e8895a23cd364b90abfbfb567ac573
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e1a4faabc8f0703b497062a8c5d587221692dab7
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771612"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139752"
 ---
 # <a name="xamarinforms-binding-value-converters"></a>Xamarin.Forms 绑定值转换器
 
@@ -20,7 +23,7 @@ ms.locfileid: "70771612"
 
 一般情况下数据绑定会将数据从源属性传递到目标属性，某些情况下则从目标属性传递到源属性。 当源和目标属性都是同一类型，或当一个类型可以隐式转换为另一种类型时，这类传递都是非常简单的。 如果不是这种情况，则必须执行类型转换。
 
-[字符串格式设置](string-formatting.md)一文已介绍如何使用数据绑定的 `StringFormat` 属性将任意类型转换为字符串  。 对于其他类型的转换，需要在类中编写一些专门的代码以实现 [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 接口。 （通用 Windows 平台在 `Windows.UI.Xaml.Data` 命名空间中包含一个名为 [`IValueConverter`](/uwp/api/Windows.UI.Xaml.Data.IValueConverter/) 的类似的类，但此 `IValueConverter` 在 `Xamarin.Forms` 命名空间中。）实现 `IValueConverter` 的类被称为“值转换器”，但它们通常也被称为“绑定转换器”或“绑定值转换器”    。
+[字符串格式设置](string-formatting.md)一文已介绍如何使用数据绑定的 `StringFormat` 属性将任意类型转换为字符串。 对于其他类型的转换，需要在类中编写一些专门的代码以实现 [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 接口。 （通用 Windows 平台在 `Windows.UI.Xaml.Data` 命名空间中包含一个名为 [`IValueConverter`](/uwp/api/Windows.UI.Xaml.Data.IValueConverter/) 的类似的类，但此 `IValueConverter` 在 `Xamarin.Forms` 命名空间中。）实现 `IValueConverter` 的类被称为“值转换器”，但它们通常也被称为“绑定转换器”或“绑定值转换器”  。
 
 ## <a name="the-ivalueconverter-interface"></a>IValueConverter 接口
 
@@ -51,7 +54,7 @@ public class IntToBoolConverter : IValueConverter
 
 如果数据绑定还包括 `StringFormat` 设置，则在结果格式化为字符串之前调用值转换器。
 
-[数据绑定演示](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)示例中的启用按钮页面演示了如何在数据绑定中使用此值转换器   。 `IntToBoolConverter` 在页面的资源字典中实例化。 然后使用 `StaticResource` 标记扩展引用它以在两个数据绑定中设置 `Converter` 属性。 在页面中的多个数据绑定中共享数据转换器是很常见的：
+[数据绑定演示](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)示例中的启用按钮页面演示了如何在数据绑定中使用此值转换器 。 `IntToBoolConverter` 在页面的资源字典中实例化。 然后使用 `StaticResource` 标记扩展引用它以在两个数据绑定中设置 `Converter` 属性。 在页面中的多个数据绑定中共享数据转换器是很常见的：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -93,9 +96,9 @@ public class IntToBoolConverter : IValueConverter
 </ContentPage>
 ```
 
-如果在应用程序的多个页面中使用值转换器，则可以在 App.xaml 文件的资源字典中将其实例化  。
+如果在应用程序的多个页面中使用值转换器，则可以在 App.xaml 文件的资源字典中将其实例化。
 
-启用按钮页面演示了当 `Button` 基于用户在 `Entry` 视图中键入的文本执行操作时的常见需求  。 如果用户没有在 `Entry` 中键入任何内容，则应禁用 `Button`。 每个 `Button` 都包含其 `IsEnabled` 属性的数据绑定。 数据绑定源是相应 `Entry` 的 `Text` 属性的 `Length` 属性。 如果 `Length`属性不是 0，则值转换器返回 `true` 并启用 `Button`：
+启用按钮页面演示了当 `Button` 基于用户在 `Entry` 视图中键入的文本执行操作时的常见需求。 如果用户没有在 `Entry` 中键入任何内容，则应禁用 `Button`。 每个 `Button` 都包含其 `IsEnabled` 属性的数据绑定。 数据绑定源是相应 `Entry` 的 `Text` 属性的 `Length` 属性。 如果 `Length`属性不是 0，则值转换器返回 `true` 并启用 `Button`：
 
 [![启用按钮](converters-images/enablebuttons-small.png "启用按钮")](converters-images/enablebuttons-large.png#lightbox "启用按钮")
 
@@ -132,7 +135,7 @@ public class BoolToObjectConverter<T> : IValueConverter
 }
 ```
 
-切换指示器页面演示了如何使用它来显示 `Switch` 视图的值  。 虽然将值转换器实例化为资源字典中的资源很常见，但此页面演示了另一种选择：每个值转换器都在 `Binding.Converter` 属性元素标记之间实例化。 `x:TypeArguments` 指示泛型参数，并将 `TrueObject` 和 `FalseObject` 都设置为该类型的对象：
+切换指示器页面演示了如何使用它来显示 `Switch` 视图的值。 虽然将值转换器实例化为资源字典中的资源很常见，但此页面演示了另一种选择：每个值转换器都在 `Binding.Converter` 属性元素标记之间实例化。 `x:TypeArguments` 指示泛型参数，并将 `TrueObject` 和 `FalseObject` 都设置为该类型的对象：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -396,7 +399,7 @@ binding.ConverterParameter = 255;
 
 为此，上述的值转换器包含一个单独的 `GetParameter` 方法，该方法用于处理 `parameter` 属于类型 `double`、`int` 或 `string` 的情况。  
 
-RGB 颜色选择器页面遵照两个隐式样式的定义在其资源字典中实例化 `DoubleToIntConverter` ：
+RGB 颜色选择器页面遵照两个隐式样式的定义在其资源字典中实例化 `DoubleToIntConverter`：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -467,4 +470,4 @@ RGB 颜色选择器页面遵照两个隐式样式的定义在其资源字典中�
 ## <a name="related-links"></a>相关链接
 
 - [数据绑定演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
-- [Xamarin.Forms 书中的数据绑定章节](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Xamarin.Forms 书籍中的数据绑定章节](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

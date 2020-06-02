@@ -1,18 +1,21 @@
 ---
-title: 加载应用程序资源视频
+title: ''
 description: 本文介绍如何使用 Xamarin.Forms 在视频播放器应用程序中加载以应用程序资源形式存储的视频。
-ms.prod: xamarin
-ms.assetid: F75BD540-9354-4C17-A119-57F3DEC66D54
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/12/2018
-ms.openlocfilehash: 4573d58f80b9c168f5d0a8a3f72beb64c29b1703
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 472c6c2a7c5a084520aee6b8ae160d9329c3f593
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771839"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84133752"
 ---
 # <a name="loading-application-resource-videos"></a>加载应用程序资源视频
 
@@ -28,21 +31,21 @@ ms.locfileid: "70771839"
 
 ### <a name="ios-video-resources"></a>iOS 视频资源
 
-在 iOS 项目中，可在资源文件夹或资源文件夹的子文件夹中存储视频   。 视频文件必须具有 `BundleResource` 的 `Build Action`。 将 `ResourceVideoSource` 的 `Path` 属性设置为文件名，例如，MyFile.mp4 表示资源文件夹中的某个文件，或 MyFolder/MyFile.mp4，其中 MyFolder 是资源的子文件夹      。
+在 iOS 项目中，可在资源文件夹或资源文件夹的子文件夹中存储视频 。 视频文件必须具有 `BundleResource` 的 `Build Action`。 将 `ResourceVideoSource` 的 `Path` 属性设置为文件名，例如，MyFile.mp4 表示资源文件夹中的某个文件，或 MyFolder/MyFile.mp4，其中 MyFolder 是资源的子文件夹    。
 
-在 VideoPlayerDemos 解决方案中，VideoPlayerDemos.iOS 项目包含名为“Videos”的资源的子文件夹，其中包含名为 iOSApiVideo.mp4 的文件      。 这是一个简短的视频，显示如何使用 Xamarin 网站找到 iOS `AVPlayerViewController` 类的文档。
+在 VideoPlayerDemos 解决方案中，VideoPlayerDemos.iOS 项目包含名为“Videos”的资源的子文件夹，其中包含名为 iOSApiVideo.mp4 的文件    。 这是一个简短的视频，显示如何使用 Xamarin 网站找到 iOS `AVPlayerViewController` 类的文档。
 
 ### <a name="android-video-resources"></a>Android 视频资源
 
-在 Android 项目中，视频必须存储在名为“raw”的资源的子文件中   。 “raw”文件夹不能包含子文件夹  。 为视频文件授予 `AndroidResource` 的 `Build Action`。 将 `ResourceVideoSource` 的 `Path` 属性设置为文件名，例如 MyFile.mp4  。
+在 Android 项目中，视频必须存储在名为“raw”的资源的子文件中 。 “raw”文件夹不能包含子文件夹。 为视频文件授予 `AndroidResource` 的 `Build Action`。 将 `ResourceVideoSource` 的 `Path` 属性设置为文件名，例如 MyFile.mp4。
 
-VideoPlayerDemos.Android 项目包含名为“raw”的资源子文件夹，其中包含名为 AndroidApiVideo.mp4 的文件     。
+VideoPlayerDemos.Android 项目包含名为“raw”的资源子文件夹，其中包含名为 AndroidApiVideo.mp4 的文件   。
 
 ### <a name="uwp-video-resources"></a>UWP 视频资源
 
-在通用 Windows 平台项目中，可以将视频存储在项目的任何文件夹中。 为文件提供 `Content` 的 `Build Action`。 将 `ResourceVideoSource` 的 `Path` 属性设置为文件夹和文件名，例如，MyFolder/MyVideo.mp4  。
+在通用 Windows 平台项目中，可以将视频存储在项目的任何文件夹中。 为文件提供 `Content` 的 `Build Action`。 将 `ResourceVideoSource` 的 `Path` 属性设置为文件夹和文件名，例如，MyFolder/MyVideo.mp4。
 
-VideoPlayerDemos.UWP 项目包含名为“Videos”的文件夹，其中包含 UWPApiVideo.mp4 文件    。
+VideoPlayerDemos.UWP 项目包含名为“Videos”的文件夹，其中包含 UWPApiVideo.mp4 文件  。
 
 ## <a name="loading-the-video-files"></a>加载视频文件
 
@@ -84,7 +87,7 @@ namespace FormsVideoLibrary.iOS
 
 ### <a name="android-resource-loading"></a>Android 资源加载
 
-Android `VideoPlayerRenderer` 使用文件名和包名称来构造 `Uri` 对象。 包名称是应用程序的名称，在此示例中为 VideoPlayerDemos.Android，可从静态 `Context.PackageName` 属性中获得  。 然后，生成的 `Uri` 对象将传递给 `VideoView` 的 `SetVideoURI` 方法：
+Android `VideoPlayerRenderer` 使用文件名和包名称来构造 `Uri` 对象。 包名称是应用程序的名称，在此示例中为 VideoPlayerDemos.Android，可从静态 `Context.PackageName` 属性中获得。 然后，生成的 `Uri` 对象将传递给 `VideoView` 的 `SetVideoURI` 方法：
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -149,7 +152,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="playing-the-resource-file"></a>播放资源文件
 
-VideoPlayerDemos 解决方案中的“播放视频资源”页使用 `OnPlatform` 类为每个平台指定视频文件   ：
+VideoPlayerDemos 解决方案中的“播放视频资源”页使用 `OnPlatform` 类为每个平台指定视频文件 ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -173,7 +176,7 @@ VideoPlayerDemos 解决方案中的“播放视频资源”页使用 `OnPlatform
 </ContentPage>
 ```
 
-如果 iOS 资源存储在“Resources”文件夹中，并且如果 UWP 资源存储在项目的根文件夹中，则可以对每个平台使用相同的文件名  。 如果出现这种情况，则可以直接将该名称设置为 `VideoPlayer` 的 `Source` 属性。
+如果 iOS 资源存储在“Resources”文件夹中，并且如果 UWP 资源存储在项目的根文件夹中，则可以对每个平台使用相同的文件名。 如果出现这种情况，则可以直接将该名称设置为 `VideoPlayer` 的 `Source` 属性。
 
 下面是该页面的运行结果：
 

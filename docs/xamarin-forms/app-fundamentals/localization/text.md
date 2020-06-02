@@ -1,19 +1,22 @@
 ---
 title: Xamarin.Forms 中的字符串和图像本地化
 description: 可使用 .NET 资源文件实现 Xamarin.Forms 应用本地化。
-zone_pivot_groups: platform
-ms.prod: xamarin
-ms.assetid: 852B4ED3-2D2D-48A5-A759-A6591F6A1509
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 11/01/2019
-ms.openlocfilehash: bf99873d88a69a715cdf7969ad94afd66372b5e3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+zone_pivot_groups: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: af15dc5a23404a11be6207bef7b4fc3e4bf9fad7
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "74135308"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137593"
 ---
 # <a name="xamarinforms-string-and-image-localization"></a>Xamarin.Forms 字符串和图像本地化
 
@@ -29,24 +32,24 @@ ms.locfileid: "74135308"
 
 1. 创建包含已翻译文本的 [Resx 文件](#create-resx-files)。
 1. 在共享项目中[指定默认区域性](#specify-the-default-culture)。
-1. [在 Xamarin.Forms 中本地化文本](#localize-text-in-xamarinforms)。
+1. [在 Xamarin.Forms 中进行文本本地化](#localize-text-in-xamarinforms)。
 1. 根据每个平台的区域性设置[本地化图像](#localize-images)。
 1. 在每个平台上[本地化应用程序名称](#localize-the-application-name)。
 1. 在每个平台上[测试本地化](#test-localization)。
 
 ## <a name="create-resx-files"></a>创建 Resx 文件
 
-资源文件是扩展名为 .resx 的 XML 文件，它们在生成过程中会编译为二进制资源 (.resources) 文件  。 Visual Studio 2019 生成一个类，该类提供用于检索资源的 API。 本地化后的应用程序通常包含一个默认资源文件，其中带有应用程序中使用的所有字符串，还包含用于每种受支持语言的资源文件。 示例应用程序在共享项目中有一个 Resx 文件夹，其中包含多个资源文件和一个名为 AppResources.resx 的默认资源文件   。
+资源文件是扩展名为 .resx 的 XML 文件，它们在生成过程中会编译为二进制资源 (.resources) 文件。 Visual Studio 2019 生成一个类，该类提供用于检索资源的 API。 本地化后的应用程序通常包含一个默认资源文件，其中带有应用程序中使用的所有字符串，还包含用于每种受支持语言的资源文件。 示例应用程序在共享项目中有一个 Resx 文件夹，其中包含多个资源文件和一个名为 AppResources.resx 的默认资源文件 。
 
 资源文件包含每个项的下列信息：
 
-- 名称指定用于在代码中访问文本的键  。
-- 值指定翻译后的文本  。
-- 注释是包含其他信息的可选字段  。
+- 名称指定用于在代码中访问文本的键。
+- 值指定翻译后的文本。
+- 注释是包含其他信息的可选字段。
 
 ::: zone pivot="windows"
 
-资源文件通过 Visual Studio 2019 中的“添加新项”对话框进行添加  ：
+资源文件通过 Visual Studio 2019 中的“添加新项”对话框进行添加：
 
 ![在 Visual Studio 2019 中添加新资源](text-images/pc-add-resource-file.png)
 
@@ -54,26 +57,26 @@ ms.locfileid: "74135308"
 
 ![在 .resx 文件中指定默认文本资源](text-images/pc-default-strings.png)
 
-“访问修饰符”下拉设置确定了 Visual Studio 如何生成用于访问资源的类  。 将“访问修饰符”设置为“公共”或“内部”会生成具有指定可访问性级别的类   。 如果将“访问修饰符”设置为“不生成代码”，则不会生成类文件  。 默认资源文件应配置为生成类文件，这样即可生成一个扩展名为 .designer.cs 且要添加到项目中的文件  。
+“访问修饰符”下拉设置确定了 Visual Studio 如何生成用于访问资源的类。 将“访问修饰符”设置为“公共”或“内部”会生成具有指定可访问性级别的类 。 如果将“访问修饰符”设置为“不生成代码”，则不会生成类文件。 默认资源文件应配置为生成类文件，这样即可生成一个扩展名为 .designer.cs 且要添加到项目中的文件。
 
-创建默认资源文件后，可为应用程序支持的每个区域性创建其他文件。 每个其他资源文件都应在文件名中包含翻译区域性，并且应将“访问修饰符”设置为“不生成代码”   。 
+创建默认资源文件后，可为应用程序支持的每个区域性创建其他文件。 每个其他资源文件都应在文件名中包含翻译区域性，并且应将“访问修饰符”设置为“不生成代码” 。 
 
-运行时期间，应用程序会按指定顺序尝试解析资源请求。 例如，如果设备区域性是 en-US，应用程序将按以下顺序查找资源文件  ：
+运行时期间，应用程序会按指定顺序尝试解析资源请求。 例如，如果设备区域性是 en-US，应用程序将按以下顺序查找资源文件：
 
 1. AppResources.en-US.resx
 1. AppResources.en.resx
 1. AppResources.resx（默认）
 
-以下屏幕截图显示了名为 AppResources.es.cs 的西班牙语翻译文件  ：
+以下屏幕截图显示了名为 AppResources.es.cs 的西班牙语翻译文件：
 
 ![在 .resx 文件中指定默认文本资源](text-images/pc-spanish-strings.png)
 
-翻译文件使用默认文件中指定的“名称”值，但会在“值”列中包含西班牙语语言字符串   。 此外，“访问修饰符”设置为“不生成代码”   。
+翻译文件使用默认文件中指定的“名称”值，但会在“值”列中包含西班牙语语言字符串 。 此外，“访问修饰符”设置为“不生成代码” 。
 
 ::: zone-end
 ::: zone pivot="macos"
 
-资源文件通过 Visual Studio 2019 for Mac 中的“添加新文件”对话框进行添加  ：
+资源文件通过 Visual Studio 2019 for Mac 中的“添加新文件”对话框进行添加：
 
 ![在 Visual Studio 2019 for Mac 中添加新资源](text-images/mac-add-resource-file.png)
 
@@ -95,21 +98,21 @@ ms.locfileid: "74135308"
 </root>
 ```
 
-可通过在资源文件选项中设置“自定义工具”属性来创建 .designer.cs 类文件   ：
+可通过在资源文件选项中设置“自定义工具”属性来创建 .designer.cs 类文件 ：
 
 ![资源文件的属性中指定的自定义工具](text-images/mac-resx-properties.png)
 
-将“自定义工具”设置为 PublicResXFileCodeGenerator 将生成具有 `public` 访问权限的类   。 将“自定义工具”设置为 InternalResXFileCodeGenerator 将生成具有 `internal` 访问权限的类   。 “自定义工具”值为空则不生成类  。 生成的类名称将与资源文件名匹配。 例如，AppResources.resx 文件将在名为 AppResources.designer.cs 的文件中创建 `AppResources` 类   。
+将“自定义工具”设置为 PublicResXFileCodeGenerator 将生成具有 `public` 访问权限的类 。 将“自定义工具”设置为 InternalResXFileCodeGenerator 将生成具有 `internal` 访问权限的类 。 “自定义工具”值为空则不生成类。 生成的类名称将与资源文件名匹配。 例如，AppResources.resx 文件将在名为 AppResources.designer.cs 的文件中创建 `AppResources` 类 。
 
-可为每个支持的区域性创建其他资源文件。 每个语言文件都应在文件名中包含翻译区域性，因此要翻译成 es-MX 的文件应命名为 AppResources.es-MX.resx   。
+可为每个支持的区域性创建其他资源文件。 每个语言文件都应在文件名中包含翻译区域性，因此要翻译成 es-MX 的文件应命名为 AppResources.es-MX.resx 。
 
-运行时期间，应用程序会按指定顺序尝试解析资源请求。 例如，如果设备区域性是 en-US，应用程序将按以下顺序查找资源文件  ：
+运行时期间，应用程序会按指定顺序尝试解析资源请求。 例如，如果设备区域性是 en-US，应用程序将按以下顺序查找资源文件：
 
 1. AppResources.en-US.resx
 1. AppResources.en.resx
 1. AppResources.resx（默认）
 
-语言翻译文件的“名称”值应与默认文件中指定的相同  。 以下 XML 显示了名为 AppResources.es.resx 的西班牙语翻译文件  ：
+语言翻译文件的“名称”值应与默认文件中指定的相同。 以下 XML 显示了名为 AppResources.es.resx 的西班牙语翻译文件：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -131,7 +134,7 @@ ms.locfileid: "74135308"
 
 ## <a name="specify-the-default-culture"></a>指定默认区域性
 
-要使资源文件可正常使用，应用程序必须指定 `NeutralResourcesLanguage`。 在共享项目中，应自定义 AssemblyInfo.cs 文件以指定默认区域性  。 以下代码演示如何在 AssemblyInfo.cs 文件中将 `NeutralResourcesLanguage` 设置为 en-US   ：
+要使资源文件可正常使用，应用程序必须指定 `NeutralResourcesLanguage`。 在共享项目中，应自定义 AssemblyInfo.cs 文件以指定默认区域性。 以下代码演示如何在 AssemblyInfo.cs 文件中将 `NeutralResourcesLanguage` 设置为 en-US ：
 
 ```csharp
 using System.Resources;
@@ -142,13 +145,13 @@ using System.Resources;
 > [!WARNING]
 > 如果未指定 `NeutralResourcesLanguage` 属性，`ResourceManager` 类会对缺少特定资源文件的任何区域性返回 `null` 值。 指定默认区域性后，`ResourceManager` 会对不支持的区域性返回默认 Resx 文件中的结果。 因此，建议始终指定 `NeutralResourcesLanguage` 以便对不支持的区域性显示文本。
 
-创建默认资源文件并在 AssemblyInfo.cs 文件中指定默认区域性后，应用程序可在运行时期间检索已本地化的字符串  。
+创建默认资源文件并在 AssemblyInfo.cs 文件中指定默认区域性后，应用程序可在运行时期间检索已本地化的字符串。
 
 要详细了解资源文件，请参阅 [Create resource files for .NET apps](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps)（为 .NET 应用创建资源文件）。
 
-## <a name="localize-text-in-xamarinforms"></a>在 Xamarin.Forms 中本地化文本
+## <a name="localize-text-in-xamarinforms"></a>在 Xamarin.Forms 中进行文本本地化
 
-文本通过在 Xamarin.Forms 中使用生成的 `AppResources` 类进行本地化。 此类根据默认的资源文件名称进行命名。 由于示例项目资源文件名为 AppResources.cs，因此 Visual Studio 会生成名为 `AppResources` 的匹配类  。 对资源文件中的每一行，静态属性在 `AppResources` 类中生成。 以下静态属性在示例应用程序的 `AppResources` 类中生成：
+文本通过在 Xamarin.Forms 中使用生成的 `AppResources` 类进行本地化。 此类根据默认的资源文件名称进行命名。 由于示例项目资源文件名为 AppResources.cs，因此 Visual Studio 会生成名为 `AppResources` 的匹配类。 对资源文件中的每一行，静态属性在 `AppResources` 类中生成。 以下静态属性在示例应用程序的 `AppResources` 类中生成：
 
 - AddButton
 - NotesLabel
@@ -207,9 +210,9 @@ public LocalizedCodePage()
 
 ### <a name="localize-images-on-android"></a>在 Android 上本地化图像
 
-在 Android 上，使用“资源”目录中的文件夹命名约定来存储已本地化的可绘制资源（图像）  。 文件夹命名为 drawable，并附上目标语言的后缀  。 例如，西班牙语文件夹命名为 drawable-es  。
+在 Android 上，使用“资源”目录中的文件夹命名约定来存储已本地化的可绘制资源（图像）。 文件夹命名为 drawable，并附上目标语言的后缀。 例如，西班牙语文件夹命名为 drawable-es。
 
-如果需要 4 个字母的区域设置代码，Android 需要在短划线后附加 r  。 例如，墨西哥区域设置 (es-MX) 文件夹应命名为 drawable-es-rMX  。 每个区域设置文件夹中的图像文件名应相同：
+如果需要 4 个字母的区域设置代码，Android 需要在短划线后附加 r。 例如，墨西哥区域设置 (es-MX) 文件夹应命名为 drawable-es-rMX。 每个区域设置文件夹中的图像文件名应相同：
 
 ![Android 项目中的本地化图像](text-images/pc-android-images.png)
 
@@ -217,9 +220,9 @@ public LocalizedCodePage()
 
 ### <a name="localize-images-on-ios"></a>在 iOS 上本地化图像
 
-在 iOS 上，使用“资源”目录中的文件夹命名约定来存储本地化图像  。 默认文件夹命名为 Base.lproj  。 特定语言的文件夹以语言或区域设置名称命名并后接 .lproj  。 例如，西班牙语文件夹命名为 es.lproj  。
+在 iOS 上，使用“资源”目录中的文件夹命名约定来存储本地化图像。 默认文件夹命名为 Base.lproj。 特定语言的文件夹以语言或区域设置名称命名并后接 .lproj。 例如，西班牙语文件夹命名为 es.lproj。
 
-四字母本地代码的工作方式与两字母语言代码的类似。 例如，墨西哥区域设置 (es-MX) 文件夹应命名为 es-MX.lproj  。 每个区域设置文件夹中的图像文件名应相同：
+四字母本地代码的工作方式与两字母语言代码的类似。 例如，墨西哥区域设置 (es-MX) 文件夹应命名为 es-MX.lproj。 每个区域设置文件夹中的图像文件名应相同：
 
 ![iOS 项目中的本地化图像](text-images/pc-ios-images.png)
 
@@ -230,7 +233,7 @@ public LocalizedCodePage()
 
 ### <a name="localize-images-on-uwp"></a>在 UWP 上本地化图像
 
-在 UWP 上，使用“资产/图像”目录中的文件夹命名约定来存储本地化图像  。 文件夹按语言或区域设置进行命名。 例如，西班牙语文件夹以 es 命名，墨西哥区域设置文件夹应以 es-MX 命名   。 每个区域设置文件夹中的图像文件名应相同：
+在 UWP 上，使用“资产/图像”目录中的文件夹命名约定来存储本地化图像。 文件夹按语言或区域设置进行命名。 例如，西班牙语文件夹以 es 命名，墨西哥区域设置文件夹应以 es-MX 命名 。 每个区域设置文件夹中的图像文件名应相同：
 
 ![UWP 项目中的本地化图像](text-images/pc-uwp-images.png)
 

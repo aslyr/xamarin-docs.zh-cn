@@ -1,18 +1,22 @@
 ---
-title: “第 3 章： 深入了解文本”摘要
-description: 使用 Xamarin.Forms 创建移动应用：“第 3 章： 深入了解文本”摘要
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/18/2018
-ms.openlocfilehash: 69415b59bbd376330454302981e3216c236a16bb
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 3. Deeper into text''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5423a9f716f384eca107003bdeca69615f8b459f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "72980922"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136898"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>“第 3 章： 深入了解文本”摘要
 
@@ -22,13 +26,13 @@ ms.locfileid: "72980922"
 
 ## <a name="wrapping-paragraphs"></a>段落换行
 
-如果 `Label` 的 [`Text`](xref:Xamarin.Forms.Label.Text) 属性包含长文本，`Label` 会自动将它换行为多行，如 [Baskervilles  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/Baskervilles) 示例所示。 可以嵌入 Unicode 代码（如表示长破折号的“\u2014”）或 C# 字符（如“\r'”）换到新行。
+如果 `Label` 的 [`Text`](xref:Xamarin.Forms.Label.Text) 属性包含长文本，`Label` 会自动将它换行为多行，如 [Baskervilles](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/Baskervilles) 示例所示。 可以嵌入 Unicode 代码（如表示长破折号的“\u2014”）或 C# 字符（如“\r'”）换到新行。
 
-如果 `Label` 的 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 属性设置为 `LayoutOptions.Fill`，那么 `Label` 的总尺寸由其容器提供的可用空间决定。 `Label` 被认为是受约束的  。 `Label` 的尺寸就是它的容器尺寸。
+如果 `Label` 的 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 属性设置为 `LayoutOptions.Fill`，那么 `Label` 的总尺寸由其容器提供的可用空间决定。 `Label` 被认为是受约束的。 `Label` 的尺寸就是它的容器尺寸。
 
-如果 `HorizontalOptions` 和 `VerticalOptions` 属性设置为除 `LayoutOptions.Fill` 以外的值，那么 `Label` 的尺寸由文本呈现所需的空间决定，最大尺寸是其容器为 `Label` 提供的可用空间。 `Label` 被认为是不受约束的  ，它决定自己的尺寸。
+如果 `HorizontalOptions` 和 `VerticalOptions` 属性设置为除 `LayoutOptions.Fill` 以外的值，那么 `Label` 的尺寸由文本呈现所需的空间决定，最大尺寸是其容器为 `Label` 提供的可用空间。 `Label` 被认为是不受约束的，它决定自己的尺寸。
 
-（注意：术语“受约束”  和“不受约束”  可能是违反常理的，因为不受约束的视图通常小于受约束的视图。 此外，这两个术语与本电子图书前面章节中的用法不一致。）
+（注意：术语“受约束”和“不受约束”可能是违反常理的，因为不受约束的视图通常小于受约束的视图。 此外，这两个术语与本电子图书前面章节中的用法不一致。）
 
 `Label` 等视图可以在一个维度上受约束，而在另一个维度上不受约束。 `Label` 仅在水平方向受约束时才将文本换行为多行。
 
@@ -100,7 +104,7 @@ ms.locfileid: "72980922"
 `Color.Default` 旨在强制执行平台的配色方案，因此它的含义因平台和上下文而异。 默认情况下，平台的配色方案为：
 
 - iOS：浅色背景上深色文本
-- Android：深色背景上浅色文本（在图书中），或浅色背景上深色文本（在示例代码存储库的主  分支中通过 AppCompat 用于 Material Design）
+- Android：深色背景上浅色文本（在图书中），或浅色背景上深色文本（在示例代码存储库的主分支中通过 AppCompat 用于 Material Design）
 - UWP：浅色背景上深色文本
 
 `Color.Accent` 值生成特定于平台（有时为用户可选择）的颜色，它在深色或浅色背景上都是可见的。
@@ -119,7 +123,7 @@ ms.locfileid: "72980922"
 
 将 `Label` 的 [`FontSize`](xref:Xamarin.Forms.Label.FontSize) 属性设置为 `double`，可以指定大致字体高度。 若要详细了解如何智能选择字号，请参阅[第 5 章：处理字号](chapter05.md)。
 
-也可以从多个平台相关预设字号中选择一个。 静态 [`Device.GetNamedSize`](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,System.Type)) 方法和[重载](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,Xamarin.Forms.Element))都根据 [`NamedSize`](xref:Xamarin.Forms.NamedSize) 枚举的成员（[`Default`](xref:Xamarin.Forms.NamedSize.Default)、[`Micro`](xref:Xamarin.Forms.NamedSize.Micro)、[`Small`](xref:Xamarin.Forms.NamedSize.Small)、[`Medium`](xref:Xamarin.Forms.NamedSize.Medium) 和 [`Large`](xref:Xamarin.Forms.NamedSize.Large)）返回与平台相对应的 `double` 字号值。 从 `Medium` 成员返回的值不一定与 `Default` 相同。 [NamedFontSizes  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes) 示例使用这些命名字号显示文本。
+也可以从多个平台相关预设字号中选择一个。 静态 [`Device.GetNamedSize`](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,System.Type)) 方法和 [overload](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,Xamarin.Forms.Element)) 都根据 [`NamedSize`](xref:Xamarin.Forms.NamedSize) 枚举（[`Default`](xref:Xamarin.Forms.NamedSize.Default)、[`Micro`](xref:Xamarin.Forms.NamedSize.Micro)、[`Small`](xref:Xamarin.Forms.NamedSize.Small)、[`Medium`](xref:Xamarin.Forms.NamedSize.Medium) 和 [`Large`](xref:Xamarin.Forms.NamedSize.Large)）的成员返回适合于平台的 `double` 字体大小值。 从 `Medium` 成员返回的值不一定与 `Default` 相同。 [NamedFontSizes](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes) 示例使用这些命名字号显示文本。
 
 将 `Label` 的 [`FontAttributes`](xref:Xamarin.Forms.Label.FontAttributes) 属性设置为这些 [`FontAttributes`](xref:Xamarin.Forms.FontAttributes) 枚举的成员（[`Bold`](xref:Xamarin.Forms.FontAttributes.Bold)、[`Italic`](xref:Xamarin.Forms.FontAttributes.Italic) 或 [`None`](xref:Xamarin.Forms.FontAttributes.None)）。 可以将 `Bold` 和 `Italic` 成员与 C# 位 OR 运算符结合使用。
 
@@ -129,11 +133,11 @@ ms.locfileid: "72980922"
 
 `FormattedString` 有 [`Spans`](xref:Xamarin.Forms.FormattedString.Spans) 属性，此属性是 [`Span`](xref:Xamarin.Forms.Span) 对象集合。 每个 `Span` 对象都有自己的 [`Text`](xref:Xamarin.Forms.Span.Text)、[`FontFamily`](xref:Xamarin.Forms.Span.FontFamily)、[`FontSize`](xref:Xamarin.Forms.Span.FontSize)、[`FontAttributes`](xref:Xamarin.Forms.Span.FontAttributes)、[`ForegroundColor`](xref:Xamarin.Forms.Span.ForegroundColor) 和 [`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor) 属性。
 
-[VariableFormattedText  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/VarFormText) 示例展示了如何对单行文本使用 `FormattedText` 属性；[VariableFormattedParagraph  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/VarFormPara) 展示了对整个段落使用的技术，如下所示：
+[VariableFormattedText](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/VarFormText) 示例展示了如何对单行文本使用 `FormattedText` 属性；[VariableFormattedParagraph](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/VarFormPara) 展示了对整个段落使用的技术，如下所示：
 
 [![可变格式化段落的三倍屏幕截图](images/ch03fg06-small.png "可变格式化标签文本")](images/ch03fg06-large.png#lightbox "可变格式化标签文本")
 
-[NamedFontSizes  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes) 程序使用一个 `Label` 和 `FormattedString` 对象显示每个平台的所有命名字号。
+[NamedFontSizes](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes) 程序使用一个 `Label` 和 `FormattedString` 对象显示每个平台的所有命名字号。
 
 ## <a name="related-links"></a>相关链接
 

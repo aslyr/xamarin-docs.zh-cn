@@ -1,24 +1,27 @@
 ---
 title: Xamarin.Forms 模式页面
 description: Xamarin.Forms 支持模式页面。 模式页面鼓励用户完成独立任务，在完成或取消该任务之前，不允许导航离开该任务。 本文演示如何导航到模式页面。
-ms.prod: xamarin
-ms.assetid: 486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/01/2017
-ms.openlocfilehash: 7a4c67f067b73873c3d1de4499abda2703217ddf
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4f6547049f2801e5d15115c0ae80af9a07034731
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70760827"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137821"
 ---
 # <a name="xamarinforms-modal-pages"></a>Xamarin.Forms 模式页面
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-modal)
 
-Xamarin.Forms 支持模式页面。模式页面鼓励用户完成独立任务，在完成或取消该任务之前，不允许导航离开该任务。本文演示如何导航到模式页面。 
+Xamarin.Forms 支持模式页面。模式页面鼓励用户完成独立任务，在完成或取消该任务之前，不允许导航离开该任务。本文演示如何导航到模式页面。
 
 本文讨论以下主题：
 
@@ -27,7 +30,7 @@ Xamarin.Forms 支持模式页面。模式页面鼓励用户完成独立任务，
 
 ## <a name="overview"></a>概述
 
-模式页面可以是 Xamarin.Forms 支持的任何 [页面](~/xamarin-forms/user-interface/controls/pages.md)类型。 若要显示模式页面，应用程序会将页面推送到模式堆栈中，在堆栈中，该页面会变为活动页面，如下图所示：
+模式页可以是 Xamarin.Forms 支持的任何[页面](~/xamarin-forms/user-interface/controls/pages.md)类型。 若要显示模式页面，应用程序会将页面推送到模式堆栈中，在堆栈中，该页面会变为活动页面，如下图所示：
 
 ![](modal-images/pushing.png "Pushing a Page to the Modal Stack")
 
@@ -73,7 +76,7 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 - 要导航到的页面会调用其 [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) 替代。
 - `PushAsync` 任务完成。
 
-但是，这些事件发生的确切顺序取决于平台。 有关详细信息，请参阅 Charles Petzold 所著 Xamarin.Forms 书籍的[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)。
+但是，这些事件发生的确切顺序取决于平台。 有关详细信息，请参阅 Charles Petzold 所著的 Xamarin.Forms 书籍的[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)。
 
 > [!NOTE]
 > 不能将对 [`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing) 和 [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) 替代的调用视为绝对的页面导航指示。 例如，在 iOS 上，应用程序终止后，将对活动页面调用 `OnDisappearing` 替代。
@@ -82,7 +85,7 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 
 ### <a name="popping-pages-from-the-modal-stack"></a>从模式堆栈中弹出页面
 
-通过设备上的“后退”  按钮（无论是设备上的物理按钮还是屏幕按钮），可以从模式堆栈中弹出活动页面。
+通过设备上的“后退”按钮（无论是设备上的物理按钮还是屏幕按钮），可以从模式堆栈中弹出活动页面。
 
 若要以编程方式返回原始页，`ModalPage` 实例必须调用 [`PopModalAsync`](xref:Xamarin.Forms.INavigation.PopModalAsync) 方法，如以下代码示例所示：
 
@@ -99,11 +102,11 @@ async void OnDismissButtonClicked (object sender, EventArgs args)
 - 如果基础平台不是 Android，则要返回 [ 的页面会调用其 `OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) 替代。
 - `PopModalAsync` 任务返回。
 
-但是，这些事件发生的确切顺序取决于平台。 有关详细信息，请参阅 Charles Petzold 所著 Xamarin.Forms 书籍的[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)。
+但是，这些事件发生的确切顺序取决于平台。 有关详细信息，请参阅 Charles Petzold 所著的 Xamarin.Forms 书籍的[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)。
 
 ### <a name="disabling-the-back-button"></a>禁用“后退”按钮
 
-在 Android 上，只要按设备上的标准“后退”  按钮，用户就可返回到上一页。 如果模式页面要求用户在离开页面之前完成独立任务，则应用程序必须禁用“后退”  按钮。 可通过替代模式页面上的 [`Page.OnBackButtonPressed`](xref:Xamarin.Forms.Page.OnBackButtonPressed) 方法来完成此操作。 有关详细信息，请参阅 Charles Petzold 所著 Xamarin.Forms 书籍的[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)。
+在 Android 上，只要按设备上的标准“后退”按钮，用户就可返回到上一页。 如果模式页面要求用户在离开页面之前完成独立任务，则应用程序必须禁用“后退”按钮。 可通过替代模式页面上的 [`Page.OnBackButtonPressed`](xref:Xamarin.Forms.Page.OnBackButtonPressed) 方法来完成此操作。 有关详细信息，请参阅 Charles Petzold 所著的 Xamarin.Forms 书籍的[第 24 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)。
 
 ### <a name="animating-page-transitions"></a>对页面过渡效果进行动画处理
 

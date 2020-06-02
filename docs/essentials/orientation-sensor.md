@@ -1,20 +1,12 @@
 ---
-title: Xamarin.Essentials:OrientationSensor
-description: OrientationSensor 类可让你监视设备在三维空间中的方向。
-ms.assetid: F3091D93-E779-41BA-8696-23D296F2F6F5
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 5423872da7966bc7e4bb88e278d76b709f114158
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70120717"
----
-# <a name="xamarinessentials-orientationsensor"></a>Xamarin.Essentials:OrientationSensor
+title: ''Xamarin.Essentials:OrientationSensor'' description: ms.assetid: author: ms.author: ms.date: no-loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
- OrientationSensor 类可让你监视设备在三维空间中的方向。
+---
+# <a name="xamarinessentials-orientationsensor"></a>Xamarin.Essentials：OrientationSensor
+
+OrientationSensor 类可让你监视设备在三维空间中的方向。
 
 > [!NOTE]
 > 此类用于确定设备在三维空间中的方向。 如果需要确定设备的视频显示器是处于纵向模式还是横向模式，请使用可从 [`DeviceDisplay`](device-display.md) 类获得的 `ScreenMetrics` 对象的 `Orientation` 属性。
@@ -25,7 +17,7 @@ ms.locfileid: "70120717"
 
 ## <a name="using-orientationsensor"></a>使用 OrientationSensor
 
-在你的类中添加对 Xamarin.Essentials 的引用：
+在类中添加对 Xamarin.Essentials 的引用：
 
 ```csharp
 using Xamarin.Essentials;

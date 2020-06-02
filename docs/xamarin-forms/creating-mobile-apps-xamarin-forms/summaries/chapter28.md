@@ -1,18 +1,22 @@
 ---
-title: 摘要：第 28 章. 位置和地图
-description: 使用 Xamarin.Forms 创建移动应用：摘要：第 28 章. 位置和地图
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/19/2018
-ms.openlocfilehash: 5dcd84536cc6d80deb753fc6fe57f9090f6b2dad
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 28. Location and maps''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 301dc65c7909603e117717a993959e3c73fa2d32
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "72697077"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84133401"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>摘要：第 28 章. 位置和地图
 
@@ -21,29 +25,29 @@ ms.locfileid: "72697077"
 > [!NOTE]
 > 此页上的“注意”指出了 Xamarin.Forms 与书中所述内容的不同之处。
 
-Xamarin.Forms 支持派生自 `View` 的 [`Map`](xref:Xamarin.Forms.Maps.Map) 元素。 由于使用地图涉及到特殊的平台要求，因此它们在单独的程序集 (Xamarin.Forms.Maps  ) 中实现，并涉及到不同的命名空间：`Xamarin.Forms.Maps`。
+Xamarin.Forms 支持派生自 `View` 的 [`Map`](xref:Xamarin.Forms.Maps.Map) 元素。 由于使用地图涉及到特殊的平台要求，因此它们在单独的程序集 (Xamarin.Forms.Maps) 中实现，并涉及到不同的命名空间：`Xamarin.Forms.Maps`。
 
 ## <a name="the-geographic-coordinate-system"></a>地理坐标系统
 
-地理坐标系统确定球形（或将近球形）对象（如地球）上的位置。 坐标由纬度  和经度  组成，用角度表示。
+地理坐标系统确定球形（或将近球形）对象（如地球）上的位置。 坐标由纬度和经度组成，用角度表示。
 
 称为 `equator` 的大圆位于地球的两极之间，从概念上讲，地轴就是从两极延伸出去的。
 
 ### <a name="parallels-and-latitude"></a>纬线和纬度
 
-从地球中心到赤道以北或以南测得的角度标示等纬度线，称为纬线  。 范围从赤道的 0 度到南北极的 90 度。 按照惯例，赤道以北的纬度为正值，赤道以南的纬度为负值。
+从地球中心到赤道以北或以南测得的角度标示等纬度线，称为纬线。 范围从赤道的 0 度到南北极的 90 度。 按照惯例，赤道以北的纬度为正值，赤道以南的纬度为负值。
 
 ### <a name="longitude-and-meridians"></a>经度和经线
 
-从北极到南极的大圆的一半是等经度线，也被称为经线  。 它们相对于英格兰格林威治的本初子午线。 按照惯例，本初子午线以东的经度是 0 度到 180 度之间的正值，而本初子午线以西的经度是 0 度到 &ndash;180 度之间的负值。
+从北极到南极的大圆的一半是等经度线，也被称为经线。 它们相对于英格兰格林威治的本初子午线。 按照惯例，本初子午线以东的经度是 0 度到 180 度之间的正值，而本初子午线以西的经度是 0 度到 &ndash;180 度之间的负值。
 
 ### <a name="the-equirectangular-projection"></a>Equirectangular 投影
 
-地球的任何平面地图都会产生变形。 如果纬度和经度的所有线都是直线，并且纬度和经度的相等差异与地图上的相等距离相对应，结果就是 Equirectangular 投影  。 这张地图使靠近两极的区域发生了形变，因为它们是水平延伸的。
+地球的任何平面地图都会产生变形。 如果纬度和经度的所有线都是直线，并且纬度和经度的相等差异与地图上的相等距离相对应，结果就是 Equirectangular 投影。 这张地图使靠近两极的区域发生了形变，因为它们是水平延伸的。
 
 ### <a name="the-mercator-projection"></a>墨卡托投影
 
-常见的墨卡托投影  同样尝试通过垂直拉伸这些区域来补偿水平拉伸。 这会生成一个地图，其中靠近两极的区域会看起来比实际大得多，但任何局部区域都与实际区域非常接近。
+常见的墨卡托投影同样尝试通过垂直拉伸这些区域来补偿水平拉伸。 这会生成一个地图，其中靠近两极的区域会看起来比实际大得多，但任何局部区域都与实际区域非常接近。
 
 ### <a name="map-services-and-tiles"></a>地图服务和磁贴
 
@@ -58,7 +62,7 @@ Xamarin.Forms `Map` 类不包含用于获取用户地理位置的工具，但在
 
 ### <a name="the-location-tracker-api"></a>位置跟踪器 API
 
-[Xamarin.FormsBook.Platform  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform) 解决方案包含位置跟踪器 API 代码。 [`GeographicLocation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/GeographicLocation.cs) 结构封装纬度和经度。 [`ILocationTracker`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/ILocationTracker.cs) 接口定义了用于启动和暂停位置跟踪器的两种方法，并定义了新位置可用时的事件。
+[Xamarin.FormsBook.Platform](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform) 解决方案包含位置跟踪器 API 代码。 [`GeographicLocation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/GeographicLocation.cs) 结构封装纬度和经度。 [`ILocationTracker`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/ILocationTracker.cs) 接口定义了用于启动和暂停位置跟踪器的两种方法，并定义了新位置可用时的事件。
 
 #### <a name="the-ios-location-manager"></a>iOS 位置管理器
 
@@ -78,13 +82,13 @@ Xamarin.Forms `Map` 类不包含用于获取用户地理位置的工具，但在
 
 ### <a name="the-required-overhead"></a>必需的开销
 
-WhereAmI  使用位置跟踪器时需要一些开销。 首先，WhereAmI  解决方案中的所有项目都必须引用 Xamarin.FormsBook.Platform  中的相应项目，并且每个 WhereAmI  项目都必须调用 `Toolkit.Init` 方法。
+WhereAmI 使用位置跟踪器时需要一些开销。 首先，WhereAmI 解决方案中的所有项目都必须引用 Xamarin.FormsBook.Platform 中的相应项目，并且每个 WhereAmI 项目都必须调用 `Toolkit.Init` 方法。
 
 还需要一些特定于平台的额外开销（以位置权限的形式）。
 
 #### <a name="location-permission-for-ios"></a>iOS 位置权限
 
-对于 iOS，info.plist  文件必须包括包含问题文本的项，以请求用户允许获取该用户的位置。
+对于 iOS，info.plist 文件必须包括包含问题文本的项，以请求用户允许获取该用户的位置。
 
 #### <a name="location-permissions-for-android"></a>Android 位置权限
 
@@ -100,7 +104,7 @@ WhereAmI  使用位置跟踪器时需要一些开销。 首先，WhereAmI  解�
 
 ### <a name="the-nuget-package"></a>NuGet 包
 
-必须将 Xamarin.Forms.Maps  NuGet 库添加到应用程序解决方案。 版本号应与当前安装的 Xamarin.Forms  包相同。
+必须将 Xamarin.Forms.Maps NuGet 库添加到应用程序解决方案。 版本号应与当前安装的 Xamarin.Forms 包相同。
 
 ### <a name="initializing-the-maps-package"></a>初始化 Maps 包
 
@@ -116,7 +120,7 @@ WhereAmI  使用位置跟踪器时需要一些开销。 首先，WhereAmI  解�
 
 #### <a name="enabling-android-maps"></a>启用 Android 地图
 
-使用 Google Map 服务需要授权密钥。 此密钥插入到 AndroidManifest.xml  文件中。 此外，AndroidManifest.xml  文件需要使用 `manifest` 标记来获取用户位置。
+使用 Google Map 服务需要授权密钥。 此密钥插入到 AndroidManifest.xml 文件中。 此外，AndroidManifest.xml 文件需要使用 `manifest` 标记来获取用户位置。
 
 #### <a name="enabling-uwp-maps"></a>启用 UWP 地图
 
@@ -124,7 +128,7 @@ WhereAmI  使用位置跟踪器时需要一些开销。 首先，WhereAmI  解�
 
 ### <a name="the-unadorned-map"></a>未经修饰的地图
 
-[MapDemos  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28/MapDemos) 示例包含 [MapsDemoHomePage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapDemosHomePage.xaml) 文件和 [MapsDemoHomePage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapDemosHomePage.xaml.cs) 代码隐藏文件，该文件允许导航到各种演示程序。
+[MapDemos](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28/MapDemos) 示例包含 [MapsDemoHomePage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapDemosHomePage.xaml) 文件和 [MapsDemoHomePage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapDemosHomePage.xaml.cs) 代码隐藏文件，该文件允许导航到各种演示程序。
 
 [BasicMapPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/BasicMapPage.xaml) 文件展示了如何显示 [`Map`](xref:Xamarin.Forms.Maps.Map) 视图。 默认情况下，它会显示罗马城，但该地图可以由用户操作。
 
@@ -138,11 +142,11 @@ WhereAmI  使用位置跟踪器时需要一些开销。 首先，WhereAmI  解�
 - [`Satellite`](xref:Xamarin.Forms.Maps.MapType.Satellite)
 - [`Hybrid`](xref:Xamarin.Forms.Maps.MapType.Hybrid)
 
-[MapTypesPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapTypesPage.xaml) 文件展示了如何使用单选按钮来选择地图类型。 它利用 [Xamarin.FormsBook.Toolkit  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的 [`RadioButtonManager`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/RadioButtonManager.cs) 类，以及基于 [MapTypeRadioButton.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapTypeRadioButton.xaml) 文件的类。
+[MapTypesPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapTypesPage.xaml) 文件展示了如何使用单选按钮来选择地图类型。 它利用 [Xamarin.FormsBook.Toolkit](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的 [`RadioButtonManager`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/RadioButtonManager.cs) 类，以及基于 [MapTypeRadioButton.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapTypeRadioButton.xaml) 文件的类。
 
 ### <a name="map-coordinates"></a>地图坐标
 
-程序可以获取 `Map` 通过 [`VisibleRegion`](xref:Xamarin.Forms.Maps.Map.VisibleRegion) 属性显示的当前区域。 可绑定属性不  支持此属性，并且没有用于指示其发生更改的通知机制，因此希望监视属性的程序应为此使用计时器。
+程序可以获取 `Map` 通过 [`VisibleRegion`](xref:Xamarin.Forms.Maps.Map.VisibleRegion) 属性显示的当前区域。 可绑定属性不支持此属性，并且没有用于指示其发生更改的通知机制，因此希望监视属性的程序应为此使用计时器。
 
 `VisibleRegion` 是 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) 类型，一个具有四个只读属性的类：
 
@@ -173,20 +177,20 @@ WhereAmI  使用位置跟踪器时需要一些开销。 首先，WhereAmI  解�
 
 ### <a name="position-extensions"></a>位置扩展
 
-本书新增了名为 [Xamarin.FormsBook.Toolkit.Maps  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit.Maps) 的库，包含特定于地图但独立于平台的类型。 [`PositionExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit.Maps/Xamarin.FormsBook.Toolkit.Maps/PositionExtensions.cs) 类具有用于 `Position` 的 `ToString` 方法，以及用于计算两个 `Position` 值之间的距离的方法。
+本书新增了名为 [Xamarin.FormsBook.Toolkit.Maps](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit.Maps) 的库，包含特定于地图但独立于平台的类型。 [`PositionExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit.Maps/Xamarin.FormsBook.Toolkit.Maps/PositionExtensions.cs) 类具有用于 `Position` 的 `ToString` 方法，以及用于计算两个 `Position` 值之间的距离的方法。
 
 ### <a name="setting-an-initial-location"></a>设置初始位置
 
 可以调用 `Map` 的 [`MoveToRegion`](xref:Xamarin.Forms.Maps.Map.MoveToRegion(Xamarin.Forms.Maps.MapSpan)) 方法，以编程方式设置地图上的位置和缩放级别。 此参数类型为 `MapSpan`。 可以使用下列任一方法创建 `MapSpan` 对象：
 
-- 带有 `Position` 以及纬度和经度范围的 [`MapSpan` 构造函数](xref:Xamarin.Forms.Maps.MapSpan.%23ctor(Xamarin.Forms.Maps.Position,System.Double,System.Double))
-- 带有 `Position` 和半径范围的 [`MapSpan.FromCenterAndRadius`](xref:Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius(Xamarin.Forms.Maps.Position,Xamarin.Forms.Maps.Distance))
+- [`MapSpan` constructor](xref:Xamarin.Forms.Maps.MapSpan.%23ctor(Xamarin.Forms.Maps.Position,System.Double,System.Double)) 方法，其中包含 `Position` 以及纬度和经度范围
+- [`MapSpan.FromCenterAndRadius`](xref:Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius(Xamarin.Forms.Maps.Position,Xamarin.Forms.Maps.Distance)) 方法，其中包含 `Position` 和半径
 
 还可以使用 [`ClampLatitude`](xref:Xamarin.Forms.Maps.MapSpan.ClampLatitude(System.Double,System.Double)) 或 [`WithZoom`](xref:Xamarin.Forms.Maps.MapSpan.WithZoom(System.Double)) 方法从现有对象创建新的 `MapSpan`。
 
 [WyomingPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/WyomingPage.xaml) 文件和 [WyomingPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/WyomingPage.xaml.cs) 代码隐藏文件演示如何使用 `MoveToRegion` 方法来显示怀俄明州的状态。
 
-也可以将 [`Map` 构造函数](xref:Xamarin.Forms.Maps.Map.%23ctor(Xamarin.Forms.Maps.MapSpan)) 与 `MapSpan` 对象结合使用来初始化地图的位置。 [XamarinHQPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/XamarinHQPage.xaml) 文件演示了如何完全在 XAML 中执行此操作，以显示 Xamarin 在旧金山的总部。
+也可以将 [`Map` constructor](xref:Xamarin.Forms.Maps.Map.%23ctor(Xamarin.Forms.Maps.MapSpan)) 与 `MapSpan` 对象结合使用来初始化地图的位置。 [XamarinHQPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/XamarinHQPage.xaml) 文件演示了如何完全在 XAML 中执行此操作，以显示 Xamarin 在旧金山的总部。
 
 ### <a name="dynamic-zooming"></a>动态缩放
 
@@ -202,7 +206,7 @@ WhereAmI  使用位置跟踪器时需要一些开销。 首先，WhereAmI  解�
 - 在 Android 上，当推送提示将地图移至手机位置时，会显示一个图标
 - UWP 类似于 iOS，但有时会自动导航到位置
 
-MapDemos  项目尝试通过先定义基于图标的按钮来模拟 Android 方法，此做法基于 [MyLocationButton.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MyLocationButton.xaml) 文件和 [MyLocationButton.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MyLocationButton.xaml.cs) 代码隐藏文件。
+MapDemos 项目尝试通过先定义基于图标的按钮来模拟 Android 方法，此做法基于 [MyLocationButton.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MyLocationButton.xaml) 文件和 [MyLocationButton.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MyLocationButton.xaml.cs) 代码隐藏文件。
 
 [GoToLocationPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GoToLocationPage.xaml) 文件和 [GoToLocationPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GoToLocationPage.xaml.cs) 代码隐藏文件使用此按钮导航到手机位置。
 
@@ -215,7 +219,7 @@ MapDemos  项目尝试通过先定义基于图标的按钮来模拟 Android 方�
 - `Position` 类型的 [`Position`](xref:Xamarin.Forms.Maps.Pin.Position)，指示在地图上显示图钉的位置
 - [`PinType`](xref:Xamarin.Forms.Maps.PinType) 类型的 [`Type`](xref:Xamarin.Forms.Maps.Pin.Type)，不使用的枚举
 
-MapDemos  项目包含 [ScienceMuseums.xml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Data/ScienceMuseums.xml) 文件，该文件列出了美国的科学博物馆，[`Locations`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Locations.cs) 和 [`Site`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Site.cs) 类用于反序列化此数据。
+MapDemos 项目包含 [ScienceMuseums.xml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Data/ScienceMuseums.xml) 文件，该文件列出了美国的科学博物馆，[`Locations`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Locations.cs) 和 [`Site`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Site.cs) 类用于反序列化此数据。
 
 [ScienceMuseumsPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ScienceMuseumsPage.xaml) 文件和 [ScienceMuseumsPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ScienceMuseumsPage.xaml.cs) 代码隐藏文件在地图中显示表示这些科学博物馆的图钉。 当用户点击图钉时，它将显示博物馆的地址和网站。
 
@@ -231,7 +235,7 @@ MapDemos  项目包含 [ScienceMuseums.xml](https://github.com/xamarin/xamarin-f
 
 ## <a name="geocoding-and-back-again"></a>地理位置编码，然后返回
 
-[Xamarin.Forms.Maps  ](xref:Xamarin.Forms.Maps) 程序集还包含 [`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder) 类，其中 [`GetPositionsForAddressAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync(System.String)) 方法用于将文本地址转换为零个或多个可能的地理位置，另一个方法 [`GetAddressesForPositionAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync(Xamarin.Forms.Maps.Position)) 用于转换为其他方向。
+[Xamarin.Forms.Maps](xref:Xamarin.Forms.Maps) 程序集还包含 [`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder) 类，其中 [`GetPositionsForAddressAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync(System.String)) 方法用于将文本地址转换为零个或多个可能的地理位置，另一个方法 [`GetAddressesForPositionAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync(Xamarin.Forms.Maps.Position)) 用于转换为其他方向。
 
 [GeocoderRoundTrip.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml) 文件和 [GeocoderRoundTrip.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml.cs) 代码隐藏文件演示了此功能。
 

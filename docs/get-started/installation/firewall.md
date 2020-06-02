@@ -1,21 +1,24 @@
 ---
-title: Xamarin 防火墙配置说明
-description: 本文档提供了必须在防火墙中允许，以使 Xamarin 能够在企业环境中工作的主机列表。
-ms.prod: xamarin
-ms.assetid: 658f699b-8cca-48f7-ae54-fa956384b6d6
-author: conceptdev
-ms.author: crdun
-ms.date: 07/17/2019
-ms.openlocfilehash: 2b52dfd55194ec076f28f8c33e758a39d14f5943
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 71b2754d19d00b7bf4860acd96bfb7ad8dec4ce5
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70291335"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84132986"
 ---
 # <a name="xamarin-firewall-configuration-instructions"></a>Xamarin 防火墙配置说明
 
-一个主机列表，需要在防火墙中允许这些主机才可让 Xamarin 的平台适合你的公司。 
+一个主机列表，需要在防火墙中允许这些主机才可让 Xamarin 的平台适合你的公司。
 
 为了使 Xamarin 产品正常安装和工作，必须有权访问某些终结点，下载软件必需的工具和更新。 如果你或你公司的防火墙设置严苛，则可能遇到安装、授权和组件等方面的问题。 本文档概述了一些需要在防火墙中允许以使 Xamarin 正常工作的已知终结点。 本列表不包括下载文件中的任何第三方工具所需的终结点。 如果仔细检查此列表后仍遇到问题，请参阅 Apple 或 Android 安装疑难解答指南。
 

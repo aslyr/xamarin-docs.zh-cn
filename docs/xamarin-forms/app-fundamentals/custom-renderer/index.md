@@ -1,22 +1,25 @@
 ---
 title: Xamarin.Forms 自定义呈现器
-description: 通过自定义呈现器，开发人员可以自定义 Xamarin.Forms 控件的外观和行为，并以此替代各平台上本机控件的呈现。
-ms.prod: xamarin
-ms.assetid: BF1CF23A-3BC9-4226-92E6-DAEEB91422F1
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/03/2019
-ms.openlocfilehash: 04d40aa4cafe663113957d31bdb8a6463ba58ba5
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+description: 通过自定义呈现器，开发人员可以自定义 Xamarin.Forms 控件的外观和行为，以此替代各平台上本机控件的呈现。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: be281f9b7987a8d23ba6ac93f0771e432f277d45
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82516460"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138913"
 ---
 # <a name="xamarinforms-custom-renderers"></a>Xamarin.Forms 自定义呈现器
 
-Xamarin.Forms 使用目标平台的本机控件呈现用户界面，从而让 Xamarin.Forms 应用程序为每个平台保留了相应的界面外观。  自定义呈现器允许开发人员重写此过程，自定义每个平台上 Xamarin.Forms 控件的外观和行为。
+使用目标平台的本机控件即可呈现 Xamarin.Forms 用户界面，从而让 Xamarin.Forms 应用程序为每个平台保留相应的界面外观。自定义呈现器允许开发人员重写此过程，自定义每个平台上 Xamarin.Forms 控件的外观和行为。
 
 ## <a name="introduction-to-custom-renderers"></a>[自定义呈现器简介](introduction.md)
 
@@ -36,11 +39,11 @@ Xamarin.Forms [`Entry`](xref:Xamarin.Forms.Entry) 控件允许对单行文本进
 
 ## <a name="customizing-a-map-pin"></a>[自定义图钉](map-pin.md)
 
-Xamarin.Forms.Maps 提供跨平台抽象，用于显示在每个平台上使用本机地图 API 的地图，为用户提供快速且熟悉的地图体验。 本主题演示了如何为 `Map` 控件创建自定义呈现器，使开发人员能够使用自己特定于平台的自定义呈现替代默认本机呈现。
+Xamarin.Forms 提供跨平台抽象，用于显示在每个平台上使用本机地图 API 的地图，为用户提供快速且熟悉的地图体验。 本主题演示了如何为 `Map` 控件创建自定义呈现器，使开发人员能够使用自己特定于平台的自定义呈现替代默认本机呈现。
 
 ## <a name="customizing-a-listview"></a>[自定义 ListView](listview.md)
 
-Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 视图以垂直列表的形式显示数据集合。 本文演示如何创建自定义呈现器来封装特定于平台的列表控件和本机单元布局，从而进一步控制本机列表控件的性能。
+Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 是以垂直列表的形式显示数据集合的视图。 本文演示如何创建自定义呈现器来封装特定于平台的列表控件和本机单元布局，从而进一步控制本机列表控件的性能。
 
 ## <a name="customizing-a-viewcell"></a>[自定义 ViewCell](viewcell.md)
 

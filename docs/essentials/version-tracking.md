@@ -1,21 +1,14 @@
 ---
-title: Xamarin.Essentials:版本跟踪
-description: Xamarin.Essentials 中的 VersionTracking 类使你能够检查应用程序版本和内部版本号以及查看其他信息，例如，此应用程序是第一次启动还是当前版本的第一次启动，以及获取之前的内部版本信息等。
-ms.assetid: 670C7E8A-E882-4AC0-97D2-A53D90ADD6A3
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 05/28/2019
-ms.custom: video
-ms.openlocfilehash: 3728a209c99712fad6b3dbf9bc59a2c1a3c7bcd5
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "66354114"
----
-# <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials:版本跟踪
+title: ''Xamarin.Essentials:版本跟踪'' description:'Xamarin.Essentials 中的 VersionTracking 类使你能够检查应用程序版本和内部版本号以及查看其他信息，例如，此应用程序是第一次启动还是当前版本的第一次启动，以及获取之前的内部版本信息等。'
+ms.assetid: author: ms.author: ms.date: ms.custom: no-loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-VersionTracking 类使你能够检查应用程序版本和内部版本号以及查看其他信息，例如，此应用程序是第一次启动还是当前版本的第一次启动，以及获取之前的内部版本信息等  。
+---
+
+# <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials：版本跟踪
+
+VersionTracking 类使你能够检查应用程序版本和内部版本号以及查看其他信息，例如，此应用程序是第一次启动还是当前版本的第一次启动，以及获取之前的内部版本信息等。
 
 ## <a name="get-started"></a>入门
 
@@ -23,13 +16,13 @@ VersionTracking 类使你能够检查应用程序版本和内部版本号以及�
 
 ## <a name="using-version-tracking"></a>使用版本跟踪
 
-在你的类中添加对 Xamarin.Essentials 的引用：
+在类中添加对 Xamarin.Essentials 的引用：
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-首次使用 VersionTracking 类时，它将开始跟踪当前版本  。 每次加载时，必须仅在应用程序中提前调用 `Track` 以确保跟踪当前版本信息：
+首次使用 VersionTracking 类时，它将开始跟踪当前版本。 每次加载时，必须仅在应用程序中提前调用 `Track` 以确保跟踪当前版本信息：
 
 ```csharp
 VersionTracking.Track();
@@ -75,7 +68,7 @@ var buildHistory = VersionTracking.BuildHistory;
 
 ## <a name="platform-implementation-specifics"></a>平台实现细节
 
-所有版本信息均是使用 Xamarin.Essentials 中的 [Preferences](preferences.md) API 存储的，是以 [你的-应用-包-ID].xamarinessentials.versiontracking 为文件名存储的，并且遵循 [Preferences](preferences.md#persistence) 文档中概述的同一数据持久性  。
+所有版本信息均是使用 Xamarin.Essentials 中的 [Preferences](preferences.md) API 存储的，是以 [你的-应用-包-ID].xamarinessentials.versiontracking 为文件名存储的，并且遵循 [Preferences](preferences.md#persistence) 文档中概述的同一数据持久性。
 
 ## <a name="api"></a>API
 

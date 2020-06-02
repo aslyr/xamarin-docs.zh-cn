@@ -1,26 +1,29 @@
 ---
 title: Xamarin.Forms Shell
-description: 本指南介绍如何使用 Xamarin.Forms Shell，Xamarin.Forms Shell 通过提供大多数应用程序所需的基本功能简化了 Xamarin.Forms 应用程序。
-ms.prod: xamarin
-ms.assetid: 85B322AA-808F-41B6-953A-5877264AE643
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/28/2019
-ms.openlocfilehash: 20ac6ad748e7056f7f8037a73a95de66b9eae3b6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: 本指南介绍如何使用 Xamarin.Forms Shell，它可通过提供大多数应用程序所需的基本功能简化 Xamarin.Forms 应用程序。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0acf00d85c2bfb823ec1cfba099179bb6743117c
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "69888919"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138744"
 ---
 # <a name="xamarinforms-shell"></a>Xamarin.Forms Shell
 
 ## <a name="introduction"></a>[介绍](introduction.md)
 
-Xamarin.Forms Shell 简化了移动应用程序开发，方法是提供大多数移动应用程序所需的基本功能。 包括常见的导航用户体验、基于 URI 的导航方案，以及集成的搜索处理程序。
+Xamarin.Forms Shell 可通过提供大多数应用程序所需的基本功能简化移动应用程序开发的复杂性。 包括常见的导航用户体验、基于 URI 的导航方案，以及集成的搜索处理程序。
 
-## <a name="create-a-xamarinforms-shell-application"></a>[创建 Xamarin.Forms Shell 应用程序](create.md)
+## <a name="create-a-xamarinforms-shell-applicationcreatemd"></a>[创建 Xamarin.Forms Shell 应用程序](create.md)
 
 创建 Xamarin.Forms Shell 应用程序的过程包括创建可对 `Shell` 类进行子类化的 XAML 文件，将应用程序的 `App` 类的 `MainPage` 属性设置为子类化的 `Shell` 对象，然后描述子类化的 `Shell` 类中的应用程序的视觉对象层次结构。
 

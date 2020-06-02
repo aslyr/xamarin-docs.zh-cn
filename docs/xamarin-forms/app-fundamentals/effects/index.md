@@ -1,22 +1,25 @@
 ---
 title: Xamarin.Forms 效果
-description: 凭借效果，无需进行自定义呈现器实现，即可自定义每个平台上的本机控件。
-ms.prod: xamarin
-ms.assetid: 8AF168A7-4CD9-4603-B961-15B8B1543784
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/01/2017
-ms.openlocfilehash: 2de1d1dd065a01bb457ebf03acdc0c01529abf7b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a6206d2c561df74a01b7d7408e8d542f1e2189d3
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73083836"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139329"
 ---
 # <a name="xamarinforms-effects"></a>Xamarin.Forms 效果
 
-Xamarin.Forms 使用目标平台的本机控件呈现用户界面，从而让 Xamarin.Forms 应用程序为每个平台保留了相应的界面外观。  凭借效果，无需进行自定义呈现器实现，即可自定义每个平台上的本机控件。
+使用目标平台的本机控件即可呈现 Xamarin.Forms 用户界面，从而让 Xamarin.Forms 应用程序为每个平台保留相应的界面外观。凭借效果，无需进行自定义呈现器实现，即可自定义每个平台上的本机控件。
 
 ## <a name="introduction-to-effects"></a>[效果简介](introduction.md)
 

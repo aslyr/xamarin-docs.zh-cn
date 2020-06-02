@@ -1,18 +1,21 @@
 ---
-title: 自定义 ListView
+title: ''
 description: Xamarin.Forms ListView 是以垂直列表的形式显示数据集合的视图。 本文演示如何创建自定义呈现器来封装特定于平台的列表控件和本机单元布局，从而进一步控制本机列表控件的性能。
-ms.prod: xamarin
-ms.assetid: 2FBCB8C8-4F32-45E7-954F-63AD29D5F1B5
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/29/2017
-ms.openlocfilehash: 384ad20cc1456f3de01ddbe241bf2d8b58de387f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3403948c2853289610a73bb36073f09c0c86137d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771934"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135299"
 ---
 # <a name="customizing-a-listview"></a>自定义 ListView
 
@@ -161,7 +164,7 @@ public class MainPageCS : ContentPage
 
 ![](listview-images/screenshots.png "NativeListView on each Platform")
 
-`ListViewRenderer` 类公开 `OnElementChanged` 方法，创建 Xamarin.Forms 自定义控件时调用此方法以呈现对应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素   。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `NativeListView` 实例的引用。
+`ListViewRenderer` 类公开 `OnElementChanged` 方法，创建 Xamarin.Forms 自定义控件时调用此方法以呈现对应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素 。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `NativeListView` 实例的引用。
 
 在每个特定于平台的呈现器类中，`OnElementChanged` 方法的替代版本可执行本机控件自定义。 可以通过 `Control` 属性访问平台上使用的对本机控件的类型化引用。 此外，可以通过 `Element` 属性获取正在呈现的 Xamarin.Forms 控件的引用。
 
@@ -360,7 +363,7 @@ namespace CustomRenderer.Droid
 }
 ```
 
-如果自定义呈现器附加到新的 Xamarin.Forms 元素，则会配置本机 `ListView` 控件。 此配置涉及创建向本机 `ListView` 控件提供数据的 `NativeAndroidListViewAdapter` 类的实例，以及注册事件处理程序用于处理 `ItemClick` 事件。 此处理程序转而会调用 `NativeListView` 自定义控件提供的 `ItemSelected` 事件。 如果呈现器所附加到的 Xamarin.Forms 元素更改，则会取消订阅 `ItemClick` 事件。
+如果自定义呈现器附加到新的 Xamarin.Forms 元素，则配置本机 `ListView` 控件。 此配置涉及创建向本机 `ListView` 控件提供数据的 `NativeAndroidListViewAdapter` 类的实例，以及注册事件处理程序用于处理 `ItemClick` 事件。 此处理程序转而会调用 `NativeListView` 自定义控件提供的 `ItemSelected` 事件。 如果呈现器所附加到的 Xamarin.Forms 元素更改，则会取消订阅 `ItemClick` 事件。
 
 `NativeAndroidListViewAdapter` 派生自 `BaseAdapter` 类，并公开包含要显示的数据列表的 `Items` 属性，同时替代 `Count`、`GetView`、`GetItemId` 和 `this[int]` 方法。 有关这些方法替代的详细信息，请参阅[实现 ListAdapter](~/android/user-interface/layouts/list-view/populating.md)。 `GetView` 方法返回每行的视图，其中填充数据，如以下代码示例所示：
 
@@ -513,7 +516,7 @@ namespace CustomRenderer.UWP
 }
 ```
 
-如果自定义呈现器附加到新的 Xamarin.Forms 元素，则会配置本机 `ListView` 控件。 此配置涉及设置本机 `ListView` 控件将如何响应所选项、填充控件显示的数据、定义每个单元的外观和内容，以及注册事件处理程序用于处理 `SelectionChanged` 事件。 此处理程序转而会调用 `NativeListView` 自定义控件提供的 `ItemSelected` 事件。 如果呈现器所附加到的 Xamarin.Forms 元素更改，则会取消订阅 `SelectionChanged` 事件。
+如果自定义呈现器附加到新的 Xamarin.Forms 元素，则配置本机 `ListView` 控件。 此配置涉及设置本机 `ListView` 控件将如何响应所选项、填充控件显示的数据、定义每个单元的外观和内容，以及注册事件处理程序用于处理 `SelectionChanged` 事件。 此处理程序转而会调用 `NativeListView` 自定义控件提供的 `ItemSelected` 事件。 如果呈现器所附加到的 Xamarin.Forms 元素更改，则会取消订阅 `SelectionChanged` 事件。
 
 每个本机 `ListView` 单元的外观和内容均由名为 `ListViewItemTemplate` 的 `DataTemplate` 定义。 此 `DataTemplate` 存储在应用程序级资源字典中，如以下代码示例所示：
 

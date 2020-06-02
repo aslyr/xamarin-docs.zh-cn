@@ -1,24 +1,27 @@
 ---
 title: 提高 Xamarin.Forms 应用性能
 description: 可以通过许多方法来提高使用 Xamarin.Forms 应用程序的性能。 这些方法共同可以极大地降低由 CPU 执行的工作量和应用程序占用的内存量。
-ms.prod: xamarin
-ms.assetid: 0be84c56-6698-448d-be5a-b4205f1caa9f
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/27/2019
-ms.openlocfilehash: 4427d347723284a2f8897612f10857270c9631bf
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 96b5939fd1f8448d45d1398fd56770f9032de083
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303881"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139108"
 ---
 # <a name="improve-xamarinforms-app-performance"></a>提高 Xamarin.Forms 应用性能
 
 > [!VIDEO https://youtube.com/embed/RZvdql3Ev0E]
 
-**Evolve 2016：使用 Xamarin.Forms 优化应用性能**
+**Evolve 2016：使用 Xamarin.Forms** 优化应用性能
 
 应用程序性能差表现在许多方面。 这会使应用程序看起来无响应，导致滚动缓慢，还可降低设备电池寿命。 但是，优化性能不止需要实现高效的代码。 还必须考虑用户对应用程序性能的体验。 例如，确保操作执行不会妨碍用户执行其他活动，这有助于改进用户的体验。
 
@@ -179,7 +182,7 @@ XAML 可以根据需要使用 XAML 编译器 (XAMLC) 直接编译为中间语言
 ### <a name="ui"></a>UI
 
 - 调用 API 的异步版本（若可用）。 这将保持 UI 线程通畅，从而有助于提升用户对应用程序的体验。
-- 使用 UI 线程上异步操作中的数据更新 UI 元素，以避免引发异常。 但是，对 `ListView.ItemsSource` 属性的更新将自动被封送到该 UI 线程。 要了解如何确定代码是否在 UI 线程上运行，请参阅 [Xamarin.Essentials:MainThread](~/essentials/main-thread.md?content=xamarin/xamarin-forms)。
+- 使用 UI 线程上异步操作中的数据更新 UI 元素，以避免引发异常。 但是，对 `ListView.ItemsSource` 属性的更新将自动被封送到该 UI 线程。 要了解如何确定代码是否在 UI 线程上运行，请参阅 [Xamarin.Essentials：MainThread](~/essentials/main-thread.md?content=xamarin/xamarin-forms)。
 
     > [!IMPORTANT]
     > 通过数据绑定更新的控件属性都将自动被封送到该 UI 线程。
@@ -190,7 +193,7 @@ XAML 可以根据需要使用 XAML 编译器 (XAMLC) 直接编译为中间语言
 - 不要创建 `async void` 方法，而是创建 `async Task` 方法。 这些方法更便于实现错误处理、可组合性和可测试性。 此指导原则的例外情况是异步事件处理程序，这类处理程序必须返回 `void`。 有关详细信息，请参阅[避免 Async Void](/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming#avoid-async-void)。
 - 请勿通过调用 `Task.Wait`、`Task.Result` 或 `GetAwaiter().GetResult` 方法将阻止代码和异步代码混杂在一起，因为它们会导致死锁的发生。 但是，如果必须违反此准则，则首选的方法是调用 `GetAwaiter().GetResult` 方法，因为它将保留任务异常。 有关详细信息，请参阅[始终使用 Async](/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming#async-all-the-way) 和 [.NET 4.5 中的任务异常处理](https://devblogs.microsoft.com/pfxteam/task-exception-handling-in-net-4-5/)。
 - 尽可能使用 `ConfigureAwait` 方法创建无上下文的代码。 无上下文的代码对于移动应用程序而言性能更佳具，是一种可在使用部分异步代码库时避免死锁的方法。 有关详细信息，请参阅[配置上下文](/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming#configure-context)。
-- 使用“延续任务”来实现一些功能，例如处理上一个异步操作引发的异常以及在延续开始前或运行时取消延续  。 有关详细信息，请参阅[使用延续任务链接任务](/dotnet/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks)。
+- 使用“延续任务”来实现一些功能，例如处理上一个异步操作引发的异常以及在延续开始前或运行时取消延续。 有关详细信息，请参阅[使用延续任务链接任务](/dotnet/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks)。
 - 从 `ICommand` 中调用异步操作时，使用异步 `ICommand` 实现。 这确保了异步命令逻辑中的任何异常都可得到处理。 有关详细信息，请参阅[异步编程：针对异步 MVVM 应用程序的模式：命令](/archive/msdn-magazine/2014/april/async-programming-patterns-for-asynchronous-mvvm-applications-commands)。
 
 ## <a name="choose-a-dependency-injection-container-carefully"></a>仔细选择依赖关系注入容器
@@ -299,7 +302,7 @@ Xamarin.Forms Shell 应用程序提供了基于浮出控件和选项卡的固定
 
 ## <a name="use-the-custom-renderer-pattern"></a>使用自定义呈现器模式
 
-大多数 Xamarin.Forms 呈现器类会公开 `OnElementChanged` 方法，此方法会在创建 Xamarin.Forms 自定义控件时被调用以呈现相应的本机控件。 自定义呈现器类（在每个平台项目中）随后会替代此方法，以实例化并自定义本机控件。 `SetNativeControl` 方法用于实例化本机控件，此方法还会将控件引用分配给 `Control` 属性。
+大多数 Xamarin.Forms 呈现器类都会公开 `OnElementChanged` 方法，此方法会在创建 Xamarin.Forms 自定义控件时被调用以呈现相应的本机控件。 自定义呈现器类（在每个平台项目中）随后会替代此方法，以实例化并自定义本机控件。 `SetNativeControl` 方法用于实例化本机控件，此方法还会将控件引用分配给 `Control` 属性。
 
 但是，在某些情况下，可以多次调用 `OnElementChanged` 方法。 因此，为了防止内存泄漏（这可能会对性能产生影响），在实例化新的本机控件时务必要格外小心。 下面的代码示例中演示了在自定义呈现器中实例化新的本机控件时要使用的方法：
 

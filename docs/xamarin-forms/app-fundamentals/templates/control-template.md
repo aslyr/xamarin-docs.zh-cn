@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms 控件模板
 description: Xamarin.Forms 控件模板定义 ContentView 派生的自定义控件和 ContentPage 派生的页面的可视结构。
-ms.prod: xamarin
-ms.assetid: 8B8E2360-6531-44A3-A7C8-9A8808DE9B86
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/13/2020
-ms.openlocfilehash: a73123b89cba932f2e2cb907645f6fe858cf6176
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 44eebed2a49fbdda5504f9a09873f93466d0326c
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303839"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84132543"
 ---
 # <a name="xamarinforms-control-templates"></a>Xamarin.Forms 控件模板
 
@@ -119,7 +122,7 @@ public class CardView : ContentView
 </ContentPage>
 ```
 
-将 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 作为资源声明时，它必须使用 `x:Key` 特性指定一个密钥，以便可以在资源字典中标识它。 在此示例中，`CardViewControlTemplate` 的根元素是 [`Frame`](xref:Xamarin.Forms.Frame) 对象。 `Frame` 对象使用 `RelativeSource` 标记扩展，将 `BindingContext` 设置为模板将应用到的运行时对象实例（称为“模板化父级”）。  `Frame` 对象使用 [`Grid`](xref:Xamarin.Forms.Grid)、`Frame`、[`Image`](xref:Xamarin.Forms.Image)、[`Label`](xref:Xamarin.Forms.Label) 和 [`BoxView`](xref:Xamarin.Forms.BoxView) 对象组合来定义 `CardView` 对象的可视结构。 由于这些对象的绑定表达式继承自根 `Frame` 元素的 `BindingContext`，因此它们会针对 `CardView` 属性进行解析。 有关 `RelativeSource` 标记扩展的详细信息，请参阅 [Xamarin.Forms 相对绑定](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)。
+将 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 作为资源声明时，它必须使用 `x:Key` 特性指定一个密钥，以便可以在资源字典中标识它。 在此示例中，`CardViewControlTemplate` 的根元素是 [`Frame`](xref:Xamarin.Forms.Frame) 对象。 `Frame` 对象使用 `RelativeSource` 标记扩展，将 `BindingContext` 设置为模板将应用到的运行时对象实例（称为“模板化父级”）。 `Frame` 对象使用 [`Grid`](xref:Xamarin.Forms.Grid)、`Frame`、[`Image`](xref:Xamarin.Forms.Image)、[`Label`](xref:Xamarin.Forms.Label) 和 [`BoxView`](xref:Xamarin.Forms.BoxView) 对象组合来定义 `CardView` 对象的可视结构。 由于这些对象的绑定表达式继承自根 `Frame` 元素的 `BindingContext`，因此它们会针对 `CardView` 属性进行解析。 有关 `RelativeSource` 标记扩展的详细信息，请参阅 [Xamarin.Forms 相对绑定](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)。
 
 ## <a name="consume-a-controltemplate"></a>使用 ControlTemplate
 
@@ -174,7 +177,7 @@ public class CardView : ContentView
 `TemplateBinding` 标记扩展定义以下属性：
 
 - `Path`（`string` 类型），属性的路径。
-- `Mode`（`BindingMode` 类型），更改在源和目标之间的传播方向。  
+- `Mode`（`BindingMode` 类型），更改在源和目标之间的传播方向。 
 - `Converter`（`IValueConverter` 类型），绑定值转换器。
 - `ConverterParameter`（`object` 类型），绑定值转换器的参数。
 - `StringFormat`（`string` 类型），绑定的字符串格式。
@@ -257,9 +260,9 @@ public class CardView : ContentView
 
 ## <a name="apply-a-controltemplate-with-a-style"></a>使用样式应用 ControlTemplate
 
-此外，也可以通过样式应用控件模板。 实现方法为创建使用 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 的隐式或显式样式。  
+此外，也可以通过样式应用控件模板。 实现方法为创建使用 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 的隐式或显式样式。 
 
-以下 XAML 示例显示使用 `CardViewControlTemplate` 的隐式样式： 
+以下 XAML 示例显示使用 `CardViewControlTemplate` 的隐式样式：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -296,7 +299,7 @@ public class CardView : ContentView
 </ContentPage>
 ```
 
-在此示例中，隐式  [`Style`](xref:Xamarin.Forms.Style) 自动应用于各个 `CardView` 对象，并将各个 `CardView` 的 [`ControlTemplate`](xref:Xamarin.Forms.TemplatedView.ControlTemplate) 属性设置为 `CardViewControlTemplate`。
+在此示例中，隐式 [`Style`](xref:Xamarin.Forms.Style) 自动应用于各个 `CardView` 对象，并将各个 `CardView` 的 [`ControlTemplate`](xref:Xamarin.Forms.TemplatedView.ControlTemplate) 属性设置为 `CardViewControlTemplate`。
 
 有关样式的详细信息，请参阅 [Xamarin.Forms 样式](~/xamarin-forms/user-interface/styles/index.md)。
 
@@ -638,5 +641,5 @@ public partial class AccessTemplateElementPage : HeaderFooterPage
 - [Xamarin.Forms ContentView](~/xamarin-forms/user-interface/layouts/contentview.md)
 - [Xamarin.Forms 相对绑定](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)
 - [Xamarin.Forms 资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [Xamarin.Forms 数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)
+- [Xamarin.Forms数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [Xamarin.Forms 样式](~/xamarin-forms/user-interface/styles/index.md)

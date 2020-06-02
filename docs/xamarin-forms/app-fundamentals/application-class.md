@@ -1,21 +1,24 @@
 ---
-title: Xamarin.Forms App 类
-description: 本文说明默认 App 类的功能，其中包括一个可设置应用初始页面的属性，以及一个跨生命周期状态更改存储简单值的持久字典。
-ms.prod: xamarin
-ms.assetid: 421F8294-1944-46A4-8459-D2BD5AAABC9D
-ms.technology: xamarin-forms
-ms.custom: video
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/19/2016
-ms.openlocfilehash: aaf2086fd8128d68baa401ab646b31bcbc279545
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.Forms 应用类
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+ms.custom: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2f4b568809f949d813de86ae88cbe621cfa3161c
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303767"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84129683"
 ---
-# <a name="xamarinforms-app-class"></a>Xamarin.Forms App 类
+# <a name="xamarinforms-app-class"></a>Xamarin.Forms 应用类
 
 `Application` 基类提供以下功能，这些功能在项目的默认 `App` 子类中公开：
 
@@ -112,7 +115,7 @@ if (Application.Current.Properties.ContainsKey("id"))
 
 Xamarin.Forms 1.4 在 `Application` 类上引入了其他方法 (`SavePropertiesAsync()`)，可调用该方法来主动保存 `Properties` 字典。 这是为了让用户能够在重要更新后保存属性，而不用冒因崩溃或被 OS 终止而无法将这些属性序列化的风险。
 
-可在**使用 Xamarin.Forms 创建移动应用**一书的第 [6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf)、[15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf) 和 [20](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf) 章以及相关[示例](https://github.com/xamarin/xamarin-forms-book-preview-2)中找到如何使用 `Properties` 字典的参考。
+可在“使用 Xamarin.Forms 创建移动应用”一书的第 [6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf)、[15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf) 和 [20](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf) 章以及相关[示例](https://github.com/xamarin/xamarin-forms-book-preview-2)中找到如何使用 `Properties` 字典的参考。
 
 ## <a name="the-application-class"></a>应用程序类
 
@@ -147,7 +150,7 @@ public class App : Xamarin.Forms.Application
 ```
 
 此类随后在每个特定于平台的项目中实例化并传递到 `LoadApplication` 方法，该方法可供加载 `MainPage` 并向用户显示。
-以下各部分展示了每个平台的代码。 最新的 Xamarin.Forms 解决方案模板已包含所有这些为应用预先配置的代码。
+以下各部分展示了每个平台的代码。 最新的 XXamarin.Forms 解决方案模板已包含所有这些为应用预先配置的代码。
 
 ### <a name="ios-project"></a>iOS 项目
 
@@ -219,7 +222,7 @@ public sealed partial class MainPage
  }
 ```
 
-请注意，必须从 UWP 项目中的 App.xaml.cs  调用 `Forms.Init()`。
+请注意，必须从 UWP 项目中的 App.xaml.cs 调用 `Forms.Init()`。
 
 有关详细信息，请参阅[安装 Windows 项目](~/xamarin-forms/platform/windows/installation/index.md)，其中包括将 UWP 项目添加到现有的不面向 UWP 的 Xamarin.Forms 解决方案的步骤。
 

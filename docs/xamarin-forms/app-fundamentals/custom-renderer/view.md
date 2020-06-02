@@ -1,18 +1,21 @@
 ---
-title: 实现视图
-description: 本文说明如何为 Xamarin.Forms 自定义控件创建自定义呈现器，用于显示设备摄像头的预览视频流。
-ms.prod: xamarin
-ms.assetid: 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/10/2018
-ms.openlocfilehash: c93feb9527892b7b4c60c9d213361d19d3bc4b93
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e565a2bcddf292d37bc3dd07a8edbbabec709d8a
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771734"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84133557"
 ---
 # <a name="implementing-a-view"></a>实现视图
 
@@ -20,7 +23,7 @@ ms.locfileid: "70771734"
 
 _Xamarin.Forms 自定义用户界面控件应派生自视图类，该类用于在屏幕上放置布局和控件。本文演示如何为 Xamarin.Forms 自定义控件创建自定义呈现器，用于显示设备摄像头的预览视频流。_
 
-每个 Xamarin.Forms 视图都有一个附带的呈现器，适用于创建本机控件实例的各个平台。 当 Xamarin.Forms 应用程序在 iOS 中呈现 [`View`](xref:Xamarin.Forms.View) 时，会实例化 `ViewRenderer` 类，该类又会实例化本机 `UIView` 控件。 在 Android 平台上，`ViewRenderer` 类实例化本机 `View` 控件。 在通用 Windows 平台 (UWP) 上，`ViewRenderer` 类实例化本机 `FrameworkElement` 控件。 有关 Xamarin.Forms 控件映射到的呈现器和本机控件类的详细信息，请参阅[呈现器基类和本机控件](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
+每个 Xamarin.Forms 视图都有一个附带的呈现器，适用于创建本机控件实例的各个平台。 当 iOS 中的 Xamarin.Forms 应用程序呈现 [`View`](xref:Xamarin.Forms.View) 时，将实例化 `ViewRenderer` 类，而该操作又会实例化本机 `UIView` 控件。 在 Android 平台上，`ViewRenderer` 类实例化本机 `View` 控件。 在通用 Windows 平台 (UWP) 上，`ViewRenderer` 类实例化本机 `FrameworkElement` 控件。 有关 Xamarin.Forms 控件映射到的呈现器和本机控件类的详细信息，请参阅[呈现器基类和本机控件](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
 下图说明了 [`View`](xref:Xamarin.Forms.View) 和实现它的相应本机控件之间的关系：
 
@@ -117,7 +120,7 @@ public class MainPageCS : ContentPage
 1. 向自定义呈现器类添加 `ExportRenderer` 属性，以指定其将用于呈现 Xamarin.Forms 自定义控件。 此属性用于向 Xamarin.Forms 注册自定义呈现器。
 
 > [!NOTE]
-> 对大多数 Xamarin.Forms 元素来说，可以选择在每个平台项目中提供自定义呈现器。 如果未注册自定义呈现器，将使用控件基类的默认呈现器。 但是，呈现[视图](xref:Xamarin.Forms.View)元素时，每个平台项目中都需要自定义呈现器。
+> 对于大多数 Xamarin.Forms 元素，都可选择在每个平台项目中提供自定义呈现器。 如果未注册自定义呈现器，将使用控件基类的默认呈现器。 但是，呈现[视图](xref:Xamarin.Forms.View)元素时，每个平台项目中都需要自定义呈现器。
 
 下图说明了示例应用程序中每个项目的职责，以及它们之间的关系：
 
@@ -127,7 +130,7 @@ public class MainPageCS : ContentPage
 
 ![](view-images/screenshots.png "CameraPreview on each Platform")
 
-`ViewRenderer` 类公开 `OnElementChanged` 方法，创建 Xamarin.Forms 自定义控件时调用此方法以呈现对应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素   。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `CameraPreview` 实例的引用。
+`ViewRenderer` 类公开 `OnElementChanged` 方法，创建 Xamarin.Forms 自定义控件时调用此方法以呈现对应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素 。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `CameraPreview` 实例的引用。
 
 在每个特定于平台的呈现器类中，`OnElementChanged` 方法的替代版本是执行本机控件实例化和自定义的位置。 `SetNativeControl` 方法应该用于实例化本机控件，此方法还会将控件引用分配给 `Control` 属性。 此外，可以通过 `Element` 属性获取正在呈现的 Xamarin.Forms 控件的引用。
 

@@ -1,24 +1,27 @@
 ---
-title: 自定义 ContentPage
-description: ContentPage 是一个可视元素，它显示单个视图并占据大部分屏幕区域。 本文演示了如何为 ContentPage 页面创建自定义呈现器，使开发人员能够使用自己特定于平台的自定义呈现替代默认本机呈现。
-ms.prod: xamarin
-ms.assetid: A4E61D93-73D9-4668-8D1C-DB6FC2491822
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/29/2017
-ms.openlocfilehash: 64367ded8dcd173f7c9e57cfc234aa66712aefd4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 50e28291d72550264e3806c0911f59a57c6d8bf0
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70772015"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136326"
 ---
 # <a name="customizing-a-contentpage"></a>自定义 ContentPage
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)
 
-ContentPage 是一个可视元素，它显示单个视图并占据大部分屏幕区域。本文演示了如何为 ContentPage 页面创建自定义呈现器，使开发人员能够使用自己特定于平台的自定义呈现替代默认本机呈现。 
+ContentPage 是一个可视元素，它显示单个视图并占据大部分屏幕区域。本文演示了如何为 ContentPage 页面创建自定义呈现器，使开发人员能够使用自己特定于平台的自定义呈现替代默认本机呈现。
 
 每个 Xamarin.Forms 控件都有一个附带的呈现器，适用于创建本机控件实例的各个平台。 当 Xamarin.Forms 应用程序呈现 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 时，将在 iOS 中实例化 `PageRenderer` 类，而该操作又会实例化本机 `UIViewController` 控件。 在 Android 平台上，`PageRenderer` 类实例化 `ViewGroup` 控件。 在通用 Windows 平台 (UWP) 上，`PageRenderer` 类实例化 `FrameworkElement` 控件。 有关 Xamarin.Forms 控件映射到的呈现器和本机控件类的详细信息，请参阅[呈现器基类和本机控件](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
@@ -28,8 +31,8 @@ ContentPage 是一个可视元素，它显示单个视图并占据大部分屏�
 
 通过在每个平台上为 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 创建自定义呈现器，可以利用呈现过程来实现特定于平台的自定义。 执行此操作的过程如下：
 
-1. [创建](#Creating_the_Xamarin.Forms_Page) Xamarin.Forms 页。
-1. [使用](#Consuming_the_Xamarin.Forms_Page) Xamarin.Forms 中的该页。
+1. [创建](#Creating_the_Xamarin.Forms_Page) Xamarin.Forms 页面。
+1. [使用](#Consuming_the_Xamarin.Forms_Page) Xamarin.Forms 中的页面。
 1. 在每个平台上为页面[创建](#Creating_the_Page_Renderer_on_each_Platform)自定义呈现器。
 
 现在将依次介绍每个项，以实现 `CameraPage`，提供实时摄像头源和捕获照片的功能。
@@ -77,7 +80,7 @@ public class CameraPageCS : ContentPage
 
 <a name="Consuming_the_Xamarin.Forms_Page" />
 
-## <a name="consuming-the-xamarinforms-page"></a>自定义 Xamarin.Forms 页面
+## <a name="consuming-the-xamarinforms-page"></a>使用 Xamarin.Forms 页面
 
 空白的 `CameraPage` 必须由 Xamarin.Forms 应用程序显示。 单击 `MainPage` 实例上的按钮时将发生此情况，这将反过来执行 `OnTakePhotoButtonClicked` 方法，如下面的代码示例中所示：
 
@@ -111,7 +114,7 @@ async void OnTakePhotoButtonClicked (object sender, EventArgs e)
 
 ![](contentpage-images/screenshots.png "CameraPage on each Platform")
 
-`PageRenderer` 类会公开 `OnElementChanged` 方法，此方法会在创建 Xamarin.Forms 页面时被调用以呈现相应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素   。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `CameraPage` 实例的引用。
+`PageRenderer` 类会公开 `OnElementChanged` 方法，此方法会在创建 Xamarin.Forms 页面时被调用以呈现相应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素 。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `CameraPage` 实例的引用。
 
 `CameraPageRenderer` 类中 `OnElementChanged` 方法的替代版本是执行本机页面自定义的位置。 可通过 `Element` 属性获取对正在呈现的 Xamarin.Forms 页面实例的引用。
 

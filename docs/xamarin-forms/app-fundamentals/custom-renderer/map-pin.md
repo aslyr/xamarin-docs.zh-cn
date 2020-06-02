@@ -1,26 +1,29 @@
 ---
-title: 自定义图钉
-description: 本文介绍如何为地图控件创建自定义呈现器，该控件显示带有自定义图钉的本机地图以及每个平台上图钉数据的自定义视图。
-ms.prod: xamarin
-ms.assetid: C5481D86-80E9-4E3D-9FB6-57B0F93711A6
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/06/2019
-ms.openlocfilehash: 513ba16f0cb74e330cc3b681e0880b685f0c226c
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 30fcc8304d32d8ebdef38df8550bcd8c26514701
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82532595"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135312"
 ---
 # <a name="customizing-a-map-pin"></a>自定义图钉
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)
 
-本文介绍如何为地图控件创建自定义呈现器，该控件显示带有自定义图钉的本机地图以及每个平台上图钉数据的自定义视图。 
+本文介绍如何为地图控件创建自定义呈现器，该控件显示带有自定义图钉的本机地图以及每个平台上图钉数据的自定义视图。
 
-每个 Xamarin.Forms 视图都有一个附带的呈现器，适用于创建本机控件实例的各个平台。 当 Xamarin.Forms 应用程序在 iOS 中呈现 [`Map`](xref:Xamarin.Forms.Maps.Map) 时，会实例化 `MapRenderer` 类，该类又会实例化本机 `MKMapView` 控件。 在 Android 平台上，`MapRenderer` 类实例化本机 `MapView` 控件。 在通用 Windows 平台 (UWP) 上，`MapRenderer` 类实例化本机 `MapControl`。 有关 Xamarin.Forms 控件映射到的呈现器和本机控件类的详细信息，请参阅[呈现器基类和本机控件](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
+每个 Xamarin.Forms 视图都有一个附带的呈现器，适用于创建本机控件实例的各个平台。 当 iOS 中的 Xamarin.Forms 应用程序呈现 [`Map`](xref:Xamarin.Forms.Maps.Map) 时，将实例化 `MapRenderer` 类，而该操作又会实例化本机 `MKMapView` 控件。 在 Android 平台上，`MapRenderer` 类实例化本机 `MapView` 控件。 在通用 Windows 平台 (UWP) 上，`MapRenderer` 类实例化本机 `MapControl`。 有关 Xamarin.Forms 控件映射到的呈现器和本机控件类的详细信息，请参阅[呈现器基类和本机控件](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
 下图说明了 [`Map`](xref:Xamarin.Forms.Maps.Map) 和实现它的相应本机控件之间的关系：
 
@@ -144,7 +147,7 @@ public MapPage()
 
 ![](map-pin-images/screenshots.png "CustomMap on each Platform")
 
-`MapRenderer` 类公开 `OnElementChanged` 方法，创建 Xamarin.Forms 自定义地图时调用此方法以呈现相应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素   。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `CustomMap` 实例的引用。
+`MapRenderer` 类公开 `OnElementChanged` 方法，创建 Xamarin.Forms 自定义地图时调用此方法以呈现对应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素 。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `CustomMap` 实例的引用。
 
 在每个特定于平台的呈现器类中，`OnElementChanged` 方法的替代版本可执行本机控件自定义。 可以通过 `Control` 属性访问平台上使用的对本机控件的类型化引用。 此外，可以通过 `Element` 属性获取正在呈现的 Xamarin.Forms 控件的引用。
 
@@ -179,7 +182,7 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 
 ![](map-pin-images/map-layout-ios.png "Map Control Before and After Customization")
 
-在 iOS 上，图钉称为“注释”，可以是自定义映像，也可以是不同颜色的系统定义的图钉  。 注释可以选择性地显示标注，以在用户选择注释时作出响应  。 标注显示 `Pin` 实例的 `Label` 和 `Address` 属性，以及可选的左和右附件视图。 上面的屏幕截图中，左附件视图是猴子图像，而右附件视图是“信息”按钮  。
+在 iOS 上，图钉称为“注释”，可以是自定义映像，也可以是不同颜色的系统定义的图钉。 注释可以选择性地显示标注，以在用户选择注释时作出响应。 标注显示 `Pin` 实例的 `Label` 和 `Address` 属性，以及可选的左和右附件视图。 上面的屏幕截图中，左附件视图是猴子图像，而右附件视图是“信息”按钮。
 
 以下代码示例展示了适用于 iOS 平台的自定义呈现器：
 
@@ -281,7 +284,7 @@ protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKA
     - `CustomMKAnnotationView.Image` 属性设置为将表示地图上的注释的图像。
     - `CustomMKAnnotationView.CalloutOffset` 属性设置为 `CGPoint`，它指定在注释上方将标注居中。
     - `CustomMKAnnotationView.LeftCalloutAccessoryView` 属性设置为猴子图像，该图像将出现在注释标题和地址的左侧。
-    - `CustomMKAnnotationView.RightCalloutAccessoryView` 属性设置为“信息”按钮，其将出现在注释标题和地址的右侧  。
+    - `CustomMKAnnotationView.RightCalloutAccessoryView` 属性设置为“信息”按钮，其将出现在注释标题和地址的右侧。
     - `CustomMKAnnotationView.Name` 属性设置为 `GetCustomPin` 方法返回的 `CustomPin.Name` 属性。 这使得注释能被识别，以便需要时其[标注可以进一步自定义](#Selecting_the_Annotation)。
     - `CustomMKAnnotationView.Url` 属性设置为 `GetCustomPin` 方法返回的 `CustomPin.Url` 属性。 用户[点击右标注附件视图中显示的按钮](#Tapping_on_the_Right_Callout_Accessory_View)时，将导航到该 URL。
 1. [`MKAnnotationView.CanShowCallout`](xref:MapKit.MKAnnotationView.CanShowCallout*) 属性设置为 `true`，以便点击注释时显示标注。
@@ -317,7 +320,7 @@ void OnDidSelectAnnotationView(object sender, MKAnnotationViewEventArgs e)
 
 #### <a name="tapping-on-the-right-callout-accessory-view"></a>点击右标注附件视图
 
-用户点击右标注附件视图中的“信息”按钮时，触发 `CalloutAccessoryControlTapped` 事件，该事件进而执行 `OnCalloutAccessoryControlTapped` 方法  ：
+用户点击右标注附件视图中的“信息”按钮时，触发 `CalloutAccessoryControlTapped` 事件，该事件进而执行 `OnCalloutAccessoryControlTapped` 方法：
 
 ```csharp
 void OnCalloutAccessoryControlTapped(object sender, MKMapViewAccessoryTappedEventArgs e)
@@ -360,7 +363,7 @@ void OnDidDeselectAnnotationView(object sender, MKAnnotationViewEventArgs e)
 
 ![](map-pin-images/map-layout-android.png "Map Control Before and After Customization")
 
-在 Android 上，图钉称为“标记”，可以是自定义图像，也可以是不同颜色的系统定义的标记  。 标记可以显示信息窗口，在用户点击标记时作出响应  。 信息窗口显示 `Pin` 实例的 `Label` 和 `Address` 属性，并可以通过自定义包含其他内容。 但是，一次只可以显示一个信息窗口。
+在 Android 上，图钉称为“标记”，可以是自定义图像，也可以是不同颜色的系统定义的标记。 标记可以显示信息窗口，在用户点击标记时作出响应。 信息窗口显示 `Pin` 实例的 `Label` 和 `Address` 属性，并可以通过自定义包含其他内容。 但是，一次只可以显示一个信息窗口。
 
 以下代码示例展示了适用于 Android 平台的自定义呈现器：
 
@@ -527,7 +530,7 @@ void OnInfoWindowClick(object sender, GoogleMap.InfoWindowClickEventArgs e)
 
 ![](map-pin-images/map-layout-uwp.png "Map Control Before and After Customization")
 
-在 UWP 上，图钉称为“地图图标”，可以是自定义图像，也可以是系统定义的默认图像  。 地图图标可以显示 `UserControl`，在用户点击地图图标时显示。 `UserControl` 可以显示任何内容，包括 `Pin` 实例的 `Label` 和 `Address` 属性。
+在 UWP 上，图钉称为“地图图标”，可以是自定义图像，也可以是系统定义的默认图像。 地图图标可以显示 `UserControl`，在用户点击地图图标时显示。 `UserControl` 可以显示任何内容，包括 `Pin` 实例的 `Label` 和 `Address` 属性。
 
 以下代码示例显示 UWP 自定义呈现器：
 
@@ -654,7 +657,7 @@ private void OnMapElementClick(MapControl sender, MapElementClickEventArgs args)
 
 #### <a name="tapping-on-the-information-button"></a>点击“信息”按钮
 
-用户点击 `XamarinMapOverlay` 用户控件中的“信息”按钮时，触发 `Tapped` 事件，然后该事件执行 `OnInfoButtonTapped` 方法  ：
+用户点击 `XamarinMapOverlay` 用户控件中的“信息”按钮时，触发 `Tapped` 事件，然后该事件执行 `OnInfoButtonTapped` 方法：
 
 ```csharp
 private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)

@@ -1,21 +1,24 @@
 ---
 title: Xamarin.Essentials 单位转换器
-description: Xamarin.Essentials 中的 UnitConverters 类提供了几种单元转换器，以在开发人员使用 Xamarin.Essentials 时为其提供帮助。
-ms.assetid: 35DE2704-E730-4337-9476-66CD53376943
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 01/06/2020
-ms.openlocfilehash: 866842cbed9f97dc957e3631c037fa8d27d20076
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+description: Xamarin.Essentials 中的 UnitConverters 类提供了几种单位转换器，以在开发人员使用 Xamarin.Essentials 时为其提供帮助。
+ms.assetid: ''
+author: ''
+ms.custom: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: deff6997ff921e6048ccb2497a0747c770501a04
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149774"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137132"
 ---
-# <a name="xamarinessentials-unit-converters"></a>Xamarin.Essentials:单位转换器
+# <a name="xamarinessentials-unit-converters"></a>Xamarin.Essentials：单位转换器
 
-UnitConverters 类提供了几种单元转换器，以在开发人员使用 Xamarin.Essentials 时为其提供帮助  。
+UnitConverters 类提供了几种单位转换器，以在开发人员使用 Xamarin.Essentials 时为其提供帮助。
 
 ## <a name="get-started"></a>入门
 
@@ -23,7 +26,7 @@ UnitConverters 类提供了几种单元转换器，以在开发人员使用 Xama
 
 ## <a name="using-unit-converters"></a>使用单位转换器
 
-在你的类中添加对 Xamarin.Essentials 的引用：
+在类中添加对 Xamarin.Essentials 的引用：
 
 ```csharp
 using Xamarin.Essentials;

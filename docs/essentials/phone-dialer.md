@@ -1,21 +1,13 @@
 ---
-title: Xamarin.Essentials:电话拨号程序
-description: Xamarin.Essentials 中的 PhoneDialer 类使应用程序能够在拨号程序中打开一个电话号码
-ms.assetid: E7457942-4D7B-4195-A2FF-417919B9537F
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 07/02/2019
-ms.openlocfilehash: a955399b40f26d4a03a4047d56f7bebe3ad5b5c4
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150045"
----
-# <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials:电话拨号程序
+title: ''Xamarin.Essentials:电话拨号程序'' description:'Xamarin.Essentials 中的 PhoneDialer 类使应用程序可以在拨号程序中拨打电话号码' ms.assetid: author: ms.custom: ms.author: ms.date: no-loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-PhoneDialer 类使应用程序能够在拨号程序中打开一个电话号码  。
+---
+
+# <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials：电话拨号程序
+
+PhoneDialer 类使应用程序能够在拨号程序中打开一个电话号码。
 
 ## <a name="get-started"></a>入门
 
@@ -23,7 +15,7 @@ PhoneDialer 类使应用程序能够在拨号程序中打开一个电话号码  
 
 ## <a name="using-phone-dialer"></a>使用电话拨号程序
 
-在你的类中添加对 Xamarin.Essentials 的引用：
+在类中添加对 Xamarin.Essentials 的引用：
 
 ```csharp
 using Xamarin.Essentials;

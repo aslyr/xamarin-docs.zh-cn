@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms 本地通知
 description: 本文介绍如何在 Xamarin.Forms 中发送和接收本地通知。
-ms.prod: xamarin
-ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 10/10/2019
-ms.openlocfilehash: ef2ef004378212fac593179d7aa38b3688fa82c3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 40e040f216ddda40931273f4e7f5614964862fe8
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "72371537"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137587"
 ---
 # <a name="local-notifications-in-xamarinforms"></a>Xamarin.Forms 中的本地通知
 
@@ -47,7 +50,7 @@ public interface INotificationManager
 
 此接口将在每个平台项目中实现。 `NotificationReceived` 事件允许应用程序处理传入通知。 `Initialize` 方法应执行准备通知系统所需的任何本机平台逻辑。 `ScheduleNotification` 方法应发送通知。 当收到消息时，`ReceiveNotification` 方法应由基础平台调用。
 
-## <a name="consume-the-interface-in-xamarinforms"></a>在 Xamarin.Forms 中使用接口
+## <a name="consume-the-interface-in-xamarinforms"></a>在 Xamarin.Forms 使用接口
 
 创建接口后，即使尚未创建平台实现，也可以在共享 Xamarin.Forms 项目中使用该接口。 示例应用程序包含名为 MainPage.xaml 的 **，其中包含以内容`ContentPage`** ：
 
@@ -385,13 +388,13 @@ iOS 为通知提供多个高级选项。 有关详细信息，请参阅 [Xamarin
 
 ## <a name="test-the-application"></a>测试应用程序
 
-平台项目包含 `INotificationManager` 接口的已注册实现后，可在两个平台上测试应用程序。 运行应用程序并单击“计划通知”  按钮以创建通知。
+平台项目包含 `INotificationManager` 接口的已注册实现后，可在两个平台上测试应用程序。 运行应用程序并单击“计划通知”按钮以创建通知。
 
-在 Android 上，通知区域中会出现通知。 当点击通知时，应用程序会收到通知，并在“计划通知”  按钮下方显示消息：
+在 Android 上，通知区域中会出现通知。 当点击通知时，应用程序会收到通知，并在“计划通知”按钮下方显示消息：
 
 ![Android 中的本地通知](local-notifications-images/local-notifications-android.png)
 
-在 iOS 上，传入通知自动由应用程序接收，而无需用户输入。 应用程序会收到通知，并在“计划通知”  按钮下方显示消息：
+在 iOS 上，传入通知自动由应用程序接收，而无需用户输入。 应用程序会收到通知，并在“计划通知”按钮下方显示消息：
 
 ![iOS 中的本地通知](local-notifications-images/local-notifications-ios.png)
 

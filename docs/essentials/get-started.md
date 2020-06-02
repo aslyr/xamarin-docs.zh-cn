@@ -1,17 +1,20 @@
 ---
 title: Xamarin.Essentials 入门
 description: Xamarin.Essentials 提供了适用于任何 iOS、Android 或 UWP 应用程序的单一跨平台 API，不管如何创建用户界面，都可以通过共享代码进行访问。
-ms.assetid: B2669C48-B659-4854-BD80-FEB0E876F5B9
-author: jamesmontemagno
-ms.author: jamont
-ms.custom: video
-ms.date: 05/11/2020
-ms.openlocfilehash: 944b01d67fb09f9a21a19fb2ede9eb217d89732a
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.custom: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0c0052b35475522ffb3634ebe22f69f66fe3b22b
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149986"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84129306"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Xamarin.Essentials 入门
 
@@ -23,21 +26,21 @@ Xamarin.Essentials 可用作 NuGet 包并包含在 Visual Studio 的每个新项
 
 1. 使用 [Visual Studio tools for Xamarin](~/get-started/installation/index.md) 下载并安装 [Visual Studio](https://visualstudio.microsoft.com/)。
 
-2. 使用  Visual Studio C#（Android、iPhone 和 iPad 或跨平台）下的空白应用模板打开现有项目，或创建新项目。
+2. 使用 Visual Studio C#（Android、iPhone 和 iPad 或跨平台）下的空白应用模板打开现有项目，或创建新项目。
 
     > [!IMPORTANT]
     > 若要添加到 UWP 项目，请务必在项目属性中设置内部版本 16299 或更高版本。
 
-3. 将 [**Xamarin.Essentials**](https://www.nuget.org/packages/Xamarin.Essentials/) NuGet 包添加到每个项目：
+3. 将 [Xamarin.Essentials](https://www.nuget.org/packages/Xamarin.Essentials/) NuGet 包添加到每个项目中：
 
     <!--markdownlint-disable MD023 -->
     # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-    在“解决方案资源管理器”面板中，右键单击解决方案名称，然后选择“管理 NuGet 包”  。 搜索  Xamarin.Essentials 并将包安装到  所有项目，包括 Android、iOS、UWP 和 .NET Standard 库。
+    在“解决方案资源管理器”面板中，右键单击解决方案名称，然后选择“管理 NuGet 包”。 搜索 Xamarin.Essentials 并将包安装到所有项目，包括 Android、iOS、UWP 和 .NET Standard 库 。
 
     # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-    在“解决方案资源管理器”面板中，右键单击项目名称，然后选择“添加”>“添加 NuGet 包...”  。搜索  Xamarin.Essentials 并将包安装到  所有项目，包括 Android、iOS 和 .NET Standard 库。
+    在“解决方案资源管理器”面板中，右键单击项目名称，然后选择“添加”>“添加 NuGet 包...”。搜索 Xamarin.Essentials 并将包安装到所有项目，包括 Android、iOS 和 .NET Standard 库 。
 
     -----
 
@@ -53,7 +56,7 @@ Xamarin.Essentials 可用作 NuGet 包并包含在 Visual Studio 的每个新项
 
     Xamarin.Essentials 支持 Android 版本 4.4（对应于 API 级别 19）及更高版本，但用于编译的目标 Android 版本必须为 9.0 或 10.0（对应于 API 级别 28 和 29）。 （在 Visual Studio 中，已在“Android 清单”选项卡中的 Android 项目的“项目属性”对话框中设置这两个版本。在 Visual Studio for Mac 中，已在“Android 应用程序”选项卡中的 Android 项目的“项目选项”对话框中设置这两个版本。）
 
-    针对 Android 9.0 进行编译时，Xamarin.Essentials 将安装必需的 28.0.0.3 版 Xamarin.Android.Support 库。 还应使用 NuGet 包管理器将应用所需的其他任何 Xamarin.Android.Support 库更新到版本 28.0.0.3。 应用使用的所有 Xamarin.Android.Support 库都应相同，且版本不得低于 28.0.0.3。 如果在解决方案中添加 Xamarin.Essentials NuGet 或更新 Nuget 时遇到问题，请参阅[疑难解答页面](troubleshooting.md)。
+    针对 Android 9.0 进行编译时，Xamarin.Essentials 将安装必需的 28.0.0.3 版 Xamarin.Android.Support 库。 还应使用 NuGet 包管理器将应用所需的其他任何 Xamarin.Android.Support 库更新到版本 28.0.0.3。 应用使用的所有 Xamarin.Android.Support 库都应相同，且版本不得低于 28.0.0.3。 如果在解决方案中添加 Xamarin.Essentials NuGet 或更新 NuGet 时遇到问题，请参阅[疑难解答页面](troubleshooting.md)。
 
     从版本 1.5.0 开始，在针对 Android 10.0 进行编译时，Xamarin.Essentials 将安装必需的 AndroidX 支持库。 如果尚未转换，请阅读 [AndroidX 文档](https://docs.microsoft.com/xamarin/android/platform/androidx)。
 
@@ -90,7 +93,7 @@ Xamarin.Essentials 可用作 NuGet 包并包含在 Visual Studio 的每个新项
 
 6. 按照 [Xamarin.Essentials 指南](index.md)为每个功能复制并粘贴代码片段。
 
-## <a name="xamarinessentials---cross-platform-apis-for-mobile-apps-video"></a>Xamarin.Essentials - 适用于移动应用的跨平台 API（视频）
+## <a name="xamarinessentials---cross-platform-apis-for-mobile-apps-video"></a>Xamarin.Essentials - 用于移动应用（视频）的跨平台 API
 
 > [!Video https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-XamarinEssentials-Cross-Platform-APIs-for-Mobile-Apps/player]
 

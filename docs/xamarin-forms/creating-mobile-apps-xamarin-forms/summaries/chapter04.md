@@ -1,24 +1,28 @@
 ---
-title: “第 4 章： 滚动堆叠”摘要
-description: 使用 Xamarin.Forms 创建移动应用：“第 4 章： 滚动堆叠”摘要
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/19/2018
-ms.openlocfilehash: 5313dd34839d6a5d21432161b9fd3a0ffce6e816
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 4. Scrolling the stack''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9890ecdf286ee33d7af28fd20847788b063df8f5
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83149943"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136885"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>“第 4 章： 滚动堆叠”摘要
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
 
-本章节主要介绍了“布局”  概念，这是 Xamarin.Forms 用于在页面上组织多个视图的可视化显示的类和技术的总称。
+本章节主要介绍了“布局”概念，这是 Xamarin.Forms 用于在页面上组织多个视图的可视化显示的类和技术的总称。
 
 布局涉及多个派生自 [`Layout`](xref:Xamarin.Forms.Layout) 和 [`Layout<T>`](xref:Xamarin.Forms.Layout`1) 的类。 本章节重点介绍了 [`StackLayout`](xref:Xamarin.Forms.StackLayout)。
 
@@ -35,7 +39,7 @@ ms.locfileid: "83149943"
 
 将 `StackLayout` 的 [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) 属性设置为 `double` 值，可以指定子元素之间的间距。 默认值为 6。
 
-在代码中，可以在 `for` 或 `foreach` 循环中将项添加到 `StackLayout` 的 `Children` 集合，如 [ColorLoop  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorLoop) 示例所示；也可以使用单独视图的列表来初始化 `Children` 集合，如 [ColorList  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorList) 所示。 子元素必须派生自 `View`，但也可以包含其他 `StackLayout` 对象。
+在代码中，可以在 `for` 或 `foreach` 循环中将项添加到 `StackLayout` 的 `Children` 集合，如 [ColorLoop](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorLoop) 示例所示；也可以使用单独视图的列表来初始化 `Children` 集合，如 [ColorList](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorList) 所示。 子元素必须派生自 `View`，但也可以包含其他 `StackLayout` 对象。
 
 ## <a name="scrolling-content"></a>滚动内容
 
@@ -45,7 +49,7 @@ ms.locfileid: "83149943"
 
 将 `ScrollView` 的 [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) 属性设置为 [`ScrollOrientation`](xref:Xamarin.Forms.ScrollOrientation) 属性的成员（[`Vertical`](xref:Xamarin.Forms.ScrollOrientation.Vertical)、[`Horizontal`](xref:Xamarin.Forms.ScrollOrientation.Horizontal) 或 [`Both`](xref:Xamarin.Forms.ScrollOrientation.Both)）。 默认值为 `Vertical`。 如果 `ScrollView` 的内容是 `StackLayout`，这两个方向应一致。
 
-[ReflectedColors  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ReflectedColors) 示例展示了如何使用 `ScrollView` 和 `StackLayout` 显示可用颜色。 此示例还展示了如何使用 .NET 反射来获取 `Color` 结构的所有公共静态属性和字段，而无需显式列出它们。
+[ReflectedColors](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ReflectedColors) 示例展示了如何使用 `ScrollView` 和 `StackLayout` 显示可用颜色。 此示例还展示了如何使用 .NET 反射来获取 `Color` 结构的所有公共静态属性和字段，而无需显式列出它们。
 
 ## <a name="the-expands-option"></a>Expands 选项
 
@@ -77,7 +81,7 @@ ms.locfileid: "83149943"
 
 不过，如果垂直 `StackLayout` 在垂直方向受约束（即如果它的 `VerticalOptions` 设置为 `Fill`），则 `StackLayout` 的高度就是其容器的高度，可能大于其子元素的总高度。 在这种情况下，如果至少有一个子元素有 `VerticalOptions` 设置和值为 `true` 的 `Expands` 标志，则 `StackLayout` 中的额外空间会在所有这些有值为 `true` 的 `Expands` 标志的子元素之间平均分配。 子元素的总高度等于 `StackLayout` 的高度，而 `VerticalOptions` 设置的 `Alignment` 部分则决定了子元素在槽中的垂直定位。
 
-[VerticalOptionsDemo  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/VerticalOptionsDemo) 示例对此进行了展示。
+[VerticalOptionsDemo](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/VerticalOptionsDemo) 示例对此进行了展示。
 
 ## <a name="frame-and-boxview"></a>Frame 和 BoxView
 
@@ -91,15 +95,15 @@ ms.locfileid: "83149943"
 
 `Frame` 的 `HorizontalOptions` 和 `VerticalOptions` 默认值为 `LayoutOptions.Fill`（即 `Frame` 会填充它的容器）。 在其他设置中，`Frame` 的尺寸取决于其内容的尺寸。
 
-[FramedText  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FramedText) 示例展示了 `Frame`。
+[FramedText](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FramedText) 示例展示了 `Frame`。
 
 [`BoxView`](xref:Xamarin.Forms.BoxView) 会显示矩形区域，颜色由其 [`Color`](xref:Xamarin.Forms.BoxView.Color) 属性指定。
 
 如果 `BoxView` 受约束（即它的 `HorizontalOptions` 和 `VerticalOptions` 属性的默认设置为 `LayoutOptions.Fill`），则 `BoxView` 填充可用空间。 如果 `BoxView` 不受约束（即 `HorizontalOptions` 和 `LayoutOptions` 设置为 `Start`、`Center` 或 `End`），则它的默认尺寸为 40 个平方单位。 `BoxView` 可以在一个维度上受约束，而在另一个维度上不受约束。
 
-通常会设置 `BoxView` 的 [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) 和 [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) 属性，以为它指定具体尺寸。 [SizedBoxView  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/SizedBoxView) 示例对此进行了展示。
+通常会设置 `BoxView` 的 [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) 和 [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) 属性，以为它指定具体尺寸。 [SizedBoxView](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/SizedBoxView) 示例对此进行了展示。
 
-可以使用 `StackLayout` 的多个实例，在 `Frame` 中组合一个 `BoxView` 和多个 `Label` 实例，以显示特定颜色，然后将每个视图置于 `ScrollView` 的 `StackLayout` 中，以创建有吸引力的颜色列表，如 [ColorBlocks  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorBlocks) 示例所示：
+可以使用 `StackLayout` 的多个实例，在 `Frame` 中组合一个 `BoxView` 和多个 `Label` 实例，以显示特定颜色，然后将每个视图置于 `ScrollView` 的 `StackLayout` 中，以创建有吸引力的颜色列表，如 [ColorBlocks](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorBlocks) 示例所示：
 
 [![颜色块的三倍屏幕截图](images/ch04fg11-small.png "颜色列表")](images/ch04fg11-large.png#lightbox "颜色列表")
 
@@ -107,9 +111,9 @@ ms.locfileid: "83149943"
 
 将 `StackLayout` 置于 `ScrollView` 中很常见，但将 `ScrollView` 置于 `StackLayout` 中有时也很方便。 理论上，这是不可能的，因为垂直 `StackLayout` 的子元素在垂直方向不受约束。 但 `ScrollView` 必须在垂直方向受约束。 必须为它指定具体高度，这样它才能确定用于滚动的子元素的尺寸。
 
-诀窍是为 `StackLayout` 的 `ScrollView` 子元素指定 `FillAndExpand` 的 `VerticalOptions` 设置。 [BlackCat  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCat) 示例对此进行了展示。
+诀窍是为 `StackLayout` 的 `ScrollView` 子元素指定 `FillAndExpand` 的 `VerticalOptions` 设置。 [BlackCat](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCat) 示例对此进行了展示。
 
-BlackCat  示例还展示了如何定义和访问嵌入到共享库中的程序资源。 这也可以通过共享资产项目 (SAP) 来实现，但过程有点棘手，如 [BlackCatSap  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCatSap) 示例所示。
+BlackCat 示例还展示了如何定义和访问嵌入到共享库中的程序资源。 这也可以通过共享资产项目 (SAP) 来实现，但过程有点棘手，如 [BlackCatSap](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCatSap) 示例所示。
 
 ## <a name="related-links"></a>相关链接
 

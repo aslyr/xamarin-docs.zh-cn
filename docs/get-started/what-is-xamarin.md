@@ -1,18 +1,21 @@
 ---
-title: 什么是 Xamarin？
-description: 本文介绍 Xamarin 和相关库。
-ms.prod: xamarin
-ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
-ms.custom: video
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 09/16/2019
-ms.openlocfilehash: 34763804e9833224721ea32f9c7e6200dd5faba7
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.custom: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a9a25cff30b9dfbed44e60faeae2f577d07940fc
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75607875"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139212"
 ---
 # <a name="what-is-xamarin"></a>什么是 Xamarin？
 
@@ -22,7 +25,7 @@ Xamarin 是一个开放源代码平台，用于通过 .NET 构建适用于 iOS�
 
 Xamarin 使开发人员可以跨平台共享其应用程序（平均 90%）。 此模式允许开发人员以一种语言编写所有业务逻辑（或重复使用现有应用程序代码），但在每个平台上实现本机性能和外观。
 
-Xamarin 应用程序可以在电脑或 Mac 上进行编写并编译为本机应用程序包，如 Android 上的 .apk  文件，或 iOS 上的 .ipa  文件。
+Xamarin 应用程序可以在电脑或 Mac 上进行编写并编译为本机应用程序包，如 Android 上的 .apk 文件，或 iOS 上的 .ipa 文件。
 
 > [!NOTE]
 > 编译和部署适用于 iOS 的应用程序当前需要 MacOS 计算机。 有关开发要求的详细信息，请参阅[系统要求](~/cross-platform/get-started/requirements.md#macos-requirements)。
@@ -40,7 +43,7 @@ Xamarin 适用于具有以下目标的开发人员：
 
 该图显示跨平台 Xamarin 应用程序的总体体系结构。 Xamarin 允许在每个平台上创建本机 UI，并在 C# 中编写跨平台共享的业务逻辑。 在大多数情况下，80% 的应用程序代码可使用 Xamarin 进行共享。
 
-Xamarin 是在 Mono  基础上生成的，后者是基于 .NET ECMA 标准的 .NET Framework 的开放源代码版本。 Mono 存在时间几乎与 .NET Framework 本身一样长，并可在大多数平台上运行，包括 Linux、Unix、FreeBSD 和 macOS。 Mono 执行环境会自动处理任务，如内存分配、垃圾回收以及与基础平台的互操作性。
+Xamarin 是在 Mono 基础上生成的，后者是基于 .NET ECMA 标准的 .NET Framework 的开放源代码版本。 Mono 存在时间几乎与 .NET Framework 本身一样长，并可在大多数平台上运行，包括 Linux、Unix、FreeBSD 和 macOS。 Mono 执行环境会自动处理任务，如内存分配、垃圾回收以及与基础平台的互操作性。
 
 有关特定于平台的体系结构的详细信息，请参阅 [Xamarin.Android](#xamarinandroid) 和 [Xamarin.iOS](#xamarinios)。
 
@@ -59,7 +62,7 @@ Xamarin 结合了本机平台的功能，并添加了一些功能，包括：
 
 [![Xamarin.Android 体系结构关系图](what-is-xamarin-images/android-architecture-cropped.png)](what-is-xamarin-images/android-architecture.png#lightbox)
 
-Xamarin.Android 应用程序从 C# 编译为中间语言 (IL)  ，随后在启动应用程序时，再实时 (JIT)  编译为本机程序集。 Xamarin.Android 应用程序在 Mono 执行环境中与 Android 运行时 (ART) 虚拟机并行运行。 Xamarin 向 Android.* 和 Java.* 命名空间提供 .NET 绑定。 Mono 执行环境通过托管可调用包装器 (MCW)  调入这些命名空间，并向 ART 提供 Android 可调用包装器 (ACW)  ，这使两种环境可以相互调用代码。
+Xamarin.Android 应用程序从 C# 编译为中间语言 (IL)，随后在启动应用程序时，再实时 (JIT) 编译为本机程序集。 Xamarin.Android 应用程序在 Mono 执行环境中与 Android 运行时 (ART) 虚拟机并行运行。 Xamarin 向 Android.* 和 Java.* 命名空间提供 .NET 绑定。 Mono 执行环境通过托管可调用包装器 (MCW) 调入这些命名空间，并向 ART 提供 Android 可调用包装器 (ACW)，这使两种环境可以相互调用代码。
 
 有关详细信息，请参阅 [Xamarin.Android 体系结构](~/android/internals/architecture.md)。
 
@@ -67,11 +70,11 @@ Xamarin.Android 应用程序从 C# 编译为中间语言 (IL)  ，随后在启�
 
 [![Xamarin.iOS 体系结构关系图](what-is-xamarin-images/ios-architecture-cropped.png)](what-is-xamarin-images/ios-architecture.png#lightbox)
 
-Xamarin.iOS 应用程序完全预先 (AOT)  地从 C# 编译为本机 ARM 程序集代码。 Xamarin 使用选择器  向托管 C# 公开 Objective-C，并使用注册器  向 Objective-C 公开托管 C# 代码。 选择器和注册器共同称为“绑定”，使 Objective-C 和 C# 可以进行通信。
+Xamarin.iOS 应用程序完全预先 (AOT) 地从 C# 编译为本机 ARM 程序集代码。 Xamarin 使用选择器向托管 C# 公开 Objective-C，并使用注册器向 Objective-C 公开托管 C# 代码。 选择器和注册器共同称为“绑定”，使 Objective-C 和 C# 可以进行通信。
 
 有关详细信息，请参阅 [Xamarin.iOS 体系结构](~/ios/internals/architecture.md)。
 
-### <a name="xamarinessentials"></a>Xamarin.Essentials
+### Xamarin.Essentials
 
 Xamarin.Essentials 是一个库，可为本机设备功能提供跨平台 API。 与 Xamarin 本身一样，Xamarin.Essentials 是一种简化本机功能访问过程的抽象。 Xamarin.Essentials 提供的功能的一些示例包括：
 
@@ -84,9 +87,9 @@ Xamarin.Essentials 是一个库，可为本机设备功能提供跨平台 API。
 
 有关详细信息，请参阅 [Xamarin.Essentials](~/essentials/index.md)。
 
-### <a name="xamarinforms"></a>Xamarin.Forms
+### Xamarin.Forms
 
-Xamarin.Forms 是一个开放源代码 UI 框架。 Xamarin.Forms 使开发人员可以从单个共享基本代码生成 iOS、Android 和 Windows 应用程序。 Xamarin.Forms 使开发人员可以 C# 中通过代码隐藏在 XAML 中创建用户界面。 这些用户界面在每个平台上呈现为高性能本机控件。 Xamarin.Forms 提供的功能的一些示例包括：
+Xamarin.Forms 是一个开放源代码 UI 框架。 Xamarin.Forms 使开发人员可以从单个共享基本代码生成 iOS、Android 和 Windows 应用程序。 Xamarin.Forms 使开发人员可以在 C# 中通过代码隐藏在 XAML 中创建用户界面。 这些用户界面在每个平台上呈现为高性能本机控件。 Xamarin.Forms 提供的功能的一些示例包括：
 
 - XAML 用户界面语言
 - 数据绑定
@@ -100,7 +103,7 @@ Xamarin.Forms 是一个开放源代码 UI 框架。 Xamarin.Forms 使开发人�
 
 以下指南会帮助你使用 Xamarin 生成第一个应用：
 
-- [Xamarin.Forms 入门](~/xamarin-forms/index.yml)
+- [开始使用 Xamarin.Forms](~/xamarin-forms/index.yml)
 - [Xamarin.Android 入门](~/android/index.yml)
 - [Xamarin.iOS 入门](~/ios/index.yml)
 - [Xamarin.Mac 入门](~/mac/index.yml)

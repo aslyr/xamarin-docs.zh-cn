@@ -1,28 +1,31 @@
 ---
 title: Xamarin.Forms 数据绑定
-description: 数据绑定将两个对象的属性链接起来，如此，对某一属性的更改将自动反映在另一个属性中。 数据绑定是模型-视图-视图模型 (MVVM) 应用程序体系结构必不可少的一部分。
-ms.prod: xamarin
-ms.assetid: 938E85C8-521D-43B9-92CB-D591A06D98A6
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/23/2020
-ms.openlocfilehash: 9e3e602eda0d2fa78dd25905a2b6ccf3ce5a744d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4b99877342ddbaf9ad5606ec5dc284818fcfeffd
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80247595"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139693"
 ---
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms 数据绑定
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-数据绑定将两个对象的属性链接起来，如此，对某一属性的更改将自动反映在另一个属性中。  数据绑定是模型-视图-视图模型 (MVVM) 应用程序体系结构必不可少的一部分。
+数据绑定将两个对象的属性链接起来，如此，对某一属性的更改将自动反映在另一个属性中。数据绑定是模型-视图-视图模型 (MVVM) 应用程序体系结构必不可少的一部分。
 
 ## <a name="the-data-linking-problem"></a>数据链接问题
 
-Xamarin.Forms 应用程序由一个或多个页面组成，每个页面通常包含多个名为“视图”的用户界面对象  。 该程序的一项首要任务是确保这些视图保持同步，并跟踪它们所表示的各种值或选项。 通常，视图表示来自基础数据源的值，用户可对这些视图进行处理以更改该数据。 当视图发生更改时，基础数据必会反映该更改；同样，当基础数据发生更改时，该更改必将反映在视图中。
+Xamarin.Forms 应用程序由一个或多个页面组成，每个页面通常包含多个名为“视图”的用户界面对象。 该程序的一项首要任务是确保这些视图保持同步，并跟踪它们所表示的各种值或选项。 通常，视图表示来自基础数据源的值，用户可对这些视图进行处理以更改该数据。 当视图发生更改时，基础数据必会反映该更改；同样，当基础数据发生更改时，该更改必将反映在视图中。
 
 要成功执行此作业，程序必须知晓这些视图或基础数据的更改。 常用的解决方案是定义一个事件，在发生更改时发出信号。 随后将安装事件处理程序，就这些更改进行通知。 它通过将数据从一个对象传输到另一个对象来响应。 但是，如果存在多个视图，就必须使用多个事件处理程序并将涉及大量代码。
 
@@ -78,5 +81,5 @@ Xamarin.Forms 应用程序由一个或多个页面组成，每个页面通常包
 ## <a name="related-links"></a>相关链接
 
 - [数据绑定演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
-- [Xamarin.Forms 书中的数据绑定章节](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Xamarin.Forms 书籍中的数据绑定章节](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
 - [XAML 标记扩展](~/xamarin-forms/xaml/markup-extensions/index.md)

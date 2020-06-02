@@ -1,18 +1,22 @@
 ---
-title: “第 26 章： 自定义布局
-description: 使用 Xamarin.Forms 创建移动应用：“第 26 章： 自定义布局
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 2B7F4346-414E-49FF-97FB-B85E92D98A21
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/07/2017
-ms.openlocfilehash: 1eb5153f8ab295696e373f4fdb65a4f8820a05bc
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 26. Custom layouts''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: deb46d1a70e7c707c998be8669b4af3b8e8d7ead
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70770940"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136599"
 ---
 # <a name="summary-of-chapter-26-custom-layouts"></a>“第 26 章： 自定义布局
 
@@ -58,7 +62,7 @@ Xamarin.Forms 包含多个派生自 [`Layout<View>`](xref:Xamarin.Forms.Layout`1
 
 - [`SizeChanged`](xref:Xamarin.Forms.VisualElement.SizeChanged)
 
-`OnSizeAllocated` 方法由 `Page` 和 `Layout` 重写，这两个类是 Xamarin.Forms 中唯一可以有子元素的类。 重写的方法调用
+`OnSizeAllocated` 方法由 `Page` 和 `Layout` 替代，这两个类是 Xamarin.Forms 中唯一可以有子元素的类。 重写的方法调用
 
 - [`UpdateChildrenLayout`](xref:Xamarin.Forms.Page.UpdateChildrenLayout)：对于 `Page` 衍生物；[`UpdateChildrenLayout`](xref:Xamarin.Forms.Layout.UpdateChildrenLayout)：对于 `Layout` 衍生物；调用
 - [`LayoutChildren`](xref:Xamarin.Forms.Page.LayoutChildren(System.Double,System.Double,System.Double,System.Double))：对于 `Page` 衍生物；[`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double))：对于 `Layout` 衍生物。
@@ -69,7 +73,7 @@ Xamarin.Forms 包含多个派生自 [`Layout<View>`](xref:Xamarin.Forms.Layout`1
 
 ### <a name="constraints-and-size-requests"></a>约束和尺寸请求
 
-为了能够智能地对自己的所有子元素调用 `Layout`，`LayoutChildren` 必须知道子元素的首选  或所需  尺寸。 因此，对每个子元素调用 `Layout` 之前，通常先调用
+为了能够智能地对自己的所有子元素调用 `Layout`，`LayoutChildren` 必须知道子元素的首选或所需尺寸。 因此，对每个子元素调用 `Layout` 之前，通常先调用
 
 - [`GetSizeRequest`](xref:Xamarin.Forms.VisualElement.GetSizeRequest(System.Double,System.Double))
 
@@ -82,7 +86,7 @@ Xamarin.Forms 包含多个派生自 [`Layout<View>`](xref:Xamarin.Forms.Layout`1
 - [`IncludeMargins`](xref:Xamarin.Forms.MeasureFlags.IncludeMargins)
 - [`None`](xref:Xamarin.Forms.MeasureFlags.None)：没有边距
 
-对于许多元素，`GetSizeRequest` 或 `Measure` 从呈现器获取元素的本机尺寸。 这两种方法都有宽度和高度约束  参数。 例如，`Label` 使用宽度约束来确定如何换行多行文本。
+对于许多元素，`GetSizeRequest` 或 `Measure` 从呈现器获取元素的本机尺寸。 这两种方法都有宽度和高度约束参数。 例如，`Label` 使用宽度约束来确定如何换行多行文本。
 
 `GetSizeRequest` 和 `Measure` 都返回 [`SizeRequest`](xref:Xamarin.Forms.SizeRequest) 类型的值，它有两个属性：
 
@@ -114,7 +118,7 @@ Xamarin.Forms 包含多个派生自 [`Layout<View>`](xref:Xamarin.Forms.Layout`1
 
 ### <a name="peeking-inside-the-process"></a>过程一窥
 
-[ExploreChildSize  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/ExploreChildSizes) 显示简单布局的约束和尺寸请求信息。
+[ExploreChildSize](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/ExploreChildSizes) 显示简单布局的约束和尺寸请求信息。
 
 ## <a name="deriving-from-layoutview"></a>派生自 Layout\<View>
 
@@ -129,11 +133,11 @@ Xamarin.Forms 包含多个派生自 [`Layout<View>`](xref:Xamarin.Forms.Layout`1
 
 ### <a name="an-easy-example"></a>简单示例
 
-[VerticalStackDemo  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/VerticalStackDemo) 示例包含简化的 [`VerticalStack`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter26/VerticalStackDemo/VerticalStackDemo/VerticalStackDemo/VerticalStack.cs) 类及其用法演示。
+[VerticalStackDemo](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/VerticalStackDemo) 示例包含简化的 [`VerticalStack`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter26/VerticalStackDemo/VerticalStackDemo/VerticalStackDemo/VerticalStack.cs) 类及其用法演示。
 
 ### <a name="vertical-and-horizontal-positioning-simplified"></a>简化了垂直和水平定位
 
-`VerticalStack` 必须执行的作业之一发生在 `LayoutChildren` 重写期间。 此方法使用子元素的 `HorizontalOptions` 属性，以确定如何在 `VerticalStack` 中的槽内定位子元素。 可以改为调用静态方法 [`Layout.LayoutChildIntoBoundingRect`](xref:Xamarin.Forms.Layout.LayoutChildIntoBoundingRegion(Xamarin.Forms.VisualElement,Xamarin.Forms.Rectangle))。 此方法对子元素调用 `Measure`，并使用它的 `HorizontalOptions` 和 `VerticalOptions` 属性在指定矩形中定位子元素。
+`VerticalStack` 必须执行的作业之一发生在 `LayoutChildren` 重写期间。 此方法使用子元素的 `HorizontalOptions` 属性，以确定如何在 `VerticalStack` 中的槽内定位子元素。 你可以改为调用静态方法 [`Layout.LayoutChildIntoBoundingRect`](xref:Xamarin.Forms.Layout.LayoutChildIntoBoundingRegion(Xamarin.Forms.VisualElement,Xamarin.Forms.Rectangle))。 此方法对子元素调用 `Measure`，并使用它的 `HorizontalOptions` 和 `VerticalOptions` 属性在指定矩形中定位子元素。
 
 ### <a name="invalidation"></a>失效
 
@@ -153,15 +157,15 @@ Xamarin.Forms 包含多个派生自 [`Layout<View>`](xref:Xamarin.Forms.Layout`1
 
 ### <a name="a-layout-with-properties"></a>带属性的布局
 
-[Xamarin.FormsBook.Toolkit  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 中的 [`WrapLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/WrapLayout.cs) 类假设所有子元素都相同，并将子元素从一行（或列）换到下一行。 它定义了 `Orientation` 属性（像 `StackLayout` 一样），定义了 `ColumnSpacing` 和 `RowSpacing` 属性（像 `Grid` 一样），并缓存了子元素尺寸。
+[Xamarin.FormsBook.Toolkit](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 中的 [`WrapLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/WrapLayout.cs) 类假设所有子元素都相同，并将子元素从一行（或列）换到下一行。 它定义了 `Orientation` 属性（像 `StackLayout` 一样），定义了 `ColumnSpacing` 和 `RowSpacing` 属性（像 `Grid` 一样），并缓存了子元素尺寸。
 
-[PhotoWrap  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoWrap) 示例将 `WrapLayout` 置于用于显示图库照片的 `ScrollView` 中。
+[PhotoWrap](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoWrap) 示例将 `WrapLayout` 置于用于显示图库照片的 `ScrollView` 中。
 
 ### <a name="no-unconstrained-dimensions-allowed"></a>不允许使用不受约束的尺寸！
 
-[Xamarin.FormsBook.Toolkit  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的 [`UniformGridLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/UniformGridLayout.cs) 旨在在自身内部显示所有子元素。 因此，它无法处理不受约束的尺寸；如果遇到，就会抛出异常。
+[Xamarin.FormsBook.Toolkit](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的 [`UniformGridLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/UniformGridLayout.cs) 旨在在自身内部显示所有子元素。 因此，它无法处理不受约束的尺寸；如果遇到，就会抛出异常。
 
-[PhotoGrid  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoGrid) 示例展示了 `UniformGridLayout`：
+[PhotoGrid](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoGrid) 示例展示了 `UniformGridLayout`：
 
 [![照片网格的三倍屏幕截图](images/ch26fg08-small.png "统一网格布局")](images/ch26fg08-large.png#lightbox "统一网格布局")
 
@@ -171,24 +175,24 @@ Xamarin.Forms 包含多个派生自 [`Layout<View>`](xref:Xamarin.Forms.Layout`1
 
 `Layout` 类定义了两个方法，可便于在集合中移动子元素：
 
-- [`LowerChild`](xref:Xamarin.Forms.Layout.LowerChild(Xamarin.Forms.View))：将子元素移到集合开头
-- [`RaiseChild`](xref:Xamarin.Forms.Layout.RaiseChild(Xamarin.Forms.View))：将子元素移到集合末尾
+- [`LowerChild`](xref:Xamarin.Forms.Layout.LowerChild(Xamarin.Forms.View))：将子元素移动到集合开头
+- [`RaiseChild`](xref:Xamarin.Forms.Layout.RaiseChild(Xamarin.Forms.View))：将子元素移动到集合末尾
 
 对于重叠子元素，从视觉上看，集合末尾的子元素会显示在集合开头的子元素之上。
 
-[Xamarin.FormsBook.Toolkit  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的 [`OverlapLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/OverlapLayout.cs) 类定义了附加属性来指明呈现顺序，这样它的一个子元素就能显示在其他子元素之上。 [StudentCardFile  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/StudentCardFile) 示例对此进行了展示：
+[Xamarin.FormsBook.Toolkit](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的 [`OverlapLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/OverlapLayout.cs) 类定义了附加属性来指明呈现顺序，这样它的一个子元素就能显示在其他子元素之上。 [StudentCardFile](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/StudentCardFile) 示例对此进行了展示：
 
 [![学生卡文件网格的三倍屏幕截图](images/ch26fg10-small.png "重叠布局子元素")](images/ch26fg10-large.png#lightbox "重叠布局子元素")
 
 ### <a name="more-attached-bindable-properties"></a>更多附加的可绑定属性
 
-[Xamarin.FormsBook.Toolkit  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的 [`CartesianLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CartesianLayout.cs) 类定义了附加的可绑定属性，以指定两个 `Point` 值和粗细值，并控制 `BoxView` 元素，使其类似于线条。
+[Xamarin.FormsBook.Toolkit](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的 [`CartesianLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CartesianLayout.cs) 类定义了附加的可绑定属性，以指定两个 `Point` 值和粗细值，并控制 `BoxView` 元素，使其类似于线条。
 
-[UnitCube  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/UnitCube) 示例使用此类绘制 3D 立方体。
+[UnitCube](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/UnitCube) 示例使用此类绘制 3D 立方体。
 
 ### <a name="layout-and-layoutto"></a>Layout 和 LayoutTo
 
-`Layout<T>` 衍生物可以调用 `LayoutTo`（而不是 `Layout`），以为布局添加动画效果。 [`AnimatedCartesianLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AnimatedCartesianLayout.cs) 类可实现此目的，[AnimatedUnitCube  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/AnimatedUnitCube) 示例对此进行了展示。
+`Layout<T>` 衍生物可以调用 `LayoutTo`（而不是 `Layout`），以为布局添加动画效果。 [`AnimatedCartesianLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AnimatedCartesianLayout.cs) 类可实现此目的，[AnimatedUnitCube](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/AnimatedUnitCube) 示例对此进行了展示。
 
 ## <a name="related-links"></a>相关链接
 

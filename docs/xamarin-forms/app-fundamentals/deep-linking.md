@@ -1,19 +1,22 @@
 ---
-title: 应用程序索引和深层链接
+title: ''
 description: 本文介绍如何使用应用程序索引和深层链接使 Xamarin.Forms 应用程序内容可在 iOS 和 Android 设备上进行搜索。
-ms.prod: xamarin
-ms.assetid: 410C5D19-AA3C-4E0D-B799-E288C5803226
-ms.technology: xamarin-forms
-ms.custom: xamu-video
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/28/2018
-ms.openlocfilehash: fcd8333a0623058fceb486183ddb995e85eaf18a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+ms.custom: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d93f9bbcfafc3cb71d6b71159f6d3368f50c08be
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76940324"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135728"
 ---
 # <a name="application-indexing-and-deep-linking"></a>应用程序索引和深层链接
 
@@ -23,7 +26,7 @@ _应用程序索引使得用了几次之后可能被忘记的应用程序出现�
 
 > [!VIDEO https://youtube.com/embed/UJv4jUs7cJw]
 
-**Xamarin.Forms 和 Azure 视频的深层链接**
+Xamarin.Forms 和 Azure 视频的深层链接
 
 Xamarin.Forms 应用程序索引和深层链接提供一个 API，在用户浏览应用程序时发布元数据进行应用程序索引。 然后索引的内容可在 Spotlight 搜索、Google 搜索或 Web 搜索中进行搜索。 点击包含深层链接的搜索结果将触发一个事件，该事件可由应用程序进行处理且通常用于导航到引用自深层链接的页面。
 
@@ -44,7 +47,7 @@ Xamarin.Forms 应用程序索引和深层链接提供一个 API，在用户浏�
 
 ### <a name="ios"></a>iOS
 
-在 iOS 平台上，确保 iOS 平台项目将 Entitlements.plist 文件设置为自定义的授权文件以对捆绑内容进行签名  。
+在 iOS 平台上，确保 iOS 平台项目将 Entitlements.plist 文件设置为自定义的授权文件以对捆绑内容进行签名。
 
 使用 iOS 通用链接：
 
@@ -65,12 +68,12 @@ Xamarin.Forms 应用程序索引和深层链接提供一个 API，在用户浏�
 满足这些先决条件后，需要进行以下其他设置才能在 Android 平台上使用 Xamarin.Forms 应用程序索引和深层链接：
 
 1. 将 [Xamarin.Forms.AppLinks](https://www.nuget.org/packages/Xamarin.Forms.AppLinks/) NuGet 包安装到 Android 应用程序项目。
-1. 在 MainActivity.cs  文件中，添加声明以使用 `Xamarin.Forms.Platform.Android.AppLinks` 命名空间。
-1. 在 MainActivity.cs  文件中，添加声明以使用 `Firebase` 命名空间。
+1. 在 MainActivity.cs 文件中，添加声明以使用 `Xamarin.Forms.Platform.Android.AppLinks` 命名空间。
+1. 在 MainActivity.cs 文件中，添加声明以使用 `Firebase` 命名空间。
 1. 在 Web 浏览器中，通过 [Firebase 控制台](https://console.firebase.google.com/)创建新项目。
 1. 在 Firebase 控制台中，将 Firebase 添加到 Android 应用，并输入所需的数据。
-1. 下载产生的 google-services.json  文件。
-1. 将 google-services.json 文件添加到 Android 项目的根目录，然后将其生成操作设置为 GoogleServicesJson    。
+1. 下载产生的 google-services.json 文件。
+1. 将 google-services.json 文件添加到 Android 项目的根目录，然后将其生成操作设置为 GoogleServicesJson  。
 1. 在 `MainActivity.OnCreate` 重写中，在 `Forms.Init(this, bundle)` 下添加以下代码行：
 
 ```csharp
@@ -78,7 +81,7 @@ FirebaseApp.InitializeApp(this);
 AndroidAppLinks.Init(this);
 ```
 
-将 google-services.json 添加到项目（并且设置了 GoogleServicesJson* 生成操作）时，生成过程将提取客户端 ID 和 API 密钥，然后将这些凭据添加到生成的清单文件   。
+将 google-services.json 添加到项目（并且设置了 GoogleServicesJson* 生成操作）时，生成过程将提取客户端 ID 和 API 密钥，然后将这些凭据添加到生成的清单文件。
 
 > [!NOTE]
 > 在本文中，术语“应用程序链接”和“深层链接”通常可以交换使用。 但是，在 Android 上，这些术语具有不同的含义。 在 Android 上，深层链接是一个意图筛选器，可让用户直接在应用中输入特定活动。 单击深层链接可能会打开一个消除歧义对话框，该对话框允许用户选择可以处理 URL 的多个应用程序之一。 Android 应用链接是基于网站 URL 的深层链接，该链接已被验证为属于网站。 单击应用链接会打开应用（如果已安装），而不会打开消除歧义对话框。

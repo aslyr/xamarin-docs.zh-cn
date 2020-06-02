@@ -1,27 +1,19 @@
 ---
-title: Xamarin.Essentials:MainThread
-description: MainThread 类允许应用程序在主执行线程上运行代码。
-ms.assetid: CD6D51E7-D933-4FE7-A7F7-392EF27812E1
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 08/20/2019
-ms.openlocfilehash: dfef9fc5d1b8e4acaec8d9e1d653b141b04cead6
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150063"
----
-# <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials:MainThread
+title: ''Xamarin.Essentials:MainThread'' description: ms.assetid: author: ms.custom: ms.author: ms.date: no-loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
- MainThread 类允许应用程序在主执行线程上运行代码，并确定当前是否在主线程上运行特定代码块。
+---
+
+# <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials：MainThread
+
+MainThread 类允许应用程序在主执行线程上运行代码，并确定当前是否在主线程上运行特定代码块。
 
 ## <a name="background"></a>背景
 
-大多数操作系统（包括 iOS、Android 和通用 Windows 平台）对涉及用户界面的代码使用单线程模型。 正确序列化用户界面事件（包括击键和触控输入）需要此模型。 此线程通常称为“主线程”  、“用户界面线程”  或“UI 线程”  。 此模型的缺点是用于访问用户界面元素的所有代码必须在应用程序的主线程上运行。 
+大多数操作系统（包括 iOS、Android 和通用 Windows 平台）对涉及用户界面的代码使用单线程模型。 正确序列化用户界面事件（包括击键和触控输入）需要此模型。 此线程通常称为“主线程”、“用户界面线程”或“UI 线程”。 此模型的缺点是用于访问用户界面元素的所有代码必须在应用程序的主线程上运行。
 
-应用程序有时需要使用在辅助执行线程上调用事件处理程序的事件。 （Xamarin.Essentials 类 [`Accelerometer`](accelerometer.md)、[`Compass`](compass.md)、[`Gyroscope`](gyroscope.md)、[`Magnetometer`](magnetometer.md) 和 [`OrientationSensor`](orientation-sensor.md) 以更快的速度使用时，可能会返回有关辅助线程的信息。）如果事件处理程序需要访问用户界面元素，则必须在主线程上运行该代码。  MainThread 类允许应用程序在主线程上运行此代码。
+应用程序有时需要使用在辅助执行线程上调用事件处理程序的事件。 （Xamarin.Essentials 类 [`Accelerometer`](accelerometer.md)、[`Compass`](compass.md)、[`Gyroscope`](gyroscope.md)、[`Magnetometer`](magnetometer.md) 和 [`OrientationSensor`](orientation-sensor.md) 以更快的速度使用时，可能会返回有关辅助线程的信息。）如果事件处理程序需要访问用户界面元素，则必须在主线程上运行该代码。 MainThread 类允许应用程序在主线程上运行此代码。
 
 ## <a name="get-started"></a>入门
 
@@ -29,7 +21,7 @@ ms.locfileid: "83150063"
 
 ## <a name="running-code-on-the-main-thread"></a>在主线程上运行代码
 
-在你的类中添加对 Xamarin.Essentials 的引用：
+在类中添加对 Xamarin.Essentials 的引用：
 
 ```csharp
 using Xamarin.Essentials;
@@ -60,8 +52,9 @@ MainThread.BeginInvokeOnMainThread(MyMainThreadCode);
 ```
 
 > [!NOTE]
-> Xamarin.Forms 具有名为 [`Device.BeginInvokeOnMainThread(Action)`](https://docs.microsoft.com/dotnet/api/xamarin.forms.device.begininvokeonmainthread) 的方法，
-> 该方法与 `MainThread.BeginInvokeOnMainThread(Action)` 执行相同操作。 虽然可以在 Xamarin.Forms 应用中使用任何一种方法，但请考虑调用代码是否需要在 Xamarin.Forms 上有任何其他依赖项。 如果不需要，则 `MainThread.BeginInvokeOnMainThread(Action)` 可能是更好的选择。
+> Xamarin.Forms 具有一个名为 [`Device.BeginInvokeOnMainThread(Action)`](https://docs.microsoft.com/dotnet/api/xamarin.forms.device.begininvokeonmainthread) 的方法
+> 该方法与 `MainThread.BeginInvokeOnMainThread(Action)` 执行相同操作。
+> 虽然可以在 Xamarin.Forms 应用中使用任何一种方法，但请考虑调用的代码是否需要在 Xamarin.Forms 上有任何其他依赖项。 如果不需要，则 `MainThread.BeginInvokeOnMainThread(Action)` 可能是更好的选择。
 
 ## <a name="determining-if-code-is-running-on-the-main-thread"></a>确定是否在主线程上运行代码
 

@@ -1,22 +1,25 @@
 ---
 title: Xamarin.Forms 行为
-description: 通过行为可将功能添加到用户界面控件，且无需将其子类化。 行为由代码编写，并以 XAML 或代码的形式添加到控件中。
-ms.prod: xamarin
-ms.assetid: 42E32AD7-8E3B-48B3-B402-E75B758DA913
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/06/2016
-ms.openlocfilehash: df0a767976247166205ae8a3d70fd59c521646f6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 83952982bd163725fb931c860cac3e267726315c
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61197534"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135806"
 ---
 # <a name="xamarinforms-behaviors"></a>Xamarin.Forms 行为
 
-通过行为可将功能添加到用户界面控件，且无需将其子类化。  行为由代码编写，并以 XAML 或代码的形式添加到控件中。
+通过行为可将功能添加到用户界面控件，且无需将其子类化。行为由代码编写，并以 XAML 或代码的形式添加到控件中。
 
 ## <a name="introduction-to-behaviors"></a>[行为简介](introduction.md)
 
@@ -26,7 +29,7 @@ ms.locfileid: "61197534"
 
 附加行为是具有一个或多个附加属性的 `static` 类。 本文演示如何创建和使用附加行为。
 
-## <a name="xamarinforms-behaviors"></a>[Xamarin.Forms 行为](creating.md)
+## <a name="xamarinforms-behaviorscreatingmd"></a>[Xamarin.Forms 行为](creating.md)
 
 Xamarin.Forms 行为由 [`Behavior`](xref:Xamarin.Forms.Behavior) 或 [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) 类派生创建而成。 本文演示如何创建和使用 Xamarin.Forms 行为。
 

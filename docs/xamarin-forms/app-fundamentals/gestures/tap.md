@@ -1,18 +1,21 @@
 ---
-title: 添加点击手势识别器
-description: 本文说明如何在 Xamarin.Forms 应用程序中使用点击手势进行点击检测。 可通过 TapGestureRecognizer 类实现点击检测。
-ms.prod: xamarin
-ms.assetid: 1D150BAF-4157-49BC-90A0-153323B8EBCF
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/21/2016
-ms.openlocfilehash: 95f25dbce55e2b960f604b6e304ffb6e8ed775e0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: 本文说明如何在 Xamarin.Forms 应用程序中使用轻击手势进行轻击检测。 可通过 TapGestureRecognizer 类实现点击检测。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0470419dd5070424c362dec8d4b1978507985783
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771340"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137613"
 ---
 # <a name="adding-a-tap-gesture-recognizer"></a>添加点击手势识别器
 

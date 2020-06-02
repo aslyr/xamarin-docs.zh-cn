@@ -1,18 +1,22 @@
 ---
-title: 摘要：第 20 章. 异步和文件 I/O
-description: 使用 Xamarin.Forms 创建移动应用：摘要：第 20 章. 异步和文件 I/O
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/18/2018
-ms.openlocfilehash: 283273e6ee28cc5cd1a61169f38bfcd1dd1726d8
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 20. Async and file I/O''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ad71dc5f5389f1676698a761a138b3f76ffa9fa0
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771038"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136677"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>摘要：第 20 章. 异步和文件 I/O
 
@@ -21,7 +25,7 @@ ms.locfileid: "70771038"
 > [!NOTE] 
 > 此页上的“注意”指出了 Xamarin.Forms 与书中所述内容的不同之处。
 
- 图形用户界面必须按顺序响应用户输入事件。 这意味着，用户输入事件的所有处理都必须发生在单个线程中，通常称为主线程  或 UI 线程  。
+ 图形用户界面必须按顺序响应用户输入事件。 这意味着，用户输入事件的所有处理都必须发生在单个线程中，通常称为主线程或 UI 线程。
 
 用户希望图形用户界面能够快速响应。 这意味着程序必须快速处理用户输入事件。 如果不能，则必须将处理操作归入辅助执行线程。
 
@@ -141,7 +145,7 @@ Xamarin.iOS 和 Xamarin.Android 库包括 Xamarin 专门为这两个平台定制
 
 ### <a name="the-basic-mandelbrot-set"></a>基本 Mandelbrot 集
 
-为了实时绘制 Mandelbrot 集，[**Xamarin.Forms.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的 [`Complex`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/Complex.cs) 结构与 `System.Numerics` 命名空间中的结构类似。
+为了实时绘制 Mandelbrot 集，[Xamarin.Forms.Toolkit](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库中的 [`Complex`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/Complex.cs) 结构与 `System.Numerics` 命名空间中的结构类似。
 
 [**MandelbrotSet**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/MandelbrotSet) 示例在其代码隐藏文件中有一个 `CalculateMandeblotAsync` 方法，该方法计算基本的黑白 Mandelbrot 集，并使用 [`BmpMaker`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BmpMaker.cs) 将其放在位图上。
 

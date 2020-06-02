@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms 双屏触发器
-description: 此文章介绍了如何使用 Xamarin.Forms 双屏触发器来响应 XAML 的用户界面更改。
-ms.prod: xamarin
-ms.assetid: 2181715D-3995-4E71-9A21-6B892F0B3B59
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/28/2020
-ms.openlocfilehash: 0cce23973c90c89ce90e40651a2646d5f1bdd2c0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: 本文介绍了如何使用 Xamarin.Forms 双屏触发器来响应 XAML 的用户界面更改。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: df10327b2ac12d2b119f1ab558d7f27e8c319507
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "78165526"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84131191"
 ---
 # <a name="xamarinforms-dual-screen-triggers"></a>Xamarin.Forms 双屏触发器
 
@@ -122,4 +125,4 @@ ms.locfileid: "78165526"
 ## <a name="related-links"></a>相关链接
 
 - [Xamarin.Forms 触发器](~/xamarin-forms/app-fundamentals/triggers.md)
-- [Xamarin.Forms 视觉对象状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)

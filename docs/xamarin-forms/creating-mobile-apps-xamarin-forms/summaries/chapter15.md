@@ -1,18 +1,22 @@
 ---
-title: “第 15 章： 交互式界面”摘要
-description: 使用 Xamarin.Forms 创建移动应用：“第 15 章： 交互式界面”摘要
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/07/2017
-ms.openlocfilehash: 5f96d2f4b619bbb10bb58e9b1b5dc7007c1ce888
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 15. The interactive interface''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9bb930c2d0e4b6281b1aa48589ea5245eedc1a60
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77131104"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136742"
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>“第 15 章： 交互式界面”摘要
 
@@ -22,7 +26,7 @@ ms.locfileid: "77131104"
 
 ## <a name="view-overview"></a>视图概述
 
-Xamarin.Forms 包含 20 个派生自 `View`（而不是 `Layout`）可实例化类。 前面的章节介绍了其中六个类：
+Xamarin.Forms 包含 20 个派生自 `View`（而不是 `Layout`）的可实例化类。 前面的章节介绍了其中六个类：
 
 - `Label`：[**第 2 章：应用剖析**](chapter02.md)
 - `BoxView`：[**第 3 章：滚动堆叠**](chapter03.md)
@@ -40,7 +44,7 @@ Xamarin.Forms 包含 20 个派生自 `View`（而不是 `Layout`）可实例化�
 |`String`|[`Entry`](xref:Xamarin.Forms.Entry)、[`Editor`](xref:Xamarin.Forms.Editor)、[`SearchBar`](xref:Xamarin.Forms.SearchBar)|
 |`DateTime`|[`DatePicker`](xref:Xamarin.Forms.DatePicker), [`TimePicker`](xref:Xamarin.Forms.TimePicker)|
 
-可以将这些视图视为基础数据类型的可视化交互表示。 下一章节（[第 16 章：  数据绑定](chapter16.md)）更深入地探讨了此概念。
+可以将这些视图视为基础数据类型的可视化交互表示。 下一章节（[第 16 章：数据绑定](chapter16.md)）更深入地探讨了此概念。
 
 以下章节将介绍其余六个视图：
 
@@ -70,7 +74,7 @@ Xamarin.Forms 包含 20 个派生自 `View`（而不是 `Layout`）可实例化�
 
 如果 `Value` 属性更改（无论是以编程方式更改，还是用户控制 `Slider`），`Slider` 会触发含 [`ValueChangedEventArgs`](xref:Xamarin.Forms.ValueChangedEventArgs) 参数的 [`ValueChanged`](xref:Xamarin.Forms.Slider.ValueChanged) 事件。
 
-[SliderDemo  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SliderDemo) 示例展示了 `Slider` 的简单用法。
+[SliderDemo](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SliderDemo) 示例展示了 `Slider` 的简单用法。
 
 ### <a name="common-pitfalls"></a>常见错误
 
@@ -82,11 +86,11 @@ Xamarin.Forms 包含 20 个派生自 `View`（而不是 `Layout`）可实例化�
 
 ### <a name="slider-color-selection"></a>颜色选择滑块
 
-[RgbSliders  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/RgbSliders) 程序包含三个 `Slider` 元素，可便于通过指定 RGB 值以交互方式选择颜色：
+[RgbSliders](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/RgbSliders) 程序包含三个 `Slider` 元素，可便于通过指定 RGB 值以交互方式选择颜色：
 
 [![R G B 滑块的三倍屏幕截图](images/ch15fg03-small.png "RGB 滑块")](images/ch15fg03-large.png#lightbox "RGB 滑块")
 
-[TextFade  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/TextFade) 示例使用两个 `Slider` 元素跨 `AbsoluteLayout` 移动两个 `Label` 元素，并让其中一个元素淡入另一个元素。
+[TextFade](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/TextFade) 示例使用两个 `Slider` 元素跨 `AbsoluteLayout` 移动两个 `Label` 元素，并让其中一个元素淡入另一个元素。
 
 ### <a name="the-stepper-difference"></a>步进器区别
 
@@ -94,9 +98,9 @@ Xamarin.Forms 包含 20 个派生自 `View`（而不是 `Layout`）可实例化�
 
 - `double` 类型的 [`Increment`](xref:Xamarin.Forms.Stepper.Increment)（初始化为 1）
 
-从视觉上看，`Stepper` 包含两个标记为 &ndash;  和 +  的按钮。 按 &ndash;  会让 `Value` 按 `Increment` 递减到最小值 `Minimum`。 按 +  会让 `Value` 按 `Increment` 递增到最大值 `Maximum`。
+从视觉上看，`Stepper` 包含两个标记为 &ndash; 和 + 的按钮。 按 &ndash; 会让 `Value` 按 `Increment` 递减到最小值 `Minimum`。 按 + 会让 `Value` 按 `Increment` 递增到最大值 `Maximum`。
 
-[StepperDemo  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/StepperDemo) 示例对此进行了展示。
+[StepperDemo](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/StepperDemo) 示例对此进行了展示。
 
 ## <a name="switch-and-checkbox"></a>开关和复选框
 
@@ -112,13 +116,13 @@ Xamarin.Forms 包含 20 个派生自 `View`（而不是 `Layout`）可实例化�
 
 - [`Toggled`](xref:Xamarin.Forms.Switch.Toggled)：附带了 [`ToggledEventArgs`](xref:Xamarin.Forms.ToggledEventArgs) 对象，在 `IsToggled` 属性更改时触发。
 
-[SwitchDemo  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SwitchDemo) 程序展示了 `Switch`。
+[SwitchDemo](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SwitchDemo) 程序展示了 `Switch`。
 
 ### <a name="a-traditional-checkbox"></a>传统复选框
 
-一些开发人员可能更倾向于传统的 `CheckBox`，而不是 `Switch`。 [Xamarin.FormsBook.Toolkit  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库包含派生自 `ContentView` 的 `CheckBox` 类。 `CheckBox` 由 [CheckBox.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CheckBox.xaml) 和 [CheckBox.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CheckBox.xaml.cs) 文件实现。 `CheckBox` 定义了三个属性（`Text`、`FontSize` 和 `IsChecked`）和 `CheckedChanged` 事件。
+一些开发人员可能更倾向于传统的 `CheckBox`，而不是 `Switch`。 [Xamarin.FormsBook.Toolkit](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 库包含派生自 `ContentView` 的 `CheckBox` 类。 `CheckBox` 由 [CheckBox.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CheckBox.xaml) 和 [CheckBox.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CheckBox.xaml.cs) 文件实现。 `CheckBox` 定义了三个属性（`Text`、`FontSize` 和 `IsChecked`）和 `CheckedChanged` 事件。
 
-[CheckBoxDemo  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/CheckBoxDemo) 示例展示了此 `CheckBox`。
+[CheckBoxDemo](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/CheckBoxDemo) 示例展示了此 `CheckBox`。
 
 ## <a name="typing-text"></a>键入文本
 
@@ -168,7 +172,7 @@ Xamarin.Forms 定义了三个可便于用户输入和编辑文本的视图：
 - [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone)
 - [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric)：用于带或不带小数点的正数。
 
-[`KeyboardTypeConverter`](xref:Xamarin.Forms.KeyboardTypeConverter) 允许在 XAML 中指定这些属性，如 [EntryKeyboards  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/EntryKeyboards) 程序所示。
+[`KeyboardTypeConverter`](xref:Xamarin.Forms.KeyboardTypeConverter) 允许在 XAML 中指定这些属性，如 [EntryKeyboards](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/EntryKeyboards) 程序所示。
 
 ### <a name="entry-properties-and-events"></a>条目属性和事件
 
@@ -188,13 +192,13 @@ Xamarin.Forms 定义了三个可便于用户输入和编辑文本的视图：
 - 包含 [`TextChangedEventArgs`](xref:Xamarin.Forms.TextChangedEventArgs) 对象的 [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged)：在 `Text` 属性更改时触发
 - [`Completed`](xref:Xamarin.Forms.Entry.Completed)：在用户完成并关闭键盘时触发。 用户以特定于平台的方式指明完成
 
-[QuadraticEquations  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/QuadaticEquations) 示例展示了这两个事件。
+[QuadraticEquations](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/QuadaticEquations) 示例展示了这两个事件。
 
 ### <a name="the-editor-difference"></a>编辑器区别
 
 多行 [`Editor`](xref:Xamarin.Forms.Editor) 定义了与 `Entry` 相同的 `Text` 和 `Font` 属性，但没有定义其他属性。 `Editor` 还定义了与 `Entry` 相同的两个属性。
 
-[JustNotes  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/JustNotes) 是保存和还原 `Editor` 内容的自由格式笔记程序。
+[JustNotes](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/JustNotes) 是保存和还原 `Editor` 内容的自由格式笔记程序。
 
 ### <a name="the-searchbar"></a>SearchBar
 
@@ -209,7 +213,7 @@ Xamarin.Forms 定义了三个可便于用户输入和编辑文本的视图：
 - [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged)：附带了 [`TextChangedEventArgs`](xref:Xamarin.Forms.TextChangedEventArgs) 对象
 - [`SearchButtonPressed`](xref:Xamarin.Forms.SearchBar.SearchButtonPressed)
 
-[SearchBarDemo  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SearchBarDemo) 示例展示了 `SearchBar`。
+[SearchBarDemo](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SearchBarDemo) 示例展示了 `SearchBar`。
 
 ## <a name="date-and-time-selection"></a>日期和时间选择
 
@@ -226,7 +230,7 @@ Xamarin.Forms 定义了三个可便于用户输入和编辑文本的视图：
 
 可以在 XAML 中设置 `DateTime` 属性，具体方法是将属性表达为属性元素，并使用区域性固定的短日期格式（“7/20/1969”）。   
 
-[DaysBetweenDates  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/DaysBetweenDates) 示例计算用户选择的两个日期之间的天数。
+[DaysBetweenDates](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/DaysBetweenDates) 示例计算用户选择的两个日期之间的天数。
 
 ### <a name="the-timepicker-or-is-it-a-timespanpicker"></a>TimePicker（还是 TimeSpanPicker？）
 
@@ -235,9 +239,9 @@ Xamarin.Forms 定义了三个可便于用户输入和编辑文本的视图：
 - `TimeSpan` 类型（而不是 `DateTime`）的 [`Time`](xref:Xamarin.Forms.TimePicker.Time)：表示从午夜起经过的时间
 - `string` 类型的 [`Format`](xref:Xamarin.Forms.TimePicker.Format)：初始化为“t”（短时间模式）的 .NET 格式设置字符串，在美国将时间显示为“1:45 PM”。
 
-[SetTimer  ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SetTimer) 程序展示了如何使用 `TimePicker` 指定计时器的时间。 此程序只有在前台时才能运行。
+[SetTimer](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SetTimer) 程序展示了如何使用 `TimePicker` 指定计时器的时间。 此程序只有在前台时才能运行。
 
-SetTimer  还展示了如何使用 `Page` 的 [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)) 方法来显示警报框。
+SetTimer 还展示了如何使用 `Page` 的 [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)) 方法来显示警报框。
 
 ## <a name="related-links"></a>相关链接
 

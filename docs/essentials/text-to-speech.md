@@ -1,21 +1,14 @@
 ---
-title: Xamarin.Essentials:文本到语音转换
-description: Xamarin.Essentials 中的 TextToSpeech 类允许应用程序使用内置的文本到语音转换引擎回讲设备中的文本并查询引擎可以支持的可用语言。
-ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: abe591d67ea749de4ae9a2f8dadf4df07712691a
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149728"
----
-# <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials:文本到语音转换
+title: ''Xamarin.Essentials:文本转语音'' description:'Xamarin.Essentials 中的 TextToSpeech 类允许应用程序使用内置的文本到语音转换引擎回讲设备中的文本并查询引擎可以支持的可用语言。'
+ms.assetid: author: ms.custom: ms.author: ms.date: no-loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
- TextToSpeech 类允许应用程序使用内置的文本到语音转换引擎回讲设备中的文本并查询引擎可以支持的可用语言。
+---
+
+# <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials：文本到语音转换
+
+TextToSpeech 类允许应用程序使用内置的文本到语音转换引擎回讲设备中的文本并查询引擎可以支持的可用语言。
 
 ## <a name="get-started"></a>入门
 
@@ -23,7 +16,7 @@ ms.locfileid: "83149728"
 
 ## <a name="using-text-to-speech"></a>使用 Text-to-Speech
 
-在你的类中添加对 Xamarin.Essentials 的引用：
+在类中添加对 Xamarin.Essentials 的引用：
 
 ```csharp
 using Xamarin.Essentials;
