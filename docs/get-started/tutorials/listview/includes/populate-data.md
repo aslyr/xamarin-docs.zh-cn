@@ -8,11 +8,11 @@ ms.locfileid: "82109714"
 ---
 使用 `IEnumerable` 类型的 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 属性为 [`ListView`](xref:Xamarin.Forms.ListView) 填充数据。 上一步骤使用 XAML 为 `ListView` 填充了一个字符串数组。 然而，我们通常从在代码隐藏中定义的实现 `IEnumerable` 的集合为 `ListView` 填充数据。
 
-本练习为：修改 ListViewTutorial 项目，以便使用存储在 `List` 中的对象集合中的数据填充 [`ListView`](xref:Xamarin.Forms.ListView)  。
+本练习为：修改 ListViewTutorial 项目，以便使用存储在 `List` 中的对象集合中的数据填充 [`ListView`](xref:Xamarin.Forms.ListView)。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
-1. 在“解决方案资源管理器”的 ListViewTutorial 项目中，添加名为 `Monkey` 且包含以下代码的类   ：
+1. 在“解决方案资源管理器”的 ListViewTutorial 项目中，添加名为 `Monkey` 且包含以下代码的类  ：
 
     ```csharp
     public class Monkey
@@ -30,7 +30,7 @@ ms.locfileid: "82109714"
 
     此代码定义 `Monkey` 对象，该对象存储名称、位置和表示猴子的图像的 URL。 此外，该类重写 `ToString` 方法，从而返回 `Name` 属性。
 
-1. 在“解决方案资源管理器”的 ListViewTutorial 项目中，展开“MainPage.xaml”，然后双击“MainPage.xaml.cs”将其打开     。 然后，在“MainPage.xaml.cs”中，删除所有模板代码，替换为以下代码  ：
+1. 在“解决方案资源管理器”的 ListViewTutorial 项目中，展开“MainPage.xaml”，然后双击“MainPage.xaml.cs”将其打开   。 然后，在“MainPage.xaml.cs”中，删除所有模板代码，替换为以下代码：
 
     ```csharp
     using System.Collections.Generic;
@@ -177,7 +177,7 @@ ms.locfileid: "82109714"
     > [!IMPORTANT]
     > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 属性通过可视化树继承。 已在 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 对象上设置了该属性，所以 `ContentPage` 的子对象继承它的值，包括 [`ListView`](xref:Xamarin.Forms.ListView)。
 
-1. 在 MainPage.xaml 中，修改 [`ListView`](xref:Xamarin.Forms.ListView) 声明，将 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 属性设置为 `Monkeys` 集合  ：
+1. 在 MainPage.xaml 中，修改 [`ListView`](xref:Xamarin.Forms.ListView) 声明，将 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 属性设置为 `Monkeys` 集合：
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}" />
@@ -185,7 +185,7 @@ ms.locfileid: "82109714"
 
     此代码数据将 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 属性绑定到 `Monkeys` 集合。 [`ListView`](xref:Xamarin.Forms.ListView) 将在运行时查看 `Monkeys` 集合的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)，并填充该集合的数据。 有关数据绑定的详细信息，请参阅 [Xamarin.Forms 数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
 
-1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序  ：
+1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序：
 
     [![iOS 和 Android 上填充了集合数据的 ListView 屏幕截图](../images/populate-data.png "显示集合数据的 ListView")](../images/populate-data-large.png#lightbox "显示集合数据的 ListView")
 
@@ -193,7 +193,7 @@ ms.locfileid: "82109714"
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. 在 Solution Pad 的 ListViewTutorial 项目中，添加名为 `Monkey` 且包含以下代码的类   ：
+1. 在 Solution Pad 的 ListViewTutorial 项目中，添加名为 `Monkey` 且包含以下代码的类  ：
 
     ```csharp
     public class Monkey
@@ -211,7 +211,7 @@ ms.locfileid: "82109714"
 
     此代码定义 `Monkey` 对象，该对象存储名称、位置和表示猴子的图像的 URL。 此外，该类重写 `ToString` 方法，从而返回 `Name` 属性。
 
-1. 在 Solution Pad 的 ListViewTutorial 项目中，展开“MainPage.xaml”，然后双击“MainPage.xaml.cs”将其打开     。 然后，在“MainPage.xaml.cs”中，删除所有模板代码，替换为以下代码  ：
+1. 在 Solution Pad 的 ListViewTutorial 项目中，展开“MainPage.xaml”，然后双击“MainPage.xaml.cs”将其打开   。 然后，在“MainPage.xaml.cs”中，删除所有模板代码，替换为以下代码：
 
     ```csharp
     using System.Collections.Generic;
@@ -358,7 +358,7 @@ ms.locfileid: "82109714"
     > [!IMPORTANT]
     > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 属性通过可视化树继承。 已在 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 对象上设置了该属性，所以 `ContentPage` 的子对象继承它的值，包括 [`ListView`](xref:Xamarin.Forms.ListView)。
 
-1. 在 MainPage.xaml 中，修改 [`ListView`](xref:Xamarin.Forms.ListView) 声明，将 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 属性设置为 `Monkeys` 集合  ：
+1. 在 MainPage.xaml 中，修改 [`ListView`](xref:Xamarin.Forms.ListView) 声明，将 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 属性设置为 `Monkeys` 集合：
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}" />
@@ -366,7 +366,7 @@ ms.locfileid: "82109714"
 
     此代码数据将 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 属性绑定到 `Monkeys` 集合。 [`ListView`](xref:Xamarin.Forms.ListView) 将在运行时查看 `Monkeys` 集合的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)，并填充该集合的数据。 有关数据绑定的详细信息，请参阅 [Xamarin.Forms 数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
 
-1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android 模拟器内的应用程序  ：
+1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android 模拟器内的应用程序：
 
     [![iOS 和 Android 上填充了集合数据的 ListView 屏幕截图](../images/populate-data.png "显示集合数据的 ListView")](../images/populate-data-large.png#lightbox "显示集合数据的 ListView")
 

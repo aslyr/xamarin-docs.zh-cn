@@ -8,11 +8,11 @@ ms.locfileid: "81389965"
 ---
 以前，使用数据绑定为 [`ListView`](xref:Xamarin.Forms.ListView) 填充数据。 但是，尽管数据绑定到每个对象都定义了多个数据项的集合，但每个对象只显示一个数据项（`Monkey` 对象的 `Name` 属性）。
 
-在本练习中，你将修改 ListViewTutorial 项目，以便 [`ListView`](xref:Xamarin.Forms.ListView) 在每行中显示多个数据项  。
+在本练习中，你将修改 ListViewTutorial 项目，以便 [`ListView`](xref:Xamarin.Forms.ListView) 在每行中显示多个数据项。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
-1. 在 MainPage.xaml 中，修改 [`ListView`](xref:Xamarin.Forms.ListView) 声明以自定义每行的外观  ：
+1. 在 MainPage.xaml 中，修改 [`ListView`](xref:Xamarin.Forms.ListView) 声明以自定义每行的外观：
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}"
@@ -56,13 +56,13 @@ ms.locfileid: "81389965"
 
     有关 [`ListView`](xref:Xamarin.Forms.ListView) 单元格外观的详细信息，请参阅[自定义 ListView 单元格外观](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)。 有关数据模板的详细信息，请参阅 [Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
 
-1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序  ：
+1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序：
 
     [![项已使用数据模板进行模板化的 ListView 屏幕截图](../images/customize-cell-appearance.png "显示模板化数据的 ListView")](../images/customize-cell-appearance-large.png#lightbox "显示模板化数据的 ListView")
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. 在 MainPage.xaml 中，修改 [`ListView`](xref:Xamarin.Forms.ListView) 声明以自定义每行的外观  ：
+1. 在 MainPage.xaml 中，修改 [`ListView`](xref:Xamarin.Forms.ListView) 声明以自定义每行的外观：
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}"
@@ -106,6 +106,6 @@ ms.locfileid: "81389965"
 
     有关 [`ListView`](xref:Xamarin.Forms.ListView) 单元格外观的详细信息，请参阅[自定义 ListView 单元格外观](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)。 有关数据模板的详细信息，请参阅 [Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
 
-1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android 模拟器内的应用程序  ：
+1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android 模拟器内的应用程序：
 
     [![项已使用数据模板进行模板化的 ListView 屏幕截图](../images/customize-cell-appearance.png "显示模板化数据的 ListView")](../images/customize-cell-appearance-large.png#lightbox "显示模板化数据的 ListView")

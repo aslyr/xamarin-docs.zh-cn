@@ -8,7 +8,7 @@ ms.locfileid: "83435381"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
-1. 在“MainPage.xaml”中，修改 [`Grid`](xref:Xamarin.Forms.Grid) 声明以定义列和行，并放置跨越列和行的内容  ：
+1. 在“MainPage.xaml”中，修改 [`Grid`](xref:Xamarin.Forms.Grid) 声明以定义列和行，并放置跨越列和行的内容：
 
     ```xaml
     <Grid Margin="20,35,20,20">
@@ -31,7 +31,7 @@ ms.locfileid: "83435381"
 
     此代码定义 [`Grid`](xref:Xamarin.Forms.Grid) 的列和行，并将 [`Label`](xref:Xamarin.Forms.Label) 实例放置在特定的列和行中。 第一个 `Label` 设置 [`ColumnSpan`](xref:Xamarin.Forms.Grid.ColumnSpanProperty) 附加属性，使其文本跨越多列。 将 `ColumnSpan` 属性设置为 2，代表着 `Label` 将跨越的列数。 第二个 `Label` 设置 [`RowSpan`](xref:Xamarin.Forms.Grid.RowSpanProperty) 附加属性，使其文本跨越多行。 将 `RowSpan` 属性设置为 2，代表着 `Label` 将跨越的行数。
 
-1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 远程模拟器或 Android Emulator 内的应用程序  ：
+1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 远程模拟器或 Android Emulator 内的应用程序：
 
     [![iOS 和 Android 上内容跨多列和多行的网格屏幕截图](../images/span-columns-rows.png "内容跨多列和多行的网格")](../images/span-columns-rows-large.png#lightbox "内容跨多列和多行的网格")
 
@@ -39,7 +39,7 @@ ms.locfileid: "83435381"
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. 在“MainPage.xaml”中，修改 [`Grid`](xref:Xamarin.Forms.Grid) 声明以定义列和行，并放置跨越列和行的内容  ：
+1. 在“MainPage.xaml”中，修改 [`Grid`](xref:Xamarin.Forms.Grid) 声明以定义列和行，并放置跨越列和行的内容：
 
     ```xaml
     <Grid Margin="20,35,20,20">
@@ -62,7 +62,7 @@ ms.locfileid: "83435381"
 
     此代码定义 [`Grid`](xref:Xamarin.Forms.Grid) 的列和行，并将 [`Label`](xref:Xamarin.Forms.Label) 实例放置在特定的列和行中。 第一个 `Label` 设置 [`ColumnSpan`](xref:Xamarin.Forms.Grid.ColumnSpanProperty) 附加属性，使其文本跨越多列。 将 `ColumnSpan` 属性设置为 2，代表着 `Label` 将跨越的列数。 第二个 `Label` 设置 [`RowSpan`](xref:Xamarin.Forms.Grid.RowSpanProperty) 附加属性，使其文本跨越多行。 将 `RowSpan` 属性设置为 2，代表着 `Label` 将跨越的行数。
 
-1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android 模拟器内的应用程序  ：
+1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android 模拟器内的应用程序：
 
     [![iOS 和 Android 上内容跨多列和多行的网格屏幕截图](../images/span-columns-rows.png "内容跨多列和多行的网格")](../images/span-columns-rows-large.png#lightbox "内容跨多列和多行的网格")
 

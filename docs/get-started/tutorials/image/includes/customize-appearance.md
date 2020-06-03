@@ -8,7 +8,7 @@ ms.locfileid: "82109703"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
-1. 在 MainPage.xaml 中，修改 [`Image`](xref:Xamarin.Forms.Image) 声明以自定义其外观  ：
+1. 在 MainPage.xaml 中，修改 [`Image`](xref:Xamarin.Forms.Image) 声明以自定义其外观：
 
     ```xaml
     <Image Source="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
@@ -24,13 +24,13 @@ ms.locfileid: "82109703"
 
     此外，[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 属性指定图像将水平居中。
 
-1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序  ：
+1. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选远程 iOS 模拟器或 Android Emulator 内的应用程序：
 
     [![iOS 和 Android 上不同尺寸的图像的屏幕截图](../images/customize-appearance.png "基于每个平台的图像尺寸")](../images/customize-appearance-large.png#lightbox "基于每个平台的图像尺寸")
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. 在 MainPage.xaml 中，修改 [`Image`](xref:Xamarin.Forms.Image) 声明以自定义其外观  ：
+1. 在 MainPage.xaml 中，修改 [`Image`](xref:Xamarin.Forms.Image) 声明以自定义其外观：
 
     ```xaml
     <Image Source="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
@@ -46,6 +46,6 @@ ms.locfileid: "82109703"
 
     此外，[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 属性指定图像将水平居中。
 
-1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android 模拟器内的应用程序  ：
+1. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器或 Android 模拟器内的应用程序：
 
     [![iOS 和 Android 上不同尺寸的图像的屏幕截图](../images/customize-appearance.png "基于每个平台的图像尺寸")](../images/customize-appearance-large.png#lightbox "基于每个平台的图像尺寸")
