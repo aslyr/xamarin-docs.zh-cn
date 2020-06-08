@@ -1,26 +1,14 @@
 ---
-title: 什么是 Xamarin.Forms？
-description: 本文介绍 Xamarin.Forms 和相关库。
-ms.prod: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b65be3cd552cf6a4fb094d59c44fa43de3deddcd
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139186"
+title:"什么是 Xamarin.Forms？"
+description:"本文介绍 Xamarin.Forms 和相关库。"
+ms.prod: xamarin ms.assetid:C1E24DB9-3099-4F79-BB88-10AABF7D4614 author: profexorgeek ms.author: jusjohns ms.date:2020 年 5 月 28 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="what-is-xamarinforms"></a>什么是 Xamarin.Forms？
 
 [![iOS 和 Android 中的示例 Xamarin.Forms 应用程序的屏幕截图](what-is-xamarin-forms-images/xamarin-forms-app-cropped.png)](what-is-xamarin-forms-images/xamarin-forms-app.png#lightbox)
 
-Xamarin.Forms 是一个开放源代码 UI 框架。 Xamarin.Forms 使开发人员可以从单个共享基本代码生成 Android、iOS 和 Windows 应用程序。
+Xamarin.Forms 是一个开放源代码 UI 框架。 通过 Xamarin.Forms，开发人员可从单个共享基本代码生成 Xamarin.Android、Xamarin.iOS 和 Windows 应用程序。
 
 Xamarin.Forms 使开发人员可以在 C# 中通过代码隐藏在 XAML 中创建用户界面。 这些界面在每个平台上呈现为高性能本机控件。
 
@@ -38,15 +26,15 @@ Xamarin.Forms 适用于具有以下目标的开发人员：
 
 Xamarin.Forms 提供了一个一致的 API，用于跨平台创建 UI 元素。 此 API 可以在 XAML 或 C# 中实现，支持针对模型-视图-视图模型 (MVVM) 等模式的数据绑定。
 
-在运行时，Xamarin.Forms 使用平台呈现器将跨平台 UI 元素转换为 Android、iOS 和 UWP 上的本机控件。 这使开发人员可以获得本机外观和性能，同时实现跨平台代码共享的优势。
+在运行时，Xamarin.Forms 使用平台呈现器将跨平台 UI 元素转换为 Xamarin.Android、Xamarin.iOS 和 UWP 上的本机控件。 这使开发人员可以获得本机外观和性能，同时实现跨平台代码共享的优势。
 
 Xamarin.Forms 应用程序通常由共享 .NET Standard 库和各个平台项目组成。 共享库包含 XAML 或 C# 视图以及任何业务逻辑（如服务、模型或其他代码）。 平台项目包含应用程序所需的任何特定于平台的逻辑或包。
 
-Xamarin.Forms 使用 Xamarin 跨平台本机运行 .NET 应用程序。 有关 Xamarin 的详细信息，请参阅[什么是 Xamarin？](~/get-started/what-is-xamarin.md)。
+Xamarin.Forms 使用 Xamarin 平台，跨平台本机运行 .NET 应用程序。 有关 Xamarin 平台的详细信息，请参阅[什么是 Xamarin？](~/get-started/what-is-xamarin.md)。
 
-## <a name="additional-tools"></a>其他工具
+## <a name="additional-functionality"></a>附加功能
 
-Xamarin.Forms 包含一个大型 NuGet 包生态系统，可向应用程序添加各种功能。 本部分介绍几个常用 NuGet 包。
+Xamarin.Forms 包含一个大型库生态系统，可向应用程序添加各种功能。 本节介绍其中一些附加功能。
 
 ### Xamarin.Essentials
 

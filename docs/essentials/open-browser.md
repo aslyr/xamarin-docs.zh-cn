@@ -1,21 +1,11 @@
 ---
-title: Xamarin.Essentials：Open Browser
-description: Xamarin.Essentials 中的 Browser 类允许应用程序在优化的系统首选浏览器或外部浏览器中打开 Web 链接。
-ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 04/02/2019
-ms.custom: video
-ms.openlocfilehash: 715b9872642dfa8d5426c2967c62e82643def34d
-ms.sourcegitcommit: 9ca07644710e5919c7bc684c1ce144471611d5df
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82974482"
+title:"Xamarin.Essentials打开浏览器" description:"Xamarin.Essentials 中的 Browser 类允许应用程序在优化的系统首选浏览器或外部浏览器中打开 Web 链接。"
+ms.assetid：BABF40CC-8BEE-43FD-BE12-6301DF27DD33 author: jamesmontemagno ms.author: jamont ms.date:2019 年 4 月 2 日 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
-# <a name="xamarinessentials-browser"></a>Xamarin.Essentials:浏览者
 
- Browser 类允许应用程序在优化的系统首选浏览器或外部浏览器中打开 Web 链接。
+# <a name="xamarinessentials-browser"></a>Xamarin.Essentials：浏览者
+
+Browser 类允许应用程序在优化的系统首选浏览器或外部浏览器中打开 Web 链接。
 
 ## <a name="get-started"></a>入门
 
@@ -23,7 +13,7 @@ ms.locfileid: "82974482"
 
 ## <a name="using-browser"></a>使用 Browser
 
-在你的类中添加对 Xamarin.Essentials 的引用：
+在类中添加对 Xamarin.Essentials 的引用：
 
 ```csharp
 using Xamarin.Essentials;
@@ -42,11 +32,11 @@ public class BrowserTest
 }
 ```
 
-此方法在用户启动并关闭（不一定）浏览器后返回   。  `bool` 结果表明启动是否是成功。
+此方法在用户启动并关闭（不一定）浏览器后返回 。  `bool` 结果表明启动是否是成功。
 
 ## <a name="customization"></a>自定义
 
-使用系统首选浏览器时，iOS 和 Android 有多种自定义选项。 这包括 `TitleMode`（仅限 Android ），以及出现的 `Toolbar`（iOS 和 Android）和 `Controls`（仅限 iOS）的首选颜色选项。 
+使用系统首选浏览器时，iOS 和 Android 有多种自定义选项。 这包括 `TitleMode`（仅限 Android ），以及出现的 `Toolbar`（iOS 和 Android）和 `Controls`（仅限 iOS）的首选颜色选项。
 
 调用 `OpenAsync` 时，使用 `BrowserLaunchOptions` 指定这些选项。
 

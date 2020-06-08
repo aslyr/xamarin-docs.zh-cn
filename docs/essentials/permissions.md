@@ -1,21 +1,11 @@
 ---
-title: Xamarin.Essentials:权限
-description: 本文档介绍了 Xamarin.Essentials 中的 Permissions 类，它提供了检查和请求运行时权限的功能。
-ms.assetid: 34062D84-3E55-4AF7-A688-8551068B1E57
-author: jamesmontemagno
-ms.author: jamont
-ms.custom: video
-ms.date: 01/06/2020
-ms.openlocfilehash: fbce02300363c3ec68c35c11afb25342f06f4be1
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150067"
+title: "Xamarin.Essentials：Permissions" description:"本文档介绍了 Xamarin.Essentials 中的 Permissions 类，它提供了检查和请求运行时权限的功能。"
+ms.assetid：34062D84-3E55-4AF7-A688-8551068B1E57 author: jamesmontemagno ms.author: jamont ms.custom: video ms.date:2020 年 1 月 6 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
-# <a name="xamarinessentials-permissions"></a>Xamarin.Essentials:权限
 
-Permissions  类提供了检查和请求运行时权限的功能。
+# <a name="xamarinessentials-permissions"></a>Xamarin.Essentials：权限
+
+Permissions 类提供了检查和请求运行时权限的功能。
 
 ## <a name="get-started"></a>入门
 
@@ -25,7 +15,7 @@ Permissions  类提供了检查和请求运行时权限的功能。
 
 ## <a name="using-permissions"></a>使用 Permissions
 
-在你的类中添加对 Xamarin.Essentials 的引用：
+在类中添加对 Xamarin.Essentials 的引用：
 
 ```csharp
 using Xamarin.Essentials;
@@ -145,7 +135,7 @@ public async Task<PermissionStatus> CheckAndRequestPermissionAsync<T>(T permissi
 
 ## <a name="extending-permissions"></a>扩展 Permissions
 
-Permissions API 灵活且可扩展，可用于需要额外验证或权限的应用，而这些验证或权限未包含在 Xamarin.Essentials 中。 新建继承自 `BasePermission` 的类，并实现相应抽象方法。 Then
+Permissions API 灵活且可扩展，可用于需要额外验证或权限的应用程序，而这些验证或权限未包含在 Xamarin.Essentials 中。 新建继承自 `BasePermission` 的类，并实现相应抽象方法。 Then
 
 ```csharp
 public class MyPermission : BasePermission

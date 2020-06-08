@@ -1,19 +1,9 @@
 ---
-title: Xamarin.Essentials:安全存储
-description: 本文档介绍了 Xamarin.Essentials 中的 SecureStorage 类，该类有助于安全地存储简单的键/值对。 讨论了如何使用类、平台实现细节和限制。
-ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 04/02/2019
-ms.custom: video
-ms.openlocfilehash: 41d9efa66318f4c3f5315351d3c1f51b4e503521
-ms.sourcegitcommit: 44c44ad60c5c880a39006493aedd2d7aa834a27e
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83550895"
+title: "Xamarin.Essentials：安全存储" description:"本文档介绍了 Xamarin.Essentials 中的 SecureStorage 类，该类有助于安全地存储简单的键/值对。 讨论了如何使用类、平台实现细节和限制。"
+ms.assetid：78856C0D-76BB-406E-A880-D5A3987B7D64 author: jamesmontemagno ms.author: jamont ms.date:2019 年 4 月 2 日 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
-# <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials:安全存储
+
+# <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials：安全存储
 
 SecureStorage 类有助于安全地存储简单的键/值对。
 
@@ -63,7 +53,7 @@ SecureStorage 类有助于安全地存储简单的键/值对。
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-在 iOS 模拟器上开发时，启用密钥链权利，并为应用程序的捆绑包标识符添加密钥链访问组。 
+在 iOS 模拟器上开发时，启用密钥链权利，并为应用程序的捆绑包标识符添加密钥链访问组。
 
 打开 iOS 项目中的 Entitlements.plist，查找密钥链权利并启用它。 这样会自动将应用程序的标识符添加为一个组。
 
@@ -80,7 +70,7 @@ SecureStorage 类有助于安全地存储简单的键/值对。
 
 ## <a name="using-secure-storage"></a>使用 Secure Storage
 
-在你的类中添加对 Xamarin.Essentials 的引用：
+在类中添加对 Xamarin.Essentials 的引用：
 
 ```csharp
 using Xamarin.Essentials;
@@ -161,7 +151,7 @@ SecureStorage 使用[首选项](preferences.md) API，并遵循[首选项](prefe
 
 ## <a name="limitations"></a>限制
 
-此 API 用于存储少量文本。  如果尝试将其用于存储大量文本，则可能会降低性能。 
+此 API 用于存储少量文本。  如果尝试将其用于存储大量文本，则可能会降低性能。
 
 ## <a name="api"></a>API
 

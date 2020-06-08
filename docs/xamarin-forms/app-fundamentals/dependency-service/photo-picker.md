@@ -1,9 +1,6 @@
 ---
-title: description:'本文介绍如何使用 Xamarin.Forms DependencyService 类从手机的图片库中选取照片。'
-ms.prod: ms.assetid: ms.technology: author: ms.author: ms.date: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title:"从图片库中选取照片" description:"本文介绍如何使用 Xamarin.Forms DependencyService 类从手机的图片库中选取照片。"
+ms.prod: xamarin ms.assetid:4F51B0E7-6A63-403C-B488-500CCBCE75DD ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2017 年 3 月 6 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 
 # <a name="picking-a-photo-from-the-picture-library"></a>从图片库中选取照片
@@ -61,7 +58,7 @@ namespace DependencyServiceDemos.iOS
             // Present UIImagePickerController;
             UIWindow window = UIApplication.SharedApplication.KeyWindow;
             var viewController = window.RootViewController;
-            viewController.PresentModalViewController(imagePicker, true);
+            viewController.PresentViewController(imagePicker, true, null);
 
             // Return Task object
             taskCompletionSource = new TaskCompletionSource<Stream>();
@@ -73,7 +70,7 @@ namespace DependencyServiceDemos.iOS
 
 ```
 
-`GetImageStreamAsync` 方法创建 `UIImagePickerController` 并初始化它，以从照片库中选择图像。 需要两个事件处理程序：一个用于用户选择照片，另一个用于用户取消照片库的显示。 然后 `PresentModalViewController` 向用户显示照片库。
+`GetImageStreamAsync` 方法创建 `UIImagePickerController` 并初始化它，以从照片库中选择图像。 需要两个事件处理程序：一个用于用户选择照片，另一个用于用户取消照片库的显示。 然后 `PresentViewController` 方法向用户显示照片图库。
 
 此时，`GetImageStreamAsync` 方法必须将 `Task<Stream>` 对象返回给调用它的代码。 只有用户已完成与照片库的交互并调用其中一个事件处理程序时，该任务才会完成。 对于这种情况，[`TaskCompletionSource`](https://msdn.microsoft.com/library/dd449174(v=vs.110).aspx) 类是必不可少的。 该类提供要从 `GetImageStreamAsync` 方法返回的适当泛型类型的 `Task` 对象，稍后完成任务时该类将收到通知。
 
@@ -152,7 +149,7 @@ public class MainActivity : FormsAppCompatActivity
 
     protected override void OnCreate(Bundle savedInstanceState)
     {
-        // ... 
+        // ...
         Instance = this;
     }
     // ...

@@ -1,27 +1,17 @@
 ---
-title: Xamarin.Essentials:地理编码
-description: Xamarin.Essentials 中的 Geocoding 类提供了 API，既可以将地标地理编码为位置坐标，又可以将坐标反向地理编码为地标。
-ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 05/28/2019
-ms.custom: video
-ms.openlocfilehash: 157eb3116f09268790036f8983543114e7a58276
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "66354111"
+title: "Xamarin.Essentials：Geocoding" description:"Xamarin.Essentials 中的 Geocoding 类提供了 API，既可以将地标地理编码为位置坐标，又可以将坐标反向地理编码为地标。"
+ms.assetid：3ADC440C-B000-4708-A2CC-296F5160AF90 author: jamesmontemagno ms.author: jamont ms.date:2019 年 5 月 28 日 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
-# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials:地理编码
 
-Geocoding 类提供了 API，既可以将地标地理编码为位置坐标，又可以将坐标反向地理编码为地标  。
+# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials：地理编码
+
+Geocoding 类提供了 API，既可以将地标地理编码为位置坐标，又可以将坐标反向地理编码为地标。
 
 ## <a name="get-started"></a>入门
 
 [!include[](~/essentials/includes/get-started.md)]
 
-若要访问 Geocoding 功能，需要以下特定于平台的设置  。
+若要访问 Geocoding 功能，需要以下特定于平台的设置。
 
 # <a name="android"></a>[Android](#tab/android)
 
@@ -33,9 +23,9 @@ Geocoding 类提供了 API，既可以将地标地理编码为位置坐标，又
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-需要必应地图 API 密钥才能使用地理编码功能。 注册免费的[必应地图](https://www.bingmapsportal.com/)帐户。 在“我的帐户”>“我的密钥”下创建一个新密钥，并根据你的应用程序类型（对于 UWP 应用，应该是公共 Windows 应用（UWP、8.x 及更早版本））填写信息   。
+需要必应地图 API 密钥才能使用地理编码功能。 注册免费的[必应地图](https://www.bingmapsportal.com/)帐户。 在“我的帐户”>“我的密钥”下创建一个新密钥，并根据你的应用程序类型（对于 UWP 应用，应该是公共 Windows 应用（UWP、8.x 及更早版本））填写信息 。
 
-在应用程序生命周期的早期调用任何 Geocoding 方法之前，应设置 API 密钥（仅在 UWP 上可用）  ：
+在应用程序生命周期的早期调用任何 Geocoding 方法之前，应设置 API 密钥（仅在 UWP 上可用）：
 
 ```csharp
 Platform.MapServiceToken = "YOUR-KEY-HERE";
@@ -45,7 +35,7 @@ Platform.MapServiceToken = "YOUR-KEY-HERE";
 
 ## <a name="using-geocoding"></a>使用 Geocoding
 
-在你的类中添加对 Xamarin.Essentials 的引用：
+在类中添加对 Xamarin.Essentials 的引用：
 
 ```csharp
 using Xamarin.Essentials;
@@ -119,7 +109,7 @@ catch (Exception ex)
 
 ## <a name="distance-between-two-locations"></a>两个位置之间的距离
 
-[`Location`](xref:Xamarin.Essentials.Location) 和 [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) 类定义了可用于计算两个位置之间的距离的方法。 有关示例，请参阅文章 [**Xamarin.Essentials：地理位置**](geolocation.md#calculate-distance)。
+[`Location`](xref:Xamarin.Essentials.Location) 和 [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) 类定义了可用于计算两个位置之间的距离的方法。 有关示例，请参阅文章[Xamarin.Essentials：Geolocation](geolocation.md#calculate-distance)。
 
 ## <a name="api"></a>API
 

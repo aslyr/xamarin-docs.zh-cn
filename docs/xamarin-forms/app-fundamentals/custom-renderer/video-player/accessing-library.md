@@ -1,9 +1,6 @@
 ---
-title: description:'本文说明如何使用 Xamarin.Forms 在视频播放器应用程序中访问设备的视频库。'
-ms.prod: ms.assetid: ms.technology: author: ms.author: ms.date: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title:"访问设备的视频库" description:"本文说明如何使用 Xamarin.Forms 在视频播放器应用程序中访问设备的视频库。"
+ms.prod: xamarin ms.assetid:364C1D43-EAAE-45B9-BE24-0DA5AE74C4D9 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2018 年 2 月 12 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 
 # <a name="accessing-the-devices-video-library"></a>访问设备的视频库
@@ -65,7 +62,7 @@ namespace FormsVideoLibrary.iOS
             // Present UIImagePickerController;
             UIWindow window = UIApplication.SharedApplication.KeyWindow;
             var viewController = window.RootViewController;
-            viewController.PresentModalViewController(imagePicker, true);
+            viewController.PresentViewController(imagePicker, true, null);
 
             // Return Task object
             taskCompletionSource = new TaskCompletionSource<string>();

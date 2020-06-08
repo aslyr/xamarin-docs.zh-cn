@@ -1,21 +1,11 @@
 ---
-title: Xamarin.Essentials:应用主题
-description: 本文档介绍了 Xamarin.Essentials 中请求的应用主题 API，它提供了系统为正在运行的应用请求什么主题样式的信息。
-ms.assetid: F6F6D496-A8A9-4B9A-AF1A-370D937E5073
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 01/06/2020
-ms.openlocfilehash: 84c246eb60f4ee561bbf2bcfee6eb587ce601a4a
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150154"
+title: "Xamarin.Essentials：应用主题" description:"本文档介绍了 Xamarin.Essentials 中请求的应用主题 API，它提供了系统为正在运行的应用请求什么主题样式的信息。"
+ms.assetid：F6F6D496-A8A9-4B9A-AF1A-370D937E5073 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:2020 年 1 月 6 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
-# <a name="xamarinessentials-app-theme"></a>Xamarin.Essentials:应用主题
 
-RequestedTheme  API 属于 [`AppInfo`](app-information.md) 类，它提供了系统为正在运行的应用请求什么主题的信息。
+# <a name="xamarinessentials-app-theme"></a>Xamarin.Essentials：应用主题
+
+RequestedTheme API 属于 [`AppInfo`](app-information.md) 类，它提供了系统为正在运行的应用请求什么主题的信息。
 
 ## <a name="get-started"></a>入门
 
@@ -23,7 +13,7 @@ RequestedTheme  API 属于 [`AppInfo`](app-information.md) 类，它提供了系
 
 ## <a name="using-requestedtheme"></a>使用 RequestedTheme
 
-在你的类中添加对 Xamarin.Essentials 的引用：
+在类中添加对 Xamarin.Essentials 的引用：
 
 ```csharp
 using Xamarin.Essentials;
@@ -58,14 +48,14 @@ Android 使用配置模式来指定要向用户请求的主题类型。 它可�
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-在版本低于 13.0 的 iOS 上，始终返回“Unspecified” 
+在版本低于 13.0 的 iOS 上，始终返回“Unspecified”
 
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
 必须在 UI 线程上调用 `RequestedTheme`，否则将引发异常。
 
-UWP 应用程序将在 RUWP App.xaml 中的 RequestedTheme 下反映出你的设置  。 如果将它设置为特定主题，则 Xamarin.Essentials 将始终返回此设置。 要使用操作系统的动态主题，请从应用程序中删除此节点，然后在应用运行时，它将返回用户在 Windows 设置中（“设置”>“个性化”>“颜色”>“选择默认应用模式”）设置的主题  。
+UWP 应用程序将在 RUWP App.xaml 中的 RequestedTheme 下反映出你的设置。 如果将它设置为特定主题，则 Xamarin.Essentials 将始终返回此设置。 要使用操作系统的动态主题，请从应用程序中删除此节点，然后在应用运行时，它将返回用户在 Windows 设置中（“设置”>“个性化”>“颜色”>“选择默认应用模式”）设置的主题。
 
 有关详细信息，请参阅 [UWP RequestedTheme 文档](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.requestedtheme)。
 

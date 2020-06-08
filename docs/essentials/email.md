@@ -1,21 +1,11 @@
 ---
-title: Xamarin.Essentials:电子邮件
-description: Xamarin.Essentials 中的 Email 类使应用程序能够打开包含主题、正文和收件人（TO、CC、BCC）等指定信息的默认电子邮件应用程序。
-ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 08/20/2019
-ms.openlocfilehash: 77fcadf3ec58a38acac5eca14b43d937414a4a60
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150100"
+title: "Xamarin.Essentials：Email" description:"Xamarin.Essentials 中的 Email 类使应用程序能够打开包含主题、正文和收件人（TO、CC、BCC）等指定信息的默认电子邮件应用程序。"
+ms.assetid：5FBB6FF0-0E7B-4C29-8F06-91642AF12629 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:2019 年 8 月 20 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
-# <a name="xamarinessentials-email"></a>Xamarin.Essentials:电子邮件
 
-Email 类使应用程序能够打开包含主题、正文和收件人（TO、CC、BCC）等指定信息的默认电子邮件应用程序  。
+# <a name="xamarinessentials-email"></a>Xamarin.Essentials：电子邮件
+
+Email 类使应用程序能够打开包含主题、正文和收件人（TO、CC、BCC）等指定信息的默认电子邮件应用程序。
 
 ## <a name="get-started"></a>入门
 
@@ -26,7 +16,7 @@ Email 类使应用程序能够打开包含主题、正文和收件人（TO、CC�
 
 ## <a name="using-email"></a>使用 Email
 
-在你的类中添加对 Xamarin.Essentials 的引用：
+在类中添加对 Xamarin.Essentials 的引用：
 
 ```csharp
 using Xamarin.Essentials;

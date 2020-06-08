@@ -1,21 +1,11 @@
 ---
-title: Xamarin.Essentials：Launcher
-description: Xamarin.Essentials 中的 Launcher 类允许应用程序打开系统的 URI。
-ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 08/20/2019
-ms.openlocfilehash: f84d3bf379562c8ddd96a32dfb9f15b03b0a6827
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149790"
+title:"Xamarin.EssentialsLauncher" description:"Xamarin.Essentials 中的 Launcher 类允许应用程序打开系统的 URI。"
+ms.assetid：BABF40CC-8BEE-43FD-BE12-6301DF27DD33 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:2019 年 8 月 20 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
-# <a name="xamarinessentials-launcher"></a>Xamarin.Essentials:启动器
 
- Launcher 类允许应用程序打开系统的 URI。 通常在深入链接到另一个应用程序的自定义 URI 方案后使用此类。 如果想要将浏览器打开到某个网站，则应引用[浏览器](open-browser.md)  API。
+# <a name="xamarinessentials-launcher"></a>Xamarin.Essentials：启动器
+
+Launcher 类允许应用程序打开系统的 URI。 通常在深入链接到另一个应用程序的自定义 URI 方案后使用此类。 如果想要将浏览器打开到某个网站，则应引用[浏览器](open-browser.md) API。
 
 ## <a name="get-started"></a>入门
 
@@ -23,7 +13,7 @@ ms.locfileid: "83149790"
 
 ## <a name="using-launcher"></a>使用 Launcher
 
-在你的类中添加对 Xamarin.Essentials 的引用：
+在类中添加对 Xamarin.Essentials 的引用：
 
 ```csharp
 using Xamarin.Essentials;

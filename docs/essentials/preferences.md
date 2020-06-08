@@ -1,21 +1,11 @@
 ---
-title: Xamarin.Essentials:首选项
-description: 本文档介绍 Xamarin.Essentials 中的 Preferences 类，此类将应用程序首选项保存在键/值存储中。 本文还讨论了如何使用类和可以存储的数据类型。
-ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/15/2019
-ms.custom: video
-ms.openlocfilehash: e812ab5b85db396ee3cb473f4a659ac188c9212f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79497050"
+title: "Xamarin.Essentials：Preferences" description:"本文档介绍 Xamarin.Essentials 中的 Preferences 类，此类将应用程序首选项保存在键/值存储中。 本文还讨论了如何使用类和可以存储的数据类型。"
+ms.assetid：AA81BCBD-79BA-448F-942B-BA4415CA50FF author: jamesmontemagno ms.author: jamont ms.date:2019 年 1 月 15 日 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
-# <a name="xamarinessentials-preferences"></a>Xamarin.Essentials:首选项
 
-Preferences 类帮助将应用程序首选项存储在键/值存储中  。
+# <a name="xamarinessentials-preferences"></a>Xamarin.Essentials：首选项
+
+Preferences 类帮助将应用程序首选项存储在键/值存储中。
 
 ## <a name="get-started"></a>入门
 
@@ -23,13 +13,13 @@ Preferences 类帮助将应用程序首选项存储在键/值存储中  。
 
 ## <a name="using-preferences"></a>使用 Preferences
 
-在你的类中添加对 Xamarin.Essentials 的引用：
+在类中添加对 Xamarin.Essentials 的引用：
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-将给定密匙的值保存在首选项中  ：
+将给定密匙的值保存在首选项中：
 
 ```csharp
 Preferences.Set("my_key", "my_value");
@@ -41,13 +31,13 @@ Preferences.Set("my_key", "my_value");
 var myValue = Preferences.Get("my_key", "default_value");
 ```
 
-检查首选项中是否存在特定密钥  ：
+检查首选项中是否存在特定密钥：
 
 ```csharp
 bool hasKey = Preferences.ContainsKey("my_key");
 ```
 
-从首选项删除密钥  ：
+从首选项删除密钥：
 
 ```csharp
 Preferences.Remove("my_key");
@@ -63,7 +53,7 @@ Preferences.Clear();
 
 ## <a name="supported-data-types"></a>支持的数据类型
 
-以下数据类型在 Preferences 中受到支持  ：
+以下数据类型在 Preferences 中受到支持：
 
 - **bool**
 - **double**
@@ -90,7 +80,7 @@ Preferences.Clear();
 
 # <a name="android"></a>[Android](#tab/android)
 
-所有数据都存储到[共享首选项](https://developer.android.com/training/data-storage/shared-preferences.html)中。 如果未指定 `sharedName`，则使用默认的共享首选项，否则此名称将用于获取具有指定名称的私有共享首选项  。
+所有数据都存储到[共享首选项](https://developer.android.com/training/data-storage/shared-preferences.html)中。 如果未指定 `sharedName`，则使用默认的共享首选项，否则此名称将用于获取具有指定名称的私有共享首选项。
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
@@ -98,7 +88,7 @@ Preferences.Clear();
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-[ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) 用于将值存储在设备上。 如果未指定 `sharedName`，则使用 `LocalSettings`，否则此名称将用于在 `LocalSettings` 内创建新容器。 
+[ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) 用于将值存储在设备上。 如果未指定 `sharedName`，则使用 `LocalSettings`，否则此名称将用于在 `LocalSettings` 内创建新容器。
 
 `LocalSettings` 还存在以下限制：每个设置的名称长度最多可为 255 个字符。 每个设置的大小最多可为 8K 字节，每个复合设置的大小最多可为 64K 字节。
 
@@ -106,7 +96,7 @@ Preferences.Clear();
 
 ## <a name="persistence"></a>持久性
 
-卸载应用程序将导致所有首选项被删除  。 对此有一个例外，即面向使用[__自动备份__](https://developer.android.com/guide/topics/data/autobackup)的 Android 6.0（API 级别 23）或更高版本并在其上运行的应用。 此功能默认启用并且会保留应用数据，包括共享首选项（即 Preferences API 使用的内容）   。 可以遵循 Google 的[文档](https://developer.android.com/guide/topics/data/autobackup)禁用此功能。
+卸载应用程序将导致所有首选项被删除。 对此有一个例外，即面向使用[__自动备份__](https://developer.android.com/guide/topics/data/autobackup)的 Android 6.0（API 级别 23）或更高版本并在其上运行的应用。 此功能默认启用并且会保留应用数据，包括共享首选项（即 Preferences API 使用的内容）。 可以遵循 Google 的[文档](https://developer.android.com/guide/topics/data/autobackup)禁用此功能。
 
 ## <a name="limitations"></a>限制
 

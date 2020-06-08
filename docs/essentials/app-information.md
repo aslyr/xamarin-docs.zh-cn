@@ -1,21 +1,11 @@
 ---
-title: Xamarin.Essentials:应用信息
-description: 本文档介绍 Xamarin.Essentials 中的 AppInfo 类，此类提供应用程序的相关信息。 例如，它会公开应用名称和版本。
-ms.assetid: 15924FCB-19E0-45B2-944E-E94FD7AE12FA
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/29/2019
-ms.custom: video
-ms.openlocfilehash: 69d0cb503d329ccfb4c29fb6cc4a589bef97e893
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70756995"
+title: "Xamarin.Essentials：应用信息" description:"本文档介绍 Xamarin.Essentials 中的 AppInfo 类，此类提供应用程序的相关信息。 例如，它会公开应用名称和版本。"
+ms.assetid：15924FCB-19E0-45B2-944E-E94FD7AE12FA author: jamesmontemagno ms.author: jamont ms.date:2019 年 1 月 29 日 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
-# <a name="xamarinessentials-app-information"></a>Xamarin.Essentials:应用信息
 
-AppInfo 类提供应用程序的相关信息  。
+# <a name="xamarinessentials-app-information"></a>Xamarin.Essentials：应用信息
+
+AppInfo 类提供应用程序的相关信息。
 
 ## <a name="get-started"></a>入门
 
@@ -23,7 +13,7 @@ AppInfo 类提供应用程序的相关信息  。
 
 ## <a name="using-appinfo"></a>使用 AppInfo
 
-在你的类中添加对 Xamarin.Essentials 的引用：
+在类中添加对 Xamarin.Essentials 的引用：
 
 ```csharp
 using Xamarin.Essentials;
@@ -49,7 +39,7 @@ var build = AppInfo.BuildString;
 
 ## <a name="displaying-application-settings"></a>显示应用程序设置
 
-AppInfo 类还可以显示由操作系统为应用程序维护的设置页面  ：
+AppInfo 类还可以显示由操作系统为应用程序维护的设置页面：
 
 ```csharp
 // Display settings page
@@ -64,28 +54,28 @@ AppInfo.ShowSettingsUI();
 
 应用信息提取自 `AndroidManifest.xml` 的以下字段：
 
--  版本 – `manifest` 节点中的 `android:versionCode`
--  名称 - `application` 节点中的 `android:label`
--  PackageName：`manifest` 节点中的 `package`
--  VersionString – `application` 节点中的 `android:versionName`
+- 版本 – `manifest` 节点中的 `android:versionCode`
+- 名称 - `application` 节点中的 `android:label`
+- PackageName：`manifest` 节点中的 `package`
+- VersionString – `application` 节点中的 `android:versionName`
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
 应用信息提取自 `Info.plist` 的以下字段：
 
--  版本 – `CFBundleVersion`
--  名称 - `CFBundleDisplayName`如果已设置否则为 `CFBundleName`
--  PackageName：`CFBundleIdentifier`
--  VersionString – `CFBundleShortVersionString`
+- 版本 – `CFBundleVersion`
+- 名称 - `CFBundleDisplayName`如果已设置否则为 `CFBundleName`
+- PackageName：`CFBundleIdentifier`
+- VersionString – `CFBundleShortVersionString`
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
 应用信息提取自 `Package.appxmanifest` 的以下字段：
 
--  版本 – 使用 `Identity` 节点上 `Version` 中的 `Build`
--  名称 - `Properties` 节点上的 `DisplayName`
--  PackageName：`Identity` 节点上的 `Name`
--  VersionString – `Identity` 节点上的 `Version`
+- 版本 – 使用 `Identity` 节点上 `Version` 中的 `Build`
+- 名称 - `Properties` 节点上的 `DisplayName`
+- PackageName：`Identity` 节点上的 `Name`
+- VersionString – `Identity` 节点上的 `Version`
 
 --------------
 

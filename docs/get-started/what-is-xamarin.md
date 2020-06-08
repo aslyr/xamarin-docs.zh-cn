@@ -1,22 +1,9 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a9a25cff30b9dfbed44e60faeae2f577d07940fc
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139212"
+title:"什么是 Xamarin？"
+description:"本文介绍 Xamarin 平台和相关库。"
+ms.prod: xamarin ms.assetid:33C83E13-F3E5-17B4-6512-207F3D3C5AB6 ms.custom: video author: profexorgeek ms.author: jusjohns ms.date:2020 年 5 月 28 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="what-is-xamarin"></a>什么是 Xamarin？
 
 [![iOS 和 Android 中的示例 Xamarin 应用程序的屏幕截图](what-is-xamarin-images/xamarin-app-cropped.png)](what-is-xamarin-images/xamarin-app.png#lightbox)
@@ -43,7 +30,7 @@ Xamarin 适用于具有以下目标的开发人员：
 
 该图显示跨平台 Xamarin 应用程序的总体体系结构。 Xamarin 允许在每个平台上创建本机 UI，并在 C# 中编写跨平台共享的业务逻辑。 在大多数情况下，80% 的应用程序代码可使用 Xamarin 进行共享。
 
-Xamarin 是在 Mono 基础上生成的，后者是基于 .NET ECMA 标准的 .NET Framework 的开放源代码版本。 Mono 存在时间几乎与 .NET Framework 本身一样长，并可在大多数平台上运行，包括 Linux、Unix、FreeBSD 和 macOS。 Mono 执行环境会自动处理任务，如内存分配、垃圾回收以及与基础平台的互操作性。
+Xamarin 在 .NET 的基础之上进行构建，它自动处理诸如内存分配、垃圾回收以及与基础平台的互操作性等任务。
 
 有关特定于平台的体系结构的详细信息，请参阅 [Xamarin.Android](#xamarinandroid) 和 [Xamarin.iOS](#xamarinios)。
 
@@ -89,7 +76,7 @@ Xamarin.Essentials 是一个库，可为本机设备功能提供跨平台 API。
 
 ### Xamarin.Forms
 
-Xamarin.Forms 是一个开放源代码 UI 框架。 Xamarin.Forms 使开发人员可以从单个共享基本代码生成 iOS、Android 和 Windows 应用程序。 Xamarin.Forms 使开发人员可以在 C# 中通过代码隐藏在 XAML 中创建用户界面。 这些用户界面在每个平台上呈现为高性能本机控件。 Xamarin.Forms 提供的功能的一些示例包括：
+Xamarin.Forms 是一个开放源代码 UI 框架。 通过 Xamarin.Forms，开发人员可从单个共享基本代码生成 Xamarin.iOS、Xamarin.Android 和 Windows 应用程序。 Xamarin.Forms 使开发人员可以在 C# 中通过代码隐藏在 XAML 中创建用户界面。 这些用户界面在每个平台上呈现为高性能本机控件。 Xamarin.Forms 提供的功能的一些示例包括：
 
 - XAML 用户界面语言
 - 数据绑定

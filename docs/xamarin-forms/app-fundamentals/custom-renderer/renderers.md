@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 每个 Xamarin.Forms 控件都有一个附带的呈现器，适用于创建本机控件实例的各个平台。 本文列出了用于实现每个 Xamarin.Forms 页面、布局、视图和单元的呈现器和本机控件类。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a56f05f8ff4eb8ece43a9f4f38a669cfdc85c4be
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135182"
+title:"呈现器基类和本机控件" description:"每个 Xamarin.Forms 控件都有一个附带的呈现器，适用于创建本机控件实例的各个平台。 本文列出了用于实现每个 Xamarin.Forms 页面、布局、视图和单元的呈现器和本机控件类。"
+ms.prod: xamarin ms.assetid:A8909AE3-ED0E-4D24-BF96-B49E732E3B93 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2020 年 4 月 17 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="renderer-base-classes-and-native-controls"></a>呈现器基类和本机控件
 
 每个 Xamarin.Forms 控件都有一个附带的呈现器，适用于创建本机控件实例的各个平台。本文列出了用于实现每个 Xamarin.Forms 页面、布局、视图和单元的呈现器和本机控件类。
@@ -26,7 +12,10 @@ ms.locfileid: "84135182"
 - **iOS** – Xamarin.Forms.Platform.iOS
 - **Android** – Xamarin.Forms.Platform.Android
 - **Android (AppCompat)** – Xamarin.Forms.Platform.Android.AppCompat
+- Android (FastRenderers) - Xamarin.Forms.Platform.Android.FastRenderers
 - **通用 Windows 平台 (UWP)** – Xamarin.Forms.Platform.UWP
+
+有关快速呈现器的详细信息，请参阅 [Xamarin.Forms 快速呈现器](~/xamarin-forms/internals/fast-renderers.md)。
 
 `MapRenderer` 类位于以下命名空间：：
 
@@ -54,18 +43,18 @@ ms.locfileid: "84135182"
 
 下表列出实现每个 Xamarin.Forms [布局](~/xamarin-forms/user-interface/controls/layouts.md)类型的呈现器和本机控件类：
 
-|布局|呈现器|iOS|Android|UWP|
+|布局|呈现器|iOS|Android|Android (AppCompat)|UWP|
 |--- |--- |--- |--- |--- |
-|[`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter)|ViewRenderer|UIView|视图|FrameworkElement|
-|[`ContentView`](xref:Xamarin.Forms.ContentView)|ViewRenderer|UIView|视图|FrameworkElement|
-|[`FlexLayout`](xref:Xamarin.Forms.FlexLayout)|ViewRenderer|UIView|视图|FrameworkElement|
-|[`Frame`](xref:Xamarin.Forms.Frame)|FrameRenderer|UIView|ViewGroup|Border|
-|[`ScrollView`](xref:Xamarin.Forms.ScrollView)|ScrollViewRenderer|UIScrollView|ScrollView|ScrollViewer|
-|[`TemplatedView`](xref:Xamarin.Forms.TemplatedView)|ViewRenderer|UIView|视图|FrameworkElement|
-|[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)|ViewRenderer|UIView|视图|FrameworkElement|
-|[`Grid`](xref:Xamarin.Forms.Grid)|ViewRenderer|UIView|视图|FrameworkElement|
-|[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)|ViewRenderer|UIView|视图|FrameworkElement|
-|[`StackLayout`](xref:Xamarin.Forms.StackLayout)|ViewRenderer|UIView|视图|FrameworkElement|
+|[`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter)|ViewRenderer|UIView|视图|视图|FrameworkElement|
+|[`ContentView`](xref:Xamarin.Forms.ContentView)|ViewRenderer|UIView|视图|视图|FrameworkElement|
+|[`FlexLayout`](xref:Xamarin.Forms.FlexLayout)|ViewRenderer|UIView|视图|视图|FrameworkElement|
+|[`Frame`](xref:Xamarin.Forms.Frame)|FrameRenderer|UIView|ViewGroup|CardView|Border|
+|[`ScrollView`](xref:Xamarin.Forms.ScrollView)|ScrollViewRenderer|UIScrollView|ScrollView|ScrollView|ScrollViewer|
+|[`TemplatedView`](xref:Xamarin.Forms.TemplatedView)|ViewRenderer|UIView|视图|视图|FrameworkElement|
+|[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)|ViewRenderer|UIView|视图|视图|FrameworkElement|
+|[`Grid`](xref:Xamarin.Forms.Grid)|ViewRenderer|UIView|视图|视图|FrameworkElement|
+|[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)|ViewRenderer|UIView|视图|视图|FrameworkElement|
+|[`StackLayout`](xref:Xamarin.Forms.StackLayout)|ViewRenderer|UIView|视图|视图|FrameworkElement|
 
 ## <a name="views"></a>视图
 
@@ -117,6 +106,7 @@ ms.locfileid: "84135182"
 |[`ImageCell`](xref:Xamarin.Forms.ImageCell)|ImageCellRenderer|带有 UIImage 的 UITableViewCell|带有两个 TextViews 和一个 ImageView 的 LinearLayout|带有网格且包含一个 Image 和两个 TextBlocks 的 DataTemplate|
 |[`ViewCell`](xref:Xamarin.Forms.ViewCell)|[ViewCellRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)|UITableViewCell|视图|带有 ContentPresenter 的 DataTemplate|
 
-## <a name="summary"></a>总结
+## <a name="related-links"></a>相关链接
 
-本文列出了用于实现每个 Xamarin.Forms 页面、布局、视图和单元的呈现器和本机控件类。 每个 Xamarin.Forms 控件都有一个附带的呈现器，适用于创建本机控件实例的各个平台。
+- [Xamarin.Forms 快速呈现器](~/xamarin-forms/internals/fast-renderers.md)
+- [Xamarin.Forms Shell 自定义呈现器](~/xamarin-forms/app-fundamentals/shell/customrenderers.md)

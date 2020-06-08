@@ -1,21 +1,11 @@
 ---
-title: Xamarin.Essentials:共享
-description: Xamarin.Essentials 中的 Share 类使应用程序能够将数据（例如文本和 Web 链接）共享到设备上的其他应用程序。
-ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/06/2020
-ms.custom: video
-ms.openlocfilehash: f964967dce0dbb7e49d52a7f865b0fe8a9957bbe
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77545198"
+title: "Xamarin.Essentials：Share" description:"Xamarin.Essentials 中的 Share 类使应用程序能够将数据（例如文本和 Web 链接）共享到设备上的其他应用程序。"
+ms.assetid：B7B01D55-0129-4C87-B515-89F8F4E94665 author: jamesmontemagno ms.author: jamont ms.date:2020 年 1 月 6 日 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
-# <a name="xamarinessentials-share"></a>Xamarin.Essentials:共享
 
-Share 类使应用程序能够将数据（例如文本和 Web 链接）共享到设备上的其他应用程序  。
+# <a name="xamarinessentials-share"></a>Xamarin.Essentials：共享
+
+Share 类使应用程序能够将数据（例如文本和 Web 链接）共享到设备上的其他应用程序。
 
 ## <a name="get-started"></a>入门
 
@@ -23,7 +13,7 @@ Share 类使应用程序能够将数据（例如文本和 Web 链接）共享到
 
 ## <a name="using-share"></a>使用 Share
 
-在你的类中添加对 Xamarin.Essentials 的引用：
+在类中添加对 Xamarin.Essentials 的引用：
 
 ```csharp
 using Xamarin.Essentials;

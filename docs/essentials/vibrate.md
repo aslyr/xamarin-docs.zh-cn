@@ -1,33 +1,23 @@
 ---
-title: Xamarin.Essentials:振动
-description: 本文档介绍 Xamarin.Essentials 中的 Vibration 类，此类使你能够在所需的时间内启动和停止振动功能。
-ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: a002cd6ed183ffeafef92cb40d48b2792347714d
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149840"
+title: "Xamarin.Essentials：Vibration" description:"本文档介绍 Xamarin.Essentials 中的 Vibration 类，你可通过此类在所需的时间内启动和停止振动功能。"
+ms.assetid：7E8B24C4-2625-4DAE-A129-383542D34F1E author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:2018 年 11 月 4 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
-# <a name="xamarinessentials-vibration"></a>Xamarin.Essentials:振动
 
-Vibration 类使你能够在所需的时间内启动和停止振动功能  。
+# <a name="xamarinessentials-vibration"></a>Xamarin.Essentials：振动
+
+Vibration 类使你能够在所需的时间内启动和停止振动功能。
 
 ## <a name="get-started"></a>入门
 
 [!include[](~/essentials/includes/get-started.md)]
 
-若要访问 Vibration 功能，需要以下特定于平台的设置  。
+若要访问 Vibration 功能，需要以下特定于平台的设置。
 
 # <a name="android"></a>[Android](#tab/android)
 
 需要具有 Vibrate 权限，并且必须在 Android 项目中进行配置。 可以通过以下方法添加此权限：
 
-打开 Properties 文件夹下的 AssemblyInfo.cs 文件并添加   ：
+打开 Properties 文件夹下的 AssemblyInfo.cs 文件并添加 ：
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.Vibrate)]
@@ -35,13 +25,13 @@ Vibration 类使你能够在所需的时间内启动和停止振动功能  。
 
 或更新 Android 清单：
 
-打开 Properties 文件夹下的 AndroidManifest.xml 文件，并在“manifest”节点内添加以下代码    。
+打开 Properties 文件夹下的 AndroidManifest.xml 文件，并在“manifest”节点内添加以下代码  。
 
 ```xml
 <uses-permission android:name="android.permission.VIBRATE" />
 ```
 
-或右键单击 Android 项目并打开项目的属性。 在“Android 清单”下找到“所需权限:”区域，然后选中“VIBRATE”权限    。 这样会自动更新 AndroidManifest.xml 文件  。
+或右键单击 Android 项目并打开项目的属性。 在“Android 清单”下找到“所需权限:”区域，然后选中“VIBRATE”权限  。 这样会自动更新 AndroidManifest.xml 文件。
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
@@ -55,7 +45,7 @@ Vibration 类使你能够在所需的时间内启动和停止振动功能  。
 
 ## <a name="using-vibration"></a>使用 Vibration
 
-在你的类中添加对 Xamarin.Essentials 的引用：
+在类中添加对 Xamarin.Essentials 的引用：
 
 ```csharp
 using Xamarin.Essentials;

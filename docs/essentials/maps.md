@@ -1,21 +1,11 @@
 ---
-title: Xamarin.Essentials Map
-description: Xamarin.Essentials 中的 Map 类使应用程序可以将已安装的地图应用程序打开到特定位置或地标。
-ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 05/26/2020
-ms.custom: video
-ms.openlocfilehash: 16f4a69e2d9216bb2e03fbcb663403d198b42c98
-ms.sourcegitcommit: 6a6cbb62bcf149f9515ee8868679a8a07ce17956
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83862711"
+title:"Xamarin.EssentialsMap" description:"Xamarin.Essentials 中的 Map 类使应用程序可以将已安装的地图应用程序打开到特定位置或地标。"
+ms.assetid：BABF40CC-8BEE-43FD-BE12-6301DF27DD33 author: jamesmontemagno ms.author: jamont ms.date:2020 年 5 月 26 日 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
-# <a name="xamarinessentials-map"></a>Xamarin.Essentials:映射
 
- Map 类使应用程序可以将已安装的地图应用程序打开到特定位置或地标。
+# <a name="xamarinessentials-map"></a>Xamarin.Essentials：映射
+
+Map 类使应用程序可以将已安装的地图应用程序打开到特定位置或地标。
 
 ## <a name="get-started"></a>入门
 
@@ -23,7 +13,7 @@ ms.locfileid: "83862711"
 
 ## <a name="using-map"></a>使用 Map
 
-在你的类中添加对 Xamarin.Essentials 的引用：
+在类中添加对 Xamarin.Essentials 的引用：
 
 ```csharp
 using Xamarin.Essentials;
@@ -142,7 +132,7 @@ public class MapTest
 
 # <a name="android"></a>[Android](#tab/android)
 
-Android 使用 `geo:` URI 方案启动设备上的地图应用程序。 这可能会提示用户从支持此 URI 方案的现有应用程序中进行选择。  Xamarin.Essentials 使用支持此方案的 Google 地图进行测试。
+Android 使用 `geo:` URI 方案启动设备上的地图应用程序。 这可能会提示用户从支持此 URI 方案的现有应用程序中进行选择。  Xamarin.Essentials 使用支持此方案的 Google Maps 进行测试。
 
 # <a name="ios"></a>[iOS](#tab/ios)
 

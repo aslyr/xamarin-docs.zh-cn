@@ -1,19 +1,8 @@
 ---
-title: Xamarin.Forms 支持的平台
-description: Xamarin.Forms 平台和开发系统要求。
-ms.prod: xamarin
-ms.assetid: eecaf6a5-567c-49b2-ac83-2a195596c5bf
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/22/2020
-ms.openlocfilehash: 5751983bf4a818e8ee91af98b0c05658efaca8b2
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303617"
+title: "Xamarin.Forms 支持的平台" description:"Xamarin.Forms 平台和开发系统要求。"
+ms.prod: xamarin ms.assetid: eecaf6a5-567c-49b2-ac83-2a195596c5bf ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2020 年 1 月 22 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinforms-supported-platforms"></a>Xamarin.Forms 支持的平台
 
 可对以下操作系统编写 Xamarin.Forms 应用程序：
@@ -34,7 +23,7 @@ ms.locfileid: "79303617"
 Xamarin.Forms 支持 iOS、Android 和 Windows 以外的其他平台：
 
 - Samsung Tizen
-- macOS
+- macOS 10.13 或更高版本
 - GTK#
 - WPF
 
@@ -44,21 +33,21 @@ Xamarin.Forms 支持 iOS、Android 和 Windows 以外的其他平台：
 
 应安装最新的 Android SDK 工具和 Android API 平台。 可使用 [Android SDK 管理器](~/android/get-started/installation/android-sdk.md)更新到最新版本。
 
-此外，Android 项目的目标/编译版本必须设置为“使用最新安装的平台”   。 但是，最低版本可设置为 API 19，因此可继续支持使用 Android 4.4（以及更高版本）的设备。 在“项目选项”中可设置这些值  ：
+此外，Android 项目的目标/编译版本必须设置为“使用最新安装的平台”。 但是，最低版本可设置为 API 19，因此可继续支持使用 Android 4.4（以及更高版本）的设备。 在“项目选项”中可设置这些值：
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-“项目选项”>“应用程序”>“应用程序属性” 
+“项目选项”>“应用程序”>“应用程序属性”
 
 ![Visual Studio 中的 Android 生成选项](requirements-images/options-android-vs-sml.png)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-“生成”>“常规” 
+“生成”>“常规”
 
 ![选择最新目标框架](requirements-images/options-general-sml.png)
 
-“生成”>“Android 应用程序” 
+“生成”>“Android 应用程序”
 
 ![为应用选择最低和目标 Android 版本](requirements-images/options-android-sml.png)
 
@@ -66,7 +55,7 @@ Xamarin.Forms 支持 iOS、Android 和 Windows 以外的其他平台：
 
 ## <a name="deprecated-platforms"></a>已弃用的平台
 
-使用 Xamarin.Forms 3.0 或更高版本时，不支持这些平台：
+使用 Xamarin.Forms 3.0 或更高版本时，这些平台不受支持：
 
 - *Windows 8.1 / Windows Phone 8.1 WinRT*
 - *Windows Phone 8 Silverlight*

@@ -1,33 +1,23 @@
 ---
-title: Xamarin.Essentials:手电筒
-description: 本文档介绍 Xamarin.Essentials 中的 Flashlight 类，此类使你能够打开或关闭设备的照相机闪光灯，将其转换为一个手电筒。
-ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 1a8601860afaf033c9bdb62c187fe228d2e83435
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149957"
+title: "Xamarin.Essentials：Flashlight" description:"本文档介绍 Xamarin.Essentials 中的 Flashlight 类，你可使用此类打开或关闭设备的照相机闪光灯，将其转换为一个手电筒。"
+ms.assetid：06A03553-D212-43A2-9E6E-C2D2D93EB136 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:2018 年 11 月 4 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
-# <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials:手电筒
 
-Flashlight 类，此类使你能够打开或关闭设备的照相机闪光灯，将其转换为一个手电筒  。
+# <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials：手电筒
+
+Flashlight 类，此类使你能够打开或关闭设备的照相机闪光灯，将其转换为一个手电筒。
 
 ## <a name="get-started"></a>入门
 
 [!include[](~/essentials/includes/get-started.md)]
 
-若要访问 Flashlight 功能，需要以下特定于平台的设置  。
+若要访问 Flashlight 功能，需要以下特定于平台的设置。
 
 # <a name="android"></a>[Android](#tab/android)
 
 需要具有 Flashlight 和 Camera 权限，并且必须在 Android 项目中进行配置。 可以通过以下方法添加权限：
 
-打开 Properties 文件夹下的 AssemblyInfo.cs 文件并添加   ：
+打开 Properties 文件夹下的 AssemblyInfo.cs 文件并添加 ：
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.Flashlight)]
@@ -36,14 +26,14 @@ Flashlight 类，此类使你能够打开或关闭设备的照相机闪光灯，
 
 或更新 Android 清单：
 
-打开 Properties 文件夹下的 AndroidManifest.xml 文件，并在“manifest”节点内添加以下代码    。
+打开 Properties 文件夹下的 AndroidManifest.xml 文件，并在“manifest”节点内添加以下代码  。
 
 ```xml
 <uses-permission android:name="android.permission.FLASHLIGHT" />
 <uses-permission android:name="android.permission.CAMERA" />
 ```
 
-或右键单击 Android 项目并打开项目的属性。 在“Android 清单”下找到“所需权限:”区域，然后选中“FLASHLIGHT”和“CAMERA”权限     。 这样会自动更新 AndroidManifest.xml 文件  。
+或右键单击 Android 项目并打开项目的属性。 在“Android 清单”下找到“所需权限:”区域，然后选中“FLASHLIGHT”和“CAMERA”权限   。 这样会自动更新 AndroidManifest.xml 文件。
 
 通过添加这些权限，[Google Play 将自动筛选出设备](https://developer.android.com/guide/topics/manifest/uses-feature-element.html#permissions-features)，而无需任何特定硬件。 可以通过将以下代码添加到 Android 项目中的 AssemblyInfo.cs 文件中来绕过此操作：
 
@@ -66,7 +56,7 @@ Flashlight 类，此类使你能够打开或关闭设备的照相机闪光灯，
 
 ## <a name="using-flashlight"></a>使用 Flashlight
 
-在你的类中添加对 Xamarin.Essentials 的引用：
+在类中添加对 Xamarin.Essentials 的引用：
 
 ```csharp
 using Xamarin.Essentials;
@@ -109,7 +99,7 @@ Flashlight 类已根据设备的操作系统进行了优化。
 
 #### <a name="api-level-22-and-lower"></a>API 级别 22 及更高版本
 
-创建一个相机表面纹理以打开或关闭相机单元的 `FlashMode`。 
+创建一个相机表面纹理以打开或关闭相机单元的 `FlashMode`。
 
 ### <a name="ios"></a>[iOS](#tab/ios)
 

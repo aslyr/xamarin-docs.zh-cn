@@ -1,20 +1,11 @@
 ---
-title: Xamarin.Essentials:气压计
-description: Xamarin.Essentials 中的 Barometer 类可用于监视设备的气压计传感器，该传感器可测量压力。
-ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 5a496fc06732be1cf104cfbaffa8ff4b68c8f564
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "69976428"
+title: "Xamarin.Essentials：Barometer" description:"Xamarin.Essentials 中的 Barometer 类可用于监视设备的气压计传感器，该传感器可测量压力。"
+ms.assetid：DA4F968A-D988-41F5-8745-1BEE693660A1 author: jamesmontemagno ms.author: jamont ms.date:2018 年 11 月 4 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
-# <a name="xamarinessentials-barometer"></a>Xamarin.Essentials:气压计
 
- Barometer 类可用于监视设备的气压计传感器，该传感器可测量压力。
+# <a name="xamarinessentials-barometer"></a>Xamarin.Essentials：气压计
+
+Barometer 类可用于监视设备的气压计传感器，该传感器可测量压力。
 
 ## <a name="get-started"></a>入门
 
@@ -22,7 +13,7 @@ ms.locfileid: "69976428"
 
 ## <a name="using-barometer"></a>使用 Barometer
 
-在你的类中添加对 Xamarin.Essentials 的引用：
+在类中添加对 Xamarin.Essentials 的引用：
 
 ```csharp
 using Xamarin.Essentials;

@@ -1,20 +1,11 @@
 ---
-title: Xamarin.Essentials:Web 验证器
-description: 本文档介绍了 Xamarin.Essentials 中的 WebAuthenticator 类，使用此类可以启动基于浏览器的身份验证流，以侦听对应用的回调。
-ms.assetid: 3D95371E-5D59-440E-8D31-F3C04E493DC1
-author: redth
-ms.author: jodick
-ms.date: 03/26/2020
-ms.openlocfilehash: b090ea8491afccb7078de8333a44a4888819a46a
-ms.sourcegitcommit: ddd2cb3a102df339bb269380cb2c0617dbb1acb7
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81688263"
+title: "Xamarin.Essentials：Web 验证器" description:"本文档介绍了 Xamarin.Essentials 中的 WebAuthenticator 类，使用此类可以启动基于浏览器的身份验证流，以侦听对应用的回调。"
+ms.assetid：3D95371E-5D59-440E-8D31-F3C04E493DC1 author: redth ms.author: jodick ms.date:2020 年 3 月 26 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
-# <a name="xamarinessentials-web-authenticator"></a>Xamarin.Essentials:Web 验证器
 
-使用 WebAuthenticator  类可以启动基于浏览器的流，以侦听对注册到应用的特定 URL 的回调。
+# <a name="xamarinessentials-web-authenticator"></a>Xamarin.Essentials：Web 验证器
+
+使用 WebAuthenticator 类可以启动基于浏览器的流，以侦听对注册到应用的特定 URL 的回调。
 
 ## <a name="overview"></a>概述
 
@@ -22,11 +13,11 @@ ms.locfileid: "81688263"
 
 [Microsoft 身份验证库 (MSAL)](https://docs.microsoft.com/azure/active-directory/develop/msal-overview) 提供了出色的统包解决方案，用于向应用添加身份验证。 客户端 NuGet 包甚至还支持 Xamarin 应用。
 
-如果你有兴趣使用自己的 Web 服务进行身份验证，可以使用 WebAuthenticator  来实现客户端功能。
+如果你有兴趣使用自己的 Web 服务进行身份验证，可以使用 WebAuthenticator 来实现客户端功能。
 
 ## <a name="why-use-a-server-back-end"></a>为什么使用服务器后端？
 
-许多验证提供程序已转向仅提供显式或两步身份验证流，以确保获得更好的安全性。 这意味着，你将需要提供程序提供的“客户端密码”  才能完成身份验证流。 遗憾的是，要存储机密和存储在移动应用代码中的任何内容、二进制文件，移动应用并不是理想的存储位置，这样做通常被视为不安全。
+许多验证提供程序已转向仅提供显式或两步身份验证流，以确保获得更好的安全性。 这意味着，你将需要提供程序提供的“客户端密码”才能完成身份验证流。 遗憾的是，要存储机密和存储在移动应用代码中的任何内容、二进制文件，移动应用并不是理想的存储位置，这样做通常被视为不安全。
 
 在这种情况下，最佳做法是将 Web 后端用作移动应用与验证提供程序之间的中间层。
 
@@ -37,7 +28,7 @@ ms.locfileid: "81688263"
 
 [!include[](~/essentials/includes/get-started.md)]
 
-若要访问 WebAuthenticator 功能，需要以下特定于平台的设置  。
+若要访问 WebAuthenticator 功能，需要以下特定于平台的设置。
 
 # <a name="android"></a>[Android](#tab/android)
 
@@ -106,7 +97,7 @@ public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
 
 ## <a name="using-webauthenticator"></a>使用 WebAuthenticator
 
-在你的类中添加对 Xamarin.Essentials 的引用：
+在类中添加对 Xamarin.Essentials 的引用：
 
 ```csharp
 using Xamarin.Essentials;
