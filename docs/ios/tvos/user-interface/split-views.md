@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: e42912add9dd94b9cce16d725a456b1b4da30e35
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 98cedb1cf02f9688581946fa21a2cb40379f606f
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022212"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84566170"
 ---
 # <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>在 Xamarin 中使用 tvOS 拆分视图控制器
 
@@ -20,7 +20,7 @@ ms.locfileid: "73022212"
 
 [![](split-views-images/intro01.png "Sample Split View")](split-views-images/intro01.png#lightbox)
 
-<a name="About-Split-View-Controllers" />
+<a name="About-Split-View-Controllers"></a>
 
 ## <a name="about-split-view-controllers"></a>关于拆分视图控制器
 
@@ -40,15 +40,15 @@ Apple 对于使用拆分视图控制器有以下建议：
 - **保持主选择**-当 "详细信息视图" 中的内容可以更改时，它将响应用户在母版视图中的选择，应修复母版视图内容。 此外，您应该清楚地在母版视图中显示当前选定的项。
 - **使用单个统一标题**-通常情况下，你需要在详细信息视图中使用单个居中的标题，而不是在详细信息视图和母版视图中使用标题。
 
-<a name="Split-View-Controllers-and-Storyboards" />
+<a name="Split-View-Controllers-and-Storyboards"></a>
 
 ## <a name="split-view-controllers-and-storyboards"></a>拆分视图控制器和情节提要
 
 若要在 tvOS 应用中使用拆分视图控制器，最简单的方法是使用 iOS 设计器将它们添加到应用的 UI。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在**Solution Pad**中，双击 `Main.storyboard` 文件，然后将其打开进行编辑。
+1. 在**Solution Pad**中，双击该文件， `Main.storyboard` 然后将其打开进行编辑。
 1. 从 "工具箱" 中将 **"** **拆分视图" 控制器**拖放到视图上： 
 
     [![](split-views-images/activity01.png "A Split View Controller")](split-views-images/activity01.png#lightbox)
@@ -63,12 +63,12 @@ Apple 对于使用拆分视图控制器有以下建议：
 1. 设计大纲和详细信息视图的内容： 
 
     [![](split-views-images/activity04.png "Example layout")](split-views-images/activity04.png#lightbox)
-1. 在**Properties Pad**的 "**小组件" 选项卡**中指定**名称**，以便在代码C#中使用您的 UI 控件。
+1. 在**Properties Pad**的 "**小组件" 选项卡**中指定**名称**，以使用 c # 代码中的 UI 控件。
 1. 保存更改并返回到 Visual Studio for Mac。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 在**解决方案资源管理器**中，双击 `Main.storyboard` 文件，然后将其打开进行编辑。
+1. 在**解决方案资源管理器**中，双击该文件， `Main.storyboard` 然后将其打开进行编辑。
 1. 从 "工具箱" 中将 **"** **拆分视图" 控制器**拖放到视图上： 
 
     [![](split-views-images/activity01-vs.png "A Split View Controller")](split-views-images/activity01-vs.png#lightbox)
@@ -83,24 +83,24 @@ Apple 对于使用拆分视图控制器有以下建议：
 1. 设计大纲和详细信息视图的内容： 
 
     [![](split-views-images/activity04.png "Content layout")](split-views-images/activity04.png#lightbox)
-1. 在 "**属性资源管理器**" 的 " C# **小组件" 选项卡**中指定**名称**，以便在代码中使用您的 UI 控件。
-1. 保存更改。
+1. 在 "**属性资源管理器**" 的 "**小组件" 选项卡**中分配**名称**，以使用 c # 代码中的 UI 控件。
+1. 保存所做更改。
 
 -----
 
 有关使用情节提要的详细信息，请参阅[tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)。
 
-<a name="Working-with-Split-View-Controllers" />
+<a name="Working-with-Split-View-Controllers"></a>
 
 ## <a name="working-with-split-view-controllers"></a>使用拆分视图控制器
 
 如上所述，拆分视图控制器通常用于向用户显示已筛选内容的情况。 主类别显示在母版视图的左侧，并根据用户的选择在详细信息视图中显示筛选结果。
 
-<a name="Accessing-Master-and-Detail" />
+<a name="Accessing-Master-and-Detail"></a>
 
 ### <a name="accessing-master-and-detail"></a>访问 Master 和 Detail
 
-如果需要以编程方式访问主视图控制器和详细视图控制器，请使用拆分视图控制器的 `ViewControllers` 属性。 例如:
+如果需要以编程方式访问主视图控制器和详细视图控制器，请使用 `ViewControllers` 拆分视图控制器的属性。 例如：
 
 ```csharp
 // Gain access to master and detail view controllers
@@ -110,7 +110,7 @@ var detailController = ViewControllers [1] as DetailViewController;
 
 它以数组形式显示，其中，主视图控制器中的第一个元素（0）和第二个元素（1）为详细信息。
 
-<a name="Accessing-Detail-from-Master" />
+<a name="Accessing-Detail-from-Master"></a>
 
 ### <a name="accessing-detail-from-master"></a>从 Master 访问详细信息
 
@@ -122,7 +122,7 @@ var detailController = ViewControllers [1] as DetailViewController;
 public DetailViewController DetailController { get; set;}
 ```
 
-在拆分视图控制器中，重写 `ViewDidLoad` 方法，并将两个视图绑定在一起。 例如:
+在拆分视图控制器中，重写 `ViewDidLoad` 方法，并将两个视图绑定在一起。 例如：
 
 ```csharp
 public override void ViewDidLoad ()
@@ -142,11 +142,11 @@ public override void ViewDidLoad ()
 
 你可以公开详细信息视图控制器上的属性和方法，Master 可以使用该控制器根据需要提供新数据。
 
-<a name="Showing-and-Hiding-Master" />
+<a name="Showing-and-Hiding-Master"></a>
 
 ### <a name="showing-and-hiding-master"></a>显示和隐藏 Master
 
-或者，您可以使用拆分视图控制器的 `PreferredDisplayMode` 属性来显示和隐藏母版视图控制器。 例如:
+或者，您可以使用拆分视图控制器的属性来显示和隐藏母版视图控制器 `PreferredDisplayMode` 。 例如：
 
 ```csharp
 // Show hide split view
@@ -157,16 +157,16 @@ if (SplitViewController.DisplayMode == UISplitViewControllerDisplayMode.PrimaryH
 }
 ```
 
-`UISplitViewControllerDisplayMode` 枚举定义了如何将主视图控制器呈现为以下内容之一：
+`UISplitViewControllerDisplayMode`枚举定义如何将主视图控制器呈现为以下内容之一：
 
 - **自动**-tvOS 将控制母版和详细信息视图的表示形式。
 - **PrimaryHidden** -隐藏母版视图控制器。
 - **AllVisible** -并排显示主节点和详细信息视图控制器。 这是正常的默认演示。
 - **PrimaryOverlay** -详细信息视图控制器在下扩展，并由主节点覆盖。
 
-若要获取当前显示状态，请使用拆分视图控制器的 `DisplayMode` 属性。
+若要获取当前显示状态，请使用 `DisplayMode` 拆分视图控制器的属性。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>总结
 

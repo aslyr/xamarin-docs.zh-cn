@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 35a8d3aeb00ac73f944712cb31f913f98bd3b6e8
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 5aa3baa6aba76483866911d905687be6c3a5ae4e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306055"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569824"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>用 Xamarin Designer for iOS 自动布局
 
@@ -30,7 +30,7 @@ ms.locfileid: "79306055"
 
 约束是屏幕上两个元素之间的关系的数学表示形式。 将 UI 元素的位置表示为数学关系，解决了与硬编码 UI 元素的位置相关的几个问题。 例如，如果要在纵向模式下在屏幕底部放置按钮20px，按钮的位置将在横向模式下关闭。 为避免出现这种情况，我们可以设置一个约束，将20px 按钮的下边缘放置在视图的底部。 然后，按钮边缘的位置将计算为*按钮。底端 = 20px*，这会在纵向和横向模式下将按钮从视图的底部20px。 根据数学关系计算位置的功能是使约束在 UI 设计中非常有用。
 
-当我们设置约束时，我们将创建一个 `NSLayoutConstraint` 对象，该对象将所约束的对象作为参数，并使用该约束将作用于的属性或*特性*。 在 iOS 设计器中，属性包括边缘，如元素的*左*、*右*、*上*和*下*。 它们还包括大小属性（如*高度*和*宽度*）以及中心点位置、 *system.windows.media.rotatetransform.centerx*和*system.windows.media.rotatetransform.centery*。 例如，当我们在两个按钮的左边缘的位置添加约束时，设计器将在以下代码段中生成以下代码：
+当我们设置约束时，我们将创建一个对象，该对象将所约束 `NSLayoutConstraint` 的对象作为参数，并使用该约束将作用于的属性或*特性*。 在 iOS 设计器中，属性包括边缘，如元素的*左*、*右*、*上*和*下*。 它们还包括大小属性（如*高度*和*宽度*）以及中心点位置、 *system.windows.media.rotatetransform.centerx*和*system.windows.media.rotatetransform.centery*。 例如，当我们在两个按钮的左边缘的位置添加约束时，设计器将在以下代码段中生成以下代码：
 
 ```csharp
 View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, NSLayoutRelation.Equal, Button2, NSLayoutAttribute.Left, 1, 10));
@@ -67,7 +67,7 @@ View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, 
 
 使用 "约束编辑器" 弹出窗口，我们可以为选择视图添加和更新多个约束。 可以创建多个间距、纵横比和对齐约束，如将视图与两个视图的左边缘对齐。
 
-若要编辑所选视图的约束，请单击省略号以显示 segue： ![约束编辑 segue](designer-auto-layout-images/constraints-popup.png)
+若要编辑所选视图的约束，请单击省略号以显示 segue： ![ 约束编辑 segue](designer-auto-layout-images/constraints-popup.png)
 
 打开约束后，segue 会在视图上显示任何预设约束。 我们可以在右上角选择组合框中的所有**边**，然后选择 "**全部清除**" 将其删除。
 
@@ -170,7 +170,7 @@ Frame misplacement 使用与 underconstrained 项相同的颜色代码。 该项
 
 这将自动调整元素框以匹配控件定义的位置。
 
-<a name="modifying-in-code" />
+<a name="modifying-in-code"></a>
 
 ## <a name="modifying-constraints-in-code"></a>修改代码中的约束
 
@@ -201,12 +201,12 @@ ViewInfoHeight.Constant = 0;
 
 自动布局引擎不会立即更新附加视图以响应约束更改，而是在不久的将来计划_延迟布局处理过程_。 在此延迟传递过程中，不仅会更新给定视图的约束，还会重新计算和更新层次结构中每个视图的约束，以调整新布局。
 
-在任何时候，都可以通过调用父视图的 `SetNeedsLayout` 或 `SetNeedsUpdateConstraints` 方法来计划自己的延迟布局传递。
+在任何时候，都可以通过调用 `SetNeedsLayout` 父视图的或方法来计划自己的延迟布局传递 `SetNeedsUpdateConstraints` 。
 
 延迟的布局传递通过视图层次结构包含两个唯一的传递：
 
-- **更新通过**此传递，自动布局引擎遍历视图层次结构，并对所有视图控制器调用 `UpdateViewConstraints` 方法，并对所有视图调用 `UpdateConstraints` 方法。
-- 此布局将再次**传递**，自动布局引擎将遍历视图层次结构，但这次将对所有视图控制器调用 `ViewWillLayoutSubviews` 方法，并对所有视图调用 `LayoutSubviews` 方法。 `LayoutSubviews` 方法使用自动布局引擎计算的矩形更新每个子视图的 `Frame` 属性。
+- **更新通过**此传递，自动布局引擎遍历视图层次结构，并在所有 `UpdateViewConstraints` 视图控制器上调用方法，并在 `UpdateConstraints` 所有视图上调用方法。
+- 此**布局将再次传递**，自动布局引擎将遍历视图层次结构，但这次将对所有视图 `ViewWillLayoutSubviews` 控制器调用方法，并在 `LayoutSubviews` 所有视图上调用方法。 `LayoutSubviews`方法 `Frame` 用自动布局引擎计算的矩形更新每个子视图的属性。
 
 ### <a name="animating-constraint-changes"></a>对约束更改进行动画处理
 
@@ -222,9 +222,9 @@ View.LayoutIfNeeded();
 UIView.CommitAnimations();
 ```
 
-此处的关键是在动画块中调用父视图的 `LayoutIfNeeded` 方法。 这会告知视图绘制动态位置或大小变化的每个 "帧"。 如果没有此行，视图只会与最终版本对齐，而不进行动画处理。
+此处的关键是在 `LayoutIfNeeded` 动画块中调用父视图的方法。 这会告知视图绘制动态位置或大小变化的每个 "帧"。 如果没有此行，视图只会与最终版本对齐，而不进行动画处理。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本指南介绍了 iOS 自动（或 "自适应"）布局和约束概念，作为设计图面上元素间关系的数学表示形式。 它介绍了如何在 iOS 设计器中启用自动布局、使用 "**约束" 工具栏**以及在设计图面上分别编辑约束。 接下来，它介绍了如何排查三个常见的约束问题。 最后，它演示了如何在代码中修改约束。
 

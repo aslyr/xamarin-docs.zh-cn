@@ -1,24 +1,9 @@
 ---
-title: Xamarin.Forms视觉状态管理器
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 13dd0a3f5d665e2232e7e6e12edac7cf117dd0ca
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127278"
+标题： " Xamarin.Forms 视觉状态管理器" 说明： "使用可视状态管理器根据代码中的可视状态集对 XAML 元素进行更改。"
+ms-chap： xamarin assetid：17296F14-640D-484B-A24C-A4E9B7013E4F： xamarin。 custom： xamu：： davidbritch： dabritch：：02/21/2020 不，不是： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
-# <a name="xamarinforms-visual-state-manager"></a>Xamarin.Forms视觉状态管理器
+
+# <a name="xamarinforms-visual-state-manager"></a>Xamarin.Forms 可视状态管理器
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)
 
@@ -409,41 +394,13 @@ VSM 标记的剩余部分与之前相同。
 下表列出了在中定义的视觉对象状态 Xamarin.Forms ：
 
 | 类 | 状态 | 更多信息 |
-| ----- | ---
-标题： ' Xamarin.Forms 可视状态管理器 ' 说明： assetid： ms. 技术：微秒： author： author： ms. 作者： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
---- |---标题： " Xamarin.Forms 视觉状态管理器" 说明： assetid： ms. 技术： ms. 自定义：作者：： ms. 作者： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题： ' Xamarin.Forms 可视状态管理器 ' 说明： assetid： ms. 技术：微秒： author： author： ms. 作者： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题： ' Xamarin.Forms 可视状态管理器 ' 说明： assetid： ms. 技术：微秒： author： author： ms. 作者： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题： ' Xamarin.Forms 可视状态管理器 ' 说明： assetid： ms. 技术：微秒： author： author： ms. 作者： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题： ' Xamarin.Forms 可视状态管理器 ' 说明： assetid： ms. 技术：微秒： author： author： ms. 作者： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题： ' Xamarin.Forms 可视状态管理器 ' 说明： assetid： ms. 技术：微秒： author： author： ms. 作者： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--------- | |`Button` | `Pressed` | [Button 视觉状态](~/xamarin-forms/user-interface/button.md#button-visual-states)| |`CheckBox` | `IsChecked` | [复选框可视状态](~/xamarin-forms/user-interface/checkbox.md#checkbox-visual-states)| |`CarouselView`  |  `DefaultItem` 、 `CurrentItem` 、 `PreviousItem` 、 `NextItem`  |  [CarouselView 可视状态](~/xamarin-forms/user-interface/carouselview/interaction.md#define-visual-states)| `ImageButton` |  |  `Pressed`  | [ImageButton 可视状态](~/xamarin-forms/user-interface/imagebutton.md#imagebutton-visual-states)| |`RadioButton` | `IsChecked` | [单选按钮可视状态](~/xamarin-forms/user-interface/radiobutton.md#radiobutton-visual-states)| |，，， `VisualElement`  |  `Normal` `Disabled` `Focused` `Selected`  |  [公共状态](#common-states) |
+| ----- | ------ | ---------------- |
+| `Button` | `Pressed` | [按钮视觉状态](~/xamarin-forms/user-interface/button.md#button-visual-states) |
+| `CheckBox` | `IsChecked` | [复选框可视状态](~/xamarin-forms/user-interface/checkbox.md#checkbox-visual-states) |
+| `CarouselView` | `DefaultItem`, `CurrentItem`, `PreviousItem`, `NextItem` | [CarouselView 视觉状态](~/xamarin-forms/user-interface/carouselview/interaction.md#define-visual-states) |
+| `ImageButton` | `Pressed` | [ImageButton 视觉状态](~/xamarin-forms/user-interface/imagebutton.md#imagebutton-visual-states) |
+| `RadioButton` | `IsChecked` | [单选按钮视觉状态](~/xamarin-forms/user-interface/radiobutton.md#radiobutton-visual-states) |
+| `VisualElement` | `Normal`, `Disabled`, `Focused`, `Selected` | [常见状态](#common-states) |
 
 每个状态都可以通过名为的视觉状态组进行访问 `CommonStates` 。
 
@@ -626,7 +583,7 @@ public partial class VsmValidationPage : ContentPage
 
 状态触发器添加到 [`VisualState`](xref:Xamarin.Forms.VisualState) 的 [`StateTriggers`](xref:Xamarin.Forms.VisualState.StateTriggers) 集合。 此集合可以包含一个或多个状态触发器。 当此集合中的任何状态触发器处于活动状态时，便会应用 [`VisualState`](xref:Xamarin.Forms.VisualState)。
 
-使用状态触发器控制可视状态时， Xamarin.Forms 使用以下优先规则来确定将激活哪个触发器（以及相应的触发器 [`VisualState`](xref:Xamarin.Forms.VisualState) ）：
+使用状态触发器来控制视觉对象状态时，Xamarin.Forms 使用以下优先规则来确定哪个触发器（以及相应的 [`VisualState`](xref:Xamarin.Forms.VisualState)）处于活动状态：
 
 1. 任何派生自 [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) 的触发器。
 1. 因满足 [`MinWindowWidth`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowWidth) 条件而激活的 [`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger)。
@@ -635,8 +592,6 @@ public partial class VsmValidationPage : ContentPage
 如果多个触发器同时处于活动状态（例如，两个自定义触发器），则标记中声明的第一个触发器优先。
 
 有关状态触发器的详细信息，请参阅[状态触发器](~/xamarin-forms/app-fundamentals/triggers.md#state-triggers)。
-
-<a name="adaptive-layout" />
 
 ## <a name="use-the-visual-state-manager-for-adaptive-layout"></a>使用视觉对象状态管理器进行自适应布局
 

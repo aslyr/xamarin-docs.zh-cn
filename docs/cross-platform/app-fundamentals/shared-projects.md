@@ -6,12 +6,12 @@ ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
 author: davidortinau
 ms.author: daortin
 ms.date: 07/18/2018
-ms.openlocfilehash: eee76c056d05edccd1e039bc5e4cb8107d1aceb5
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b8be06b9da4561ffc0d628b53f8daf639b5e3179
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016699"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571087"
 ---
 # <a name="shared-projects-code-sharing"></a>共享项目代码共享
 
@@ -35,7 +35,7 @@ _使用共享项目，可以编写由多个不同的应用程序项目引用的�
 
 请注意，Android 应用程序项目无法引用其他 Android 应用程序项目，例如，Android 单元测试项目无法引用 Android 应用程序项目。 有关此限制的详细信息，请参阅此[论坛讨论](https://forums.xamarin.com/discussion/comment/98092/)。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ## <a name="visual-studio-for-mac-walkthrough"></a>Visual Studio for Mac 演练
 
@@ -43,7 +43,7 @@ _使用共享项目，可以编写由多个不同的应用程序项目引用的�
 
 ## <a name="creating-a-shared-project"></a>创建共享项目
 
-若要创建新的共享项目，请导航到 "**文件" > "新建解决方案 ...** " （或者右键单击现有解决方案，然后选择 "**添加 > 添加新项目 ...** "）：
+若要创建新的共享项目，请导航到 "**文件" > "新建解决方案 ...** " （或者右键单击现有解决方案，然后选择 "**添加 > 添加新项目 ...**"）：
 
 [![新建共享项目](shared-projects-images/xs-newsolution-sml.png "新建解决方案")](shared-projects-images/xs-newsolution.png#lightbox)
 
@@ -69,7 +69,7 @@ _使用共享项目，可以编写由多个不同的应用程序项目引用的�
 
 ![](shared-projects-images/xs-sharedprojectoptions.png "Shared Project Options")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ## <a name="visual-studio-walkthrough"></a>Visual Studio 演练
 
@@ -77,7 +77,7 @@ _使用共享项目，可以编写由多个不同的应用程序项目引用的�
 
 ### <a name="creating-a-shared-project"></a>创建共享项目
 
-若要创建新的共享项目，请导航到 "**文件**"  > **新建** > **项目**"。
+若要创建新的共享项目，请导航到 "**文件**" "  >  **新建**  >  **项目**"。
 
 在 Visual Studio 2019 中，在 "**创建新项目**" 页面上的搜索框中输入 "**共享**"。 选择**共享项目**模板，然后选择 "**下一步**"。 输入项目的名称，然后选择 "**创建**"。
 
@@ -107,19 +107,19 @@ _使用共享项目，可以编写由多个不同的应用程序项目引用的�
 
 -----
 
-<a name="Shared_Project_Example"/>
+<a name="Shared_Project_Example"></a>
 
 ## <a name="shared-project-example"></a>共享项目示例
 
-[Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky)示例使用共享项目来包含 IOS、Android 和 Windows Phone 应用程序使用的通用代码。 `SQLite.cs` 和 `TaskRepository.cs` 源代码文件都利用编译器指令（例如 `#if __ANDROID__`）为每个引用它们的应用程序生成不同的输出。
+[Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky)示例使用共享项目来包含 IOS、Android 和 Windows Phone 应用程序使用的通用代码。 `SQLite.cs`和 `TaskRepository.cs` 源代码文件都利用编译器指令（例如 `#if __ANDROID__`）为每个引用它们的应用程序生成不同的输出。
 
 完整的解决方案结构如下所示（分别在 Visual Studio for Mac 和 Visual Studio 中）：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ![](shared-projects-images/xs-examplesolution.png "Visual Studio for Mac solution")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![](shared-projects-images/vs-examplesolution.png "Visual Studio solution")
 

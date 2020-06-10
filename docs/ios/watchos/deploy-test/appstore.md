@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: a622684461bfe2e4a57b910288ee1f9afb54c694
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: f42c4a6dd2f4408d7b0ccf65e60851ebd29b76f6
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725120"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574532"
 ---
 # <a name="deploying-watchos-apps-to-the-app-store"></a>将 watchOS 应用部署到 App Store
 
@@ -21,7 +21,7 @@ ms.locfileid: "76725120"
 
 - 请确保：
   - 为你的项目创建的[**分发配置文件**](#provisioning)。
-  - IOS 父应用程序的**部署目标**（`MinimumOSVersion`）已设置为**8.2**或更早版本（不支持8.3）。
+  - IOS 父应用程序的**部署目标**（ `MinimumOSVersion` ）设置为**8.2**或更早版本（不支持8.3）。
 
 - 在[**ITunes Connect**](#iTunes_Connect)中：
 
@@ -43,7 +43,7 @@ ms.locfileid: "76725120"
 
 阅读与以下各项相关的特定提示。 如果遇到问题，请参阅[故障排除](#troubleshooting)部分。
 
-<a name="provisioning" />
+<a name="provisioning"></a>
 
 ## <a name="distribution-provisioning-profiles"></a>分发预配配置文件
 
@@ -63,7 +63,7 @@ ms.locfileid: "76725120"
 
 ![](appstore-images/options-selectprofile-sml.png "The iOS Bundle Signing dialog")
 
-<a name="iTunes_Connect"/>
+<a name="iTunes_Connect"></a>
 
 ## <a name="itunes-connect"></a>iTunes Connect
 
@@ -82,7 +82,7 @@ ms.locfileid: "76725120"
 它们应为312x390 像素，并演示监视应用的操作。
 可以使用 42mm watch 模拟器以这种大小拍摄屏幕截图。
 
-<a name="xamarin_studio" />
+<a name="xamarin_studio"></a>
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
@@ -102,7 +102,7 @@ ms.locfileid: "76725120"
 
   ![](appstore-images/xs-archives-sml.png "The Archives view")
 
-<a name="xcode" />
+<a name="xcode"></a>
 
 ## <a name="xcode"></a>Xcode
 
@@ -128,7 +128,7 @@ Xcode 会自动显示 Visual Studio for Mac 中创建的存档。
 
 然后，你可以在 "**版本**" 页上提交要审批的应用。 有关详细信息，请参阅[iOS 应用分发概述](~/ios/deploy-test/app-distribution/index.md)。
 
-## <a name="troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>疑难解答
 
 下面是在提交到 App Store 时可能会遇到的一些错误，以及解决这些错误的步骤。
 
@@ -175,7 +175,7 @@ is missing icon with name pattern '*44x44@2x.png' (Home Screen 42mm).
 请确保具有最新版本的 Visual Studio for Mac，并且**appicons.appiconset**包含一组完整的映像。 如果仍看到此错误，请查看**内容**的源，以确认它是否包含所有所需映像的条目。 或者，在确保使用最新版本的 Xamarin 后，请删除并重新创建**appicons.appiconset**。
 
 > [!IMPORTANT]
-> Visual Studio for Mac 的 "监视" 图标支持中有一个已知 bug：它需要 **29x29@3x** 图像的88x88 像素图像（应为87x87 像素）。
+> Visual Studio for Mac 的 "监视" 图标支持中有一个已知 bug：它需要图像的88x88 像素图像 **29x29@3x** （应为87x87 像素）。
 
 无法在 Visual Studio for Mac 中解决此问题-请在 Xcode 中编辑图像资产，或者手动编辑**内容 json**文件。
 
@@ -217,7 +217,7 @@ by a dot '.' followed by the bundle identifier.
 
 确保预配配置文件在 Apple 开发人员中心正确设置，并且已下载并安装这些配置文件。 同时，检查它们是否在每个项目 Visual Studio for Mac 的 "属性" 窗口中设置。
 
-### <a name="invalid-architecture"></a>体系结构无效
+### <a name="invalid-architecture"></a>无效的体系结构
 
 ```csharp
 Invalid architecture: Apps that include an app extension

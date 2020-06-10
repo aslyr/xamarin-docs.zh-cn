@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/31/2018
-ms.openlocfilehash: 4cf32bae208efa67acbb08f2e4525e4571b14b16
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: acb0e9ea23d4043a72b9d2688501c576a3d43358
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76723779"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570162"
 ---
 # <a name="firebase-cloud-messaging"></a>Firebase Cloud Messaging
 
@@ -32,26 +32,26 @@ Firebase 云消息传送（FCM）是一项跨平台服务，用于处理服务�
 
 使用 FCM，应用程序服务器可以将消息发送到单个设备、一组设备或多个已订阅主题的设备。 客户端应用程序可以使用 FCM 从应用程序服务器（例如，接收远程通知）订阅下游消息。 有关不同类型的 Firebase 消息的详细信息，请参阅[关于 FCM 消息](https://firebase.google.com/docs/cloud-messaging/concept-options)。
 
-## <a name="fcm-in-action"></a>Firebase 云消息传送操作
+## <a name="firebase-cloud-messaging-in-action"></a><a name="fcm-in-action"></a>Firebase 云消息传送操作
 
 将下游消息从应用服务器发送到客户端应用时，应用服务器会将消息发送到 Google 提供的*FCM 连接服务器*;然后，FCM 连接服务器将消息转发到运行客户端应用的设备。 可以通过 HTTP 或[XMPP](https://firebase.google.com/docs/cloud-messaging/xmpp-server-ref) （可扩展消息传递和状态协议）发送消息。 因为客户端应用程序并不总是连接或运行，所以 FCM 连接服务器排队并存储消息，并在客户端应用程序重新连接时将其发送到客户端应用程序。 同样，如果应用服务器不可用，则 FCM 将从客户端应用程序向应用服务器发送上游消息。 有关 FCM 连接服务器的详细信息，请参阅[关于 Firebase Cloud 消息传递服务器](https://firebase.google.com/docs/cloud-messaging/server)。
 
 FCM 使用以下凭据来标识应用服务器和客户端应用，并使用这些凭据通过 FCM 授权消息事务：
 
-- <a name="fcm-in-action-sender-id"></a>**发件人 id &ndash;** *发送方 id*是在创建 Firebase 项目时分配的唯一数值。 发件人 ID 用于标识可以向客户端应用程序发送消息的每个应用程序服务器。 发件人 ID 也是你的项目编号;注册项目时，可以从 Firebase 控制台获取发件人 ID。 `496915549731`的发送方 ID 的示例。
+- <a name="fcm-in-action-sender-id"></a>**发件人 ID** &ndash;*发件人 ID*是在创建 Firebase 项目时分配的唯一数值。 发件人 ID 用于标识可以向客户端应用程序发送消息的每个应用程序服务器。 发件人 ID 也是你的项目编号;注册项目时，可以从 Firebase 控制台获取发件人 ID。 发件人 ID 的一个示例是 `496915549731` 。
 
-- <a name="fcm-in-action-api-key"></a>**Api 密钥 &ndash;** *api 密钥*向应用服务器授予 Firebase services 的访问权限;FCM 使用此密钥对应用服务器进行身份验证。 此凭据也称为*服务器密钥*或*Web API 密钥*。 `AJzbSyCTcpfRT1YRqbz-jIwp1h06YdauvewGDzk`API 密钥的示例。
+- <a name="fcm-in-action-api-key"></a>**API 密钥** &ndash;*API 密钥*使应用服务器可以访问 Firebase 服务;FCM 使用此密钥对应用服务器进行身份验证。 此凭据也称为*服务器密钥*或*Web API 密钥*。 API 密钥的一个示例是 `AJzbSyCTcpfRT1YRqbz-jIwp1h06YdauvewGDzk` 。
 
-- <a name="fcm-in-action-app-id"></a>**应用 ID** &ndash; 注册为接收来自 FCM 的消息的客户端应用（独立于任何给定设备）的标识。 `1:415712510732:android:0e1eb7a661af2460`应用 ID 的示例。
+- <a name="fcm-in-action-app-id"></a>**应用 ID** &ndash;注册从 FCM 接收消息的客户端应用的标识（独立于任何给定设备）。 应用 ID 的一个示例是 `1:415712510732:android:0e1eb7a661af2460` 。
 
-- <a name="fcm-in-action-registration-token"></a>**注册令牌 &ndash;** 注册*令牌（也*称为*实例 ID*）是给定设备上客户端应用的 FCM 标识。 注册令牌是在运行时生成的 &ndash; 应用程序在设备上运行时首次注册 FCM 时接收注册令牌。 注册令牌授权客户端应用的实例（在该特定设备上运行），以接收来自 FCM 的消息。
-    注册令牌的示例 `fkBQTHxKKhs:AP91bHuEedxM4xFAUn0z ... JKZS` （非常长的字符串）。
+- <a name="fcm-in-action-registration-token"></a>**注册令牌** &ndash;*注册令牌*（也称为*实例 ID*）是给定设备上客户端应用的 FCM 标识。 &ndash;当应用程序在运行时首次注册 FCM 时，会在运行时生成注册令牌。 注册令牌授权客户端应用的实例（在该特定设备上运行），以接收来自 FCM 的消息。
+    注册令牌的一个示例是 `fkBQTHxKKhs:AP91bHuEedxM4xFAUn0z ... JKZS` （非常长的字符串）。
 
-[设置 Firebase 云消息传送](#setup_fcm)（稍后在本指南中）提供了有关创建项目和生成这些凭据的详细说明。 当你在[Firebase 控制台](https://console.firebase.google.com/)中创建新项目时 **，将创建一个名为**FCM 的凭据文件 &ndash; 将此文件添加到你的 Xamarin Android 项目，如[使用的远程通知](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md)中所述。
+[设置 Firebase 云消息传送](#setup_fcm)（稍后在本指南中）提供了有关创建项目和生成这些凭据的详细说明。 在[Firebase 控制台](https://console.firebase.google.com/)中创建新项目时，会创建一个名为**google-services**的凭据文件， &ndash; 将此文件添加到你的 Xamarin ANDROID 项目，如[使用 FCM 的远程通知](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md)中所述。
 
 以下部分说明了当客户端应用程序通过 FCM 与应用程序服务器通信时，如何使用这些凭据。
 
-<a name="registration" />
+<a name="registration"></a>
 
 ### <a name="registration-with-fcm"></a>注册到 FCM
 
@@ -93,7 +93,7 @@ FCM 使用以下凭据来标识应用服务器和客户端应用，并使用这�
 
 *主题消息传递*使应用服务器能够将消息发送到多个已选择特定主题的设备。 还可以通过 Firebase 控制台通知 GUI 撰写和发送主题消息。 FCM 处理主题消息到已订阅客户端的路由和传递。 此功能可用于天气警报、股票报价和新闻等消息。
 
-[![主题消息传递关系图](firebase-cloud-messaging-images/04-topic-messaging-sml.png)](firebase-cloud-messaging-images/04-topic-messaging.png#lightbox)
+[![主题消息示意图](firebase-cloud-messaging-images/04-topic-messaging-sml.png)](firebase-cloud-messaging-images/04-topic-messaging.png#lightbox)
 
 在主题消息（在客户端应用程序获取注册令牌后，如前文所述）中使用以下步骤：
 
@@ -105,7 +105,7 @@ FCM 使用以下凭据来标识应用服务器和客户端应用，并使用这�
 
 有关 Firebase 主题消息的详细信息，请参阅[Android 上的 Google 主题消息](https://firebase.google.com/docs/cloud-messaging/android/topic-messaging)。
 
-<a name="setup_fcm" />
+<a name="setup_fcm"></a>
 
 ## <a name="setting-up-firebase-cloud-messaging"></a>设置 Firebase 云消息传送
 
@@ -113,7 +113,7 @@ FCM 使用以下凭据来标识应用服务器和客户端应用，并使用这�
 
 1. 用 Google 帐户（即 Gmail 地址）登录到[Firebase 控制台](https://console.firebase.google.com/)，并单击 "**创建新项目**"：
 
-    [![创建新项目 "按钮](firebase-cloud-messaging-images/05-firebase-console-sml.png)](firebase-cloud-messaging-images/05-firebase-console.png#lightbox)
+    [!["新建项目" 按钮](firebase-cloud-messaging-images/05-firebase-console-sml.png)](firebase-cloud-messaging-images/05-firebase-console.png#lightbox)
 
     如果已有项目，请单击 "**导入 Google 项目**"。
 
@@ -141,7 +141,7 @@ FCM 使用以下凭据来标识应用服务器和客户端应用，并使用这�
 
 有关如何将**google services json**添加到应用项目以在 Android 上接收 FCM 推送通知消息的详细示例，请参阅[使用 FCM 远程通知](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md)。
 
-## <a name="for-further-reading"></a>获取进一步阅读
+## <a name="for-further-reading"></a>延伸阅读
 
 - Google 的[Firebase Cloud 消息传递](https://firebase.google.com/docs/cloud-messaging/)概述了 Firebase Cloud 消息传递的关键功能、其工作原理的说明以及设置说明。
 
@@ -151,7 +151,7 @@ FCM 使用以下凭据来标识应用服务器和客户端应用，并使用这�
 
 - [关于 FCM 消息](https://firebase.google.com/docs/cloud-messaging/concept-options)介绍可通过 Firebase 云消息传送发送的不同类型的消息。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文提供 Firebase 云消息传送（FCM）的概述。 它介绍了用于在应用程序服务器和客户端应用程序之间识别和授权消息传递的各种凭据。 其中阐释了注册和下游消息传递方案，并详细说明了向 FCM 注册应用程序以使用 FCM 服务的步骤。
 

@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 4833d8a03649341cb5c6d9f2692410b89e6cea4c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 9f4e88cdc04431660376b885faef0a855e14efc2
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021824"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572112"
 ---
 # <a name="text-input-in-xamarinios"></a>Xamarin 中的文本输入
 
-接受用户文本输入是通过用于单行输入的 `UITextField` 和多行可编辑文本的 UITextView 来完成的。 您可以将其中任一控件拖动到屏幕上，然后双击以设置初始文本。
+接受用户文本输入的目的是实现 `UITextField` 单行输入，并将 UITextView 用于多行可编辑文本。 您可以将其中任一控件拖动到屏幕上，然后双击以设置初始文本。
 
 下面的屏幕截图显示了这些控件的图标，这些控件位于 Visual Studio for Mac 的 "工具箱" 面板中：
 
@@ -24,13 +24,13 @@ ms.locfileid: "73021824"
 
  [![](text-input-images/image13a.png "UITextView")](text-input-images/image13a.png#lightbox)
 
-命名插座并保存情节提要文件后，Visual Studio for Mac 将更新 `.designer.cs` 分部类，并且可以将引用控件的代码C#添加到类文件中。 每个控件都有其自己的唯一属性和可在C#代码中访问的事件。
+命名插座并保存情节提要文件后，Visual Studio for Mac 将更新 `.designer.cs` 分部类，您可以将引用控件的 c # 代码添加到您的类文件中。 每个控件都有其自己的唯一属性和可在 c # 代码中访问的事件。
 
- <a name="UITextField" />
+ <a name="UITextField"></a>
 
 ## <a name="uitextfield"></a>UITextField
 
-`UITextField` 控件通常用于接受单行文本输入，例如用户名或密码。 下面显示了一些可用于自定义控件的选项：
+`UITextField`控件最常用于接受单行文本输入，例如用户名或密码。 下面显示了一些可用于自定义控件的选项：
 
  [![](text-input-images/image15a.png "UITextField Properties")](text-input-images/image15a.png#lightbox)
 
@@ -46,7 +46,7 @@ ms.locfileid: "73021824"
 - **返回键**–更改返回键上的标签，以更好地反映要采取的操作。 受支持的值包括 "开始"、"联接"、"下一步"、"路由"
 - **Secure** –标识是否屏蔽输入（例如密码输入）。
 
-如果已使用设计器将名为 `textfield1` 的 UITextField 添加到屏幕中，则可以在中C#设置或更改其属性，如下所示：
+如果 `textfield1` 已使用设计器将名为的 UITextField 添加到屏幕，则可在 c # 中设置或更改其属性，如下所示：
 
 ```csharp
 textfield1.Placeholder = "type email here...";
@@ -56,11 +56,11 @@ textfield1.MinimumFontSize = 17f;
 textfield1.AdjustsFontSizeToFitWidth = true;
 ```
 
-Xamarin 在适当的情况下提供枚举，以便轻松地选择所需的设置，如以上代码段中的 `UIKeyboardType` 和 `UIReturnKeyType`。
+Xamarin 在适当的情况下提供枚举，以便轻松地选择所需的设置，如 `UIKeyboardType` `UIReturnKeyType` 以上代码段中的和。
 
 ### <a name="display-text-programmatically"></a>以编程方式显示文本
 
-如果你不想使用设计器设计屏幕，或者想要在运行时动态添加某些文本，可以在视图控制器的 `ViewDidLoad` 方法中以编程方式创建和显示 UITextField，如下所示：
+如果你不想使用设计器设计屏幕，或者想要在运行时动态添加某些文本，可以在视图控制器的方法中以编程方式创建和显示 UITextField， `ViewDidLoad` 如下所示：
 
 ```csharp
 var frame = new CGRect(10, 10, 300, 40);
@@ -68,11 +68,11 @@ textfield1 = new UITextField(frame);
 View.Add(textfield1);
 ```
 
- <a name="UITextView" />
+ <a name="UITextView"></a>
 
 ## <a name="uitextview"></a>UITextView
 
-`UITextView` 控件可用于显示只读文本或接受多行文本输入。 它具有许多与 `UITextField` 相同的选项（如大小写、更正等）。
+`UITextView`控件可用于显示只读文本或接受多行文本输入。 它具有许多与相同的选项 `UITextField` （如大小写、更正等）。
 
  [![](text-input-images/image16a.png "UITextView Properties")](text-input-images/image16a.png#lightbox)
 

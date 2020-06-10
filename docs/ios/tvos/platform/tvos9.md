@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: 34f332eb712f479f9f9565a3894212e3cdd5aaf6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 99565d7e61e8e8c1d28b67a6a6d25979c79fa387
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030534"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84566157"
 ---
 # <a name="introduction-to-tvos-9"></a>tvOS 9 简介
 
@@ -20,13 +20,13 @@ _本文介绍了 tvOS 9 for Xamarin tvOS 开发人员提供的所有新的和修
 
 Apple 已发布第四代 Apple TV 硬件，其中包含经过重新设计的触摸式远程远程运行，并运行新的 tvOS 操作系统（基于 iOS 9）。
 
-第一次，tvOS 向开发人员开放 Apple TV 平台，使用户能够创建丰富的沉浸式应用程序，并在类似于使用 iTunes 应用编写和发布适用于 iOS 的应用的体验的过程中将其发布到 Apple TV 的内置应用商店店.
+第一次，tvOS 向开发人员开放 Apple TV 平台，使用户能够创建丰富的沉浸式应用程序，并在类似于使用 iTunes 应用商店编写和发布适用于 iOS 的应用的过程中，通过 Apple TV 的内置应用商店发布这些应用。
 
 如果你熟悉 Xamarin iOS 开发，你应发现过渡到 tvOS 的方式非常简单。 大多数 Api 和功能都是相同的，但很多公共 Api 都无法使用（如 WebKit）。 此外，使用 Siri 远程处理会引发一些设计挑战，这些挑战在基于触摸屏的 iOS 设备中不存在。
 
 本指南将介绍 tvOS 9 中适用于 tvOS 开发人员的所有新的和修改的 Api 和功能。 有关 tvOS 的详细信息，请参阅 Apple[针对新的 APPLE TV 文档开发](https://developer.apple.com/tvos/)。
 
-<a name="Supported-and-Unsupported-Capabilities" />
+<a name="Supported-and-Unsupported-Capabilities"></a>
 
 ## <a name="supported-and-unsupported-capabilities"></a>支持和不支持的功能
 
@@ -35,7 +35,7 @@ Apple TV 上运行的 tvOS 应用具有以下支持的功能和功能：
 - 应用组
 - 后台模式
 - 数据保护
-- Game Center
+- 游戏中心
 - 游戏控制器
 - iCloud
 - 应用内购买
@@ -49,7 +49,7 @@ Apple TV 上运行的 tvOS 应用具有以下支持的功能和功能：
 - HealthKit
 - HomeKit
 - 应用间音频
-- 映射
+- Maps
 - 个人 VPN
 - 推送通知
 - Wallet
@@ -57,7 +57,7 @@ Apple TV 上运行的 tvOS 应用具有以下支持的功能和功能：
 
 有关详细信息，请参阅[支持的程序集](~/ios/tvos/internals/assemblies.md)和[支持的框架](~/ios/tvos/internals/frameworks.md)文档。
 
-<a name="Apple-TV-Hardware" />
+<a name="Apple-TV-Hardware"></a>
 
 ## <a name="apple-tv-hardware"></a>Apple TV 硬件
 
@@ -80,7 +80,7 @@ Apple TV 上运行的 tvOS 应用具有以下支持的功能和功能：
 当前在以下国家/地区提供 Siri 远程：
 
 - 澳大利亚
-- 加拿大
+- Canada
 - 法国
 - 德国
 - 日本
@@ -94,7 +94,7 @@ Apple TV 上运行的 tvOS 应用具有以下支持的功能和功能：
 
 有关详细信息，请参阅我们的[Siri 远程和蓝牙控制器](~/ios/tvos/platform/remote-bluetooth.md)文档。
 
-<a name="Apple-TV-Provisioning" />
+<a name="Apple-TV-Provisioning"></a>
 
 ## <a name="apple-tv-provisioning"></a>Apple TV 预配
 
@@ -104,13 +104,13 @@ Apple TV 上运行的 tvOS 应用具有以下支持的功能和功能：
 
 预配配置文件的创建和安装方式与使用 Xamarin iOS 应用的方式相同。 同样，请参阅 iOS[设备预配](~/ios/get-started/installation/device-provisioning/index.md)文档以了解更多详细信息。
 
-<a name="Apple-TV-Apps" />
+<a name="Apple-TV-Apps"></a>
 
 ## <a name="apple-tv-apps"></a>Apple TV 应用
 
 新的 Apple TV 硬件和 tvOS 9 支持两种类型的应用：传统应用和客户端-服务器应用。
 
-<a name="Traditional-Apps" />
+<a name="Traditional-Apps"></a>
 
 ### <a name="traditional-apps"></a>传统应用
 
@@ -120,15 +120,15 @@ Apple TV 应用的最大大小为200MB，可以使用点播资源下载其他2GB
 
 请参阅[tvOS 快速入门指南，](~/ios/tvos/get-started/hello-tvos.md)熟悉使用 tvOS 开发 tvOS 应用程序所需的工具和概念。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ### <a name="client-server-apps"></a>客户端-服务器应用
 
 除了已安装的传统应用外，通过 Apple TV，还可以轻松地使用 web 技术（HTTPS、XML 和 JavaScript）创建基于 web 的客户端-服务器媒体流式处理应用。 你将使用 Apple 的 TVML 标记语言设计用户界面，并使用 JavaScript 通过 TVMLKit 定义应用的行为。
 
-有关详细信息，请参阅 Apple 的[APPLE Tv 标记语言参考](https://developer.apple.com/library/prerelease/tvos/documentation/LanguagesUtilities/Conceptual/ATV_Template_Guide/index.html#//apple_ref/doc/uid/TP40015064)， [TVJS framework 参考](https://developer.apple.com/library/prerelease/tvos/documentation/TVMLJS/Reference/TVJSFrameworkReference/index.html#//apple_ref/doc/uid/TP40016076)， [TVMLKit FRAMEWORK 参考](https://developer.apple.com/library/prerelease/tvos/documentation/TVMLKit/Reference/TVMLKit_Collection/index.html#//apple_ref/doc/uid/TP40016429)，[关于](https://developer.apple.com/library/prerelease/tvos/referencelibrary/GettingStarted/AboutHTTPLiveStreaming/about/about.html#//apple_ref/doc/uid/TP40013978) [apple TV 的 HTTP Live Streaming 和 HLS 创作规范](https://developer.apple.com/services-account/download?path=/Documentation/HLS_Authoring_Specification_for_Apple_TV/HLS_Authoring_Specification_for_Apple_TV.pdf)关于.
+有关详细信息，请参阅 apple 的[APPLE Tv 标记语言参考](https://developer.apple.com/library/prerelease/tvos/documentation/LanguagesUtilities/Conceptual/ATV_Template_Guide/index.html#//apple_ref/doc/uid/TP40015064)， [TVJS framework 参考](https://developer.apple.com/library/prerelease/tvos/documentation/TVMLJS/Reference/TVJSFrameworkReference/index.html#//apple_ref/doc/uid/TP40016076)， [TVMLKit FRAMEWORK 参考](https://developer.apple.com/library/prerelease/tvos/documentation/TVMLKit/Reference/TVMLKit_Collection/index.html#//apple_ref/doc/uid/TP40016429)，[关于](https://developer.apple.com/library/prerelease/tvos/referencelibrary/GettingStarted/AboutHTTPLiveStreaming/about/about.html#//apple_ref/doc/uid/TP40013978) [apple TV 文档的 HTTP Live Streaming 和 HLS 创作规范](https://developer.apple.com/services-account/download?path=/Documentation/HLS_Authoring_Specification_for_Apple_TV/HLS_Authoring_Specification_for_Apple_TV.pdf)。
 
-<a name="User-Interface-Challenges" />
+<a name="User-Interface-Challenges"></a>
 
 ## <a name="user-interface-challenges"></a>用户界面问题
 
@@ -136,7 +136,7 @@ Apple TV 应用的最大大小为200MB，可以使用点播资源下载其他2GB
 
 此外，总体用户体验明显不同于通常是单用户体验的 iOS 或 Mac 应用。 使用 Apple TV，用户体验趋向于性质更高的社交领域，其中有多个人在沙发上与单个应用程序交互。 若要设计成功的 Apple TV 应用体验（新应用或移植现有应用），必须考虑这些更改。 
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ### <a name="working-with-focus-and-parallax-images"></a>使用焦点和视差图像
 
@@ -148,7 +148,7 @@ Apple TV 应用的最大大小为200MB，可以使用点播资源下载其他2GB
 
 有关详细信息，请参阅使用[导航和焦点](~/ios/tvos/app-fundamentals/navigation-focus.md)和使用[图标和图像](~/ios/tvos/app-fundamentals/icons-images.md)文档。
 
-<a name="The-Home-Screen" />
+<a name="The-Home-Screen"></a>
 
 ### <a name="the-home-screen"></a>主屏幕
 
@@ -162,7 +162,7 @@ Apple TV 主屏幕显示所有已安装的应用，并提供一种方法来访�
 
 有关详细信息，请参阅[使用图标和图像](~/ios/tvos/app-fundamentals/icons-images.md)文档。
 
-<a name="The-Top-Shelf" />
+<a name="The-Top-Shelf"></a>
 
 ### <a name="the-top-shelf"></a>顶部货位
 
@@ -170,7 +170,7 @@ Apple TV 主屏幕显示所有已安装的应用，并提供一种方法来访�
 
 [![](tvos9-images/topshelf01.png "The Top Shelf")](tvos9-images/topshelf01.png#lightbox)
 
-可以将顶架图像作为单个静态 `.png` 或 `.lsr` 文件提供，也可以在运行时动态创建为可设定焦点的单个行。
+顶部货位图像可以作为单个静态 `.png` 或文件提供，也可以 `.lsr` 在运行时动态创建为可设定焦点的单个行。
 
 它不会显示静态的顶层图像，而是包含动态行、可设定焦点的项或动态的滚动条带集。 这两种动态样式都允许您突出显示应用程序提供的内容或跳转到其最常用的功能。
 

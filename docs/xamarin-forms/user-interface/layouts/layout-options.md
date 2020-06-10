@@ -1,22 +1,8 @@
 ---
-title: 布局选项Xamarin.Forms
-description: 每个 Xamarin.Forms 视图都具有类型为 LayoutOptions 的 HorizontalOptions 和 VerticalOptions 属性。 本文说明每个 LayoutOptions 值对视图对齐和展开的影响。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 17f4e76f9bef71352cabddfba9397e95bcdd24d3
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138016"
+标题： "说明：" 中的 "布局选项" Xamarin.Forms ：每个 Xamarin.Forms 视图都有 HorizontalOptions 和 VerticalOptions 属性，其类型为 LayoutOptions。 本文说明每个 LayoutOptions 值对视图对齐和展开的影响。
+ms-chap： xamarin assetid：7CAB5631-5153-4DEF-8AD7-C6011CE44307： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/10/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="layout-options-in-xamarinforms"></a>布局选项Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)
@@ -52,8 +38,6 @@ _每个 Xamarin.Forms 视图都具有类型为 LayoutOptions 的 HorizontalOptio
 
 > [!NOTE]
 > 视图的 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 属性的默认值为 [`LayoutOptions.Fill`](xref:Xamarin.Forms.LayoutOptions.Fill)。
-
-<a name="alignment" />
 
 ## <a name="alignment"></a>对齐方式
 
@@ -98,9 +82,7 @@ Content = new StackLayout
 
 [![](layout-options-images/alignment.png "Alignment Layout Options")](layout-options-images/alignment-large.png#lightbox "Alignment Layout Options")
 
-<a name="expansion" />
-
-## <a name="expansion"></a>膨胀
+## <a name="expansion"></a>扩展
 
 展开控制在中，视图是否会占用更多空间（如果可用） [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 如果 `StackLayout` 包含未使用的空间（即，大于 `StackLayout` 其所有子项的组合大小），则通过将请求扩展的所有子视图的 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 或 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 属性设置为 [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) 使用该后缀的字段，可平均共享未使用的空间 `AndExpand` 。 请注意，当使用中的所有空格时 `StackLayout` ，扩展选项不起作用。
 

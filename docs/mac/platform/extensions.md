@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 9a9dbb63b78b00a9bcac9d7833530da02890afc6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 1d1e40de646362e9b573ad7040ab08ba6d01d6e8
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73017301"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571605"
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac 扩展支持
 
@@ -22,7 +22,7 @@ ms.locfileid: "73017301"
 - 共享
 - 今天
 
-<a name="Limitations-and-Known-Issues" />
+<a name="Limitations-and-Known-Issues"></a>
 
 ## <a name="limitations-and-known-issues"></a>限制和已知问题
 
@@ -32,21 +32,21 @@ ms.locfileid: "73017301"
 - 扩展必须包含在主机应用程序中，该应用程序运行一次并向系统注册一次。 然后必须在 "**系统首选项**" 的 "**扩展**" 部分启用。 
 - 某些扩展崩溃可能会使主机应用程序不稳定，并导致异常行为。 特别是，**通知中心**的 "**查找**器" 和 "**今日**" 部分可能会变为 "卡住" 并无响应。 这也是在 Xcode 中的扩展项目中遇到的，当前与 Xamarin 无关。 通常，可以在系统日志中查看（通过**控制台**查看有关详细信息的提示）打印重复的错误消息。 重新启动 macOS 将会解决此问题。
 
-<a name="Tips" />
+<a name="Tips"></a>
 
 ## <a name="tips"></a>提示
 
 使用 Xamarin 中的扩展时，以下提示会很有用：
 
-- 因为 Xamarin 目前不支持调试扩展，所以调试体验主要依赖于执行和 `printf` 的语句。 但是，扩展在沙盒进程中运行，因此 `Console.WriteLine` 在其他 Xamarin 应用程序中不起作用。 [直接调用 `NSLog`](https://gist.github.com/chamons/e2e409013a449cfbe1f2fbe5547f6554)会将调试消息输出到系统日志。
-- 任何未捕获的异常都将导致扩展过程崩溃，仅在**系统日志**中提供少量有用的信息。 在重新引发之前 `NSLog` 的 `try/catch` （异常）块中包装有麻烦的代码可能会很有用。
-- 可以通过**应用程序** > **实用**程序下的**控制台**应用程序访问**系统日志**：
+- 因为 Xamarin 目前不支持调试扩展，所以调试体验主要依赖于执行和 `printf` like 语句。 但是，扩展在沙盒进程中运行，因此 `Console.WriteLine` 不会像在其他 Xamarin 应用程序中那样工作。 [ `NSLog` 直接](https://gist.github.com/chamons/e2e409013a449cfbe1f2fbe5547f6554)调用会将调试消息输出到系统日志。
+- 任何未捕获的异常都将导致扩展过程崩溃，仅在**系统日志**中提供少量有用的信息。 在 `try/catch` 重新引发之前，在（异常）块中包装有麻烦的代码 `NSLog` 可能会很有用。
+- 可以从**应用**程序实用工具下的**控制台**应用程序访问**系统日志**  >  **Utilities**：
 
     [![](extensions-images/extension02.png "The system log")](extensions-images/extension02.png#lightbox)
 - 如上所述，运行扩展主机应用程序会将其注册到系统。 删除应用程序包，并将其取消注册。 
-- 如果注册了应用扩展的 "游离" 版本，请使用以下命令进行查找（以便可以删除它们）： `plugin kit -mv`
+- 如果注册了应用扩展的 "游离" 版本，请使用以下命令进行查找（以便可以删除它们）：`plugin kit -mv`
 
-<a name="Walkthrough-and-Sample-App" />
+<a name="Walkthrough-and-Sample-App"></a>
 
 ## <a name="walkthrough-and-sample-app"></a>演练和示例应用
 
@@ -54,7 +54,7 @@ ms.locfileid: "73017301"
 
 可在[此处](https://docs.microsoft.com/samples/xamarin/mac-samples/extensionsamples)找到包含每个扩展类型的小型工作示例的 Xamarin Mac 项目示例。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>总结
 

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsBoxView
-description: 本文介绍如何在应用程序中使用有色矩形来实现修饰、图形和交互 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5f915955bff969ef38cdb7a89bf9cecf05401131
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136352"
+标题： " Xamarin.Forms BoxView" 说明： "本文介绍了如何在应用程序中使用颜色矩形来实现修饰、图形和交互 Xamarin.Forms 。
+ms-chap： xamarin assetid：4CBF703D-84A0-4CDF-A433-5926B587782A： xamarin 窗体作者： davidbritch： dabritch ms. 日期：07/26/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-boxview"></a>Xamarin.FormsBoxView
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
@@ -26,17 +12,6 @@ ms.locfileid: "84136352"
 因为没有 Xamarin.Forms 内置矢量图形系统，所以 `BoxView` 有助于进行补偿。 本文中介绍的一些示例程序用于 `BoxView` 呈现图形。 `BoxView`可以调整大小，使其类似于特定宽度和粗细的线条，然后使用属性旋转任意角度 `Rotation` 。
 
 尽管 `BoxView` 可以模拟简单图形，但你可能希望[在中 Xamarin.Forms 使用 SkiaSharp](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)进行调查，以获得更复杂的图形要求。
-
-本文讨论以下主题：
-
-- **[设置 BoxView 颜色和大小](#colorandsize)** &ndash;设置 `BoxView` 属性。
-- **[呈现文本修饰](#textdecorations)** &ndash;使用 `BoxView` 绘制线条。
-- **[用 BoxView](#listingcolors)** &ndash; 列出颜色显示中的所有系统颜色 `ListView` 。
-- **[通过对 BoxView](#subclassing)** &ndash; 进行分类来玩生活游戏实现著名的手机网络自动机。
-- **[创建数字时钟](#digitalclock)** &ndash;模拟点矩阵显示。
-- **[创建模拟时钟](#analogclock)** &ndash;转换和动画处理 `BoxView` 元素。
-
-<a name="colorandsize" />
 
 ## <a name="setting-boxview-color-and-size"></a>设置 BoxView 颜色和大小
 
@@ -55,7 +30,7 @@ ms.locfileid: "84136352"
 
 `WidthRequest`如果在 `HeightRequest` 布局中受到约束，则将忽略和属性 `BoxView` ，在这种情况下，布局容器在上施加自己的大小*constrained* `BoxView` 。
 
-`BoxView`可以在一个维度中进行约束，而在另一个维度中不受约束。 例如，如果 `BoxView` 是垂直的子级，则的 `StackLayout` 垂直尺寸 `BoxView` 是不受限制的，并且其水平尺寸通常受到约束。 但这种水平维度存在异常：如果将 `BoxView` 其 `HorizontalOptions` 属性设置为以外的其他内容 `LayoutOptions.Fill` ，则水平维度也不受约束。 本身也可能 `StackLayout` 具有一个不受约束的水平维度，在这种情况下，也可能会不 `BoxView` 受限制。
+`BoxView` 可以在一个维度上受约束，而在另一个维度上不受约束。 例如，如果 `BoxView` 是垂直的子级，则的 `StackLayout` 垂直尺寸 `BoxView` 是不受限制的，并且其水平尺寸通常受到约束。 但这种水平维度存在异常：如果将 `BoxView` 其 `HorizontalOptions` 属性设置为以外的其他内容 `LayoutOptions.Fill` ，则水平维度也不受约束。 本身也可能 `StackLayout` 具有一个不受约束的水平维度，在这种情况下，也可能会不 `BoxView` 受限制。
 
 [**BasicBoxView**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)示例 `BoxView` 在其页面中心显示一英寸的不受限制的块：
 
@@ -84,8 +59,6 @@ ms.locfileid: "84136352"
 `BoxView`也可以是的子级 `AbsoluteLayout` 。 在这种情况下， `BoxView` 使用附加的可绑定属性设置的位置和大小 `LayoutBounds` 。 `AbsoluteLayout`文章[**AbsoluteLayout**](~/xamarin-forms/user-interface/layouts/absolute-layout.md)中对进行了讨论。
 
 在下面的示例程序中，你将看到所有这些事例的示例。
-
-<a name="textdecorations" />
 
 ## <a name="rendering-text-decorations"></a>呈现文本修饰
 
@@ -171,8 +144,6 @@ ms.locfileid: "84136352"
     </Label>
 </StackLayout>
 ```
-
-<a name="listingcolors" />
 
 ## <a name="listing-colors-with-boxview"></a>用 BoxView 列出颜色
 
@@ -305,8 +276,6 @@ XAML 文件中描述了程序视觉对象。 `ItemsSource`的属性 `ListView` �
 
 `NamedColor`对象由 `ViewCell` 设置为的数据模板的对象进行格式设置 `ListView` 。 此模板包括 `BoxView` 其 `Color` 属性绑定到 `Color` 对象的属性的 `NamedColor` 。
 
-<a name="subclassing" />
-
 ## <a name="playing-the-game-of-life-by-subclassing-boxview"></a>通过对 BoxView 进行分类来玩生活游戏
 
 生活的游戏是 mathematician John Conway 和那时推广在七十年代的*美国科研*页中 John 和的移动自动机。 维基百科文章[Conway](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)提供了一个很好的简介。
@@ -361,8 +330,6 @@ class LifeCell : BoxView
 **GameOfLife**程序还包括一个 `LifeGrid` 类，该类封装游戏的很多逻辑，以及一个 `MainPage` 处理程序视觉对象的类。 其中包括描述游戏规则的覆盖区。 下面是在 `LifeCell` 页面上显示几百个对象的程序：
 
 [![生活游戏](boxview-images/gameoflife-small.png "生活游戏")](boxview-images/gameoflife-large.png#lightbox "生活游戏")
-
-<a name="digitalclock" />
 
 ## <a name="creating-a-digital-clock"></a>创建数字时钟
 
@@ -599,8 +566,6 @@ public partial class MainPage : ContentPage
 }
 ```
 
-<a name="analogclock" />
-
 ## <a name="creating-an-analog-clock"></a>创建模拟时钟
 
 点阵时钟似乎是一个明显的应用程序 `BoxView` ，但 `BoxView` 元素也能够实现模拟时钟：
@@ -782,10 +747,6 @@ public partial class MainPage : ContentPage
 ```
 
 第二种处理方式略有不同：应用动画缓动函数以使移动看起来不是平滑。 每次计时周期后，第二次就会回发，然后超限其目标。 这小段代码在移动的真实感上增加了很多。
-
-## <a name="conclusion"></a>结束语
-
-`BoxView`首先，这似乎很简单，但正如您所看到的，它可能会相当多样，几乎还可以很好地再现通常只是矢量图形才能实现的视觉对象。 有关更复杂的图形，请参阅[使用 Xamarin.Forms 中的 SkiaSharp ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)。
 
 ## <a name="related-links"></a>相关链接
 

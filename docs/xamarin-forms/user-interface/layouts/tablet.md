@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文介绍如何优化 Xamarin.Forms 平板电脑的应用程序布局，而不是手机。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8ce5ba09f89c2bc84b7f6ba722f724ae39c0222e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137916"
+标题： "Tablet 和桌面应用的布局" 说明： "本文介绍如何优化 Xamarin.Forms 平板电脑的应用程序布局，而不是手机。"
+ms-chap： xamarin assetid： D62F472B-4345-4983-8403-659A538B591F： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/01/2016 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="layout-for-tablet-and-desktop-apps"></a>平板电脑和桌面应用的布局
 
 Xamarin.Forms支持在受支持的平台上使用的所有设备类型，因此除了手机外，应用程序还可以在以下设备上运行：
@@ -27,10 +13,8 @@ Xamarin.Forms支持在受支持的平台上使用的所有设备类型，因此�
 
 本页简要讨论：
 
-- 支持的[设备类型](#Device_Types)和
-- 如何[优化](#optimize)平板电脑与手机的布局。
-
-<a name="Device_Types" />
+- 支持的[设备类型](#device-types)和
+- 如何[优化](#optimize-for-tablet-and-desktop)平板电脑与手机的布局。
 
 ## <a name="device-types"></a>设备类型
 
@@ -64,9 +48,7 @@ Android 生态系统提供多种受支持的屏幕大小（从小手机到大平
 
 [![](tablet-images/splitscreen-sml.png "Windows Split Screen Example")](tablet-images/splitscreen.png#lightbox "Windows Split Screen Example")
 
-<a name="optimize" />
-
-## <a name="optimizing-for-tablet-and-desktop"></a>为平板电脑和桌面优化
+## <a name="optimize-for-tablet-and-desktop"></a>为平板电脑和桌面优化
 
 你可以根据 Xamarin.Forms 手机或平板电脑/桌面设备是否正在使用来调整你的用户界面。 这意味着你可以优化大屏幕设备（如平板电脑和台式计算机）的用户体验。
 
@@ -85,7 +67,7 @@ if (Device.Idiom == TargetIdiom.Phone)
 
 此方法可以进行扩展，以对单个页面布局进行重大更改，甚至在较大屏幕上呈现完全不同的页面。
 
-### <a name="leveraging-masterdetailpage"></a>利用 MasterDetailPage
+### <a name="leverage-masterdetailpage"></a>利用 MasterDetailPage
 
 适用 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 于更大的屏幕，特别是在 iPad 上，它使用 [`UISplitViewController`](xref:UIKit.UISplitViewController) 提供本机 iOS 体验。
 

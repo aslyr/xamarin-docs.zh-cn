@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 0e8014263d417cef39147b440ed3b38155f226bb
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: bf023543d3159f5d5baf7f7036a576b8a746cf9e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021844"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572125"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>Xamarin 中的表部件和功能
 
@@ -21,7 +21,7 @@ UITableView 可以具有 "分组" 或 "纯" 样式，由以下部分组成：
 - [节标头](#Section_Header)
 - [单元格](#Cells)（如果需要，还可以使用行）
 - [节页脚](#Section_Footer)
-- [Tuple](#Index)
+- [索引](#Index)
 - [编辑模式](#Edit_Features)（包括 "轻扫到删除" 和拖动控点以更改行顺序） 
 
 这些屏幕截图显示部分行、页眉、页脚、编辑控件和索引的显示方式。
@@ -30,32 +30,32 @@ UITableView 可以具有 "分组" 或 "纯" 样式，由以下部分组成：
 
 下面更详细地介绍了这些部分：
 
-<a name="Section_Header" />
+<a name="Section_Header"></a>
 
 ## <a name="section-header"></a>节标头
 
 可以选择性地将单元分组为多个节，使用自定义标头进行标记，并/或用页脚标记。 可以使用字符串值设置标头，也可以提供自定义视图以允许不同的布局或样式。
 
-<a name="Cells" />
+<a name="Cells"></a>
 
 ## <a name="cells"></a>单元
 
 单元是表的主要用户界面元素。 正确实现时，将重新使用单元以提高内存效率。 有四种内置单元样式，您可以创建自己的自定义单元格（在代码中），也可以在设计器中使用情节提要。
 
-<a name="Section_Footer"/>
+<a name="Section_Footer"></a>
 
 ## <a name="section-footer"></a>节页脚
 
 可选节页脚可以使用字符串值进行设置，也可以提供自定义视图以允许不同的布局或样式。 节标头和表尾可以单独设置。
 
-<a name="Index" />
+<a name="Index"></a>
 
-## <a name="index"></a>Index
+## <a name="index"></a>索引
 
 索引在表的右边缘下显示为一条字符。
 触摸或拖动索引会加速滚动到该表的该部分。 索引是可选的，但建议使用它来帮助导航较长的列表。 索引通常不与分组样式一起使用。
 
-<a name="Edit_Features" />
+<a name="Edit_Features"></a>
 
 ## <a name="editing-mode"></a>编辑模式
 
@@ -77,7 +77,7 @@ UITableView 可以具有 "分组" 或 "纯" 样式，由以下部分组成：
 每个类的用途如下所述：
 
 - **UITableView** –一个视图，其中包含滚动容器中单元格的集合。 表格视图通常使用 iPhone 应用中的整个屏幕，但可能作为 iPad 上较大视图的一部分（或出现在 segue 中）。 
-- **UITableViewCell** –一个视图，它表示表视图中的单个单元格（或行）。 有四种内置单元类型，可以在中创建自定义单元，也可以在C# IOS 设计器中创建。 
+- **UITableViewCell** –一个视图，它表示表视图中的单个单元格（或行）。 有四种内置单元类型，可以在 c # 中创建自定义单元，也可以在 iOS 设计器中创建。 
 - **UITableViewSource** – Xamarin 专用抽象类，提供显示表所需的所有方法，包括行计数、返回每行的单元格视图、处理行选择以及许多其他可选功能。 要使 UITableView 正常工作，*必须*为此划分子类。 
 - **Nsindexpath.fromitemsection** –包含唯一标识表中单元格位置的行和节属性。 
 - **UITableViewController** –一种随时可用的 UIViewController，它将 UITableView 硬编码为其视图，并可通过 TableView 属性进行访问。 

@@ -7,20 +7,20 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 01ab48f68656dcabdf2a6cfc286dfcd8850454f8
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 68c0fb9e034f432c619bc188553996bd7bacdee8
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030764"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573685"
 ---
 # <a name="configure-your-tvos-app-in-itunes-connect"></a>在 iTunes Connect 中配置 tvOS 应用
 
 _本文提供 iOS 补充指南，适用于 iOS 在 iTunes Connect 中配置应用以 tvOS 特定配置。_
 
-除了遵循 iOS 在[ITunes Connect guide 中配置应用](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)所需的配置和设置外，本文档还介绍了在 Apple TV 应用中发布 tvOS 应用程序所需的特定配置。店.
+除了需要遵循 iOS 在[ITunes Connect guide 中配置应用](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)所需的配置和设置外，本文档还介绍了在 Apple TV 应用商店中发布 tvOS 应用所需的特定配置。
 
-<a name="Adding-a-tvOS-Release-Version" />
+<a name="Adding-a-tvOS-Release-Version"></a>
 
 ## <a name="adding-a-tvos-release-version"></a>添加 tvOS 发行版本
 
@@ -44,7 +44,7 @@ _本文提供 iOS 补充指南，适用于 iOS 在 iTunes Connect 中配置应�
 
 [![](itunes-connect-images/connect02.png "The tvOS specific information screen")](itunes-connect-images/connect02.png#lightbox)
 
-<a name="tvOS-Version-Information" />
+<a name="tvOS-Version-Information"></a>
 
 ## <a name="tvos-version-information"></a>tvOS 版本信息
 
@@ -64,7 +64,7 @@ _本文提供 iOS 补充指南，适用于 iOS 在 iTunes Connect 中配置应�
 
 [![](itunes-connect-images/connect04.png "tvOS Version Information ready for submission")](itunes-connect-images/connect04.png#lightbox)
 
-<a name="Submitting-for-Review" />
+<a name="Submitting-for-Review"></a>
 
 ## <a name="preparing-to-submit-for-review"></a>正在准备提交以供审阅
 
@@ -72,7 +72,7 @@ _本文提供 iOS 补充指南，适用于 iOS 在 iTunes Connect 中配置应�
 
 [![](itunes-connect-images/connect05.png "Submit for Review")](itunes-connect-images/connect05.png#lightbox)
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>总结
 

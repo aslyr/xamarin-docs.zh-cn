@@ -1,23 +1,8 @@
 ---
-title: 在中使用 Azure Cosmos DB 文档数据库Xamarin.Forms
-description: 本文介绍如何使用 Azure Cosmos DB .NET Standard 客户端库将 Azure Cosmos DB 文档数据库集成到 Xamarin.Forms 应用程序中。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 47b35d394eab339a8e9a1f81880e6de4233f29b6
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127078"
+标题：在 Xamarin.Forms "说明：" 中使用 Azure Cosmos DB 文档数据库，本文介绍如何使用 Azure Cosmos DB .NET Standard 客户端库将 Azure Cosmos DB 文档数据库集成到 Xamarin.Forms 应用程序中。 "
+ms-chap： xamarin assetid：7C0605D9-9B7F-4002-9B60-2B5DAA3EA30C： xamarin。 custom： xamu：： davidbritch： dabritch：：06/16/2017 不，不是： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="consume-an-azure-cosmos-db-document-database-in-xamarinforms"></a>在中使用 Azure Cosmos DB 文档数据库Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdb)
@@ -120,8 +105,6 @@ public async Task CreateDocumentCollection(string databaseName, string collectio
 > [!IMPORTANT]
 > 请注意，该 `CreateDocumentCollectionIfNotExistsAsync` 方法将创建具有保留吞吐量的新集合，这会产生定价影响。
 
-<a name="document_query" />
-
 ### <a name="retrieving-document-collection-documents"></a>检索文档集合文档
 
 可以通过创建和执行文档查询来检索文档集合的内容。 使用方法创建文档查询 `DocumentClient.CreateDocumentQuery` ：
@@ -160,8 +143,6 @@ var query = client.CreateDocumentQuery<TodoItem>(collectionLink)
 
 此查询从其属性等于的集合中检索所有文档 `Done` `false` 。
 
-<a name="inserting_document" />
-
 ### <a name="inserting-a-document-into-a-document-collection"></a>将文档插入文档集合
 
 文档是用户定义的 JSON 内容，可以使用方法插入到文档集合中 `DocumentClient.CreateDocumentAsync` ：
@@ -191,8 +172,6 @@ public async Task SaveTodoItemAsync(TodoItem item, bool isNewItem = false)
 ```
 
 `ReplaceDocumentAsync`方法指定一个 `Uri` 参数，该参数表示应替换的集合中的文档，以及一个 `object` 表示更新后的文档数据的参数。
-
-<a name="deleting_document" />
 
 ### <a name="deleting-a-document-from-a-document-collection"></a>从文档集合中删除文档
 

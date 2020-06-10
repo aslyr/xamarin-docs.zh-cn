@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2018
-ms.openlocfilehash: ef1a97df5648d0f120b58f6206f18f74a6f50f92
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.openlocfilehash: a2f15c8385b7df7afc3f04e033a085cb00bc9005
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76940984"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573854"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>为 Xamarin iOS 应用启动屏幕
 
@@ -22,13 +22,13 @@ _本文介绍如何使用单个统一的情节提要，以任何分辨率和方�
 
 此 brief 演练介绍了如何使用默认情况下在新项目中提供的情节提要或手动添加到现有项目中的情节提要创建启动屏幕。 然后，它演示了如何使用 iOS 设计器将图像视图和标签添加到情节提要，为这些视图设置约束，并验证情节提要对于各种设备和方向是否正确显示。
 
-<a name="storyboard" />
+<a name="storyboard"></a>
 
 ## <a name="managing-launch-screens-with-storyboards"></a>用情节提要管理启动屏幕
 
 在 iOS 8 （及更高版本）中，开发人员可以创建一个特殊的统一情节提要来提供 "启动" 屏幕，而不是使用一个或多个静态启动图像。 在 iOS 设计器中创建启动情节提要时，可使用大小类和自动布局来定义不同显示环境的不同布局。 通过使用 Size 类和自动布局，开发人员可以创建一个在所有设备上都能正常运行并显示环境的启动屏幕。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在 Visual Studio for Mac 中，选择 "**文件" > "新建解决方案**"，然后选择 "**单视图应用**"，创建一个新项目： 
 
@@ -95,13 +95,13 @@ _本文介绍如何使用单个统一的情节提要，以任何分辨率和方�
 
 13. 保存对情节提要所做的更改。 在模拟器或设备上运行应用，启动屏幕将在应用启动时可见。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 创建新项目。 在 Visual Studio 中，选择 "文件" " **> 新建C# > 项目" > Visual > iPhone & IPad > "IOS 应用（Xamarin）** "：
+1. 创建新项目。 在 Visual Studio 中，选择 "文件" " **> 新建 > 项目" > Visual c # > iPhone & "IOS 应用（Xamarin）**"：
 
     ![已选中 "iOS 应用（Xamarin）" 的 "新建项目" 窗口](launch-screens-images/launch01.w157.png)
 
-    选择 "**单一视图应用程序**" 模板，然后单击 **"确定"** ：
+    选择 "**单一视图应用程序**" 模板，然后单击 **"确定"**：
 
     ![单一视图应用模板](launch-screens-images/launch01-2.w157.png)
 
@@ -113,7 +113,7 @@ _本文介绍如何使用单个统一的情节提要，以任何分辨率和方�
 
 4. 将项目配置为使用**LaunchScreen**作为其启动屏幕情节提要：
 
-    - 在“解决方案资源管理器”中，双击 **Info.plist** 文件，打开它进行编辑。 
+    - 在“解决方案资源管理器”**** 中，双击 **Info.plist** 文件，打开它进行编辑。 
     - 在 "**视觉对象资产**" 选项卡上，将 "**启动屏幕**" 设置为**LaunchScreen**。
 
     ![Info.plist 中的启动屏幕选择器](launch-screens-images/launch04-vs.png)
@@ -187,26 +187,26 @@ _本文介绍如何使用单个统一的情节提要，以任何分辨率和方�
 
 ## <a name="migrating-to-launch-screen-storyboards"></a>迁移到启动屏幕情节提要
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-更新现有应用程序以使用演示图板启动屏幕时，右键单击 "**解决方案资源管理器**中的**项目名称**，然后选择"**添加** > **新文件 ...** "。选择 " **iOS** > **启动屏幕**并单击"**新建**"按钮：
+更新现有应用程序以使用演示图板启动屏幕时，右键单击 "**解决方案资源管理器**中的**项目名称**，然后选择"**添加**  >  **新文件 ...**"。选择 " **iOS**  >  " "**启动" 屏幕**，然后单击 "**新建**" 按钮：
 
 ![](launch-screens-images/storyboard02.png "Select an iOS Launch Screen")
 
-接下来，双击**解决方案资源管理器**中的 `Info.plist` 文件，将其打开进行编辑。 在 "**启动" 屏幕**下，选择上面创建的新情节提要文件。
+接下来， `Info.plist` 在**解决方案资源管理器**中双击该文件以将其打开以进行编辑。 在 "**启动" 屏幕**下，选择上面创建的新情节提要文件。
 
 ![](launch-screens-images/storyboard09.png "Select the new Storyboard file created above")
 
 若要使用新的情节提要作为启动屏幕，请执行以下操作：
 
-1. 双击**解决方案资源管理器**中的 `Info.plist` 文件，将其打开进行编辑。
+1. 双击 `Info.plist` "**解决方案资源管理器**中的文件以将其打开以进行编辑。
 2. 滚动到编辑器的 "**通用启动映像**" 部分，打开 "**启动屏幕**" 下拉列表，选择上面创建的情节提要的名称： 
 
     ![](launch-screens-images/storyboard08.png "Setting the launch screen to the storyboard")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 右键单击 "**解决方案资源管理器**中的项目名称，然后选择"**添加** > **新文件 ...** "： 
+1. 右键单击 "**解决方案资源管理器**中的项目名称，然后选择"**添加**  >  **新文件 ...**"： 
 
     ![](launch-screens-images/image012.png "Add new file")
 2. 输入启动屏幕的名称，然后单击 "**添加**" 按钮： 
@@ -216,7 +216,7 @@ _本文介绍如何使用单个统一的情节提要，以任何分辨率和方�
 4. 确保**Size 类**设置为**any： any** ，并将**视图**设置为**泛型**： 
 
     ![](launch-screens-images/image016.png "Ensure that the Size Class is set to any:any and the View As is Generic")
-5. 从大小类、简单 UI 元素（例如 `UIImageView`）和包含在应用程序捆绑中的图像的程序集启动屏幕： 
+5. 从大小类、简单 UI 元素（如 `UIImageView` ）和包含在应用程序捆绑中的图像的程序集启动屏幕： 
 
     ![](launch-screens-images/image017.png "Assembly the launch screen in the iOS Designer")
 6. 保存对情节提要所做的更改。

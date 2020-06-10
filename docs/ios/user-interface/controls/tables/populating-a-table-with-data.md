@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: d03cb6ec6bc364aa63578cd6e2fbb78dbc7fedda
-ms.sourcegitcommit: 05ba8ffb8b34ec881b89e442323f3edd8de18f2e
+ms.openlocfilehash: 9acdde897a3a700d0138cb67db6735a8cce07120
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83546006"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570825"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>使用 Xamarin 中的数据填充表
 
@@ -25,7 +25,7 @@ ms.locfileid: "83546006"
 - 添加索引
 - 添加页眉和页脚
 
-<a name="Subclassing_UITableViewSource" />
+<a name="Subclassing_UITableViewSource"></a>
 
 ## <a name="subclassing-uitableviewsource"></a>子类 UITableViewSource
 
@@ -214,7 +214,7 @@ public class MyCell : UITableViewCell
 
 你可以在链接到本文的**BasicTable**示例中查看上述主题的示例。
 
-<a name="Adding_an_Index" />
+<a name="Adding_an_Index"></a>
 
 ## <a name="adding-an-index"></a>添加索引
 
@@ -261,7 +261,7 @@ public override string[] SectionIndexTitles (UITableView tableView)
 
 索引通常只与纯表样式一起使用。
 
-<a name="Adding_Headers_and_Footers" />
+<a name="Adding_Headers_and_Footers"></a>
 
 ## <a name="adding-headers-and-footers"></a>添加页眉和页脚
 

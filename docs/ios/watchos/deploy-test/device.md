@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: c049fb0bd05749db30d99603fb9179e710f815f7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: cbbf8194505e9caa09587471020026d495f9f99b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028357"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569685"
 ---
 # <a name="testing-on-apple-watch-devices"></a>Apple Watch 设备上的测试
 
@@ -22,7 +22,7 @@ ms.locfileid: "73028357"
 - [创建开发预配配置文件](#profiles)，然后
 - [部署和测试](#testing)Apple Watch。
 
-<a name="devices" />
+<a name="devices"></a>
 
 ## <a name="devices"></a>设备
 
@@ -44,7 +44,7 @@ ms.locfileid: "73028357"
 
 别忘了编辑现有的预配配置文件以进行下载并重新安装！
 
-<a name="profiles" />
+<a name="profiles"></a>
 
 ## <a name="development-provisioning-profiles"></a>开发预配配置文件
 
@@ -64,7 +64,7 @@ ms.locfileid: "73028357"
 
 ![](device-images/options-selectprofile.png "The Provisioning Profile list")
 
-<a name="testing" />
+<a name="testing"></a>
 
 ## <a name="testing-on-a-watch-device"></a>监视设备上的测试
 
@@ -120,7 +120,7 @@ Invalid executable/Application Verification Failed
 
 - 用于测试的开发预配配置文件未包含监视设备;或者，在将手表添加到预配配置文件后，不会重新下载并重新安装它们。 按照说明[正确配置预配配置文件](#profiles)。
 
-- 如果**IOS 设备日志**包含 `The system version is lower than the minimum OS version specified for bundle...Have 8.2; need 8.3` 则 Watch 应用的**info.plist**具有错误的**MinimumOSVersion**值。
+- 如果**IOS 设备日志**包含 " `The system version is lower than the minimum OS version specified for bundle...Have 8.2; need 8.3` 监视应用的**信息**"，则 info.plist 具有错误的**MinimumOSVersion**值。
   这应该是**8.2** -如果你已安装 Xcode 6.3，你可能需要手动编辑要插入的源，并将其设置为8.2。
 
 - 手表应用的**info.plist**不正确地启用了权利（如应用组）。

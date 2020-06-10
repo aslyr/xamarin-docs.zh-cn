@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d2e335535b508a6cd5e2f497e2c681152a7e5cda
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130944"
+标题： "模型-视图-ViewModel 模式" 说明： "本章节介绍 eShopOnContainers 移动应用如何使用 MVVM 模式将应用的业务和表示逻辑与用户界面完全分离。"
+ms-chap： xamarin assetid： dd8c1813-df44-4947-bcee-1a1ff2334b87： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/07/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="the-model-view-viewmodel-pattern"></a>模型-视图-ViewModel 模式
 
 Xamarin.Forms开发人员体验通常涉及在 XAML 中创建一个用户界面，然后添加在用户界面上操作的代码隐藏。 当修改应用，并且大小和范围增加时，可能会出现复杂的维护问题。 这些问题包括 UI 控件和业务逻辑之间的紧密耦合，这会增加进行 UI 修改的成本，以及单元测试此类代码的困难。
@@ -42,7 +28,7 @@ MVVM 模式中有三个核心组件：模型、视图和视图模型。 每个�
 
 使用 MVVM 的关键是要了解如何将应用程序代码分解为正确的类，并了解类的交互方式。 以下各节讨论 MVVM 模式中每个类的职责。
 
-### <a name="view"></a>查看
+### <a name="view"></a>视图
 
 视图负责定义用户在屏幕上看到的内容的结构、布局和外观。 理想情况下，在 XAML 中定义每个视图，但不包含业务逻辑的代码隐藏有限。 但是，在某些情况下，代码隐藏可能包含用于实现视觉对象的 UI 逻辑，该行为在 XAML 中很难表达，例如动画。
 
@@ -124,8 +110,6 @@ public LoginView()
 ### <a name="creating-a-view-defined-as-a-data-template"></a>创建定义为数据模板的视图
 
 视图可以定义为数据模板并与视图模型类型相关联。 数据模板可以定义为资源，也可以在将显示视图模型的控件内以内联方式定义数据模板。 控件的内容为视图模型实例，使用数据模板直观地表示它。 此方法的一个示例是首先实例化视图模型，然后创建视图。
-
-<a name="automatically_creating_a_view_model_with_a_view_model_locator" />
 
 ### <a name="automatically-creating-a-view-model-with-a-view-model-locator"></a>自动创建具有视图模型定位器的视图模型
 
@@ -279,13 +263,11 @@ public ICommand NavigateCommand => new Command<string>(NavigateAsync);
 
 此外，还可以使用属性定义命令参数 [`CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter) 。 预期参数的类型是在 `Execute` 和目标方法中指定的 `CanExecute` 。 [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)当用户与附加控件交互时，将自动调用目标命令。 命令参数（如果提供）将作为参数传递给命令的 `Execute` 委托。
 
-<a name="implementing_behaviors" />
-
 ### <a name="implementing-behaviors"></a>实现行为
 
 行为允许向 UI 控件添加功能，而无需对这些控件添加子类。 功能是在行为类中实现的，并附加到控件上，就像它本身就是控件的一部分。 利用行为，你可以实现通常必须作为代码隐藏来编写的代码，因为它直接与控件的 API 交互，这种方法可以将其简洁地附加到控件，并打包以便在多个视图或应用上重复使用。 在 MVVM 的上下文中，行为是将控件连接到命令的有用方法。
 
-通过附加属性附加到控件的行为称为*附加行为*。 然后，该行为可以使用它附加到的元素的公开 API 向该控件的可视化树中的控件或其他控件添加功能。 EShopOnContainers 移动应用包含 `LineColorBehavior` 类，该类是附加的行为。 有关此行为的详细信息，请参阅[显示验证错误](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying_validation_errors)。
+通过附加属性附加到控件的行为称为*附加行为*。 然后，该行为可以使用它附加到的元素的公开 API 向该控件的可视化树中的控件或其他控件添加功能。 EShopOnContainers 移动应用包含 `LineColorBehavior` 类，该类是附加的行为。 有关此行为的详细信息，请参阅[显示验证错误](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying-validation-errors)。
 
 Xamarin.Forms行为是从或类派生的类 [`Behavior`](xref:Xamarin.Forms.Behavior) [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) ，其中 `T` 是该行为应应用到的控件的类型。 这些类提供了 `OnAttachedTo` 和 `OnDetachingFrom` 方法，应重写这些方法，以提供在将行为附加到控件并将其与控件分离时执行的逻辑。
 

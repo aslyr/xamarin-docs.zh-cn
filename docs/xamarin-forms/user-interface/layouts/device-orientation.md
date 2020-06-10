@@ -9,8 +9,6 @@ ms-chap： xamarin assetid：11A1D327-2DF3-4F3B-810D-6C95B71D27B2： xamarin 窗
 
 请务必考虑应用程序的使用方式以及如何合并横向方向以改善用户体验。 可以设计各个布局来容纳多个方向并最好地使用可用空间。 在应用程序级别，可以禁用或启用旋转。
 
-<a name="Controlling_Orientation" />
-
 ## <a name="controlling-orientation"></a>控制方向
 
 使用时 Xamarin.Forms ，支持的设备方向控制方法是使用每个单独项目的设置。
@@ -74,8 +72,6 @@ Xamarin 支持指定方向的几个选项：
 
 在通用 Windows 平台（UWP）上，支持的方向是在**appxmanifest.xml**文件中设置的。 打开清单将显示一个配置面板，可以在其中选择支持的方向。
 
-<a name="Reacting_to_Changes_in_Orientation" />
-
 ## <a name="reacting-to-changes-in-orientation"></a>对方向变化做出反应
 
 Xamarin.Forms不提供用于向应用程序通知共享代码中的方向更改的任何本机事件。 但是， [Xamarin.Essentials](~/essentials/index.md) 包含一个 `DeviceDisplay` 提供方向更改通知的 [] 类。
@@ -120,8 +116,6 @@ protected override void OnSizeAllocated(double width, double height)
 ![](device-orientation-images/calculator-landscape.png "Calculator Application in Landscape")
 
 请注意，应用会通过在横向添加更多功能来利用可用空间。
-
-<a name="Responsive_Layout" />
 
 ## <a name="responsive-layout"></a>响应式布局
 

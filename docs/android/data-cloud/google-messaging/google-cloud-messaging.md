@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2019
-ms.openlocfilehash: e9b0337c9cdcfbd8f738a11c5dffff427df620bc
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: d5231d57e84d57788f318c8ae04e592da57a0f5d
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76723659"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84566600"
 ---
 # <a name="google-cloud-messaging"></a>Google Cloud Messaging
 
@@ -41,15 +41,15 @@ Google Cloud Messaging （GCM）是一种服务，用于处理服务器应用程
 
 GCM 使用以下凭据来识别应用服务器和客户端应用，并使用这些凭据通过 GCM 授权消息事务：
 
-- **Api 密钥 &ndash;** *api 密钥*可让应用服务器访问 Google services;GCM 使用此密钥对你的应用服务器进行身份验证。
+- **API 密钥** &ndash;*API 密钥*可让应用服务器访问 Google services;GCM 使用此密钥对你的应用服务器进行身份验证。
     在可以使用 GCM 服务之前，必须先通过创建*项目*从[Google DEVELOPER Console](https://console.developers.google.com/)获取 API 密钥。 应确保 API 密钥的安全;有关保护 API 密钥的详细信息，请参阅[安全使用 api 密钥的最佳实践](https://support.google.com/cloud/answer/6310037?hl=en)。
 
-- **发件人 id &ndash;** *发送方 id*向你的客户端应用授予应用服务器 &ndash; 它是一个唯一的编号，用于标识允许向客户端应用程序发送消息的应用程序服务器。
+- **发件人 ID** &ndash;*发件人 ID*向客户端应用授予应用服务器， &ndash; 它是一个唯一的编号，用于标识允许向客户端应用程序发送消息的应用程序服务器。
     发件人 ID 也是你的项目编号;注册项目时，从 Google 开发人员控制台获取发件人 ID。
 
-- **注册令牌 &ndash;** *注册令牌*是给定设备上客户端应用的 GCM 标识。 注册令牌是在运行时生成的 &ndash; 应用程序在设备上运行时首次注册 GCM 时接收注册令牌。 注册令牌授权客户端应用的实例（在该特定设备上运行）以从 GCM 接收消息。
+- **注册令牌** &ndash;*注册令牌*是给定设备上的客户端应用的 GCM 标识。 注册令牌是在运行时生成的， &ndash; 应用程序在设备上运行时首次注册 GCM 时接收注册令牌。 注册令牌授权客户端应用的实例（在该特定设备上运行）以从 GCM 接收消息。
 
-- **应用程序 ID** &ndash; 注册为从 GCM 接收消息的客户端应用（独立于任何给定设备）的标识。 在 Android 上，应用程序 ID 是在**androidmanifest.xml**中记录的包名称，如 `com.xamarin.gcmexample`。
+- **应用程序 ID** &ndash;注册从 GCM 接收消息的客户端应用（独立于任何给定设备）的标识。 在 Android 上，应用程序 ID 是在**androidmanifest.xml**中记录的包名称，如 `com.xamarin.gcmexample` 。
 
 [设置 Google Cloud Messaging](#settingup) （本指南稍后将提供有关创建项目和生成这些凭据的详细说明。
 
@@ -102,7 +102,7 @@ GCM 使用以下凭据来识别应用服务器和客户端应用，并使用这�
 
 如果客户端应用程序连接到支持[XMPP](https://firebase.google.com/docs/cloud-messaging/xmpp-server-ref)的服务器，它可以将消息发送回应用程序服务器，如下图所示：
 
-[![上游消息传送关系图](google-cloud-messaging-images/04-upstream-sml.png)](google-cloud-messaging-images/04-upstream.png#lightbox)
+[![上游消息处理关系图](google-cloud-messaging-images/04-upstream-sml.png)](google-cloud-messaging-images/04-upstream.png#lightbox)
 
 1. 客户端应用程序将消息发送到 GCM XMPP 连接服务器。
 
@@ -116,7 +116,7 @@ GCM 使用以下凭据来识别应用服务器和客户端应用，并使用这�
 
 Google 的[上游消息](https://firebase.google.com/docs/cloud-messaging/xmpp-server-ref#upstream)说明如何构建 JSON 编码的消息并将其发送到运行 Google 的基于 XMPP 的云连接服务器的应用程序服务器。
 
-<a name="settingup" />
+<a name="settingup"></a>
 
 ## <a name="setting-up-google-cloud-messaging"></a>设置 Google Cloud Messaging
 
@@ -130,7 +130,7 @@ Google 的[上游消息](https://firebase.google.com/docs/cloud-messaging/xmpp-s
 
 2. 接下来，输入应用的包名称（在此示例中，包名为**gcmexample**），然后单击 "**继续" 以选择并配置服务**：
 
-    [输入包名称 ![](google-cloud-messaging-images/06-package-name-sml.png)](google-cloud-messaging-images/06-package-name.png#lightbox)
+    [![输入包名称](google-cloud-messaging-images/06-package-name-sml.png)](google-cloud-messaging-images/06-package-name.png#lightbox)
 
     请注意，此包名称也是应用的应用程序 ID。
 
@@ -144,16 +144,16 @@ Google 的[上游消息](https://firebase.google.com/docs/cloud-messaging/xmpp-s
 
 5. 将为您的应用程序生成一个**服务器 API 密钥**和一个**发送程序 ID** 。 记录这些值，然后单击 "**关闭**"：
 
-    [显示 ![服务器 API 密钥和发件人 ID](google-cloud-messaging-images/09-get-api-key-and-id-sml.png)](google-cloud-messaging-images/09-get-api-key-and-id.png#lightbox)
+    [![显示的服务器 API 密钥和发件人 ID](google-cloud-messaging-images/09-get-api-key-and-id-sml.png)](google-cloud-messaging-images/09-get-api-key-and-id.png#lightbox)
 
-    保护 API 密钥，&ndash; 不打算公开使用。 如果 API 密钥已泄露，则未经授权的服务器可能会将消息发布到客户端应用程序。
+    保护 API 密钥，而 &ndash; 不打算公开使用。 如果 API 密钥已泄露，则未经授权的服务器可能会将消息发布到客户端应用程序。
     [安全使用 api 密钥的最佳实践](https://support.google.com/cloud/answer/6310037?hl=en)提供了用于保护 API 密钥的有用指导原则。
 
 ### <a name="view-your-project-settings"></a>查看项目设置
 
 你可以随时通过登录到[Google Cloud Console](https://console.cloud.google.com/)并选择你的项目来查看你的项目设置。 例如，你可以通过在页面顶部的下拉菜单中选择你的项目来查看**发送方 ID** （在本示例中，项目称为**XamarinGCM**）。 发件人 ID 是此屏幕截图中所示的项目编号（此处的发件人 ID 为**9349932736**）：
 
-[查看发送方 ID ![](google-cloud-messaging-images/10-view-server-id-sml.png)](google-cloud-messaging-images/10-view-server-id.png#lightbox)
+[![查看发送方 ID](google-cloud-messaging-images/10-view-server-id-sml.png)](google-cloud-messaging-images/10-view-server-id.png#lightbox)
 
 若要查看**api 密钥**，请单击 " **api 管理器**"，然后单击 "**凭据**"：
 
@@ -163,7 +163,7 @@ Google 的[上游消息](https://firebase.google.com/docs/cloud-messaging/xmpp-s
 
 - [Rfc 6120](https://tools.ietf.org/html/rfc6120)和[rfc 6121](https://tools.ietf.org/html/rfc6121)解释并定义了可扩展的消息传递协议（XMPP）。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文提供 Google Cloud Messaging （GCM）的概述。 它介绍了用于在应用程序服务器和客户端应用程序之间识别和授权消息传递的各种凭据。 其中介绍了最常见的消息传递方案，并详细说明了向 GCM 注册应用程序以使用 GCM 服务的步骤。
 

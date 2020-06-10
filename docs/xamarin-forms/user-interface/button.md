@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms鼠标
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f7309794768c01d4978aa369cd1950d4986938db
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137457"
+标题： " Xamarin.Forms 按钮" 说明： "按钮会响应点击或单击，指示应用程序执行特定任务。"
+ms-chap： xamarin assetid：62CAEB63-0800-44F4-9B8C-EE632138C2F5： xamarin 窗体作者： davidbritch： dabritch ms. 日期：12/04/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-button"></a>Xamarin.Forms鼠标
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
@@ -414,8 +400,6 @@ public partial class PressAndReleaseButtonPage : ContentPage
 
 这种行为具有适用于游戏的应用程序：保存在上的手指 `Button` 可能使屏幕上的对象按特定方向移动。
 
-<a name="button-appearance" />
-
 ## <a name="button-appearance"></a>按钮外观
 
 `Button`继承或定义多个影响其外观的属性：
@@ -433,7 +417,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 > [!NOTE]
 > `Button`类还具有 [`Margin`](xref:Xamarin.Forms.View.Margin) 控制的 [`Padding`](xref:Xamarin.Forms.Button.Padding) 布局行为的和属性 `Button` 。 有关详细信息，请参阅[边距和填充](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)。
 
-其中六个属性（"不包括" 和 "）" 的效果 `FontFamily` `FontAttributes` 在**按钮外观**页中进行了演示。 另一个属性， [`Image`](xref:Xamarin.Forms.Button.ImageSource) 将在 "[**使用位图" 按钮**](#image-button)部分中进行讨论。
+其中六个属性（"不包括" 和 "）" 的效果 `FontFamily` `FontAttributes` 在**按钮外观**页中进行了演示。 另一个属性， [`Image`](xref:Xamarin.Forms.Button.ImageSource) 将在 "[**使用位图" 按钮**](#using-bitmaps-with-buttons)部分中进行讨论。
 
 "**按钮外观**" 页中的所有视图和数据绑定都在 XAML 文件中定义：
 
@@ -748,9 +732,7 @@ public partial class ToggleButtonDemoPage : ContentPage
 
 [![切换按钮演示](button-images/ToggleButtonDemo.png "切换按钮演示")](button-images/ToggleButtonDemo-Large.png#lightbox)
 
-<a name="image-button" />
-
-## <a name="using-bitmaps-with-buttons"></a>将位图与按钮一起使用
+## <a name="using-bitmaps-with-buttons"></a>使用带有按钮的位图
 
 `Button`类定义一个 [`ImageSource`](xref:Xamarin.Forms.Button.Image) 属性，该属性允许你在上显示位图图像 `Button` （单独显示或与文本组合显示）。 还可以指定文本和图像的排列方式。
 

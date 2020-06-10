@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 7eff434c21b5e2330d320f2eb85174dc6fe65b34
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 57347336bb91757c9c54f7279f386f15e07c9cd7
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021945"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573595"
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>在 iOS 设计器中使用表
 
@@ -20,19 +20,19 @@ ms.locfileid: "73021945"
 
 在 iOS 设计器中配置表视图的属性时，可以选择以下两种类型的单元格内容：**动态**或**静态**原型内容。
 
-<a name="Prototype_Content" />
+<a name="Prototype_Content"></a>
 
 ## <a name="dynamic-prototype-content"></a>动态原型内容
 
-具有原型内容的 `UITableView` 通常用于显示一个数据列表，其中的原型单元（或可定义多个单元格）对列表中的每个项重复使用。 单元不需要实例化，而是通过调用其 `UITableViewSource`的 `DequeueReusableCell` 方法在 `GetView` 方法中获取。
+`UITableView`具有原型内容的通常用于显示数据列表，其中，原型单元（或可定义多个单元格，可定义多个单元格）将在列表中的每一项上重复使用。 单元不需要实例化，而是 `GetView` 通过调用其的方法在方法中获取 `DequeueReusableCell` `UITableViewSource` 。
 
- <a name="Static_Content" />
+ <a name="Static_Content"></a>
 
 ## <a name="static-content"></a>静态内容
 
-利用静态内容的 `UITableView`，可以在设计图面上直接设计表。 可以通过更改属性并添加控件，将单元拖到表中并进行自定义。
+`UITableView`具有静态内容的可以在设计图面上直接设计表。 可以通过更改属性并添加控件，将单元拖到表中并进行自定义。
 
- <a name="Creating_a_Storyboard-driven_app" />
+ <a name="Creating_a_Storyboard-driven_app"></a>
 
 ## <a name="creating-a-storyboard-driven-app"></a>创建情节提要驱动的应用
 
@@ -44,13 +44,13 @@ StoryboardTable 示例包含一个简单的主-从应用，它使用情节提要
 
 ## <a name="walkthrough"></a>演练
 
-使用 **（创建）新项目在 Visual Studio 中创建新的解决方案 。> 单视图应用（C#）** ，并将其调用_StoryboardTables_。
+在 Visual Studio 中创建一个新的解决方案，方法是使用 **（创建） "新建项目 ..." > 单视图应用程序（c #）**，并_StoryboardTables_调用它。
 
- [![创建新项目 "对话框](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png#lightbox)
+ [![“创建新项目”对话框](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png#lightbox)
 
-该解决方案将打开，其中C#包含一些文件和一个已创建的`Main.storyboard`文件。 双击 `Main.storyboard` 文件以在 iOS 设计器中将其打开。
+解决方案将打开，其中包含某些 c # 文件和 `Main.storyboard` 已创建的文件。 双击该 `Main.storyboard` 文件以在 IOS 设计器中将其打开。
 
-<a name="Modifying_the_Storyboard" />
+<a name="Modifying_the_Storyboard"></a>
 
 ## <a name="modifying-the-storyboard"></a>修改情节提要
 
@@ -62,17 +62,17 @@ StoryboardTable 示例包含一个简单的主-从应用，它使用情节提要
 
 情节提要完成后，可以添加代码以使一切正常工作。
 
-<a name="Layout_The_View_Controllers" />
+<a name="Layout_The_View_Controllers"></a>
 
 ### <a name="layout-the-view-controllers"></a>布局视图控制器
 
-首次更改情节提要时，会删除现有的详细信息视图，并将其替换为 UITableViewController。 请执行这些步骤：
+首次更改情节提要时，会删除现有的详细信息视图，并将其替换为 UITableViewController。 执行以下步骤：
 
 1. 选择视图控制器底部的栏并将其删除。
 2. 将**导航控制器**和**表视图控制器**从工具箱拖至情节提要。 
 3. 创建从根视图控制器到刚刚添加的第二个表视图控制器的 segue。 若要创建 segue，请控制并将*详细信息单元*拖到新添加的 UITableViewController 中。 选择选项 "在**Segue**选项下**显示**"。 
-4. 选择创建的新 segue，并为其指定一个标识符以在代码中引用此 segue。 单击 "segue" 并在**Properties Pad**中输入**标识符**`TaskSegue`，如下所示：    
-  [属性面板中的![命名 segue](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png#lightbox) 
+4. 选择创建的新 segue，并为其指定一个标识符以在代码中引用此 segue。 单击 "segue"，并在 `TaskSegue` **Properties Pad**中输入**标识符**，如下所示：    
+  [![属性面板中的命名 segue](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png#lightbox) 
 
 5. 接下来，通过选择两个表视图并使用 Properties Pad 进行配置。 请确保选择 "查看"，而不是 "查看控制器" –您可以使用文档大纲来帮助选择。
 
@@ -82,15 +82,15 @@ StoryboardTable 示例包含一个简单的主-从应用，它使用情节提要
 
 7. 将新的**UITableViewController**更改为**Content： Static Cells**。 
 
-8. 新的 UITableViewController 必须具有其类名称和标识符集。 在**Properties Pad**中为**类**选择视图控制器并键入_TaskDetailViewController_ –这将在 Solution Pad 中创建新的 `TaskDetailViewController.cs` 文件。 输入**StoryboardID**作为_详细信息_，如以下示例中所示。 稍后将用于在代码中C#加载此视图：  
+8. 新的 UITableViewController 必须具有其类名称和标识符集。 在**Properties Pad**中为**类**选择视图控制器并键入_TaskDetailViewController_ –这会 `TaskDetailViewController.cs` 在 Solution Pad 中创建新的文件。 输入**StoryboardID**作为_详细信息_，如以下示例中所示。 稍后将使用它在 c # 代码中加载此视图：  
 
-    [设置情节提要 ID![](creating-tables-in-a-storyboard-images/image18a.png)](creating-tables-in-a-storyboard-images/image18a.png#lightbox)
+    [![设置情节提要 ID](creating-tables-in-a-storyboard-images/image18a.png)](creating-tables-in-a-storyboard-images/image18a.png#lightbox)
 
 9. 情节提要设计图面现在应如下所示（根视图控制器的导航项标题已更改为 "任务板"）：
 
     [![设计图面](creating-tables-in-a-storyboard-images/image20a-sml.png)](creating-tables-in-a-storyboard-images/image20a.png#lightbox)  
 
-<a name="Create_the_UI" />
+<a name="Create_the_UI"></a>
 
 ### <a name="create-the-ui"></a>创建 UI
 
@@ -100,16 +100,16 @@ StoryboardTable 示例包含一个简单的主-从应用，它使用情节提要
 
 首先，选择母版视图控制器中的原型单元，并将**标识符**设置为_taskcell_，如下图所示。 稍后在代码中将使用它来检索此 UITableViewCell 的实例：
 
- [设置单元标识符![](creating-tables-in-a-storyboard-images/image22a-sml.png)](creating-tables-in-a-storyboard-images/image22a.png#lightbox)
+ [![设置单元标识符](creating-tables-in-a-storyboard-images/image22a-sml.png)](creating-tables-in-a-storyboard-images/image22a.png#lightbox)
 
 接下来，你将需要创建一个将添加新任务的按钮，如下所示：
 
-[导航栏中的![条形按钮项](creating-tables-in-a-storyboard-images/image23-sml.png)](creating-tables-in-a-storyboard-images/image23.png#lightbox)
+[![导航栏中的 "条形" 按钮项](creating-tables-in-a-storyboard-images/image23-sml.png)](creating-tables-in-a-storyboard-images/image23.png#lightbox)
 
 请执行以下操作： 
 
 - 将 "**条形" 按钮项**从工具箱拖动到_导航栏的右侧_。
-- 在**Properties Pad**的 "**条形按钮项**" 下，选择 "**标识符：添加**" （使其成为 *+* 加按钮）。 
+- 在**Properties Pad**的 "**条形按钮项**" 下，选择 "**标识符：添加**" （使其成为 *+* 加号按钮）。 
 - 为其指定一个名称，以便可以在以后的代码中识别该名称。 请注意，需要为根视图控制器提供类名（例如**ItemViewController**），以允许您设置条形按钮项的名称。
 
 #### <a name="taskdetail-view-controller"></a>TaskDetail 视图控制器
@@ -129,7 +129,7 @@ StoryboardTable 示例包含一个简单的主-从应用，它使用情节提要
 
 选择顶部部分，然后在 "**属性 > 表视图部分**将**行**更改为_3_，如下所示：
 
- [将顶部部分设置为三行![](creating-tables-in-a-storyboard-images/image29-sml.png)](creating-tables-in-a-storyboard-images/image29.png#lightbox)
+ [![将顶部部分设置为三行](creating-tables-in-a-storyboard-images/image29-sml.png)](creating-tables-in-a-storyboard-images/image29.png#lightbox)
 
 对于每个单元，打开**Properties Pad**并设置：
 
@@ -143,7 +143,7 @@ StoryboardTable 示例包含一个简单的主-从应用，它使用情节提要
 - **设置 "背景**：_清除颜色_"。
 - 将两个按钮拖到单元格上，并适当地设置其标题（如_保存_并_删除_），如下所示：
 
-   [![在底部设置两个按钮](creating-tables-in-a-storyboard-images/image30-sml.png)](creating-tables-in-a-storyboard-images/image30.png#lightbox)
+   [![设置下一部分中的两个按钮](creating-tables-in-a-storyboard-images/image30-sml.png)](creating-tables-in-a-storyboard-images/image30.png#lightbox)
 
 此时，您可能还需要对单元和控件设置约束以确保自适应布局。
 
@@ -157,13 +157,13 @@ StoryboardTable 示例包含一个简单的主-从应用，它使用情节提要
 - **Delete UIButton** ： _DeleteButton_
 - **Save UIButton** ： _SaveButton_
 
-<a name="Adding_Code" />
+<a name="Adding_Code"></a>
 
 ## <a name="adding-code"></a>添加代码
 
-剩余的工作在 Mac 或 Windows 上的 Visual Studio 中完成C#。 请注意，代码中使用的属性名称反映了上述演练中设置的属性名称。
+剩余的工作将在使用 c # 的 Mac 或 Windows 上的 Visual Studio 中完成。 请注意，代码中使用的属性名称反映了上述演练中设置的属性名称。
 
-首先，我们要创建一个 `Chores` 类，这将提供一种方法来获取和设置 ID、名称、注释和已完成的布尔值，以便我们可以在整个应用程序中使用这些值。
+首先，我们要创建一个 `Chores` 类，它将提供一种方法来获取和设置 ID、名称、注释和完成的布尔值，以便我们可以在整个应用程序中使用这些值。
 
 在 `Chores` 类中添加以下代码：
 
@@ -176,11 +176,11 @@ public class Chores {
   }
 ```
 
-接下来，创建一个继承自 `UITableViewSource`的 `RootTableSource` 类。 
+接下来，创建一个 `RootTableSource` 继承自的类 `UITableViewSource` 。 
 
-此表和非情节提要表视图的区别在于 `GetView` 方法不需要实例化任何单元– `theDequeueReusableCell` 方法将始终返回原型单元的实例（具有匹配标识符）。
+此表和非情节提要表视图的区别在于： `GetView` 方法不需要实例化任何单元– `theDequeueReusableCell` 方法将始终返回原型单元的实例（具有匹配标识符）。
 
-下面的代码来自 `RootTableSource.cs` 文件：
+以下代码来自 `RootTableSource.cs` 文件：
 
 ```csharp
 public class RootTableSource : UITableViewSource
@@ -217,7 +217,7 @@ public Chores GetItem(int id)
 }
 ```
 
-若要使用 `RootTableSource` 类，请在 `ItemViewController`的构造函数中创建新的集合：
+若要使用 `RootTableSource` 类，请在的构造函数中创建新的集合 `ItemViewController` ：
 
 ```csharp
 chores = new List<Chore> {
@@ -226,7 +226,7 @@ chores = new List<Chore> {
     };
 ```
 
-在 `ViewWillAppear` 将集合传递到源并分配给表视图：
+在中 `ViewWillAppear` ，将集合传递到源并分配给表视图：
 
 ```csharp
 public override void ViewWillAppear(bool animated)
@@ -239,7 +239,7 @@ public override void ViewWillAppear(bool animated)
 
 如果现在运行应用程序，主屏幕现在将加载并显示两个任务的列表。 当涉及到任务时，由情节提要定义的 segue 将导致显示 "详细信息" 屏幕，但此时不会显示任何数据。
 
-若要在 segue 中 "发送参数"，请重写 `PrepareForSegue` 方法，并设置 `DestinationViewController` 上的属性（在本示例中为 `TaskDetailViewController`）。 目标视图控制器类将已经实例化但尚未向用户显示-这意味着你可以设置类的属性，但不能修改任何 UI 控件：
+若要在 segue 中 "发送参数"，请重写 `PrepareForSegue` 方法，并设置上的属性 `DestinationViewController` （ `TaskDetailViewController` 在本示例中为）。 目标视图控制器类将已经实例化但尚未向用户显示-这意味着你可以设置类的属性，但不能修改任何 UI 控件：
 
 ```csharp
 public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
@@ -256,7 +256,7 @@ public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
     }
 ```
 
-在 `TaskDetailViewController` `SetTask` 方法会将其参数分配给属性，以便在 ViewWillAppear 中引用它们。 无法在 `SetTask` 中修改控件属性，因为调用 `PrepareForSegue` 时可能不存在：
+在 `TaskDetailViewController` 方法中，将 `SetTask` 其参数分配给属性，以便在 ViewWillAppear 中引用它们。 调用时不能修改控件属性， `SetTask` 因为在调用时可能不存在 `PrepareForSegue` ：
 
 ```csharp
 Chore currentTask {get;set;}
@@ -294,7 +294,7 @@ public void DeleteTask(Chores chore)
 }
 ```
 
-接下来，需要将按钮的 `TouchUpInside` 事件处理程序添加到**TaskDetailViewController.cs**的 `ViewDidLoad` 方法。 对 `ItemViewController` 的 `Delegate` 属性引用是专门创建的，因此我们可以调用 `SaveTask` 和 `DeleteTask`，这会在其操作过程中关闭此视图：
+接下来，需要将该按钮的 `TouchUpInside` 事件处理程序添加到 `ViewDidLoad` **TaskDetailViewController.cs**的方法。 `Delegate`对的属性引用是 `ItemViewController` 专门创建的，因此我们可以调用 `SaveTask` 和 `DeleteTask` ，后者将此视图作为其操作的一部分进行关闭：
 
 ```csharp
 SaveButton.TouchUpInside += (sender, e) => {
@@ -307,7 +307,7 @@ SaveButton.TouchUpInside += (sender, e) => {
 DeleteButton.TouchUpInside += (sender, e) => Delegate.DeleteTask(currentTask);
 ```
 
-要生成的最后一项功能是创建新任务。 在**ItemViewController.cs**中，添加一个方法，用于创建新任务并打开详细信息视图。 若要从情节提要实例化视图，请将 `InstantiateViewController` 方法用于该视图的 `Identifier`-在此示例中，将为 "detail"：
+要生成的最后一项功能是创建新任务。 在**ItemViewController.cs**中，添加一个方法，用于创建新任务并打开详细信息视图。 若要从情节提要实例化视图，请将方法用于该 `InstantiateViewController` `Identifier` 视图的; 在此示例中，将为 "详细信息"：
 
 ```csharp
 public void CreateTask () 
@@ -324,7 +324,7 @@ public void CreateTask ()
     }
 ```
 
-最后，将导航栏中的按钮连接到**ItemViewController.cs**的 `ViewDidLoad` 方法来调用它：
+最后，将导航栏中的按钮连接到**ItemViewController.cs**的 `ViewDidLoad` 方法，以调用它：
 
 ```csharp
 AddButton.Clicked += (sender, e) => CreateTask ();
@@ -332,14 +332,14 @@ AddButton.Clicked += (sender, e) => CreateTask ();
 
 完成情节提要示例-完成的应用如下所示：
 
-[![完成的应用程序](creating-tables-in-a-storyboard-images/image28a.png)](creating-tables-in-a-storyboard-images/image28a.png#lightbox)
+[![完成的应用](creating-tables-in-a-storyboard-images/image28a.png)](creating-tables-in-a-storyboard-images/image28a.png#lightbox)
 
 该示例演示：
 
 - 使用原型内容创建一个表，其中单元定义用于显示数据列表。 
 - 创建具有静态内容的表以生成输入窗体。 这包括更改表样式并添加部分、单元格和 UI 控件。 
 - 如何创建 segue 并重写 `PrepareForSegue` 方法，以通知目标视图其所需的任何参数。 
-- 直接用 `Storyboard.InstantiateViewController` 方法加载情节提要视图。
+- 直接用方法加载情节提要视图 `Storyboard.InstantiateViewController` 。
 
 ## <a name="related-links"></a>相关链接
 

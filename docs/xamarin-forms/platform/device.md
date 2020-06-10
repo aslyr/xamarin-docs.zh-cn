@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms设备类
-description: 本文介绍如何使用 Xamarin.Forms Device 类，以便对每个平台的功能和布局进行精细的控制。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 7ee7b2f1bb9d34b0c0e8bdc4ae606d98423c64a9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138588"
+标题： " Xamarin.Forms 设备类" 说明： "本文介绍了如何使用 Xamarin.Forms Device 类，以便对每个平台的功能和布局进行精细的控制。"
+ms-chap： xamarin assetid：2F304AEC-8612-4833-81E5-B2F3F469B2DF： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/17/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-device-class"></a>Xamarin.Forms设备类
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
@@ -68,7 +54,7 @@ layout.Margin = new Thickness(5, top, 5, 0);
 > [!IMPORTANT]
 > 在类中提供不正确的 `Platform` 属性值 `On` 不会导致错误。 相反，代码将在不应用特定于平台的值的情况下执行。
 
-此外，还 `OnPlatform` 可以在 XAML 中使用标记扩展来根据每个平台自定义 UI 外观。 有关详细信息，请参阅[OnPlatform 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)。
+此外，还 `OnPlatform` 可以在 XAML 中使用标记扩展来根据每个平台自定义 UI 外观。 有关详细信息，请参阅[OnPlatform 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)。
 
 ## <a name="deviceidiom"></a>Device。
 
@@ -110,7 +96,7 @@ if (Device.Idiom == TargetIdiom.Phone) {
 
 [`OnIdiom`](xref:Xamarin.Forms.OnPlatform`1)类是一个泛型类，必须使用与目标类型匹配的属性对其进行实例化 `x:TypeArguments` 。
 
-此外，还 `OnIdiom` 可以在 XAML 中使用标记扩展，根据应用程序运行的设备的用法来自定义 UI 外观。 有关详细信息，请参阅[OnIdiom 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onidiom)。
+此外，还 `OnIdiom` 可以在 XAML 中使用标记扩展，根据应用程序运行的设备的用法来自定义 UI 外观。 有关详细信息，请参阅[OnIdiom 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onidiom-markup-extension)。
 
 ## <a name="deviceflowdirection"></a>System.windows.flowdirection>
 
@@ -228,7 +214,7 @@ Device.StartTimer (new TimeSpan (0, 0, 60), () =>
 
 此 `Device` 类包括以下 `static` 方法，可用于与背景线程中的用户界面元素进行交互：
 
-| 方法 | 自变量 | 返回 | 目的 |
+| 方法 | 自变量 | 返回 | 目标 |
 |---|---|---|---|
 | `BeginInvokeOnMainThread` | `Action` | `void` | `Action`在主线程上调用，而不会等待它完成。 |
 | `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | 在主线程上调用 `Func<T>`，并等待其完成。 |

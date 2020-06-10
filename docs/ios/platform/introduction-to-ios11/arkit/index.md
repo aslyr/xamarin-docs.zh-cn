@@ -7,23 +7,23 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/30/2017
-ms.openlocfilehash: 0094a496ce99addb08648431d993bd4afddca2f4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 51b28ec05af91dea21b1291956de30c549b1868e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032249"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571670"
 ---
 # <a name="introduction-to-arkit-in-xamarinios"></a>Xamarin 中的 ARKit 简介
 
 _IOS 11 的增强现实_
 
-ARKit 实现了各种增加的现实应用程序和游戏。 此节涵盖以下主题：
+ARKit 实现了各种增加的现实应用程序和游戏。 本部分涵盖了以下主题：
 
 - [入门与 ARKit](#gettingstarted)
 - [将 ARKit 与 UrhoSharp 配合使用](urhosharp.md)
 
-<a name="gettingstarted" />
+<a name="gettingstarted"></a>
 
 ## <a name="getting-started-with-arkit"></a>入门与 ARKit
 
@@ -39,7 +39,7 @@ ARKit 实现了各种增加的现实应用程序和游戏。 此节涵盖以下�
 
 ### <a name="2-configure-the-view"></a>2. 配置视图
 
-在视图控制器的 `ViewDidLoad` 方法中，加载场景资产，并在视图上设置 `Scene` 属性：
+在视图控制器的 `ViewDidLoad` 方法中，加载场景资产，并在 `Scene` 视图上设置属性：
 
 ```csharp
 ARSCNView SceneView = (View as ARSCNView);
@@ -66,7 +66,7 @@ public class SessionDelegate : ARSessionDelegate
 }
 ```
 
-在 `ViewDidLoad` 方法中的中分配委托：
+在方法的中分配委托 `ViewDidLoad` ：
 
 ```csharp
 // Track changes to the session
@@ -75,7 +75,7 @@ SceneView.Session.Delegate = new SessionDelegate();
 
 ### <a name="4-position-the-3d-model-in-the-world"></a>4. 将三维模型置于世界中
 
-在 `ViewWillAppear`中，以下代码将建立 ARKit 会话，并将3D 模型的位置设置为相对于设备相机的空间：
+在中 `ViewWillAppear` ，以下代码将建立 ARKit 会话，并将3d 模型的位置设置为相对于设备照相机的空间：
 
 ```csharp
 // Create a session configuration
@@ -97,7 +97,7 @@ ship.Position = new SCNVector3(2f, -2f, -9f);
 
 ### <a name="5-pause-the-augmented-reality-session"></a>5. 暂停扩充的现实会话
 
-当视图控制器不可见时（在 `ViewWillDisappear` 方法中，最好暂停 ARKit 会话：
+当视图控制器不可见时（在方法中为）暂停 ARKit 会话是一种很好的做法 `ViewWillDisappear` ：
 
 ```csharp
 SceneView.Session.Pause();
@@ -105,7 +105,7 @@ SceneView.Session.Pause();
 
 ## <a name="summary"></a>总结
 
-上述代码会生成一个简单的 ARKit 应用程序。 更复杂的示例会使托管已增加的现实会话的视图控制器实现 `IARSCNViewDelegate`，并实现其他方法。
+上述代码会生成一个简单的 ARKit 应用程序。 更复杂的示例是，要托管扩大现实会话的视图控制器实现 `IARSCNViewDelegate` 并实现其他方法。
 
 ARKit 提供大量更复杂的功能，如面跟踪和用户交互。 有关将 ARKit 跟踪与 UrhoSharp 结合使用的示例，请参阅[UrhoSharp 演示](urhosharp.md)。
 

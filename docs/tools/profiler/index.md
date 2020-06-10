@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: davidortinau
 ms.author: daortin
 ms.date: 06/03/2018
-ms.openlocfilehash: cb109055b476fee6d34041940c682187074f4e7d
-ms.sourcegitcommit: 099b06e311a40c00eeea85465ff9b97867a5c5de
+ms.openlocfilehash: b8b3ca4892e849f9bf08ca2910798c4b2d0f9f6f
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78295438"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573457"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -55,15 +55,15 @@ Xamarin Profiler 为开发人员提供了一种方法，用于分析 Visual Stud
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-目前，Xamarin Profiler 可用于测试 Mac 上的 Xamarin、Xamarin 和 Xamarin 应用程序（通过 Visual Studio for Mac）。 探查器是一个独立于 IDE 的进程，因此，除了从 Visual Studio for Mac 启动之外，它还可用作独立的应用程序来检查从[mono 日志探查器](https://www.mono-project.com/docs/debug+profile/profile/profiler/)生成的 .exe 和 `.mlpd` 文件。
+目前，Xamarin Profiler 可用于测试 Mac 上的 Xamarin、Xamarin 和 Xamarin 应用程序（通过 Visual Studio for Mac）。 探查器是一个独立于 IDE 的进程，因此，除了从 Visual Studio for Mac 启动之外，它还可用作独立的应用程序，以检查 `.mlpd` 从[mono 日志探查器](https://www.mono-project.com/docs/debug+profile/profile/profiler/)生成的 .exe 和文件。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-目前，Xamarin Profiler 可用于在 Windows 上测试 Xamarin Android 应用（通过 Visual Studio 和 Visual Studio for Mac）。 探查器是一个独立于 IDE 的进程，因此，除了从 Visual Studio 启动以外，它还可用作独立的应用程序，用于检查从[mono 日志探查器](https://www.mono-project.com/docs/debug+profile/profile/profiler/)生成的 .exe 和 `.mlpd` 文件。
+目前，Xamarin Profiler 可用于在 Windows 上测试 Xamarin Android 应用（通过 Visual Studio 和 Visual Studio for Mac）。 探查器是一个独立于 IDE 的进程，因此，除了从 Visual Studio 启动以外，它还可以用作独立的应用程序，以检查 `.mlpd` 从[mono 日志探查器](https://www.mono-project.com/docs/debug+profile/profile/profiler/)生成的 .exe 和文件。
 
 -----
 
-<a name="Profiler_Support" />
+<a name="Profiler_Support"></a>
 
 ## <a name="profiler-support"></a>探查器支持
 
@@ -106,7 +106,7 @@ Xamarin Profiler 为开发人员提供了一种方法，用于分析 Visual Stud
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-  **> IOS Build > 启用分析的属性**
+  **> iOS Build > 启用分析的属性**
 
   ![Visual Studio 中的 "iOS 选项" 对话框](images/ios-project-options-vs.png)
 
@@ -186,11 +186,11 @@ Xamarin Profiler 由五个部分组成，如下所示：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[Visual Studio for Mac 中的 ![探查器部分](images/profiler-mac-sml.png)](images/profiler-mac.png#lightbox) 
+[![Visual Studio for Mac 中的探查器部分](images/profiler-mac-sml.png)](images/profiler-mac.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[Visual Studio 中的 ![探查器部分](images/profiler-vs.png)](images/profiler-vs.png#lightbox)
+[![Visual Studio 中的探查器部分](images/profiler-vs.png)](images/profiler-vs.png#lightbox)
 
 -----
 
@@ -222,11 +222,11 @@ Xamarin Profiler 由五个部分组成，如下所示：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-  [![分配 "选项卡](images/allocations3.png)](images/allocations3.png#lightbox) 
+  [![分配选项卡](images/allocations3.png)](images/allocations3.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-  [![分配 "选项卡](images/allocations2-vs.png)](images/allocations2-vs.png#lightbox)
+  [![分配选项卡](images/allocations2-vs.png)](images/allocations2-vs.png#lightbox)
 
 -----
 
@@ -250,11 +250,11 @@ Xamarin Profiler 由五个部分组成，如下所示：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-  [![快照 "选项卡](images/allocations4.png)](images/allocations4.png#lightbox) 
+  [![快照选项卡](images/allocations4.png)](images/allocations4.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-  [![快照 "选项卡](images/allocations4-vs.png)](images/allocations4-vs.png#lightbox)
+  [![快照选项卡](images/allocations4-vs.png)](images/allocations4-vs.png#lightbox)
 
 -----
 
@@ -290,9 +290,9 @@ Xamarin Profiler 由五个部分组成，如下所示：
 
 -----
 
-### <a name="cycles"></a>Cycles
+### <a name="cycles"></a>周期
 
-通过使用C#和F#托管代码，它可能很常见，并且很容易创建对对象的引用，这将永远不会被释放。 此检测允许你查找这些对象，并显示应用程序中引用的循环。
+通过使用 c # 和 F # 托管代码，它可能很常见，并且很容易创建对对象的引用，这将永远不会被释放。 此检测允许你查找这些对象，并显示应用程序中引用的循环。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 

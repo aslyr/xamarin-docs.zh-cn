@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 32beda28cb4db961abcbe74c26d38c70c8188a45
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139225"
+标题： "依赖关系注入" 说明： "本章节介绍了 eShopOnContainers 移动应用如何使用依赖关系注入将具体类型从依赖于这些类型的代码中分离出来。"
+ms-chap： xamarin assetid： a150f2d1-06f8-4aed-ab4e-7a847d69f103： xamarin 窗体作者： davidbritch： dabritch ms. 日期：11/04/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="dependency-injection"></a>依赖关系注入
 
 通常，在实例化对象时将调用类构造函数，并且该对象需要的任何值都将作为参数传递到构造函数。 这是依赖关系注入的示例，专门称为*构造函数注入*。 将对象所需的依赖项注入构造函数。
@@ -24,8 +10,6 @@ ms.locfileid: "84139225"
 通过将依赖项指定为接口类型，依赖关系注入允许从依赖于这些类型的代码分离具体类型。 它通常使用容器来保存接口与抽象类型之间的注册和映射列表，以及实现或扩展这些类型的具体类型。
 
 还有其他类型的依赖项注入，如*属性 setter 注入*和*方法调用注入*，但不太常见。 因此，本章重点介绍如何通过依赖关系注入容器来执行构造函数注入。
-
-<a name="introduction_to_dependency_injection" />
 
 ## <a name="introduction-to-dependency-injection"></a>依赖关系注入简介
 
@@ -118,8 +102,6 @@ _container.Register<ProfileViewModel>();
 
 默认情况下，每个具体的类注册都配置为多实例，以便每个依赖对象收到一个新实例。 因此，当 `ProfileViewModel` 解析时，将创建一个新的实例，并且容器将注入其所需的依赖项。
 
-<a name="resolution" />
-
 ## <a name="resolution"></a>解决方法
 
 类型注册后，可以将其解析或注入为依赖项。 当正在解析类型并且容器需要创建新的实例时，它会将任何依赖关系注入到该实例中。
@@ -136,7 +118,7 @@ _container.Register<ProfileViewModel>();
 var requestProvider = _container.Resolve<IRequestProvider>();
 ```
 
-在此示例中，要求 TinyIoC 解析类型的具体类型以及 `IRequestProvider` 任何依赖项。 通常， `Resolve` 当需要特定类型的实例时，将调用方法。 有关控制已解析对象的生存期的信息，请参阅[管理已解析对象的生存期](#managing_the_lifetime_of_resolved_objects)。
+在此示例中，要求 TinyIoC 解析类型的具体类型以及 `IRequestProvider` 任何依赖项。 通常， `Resolve` 当需要特定类型的实例时，将调用方法。 有关控制已解析对象的生存期的信息，请参阅[管理已解析对象的生存期](#managing-the-lifetime-of-resolved-objects)。
 
 下面的代码示例演示了 eShopOnContainers 移动应用如何实例化视图模型类型及其依赖项：
 
@@ -144,12 +126,10 @@ var requestProvider = _container.Resolve<IRequestProvider>();
 var viewModel = _container.Resolve(viewModelType);
 ```
 
-在此示例中，要求 TinyIoC 解析请求的视图模型的视图模型类型，并且该容器还将解析任何依赖项。 解析类型时 `ProfileViewModel` ，要解析的依赖项是 `ISettingsService` 对象和 `IOrderService` 对象。 由于在注册和类时使用了接口注册 `SettingsService` `OrderService` ，因此 TinyIoC 返回和类的单独实例， `SettingsService` 然后将 `OrderService` 它们传递给类的构造函数 `ProfileViewModel` 。 有关 eShopOnContainers mobile 应用如何构造视图模型并将其与视图相关联的详细信息，请参阅[自动创建具有视图模型定位器的视图模型](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator)。
+在此示例中，要求 TinyIoC 解析请求的视图模型的视图模型类型，并且该容器还将解析任何依赖项。 解析类型时 `ProfileViewModel` ，要解析的依赖项是 `ISettingsService` 对象和 `IOrderService` 对象。 由于在注册和类时使用了接口注册 `SettingsService` `OrderService` ，因此 TinyIoC 返回和类的单独实例， `SettingsService` 然后将 `OrderService` 它们传递给类的构造函数 `ProfileViewModel` 。 有关 eShopOnContainers mobile 应用如何构造视图模型并将其与视图相关联的详细信息，请参阅[自动创建具有视图模型定位器的视图模型](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically-creating-a-view-model-with-a-view-model-locator)。
 
 > [!NOTE]
 > 使用容器来注册和解析类型会影响性能，因为容器使用反射来创建每个类型，特别是在应用中为每个页面导航重构依赖关系的情况。 如果存在许多或深度依赖关系，则创建成本会显著增加。
-
-<a name="managing_the_lifetime_of_resolved_objects" />
 
 ## <a name="managing-the-lifetime-of-resolved-objects"></a>管理已解析对象的生存期
 

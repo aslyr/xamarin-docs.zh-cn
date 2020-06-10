@@ -1,22 +1,8 @@
 ---
-title: 使用 Azure Cosmos DB 文档数据库对用户进行身份验证并Xamarin.Forms
-description: 本文介绍如何将 access control 与 Azure Cosmos DB 分区集合结合使用，以便用户只能在应用程序中访问他们自己的文档 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b0322db5ebcc70347bf35157e3dc7c057e58cf18
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136092"
+标题： "使用 Azure Cosmos DB 文档数据库进行用户身份验证" 和 Xamarin.Forms "说明：" 本文介绍如何将 access control 与 Azure Cosmos DB 分区集合结合使用，以便用户只能在应用程序中访问他们自己的文档 Xamarin.Forms 。 "
+ms-chap： xamarin assetid：11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D： xamarin 窗体作者： davidbritch： dabritch ms. 日期：06/16/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>使用 Azure Cosmos DB 文档数据库对用户进行身份验证并Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
@@ -55,16 +41,14 @@ _Azure Cosmos DB 文档数据库支持分区集合，这些集合可以跨多个
 
 将资源令牌代理集成到应用程序的过程 Xamarin.Forms 如下所示：
 
-1. 创建将使用访问控制的 Cosmos DB 帐户。 有关详细信息，请参阅[Cosmos DB 配置](#cosmosdb_configuration)。
-1. 创建用于托管资源令牌代理的 Azure App Service。 有关详细信息，请参阅[Azure App Service 配置](#app_service_configuration)。
-1. 创建 Facebook 应用以执行身份验证。 有关详细信息，请参阅[Facebook 应用配置](#facebook_configuration)。
-1. 配置 Azure App Service 以通过 Facebook 执行轻松身份验证。 有关详细信息，请参阅[Azure App Service 身份验证配置](#app_service_authentication_configuration)。
-1. 配置 Xamarin.Forms 示例应用程序，以便与 Azure App Service 和 Cosmos DB 通信。 有关详细信息，请参阅[ Xamarin.Forms 应用程序配置](#forms_application_configuration)。
+1. 创建将使用访问控制的 Cosmos DB 帐户。 有关详细信息，请参阅[Azure Cosmos DB 配置](#azure-cosmos-db-configuration)。
+1. 创建用于托管资源令牌代理的 Azure App Service。 有关详细信息，请参阅[Azure App Service 配置](#azure-app-service-configuration)。
+1. 创建 Facebook 应用以执行身份验证。 有关详细信息，请参阅[Facebook 应用配置](#facebook-app-configuration)。
+1. 配置 Azure App Service 以通过 Facebook 执行轻松身份验证。 有关详细信息，请参阅[Azure App Service 身份验证配置](#azure-app-service-authentication-configuration)。
+1. 配置 Xamarin.Forms 示例应用程序，以便与 Azure App Service 和 Cosmos DB 通信。 有关详细信息，请参阅[ Xamarin.Forms 应用程序配置](#xamarinforms-application-configuration)。
 
 > [!NOTE]
 > 如果还没有 [Azure 订阅](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，可以在开始前创建一个[免费帐户](https://aka.ms/azfree-docs-mobileapps)。
-
-<a name="cosmosdb_configuration" />
 
 ### <a name="azure-cosmos-db-configuration"></a>Azure Cosmos DB 配置
 
@@ -72,8 +56,6 @@ _Azure Cosmos DB 文档数据库支持分区集合，这些集合可以跨多个
 
 1. 创建 Cosmos DB 帐户。 有关详细信息，请参阅[创建 Azure Cosmos DB 帐户](/azure/cosmos-db/sql-api-dotnetcore-get-started#step-1-create-an-azure-cosmos-db-account)。
 1. 在 Cosmos DB 帐户中，创建一个名为的新集合 `UserItems` ，并指定的分区键 `/userid` 。
-
-<a name="app_service_configuration" />
 
 ### <a name="azure-app-service-configuration"></a>Azure App Service 配置
 
@@ -93,8 +75,6 @@ _Azure Cosmos DB 文档数据库支持分区集合，这些集合可以跨多个
 
 1. 将资源令牌代理解决方案发布到 Azure App Service web 应用。
 
-<a name="facebook_configuration" />
-
 ### <a name="facebook-app-configuration"></a>Facebook 应用配置
 
 创建用于执行身份验证的 Facebook 应用的过程如下所示：
@@ -112,8 +92,6 @@ _Azure Cosmos DB 文档数据库支持分区集合，这些集合可以跨多个
 
 有关详细信息，请参阅[将应用程序注册到 Facebook](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-nameregister-aregister-your-application-with-facebook)。
 
-<a name="app_service_authentication_configuration" />
-
 ### <a name="azure-app-service-authentication-configuration"></a>Azure App Service 身份验证配置
 
 配置应用服务轻松身份验证的过程如下所示：
@@ -128,8 +106,6 @@ _Azure Cosmos DB 文档数据库支持分区集合，这些集合可以跨多个
     [![](azure-cosmosdb-auth-images/app-service-authentication-settings.png "App Service Web App Authentication Settings")](azure-cosmosdb-auth-images/app-service-authentication-settings-large.png#lightbox "App Service Web App Authentication Settings")
 
 应用服务 web 应用还应配置为与 Facebook 应用通信，以启用身份验证流。 为此，可以选择 Facebook 标识提供者，并在 Facebook 开发人员中心的 Facebook 应用设置中输入**应用程序 ID**和**应用程序密钥**值。 有关详细信息，请参阅[将 Facebook 信息添加到应用程序](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-namesecrets-aadd-facebook-information-to-your-application)。
-
-<a name="forms_application_configuration" />
 
 ### <a name="xamarinforms-application-configuration"></a>Xamarin.Forms应用程序配置
 
@@ -237,7 +213,7 @@ while (query.HasMoreResults)
 > [!NOTE]
 > 请注意，由资源令牌代理创建的权限文档存储在与应用程序创建的文档相同的文档集合中 Xamarin.Forms 。 因此，文档查询包含一个 `Where` 子句，该子句将筛选谓词应用于针对文档集合的查询。 此子句可确保不会从文档集合中返回权限文档。
 
-有关从文档集合中检索文档的详细信息，请参阅[检索文档集合文档](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#document_query)。
+有关从文档集合中检索文档的详细信息，请参阅[检索文档集合文档](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#retrieving-document-collection-documents)。
 
 ## <a name="inserting-documents"></a>插入文档
 
@@ -250,7 +226,7 @@ await client.CreateDocumentAsync(collectionLink, item);
 
 这可确保将文档插入用户的已分区集合。
 
-有关将文档插入文档集合的详细信息，请参阅在[文档集合中插入文档](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#inserting_document)。
+有关将文档插入文档集合的详细信息，请参阅在[文档集合中插入文档](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#inserting-a-document-into-a-document-collection)。
 
 ## <a name="deleting-documents"></a>删除文档
 
@@ -266,7 +242,7 @@ await client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(Constants.Database
 
 这可确保 Cosmos DB 知道要从中删除文档的分区集合。
 
-有关从文档集合中删除文档的详细信息，请参阅[从文档集合中删除文档](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#deleting_document)。
+有关从文档集合中删除文档的详细信息，请参阅[从文档集合中删除文档](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#deleting-a-document-from-a-document-collection)。
 
 ## <a name="summary"></a>总结
 

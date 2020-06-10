@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: f5b5f8cf224c18852a0a0e7e4f591b49905ba026
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 74226aff2ae135144172a06be5e7869c5cd8e408
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73024762"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84568446"
 ---
 # <a name="started-services-with-xamarinandroid"></a>已通过 Xamarin 启动服务
 
@@ -21,12 +21,12 @@ ms.locfileid: "73024762"
 
 与绑定服务不同，"纯" 启动的服务及其客户端之间没有通信通道。 这意味着，已启动的服务将实现某些不同于绑定服务的生命周期方法。 以下列表突出显示了已启动服务中的常见生命周期方法：
 
-- 首次启动服务时，`OnCreate` &ndash; 调用一次。 这是应在其中实现初始化代码的位置。
-- 此方法 &ndash; `OnBind` 必须由所有服务类实现，但是，已启动的服务通常不会有绑定到它的客户端。 因此，已启动的服务只返回 `null`。 与此相反，混合服务（即绑定服务与已启动服务的组合）必须实现并返回客户端的 `Binder`。
-- 为每个请求启动服务 `OnStartCommand` &ndash;，以响应对 `StartService` 的调用或系统重启。 这是服务可开始执行任何长时间运行的任务的位置。 方法返回一个 `StartCommandResult` 值，该值指示系统在由于内存不足而关闭后，如何或是否应处理重启服务。 此调用发生在主线程上。 下面更详细地介绍了此方法。
-- `OnDestroy` &ndash; 在销毁服务时调用此方法。 它用于执行所需的任何最终清理。
+- `OnCreate`&ndash;首次启动服务时调用一次。 这是应在其中实现初始化代码的位置。
+- `OnBind`&ndash;此方法必须由所有服务类实现，但是，已启动的服务通常不会有绑定到它的客户端。 因此，已启动的服务只返回 `null` 。 相反，混合服务（即绑定服务与已启动服务的组合）必须实现并返回 `Binder` 客户端的。
+- `OnStartCommand`&ndash;为每个启动服务的请求调用，以响应对系统的调用 `StartService` 或重新启动系统。 这是服务可开始执行任何长时间运行的任务的位置。 方法返回一个 `StartCommandResult` 值，该值指示系统在由于内存不足而关闭后，如何或是否应处理重启服务。 此调用发生在主线程上。 下面更详细地介绍了此方法。
+- `OnDestroy`&ndash;当服务被销毁时调用此方法。 它用于执行所需的任何最终清理。
 
-开始服务的重要方法是 `OnStartCommand` 方法。 每次当服务收到执行一些工作的请求时，就会调用此方法。 以下代码片段是 `OnStartCommand` 的示例： 
+启动服务的重要方法是 `OnStartCommand` 方法。 每次当服务收到执行一些工作的请求时，就会调用此方法。 以下代码片段是一个示例 `OnStartCommand` ： 
 
 ```csharp
 public override StartCommandResult OnStartCommand (Android.Content.Intent intent, StartCommandFlags flags, int startId)
@@ -38,38 +38,38 @@ public override StartCommandResult OnStartCommand (Android.Content.Intent intent
 }
 ```
 
-第一个参数是包含要执行的工作的元数据的 `Intent` 对象。 第二个参数包含提供有关方法调用的某些信息的 `StartCommandFlags` 值。 此参数具有以下两个可能的值之一：
+第一个参数是 `Intent` 包含要执行的工作的元数据的对象。 第二个参数包含一个 `StartCommandFlags` 值，该值提供有关方法调用的某些信息。 此参数具有以下两个可能的值之一：
 
-- `StartCommandFlag.Redelivery` &ndash; 这意味着 `Intent` 是以前的 `Intent` 的重新传送。 此值在服务返回 `StartCommandResult.RedeliverIntent` 但在其可以正常关闭之前已停止的情况下提供。
-- `StartCommandFlag.Retry` &dash; 在以前的 `OnStartCommand` 调用失败并且 Android 尝试再次尝试启动服务时，会收到与先前失败尝试相同的意图。
+- `StartCommandFlag.Redelivery`&ndash;这意味着， `Intent` 是上一个的重新传递 `Intent` 。 此值在服务返回后已停止， `StartCommandResult.RedeliverIntent` 但在可以正确关闭之前已停止。
+-`StartCommandFlag.Retry`&dash;此值在上一次 `OnStartCommand` 调用失败并且 Android 尝试再次使用与上一次失败尝试相同的目的尝试启动服务时接收。
 
 最后，第三个参数是一个整数值，它对于标识请求的应用程序是唯一的。 有可能多个调用方可以调用同一个服务对象。 此值用于关联请求以停止具有给定请求的服务来启动服务。 在[停止服务](#Stopping_the_Service)部分中将对此进行更详细的讨论。 
 
-如果服务由于资源限制而终止，则服务将返回值 `StartCommandResult` 作为对 Android 的建议。 `StartCommandResult`有三个可能的值：
+此值 `StartCommandResult` 由服务返回，作为对 Android 的建议（如果由于资源限制而终止了服务）。 有三个可能的值 `StartCommandResult` ：
 
-- **[StartCommandResult. NotSticky](xref:Android.App.StartCommandResult.NotSticky)** &ndash; 此值告知 Android 不需要重新启动已终止的服务。 作为示例，请考虑在应用中为库生成缩略图的服务。 如果服务已终止，则在下次运行应用程序时，可以重新创建缩略图，这并不重要，&ndash; 缩略图重新创建。
-- **[StartCommandResult](xref:Android.App.StartCommandResult.Sticky)** &ndash; 这会告诉 Android 重新启动该服务，但不会传递启动该服务的上一意向。 如果没有要处理的挂起意向，则将为意向参数提供 `null`。 这种情况的一个示例可能是音乐播放器应用;该服务将重新启动以播放音乐，但会播放最后一首歌曲。
-- **[StartCommandResult. RedeliverIntent](xref:Android.App.StartCommandResult.RedeliverIntent)** &ndash; 此值将告知 Android 重新启动服务并重新传递最后一个 `Intent`。 这是一个为应用程序下载数据文件的服务。 如果服务已终止，则仍需要下载数据文件。 通过返回 `StartCommandResult.RedeliverIntent`，当 Android 重新启动服务时，它还会将意图（包含要下载的文件的 URL）提供给该服务。 这将允许下载重新启动或恢复（具体取决于代码的确切实现）。
+- **[StartCommandResult. NotSticky](xref:Android.App.StartCommandResult.NotSticky)** &ndash; 此值告知 Android 无需重启已终止的服务。 作为示例，请考虑在应用中为库生成缩略图的服务。 如果服务已终止，则在 &ndash; 下次运行应用程序时，可以重新创建缩略图，这并不是至关重要的。
+- **[StartCommandResult](xref:Android.App.StartCommandResult.Sticky)** &ndash; 这将指示 Android 重新启动服务，但不会传递启动该服务的上一意向。 如果没有要处理的挂起意向，则 `null` 将为意向参数提供。 这种情况的一个示例可能是音乐播放器应用;该服务将重新启动以播放音乐，但会播放最后一首歌曲。
+- **[StartCommandResult. RedeliverIntent](xref:Android.App.StartCommandResult.RedeliverIntent)** &ndash; 此值将告知 Android 重新启动服务并重新传递最后一个 `Intent` 。 这是一个为应用程序下载数据文件的服务。 如果服务已终止，则仍需要下载数据文件。 返回 `StartCommandResult.RedeliverIntent` 后，当 Android 重新启动服务时，它还会将意图（包含要下载的文件的 URL）提供给该服务。 这将允许下载重新启动或恢复（具体取决于代码的确切实现）。
 
-`StartCommandResult` &ndash; `StartCommandResult.ContinuationMask`具有第四个值。 此值由 `OnStartCommand` 返回，它描述 Android 将如何继续已终止的服务。 此值通常不用于启动服务。
+存在的第四个值 `StartCommandResult` &ndash; `StartCommandResult.ContinuationMask` 。 此值由返回 `OnStartCommand` ，并说明 Android 将如何继续已终止的服务。 此值通常不用于启动服务。
 
 此图显示了已启动服务的关键生命周期事件： 
 
 ![显示生命周期方法调用顺序的关系图](started-services-images/started-service-01.png "显示生命周期方法调用顺序的关系图。")
 
-<a name="Stopping_the_Service" />
+<a name="Stopping_the_Service"></a>
 
 ## <a name="stopping-the-service"></a>正在停止服务
 
 已启动的服务将始终保持运行状态;只要有足够的系统资源，Android 就会保持服务运行。 客户端必须停止该服务，否则当服务完成其工作时，该服务可能会自行停止。 停止服务有两种方法： 
 
-- **[StopService （）](xref:Android.Content.Context.StopService*)** &ndash; 客户端（如活动）可以通过调用 `StopService` 方法请求服务停止：
+- **[Android. StopService （）](xref:Android.Content.Context.StopService*)** &ndash;客户端（如活动）可以通过调用方法请求服务停止 `StopService` ：
 
     ```csharp
     StopService(new Intent(this, typeof(DemoService));
     ```
 
-- **[StopSelf （）](xref:Android.App.Service.StopSelf*)** &ndash; 服务可能会通过调用 `StopSelf` 自行关闭：
+- **[Android. StopSelf （）](xref:Android.App.Service.StopSelf*)** &ndash;服务可以通过调用 `StopSelf` 以下内容自行关闭：
 
     ```csharp
     StopSelf();
@@ -77,7 +77,7 @@ public override StartCommandResult OnStartCommand (Android.Content.Intent intent
 
 ### <a name="using-startid-to-stop-a-service"></a>使用 startId 停止服务
 
-多个调用方可以请求启动服务。 如果有未完成的启动请求，则该服务可以使用传递到 `OnStartCommand` 中的 `startId` 来防止服务过早停止。 `startId` 将对应于对 `StartService`的最新调用，并将在每次调用时递增。 因此，如果对 `StartService` 的后续请求尚未产生对 `OnStartCommand` 的调用，则该服务可以调用 `StopSelfResult`，并向其传递 `startId` 接收的最新值（而不是仅仅调用 `StopSelf`）。 如果对 `StartService` 的调用尚未导致相应的 `OnStartCommand` 调用，则系统将不会停止服务，因为 `StopSelf` 调用中使用的 `startId` 与最新的 `StartService` 调用不对应。
+多个调用方可以请求启动服务。 如果有未完成的启动请求，则该服务可以使用 `startId` 传入的 `OnStartCommand` 来阻止服务提前停止。 `startId`将对应于的最新调用 `StartService` ，并将在每次调用时递增。 因此，如果对的后续请求尚未 `StartService` 导致调用 `OnStartCommand` ，服务可以调用，并向 `StopSelfResult` 其传递接收到的最新值 `startId` （而不是简单地调用 `StopSelf` ）。 如果对的调用尚未 `StartService` 导致相应的调用 `OnStartCommand` ，则系统将不会停止服务，因为在 `startId` 调用中使用的与 `StopSelf` 最新调用不对应 `StartService` 。
 
 ## <a name="related-links"></a>相关链接
 

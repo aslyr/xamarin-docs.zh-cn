@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 21f10c7771e1c30eabb3f42a161c6d563a5327f3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8090cb3c694083be4ef12294799d6aadf26b6038
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032389"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569122"
 ---
 # <a name="healthkit-in-xamarinios"></a>Xamarin 中的 HealthKit
 
@@ -50,27 +50,27 @@ ms.locfileid: "73032389"
 
 - 显式**应用 ID**。
 - 与该显式**应用 ID**和具有**健康套件**权限相关联的**预配配置文件**。
-- `Entitlements.plist`，其 `com.apple.developer.healthkit` 类型 `Boolean` 设置为 `Yes`。
-- 一个 `Info.plist`，其 `UIRequiredDeviceCapabilities` 键包含一个 `String` 值 `healthkit`的条目。
-- `Info.plist` 还必须具有相应的隐私解释条目：如果应用程序要写入数据，则 `String` 对密钥 `NSHealthUpdateUsageDescription` 的说明; 如果应用要读取运行状况工具包数据，则应为密钥 `NSHealthShareUsageDescription` 的 `String` 说明。
+- `Entitlements.plist`具有 `com.apple.developer.healthkit` 设置为的类型的属性的 `Boolean` `Yes` 。
+- 一个 `Info.plist` `UIRequiredDeviceCapabilities` ，其键包含值为的 `String` 项 `healthkit` 。
+- `Info.plist`还必须具有相应的隐私解释条目： `String` 有关密钥的说明（ `NSHealthUpdateUsageDescription` 如果应用要写入数据）和对 `String` 密钥的说明（ `NSHealthShareUsageDescription` 如果应用要读取运行状况工具包数据）。
 
 若要了解有关预配 iOS 应用的详细信息，Xamarin**入门**系列中的[设备预配](~/ios/get-started/installation/device-provisioning/index.md)文章介绍了开发人员证书、应用 Id、预配配置文件和应用权利之间的关系。
 
-<a name="explicit-appid" />
+<a name="explicit-appid"></a>
 
 ### <a name="explicit-app-id-and-provisioning-profile"></a>显式应用 ID 和预配配置文件
 
 创建显式**应用 ID**和适当的**预配配置文件**在 Apple 的[iOS 开发人员中心](https://developer.apple.com/devcenter/ios/index.action)内完成。 
 
-当前**应用 id**列在开发人员中心的 "[证书"、"标识符 & 配置文件](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action)" 部分中。 通常，此列表将显示 `*`的**id**值，指示**应用 ID** - **名称**可与任意数量的后缀一起使用。 此类*通配符应用 id*不能与运行状况工具包一起使用。
+当前**应用 id**列在开发人员中心的 "[证书"、"标识符 & 配置文件](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action)" 部分中。 通常，此列表将显示**ID**值 `*` ，指示**应用 ID**  -  **名称**可以与任意数量的后缀一起使用。 此类*通配符应用 id*不能与运行状况工具包一起使用。
 
-若要创建显式**应用 ID**，请单击右上角的 " **+** " 按钮转到 "**注册 iOS 应用 id** " 页：
+若要创建显式**应用 ID**，请单击 **+** 右上角的按钮以转到 "**注册 iOS 应用 id** " 页：
 
 [![](healthkit-images/image02.png "Registering an app on the Apple Developer Portal")](healthkit-images/image02.png#lightbox)
 
 如上图所示，在创建应用程序说明后，请使用 "**显式应用 id** " 部分为应用程序创建 ID。 在 "**应用服务**" 部分中，检查 "**启用服务**" 部分中的**运行状况工具包**。
 
-完成后，请按 "**继续**" 按钮，在帐户中注册**应用 ID** 。 你将返回到 "**证书、标识符和配置文件**" 页。 单击 "**预配配置文件**"，转到当前预配配置文件的列表，然后单击右上角的 " **+** " 按钮转到 "**添加 iOS 预配配置文件**" 页。 选择 " **IOS 应用开发**" 选项，然后单击 "**继续**" 以转到 "**选择应用 ID** " 页。 在此处选择之前指定的显式**应用 ID** ：
+完成后，请按 "**继续**" 按钮，在帐户中注册**应用 ID** 。 你将返回到 "**证书、标识符和配置文件**" 页。 单击 "**预配配置文件**"，转到当前预配配置文件的列表，然后单击 **+** 右上角的按钮以转到 "**添加 IOS 预配配置文件**" 页。 选择 " **IOS 应用开发**" 选项，然后单击 "**继续**" 以转到 "**选择应用 ID** " 页。 在此处选择之前指定的显式**应用 ID** ：
 
 [![](healthkit-images/image03.png "Select the explicit App ID")](healthkit-images/image03.png#lightbox)
 
@@ -82,11 +82,11 @@ ms.locfileid: "73032389"
 
 [![](healthkit-images/image05.png "Viewing the profile in Xcode")](healthkit-images/image05.png#lightbox)
 
-<a name="associating-appid" />
+<a name="associating-appid"></a>
 
 ### <a name="associating-the-app-id-and-provisioning-profile-with-your-xamarinios-app"></a>将应用 ID 和预配配置文件与 Xamarin iOS 应用相关联
 
-按照说明创建并安装适当的**预配配置文件**后，通常可以在 Visual Studio for Mac 或 Visual Studio 中创建解决方案。 健康工具包访问适用于任何 iOS C#或F#项目。
+按照说明创建并安装适当的**预配配置文件**后，通常可以在 Visual Studio for Mac 或 Visual Studio 中创建解决方案。 运行状况工具包访问适用于任何 iOS c # 或 F # 项目。
 
 请不要手动完成创建 Xamarin iOS 8 项目的过程，而是打开附加到本文的示例应用（其中包括预建的情节提要和代码）。 若要将示例应用与运行状况工具包的**预配配置文件**相关联，请在**Solution Pad**中右键单击你的项目并打开其 "**选项**" 对话框。 切换到 " **IOS 应用程序**" 面板，然后输入之前创建的显式**应用 ID**作为应用的**捆绑包标识符**：
 
@@ -96,15 +96,15 @@ ms.locfileid: "73032389"
 
 [![](healthkit-images/image07.png "Select the Provisioning Profile")](healthkit-images/image07.png#lightbox)
 
-如果**预配配置文件**不可用，请在**ios 应用程序**面板中仔细检查**捆绑标识符**，与**ios 开发人员中心**中指定的相同，并确保已安装**预配配置文件**（**Xcode> 首选项 > 帐户 > 查看详细信息 ...** ）。
+如果**预配配置文件**不可用，请在**ios 应用程序**面板中仔细检查**捆绑标识符**，与**ios 开发人员中心**中指定的相同，并确保已安装**预配配置文件**（**Xcode > 首选项 > 帐户 > 查看详细信息 ...**"）。
 
 如果选择了 "启用运行状况工具包的**预配配置文件**"，请单击 **"确定"** 以关闭 "项目选项" 对话框。
 
 ### <a name="entitlementsplist-and-infoplist-values"></a>Info.plist 和 info.plist 值
 
-该示例应用包含一个 `Entitlements.plist` 文件（该文件对于启用了运行状况工具包的应用是必需的），不包括在每个项目模板中。 如果你的项目不包括权利，请右键单击项目，然后选择 "**文件" "> 新文件 ..."> iOS >** ，手动添加一个 info.plist。
+该示例应用包括 `Entitlements.plist` 文件（对于启用了运行状况工具包的应用，这是必需的），不包括在每个项目模板中。 如果你的项目不包括权利，请右键单击项目，选择 "文件" " **> 新建文件 ..." > iOS > "info.plist** " 手动添加一个。
 
-最终，`Entitlements.plist` 必须具有以下键和值对：
+最终， `Entitlements.plist` 必须具有以下键和值对：
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -118,7 +118,7 @@ ms.locfileid: "73032389"
 
 ```
 
-同样，应用的 `Info.plist` 的值必须与 `UIRequiredDeviceCapabilities` 键 `healthkit` 相关联：
+同样， `Info.plist` 应用的值必须具有 `healthkit` 与键关联的值 `UIRequiredDeviceCapabilities` ：
 
 ```xml
 <key>UIRequiredDeviceCapabilities</key>
@@ -129,27 +129,27 @@ ms.locfileid: "73032389"
 
 ```
 
-本文中提供的示例应用程序包含一个预配置的 `Entitlements.plist`，其中包括所有必需的键。
+本文中提供的示例应用程序包含一个预配置 `Entitlements.plist` 的，其中包括所有必需的键。
 
-<a name="programming" />
+<a name="programming"></a>
 
 ## <a name="programming-health-kit"></a>编程运行状况工具包
 
 运行状况工具包数据存储是在应用之间共享的专用用户特定数据存储。 由于运行状况信息非常敏感，用户必须采取积极措施来允许数据访问。 这种访问可能是部分的（对于某些类型的数据（但不是其他类型），可以随时撤消。 健康工具包应用程序应保守编写，了解到很多用户将不愿意存储其与运行状况相关的信息。
 
-健康套件数据仅限 Apple 指定的类型。 严格定义这些类型：某些类型（如血糖类型）仅限于 Apple 提供的枚举的特定值，而其他类型则将量与度量单位（如克、卡路里和升）组合在一起。 即使是共享兼容度量单位的数据也可以通过其 `HKObjectType`进行区分;例如，类型系统将捕获一次尝试将 `HKQuantityTypeIdentifier.NumberOfTimesFallen` 值存储到需要 `HKQuantityTypeIdentifier.FlightsClimbed` 的字段的被误认为尝试，即使两者都使用 `HKUnit.Count` 度量单位。
+健康套件数据仅限 Apple 指定的类型。 严格定义这些类型：某些类型（如血糖类型）仅限于 Apple 提供的枚举的特定值，而其他类型则将量与度量单位（如克、卡路里和升）组合在一起。 即使是共享兼容度量单位的数据，也可以通过它们进行区分 `HKObjectType` ; 例如，类型系统将捕获一次尝试将值存储 `HKQuantityTypeIdentifier.NumberOfTimesFallen` 到预期的字段（ `HKQuantityTypeIdentifier.FlightsClimbed` 即使两者都使用 `HKUnit.Count` 度量单位）。
 
-运行状况工具包数据存储中的存储类型是 `HKObjectType`的所有子类。 `HKCharacteristicType` 对象存储生物性爱、血糖类型和出生日期。 然而，更常见的是 `HKSampleType` 对象，这些对象表示在特定时间或一段时间内采样的数据。 
+运行状况工具包数据存储中的存储类型是的所有子类 `HKObjectType` 。 `HKCharacteristicType`对象存储生物性爱、血糖类型和出生日期。 但更常见的是 `HKSampleType` 对象，这些对象表示在特定时间或一段时间内采样的数据。 
 
 [![](healthkit-images/image08.png "HKSampleType objects chart")](healthkit-images/image08.png#lightbox)
 
-`HKSampleType` 是抽象的，并且具有四个具体子类。 目前只有一种类型的 `HKCategoryType` 数据，它是休眠分析。 运行状况工具包中的大部分数据类型为 `HKQuantityType`，并将其数据存储在使用熟悉的工厂设计模式创建 `HKQuantitySample` 对象中：
+`HKSampleType`是抽象的，并且具有四个具体子类。 目前只有一种类型的 `HKCategoryType` 数据，即休眠分析。 运行状况工具包中的大部分数据的类型为 `HKQuantityType` ，并将其数据存储在 `HKQuantitySample` 对象中，这些对象是使用熟悉的工厂设计模式创建的：
 
 [![](healthkit-images/image09.png "The large majority of data in Health Kit are of type HKQuantityType and store their data in HKQuantitySample objects")](healthkit-images/image09.png#lightbox)
 
-`HKQuantityType` 类型范围从 `HKQuantityTypeIdentifier.ActiveEnergyBurned` 到 `HKQuantityTypeIdentifier.StepCount`。 
+`HKQuantityType`类型的范围从 `HKQuantityTypeIdentifier.ActiveEnergyBurned` 到 `HKQuantityTypeIdentifier.StepCount` 。 
 
-<a name="requesting-permission" />
+<a name="requesting-permission"></a>
 
 ### <a name="requesting-permission-from-the-user"></a>正在请求用户的权限
 
@@ -161,11 +161,11 @@ ms.locfileid: "73032389"
 
 [![](healthkit-images/image11.png "The user can change permissions using Health apps Sources dialog")](healthkit-images/image11.png#lightbox)
 
-由于运行状况信息非常敏感，应用程序开发人员应该编写其程序保守，并假定在应用程序运行时权限将被拒绝和更改。 最常见的用法是在 `UIApplicationDelegate.OnActivated` 方法中请求权限，然后根据需要修改用户界面。
+由于运行状况信息非常敏感，应用程序开发人员应该编写其程序保守，并假定在应用程序运行时权限将被拒绝和更改。 最常见的用法是在方法中请求权限 `UIApplicationDelegate.OnActivated` ，然后根据需要修改用户界面。
 
 ### <a name="permissions-walkthrough"></a>权限演练
 
-在运行状况工具包预配的项目中，打开 `AppDelegate.cs` 文件。 请注意使用 `HealthKit`的语句;文件顶部。
+在运行状况工具包预配的项目中，打开 `AppDelegate.cs` 文件。 请注意文件顶部使用的语句 `HealthKit` 。
 
 下面的代码与运行状况工具包权限相关：
 
@@ -201,16 +201,16 @@ void ReactToHealthCarePermissions (bool success, NSError error)
 
 ```
 
-这些方法中的所有代码都可以在 `OnActivated`中以内联方式完成，但示例应用程序使用不同的方法来使其意图更清晰： `ValidateAuthorization()` 具有请求访问所写入的特定类型（并读取，如果需要应用程序）和 `ReactToHealthCarePermissions()`是一个回调，该回调在用户与运行状况中的 "权限" 对话框进行交互之后激活。
+这些方法中的所有代码都可以在中以内联方式完成 `OnActivated` ，但示例应用程序使用不同的方法来使其意图更清晰：执行以下 `ValidateAuthorization()` 步骤：请求访问要写入的特定类型（并读取，如果需要应用），并且 `ReactToHealthCarePermissions()` 是在用户与运行状况中的权限对话框交互之后激活的回调。
 
-`ValidateAuthorization()` 的工作是生成应用编写的一组 `HKObjectTypes`，并请求授权更新该数据。 在示例应用中，`HKObjectType` 适用于键 `KHQuantityTypeIdentifierKey.HeartRate`。 此类型添加到 `typesToWrite`集，而集 `typesToRead` 留空。 这些集和对 `ReactToHealthCarePermissions()` 回调的引用将传递给 `HKHealthStore.RequestAuthorizationToShare()`。
+的工作 `ValidateAuthorization()` 是生成 `HKObjectTypes` 应用程序编写的集合，并请求授权来更新该数据。 在示例应用中， `HKObjectType` 用于键的 `KHQuantityTypeIdentifierKey.HeartRate` 。 此类型将添加到集合 `typesToWrite` 中，而集 `typesToRead` 保留为空。 这些集和对回调的引用 `ReactToHealthCarePermissions()` 将传递给 `HKHealthStore.RequestAuthorizationToShare()` 。
 
-在用户使用 "权限" 对话框进行交互并传递两条信息时，将调用 `ReactToHealthCarePermissions()` 回调：如果用户已与 "权限" 对话框进行交互，将 `true` 的 `bool` 值和 `NSError`如果非 null，则表示与显示权限对话框相关联的某种错误。
+在 `ReactToHealthCarePermissions()` 用户与 "权限" 对话框进行交互并传递两部分信息时，将调用该回调：一个 `bool` 值。 `true` 如果用户已与 "权限" 对话框交互，则将调用该回调; 如果用户已与 "权限" 对话框进行交互，则将调用该回调 `NSError` 。
 
 > [!IMPORTANT]
 > 若要清楚地了解此函数的参数： _success_和_error_参数并不指示用户是否已授予访问运行状况工具包数据的权限！ 它们仅指示用户已获得允许访问数据的机会。
 
-若要确认应用是否有权访问数据，请使用 `HKHealthStore.GetAuthorizationStatus()`，并传入 `HKQuantityTypeIdentifierKey.HeartRate`。 根据返回的状态，应用启用或禁用输入数据的功能。 没有用于处理拒绝访问的标准用户体验，有许多可能的选项。 在示例应用中，状态设置为 `HeartRateModel` 单一实例对象，进而引发相关事件。
+若要确认应用是否有权访问数据，请 `HKHealthStore.GetAuthorizationStatus()` 使用，并传入 `HKQuantityTypeIdentifierKey.HeartRate` 。 根据返回的状态，应用启用或禁用输入数据的功能。 没有用于处理拒绝访问的标准用户体验，有许多可能的选项。 在示例应用中，状态设置为 `HeartRateModel` 单一实例对象，而该对象又引发相关事件。
 
 ## <a name="model-view-and-controller"></a>模型、视图和控制器
 
@@ -327,23 +327,23 @@ namespace HKWork
 
 ```
 
-第一部分是用于创建一般事件和处理程序的样板代码。 `HeartRateModel` 类的初始部分也是用于创建线程安全单独对象的样板。
+第一部分是用于创建一般事件和处理程序的样板代码。 类的初始部分 `HeartRateModel` 也是用于创建线程安全单独对象的样板。
 
-然后，`HeartRateModel` 公开3个事件： 
+然后， `HeartRateModel` 公开3个事件： 
 
 - `EnabledChanged`-表示已启用或禁用心率存储（请注意，存储最初处于禁用状态）。 
 - `ErrorMessageChanged`-对于此示例应用，我们有一个非常简单的错误处理模型：一个字符串，其中包含上一个错误。 
 - `HeartRateStored`-当心率存储在运行状况工具包数据库中时引发。
 
-请注意，每当触发这些事件时，都将通过 `NSObject.InvokeOnMainThread()`来完成，该操作允许订户更新 UI。 或者，可以将事件记录为在后台线程上引发，并确保可以将兼容性留给其处理程序。 由于许多函数（如权限请求）都是异步的，并且在非主线程上执行回调，因此线程注意事项在运行状况工具包应用程序中非常重要。
+请注意，每当触发这些事件时，它都是通过进行的 `NSObject.InvokeOnMainThread()` ，这允许订户更新 UI。 或者，可以将事件记录为在后台线程上引发，并确保可以将兼容性留给其处理程序。 由于许多函数（如权限请求）都是异步的，并且在非主线程上执行回调，因此线程注意事项在运行状况工具包应用程序中非常重要。
 
-`HeartRateModel` 中的特定于 Heath 工具包的代码 `HeartRateInBeatsPerMinute()` 和 `StoreHeartRate()`。 
+中特定于 Heath 工具包的代码位于 `HeartRateModel` 两个函数 `HeartRateInBeatsPerMinute()` 和中 `StoreHeartRate()` 。 
 
-`HeartRateInBeatsPerMinute()` 将其参数转换为强类型的运行状况包 `HKQuantity`。 数量的类型为由 `HKQuantityTypeIdentifierKey.HeartRate` 指定，并且数量的单位 `HKUnit.Count` 除以 `HKUnit.Minute` （换言之，单位为*每分钟节拍数*）。 
+`HeartRateInBeatsPerMinute()`将其参数转换为强类型的运行状况工具包 `HKQuantity` 。 数量的类型是由指定的， `HKQuantityTypeIdentifierKey.HeartRate` 并且数量的单位 `HKUnit.Count` 除以 `HKUnit.Minute` （换言之，单位为*每分钟节拍数*）。 
 
-`StoreHeartRate()` 函数使用 `HKQuantity` （在示例应用程序中，由 `HeartRateInBeatsPerMinute()` 创建）。 若要验证其数据，则使用 `HKQuantity.IsCompatible()` 方法，该方法在对象的单位可以转换为参数中的单位时返回 `true`。 如果数量是用 `HeartRateInBeatsPerMinute()` 创建的，则会明显返回 `true`，但如果数量创建为（例如，*每小时节拍*），则它也会返回 `true`。 更常见的情况是，`HKQuantity.IsCompatible()` 可用于验证用户或设备在一种测量系统（如英制单位）中可能输入或显示的质量、距离和能量，但可能存储在另一个系统（如公制单位）中。 
+此 `StoreHeartRate()` 函数采用一个 `HKQuantity` （在示例应用程序中，由创建 `HeartRateInBeatsPerMinute()` ）。 若要验证其数据，则使用 `HKQuantity.IsCompatible()` 方法，该方法将在 `true` 对象的单位可以转换为参数中的单位时返回。 如果创建的数量 `HeartRateInBeatsPerMinute()` 将明显返回 `true` ，但 `true` 如果数量创建为（例如，*每小时节拍*），则它也会返回。 更常见的情况 `HKQuantity.IsCompatible()` 是，可用于验证用户或设备在一种测量系统（如英制单位）中可能输入或显示的电量、距离和能量量，但可能存储在另一个系统（如公制单位）中。 
 
-数量的兼容性验证完成后，`HKQuantitySample.FromType()` 工厂方法用于创建强类型 `heartRateSample` 对象。 `HKSample` 对象具有开始日期和结束日期;对于瞬时读取，这些值应相同，如示例中所示。 该示例还不会在其 `HKMetadata` 参数中设置任何键-值数据，但可以使用类似于以下代码的代码来指定传感器位置：
+一旦验证了数量的兼容性，则 `HKQuantitySample.FromType()` 使用工厂方法创建强类型 `heartRateSample` 对象。 `HKSample`对象具有开始和结束日期;对于瞬时读取，这些值应相同，如示例中所示。 该示例还不会在其参数中设置任何键-值数据 `HKMetadata` ，但可以使用代码（如以下代码）来指定传感器的位置：
 
 ```csharp
 var hkm = new HKMetadata();
@@ -351,9 +351,9 @@ hkm.HeartRateSensorLocation = HKHeartRateSensorLocation.Chest;
 
 ```
 
-创建 `heartRateSample` 后，代码将使用 using 块创建与数据库的新连接。 在该块中，`HKHealthStore.SaveObject()` 方法尝试异步写入数据库。 生成的 lambda 表达式调用会触发相关事件，`HeartRateStored` 或 `ErrorMessageChanged`。
+创建完成后 `heartRateSample` ，代码将使用 using 块创建与数据库的新连接。 在该块中，该 `HKHealthStore.SaveObject()` 方法会尝试异步写入数据库。 生成的 lambda 表达式调用触发相关事件， `HeartRateStored` 或 `ErrorMessageChanged` 。
 
-现在已对模型进行了编程，可以查看控制器反映模型状态的方式。 打开 `HKWorkViewController.cs` 文件。 构造函数只是将 `HeartRateModel` 单一实例排到事件处理方法中（同样，这可以使用 lambda 表达式来实现，但不同的方法使意向稍微明显）：
+现在已对模型进行了编程，可以查看控制器反映模型状态的方式。 打开 `HKWorkViewController.cs` 文件。 构造函数只是将 `HeartRateModel` 单一实例指向事件处理方法（同样，这可以使用 lambda 表达式来实现），但单独的方法使意向稍微明显一些：
 
 ```csharp
 public HKWorkViewController (IntPtr handle) : base (handle)
@@ -402,21 +402,21 @@ IOS 模拟器不支持运行状况工具包。 必须在运行 iOS 8 的物理�
 > - **项目选项**-捆绑标识符（显式应用 ID） & 预配配置文件。
 > - **源代码**-Info.plist & 信息。 info.plist
 
-假设预配已正确设置，你的应用程序将启动。 当它达到其 `OnActivated` 方法时，它将请求健康包授权。 首次遇到此错误时，用户将看到以下对话框：
+假设预配已正确设置，你的应用程序将启动。 当它达到其 `OnActivated` 方法时，它将请求健康工具包授权。 首次遇到此错误时，用户将看到以下对话框：
 
 [![](healthkit-images/image12.png "The user will be presented with this dialog")](healthkit-images/image12.png#lightbox)
 
-启用应用程序以更新心率数据，应用将重新出现。 `ReactToHealthCarePermissions` 回调将异步激活。 这将导致 `HeartRateModel’s` 的 `Enabled` 属性更改，这将引发 `EnabledChanged` 事件，这将导致 `HKPermissionsViewController.OnEnabledChanged()` 事件处理程序运行，这将启用 `StoreData` 按钮。 下图显示了顺序：
+启用应用程序以更新心率数据，应用将重新出现。 `ReactToHealthCarePermissions`回调将异步激活。 这将导致 `HeartRateModel’s` `Enabled` 属性更改，这将引发 `EnabledChanged` 事件，这将导致 `HKPermissionsViewController.OnEnabledChanged()` 事件处理程序运行，从而启用 `StoreData` 按钮。 下图显示了顺序：
 
 [![](healthkit-images/image13.png "This diagram shows the sequence of events")](healthkit-images/image13.png#lightbox)
 
-按 "**录制**" 按钮。 这将导致运行 `StoreData_TouchUpInside()` 处理程序，该处理程序将尝试分析 `heartRate` 文本字段的值，通过前面讨论的 `HeartRateModel.HeartRateInBeatsPerMinute()` 函数转换为 `HKQuantity`，并将该数量传递到 `HeartRateModel.StoreHeartRate()`。 如前所述，这会尝试存储数据，并引发 `HeartRateStored` 或 `ErrorMessageChanged` 事件。
+按 "**录制**" 按钮。 这将导致 `StoreData_TouchUpInside()` 处理程序运行，这将尝试分析 `heartRate` 文本字段的值， `HKQuantity` 通过前面讨论的函数转换为， `HeartRateModel.HeartRateInBeatsPerMinute()` 并将此数量传递到 `HeartRateModel.StoreHeartRate()` 。 如前所述，这会尝试存储数据，并将引发 `HeartRateStored` 或 `ErrorMessageChanged` 事件。
 
-双击设备上的 "**主页**" 按钮并打开 "运行状况应用"。 单击 "**源**" 选项卡，你将看到列出的示例应用。 选择它，并且不允许更新心率数据的权限。 双击 "**主页**" 按钮，然后切换回您的应用程序。 同样，将调用 `ReactToHealthCarePermissions()`，但这一次，由于访问被拒绝， **datastorage.storedata**按钮将被禁用（请注意，这种情况是异步发生的，用户界面中的更改可能对最终用户可见）。
+双击设备上的 "**主页**" 按钮并打开 "运行状况应用"。 单击 "**源**" 选项卡，你将看到列出的示例应用。 选择它，并且不允许更新心率数据的权限。 双击 "**主页**" 按钮，然后切换回您的应用程序。 同样， `ReactToHealthCarePermissions()` 将调用，但这一次，由于访问被拒绝， **datastorage.storedata**按钮将被禁用（请注意，这会以异步方式发生，用户界面中的更改可能对最终用户可见）。
 
 ## <a name="advanced-topics"></a>高级主题
 
-从健康套件数据库中读取数据与写入数据非常类似：其中一种方式指定了一种尝试访问的数据类型，请求授权，如果授权已被授予，数据可用，并自动转换为兼容单元措施.
+从健康套件数据库中读取数据非常类似于写入数据：一个指定要尝试访问的数据类型，请求授权，如果授权已被授予，则数据可用，并自动转换为兼容的度量单位。
 
 有一些更复杂的查询函数，它们允许基于谓词的查询和查询在更新相关数据时执行更新。 
 
@@ -430,7 +430,7 @@ IOS 模拟器不支持运行状况工具包。 必须在运行 iOS 8 的物理�
 
 在本文中，我们了解了运行状况工具包如何允许应用程序存储、检索和共享运行状况相关信息，同时还提供了允许用户访问和控制此数据的标准运行状况应用。 
 
-此外，我们还了解了隐私、安全性和数据完整性如何替代与运行状况相关的信息的问题，以及使用运行状况工具包的应用程序必须处理应用程序管理方面的复杂性增加（预配），编码（健康套件类型系统）和用户体验（通过系统对话框和运行状况应用对权限进行用户控制）。 
+此外，我们还了解了隐私、安全性和数据完整性是如何覆盖与运行状况相关的信息以及使用运行状况工具包的应用的问题，必须处理应用程序管理方面的复杂性增加（设置）、编码（运行状况工具包的类型系统）和用户体验（通过系统对话框和运行状况应用对权限进行用户控制）。 
 
 最后，我们使用包含的示例应用程序来查看运行状况工具包的简单实现，该应用程序将检测信号数据写入到运行状况工具包存储，并具有异步感知的设计。
 

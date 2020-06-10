@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms单元
-description: Xamarin.Forms可以将单元格添加到 Listview 和 TableViews 中。 本文列出了中包含的单元 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: bd1a2398787fe39c0b4cbd08ccd5c5793775d5cf
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137275"
+标题： " Xamarin.Forms cells" description： " Xamarin.Forms 可以将单元格添加到 Listview 和 TableViews 中。 本文列出了中包含的单元 Xamarin.Forms 。
+ms-chap： xamarin assetid：77DA0C89-35D6-4C09-A072-3ADE53FD56CF： xamarin 窗体作者： davidbritch： dabritch ms. 日期：01/12/2016 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-cells"></a>Xamarin.Forms单元
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
@@ -31,8 +17,6 @@ _Xamarin. 可以将表单元格添加到 Listview 和 TableViews 中。_
 
 Xamarin.Forms支持以下单元类型：
 
-<a name="textCell" />
-
 ### <a name="textcell"></a>TextCell
 
 |     |     |
@@ -44,7 +28,7 @@ Xamarin.Forms支持以下单元类型：
 
 |     |     |
 | --- | --- |
-| 将 [`ImageCell`](xref:Xamarin.Forms.ImageCell) 显示相同的信息， [`TextCell`](#textCell) 但包含使用属性设置的位图 [`Source`](xref:Xamarin.Forms.Image.Source) 。<br /><br />[API 文档](xref:Xamarin.Forms.ImageCell)  / [指南](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#imagecell) | [![ImageCell 示例](cells-images/ImageCell.png "ImageCell 示例")](cells-images/ImageCell-Large.png#lightbox "ImageCell 示例")<br />[此页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageCellDemoPage.cs)  /  的 c # 代码[XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageCellDemoPage.xaml) |
+| 将 [`ImageCell`](xref:Xamarin.Forms.ImageCell) 显示相同的信息， [`TextCell`](#textcell) 但包含使用属性设置的位图 [`Source`](xref:Xamarin.Forms.Image.Source) 。<br /><br />[API 文档](xref:Xamarin.Forms.ImageCell)  / [指南](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#imagecell) | [![ImageCell 示例](cells-images/ImageCell.png "ImageCell 示例")](cells-images/ImageCell-Large.png#lightbox "ImageCell 示例")<br />[此页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageCellDemoPage.cs)  /  的 c # 代码[XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageCellDemoPage.xaml) |
 |     |     |
 
 ### <a name="switchcell"></a>SwitchCell
@@ -64,5 +48,5 @@ Xamarin.Forms支持以下单元类型：
 ## <a name="related-links"></a>相关链接
 
 - [Xamarin.FormsFormsGallery 示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
-- [Xamarin.Forms范例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- [Xamarin.Forms 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
 - [Xamarin.FormsAPI 文档](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

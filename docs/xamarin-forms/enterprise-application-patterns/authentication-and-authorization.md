@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8d5bf1d7821187924adc58582a5139f81235e6a0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139095"
+标题： "身份验证和授权" 说明： "本章节介绍了 eShopOnContainers mobile 应用如何针对容器化微服务执行身份验证和授权。"
+ms-chap： xamarin assetid： e3f27b4c-f7f5-4839-a48c-30bcb919c59e： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/08/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="authentication-and-authorization"></a>身份验证和授权
 
 身份验证是从用户获取标识凭据（例如用户名和密码）的过程，并根据机构验证这些凭据。 如果凭据有效，则提交凭据的实体被视为经过身份验证的标识。 身份验证后，授权过程会确定该标识是否有权访问给定的资源。
@@ -40,7 +26,7 @@ OpenID Connect 是位于 OAuth 2.0 协议顶层的身份验证层。 OAuth 2 是
 
 OpenID Connect 和 OAuth 2.0 的组合结合了身份验证和 API 访问的两个基本安全问题，IdentityServer 4 是这些协议的实现。
 
-在使用直接客户端到微服务通信的应用程序（如 eShopOnContainers 引用应用程序）中，可使用专用身份验证微服务作为安全令牌服务（STS）来对用户进行身份验证，如图9-1 所示。 有关直接的客户端到微服务通信的详细信息，请参阅[客户端和微服务之间的通信](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md#communication_between_client_and_microservices)。
+在使用直接客户端到微服务通信的应用程序（如 eShopOnContainers 引用应用程序）中，可使用专用身份验证微服务作为安全令牌服务（STS）来对用户进行身份验证，如图9-1 所示。 有关直接的客户端到微服务通信的详细信息，请参阅[客户端和微服务之间的通信](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md#communication-between-client-and-microservices)。
 
 ![](authentication-and-authorization-images/authentication.png "Authentication by a dedicated authentication microservice")
 
@@ -195,7 +181,7 @@ public static IEnumerable<Client> GetClients(Dictionary<string,string> clien
 
 - `ClientId`：客户端的唯一 ID。
 - `ClientName`：用于日志记录和许可屏幕的客户端显示名称。
-- `AllowedGrantTypes`：指定客户端想要如何与 IdentityServer 交互。 有关详细信息，请参阅[配置身份验证流](#configuring_the_authentication_flow)。
+- `AllowedGrantTypes`：指定客户端想要如何与 IdentityServer 交互。 有关详细信息，请参阅[配置身份验证流](#configuring-the-authentication-flow)。
 - `ClientSecrets`：指定从令牌终结点请求令牌时使用的客户端机密凭据。
 - `RedirectUris`：指定允许向其返回令牌或授权代码的 Uri。
 - `RequireConsent`：指定是否需要同意屏幕。
@@ -204,8 +190,6 @@ public static IEnumerable<Client> GetClients(Dictionary<string,string> clien
 - `AllowedCorsOrigins`：指定客户端的源，以便 IdentityServer 可以允许来自源的跨源调用。
 - `AllowedScopes`：指定客户端有权访问的资源。 默认情况下，客户端不能访问任何资源。
 - `AllowOfflineAccess`：指定客户端是否可以请求刷新令牌。
-
-<a name="configuring_the_authentication_flow" />
 
 #### <a name="configuring-the-authentication-flow"></a>配置身份验证流
 
@@ -326,14 +310,14 @@ private async Task NavigateAsync(string url)
 
 如果令牌终结点收到有效的授权代码和 PKCE 机密验证程序，则它将使用访问令牌、标识令牌和刷新令牌进行响应。 然后，访问令牌（允许访问 API 资源）和标识令牌存储为应用程序设置，并执行页面导航。 因此，eShopOnContainers 移动应用中的整体效果如下所示：如果用户能够使用 IdentityServer 成功进行身份验证，则这些用户将导航到 `MainView` 页面，该页是 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 显示 `CatalogView` 为其所选选项卡的。
 
-有关页面导航的信息，请参阅[导航](~/xamarin-forms/enterprise-application-patterns/navigation.md)。 有关 [`WebView`](xref:Xamarin.Forms.WebView) 导航如何导致执行视图模型方法的信息，请参阅[使用行为调用导航](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors)。 有关应用程序设置的信息，请参阅[配置管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)。
+有关页面导航的信息，请参阅[导航](~/xamarin-forms/enterprise-application-patterns/navigation.md)。 有关 [`WebView`](xref:Xamarin.Forms.WebView) 导航如何导致执行视图模型方法的信息，请参阅[使用行为调用导航](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking-navigation-using-behaviors)。 有关应用程序设置的信息，请参阅[配置管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)。
 
 > [!NOTE]
 > 当应用配置为使用中的模拟服务时，eShopOnContainers 还允许进行模拟登录 `SettingsView` 。 在此模式下，应用不会与 IdentityServer 通信，而是允许用户使用任何凭据进行登录。
 
 #### <a name="signing-out"></a>注销
 
-当用户点击中的 "**注销**" 按钮时 `ProfileView` ，将 `LogoutCommand` `ProfileViewModel` 执行类中的，后者又执行 `LogoutAsync` 方法。 此方法执行页面导航到 `LoginView` 页面，并 `LogoutParameter` 将实例集 `true` 作为参数传递给。 有关在页面导航期间传递参数的详细信息，请参阅[在导航过程中传递参数](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing_parameters_during_navigation)。
+当用户点击中的 "**注销**" 按钮时 `ProfileView` ，将 `LogoutCommand` `ProfileViewModel` 执行类中的，后者又执行 `LogoutAsync` 方法。 此方法执行页面导航到 `LoginView` 页面，并 `LogoutParameter` 将实例集 `true` 作为参数传递给。 有关在页面导航期间传递参数的详细信息，请参阅[在导航过程中传递参数](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing-parameters-during-navigation)。
 
 创建并导航到视图时，将 `InitializeAsync` 执行视图的关联视图模型的方法，然后执行 `Logout` 类的方法 `LoginViewModel` ，如以下代码示例所示：
 
@@ -385,12 +369,10 @@ private async Task NavigateAsync(string url)
 
 此方法会从应用程序设置中清除标识令牌和访问令牌，并将 `IsLogin` 属性设置为 `false` ，这将导致 [`WebView`](xref:Xamarin.Forms.WebView) 在 `LoginView` 页面上变得不可见。 最后，将 `LoginUrl` 属性设置为 IdentityServer 的[授权终结点](https://identityserver4.readthedocs.io/en/latest/endpoints/authorize.html)的 URI （具有所需的参数），以便为用户下一次启动登录做准备。
 
-有关页面导航的信息，请参阅[导航](~/xamarin-forms/enterprise-application-patterns/navigation.md)。 有关 [`WebView`](xref:Xamarin.Forms.WebView) 导航如何导致执行视图模型方法的信息，请参阅[使用行为调用导航](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors)。 有关应用程序设置的信息，请参阅[配置管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)。
+有关页面导航的信息，请参阅[导航](~/xamarin-forms/enterprise-application-patterns/navigation.md)。 有关 [`WebView`](xref:Xamarin.Forms.WebView) 导航如何导致执行视图模型方法的信息，请参阅[使用行为调用导航](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking-navigation-using-behaviors)。 有关应用程序设置的信息，请参阅[配置管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)。
 
 > [!NOTE]
 > 当应用配置为在 SettingsView 中使用模拟服务时，eShopOnContainers 还允许模拟注销。 在此模式下，应用不与 IdentityServer 通信，而是从应用程序设置中清除任何存储的令牌。
-
-<a name="authorization" />
 
 ## <a name="authorization"></a>授权
 

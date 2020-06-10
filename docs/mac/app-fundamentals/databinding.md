@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 81a1f63078a5f7a2a70f731d1790f85f4283d22f
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 110aaf8d324a13a6ea2e4c5a354adbc74fd8df96
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306277"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567575"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Xamarin 中的数据绑定和键/值编码
 
@@ -20,7 +20,7 @@ _本文介绍如何使用键/值编码和键-值观察，以允许数据绑定�
 
 ## <a name="overview"></a>概述
 
-在 Xamarin Mac C#应用程序中使用和 .net 时，可以访问在*Xcode 和* *中工作*的开发人员所使用的相同的键/值编码和数据绑定技术。 由于 Xamarin 与 Xcode 直接集成，因此可以使用 Xcode 的_Interface Builder_与 UI 元素进行数据绑定，而不是编写代码。
+在 Xamarin 应用程序中使用 c # 和 .NET 时，可以访问在*Xcode 和**中工作*的开发人员所使用的相同的键/值编码和数据绑定技术。 由于 Xamarin 与 Xcode 直接集成，因此可以使用 Xcode 的_Interface Builder_与 UI 元素进行数据绑定，而不是编写代码。
 
 通过在 Xamarin 应用程序中使用键/值编码和数据绑定技术，可以极大地减少需要编写和维护的代码量，以填充和处理 UI 元素。 您还可以从您的前端用户界面（_模型-视图-控制器_）进一步分离您的备份数据（_数据模型_），从而更易于维护，更灵活的应用程序设计。
 
@@ -28,13 +28,13 @@ _本文介绍如何使用键/值编码和键-值观察，以允许数据绑定�
 
 在本文中，我们将介绍在 Xamarin. Mac 应用程序中使用键/值编码和数据绑定的基本知识。 强烈建议您先完成[Hello，Mac](~/mac/get-started/hello-mac.md)一文，特别是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)及[输出口和操作](~/mac/get-started/hello-mac.md#outlets-and-actions)部分的简介，因为它涵盖了我们将在本文中使用的重要概念和技巧。
 
-你可能想要查看[Xamarin 内部](~/mac/internals/how-it-works.md)示例文档的 " C# [公开C#类/方法到目标-c](~/mac/internals/how-it-works.md) " 部分，它解释了用于将类连接到目标 c 对象和 UI 元素的 `Register` 和 `Export` 属性。
+您可能想要了解如何向[Xamarin 内部](~/mac/internals/how-it-works.md)对象[公开 c # 类/方法](~/mac/internals/how-it-works.md)， `Register` 并说明用于将 `Export` c # 类与目标 c 对象和 UI 元素连接起来的和特性。
 
-<a name="What_is_Key-Value_Coding" />
+<a name="What_is_Key-Value_Coding"></a>
 
 ## <a name="what-is-key-value-coding"></a>什么是键-值编码
 
-键-值编码（KVC）是一种用于间接访问对象属性的机制，使用键（特殊格式的字符串）来标识属性，而不是通过实例变量或访问器方法（`get/set`）来访问这些属性。 通过在 Xamarin 应用程序中实现符合键值的代码访问器，你可以访问其他 macOS （以前称为 OS X）功能，例如键-值观察（KVO）、数据绑定、核心数据、Cocoa 绑定和 scriptability。
+键-值编码（KVC）是一种用于间接访问对象属性的机制，使用键（特殊格式的字符串）来标识属性，而不是通过实例变量或访问器方法（）来访问这些属性 `get/set` 。 通过在 Xamarin 应用程序中实现符合键值的代码访问器，你可以访问其他 macOS （以前称为 OS X）功能，例如键-值观察（KVO）、数据绑定、核心数据、Cocoa 绑定和 scriptability。
 
 通过在 Xamarin 应用程序中使用键/值编码和数据绑定技术，可以极大地减少需要编写和维护的代码量，以填充和处理 UI 元素。 您还可以从您的前端用户界面（_模型-视图-控制器_）进一步分离您的备份数据（_数据模型_），从而更易于维护，更灵活的应用程序设计。
 
@@ -68,9 +68,9 @@ namespace MacDatabinding
 }
 ```
 
-首先，`[Register("PersonModel")]` 属性注册类并将其公开给目标-C。 然后，类需要从 `NSObject` （或继承自 `NSObject`的子类）继承，这会添加几个允许类 KVC 兼容的基方法。 接下来，`[Export("Name")]` 特性公开 `Name` 属性，并定义稍后用于通过 KVC 和 KVO 技术访问属性的键值。
+首先， `[Register("PersonModel")]` 属性注册类并将其公开给目标-C。 然后，类需要从 `NSObject` （或继承自的子类 `NSObject` ）继承，这会添加几个允许类 KVC 兼容的基方法。 接下来， `[Export("Name")]` 特性公开 `Name` 属性，并定义稍后用于通过 KVC 和 KVO 技术访问属性的键值。
 
-最后，若要能够以键值方式观察到对属性值的更改，访问器必须在 `WillChangeValue` 和 `DidChangeValue` 方法调用中包装其值的更改（指定与 `Export` 特性相同的键）。  例如：
+最后，若要能够以键值方式观察到对属性值的更改，访问器必须在和方法调用中包装其值的更改 `WillChangeValue` `DidChangeValue` （指定与特性相同的键 `Export` ）。  例如：
 
 ```csharp
 set {
@@ -86,11 +86,11 @@ set {
 
 ### <a name="keys-and-key-paths"></a>密钥和密钥路径
 
-_键_是标识对象的特定属性的字符串。 通常，键对应于键值编码符合对象中的访问器方法的名称。 密钥必须使用 ASCII 编码，通常以小写字母开头，并且不能包含空格。 因此，在上面的示例中，`Name` 将是 `PersonModel` 类的 `Name` 属性的键值。 键及其公开的属性的名称不必相同，但是在大多数情况下，它们都是相同的。
+_键_是标识对象的特定属性的字符串。 通常，键对应于键值编码符合对象中的访问器方法的名称。 密钥必须使用 ASCII 编码，通常以小写字母开头，并且不能包含空格。 因此，在上面的示例中，将 `Name` 是类的 `Name` 属性的键值 `PersonModel` 。 键及其公开的属性的名称不必相同，但是在大多数情况下，它们都是相同的。
 
-_键路径_是一个用句点分隔的键组成的字符串，用于指定要遍历的对象属性的层次结构。 序列中第一个键的属性相对于接收方，并且每个后续键都是相对于上一个属性的值计算的。 与使用点表示法来遍历C#类中的对象及其属性的方式相同。
+_键路径_是一个用句点分隔的键组成的字符串，用于指定要遍历的对象属性的层次结构。 序列中第一个键的属性相对于接收方，并且每个后续键都是相对于上一个属性的值计算的。 与使用点表示法遍历 c # 类中的对象及其属性的方式相同。
 
-例如，如果扩展了 `PersonModel` 类并添加了 `Child` 属性：
+例如，如果您展开 `PersonModel` 类并添加了 `Child` 属性：
 
 ```csharp
 using System;
@@ -131,35 +131,35 @@ namespace MacDatabinding
 }
 ```
 
-子级名称的密钥路径将为 `self.Child.Name` 或只 `Child.Name` （基于如何使用键值）。
+子级名称的键路径将为 `self.Child.Name` 或简单 `Child.Name` （基于如何使用键值）。
 
 ### <a name="getting-values-using-key-value-coding"></a>使用键/值编码获取值
 
-`ValueForKey` 方法返回指定键的值（作为 `NSString`），相对于接收请求的 KVC 类的实例。 例如，如果 `Person` 是上面定义的 `PersonModel` 类的实例：
+`ValueForKey`方法返回指定键的值（作为 `NSString` ），相对于接收请求的 KVC 类的实例。 例如，如果 `Person` 是 `PersonModel` 上面定义的类的实例：
 
 ```csharp
 // Read value
 var name = Person.ValueForKey (new NSString("Name"));
 ```
 
-这会返回 `PersonModel`的该实例的 `Name` 属性的值。
+这将返回 `Name` 该实例的属性的值 `PersonModel` 。
 
 ### <a name="setting-values-using-key-value-coding"></a>使用键值编码设置值
 
-同样，`SetValueForKey` 会相对于接收请求的 KVC 类的实例，设置指定键的值（作为 `NSString`）。 同样，使用 `PersonModel` 类的实例，如下所示：
+同样， `SetValueForKey` 将指定键的值（作为）设置为 `NSString` 相对于接收请求的 KVC 类的实例。 同样，使用类的实例，如下 `PersonModel` 所示：
 
 ```csharp
 // Write value
 Person.SetValueForKey(new NSString("Jane Doe"), new NSString("Name"));
 ```
 
-会将 `Name` 属性的值更改为 `Jane Doe`。
+会将属性的值更改 `Name` 为 `Jane Doe` 。
 
-<a name="Observing_Value_Changes" />
+<a name="Observing_Value_Changes"></a>
 
 ### <a name="observing-value-changes"></a>观察值更改
 
-使用键值感知（KVO），可以将观察者附加到 KVC 相容类的特定键，并在每次修改该键的值时收到通知（使用 KVC 技术或直接访问代码中C#的给定属性）。 例如：
+使用键-值观察（KVO），可以将观察者附加到 KVC 相容类的特定键，并在每次修改该键的值时收到通知（使用 KVC 技术或直接访问 c # 代码中的给定属性）。 例如：
 
 ```csharp
 // Watch for the name value changing
@@ -169,15 +169,15 @@ Person.AddObserver ("Name", NSKeyValueObservingOptions.New, (sender) => {
 });
 ```
 
-现在，每当 `PersonModel` 类的 `Person` 实例的 `Name` 属性被修改时，新值就会写出到控制台。
+现在，每当类的 `Name` 实例的属性 `Person` `PersonModel` 被修改时，新值就会写出到控制台。
 
 有关详细信息，请参阅 Apple[对关键值观察编程指南的介绍](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html#//apple_ref/doc/uid/10000177i)。
 
 ## <a name="data-binding"></a>数据绑定
 
-以下各节将介绍如何使用键/值代码和键值一致的类将数据绑定到 Xcode 的 Interface Builder 中的 UI 元素，而不是使用C#代码读取和写入值。 通过这种方式，您可以将_数据模型_与用于显示它们的视图进行分隔，使 Xamarin 应用程序更灵活、更易于维护。 您还可以极大地减少需要写入的代码量。
+以下各节将介绍如何使用键/值代码和键值一致的类将数据绑定到 Xcode 的 Interface Builder 中的 UI 元素，而不是使用 c # 代码读取和写入值。 通过这种方式，您可以将_数据模型_与用于显示它们的视图进行分隔，使 Xamarin 应用程序更灵活、更易于维护。 您还可以极大地减少需要写入的代码量。
 
-<a name="Defining_your_Data_Model" />
+<a name="Defining_your_Data_Model"></a>
 
 ### <a name="defining-your-data-model"></a>定义数据模型
 
@@ -319,7 +319,7 @@ namespace MacDatabinding
 
 此类的大部分功能都在上面的 "[关键值编码](#What_is_Key-Value_Coding)" 一节中介绍。 不过，让我们来看看一些具体的元素，以及一些为允许此类充当**数组控制器**和**树控制器**的数据模型（稍后将用于数据绑定**树视图**、**大纲视图**和**集合视图**）的一些内容。
 
-首先，因为员工可能是经理，所以我们使用了 `NSArray` （具体来说是 `NSMutableArray` 以便可以修改值），以允许他们所管理的员工附加到他们：
+首先，因为员工可能是经理，所以我们使用了 `NSArray` （具体来说， `NSMutableArray` 这样可以修改值），以允许他们所管理的员工附加到他们：
 
 ```csharp
 private NSMutableArray _people = new NSMutableArray();
@@ -333,8 +333,8 @@ public NSArray People {
 
 此处需要注意两点：
 
-1. 我们使用了 `NSMutableArray` 而不是标准C#的数组或集合，因为这是将数据绑定到**表视图**、**大纲视图**和**集合**等 AppKit 控件的要求。
-2. 我们公开了员工数组，方法是将其强制转换为用于数据绑定的 `NSArray`， C#并将其格式化名称（`People`）更改为数据绑定所需的名称，`personModelArray` 格式为 **{class_name} 数组**（请注意，第一个字符已被小写）。
+1. 我们使用了 `NSMutableArray` 而不是标准 c # 数组或集合，因为这是将数据绑定到**表视图**、**大纲视图**和**集合**等 AppKit 控件的要求。
+2. 我们公开了员工数组，方法是：将其强制转换为以 `NSArray` 进行数据绑定，并将其 c # 格式的名称更改为数据绑定所需的名称， `People` `personModelArray` 格式为 **{class_name} 数组**（请注意，第一个字符已被小写）。
 
 接下来，我们需要添加一些专门的名称公共方法，以支持**数组控制器**和**树控制器**：
 
@@ -369,16 +369,16 @@ public void SetPeople(NSMutableArray array) {
 }
 ```
 
-它们允许控制器请求和修改它们显示的数据。 与上面公开的 `NSArray` 相似，它们具有非常具体的命名约定（与典型C#的命名约定不同）：
+它们允许控制器请求和修改它们显示的数据。 与上面公开的相同 `NSArray` ，它们具有非常具体的命名约定（与典型 c # 命名约定不同）：
 
 - `addObject:`-将对象添加到数组中。
-- `insertObject:in{class_name}ArrayAtIndex:`-其中，`{class_name}` 是你的类的名称。 此方法将对象插入到数组中的指定索引处。
-- `removeObjectFrom{class_name}ArrayAtIndex:`-其中，`{class_name}` 是你的类的名称。 此方法删除数组中给定索引处的对象。
-- `set{class_name}Array:`-其中，`{class_name}` 是你的类的名称。 此方法允许您将现有的执行替换为新的。
+- `insertObject:in{class_name}ArrayAtIndex:`-其中 `{class_name}` 是你的类的名称。 此方法将对象插入到数组中的指定索引处。
+- `removeObjectFrom{class_name}ArrayAtIndex:`-其中 `{class_name}` 是你的类的名称。 此方法删除数组中给定索引处的对象。
+- `set{class_name}Array:`-其中 `{class_name}` 是你的类的名称。 此方法允许您将现有的执行替换为新的。
 
-在这些方法中，我们已将对数组的更改包装到 `WillChangeValue`，并 `DidChangeValue` 消息来 KVO 符合性。
+在这些方法中，我们已将对数组的更改包装在中， `WillChangeValue` 并 `DidChangeValue` 为 KVO 符合性发送消息。
 
-最后，由于 `Icon` 属性依赖于 `isManager` 属性的值，对 `isManager` 属性的更改可能不会反映在数据绑定 UI 元素（在 KVO 期间）的 `Icon` 中：
+最后，由于 `Icon` 属性依赖于属性的值，对 `isManager` 属性所做的更改 `isManager` 可能不会反映到 `Icon` 数据绑定 UI 元素（在 KVO 期间）中：
 
 ```csharp
 [Export("Icon")]
@@ -409,21 +409,21 @@ public bool isManager {
 }
 ```
 
-请注意，除自己的密钥外，`isManager` 访问器还会发送 `Icon` 密钥的 `WillChangeValue` 和 `DidChangeValue` 消息，以便它也会看到更改。
+请注意，除自己的键外， `isManager` 访问器还会为 `WillChangeValue` 密钥发送和消息， `DidChangeValue` `Icon` 以便它也能看到更改。
 
-本文的其余部分将使用 `PersonModel` 数据模型。
+`PersonModel`本文的其余部分将使用数据模型。
 
-<a name="Simple_Data_Binding" />
+<a name="Simple_Data_Binding"></a>
 
 ### <a name="simple-data-binding"></a>简单数据绑定
 
-定义数据模型后，让我们看一下 Xcode 的 Interface Builder 中的数据绑定的简单示例。 例如，让我们向 Xamarin Mac 应用程序添加一个窗体，该窗体可用于编辑上面定义的 `PersonModel`。 我们将添加几个文本字段和一个复选框，以显示和编辑模型的属性。
+定义数据模型后，让我们看一下 Xcode 的 Interface Builder 中的数据绑定的简单示例。 例如，让我们将一个窗体添加到我们的 Xamarin 应用程序，该应用程序可用于编辑 `PersonModel` 上面定义的。 我们将添加几个文本字段和一个复选框，以显示和编辑模型的属性。
 
-首先，让我们将新的**视图控制器**添加到 Interface Builder 中的**主情节提要**文件，并将其类命名 `SimpleViewController`：
+首先，让我们将新的**视图控制器**添加到 Interface Builder 中的**主情节提要**文件，并为其类命名 `SimpleViewController` ：
 
 [![添加新的视图控制器](databinding-images/simple01.png "添加新的视图控制器")](databinding-images/simple01-large.png#lightbox)
 
-接下来，返回到 Visual Studio for Mac，编辑**SimpleViewController.cs**文件（已自动添加到我们的项目），并公开要将窗体数据绑定到的 `PersonModel` 的实例。 添加以下代码：
+接下来，返回到 Visual Studio for Mac，编辑**SimpleViewController.cs**文件（已自动添加到我们的项目中），并公开要将 `PersonModel` 窗体数据绑定到的实例。 添加以下代码：
 
 ```csharp
 private PersonModel _person = new PersonModel();
@@ -440,7 +440,7 @@ public PersonModel Person {
 }
 ```
 
-接下来，在加载视图时，让我们创建一个 `PersonModel` 的实例，然后使用以下代码填充它：
+接下来，在加载视图时，让我们创建一个实例， `PersonModel` 并使用以下代码填充它：
 
 ```csharp
 public override void ViewDidLoad ()
@@ -463,51 +463,51 @@ public override void ViewDidLoad ()
 
 [![在 Xcode 中编辑情节提要](databinding-images/simple02.png "在 Xcode 中编辑情节提要")](databinding-images/simple02-large.png#lightbox)
 
-若要将窗体数据绑定到通过 `Person` 项公开的 `PersonModel`，请执行以下操作：
+若要将窗体数据绑定到 `PersonModel` 我们通过该键公开的， `Person` 请执行以下操作：
 
 1. 选择 "**员工姓名**" 文本字段并切换到**绑定检查器**。
-2. 选中 "**绑定到**" 框，然后从下拉列表中选择 "**简单视图控制器**"。 接下来，输入**密钥路径**`self.Person.Name`：
+2. 选中 "**绑定到**" 框，然后从下拉列表中选择 "**简单视图控制器**"。 接下来，输入 `self.Person.Name` 作为**密钥路径**：
 
     [![输入密钥路径](databinding-images/simple03.png "输入密钥路径")](databinding-images/simple03-large.png#lightbox)
-3. 选择 "**职业**" 文本字段并选中 "**绑定到**" 框，然后从下拉列表中选择 "**简单视图控制器**"。 接下来，输入**密钥路径**`self.Person.Occupation`：
+3. 选择 "**职业**" 文本字段并选中 "**绑定到**" 框，然后从下拉列表中选择 "**简单视图控制器**"。 接下来，输入 `self.Person.Occupation` 作为**密钥路径**：
 
     [![输入密钥路径](databinding-images/simple04.png "输入密钥路径")](databinding-images/simple04-large.png#lightbox)
-4. 选择 "**员工是经理**" 复选框并选中 "**绑定到**" 框，然后从下拉列表中选择 "**简单视图控制器**"。 接下来，输入**密钥路径**`self.Person.isManager`：
+4. 选择 "**员工是经理**" 复选框并选中 "**绑定到**" 框，然后从下拉列表中选择 "**简单视图控制器**"。 接下来，输入 `self.Person.isManager` 作为**密钥路径**：
 
     [![输入密钥路径](databinding-images/simple05.png "输入密钥路径")](databinding-images/simple05-large.png#lightbox)
-5. 选择 "**管理的员工数**" 文本字段，并选中 "**绑定到**" 框，然后从下拉列表中选择 "**简单视图控制器**"。 接下来，输入**密钥路径**`self.Person.NumberOfEmployees`：
+5. 选择 "**管理的员工数**" 文本字段，并选中 "**绑定到**" 框，然后从下拉列表中选择 "**简单视图控制器**"。 接下来，输入 `self.Person.NumberOfEmployees` 作为**密钥路径**：
 
     [![输入密钥路径](databinding-images/simple06.png "输入密钥路径")](databinding-images/simple06-large.png#lightbox)
 6. 如果员工不是经理，我们需要隐藏 "托管标签" 和 "文本字段" 的 "员工数"。
-7. 选择 "**管理的员工数**" 标签，展开**隐藏**的 Turndown 并选中 "**绑定到**" 框，然后从下拉列表中选择 "**简单视图控制器**"。 接下来，输入**密钥路径**`self.Person.isManager`：
+7. 选择 "**管理的员工数**" 标签，展开**隐藏**的 Turndown 并选中 "**绑定到**" 框，然后从下拉列表中选择 "**简单视图控制器**"。 接下来，输入 `self.Person.isManager` 作为**密钥路径**：
 
     [![输入密钥路径](databinding-images/simple07.png "输入密钥路径")](databinding-images/simple07-large.png#lightbox)
-8. 从 "**值变压器**" 下拉列表中选择 `NSNegateBoolean`：
+8. `NSNegateBoolean`从 "**值转换器**" 下拉列表中选择：
 
     ![选择 NSNegateBoolean 键转换](databinding-images/simple08.png "选择 NSNegateBoolean 键转换")
-9. 这会通知数据绑定，如果 `isManager` 属性的值 `false`，则会隐藏标签。
+9. 此属性的值为时，通知数据绑定标签将隐藏 `isManager` `false` 。
 10. 对于 "**员工管理**的文本" 字段，重复步骤7和8。
 11. 保存更改并返回到 Visual Studio for Mac 以与 Xcode 同步。
 
-如果运行应用程序，`Person` 属性中的值将自动填充我们的窗体：
+如果运行应用程序，属性中的值 `Person` 将自动填充我们的窗体：
 
 [![显示自动填充的窗体](databinding-images/simple09.png "显示自动填充的窗体")](databinding-images/simple09-large.png#lightbox)
 
-用户对窗体所做的任何更改都将写回到视图控制器中的 `Person` 属性。 例如，取消选中**员工是经理**更新 `PersonModel` 的 `Person` 实例，并且会自动隐藏 "**受管理的员工数**" 标签和 "文本" 字段（通过数据绑定）：
+用户对窗体所做的任何更改都将写回到 `Person` 视图控制器中的属性。 例如，取消选中**员工是经理**更新的 `Person` 实例 `PersonModel` ，并且会自动隐藏 "**员工管理**的标签" 和 "文本" 字段的数量（通过数据绑定）：
 
 [![隐藏非经理的员工数](databinding-images/simple10.png "隐藏非经理的员工数")](databinding-images/simple10-large.png#lightbox)
 
-<a name="Table_View_Data_Binding" />
+<a name="Table_View_Data_Binding"></a>
 
 ### <a name="table-view-data-binding"></a>表视图数据绑定
 
 现在我们已经有了数据绑定基础知识，接下来让我们通过使用_数组控制器_和表视图的数据绑定来了解更复杂的数据绑定任务。 有关使用表视图的详细信息，请参阅我们的[表视图](~/mac/user-interface/table-view.md)文档。
 
-首先，让我们将新的**视图控制器**添加到 Interface Builder 中的**主情节提要**文件，并将其类命名 `TableViewController`：
+首先，让我们将新的**视图控制器**添加到 Interface Builder 中的**主情节提要**文件，并为其类命名 `TableViewController` ：
 
 [![添加新的视图控制器](databinding-images/table01.png "添加新的视图控制器")](databinding-images/table01-large.png#lightbox)
 
-接下来，让我们编辑**TableViewController.cs**文件（已自动添加到项目中），并公开 `PersonModel` 类的数组（`NSArray`），我们将把窗体数据绑定到该文件。 添加以下代码：
+接下来，让我们编辑**TableViewController.cs**文件（已自动添加到我们的项目），并公开要将 `NSArray` `PersonModel` 窗体数据绑定到的类的数组（）。 添加以下代码：
 
 ```csharp
 private NSMutableArray _people = new NSMutableArray();
@@ -548,7 +548,7 @@ public void SetPeople(NSMutableArray array) {
 }
 ```
 
-就像我们在 "[定义数据模型](#Defining_your_Data_Model)" 一节中的 "`PersonModel`" 类上所做的那样，我们公开了四个特殊命名的公共方法，以便数组控制器和从我们的 `PersonModels`集合中读取和写入数据。
+就像我们在 `PersonModel` "[定义数据模型](#Defining_your_Data_Model)" 一节中的类上所做的那样，我们公开了四个特殊命名的公共方法，以便数组控制器和从集合中读取和写入数据 `PersonModels` 。
 
 接下来，在加载视图时，需要用以下代码填充数组：
 
@@ -582,47 +582,47 @@ public override void AwakeFromNib ()
 2. 在**接口层次结构**中选择 "**数组控制器**"，并切换到 "**属性检查器**"：
 
     [![选择特性检查器](databinding-images/table04.png "选择特性检查器")](databinding-images/table04-large.png#lightbox)
-3. 为 "**类名称**" 输入 `PersonModel`，单击**加号**按钮并添加三个键。 `Name`、`Occupation` 和 `isManager`命名它们：
+3. `PersonModel`为 "**类名称**" 输入，单击**加号**按钮并添加三个键。 将其 `Name` 命名 `Occupation` 为，并 `isManager` ：
 
     ![添加所需的密钥路径](databinding-images/table05.png "添加所需的密钥路径")
 4. 这会告知数组控制器它所管理的数组，以及应公开的属性（通过键）。
-5. 切换到 "**绑定" 检查器**，然后在 "**内容数组**" 下选择 "**绑定到**" 和**表视图控制器**。 输入**模型键路径**`self.personModelArray`：
+5. 切换到 "**绑定" 检查器**，然后在 "**内容数组**" 下选择 "**绑定到**" 和**表视图控制器**。 输入**模型密钥路径** `self.personModelArray` ：
 
     ![输入密钥路径](databinding-images/table06.png "输入密钥路径")
-6. 这会将数组控制器与我们在视图控制器上公开的 `PersonModels` 数组联系在一起。
+6. 这会将数组控制器与 `PersonModels` 我们在视图控制器上公开的数组进行联系。
 
 现在，我们需要将表视图绑定到数组控制器，请执行以下操作：
 
 1. 选择表视图和**绑定检查器**：
 
     [![选择绑定检查器](databinding-images/table07.png "选择绑定检查器")](databinding-images/table07-large.png#lightbox)
-2. 在**表内容**turndown 下，选择 "**绑定到**" 和 "**数组控制器**"。 输入**控制器密钥**字段 `arrangedObjects`：
+2. 在**表内容**turndown 下，选择 "**绑定到**" 和 "**数组控制器**"。 `arrangedObjects`对于**控制器密钥**字段，请输入：
 
     ![定义控制器密钥](databinding-images/table08.png "定义控制器密钥")
-3. 选择 " **Employee** " 列下的**表视图单元**。 在 "**绑定" 检查器**的**值**"turndown" 下，选择 "**绑定到**" 和 "**表格单元" 视图**。 输入**模型键路径**`objectValue.Name`：
+3. 选择 " **Employee** " 列下的**表视图单元**。 在 "**绑定" 检查器**的**值**"turndown" 下，选择 "**绑定到**" 和 "**表格单元" 视图**。 `objectValue.Name`对于**模型键路径**，请输入：
 
     [![设置模型键路径](databinding-images/table09.png "设置模型键路径")](databinding-images/table09-large.png#lightbox)
-4. `objectValue` 是数组控制器正在管理的数组中的当前 `PersonModel`。
-5. 选择 "**职业**" 列下的**表视图单元**。 在 "**绑定" 检查器**的**值**"turndown" 下，选择 "**绑定到**" 和 "**表格单元" 视图**。 输入**模型键路径**`objectValue.Occupation`：
+4. `objectValue`是数组 `PersonModel` 控制器正在管理的数组中的当前。
+5. 选择 "**职业**" 列下的**表视图单元**。 在 "**绑定" 检查器**的**值**"turndown" 下，选择 "**绑定到**" 和 "**表格单元" 视图**。 `objectValue.Occupation`对于**模型键路径**，请输入：
 
     [![设置模型键路径](databinding-images/table10.png "设置模型键路径")](databinding-images/table10-large.png#lightbox)
 6. 保存更改并返回到 Visual Studio for Mac 以与 Xcode 同步。
 
-如果运行该应用程序，将用 `PersonModels`数组填充该表：
+如果运行该应用程序，则表中将填充 `PersonModels` 以下数组：
 
 [![运行应用程序](databinding-images/table11.png "运行应用程序")](databinding-images/table11-large.png#lightbox)
 
-<a name="Outline_View_Data_Binding" />
+<a name="Outline_View_Data_Binding"></a>
 
 ### <a name="outline-view-data-binding"></a>数据绑定大纲视图
 
 针对大纲视图的数据绑定非常类似于对表视图进行绑定。 主要区别在于，我们将使用**树控制器**而不是**数组控制器**将绑定数据提供给大纲视图。 有关使用大纲视图的详细信息，请参阅[大纲视图](~/mac/user-interface/outline-view.md)文档。
 
-首先，让我们将新的**视图控制器**添加到 Interface Builder 中的**主情节提要**文件，并将其类命名 `OutlineViewController`：
+首先，让我们将新的**视图控制器**添加到 Interface Builder 中的**主情节提要**文件，并为其类命名 `OutlineViewController` ：
 
 [![添加新的视图控制器](databinding-images/outline01.png "添加新的视图控制器")](databinding-images/outline01-large.png#lightbox)
 
-接下来，让我们编辑**OutlineViewController.cs**文件（已自动添加到项目中），并公开 `PersonModel` 类的数组（`NSArray`），我们将把窗体数据绑定到该文件。 添加以下代码：
+接下来，让我们编辑**OutlineViewController.cs**文件（已自动添加到我们的项目），并公开要将 `NSArray` `PersonModel` 窗体数据绑定到的类的数组（）。 添加以下代码：
 
 ```csharp
 private NSMutableArray _people = new NSMutableArray();
@@ -663,7 +663,7 @@ public void SetPeople(NSMutableArray array) {
 }
 ```
 
-就像我们在 "[定义数据模型](#Defining_your_Data_Model)" 一节中的 "`PersonModel`" 类上所做的那样，我们公开了四个特殊命名的公共方法，以便树控制器和从我们的 `PersonModels`集合中读取和写入数据。
+就像我们在 `PersonModel` "[定义数据模型](#Defining_your_Data_Model)" 一节中的类上所做的那样，我们公开了四个特殊命名的公共方法，以便树控制器和从集合中读取和写入数据 `PersonModels` 。
 
 接下来，在加载视图时，需要用以下代码填充数组：
 
@@ -700,37 +700,37 @@ public override void AwakeFromNib ()
 2. 选择**接口层次结构**中的**树控制器**并切换到 "**属性检查器**"：
 
     [![选择特性检查器](databinding-images/outline04.png "选择特性检查器")](databinding-images/outline04-large.png#lightbox)
-3. 为 "**类名称**" 输入 `PersonModel`，单击**加号**按钮并添加三个键。 `Name`、`Occupation` 和 `isManager`命名它们：
+3. `PersonModel`为 "**类名称**" 输入，单击**加号**按钮并添加三个键。 将其 `Name` 命名 `Occupation` 为，并 `isManager` ：
 
     ![添加所需的密钥路径](databinding-images/outline05.png "添加所需的密钥路径")
 4. 这会告知树控制器它所管理的数组，以及应公开的属性（通过键）。
-5. 在 "**树控制器**" 部分下，输入 "**子级**`personModelArray`"，在 "**计数**" 下输入 `NumberOfEmployees`，然后在 "**叶**" 下输入 `isEmployee`：
+5. 在 "**树控制器**" 部分下， `personModelArray` 为 "**子级**" 输入， `NumberOfEmployees` 在**Count** " `isEmployee` **叶**" 下输入并输入：
 
     ![设置树控制器密钥路径](databinding-images/outline05.png "设置树控制器密钥路径")
 6. 这会告知树控制器查找任何子节点的位置、有多少个子节点以及当前节点是否有子节点。
-7. 切换到**绑定检查器**，然后在 "**内容数组**" 下选择 "**绑定到**" 和**文件的 "所有者**"。 输入**模型键路径**`self.personModelArray`：
+7. 切换到**绑定检查器**，然后在 "**内容数组**" 下选择 "**绑定到**" 和**文件的 "所有者**"。 输入**模型密钥路径** `self.personModelArray` ：
 
     ![编辑密钥路径](databinding-images/outline06.png "编辑密钥路径")
-8. 这会将树控制器与我们在视图控制器上公开的 `PersonModels` 数组联系在一起。
+8. 这会将树控制器与 `PersonModels` 我们在视图控制器上公开的数组联系在一起。
 
 现在，我们需要将大纲视图绑定到树控制器，请执行以下操作：
 
 1. 选择大纲视图，并在**绑定检查器**中选择：
 
     [![选择绑定检查器](databinding-images/outline07.png "选择绑定检查器")](databinding-images/outline07-large.png#lightbox)
-2. 在**大纲视图内容**turndown 下，选择 "**绑定到**" 和 "**树控制器**"。 输入**控制器密钥**字段 `arrangedObjects`：
+2. 在**大纲视图内容**turndown 下，选择 "**绑定到**" 和 "**树控制器**"。 `arrangedObjects`对于**控制器密钥**字段，请输入：
 
     ![设置控制器密钥](databinding-images/outline08.png "设置控制器密钥")
-3. 选择 " **Employee** " 列下的**表视图单元**。 在 "**绑定" 检查器**的**值**"turndown" 下，选择 "**绑定到**" 和 "**表格单元" 视图**。 输入**模型键路径**`objectValue.Name`：
+3. 选择 " **Employee** " 列下的**表视图单元**。 在 "**绑定" 检查器**的**值**"turndown" 下，选择 "**绑定到**" 和 "**表格单元" 视图**。 `objectValue.Name`对于**模型键路径**，请输入：
 
     [![输入模型键路径](databinding-images/outline09.png "输入模型键路径")](databinding-images/outline09-large.png#lightbox)
-4. `objectValue` 是由树控制器管理的数组中的当前 `PersonModel`。
-5. 选择 "**职业**" 列下的**表视图单元**。 在 "**绑定" 检查器**的**值**"turndown" 下，选择 "**绑定到**" 和 "**表格单元" 视图**。 输入**模型键路径**`objectValue.Occupation`：
+4. `objectValue`是 `PersonModel` 由树控制器管理的数组中的当前。
+5. 选择 "**职业**" 列下的**表视图单元**。 在 "**绑定" 检查器**的**值**"turndown" 下，选择 "**绑定到**" 和 "**表格单元" 视图**。 `objectValue.Occupation`对于**模型键路径**，请输入：
 
     [![输入模型键路径](databinding-images/outline10.png "输入模型键路径")](databinding-images/outline10-large.png#lightbox)
 6. 保存更改并返回到 Visual Studio for Mac 以与 Xcode 同步。
 
-如果运行该应用程序，将用 `PersonModels`数组填充轮廓：
+如果运行该应用程序，将会在数组中填充大纲，其中包含 `PersonModels` ：
 
 [![运行应用程序](databinding-images/outline11.png "运行应用程序")](databinding-images/outline11-large.png#lightbox)
 
@@ -864,18 +864,18 @@ For more information on working with Collection Views, please see our [Collectio
 
 在数据绑定过程中，通常会有四个导致本机崩溃的主要原因：
 
-1. 数据模型未从 `NSObject`的 `NSObject` 或子类继承。
-2. 你未使用 `[Export("key-name")]` 特性将属性公开给目标-C。
-3. 未将对访问器的值所做的更改换行 `WillChangeValue` 和 `DidChangeValue` 方法调用（指定与 `Export` 特性相同的键）。
+1. 数据模型不从 `NSObject` 或的子类继承 `NSObject` 。
+2. 你未使用属性向目标-C 公开属性 `[Export("key-name")]` 。
+3. 您没有将对访问器的值所做的更改包装在 `WillChangeValue` 和 `DidChangeValue` 方法调用中（指定与特性相同的键 `Export` ）。
 4. Interface Builder 的**绑定检查器**中有错误或错误输入的键。
 
 ### <a name="decoding-a-crash"></a>解码故障
 
-让我们在数据绑定中导致本机崩溃，以便我们可以介绍如何查找并修复它。 在 Interface Builder 中，让我们将集合视图示例中第一个标签的绑定从 `Name` 更改为 `Title`：
+让我们在数据绑定中导致本机崩溃，以便我们可以介绍如何查找并修复它。 在 Interface Builder 中，让我们将集合视图示例中第一个标签的绑定从更改 `Name` 为 `Title` ：
 
 [![编辑绑定键](databinding-images/debug02.png "编辑绑定键")](databinding-images/debug02-large.png#lightbox)
 
-让我们保存更改，切换回 Visual Studio for Mac 以便与 Xcode 同步，然后运行我们的应用程序。 当显示集合视图时，应用程序会暂时崩溃，并显示 `SIGABRT` 错误（如 Visual Studio for Mac 中的**应用程序输出**中所示），因为 `PersonModel` 不会公开包含密钥 `Title`的属性：
+让我们保存更改，切换回 Visual Studio for Mac 以便与 Xcode 同步，然后运行我们的应用程序。 当显示集合视图时，应用程序会暂时崩溃并显示 `SIGABRT` 错误（如 Visual Studio for Mac 中的**应用程序输出**中所示），因为不 `PersonModel` 会公开具有以下键的属性 `Title` ：
 
 [![绑定错误示例](databinding-images/debug03.png "绑定错误示例")](databinding-images/debug03-large.png#lightbox)
 
@@ -883,11 +883,11 @@ For more information on working with Collection Views, please see our [Collectio
 
 [![在错误日志中查找问题](databinding-images/debug04.png "在错误日志中查找问题")](databinding-images/debug04-large.png#lightbox)
 
-该行告诉我们，键 `Title` 在要绑定到的对象上不存在。 如果将绑定更改回 Interface Builder 中的 `Name`，保存、同步、重新生成和运行，则应用程序将按预期运行，而不会出现问题。
+该行告诉我们，该键 `Title` 不在要绑定到的对象上。 如果在 Interface Builder 中将绑定改回为 `Name` ，则应用程序将按预期运行，而不会出现问题。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
-本文详细介绍了如何在 Xamarin. Mac 应用程序中使用数据绑定和键值编码。 首先，它介绍了如何使用C#键/值编码（KVC）和键-值观察（KVO）向目标-C 公开一个类。 接下来，该示例演示如何使用 KVO 兼容类并将其绑定到 Xcode 的 Interface Builder 中的 UI 元素。 最后，它使用**数组控制器**和**树控制器**展示复杂的数据绑定。
+本文详细介绍了如何在 Xamarin. Mac 应用程序中使用数据绑定和键值编码。 首先，它介绍如何使用键/值编码（KVC）和键-值观察（KVO）将 c # 类公开给目标-C。 接下来，该示例演示如何使用 KVO 兼容类并将其绑定到 Xcode 的 Interface Builder 中的 UI 元素。 最后，它使用**数组控制器**和**树控制器**展示复杂的数据绑定。
 
 ## <a name="related-links"></a>相关链接
 

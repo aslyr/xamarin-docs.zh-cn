@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4a9af91e2d48ba7ef7fdcdb4f8472e0aaafb7854
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138705"
+标题： "在企业应用中验证" 说明： "此章介绍了 eShopOnContainers 移动应用如何执行用户输入验证。 这包括指定验证规则、触发验证和显示验证错误。 "
+ms-chap： xamarin assetid：56e4f0fc-48d9-4033-91ec-173bb46a5e4d： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/07/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="validation-in-enterprise-apps"></a>企业应用程序中的验证
 
 任何接受用户输入的应用都应确保输入有效。 例如，应用程序可以检查输入中是否仅包含特定范围内的字符、是否为特定长度，或是否匹配特定格式。 如果没有验证，用户可以提供导致应用失败的数据。 验证将强制实施业务规则，并阻止攻击者注入恶意数据。
@@ -209,9 +195,7 @@ public bool Validate()
 
 [`Entry`](xref:Xamarin.Forms.Entry)控件将绑定到该 `UserName.Value` 实例的属性 `ValidatableObject<T>` ，并向该控件的 `Behaviors` 集合添加一个 `EventToCommandBehavior` 实例。 此行为 `ValidateUserNameCommand` 在响应中的 [ `TextChanged` ] 事件触发时执行，在中的 `Entry` 文本 `Entry` 发生更改时引发。 反过来， `ValidateUserNameCommand` 委托执行 `ValidateUserName` 方法，该方法对 `Validate` 实例执行方法 `ValidatableObject<T>` 。 因此，每次用户在控件中为用户名输入一个字符时 `Entry` ，都会对输入的数据进行验证。
 
-有关行为的详细信息，请参阅[实现行为](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors)。
-
-<a name="displaying_validation_errors" />
+有关行为的详细信息，请参阅[实现行为](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing-behaviors)。
 
 ## <a name="displaying-validation-errors"></a>显示验证错误
 
@@ -286,7 +270,7 @@ public static class LineColorBehavior
 }
 ```
 
-此方法的参数提供行为所附加到的控件的实例，以及附加属性的新旧值 `ApplyLineColor` 。 `EntryLineColorEffect`如果附加属性为，则将类添加到控件的 [`Effects`](xref:Xamarin.Forms.Element.Effects) 集合 `ApplyLineColor` `true` ，否则将从控件的集合中删除该类 `Effects` 。 有关行为的详细信息，请参阅[实现行为](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors)。
+此方法的参数提供行为所附加到的控件的实例，以及附加属性的新旧值 `ApplyLineColor` 。 `EntryLineColorEffect`如果附加属性为，则将类添加到控件的 [`Effects`](xref:Xamarin.Forms.Element.Effects) 集合 `ApplyLineColor` `true` ，否则将从控件的集合中删除该类 `Effects` 。 有关行为的详细信息，请参阅[实现行为](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing-behaviors)。
 
 `EntryLineColorEffect`子类为 [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) 类，如下面的代码示例所示：
 

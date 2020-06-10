@@ -1,34 +1,18 @@
 ---
-title: ''
-description: 本文介绍如何在不使用自定义呈现器的情况下设置特定于 iOS 的外观 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: eb44b7d756fee4fa4f452b79292effb45ab98154
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138510"
+标题： "添加特定于 iOS 的格式设置" 说明： "本文介绍了如何设置特定于 iOS 的外观，而无需使用 Xamarin.Forms 自定义呈现器。"
+ms-chap： xamarin assetid： CE50E207-D092-4D88-8439-1B51F178E7ED： xamarin 窗体作者： davidbritch： dabritch ms. 日期：01/29/2016 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="adding-ios-specific-formatting"></a>添加特定于 iOS 的格式
 
 设置特定于 iOS 格式的一种方法是为控件创建[自定义呈现](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)器，并为每个平台设置特定于平台的样式和颜色。
 
 控制 iOS 应用外观的其他选项 Xamarin.Forms 包括：
 
-- 配置 info.plist 中的显示选项[ **Info.plist**](#info-plist)
-- 通过[ `UIAppearance` API](#uiappearance)设置控件样式
+- 配置 info.plist 中的显示选项[ **Info.plist**](#customizing-infoplist)
+- 通过[ `UIAppearance` API](#uiappearance-api)设置控件样式
 
 下面讨论了这些备选方法。
-
-<a name="info-plist"/>
 
 ## <a name="customizing-infoplist"></a>自定义信息。 info.plist
 
@@ -62,8 +46,6 @@ nav.BarTextColor = Color.White;
 现在，当应用程序运行时，导航栏为绿色，其文本为白色（由于 Xamarin.Forms 格式设置） *，并且*由于特定于 iOS 的配置，状态栏文本也是白色的：
 
 ![](theme-images/status-white-sml.png "iOS Theming")
-
-<a name="uiappearance"/>
 
 ## <a name="uiappearance-api"></a>UIAppearance API
 

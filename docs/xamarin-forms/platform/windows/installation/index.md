@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 旧 Xamarin.Forms 解决方案（或在 macOS 上创建的解决方案）将不通用 Windows 平台项目，因此本文介绍如何向现有解决方案添加新的 UWP 项目 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 87ad78e97046eef7fd6c2e062fa9f84d92c11b38
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132205"
+标题： "设置 Windows 项目" 说明： "较早的 Xamarin.Forms 解决方案（或在 macOS 上创建的解决方案）将不包含通用 Windows 平台项目，因此本文介绍如何向现有解决方案添加新的 UWP 项目 Xamarin.Forms 。"
+ms-chap： xamarin assetid： A0774D2E-6994-4D91-84E8-DAB66FC92320： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/10/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="setup-windows-projects"></a>设置 Windows 项目
 
 _向现有解决方案中添加新的 Windows 项目 Xamarin.Forms_
@@ -108,9 +94,7 @@ LoadApplication(new YOUR_NAMESPACE.App());
 
 10. 添加任何本地资源（例如 图像文件）的文件。
 
-## <a name="troubleshooting"></a>故障排除
-
-<a name="target-invocation-exception" />
+## <a name="troubleshooting"></a>疑难解答
 
 ### <a name="target-invocation-exception-when-using-compile-with-net-native-tool-chain"></a>使用 "使用 .NET Native 工具链编译" 时的 "目标调用异常"
 

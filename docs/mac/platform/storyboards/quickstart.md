@@ -7,20 +7,20 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 2b8fede37354fd8a899a14c0710bf46e5a82b86a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 007d835b71c16a51cf5f6aca3c9fe1edd5be0034
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026200"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572385"
 ---
 # <a name="storyboards-in-xamarinmac-quick-start"></a>Xamarin 中的情节提要–快速入门
 
-若要快速了解如何使用情节提要定义 Xamarin 应用程序的用户界面，请启动新的 Xamarin Mac 项目。 选择“Mac” > “App” > “Cocoa 应用”，然后单击“下一步”按钮：
+若要快速了解如何使用情节提要定义 Xamarin 应用程序的用户界面，请启动新的 Xamarin Mac 项目。 选择 " **Mac**  >  **app**  >  **Cocoa 应用**"，并单击 "**下一步**" 按钮：
 
 [![](quickstart-images/qs01.png "Adding a new Cocoa App")](quickstart-images/qs01.png#lightbox)
 
-使用 `MacStoryboard` 的**应用程序名称**，然后单击 "**下一步**" 按钮：
+使用**应用名称** `MacStoryboard` ，并单击 "**下一步**" 按钮：
 
 [![](quickstart-images/qs02.png "Setting the App Name")](quickstart-images/qs02.png#lightbox)
 
@@ -28,7 +28,7 @@ ms.locfileid: "73026200"
 
 [![](quickstart-images/qs03.png "The project and solution names")](quickstart-images/qs03.png#lightbox)
 
-在**解决方案资源管理器**中，双击 `Main.storyboard` 文件以将其打开，以便在 Xcode 的 Interface Builder 中进行编辑：
+在**解决方案资源管理器**中，双击该 `Main.storyboard` 文件以将其打开，以便在 Xcode 的 Interface Builder 中进行编辑：
 
 [![](quickstart-images/qs04.png "Editing the storyboard in Xcode")](quickstart-images/qs04.png#lightbox)
 
@@ -38,7 +38,7 @@ ms.locfileid: "73026200"
 
 [![](quickstart-images/qs05.png "Removing the default view controller")](quickstart-images/qs05.png#lightbox)
 
-接下来，在 "**筛选器**" 区域中键入 `split`，选择垂直拆分视图控制器并将其拖动到_Design Surface_：
+接下来，在 `split` "**筛选器**" 区域中键入，选择垂直拆分视图控制器并将其拖到_Design Surface_：
 
 [![](quickstart-images/qs06.png "Searching for the split view controller")](quickstart-images/qs06.png#lightbox)
 
@@ -60,7 +60,7 @@ ms.locfileid: "73026200"
 
 [![](quickstart-images/qs10.png "An example of the app running")](quickstart-images/qs10.png#lightbox)
 
-由于我们要使用拆分视图的右侧作为检查器区域，因此，我们希望它具有较小的大小并允许折叠。 返回到 Xcode，并通过在 Design Surface 中选择并单击**大小检查器**来编辑右侧的视图。 从此处输入 `250`的**宽度**：
+由于我们要使用拆分视图的右侧作为检查器区域，因此，我们希望它具有较小的大小并允许折叠。 返回到 Xcode，并通过在 Design Surface 中选择并单击**大小检查器**来编辑右侧的视图。 从此处输入**宽度** `250` ：
 
 [![](quickstart-images/qs11.png "Setting the width")](quickstart-images/qs11.png#lightbox)
 
@@ -72,7 +72,7 @@ ms.locfileid: "73026200"
 
 [![](quickstart-images/qs13.png "An example of the app running")](quickstart-images/qs13.png#lightbox)
 
-<a name="Defining-a-Presentation-Segue" />
+<a name="Defining-a-Presentation-Segue"></a>
 
 ## <a name="defining-a-presentation-segue"></a>定义演示 Segue
 
@@ -94,7 +94,7 @@ ms.locfileid: "73026200"
 
 [![](quickstart-images/qs17.png "An example of the segue running")](quickstart-images/qs17.png#lightbox)
 
-<a name="Creating-App-Preferences" />
+<a name="Creating-App-Preferences"></a>
 
 ## <a name="creating-app-preferences"></a>创建应用首选项
 
@@ -120,7 +120,7 @@ ms.locfileid: "73026200"
 
 [![](quickstart-images/qs22.png "An example of the segue running")](quickstart-images/qs22.png#lightbox)
 
-你可能会注意到，这看起来不像标准的 macOS 应用首选项对话框窗口。 若要解决此问题，请在**解决方案资源管理器**中包含 Xamarin 应用程序 `Resources` 文件夹中的两个图像文件，并返回到 Xcode 的 Interface Builder。
+你可能会注意到，这看起来不像标准的 macOS 应用首选项对话框窗口。 若要解决此问题，请在解决方案资源管理器中包括 Xamarin 应用程序文件夹中的两个图像文件 `Resources` ，并返回到 Xcode 的 Interface Builder。 **Solution Explorer**
 
 选择选项卡视图控制器，并将其**样式**切换到**工具栏**： 
 

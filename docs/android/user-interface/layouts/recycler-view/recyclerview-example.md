@@ -7,48 +7,48 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/30/2018
-ms.openlocfilehash: 7266d13136dbfc858bc3c882cacb802d83c92f52
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 6093c983a80c53b4900bb26c3a7020724a59c06d
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028840"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571275"
 ---
 # <a name="a-basic-recyclerview-example"></a>基本 RecyclerView 示例
 
-为了了解 `RecyclerView` 在典型的应用程序中如何工作，本主题介绍了[RecyclerViewer](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-recyclerviewer)示例应用程序，这是一个使用 `RecyclerView` 来显示大量照片的简单代码示例： 
+为了了解 `RecyclerView` 典型应用程序中的工作原理，本主题介绍了[RecyclerViewer](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-recyclerviewer)示例应用，这是一个用于 `RecyclerView` 显示大量照片的简单代码示例： 
 
 [![使用 CardViews 显示照片的 RecyclerView 应用程序的两个屏幕截图](recyclerview-example-images/01-recyclerviewer-sml.png)](recyclerview-example-images/01-recyclerviewer.png#lightbox)
 
-**RecyclerViewer**使用[CardView](~/android/user-interface/controls/card-view.md)实现 `RecyclerView` 布局中的每个照片项。 由于 `RecyclerView`的性能优势，此示例应用程序能够平稳地快速滚动大量照片，而不会出现明显的延迟。
+**RecyclerViewer**使用[CardView](~/android/user-interface/controls/card-view.md)实现布局中的每个照片项 `RecyclerView` 。 由于性能方面的 `RecyclerView` 优势，此示例应用程序能够快速滚动大量照片，而不会出现明显的延迟。
 
 ### <a name="an-example-data-source"></a>示例数据源
 
-在此示例应用程序中，"相册" 数据源（由 `PhotoAlbum` 类表示）提供与项内容 `RecyclerView`。
-`PhotoAlbum` 是包含字幕的照片集合;当你对其进行实例化时，将获得一个现成的32照片集合：
+在此示例应用程序中，"相册" 数据源（由类表示 `PhotoAlbum` ）提供 `RecyclerView` 了项内容。
+`PhotoAlbum`带有字幕的照片集合;当你对其进行实例化时，将获得一个现成的32照片集合：
 
 ```csharp
 PhotoAlbum mPhotoAlbum = new PhotoAlbum ();
 ```
 
-`PhotoAlbum` 中的每个照片实例都公开了属性，这些属性可用于读取其图像资源 ID、`PhotoID`及其标题字符串 `Caption`。 照片集合经过组织，可以通过索引器访问每张照片。 例如，以下代码行访问集合中第十张照片的图像资源 ID 和标题：
+中的每个照片实例都 `PhotoAlbum` 公开了属性，这些属性允许您读取其图像资源 ID 及其 `PhotoID` 标题字符串 `Caption` 。 照片集合经过组织，可以通过索引器访问每张照片。 例如，以下代码行访问集合中第十张照片的图像资源 ID 和标题：
 
 ```csharp
 int imageId = mPhotoAlbum[9].ImageId;
 string caption = mPhotoAlbum[9].Caption;
 ```
 
-`PhotoAlbum` 还提供了一个 `RandomSwap` 方法，你可以调用该方法，将集合中的第一张照片替换为集合中其他地方随机选择的照片：
+`PhotoAlbum`还提供了一个 `RandomSwap` 方法，可以调用该方法，将集合中的第一个照片替换为集合中其他位置随机选择的照片：
 
 ```csharp
 mPhotoAlbum.RandomSwap ();
 ```
 
-由于 `PhotoAlbum` 的实现细节与理解 `RecyclerView`无关，因此此处不会提供 `PhotoAlbum` 源代码。 要 `PhotoAlbum` 的源代码可在[RecyclerViewer](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-recyclerviewer)示例应用程序的[PhotoAlbum.cs](https://github.com/xamarin/monodroid-samples/blob/master/android5.0/RecyclerViewer/RecyclerViewer/PhotoAlbum.cs)中找到。
+由于的实现细节 `PhotoAlbum` 与理解无关 `RecyclerView` ，因此 `PhotoAlbum` 此处不会显示源代码。 `PhotoAlbum` [RecyclerViewer](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-recyclerviewer)示例应用程序的[PhotoAlbum.cs](https://github.com/xamarin/monodroid-samples/blob/master/android5.0/RecyclerViewer/RecyclerViewer/PhotoAlbum.cs)中提供了源代码。
 
 ### <a name="layout-and-initialization"></a>布局和初始化
 
-布局文件**main.axml**包含 `LinearLayout`中的单个 `RecyclerView`：
+布局文件**main.axml**包含中的单个 `RecyclerView` `LinearLayout` ：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -64,7 +64,7 @@ mPhotoAlbum.RandomSwap ();
 </LinearLayout>
 ```
 
-请注意，必须使用完全限定的名称**v7** ，因为 `RecyclerView` 打包在支持库中。 `MainActivity` 的 `OnCreate` 方法初始化此布局，实例化适配器，并准备基础数据源：
+请注意，必须使用完全限定的名称**v7** ，因为 `RecyclerView` 会打包到支持库中。 的 `OnCreate` 方法 `MainActivity` 初始化此布局，实例化适配器，并准备基础数据源：
 
 ```csharp
 public class MainActivity : Activity
@@ -94,40 +94,40 @@ public class MainActivity : Activity
         mRecyclerView.SetAdapter (mAdapter);
 ```
 
-此代码执行以下操作：
+此代码将执行以下操作：
 
 1. 实例化 `PhotoAlbum` 数据源。
 
-2. 将唱片唱片集数据源传递到适配器的构造函数，`PhotoAlbumAdapter` （本指南稍后将对此进行定义）。 
+2. 将唱片集数据源传递到适配器的构造函数 `PhotoAlbumAdapter` （在本指南的后面部分中定义）。 
    请注意，将数据源作为参数传递给适配器的构造函数是一种最佳做法。 
 
-3. 从布局中获取 `RecyclerView`。
+3. `RecyclerView`从布局中获取。
 
-4. 通过调用 `RecyclerView` `SetAdapter` 方法将适配器插入 `RecyclerView` 实例，如上所示。
+4. 通过调用方法将适配器插入到实例中， `RecyclerView` `RecyclerView` `SetAdapter` 如上面所示。
 
 ### <a name="layout-manager"></a>布局管理器
 
-`RecyclerView` 中的每一项都由包含照片图像和照片标题的 `CardView` 组成（下面的 "[查看刀柄](#view-holder)" 部分中介绍了详细信息）。 预定义的 `LinearLayoutManager` 用于在垂直滚动排列中布局每个 `CardView`：
+中的每一项 `RecyclerView` 都由一个 `CardView` 包含照片图像和照片标题的组成（详细信息将在下面的 "[查看容器](#view-holder)" 部分中介绍）。 预定义 `LinearLayoutManager` 用于 `CardView` 在垂直滚动排列中布局每个：
 
 ```csharp
 mLayoutManager = new LinearLayoutManager (this);
 mRecyclerView.SetLayoutManager (mLayoutManager);
 ```
 
-此代码位于主活动的 `OnCreate` 方法中。 布局管理器的构造函数需要*上下文*，因此使用 `this` 传递 `MainActivity`，如上面所示。
+此代码位于主活动的方法中 `OnCreate` 。 布局管理器的构造函数需要*上下文*，因此 `MainActivity` 使用传递的是， `this` 如上所述。
 
-您可以插入自定义 `CardView` 的布局管理器，而不是使用预定义的 `LinearLayoutManager`，而是通过实现页面翻转动画效果来遍历照片集合，而不是使用预定义的。 稍后在本指南中，你将看到一个示例，说明如何通过在不同的布局管理器中进行交换来修改布局。
+可以不使用预定义的，而是 `LinearLayoutManager` 插入一个自定义的布局管理器，该管理器将并排显示两个 `CardView` 项，实现页面翻转动画效果以遍历照片集。 稍后在本指南中，你将看到一个示例，说明如何通过在不同的布局管理器中进行交换来修改布局。
 
-<a name="view-holder" />
+<a name="view-holder"></a>
 
 ### <a name="view-holder"></a>查看刀柄
 
-视图持有者类称为 `PhotoViewHolder`。 每个 `PhotoViewHolder` 实例都包含对关联行项的 `ImageView` 和 `TextView` 的引用，该项在如下所示的 `CardView` 中布局：
+调用视图持有者类 `PhotoViewHolder` 。 每个 `PhotoViewHolder` 实例都包含对 `ImageView` 关联行项的和的引用 `TextView` ，这些行项在中 `CardView` 按图解的方式进行布局：
 
-[包含 ImageView 和 TextView 的 CardView![关系图](recyclerview-example-images/02-cardview-layout-sml.png)](recyclerview-example-images/02-cardview-layout.png#lightbox)
+[![包含 ImageView 和 TextView 的 CardView 关系图](recyclerview-example-images/02-cardview-layout-sml.png)](recyclerview-example-images/02-cardview-layout.png#lightbox)
 
-`PhotoViewHolder` 派生自 `RecyclerView.ViewHolder`，其中包含用于存储对 `ImageView` 的引用的属性，以及显示在上述布局中的 `TextView`。
-`PhotoViewHolder` 包括两个属性和一个构造函数：
+`PhotoViewHolder`派生自 `RecyclerView.ViewHolder` ，其中包含用于存储对的引用 `ImageView` 并 `TextView` 显示在上述布局中的属性。
+`PhotoViewHolder`包含两个属性和一个构造函数：
 
 ```csharp
 public class PhotoViewHolder : RecyclerView.ViewHolder
@@ -144,15 +144,15 @@ public class PhotoViewHolder : RecyclerView.ViewHolder
 }
 ```
 
-在此代码示例中，将向 `PhotoViewHolder` 包装的父项视图（`CardView`）传递引用 `PhotoViewHolder` 构造函数。 请注意，始终将父项视图转发到基构造函数。 `PhotoViewHolder` 构造函数对父项视图调用 `FindViewById`，以查找其每个子视图引用、`ImageView` 和 `TextView`，并分别将结果存储在 `Image` 和 `Caption` 属性中。 该适配器在更新此 `CardView`的子视图和新数据时，将从这些属性中检索视图引用。
+在此代码示例中， `PhotoViewHolder` 构造函数向包装的父项视图（）传递引用 `CardView` `PhotoViewHolder` 。 请注意，始终将父项视图转发到基构造函数。 `PhotoViewHolder`构造函数对 `FindViewById` 父项视图调用以定位其每个子视图引用， `ImageView` 并分别将 `TextView` 结果存储在 `Image` 和属性中 `Caption` 。 以后，适配器将在用新数据更新此子视图时从这些属性中检索视图引用 `CardView` 。
 
-有关 `RecyclerView.ViewHolder`的详细信息，请参阅[RecyclerView. ViewHolder 类引用](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html)。
+有关的详细信息 `RecyclerView.ViewHolder` ，请参阅[RecyclerView. ViewHolder 类引用](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html)。
 
 ### <a name="adapter"></a>适配器
 
-适配器使用特定照片的数据加载每个 `RecyclerView` 行。 例如，对于位于第*p*行的给定照片，适配器将在数据源中的位置*p*处查找关联的数据，并将此数据复制到 `RecyclerView` 集合中位置*p*处的行项。 适配器使用视图持有者查找 `ImageView` 的引用并在该位置 `TextView`，因此当用户滚动照片集合并重复使用视图时，无需对这些视图重复调用 `FindViewById`。
+适配器 `RecyclerView` 使用特定照片的数据加载每一行。 例如，对于位于第*p*行的给定照片，适配器会在数据源中的位置*p*找到关联的数据，并将此数据复制到集合中位于*p*位置的行项 `RecyclerView` 。 适配器使用视图持有者在该位置查找和的引用 `ImageView` ， `TextView` 这样 `FindViewById` 当用户滚动照片集合并重复使用视图时，无需重复调用这些视图。
 
-在**RecyclerViewer**中，适配器类派生自 `RecyclerView.Adapter` 来创建 `PhotoAlbumAdapter`：
+在**RecyclerViewer**中，适配器类从派生， `RecyclerView.Adapter` 以创建 `PhotoAlbumAdapter` ：
 
 ```csharp
 public class PhotoAlbumAdapter : RecyclerView.Adapter
@@ -167,21 +167,21 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 }
 ```
 
-`mPhotoAlbum` 成员包含传入构造函数的数据源（相册）;构造函数将相册复制到此成员变量中。 实现以下必需 `RecyclerView.Adapter` 方法：
+`mPhotoAlbum`成员包含传入构造函数的数据源（相册）; 构造函数将相册复制到此成员变量中。 实现以下必需 `RecyclerView.Adapter` 方法：
 
-- **`OnCreateViewHolder`** &ndash; 实例化项布局文件和视图持有者。
+- **`OnCreateViewHolder`**&ndash;实例化项布局文件和视图持有者。
 
-- **`OnBindViewHolder`** &ndash; 将位于指定位置的数据加载到其引用存储在给定视图持有者中的视图中。
+- **`OnBindViewHolder`** 将 &ndash; 位于指定位置的数据加载到其引用存储在给定视图持有者中的视图中。
 
-- **`ItemCount`** &ndash; 返回数据源中的项数。
+- **`ItemCount`**&ndash;返回数据源中的项数。
 
-布局管理器在 `RecyclerView`中定位项时调用这些方法。 以下各节将对这些方法的实现进行了检查。
+布局管理器在定位中的项时调用这些方法 `RecyclerView` 。 以下各节将对这些方法的实现进行了检查。
 
 #### <a name="oncreateviewholder"></a>OnCreateViewHolder
 
-当 `RecyclerView` 需要新的视图持有者来表示项时，布局管理器会调用 `OnCreateViewHolder`。 `OnCreateViewHolder` 从视图的布局文件增加项目视图，并在新 `PhotoViewHolder` 实例中包装视图。 `PhotoViewHolder` 构造函数在布局中查找并存储对子视图的引用，如前面的 "[查看刀柄](#view-holder)" 中所述。
+`OnCreateViewHolder`当 `RecyclerView` 需要新的视图持有者来表示项时，布局管理器会调用。 `OnCreateViewHolder`从视图的布局文件中增加项视图，并在新的实例中包装视图 `PhotoViewHolder` 。 `PhotoViewHolder`构造函数在布局中查找并存储对子视图的引用，如前面的 "[查看容器](#view-holder)" 中所述。
 
-每个行项由一个 `CardView` 表示，其中包含 `ImageView` （对于照片）和 `TextView` （对于标题）。 此布局位于 PhotoCardView 文件中 **。 main.axml**：
+每个行项由一个 `CardView` 包含 `ImageView` （对于照片）和一个 `TextView` （用于标题）的表示。 此布局位于 PhotoCardView 文件中 **。 main.axml**：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -219,8 +219,8 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 </FrameLayout>
 ```
 
-此布局表示 `RecyclerView`中的单个行项。 `OnBindViewHolder` 方法（如下所述）将数据从数据源复制到此布局的 `ImageView` 和 `TextView`。
-`OnCreateViewHolder` 在 `RecyclerView` 中为给定照片位置增加此布局，并实例化一个新的 `PhotoViewHolder` 实例（该实例在关联 `TextView` 布局中查找并缓存对 `ImageView` 和 `CardView` 子视图的引用）:
+此布局表示中的单个行项 `RecyclerView` 。 `OnBindViewHolder`方法（如下所述）将数据从数据源复制到 `ImageView` 此布局的和中 `TextView` 。
+`OnCreateViewHolder`为中的给定照片位置增加此布局 `RecyclerView` ，并实例化一个新 `PhotoViewHolder` 实例（该实例 `ImageView` 在关联布局中查找并缓存对和 `TextView` 子视图的引用 `CardView` ）：
 
 ```csharp
 public override RecyclerView.ViewHolder
@@ -237,11 +237,11 @@ public override RecyclerView.ViewHolder
 
 ```
 
-生成的视图持有者实例 `vh`返回到调用方（布局管理器）。
+生成的视图持有者实例 `vh` 返回到调用方（布局管理器）。
 
 #### <a name="onbindviewholder"></a>OnBindViewHolder
 
-当布局管理器准备好在 `RecyclerView`的可见屏幕区域中显示特定视图时，它将调用适配器的 `OnBindViewHolder` 方法，以便使用数据源中的内容来填充指定行位置处的项。 `OnBindViewHolder` 获取指定行位置（照片的图像资源和照片标题的字符串）的照片信息，并将此数据复制到关联的视图中。 视图通过存储在视图容器对象中的引用来定位（通过 `holder` 参数传入）：
+当布局管理器准备好在的可视屏幕区域中显示特定视图时 `RecyclerView` ，它会调用适配器的 `OnBindViewHolder` 方法，以使用来自数据源的内容来填充位于指定行位置的项。 `OnBindViewHolder`获取指定行位置（照片的图像资源和照片标题的字符串）的照片信息，并将此数据复制到关联的视图中。 视图通过存储在视图容器对象中的引用来定位（通过 `holder` 参数传入）：
 
 ```csharp
 public override void
@@ -257,14 +257,14 @@ public override void
 }
 ```
 
-在使用传入的视图持有者对象之前，必须先将该对象强制转换为派生的视图持有者类型（在本例中为 `PhotoViewHolder`）。
-适配器将图像资源加载到视图持有者的 `Image` 属性所引用的视图中，并将标题文本复制到视图持有者的 `Caption` 属性所引用的视图中。 这会将关联视图与其数据*绑定*在一起。
+在使用传入的视图持有者对象之前，必须先将该对象强制转换为派生的视图持有者类型（在本例中为 `PhotoViewHolder` ）。
+适配器将图像资源加载到视图持有者的属性所引用的视图 `Image` 中，并将标题文本复制到视图持有者的属性所引用的视图中 `Caption` 。 这会将关联视图与其数据*绑定*在一起。
 
-请注意，`OnBindViewHolder` 是直接处理数据结构的代码。 在这种情况下，`OnBindViewHolder` 了解如何将 `RecyclerView` 项位置映射到数据源中其关联数据项。 在这种情况下，映射很简单，因为位置可用作相册中的数组索引;但是，更复杂的数据源可能需要额外的代码来建立此类映射。
+请注意， `OnBindViewHolder` 是直接处理数据结构的代码。 在这种情况下， `OnBindViewHolder` 了解如何将 `RecyclerView` 项位置映射到数据源中其关联数据项。 在这种情况下，映射很简单，因为位置可用作相册中的数组索引;但是，更复杂的数据源可能需要额外的代码来建立此类映射。
 
 #### <a name="itemcount"></a>ItemCount
 
-`ItemCount` 方法返回数据集合中的项数。 在示例照片查看器应用程序中，项计数是相册中照片的数目：
+`ItemCount`方法返回数据集合中的项数。 在示例照片查看器应用程序中，项计数是相册中照片的数目：
 
 ```csharp
 public override int ItemCount
@@ -273,11 +273,11 @@ public override int ItemCount
 }
 ```
 
-有关 `RecyclerView.Adapter`的详细信息，请参阅[RecyclerView 类引用](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html)。
+有关的详细信息 `RecyclerView.Adapter` ，请参阅[RecyclerView 类引用](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html)。
 
 ### <a name="putting-it-all-together"></a>将其全部放在一起
 
-示例照片应用的生成的 `RecyclerView` 实现包括创建数据源、布局管理器和适配器的 `MainActivity` 代码。 `MainActivity` 创建 `mRecyclerView` 实例，实例化数据源和适配器，并插入布局管理器和适配器：
+`RecyclerView`示例照片应用程序的结果实现包括 `MainActivity` 创建数据源、布局管理器和适配器的代码。 `MainActivity`创建 `mRecyclerView` 实例，实例化数据源和适配器，并插入布局管理器和适配器：
 
 ```csharp
 public class MainActivity : Activity
@@ -306,7 +306,7 @@ public class MainActivity : Activity
 
 ```
 
-`PhotoViewHolder` 查找并缓存视图引用：
+`PhotoViewHolder`查找并缓存视图引用：
 
 ```csharp
 public class PhotoViewHolder : RecyclerView.ViewHolder
@@ -323,7 +323,7 @@ public class PhotoViewHolder : RecyclerView.ViewHolder
 }
 ```
 
-`PhotoAlbumAdapter` 实现了三个必需的方法重写：
+`PhotoAlbumAdapter`实现三个所需的方法重写：
 
 ```csharp
 public class PhotoAlbumAdapter : RecyclerView.Adapter
@@ -360,9 +360,9 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 
 编译并运行此代码时，它将创建基本照片查看应用，如以下屏幕截图所示：
 
-[通过垂直滚动照片卡![两个屏幕截图](recyclerview-example-images/03-recyclerviewer-basic-sml.png)](recyclerview-example-images/03-recyclerviewer-basic.png#lightbox)
+[![具有垂直滚动照片卡的照片查看应用的两个屏幕截图](recyclerview-example-images/03-recyclerviewer-basic-sml.png)](recyclerview-example-images/03-recyclerviewer-basic.png#lightbox)
 
-如果未绘制阴影（如上面的屏幕截图中所示），请编辑**Properties/androidmanifest.xml** ，并将以下属性设置添加到 `<application>` 元素：
+如果未绘制阴影（如上面的屏幕截图所示），请编辑**Properties/androidmanifest.xml** ，并将以下属性设置添加到 `<application>` 元素：
 
 ```xml
 android:hardwareAccelerated="true"
@@ -372,20 +372,20 @@ android:hardwareAccelerated="true"
 
 ### <a name="changing-the-layoutmanager"></a>更改 LayoutManager
 
-由于 `RecyclerView`的灵活性，因此可轻松地将应用程序修改为使用不同的布局管理器。 在下面的示例中，将对其进行修改，以显示带有水平滚动而不是垂直线性布局的网格布局的相册。 为此，布局管理器实例化将被修改为使用 `GridLayoutManager` 如下所示：
+由于 `RecyclerView` 非常灵活，因此可轻松修改应用以使用不同的布局管理器。 在下面的示例中，将对其进行修改，以显示带有水平滚动而不是垂直线性布局的网格布局的相册。 为此，布局管理器实例化将被修改为使用，如下所示 `GridLayoutManager` ：
 
 ```csharp
 mLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.Horizontal, false);
 ```
 
-此代码更改将垂直 `LinearLayoutManager` 替换为一个 `GridLayoutManager`，该网格显示由两行组成的网格，这两行沿水平方向滚动。 再次编译并运行应用程序时，将看到照片显示在网格中，并且滚动是水平而不是垂直的：
+此代码更改将垂直替换为 `LinearLayoutManager` 一个 `GridLayoutManager` ，它表示由两行组成的网格，该网格沿水平方向滚动。 再次编译并运行应用程序时，将看到照片显示在网格中，并且滚动是水平而不是垂直的：
 
-[在网格中使用水平滚动照片的应用的![示例屏幕截图](recyclerview-example-images/04-gridlayoutmanager-sml.png)](recyclerview-example-images/04-gridlayoutmanager.png#lightbox)
+[![网格中水平滚动照片的应用的示例屏幕截图](recyclerview-example-images/04-gridlayoutmanager-sml.png)](recyclerview-example-images/04-gridlayoutmanager.png#lightbox)
 
 通过只更改一行代码，可以修改照片查看应用程序，以使用具有不同行为的不同布局。
 请注意，适配器代码和布局 XML 都必须修改以更改布局样式。 
 
-在下一主题中，[扩展了 RecyclerView 示例](~/android/user-interface/layouts/recycler-view/extending-the-example.md)，扩展了此基本示例应用程序以处理项单击事件，并在基础数据源更改时更新 `RecyclerView`。
+在下一主题中，[扩展了 RecyclerView 示例](~/android/user-interface/layouts/recycler-view/extending-the-example.md)，扩展了此基本示例应用程序以处理项单击事件，并在 `RecyclerView` 基础数据源发生更改时进行更新。
 
 ## <a name="related-links"></a>相关链接
 

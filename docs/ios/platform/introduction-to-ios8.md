@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 9353cffd924688058c1495b9258cc7f0e0ce7b82
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 1fae83f60f819da9767e14612a7f778dc49ddf52
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306187"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84564624"
 ---
 # <a name="introduction-to-ios-8"></a>iOS 8 简介
 
@@ -44,13 +44,13 @@ iOS 8 已帮助将 Apple 牢固地植物，而 iOS 设备则通过使用 HomeKit
 
 借助 HomeKit，第三方应用和 Siri 可以发现附件，并将其添加到其个人主页配置数据库，编辑和操作这些数据，以及与附件及其服务进行沟通以执行操作。
 
-### <a name="configuration"></a>配置
+### <a name="configuration"></a>Configuration
 
 下图显示了 HomeKit 附件配置的基本层次结构：
 
 ![](introduction-to-ios8-images/image1.png "This diagram shows the basic hierarchy of the configuration of HomeKit accessories")
 
-若要开始 HomeKit，开发人员需要确保其预配配置文件已选择 HomeKit 服务。 Apple 还为开发人员提供了用于 Xcode 的 HomeKit 模拟器外接程序。 可在[Apple 开发人员中心](https://developer.apple.com/downloads/index.action)的 `Hardware IO Tools for Xcode`下找到此项。 
+若要开始 HomeKit，开发人员需要确保其预配配置文件已选择 HomeKit 服务。 Apple 还为开发人员提供了用于 Xcode 的 HomeKit 模拟器外接程序。 可在[Apple 开发人员中心](https://developer.apple.com/downloads/index.action)的下找到此项 `Hardware IO Tools for Xcode` 。 
 
 有关详细信息，请参阅我们的[HomeKit](~/ios/platform/homekit.md)指南。
 
@@ -68,7 +68,7 @@ HealthKit 是 iOS 8 中引入的一个框架，可为与运行状况相关的信
 
 创建应用扩展的第一步是定义正确的扩展点，这对于确保正确 Api 的行为和可用性非常重要。 若要在 Visual Studio for Mac 中创建应用扩展，请将新项目添加到解决方案中，将其添加到现有应用程序。
 
-在 "**新建项目**" 对话框中**C#** ，导航到 > **iOS** > **Unified API** > **扩展**，如以下屏幕截图中所示：
+在 "**新建项目**" 对话框中，导航到**c #**  >  **iOS**  >  **Unified API**  >  **扩展**，如以下屏幕截图中所示：
 
 ![](introduction-to-ios8-images/image2.png "Creating a new extension")
 
@@ -91,7 +91,7 @@ HealthKit 是 iOS 8 中引入的一个框架，可为与运行状况相关的信
 
 首先，它通过使用新的密钥链访问控制列表（Acl）来帮助现有的密钥链服务。 用户指纹的身份验证成功后，可以使用密钥链数据解除锁定。
 
-其次，Localauthentication.framework 提供了两种方法来对应用程序进行本地身份验证。 开发人员应使用 `CanEvaluatePolicy` 来确定设备是否能够接受 Touch ID，然后 `EvaluatePolicy` 启动身份验证操作。
+其次，Localauthentication.framework 提供了两种方法来对应用程序进行本地身份验证。 开发人员应使用 `CanEvaluatePolicy` 来确定设备是否能够接受 TOUCH ID，然后再 `EvaluatePolicy` 开始身份验证操作。
 
 有关 Touch ID 并了解如何将其集成到 Xamarin iOS 应用程序的详细信息，请参阅[xamarin 指南中的 TOUCH id 和人脸 id](~/ios/platform/touch-id-face-id.md) 。
 
@@ -112,7 +112,7 @@ HealthKit 是 iOS 8 中引入的一个框架，可为与运行状况相关的信
 ## <a name="unified-storyboards"></a>统一的情节提要
 iOS 8 包含用于创建用户界面（统一情节提要）的一种新易用的机制。 使用单个情节提要来涵盖所有不同的硬件屏幕大小，可以在真正的 "设计一次，使用多个" 样式创建快速、响应性视图。
 
-在 iOS8 之前，开发人员使用 `UIInterfaceOrientation` 来区分纵向模式和横向模式，并 `UIInterfaceIdiom` 来区分 iOS 设备。 在 iOS8 中，不再需要为 iPhone 和 iPad 设备创建单独的情节提要，方向和设备是使用*大小类*确定的。
+在 iOS8 之前，开发人员用 `UIInterfaceOrientation` 来区分纵向模式和横向模式，并 `UIInterfaceIdiom` 区分 iOS 设备。 在 iOS8 中，不再需要为 iPhone 和 iPad 设备创建单独的情节提要，方向和设备是使用*大小类*确定的。
 
 每个设备都是由大小类在垂直轴和水平轴中定义的，在 iOS 8 中有两种类型的大小类：
 
@@ -132,7 +132,7 @@ iOS 8 包含用于创建用户界面（统一情节提要）的一种新易用�
 
 ## <a name="games"></a>游戏
 
-<a name="scenekit" />
+<a name="scenekit"></a>
 
 ### <a name="scene-kit"></a>场景工具包
 
@@ -140,7 +140,7 @@ iOS 8 包含用于创建用户界面（统一情节提要）的一种新易用�
 
 有关详细信息，请参阅我们的[SceneKit](~/ios/platform/gaming/scenekit.md)文档。
 
-<a name="spritekit" />
+<a name="spritekit"></a>
 
 ### <a name="sprite-kit"></a>动画工具包
 
@@ -151,7 +151,7 @@ iOS 8 包含用于创建用户界面（统一情节提要）的一种新易用�
 ## <a name="other-changes"></a>其他更改
 除了上面所述的 iOS 8 中的主要更改，Apple 还更新了多个现有框架。 下面详细介绍了这些内容：
 
-- **[核心映像](https://developer.apple.com/library/prerelease/ios/documentation/GraphicsImaging/Reference/CoreImagingRef/index.html#//apple_ref/doc/uid/TP40001171)** – Apple 通过添加对矩形区域检测的更好支持以及图像内的 QR 码，扩展了其图像处理框架。 Mike Bluestein 在他的博客文章中探讨了如何[在 iOS 8 中进行图像检测](https://blog.xamarin.com/image-detection-in-ios-8/)
+- **[核心映像](https://developer.apple.com/library/prerelease/ios/documentation/GraphicsImaging/Reference/CoreImagingRef/index.html#//apple_ref/doc/uid/TP40001171)**– Apple 通过添加对矩形区域检测的更好支持以及图像内的 QR 码，扩展了其图像处理框架。 Mike Bluestein 在他的博客文章中探讨了如何[在 iOS 8 中进行图像检测](https://blog.xamarin.com/image-detection-in-ios-8/)
 
 ## <a name="deprecated-apis"></a>弃用的 API
 在 iOS 8 中进行了所有改进后，许多 Api 已弃用。 下面详细介绍了其中一些信息。
@@ -161,7 +161,7 @@ iOS 8 包含用于创建用户界面（统一情节提要）的一种新易用�
 
 - **[UISearchDisplayController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/cl/UISearchDisplayController)** –此项已由 UISearchController 在 iOS8 中替换。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 本文介绍了 iOS 8 中 Apple 引入的一些新功能。
 
 ## <a name="related-links"></a>相关链接

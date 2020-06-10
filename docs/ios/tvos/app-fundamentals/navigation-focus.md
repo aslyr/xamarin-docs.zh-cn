@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 3c754acc3502d7aa2c47264e734187ffe060c029
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 69886a0da53d419a0c40bdf34f91d301c9efe504
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306079"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573711"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>在 Xamarin 中使用 tvOS 导航和焦点
 
@@ -24,9 +24,9 @@ _本文介绍了焦点的概念以及如何使用它来呈现和处理 tvOS 应�
 
 接下来，我们将介绍如何将焦点与[视差](#Focus-and-Parallax)和*分层图像*一起使用，为最终用户提供当前导航状态的视觉线索。
 
-最后, 我们将探讨如何使用[焦点](#Working-with-Focus),[重点更新](#Working-with-Focus-Updates),[重点指南](#Working-with-Focus-Guides), 将[焦点放在](#Working-with-Focus-in-Collections)tvOS 应用程序中的图像视图上。[启用并行](#enabling-parallax)
+最后，我们将探讨如何使用[焦点](#Working-with-Focus)，[重点更新](#Working-with-Focus-Updates)，[重点指南](#Working-with-Focus-Guides)，将[焦点放在](#Working-with-Focus-in-Collections)tvOS 应用程序中的图像视图上。 [Enabling Parallax](#enabling-parallax)
 
-<a name="Navigation" />
+<a name="Navigation"></a>
 
 ## <a name="navigation"></a>导航
 
@@ -51,7 +51,7 @@ Apple 建议在设计 tvOS 应用的导航时请牢记以下事项：
 - **使用标准控件再次导航**，若要创建一个简单而熟悉的用户体验，请尽可能使用内置 `UIKit` 控件，如页面控件、选项卡栏、分段控件、表视图、集合视图和应用的导航视图。 由于用户已经熟悉这些元素，因此它们将以直观方式浏览您的应用程序。
 - **优选水平内容导航**-由于 Apple TV 的性质，在 Siri 遥控器上向右轻扫会比向上和向右轻扫。 为应用设计内容布局时，请考虑此选项。
 
-<a name="Focus-and-Selection" />
+<a name="Focus-and-Selection"></a>
 
 ## <a name="focus-and-selection"></a>焦点和选择
 
@@ -67,20 +67,20 @@ Apple 建议在设计 tvOS 应用的导航时请牢记以下事项：
 
 Apple 对于使用焦点和选择有以下建议：
 
-- **使用内置的 UI 控件来实现运动效果**-通过使用用户界面中的 `UIKit` 和焦点 API，焦点模型会自动将默认动作和视觉效果应用于 UI 元素。 这会使你的应用对 Apple TV 平台用户具有本机和熟悉，并允许可设定焦点的项目之间进行流畅且直观的移动。
+- **使用内置的 UI 控件来实现运动效果**-通过使用 `UIKit` 和用户界面中的焦点 API，焦点模型会自动将默认动作和视觉效果应用于 UI 元素。 这会使你的应用对 Apple TV 平台用户具有本机和熟悉，并允许可设定焦点的项目之间进行流畅且直观的移动。
 - **将焦点移动到预期方向**-在 Apple TV 上，几乎每个元素都使用间接操作。 例如，用户使用 Siri 遥控器来移动焦点，系统会自动滚动接口，以使当前聚焦的项可见。 如果你的应用程序实现了这种类型的交互，请确保焦点按用户的手势方向移动。 因此，如果用户在 Siri 遥控器上向右轻扫，则应向右移动（这会导致屏幕向左滚动）。 此规则的例外情况是，使用直接操作（在其中，向上轻扫会使元素向上移动）的全屏项。
-- **确保重点项显而易见**，因为用户与阿法尔语中的 UI 元素进行交互，所以，当前的聚焦项确实非常重要。通常，这会由内置 `UIKit` 元素自动处理。 对于自定义控件，请使用项大小或阴影等功能来显示焦点。
-- **使用视差使重点项的响应能力更**小，Siri 遥控器上的循环手势会使聚焦项的实时实时移动。 此[视差效果](#Focus-and-Parallax)内置 `UIKit` 分层的_图像_中，使用户有权连接到聚焦项。
+- **确保重点项显而易见**，因为用户与阿法尔语中的 UI 元素进行交互，所以，当前的聚焦项确实非常重要。这通常会由内置元素自动处理 `UIKit` 。 对于自定义控件，请使用项大小或阴影等功能来显示焦点。
+- **使用视差使重点项的响应能力更**小，Siri 遥控器上的循环手势会使聚焦项的实时实时移动。 此[视差效果](#Focus-and-Parallax)内置 `UIKit` 于_分层图像_中，使用户有权连接到聚焦项。
 - **创建适当大小的可设定焦点的项**-具有充足间距的大型项比小项更容易选择和导航。
 - **设计 UI 元素以使其看起来很有针对性或失去焦点**-通常情况下，Apple TV 通过增加其大小来表示重点项。 确保应用的 UI 元素在任何显示大小上看起来很好，如有必要，为大小较大的元素提供资产。
 - **表示焦点更改流畅地**-使用动画以平稳地在**聚焦**和**失去焦点**状态的项之间淡化，以防止转换 jarring。
 - **不显示光标**-用户希望使用焦点在应用的 UI 上导航，而不是在屏幕上移动光标。 用户界面应始终使用焦点模型来提供一致的用户体验。
 
-<a name="Working-with-Focus" />
+<a name="Working-with-Focus"></a>
 
 ### <a name="working-with-focus"></a>使用焦点
 
-有时可能需要创建可成为可设定焦点的项的自定义控件。 如果为，则重写 `CanBecomeFocused` 属性并返回 `true`，否则返回 `false`。 例如：
+有时可能需要创建可成为可设定焦点的项的自定义控件。 如果为，则重写 `CanBecomeFocused` 属性并返回 `true` ，否则返回 `false` 。 例如：
 
 ```csharp
 public class myView : UIView
@@ -91,7 +91,7 @@ public class myView : UIView
 }
 ```
 
-你随时都可以使用 `UIKit` 控件的 `Focused` 属性来查看它是否为当前项。 如果 `true` UI 项当前具有焦点，则为; 否则为。 例如:
+你随时都可以使用控件的 `Focused` 属性 `UIKit` 来查看它是否为当前项。 如果 `true` UI 项当前具有焦点，则为; 否则为。 例如：
 
 ```csharp
 // Is my view in focus?
@@ -101,30 +101,30 @@ if (myView.Focused) {
 }
 ```
 
-尽管不能通过代码直接将焦点移到另一个 UI 元素，但你可以通过将屏幕上的 `PreferredFocusedView` 属性设置为 `true`来指定哪个 UI 元素首次获得焦点。 例如:
+尽管不能通过代码直接将焦点移到另一个 UI 元素，但你可以指定在通过将屏幕设置为时将哪个 UI 元素首次获取焦点 `PreferredFocusedView` `true` 。 例如：
 
 ```csharp
 // Make the play button the starting focus item
 playButton.PreferredFocusedView = true;
 ```
 
-<a name="Working-with-Focus-Updates" />
+<a name="Working-with-Focus-Updates"></a>
 
 ### <a name="working-with-focus-updates"></a>使用焦点更新 
 
 当用户导致焦点从一个 UI 元素移到另一个 UI 元素时（例如，为了响应 Siri 远程上的笔势），_焦点更新事件_将发送到失去焦点的项，并且该项获得焦点。
 
-对于从 `UIView` 或 `UIViewController`继承的自定义元素，你可以重写若干方法以使用焦点更新事件：
+对于从或继承的自定义元素 `UIView` `UIViewController` ，你可以重写若干方法以使用焦点更新事件：
 
 - **DidUpdateFocus** -每当视图获得或失去焦点时，都会调用此方法。
 - **ShouldUpdateFocus** -使用此方法定义允许焦点移动的位置。
 
-若要请求焦点引擎将焦点移回 `PreferredFocusedView` UI 元素，请调用视图控制器的 `SetNeedsUpdateFocus` 方法。
+若要请求焦点引擎将焦点移回 `PreferredFocusedView` UI 元素，请调用 `SetNeedsUpdateFocus` 视图控制器的方法。
 
 > [!IMPORTANT]
-> 仅当调用 `SetNeedsUpdateFocus` 的视图控制器包含当前具有焦点的视图时，调用才会生效。
+> `SetNeedsUpdateFocus`如果调用的视图控制器包含当前具有焦点的视图，则调用仅会生效。
 
-<a name="Working-with-Focus-Guides" />
+<a name="Working-with-Focus-Guides"></a>
 
 ### <a name="working-with-focus-guides"></a>使用焦点指南
 
@@ -138,7 +138,7 @@ playButton.PreferredFocusedView = true;
 
 由于 "**详细信息**" 按钮并不在具有 "**购买**" 按钮的水平和垂直网格上，因此用户将无法访问它。 但是，可以使用_重点指南_轻松地纠正这种情况，以便向焦点引擎提供移动提示。 
 
-焦点指南（`UIFocusGuide`）公开了视图的不可见区域，以实现焦点引擎的可焦点，从而允许将焦点重定向到另一个视图。
+焦点指南（ `UIFocusGuide` ）公开了视图的不可见区域，以使其可用于焦点引擎，从而允许将焦点重定向到另一个视图。
 
 因此，若要解决上面给出的示例，可将以下代码添加到视图控制器，以在 "**详细信息**" 和 "**购买**" 按钮之间创建焦点指南：
 
@@ -162,19 +162,19 @@ public override void ViewDidLoad ()
 }
 ```
 
-首先，将创建一个新的 `UIFocusGuide`，并使用 `AddLayoutGuide` 方法将其添加到视图的布局参考线集合。
+首先，使用方法创建一个新的，并将其 `UIFocusGuide` 添加到视图的布局指南集合中 `AddLayoutGuide` 。
 
 接下来，重点指南的顶部、左侧、宽度和高度锚点相对于**详细信息**进行调整，并**购买**按钮将其置于不同位置。 请参阅：
 
 [![](navigation-focus-images/guide02.png "Example Focus Guide")](navigation-focus-images/guide02.png#lightbox)
 
-另外，请务必注意，通过将新约束的 `Active` 属性设置为 `true`来创建新的约束：
+另外，请务必注意，在创建新约束时通过将它们的 `Active` 属性设置为 `true` ：
 
 ```csharp
 FocusGuide.LeftAnchor.ConstraintEqualTo (...).Active = true;
 ```
 
-在新的焦点指南建立并添加到视图中时，可以重写视图控制器的 `DidUpdateFocus` 方法，并添加以下代码以在 "**详细信息**" 和 "**购买**" 按钮之间移动：
+在新的重点指南建立并添加到视图中 `DidUpdateFocus` 后，可以重写视图控制器的方法，并添加以下代码以在 "**详细信息**" 和 "**购买**" 按钮之间移动：
 
 ```csharp
 public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimationCoordinator coordinator)
@@ -202,27 +202,27 @@ public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimat
 }
 ```
 
-首先，此代码从已传入的 `UIFocusUpdateContext` 中获取 `NextFocusedView` （`context`）。 如果 `null`此视图，则不需要处理并且方法退出。
+首先，此代码 `NextFocusedView` 从 `UIFocusUpdateContext` 传入的（）中获取 `context` 。 如果此视图为 `null` ，则不需要任何处理，并且方法已退出。
 
-接下来，计算 `nextFocusableItem`。 如果它与 "**详细信息**" 或 "**购买**" 按钮相匹配，则使用焦点指南的 `PreferredFocusedView` 属性将焦点发送到相反的按钮。 例如:
+接下来， `nextFocusableItem` 计算。 如果它与 "**详细信息**" 或 "**购买**" 按钮相匹配，则使用焦点指南的属性将焦点发送到相反的按钮 `PreferredFocusedView` 。 例如：
 
 ```csharp
 // Move from the More Info to Buy button
 FocusGuide.PreferredFocusedView = BuyButton;
 ```
 
-如果这两个按钮都不是焦点的源，则会清除 `PreferredFocusedView` 属性：
+如果这两个按钮都不是焦点的源，则 `PreferredFocusedView` 会清除属性：
 
 ```csharp
 // No valid move
 FocusGuide.PreferredFocusedView = null;
 ```
 
-<a name="Working-with-Focus-in-Collections" />
+<a name="Working-with-Focus-in-Collections"></a>
 
 ### <a name="working-with-focus-in-collections"></a>使用集合中的焦点
 
-确定单个项能否在 `UICollectionView` 或 `UITableView`中获得焦点时，您将分别重写 `UICollectionViewDelegate` 或 `UITableViewDelegate` 的方法。 例如：
+确定单个项在或中是否可设定焦点时 `UICollectionView` `UITableView` ，您将重写或的方法 `UICollectionViewDelegate` `UITableViewDelegate` 。 例如：
 
 ```csharp
 public class CardHandDelegate : UICollectionViewDelegateFlowLayout
@@ -240,11 +240,11 @@ public class CardHandDelegate : UICollectionViewDelegateFlowLayout
 }
 ```
 
-如果当前项可以处于焦点，则 `CanFocusItem` 方法返回 `true` 否则返回 `false`。
+`CanFocusItem` `true` 如果当前项可以处于焦点，则方法返回; 否则返回 `false` 。
 
-如果希望 `UICollectionView` 或 `UITableView` 在其失去并重新获得焦点时记住并将焦点还原到最后一个项，请将 `RemembersLastFocusedIndexPath` 属性设置为 `true`。
+如果你想要使用 `UICollectionView` 或 `UITableView` 来记住并在其失去和重新获得焦点时将焦点还原到最后一个项，请将 `RemembersLastFocusedIndexPath` 属性设置为 `true` 。
 
-<a name="Focus-and-Parallax" />
+<a name="Focus-and-Parallax"></a>
 
 ## <a name="focus-and-parallax"></a>重心和视差
 
@@ -260,15 +260,15 @@ public class CardHandDelegate : UICollectionViewDelegateFlowLayout
 
 ### <a name="enabling-parallax"></a>启用视差
 
-`UIImageView` 控件（或从 `UIImageView`继承的任何控件）会自动支持视差效果。 默认情况下，此支持处于禁用状态，若要启用它，请使用以下代码：
+`UIImageView`控件（或继承自的任何控件 `UIImageView` ）会自动支持视差效果。 默认情况下，此支持处于禁用状态，若要启用它，请使用以下代码：
 
 ```csharp
 myImageView.AdjustsImageWhenAncestorFocused = true;
 ```
 
-如果将此属性设置为 "`true`"，则当用户选择 "焦点" 时，图像视图将自动获得视差效果。
+如果将此属性设置为 `true` ，则图像视图将在用户和焦点选择时自动获得视差效果。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>总结
 

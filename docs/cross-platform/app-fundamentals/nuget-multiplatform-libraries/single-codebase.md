@@ -6,12 +6,12 @@ ms.assetid: E7B55354-9BBE-4122-BCE3-3506B79090DD
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 7dabb420aa094e67fae689f47b3b64a8fe1a6ed4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5e63e6470a7dac0f9148147a0303d35cf33adb1b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016708"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571121"
 ---
 # <a name="creating-a-new-multiplatform-library-for-nuget"></a>为 NuGet 创建新的多平台库
 
@@ -58,13 +58,13 @@ NuGet 包也是 ZIP 文件，因此可以检查生成的包的内部结构。
 
 ![](single-codebase-images/nuget-output.png "Files contained in the NuGet package")
 
-<a name="add-platforms" />
+<a name="add-platforms"></a>
 
 ## <a name="adding-platform-specific-code"></a>添加特定于平台的代码
 
 基于 PCL 的项目和基于 .NET Standard 的项目不能包含特定于平台的引用（例如 iOS 或 Android 功能）。
 
-如果需要扩展现有 PCL 项目或 .NET Standard 项目以包含特定于平台的代码，则可以通过右键单击该项目并选择 "**添加 > 添加平台实现 ...** " 来完成此操作：
+如果需要扩展现有 PCL 项目或 .NET Standard 项目以包含特定于平台的代码，则可以通过右键单击该项目并选择 "**添加 > 添加平台实现 ...**" 来完成此操作：
 
 [![](single-codebase-images/add-later-sml.png "Add platform implementation menu")](single-codebase-images/add-later.png#lightbox)
 
@@ -72,8 +72,8 @@ NuGet 包也是 ZIP 文件，因此可以检查生成的包的内部结构。
 
 [![](single-codebase-images/add-later-platforms-sml.png "Add platform options such as iOS, Android, and Shared Project")](single-codebase-images/add-later-platforms-sml.png#lightbox)
 
-转换为共享项目后，请访问**项目选项 > NuGet 包 > 引用程序集**"
-[部分](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/platform-specific.md)，并确保已选择任何所需的配置文件（以便 NuGet 继续与之前用于的项目兼容）。
+转换为共享项目后，请访问**项目选项 > NuGet 包 > 引用程序集**" 
+ [部分](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/platform-specific.md)，并确保选择任何所需的配置文件（以便 NuGet 继续与以前用于的项目兼容）。
 
 ## <a name="related-links"></a>相关链接
 

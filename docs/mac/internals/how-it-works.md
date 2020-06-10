@@ -7,24 +7,24 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 05/25/2017
-ms.openlocfilehash: 347fb1021a290fa849ae354468bc66b0cdd8b684
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 05bb9a5552022ea1eb5cd92df90659f7ebacb7cc
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73017599"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571644"
 ---
 # <a name="how-xamarinmac-works"></a>Xamarin.Mac 的工作原理
 
-但在大多数情况下，开发人员始终都无需担心 Xamarin 的内部 "神奇" 的问题，但是，大致了解功能在幕后的工作方式将有助于使用C#镜头和调试来解释现有文档出现问题。
+但在大多数情况下，开发人员始终都无需担心 Xamarin 的内部 "神奇" 的问题，但是，在这种情况下，在使用 c # 镜头并在出现问题时对其进行调试会有助于解释现有文档。
 
-在 Xamarin 中，应用程序可桥接两个领域：基于目标的运行时包含本机类的实例（`NSString`、`NSApplication`等），并且C#运行时包含托管类的实例（`System.String`、`HttpClient`，等等）. 在这两个领域之间，Xamarin 会创建一个双向桥，使应用可以在目标 C （如 `NSApplication.Init`）调用方法（选择器），而客观-C 可以调用应用的C#方法（如应用委托上的方法）。 通常情况下，通过**P/invoke**和某些运行时代码 Xamarin 提供对目标 C 的调用。
+在 Xamarin 中，应用程序可桥接两个：基于目标 C 的运行时包含本机类的实例（ `NSString` 、 `NSApplication` 等），并且 c # 运行时包含托管类的实例（、等 `System.String` `HttpClient` ）。 在这两个领域之间，Xamarin 会创建一个双向桥，使应用可以调用目标 C （如）中的方法（选择器） `NSApplication.Init` ，而客观-c 可以调用应用的 c # 方法（如应用委托上的方法）。 通常情况下，通过**P/invoke**和某些运行时代码 Xamarin 提供对目标 C 的调用。
 
-<a name="exposing-classes" />
+<a name="exposing-classes"></a>
 
-## <a name="exposing-c-classes--methods-to-objective-c"></a>向C#目标公开类/方法-C
+## <a name="exposing-c-classes--methods-to-objective-c"></a>向目标-C 公开 c # 类/方法
 
-但是，若要返回到应用的C#对象，则需要以目标 c 可以理解的方式公开。 这是通过 `Register` 和 `Export` 属性来完成的。 请参见以下示例：
+但是，若要让目标 C 回调到应用的 c # 对象，需要以可理解的方式公开。 这是通过和属性来完成的 `Register` `Export` 。 请参见以下示例：
 
 ```csharp
 [Register ("MyClass")]
@@ -42,13 +42,13 @@ public class MyClass : NSObject
 }
 ```
 
-在此示例中，对于名为 `init` 和 `run`的选择器，目标 C 运行时现在将了解名为 `MyClass` 的类。
+在此示例中，对于名为和的选择器，目标 C 运行时现在将了解名为的类 `MyClass` `init` `run` 。
 
-在大多数情况下，这是开发人员可以忽略的实现细节，因为应用接收的大多数回调都是通过 `base` 类上的重写方法（如 `AppDelegate`、`Delegates`、`DataSources`），也可以是传递给 Api 的**操作**。 在所有这些情况下， C#代码中不需要 `Export` 特性。
+在大多数情况下，这是开发人员可以忽略的实现细节，因为应用接收的大多数回调都是通过类上的重写方法 `base` （如 `AppDelegate` 、 `Delegates` 、 `DataSources` ）或传递给 api 的**操作**。 在所有这些情况下， `Export` c # 代码中都不需要属性。
 
 ## <a name="constructor-runthrough"></a>构造函数浏览
 
-在许多情况下，开发人员需要将应用程序的C#类构造 API 公开给目标-C 运行时，以便可以从诸如在情节提要或 XIB 文件中调用时这样的位置对其进行实例化。 下面是 Xamarin 应用程序中使用的五个最常见的构造函数：
+在许多情况下，开发人员需要将应用程序的 c # 类构造 API 公开给目标 C 运行时，以便可以从诸如在情节提要或 XIB 文件中调用时等位置实例化。 下面是 Xamarin 应用程序中使用的五个最常见的构造函数：
 
 ```csharp
 // Called when created from unmanaged code
@@ -81,7 +81,7 @@ public CustomView () : base (NSObjectFlag.Empty)
 }
 ```
 
-通常，开发人员应保留在创建某些类型（例如自定义 `NSViews`）时生成的 `IntPtr` 和 `NSCoder` 构造函数。 如果 Xamarin 需要调用这些构造函数之一来响应目标 C 运行时请求，并且删除了该程序，则该应用程序将在本机代码中崩溃，可能很难准确确定问题所在。
+通常，开发人员应保留在 `IntPtr` `NSCoder` 创建某些类型（例如自定义）时生成的和构造函数 `NSViews` 。 如果 Xamarin 需要调用这些构造函数之一来响应目标 C 运行时请求，并且删除了该程序，则该应用程序将在本机代码中崩溃，可能很难准确确定问题所在。
 
 ## <a name="memory-management-and-cycles"></a>内存管理和周期
 
@@ -95,16 +95,16 @@ Mono 运行时 JIT 编译此计算机代码所需的时间可能会使 Xamarin �
 
 由于 Apple 在 iOS 上施加了限制，因此不能对 IL 使用 JIT 编译。 因此，所有 Xamarin iOS 应用都是在生成周期内编译为计算机_代码的全职（AOT_ ）。
 
-Xamarin 的新功能是在应用程序生成周期内对 IL 代码进行 AOT 的功能，就像 Xamarin 一样。 Xamarin 使用_混合_AOT 方法，该方法编译大多数所需的机器代码，但允许运行时编译所需的 trampolines，并灵活地继续支持反射。发出（以及当前正在处理的其他用例Xamarin）。
+Xamarin 的新功能是在应用程序生成周期内对 IL 代码进行 AOT 的功能，就像 Xamarin 一样。 Xamarin 使用_混合_AOT 方法，该方法编译大多数所需的机器代码，但允许运行时编译所需的 trampolines，并灵活地继续支持反射。发出（以及当前适用于 Xamarin 的其他用例）。
 
 AOT 可以通过两个主要方面来帮助 Xamarin 应用：
 
-- **更好的 "本机" 崩溃日志**-如果 Xamarin 应用程序在本机代码中崩溃，这种情况在对 Cocoa api 进行无效调用（如将 `null` 发送到不接受它的方法）时常见，将使用 JIT 帧的本机崩溃日志难以分析。 由于 JIT 帧不包含调试信息，因此将有多行包含十六进制偏移，而不会有任何线索发生。 AOT 生成 "真实" 的命名帧，跟踪的可读性更强。 这也意味着 Xamarin 应用程序将更好地与**lldb**和**乐器**等本机工具进行交互。
+- **更好的 "本机" 崩溃日志**-如果 Xamarin 应用程序在本机代码中崩溃，这种情况通常发生在对 Cocoa api 进行无效调用（如将发送 `null` 到不接受它的方法）时，使用 JIT 帧的本机崩溃日志很难进行分析。 由于 JIT 帧不包含调试信息，因此将有多行包含十六进制偏移，而不会有任何线索发生。 AOT 生成 "真实" 的命名帧，跟踪的可读性更强。 这也意味着 Xamarin 应用程序将更好地与**lldb**和**乐器**等本机工具进行交互。
 - **更好的启动时间性能**-对于大型 Xamarin Mac 应用程序，如果有多秒启动时间，JIT 编译所有代码可能需要很长时间。 AOT 会提前完成此操作。
 
 ### <a name="enabling-aot-compilation"></a>启用 AOT 编译
 
-在 Xamarin 中，通过双击 "**解决方案资源管理器**中的**项目名称**，导航到" **Mac 生成**"并将 `--aot:[options]` 添加到"**其他 mmp 参数：** "字段（其中 `[options]` 是一个或多个选项来控制 AOT 类型，如下所示。 例如:
+在 Xamarin 中，通过双击 "**解决方案资源管理器**中的**项目名称**，导航到" **Mac 生成**"并添加 `--aot:[options]` 到"**其他 mmp 参数：** "字段（其中 `[options]` 是一个或多个用于控制 AOT 类型的选项，请参阅下文）。 例如：
 
 ![将 AOT 添加到其他 mmp 参数](how-it-works-images/aot01.png "将 AOT 添加到其他 mmp 参数")
 
@@ -115,15 +115,15 @@ AOT 可以通过两个主要方面来帮助 Xamarin 应用：
 
 在 Xamarin 应用程序上启用 AOT 编译时，有几种不同的选项可以进行调整：
 
-- `none`-无 AOT 编译。 此为默认设置。
+- `none`-无 AOT 编译。 此设置为默认设置。
 - `all`-AOT 编译 MonoBundle 中的每个程序集。
-- `core`-AOT 编译 `Xamarin.Mac`、`System` 和 `mscorlib` 程序集。
+- `core`-AOT 编译 `Xamarin.Mac` `System` 和 `mscorlib` 程序集。
 - `sdk`-AOT 编译 `Xamarin.Mac` 和基类库（BCL）程序集。
-- `|hybrid` 将此添加到上述选项之一后，将启用混合 AOT，这允许进行 IL 剥离，但会导致编译时间较长。
+- `|hybrid`-将此项添加到上述选项之一后，将启用混合 AOT，这允许进行 IL 剥离，但会导致编译时间较长。
 - `+`-包含用于 AOT 编译的单个文件。
-- `-`-删除 AOT 编译中的单个文件。
+- `-`-从 AOT 编译中删除单个文件。
 
-例如，`--aot:all,-MyAssembly.dll` 将在 MonoBundle 中的所有程序集上启用 AOT 编译，_但_`MyAssembly.dll` 和 `--aot:core|hybrid,+MyOtherAssembly.dll,-mscorlib.dll` 会启用混合，代码 AOT 包括 `MyOtherAssembly.dll` 并排除 `mscorlib.dll`。
+例如， `--aot:all,-MyAssembly.dll` 将在 MonoBundle 中的所有程序集上启用 AOT 编译，_但_ `MyAssembly.dll` `--aot:core|hybrid,+MyOtherAssembly.dll,-mscorlib.dll` 会启用混合，代码 AOT 包含 `MyOtherAssembly.dll` 和排除 `mscorlib.dll` 。
 
 ## <a name="partial-static-registrar"></a>部分静态注册器
 
@@ -133,20 +133,20 @@ AOT 可以通过两个主要方面来帮助 Xamarin 应用：
 
 ### <a name="about-the-registrar"></a>关于注册机构
 
-任何 Xamarin 应用程序的本质都是 Apple 和目标-C 运行时中的 Cocoa 框架。 在这种C# "本机世界" 和 "托管世界" 之间建立桥梁是 Xamarin 的主要责任。 此任务的一部分由注册机构处理，注册机构在 `NSApplication.Init ()` 方法中执行。 这是在 Xamarin 中使用 Cocoa Api 的一个原因。 Mac 需要首先调用 `NSApplication.Init`。
+任何 Xamarin 应用程序的本质都是 Apple 和目标-C 运行时中的 Cocoa 框架。 在这种 "本机世界" 和 c # "托管世界" 之间建立桥梁是 Xamarin 的主要责任。 此任务的一部分由注册机构处理，在方法内执行 `NSApplication.Init ()` 。 这是在 Xamarin 中使用 Cocoa Api 的一个原因是需要 `NSApplication.Init` 先调用。
 
-注册器的工作是通知目标 C 运行时是否存在从类派生的应用C#类，如`NSApplicationDelegate`、`NSView`、`NSWindow`和`NSObject`。 这需要扫描应用中的所有类型，以确定需要注册的内容以及每种类型上要报告的元素。
+注册器的工作是将从类派生的应用 c # 类（如、、和）的存在情况通知给目标 c 运行时 `NSApplicationDelegate` `NSView` `NSWindow` `NSObject` 。 这需要扫描应用中的所有类型，以确定需要注册的内容以及每种类型上要报告的元素。
 
 此扫描可以在启动应用程序时使用反射**动态**完成，也可以**静态**方式完成，作为生成时步骤。 选择注册类型时，开发人员应注意以下事项：
 
 - 静态注册可显著减少启动时间，但可能会显著降低生成时间（通常比双重调试生成时间多）。 这将是**发布**配置生成的默认值。
 - 动态注册会在应用程序启动和跳过代码生成之前延迟此操作，但此附加工作可在应用程序启动中创建明显的暂停（至少两秒钟）。 这在调试配置生成（默认为动态注册，其反射速度较慢）中尤其明显。
 
-在 Xamarin 8.13 中首次引入的部分静态注册为开发人员提供了这两个选项的最佳选择。 通过在 `Xamarin.Mac.dll` 中预计算每个元素的注册信息，并将此信息与静态库中的 Xamarin （仅需要在生成时链接到）一起传送，Microsoft 已删除动态注册器的大部分反射时间而不影响生成时间。
+在 Xamarin 8.13 中首次引入的部分静态注册为开发人员提供了这两个选项的最佳选择。 通过在静态库中预计算每个元素的注册信息 `Xamarin.Mac.dll` 并将此信息与 Xamarin 一起发送（仅需要在生成时链接到），Microsoft 已删除动态注册器的大多数反射时间，同时不影响生成时间。
 
 ### <a name="enabling-the-partial-static-registrar"></a>启用部分静态注册器
 
-通过双击 "**解决方案资源管理器**中的**项目名称**，导航到" **Mac 生成**"并将 `--registrar:static` 添加到"**其他 Mmp 参数：** "字段，在 Xamarin 中启用部分静态注册器。 例如:
+通过双击 "**解决方案资源管理器**中的**项目名称**，导航到" **Mac 生成**"并将 `--registrar:static` 其添加到"**其他 mmp 参数：** "字段，在 Xamarin 中启用部分静态注册器。 例如：
 
 ![向其他 mmp 参数添加部分静态注册器](how-it-works-images/psr01.png "向其他 mmp 参数添加部分静态注册器")
 
@@ -159,4 +159,4 @@ AOT 可以通过两个主要方面来帮助 Xamarin 应用：
 - [适用于 iOS 和 OS X 的 Xamarin Unified API](~/cross-platform/macios/unified/index.md)
 - [Theading 基础知识](~/ios/app-fundamentals/threading.md)
 - [委托、协议和事件](~/ios/app-fundamentals/delegates-protocols-and-events.md)
-- [关于 `newrefcount`](~/ios/internals/newrefcount.md)
+- [有关`newrefcount`](~/ios/internals/newrefcount.md)

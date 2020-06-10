@@ -7,12 +7,12 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: davidortinau
 ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: 4a5aa13a197e885b074b07eae3594abd4992ee71
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: f81df8ac253e53b16c3ab09bf80d66a7b6324854
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728247"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571514"
 ---
 # <a name="updating-component-references-to-nuget"></a>将组件引用更新到 NuGet
 
@@ -29,7 +29,7 @@ ms.locfileid: "75728247"
 
 15.6 版本的 Visual Studio 和7.4 版本的 Visual Studio for Mac 不再支持项目中的组件。 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 如果将项目加载到 Visual Studio 中，则会显示以下对话框，说明必须手动从项目中删除任何组件：
 
@@ -41,7 +41,7 @@ ms.locfileid: "75728247"
 
 2. 再次右键单击卸载的项目，然后选择 "**编辑 {你的项目名称}. .csproj**"。
 
-3. 查找要 `XamarinComponentReference`的文件中的任何引用。 它应看似以下示例：
+3. 查找文件中的任何引用 `XamarinComponentReference` 。 其外观应类似于以下示例：
 
     ```xml
     <ItemGroup>
@@ -60,13 +60,13 @@ ms.locfileid: "75728247"
     </ItemGroup>
     ```
 
-4. 删除对 `XamarinComponentReference` 的引用并保存该文件。 在上面的示例中，可以安全地删除整个 `ItemGroup`。
+4. 删除对的引用 `XamarinComponentReference` ，并保存该文件。 在上面的示例中，可以安全地删除整个 `ItemGroup` 。
 
 5. 保存该文件后，右键单击项目名称，然后选择 "**重新加载项目**"。
 
 6. 为解决方案中的每个项目重复上述步骤。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 如果将项目加载到 Visual Studio for Mac 中，将显示以下对话框，说明必须手动从项目中删除任何组件：
 
@@ -76,7 +76,7 @@ ms.locfileid: "75728247"
 
 1. 打开 .csproj 文件。 为此，请右键单击项目名称，然后选择 "**工具" > "编辑文件**"。
 
-2. 查找要 `XamarinComponentReference`的文件中的任何引用。 它应看似以下示例：
+2. 查找文件中的任何引用 `XamarinComponentReference` 。 其外观应类似于以下示例：
 
     ```xml
     <ItemGroup>
@@ -95,7 +95,7 @@ ms.locfileid: "75728247"
     </ItemGroup>
     ```
 
-3. 删除对 `XamarinComponentReference` 的引用并保存该文件。 在上面的示例中，可以安全地删除整个 `ItemGroup`
+3. 删除对的引用 `XamarinComponentReference` ，并保存该文件。 在上面的示例中，可以安全地删除整个`ItemGroup`
 
 4. 为解决方案中的每个项目重复上述步骤。
 
@@ -113,7 +113,7 @@ ms.locfileid: "75728247"
 大多数组件属于上述类别之一。
 如果你使用的组件看起来没有等效的 NuGet 包，请阅读下面的 "[不包含 nuget 迁移路径的组件](#require-update)" 一节。
 
-<a name="contain" />
+<a name="contain"></a>
 
 ## <a name="components-that-contain-nuget-packages"></a>包含 NuGet 包的组件
 
@@ -141,7 +141,7 @@ NuGet 包将继续在 "**包**" 节点中列出，并且你的应用程序将照
 
 ![更新 NuGet 包](component-nuget-images/nuget-update-sml.png)
 
-<a name="replace" />
+<a name="replace"></a>
 
 ## <a name="components-with-nuget-replacements"></a>带有 NuGet 替换的组件
 
@@ -159,8 +159,8 @@ _它可能包含 NuGet 依赖项，但可以忽略这些依赖项。_
 
 例如，你可以通过搜索来查找常见的**sqlite 网络-pcl**包：
 
-- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl) –产品名称。
-- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum) –作者的个人资料。
+- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl)–产品名称。
+- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum)–作者的个人资料。
 
 ### <a name="updating-the-solution"></a>更新解决方案
 
@@ -176,7 +176,7 @@ _它可能包含 NuGet 依赖项，但可以忽略这些依赖项。_
 
 #### <a name="add-the-nuget-package"></a>添加 NuGet 包
 
-1. 右键单击 "**包**" 节点，然后选择 "**添加包 ...** "。
+1. 右键单击 "**包**" 节点，然后选择 "**添加包 ...**"。
 2. 按名称或作者搜索 NuGet 替换：
 
     ![](component-nuget-images/nuget-search-sml.png)
@@ -186,7 +186,7 @@ _它可能包含 NuGet 依赖项，但可以忽略这些依赖项。_
 NuGet 包将添加到你的项目，以及任何依赖项。
 这会修复生成。 如果生成继续失败，请调查每个错误，查看组件和 NuGet 包之间是否存在 API 差异。
 
-<a name="require-update" />
+<a name="require-update"></a>
 
 ## <a name="components-without-a-nuget-migration-path"></a>无 NuGet 迁移路径的组件
 

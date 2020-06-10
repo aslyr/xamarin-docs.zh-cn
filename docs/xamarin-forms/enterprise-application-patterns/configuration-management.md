@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 943148a642a1dec7e84f74ae96983c21f30319ab
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139264"
+标题： "配置管理" 说明： "本章节介绍了 eShopOnContainers 移动应用如何实现配置管理，以提供应用设置和用户设置。"
+ms-chap： xamarin assetid：50d6e780-e768-47f8-9361-3af11e56b87b： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/07/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="configuration-management"></a>配置管理
 
 设置允许将配置应用行为的数据与代码分离，从而允许更改行为而无需重新生成应用。 有两种类型的设置： "应用设置" 和 "用户设置"。
@@ -25,7 +11,7 @@ ms.locfileid: "84139264"
 
 用户设置是应用程序的可自定义设置，它会影响应用程序的行为，而不需要频繁重新调整。 例如，应用可能会让用户指定从中检索数据的位置，以及如何在屏幕上显示数据。
 
-Xamarin.Forms包含一个可用于存储设置数据的持久字典。 可以使用属性访问此字典 [`Application.Current.Properties`](xref:Xamarin.Forms.Application.Properties) ，当应用进入睡眠状态时，将保存其中的任何数据，并在应用恢复或重新启动时还原。 此外， [`Application`](xref:Xamarin.Forms.Application) 类还提供了一 [`SavePropertiesAsync`](xref:Xamarin.Forms.Application.SavePropertiesAsync) 种方法，允许应用在需要时保存其设置。 有关此字典的详细信息，请参阅[属性字典](~/xamarin-forms/app-fundamentals/application-class.md#Properties_Dictionary)。
+Xamarin.Forms包含一个可用于存储设置数据的持久字典。 可以使用属性访问此字典 [`Application.Current.Properties`](xref:Xamarin.Forms.Application.Properties) ，当应用进入睡眠状态时，将保存其中的任何数据，并在应用恢复或重新启动时还原。 此外， [`Application`](xref:Xamarin.Forms.Application) 类还提供了一 [`SavePropertiesAsync`](xref:Xamarin.Forms.Application.SavePropertiesAsync) 种方法，允许应用在需要时保存其设置。 有关此字典的详细信息，请参阅[属性字典](~/xamarin-forms/app-fundamentals/application-class.md#properties-dictionary)。
 
 使用持久性字典存储数据的一个缺点 Xamarin.Forms 是它不容易被绑定到数据。 因此，eShopOnContainers 移动应用使用的是可从[NuGet](https://www.nuget.org/packages/Xam.Plugins.Settings/)获得的库。 此库提供一致的类型安全跨平台方法，用于保留和检索应用和用户设置，同时使用每个平台提供的本机设置管理。 此外，使用数据绑定访问由库公开的设置数据非常简单。
 
@@ -128,7 +114,7 @@ public class GlobalSetting
 
 **图 7-1**： eShopOnContainers 移动应用公开的用户设置
 
-数据绑定可用于检索和设置由类公开的设置 `Settings` 。 这是通过视图绑定上的控件来实现的，它可以查看模型属性，这些属性又可以访问类中的属性 `Settings` ，并且在设置值更改时引发属性更改通知。 有关 eShopOnContainers 移动应用如何构造视图模型并将其与视图相关联的信息，请参阅[自动创建具有视图模型定位器的视图模型](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator)。
+数据绑定可用于检索和设置由类公开的设置 `Settings` 。 这是通过视图绑定上的控件来实现的，它可以查看模型属性，这些属性又可以访问类中的属性 `Settings` ，并且在设置值更改时引发属性更改通知。 有关 eShopOnContainers 移动应用如何构造视图模型并将其与视图相关联的信息，请参阅[自动创建具有视图模型定位器的视图模型](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically-creating-a-view-model-with-a-view-model-locator)。
 
 下面的代码示例演示 [`Entry`](xref:Xamarin.Forms.Entry) 了中的控件 `SettingsView` ，该控件允许用户为容器化的微服务输入基终结点 URL：
 
@@ -178,7 +164,7 @@ public override Task InitializeAsync(object navigationData)
 }
 ```
 
-方法将属性设置 `Endpoint` 为 `UrlBase` 类中的属性的值 `Settings` 。 访问 `UrlBase` 属性会导致在特定于平台的存储中检索设置值。 有关如何 `InitializeAsync` 调用方法的信息，请参阅[在导航过程中传递参数](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing_parameters_during_navigation)。
+方法将属性设置 `Endpoint` 为 `UrlBase` 类中的属性的值 `Settings` 。 访问 `UrlBase` 属性会导致在特定于平台的存储中检索设置值。 有关如何 `InitializeAsync` 调用方法的信息，请参阅[在导航过程中传递参数](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing-parameters-during-navigation)。
 
 此机制可确保每次用户导航到 SettingsView 时，都会从特定于平台的存储检索用户设置，并通过数据绑定来显示用户设置。 然后，如果用户更改设置值，数据绑定将确保它们立即保留回平台特定的存储。
 

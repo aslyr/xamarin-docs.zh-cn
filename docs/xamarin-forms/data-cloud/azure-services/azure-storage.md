@@ -1,22 +1,8 @@
 ---
-title: 在 Azure 存储中存储和访问数据Xamarin.Forms
-description: Azure 存储是一种可缩放的云存储解决方案，可用于存储非结构化和结构化数据。 本文介绍如何使用 Xamarin.Forms 在 Azure 存储中存储文本和二进制数据，以及如何访问数据。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4df14ef4d3eb72b92e4201e57103780801ca2d2f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131022"
+标题： " Xamarin.Forms 描述：" Azure 存储是一个可缩放的云存储解决方案，可用于存储非结构化和结构化数据。 本文介绍如何使用 Xamarin.Forms 在 Azure 存储中存储文本和二进制数据，以及如何访问数据。
+ms-chap： xamarin assetid：5B10D37B-839B-4CD0-9C65-91014A93F3EB： xamarin 窗体作者： davidbritch： dabritch ms. 日期：12/28/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>在 Azure 存储中存储和访问数据Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
@@ -71,10 +57,8 @@ Blob 是任意类型和大小的文件。 Azure 存储支持三种不同的 blob
 
 1. 创建存储帐户。 有关详细信息，请参阅[创建存储帐户](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account)。
 1. 将[Azure 存储客户端库](https://www.nuget.org/packages/WindowsAzure.Storage/)添加到 Xamarin.Forms 应用程序。
-1. 配置存储连接字符串。 有关详细信息，请参阅[连接到 Azure 存储](#connecting)。
+1. 配置存储连接字符串。 有关详细信息，请参阅[连接到 Azure 存储](#connecting-to-azure-storage)。
 1. 将 `using` `Microsoft.WindowsAzure.Storage` 和命名空间的指令添加 `Microsoft.WindowsAzure.Storage.Blob` 到将访问 Azure 存储的类。
-
-<a name="connecting" />
 
 ## <a name="connecting-to-azure-storage"></a>连接到 Azure 存储
 

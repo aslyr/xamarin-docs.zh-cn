@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: b9b4d201e02d60bd6131c8693d9ac6a233e4fe10
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 4e2ff46174d9dbb9171a470c389ffe301f6d0d60
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306211"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569642"
 ---
 # <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>部署和测试 Xamarin 的 watchOS 应用
 
@@ -36,7 +36,7 @@ ms.locfileid: "79306211"
   - [部署到用于测试的 Apple Watch](~/ios/watchos/deploy-test/device.md)，或
   - [上载到 App Store](~/ios/watchos/deploy-test/appstore.md)。
 
-<a name="App_IDs"/>
+<a name="App_IDs"></a>
 
 ## <a name="app-ids"></a>应用 Id
 
@@ -60,13 +60,13 @@ ms.locfileid: "79306211"
 
 ### <a name="wildcard-app-id"></a>通配符应用 ID
 
-或者，你可以创建一个与所有三个项目（如 `com.xamarin.*`）匹配的通配符**应用 ID** 。
+或者，你可以创建与所有三个项目（如）匹配的通配符**应用 ID** `com.xamarin.*` 。
 
 请注意，某些功能不能用于通配符应用 ID （例如推送通知）。 如果你的应用需要这些功能，则应创建显式应用 Id。
 
 对于分发，你只需为通配符应用 ID 创建一个分发配置文件。
 
-<a name="App_Groups" />
+<a name="App_Groups"></a>
 
 ## <a name="app-groups"></a>应用组
 
@@ -74,11 +74,11 @@ ms.locfileid: "79306211"
 
 - 在 Apple 开发人员门户**证书，标识符 & 配置文件**部分配置了**应用组**。
 
-- 已在 iOS 应用和监视扩展的**应用 ID**和 info.plist **中启用***应用*组（并提供**应用组 ID**）。
+- 已在 iOS 应用和监视扩展的**应用 ID**和 info.plist *中启用***应用**组（并提供**应用组 ID**）。 ****
 
 ### <a name="certificates-identifiers--profiles"></a>证书，标识符 & 配置文件
 
-若要使用应用组，请在 "**应用组**" 屏幕中创建一个条目。 在下面的示例中，使用与应用 Id 相同的反向 DNS 样式来命名组，但使用 `group.` 前缀（必需）：
+若要使用应用组，请在 "**应用组**" 屏幕中创建一个条目。 在下面的示例中，使用与应用 Id 相同的反向 DNS 样式来命名组，但 `group.` 需要使用前缀（必需）：
 
 ![标识符](images/appgroups-new-sml.png)
 
@@ -88,7 +88,7 @@ ms.locfileid: "79306211"
 
 创建组后，可以在**应用 ID**配置中对其进行引用。 请记住，同时包含 iOS 应用和监视扩展**应用 id**。
 
-![可用配置](images/appgroups-sml.png)
+![“可用配置”](images/appgroups-sml.png)
 
 请勿在 Apple Watch 的应用程序 ID**中启用应用**程序组。 不需要在监视本身上启用它。
 

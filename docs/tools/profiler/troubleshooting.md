@@ -6,12 +6,12 @@ ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
 author: davidortinau
 ms.author: daortin
 ms.date: 10/27/2017
-ms.openlocfilehash: 915f7df80e3ae29ab3c598ea95fabbc054e916dd
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5b4b4bdf85ec79a46a4e4c06504eb8b9b85af329
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73019217"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84566952"
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Xamarin Profiler 疑难解答
 
@@ -25,19 +25,19 @@ ms.locfileid: "73019217"
 
 ### <a name="getting-log-outputs"></a>获取日志输出
 
-在 Mac 日志上保存到 `~/Library/Logs/Xamarin.Profiler/Profiler.<date>.log`。
+将保存到 `~/Library/Logs/Xamarin.Profiler/Profiler.<date>.log` 。
 
-在 Windows 上，这些会保存到 `%appdata%Local//Xamarin/Log/Xamarin.Profiler/Profiler.<date>.log` 请在每次提交问题时包含最新的日志。
+在 Windows 上，当你提交问题时，它们将保存到，并 `%appdata%Local//Xamarin/Log/Xamarin.Profiler/Profiler.<date>.log` 包括最新的日志。
 
 我们将在此期间添加更多日志记录，因此，此输出会随着时间的推移而变得更加有用。
 
-<a name="gen_mlpd" />
+<a name="gen_mlpd"></a>
 
 ### <a name="generating-mlpd-files"></a>生成 .mlpd 文件
 
 **.Mlpd**文件是 mono 运行时探查器的压缩输出。 Xamarin Profiler GUI 从 **.mlpd**读取数据并为用户显示该数据。 **.mlpd**文件对 Xamarin 有用，因为它们可帮助工程师诊断探查器可能会遇到的数据问题。
 
-当前会话的 **.mlpd**将自动保存在 Mac 的 `/tmp` 目录中，并可通过时间戳进行标识。 如果启用日志记录，则第一个输出将是 **.mlpd**文件的路径。 **.Mlpd**文件通常会保存在目录中，从 ~/var/folders。
+当前会话的 **.mlpd**将自动保存在 Mac 的 `/tmp` 目录中，并且可通过时间戳进行标识。 如果启用日志记录，则第一个输出将是 **.mlpd**文件的路径。 **.Mlpd**文件通常会保存在目录中，从 ~/var/folders.。。
 
 还可以通过选择 " **File > 另存为 ...** " 来保存当前会话的 **.mlpd** 从探查器菜单：
 
@@ -79,7 +79,7 @@ ms.locfileid: "73019217"
 
 #### <a name="to-watch-a-specific-thread"></a>监视特定线程
 
-如果你有一个想要专门观看的线程，最好将该线程命名为开始创建的位置，以获取 `ThreadName` 而不是 `0x0`。 例如，若要将线程名称设置为 `UI`，可以使用以下代码：
+如果你有一个想要专门观看的线程，最好将该线程命名为开始创建的位置， `ThreadName` 而不是 `0x0` 。 例如，若要将线程名称设置为 `UI` ，可以使用以下代码：
 
 ```csharp
 RunOnUiThread (() => {

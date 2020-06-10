@@ -1,39 +1,13 @@
 ---
-title: ''
-description: 可以直接从 XAML 文件引用 iOS、Android 和通用 Windows 平台中的本机视图 Xamarin.Forms 。 可以在本机视图上设置属性和事件处理程序，并且可以与视图进行交互 Xamarin.Forms 。 本文演示如何从 XAML 文件使用本机视图 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 67994371d3042100503eb3a7c3bc7d117b1c590c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139576"
+标题： "XAML 中的本机视图" 说明： "iOS、Android 和通用 Windows 平台中的本机视图可以从 Xamarin.Forms XAML 文件直接引用。 可以在本机视图上设置属性和事件处理程序，并且可以与视图进行交互 Xamarin.Forms 。 本文演示如何从 XAML 文件使用本机视图 Xamarin.Forms 。 "
+ms-chap： xamarin assetid：7A856D31-B300-409E-9AEB-F8A4DB99B37E： xamarin 窗体作者： davidbritch： dabritch ms. 日期：03/23/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="native-views-in-xaml"></a>采用 XAML 的本机视图
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
 
 _可以直接从 XAML 文件引用 iOS、Android 和通用 Windows 平台中的本机视图 Xamarin.Forms 。可以在本机视图上设置属性和事件处理程序，并且可以与视图进行交互 Xamarin.Forms 。本文演示如何从 XAML 文件使用本机视图 Xamarin.Forms 。_
-
-本文讨论以下主题：
-
-- [使用本机视图](#consuming)–从 XAML 使用本机视图的过程。
-- [使用本机绑定](#native_bindings)–与本机视图的属性之间的数据绑定。
-- [将自变量传递给本机](#passing_arguments)视图–将参数传递给本机视图构造函数并调用本机视图工厂方法。
-- [从代码引用本机视图](#native_view_code)–从代码隐藏文件检索在 XAML 文件中声明的本机视图实例。
-- [子类本机视图](#subclassing)–为定义 XAML 友好 API 定义 XAML 本机视图。  
-
-<a name="overview" />
-
-## <a name="overview"></a>概述
 
 若要将本机视图嵌入到 Xamarin.Forms XAML 文件中：
 
@@ -43,11 +17,9 @@ _可以直接从 XAML 文件引用 iOS、Android 和通用 Windows 平台中的�
 > [!IMPORTANT]
 > 对于任何使用本机视图的 XAML 页，必须禁用已编译的 XAML。 这可以通过使用特性修饰 XAML 页的代码隐藏类来实现 `[XamlCompilation(XamlCompilationOptions.Skip)]` 。 有关 XAML 编译的详细信息，请参阅[中的 Xamarin.Forms xaml 编译](~/xamarin-forms/xaml/xamlc.md)。
 
-若要从代码隐藏文件引用本机视图，必须使用共享资产项目（SAP），并使用条件编译指令包装特定于平台的代码。 有关详细信息，请参阅[从代码引用本机视图](#native_view_code)。
+若要从代码隐藏文件引用本机视图，必须使用共享资产项目（SAP），并使用条件编译指令包装特定于平台的代码。 有关详细信息，请参阅[从代码引用本机视图](#refer-to-native-views-from-code)。
 
-<a name="consuming" />
-
-## <a name="consuming-native-views"></a>使用本机视图
+## <a name="consume-native-views"></a>使用本机视图
 
 下面的代码示例演示如何将每个平台的本机视图用于 Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) ：
 
@@ -77,12 +49,10 @@ _可以直接从 XAML 文件引用 iOS、Android 和通用 Windows 平台中的�
 > [!NOTE]
 > 请注意，样式不能用于本机视图，因为样式只能以对象支持的属性为目标 `BindableProperty` 。
 
-Android 小组件构造函数通常要求将 Android `Context` 对象作为参数，这可以通过类中的静态属性来使用 `MainActivity` 。 因此，在 XAML 中创建 Android 小组件时， `Context` 通常必须使用 `x:Arguments` 具有标记扩展的属性将对象传递给小组件的构造函数 `x:Static` 。 有关详细信息，请参阅[将参数传递给本机视图](#passing_arguments)。
+Android 小组件构造函数通常要求将 Android `Context` 对象作为参数，这可以通过类中的静态属性来使用 `MainActivity` 。 因此，在 XAML 中创建 Android 小组件时， `Context` 通常必须使用 `x:Arguments` 具有标记扩展的属性将对象传递给小组件的构造函数 `x:Static` 。 有关详细信息，请参阅[将参数传递给本机视图](#pass-arguments-to-native-views)。
 
 > [!NOTE]
-> 请注意，不能将本机视图命名 `x:Name` 为 .NET Standard 库项目或共享资产项目（SAP）。 这样做将生成本机类型的变量，这将导致编译错误。 但是，本机视图可以包装在实例中， `ContentView` 并在代码隐藏文件中检索，前提是使用了 SAP。 有关详细信息，请参阅[从代码引用本机视图](#native_view_code)。
-
-<a name="native_bindings" />
+> 请注意，不能将本机视图命名 `x:Name` 为 .NET Standard 库项目或共享资产项目（SAP）。 这样做将生成本机类型的变量，这将导致编译错误。 但是，本机视图可以包装在实例中， `ContentView` 并在代码隐藏文件中检索，前提是使用了 SAP。 有关详细信息，请参阅[从代码引用本机视图](#refer-to-native-views-from-code)。
 
 ## <a name="native-bindings"></a>本机绑定
 
@@ -127,9 +97,7 @@ Android 小组件构造函数通常要求将 Android `Context` 对象作为参�
 
 自动支持双向绑定，前提是本机属性实现了 `INotifyPropertyChanged` ，或支持 iOS 上的键-值观察（KVO）或 `DependencyProperty` UWP 上的。 但是，许多本机视图不支持属性更改通知。 对于这些视图，您可以 [`UpdateSourceEventName`](xref:Xamarin.Forms.Binding.UpdateSourceEventName) 将属性值指定为绑定表达式的一部分。 应将此属性设置为本机视图中的事件名称，该事件指示目标属性已更改。 然后，当本机开关的值发生更改时， `Binding` 会通知类用户已更改开关值，并 `NativeSwitchPageViewModel.IsSwitchOn` 更新属性值。
 
-<a name="passing_arguments" />
-
-## <a name="passing-arguments-to-native-views"></a>将自变量传递给本机视图
+## <a name="pass-arguments-to-native-views"></a>将自变量传递给本机视图
 
 构造函数参数可以使用 `x:Arguments` 具有标记扩展的属性传递给本机视图 `x:Static` 。 此外， `public static` 可以通过使用属性指定方法的名称 `x:FactoryMethod` ，并使用属性来调用本机视图工厂方法（返回与定义方法的类或结构类型相同的对象或值的方法） `x:Arguments` 。
 
@@ -200,9 +168,7 @@ Android 小组件构造函数通常要求将 Android `Context` 对象作为参�
 
 有关在 XAML 中传递参数的详细信息，请参阅[在 xaml 中传递参数](~/xamarin-forms/xaml/passing-arguments.md)。
 
-<a name="native_view_code" />
-
-## <a name="referring-to-native-views-from-code"></a>从代码引用本机视图
+## <a name="refer-to-native-views-from-code"></a>从代码中引用本机视图
 
 尽管不能将本机视图命名为属性，但可以 `x:Name` 从共享访问项目中的代码隐藏文件中检索在 XAML 文件中声明的本机视图实例，前提是本机视图是 [`ContentView`](xref:Xamarin.Forms.ContentView) 指定属性值的的子 `x:Name` 。 然后，在代码隐藏文件中的条件编译指令的内部，应执行以下操作：
 
@@ -287,9 +253,7 @@ IOS 和 Android 本机按钮共享同一 `OnButtonTap` 事件处理程序，因�
 
 ![](xaml-images/contentview.png "ContentView Containing a Native Control")
 
-<a name="subclassing" />
-
-## <a name="subclassing-native-views"></a>子类本机视图
+## <a name="subclass-native-views"></a>子类本机视图
 
 许多 iOS 和 Android 本机视图不适合在 XAML 中进行实例化，因为它们使用方法而不是属性来设置控件。 此问题的解决方法是包装中的本机视图的子类，这些包装器定义更易于 XAML 的 API，该 API 使用属性来设置控件，并使用与平台无关的事件。 然后，可以将换行的本机视图置于共享资产项目（SAP）中并使用条件编译指令来放置，或者放置在平台特定的项目中，并在 .NET Standard 库项目中从 XAML 进行引用。
 
@@ -485,10 +449,6 @@ class MySpinner : Spinner
 ```
 
 `MySpinner`类公开 `ItemsSource` 和属性以及 `SelectedObject` `ItemSelected` 事件。 类显示的项 `MySpinner` 由 [`Adapter`](xref:Android.Widget.Adapter) 与视图关联的提供，在 `Adapter` `ItemsSource` 首次设置属性时，项将填充到中。 每当类中的选定项 `MySpinner` 发生更改时， `OnBindableSpinnerItemSelected` 事件处理程序都将更新 `SelectedObject` 属性。
-
-## <a name="summary"></a>总结
-
-本文演示了如何从 XAML 文件使用本机视图 Xamarin.Forms 。 可以在本机视图上设置属性和事件处理程序，并且可以与视图进行交互 Xamarin.Forms 。
 
 ## <a name="related-links"></a>相关链接
 

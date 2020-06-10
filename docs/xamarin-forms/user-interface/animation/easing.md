@@ -1,9 +1,6 @@
 ---
-title： ' description 中的缓动函数 Xamarin.Forms ： ' Xamarin.Forms 包含一个缓动类，使你能够指定传输函数，该函数控制动画在运行时的速度如何提高或减速。 本文演示如何使用预定义的缓动函数，以及如何创建自定义缓动函数。
-ms-chap： assetid： ms-chap： author： ms. 作者： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title： "描述中的缓动函数" Xamarin.Forms 说明： " Xamarin.Forms 包含一个缓动类，使你能够指定传输函数，该函数控制动画在运行时的速度如何提高或减速。 本文演示如何使用预定义的缓动函数，以及如何创建自定义缓动函数。
+ms-chap： xamarin assetid： E6F124C7-A161-4C1F-AF40-52F0935E54DE： xamarin 窗体作者： davidbritch： dabritch ms. 日期：07/14/2016 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="easing-functions-in-xamarinforms"></a>缓动函数Xamarin.Forms
@@ -28,7 +25,7 @@ _Xamarin 包含一个缓动类，使你可以指定一个传输函数来控制�
 
 `In`和 `Out` 后缀指示缓动函数所提供的效果在动画的开头、结尾还是同时非常明显。
 
-此外，还可以创建自定义缓动函数。 有关详细信息，请参阅[自定义缓动函数](#customeasing)。
+此外，还可以创建自定义缓动函数。 有关详细信息，请参阅[自定义缓动函数](#custom-easing-functions)。
 
 ## <a name="consuming-an-easing-function"></a>使用缓动函数
 
@@ -45,8 +42,6 @@ await image.TranslateTo(0, -200, 2000, Easing.BounceOut);
 通过指定动画的缓动函数，动画速度变为非线性，并产生缓动函数所提供的效果。 在创建动画时省略缓动函数会使动画使用默认 [`Linear`](xref:Xamarin.Forms.Easing.Linear) 缓动函数，这将产生线性速度。
 
 有关在类中使用动画扩展方法的详细信息 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) ，请参阅[简单动画](~/xamarin-forms/user-interface/animation/simple.md)。 类也可以使用缓动函数 [`Animation`](xref:Xamarin.Forms.Animation) 。 有关详细信息，请参阅[自定义动画](~/xamarin-forms/user-interface/animation/custom.md)。
-
-<a name="customeasing" />
 
 ## <a name="custom-easing-functions"></a>自定义缓动函数
 

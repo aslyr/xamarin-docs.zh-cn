@@ -6,16 +6,16 @@ ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: 92b08a9cfd725c1114b71fad4f29e6f28cd828b3
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: a044169f86b46abff4158011e99320c528180ffc
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306295"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573880"
 ---
 # <a name="workbooks-installation-and-requirements"></a>工作簿安装和要求
 
-<a name="install" />
+<a name="install"></a>
 
 ## <a name="download-and-install"></a>下载并安装
 
@@ -37,18 +37,18 @@ ms.locfileid: "79306295"
 
 ## <a name="requirements"></a>要求
 
-#### <a name="supported-operating-systems"></a>受支持的操作系统
+#### <a name="supported-operating-systems"></a>Supported Operating Systems
 
 - **Mac** -OS X 10.11 或更高版本
 - **Windows** -windows 7 或更高版本（包含 Internet Explorer 11 或更高版本以及 .net 4.6.1 或更高版本）
 
 #### <a name="supported-app-platforms"></a>支持的应用平台
 
-|应用平台|OS 支持|注意|
+|应用平台|OS 支持|说明|
 |--- |--- |--- |
 |Mac|仅在 Mac 上受支持|
 |iOS|在 Mac 和 Windows 上受支持|需要在 Mac 上安装 Xamarin 11.0 和 Xcode 9.0 或更高版本。 在 Windows 上运行 iOS 工作簿需要运行上述所有的 Mac 生成主机，以及在 Windows 上安装的[远程 IOS 模拟器](~/tools/ios-simulator/index.md)。|
-|Android|在 Mac 和 Windows 上受支持|必须使用 Google、Visual Studio 或 Xamarin Android 模拟器，并且虚拟设备 > = 5。0|
+|Android|在 Mac 和 Windows 上受支持|必须使用 Google、Visual Studio 或 Xamarin Android 模拟器，并且虚拟设备 >= 5。0|
 |WPF|仅在 Windows 上受支持|
 |控制台（.NET Framework）|在 Mac 和 Windows 上受支持|
 |控制台（.NET Core）|在 Mac 和 Windows 上受支持|
@@ -62,7 +62,7 @@ ms.locfileid: "79306295"
 始终附加工作簿客户端日志文件：
 
 - Mac：`~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
-- Windows：`%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
+- Windows： `%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
 
 1.4. x 还可以直接从主菜单中选择查找器（macOS）或资源管理器（Windows）中的日志文件：
 
@@ -71,7 +71,7 @@ ms.locfileid: "79306295"
 #### <a name="log-paths-for-workbooks-13-and-earlier"></a>工作簿1.3 及更早版本的日志路径：
 
 - Mac：`~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
-- Windows：`%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
+- Windows： `%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
 
 ### <a name="platform-version-information"></a>平台版本信息
 
@@ -132,7 +132,7 @@ Visual Studio
 
 **你仍应按照 Visual Studio 安装程序的过程进行操作，以确保在不知情的情况下不会重新安装工作簿。**
 
-<a name="uninstall-macos" />
+<a name="uninstall-macos"></a>
 
 ### <a name="macos"></a>macOS
 
@@ -144,7 +144,7 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 
 卸载程序将详细说明它将删除的文件和目录，并在继续操作之前要求确认。
 
-对于更高级的方案，将 `-help` 参数传递到 `uninstall` 脚本。
+`-help`对于更高级的方案，将参数传递给 `uninstall` 脚本。
 
 对于旧版本，需手动删除以下各项：
 
@@ -155,11 +155,11 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 
 ## <a name="downgrading"></a>降级
 
-**/Applications/Xamarin 工作簿**的捆绑标识符将从 `com.xamarin.Inspector` 更改为1.4 版本中的 `com.xamarin.Workbooks`，因为工作簿和检查器现已完全拆分。
+**/Applications/Xamarin 工作簿的捆绑标识符。应用程序**已从更改 `com.xamarin.Inspector` 为 `com.xamarin.Workbooks` 1.4 版本，因为工作簿和检查器现已完全拆分。
 
 由于较旧的安装程序中的 bug，无法使用1.3.2 或较旧的安装程序降级1.4 或更高版本。
 
 从1.4 或更高版本降级到1.3.2 或更高版本：
 
 1. [手动卸载工作簿 & 检查器](#uninstall-macos)
-2. 运行1.3.2 或更早 `.pkg` 安装程序
+2. 运行1.3.2 或更早版本的 `.pkg` 安装程序

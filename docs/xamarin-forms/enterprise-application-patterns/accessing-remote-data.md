@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 7a7482754653e2aecb069afa215b68306ade8a99
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129575"
+标题： "访问远程数据" 说明： "本章节介绍了 eShopOnContainers 移动应用如何从容器化微服务访问数据。"
+ms-chap： xamarin assetid：42eba6f5-9784-4e1a-9943-5c1fbeea7452： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/07/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="accessing-remote-data"></a>访问远程数据
 
 许多基于 web 的新式解决方案都利用 web 服务器托管的 web 服务，为远程客户端应用程序提供功能。 Web 服务公开的操作构成 Web API。
@@ -48,11 +34,9 @@ EShopOnContainers 移动应用使用模型-视图-ViewModel （MVVM）模式，�
 
 EShopOnContainers 移动应用使用 `HttpClient` 类通过 HTTP 发出请求，使用 JSON 作为媒体类型。 此类提供了用于异步发送 HTTP 请求以及从 URI 标识的资源接收 HTTP 响应的功能。 `HttpResponseMessage`类表示发出 http 请求后 REST API 收到的 http 响应消息。 它包含有关响应的信息，包括状态代码、标头和任何正文。 `HttpContent`类表示 HTTP 正文和内容标头，例如 `Content-Type` 和 `Content-Encoding` 。 可以使用任何 `ReadAs` 方法（如和）读取内容， `ReadAsStringAsync` `ReadAsByteArrayAsync` 具体取决于数据的格式。
 
-<a name="making_a_get_request" />
-
 #### <a name="making-a-get-request"></a>发出 GET 请求
 
-`CatalogService`类用于管理目录微服务中的数据检索过程。 在 `RegisterDependencies` 类的方法中 `ViewModelLocator` ， `CatalogService` `ICatalogService` 使用 Autofac 依赖关系注入容器将类注册为针对类型的类型映射。 然后，在创建类的实例时 `CatalogViewModel` ，其构造函数将接受 `ICatalogService` Autofac 解析的类型，并返回类的实例 `CatalogService` 。 有关依赖关系注入的详细信息，请参阅[依赖关系注入简介](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection)。
+`CatalogService`类用于管理目录微服务中的数据检索过程。 在 `RegisterDependencies` 类的方法中 `ViewModelLocator` ， `CatalogService` `ICatalogService` 使用 Autofac 依赖关系注入容器将类注册为针对类型的类型映射。 然后，在创建类的实例时 `CatalogViewModel` ，其构造函数将接受 `ICatalogService` Autofac 解析的类型，并返回类的实例 `CatalogService` 。 有关依赖关系注入的详细信息，请参阅[依赖关系注入简介](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction-to-dependency-injection)。
 
 图10-1 显示了从目录微服务读取目录数据以便显示的类的交互 `CatalogView` 。
 
@@ -86,7 +70,7 @@ public async Task<ObservableCollection<CatalogItem>> GetCatalogAsync()
 }
 ```
 
-此方法生成标识请求将发送到的资源的 URI，并在将 `RequestProvider` 结果返回到之前，使用类对资源调用 GET HTTP 方法 `CatalogViewModel` 。 `RequestProvider`类包含的功能以 URI 的形式提交请求，该 URI 用于标识资源、指示要对该资源执行的操作的 HTTP 方法，以及包含执行操作所需的任何数据的主体。 有关如何将 `RequestProvider` 类注入到中的信息 `CatalogService class` ，请参阅[依赖关系注入简介](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection)。
+此方法生成标识请求将发送到的资源的 URI，并在将 `RequestProvider` 结果返回到之前，使用类对资源调用 GET HTTP 方法 `CatalogViewModel` 。 `RequestProvider`类包含的功能以 URI 的形式提交请求，该 URI 用于标识资源、指示要对该资源执行的操作的 HTTP 方法，以及包含执行操作所需的任何数据的主体。 有关如何将 `RequestProvider` 类注入到中的信息 `CatalogService class` ，请参阅[依赖关系注入简介](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction-to-dependency-injection)。
 
 下面的代码示例演示 `GetAsync` 类中的方法 `RequestProvider` ：
 
@@ -157,7 +141,7 @@ public async Task<IActionResult> Items(
 
 #### <a name="making-a-post-request"></a>发出 POST 请求
 
-`BasketService`类用于管理购物车微服务的数据检索和更新过程。 在 `RegisterDependencies` 类的方法中 `ViewModelLocator` ， `BasketService` `IBasketService` 使用 Autofac 依赖关系注入容器将类注册为针对类型的类型映射。 然后，在创建类的实例时 `BasketViewModel` ，其构造函数将接受 `IBasketService` Autofac 解析的类型，并返回类的实例 `BasketService` 。 有关依赖关系注入的详细信息，请参阅[依赖关系注入简介](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection)。
+`BasketService`类用于管理购物车微服务的数据检索和更新过程。 在 `RegisterDependencies` 类的方法中 `ViewModelLocator` ， `BasketService` `IBasketService` 使用 Autofac 依赖关系注入容器将类注册为针对类型的类型映射。 然后，在创建类的实例时 `BasketViewModel` ，其构造函数将接受 `IBasketService` Autofac 解析的类型，并返回类的实例 `BasketService` 。 有关依赖关系注入的详细信息，请参阅[依赖关系注入简介](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction-to-dependency-injection)。
 
 图10-2 显示了将显示的购物篮数据发送 `BasketView` 到购物篮微服务的类的交互。
 
@@ -215,7 +199,7 @@ public async Task<TResult> PostAsync<TResult>(
 }
 ```
 
-此方法调用 `CreateHttpClient` 方法，该方法 `HttpClient` 使用适当的标头集返回类的实例。 然后，它会将异步 POST 请求提交到由 URI 标识的资源，并以 JSON 格式发送序列化篮数据以及在实例中存储的响应 `HttpResponseMessage` 。 `HandleResponse`然后调用方法，如果响应未包含成功的 HTTP 状态代码，则会引发异常。 然后，响应作为字符串读取，从 JSON 转换为 `CustomerBasket` 对象，并返回到 `BasketService` 。 有关方法的详细信息 `CreateHttpClient` ，请参阅[发出 GET 请求](#making_a_get_request)。
+此方法调用 `CreateHttpClient` 方法，该方法 `HttpClient` 使用适当的标头集返回类的实例。 然后，它会将异步 POST 请求提交到由 URI 标识的资源，并以 JSON 格式发送序列化篮数据以及在实例中存储的响应 `HttpResponseMessage` 。 `HandleResponse`然后调用方法，如果响应未包含成功的 HTTP 状态代码，则会引发异常。 然后，响应作为字符串读取，从 JSON 转换为 `CustomerBasket` 对象，并返回到 `BasketService` 。 有关方法的详细信息 `CreateHttpClient` ，请参阅[发出 GET 请求](#making-a-get-request)。
 
 当 `PostAsync` 类中的方法 `RequestProvider` 调用时，将调用中的类中的方法，如 `HttpClient.PostAsync` `Post` `BasketController` 以下代码示例所示：
 
@@ -273,7 +257,7 @@ public async Task DeleteAsync(string uri, string token = "")
 }
 ```
 
-此方法调用 `CreateHttpClient` 方法，该方法 `HttpClient` 使用适当的标头集返回类的实例。 然后，它会将异步删除请求提交到由 URI 标识的资源。 有关方法的详细信息 `CreateHttpClient` ，请参阅[发出 GET 请求](#making_a_get_request)。
+此方法调用 `CreateHttpClient` 方法，该方法 `HttpClient` 使用适当的标头集返回类的实例。 然后，它会将异步删除请求提交到由 URI 标识的资源。 有关方法的详细信息 `CreateHttpClient` ，请参阅[发出 GET 请求](#making-a-get-request)。
 
 当 `DeleteAsync` 类中的方法 `RequestProvider` 调用时，将调用中的类中的方法，如 `HttpClient.DeleteAsync` `Delete` `BasketController` 以下代码示例所示：
 
@@ -316,8 +300,6 @@ EShopOnContainers 移动应用使用专用缓存，其中的数据保存在运�
 当缓存的数据过期时，它应从缓存中删除，应用程序必须从原始数据存储中检索数据并将其放回到缓存中。
 
 如果允许数据长时间保留太长时间，则缓存可能会填满。 因此，在将新项添加到缓存中的请求可能需要在称为*逐出*的进程中删除某些项。 缓存服务通常在最近使用的基础上逐出数据。 但是，还有其他逐出策略，包括最近使用过的和先进先出的策略。有关详细信息，请参阅[缓存指南](/azure/architecture/best-practices/caching/)。
-
-<a name="caching_images" />
 
 ### <a name="caching-images"></a>缓存图像
 
@@ -376,18 +358,16 @@ FFImageLoading 的 `CachedImage` 控件是控件的替代 Xamarin.Forms [`Image`
 > [!NOTE]
 > 尝试次数最短的重试策略和大量重试会使运行接近或达到容量的远程服务下降。 此外，此类重试策略还可能会影响应用的响应能力，前提是它正尝试执行失败的操作。
 
-如果在重试多次后请求仍失败，则应用程序可以防止进一步请求进入同一资源并报告故障。 然后，在设定的时间段之后，应用程序可以对资源进行一个或多个请求，以查看它们是否成功。 有关详细信息，请参阅[断路器模式](#circuit_breaker_pattern)。
+如果在重试多次后请求仍失败，则应用程序可以防止进一步请求进入同一资源并报告故障。 然后，在设定的时间段之后，应用程序可以对资源进行一个或多个请求，以查看它们是否成功。 有关详细信息，请参阅[断路器模式](#circuit-breaker-pattern)。
 
 > [!TIP]
 > 切勿实施永不结束的重试机制。 使用有限的重试次数，或实现[断路](/azure/architecture/patterns/circuit-breaker/)器模式以允许服务恢复。
 
-发出 RESTful web 请求时，eShopOnContainers 移动应用当前未实现重试模式。 但是，由 `CachedImage` [FFImageLoading](https://www.nuget.org/packages/Xamarin.FFImageLoading.Forms/)库提供的控件通过重试图像加载来支持暂时性故障处理。 如果图像加载失败，将进行进一步的尝试。 尝试次数由 `RetryCount` 属性指定，并重试将在属性指定的延迟后发生 `RetryDelay` 。 如果未显式设置这些属性值，将对属性应用其默认值– 3 `RetryCount` ，并为属性应用250毫秒 `RetryDelay` 。 有关控件的详细信息 `CachedImage` ，请参阅[缓存图像](#caching_images)。
+发出 RESTful web 请求时，eShopOnContainers 移动应用当前未实现重试模式。 但是，由 `CachedImage` [FFImageLoading](https://www.nuget.org/packages/Xamarin.FFImageLoading.Forms/)库提供的控件通过重试图像加载来支持暂时性故障处理。 如果图像加载失败，将进行进一步的尝试。 尝试次数由 `RetryCount` 属性指定，并重试将在属性指定的延迟后发生 `RetryDelay` 。 如果未显式设置这些属性值，将对属性应用其默认值– 3 `RetryCount` ，并为属性应用250毫秒 `RetryDelay` 。 有关控件的详细信息 `CachedImage` ，请参阅[缓存图像](#caching-images)。
 
 EShopOnContainers 引用应用程序执行重试模式。 有关详细信息，包括如何将重试模式与类结合使用的讨论 `HttpClient` ，请参阅[.net 微服务：适用于容器化 .Net 应用程序的体系结构](https://aka.ms/microservicesebook)。
 
 有关重试模式的详细信息，请参阅[重试](/azure/architecture/patterns/retry/)模式。
-
-<a name="circuit_breaker_pattern" />
 
 ### <a name="circuit-breaker-pattern"></a>断路器模式
 

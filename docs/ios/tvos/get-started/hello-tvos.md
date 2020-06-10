@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 02/02/2018
-ms.openlocfilehash: 35f0bc0668c6f80ee00b1253b16a8ac71770a9be
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 7b254d3a7cfc04893b3b240d8d372f8df60c655c
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030819"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571750"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>你好，tvOS 快速入门指南
 
@@ -28,9 +28,9 @@ Apple TV 平台面向开发人员，使他们能够创建丰富的沉浸式应�
 
 ## <a name="overview"></a>概述
 
-使用 tvOS，可以使用在*Swift* （或*目标-C*） C#和*Xcode*中进行开发时使用的相同 OS X 库和接口控件在和 .net 中开发完全本机的 Apple 电视应用程序。
+使用 tvOS 可以在 c # 和 .NET 中使用在*Swift* （或*目标-C*）和*Xcode*中进行开发时使用的相同 OS X 库和接口控件开发完全本机的 Apple 电视应用程序。
 
-此外，由于 tvOS 应用是用C#和 .net 编写的，因此可以通过 Xamarin、Xamarin 和 Xamarin for Mac 应用共享通用的后端代码;同时提供每个平台的本机体验。
+此外，由于 tvOS 应用是用 c # 和 .NET 编写的，因此常用的后端代码可以与 Xamarin、Xamarin 和 Xamarin 应用共享;同时提供每个平台的本机体验。
 
 本文介绍了使用 tvOS 和 Visual Studio 创建 Apple TV 应用所需的关键概念，逐步引导你完成构建基本**的 Hello，tvOS**应用程序，该应用对按钮的点击次数进行计数：
 
@@ -45,7 +45,7 @@ Apple TV 平台面向开发人员，使他们能够创建丰富的沉浸式应�
 
 ## <a name="starting-a-new-xamarintvos-app-in-visual-studio-for-mac"></a>在 Visual Studio for Mac 中启动新的 tvOS 应用
 
-如前文所述，我们将创建一个名为 `Hello-tvOS` 的 Apple 电视应用程序，该应用程序将单个按钮和标签添加到主屏幕。 点击此按钮后，标签会显示已点击次数。
+如上所述，我们将创建一个名为的 Apple TV 应用 `Hello-tvOS` ，用于向主屏幕添加单个按钮和标签。 点击此按钮后，标签会显示已点击次数。
 
 若要开始操作，请执行以下操作：
 
@@ -53,13 +53,13 @@ Apple TV 平台面向开发人员，使他们能够创建丰富的沉浸式应�
 
     [![](hello-tvos-images/setup01.png "Visual Studio for Mac")](hello-tvos-images/setup01.png#lightbox)
 2. 单击屏幕左上角的 "**新建解决方案 ...** " 链接以打开 "**新建项目**" 对话框。
-3. 选择**tvOS** > **应用** > **单视图应用**，然后单击 "**下一步**" 按钮：
+3. 选择 " **tvOS**  >  **应用**  >  **单视图应用**"，并单击 "**下一步**" 按钮：
 
     [![](hello-tvos-images/setup02.png "Select Single View App")](hello-tvos-images/setup02.png#lightbox)
-4. 输入**应用名称**`Hello, tvOS`，输入**组织标识符**，并单击 "**下一步**" 按钮：
+4. 输入 `Hello, tvOS` "**应用名称**"，输入**组织标识符**，并单击 "**下一步**" 按钮：
 
     [![](hello-tvos-images/setup04.png "Enter Hello, tvOS")](hello-tvos-images/setup04.png#lightbox)
-5. 输入**项目名称**`Hello_tvOS`，并单击 "**创建**" 按钮：
+5. 输入 `Hello_tvOS` 作为**项目名称**，然后单击 "**创建**" 按钮：
 
     [![](hello-tvos-images/setup03.png "Enter HellotvOS")](hello-tvos-images/setup03.png#lightbox)
 
@@ -78,17 +78,17 @@ Visual Studio for Mac 使用**解决方案**和**项目**，与 Visual Studio �
 让我们看一下项目中的文件：
 
 - `Main.cs` – 此文件包含应用的主入口点。 启动应用时，其中会包含运行的首个类和方法。
-- `AppDelegate.cs` –此文件包含主应用程序类，该类负责侦听来自操作系统的事件。
-- `Info.plist` –此文件包含应用程序属性，如应用程序名称、图标等。
-- `ViewController.cs` –这是表示主窗口并控制其生命周期的类。
-- `ViewController.designer.cs` –此文件包含可帮助你与主屏幕用户界面集成的管道代码。
-- `Main.storyboard` –主窗口的 UI。 此文件可以由 Xamarin Designer for iOS 创建和维护。
+- `AppDelegate.cs`–此文件包含主应用程序类，该类负责侦听来自操作系统的事件。
+- `Info.plist`–此文件包含应用程序属性，如应用程序名称、图标等。
+- `ViewController.cs`–这是表示主窗口并控制其生命周期的类。
+- `ViewController.designer.cs`–此文件包含可帮助你与主屏幕的用户界面集成的管道代码。
+- `Main.storyboard`–主窗口的 UI。 此文件可以由 Xamarin Designer for iOS 创建和维护。
 
 在以下部分中，我们将简要介绍一下其中一些文件。 稍后我们将更详细地探讨这些问题，但最好立即了解其基础知识。
 
 ### <a name="maincs"></a>Main.cs
 
-`Main.cs` 文件包含静态 `Main` 方法，该方法创建新的 tvOS 应用程序实例，并传递将处理 OS 事件的类的名称，在本例中为 `AppDelegate` 类：
+`Main.cs`文件包含一个静态 `Main` 方法，该方法创建新的 tvOS 应用程序实例，并传递将处理 OS 事件的类的名称，在本例中为 `AppDelegate` 类：
 
 ```csharp
 using UIKit;
@@ -110,7 +110,7 @@ namespace Hello_tvOS
 
 ### <a name="appdelegatecs"></a>AppDelegate.cs
 
-`AppDelegate.cs` 文件包含我们的 `AppDelegate` 类，该类负责创建窗口和侦听 OS 事件：
+此 `AppDelegate.cs` 文件包含我们的 `AppDelegate` 类，该类负责创建窗口和侦听 OS 事件：
 
 ```csharp
 using Foundation;
@@ -184,15 +184,15 @@ public override UIWindow Window {
 
 ```
 
-`Window` 属性提供对主窗口的访问。 tvOS 使用所谓的*模型视图控制器*（MVC）模式。 通常，对于你创建的每个窗口（以及 windows 中的许多其他功能），都有一个控制器，该控制器负责窗口的生命周期（如显示它、向其添加新视图（控件）等）。
+`Window`属性提供对主窗口的访问。 tvOS 使用所谓的*模型视图控制器*（MVC）模式。 通常，对于你创建的每个窗口（以及 windows 中的许多其他功能），都有一个控制器，该控制器负责窗口的生命周期（如显示它、向其添加新视图（控件）等）。
 
-接下来，我们使用 `FinishedLaunching` 方法。 此方法在应用程序实例化后运行，并负责实际创建应用程序窗口并开始在其中显示视图。 由于我们的应用程序使用情节提要来定义其 UI，因此此处不需要其他代码。
+接下来，我们有 `FinishedLaunching` 方法。 此方法在应用程序实例化后运行，并负责实际创建应用程序窗口并开始在其中显示视图。 由于我们的应用程序使用情节提要来定义其 UI，因此此处不需要其他代码。
 
-模板中提供了许多其他方法，例如 `DidEnterBackground` 和 `WillEnterForeground`。 如果应用程序中未使用应用程序事件，则可以安全地删除这些事件。
+模板中提供了许多其他方法，例如 `DidEnterBackground` 和 `WillEnterForeground` 。 如果应用程序中未使用应用程序事件，则可以安全地删除这些事件。
 
 ### <a name="viewcontrollercs"></a>ViewController.cs
 
-`ViewController` 类是主窗口的控制器。 这意味着它负责主窗口的生命周期。 稍后我们将详细介绍这一点，现在我们来简单了解一下：
+`ViewController`类是主窗口的控制器。 这意味着它负责主窗口的生命周期。 稍后我们将详细介绍这一点，现在我们来简单了解一下：
 
 ```csharp
 using System;
@@ -245,13 +245,13 @@ namespace HellotvOS
 
 现在，我们已经创建了 tvOS 应用，并对其组件有了基本的了解，接下来让我们看看如何创建 UI。
 
-<a name="Creating-the-User-Interface" />
+<a name="Creating-the-User-Interface"></a>
 
 ## <a name="creating-the-user-interface"></a>创建用户界面
 
-无需使用 Xamarin Designer for iOS 创建 tvOS 应用的用户界面，可以直接从C#代码创建 UI，但这超出了本文的范围。 为了简单起见，我们将在本教程的其余部分使用 iOS 设计器创建 UI。
+无需使用 Xamarin Designer for iOS 创建 tvOS 应用的用户界面，可直接通过 c # 代码创建 UI，但这超出了本文的范围。 为了简单起见，我们将在本教程的其余部分使用 iOS 设计器创建 UI。
 
-若要开始创建 UI，请在**解决方案资源管理器**中双击 `Main.storyboard` 文件，在 IOS 设计器中将其打开以进行编辑：
+若要开始创建 UI，请在解决方案资源管理器中双击该 `Main.storyboard` 文件，以便**Solution Explorer**在 iOS 设计器中将其打开以进行编辑：
 
 [![](hello-tvos-images/designer01.png "The Main.storyboard file in the Solution Explorer")](hello-tvos-images/designer01.png#lightbox)
 
@@ -273,7 +273,7 @@ namespace HellotvOS
 2. 将**标签**从**工具箱**拖到设计图面上：
 
     [![](hello-tvos-images/designer04.png "Drag a Label from the Toolbox")](hello-tvos-images/designer04.png#lightbox)
-3. 单击**属性板**中的 "**标题**" 属性，将该按钮的标题更改为 "`Hello, tvOS`"，并将 "**字号**" 设置为 "128"：
+3. 单击**属性板**中的 "**标题**" 属性，将该按钮的标题更改为 `Hello, tvOS` ，并将**字体大小**设置为128：
 
     [![](hello-tvos-images/designer05.png "Set the title to Hello, tvOS and set the Font Size to 128")](hello-tvos-images/designer05.png#lightbox)
 4. 调整标签的大小，使所有单词可见，并将其放置在窗口顶部附近：
@@ -299,7 +299,7 @@ namespace HellotvOS
 
     [![](hello-tvos-images/designer11.png "Example Constraints")](hello-tvos-images/designer11.png#lightbox)
 10. 将一个**按钮**从**工具箱**拖放到标签下。
-11. 单击**属性板**中的 "**标题**" 属性，并将该按钮的标题更改为 `Click Me`：
+11. 单击**属性板**中的 "**标题**" 属性，并将按钮的标题更改为 `Click Me` ：
 
     [![](hello-tvos-images/designer12.png "Change the buttons title to Click Me")](hello-tvos-images/designer12.png#lightbox)
 12. 重复上面的步骤5到步骤8来限制 tvOS 窗口中的按钮。 不过，请将 T 控点拖到该标签的底部，而不是将其拖动到窗口顶部（如步骤 #7）：
@@ -321,7 +321,7 @@ namespace HellotvOS
 
 在此处，你可以选择要编辑的项，或拖动以根据需要对 UI 元素重新排序。 例如，如果某个 UI 元素被另一个元素所覆盖，则可以将其拖到列表底部，使其成为窗口中最顶层的项目。
 
-现在，我们已经创建了用户界面，接下来需要公开 UI 项，以便 tvOS 可以在代码中C#访问它们并与其交互。
+现在我们已创建用户界面，我们需要公开 UI 项，以便 tvOS 可以在 c # 代码中对其进行访问和交互。
 
 ### <a name="accessing-the-controls-in-the-code-behind"></a>访问代码隐藏中的控件
 
@@ -330,7 +330,7 @@ namespace HellotvOS
 - 为控件创建事件处理程序。
 - 为控件提供一个名称，以便以后可以引用它。
 
-当添加其中任何一个时，`ViewController.designer.cs` 中的分部类将会进行更新以反映所做的更改。 这将允许您访问视图控制器中的控件。
+当添加其中任何一个时，中的分部类 `ViewController.designer.cs` 将进行更新以反映所做的更改。 这将允许您访问视图控制器中的控件。
 
 ### <a name="creating-an-event-handler"></a>创建事件处理程序
 
@@ -340,7 +340,7 @@ namespace HellotvOS
 2. 在 Properties pad 中，选择 "**事件**" 选项卡：
 
     [![](hello-tvos-images/event1.png "The Events tab")](hello-tvos-images/event1.png#lightbox)
-3. 找到 TouchUpInside 事件，并为其指定一个名为 `Clicked`的事件处理程序：
+3. 找到 TouchUpInside 事件，并为其指定一个名为的事件处理程序 `Clicked` ：
 
     [![](hello-tvos-images/event2.png "The TouchUpInside event")](hello-tvos-images/event2.png#lightbox)
 4. 按下**enter**后，将打开**ViewController**文件，并在代码中建议你的事件处理程序的位置。 使用键盘上的箭头键来设置位置：
@@ -360,7 +360,7 @@ namespace HellotvOS
 2. 在 Properties pad 中，选择 "**小组件**" 选项卡：
 
     [![](hello-tvos-images/name1.png "Select the Widget tab")](hello-tvos-images/name1.png#lightbox)
-3. 在 "**标识" > "名称**" 下添加 `ClickedLabel`：
+3. 在 "**标识" > "名称**" 下，添加 `ClickedLabel` ：
 
     [![](hello-tvos-images/name2.png "Set ClickedLabel")](hello-tvos-images/name2.png#lightbox)
 
@@ -368,27 +368,27 @@ namespace HellotvOS
 
 ### <a name="how-controls-are-accessed"></a>如何访问控件
 
-如果在**解决方案资源管理器**中选择 `ViewController.designer.cs`，则可以看到 `ClickedLabel` 标签和 `Clicked` 事件处理程序如何映射到中C#的**插座**和**操作**：
+如果 `ViewController.designer.cs` 在**解决方案资源管理器**中选择，则可以看到 `ClickedLabel` 标签和 `Clicked` 事件处理程序如何映射到 c # 中的**插座**和**操作**：
 
 [![](hello-tvos-images/accesscontrol.png "Outlets and Actions")](hello-tvos-images/accesscontrol.png#lightbox)
 
-你可能还注意到 `ViewController.designer.cs` 是分部类，因此 Visual Studio for Mac 无需修改将覆盖对类所做的任何更改的 `ViewController.cs`。
+你还可能会注意 `ViewController.designer.cs` 到，它是一个分部类，因此 Visual Studio for Mac 不必修改 `ViewController.cs` 这将覆盖对类所做的任何更改。
 
 通过以这种方式公开 UI 元素，可在视图控制器中访问它们。
 
-通常，您不需要自行打开 `ViewController.designer.cs`，此处只是出于教育目的提供此内容。
+通常情况下，你不需要 `ViewController.designer.cs` 亲自打开，只是为了教育目的在此处提供。
 
-<a name="Writing-the-Code" />
+<a name="Writing-the-Code"></a>
 
 ## <a name="writing-the-code"></a>编写代码
 
 创建用户界面并将其 UI 元素通过**输出口**和**操作**公开给代码后，我们最终可以编写代码来提供程序功能。
 
-在我们的应用程序中，每次单击第一个按钮时，我们都会更新标签以显示按钮的单击次数。 若要实现此目的，我们需要在**Solution Pad**中双击 `ViewController.cs` 文件进行编辑：
+在我们的应用程序中，每次单击第一个按钮时，我们都会更新标签以显示按钮的单击次数。 若要完成此操作，需要打开 `ViewController.cs` 文件进行编辑，方法是在**Solution Pad**中双击该文件：
 
 [![](hello-tvos-images/code01.png "The Solution Pad")](hello-tvos-images/code01.png#lightbox)
 
-首先，我们需要在 `ViewController` 类中创建一个类级变量，以跟踪发生的点击数。 编辑类定义，使其类似于如下所示：
+首先，我们需要在类中创建一个类级变量， `ViewController` 以跟踪发生的点击数。 编辑类定义，使其类似于如下所示：
 
 ```csharp
 using System;
@@ -403,7 +403,7 @@ namespace Hello_tvOS
         ...
 ```
 
-接下来，在同一个类（`ViewController`）中，我们需要覆盖**ViewDidLoad**方法并添加一些代码，以便为标签设置初始消息：
+接下来，在同一个类（ `ViewController` ）中，我们需要覆盖**ViewDidLoad**方法，并添加一些代码来设置标签的初始消息：
 
 ```csharp
 public override void ViewDidLoad ()
@@ -415,7 +415,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-我们需要使用 `ViewDidLoad`，而不是其他方法（如 `Initialize`），因为在操作系统加载并实例化用户界面*后*，将在 `.storyboard` 文件中调用 `ViewDidLoad`。 如果在完全加载并实例化 `.storyboard` 文件之前，我们尝试访问 "标签" 控件，则会出现 `NullReferenceException` 错误，因为尚未创建 "标签" 控件。
+需要使用 `ViewDidLoad` ，而不是使用其他方法（如 `Initialize` ），因为在 `ViewDidLoad` 操作系统加载并实例化文件中的用户界面*后*调用 `.storyboard` 。 如果在完全加载并实例化文件之前尝试访问 "标签" 控件 `.storyboard` ，则会出现 `NullReferenceException` 错误，因为尚未创建 "标签" 控件。
 
 接下来，我们需要添加代码以响应用户单击按钮。 将以下内容添加到我们创建的分部类：
 
@@ -452,9 +452,9 @@ partial void Clicked (UIButton sender)
 
 若要运行应用程序，我们有三个选项：
 
-- 按 **⌘+Enter**。
-- 在“运行”菜单中，选择“调试”。
-- 单击 Visual Studio for Mac 工具栏中的“播放”按钮（位于“解决方案资源管理器”上方）。
+- 按**⌘ + enter**。
+- 在“运行”**** 菜单中，选择“调试”****。
+- 单击 Visual Studio for Mac 工具栏中的“播放”**** 按钮（位于“解决方案资源管理器”**** 上方）。
 
 应用程序将生成（如果尚未生成），在调试模式下启动，tvOS 模拟器将启动并显示该应用程序的主界面窗口：
 
@@ -468,7 +468,7 @@ partial void Clicked (UIButton sender)
 
 [![](hello-tvos-images/run05.png "The label with updated count")](hello-tvos-images/run05.png#lightbox)
 
-祝贺你！ 这里我们介绍了许多方面的内容，但如果您按照本教程的学习，您现在应该对 tvOS 应用程序的组件以及用于创建它们的工具有深刻的了解。
+祝贺！ 这里我们介绍了许多方面的内容，但如果您按照本教程的学习，您现在应该对 tvOS 应用程序的组件以及用于创建它们的工具有深刻的了解。
 
 ## <a name="where-to-next"></a>下一步是什么？
 

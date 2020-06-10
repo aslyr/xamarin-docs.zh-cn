@@ -6,18 +6,18 @@ ms.assetid: E587F0CF-7C1D-41F8-B5A8-DA3E738EDA81
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 23ef499005994c33586e1918ac3b2a9d28640d04
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: df042521d4e9852d6e23c2bbdf24484f9068250d
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030279"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571254"
 ---
 # <a name="accessibility-in-xamarin-apps"></a>Xamarin 应用中的辅助功能
 
 _确保你的应用程序可由最广泛的受众使用_
 
-可访问性指的是设计应用程序用户界面的概念，这些应用程序用户界面可正常运行操作系统显示和输入辅助功能，例如大类型、高对比度、放大、屏幕阅读（文本到语音转换）、视觉或 haptic 反馈提示，以及替代输入法。
+可访问性指的是设计应用程序用户界面的概念，这些应用程序用户界面可正常运行操作系统显示和输入辅助功能，例如大类型、高对比度、放大、屏幕阅读（文本到语音转换）、视觉或 haptic 反馈提示以及备用输入法。
 
 桌面和移动平台（如 iOS、Android 和 Windows）提供了内置的 Api，可帮助开发人员构建可访问的应用，如[Google TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback)和[Apple 的 VoiceOver](https://www.apple.com/accessibility/ios/voiceover/)。
 
@@ -28,9 +28,9 @@ _确保你的应用程序可由最广泛的受众使用_
 - [**Android 辅助功能**](~/android/app-fundamentals/accessibility.md)
 - [**iOS 辅助功能**](~/ios/app-fundamentals/accessibility.md)
 - [**OS X 辅助功能**](~/mac/app-fundamentals/accessibility.md)
-- [**Xamarin. Forms**](~/xamarin-forms/app-fundamentals/accessibility/index.md)
+- [**Xamarin.Forms**](~/xamarin-forms/app-fundamentals/accessibility/index.md)
 
-<a name="checklist" />
+<a name="checklist"></a>
 
 ## <a name="accessibility-checklist"></a>辅助功能清单
 
@@ -74,4 +74,4 @@ _确保你的应用程序可由最广泛的受众使用_
 - [Android 辅助功能](~/android/app-fundamentals/accessibility.md)
 - [iOS 辅助功能](~/ios/app-fundamentals/accessibility.md)
 - [OS X 辅助功能](~/mac/app-fundamentals/accessibility.md)
-- [Xamarin。窗体辅助功能](~/xamarin-forms/app-fundamentals/accessibility/index.md)
+- [Xamarin.Forms 辅助功能](~/xamarin-forms/app-fundamentals/accessibility/index.md)

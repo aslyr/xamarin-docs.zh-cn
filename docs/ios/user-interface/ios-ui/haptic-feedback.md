@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 156af7a5336ac091c0202e38a3a59a32846e281a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 86c7c726465257d71b6b407686153650dddbcbca
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73003345"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574465"
 ---
 # <a name="providing-haptic-feedback-in-xamarinios"></a>在 Xamarin 中提供 Haptic 的反馈
 
-<a name="Overview" />
+<a name="Overview"></a>
 
 ## <a name="overview"></a>概述
 
@@ -29,19 +29,19 @@ ms.locfileid: "73003345"
 - [UINotificationFeedbackGenerator](#UINotificationFeedbackGenerator)
 - [UISelectionFeedbackGenerator](#UISelectionFeedbackGenerator)
 
-<a name="About-Haptic-Feedback" />
+<a name="About-Haptic-Feedback"></a>
 
 ## <a name="about-haptic-feedback"></a>关于 Haptic 反馈
 
-几个内置 UI 元素已经提供了 haptic 的反馈，如选取器、开关和滑杆。 iOS 10 现在添加了使用 `UIFeedbackGenerator` 类的具体子类以编程方式触发 haptics 的功能。
+几个内置 UI 元素已经提供了 haptic 的反馈，如选取器、开关和滑杆。 iOS 10 现在添加了使用类的具体子类以编程方式触发 haptics 的功能 `UIFeedbackGenerator` 。
 
 开发人员可以使用以下 `UIFeedbackGenerator` 子类之一以编程方式触发 haptic 反馈：
 
-- `UIImpactFeedbackGenerator`-使用此反馈生成器来补充某个操作或任务（例如，当视图滑入时显示 "thud"，或者两个屏幕对象发生冲突）。
+- `UIImpactFeedbackGenerator`-使用此反馈生成器来补充操作或任务（例如，当视图滑入时显示 "thud"）或两个屏幕对象发生冲突。
 - `UINotificationFeedbackGenerator`-将此反馈生成器用于通知，如操作完成、失败或任何其他类型的警告。
-- `UISelectionFeedbackGenerator`-对正在进行的选择（如从列表中选取一项）使用此反馈生成器。
+- `UISelectionFeedbackGenerator`-对于正在进行的选择（如从列表中选取一项），请使用此反馈生成器。
 
-<a name="UIImpactFeedbackGenerator" />
+<a name="UIImpactFeedbackGenerator"></a>
 
 ### <a name="uiimpactfeedbackgenerator"></a>UIImpactFeedbackGenerator
 
@@ -61,17 +61,17 @@ impact.Prepare ();
 impact.ImpactOccurred ();
 ```
 
-当开发人员创建 `UIImpactFeedbackGenerator` 类的新实例时，它们提供 `UIImpactFeedbackStyle` 指定反馈强度的：
+当开发人员创建类的新实例时， `UIImpactFeedbackGenerator` 它们提供了 `UIImpactFeedbackStyle` 指定反馈强度的：
 
 - `Heavy`
 - `Medium`
 - `Light`
 
-调用 `UIImpactFeedbackGenerator` 的 `Prepare` 方法，以通知系统 haptic 反馈即将发生，以便能够最大程度地减少延迟。
+`Prepare`调用的方法 `UIImpactFeedbackGenerator` 可通知系统 haptic 反馈即将发生，以便能够最大程度地减少延迟。
 
-然后，`ImpactOccurred` 方法将触发 haptic 反馈。
+然后，该 `ImpactOccurred` 方法触发 haptic 反馈。
 
-<a name="UINotificationFeedbackGenerator" />
+<a name="UINotificationFeedbackGenerator"></a>
 
 ### <a name="uinotificationfeedbackgenerator"></a>UINotificationFeedbackGenerator
 
@@ -91,15 +91,15 @@ notification.Prepare ();
 notification.NotificationOccurred (UINotificationFeedbackType.Error);
 ```
 
-将创建 `UINotificationFeedbackGenerator` 类的新实例，并调用其 `Prepare` 方法，以通知系统 haptic 反馈，以便能够最大程度地减少延迟。
+创建类的新实例 `UINotificationFeedbackGenerator` ，并 `Prepare` 调用其方法来通知系统 haptic 反馈即将发生，以便能够最大程度地减少延迟。
 
-调用 `NotificationOccurred` 来触发具有给定 `UINotificationFeedbackType` 的 haptic 反馈：
+`NotificationOccurred`调用以使用给定的触发 haptic 反馈 `UINotificationFeedbackType` ：
 
 - `Success`
 - `Warning`
 - `Error`
 
-<a name="UISelectionFeedbackGenerator" />
+<a name="UISelectionFeedbackGenerator"></a>
 
 ### <a name="uiselectionfeedbackgenerator"></a>UISelectionFeedbackGenerator
 
@@ -119,9 +119,9 @@ selection.Prepare ();
 selection.SelectionChanged ();
 ```
 
-将创建 `UISelectionFeedbackGenerator` 类的新实例，并调用其 `Prepare` 方法，以通知系统 haptic 反馈，以便能够最大程度地减少延迟。
+创建类的新实例 `UISelectionFeedbackGenerator` ，并 `Prepare` 调用其方法来通知系统 haptic 反馈即将发生，以便能够最大程度地减少延迟。
 
-然后，`SelectionChanged` 方法将触发 haptic 反馈。
+然后，该 `SelectionChanged` 方法触发 haptic 反馈。
 
 ## <a name="summary"></a>总结
 

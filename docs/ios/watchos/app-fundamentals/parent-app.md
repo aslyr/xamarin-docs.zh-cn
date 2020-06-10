@@ -1,22 +1,22 @@
 ---
-title: 使用 watchOS 在 Xamarin 中的父应用程序
-description: 本文档介绍如何在 Xamarin 中的 watchOS 父应用程序使用。 它讨论了 watchOS 应用扩展、iOS 应用、共享存储等。
+title: 在 Xamarin 中使用 watchOS 父应用程序
+description: 本文档介绍如何在 Xamarin 中使用 watchOS 父应用程序。 它讨论了 watchOS 应用扩展、iOS 应用、共享存储等。
 ms.prod: xamarin
 ms.assetid: 9AD29833-E9CC-41A3-95D2-8A655FF0B511
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 3e11b163d16be9711bf09102e3ab8604d98299d7
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 49f2bdf63c286464073308cd1f17239692aa2395
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306247"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567328"
 ---
-# <a name="working-with-the-watchos-parent-application-in-xamarin"></a>使用 watchOS 在 Xamarin 中的父应用程序
+# <a name="working-with-the-watchos-parent-application-in-xamarin"></a>在 Xamarin 中使用 watchOS 父应用程序
 
-有不同的方式，监视应用和与捆绑的 iOS 应用之间进行通信：
+可以通过不同的方式在监视应用和它所捆绑到的 iOS 应用之间进行通信：
 
 - Watch 应用可以在 iPhone 上的父应用上[运行代码](#run-code)。
 
@@ -28,7 +28,7 @@ ms.locfileid: "79306247"
 
 ## <a name="run-code"></a>运行代码
 
-这两个示例演示如何使用 `WCSession` 在手表应用和配对的 iPhone 之间运行代码和发送消息：
+这两个示例演示了如何使用 `WCSession` 运行代码，并在手表应用和配对的 iPhone 之间发送消息：
 
 - [观看连接](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchconnectivity/)
 - [SimpleWatchConnectivity](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-simplewatchconnectivity/) 
@@ -37,9 +37,9 @@ ms.locfileid: "79306247"
 
 如果配置[应用组](~/ios/watchos/app-fundamentals/app-groups.md)，则 iOS 8 扩展（包括监视扩展）可以与父应用共享数据。
 
-### <a name="nsuserdefaults"></a>使用 NSUserDefaults
+### <a name="nsuserdefaults"></a>使用 nsuserdefaults
 
-可以在 "监视应用扩展" 和 "父 iPhone" 应用中编写以下代码，以便它们可以引用一组常见的 `NSUserDefaults`：
+可以在 "监视应用扩展" 和 "父 iPhone" 应用中编写以下代码，以便它们可以引用一组常见的 `NSUserDefaults` ：
 
 ```csharp
 NSUserDefaults shared = new NSUserDefaults(
@@ -55,11 +55,11 @@ shared.Synchronize ();
 var count = shared.IntForKey ("count");
 ```
 
-<a name="files" />
+<a name="files"></a>
 
-### <a name="files"></a>Files
+### <a name="files"></a>文件
 
-IOS 应用和监视扩展还可以共享使用的公共文件路径的文件。
+IOS 应用和监视扩展还可以使用公共文件路径共享文件。
 
 ```csharp
 var FileManager = new NSFileManager ();
@@ -70,7 +70,7 @@ Console.WriteLine ("agcpath: " + appGroupContainerPath);
 // use the path to create and update files
 ```
 
-注意：如果路径为 `null`，请检查[应用组配置](~/ios/watchos/app-fundamentals/app-groups.md)，以确保正确配置了预配配置文件并将其下载/安装到了开发计算机上。
+注意：如果路径为， `null` 则检查[应用程序组配置](~/ios/watchos/app-fundamentals/app-groups.md)以确保配置文件已正确配置，并且已在开发计算机上下载/安装。
 
 有关详细信息，请参阅[应用组功能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)文档。
 

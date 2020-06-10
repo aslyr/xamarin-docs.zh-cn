@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/30/2017
-ms.openlocfilehash: 02bd25c4b4e251536dfdabdef109eb659fe3be37
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: bddab35044c2b85b69146a03babd9884784baceb
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032155"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574582"
 ---
 # <a name="new-features-in-mapkit-on-ios-11"></a>IOS 11 上 MapKit 中的新功能
 
@@ -25,7 +25,7 @@ iOS 11 向 MapKit 添加了以下新功能：
 
 ![显示聚集标记和罗盘按钮的地图](mapkit-images/cyclemap-heading.png)
 
-<a name="clustering" />
+<a name="clustering"></a>
 
 ## <a name="automatically-grouping-markers-while-zooming"></a>缩放时自动对标记进行分组
 
@@ -33,9 +33,9 @@ iOS 11 向 MapKit 添加了以下新功能：
 
 ### <a name="1-create-an-mkpointannotation-subclass"></a>1. 创建 `MKPointAnnotation` 子类
 
-Point 批注类表示地图上的每个标记。 可以使用 `MapView.AddAnnotation()` 或从使用 `MapView.AddAnnotations()`的数组单独添加它们。
+Point 批注类表示地图上的每个标记。 可以通过使用 `MapView.AddAnnotation()` 或从数组中单独添加它们 `MapView.AddAnnotations()` 。
 
-点批注类没有直观的表示形式，只需要表示与标记相关的数据（最重要 `Coordinate` 的是，它是地图上的纬度和经度）和任何自定义属性：
+点批注类没有直观的表示形式，只需要表示与标记相关的数据（最重要的是，它 `Coordinate` 是地图上的纬度和经度）和任何自定义属性：
 
 ```csharp
 public class Bike : MKPointAnnotation
@@ -57,14 +57,14 @@ public class Bike : MKPointAnnotation
 }
 ```
 
-### <a name="2-create-an-mkmarkerannotationview-subclass-for-single-markers"></a>2. 为单标记创建 `MKMarkerAnnotationView` 子类
+### <a name="2-create-an-mkmarkerannotationview-subclass-for-single-markers"></a>2. `MKMarkerAnnotationView` 为单标记创建子类
 
 标记批注视图是每个批注的可视化表示形式，并且使用属性（例如）进行样式化。
 
 - **MarkerTintColor** –标记的颜色。
 - **GlyphText** –标记中显示的文本。
 - **GlyphImage** -设置显示在标记中的图像。
-- **DisplayPriority** –决定当地图与标记拥挤时，z 顺序（堆栈行为）。 使用 `Required`、`DefaultHigh`或 `DefaultLow`之一。
+- **DisplayPriority** –决定当地图与标记拥挤时，z 顺序（堆栈行为）。 使用、或中的一个 `Required` `DefaultHigh` `DefaultLow` 。
 
 若要支持自动群集，还必须设置：
 
@@ -112,8 +112,8 @@ public class BikeView : MKMarkerAnnotationView
 
 还应设置：
 
-- **DisplayPriority** –决定当地图与标记拥挤时，z 顺序（堆栈行为）。 使用 `Required`、`DefaultHigh`或 `DefaultLow`之一。
-- **CollisionMode** – `Circle` 或 `Rectangle`。
+- **DisplayPriority** –决定当地图与标记拥挤时，z 顺序（堆栈行为）。 使用、或中的一个 `Required` `DefaultHigh` `DefaultLow` 。
+- **CollisionMode** - `Circle` 或 `Rectangle` 。
 
 ```csharp
 [Register("ClusterView")]
@@ -196,7 +196,7 @@ MapView.Register(typeof(ClusterView), MKMapViewDefault.ClusterAnnotationViewReus
 
 有关用 MapKit 显示数据的详细信息，请参阅[Maps 部分](~/ios/user-interface/controls/ios-maps/index.md)。
 
-<a name="compass" />
+<a name="compass"></a>
 
 ## <a name="compass-button"></a>罗盘按钮
 
@@ -215,13 +215,13 @@ NavigationItem.RightBarButtonItem = new UIBarButtonItem(compass);
 MapView.ShowsCompass = false; // so we don't have two compasses!
 ```
 
-`ShowsCompass` 属性可用于控制地图视图内默认罗盘的可见性。
+`ShowsCompass`属性可用于控制地图视图中默认罗盘的可见性。
 
-<a name="scale" />
+<a name="scale"></a>
 
 ## <a name="scale-view"></a>缩放视图
 
-使用 `MKScaleView.FromMapView()` 方法将刻度添加到视图中的其他位置，以便在视图层次结构中的其他位置添加缩放视图的实例。
+使用方法，将刻度添加到视图中的其他位置，以便在 `MKScaleView.FromMapView()` 视图层次结构中的其他位置添加缩放视图的实例。
 
 ![地图上重叠的缩放视图](mapkit-images/scale-sml.png)
 
@@ -233,9 +233,9 @@ View.AddSubview(scale); // constraints omitted for simplicity
 MapView.ShowsScale = false; // so we don't have two scale displays!
 ```
 
-`ShowsScale` 属性可用于控制地图视图内默认罗盘的可见性。
+`ShowsScale`属性可用于控制地图视图中默认罗盘的可见性。
 
-<a name="user-tracking" />
+<a name="user-tracking"></a>
 
 ## <a name="user-tracking-button"></a>"用户跟踪" 按钮
 

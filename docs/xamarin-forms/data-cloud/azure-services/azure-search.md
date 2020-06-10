@@ -1,22 +1,8 @@
 ---
-title: 在 Azure 搜索中搜索数据Xamarin.Forms
-description: 本文演示如何使用 Microsoft Azure 搜索库将 Azure 搜索集成到 Xamarin.Forms 应用程序中。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 69962bbb51a493ba2bcaed5d3c9407c5aafe471c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133284"
+标题：使用 Azure 搜索和 "说明：" 搜索数据- Xamarin.Forms 本文演示了如何使用 Microsoft Azure 搜索库将 Azure 搜索集成到 Xamarin.Forms 应用程序中。 "
+ms-chap： xamarin assetid： A4AEF233-3672-4174-9DBA-15BEE3030C0B： xamarin 窗体作者： davidbritch： dabritch ms. 日期：12/05/2016 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="search-data-with-azure-search-and-xamarinforms"></a>在 Azure 搜索中搜索数据Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
@@ -39,7 +25,7 @@ _Azure 搜索是一种云服务，可为上载的数据提供索引和查询功�
 
 搜索查询和筛选器查询可以单独使用，也可以一起使用。 当一起使用时，筛选器查询首先应用于整个索引，然后在筛选器查询的结果上执行搜索查询。
 
-Azure 搜索还支持根据搜索输入检索建议。 有关详细信息，请参阅[建议查询](#suggestions)。
+Azure 搜索还支持根据搜索输入检索建议。 有关详细信息，请参阅[建议查询](#suggestion-queries)。
 
 > [!NOTE]
 > 如果还没有 [Azure 订阅](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，可以在开始前创建一个[免费帐户](https://aka.ms/azfree-docs-mobileapps)。
@@ -225,8 +211,6 @@ var searchResults = await indexClient.Documents.SearchAsync<Monkey>(text, parame
 ![](azure-search-images/search.png "Search Results")
 
 有关搜索和筛选的详细信息，请参阅[使用 .NET SDK 查询 Azure 搜索索引](/azure/search/search-query-dotnet/)。
-
-<a name="suggestions" />
 
 ### <a name="suggestion-queries"></a>建议查询
 

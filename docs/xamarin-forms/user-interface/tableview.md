@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsTableView
-description: 本文介绍如何使用 Xamarin.Forms TableView 类在应用程序中呈现滚动菜单、设置和输入窗体。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8f3fd8d84906844b578e71cb0774932561e0d507
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136222"
+标题： " Xamarin.Forms TableView" 说明： "本文介绍了如何使用 Xamarin.Forms TableView 类来显示应用程序中的滚动菜单、设置和输入窗体。"
+ms-chap： xamarin assetid： D1619D19-A74F-40DF-8E53-B1B7DFF7A3FB： xamarin 窗体作者： davidbritch： dabritch ms. 日期：09/25/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-tableview"></a>Xamarin.FormsTableView
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-tableview)
@@ -24,8 +10,6 @@ ms.locfileid: "84136222"
 [`TableView`](xref:Xamarin.Forms.TableView)是一个视图，用于显示数据的可滚动列表或可选择的不共享同一模板的行。 与[ListView](~/xamarin-forms/user-interface/listview/index.md)不同，没有的 `TableView` 概念 `ItemsSource` ，因此必须手动将项添加为子级。
 
 ![TableView 示例](tableview-images/tableview-all-sml.png)
-
-<a name="Use_Cases" />
 
 ## <a name="use-cases"></a>用例
 
@@ -36,8 +20,6 @@ ms.locfileid: "84136222"
 - 显示与行和行不同的显示数据（例如数字、百分比和图像）。
 
 [`TableView`](xref:Xamarin.Forms.TableView)处理引人注目的部分中的行滚动和布局，这是上述方案的常见需求。 `TableView`控件使用每个平台的底层等效视图（如果有），从而为每个平台创建本机查找。
-
-<a name="TableView_Structure" />
 
 ## <a name="structure"></a>结构
 
@@ -72,8 +54,6 @@ Content = new TableView
 };
 ```
 
-<a name="TableView_Appearance" />
-
 ## <a name="appearance"></a>外观
 
 [`TableView`](xref:Xamarin.Forms.TableView)公开 [`Intent`](xref:Xamarin.Forms.TableView.Intent) 属性，该属性可以设置为任何 [`TableIntent`](xref:Xamarin.Forms.TableIntent) 枚举成员：
@@ -87,15 +67,11 @@ Content = new TableView
 
 此外， [`TableSection`](xref:Xamarin.Forms.TableSection) 通过将属性设置为，可以更改为每个显示的文本的颜色 `TextColor` [`Color`](xref:Xamarin.Forms.Color) 。
 
-<a name="Built-In_Cells" />
-
 ## <a name="built-in-cells"></a>内置单元
 
 Xamarin.Forms附带了用于收集和显示信息的内置单元。 虽然 [`ListView`](xref:Xamarin.Forms.ListView) 和 [`TableView`](xref:Xamarin.Forms.TableView) 可以使用所有相同的单元，但 [`SwitchCell`](xref:Xamarin.Forms.SwitchCell) 与 [`EntryCell`](xref:Xamarin.Forms.EntryCell) 方案最为相关 `TableView` 。
 
 有关[TextCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#textcell)和[ImageCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#imagecell)的详细说明，请参阅[ListView 单元格外观](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)。
-
-<a name="switchcell" />
 
 ### <a name="switchcell"></a>SwitchCell
 
@@ -110,8 +86,6 @@ Xamarin.Forms附带了用于收集和显示信息的内置单元。 虽然 [`Lis
 [`SwitchCell`](xref:Xamarin.Forms.SwitchCell)还公开 `OnChanged` 事件，使您可以对单元格状态的更改做出响应。
 
 ![SwitchCell 示例](tableview-images/switch-cell.png)
-
-<a name="entrycell" />
 
 ### <a name="entrycell"></a>EntryCell
 
@@ -129,9 +103,7 @@ Xamarin.Forms附带了用于收集和显示信息的内置单元。 虽然 [`Lis
 
 ![EntryCell 示例](tableview-images/entry-cell.png)
 
-<a name="Custom_Cells" />
-
-## <a name="custom-cells"></a>自定义单元
+## <a name="custom-cells"></a>自定义单元格
 
 当内置单元格不够时，可使用自定义单元以对应用有意义的方式呈现和捕获数据。 例如，你可能想要显示一个滑块，以允许用户选择图像的不透明度。
 

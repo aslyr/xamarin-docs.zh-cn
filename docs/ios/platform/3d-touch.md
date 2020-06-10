@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: d6dec70d30929fdc545bf2ee9107297f1ed8d346
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b69328b00778b0c3c03cd4d954b2e0bef33e4784
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022262"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574595"
 ---
 # <a name="introduction-to-3d-touch-in-xamarinios"></a>Xamarin 中的3D 触控简介
 
@@ -33,7 +33,7 @@ _本文介绍如何在应用中使用新的 iPhone 6s 和 iPhone 6s 以及3D 触
   使用 "快速操作"，可以直接从主屏幕上的应用程序图标添加应用程序中函数的快捷方式。
 - [在模拟器中测试3D 触摸](#Testing-3D-Touch-in-the-Simulator)-通过正确的 Mac 硬件，你可以在 iOS 模拟器中测试已启用 3d touch 的应用。
 
-<a name="Pressure-Sensitivity" />
+<a name="Pressure-Sensitivity"></a>
 
 ## <a name="pressure-sensitivity"></a>压力敏感度
 
@@ -41,9 +41,9 @@ _本文介绍如何在应用中使用新的 iPhone 6s 和 iPhone 6s 以及3D 触
 
 [![](3d-touch-images/pressure01.png "A brush stroke rendered as more translucent or opaque based on the amount of pressure")](3d-touch-images/pressure01.png#lightbox)
 
-3D 触摸的结果是，如果你的应用在 iOS 9 （或更高版本）上运行，并且 iOS 设备能够支持3D 触摸，则压力改变将导致引发 `TouchesMoved` 事件。
+3D 触摸的结果是，如果你的应用在 iOS 9 （或更高版本）上运行，并且 iOS 设备能够支持3D 触摸，则压力改变将导致 `TouchesMoved` 引发事件。
 
-例如，监视[UIView](xref:UIKit.UIView)的 `TouchesMoved` 事件时，可以使用以下代码来获取用户应用到屏幕的当前压力：
+例如，在监视 UIView 的 `TouchesMoved` 事件时， [UIView](xref:UIKit.UIView)可以使用以下代码来获取用户应用到屏幕的当前压力：
 
 ```csharp
 public override void TouchesMoved (NSSet touches, UIEvent evt)
@@ -62,14 +62,14 @@ public override void TouchesMoved (NSSet touches, UIEvent evt)
 }
 ```
 
-`MaximumPossibleForce`属性根据运行应用的 iOS 设备返回 [UITouch](xref:UIKit.UITouch) 的`Force`属性的最大可能值。
+`MaximumPossibleForce`属性 `Force` 根据运行应用的 iOS 设备返回[UITouch](xref:UIKit.UITouch)的属性的最大可能值。
 
 > [!IMPORTANT]
-> 压力更改将导致引发 `TouchesMoved` 事件，即使 X/Y 坐标尚未更改也是如此。 由于这种行为发生了更改，因此，应该为你的 iOS 应用做好准备，以便更频繁地调用 `TouchesMoved` 事件，并且 X/Y 坐标与最后 `TouchesMoved` 调用相同。
+> 压力更改将导致 `TouchesMoved` 引发事件，即使 X/Y 坐标未更改也是如此。 由于这种行为发生了这种更改，因此应为 iOS 应用做好准备，以便 `TouchesMoved` 更频繁地调用事件，并使 X/Y 坐标与上次调用相同 `TouchesMoved` 。
 
-有关详细信息，请参阅 Apple 的 [TouchCanvas：有效地使用 UITouch](https://developer.apple.com/library/prerelease/ios/samplecode/TouchCanvas/) 示例应用和[UITouch 类引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITouch_Class/)。
+有关详细信息，请参阅 Apple 的[TouchCanvas：使用 UITouch 高效有效地使用](https://developer.apple.com/library/prerelease/ios/samplecode/TouchCanvas/)示例应用和[UITouch 类引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITouch_Class/)。
 
-<a name="Peek-and-Pop" />
+<a name="Peek-and-Pop"></a>
 
 ## <a name="peek-and-pop"></a>速览和 Pop
 
@@ -83,7 +83,7 @@ public override void TouchesMoved (NSSet touches, UIEvent evt)
 
 ### <a name="checking-for-3d-touch-availability"></a>检查3D 触摸可用性
 
-使用 `UIViewController` 时，可以使用以下代码来查看运行该应用的 iOS 设备是否支持3D 触摸：
+使用时， `UIViewController` 可以使用以下代码来查看运行应用的 iOS 设备是否支持3D 触摸：
 
 ```csharp
 public override void TraitCollectionDidChange(UITraitCollection previousTraitCollection)
@@ -98,11 +98,11 @@ public override void TraitCollectionDidChange(UITraitCollection previousTraitCol
         ...
 ```
 
-此方法可在 `ViewDidLoad()`之前*或之后*调用。
+此方法可以在之前*或之后*调用 `ViewDidLoad()` 。
 
 ### <a name="handling-peek-and-pop"></a>处理速览和 Pop
 
-在可以处理三维触控的 iOS 设备上，我们可以使用 `UIViewControllerPreviewingDelegate` 类的实例来处理**速览**和**Pop**项详细信息的显示。 例如，如果有一个名为 `MasterViewController` 的表视图控制器，则可以使用以下代码来支持**速览**和**Pop**：
+在可以处理三维触控的 iOS 设备上，我们可以使用类的实例 `UIViewControllerPreviewingDelegate` 来处理**速览**和**Pop**项详细信息的显示。 例如，如果有一个名为的表视图控制器，则 `MasterViewController` 可以使用以下代码来支持**速览**和**Pop**：
 
 ```csharp
 using System;
@@ -170,13 +170,13 @@ namespace DTouch
 }
 ```
 
-`GetViewControllerForPreview` 方法用于执行**查看**操作。 它可以访问表单元和备份数据，然后从当前情节提要加载 `DetailViewController`。 通过将 `PreferredContentSize` 设置为（0，0），我们要求提供默认的**速览**视图大小。 最后，我们将在 `previewingContext.SourceRect = cell.Frame` 显示的所有内容变得模糊，并返回新的显示视图。
+`GetViewControllerForPreview`方法用于执行**查看**操作。 它可以访问表单元和备份数据，然后 `DetailViewController` 从当前情节提要加载。 通过将设置 `PreferredContentSize` 为（0，0），我们要求提供默认的**速览**视图大小。 最后，我们将显示所有内容（但不显示的单元格）， `previewingContext.SourceRect = cell.Frame` 并返回显示的新视图。
 
-当用户按**下 "更**难" 时，`CommitViewController` 重用在 "查看 **" 视图中**创建的视图。
+重新显示 `CommitViewController` 在用户按下 "更难" 时**Pop**在 "**查看**" 视图中创建的视图。
 
 ### <a name="registering-for-peek-and-pop"></a>注册速览和 Pop
 
-从我们希望允许用户**查看**和**弹出**项目的视图控制器，我们需要注册此服务。 在上面给定的表视图控制器（`MasterViewController`）的示例中，我们将使用以下代码：
+从我们希望允许用户**查看**和**弹出**项目的视图控制器，我们需要注册此服务。 在上述示例中 `MasterViewController` ，我们将使用下面的代码：
 
 ```csharp
 public override void ViewDidLoad ()
@@ -193,11 +193,11 @@ public override void ViewDidLoad ()
 }
 ```
 
-这里，我们将使用我们在上面创建的 `PreviewingDelegate` 的实例调用 `RegisterForPreviewingWithDelegate` 方法。 在支持3D 触摸的 iOS 设备上，用户可以按下某个项目的 hard 来查看它。 如果他们按更难，此项将弹出到它的 "标准显示" 视图中。
+在这里，我们将 `RegisterForPreviewingWithDelegate` 使用我们在上面创建的实例调用方法 `PreviewingDelegate` 。 在支持3D 触摸的 iOS 设备上，用户可以按下某个项目的 hard 来查看它。 如果他们按更难，此项将弹出到它的 "标准显示" 视图中。
 
-有关详细信息，请参阅[iOS 9 ApplicationShortcuts 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-viewcontrollerpreview)和 Apple [ViewControllerPreviews：使用 UIViewController 预览 Api](https://developer.apple.com/library/prerelease/ios/samplecode/ViewControllerPreviews/Introduction/Intro.html) 示例应用、 [UIPreviewAction 类引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPreviewAction_Class/)、 [UIPreviewActionGroup 类引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPreviewActionGroup_Class/)和[UIPreviewActionItem 协议引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPreviewActionItem_Protocol/)。
+有关详细信息，请参阅[iOS 9 ApplicationShortcuts 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-viewcontrollerpreview)和 Apple 的[ViewControllerPreviews：使用 UIViewController 预览 api](https://developer.apple.com/library/prerelease/ios/samplecode/ViewControllerPreviews/Introduction/Intro.html)示例应用、 [UIPreviewAction 类引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPreviewAction_Class/)、 [UIPreviewActionGroup 类引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPreviewActionGroup_Class/)和[UIPreviewActionItem 协议参考](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPreviewActionItem_Protocol/)。
 
-<a name="Quick-Actions" />
+<a name="Quick-Actions"></a>
 
 ## <a name="quick-actions"></a>快速操作
 
@@ -209,7 +209,7 @@ public override void ViewDidLoad ()
 
 ### <a name="defining-static-quick-actions"></a>定义静态快速操作
 
-如果你的应用程序所需的一个或多个快速操作是静态的，并且无需更改，你可以在应用的 `Info.plist` 文件中定义它们。 在外部编辑器中编辑此文件并添加以下项：
+如果你的应用程序所需的一个或多个快速操作是静态的，并且无需更改，你可以在应用的文件中定义它们 `Info.plist` 。 在外部编辑器中编辑此文件并添加以下项：
 
 ```xml
 <key>UIApplicationShortcutItems</key>
@@ -239,7 +239,7 @@ public override void ViewDidLoad ()
 
 此处，我们将定义两个静态快速操作项，其中包含以下项：
 
-- `UIApplicationShortcutItemIconType`-将 "快速操作" 项显示的图标定义为以下值之一：
+- `UIApplicationShortcutItemIconType`-将 "快速操作" 项显示的图标定义为下列值之一：
   - `UIApplicationShortcutIconTypeAdd`
   - `UIApplicationShortcutIconTypeAlarm`
   - `UIApplicationShortcutIconTypeAudio`
@@ -274,16 +274,16 @@ public override void ViewDidLoad ()
 
 - `UIApplicationShortcutItemSubtitle`-定义项的副标题。
 - `UIApplicationShortcutItemTitle`-定义项的标题。
-- `UIApplicationShortcutItemType`-是一个字符串值，我们将使用它来确定应用程序中的项。 有关详细信息，请参阅下一节。
+- `UIApplicationShortcutItemType`-一个字符串值，我们将使用它来确定应用程序中的项。 有关详细信息，请参阅下一节。
 
 > [!IMPORTANT]
-> 无法通过 `Application.ShortcutItems` 属性访问在 `Info.plist` 文件中设置的快速操作快捷方式项。 它们只传递到 `HandleShortcutItem` 事件处理程序。
+> `Info.plist`无法通过属性访问文件中设置的快速操作快捷方式项 `Application.ShortcutItems` 。 它们只传递到 `HandleShortcutItem` 事件处理程序。
 
 ### <a name="identifying-quick-action-items"></a>正在识别快速操作项
 
-如上所述，当你在应用的 `Info.plist`中定义了快速操作项时，将向 `UIApplicationShortcutItemType` 键分配一个字符串值以标识它们。
+如上所示，当你在应用程序中定义了快速操作项时 `Info.plist` ，将为该密钥分配一个字符串值 `UIApplicationShortcutItemType` 以标识它们。
 
-若要使这些标识符更易于在代码中使用，请将名为 `ShortcutIdentifier` 的类添加到应用的项目中，使其类似于以下内容：
+若要使这些标识符更易于在代码中使用，请将名为的类添加 `ShortcutIdentifier` 到应用的项目中，使其类似于以下内容：
 
 ```csharp
 using System;
@@ -300,11 +300,11 @@ namespace AppSearch
 }
 ```
 
-<a name="Handling-a-Quick-Action" />
+<a name="Handling-a-Quick-Action"></a>
 
 ### <a name="handling-a-quick-action"></a>处理快速操作
 
-接下来，需要修改应用的 `AppDelegate.cs` 文件，以处理用户从主屏幕上应用的图标中选择 "快速操作" 项。
+接下来，需要修改应用的文件， `AppDelegate.cs` 以处理用户从主屏幕上应用的图标中选择 "快速操作" 项的用户。
 
 进行以下编辑：
 
@@ -373,15 +373,15 @@ public override void PerformActionForShortcutItem (UIApplication application, UI
 }
 ```
 
-首先，我们定义一个公共 `LaunchedShortcutItem` 属性以跟踪用户最后选定的 "快速操作" 项。 然后，重写 `FinishedLaunching` 方法，并查看 `launchOptions` 是否已传递以及是否包含 "快速操作" 项。 如果是这样，请在 "`LaunchedShortcutItem`" 属性中存储 "快速操作"。
+首先，我们定义一个公共 `LaunchedShortcutItem` 属性以跟踪用户最后选定的 "快速操作" 项。 然后，重写 `FinishedLaunching` 方法，并查看是否 `launchOptions` 已传递以及是否包含 "快速操作" 项。 如果是这样，请在属性中存储 "快速操作" `LaunchedShortcutItem` 。
 
-接下来，我们将重写 `OnActivated` 方法，并将所选的任何快速启动项传递到要操作的 `HandleShortcutItem` 方法。 目前，我们仅向**控制台**写入一条消息。 在实际应用中，您将处理所需的操作。 执行该操作后，将清除 "`LaunchedShortcutItem`" 属性。
+接下来，我们将重写 `OnActivated` 方法，并将所选的任何快速启动项传递到要操作的 `HandleShortcutItem` 方法。 目前，我们仅向**控制台**写入一条消息。 在实际应用中，您将处理所需的操作。 执行该操作后，将清除该 `LaunchedShortcutItem` 属性。
 
-最后，如果你的应用程序已在运行，则将调用 `PerformActionForShortcutItem` 方法来处理快速操作项，因此我们需要重写它并在此处调用我们的 `HandleShortcutItem` 方法。
+最后，如果你的应用程序已在运行，则会 `PerformActionForShortcutItem` 调用方法来处理快速操作项，因此我们需要替代它并在 `HandleShortcutItem` 此处调用方法。
 
 ### <a name="creating-dynamic-quick-action-items"></a>正在创建动态快速操作项
 
-除了在应用的 `Info.plist` 文件中定义静态快速操作项外，还可以快速创建动态动态操作。 若要定义两个新的动态快速操作，请再次编辑 `AppDelegate.cs` 文件，并修改 `FinishedLaunching` 方法，使其类似于以下内容：
+除了在应用文件中定义静态快速操作项外 `Info.plist` ，还可以快速创建动态动态操作。 若要定义两个新的动态快速操作，请 `AppDelegate.cs` 再次编辑文件，然后修改方法，使其类似于 `FinishedLaunching` 以下内容：
 
 ```csharp
 public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
@@ -414,15 +414,15 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 }
 ```
 
-现在，我们要检查 `application` 是否已经包含一组动态创建的 `ShortcutItems`，如果不是，我们将创建两个新的 `UIMutableApplicationShortcutItem` 对象来定义新项目并将其添加到 `ShortcutItems` 数组。
+现在，我们要检查是否 `application` 已包含一组动态创建的 `ShortcutItems` ，如果不是，我们将创建两个新 `UIMutableApplicationShortcutItem` 的对象来定义新项目并将其添加到 `ShortcutItems` 数组中。
 
 我们在[处理 "快速操作](#Handling-a-Quick-Action)" 部分中添加的代码将处理这些动态快速操作，就像静态的操作一样。
 
 应注意的是，可以创建静态和动态快速操作项的组合（如我们在此处执行的操作），而不是仅限于其中一项。
 
-有关详细信息，请参阅[iOS 9 ViewControllerPreview 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-viewcontrollerpreview)并参阅 Apple [ApplicationShortcuts：使用 UIApplicationShortcutItem](https://developer.apple.com/library/prerelease/ios/samplecode/ApplicationShortcuts/) 示例应用、 [UIApplicationShortcutItem 类引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationShortcutItem_class/)、 [UIMutableApplicationShortcutItem 类引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/)和[UIApplicationShortcutIcon 类引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationShortcutIcon_Class/)。
+有关详细信息，请参阅[iOS 9 ViewControllerPreview 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-viewcontrollerpreview)并参阅 Apple 的[ApplicationShortcuts：使用 UIApplicationShortcutItem](https://developer.apple.com/library/prerelease/ios/samplecode/ApplicationShortcuts/)示例应用、 [UIApplicationShortcutItem 类引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationShortcutItem_class/)、 [UIMutableApplicationShortcutItem](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIMutableApplicationShortcutItem_class/)类引用和[UIApplicationShortcutIcon 类引用](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplicationShortcutIcon_Class/)。
 
-<a name="Testing-3D-Touch-in-the-Simulator" />
+<a name="Testing-3D-Touch-in-the-Simulator"></a>
 
 ## <a name="testing-3d-touch-in-the-simulator"></a>在模拟器中测试 3D Touch
 
@@ -443,5 +443,5 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 - [iOS 9 ViewControllerPreview 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-viewcontrollerpreview)
 - [iOS 9 ApplicationShortcuts 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-applicationshortcuts)
 - [适用于开发人员的 iOS 9](https://developer.apple.com/ios/pre-release/)
-- [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
+- [iOS 9。0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [准备好 iPhone 应用以便进行3D 触控](https://developer.apple.com/ios/3d-touch/)

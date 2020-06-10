@@ -6,18 +6,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: da4884e7f1e3ec1ae8653ea8ec4247fce54a6565
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.openlocfilehash: 3204180ed28e98e52c4f0772ecb37a5353736acb
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76940760"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570293"
 ---
 # <a name="permissions-in-xamarinandroid"></a>Xamarin 中的权限
 
 ## <a name="overview"></a>概述
 
-Android 应用程序在其自己的沙盒中运行，出于安全原因，无法访问设备上的某些系统资源或硬件。 用户必须显式授予对应用程序的权限，然后才能使用这些资源。 例如，应用程序无法访问设备上的 GPS，无需用户的显式权限。 如果应用尝试在没有权限的情况下访问受保护的资源，则 Android 会引发 `Java.Lang.SecurityException`。
+Android 应用程序在其自己的沙盒中运行，出于安全原因，无法访问设备上的某些系统资源或硬件。 用户必须显式授予对应用程序的权限，然后才能使用这些资源。 例如，应用程序无法访问设备上的 GPS，无需用户的显式权限。 `Java.Lang.SecurityException`如果应用尝试在没有权限的情况下访问受保护的资源，则 Android 将引发。
 
 开发应用程序时，应用程序开发人员在**androidmanifest.xml**中声明了权限。 Android 提供两个不同的工作流，用于获取用户对这些权限的同意：
 
@@ -28,13 +28,13 @@ Android 应用程序在其自己的沙盒中运行，出于安全原因，无法
 
 Android 应用必须在运行时进行检查，以查看它们是否有权访问受保护的资源。 如果应用没有权限，则必须使用由 Android SDK 提供的新 Api 发出请求，用户才可授予权限。 权限分为两类：
 
-- **一般权限**&ndash; 这些权限对用户的安全或隐私带来了极大的安全风险。 Android 6.0 在安装时将自动授予正常权限。 有关[正常权限的完整列表](https://developer.android.com/guide/topics/permissions/normal-permissions.html)，请参阅 Android 文档。
-- 与常规权限相比，**危险的权限**&ndash;，但危险的权限是保护用户安全或隐私的权限。 它们必须由用户显式授予。 发送或接收 SMS 消息就是需要危险性权限的操作的一个示例。
+- **正常权限** &ndash;这些权限对用户的安全或隐私带来了极大的安全风险。 Android 6.0 在安装时将自动授予正常权限。 有关[正常权限的完整列表](https://developer.android.com/guide/topics/permissions/normal-permissions.html)，请参阅 Android 文档。
+- **危险权限** &ndash;与普通权限相比，危险权限是保护用户安全或隐私的权限。 它们必须由用户显式授予。 发送或接收 SMS 消息就是需要危险性权限的操作的一个示例。
 
 > [!IMPORTANT]
 > 权限所属的类别可能会随时间而改变。  可能会在将来的 API 级别中将已分类为 "常规" 权限的权限提升为危险权限。
 
-危险权限进一步划分为[_权限组_](https://developer.android.com/guide/topics/permissions/requesting.html#perm-groups)。 权限组将包含逻辑上相关的权限。 当用户向权限组中的一个成员授予权限时，Android 会自动向该组的所有成员授予权限。 例如， [`STORAGE`](https://developer.android.com/reference/android/Manifest.permission_group.html#STORAGE)权限组包含 `WRITE_EXTERNAL_STORAGE` 和 `READ_EXTERNAL_STORAGE` 权限。 如果用户授予 `READ_EXTERNAL_STORAGE`的权限，则将自动授予 `WRITE_EXTERNAL_STORAGE` 权限。
+危险权限进一步划分为[_权限组_](https://developer.android.com/guide/topics/permissions/requesting.html#perm-groups)。 权限组将包含逻辑上相关的权限。 当用户向权限组中的一个成员授予权限时，Android 会自动向该组的所有成员授予权限。 例如， [`STORAGE`](https://developer.android.com/reference/android/Manifest.permission_group.html#STORAGE) 权限组包含 `WRITE_EXTERNAL_STORAGE` 和 `READ_EXTERNAL_STORAGE` 权限。 如果用户授予对的权限 `READ_EXTERNAL_STORAGE` ，则将 `WRITE_EXTERNAL_STORAGE` 自动授予该权限。
 
 在请求一个或多个权限之前，最佳做法是在请求权限之前，提供有关应用程序需要权限的原因的基本原理。 用户了解其原理后，应用程序可以请求用户的权限。 了解基础知识后，用户可以做出明智的决定，告诉他们是否希望授予权限并了解其后果。 
 
@@ -49,9 +49,9 @@ Android 支持库 precise-backports 了一些新的 Api，以获得更早版本�
 > [!NOTE]
 > 硬件的权限可能会影响应用通过 Google Play 筛选的方式。 例如，如果应用需要相机的权限，则 Google Play 不会在未安装照相机的设备上的 Google Play 商店中显示应用。
 
-<a name="requirements" />
+<a name="requirements"></a>
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>要求
 
 强烈建议使用 xamarin Android 项目，其中包括 Xamarin。[支持](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/)的 NuGet 包。 此程序包会将权限特定的 Api 向后移植到较旧版本的 Android，提供一个公共接口，而无需不断检查应用运行的 Android 版本。
 
@@ -66,7 +66,7 @@ Android 支持库 precise-backports 了一些新的 Api，以获得更早版本�
 
 ### <a name="declaring-permissions-in-the-manifest"></a>在清单中声明权限
 
-将权限添加到具有 `uses-permission` 元素的**androidmanifest.xml** 。 例如，如果应用程序要查找设备的位置，则需要良好的位置权限。 以下两个元素将添加到清单中： 
+权限通过元素添加到**androidmanifest.xml。** `uses-permission` 例如，如果应用程序要查找设备的位置，则需要良好的位置权限。 以下两个元素将添加到清单中： 
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -75,50 +75,50 @@ Android 支持库 precise-backports 了一些新的 Api，以获得更早版本�
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 可以使用 Visual Studio 中内置的工具支持来声明权限：
 
 1. 双击 "**解决方案资源管理器**中的"**属性**"，然后选择" 属性窗口中的 " **Android 清单**" 选项卡：
 
-    ["Android 清单" 选项卡中 ![必需的权限](permissions-images/04-required-permissions-vs-sml.png)](permissions-images/04-required-permissions-vs.png#lightbox)
+    [!["Android 清单" 选项卡中所需的权限](permissions-images/04-required-permissions-vs-sml.png)](permissions-images/04-required-permissions-vs.png#lightbox)
 
 2. 如果应用程序还没有 Androidmanifest.xml，请单击 "**未找到 androidmanifest.xml。单击以添加一个**，如下所示：
 
-    [不 ![Androidmanifest.xml 消息](permissions-images/05-no-manifest-vs-sml.png)](permissions-images/05-no-manifest-vs.png#lightbox)
+    [![无 Androidmanifest.xml 消息](permissions-images/05-no-manifest-vs-sml.png)](permissions-images/05-no-manifest-vs.png#lightbox)
 
 3. 从 "**所需权限**" 列表中选择应用程序所需的任何权限并保存：
 
-    [选择 ![照相机权限](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png#lightbox)
+    [![选择了照相机权限的示例](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 可以使用 Visual Studio for Mac 中内置的工具支持来声明权限：
 
 1. 双击 " **Solution Pad** " 中的项目，然后选择 " **> 生成 > Android 应用程序" 选项**：
 
-    [显示 ![必需权限部分](permissions-images/04-required-permissions-xs-sml.png)](permissions-images/04-required-permissions-xs.png#lightbox)
+    [![所需权限部分](permissions-images/04-required-permissions-xs-sml.png)](permissions-images/04-required-permissions-xs.png#lightbox)
 
 2. 如果项目还没有**androidmanifest.xml**，请单击 "**添加 Android 清单**" 按钮：
 
-    [缺少项目的 Android 清单 ![](permissions-images/05-no-manifest-xs-sml.png)](permissions-images/05-no-manifest-xs.png#lightbox)
+    [![缺少项目的 Android 清单](permissions-images/05-no-manifest-xs-sml.png)](permissions-images/05-no-manifest-xs.png#lightbox)
 
-3. 从 "**所需权限**" 列表中选择应用程序所需的任何权限，然后单击 **"确定"** ：
+3. 从 "**所需权限**" 列表中选择应用程序所需的任何权限，然后单击 **"确定"**：
 
-    [选择 ![照相机权限](permissions-images/03-select-permission-xs-sml.png)](permissions-images/03-select-permission-xs.png#lightbox)
+    [![选择了照相机权限的示例](permissions-images/03-select-permission-xs-sml.png)](permissions-images/03-select-permission-xs.png#lightbox)
     
 -----
 
-在生成时，Xamarin 会自动将某些权限添加到调试版本。 这样可以更轻松地调试应用程序。 具体而言，`INTERNET` 和 `READ_EXTERNAL_STORAGE`有两个值得注意的权限。 这些自动设置的权限将不会在 "**所需权限**" 列表中启用。 不过，发布版本只使用在 "**所需权限**" 列表中显式设置的权限。 
+在生成时，Xamarin 会自动将某些权限添加到调试版本。 这样可以更轻松地调试应用程序。 具体而言，有两个值得注意的权限是 `INTERNET` 和 `READ_EXTERNAL_STORAGE` 。 这些自动设置的权限将不会在 "**所需权限**" 列表中启用。 不过，发布版本只使用在 "**所需权限**" 列表中显式设置的权限。 
 
 对于面向 Android 5.1 （API 级别22）或更低版本的应用程序，无需执行任何其他操作。 将在 Android 6.0 （API 23 级别23）或更高版本上运行的应用程序应继续到下一节，了解如何执行运行时权限检查。 
 
 ### <a name="runtime-permission-checks-in-android-60"></a>Android 6.0 中的运行时权限检查
 
-`ContextCompat.CheckSelfPermission` 方法（适用于 Android 支持库）用于检查是否已授予特定权限。 此方法将返回[`Android.Content.PM.Permission`](xref:Android.Content.PM.Permission)枚举，该枚举具有以下两个值之一：
+`ContextCompat.CheckSelfPermission`方法（适用于 Android 支持库）用于检查是否已授予特定权限。 此方法将返回一个 [`Android.Content.PM.Permission`](xref:Android.Content.PM.Permission) 枚举，该枚举具有以下两个值之一：
 
-- 已授予 **`Permission.Granted`** &ndash; 指定的权限。
-- 尚未授予 &ndash; 指定权限 **`Permission.Denied`** 。
+- **`Permission.Granted`** 已 &ndash; 授予指定的权限。
+- **`Permission.Denied`**&ndash;尚未授予指定的权限。
 
 此代码片段举例说明了如何在活动中检查相机权限： 
 
@@ -135,15 +135,15 @@ else
 
 最佳做法是，通知用户有关应用程序需要权限的原因，以便可以做出明智的决策来授予权限。 这种情况的一个示例是使用照片和地理标记的应用。 用户需要具有照相机权限，但可能并不清楚为什么应用程序也需要设备的位置。 基本原理应显示一条消息，以帮助用户了解 location 权限为何需要，以及需要相机权限。
 
-`ActivityCompat.ShouldShowRequestPermissionRationale` 方法用于确定是否应向用户显示理论。 如果应显示给定权限的基本原理，此方法将返回 `true`。 此屏幕截图显示了一个应用程序显示的 Snackbar 的示例，该应用程序说明了应用程序需要知道设备位置的原因：
+`ActivityCompat.ShouldShowRequestPermissionRationale`方法用于确定是否应向用户显示基本原理。 `true`如果应显示给定权限的基本原理，则此方法将返回。 此屏幕截图显示了一个应用程序显示的 Snackbar 的示例，该应用程序说明了应用程序需要知道设备位置的原因：
 
 ![位置的基本原理](permissions-images/07-rationale-snackbar.png) 
 
-如果用户授予权限，则应调用 `ActivityCompat.RequestPermissions(Activity activity, string[] permissions, int requestCode)` 方法。 此方法需要以下参数：
+如果用户授予权限，则 `ActivityCompat.RequestPermissions(Activity activity, string[] permissions, int requestCode)` 应调用方法。 此方法需要以下参数：
 
-- **活动**&ndash; 这是请求权限的活动，并将由 Android 的结果通知。
-- **权限**&ndash; 请求的权限列表。
-- **requestCode** &ndash; 一个整数值，该值用于将权限请求的结果与 `RequestPermissions` 调用进行匹配。 此值应大于零。
+- **活动** &ndash;这是请求权限的活动，并将通过 Android 的结果进行通知。
+- **权限** &ndash;正在请求的权限的列表。
+- **requestCode** &ndash;一个整数值，用于与调用的权限请求的结果相匹配 `RequestPermissions` 。 此值应大于零。
 
 此代码片段是讨论的两种方法的一个示例。 首先，进行检查以确定是否应显示权限的理由。 如果显示了基本原理，则会显示一个 Snackbar，其中包含基本原理。 如果用户在 Snackbar 中单击 **"确定"** ，则该应用将请求权限。 如果用户不接受此基本原理，则应用不应继续请求权限。 如果未显示说明，则活动将请求权限：
 
@@ -172,11 +172,11 @@ else
 }
 ```
 
-即使用户已授予权限，也可以调用 `RequestPermission`。 后续调用不是必需的，但它们向用户提供了确认（或撤消）权限的机会。 调用 `RequestPermission` 时，控制将移交给操作系统，该操作系统将显示用于接受权限的 UI：  
+`RequestPermission`即使用户已授予权限，也可以调用。 后续调用不是必需的，但它们向用户提供了确认（或撤消）权限的机会。 `RequestPermission`调用时，控制将移交给操作系统，该操作系统将显示用于接受权限的 UI：  
 
 ![权对话框](permissions-images/08-location-permission-dialog.png)
 
-用户完成后，Android 会通过回调方法将结果返回到活动，`OnRequestPermissionResult`。 此方法是接口 `ActivityCompat.IOnRequestPermissionsResultCallback` 的一部分，必须由活动实现。 此接口具有一个 `OnRequestPermissionsResult`的方法，该方法将由 Android 调用以通知用户选择的活动。 如果用户已授予权限，则应用可以继续并使用受保护的资源。 下面显示了如何实现 `OnRequestPermissionResult` 的示例： 
+用户完成后，Android 会通过回调方法将结果返回给活动 `OnRequestPermissionResult` 。 此方法是 `ActivityCompat.IOnRequestPermissionsResultCallback` 必须由活动实现的接口的一部分。 此接口具有一个方法， `OnRequestPermissionsResult` 该方法将由 Android 调用以通知用户选择的活动。 如果用户已授予权限，则应用可以继续并使用受保护的资源。 下面显示了如何实现的示例 `OnRequestPermissionResult` ： 
 
 ```csharp
 public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
@@ -205,7 +205,7 @@ public override void OnRequestPermissionsResult(int requestCode, string[] permis
 }
 ```  
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本指南讨论了如何在 Android 设备中添加和检查权限。 旧 Android 应用（API 级别 < 23）与新 Android 应用（API 级别 > 22）之间的权限工作方式的不同。 本文讨论了如何在 Android 6.0 中执行运行时权限检查。
 

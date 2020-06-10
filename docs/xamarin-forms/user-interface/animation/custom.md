@@ -1,29 +1,15 @@
 ---
-title: 自定义动画Xamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4fb9c94c39823e4ce6d60be6b9dbef1294321a63
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137223"
+标题： "说明中的自定义动画" Xamarin.Forms 说明： "本文演示了如何使用 Xamarin 动画类来创建和取消动画、同步多个动画以及创建自定义动画，以对现有动画方法未进行动画处理的属性进行动画处理。"
+ms-chap： xamarin assetid：03B2E3FC-E720-4D45-B9A0-711081FC1907： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/10/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="custom-animations-in-xamarinforms"></a>自定义动画Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
 
 _动画类是所有动画的构建基块 Xamarin.Forms ，ViewExtensions 类中的扩展方法可创建一个或多个动画对象。本文演示如何使用动画类来创建和取消动画，同步多个动画，以及创建自定义动画，以对未被现有动画方法进行动画处理的属性进行动画处理。_
 
-创建对象时必须指定多个参数 `Animation` ，包括正在进行动画处理的属性的开始值和结束值，以及更改属性值的回调。 `Animation`对象还可以维护可运行和同步的子动画的集合。 有关详细信息，请参阅[子动画](#child)。
+创建对象时必须指定多个参数 `Animation` ，包括正在进行动画处理的属性的开始值和结束值，以及更改属性值的回调。 `Animation`对象还可以维护可运行和同步的子动画的集合。 有关详细信息，请参阅[子动画](#child-animations)。
 
 [`Animation`](xref:Xamarin.Forms.Animation)通过调用 [ `Commit` ] （x： Xamarin.Forms . Commit （），运行通过类创建的 Xamarin.Forms 动画（可能包含或不包括子动画）。System.windows.media.animation.ianimatable>，System.string，system.web，， Xamarin.Forms 。缓动，System.object {system.exception，system.string}，system.object {system.string}）方法。） 此方法指定动画的持续时间，并指定其他项中的一个回调，该回调控制是否重复动画。
 
@@ -61,8 +47,6 @@ animation.Commit (this, "SimpleAnimation", 16, 2000, Easing.Linear, (v, c) => im
 
 > [!NOTE]
 > 可以通过 `Animation` 为每个动画创建一个对象，然后 `Commit` 在每个动画上调用方法，来构造并发动画（独立运行）。
-
-<a name="child" />
 
 ### <a name="child-animations"></a>子动画
 

@@ -7,26 +7,26 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: d84752afd5579216272895f750522a8f38ece34a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8619fa73a4dbaabe1e161c634b6a794b701d5135
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030795"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570852"
 ---
 # <a name="tvos-resources-and-data-storage-in-xamarin"></a>Xamarin 中的 tvOS 资源和数据存储
 
 _本文介绍如何在 tvOS 应用程序中使用资源和永久性数据存储。_
 
-<a name="tvOS-Resource-Limitations" />
+<a name="tvOS-Resource-Limitations"></a>
 
 ## <a name="tvos-resource-limitations"></a>tvOS 资源限制
 
-与 iOS 设备不同，新的 Apple 电视为 tvOS 应用或数据提供了非常有限的持久本地存储。 对于非常小的项目（如用户首选项），tvOS 应用仍有权访问 `NSUserDefaults`，且[限制为 500 KB 的数据](https://forums.developer.apple.com/message/50696#50696)。 但是，如果 tvOS 应用需要保存更多数量的信息，则它必须从[iCloud](#iCloud-Data-Storage)存储和检索数据。
+与 iOS 设备不同，新的 Apple 电视为 tvOS 应用或数据提供了非常有限的持久本地存储。 对于非常小的项目（如用户首选项），tvOS 应用仍有权访问 `NSUserDefaults` [500 KB 的数据](https://forums.developer.apple.com/message/50696#50696)。 但是，如果 tvOS 应用需要保存更多数量的信息，则它必须从[iCloud](#iCloud-Data-Storage)存储和检索数据。
 
 此外，tvOS 将 Apple TV 应用的大小限制为200MB。 如果你的应用程序需要超出此大小的资源，则需要使用按[需资源](#On-Demand-Resources)（最多为一个2gb）打包并加载这些资源。 考虑到这些限制，很重要的一点是，正确地下载其他资产，为应用程序的用户提供最佳体验。 有关详细信息，请参阅 Apple[点播资源指南](https://developer.apple.com/library/prerelease/tvos/documentation/FileManagement/Conceptual/On_Demand_Resources_Guide/index.html#//apple_ref/doc/uid/TP40015083)。
 
-<a name="Non-Persistent-Downloads" />
+<a name="Non-Persistent-Downloads"></a>
 
 ## <a name="non-persistent-downloads"></a>非持久下载
 
@@ -37,13 +37,13 @@ _本文介绍如何在 tvOS 应用程序中使用资源和永久性数据存储�
 > [!IMPORTANT]
 > 尽管你能够根据需要下载其他资产和资源，但 Apple 会警告你使用应用缓存中的所有空间，因为这可能会导致不可预知的结果。
 
-<a name="Managing-Resources" />
+<a name="Managing-Resources"></a>
 
 ## <a name="managing-resources"></a>管理资源
 
 如上所述，由于 tvOS 应用程序可使用有限的非持久存储信息，因此这些限制要求仔细规划，为 Xamarin. tvOS 应用创建极佳的用户体验。
 
-<a name="iCloud-Data-Storage" />
+<a name="iCloud-Data-Storage"></a>
 
 ### <a name="icloud-data-storage"></a>iCloud 数据存储
 
@@ -57,7 +57,7 @@ _本文介绍如何在 tvOS 应用程序中使用资源和永久性数据存储�
 > [!IMPORTANT]
 > Apple [提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)，用于帮助开发人员正确处理欧盟一般数据保护条例 (GDPR)。
 
-<a name="On-Demand-Resources" />
+<a name="On-Demand-Resources"></a>
 
 ### <a name="on-demand-resources"></a>点播资源
 
@@ -72,7 +72,7 @@ _本文介绍如何在 tvOS 应用程序中使用资源和永久性数据存储�
 > [!IMPORTANT]
 > 请注意，在应用必须下载按需资源的时间和单个下载的大小之间，应采取适当的平衡。 如果游戏一直中断以下载新内容，或者如果单个下载花费了太长时间，则用户可能会对应用程序造成困扰。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>总结
 

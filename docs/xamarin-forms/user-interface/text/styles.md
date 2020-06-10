@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms文本样式
-description: 本文介绍如何在应用程序中设置文本的样式 Xamarin.Forms 。 样式可定义一次，可供多个视图使用，但样式只能与一种类型的视图一起使用。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 79a86fd7a2c0f5b82ca4b3e22b3ecedf42c5a0ba
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136144"
+title： " Xamarin.Forms 文本样式" 说明： "本文介绍了如何设置应用程序中文本的样式 Xamarin.Forms 。 样式可定义一次，可供多个视图使用，但样式只能与一种类型的视图一起使用。
+ms-chap： xamarin assetid：57C0CFD6-A568-46B8-ADA1-BF25681893CF： xamarin 窗体作者： davidbritch： dabritch ms. 日期：05/22/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-text-styles"></a>Xamarin.Forms文本样式
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
@@ -25,8 +11,6 @@ _为 Xamarin 中的文本设置格式_
 
 样式可用于调整标签、项和编辑器的外观。 样式可定义一次，可供多个视图使用，但样式只能与一种类型的视图一起使用。
 可以为样式提供 `Key` ，并使用特定控件的属性有选择地应用样式 `Style` 。
-
-<a name="Built-In_Styles" />
 
 ## <a name="built-in-styles"></a>内置样式
 
@@ -52,8 +36,6 @@ label.Style = Device.Styles.TitleStyle;
 ```
 
 ![设备样式示例](styles-images/builtinstyles.png)
-
-<a name="Custom_Styles" />
 
 ## <a name="custom-styles"></a>自定义样式
 
@@ -95,8 +77,6 @@ var label = new Label { Text = "Check out my style.", Style = LabelStyle };
 
 ![自定义样式示例](styles-images/customstyle.png)
 
-<a name="Applying_Styles" />
-
 ## <a name="applying-styles"></a>应用样式
 
 创建样式后，可将其应用于与其匹配的任何视图 `TargetType` 。
@@ -132,7 +112,7 @@ label.Style = (Style)Resources["LabelStyle"];
 label.Style = Device.Styles.TitleStyle;
 ```
 
-## <a name="accessibility"></a>辅助功能
+## <a name="accessibility"></a>可访问性
 
 存在内置样式，使其更易于遵循辅助功能首选项。 使用任何内置样式时，如果用户设置其辅助功能首选项，字体大小将自动增加。
 

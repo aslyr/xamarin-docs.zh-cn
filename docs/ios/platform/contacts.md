@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 438ed93bafa37496e6a97ea2fe98ca6a515682cf
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 918030120e6b7d0e22abdf5ea3e57f3849b86616
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032558"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572567"
 ---
 # <a name="contacts-and-contactsui-in-xamarinios"></a>Xamarin 中的联系人和 ContactsUI
 
 _本文介绍如何在 Xamarin iOS 应用中使用新的 "联系人" 和 "联系人" UI 框架。这些框架替换以前版本的 iOS 中使用的现有通讯簿和通讯簿 UI。_
 
-引入 iOS 9 后，Apple 发布了两个新框架（`Contacts` 和 `ContactsUI`），用来替换 iOS 8 及更早版本使用的现有通讯簿和通讯簿 UI 框架。
+随着 iOS 9 的引入，Apple 发布了两个新框架， `Contacts` 以及 `ContactsUI` 替换 iOS 8 及更早版本使用的现有通讯簿和通讯簿 UI 框架。
 
 这两个新框架包含以下功能：
 
@@ -30,27 +30,27 @@ _本文介绍如何在 Xamarin iOS 应用中使用新的 "联系人" 和 "联系
 [![](contacts-images/add01.png "An example Contact Sheet on an iOS device")](contacts-images/add01.png#lightbox)
 
 > [!IMPORTANT]
-> IOS 8 （和之前）使用的现有 `AddressBook` 和 `AddressBookUI` 框架已在 iOS 9 中弃用，并且应尽快为任何现有的 Xamarin 应用替换为新的 `Contacts` 和 `ContactsUI` 框架。 新应用应针对新框架编写。
+> `AddressBook` `AddressBookUI` Ios 8 （及更早）使用的现有和框架已在 ios 9 中弃用，并且应 `Contacts` `ContactsUI` 尽快为任何现有的 Xamarin 应用替换为新的和框架。 新应用应针对新框架编写。
 
 在以下部分中，我们将介绍这些新框架，以及如何在 Xamarin iOS 应用程序中实现它们。
 
-<a name="contacts" />
+<a name="contacts"></a>
 
 ## <a name="the-contacts-framework"></a>联系人框架
 
 Contact 框架提供对用户的联系人信息的 Xamarin iOS 访问权限。 由于大多数应用只需要只读访问权限，因此此框架已针对线程安全只读访问进行了优化。
 
-<a name="Contact_Objects" />
+<a name="Contact_Objects"></a>
 
 ### <a name="contact-objects"></a>联系人对象
 
-`CNContact` 类提供对联系人属性（如姓名、地址或电话号码）的线程安全、只读访问。 `CNContact` 功能，如 `NSDictionary` 并包含多个只读属性集合（如地址或电话号码）：
+`CNContact`类提供对联系人属性（如姓名、地址或电话号码）的线程安全、只读访问。 `CNContact`和等函数 `NSDictionary` 包含多个只读属性集合（如地址或电话号码）：
 
 [![](contacts-images/contactobjects.png "Contact Object overview")](contacts-images/contactobjects.png#lightbox)
 
-对于可以具有多个值（如电子邮件地址或电话号码）的任何属性，这些值将表示为 `NSLabeledValue` 对象的数组。 `NSLabeledValue` 是由一组只读标签和值组成的线程安全元组，其中标签定义了用户的值（例如，家庭或工作电子邮件）。 联系人框架提供了一系列预定义标签（通过 `CNLabelKey` 和 `CNLabelPhoneNumberKey` 静态类），可以在应用中使用这些标签，也可以选择根据需要定义自定义标签。
+对于可以具有多个值（如电子邮件地址或电话号码）的任何属性，这些属性将表示为对象的数组 `NSLabeledValue` 。 `NSLabeledValue`是由一组只读标签和值组成的线程安全元组，其中标签定义用户的值（例如，家庭或工作电子邮件）。 联系人框架提供了一系列预定义标签（通过 `CNLabelKey` 和 `CNLabelPhoneNumberKey` 静态类），可以在应用中使用这些标签，也可以根据需要定义自定义标签。
 
-对于需要调整现有联系人（或创建新联系人）的值的任何 Xamarin 应用程序，请使用该类及其子类的 `NSMutableContact` 版本（如 `CNMutablePostalAddress`）。
+对于需要调整现有联系人（或创建新联系人）的值的任何 Xamarin 应用程序，请使用 `NSMutableContact` 该类及其子类的版本（如 `CNMutablePostalAddress` ）。
 
 例如，以下代码将创建一个新联系人并将其添加到用户的联系人集合中：
 
@@ -108,7 +108,7 @@ else
 }
 ```
 
-如果在 iOS 9 设备上运行此代码，则会将新联系人添加到用户的集合。 例如:
+如果在 iOS 9 设备上运行此代码，则会将新联系人添加到用户的集合。 例如：
 
 [![](contacts-images/add01.png "A new contact added to the user's collection")](contacts-images/add01.png#lightbox)
 
@@ -121,7 +121,7 @@ Console.WriteLine(CNContactFormatter.GetStringFrom(contact, CNContactFormatterSt
 Console.WriteLine(CNPostalAddressFormatter.GetStringFrom(workAddress, CNPostalAddressFormatterStyle.MailingAddress));
 ```
 
-对于将在应用程序的 UI 中显示的属性标签，Contact 框架还提供了用于本地化这些字符串的方法。 同样，这是基于运行应用的 iOS 设备的当前区域设置。 例如:
+对于将在应用程序的 UI 中显示的属性标签，Contact 框架还提供了用于本地化这些字符串的方法。 同样，这是基于运行应用的 iOS 设备的当前区域设置。 例如：
 
 ```csharp
 // Localized properties
@@ -131,9 +131,9 @@ Console.WriteLine(CNLabeledValue<NSString>.LocalizeLabel(CNLabelKey.Home));
 
 ### <a name="fetching-existing-contacts"></a>正在获取现有联系人
 
-通过使用 `CNContactStore` 类的实例，您可以从用户的 contact 数据库中提取联系信息。 `CNContactStore` 包含从数据库提取或更新联系人和组所需的所有方法。 由于这些方法是同步的，因此建议您在后台线程上运行这些方法，以防止阻止 UI。
+通过使用类的实例 `CNContactStore` ，可以从用户的 contact 数据库中提取联系信息。 `CNContactStore`包含从数据库提取或更新联系人和组所需的所有方法。 由于这些方法是同步的，因此建议您在后台线程上运行这些方法，以防止阻止 UI。
 
-使用谓词（从 `CNContact` 类生成），可以在从数据库获取联系人时筛选返回的结果。 若要仅提取包含字符串 `Appleseed`的联系人，请使用以下代码：
+使用谓词（从 `CNContact` 类生成），可以在从数据库获取联系人时筛选返回的结果。 若要仅提取包含字符串的联系人 `Appleseed` ，请使用以下代码：
 
 ```csharp
 // Create predicate to locate requested contact
@@ -163,9 +163,9 @@ var contacts = store.GetUnifiedContacts(predicate, fetchKeys, out error);
 
 ### <a name="contact-access-privacy"></a>联系访问隐私
 
-由于最终用户可以基于每个应用程序授予或拒绝对其联系信息的访问权限，因此在首次调用 `CNContactStore`时，将会显示一个对话框，询问他们是否允许访问你的应用。
+由于最终用户可以基于每个应用程序授予或拒绝对其联系人信息的访问权限，因此在首次调用时 `CNContactStore` ，将会显示一个对话框，询问他们是否允许访问你的应用。
 
-仅在应用程序第一次运行时，权限请求将会出现一次，后续运行或对 `CNContactStore` 的调用将使用用户当时选择的权限。
+仅在应用程序第一次运行时，权限请求将会出现一次，后续运行或对的调用 `CNContactStore` 将使用用户在该时间选择的权限。
 
 你应设计应用程序，使其能够正常处理用户拒绝其 contact 数据库的访问。
 
@@ -173,7 +173,7 @@ var contacts = store.GetUnifiedContacts(predicate, fetchKeys, out error);
 
 _部分联系人_是指只有部分可用属性从的联系人存储区中提取的联系人。 如果尝试访问先前未提取的属性，将导致异常。
 
-通过使用 `CNContact` 实例的 `IsKeyAvailable` 或 `AreKeysAvailable` 方法，可以轻松查看给定联系人是否具有所需的属性。 例如:
+通过使用实例的或方法，可以轻松查看给定联系人是否具有所需的属性 `IsKeyAvailable` `AreKeysAvailable` `CNContact` 。 例如：
 
 ```csharp
 // Does the contact contain the requested key?
@@ -187,7 +187,7 @@ if (!contact.IsKeyAvailable(CNContactOption.PostalAddresses)) {
 ```
 
 > [!IMPORTANT]
-> `CNContactStore` 类的 `GetUnifiedContact` 和 `GetUnifiedContacts` 方法仅返回_仅_限于从提供的提取密钥请求的属性的部分联系人。
+> `GetUnifiedContact`类的和 `GetUnifiedContacts` 方法 `CNContactStore` 仅返回_仅_限从提供的提取密钥请求的属性的部分联系人。
 
 ### <a name="unified-contacts"></a>统一联系人
 
@@ -199,7 +199,7 @@ if (!contact.IsKeyAvailable(CNContactOption.PostalAddresses)) {
 
 ### <a name="creating-and-updating-contacts"></a>创建和更新联系人
 
-正如上面的 "[联系对象](#Contact_Objects)" 一节中所述，你可以使用 `CNContactStore` 和 `CNMutableContact` 实例来创建新联系人，然后使用 `CNSaveRequest`将这些联系人写入用户的 Contact 数据库：
+正如上面的 "[联系对象](#Contact_Objects)" 一节中所述，你可以使用 `CNContactStore` 和的实例 `CNMutableContact` 来创建新联系人，然后使用将其写入用户的 Contact 数据库 `CNSaveRequest` ：
 
 ```csharp
 // Create a new Mutable Contact (read/write)
@@ -222,9 +222,9 @@ if (store.ExecuteSaveRequest(saveRequest, out error)) {
 }
 ```
 
-还可以使用 `CNSaveRequest` 将多个联系人和组更改缓存到一个操作中，并将这些修改分批地分批转换为 `CNContactStore`。
+`CNSaveRequest`还可用于将多个联系人和组更改缓存到一个操作中，并将这些修改分批 `CNContactStore` 。
 
-若要更新从提取操作获取的非可变联系人，您必须首先请求一个可变副本，然后将其修改并保存回联系人存储区。 例如:
+若要更新从提取操作获取的非可变联系人，您必须首先请求一个可变副本，然后将其修改并保存回联系人存储区。 例如：
 
 ```csharp
 // Get mutable copy of contact
@@ -252,7 +252,7 @@ if (store.ExecuteSaveRequest(saveRequest, out error)) {
 
 ### <a name="contact-change-notifications"></a>联系更改通知
 
-一旦修改了联系人，Contact Store 就会向默认通知中心发送 `CNContactStoreDidChangeNotification`。 如果已缓存或当前正在显示任何联系人，则需要从联系人存储区（`CNContactStore`）刷新这些对象。
+一旦修改了联系人，Contact Store 就会将发送 `CNContactStoreDidChangeNotification` 到默认的通知中心。 如果已缓存或当前正在显示任何联系人，则需要从联系人存储区（）刷新这些对象 `CNContactStore` 。
 
 ### <a name="containers-and-groups"></a>容器和组
 
@@ -264,7 +264,7 @@ if (store.ExecuteSaveRequest(saveRequest, out error)) {
 
 [![](contacts-images/containers02.png "Overlap within Containers and Groups")](contacts-images/containers02.png#lightbox)
 
-<a name="contactsui" />
+<a name="contactsui"></a>
 
 ## <a name="the-contactsui-framework"></a>ContactsUI 框架
 
@@ -274,11 +274,11 @@ if (store.ExecuteSaveRequest(saveRequest, out error)) {
 
 ### <a name="the-contact-picker-view-controller"></a>联系人选取器视图控制器
 
-联系人选取器视图控制器（`CNContactPickerViewController`）管理标准的 "联系人选择器" 视图，该视图允许用户从用户的 Contact 数据库中选择联系人或联系人属性。 用户可以选择一个或多个联系人（基于其使用情况），并且在显示该选取器之前，联系人选取器视图控制器不会提示用户提供权限。
+联系人选取器视图控制器（ `CNContactPickerViewController` ）管理标准的 "联系人选择器" 视图，该视图允许用户从用户的 Contact 数据库中选择联系人或联系人属性。 用户可以选择一个或多个联系人（基于其使用情况），并且在显示该选取器之前，联系人选取器视图控制器不会提示用户提供权限。
 
-在调用 `CNContactPickerViewController` 类之前，您可以定义用户可选择哪些属性并定义谓词来控制联系人属性的显示和选择。
+在调用类之前 `CNContactPickerViewController` ，您可以定义用户可选择哪些属性并定义谓词来控制联系人属性的显示和选择。
 
-使用从 `CNContactPickerDelegate` 继承的类的实例，以响应用户与选取器的交互。 例如:
+使用从继承的类的实例， `CNContactPickerDelegate` 以响应用户与选取器的交互。 例如：
 
 ```csharp
 using System;
@@ -343,7 +343,7 @@ PresentViewController(picker,true,null);
 
 ### <a name="the-contact-view-controller"></a>联系人视图控制器
 
-联系人视图控制器（`CNContactViewController`）类提供了一个控制器，用于向最终用户显示标准联系人视图。 在通过调用正确的静态构造函数（`FromNewContact`、`FromUnknownContact`、`FromContact`）显示视图之前，"联系人" 视图可以显示新的 "未知" 或 "现有联系人"，并必须指定类型。 例如：
+Contact View Controller （ `CNContactViewController` ）类提供了一个控制器，用于向最终用户显示标准联系人视图。 在通过调用正确的静态构造函数（ `FromNewContact` 、、）来显示视图之前，联系人视图可以显示新的、未知的或现有的联系人以及必须指定的类型 `FromUnknownContact` `FromContact` 。 例如：
 
 ```csharp
 // Create a new contact view

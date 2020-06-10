@@ -1,22 +1,8 @@
 ---
-title: 简单动画Xamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a4644094de9c0fcad8f38b7014426a30263dc66f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137444"
+标题： "description 中的简单动画" Xamarin.Forms ： "ViewExtensions" 类提供可用于构建简单动画的扩展方法。 本文演示如何使用 ViewExtensions 类创建和取消动画。
+ms-chap： xamarin assetid：4A6FAE5A-848F-4CE0-BFA1-22A6309B5225： xamarin 窗体作者： davidbritch： dabritch ms. 日期：11/05/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="simple-animations-in-xamarinforms"></a>简单动画Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)
@@ -43,9 +29,9 @@ _ViewExtensions 类提供了可用于构建简单动画的扩展方法。本文�
 > [!NOTE]
 > [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions)类提供 [ `LayoutTo` ] （x： Xamarin.Forms 。ViewExtensions. LayoutTo （ Xamarin.Forms 。VisualElement、 Xamarin.Forms 。Rectangle， Xamarin.Forms system.object。缓动））扩展方法。 但是，此方法旨在供布局用来对包含大小和位置更改的布局状态之间的转换进行动画处理。 因此，它应仅由子类使用 [`Layout`](xref:Xamarin.Forms.Layout) 。
 
-类中的动画扩展方法 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 都是异步的，并返回一个 `Task<bool>` 对象。 `false`如果动画完成，则返回值为; `true` 如果取消动画，则返回值。 因此，通常应将动画方法与运算符一起使用，这样就可以 `await` 轻松确定动画的完成时间。 此外，它还可以创建具有在上一方法完成后执行的后续动画方法的连续动画。 有关详细信息，请参阅[复合动画](#compound)。
+类中的动画扩展方法 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 都是异步的，并返回一个 `Task<bool>` 对象。 `false`如果动画完成，则返回值为; `true` 如果取消动画，则返回值。 因此，通常应将动画方法与运算符一起使用，这样就可以 `await` 轻松确定动画的完成时间。 此外，它还可以创建具有在上一方法完成后执行的后续动画方法的连续动画。 有关详细信息，请参阅[复合动画](#compound-animations)。
 
-如果需要让动画在后台完成，则 `await` 可以省略运算符。 在这种情况下，动画扩展方法将在启动动画后快速返回，动画将在后台发生。 创建复合动画时，可以利用此操作。 有关详细信息，请参阅[复合动画](#composite)。
+如果需要让动画在后台完成，则 `await` 可以省略运算符。 在这种情况下，动画扩展方法将在启动动画后快速返回，动画将在后台发生。 创建复合动画时，可以利用此操作。 有关详细信息，请参阅[复合动画](#composite-animations)。
 
 有关运算符的详细信息 `await` ，请参阅[异步支持概述](~/cross-platform/platform/async.md)。
 
@@ -53,7 +39,7 @@ _ViewExtensions 类提供了可用于构建简单动画的扩展方法。本文�
 
 中的每个扩展方法 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 实现一个动画操作，该操作在一段时间内从一个值逐渐更改一个值到另一个值。 本部分将探讨每个动画操作。
 
-### <a name="rotation"></a>旋转
+### <a name="rotation"></a>轮换
 
 下面的代码示例演示如何使用 [ `RotateTo` ] （x： Xamarin.Forms 。ViewExtensions. RotateTo （ Xamarin.Forms 。VisualElement、system.string、 Xamarin.Forms system.object。缓动））方法对的属性进行动画处理 [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation) [`Image`](xref:Xamarin.Forms.Image) ：
 
@@ -160,8 +146,6 @@ await image.FadeTo (1, 4000);
 
 ![](simple-images/fadeto.png "Fading Animation")
 
-<a name="compound" />
-
 ## <a name="compound-animations"></a>复合动画
 
 复合动画是动画的顺序组合，可使用运算符创建， `await` 如以下代码示例所示：
@@ -175,8 +159,6 @@ await image.TranslateTo (0, 0, 1000);       // Move image up
 ```
 
 在此示例中， [`Image`](xref:Xamarin.Forms.Image) 转换超过6秒（6000毫秒）。 的转换 `Image` 使用5个动画， `await` 运算符指示每个动画按顺序执行。 因此，在上一个方法完成后，后续的动画方法会执行。
-
-<a name="composite" />
 
 ## <a name="composite-animations"></a>复合动画
 

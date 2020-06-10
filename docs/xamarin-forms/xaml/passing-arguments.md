@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f314f3145b3573184cb8cdf7370394c975c66859
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127070"
+title： "在 XAML 中传递参数说明：" 本文演示如何使用可用于将参数传递给非默认构造函数、调用工厂方法和指定泛型参数类型的 XAML 属性。
+ms-chap： xamarin assetid：8F3B267F-499E-4D79-9193-FCA99F199519： xamarin 窗体作者： davidbritch： dabritch ms. 日期：10/25/2016 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="passing-arguments-in-xaml"></a>在 XAML 中传递参数
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-passingconstructorarguments)
@@ -27,12 +13,10 @@ _本文演示如何使用 XAML 属性，这些属性可用于将参数传递给�
 
 通常需要使用需要参数的构造函数或通过调用静态创建方法来实例化对象。 这可以通过使用和属性在 XAML 中 `x:Arguments` 实现 `x:FactoryMethod` ：
 
-- `x:Arguments`特性用于指定非默认构造函数或工厂方法对象声明的构造函数参数。 有关详细信息，请参阅[传递构造函数参数](#constructor_arguments)。
-- `x:FactoryMethod`特性用于指定可用于初始化对象的工厂方法。 有关详细信息，请参阅[调用工厂方法](#factory_methods)。
+- `x:Arguments`特性用于指定非默认构造函数或工厂方法对象声明的构造函数参数。 有关详细信息，请参阅[传递构造函数参数](#passing-constructor-arguments)。
+- `x:FactoryMethod`特性用于指定可用于初始化对象的工厂方法。 有关详细信息，请参阅[调用工厂方法](#calling-factory-methods)。
 
-此外， `x:TypeArguments` 特性可用于指定泛型类型的构造函数的泛型类型参数。 有关详细信息，请参阅[指定泛型类型参数](#generic_type_arguments)。
-
-<a name="constructor_arguments" />
+此外， `x:TypeArguments` 特性可用于指定泛型类型的构造函数的泛型类型参数。 有关详细信息，请参阅[指定泛型类型参数](#specifying-a-generic-type-argument)。
 
 ## <a name="passing-constructor-arguments"></a>传递构造函数参数
 
@@ -96,8 +80,6 @@ _本文演示如何使用 XAML 属性，这些属性可用于将参数传递给�
 
 ![BoxView 指定的 x:Arguments](passing-arguments-images/passing-arguments.png)
 
-<a name="factory_methods" />
-
 ## <a name="calling-factory-methods"></a>调用工厂方法
 
 可以在 XAML 中调用工厂方法，方法是使用属性指定方法的名称 `x:FactoryMethod` ，并使用属性指定其参数 `x:Arguments` 。 工厂方法是一种 `public static` 方法，该方法返回与定义方法的类或结构具有相同类型的对象或值。
@@ -145,8 +127,6 @@ _本文演示如何使用 XAML 属性，这些属性可用于将参数传递给�
 下面的屏幕截图显示了 [`Color`](xref:Xamarin.Forms.Color) 用指定参数值调用每个工厂方法的结果：
 
 ![BoxView 通过 x:FactoryMethod 和 x:Arguments 指定的颜色](passing-arguments-images/factory-methods.png)
-
-<a name="generic_type_arguments" />
 
 ## <a name="specifying-a-generic-type-argument"></a>指定泛型类型参数
 

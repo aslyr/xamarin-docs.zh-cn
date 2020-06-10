@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2017
-ms.openlocfilehash: 37695ef93a1005febf12369e7d1defccf6130832
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 41272e25570d9346751d7130ee8b52c6056f7f35
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305797"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84565221"
 ---
 # <a name="application-icons-in-xamarinios"></a>Xamarin 中的应用程序图标
 
@@ -22,7 +22,7 @@ ms.locfileid: "79305797"
 - 使用资产[目录管理图标](#managing)-使用资产目录管理应用程序图标。
 - [ITunes 图稿](#itunes)-为提供应用程序的即席方法提供所需的 iTunes 作品。
 
-<a name="icon-types" />
+<a name="icon-types"></a>
 
 ## <a name="application-spotlight-and-settings-icons"></a>"应用程序"、"聚光灯" 和 "设置" 图标
 
@@ -101,27 +101,27 @@ ms.locfileid: "79305797"
 
  有关图标的详细信息，请参阅 Apple 的[图标和图像大小](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW1)文档。
 
-<a name="managing" />
+<a name="managing"></a>
 
 ## <a name="managing-icons-with-asset-catalogs"></a>管理具有资产目录的图标
 
-对于图标，可以将特殊 `AppIcon` 图像集添加到应用项目中的 `Assets.xcassets` 文件。 支持所有解决方案所需的所有映像版本都包含在_xcasset_中，并组合在一起。 Visual Studio for Mac 中的一个特殊编辑器允许开发人员以图形方式包含和设置这些图像。
+对于图标，可以将特殊 `AppIcon` 图像集添加到 `Assets.xcassets` 应用项目中的文件。 支持所有解决方案所需的所有映像版本都包含在_xcasset_中，并组合在一起。 Visual Studio for Mac 中的一个特殊编辑器允许开发人员以图形方式包含和设置这些图像。
 
 若要使用资产目录，请执行以下步骤：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 双击**解决方案资源管理器**中的 `Info.plist` 文件，将其打开进行编辑。
+1. 双击 `Info.plist` "**解决方案资源管理器**中的文件以将其打开以进行编辑。
 2. 向下滚动到 " **IPhone 图标**" 部分。
 3. 单击 "**迁移到资产目录**" 按钮：
 
     ![](app-icons-images/migrate01.png "Ensure AppIcon is selected")
 
-4. 在**解决方案资源管理器**中，双击 `Assets.xcassets` 文件以将其打开进行编辑： 
+4. 在**解决方案资源管理器**中，双击该 `Assets.xcassets` 文件以将其打开进行编辑： 
 
     ![](app-icons-images/asset01.png "The Assets.xcassets file in the Solution Explorer")
 
-5. 从资产列表中选择 `AppIcon`，以显示 `Icon Editor`：
+5. `AppIcon`从资产列表中选择要显示的 `Icon Editor` ：
 
     ![](app-icons-images/asset02.png "The AppIcon editor")
 
@@ -131,7 +131,7 @@ ms.locfileid: "79305797"
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 双击 "信息"。  \* ***解决方案资源管理器**中的文件：
+1. 双击 "信息"。  * ***解决方案资源管理器**中的文件：
 
     ![](app-icons-images/icon01w.png "Select Info.plist")
 
@@ -158,7 +158,7 @@ ms.locfileid: "79305797"
 
 这是包括和管理将用于为应用程序提供应用程序、聚焦和设置图标的图像资产的首选方法。
 
-<a name="itunes" />
+<a name="itunes"></a>
 
 ## <a name="itunes-artwork"></a>iTunes 图稿
 
@@ -168,7 +168,7 @@ ms.locfileid: "79305797"
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 双击**解决方案资源管理器**中的 `Info.plist` 文件，将其打开进行编辑。
+1. 双击 `Info.plist` "**解决方案资源管理器**中的文件以将其打开以进行编辑。
 2. 滚动到编辑器的 " **ITunes 图稿**" 部分： 
 
     ![](app-icons-images/itunes01.png "Scroll to the iTunes Artwork section of the editor")
@@ -177,7 +177,7 @@ ms.locfileid: "79305797"
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 双击**解决方案资源管理器**中的 `Info.plist` 文件，将其打开进行编辑。
+1. 双击 `Info.plist` "**解决方案资源管理器**中的文件以将其打开以进行编辑。
 
 2. 单击 "**视觉资产**" 选项卡，然后展开**iTunes 图稿**： 
 

@@ -8,29 +8,29 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 11ac6289b7d2f278f534f5a65679754d212b5067
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c73be27ed82a643b01528ccba3887f59beeceb53
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030533"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574049"
 ---
 # <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>用 Xamarin 构建的 tvOS 应用疑难解答
 
 _本文介绍了在使用 Xamarin 的 tvOS 支持时可能遇到的问题。_
 
-<a name="Known-Issues" />
+<a name="Known-Issues"></a>
 
 ## <a name="known-issues"></a>已知问题
 
 Xamarin 的 tvOS 支持的当前版本具有以下已知问题：
 
-- **Mono Framework** –单声道 4.3 ProtectedData 无法解密 mono 4.2 中的数据。 因此，当配置受保护的 NuGet 源时，NuGet 包将无法还原，并 `Data unprotection failed` 错误。
+- **Mono Framework** –单声道 4.3 ProtectedData 无法解密 mono 4.2 中的数据。 因此， `Data unprotection failed` 当配置受保护的 NuGet 源时，NuGet 包将无法还原，并出现错误。
   - **解决方法**–在 Visual Studio for Mac 中，你将需要添加回使用密码身份验证的任何 NuGet 包源，然后再重新尝试还原包。
-- **Visual Studio for Mac w/ F#外**接程序–在 Windows 上创建F# Android 模板时出错。 这仍应在 Mac 上正常运行。
-- **Xamarin** –运行包含目标框架且设置为 `Unsupported`的 Xamarin 统一模板项目时，可能会出现弹出 `Could not connect to the debugger`。
+- **Visual Studio for Mac w/F # 外**接程序–在 Windows 上创建 F # Android 模板时出错。 这仍应在 Mac 上正常运行。
+- **Xamarin** –当目标框架设置为的情况下运行 Xamarin 和统一模板项目时 `Unsupported` ， `Could not connect to the debugger` 可能会出现弹出窗口。
   - **可能的解决方法**–降级稳定通道中可用的 Mono framework 版本。
-- **Xamarin Visual studio & xamarin** –在 Visual Studio 中部署 WatchKit 应用程序时，可能会出现 `The file ‘bin\iPhoneSimulator\Debug\WatchKitApp1WatchKitApp.app\WatchKitApp1WatchKitApp’ does not exist` 错误。
+- **Xamarin Visual studio & xamarin** –在 Visual Studio 中部署 WatchKit 应用程序时， `The file ‘bin\iPhoneSimulator\Debug\WatchKitApp1WatchKitApp.app\WatchKitApp1WatchKitApp’ does not exist` 可能会出现错误。
 
 请在[GitHub](https://github.com/xamarin/xamarin-macios/issues/new)上报告你发现的任何错误。
 
@@ -48,7 +48,7 @@ Xamarin 的 tvOS 支持的当前版本具有以下已知问题：
 2. 选择 " **TvOS 生成**"，并确保你在 "**发布**" 配置上： 
 
     [![](troubleshooting-images/ts01.png "Select tvOS Build options")](troubleshooting-images/ts01.png#lightbox)
-3. 将 `--bitcode=asmonly` 添加到 "**其他 mtouch 参数**" 字段，然后单击 **"确定"** 按钮。
+3. 添加 `--bitcode=asmonly` 到 "**其他 mtouch 参数**" 字段，然后单击 **"确定"** 按钮。
 4. 在**发布**配置中重新生成应用。
 
 ### <a name="verifying-that-your-tvos-app-contains-bitcode"></a>验证 tvOS 应用程序是否包含 Bitcode
@@ -76,11 +76,11 @@ Section
  reserved2 0
 ```
 
-`addr` 和 `size` 将有所不同，但其他字段应相同。
+`addr`和 `size` 将有所不同，但其他字段应相同。
 
-你将需要确保你使用的任何第三方静态（`.a`）库是针对 tvOS 库（而不是 iOS 库）构建的，并且它们还包括 bitcode 信息。
+你将需要确保你使用的任何第三方静态（ `.a` ）库是针对 tvOS 库（而不是 iOS 库）构建的，并且它们还包括 bitcode 信息。
 
-对于包含有效 bitcode 的应用或库，`size` 将大于1。 在某些情况下，库可以具有 bitcode 标记，但不包含有效的 bitcode。 例如:
+对于包含有效 bitcode 的应用或库， `size` 将大于1。 在某些情况下，库可以具有 bitcode 标记，但不包含有效的 bitcode。 例如：
 
 **无效的 Bitcode**
 
@@ -102,7 +102,7 @@ $ otool -l -arch arm64 libDownloadableAgent-tvos.a |grep __bitcode -A 3
       size 0x0000000000045440
 ```
 
-请注意上面列出的示例中两个库之间 `size` 的差异。 必须从启用了 bitcode 的 Xcode 存档版本（Xcode 设置 `ENABLE_BITCODE`）生成库，作为此大小问题的解决方案。
+请注意 `size` 上面列出的示例中两个库之间的差异。 必须从启用了 bitcode 的 Xcode 存档版本（Xcode 设置）生成库 `ENABLE_BITCODE` ，作为此大小问题的解决方案。
 
 ### <a name="apps-that-only-contain-the-arm64-slice-must-also-have-arm64-in-the-list-of-uirequireddevicecapabilities-in-infoplist"></a>仅包含 arm64 切片的应用还必须在信息 info.plist 中的 UIRequiredDeviceCapabilities 列表中包含 "arm64"。
 
@@ -123,18 +123,18 @@ _"仅包含 arm64 切片的应用还必须在 info.plist 的 UIRequiredDeviceCap
 
 ### <a name="task-mtouch-execution----failed"></a>任务 "MTouch" 执行失败
 
-如果你使用的是第三方库（如 MonoGame），并且你的发布编译失败，并在 `Task "MTouch" execution -- FAILED`结束的一系列长错误消息，请尝试将 `-gcc_flags="-framework OpenAL"` 添加到**其他 touch 参数**：
+如果你使用的是第三方库（如 MonoGame），并且你的发布编译失败，并在结束时出现一系列长错误消息 `Task "MTouch" execution -- FAILED` ，请尝试添加 `-gcc_flags="-framework OpenAL"` **其他触控参数**：
 
 [![](troubleshooting-images/mtouch01.png "Task MTouch execution")](troubleshooting-images/mtouch01.png#lightbox)
 
-还应将 `--bitcode=asmonly` 添加到**其他 touch 参数**中，将链接器选项设置为 "**全部链接**"，并执行 "干净编译"。
+还应 `--bitcode=asmonly` 在**附加的触控参数**中包含，将链接器选项设置为 "**全部链接**"，并执行干净的编译。
 
 ### <a name="itms-90471-error-the-large-icon-is-missing"></a>ITMS-90471 错误。 缺少大图标
 
 如果收到消息，格式为 "ITMS-90471 error"。 尝试将 tvOS 应用提交到 Apple TV 应用商店进行发布时，缺少大图标 "，请检查以下各项：
 
-1. 确保已在你使用[应用程序图标](~/ios/tvos/app-fundamentals/icons-images.md#App-Icons)文档创建的 `Assets.car` 文件中包含了大图标资产。
-2. 确保在最终的应用程序捆绑包中包括使用[图标和图像](~/ios/tvos/app-fundamentals/icons-images.md)文档的 `Assets.car` 文件。
+1. 确保已在文件中包含 `Assets.car` 使用[应用图标](~/ios/tvos/app-fundamentals/icons-images.md#App-Icons)文档创建的大图标资产。
+2. 确保在 `Assets.car` 最终的应用程序捆绑包中包括了使用[图标和图像](~/ios/tvos/app-fundamentals/icons-images.md)的文档。
 
 ### <a name="invalid-bundle--an-app-that-supports-game-controllers-must-also-support-the-apple-tv-remote"></a>无效的捆绑–支持游戏控制器的应用还必须支持 Apple TV 远程
 
@@ -154,7 +154,7 @@ _无效的捆绑–支持游戏控制器的应用也必须支持 Apple TV 远程
 
 _无效的捆绑包–具有 GameController 框架的 Apple TV 应用必须在应用的 info.plist 中包含 GCSupportedGameControllers 键。_
 
-解决方法是将对 Siri 远程（`GCMicroGamepad`）的支持添加到应用的 `Info.plist` 文件中。 Apple 添加了微型游戏控制器配置文件以面向 Siri 远程。 例如，包括以下项：
+解决方法是将对 Siri 远程（）的支持添加 `GCMicroGamepad` 到应用 `Info.plist` 文件。 Apple 添加了微型游戏控制器配置文件以面向 Siri 远程。 例如，包括以下项：
 
 ```xml
 <key>GCSupportedGameControllers</key>  
@@ -183,7 +183,7 @@ _无效的捆绑包–具有 GameController 框架的 Apple TV 应用必须在�
 
 _目标框架不兼容：。NetPortable，Version = 5v，Profile = Profile78_
 
-若要解决此问题，请添加一个名为 `Xamarin.TVOS.xml` 的 XML 文件，其中包含以下内容：
+若要解决此问题，请添加一个名为的 XML 文件， `Xamarin.TVOS.xml` 其中包含以下内容：
 
 ```xml
 <Framework Identifier="Xamarin.TVOS" MinimumVersion="1.0" Profile="*" DisplayName="Xamarin.TVOS"/>

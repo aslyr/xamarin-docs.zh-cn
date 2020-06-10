@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文介绍了 DataPages NuGet 包中提供的控件 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 093ef4b9b3ae7bde25da276330894bcf4e399145
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134441"
+标题： "DataPages Controls 参考" 说明： "本文介绍了 DataPages NuGet 包中提供的控件 Xamarin.Forms 。"
+ms-chap： xamarin assetid：891615D0-E8BD-4ACC-A7F0-4C3725FBCC31： xamarin 窗体作者： davidbritch： dabritch ms. 日期：12/01/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="datapages-controls-reference"></a>DataPages 控件引用
 
 ![](~/media/shared/preview.png "This API is currently in preview")
@@ -36,14 +22,12 @@ Xamarin.FormsDataPages NuGet 包含多个可以利用数据源绑定的控件。
     x:Class="DataPagesDemo.Detail">
 ```
 
-下面的示例包含 `DynamicResource` 需要在项目的资源字典中使用的引用。 此外，还提供了一个示例，说明如何生成[自定义控件](#custom)
+下面的示例包含 `DynamicResource` 需要在项目的资源字典中使用的引用。 此外，还提供了一个示例，说明如何生成[自定义控件](#custom-control-example)。
 
 ## <a name="built-in-controls"></a>内置控件
 
 * [HeroImage](#heroimage)
 * [ListItem](#listitem)
-
-<a name="heroimage" />
 
 ### <a name="heroimage"></a>HeroImage
 
@@ -69,8 +53,6 @@ Xamarin.FormsDataPages NuGet 包含多个可以利用数据源绑定的控件。
 **iOS**
 
 ![](controls-images/heroimage-light-ios.png "IOS 上的 HeroImage 控件") ![](controls-images/heroimage-dark-ios.png "IOS 上的 HeroImage 控件")
-
-<a name="listitem" />
 
 ### <a name="listitem"></a>ListItem
 
@@ -134,19 +116,15 @@ Xamarin.FormsDataPages NuGet 包含多个可以利用数据源绑定的控件。
 
 ![](controls-images/cardview-light-ios.png "IOS 上的 CardView 自定义控件") ![](controls-images/cardview-dark-ios.png "IOS 上的 CardView 自定义控件")
 
-<a name="custom" />
-
 ### <a name="building-the-custom-cardview"></a>构建自定义 CardView
 
-1. [DataView 子类](#1)
-2. [定义字体、布局和边距](#2)
-3. [为控件的子级创建样式](#3)
-4. [创建控件布局模板](#4)
-5. [添加特定于主题的资源](#5)
-6. [设置 CardView 类的 System.windows.controls.controltemplate>](#6)
-7. [将控件添加到页面](#7)
-
-<a name="1" />
+1. [DataView 子类](#1-dataview-subclass)
+2. [定义字体、布局和边距](#2-define-font-layout-and-margins)
+3. [为控件的子级创建样式](#3-create-styles-for-the-controls-children)
+4. [创建控件布局模板](#4-create-the-control-layout-template)
+5. [添加特定于主题的资源](#5-add-the-theme-specific-resources)
+6. [设置 CardView 类的 System.windows.controls.controltemplate>](#6-set-the-controltemplate-for-the-cardview-class)
+7. [将控件添加到页面](#7-add-the-control-to-a-page)
 
 #### <a name="1-dataview-subclass"></a>1. DataView 子类
 
@@ -188,13 +166,11 @@ public class CardView : DataView
 }
 ```
 
-<a name="2" />
-
 #### <a name="2-define-font-layout-and-margins"></a>2. 定义字体、布局和边距
 
 控件设计器会将这些值计算为自定义控件的用户界面设计的一部分。 如果需要平台特定的规范，则 `OnPlatform` 使用元素。
 
-请注意，某些值是指， `StaticResource` 这些值将在[步骤 5](#5)中定义。
+请注意，某些值是指， `StaticResource` 这些值将在[步骤 5](#5-add-the-theme-specific-resources)中定义。
 
 ```xml
 <!-- CARDVIEW FONT SIZES -->
@@ -246,8 +222,6 @@ public class CardView : DataView
 </OnPlatform>
 ```
 
-<a name="3" />
-
 #### <a name="3-create-styles-for-the-controls-children"></a>3. 创建控件子级的样式
 
 引用定义的所有元素，以创建将在自定义控件中使用的子元素：
@@ -277,8 +251,6 @@ public class CardView : DataView
     <Setter Property="HeightRequest" Value="165"/>
 </Style>
 ```
-
-<a name="4" />
 
 #### <a name="4-create-the-control-layout-template"></a>4. 创建控件布局模板
 
@@ -321,8 +293,6 @@ public class CardView : DataView
 </ControlTemplate>
 ```
 
-<a name="5" />
-
 #### <a name="5-add-the-theme-specific-resources"></a>5. 添加特定于主题的资源
 
 由于这是一个自定义控件，因此请添加与正在使用资源字典的主题匹配的资源：
@@ -354,11 +324,9 @@ public class CardView : DataView
             <Color x:Key="iOSCardViewDetailTextColor">#B5B4B9</Color>
 ```
 
-<a name="6" />
-
 #### <a name="6-set-the-controltemplate-for-the-cardview-class"></a>6. 设置 CardView 类的 System.windows.controls.controltemplate>
 
-最后，确保在[步骤 1](#1)中创建的 c # 类使用在[步骤 4](#4)中使用 `Style` 元素定义的控件模板 `Setter`
+最后，确保在[步骤 1](#1-dataview-subclass)中创建的 c # 类使用在[步骤 4](#4-create-the-control-layout-template)中使用 `Style` 元素定义的控件模板 `Setter`
 
 ```xml
 <Style TargetType="local:CardView">
@@ -367,8 +335,6 @@ public class CardView : DataView
   <Setter Property="BackgroundColor" Value="{ StaticResource CardViewBackgroundColor }" />
 </Style>
 ```
-
-<a name="7" />
 
 #### <a name="7-add-the-control-to-a-page"></a>7. 将控件添加到页面
 

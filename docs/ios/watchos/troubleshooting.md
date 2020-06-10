@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 06524163fadc4300d55ec90f35723fd1561bb8a0
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 17ccc67b2976b93fbb290a1d2425168cab50228e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305593"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84568784"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS 故障排除
 
@@ -27,25 +27,25 @@ ms.locfileid: "79305593"
 
 - [从命令行启动 WatchApp](#command_line)。
 
-<a name="knownissues" />
+<a name="knownissues"></a>
 
 ## <a name="known-issues"></a>已知问题
 
 ### <a name="general"></a>常规
 
-<a name="deploy" />
+<a name="deploy"></a>
 
 - 较早版本的 Visual Studio for Mac 错误地将**AppleCompanionSettings**图标之一显示为88x88 像素;如果尝试提交到 App Store，则会导致**缺少图标错误**。
-    此图标应为87x87 像素（ **@3x** Retina 屏幕的29个单位）。 无法在 Visual Studio for Mac 中解决此问题-请在 Xcode 中编辑图像资产，或者手动编辑**内容 json**文件。
+    此图标应为87x87 像素（29个单元用于 **@3x** Retina 屏幕）。 无法在 Visual Studio for Mac 中解决此问题-请在 Xcode 中编辑图像资产，或者手动编辑**内容 json**文件。
 
-- 如果未[正确设置](~/ios/watchos/get-started/project-references.md)监视扩展项目的**Info.plist > WKApp 捆绑 Id**与 WATCH 应用的**捆绑 id**相匹配，则调试器将无法连接，并且 Visual Studio for Mac 将等待消息 *"等待调试程序连接"* 。
+- 如果未[正确设置](~/ios/watchos/get-started/project-references.md)监视扩展项目的**Info.plist > WKApp 捆绑 Id**与 WATCH 应用的**捆绑 id**相匹配，则调试器将无法连接，并且 Visual Studio for Mac 将等待消息 *"等待调试程序连接"*。
 
 - 在**通知**模式下支持调试，但可能不可靠。 重试有时会起作用。 确认监视应用的**info.plist** `WKCompanionAppBundleIdentifier` 设置为与 iOS 父/容器应用（即 iPhone 上运行的应用程序）的捆绑标识符相匹配。
 
 - iOS 设计器不显示用于速览或通知界面控制器的入口点箭头。
 
-- 不能将两个 `WKNotificationControllers` 添加到情节提要。
-    解决方法： storyboard XML 中的 `notificationCategory` 元素始终以相同的 `id`插入。 若要解决此问题，你可以添加两个（或多个）通知控制器，在文本编辑器中打开情节提要文件，然后手动将 `id` 元素更改为唯一。
+- 不能将两个添加 `WKNotificationControllers` 到情节提要。
+    解决方法： `notificationCategory` STORYBOARD XML 中的元素始终以相同的方式插入 `id` 。 若要解决此问题，你可以添加两个（或多个）通知控制器，在文本编辑器中打开情节提要文件，然后手动将 `id` 元素更改为唯一。
 
     [![](troubleshooting-images/duplicate-id-sml.png "Opening the storyboard file in a text editor and manually change the id element to be unique")](troubleshooting-images/duplicate-id.png#lightbox)
 
@@ -56,7 +56,7 @@ ms.locfileid: "79305593"
 
 对于 Watch 工具包，iOS 设计器支持*要求*正确配置解决方案。 如果未设置项目引用（请参阅[如何设置引用](~/ios/watchos/get-started/project-references.md)），则设计图面将不能正常工作。
 
-<a name="noalpha" />
+<a name="noalpha"></a>
 
 ## <a name="removing-the-alpha-channel-from-icon-images"></a>从图标图像中删除 Alpha 通道
 
@@ -80,20 +80,20 @@ with an alpha channel. Icons should not have an alpha channel.
 
 4. 图标图像现在应传递 Apple 的验证检查。
 
-<a name="add" />
+<a name="add"></a>
 
 ## <a name="manually-adding-interface-controller-files"></a>手动添加接口控制器文件
 
 > [!IMPORTANT]
-> Xamarin 的 WatchKit 支持包括在 iOS 设计器中设计 watch 情节提要（在 Visual Studio for Mac 和 Visual Studio 中），这不需要下述步骤。 只需在 "Visual Studio for Mac 属性" pad 中为接口控制器指定类名称C# ，即可自动创建代码文件。
+> Xamarin 的 WatchKit 支持包括在 iOS 设计器中设计 watch 情节提要（在 Visual Studio for Mac 和 Visual Studio 中），这不需要下述步骤。 只需在 "Visual Studio for Mac 属性" pad 中为接口控制器指定类名称，将自动创建 c # 代码文件。
 
-*如果*你使用的是 Xcode Interface Builder，请按照以下步骤为你的手表应用创建新的界面控制器并启用与 Xcode 的同步，以便可以在中C#使用插座和操作：
+*如果*你使用的是 Xcode Interface Builder，请按照以下步骤为你的 watch 应用程序创建新的接口控制器并启用与 Xcode 的同步，以便可以在 c # 中使用插座和操作：
 
 1. 在 Xcode 中打开 "监视" 应用的**界面。情节提要** **Interface Builder**。
 
     ![](troubleshooting-images/add-6.png "Opening the storyboard in Xcode Interface Builder")
 
-2. 将新 `InterfaceController` 拖动到情节提要上：
+2. 将新的拖 `InterfaceController` 到情节提要：
 
     ![](troubleshooting-images/add-1.png "A InterfaceController")
 
@@ -101,7 +101,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
     ![](troubleshooting-images/add-2.png "A button in the layout")
 
-4. 关闭情节提要并返回到 Visual Studio for Mac。 在 " C# **监视应用扩展**" 项目中创建新文件**MyInterfaceController.cs** （或任何所需的名称）（而不是情节提要的 "监视" 应用本身）。 添加下面的代码（更新命名空间、classname 和构造函数名称）：
+4. 关闭情节提要并返回到 Visual Studio for Mac。 在 "**监视应用扩展**" 项目中创建新的 c # 文件**MyInterfaceController.cs** （或任何所需的名称）（而不是情节提要的 "监视" 应用本身）。 添加下面的代码（更新命名空间、classname 和构造函数名称）：
 
     ```csharp
     using System;
@@ -137,7 +137,7 @@ with an alpha channel. Icons should not have an alpha channel.
     }
     ```
 
-5. 在 " C# **监视应用扩展**" 项目中创建另一个新文件**MyInterfaceController.designer.cs** ，并添加以下代码。 请确保更新命名空间、classname 和 `Register` 属性：
+5. 在 "**监视应用扩展**" 项目中创建另一个新的 c # 文件**MyInterfaceController.designer.cs** ，并添加以下代码。 请确保更新命名空间、classname 和 `Register` 属性：
 
     ```csharp
     using Foundation;
@@ -156,7 +156,7 @@ with an alpha channel. Icons should not have an alpha channel.
     ```
 
     > [!TIP]
-    > 您可以选择将此文件作为第一个文件的子节点，方法是将其拖到 Visual Studio for Mac C# Solution Pad 的其他文件中。 它将如下所示：
+    > 您可以选择将此文件作为第一个文件的子节点，方法是将其拖到 Visual Studio for Mac Solution Pad 中的其他 c # 文件中。 它将如下所示：
 
     ![](troubleshooting-images/add-5.png "The Solution pad")
 
@@ -166,7 +166,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
     ![](troubleshooting-images/add-6.png "Opening the storyboard in Interface Builder")
 
-8. 选择新的接口控制器，并为其指定上面定义的类名，例如。 `MyInterfaceController` 列中的一个值匹配。
+8. 选择新的接口控制器，并为其指定上面定义的类名，例如。 `MyInterfaceController`.
     如果一切都正常工作，则它应自动显示在**类：** 下拉列表中，你可以从该下拉列表中选择它。
 
     ![](troubleshooting-images/add-4.png "Setting a custom class")
@@ -206,9 +206,9 @@ with an alpha channel. Icons should not have an alpha channel.
     }
     ```
 
-你现在可以在中C#引用控件（或实现操作）！
+你现在可以在 c # 中引用控件（或实现操作）！
 
-<a name="command_line" />
+<a name="command_line"></a>
 
 ## <a name="launching-the-watch-app-from-the-command-line"></a>从命令行启动 Watch 应用
 
@@ -224,7 +224,7 @@ with an alpha channel. Icons should not have an alpha channel.
 --launchsimwatch=/path/to/watchkitproject/watchsample/bin/iPhoneSimulator/Debug/watchsample.app
 ```
 
-需要更新以反映应用 `launchsimwatch`的参数：
+你需要更新以反映你的应用程序的参数 `launchsimwatch` ：
 
 ### <a name="--launchsimwatch"></a>--launchsimwatch
 
@@ -241,7 +241,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
 ## <a name="notification-mode"></a>通知模式
 
-若要测试应用的[**通知**模式](~/ios/watchos/platform/notifications.md)，请将 `watchlaunchmode` 参数设置为 `Notification`，并提供包含测试通知负载的 JSON 文件的路径。
+若要测试应用的[**通知**模式](~/ios/watchos/platform/notifications.md)，请将 `watchlaunchmode` 参数设置为， `Notification` 并提供包含测试通知负载的 JSON 文件的路径。
 
 负载参数对于通知模式是*必需*的。
 

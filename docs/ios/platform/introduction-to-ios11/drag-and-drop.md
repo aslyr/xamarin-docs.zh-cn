@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/05/2017
-ms.openlocfilehash: 928936815c89dd74d0ad3775f59ea210702c8857
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 2a59040efde59210152ca20b44df2a097904c9f9
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306163"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573750"
 ---
 # <a name="drag-and-drop-in-xamarinios"></a>在 Xamarin 中拖放
 
@@ -35,20 +35,20 @@ iOS 11 包含拖放支持，可在 iPad 上的应用程序之间复制数据。 
 
 ## <a name="drag-and-drop-with-text-controls"></a>拖放和文本控件
 
-`UITextView` 和 `UITextField` 自动支持将选定的文本拖出，并在中放置文本内容。
+`UITextView`并 `UITextField` 自动支持将选定的文本拖出，并在中放置文本内容。
 
-<a name="uitableview" />
+<a name="uitableview"></a>
 
 ## <a name="drag-and-drop-with-uitableview"></a>拖放 with UITableView
 
-`UITableView` 具有用于对表行进行拖放交互的内置处理，只需几个方法即可启用默认行为。
+`UITableView`具有与表行的拖放交互的内置处理，只需要几个方法来启用默认行为。
 
 涉及两个接口：
 
-- `IUITableViewDragDelegate` –在表视图中启动拖动时的包信息。
-- `IUITableViewDropDelegate` –尝试和完成 drop 时处理信息。
+- `IUITableViewDragDelegate`–当在表视图中启动拖动时，包信息。
+- `IUITableViewDropDelegate`–尝试和完成删除时处理信息。
 
-在[DragAndDropTableView 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview)中，这两个接口都在 `UITableViewController` 类上实现，以及委托和数据源。 它们是在 `ViewDidLoad` 方法中分配的：
+在[DragAndDropTableView 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview)中，这两个接口都是在类上实现的 `UITableViewController` ，以及委托和数据源。 它们是在方法中指定的 `ViewDidLoad` ：
 
 ```csharp
 this.TableView.DragDelegate = this;
@@ -59,9 +59,9 @@ this.TableView.DropDelegate = this;
 
 ### <a name="table-view-drag-delegate"></a>表视图拖动委托
 
-支持从表视图中拖动行的_唯一方法是_`GetItemsForBeginningDragSession`。 如果用户开始拖动行，将调用此方法。
+支持从表视图中拖动行的_唯一方法是_ `GetItemsForBeginningDragSession` 。 如果用户开始拖动行，将调用此方法。
 
-下面显示了实现。 它检索与拖动的行相关联的数据，对其进行编码，并配置一个 `NSItemProvider` 来确定应用程序将如何处理操作的 "删除" 部分（例如，在此示例中，是否可以处理数据类型，`PlainText`）：
+下面显示了实现。 它检索与拖放的行相关联的数据，对其进行编码，并对其进行配置，以 `NSItemProvider` 确定应用程序将如何处理操作的 "drop" 部分（例如，在此示例中，是否可以处理数据类型 `PlainText` ）：
 
 ```csharp
 public UIDragItem[] GetItemsForBeginningDragSession (UITableView tableView,
@@ -85,19 +85,19 @@ public UIDragItem[] GetItemsForBeginningDragSession (UITableView tableView,
 }
 ```
 
-可以实现拖动委托上的许多可选方法，以自定义拖动行为，例如提供多个数据表示形式，这些数据表示可以在目标应用（如格式化文本和纯文本，或者矢量和绘图的位图版本）。 还可以提供在同一应用中拖放时要使用的自定义数据表示形式。
+可以实现拖动委托上的很多可选方法，以自定义拖动行为，例如提供多个数据表示形式，这些数据表示形式可以在目标应用（如格式化文本和纯文本，或者图形的矢量和位图版本）中利用。 还可以提供在同一应用中拖放时要使用的自定义数据表示形式。
 
 ### <a name="table-view-drop-delegate"></a>表视图删除委托
 
 拖动操作在表视图上发生或在其上方完成时，将调用 drop 委托上的方法。 所需的方法确定是否允许删除数据，以及在删除完成后采取的操作：
 
-- `CanHandleDropSession` –当正在进行拖动并且可能会在应用程序上删除时，此方法将确定是否允许删除正在拖动的数据。
-- `DropSessionDidUpdate` –拖动过程中，将调用此方法来确定所需的操作。 要拖动的表视图中的信息、拖动会话和可能的索引路径都可用于确定为用户提供的行为和视觉反馈。
-- `PerformDrop` –当用户完成放置（通过抬起其手指）时，此方法将提取要拖动的数据，并修改表视图，以将数据添加到新行（或多行）。
+- `CanHandleDropSession`–虽然正在进行拖动并且可能会在应用程序上删除，但此方法确定是否允许删除正在拖动的数据。
+- `DropSessionDidUpdate`–拖动过程中，将调用此方法来确定所需的操作。 要拖动的表视图中的信息、拖动会话和可能的索引路径都可用于确定为用户提供的行为和视觉反馈。
+- `PerformDrop`–当用户完成放置（通过抬起其手指）时，此方法将提取要拖动的数据，并修改表视图，以将数据添加到新行（或多行）中。
 
 #### <a name="canhandledropsession"></a>CanHandleDropSession
 
-`CanHandleDropSession` 指示表视图是否可以接受要拖动的数据。 在此代码段中，`CanLoadObjects` 用于确认此表视图可以接受字符串数据。
+`CanHandleDropSession`指示表视图是否可以接受要拖动的数据。 在此代码段中， `CanLoadObjects` 用于确认此表视图可以接受字符串数据。
 
 ```csharp
 public bool CanHandleDropSession(UITableView tableView, IUIDropSession session)
@@ -108,9 +108,9 @@ public bool CanHandleDropSession(UITableView tableView, IUIDropSession session)
 
 #### <a name="dropsessiondidupdate"></a>DropSessionDidUpdate
 
-在拖动操作过程中，将重复调用 `DropSessionDidUpdate` 方法，以便向用户提供视觉提示。
+`DropSessionDidUpdate`拖动操作正在进行时，将重复调用方法，以向用户提供视觉提示。
 
-在下面的代码中，`HasActiveDrag` 用于确定操作是否源自当前表视图。 如果是这样，则只允许移动单个行。
+在下面的代码中， `HasActiveDrag` 用于确定操作是否源自当前表视图。 如果是这样，则只允许移动单个行。
 如果拖动来自其他源，则会显示复制操作：
 
 ```csharp
@@ -131,13 +131,13 @@ public UITableViewDropProposal DropSessionDidUpdate(UITableView tableView, IUIDr
 }
 ```
 
-Drop 操作可以是 `Cancel`、`Move`或 `Copy`之一。
+删除操作可以是 `Cancel` 、 `Move` 或之一 `Copy` 。
 
 Drop 意向可以是插入新行，或向现有行添加/追加数据。
 
 #### <a name="performdrop"></a>PerformDrop
 
-当用户完成操作时调用 `PerformDrop` 方法，并修改表视图和数据源以反映已删除的数据。
+`PerformDrop`当用户完成操作时调用方法，并修改表视图和数据源以反映已删除的数据。
 
 ```csharp
 public void PerformDrop(UITableView tableView, IUITableViewDropCoordinator coordinator)

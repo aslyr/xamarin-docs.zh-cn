@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/13/2016
-ms.openlocfilehash: 356509fb6f588b96a2a1224879675bbad36f8524
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2aee2a8dc37d6a1a73569322a97cdd0aebfbfa1c
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032137"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574205"
 ---
 # <a name="app-store-changes-in-ios-11"></a>IOS 11 中的应用商店更改
 
@@ -50,7 +50,7 @@ Apple 使得应用程序中购买的应用程序在应用程序存储中更易�
 
 ![ITune Connect 中的应用商店提升部分](app-store-changes-images/image4.png)
 
-还需要在应用程序中将 `ShouldAddStorePayment` 方法添加到 `SKPaymentTransactionObserver` 协议。
+还需要将 `ShouldAddStorePayment` 方法添加到 `SKPaymentTransactionObserver` 应用中的协议。
 
 有关应用内购买促销的详细信息，请参阅 Apple[升级应用内购买](https://developer.apple.com/app-store/promoting-in-app-purchases/)页。
 
@@ -84,7 +84,7 @@ Apple 使得应用程序中购买的应用程序在应用程序存储中更易�
 
 有关详细信息，请参阅 Apple[响应审核](https://developer.apple.com/app-store/responding-to-reviews/)页。
 
-<a name="Phased_Release"/>
+<a name="Phased_Release"></a>
 
 ## <a name="phased-release"></a>分阶段发布
 

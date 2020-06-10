@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 6c5e340818b702d79a1157f29c1ecec19bf1db76
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139940"
+标题： "裁剪 SkiaSharp 位图" 说明： "了解如何使用 SkiaSharp 设计用户界面以交互 desribing 裁剪矩形。"
+ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 0A79AB27-C69F-4376-8FFE-FF46E4783F30 author： davidbritch： dabritch ms. 日期：07/17/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="cropping-skiasharp-bitmaps"></a>裁剪 SkiaSharp 位图
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -79,7 +65,7 @@ class CroppingRectangle
             Rect = rect;
         }
     }
-    
+
     public SKRect Rect { set; get; }
     ···
 }
@@ -108,7 +94,7 @@ class CroppingRectangle
 }
 ```
 
-此数组用于以下调用的方法 `HitTest` 。 `SKPoint`参数是与手指触摸或鼠标单击对应的点。 方法返回对应于手指或鼠标指针接触的角的索引（0、1、2或3），该索引在参数给定的距离内 `radius` ： 
+此数组用于以下调用的方法 `HitTest` 。 `SKPoint`参数是与手指触摸或鼠标单击对应的点。 方法返回对应于手指或鼠标指针接触的角的索引（0、1、2或3），该索引在参数给定的距离内 `radius` ：
 
 ```csharp
 class CroppingRectangle
@@ -121,7 +107,7 @@ class CroppingRectangle
         for (int index = 0; index < corners.Length; index++)
         {
             SKPoint diff = point - corners[index];
-                
+
             if ((float)Math.Sqrt(diff.X * diff.X + diff.Y * diff.Y) < radius)
             {
                 return index;
@@ -271,7 +257,7 @@ class PhotoCropperCanvasView : SKCanvasView
 
         canvas.Clear(SKColors.Gray);
 
-        // Calculate rectangle for displaying bitmap 
+        // Calculate rectangle for displaying bitmap
         float scale = Math.Min((float)info.Width / bitmap.Width, (float)info.Height / bitmap.Height);
         float x = (info.Width - scale * bitmap.Width) / 2;
         float y = (info.Height - scale * bitmap.Height) / 2;
@@ -330,7 +316,7 @@ class PhotoCropperCanvasView : SKCanvasView
     CroppingRectangle croppingRect;
     SKMatrix inverseBitmapMatrix;
 
-    // Touch tracking 
+    // Touch tracking
     TouchEffect touchEffect = new TouchEffect();
     struct TouchPoint
     {
@@ -384,7 +370,7 @@ class PhotoCropperCanvasView : SKCanvasView
                 if (touchPoints.ContainsKey(args.Id))
                 {
                     TouchPoint touchPoint = touchPoints[args.Id];
-                    croppingRect.MoveCorner(touchPoint.CornerIndex, 
+                    croppingRect.MoveCorner(touchPoint.CornerIndex,
                                             bitmapLocation - touchPoint.Offset);
                     InvalidateSurface();
                 }
@@ -428,10 +414,10 @@ class PhotoCropperCanvasView : SKCanvasView
         get
         {
             SKRect cropRect = croppingRect.Rect;
-            SKBitmap croppedBitmap = new SKBitmap((int)cropRect.Width, 
+            SKBitmap croppedBitmap = new SKBitmap((int)cropRect.Width,
                                                   (int)cropRect.Height);
             SKRect dest = new SKRect(0, 0, cropRect.Width, cropRect.Height);
-            SKRect source = new SKRect(cropRect.Left, cropRect.Top, 
+            SKRect source = new SKRect(cropRect.Left, cropRect.Top,
                                        cropRect.Right, cropRect.Bottom);
 
             using (SKCanvas canvas = new SKCanvas(croppedBitmap))
@@ -533,8 +519,6 @@ photoCropper = new PhotoCropperCanvasView(bitmap, 1.78f);
 
 你将看到裁剪矩形限制为高清晰度电视的16对9纵横比特性。
 
-<a name="tile-division" />
-
 ## <a name="dividing-a-bitmap-into-tiles"></a>将位图分割为磁贴
 
 Xamarin.Forms[_使用 Xamarin 创建移动应用程序_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)的第22章中显示了著名14-15 谜题的一个版本，可以将其下载为[**XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)。 但是，当其基于您自己的照片库中的图像时，谜题就会变得更加有趣（并且通常更具挑战性）。
@@ -548,12 +532,12 @@ Xamarin.Forms[_使用 Xamarin 创建移动应用程序_](~/xamarin-forms/creatin
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SkiaSharpFormsDemos.Bitmaps.PhotoPuzzlePage1"
              Title="Photo Puzzle">
-    
+
     <Button Text="Pick a photo from your library"
-            VerticalOptions="CenterAndExpand" 
+            VerticalOptions="CenterAndExpand"
             HorizontalOptions="CenterAndExpand"
             Clicked="OnPickButtonClicked"/>
-    
+
 </ContentPage>
 ```
 
@@ -587,7 +571,7 @@ public partial class PhotoPuzzlePage1 : ContentPage
 
 从库中选择的照片可能不会在照片库中显示，而是旋转或颠倒。 （这尤其是 iOS 设备的问题。）出于此原因， `PhotoPuzzlePage2` 允许您将图像旋转到所需的方向。 XAML 文件包含三个标签为**90&#x00B0; Right** （表示顺时针）、 **90&#x00B0; 左**（逆时针）和**完成**。
 
-代码隐藏文件实现了在**[SkiaSharp 位图上创建和绘制](drawing.md#rotating-bitmaps)** 文章中所示的位图旋转逻辑。 用户可以顺时针或逆时针旋转图像90： 
+代码隐藏文件实现了在**[SkiaSharp 位图上创建和绘制](drawing.md#rotating-bitmaps)** 文章中所示的位图旋转逻辑。 用户可以顺时针或逆时针旋转图像90：
 
 ```csharp
 public partial class PhotoPuzzlePage2 : ContentPage
@@ -763,7 +747,7 @@ imgSources[4 * row + col] = (SKBitmapImageSource)bitmap;
 
 [![照片测验题2](cropping-images/PhotoPuzzle2.png "照片测验题2")](cropping-images/PhotoPuzzle2-Large.png#lightbox)
 
-现在可以按正确的顺序重新排列它们。 与空白正方形处于相同行或列中的任何磁贴都可以被点击以将它们移到空白正方形中。 
+现在可以按正确的顺序重新排列它们。 与空白正方形处于相同行或列中的任何磁贴都可以被点击以将它们移到空白正方形中。
 
 ## <a name="related-links"></a>相关链接
 

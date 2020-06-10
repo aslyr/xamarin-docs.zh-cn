@@ -1,17 +1,17 @@
 ---
 title: 构建跨平台应用程序概述
-description: 本文档提供了构建跨平台应用程序的高级概述。 它讨论了的值C#、设计模式（如 MVC/MVVM）和本机 ui。
+description: '本文档提供了构建跨平台应用程序的高级概述。 它讨论 c # 的值、设计模式（如 MVC/MVVM）和本机 Ui。'
 ms.prod: xamarin
 ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 7d839e0141f14f4ba86897b128bf2a8c0a79548d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: de8c66e6a89f035b8370a2139361d3e942aa9c09
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016917"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571202"
 ---
 # <a name="building-cross-platform-applications-overview"></a>构建跨平台应用程序概述
 
@@ -25,9 +25,9 @@ Xamarin 并非只是一次 "只写一次，可在任何位置运行" 平台，�
 
 下面总结了创建 Xamarin 跨平台应用程序的要点：
 
-- 在中C#**使用C#**  -编写你的应用程序。 在中编写的C#现有代码可以轻松地通过 Xamarin 移植到 IOS 和 Android，并且很明显用于 Windows 应用程序。
+- **使用 c #** 编写你的应用（c #）。 用 c # 编写的现有代码可以很容易地通过 Xamarin 移植到 iOS 和 Android，并且很明显用于 Windows 应用程序。
 - **利用 MVC 或 MVVM 设计模式**-使用模型/视图/控制器模式开发应用程序的用户界面。 使用模型/视图/控制器方法或模型/视图/ViewModel 方法来设计应用程序，在该方法中，"模型" 和其余部分之间存在明显的分隔。 确定应用程序的哪些部分将使用每个平台（iOS、Android、Windows 和 Mac）的本机用户界面元素，并将其用作将应用程序拆分为两个组件的指南： "核心" 和 "用户界面"。
-- **构建本机 ui** -每个特定于 OS 的应用程序都提供了不同的用户界面C#层（在中实现，并提供本机 UI 设计工具的帮助）：
+- **构建本机 ui** -每个特定于 OS 的应用程序都提供了不同的用户界面层（在 c # 中实现并具有本机 UI 设计工具的帮助）：
 
 1. 在 iOS 上，使用 UIKit Api 创建外观真实的应用程序，还可以选择利用 Xamarin 的 iOS 设计器以可视方式创建 UI。
 1. 在 Android 上，使用 Android 创建外观上的应用程序，利用 Xamarin 的 UI 设计器。
@@ -47,15 +47,15 @@ Xamarin. 在所有平台上均支持窗体项目，并允许你创建可使用 X
 
 其中一些组件是在*Tasky*案例研究中实现的。
 
- <a name="Separate_Reusable_Code_into_a_Core_Library" />
+ <a name="Separate_Reusable_Code_into_a_Core_Library"></a>
 
 ## <a name="separate-reusable-code-into-a-core-library"></a>将可重用代码分为核心库
 
-通过对应用程序体系结构进行分层，然后将平台不可知的核心功能移到可重复使用的核心库中，可以将责任分离原则分成一段示
+通过对应用程序体系结构进行分层，然后将平台不可知的核心功能移到可重复使用的核心库中，可以将责任分离原则分离，因为下图所示：
 
  ![](overview-images/layers2.png "By following the principle of separation of responsibility by layering your application architecture and then moving core functionality that is platform agnostic into a reusable core library, you can maximize code sharing across platforms")
 
- <a name="Case_Studies" />
+ <a name="Case_Studies"></a>
 
 ## <a name="case-studies"></a>案例研究
 

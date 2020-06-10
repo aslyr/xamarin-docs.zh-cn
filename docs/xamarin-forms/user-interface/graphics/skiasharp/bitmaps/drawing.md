@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 593d6a8b30d5ed0e143d1c013849d2bef571f6dc
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140291"
+标题： "在 SkiaSharp 位图上创建和绘制" 说明： "了解如何创建 SkiaSharp 位图，然后通过创建基于它们的画布在这些位图上进行绘制。"
+ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 79BD3266-D457-4E50-BDDF-33450035FA0F author： davidbritch： dabritch ms. 日期：07/17/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>在 SkiaSharp 位图上创建和绘制
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -341,8 +327,6 @@ public class PixelizedImagePage : ContentPage
 
 [![Pixelize 图](drawing-images/PixelizeImage.png "Pixelize 图")](drawing-images/PixelizeImage-Large.png#lightbox)
 
-<a name="rotating-bitmaps" />
-
 ## <a name="rotating-bitmaps"></a>旋转位图
 
 另一种常见任务是旋转位图。 当从 iPhone 或 iPad 照片库中检索位图时，此方法特别有用。 除非在拍摄照片时该设备处于特定方向，否则图片可能会倒置或侧向旋转。
@@ -388,7 +372,7 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 }
 ```
 
-在[**裁剪 SkiaSharp 位图**](cropping.md#tile-division)一文中介绍的**照片谜题**页中使用这两种方法。
+在[**裁剪 SkiaSharp 位图**](cropping.md#cropping-skiasharp-bitmaps)一文中介绍的**照片谜题**页中使用这两种方法。
 
 允许用户使用90度增量来旋转位图的程序只需实现一个函数以90度进行旋转。 然后，用户可以通过重复执行此函数，以90度的任何增量进行旋转。
 

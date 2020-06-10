@@ -1,23 +1,8 @@
 ---
-title: Xamarin.FormsFlexLayout
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 031a846b7546c204d45c7437acd829d6cb49bfbb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137201"
+title： " Xamarin.Forms FlexLayout" 说明： "使用 FlexLayout 来堆积或包装子视图的集合"。
+ms-chap： xamarin assetid：6A91EA70-268C-462C-AAAF-F8DA011403F8： xamarin。 custom： xamu：： davidbritch： dabritch：：05/07/2018 不，不是： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.FormsFlexLayout
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)
@@ -30,9 +15,7 @@ Xamarin.Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) 是版本3.0 中的�
 
 `FlexLayout`派生自 [`Layout<View>`](xref:Xamarin.Forms.Layout`1) 并继承 [`Children`](xref:Xamarin.Forms.Layout`1.Children) 类型的属性 `IList<View>` 。
 
-`FlexLayout`定义六个公共可绑定属性和五个附加的可绑定属性，这些属性影响其子元素的大小、方向和对齐方式。 （如果你不熟悉附加的可绑定属性，请参阅**[附加属性](~/xamarin-forms/xaml/attached-properties.md)** 一文。）以下各节详细介绍了这些属性，详细介绍了可**[绑定属性](#bindable-properties)** 和**[附加的可绑定属性](#attached-properties)**。 不过，本文首先介绍的一些**[常见使用方案](#common-scenarios)**， `FlexLayout` 这些方案更通俗地说明了其中的许多属性。 本文末尾介绍了如何合并 `FlexLayout` [CSS 样式表](~/xamarin-forms/user-interface/styles/css/index.md)。
-
-<a name="common-scenarios" />
+`FlexLayout`定义六个公共可绑定属性和五个附加的可绑定属性，这些属性影响其子元素的大小、方向和对齐方式。 （如果你不熟悉附加的可绑定属性，请参阅**[附加属性](~/xamarin-forms/xaml/attached-properties.md)** 一文。）以下各节详细介绍了这些属性，详细介绍了可**[绑定属性](#the-bindable-properties-in-detail)** 和**[附加的可绑定属性](#the-attached-bindable-properties-in-detail)**。 不过，本文首先介绍的一些**[常见使用方案](#common-usage-scenarios)**， `FlexLayout` 这些方案更通俗地说明了其中的许多属性。 本文末尾介绍了如何合并 `FlexLayout` [CSS 样式表](~/xamarin-forms/user-interface/styles/css/index.md)。
 
 ## <a name="common-usage-scenarios"></a>常见使用方案
 
@@ -91,7 +74,7 @@ Xamarin.Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) 是版本3.0 中的�
 
     如果使用的是 `StackLayout` ，则需要将 `VerticalOptions` 每个项的属性分配给， `CenterAndExpand` 以实现类似的效果。 但是，此 `CenterAndExpand` 选项将在每个项之间分配两倍于第一项和最后一项之后的空间。 可以 `CenterAndExpand` `VerticalOptions` 通过将的 `JustifyContent` 属性设置 `FlexLayout` 为来模拟的选项 `SpaceAround` 。
 
-下面将详细介绍 `FlexLayout` 可**[绑定属性](#bindable-properties)** 部分中的这些属性。
+下面将详细介绍 `FlexLayout` 可**[绑定属性](#the-bindable-properties-in-detail)** 部分中的这些属性。
 
 ### <a name="using-flexlayout-for-wrapping-items"></a>使用 FlexLayout 包装项
 
@@ -380,8 +363,6 @@ Web 设计中有一个称为 "[_圣圣杯_](https://en.wikipedia.org/wiki/Holy_g
 
 在这三个视图中的每个 `FlexLayout` 视图中，在之前为空， `Label` `Button` 但其 `Grow` 设置为1。 这意味着将所有额外的垂直空间分配给该空白 `Label` ，从而有效地将 `Button` 向下推送。
 
-<a name="bindable-properties" />
-
 ## <a name="the-bindable-properties-in-detail"></a>详细的可绑定属性
 
 现在，你已了解了的一些常见应用程序 `FlexLayout` ， `FlexLayout` 可以更详细地探讨的属性。
@@ -394,8 +375,6 @@ Web 设计中有一个称为 "[_圣圣杯_](https://en.wikipedia.org/wiki/Holy_g
 [!["试验" 页：默认值](flex-layout-images/ExperimentDefault.png ""试验" 页-默认")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
 
 每个 `Label` 视图都有一个灰色背景，其中显示分配给中的空间 `Label` `FlexLayout` 。 本身的背景 `FlexLayout` 为 Alice 蓝。 它占据页面的整个底部，但左侧和右侧有一个小边距。
-
-<a name="direction" />
 
 ### <a name="the-direction-property"></a>Direction 属性
 
@@ -414,8 +393,6 @@ Web 设计中有一个称为 "[_圣圣杯_](https://en.wikipedia.org/wiki/Holy_g
 
 请注意，对于 `Reverse` 选项，项从右侧或底部开始。
 
-<a name="wrap" />
-
 ### <a name="the-wrap-property"></a>Wrap 属性
 
 [`Wrap`](xref:Xamarin.Forms.FlexLayout.Wrap)属性的类型为 [`FlexWrap`](xref:Xamarin.Forms.FlexWrap) ，具有三个成员的枚举：
@@ -428,9 +405,7 @@ Web 设计中有一个称为 "[_圣圣杯_](https://en.wikipedia.org/wiki/Holy_g
 
 [!["试验" 页：换行](flex-layout-images/ExperimentWrap.png "试验页换行")](flex-layout-images/ExperimentWrap-Large.png#lightbox)
 
-如果将 `Wrap` 属性设置为 `NoWrap` ，并且主轴受到约束（如在此程序中），并且主轴的宽度或高度不足以容纳所有子级，则 `FlexLayout` 尝试使项的宽度更小，如 iOS 屏幕截图所示。 可以用附加的可绑定属性控制项的 shrinkness [`Shrink`](#shrink) 。
-
-<a name="justify-content" />
+如果将 `Wrap` 属性设置为 `NoWrap` ，并且主轴受到约束（如在此程序中），并且主轴的宽度或高度不足以容纳所有子级，则 `FlexLayout` 尝试使项的宽度更小，如 iOS 屏幕截图所示。 可以用附加的可绑定属性控制项的 shrinkness [`Shrink`](#the-shrink-property) 。
 
 ### <a name="the-justifycontent-property"></a>JustifyContent 属性
 
@@ -449,8 +424,6 @@ Web 设计中有一个称为 "[_圣圣杯_](https://en.wikipedia.org/wiki/Holy_g
 
 在所有三个屏幕截图中， `Wrap` 属性都设置为 `Wrap` 。 `Start`默认值在以前的 Android 屏幕截图中显示。 此处的 iOS 屏幕截图显示了 `Center` 选项：所有项都移到了中心。 以单词开头的三个其他选项 `Space` 会分配项未占用的额外空间。 `SpaceBetween`在项之间平均分配空间;在每个项 `SpaceAround` 周围放置相等的空间，同时在 `SpaceEvenly` 每个项之间以及第一项和最后一项之后、第一项和最后一项之后。
 
-<a name="align-items" />
-
 ### <a name="the-alignitems-property"></a>AlignItems 属性
 
 [`AlignItems`](xref:Xamarin.Forms.FlexLayout.AlignItems)属性的类型为 [`FlexAlignItems`](xref:Xamarin.Forms.FlexAlignItems) ，具有四个成员的枚举：
@@ -460,15 +433,13 @@ Web 设计中有一个称为 "[_圣圣杯_](https://en.wikipedia.org/wiki/Holy_g
 - `Start`（或 XAML 中的 "弹性启动"）
 - `End`（或 XAML 中的 "flex end"）
 
-这是两个属性中的一个（另一个是 [`AlignContent`](#align-content) ），指示子轴上的子项的对齐方式。 在每行中，子元素将被拉伸（如前面的屏幕截图中所示），或与每个项的开始、中心或结束对齐，如以下三个屏幕截图所示：
+这是两个属性中的一个（另一个是 [`AlignContent`](#the-aligncontent-property) ），指示子轴上的子项的对齐方式。 在每行中，子元素将被拉伸（如前面的屏幕截图中所示），或与每个项的开始、中心或结束对齐，如以下三个屏幕截图所示：
 
 [!["试验" 页：对齐项](flex-layout-images/ExperimentAlignItems.png "试验页对齐项")](flex-layout-images/ExperimentAlignItems-Large.png#lightbox)
 
 在 iOS 屏幕截图中，所有子项的顶部均为对齐。 在 Android 屏幕截图中，项基于最高子级垂直居中。 在 UWP 屏幕截图中，所有项的底部均为对齐。
 
-对于任何单个项，可将该设置替换为 `AlignItems` 附加的可 [`AlignSelf`](#align-self) 绑定属性。
-
-<a name="align-content" />
+对于任何单个项，可将该设置替换为 `AlignItems` 附加的可 [`AlignSelf`](#the-alignself-property) 绑定属性。
 
 ### <a name="the-aligncontent-property"></a>AlignContent 属性
 
@@ -492,13 +463,9 @@ Web 设计中有一个称为 "[_圣圣杯_](https://en.wikipedia.org/wiki/Holy_g
 
 `AlignContent`当只有一个行或列时，将不起作用。
 
-<a name="attached-properties" />
-
 ## <a name="the-attached-bindable-properties-in-detail"></a>附加的可绑定属性详细信息
 
 `FlexLayout`定义五个附加的可绑定属性。 这些属性在的子级上设置 `FlexLayout` ，并且仅适用于该特定子级。
-
-<a name="align-self" />
 
 ### <a name="the-alignself-property"></a>AlignSelf 属性
 
@@ -510,7 +477,7 @@ Web 设计中有一个称为 "[_圣圣杯_](https://en.wikipedia.org/wiki/Holy_g
 - `Start`（或 XAML 中的 "弹性启动"）
 - `End`（或 XAML 中的 "flex end"）
 
-对于的任何单个子级 `FlexLayout` ，此属性设置将重写 [`AlignItems`](#align-items) 自身上设置的属性 `FlexLayout` 。 的默认设置 `Auto` 表示使用 `AlignItems` 设置。
+对于的任何单个子级 `FlexLayout` ，此属性设置将重写 [`AlignItems`](#the-alignitems-property) 自身上设置的属性 `FlexLayout` 。 的默认设置 `Auto` 表示使用 `AlignItems` 设置。
 
 对于 `Label` 名为 `label` （或示例）的元素，可以 `AlignSelf` 在代码中设置属性，如下所示：
 
@@ -593,8 +560,6 @@ FlexLayout.SetBasis(label, new FlexBasis(0.25f, true));
 如果为任何一个子级指定了正值 `Grow` ，则该子级将占用所有剩余空间，如 Android 屏幕截图所示。 此空间还可以在两个或多个子级中分配。 在 UWP 屏幕截图中， `Grow` 第二个属性的属性 `Label` 设置为0.5，而第四个的 `Grow` 属性为1.5，这将为第 `Label` `Label` 三次剩余空间赋予第二次剩余空间 `Label` 。
 
 子视图使用该空间的方式取决于特定类型的子类型。 对于 `Label` ，可 `Label` 使用属性和在的总空间内放置文本 `HorizontalTextAlignment` `VerticalTextAlignment` 。
-
-<a name="shrink" />
 
 ### <a name="the-shrink-property"></a>Shrink 属性
 

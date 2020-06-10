@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 531e04c3dbc9bd695087204ceae88d2f0f5df012
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: de4b6e8b95eed33e7fb38baf51a0da73cef313c0
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488941"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574127"
 ---
 # <a name="introduction-to-ios-9"></a>iOS 9 简介
 
@@ -42,7 +42,7 @@ Apple 在 iOS 9 中添加了几个新的 Api 和服务，并对现有功能进�
 
 若要了解有关 ATS 的详细信息，请参阅我们的[应用传输安全](~/ios/app-fundamentals/ats.md)指南。
 
-<a name="multitasking" />
+<a name="multitasking"></a>
 
 ## <a name="multitasking-for-ipad"></a>适用于 iPad 的多任务
 
@@ -109,7 +109,7 @@ IOS 8 中引入的[HomeKit](xref:HomeKit)框架提供了一种功能，可用于
 
 ## <a name="handoff-framework-changes"></a>切换框架更改
 
-IOS 8 和 OS X Yosemite （10.10）中的 Apple 引入了移交（也称为连续性），以使用户能够在其某个设备（iOS 或 Mac）上启动活动，并在其设备上继续此相同活动（由用户的 iClou 标识）d 帐户）。
+IOS 8 和 OS X Yosemite （10.10）中的 Apple 引入了移交（也称为连续性），以使用户能够在其某个设备（iOS 或 Mac）上启动活动，并在其设备上继续该相同活动（由用户的 iCloud 帐户标识）。
 
 在 iOS 9 中扩展了移交，还支持新的增强搜索功能。 有关详细信息，请参阅我们的[搜索增强](~/ios/platform/search/index.md)文档。 有关使用移交的详细信息，请参阅我们[的移交文档简介](~/ios/platform/handoff.md)。
 
@@ -137,7 +137,7 @@ IOS 8 和 OS X Yosemite （10.10）中的 Apple 引入了移交（也称为连�
 
 - 修改指纹数据库时使密钥链项无效的新 Touch ID 约束。
 - 允许只使用 Touch ID 或密码创建访问控制列表项的新约束。
-- 一个新的身份验证上下文，用于调用与 `SecItem` 调用分开的身份验证。
+- 一个新的身份验证上下文，可用于调用独立于调用的身份验证 `SecItem` 。
 - 应用提供的密钥链项加密的访问控制列表熵（使用应用程序密码选项）。
 - 支持在安全 enclave 内生成和使用密钥（通过 `kSecAttrTokenIDSecureEnclave` 属性）。
 
@@ -145,7 +145,7 @@ IOS 8 和 OS X Yosemite （10.10）中的 Apple 引入了移交（也称为连�
 
 ## <a name="right-to-left-language-support"></a>从右到左语言支持
 
-在 iOS 9 中，通过提供对从右到左语言的完全支持，Apple 使你比以往更轻松地呈现翻转的用户界面。 这包括：
+在 iOS 9 中，通过提供对从右到左语言的完全支持，Apple 使你比以往更轻松地呈现翻转的用户界面。 其中包括：
 
 - 标准[UIKit](xref:UIKit)控件将根据 iOS 设备区域设置和语言设置自动从右到左翻转。
 - [UIView](xref:UIKit.UIView)类提供了属性，使用这些属性可以定义给定视图在从右到左翻转时应如何显示。
@@ -177,8 +177,8 @@ IOS 8 和 OS X Yosemite （10.10）中的 Apple 引入了移交（也称为连�
 Apple 在 iOS 9 中弃用了以下 Api 和函数：
 
 - **通讯簿 & 通讯簿 ui** -这些 api 已被联系人和联系人 UI 框架取代。 有关详细信息，请参阅[联系人和联系人 UI](~/ios/platform/contacts.md)文档。
-- **CBCentralManager** -已在 iOS 9 中删除了 `CBCentralManager` 类的 `RetrievePeripherals` 和 `RetrieveConnectedPeripherals` 方法。 调用这些方法将导致应用在配对附件或应用启动时崩溃。
-- **FetchAllChanges** -`CKFetchRecordChangesOperation` 类的 `FetchAllChanges` 已进行了折旧，并将在 iOS 9 中删除。
+- **CBCentralManager** - `RetrievePeripherals` 类的和 `RetrieveConnectedPeripherals` 方法已 `CBCentralManager` 在 iOS 9 中被删除。 调用这些方法将导致应用在配对附件或应用启动时崩溃。
+- **FetchAllChanges** -已对类进行了 `FetchAllChanges` `CKFetchRecordChangesOperation` 折旧，并将在 iOS 9 中将其删除。
 - **Media Player** -Media Player 框架已在 iOS 9 中弃用。 请改用 AVKit 或 AV Foundation Api。
 
 有关特定 API 弃用功能的完整列表，请参阅 Apple 的[iOS 9.0 API 差异](https://developer.apple.com/library/prerelease/ios/releasenotes/General/iOS90APIDiffs/index.html#//apple_ref/doc/uid/TP40016222)文档。
@@ -193,7 +193,7 @@ Apple 在 iOS 9 中弃用了以下 Api 和函数：
 - [MusicMotion](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-musicmotion)
 - [PhotoProgress](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-photoprogress)
 - [SegueCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-seguecatalog)
-- [StackView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StackView)
+- [System.windows.forms.toolstrip.stackview](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StackView)
 - [StickyCorners](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StickyCorners)
 
 另外，请查看这些示例的 iOS 部分（随附 Mac OS X 版本！）：
@@ -215,7 +215,7 @@ Apple 在 iOS 9 中弃用了以下 Api 和函数：
 - [HomeKit 简介](~/ios/platform/homekit.md)
 - [移交简介](~/ios/platform/handoff.md)
 - [其他 iOS 9 框架更改](~/ios/platform/introduction-to-ios9/additional-framework-changes.md)
-- [疑难解答](~/ios/platform/introduction-to-ios9/troubleshooting.md)
+- [故障排除](~/ios/platform/introduction-to-ios9/troubleshooting.md)
 - [适用于开发人员的 iOS 9](https://developer.apple.com/ios/pre-release/)
 - [IOS 9.0 中的新增功能](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [将你的 Xamarin iOS 应用程序更新到 iOS9 （视频）](https://university.xamarin.com/lightninglectures/Updating-your-XamariniOS-apps-to-iOS9)

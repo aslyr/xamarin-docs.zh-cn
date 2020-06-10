@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 02059c43d26c2e685abd685231fe5faf3d7a6bfe
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: eab0fbb6be313a2ca193b50a484b48d5b34f5fde
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030117"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84565845"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>对 Xamarin 应用程序进行沙箱处理
 
@@ -20,13 +20,13 @@ _本文介绍如何对应用商店上的发布进行沙箱处理。它涵盖了�
 
 ## <a name="overview"></a>概述
 
-在 Xamarin Mac C#应用程序中使用和 .net 时，与使用目标 C 或 Swift 时一样，可以对应用程序进行沙箱处理。
+在 Xamarin Mac 应用程序中使用 c # 和 .NET 时，与使用目标 C 或 Swift 时一样，可以对应用程序进行沙箱处理。
 
 [![正在运行的应用的示例](sandboxing-images/intro01.png "正在运行的应用的示例")](sandboxing-images/intro01-large.png#lightbox)
 
-在本文中，我们将介绍在 Xamarin 和 Mac 应用程序中使用沙盒的基本知识，以及进入沙盒的所有元素：容器目录、授权、用户确定的权限、特权分离和内核强制。 强烈建议您先完成[Hello，Mac](~/mac/get-started/hello-mac.md)一文，特别是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)及[输出口和操作](~/mac/get-started/hello-mac.md#outlets-and-actions)部分的简介，因为它涵盖了我们将在本文。
+在本文中，我们将介绍在 Xamarin 和 Mac 应用程序中使用沙盒的基本知识，以及进入沙盒的所有元素：容器目录、授权、用户确定的权限、特权分离和内核强制。 强烈建议您先完成[Hello，Mac](~/mac/get-started/hello-mac.md)一文，特别是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)及[输出口和操作](~/mac/get-started/hello-mac.md#outlets-and-actions)部分的简介，因为它涵盖了我们将在本文中使用的重要概念和技巧。
 
-你可能想要查看[Xamarin](~/mac/internals/how-it-works.md)示例文档的 " C# [公开C#类/方法到目标-c](~/mac/internals/how-it-works.md) " 部分，它解释了用于将类与目标连接起来的 `Register` 和 `Export` 属性对象和 UI 元素。
+您可能想要了解如何向[Xamarin 内部](~/mac/internals/how-it-works.md)对象[公开 c # 类/方法](~/mac/internals/how-it-works.md)， `Register` 并说明用于将 `Export` c # 类与目标 c 对象和 UI 元素连接起来的和特性。
 
 ## <a name="about-the-app-sandbox"></a>关于应用沙盒
 
@@ -46,7 +46,7 @@ _本文介绍如何对应用商店上的发布进行沙箱处理。它涵盖了�
 本文详细讨论的应用沙箱的元素如下所示：
 
 - 容器目录
-- 下方
+- 权利
 - 用户确定的权限
 - 特权分离
 - 内核强制
@@ -67,11 +67,11 @@ _本文介绍如何对应用商店上的发布进行沙箱处理。它涵盖了�
 
 让我们执行以下操作来创建示例项目：
 
-1. 开始 Visual Studio for Mac 然后单击 "**新建解决方案"。** 列表中。
-2. 在 "**新建项目**" 对话框中，选择 " **Mac**  > **应用** > **Cocoa 应用**"：
+1. 开始 Visual Studio for Mac 然后单击 "**新建解决方案"。** 链接。
+2. 在 "**新建项目**" 对话框中，选择 " **Mac**  >  **app**  >  **Cocoa 应用**"：
 
     [![创建新的 Cocoa 应用](sandboxing-images/sample01.png "创建新的 Cocoa 应用")](sandboxing-images/sample01-large.png#lightbox)
-3. 单击 "**下一步**" 按钮，输入项目名称 `MacSandbox`，然后单击 "**创建**" 按钮：
+3. 单击 "**下一步**" 按钮，输入 `MacSandbox` 作为项目名称，然后单击 "**创建**" 按钮：
 
     [![输入应用程序名称](sandboxing-images/sample02.png "输入应用程序名称")](sandboxing-images/sample02-large.png#lightbox)
 4. 在**Solution Pad**中，双击**Xcode 文件以**将其打开，以便在中进行编辑：
@@ -80,12 +80,12 @@ _本文介绍如何对应用商店上的发布进行沙箱处理。它涵盖了�
 5. 将**Web 视图**拖到窗口上，调整其大小以填充内容区域，并将其设置为随窗口一起放大和缩小：
 
     [![添加 web 视图](sandboxing-images/sample04.png "添加 web 视图")](sandboxing-images/sample04-large.png#lightbox)
-6. 创建名为 `webView` 的 web 视图的插座：
+6. 创建名为的 web 视图的插座 `webView` ：
 
     [![创建新插座](sandboxing-images/sample05.png "创建新插座")](sandboxing-images/sample05-large.png#lightbox)
 7. 返回 Visual Studio for Mac，然后双击**Solution Pad**中的**ViewController.cs**文件，将其打开进行编辑。
-8. 添加以下 using 语句： `using WebKit;`
-9. 使 `ViewDidLoad` 方法如下所示：
+8. 添加以下 using 语句：`using WebKit;`
+9. 使 `ViewDidLoad` 方法类似于以下内容：
 
     ```csharp
     public override void AwakeFromNib ()
@@ -95,13 +95,13 @@ _本文介绍如何对应用商店上的发布进行沙箱处理。它涵盖了�
     }
     ```
 
-10. 保存更改。
+10. 保存所做更改。
 
 运行应用程序，并确保在窗口中显示 Apple 网站，如下所示：
 
 [![显示应用运行示例](sandboxing-images/sample06.png "显示应用运行示例")](sandboxing-images/sample06-large.png#lightbox)
 
-<a name="Signing_and_Provisioning_the_App" />
+<a name="Signing_and_Provisioning_the_App"></a>
 
 ### <a name="signing-and-provisioning-the-app"></a>对应用进行签名和预配
 
@@ -114,7 +114,7 @@ _本文介绍如何对应用商店上的发布进行沙箱处理。它涵盖了�
     [![登录 Apple 开发人员门户](sandboxing-images/sign01.png "登录 Apple 开发人员门户")](sandboxing-images/sign01-large.png#lightbox)
 2. 选择**证书，标识符 & 配置文件**：
 
-    [![选择证书、标识符 & 配置文件](sandboxing-images/sign02.png "选择证书、标识符 & 配置文件")](sandboxing-images/sign02-large.png#lightbox)
+    [![选择证书、标识符 & 配置文件](sandboxing-images/sign02.png "选择“证书、标识符和配置文件”")](sandboxing-images/sign02-large.png#lightbox)
 3. 在 " **Mac 应用**" 下，选择 "**标识符**"：
 
     [![选择标识符](sandboxing-images/sign03.png "选择标识符")](sandboxing-images/sign03-large.png#lightbox)
@@ -126,7 +126,7 @@ _本文介绍如何对应用商店上的发布进行沙箱处理。它涵盖了�
     [![选择开发](sandboxing-images/sign05.png "选择开发")](sandboxing-images/sign05-large.png#lightbox)
 6. 创建新的配置文件并选择 " **Mac 应用开发**"：
 
-    [![创建新的配置文件](sandboxing-images/sign06.png "创建新的配置文件")](sandboxing-images/sign06-large.png#lightbox)
+    [![创建一个新配置文件](sandboxing-images/sign06.png "创建一个新配置文件")](sandboxing-images/sign06-large.png#lightbox)
 7. 选择前面创建的应用 ID：
 
     [![选择应用 ID](sandboxing-images/sign07.png "选择应用 ID")](sandboxing-images/sign07-large.png#lightbox)
@@ -139,7 +139,7 @@ _本文介绍如何对应用商店上的发布进行沙箱处理。它涵盖了�
 10. 为配置文件命名：
 
     [![为配置文件命名](sandboxing-images/sign10.png "为配置文件命名")](sandboxing-images/sign10-large.png#lightbox)
-11. 单击 "**完成**" 按钮。
+11. 单击“完成”按钮。
 
 > [!IMPORTANT]
 > 在某些情况中，你可能需要直接从 Apple 开发人员门户下载新的预配配置文件，然后双击该配置文件进行安装。 你可能还需要停止并重新启动 Visual Studio for Mac，然后它才能访问新的配置文件。
@@ -158,20 +158,20 @@ _本文介绍如何对应用商店上的发布进行沙箱处理。它涵盖了�
 接下来，需要在 Xamarin Mac 项目中选择新的应用 ID 和预配配置文件。 让我们执行以下操作：
 
 1. 在**Solution Pad**中，双击**info.plist**文件以将其打开以进行编辑。
-2. 确保**捆绑标识符**与我们之前创建的应用 ID 相匹配（例如： `com.appracatappra.MacSandbox`）：
+2. 确保**捆绑标识符**与我们之前创建的应用 ID 相匹配（例如： `com.appracatappra.MacSandbox` ）：
 
     [![编辑捆绑标识符](sandboxing-images/sign13.png "编辑捆绑标识符")](sandboxing-images/sign13-large.png#lightbox)
-3. 接下来，双击**info.plist**文件，并确保**Icloud 密钥值存储**和**icloud 容器**均与我们之前创建的应用 ID 匹配（例如： `com.appracatappra.MacSandbox`）：
+3. 接下来，双击**info.plist**文件，并确保**Icloud 密钥值存储**和**icloud 容器**均与我们之前创建的应用 ID 匹配（例如： `com.appracatappra.MacSandbox` ）：
 
     [![编辑 info.plist 文件](sandboxing-images/sign17.png "编辑 info.plist 文件")](sandboxing-images/sign17-large.png#lightbox)
-4. 保存更改。
+4. 保存所做更改。
 5. 在**Solution Pad**中，双击项目文件以打开其编辑选项：
 
     ![Editign 解决方案的选项](sandboxing-images/sign14.png "Editign 解决方案的选项")
-6. 选择 " **Mac 签名**"，然后选中 **"对应用程序捆绑进行签名**并**对安装程序包签名"** 。 在 "**预配配置文件**" 下，选择上面创建的配置文件：
+6. 选择 " **Mac 签名**"，然后选中 **"对应用程序捆绑进行签名**并**对安装程序包签名"**。 在 "**预配配置文件**" 下，选择上面创建的配置文件：
 
     ![设置预配配置文件](sandboxing-images/sign15.png "设置预配配置文件")
-7. 单击 "**完成**" 按钮。
+7. 单击“完成”按钮。
 
 > [!IMPORTANT]
 > 可能必须退出并重新启动 Visual Studio for Mac，才能识别 Xcode 安装的新应用 ID 和预配配置文件。
@@ -198,7 +198,7 @@ _本文介绍如何对应用商店上的发布进行沙箱处理。它涵盖了�
 2. 选中 "**启用权利**和**启用应用沙盒**"：
 
     [![编辑权利和启用沙盒](sandboxing-images/sign17.png "编辑权利和启用沙盒")](sandboxing-images/sign17-large.png#lightbox)
-3. 保存更改。
+3. 保存所做更改。
 
 此时，你已启用应用沙盒，但尚未提供 Web 视图所需的网络访问权限。 如果现在运行应用程序，应会看到一个空白窗口：
 
@@ -208,29 +208,29 @@ _本文介绍如何对应用商店上的发布进行沙箱处理。它涵盖了�
 
 除了资源阻止行为以外，有三种主要方法可用于判断是否已成功对 Xamarin 应用程序进行沙盒处理：
 
-1. 在 "查找器" 中，检查 "`~/Library/Containers/`" 文件夹的内容-如果应用已进行沙盒处理，则会有一个名为的文件夹，如应用的捆绑包标识符（例如： `com.appracatappra.MacSandbox`）：
+1. 在 "查找器" 中，检查 `~/Library/Containers/` 文件夹的内容-如果应用已进行沙盒处理，则会有一个名为的文件夹，如应用的捆绑包标识符（示例： `com.appracatappra.MacSandbox` ）：
 
     [![打开应用程序的捆绑包](sandboxing-images/sample09.png "打开应用程序的捆绑包")](sandboxing-images/sample09-large.png#lightbox)
 2. 系统在活动监视器中将应用视为沙盒：
-    - 启动活动监视器（在 `/Applications/Utilities` 下）。
-    - 选择 "**查看** > **列**"，并确保已选中 "**沙盒**" 菜单项。
-    - 确保沙箱列读取您的应用程序 `Yes`：
+    - 启动活动监视器（在下 `/Applications/Utilities` ）。
+    - 选择 "**查看**  >  **列**"，并确保已选中 "**沙盒**" 菜单项。
+    - 确保沙箱列读取 `Yes` 应用程序：
 
     [![在活动监视器中检查应用](sandboxing-images/sample10.png "在活动监视器中检查应用")](sandboxing-images/sample10-large.png#lightbox)
 3. 检查应用二进制文件是否已沙箱化：
     - 启动终端应用。
-    - 导航到应用程序 `bin` 目录。
+    - 导航到 "应用程序" `bin` 目录。
     - 发出此命令： `codesign -dvvv --entitlements :- executable_path` （其中 `executable_path` 是应用程序的路径）：
 
     [![在命令行上检查应用](sandboxing-images/sample11.png "在命令行上检查应用")](sandboxing-images/sample11-large.png#lightbox)
 
 ### <a name="debugging-a-sandboxed-app"></a>调试沙盒应用
 
-调试器通过 TCP 连接到 Xamarin 应用程序，这意味着在默认情况下启用沙盒时，它无法连接到应用，因此，如果你尝试在未启用适当权限的情况下运行应用，则会收到错误 *"无法连接到调试器"* .
+调试器通过 TCP 连接到 Xamarin 应用程序，这意味着在默认情况下启用沙盒时，它无法连接到应用，因此，如果你尝试在未启用适当权限的情况下运行应用，则会收到错误 *"无法连接到调试器"*。
 
 [![设置所需选项](sandboxing-images/debug01.png "设置所需选项")](sandboxing-images/debug01-large.png#lightbox)
 
-"**允许传出网络连接（客户端）** " 权限是调试程序所必需的，启用此项将允许正常调试。 由于不能对其进行调试，因此我们更新了 `msbuild` 的 `CompileEntitlements` 目标，以将该权限自动添加到仅针对调试版本进行沙盒处理的任何应用的权利。 发布版本应使用未修改的权利文件中指定的权利。
+"**允许传出网络连接（客户端）** " 权限是调试程序所必需的，启用此项将允许正常调试。 由于你无法在不进行调试的情况下进行调试，因此我们已将 `CompileEntitlements` 目标更新 `msbuild` 为，以将该权限自动添加到仅针对调试版本进行沙盒处理的任何应用的权利。 发布版本应使用未修改的权利文件中指定的权利。
 
 ### <a name="resolving-an-app-sandbox-violation"></a>解决应用沙盒冲突
 
@@ -245,12 +245,12 @@ _本文介绍如何对应用商店上的发布进行沙箱处理。它涵盖了�
 请执行以下操作：
 
 1. 编译有问题的应用程序并从 Visual Studio for Mac 运行该应用程序。
-2. 打开**控制台**应用程序（从 `/Applications/Utilties/`）。
-3. 选择侧栏中的**所有消息**，并在搜索中输入 `sandbox`：
+2. 打开**控制台**应用程序（从 `/Applications/Utilties/` ）。
+3. 选择侧栏中的**所有消息**，并 `sandbox` 在搜索中输入：
 
     [![控制台中的沙盒处理问题的示例](sandboxing-images/resolve01.png "控制台中的沙盒处理问题的示例")](sandboxing-images/resolve01-large.png#lightbox)
 
-对于上面的示例应用程序，可以看到内核由于应用沙盒而阻止 `network-outbound` 流量，因为我们尚未请求该权限。
+对于上面的示例应用，可以看到内核 `network-outbound` 由于应用沙盒而阻止流量，因为我们尚未请求该权限。
 
 #### <a name="fixing-app-sandbox-violations-with-entitlements"></a>通过权利解决应用沙盒冲突
 
@@ -270,7 +270,7 @@ _本文介绍如何对应用商店上的发布进行沙箱处理。它涵盖了�
 
 应用程序沙箱提供的访问控制机制很少，易于理解。 但是，每个应用程序采用的应用沙盒的使用方式是唯一的，并根据应用的要求。
 
-由于你尽力保护 Xamarin 应用程序免受恶意代码的攻击，因此在应用程序（或它所使用的一个库或框架）中只需要一个漏洞才能控制应用程序与主板.
+由于你尽力保护 Xamarin 应用程序免受恶意代码的攻击，因此，在应用（或它所使用的一个库或框架）中只需要一个漏洞即可控制应用与系统之间的交互。
 
 应用沙盒旨在通过允许你指定应用程序与系统的预期交互，来防止接管（或限制可能导致的损坏）。 系统仅授予对应用程序完成工作所需的资源的访问权限。
 
@@ -293,22 +293,22 @@ _本文介绍如何对应用商店上的发布进行沙箱处理。它涵盖了�
 - **应用容器目录**-首次运行时，操作系统会创建一个特殊的_容器目录_，其中的所有资源都可以访问。 应用对此目录具有完全读/写访问权限。
 - **应用组容器目录**-可以向应用授予对同一组中的应用共享的一个或多个_组容器_的访问权限。
 - **用户指定的文件**-您的应用程序会自动获取对用户显式打开或拖放到应用程序中的文件的访问权限。
-- **相关项**-对于相应的权利，你的应用程序可以访问具有相同名称但扩展名不同的文件。 例如，已另存为 `.txt` 文件和 `.pdf` 的文档。
+- **相关项**-对于相应的权利，你的应用程序可以访问具有相同名称但扩展名不同的文件。 例如，已另存为 `.txt` 文件和的文档 `.pdf` 。
 - **临时目录、命令行工具目录和特定于全球的位置**-您的应用程序对系统指定的其他定义正确的位置中的文件具有不同的访问级别。
 
 #### <a name="the-app-container-directory"></a>应用容器目录
 
 Xamarin 应用程序的应用容器目录具有以下特征：
 
-- 它位于用户的主目录（通常是 `~Library/Containers`）中的隐藏位置，可以使用应用程序内的 `NSHomeDirectory` 函数（见下文）进行访问。 因为它位于主目录中，所以每个用户都将获得自己的应用容器。
+- 它位于用户的主目录（通常为）中的隐藏位置 `~Library/Containers` ，并且可以通过 `NSHomeDirectory` 应用程序内的函数（见下文）访问。 因为它位于主目录中，所以每个用户都将获得自己的应用容器。
 - 应用对容器目录及其内的所有子目录和文件具有无限制读/写访问权限。
-- 大多数 macOS 路径查找 Api 都是相对于应用程序的容器。 例如，容器将有自己的**库**（通过 `NSLibraryDirectory`）、**应用程序支持**和**首选项**子目录。
+- 大多数 macOS 路径查找 Api 都是相对于应用程序的容器。 例如，容器将有自己的**库**（通过访问 `NSLibraryDirectory` ）、**应用程序支持**和**首选项**子目录。
 - macOS 通过代码签名建立和应用及其容器之间的连接。 即使另一个应用程序尝试使用其**捆绑标识符**来欺骗应用程序，它也不能访问容器，因为代码签名。
 - 容器不用于用户生成的文件。 而是用于应用程序使用的文件，如数据库、缓存或其他特定类型的数据。
 - 对于_shoebox_类型的应用（如 Apple 的照片应用），用户的内容将进入容器。
 
 > [!IMPORTANT]
-> 遗憾的是，Xamarin 不具有 100% API 覆盖面（与 Xamarin 不同），因此，`NSHomeDirectory` API 尚未在最新版本的 Xamarin 中进行映射。
+> 遗憾的是，Xamarin 不具有 100% API 覆盖面（与 Xamarin 不同），因此，此 `NSHomeDirectory` api 尚未在当前版本的 Xamarin 中进行映射。
 
 作为临时解决方法，可以使用以下代码：
 
@@ -325,9 +325,9 @@ public static string ContainerDirectory {
 
 #### <a name="the-app-group-container-directory"></a>应用组容器目录
 
-从 Mac macOS 10.7.5 （及更高版本）开始，应用程序可以使用 `com.apple.security.application-groups` 的权利访问组中的所有应用程序所共有的共享容器。 可以将此共享容器用于非用户的内容，如数据库或其他类型的支持文件（如缓存）。
+从 Mac macOS 10.7.5 （及更高版本）开始，应用程序可以使用 `com.apple.security.application-groups` 权利访问组中的所有应用程序所共有的共享容器。 可以将此共享容器用于非用户的内容，如数据库或其他类型的支持文件（如缓存）。
 
-组容器自动添加到每个应用的沙箱容器（如果它们是组的一部分），并存储在 `~/Library/Group Containers/<application-group-id>`。 组 ID_必须_以开发团队 id 和句点开头，例如：
+组容器自动添加到每个应用的沙箱容器（如果它们是组的一部分），并存储在中 `~/Library/Group Containers/<application-group-id>` 。 组 ID_必须_以开发团队 id 和句点开头，例如：
 
 ```plist
 <team-id>.com.company.<group-name>
@@ -340,10 +340,10 @@ public static string ContainerDirectory {
 沙盒中的 Xamarin 应用程序可以通过以下方式访问其容器外的文件系统位置：
 
 - 按用户的特定方向（通过 "打开" 和 "保存" 对话框或 "拖放" 等方法）。
-- 使用特定文件系统位置（如 `/bin` 或 `/usr/lib`）的权利。
+- 使用特定文件系统位置（如或）的权利 `/bin` `/usr/lib` 。
 - 当文件系统位置位于可读的特定目录中时（例如，共享）。
 
-_Powerbox_是 macOS 的安全技术，可与用户进行交互，以扩展你的沙盒 Xamarin 应用程序的文件访问权限。 Powerbox 没有 API，但会在应用调用 `NSOpenPanel` 或 `NSSavePanel` 时以透明方式激活。 可以通过为 Xamarin Mac 应用程序设置的权利启用 Powerbox 访问。
+_Powerbox_是 macOS 的安全技术，可与用户进行交互，以扩展你的沙盒 Xamarin 应用程序的文件访问权限。 Powerbox 没有 API，但会在应用调用或时以透明方式 `NSOpenPanel` 激活 `NSSavePanel` 。 可以通过为 Xamarin Mac 应用程序设置的权利启用 Powerbox 访问。
 
 当沙盒应用显示 "打开" 或 "保存" 对话框时，窗口由 Powerbox （而不是 AppKit）提供，因此可以访问用户有权访问的任何文件或目录。
 
@@ -363,7 +363,7 @@ _Powerbox_是 macOS 的安全技术，可与用户进行交互，以扩展你的
   - `/usr/sbin`
   - `/usr/share`
   - `/System`
-- 在 `NSTemporaryDirectory` 创建的目录中读取和写入文件。
+- 在创建的目录中读取和写入文件 `NSTemporaryDirectory` 。
 
 默认情况下，沙盒 Xamarin 应用程序打开或保存的文件将保持可访问状态，直到应用程序终止（除非该文件在应用程序退出时仍处于打开状态）。 在下次启动应用程序时，将通过 macOS Resume 功能自动将打开的文件还原到应用程序的沙盒。
 
@@ -371,25 +371,25 @@ _Powerbox_是 macOS 的安全技术，可与用户进行交互，以扩展你的
 
 #### <a name="related-items"></a>相关项
 
-应用沙箱允许应用访问具有相同文件名但扩展名不同的相关项目。 此功能包含两部分： a）应用的 `Info.plst` 文件中的相关扩展的列表，b）代码，告诉沙箱应用程序将对这些文件执行哪些操作。
+应用沙箱允许应用访问具有相同文件名但扩展名不同的相关项目。 此功能包含两部分： a）应用程序文件中的相关扩展的列表 `Info.plst` ，b）代码，告诉沙箱应用程序将对这些文件执行哪些操作。
 
 这种情况有意义：
 
-1. 应用程序需要能够保存不同版本的文件（具有新扩展名）。 例如，将 `.txt` 文件导出到 `.pdf` 文件中。 若要处理这种情况，必须使用 `NSFileCoordinator` 来访问该文件。 首先调用 `WillMove(fromURL, toURL)` 方法，将文件移到新扩展，然后调用 `ItemMoved(fromURL, toURL)`。
-2. 应用需要打开一个主文件，其中包含一个扩展名和多个具有不同扩展名的支持文件。 例如电影和字幕文件。 使用 `NSFilePresenter` 获取辅助文件的访问权限。 向 `PresentedItemURL` 属性提供 `PrimaryPresentedItemURL` 属性和辅助文件的主文件。 打开主文件后，调用 `NSFileCoordinator` 类的 `AddFilePresenter` 方法来注册辅助文件。
+1. 应用程序需要能够保存不同版本的文件（具有新扩展名）。 例如， `.txt` 将文件导出到 `.pdf` 文件。 若要处理这种情况，必须使用 `NSFileCoordinator` 来访问该文件。 `WillMove(fromURL, toURL)`首先调用方法，将文件移到新的扩展，然后调用 `ItemMoved(fromURL, toURL)` 。
+2. 应用需要打开一个主文件，其中包含一个扩展名和多个具有不同扩展名的支持文件。 例如电影和字幕文件。 使用 `NSFilePresenter` 获取辅助文件的访问权限。 向属性提供主文件 `PrimaryPresentedItemURL` ，将辅助文件提供给 `PresentedItemURL` 属性。 打开主文件后，调用 `AddFilePresenter` 类的方法 `NSFileCoordinator` 来注册辅助文件。
 
-在这两种情况下，应用的**info.plist**文件必须声明应用可打开的文档类型。 对于任何文件类型，将 `NSIsRelatedItemType` （值为 `YES`）添加到 `CFBundleDocumentTypes` 数组中的项。
+在这两种情况下，应用的**info.plist**文件必须声明应用可打开的文档类型。 对于任何文件类型，请将的 `NSIsRelatedItemType` （值为 `YES` ）添加到数组中的项 `CFBundleDocumentTypes` 。
 
 #### <a name="open-and-save-dialog-behavior-with-sandboxed-apps"></a>打开并保存带有沙盒应用的对话框行为
 
-当从沙盒 Xamarin 应用程序调用 `NSOpenPanel` 和 `NSSavePanel` 时，将对其进行以下限制：
+以下限制位于上 `NSOpenPanel` ，并在 `NSSavePanel` 从沙盒 Xamarin 应用程序中调用它们时使用：
 
 - 不能以编程方式调用 **"确定"** 按钮。
-- 不能以编程方式更改用户在 `NSOpenSavePanelDelegate` 中的选择。
+- 不能以编程方式更改用户在中所做的选择 `NSOpenSavePanelDelegate` 。
 
 此外，还就地进行了以下继承修改：
 
-- **非沙盒应用** -  `NSOpenPanel` `NSSavePanel``NSPanel``NSWindow``NSResponder``NSObject``NSOpenPanel``NSSavePanel``NSObject``NSOpenPanel``NSSavePanel`
+- **非沙盒应用**  -  `NSOpenPanel``NSSavePanel``NSPanel``NSWindow``NSResponder``NSObject``NSOpenPanel``NSSavePanel``NSObject``NSOpenPanel``NSSavePanel`
 
 ### <a name="security-scoped-bookmarks-and-persistent-resource-access"></a>安全范围的书签和持久资源访问
 
@@ -403,27 +403,27 @@ _Powerbox_是 macOS 的安全技术，可与用户进行交互，以扩展你的
 
 - **应用范围书签提供对用户指定的文件或文件夹的持久访问。**
 
-    例如，如果沙盒 Xamarin Mac 应用程序允许使用打开外部文档进行编辑（使用 `NSOpenPanel`），则应用程序可以创建应用范围的书签，以便以后可以再次访问同一文件。
+    例如，如果沙盒 Xamarin Mac 应用程序允许使用打开外部文档进行编辑（使用 `NSOpenPanel` ），则应用程序可以创建应用范围的书签，以便以后可以再次访问同一文件。
 - **文档范围书签提供特定文档对子文件的永久访问权限。**
 
 例如，一个视频编辑应用程序，该应用程序创建一个项目文件，该项目文件可以访问单独的图像、视频剪辑和以后将合并为单个影片的声音文件。
 
-当用户将资源文件导入到项目中（通过 `NSOpenPanel`）时，应用程序将为存储在项目中的项创建文档范围的书签，以便应用程序始终可以访问该文件。
+当用户将资源文件导入项目（通过 `NSOpenPanel` ）时，应用程序将为存储在项目中的项创建文档范围的书签，以便应用程序始终可以访问该文件。
 
 可以打开书签数据和文档本身的任何应用程序都可以解析文档范围的书签。 这支持可移植性，允许用户将项目文件发送给另一个用户，并使所有书签都适用于这些用户。
 
 > [!IMPORTANT]
-> 文档范围的书签_只能_指向单个文件而不是文件夹，并且该文件不能位于系统所使用的位置（如 `/private` 或 `/Library`）。
+> 文档范围的书签_只能_指向单个文件而不是文件夹，并且该文件不能位于系统所使用的位置（如 `/private` 或 `/Library` ）。
 
 #### <a name="using-security-scoped-bookmarks"></a>使用安全作用域的书签
 
 使用任何一种类型的安全范围书签，都需要执行以下步骤：
 
-1. **在需要使用安全范围内书签的 Xamarin 应用程序中设置合适的权利**-对于应用范围的书签，请将 `com.apple.security.files.bookmarks.app-scope` 的权利密钥设置为 `true`。 对于文档范围的书签，请将 `com.apple.security.files.bookmarks.document-scope` 的权利密钥设置为 `true`。
-2. **创建安全作用域的书签**-对于用户已提供访问权限的任何文件或文件夹（例如，通过 `NSOpenPanel`），该应用将需要永久访问。 使用 `NSUrl` 类的 `public virtual NSData CreateBookmarkData (NSUrlBookmarkCreationOptions options, string[] resourceValues, NSUrl relativeUrl, out NSError error)` 方法创建书签。
-3. **解析安全范围的书签**-当应用需要再次访问资源时（例如，重新启动后），需要将书签解析为安全范围的 URL。 使用 `NSUrl` 类的 `public static NSUrl FromBookmarkData (NSData data, NSUrlBookmarkResolutionOptions options, NSUrl relativeToUrl, out bool isStale, out NSError error)` 方法解析书签。
-4. **显式通知系统你要从安全作用域的 url 访问文件**-此步骤需要在获取上面的安全范围 url 之后立即执行，或者在你稍后需要重新获取对资源的访问权限释放你对它的访问权限。 调用 `NSUrl` 类的 `StartAccessingSecurityScopedResource ()` 方法，开始访问安全范围的 URL。
-5. **显式通知系统你已完成从安全范围 URL 访问文件的操作**-尽快，你应在应用程序不再需要访问该文件（例如，如果用户将其关闭）时通知系统。 调用 `NSUrl` 类的 `StopAccessingSecurityScopedResource ()` 方法，停止访问安全范围的 URL。
+1. **在需要使用安全范围内书签的 Xamarin 应用程序中设置合适的权利**-对于应用范围的书签，请将 `com.apple.security.files.bookmarks.app-scope` 权利密钥设置为 `true` 。 对于文档范围的书签，请将 `com.apple.security.files.bookmarks.document-scope` 权利密钥设置为 `true` 。
+2. **创建安全作用域的书签**-对于用户已提供访问权限的任何文件或文件夹（例如，通过）执行此操作 `NSOpenPanel` ，应用将需要永久访问。 使用 `public virtual NSData CreateBookmarkData (NSUrlBookmarkCreationOptions options, string[] resourceValues, NSUrl relativeUrl, out NSError error)` 类的方法 `NSUrl` 创建书签。
+3. **解析安全范围的书签**-当应用需要再次访问资源时（例如，重新启动后），需要将书签解析为安全范围的 URL。 使用 `public static NSUrl FromBookmarkData (NSData data, NSUrlBookmarkResolutionOptions options, NSUrl relativeToUrl, out bool isStale, out NSError error)` 类的方法 `NSUrl` 解析书签。
+4. **显式通知系统你要从安全作用域的 url 访问文件**-此步骤需要在获取上述安全范围的 url 之后立即执行，或者在你稍后想要在释放访问资源后重新获取对该资源的访问权限。 调用 `StartAccessingSecurityScopedResource ()` 类的方法 `NSUrl` ，开始访问安全范围的 URL。
+5. **显式通知系统你已完成从安全范围 URL 访问文件的操作**-尽快，你应在应用程序不再需要访问该文件（例如，如果用户将其关闭）时通知系统。 调用 `StopAccessingSecurityScopedResource ()` 类的方法 `NSUrl` ，停止访问安全范围的 URL。
 
 放弃对资源的访问权限后，需要再次返回到步骤4，以便重新建立访问权限。 如果重新启动 Xamarin 应用，则必须返回到步骤3，并重新解析书签。
 
@@ -458,9 +458,9 @@ Exception Type:  EXC_BAD_INSTRUCTION (SIGILL)
 
 若要允许运行 Xamarin 应用的 Apple 签名版本，请执行以下操作：
 
-1. 打开终端应用（`/Applications/Utilities`）。
+1. 打开终端应用（在中为 `/Applications/Utilities` ）。
 2. 向 Xamarin 应用程序的 Apple 签名版本打开查找器窗口。
-3. 在终端窗口中键入 `asctl container acl add -file`。
+3. `asctl container acl add -file`在终端窗口中键入。
 4. 将 Xamarin 应用程序的图标从 Finder 窗口拖放到终端窗口中。
 5. 文件的完整路径将添加到终端中的命令。
 6. 按**enter**执行该命令。
@@ -471,11 +471,11 @@ Exception Type:  EXC_BAD_INSTRUCTION (SIGILL)
 
 可以通过执行以下操作，查看容器的 ACL 中的代码要求列表：
 
-1. 打开终端应用（`/Applications/Utilities`）。
+1. 打开终端应用（在中为 `/Applications/Utilities` ）。
 2. 键入 `asctl container acl list -bundle <container-name>`。
 3. 按**enter**执行该命令。
 
-`<container-name>` 通常是 Xamarin 应用程序的捆绑标识符。
+`<container-name>`通常为 Xamarin 应用程序的捆绑标识符。
 
 ## <a name="designing-a-xamarinmac-app-for-the-app-sandbox"></a>设计应用程序沙箱的 Xamarin 应用程序
 
@@ -512,7 +512,7 @@ find -H [Your-App-Bundle].app -print0 | xargs -0 file | grep "Mach-O .*executabl
 - **授权服务**-使用应用沙盒时，不能使用 "[授权服务 C 参考](https://developer.apple.com/library/prerelease/mac/documentation/Security/Reference/authorization_ref/index.html#//apple_ref/doc/uid/TP30000826)" 中所述的函数。
 - **辅助功能 api** -无法对辅助应用（如屏幕阅读器或控制其他应用程序的应用）进行沙箱处理。
 - **将 Apple 事件发送到任意应用**-如果应用需要向未知、任意应用发送 apple 事件，则无法对其进行沙盒处理。 对于被调用应用程序的已知列表，应用仍可进行沙盒处理，且权利将需要包含被调用应用列表。
-- **将用户信息字典发送到其他任务**-通过应用沙盒，在发布到 `NSDistributedNotificationCenter` 对象以发送消息其他任务时，不能包含 `userInfo` 字典。
+- **将用户信息字典发送到其他任务**-通过应用沙盒，在 `userInfo` 发布到 `NSDistributedNotificationCenter` 对象以便发送消息其他任务时，不能包括字典。
 - **加载内核扩展**-应用沙盒禁止加载内核扩展。
 - **在 "打开" 和 "保存" 对话框中模拟用户输入**-以编程方式操作 "打开" 或 "保存" 对话框，以模拟或更改用户输入。
 - **在其他应用上访问或设置首选项**-应用沙盒禁止操作其他应用的设置。
@@ -525,10 +525,10 @@ find -H [Your-App-Bundle].app -print0 | xargs -0 file | grep "Mach-O .*executabl
 
 下面是一些常见问题和解决方法，你可以解决这些问题：
 
-- **打开、保存和跟踪文档**-如果您使用 `NSDocument` 以外的任何技术来管理文档，则应切换到该文档，因为它是对应用程序沙箱的内置支持。 如果用户在查找器中移动文档，`NSDocument` 会自动使用 PowerBox 并提供对在沙箱中保留文档的支持。
+- **打开、保存和跟踪文档**-如果你使用以外的任何技术来管理文档 `NSDocument` ，则应切换到它，因为内置了对应用沙盒的支持。 `NSDocument`自动使用 PowerBox，如果用户在查找器中移动文档，则支持在其中保留文档。
 - **保留对文件系统资源的访问权限**-如果 Xamarin 应用程序依赖于对其容器之外的资源的持久访问，请使用安全作用域的书签来维护访问权限。
-- **为应用创建登录项**-使用应用沙盒时，不能使用 `LSSharedFileList` 创建登录项，也不能使用 `LSRegisterURL` 操作启动服务的状态。 使用[通过服务管理框架](https://developer.apple.com/library/prerelease/mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLoginItems.html#//apple_ref/doc/uid/10000172i-SW5-SW1)文档中的 "添加登录项" 一文中所述的 `SMLoginItemSetEnabled` 函数。
-- **访问用户数据**-如果使用 POSIX 函数（如 `getpwuid`）从目录服务获取用户的主目录，请考虑使用 Cocoa 或 Core Foundation 符号，如 `NSHomeDirectory`。
+- **为应用创建登录项**-使用应用沙盒时，不能使用创建登录项，也不能 `LSSharedFileList` 使用操作启动服务的状态 `LSRegisterURL` 。 使用 `SMLoginItemSetEnabled` [通过服务管理框架](https://developer.apple.com/library/prerelease/mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLoginItems.html#//apple_ref/doc/uid/10000172i-SW5-SW1)文档中的 "添加登录项" 一文中所述的函数。
+- **访问用户数据**-如果使用 POSIX 函数（如） `getpwuid` 从目录服务获取用户的主目录，请考虑使用 Cocoa 或 Core Foundation 符号（如） `NSHomeDirectory` 。
 - **访问其他应用的首选项**-由于应用沙箱将路径查找 api 定向到应用的容器，因此修改首选项会在该容器内发生，并在不允许访问其他应用首选项。
 - **使用 Web 视图中的 HTML5 嵌入视频**-如果 Xamarin 应用使用 WebKit 播放嵌入式 HTML5 视频，还必须将应用链接到 AV 基础框架。 否则，应用沙盒会阻止 CoreMedia 播放这些视频。
 
@@ -542,10 +542,10 @@ find -H [Your-App-Bundle].app -print0 | xargs -0 file | grep "Mach-O .*executabl
 
 1. 启用应用沙盒并运行 Xamarin。
 2. 运行应用程序的功能。
-3. 打开控制台应用（`/Applications/Utilities` 中提供），并在 "**所有消息**" 日志中查找 `sandboxd` 冲突。
+3. 打开控制台应用（可在中找到 `/Applications/Utilities` ），并 `sandboxd` 在 "**所有消息**" 日志中查找冲突。
 4. 对于每个 `sandboxd` 冲突，请使用应用容器而不是其他文件系统位置来解决此问题，或应用应用沙盒权限以启用对受限制的操作系统功能的访问。
 5. 再次重新运行并测试所有 Xamarin 应用程序功能。
-6. 重复此步骤，直到所有 `sandboxd` 冲突均已解决。
+6. 重复此步骤 `sandboxd` ，直到所有冲突均已解决。
 
 ### <a name="add-privilege-separation-using-xpc"></a>使用 XPC 添加特权分离
 

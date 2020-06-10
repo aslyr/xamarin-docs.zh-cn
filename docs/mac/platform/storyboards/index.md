@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: b27a8d65ebaca6009d8310931b9dac3a4d7e12f3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 395ac62cd4db62c02863e352ed5643958348dcff
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026137"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574385"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Xamarin 中的情节提要简介
 
@@ -24,13 +24,13 @@ _本文介绍了如何在 Xamarin 应用程序中使用情节提要。其中介�
 
 本文将介绍如何使用情节提要定义 Xamarin 应用程序的用户界面。
 
-<a name="What-are-Storyboards" />
+<a name="What-are-Storyboards"></a>
 
 ## <a name="what-are-storyboards"></a>什么是情节提要？
 
 通过使用情节提要，可以在单个位置定义 Xamarin 应用程序的所有 UI，并在其各个元素和用户界面之间进行所有导航。 Xamarin 的情节提要，工作方式与 Xamarin 的情节提要的工作方式非常类似。 但是，它们包含不同的_Segue 类型_集，因为不同的接口惯例。
 
-<a name="Working-with-Scenes" />
+<a name="Working-with-Scenes"></a>
 
 ### <a name="working-with-scenes"></a>使用场景
 
@@ -44,7 +44,7 @@ _本文介绍了如何在 Xamarin 应用程序中使用情节提要。其中介�
 
 要注意的最重要的一点是，每个 Segue 表示应用 UI 的给定元素之间某种形式的数据流。
 
-<a name="Working-with-View-Controllers" />
+<a name="Working-with-View-Controllers"></a>
 
 ### <a name="working-with-view-controllers"></a>使用视图控制器
 
@@ -54,13 +54,13 @@ _本文介绍了如何在 Xamarin 应用程序中使用情节提要。其中介�
 
 通过这种方式，每个视图控制器都是一种独立的、可重复使用的信息的可视化表示形式（视图）和逻辑，用于显示和控制该信息。
 
-在给定场景中，您可以执行通常由单个 `.xib` 文件处理的所有操作： 
+在给定场景中，您可以执行通常由单个文件处理的所有操作 `.xib` ： 
 
 - 放置子视图和控件（如按钮和文本框）。
 - 定义元素位置和自动布局约束。
 - 用于向代码公开 UI 元素的连线操作和插座。
 
-<a name="Working-with-Segues" />
+<a name="Working-with-Segues"></a>
 
 ### <a name="working-with-segues"></a>使用 Segue
 
@@ -70,9 +70,9 @@ _本文介绍了如何在 Xamarin 应用程序中使用情节提要。其中介�
 
 对于 macOS 的倾向，在某些情况下，使用_演示 segue_ ，如模式窗口、工作表视图和 Popovers。
 
-使用 Presentation Segue 时，可以重写父视图控制器的 `PrepareForSegue` 方法以进行演示，以便初始化和变量并向所提供的视图控制器提供任何数据。
+使用 Presentation Segue 时，可以重写用于显示的 `PrepareForSegue` 父视图控制器的方法来初始化和变量，并向显示的视图控制器提供任何数据。
 
-<a name="Design-and-Run-Times" />
+<a name="Design-and-Run-Times"></a>
 
 ### <a name="design-and-run-times"></a>设计和运行时间
 
@@ -86,19 +86,19 @@ _本文介绍了如何在 Xamarin 应用程序中使用情节提要。其中介�
 
 通过以这种方式定义每个元素，它只允许在运行时中需要的每个元素的延迟加载。 在 macOS 中，整个过程旨在使开发人员能够创建复杂、灵活的用户界面，该界面需要最少的支持代码来使其正常工作，同时尽可能提高系统资源的效率。
 
-<a name="Storyboard-Quick-Start" />
+<a name="Storyboard-Quick-Start"></a>
 
 ## <a name="storyboard-quick-start"></a>情节提要快速入门
 
 在[情节提要快速入门](~/mac/platform/storyboards/quickstart.md)指南中，我们将创建一个简单的 Xamarin 应用程序，它介绍了使用情节提要创建用户界面的关键概念。 该示例应用包含一个包含_内容区域_和_检查器区域_的分割视图，它将显示一个简单的首选项对话框窗口。 我们将使用 Segue 将所有用户界面元素绑定在一起。
 
-<a name="Working-with-Storyboards" />
+<a name="Working-with-Storyboards"></a>
 
 ## <a name="working-with-storyboards"></a>使用情节提要
 
 本部分介绍如何在 Xamarin 应用程序中使用[情节提要](~/mac/platform/storyboards/indepth.md)的详细信息。 我们深入了解了幕后，并介绍了它们如何由视图控制器和视图组成。 接下来，我们将介绍如何将场景与 Segue 相关联。 最后，我们将介绍如何使用自定义 Segue 类型。 
 
-<a name="Complex-Storyboard-Example" />
+<a name="Complex-Storyboard-Example"></a>
 
 ## <a name="complex-storyboard-example"></a>复杂情节提要示例
 
@@ -106,7 +106,7 @@ _本文介绍了如何在 Xamarin 应用程序中使用情节提要。其中介�
 
 SourceWriter 代码已经完全注释，且在可用时，提供了相关链接，链接涵盖了从关键技术或方法到 Xamarin.Mac 指南文档中的相关信息。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>总结
 
@@ -114,7 +114,7 @@ SourceWriter 代码已经完全注释，且在可用时，提供了相关链接�
 
 ## <a name="related-links"></a>相关链接
 
-- [Hello，Mac（示例）](https://docs.microsoft.com/samples/xamarin/mac-samples/hello-mac)
+- [Hello，Mac 示例](https://docs.microsoft.com/samples/xamarin/mac-samples/hello-mac)
 - [了解 Mac](~/mac/get-started/hello-mac.md)
 - [使用 Windows](~/mac/user-interface/window.md)
 - [OS X 人机界面指南](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)

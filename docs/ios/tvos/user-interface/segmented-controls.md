@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 0bedd898232b39898e6079a204bd7409587cde82
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a31b0bcf3a61b5a1ea7e84f35131e6ceca1eef82
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030398"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569876"
 ---
 # <a name="working-with-tvos-segmented-controls-in-xamarin"></a>在 Xamarin 中使用 tvOS 分段控件
 
@@ -28,7 +28,7 @@ Apple 对于使用分段控件有以下建议：
 - **使用一致段内容大小**-所有段都具有相同的宽度，并且如果可能，应尝试将每个段中的内容保持为相同大小。 这不仅会使段控件更直观地显示，而且便于更轻松地阅读。
 - **避免混合使用图标和文本**-每个单独段可以包含图标或文本，但不能同时包含两者。 尽管可以在同一分段控件中混合使用图标和文本，但应避免这样做。
 
-<a name="About-Segment-Icons" />
+<a name="About-Segment-Icons"></a>
 
 ## <a name="about-segment-icons"></a>关于段图标
 
@@ -36,7 +36,7 @@ Apple 建议对段图标使用简单、可识别的图像，例如用于搜索�
 
 不能同时在给定段上混合文本和图标，应避免在单个分段控件中混合使用图标和文本。 它应该是所有图标或所有文本。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="segment-text"></a>分段文本
 
@@ -48,15 +48,15 @@ Apple 提出以下有关使用段文本的建议：
 
 同样，您不能同时在给定段上混合文本和图标，应避免在单个分段控件中混合使用图标和文本。
 
-<a name="Segment-Controls-and-Storyboards" />
+<a name="Segment-Controls-and-Storyboards"></a>
 
 ## <a name="segment-controls-and-storyboards"></a>段控件和情节提要
 
 在 tvOS 应用中处理段控件的最简单方法是使用 iOS 设计器将它们添加到应用的 UI。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在**Solution Pad**中，双击 `Main.storyboard` 文件，然后将其打开进行编辑。
+1. 在**Solution Pad**中，双击该文件， `Main.storyboard` 然后将其打开进行编辑。
 1. 将 "**段" 控件**从 "**工具箱**" 拖放到视图上： 
 
     [![](segmented-controls-images/segment02.png "A Segment Control")](segmented-controls-images/segment02.png#lightbox)
@@ -65,14 +65,14 @@ Apple 提出以下有关使用段文本的建议：
     [![](segmented-controls-images/segment03.png "The Widget Tab")](segmented-controls-images/segment03.png#lightbox)
 1. 使用 "**段**" 字段可以控制控制器中段的数量。
 1. 从 "**段" 下拉列表**中选择给定段以调整其各个属性（如**标题**或**图像**），并控制在显示控件时是**启用**还是**选中**某个给定段。
-1. 最后，为控件指定**名称**，以便可以在代码中C#对其进行响应。 例如: 
+1. 最后，为控件分配**名称**，以便可以在 c # 代码中对其进行响应。 例如： 
 
     [![](segmented-controls-images/segment04.png "Assign a Name")](segmented-controls-images/segment04.png#lightbox)
-1. 保存更改。
+1. 保存所做更改。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 在**解决方案资源管理器**中，双击 `Main.storyboard` 文件，然后将其打开进行编辑。
+1. 在**解决方案资源管理器**中，双击该文件， `Main.storyboard` 然后将其打开进行编辑。
 1. 将 "**段" 控件**从 "**工具箱**" 拖放到视图上： 
 
     [![](segmented-controls-images/segment02-vs.png "A Segment Control")](segmented-controls-images/segment02-vs.png#lightbox)
@@ -81,16 +81,16 @@ Apple 提出以下有关使用段文本的建议：
     [![](segmented-controls-images/segment03-vs.png "The Widget Tab")](segmented-controls-images/segment03-vs.png#lightbox)
 1. 使用 "**段**" 字段可以控制控制器中段的数量。
 1. 从 "**段" 下拉列表**中选择给定段以调整其各个属性（如**标题**或**图像**），并控制在显示控件时是**启用**还是**选中**某个给定段。
-1. 最后，为控件指定**名称**，以便可以在代码中C#对其进行响应。 例如: 
+1. 最后，为控件分配**名称**，以便可以在 c # 代码中对其进行响应。 例如： 
 
     [![](segmented-controls-images/segment04-vs.png "Assign a Name")](segmented-controls-images/segment04-vs.png#lightbox)
-1. 保存更改。
+1. 保存所做更改。
 
 -----
 
 有关使用情节提要的详细信息，请参阅[tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)。 
 
-<a name="Working-with-Segmented-Controls" />
+<a name="Working-with-Segmented-Controls"></a>
 
 ## <a name="working-with-segmented-controls"></a>使用分段控件
 
@@ -98,7 +98,7 @@ Apple 提出以下有关使用段文本的建议：
 
 可以通过多种不同的方式在 tvOS 应用程序中使用分段控件。
 
-<a name="Exposed-as-Outlets-and-Actions" />
+<a name="Exposed-as-Outlets-and-Actions"></a>
 
 ## <a name="exposed-as-names-and-events"></a>作为名称和事件公开
 
@@ -127,9 +127,9 @@ partial void PlayerCountChanged (Foundation.NSObject sender) {
 
 对于上述示例，段控件作为 `PlayerCount` 名称和 `PlayerCountChanged` 事件操作公开。 有关使用操作和插座的详细信息，请参阅[Hello，tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)中的[使用插座和操作编写代码](~/ios/tvos/get-started/hello-tvos.md#Writing-the-Code)部分。
 
-`SelectedSegment` 属性获取或设置当前选定的段作为零（0）的索引。 如果有五个（5）段，则第一个段的索引为零（0），最后一个索引为四（4）。
+`SelectedSegment`属性获取或设置当前选定的段作为零（0）的索引。 如果有五个（5）段，则第一个段的索引为零（0），最后一个索引为四（4）。
 
-<a name="Modifying-Segments" />
+<a name="Modifying-Segments"></a>
 
 ## <a name="modifying-segments"></a>修改段
 
@@ -143,7 +143,7 @@ SegmentedControl.InsertSegment(UIImage.FromFile("icon.png"), 0, true);
 SegmentedControl.InsertSegment("New Segment", 0, true);
 ```
 
-第二个参数定义使用零（0）索引插入段的位置。 如果最后一个参数为 `true` 则将对插入进行动画处理。
+第二个参数定义使用零（0）索引插入段的位置。 如果最后一个参数为，则 `true` 将对插入进行动画处理。
 
 若要删除给定段，请使用以下内容：
 
@@ -157,7 +157,7 @@ SegmentedControl.RemoveSegmentAtIndex(0, true);
 SegmentedControl.RemoveAllSegments();
 ```
 
-同样，如果最后一个参数为 `true`，将对删除进行动画处理。 使用 `NumberOfSegments` 属性返回当前段数。
+同样，如果最后一个参数为 `true` ，则将对删除进行动画处理。 使用 `NumberOfSegments` 属性返回当前段数。
 
 若要获取给定段的**标题**或**图标**，请使用以下内容：
 
@@ -194,7 +194,7 @@ if (SegmentedControl.IsEnabled(0)) {
 SegmentedControl.SetEnabled(false, 0);
 ```
 
-<a name="Modifying-the-Segmented-Controls-Appearance" />
+<a name="Modifying-the-Segmented-Controls-Appearance"></a>
 
 ## <a name="modifying-the-segmented-controls-appearance"></a>修改分段控件的外观
 
@@ -204,18 +204,18 @@ SegmentedControl.SetEnabled(false, 0);
 SegmentedControl.SetBackgroundImage (UIImage.FromFile("background.png"), UIControlState.Normal, UIBarMetrics.Default);
 ```
 
-其中 `UIControlState` 指定要将图像设置为的控件的状态：
+其中 `UIControlState` 指定为其设置图像的控件的状态：
 
-- 普通
-- 加亮
-- Disabled
+- 一般
+- Highlighted
+- 已禁用
 - 已选定
 - 已设定焦点
 
-和 `UIBarMetrics` 指定使用的度量值：
+并 `UIBarMetrics` 指定要使用的度量值：
 
-- Default
-- Compact
+- 默认值
+- 精简
 - DefaultPrompt
 - CompactPrompt
 
@@ -225,9 +225,9 @@ SegmentedControl.SetBackgroundImage (UIImage.FromFile("background.png"), UIContr
 SegmentedControl.SetDividerImage (UIImage.FromFile("divider.png"), UIControlState.Normal, UIControlState.Normal, UIBarMetrics.Default);
 ```
 
-其中，第一个 `UIControlState` 指定分隔线左侧的段的状态，第二个 `UIControlState` 指定段到右侧的状态。
+其中，第一个 `UIControlState` 指定分隔符左侧的段的状态，第二个指定线段的 `UIControlState` 状态。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>总结
 

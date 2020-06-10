@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 786afa6967731fb1bd508fa3c835b980639eb282
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 45b7c1081571b52bb8760b4207e3a05a4ffa77ae
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032382"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572307"
 ---
 # <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>Xamarin 中的应用内购买基础知识和配置
 
@@ -43,7 +43,7 @@ Apple 必须在每个产品进入销售之前批准该产品–查看需要 "产
 
 不能为产品选择任何价格–您只能选择在 Apple 支持的每个国家/地区内具有特定值的 "价格层"。 不同市场中不能有不同的价格层。
 
-## <a name="configuration"></a>配置
+## <a name="configuration"></a>Configuration
 
 编写任何应用内购买代码之前，必须在 iTunes Connect （ [itunesconnect.apple.com](https://itunesconnect.apple.com)）和 IOS 预配门户（ [developer.apple.com/iOS](https://developer.apple.com/iOS)）中执行一些设置工作。
 
@@ -79,7 +79,7 @@ Apple 必须在每个产品进入销售之前批准该产品–查看需要 "产
 
 #### <a name="bundle-identifierapp-id-suffix-format"></a>捆绑标识符/应用 ID 后缀格式
 
-你可以使用你喜欢的任何字符串作为**包标识符**（只要它在帐户中是唯一的），但 Apple 建议你遵循反向 DNS 格式，而不是使用任何任意字符串。 本文附带的示例应用程序使用 storekit 作为捆绑标识符，但使用 my_store_example 等标识符（即使 Apple 不建议这样做）是相同的。
+你可以使用你喜欢的任何字符串作为**包标识符**（只要它在帐户中是唯一的），但 Apple 建议你遵循反向 DNS 格式，而不是使用任何任意字符串。 本文附带的示例应用程序使用 storekit 的捆绑标识符，但使用 my_store_example 的标识符（即使 Apple 不建议这样做）会同样有效。
 
 > [!IMPORTANT]
 > Apple 还允许将通配符添加到**捆绑标识符**的末尾，以便单个应用 id 可用于多个应用程序，但_通配符应用 id 不能用于 AppPurchase 中_。 例如，通配符捆绑标识符可以是 .com. *
@@ -94,7 +94,7 @@ Apple 必须在每个产品进入销售之前批准该产品–查看需要 "产
 
 按常规方式创建开发和生产预配配置文件，选择已为应用内购买设置的应用 ID。 有关详细信息，请参阅[IOS 设备预配](~/ios/get-started/installation/device-provisioning/index.md)和[发布到 App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)指南。
 
-## <a name="itunes-connect"></a>iTunes 连接
+## <a name="itunes-connect"></a>iTunes Connect
 
 在 iTunes Connect 中单击 **"我的应用**" 以创建或编辑 iOS 应用程序条目。 应用程序概述页如下所示：
 
@@ -130,7 +130,7 @@ com.xamarin.storekit.testing.sepia
 com.xamarin.storekit.testing.greyscale
 ```
 
-此命名约定不是强制性的，只是一种建议，可帮助您管理您的产品。 此外，尽管遵循相同的反向 DNS 约定，产品*标识符与捆绑*标识符无关，不需要以相同的字符串开头。 使用类似于 photo_product_greyscale 的标识符仍然有效（即使 Apple 不建议这样做）。
+此命名约定不是强制性的，只是一种建议，可帮助您管理您的产品。 此外，尽管遵循相同的反向 DNS 约定，产品*标识符与捆绑*标识符无关，不需要以相同的字符串开头。 使用诸如 photo_product_greyscale 的标识符仍然有效（即使 Apple 不建议这样做）。
 
 产品 ID 不会显示给用户，而是用于引用应用程序代码中的产品。
 
@@ -146,7 +146,7 @@ com.xamarin.storekit.testing.greyscale
 
  *本文档当前仅介绍前两种产品类型（可耗用和不可用）。*
 
- <a name="Price_Tiers" />
+ <a name="Price_Tiers"></a>
 
 ### <a name="price-tiers"></a>价格层
 
@@ -156,7 +156,7 @@ Apple 提供了一个价格矩阵，可帮助你选择所需的货币/价格的�
 
  [![](in-app-purchase-basics-and-configuration-images/image10.png "An excerpt of the price matrix August 2012")](in-app-purchase-basics-and-configuration-images/image10.png#lightbox)
 
-撰写本文时（2013年6月），有87层（从 USD 0.99 到 USD 999.99）。 定价矩阵显示了你的客户将支付的价格，还显示了你将从 Apple 获得的金额–这少于30% 的费用，还需要收集的任何当地税（请注意，美国和加拿大卖方收到 99c p 的70c 的示例产品，而澳大利亚卖方只收到63c，因为 "货物 &amp; 服务税" 按销售价格收费）。
+撰写本文时（2013年6月），有87层（从 USD 0.99 到 USD 999.99）。 定价矩阵显示了你的客户将支付的价格，还显示了你将从 Apple 那里获得的金额–这不太可能是30% 的费用，也是所需的任何当地税款（请注意，美国和加拿大卖方收到99c 产品的70c，而澳大利亚卖方仅接收63c，因为 "货物 &amp; 服务税" 会按销售价格收费）。
 
 您可以随时更新您的产品的定价，包括计划在将来的日期生效的价格变化。 此屏幕截图显示了如何添加未来的价格变化–价格在9月的第1层临时更改为第3层：
 

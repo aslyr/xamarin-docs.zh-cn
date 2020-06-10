@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a05090c18039f9d3a7f9376285ce2863e0482903
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139251"
+title： "容器化微服务" 说明： "本章节介绍了如何使用微服务和容器来构建灵活、可缩放且可靠的新式云应用程序。"
+ms-chap： xamarin assetid：5872ad92-04e0-4f1a-9691-79d5602f5683： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/07/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="containerized-microservices"></a>容器化微服务
 
 开发客户端-服务器应用程序已导致重点介绍如何构建使用每个层中特定技术的分层应用程序。 此类应用程序通常称为*单片*应用程序，并打包到针对峰值负载进行预缩放的硬件上。 此开发方法的主要缺点是每个层内组件之间的紧密耦合，无法轻松缩放单个组件以及测试成本。 简单的更新可能会对层的其余部分产生不可预见的影响，因此对应用程序组件的更改需要重新测试和重新部署其整个层。
@@ -93,11 +79,9 @@ EShopOnContainers 参考应用程序使用 Docker 来托管四个容器化后端
 
 引用应用程序中后端服务的体系结构以协作微服务和容器的形式分解为多个自治子系统。 每个微服务都提供单一功能区域：标识服务、目录服务、订购服务和购物篮服务。
 
-每个微服务都有自己的数据库，使其与其他微服务完全分离。 必要时，可以使用应用程序级事件实现不同微服务数据库之间的一致性。 有关详细信息，请参阅[微服务之间的通信](#communication_between_microservices)。
+每个微服务都有自己的数据库，使其与其他微服务完全分离。 必要时，可以使用应用程序级事件实现不同微服务数据库之间的一致性。 有关详细信息，请参阅[微服务之间的通信](#communication-between-microservices)。
 
 有关引用应用程序的详细信息，请参阅[.Net 微服务：适用于容器化 .Net 应用程序的体系结构](https://aka.ms/microservicesebook)。
-
-<a name="communication_between_client_and_microservices" />
 
 ## <a name="communication-between-client-and-microservices"></a>客户端与微服务之间的通信
 
@@ -111,8 +95,6 @@ EShopOnContainers 移动应用与容器化后端微服务通信，并使用*直�
 
 > [!TIP]
 > 请考虑使用 API 网关通信。 直接的客户端到微服务通信在构建大型、复杂的基于微服务的应用程序时可能会有缺点，但对于小型应用程序而言，这种情况是不够的。 使用数十个微服务设计大型微服务应用程序时，请考虑使用 API 网关通信。 有关详细信息，请参阅[.Net 微服务：适用于容器化 .Net 应用程序的体系结构](https://aka.ms/microservicesebook)。
-
-<a name="communication_between_microservices" />
 
 ## <a name="communication-between-microservices"></a>微服务之间的通信
 

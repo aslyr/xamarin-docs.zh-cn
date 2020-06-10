@@ -7,20 +7,20 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/11/2017
-ms.openlocfilehash: 04d33d986d76daf29fc7392206c62f77d34dd969
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0957220ace9facee590a76953de6dd52be438582
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022022"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570838"
 ---
 # <a name="labels-in-xamarinios"></a>Xamarin 中的标签
 
-`UILabel` 控件用于显示单行和多行只读文本。
+`UILabel`控件用于显示单行和多行只读文本。
 
 ## <a name="implementing-a-label"></a>实现标签
 
-通过实例化[`UILabel`](xref:UIKit.UILabel)创建新标签：
+通过实例化创建新标签 [`UILabel`](xref:UIKit.UILabel) ：
 
 ```csharp
 UILabel label = new UILabel();
@@ -50,7 +50,7 @@ UILabel label = new UILabel();
 
 有关在 iOS 中使用分行符的信息，请参阅 "[截断和折行文本](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/uilabel-truncate-wrap-text)" 食谱。
 
-<a name="Formatting_Text_and_Label"/>
+<a name="Formatting_Text_and_Label"></a>
 
 ## <a name="formatting-text-and-label"></a>设置文本和标签的格式
 
@@ -74,9 +74,9 @@ label.AttributedText = new NSAttributedString(
             );
 ```
 
-有关使用 `NSAttributedString` 设置文本样式的详细信息，请参阅[样式文本](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text)食谱。
+有关使用设置文本样式的详细信息， `NSAttributedString` 请参阅[样式文本](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text)食谱。
 
-默认情况下，标签将 `Enabled` 设置为 true，但也可以将其设置为 "禁用"，以向用户提示某个控件被禁用：
+默认情况下，"标签" `Enabled` 设置为 "true"，但可以将其设置为 "已禁用" 以向用户提示某个控件被禁用：
 
 ```csharp
 label.Enabled = false;

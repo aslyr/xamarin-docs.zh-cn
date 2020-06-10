@@ -15,8 +15,6 @@ Xamarin.Forms代码在多个平台上运行-每个平台都有自己的文件系
 
 有关处理图像文件的信息，请参阅[处理图像](~/xamarin-forms/user-interface/images.md)页。
 
-<a name="Loading_and_Saving_Files" />
-
 ## <a name="saving-and-loading-files"></a>保存和加载文件
 
 可以使用 `System.IO` 类访问每个平台上的文件系统。 `File` 类可以创建、删除和读取文件，`Directory` 类可以创建、删除或枚举目录的内容。 此外，还可以使用 `Stream` 子类，它们可以实现对文件操作（例如，文件内的压缩或位置搜索）更大程度的控制。
@@ -48,8 +46,6 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 示例应用演示了这些操作，其中包括保存和加载文本的页面：
 
 [![保存和加载文本](files-images/saveandload-sml.png "在应用程序中保存和加载文件")](files-images/saveandload.png#lightbox "在应用程序中保存和加载文件")
-
-<a name="Loading_Files_Embedded_as_Resources" />
 
 ## <a name="loading-files-embedded-as-resources"></a>加载作为资源嵌入的文件
 
@@ -97,8 +93,6 @@ listView.ItemsSource = monkeys;
 
  [![嵌入到 .NET standard 库中，显示在 ListView 中的 Xml 文件](files-images/pclxml-sml.png "显示在 ListView 中的 .NET standard 库中的嵌入 XML 文件")](files-images/pclxml.png#lightbox "显示在 ListView 中的 .NET standard 库中的嵌入 XML 文件")
 
-<a name="Embedding_in_Shared_Projects" />
-
 ## <a name="embedding-in-shared-projects"></a>在共享项目中嵌入
 
 共享项目也可以包含作为嵌入式资源的文件，但是由于共享项目的内容被编译到引用项目中，用于嵌入式文件资源 ID 的前缀可能更改。 这意味着每个嵌入式文件的资源 ID 对于每个平台都可能是不同的。
@@ -125,15 +119,11 @@ Stream stream = assembly.GetManifestResourceStream
     (resourcePrefix + "SharedTextResource.txt");
 ```
 
-<a name="Organizing_Resources" />
-
 ### <a name="organizing-resources"></a>组织资源
 
 上面的例子假设该文件已嵌入 .NET Standard 库项目的根目录中，在这种情况下，资源 ID 的形式是“Namespace.Filename.Extension”，如 `WorkingWithFiles.LibTextResource.txt` 和 `WorkingWithFiles.iOS.SharedTextResource.txt`****。
 
 可以在文件夹中组织嵌入式资源。 当嵌入式资源被放置在一个文件夹中时，文件夹名称就成为资源 ID 的一部分（以句点分隔），因此资源 ID 格式就变成了“Namespace.Folder.Filename.Extension”****。 将示例应用中使用的文件放入文件夹“MyFolder”将生成相应的资源 ID `WorkingWithFiles.MyFolder.LibTextResource.txt` 和 `WorkingWithFiles.iOS.MyFolder.SharedTextResource.txt`****。
-
-<a name="Debugging_Embedded_Resources" />
 
 ### <a name="debugging-embedded-resources"></a>调试嵌入的资源
 
@@ -156,5 +146,5 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 ## <a name="related-links"></a>相关链接
 
 - [FilesSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
-- [Xamarin.Forms范例](https://github.com/xamarin/xamarin-forms-samples)
+- [Xamarin.Forms 示例](https://github.com/xamarin/xamarin-forms-samples)
 - [使用 Xamarin.iOS 中的文件系统](~/ios/app-fundamentals/file-system.md)

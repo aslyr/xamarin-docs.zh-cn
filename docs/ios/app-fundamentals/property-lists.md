@@ -7,22 +7,22 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 2060e0786b5401b44217318b647dfa7412f934f4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 6c2b5869f647f65b932b6ec92f359f8a79402c8f
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73009868"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569291"
 ---
 # <a name="working-with-property-lists-in-xamarinios"></a>在 Xamarin 中使用属性列表
 
 _本文档介绍 Visual Studio for Mac 的图形和高级属性列表（info.plist）编辑器来使用 info.plist 和 info.plist。它说明了如何在 Visual Studio for Mac 中设置用于 iOS 应用程序的图标和启动映像。_
 
-Visual Studio for Mac 功能 info.plist 编辑器，使编辑应用属性和功能变得更加容易。 Visual Studio for Mac 具有用于编辑应用程序属性和图标的 plists `Info.plist`，以及用于管理应用功能的 `Entitlements.plist`。 本指南介绍 plists，并概述如何在 Visual Studio for Mac 中使用它们。 有关 info.plist 的信息，请参阅[使用权利](~/ios/deploy-test/provisioning/entitlements.md)指南。
+Visual Studio for Mac 功能 info.plist 编辑器，使编辑应用属性和功能变得更加容易。 Visual Studio for Mac 有两个 plists- `Info.plist` 用于编辑应用程序属性和图标以及 `Entitlements.plist` 用于管理应用程序功能。 本指南介绍 plists，并概述如何在 Visual Studio for Mac 中使用它们。 有关 info.plist 的信息，请参阅[使用权利](~/ios/deploy-test/provisioning/entitlements.md)指南。
 
 ## <a name="infoplist"></a>Info.plist
 
-信息属性列表（`Info.plist`）是一个必需的 iOS 文件，它向系统提供有关应用程序配置的信息。 Visual Studio for Mac 的自定义 `Info.plist` 编辑器功能由编辑器窗口左下角的选项卡控制三个面板：
+信息属性列表（ `Info.plist` ）是必需的 iOS 文件，它提供有关应用程序配置到系统的信息。 Visual Studio for Mac 的自定义 `Info.plist` 编辑器功能由编辑器窗口左下角的选项卡控制三个面板：
 
  [![](property-lists-images/tabs.png "The Info.plist editor tabs at the bottom left of the editor window")](property-lists-images/tabs.png#lightbox)
 
@@ -36,7 +36,7 @@ Visual Studio for Mac 功能 info.plist 编辑器，使编辑应用属性和功�
 
 ## <a name="application-panel"></a>应用程序面板
 
-Visual Studio for Mac 功能是一个图形界面，用于编辑应用程序的常见 `Info.plist` 条目：
+Visual Studio for Mac 功能是一种图形界面，用于编辑 `Info.plist` 应用程序的常见条目：
 
 1. 应用程序属性
 1. 支持的设备类型
@@ -47,7 +47,7 @@ Visual Studio for Mac 功能是一个图形界面，用于编辑应用程序的�
 
 下一节将对此进行更详细的介绍。
 
- <a name="iOS_Application_Target" />
+ <a name="iOS_Application_Target"></a>
 
 ### <a name="ios-application-target"></a>iOS 应用程序目标
 
@@ -68,11 +68,11 @@ Visual Studio for Mac 功能是一个图形界面，用于编辑应用程序的�
 
 ### <a name="status-bar-styles"></a>状态栏样式
 
-"**状态栏样式**" 部分是一个图形界面，用于编辑应用程序的 `UIStatusBarStyle`：
+"**状态栏样式**" 部分是用于编辑应用程序的图形界面 `UIStatusBarStyle` ：
 
  [![](property-lists-images/status.png "Status Bar Styles")](property-lists-images/status.png#lightbox)
 
- <a name="Icons" />
+ <a name="Icons"></a>
 
 ### <a name="icons-launch-images-and-itunes-artwork"></a>图标、启动图像和 iTunes 图稿
 
@@ -80,7 +80,7 @@ Visual Studio for Mac 功能是一个图形界面，用于编辑应用程序的�
 
 ### <a name="maps-integration-and-background-modes"></a>映射集成和后台模式
 
-`Info.plist` 包含用于指定 maps integration 和后台处理模式的特殊部分。 选择要支持的选项会将所需的属性添加到你的应用程序。
+`Info.plist`包含用于指定 maps integration 和后台处理模式的特殊部分。 选择要支持的选项会将所需的属性添加到你的应用程序。
 
  [![](property-lists-images/maps.png "Maps Integration")](property-lists-images/maps.png#lightbox)
 
@@ -96,27 +96,27 @@ Visual Studio for Mac 功能是一个图形界面，用于编辑应用程序的�
 
  [![](property-lists-images/image34.png "Advanced Panel")](property-lists-images/image34.png#lightbox)
 
- <a name="Document_Types" />
+ <a name="Document_Types"></a>
 
 ## <a name="document-types"></a>文档类型
 
-对于支持打开特定类型文件的应用程序，iOS 提供 `CFBundleDocumentTypes` 密钥。 如果我们希望应用程序支持某些已知文件类型（例如 Pdf），我们将向密钥添加 PDF 值。 本部分提供一种简便的方法来输入将存储在 `Info.plist` 文件中 `CFBundleDocumentTypes` 项中的数据。
+对于支持打开特定类型文件的应用程序，iOS 提供 `CFBundleDocumentTypes` 密钥。 如果我们希望应用程序支持某些已知文件类型（例如 Pdf），我们将向密钥添加 PDF 值。 本部分提供一种方便的方法来输入将存储在文件中的 `CFBundleDocumentTypes` 密钥中的数据 `Info.plist` 。
 
 有关如何配置这些值的详细信息，请参阅有关[注册应用程序支持的文件类型](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html)的文档。
 
 ## <a name="utis"></a>Uti
 
-有时，应用程序需要支持打开自定义文件类型。 例如，我们可能希望打开带有自*定义扩展的映像文件。* 若要指定自定义文件类型，我们将创建一个自定义的 UTI-通用类型标识符-使用 `UIExportedTypeDeclarations` 键。 下面的屏幕截图演示了如何为 xam 扩展创建自定义 UTI：
+有时，应用程序需要支持打开自定义文件类型。 例如，我们可能希望打开带有自*定义扩展的映像文件。* 若要指定自定义文件类型，我们将创建一个自定义的 UTI-通用类型标识符-使用 `UIExportedTypeDeclarations` 密钥。 下面的屏幕截图演示了如何为 xam 扩展创建自定义 UTI：
 
  [![](property-lists-images/uti.png "UTIs Editor")](property-lists-images/uti.png#lightbox)
 
-正如导出的类型 Uti 指定特定于你的应用的自定义 Uti 时，*导入的类型 uti* （`UIImportedTypeDeclarations` 密钥）指定支持但不由你的应用程序拥有的自定义类型。
+正如导出的类型 Uti 指定特定于你的应用的自定义 Uti 时，*导入的类型 uti* （ `UIImportedTypeDeclarations` key）指定了支持但不由你的应用程序拥有的自定义类型。
 
 有关使用自定义 Uti 的详细信息，请参阅 Apple 的[注册文件类型应用支持](https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_declare/understand_utis_declare.html#//apple_ref/doc/uid/TP40001319-CH204-SW1)指南。
 
-## <a name="custom-urls"></a>自定义 Url
+## <a name="custom-urls"></a>自定义 URL
 
-URL 方案名称（也称为协议）是 URL 的第一部分。 例如，`http://` 和 `https://` 是常见的 URL 方案。 你可以选择为应用程序创建自定义 URL 方案。 自定义 URL 方案用于与其他应用程序来回通信和发送数据。 以下屏幕截图演示了如何创建名为 `monkeys://`的新的自定义 URL 方案：
+URL 方案名称（也称为协议）是 URL 的第一部分。 例如， `http://` 和 `https://` 是常用的 URL 方案。 你可以选择为应用程序创建自定义 URL 方案。 自定义 URL 方案用于与其他应用程序来回通信和发送数据。 以下屏幕截图演示了如何创建名为的新的自定义 URL 方案 `monkeys://` ：
 
  [![](property-lists-images/url.png "Custom URLs")](property-lists-images/url.png#lightbox)
 
@@ -124,7 +124,7 @@ URL 方案名称（也称为协议）是 URL 的第一部分。 例如，`http:/
 
 ## <a name="source-panel"></a>源面板
 
-`Info.plist` 文件的 "**源**" 选项卡允许添加或编辑自定义值。 Visual Studio for Mac 提供最常见属性的列表：
+文件的 "**源**" 选项卡 `Info.plist` 允许添加或编辑自定义值。 Visual Studio for Mac 提供最常见属性的列表：
 
  [![](property-lists-images/image31.png "Adding a new property from a dropdown")](property-lists-images/image31.png#lightbox)
 
@@ -138,11 +138,11 @@ Visual Studio for Mac 还会检测属性类型，如下所示：
 
 有关可选属性的其他信息，请参阅 Apple 的[应用相关资源](https://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html)链接。
 
- <a name="Entitlements" />
+ <a name="Entitlements"></a>
 
 ## <a name="summary"></a>总结
 
-本文演示了如何使用图形和 info.plist 编辑器来编辑常见的应用配置以及指定图标和启动图像。 它还引入了用于添加和管理应用功能的 `Entitlements.plist`。
+本文演示了如何使用图形和 info.plist 编辑器来编辑常见的应用配置以及指定图标和启动图像。 它还引入了 `Entitlements.plist` 用于添加和管理应用功能的。
 
 ## <a name="related-links"></a>相关链接
 

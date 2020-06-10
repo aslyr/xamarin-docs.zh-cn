@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9b2ee9fb02a8fd18d69e93424dc76bfd54fafc86
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130892"
+标题： "企业应用导航" 说明： "本章节介绍了 eShopOnContainers 移动应用如何执行视图模型的第一个导航。
+ms-chap： xamarin assetid：4cad57b5-7fe4-4527-a988-d9b60c9620b4： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/07/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="enterprise-app-navigation"></a>企业应用导航
 
 Xamarin.Forms支持页面导航，这通常是由于用户与 UI 交互引起的，或者由于内部逻辑驱动状态更改而导致的应用本身。 但是，导航可能会很复杂，无法在使用模型-视图-ViewModel （MVVM）模式的应用程序中实现，因为必须满足以下挑战：
@@ -82,7 +68,7 @@ builder.RegisterType<NavigationService>().As<INavigationService>().SingleInstanc
 NavigationService = ViewModelLocator.Resolve<INavigationService>();
 ```
 
-这会返回对 `NavigationService` 存储在 Autofac 依赖关系注入容器中的对象的引用，该容器由 `InitNavigation` 类中的方法创建 `App` 。 有关详细信息，请参阅在[应用启动时进行导航](#navigating_when_the_app_is_launched)。
+这会返回对 `NavigationService` 存储在 Autofac 依赖关系注入容器中的对象的引用，该容器由 `InitNavigation` 类中的方法创建 `App` 。 有关详细信息，请参阅在[应用启动时进行导航](#navigating-when-the-app-is-launched)。
 
 `ViewModelBase`类将实例存储 `NavigationService` 在 `NavigationService` 类型为的属性中 `INavigationService` 。 因此，从类派生的所有视图模型类都 `ViewModelBase` 可以使用 `NavigationService` 属性来访问接口指定的方法 `INavigationService` 。 这样可避免将 `NavigationService` 对象从 Autofac 依赖关系注入容器注入到每个视图模型类中的开销。
 
@@ -129,7 +115,7 @@ public Task NavigateToAsync<TViewModel>(object parameter) where TViewModel�
 }
 ```
 
-每个方法都允许派生自类的任何视图模型类 `ViewModelBase` 通过调用方法来执行分层导航 `InternalNavigateToAsync` 。 此外，第二种 `NavigateToAsync` 方法允许将导航数据指定为传递到要导航到的视图模型的参数，该参数通常用于执行初始化。 有关详细信息，请参阅[在导航过程中传递参数](#passing_parameters_during_navigation)。
+每个方法都允许派生自类的任何视图模型类 `ViewModelBase` 通过调用方法来执行分层导航 `InternalNavigateToAsync` 。 此外，第二种 `NavigateToAsync` 方法允许将导航数据指定为传递到要导航到的视图模型的参数，该参数通常用于执行初始化。 有关详细信息，请参阅[在导航过程中传递参数](#passing-parameters-during-navigation)。
 
 `InternalNavigateToAsync`方法执行导航请求，如以下代码示例所示：
 
@@ -188,16 +174,14 @@ private Page CreatePage(Type viewModelType, object parameter)
 - 视图模型在中。Viewmodel 子命名空间。
 - 视图名称对应于视图模型名称，并且已删除 "模型"。
 
-实例化视图时，该视图与对应的视图模型关联。 有关这种情况的详细信息，请参阅[自动创建具有视图模型定位器的视图模型](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator)。
+实例化视图时，该视图与对应的视图模型关联。 有关这种情况的详细信息，请参阅[自动创建具有视图模型定位器的视图模型](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically-creating-a-view-model-with-a-view-model-locator)。
 
 如果创建的视图为 `LoginView` ，则会将其包装在类的新实例中 `CustomNavigationView` ，并将其分配给 [`Application.Current.MainPage`](xref:Xamarin.Forms.Application.MainPage) 属性。 否则，将 `CustomNavigationView` 检索该实例，并且如果该实例不为 null，则 [`PushAsync`](xref:Xamarin.Forms.NavigationPage) 会调用方法将正在创建的视图推送到导航堆栈上。 但是，如果检索到的 `CustomNavigationView` 实例为，则在 `null` 类的新实例中包装正在创建的视图 `CustomNavigationView` 并将其分配给 `Application.Current.MainPage` 属性。 此机制可确保在导航过程中，当页为空时以及包含数据时，会将页正确地添加到导航堆栈中。
 
 > [!TIP]
 > 请考虑缓存页面。 页缓存会导致当前未显示的视图占用内存。 但是，如果不使用页缓存，则意味着在每次导航到新页时都会发生 XAML 分析和页的视图模型的构造，这会对复杂页造成性能影响。 对于不使用过多控件的设计良好的页面，性能应该足以满足需要。 但是，如果遇到慢速页面加载时间，页缓存可能会有所帮助。
 
-创建并导航到视图后，将 `InitializeAsync` 执行视图的关联视图模型的方法。 有关详细信息，请参阅[在导航过程中传递参数](#passing_parameters_during_navigation)。
-
-<a name="navigating_when_the_app_is_launched" />
+创建并导航到视图后，将 `InitializeAsync` 执行视图的关联视图模型的方法。 有关详细信息，请参阅[在导航过程中传递参数](#passing-parameters-during-navigation)。
 
 ### <a name="navigating-when-the-app-is-launched"></a>在应用启动时进行导航
 
@@ -230,9 +214,7 @@ public Task InitializeAsync()
 
 `MainView`如果应用具有缓存的访问令牌（用于身份验证），则将导航到。 否则， `LoginView` 将导航到。
 
-有关 Autofac 依赖关系注入容器的详细信息，请参阅[依赖关系注入简介](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection)。
-
-<a name="passing_parameters_during_navigation" />
+有关 Autofac 依赖关系注入容器的详细信息，请参阅[依赖关系注入简介](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction-to-dependency-injection)。
 
 ### <a name="passing-parameters-during-navigation"></a>在导航过程中传递参数
 
@@ -265,8 +247,6 @@ public override async Task InitializeAsync(object navigationData)
 ```
 
 此方法检索在 `Order` 导航操作期间传递到视图模型中的实例，并使用它来检索该实例的完整订单详细信息 `OrderService` 。
-
-<a name="invoking_navigation_using_behaviors" />
 
 ### <a name="invoking-navigation-using-behaviors"></a>使用行为调用导航
 

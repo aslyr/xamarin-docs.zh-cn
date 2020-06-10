@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 965ed4e802c05f8450192c0fec17fe31e464c779
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: e6be5d5d42abf7d99c5bd305d6e303ef770e5a04
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305965"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567707"
 ---
 # <a name="debug-on-a-wear-device"></a>在穿戴设备上调试
 
@@ -86,7 +86,7 @@ _本文介绍如何在磨损设备上调试 Xamarin 应用程序。_
     Target: connected
     ```
 
-6. 完成上述步骤后，运行 `adb devices` 将显示 "电话" 和 "Android" 磨损设备的状态：
+6. 完成上述步骤后，"运行" `adb devices` 将显示 "电话" 和 "Android" 磨损设备的状态：
 
     ```
     List of devices attached
@@ -96,7 +96,7 @@ _本文介绍如何在磨损设备上调试 Xamarin 应用程序。_
 
 此时，你可以将应用部署到磨损设备。
 
-<a name="screenshots" />
+<a name="screenshots"></a>
 
 ### <a name="taking-screenshots"></a>拍摄屏幕截图
 
@@ -126,7 +126,7 @@ adb -s 127.0.0.1:4444 shell rm /sdcard/DCIM/screencap.png
 adb -s 127.0.0.1:4444 uninstall <package name>
 ```
 
-例如，若要删除包名称 `com.xamarin.weartest`的应用，请输入以下命令：
+例如，若要删除具有包名称的应用 `com.xamarin.weartest` ，请输入以下命令：
 
 ```shell
 adb -s 127.0.0.1:4444 uninstall com.xamarin.weartest
@@ -148,6 +148,6 @@ Android 应用与随附的 Android 手机应用一起打包在 Google Play 上�
 
 4. 在设备上运行和调试应用程序。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文介绍了如何通过蓝牙为 Visual Studio 的应用配置应用程序的损耗调试，以及如何使用伴随电话应用程序调试应用程序。 它还提供了通过蓝牙调试应用程序的常见调试提示。

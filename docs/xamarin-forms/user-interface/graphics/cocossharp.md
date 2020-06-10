@@ -1,22 +1,7 @@
 ---
-title: 使用 CocosSharpXamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: cb2303eb91fe2aa332ed35131baa7f6dd3cfeff5
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129514"
+标题： "在以下项中使用 CocosSharp" Xamarin.Forms 说明： "CocosSharp 可用于将精确的形状、图像和文本呈现功能添加到应用程序中，以实现高级可视化效果"： xamarin： xamarin assetid： E0F404D5-5C6B-4288-92EC-78996C674E4E ms. 技术： xamarin 窗体作者： davidbritch 毫秒。作者： dabritch 毫秒。日期：05/03/2016 非位置： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="using-cocossharp-in-xamarinforms"></a>使用 CocosSharpXamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/CocosSharpForms)
@@ -29,13 +14,7 @@ _CocosSharp 可用于将精确的形状、图像和文本呈现添加到应用�
 
 ## <a name="overview"></a>概述
 
-CocosSharp 是一种灵活、功能强大的技术，用于显示图形、读取触控输入、播放音频和管理内容。 本指南介绍如何将 CocosSharp 添加到 Xamarin.Forms 应用程序。 其中包含以下内容：
-
-- [什么是 CocosSharp？](#what)
-- [添加 CocosSharp NuGet 包](#nuget)
-- [演练：向 Xamarin.Forms 应用程序添加 CocosSharp](#add)
-
-<a name="what" />
+CocosSharp 是一种灵活、功能强大的技术，用于显示图形、读取触控输入、播放音频和管理内容。 本指南介绍如何将 CocosSharp 添加到 Xamarin.Forms 应用程序。
 
 ## <a name="what-is-cocossharp"></a>什么是 CocosSharp？
 
@@ -53,8 +32,6 @@ CocosSharp 的主要重点是简化跨平台2D 游戏的创建;不过，它也�
 Xamarin.Forms基于特定于平台的本机 UI 系统构建。 例如，在 iOS 和 Android 上以不同的[ `Button` 方式显示，](xref:Xamarin.Forms.Button)甚至不同于操作系统版本。 与此相反，CocosSharp 不使用任何特定于平台的视觉对象，因此所有平台上的所有视觉对象都是相同的。 当然，分辨率和纵横比在设备之间有所不同，这可能会影响 CocosSharp 呈现其视觉对象的方式。 这些详细信息将在本指南的后面部分进行讨论。
 
 可在[CocosSharp 部分](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/index.md)找到更多详细信息。
-
-<a name="nuget" />
 
 ## <a name="adding-the-cocossharp-nuget-packages"></a>添加 CocosSharp NuGet 包
 
@@ -75,21 +52,17 @@ CocosSharp NuGet 包包含 `CocosSharpView` 用于在中承载 CocosSharp 的类
 
 针对特定于平台的项目（如 iOS 和 Android）重复上述步骤。
 
-<a name="add" />
-
 ## <a name="walkthrough-adding-cocossharp-to-a-xamarinforms-app"></a>演练：向 Xamarin.Forms 应用程序添加 CocosSharp
 
 按照以下步骤将简单的 CocosSharp 视图添加到 Xamarin.Forms 应用：
 
-1. [创建 Xamarin 窗体页](#1)
-1. [添加 CocosSharpView](#2)
-1. [创建 GameScene](#3)
-1. [添加圆形](#4)
-1. [与 CocosSharp 交互](#5)
+1. [创建 Xamarin 窗体页](#1-creating-a-xamarin-forms-page)
+1. [添加 CocosSharpView](#2-adding-a-cocossharpview)
+1. [创建 GameScene](#3-creating-the-gamescene)
+1. [添加圆形](#4-adding-a-circle)
+1. [与 CocosSharp 交互](#5-interacting-with-cocossharp)
 
 将 CocosSharp 视图成功添加到应用后，请 Xamarin.Forms 访问[CocosSharp 文档](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/index.md)以了解有关使用 CocosSharp 创建内容的详细信息。
-
-<a name="1" />
 
 ### <a name="1-creating-a-xamarin-forms-page"></a>1. 创建 Xamarin 窗体页
 
@@ -143,8 +116,6 @@ public HomePage ()
 
 ![](cocossharp-images/image3.png "HomePage Screenshot")
 
-<a name="2" />
-
 ### <a name="2-adding-a-cocossharpview"></a>2. 添加 CocosSharpView
 
 `CocosSharpView`类用于将 CocosSharp 嵌入到 Xamarin.Forms 应用中。 自 `CocosSharpView` 继承[ Xamarin.Forms 。视图](xref:Xamarin.Forms.View)类，它为布局提供熟悉的界面，可在布局容器（如）中使用[ Xamarin.Forms 。网格](xref:Xamarin.Forms.Grid)。 通过完成方法，向项目中添加一个新的 `CocosSharpView` `CreateTopHalf` ：
@@ -187,8 +158,6 @@ void HandleViewCreated (object sender, EventArgs e)
 
 第二个重要的详细信息是 `DesignResolution` 属性，该属性定义游戏的 CocosSharp 对象的可见区域。 `DesignResolution`创建后，将查看该属性 `GameScene` 。
 
-<a name="3" />
-
 ### <a name="3-creating-the-gamescene"></a>3. 创建 GameScene
 
 `GameScene`该类继承自 CocosSharp 的 `CCScene` 。 `GameScene`是我们仅处理 CocosSharp 的第一个点。 中包含的代码 `GameScene` 在任何 CocosSharp 应用程序中都可以使用，无论它是否在 Xamarin.Forms 项目中。
@@ -224,8 +193,6 @@ GameScene gameScene;
 现在，我们可以编译项目并运行它，以查看 CocosSharp 的运行情况。 我们未向我们添加任何内容， `GameScene,` 因此我们的页面的上半部分为黑色– CocosSharp 场景的默认颜色：
 
 ![](cocossharp-images/image5.png "Blank GameScene")
-
-<a name="4" />
 
 ### <a name="4-adding-a-circle"></a>4. 添加圆圈
 
@@ -276,8 +243,6 @@ public class GameScene : CCScene
 #### <a name="ccdrawnode-details"></a>CCDrawNode 详细信息
 
 我们的简单应用程序使用 `CCDrawNode` 类绘制一个圆圈。 此类对于业务应用非常有用，因为它提供了基于矢量的几何呈现–中缺少的功能 Xamarin.Forms 。 除了圆外，类还 `CCDrawNode` 可用于绘制矩形、样条、直线和自定义多边形。 `CCDrawNode`很容易使用，因为它不需要使用图像文件（如 .png）。 有关 CCDrawNode 的更详细讨论，请参阅[使用 CCDrawNode 指南绘制几何](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/ccdrawnode.md)。
-
-<a name="5" />
 
 ### <a name="5-interacting-with-cocossharp"></a>5. 与 CocosSharp 交互
 

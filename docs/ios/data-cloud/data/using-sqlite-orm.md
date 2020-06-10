@@ -7,28 +7,28 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: fb0981fea906a474d39834a52f0a8bfdf496ca1e
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 5b169323c606e48bf7eb0d721029c6d9a9db2831
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488408"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571698"
 ---
 # <a name="using-sqlitenet-with-xamarinios"></a>将 SQLite.NET 与 Xamarin 配合使用
 
 Xamarin 推荐的 SQLite.NET 库是一个基本的 ORM，可用于在 iOS 设备上的本地 SQLite 数据库中存储和检索对象。
 ORM 代表对象关系映射–一种 API，可让你从数据库保存和检索 "对象"，而无需编写 SQL 语句。
 
-<a name="Usage"/>
+<a name="Usage"></a>
 
-## <a name="usage"></a>用量
+## <a name="usage"></a>使用情况
 
 若要在 Xamarin 应用中包括 SQLite.NET 库，请将以下 NuGet 包添加到项目中：
 
 - **包名称：** sqlite 网络-pcl
-- **作者：** Frank Krueger
+- **创建者：** Frank A. Krueger
 - **ID：** sqlite net pcl
-- **Url:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
+- **Url：** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 [![SQLite.NET NuGet 包](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet 包")](using-sqlite-orm-images/image1a.png#lightbox)
 
@@ -37,7 +37,7 @@ ORM 代表对象关系映射–一种 API，可让你从数据库保存和检索
 
 获得可用的 SQLite.NET 库后，请执行以下三个步骤以使用它来访问数据库：
 
-1. **添加 using 语句**-将以下语句添加到需要数据C#访问的文件中：
+1. **添加 using 语句**-将以下语句添加到需要数据访问的 c # 文件中：
 
     ```csharp
     using SQLite;
@@ -69,7 +69,7 @@ ORM 代表对象关系映射–一种 API，可让你从数据库保存和检索
 
 在 iOS 上运行时，此文档的*DataAccess_Basic*示例代码将如下所示。 此代码演示如何执行简单的 SQLite.NET 操作并在应用程序的主窗口中以文本形式显示结果。
 
-**Android**
+**iOS**
 
  [![iOS SQLite.NET 示例](using-sqlite-orm-images/image2-sml.png)](using-sqlite-orm-images/image2-sml.png#lightbox)
 
@@ -85,7 +85,7 @@ ORM 代表对象关系映射–一种 API，可让你从数据库保存和检索
 using SQLite; // from the github SQLite.cs class
 ```
 
-这要求您已将 SQLite 添加到项目中[，如下所示。](#Usage) 请注意，通过将属性添加到类（`Stock` 类）而不是 CREATE TABLE 命令来定义 SQLite 数据库表。
+这要求您已将 SQLite 添加到项目中[，如下所示。](#Usage) 请注意，SQLite 数据库表是通过将属性添加到类（ `Stock` 类）而不是 CREATE TABLE 命令来定义的。
 
 ```csharp
 [Table("Items")]
@@ -122,7 +122,7 @@ public static void DoSomeDataAccess () {
 }
 ```
 
-如果在未指定表名称参数的情况下使用 `[Table]` 属性，则会导致基础数据库表具有与类相同的名称（在本例中为 "Stock"）。 如果直接针对数据库编写 SQL 查询，而不是使用 ORM 数据访问方法，则实际的表名非常重要。 同样，`[Column("_id")]` 属性是可选的，如果不存在，列将添加到与类中的属性同名的表中。
+如果在 `[Table]` 未指定表名称参数的情况下使用属性，则会导致基础数据库表具有与类相同的名称（在本例中为 "Stock"）。 如果直接针对数据库编写 SQL 查询，而不是使用 ORM 数据访问方法，则实际的表名非常重要。 同样 `[Column("_id")]` ，特性是可选的，如果不存在，则会将列添加到与类中的属性同名的表中。
 
 ## <a name="sqlite-attributes"></a>SQLite 特性
 
@@ -130,7 +130,7 @@ public static void DoSomeDataAccess () {
 
 - **[PrimaryKey]** –此特性可应用于整数属性，以强制其成为基础表的主键。 不支持组合主键。
 - **[自动增量]** –此特性将导致插入到数据库中的每个新对象的整数属性值为自动增量
-- **[Column （name）]** &ndash; `name` 参数设置基础数据库列的名称。
+- **[列（名称）]** &ndash;`name`参数设置基础数据库列的名称。
 - **[表（名称）]** –标记该类，使其能够存储在具有指定名称的基础 SQLite 表中。
 - **[MaxLength （值）]** –当尝试插入数据库时，限制文本属性的长度。 在插入对象之前，使用代码应进行验证，因为在尝试执行数据库插入或更新操作时，仅 "选中" 此属性。
 - **[Ignore]** –使 SQLite.NET 忽略此属性。 这对于类型不能存储在数据库中的属性或无法自动解析的模型集合的属性特别有用。
@@ -138,16 +138,16 @@ public static void DoSomeDataAccess () {
 
 其中的大多数属性是可选的。 应始终指定整数主键，以便可以对数据高效地执行选择和删除查询。
 
-## <a name="more-complex-queries"></a>更多复杂查询
+## <a name="more-complex-queries"></a>更复杂的查询
 
-`SQLiteConnection` 上的以下方法可用于执行其他数据操作：
+上的以下方法 `SQLiteConnection` 可用于执行其他数据操作：
 
 - **Insert** –将新的对象添加到数据库。
-- **获取\<t >** –尝试使用主键检索对象。
-- **表\<t >** –返回表中的所有对象。
+- **获取 \<T> **–尝试使用主键检索对象。
+- **表 \<T> **–返回表中的所有对象。
 - **删除**–使用其主键删除对象。
-- **查询\<t >** -执行返回多行（作为对象）的 SQL 查询。
-- **执行**–当您不希望从 SQL 返回行时（例如插入、更新和删除说明），请使用此方法（而不是 `Query`）。
+- **查询 \<T> **-执行 SQL 查询，该查询返回的行数（作为对象）。
+- **执行**– `Query` 当您不希望从 SQL 返回行时（例如插入、更新和删除说明），请使用此方法（而不是）。
 
 ### <a name="getting-an-object-by-the-primary-key"></a>通过主键获取对象
 
@@ -159,7 +159,7 @@ var existingItem = db.Get<Stock>(3);
 
 ### <a name="selecting-an-object-using-linq"></a>使用 Linq 选择对象
 
-返回集合的方法支持 IEnumerable\<T > 以便您可以使用 Linq 查询或排序表的内容。 下面的代码演示了一个示例，该示例使用 Linq 筛选出以字母 "A" 开头的所有条目：
+返回集合的方法支持 IEnumerable \<T> ，因此你可以使用 Linq 查询或排序表的内容。 下面的代码演示了一个示例，该示例使用 Linq 筛选出以字母 "A" 开头的所有条目：
 
 ```csharp
 var apple = from s in db.Table<Stock>()
@@ -190,13 +190,13 @@ foreach (var s in stocksStartingWithA) {
 var rowcount = db.Delete<Stock>(someStock.Id); // Id is the primary key
 ```
 
-您可以检查 `rowcount` 以确认受影响的行数（在此示例中已删除）。
+你可以检查 `rowcount` 以确认受影响的行数（在此示例中已删除）。
 
 ## <a name="using-sqlitenet-with-multiple-threads"></a>将 SQLite.NET 用于多个线程
 
-SQLite 支持三个不同的线程模式：*单线程*、*多线程*和*序列化*。 如果要从多个线程访问数据库，而不受任何限制，则可以将 SQLite 配置为使用**序列化**的线程模式。 在应用程序的早期设置此模式很重要（例如，在 `OnCreate` 方法的开头）。
+SQLite 支持三个不同的线程模式：*单线程*、*多线程*和*序列化*。 如果要从多个线程访问数据库，而不受任何限制，则可以将 SQLite 配置为使用**序列化**的线程模式。 在应用程序的早期设置此模式很重要（例如，在方法的开头 `OnCreate` ）。
 
-若要更改线程模式，请在 `Mono.Data.Sqlite` 命名空间中调用 `SqliteConnection.SetConfig`。 例如，下面这行代码将为**序列化**模式配置 SQLite：
+若要更改线程模式，请 `SqliteConnection.SetConfig` 在 `Mono.Data.Sqlite` 命名空间中调用。 例如，下面这行代码将为**序列化**模式配置 SQLite：
 
 ```csharp
 using Mono.Data.Sqlite;

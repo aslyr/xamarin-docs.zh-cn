@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: ee7ab7c5d0503cffd2c12a493f314f191d912e92
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 584b398deafd233fdbe6b24189a2047ae712fdcf
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73002837"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573516"
 ---
 # <a name="working-with-the-ui-thread-in-xamarinios"></a>使用 Xamarin 中的 UI 线程
 
@@ -24,7 +24,7 @@ ms.locfileid: "73002837"
 
 在视图中创建控件或处理用户启动的事件（如触控）时，代码已在 UI 线程的上下文中执行。
 
-如果代码是在后台线程上执行，则在任务或回调中，它很可能不会在主 UI 线程上执行。 在这种情况下，应将代码包装在调用 `InvokeOnMainThread` 或 `BeginInvokeOnMainThread`，如下所示：
+如果代码是在后台线程上执行，则在任务或回调中，它很可能不会在主 UI 线程上执行。 在这种情况下，应将代码包装在对的调用中， `InvokeOnMainThread` `BeginInvokeOnMainThread` 如下所示：
 
 ```csharp
 InvokeOnMainThread ( () => {
@@ -32,17 +32,17 @@ InvokeOnMainThread ( () => {
 });
 ```
 
-`InvokeOnMainThread` 方法是在 `NSObject` 上定义的，因此可以从在任何 UIKit 对象（如视图或视图控制器）上定义的方法中调用它。
+`InvokeOnMainThread`方法是在上定义的 `NSObject` ，因此可以从在任何 UIKit 对象（如视图或视图控制器）上定义的方法中调用它。
 
 调试 Xamarin iOS 应用程序时，如果您的代码尝试从错误的线程访问 UI 控件，将引发错误。 这可以帮助您跟踪并修复 InvokeOnMainThread 方法的这些问题。 这仅在调试时出现，在发布版本中不会引发错误。 错误消息会如下所示：
 
  ![](ui-thread-images/image10.png "UI Thread Execution")
 
- <a name="Background_Thread_Example" />
+ <a name="Background_Thread_Example"></a>
 
 ## <a name="background-thread-example"></a>后台线程示例
 
-下面的示例尝试使用简单的线程从后台线程访问用户界面控件（`UILabel`）：
+下面的示例尝试 `UILabel` 使用简单线程从后台线程访问用户界面控件（a）：
 
 ```csharp
 new System.Threading.Thread(new System.Threading.ThreadStart(() => {
@@ -50,7 +50,7 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 })).Start();
 ```
 
-调试时，该代码将引发 `UIKitThreadAccessException`。 若要解决此问题（并确保仅从主 UI 线程访问用户界面控件），请将引用 UI 控件的任何代码包装在 `InvokeOnMainThread` 表达式内，如下所示：
+调试时，该代码将引发 `UIKitThreadAccessException` 。 若要解决此问题（并确保仅从主 UI 线程访问用户界面控件），请将引用 UI 控件的任何代码包装在表达式内， `InvokeOnMainThread` 如下所示：
 
 ```csharp
 new System.Threading.Thread(new System.Threading.ThreadStart(() => {
@@ -60,15 +60,15 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 })).Start();
 ```
 
-对于本文档中的其余示例，你不需要使用此方法，但这是一个重要的概念，可以记住应用何时发出网络请求，使用通知中心或其他需要完成处理程序的方法（将在另一个上运行）thread.
+对于本文档中的其余示例，你不需要使用此功能，但在应用发出网络请求时要记住的一个重要概念是使用通知中心或其他需要完成处理程序的方法（将在另一个线程上运行）。
 
- <a name="Async_Await_Example" />
+ <a name="Async_Await_Example"></a>
 
 ## <a name="asyncawait-example"></a>Async/Await 示例
 
-使用C# 5 个 async/await 关键字时`InvokeOnMainThread`不是必需的，因为等待的任务完成后，该方法将在调用线程上继续。
+如果使用 c # 5 async/await 关键字 `InvokeOnMainThread` ，则不是必需的，因为等待任务完成时，方法会在调用线程上继续。
 
-此示例代码（在延迟方法调用中，纯粹用于演示目的）显示了在 UI 线程上调用的异步方法（它是 TouchUpInside 处理程序）。 由于在 UI 线程上调用了包含方法，因此在后台线程上完成异步操作后，可以安全地调用在 `UILabel` 上设置文本或显示 `UIAlertView` 的 UI 操作。
+此示例代码（在延迟方法调用中，纯粹用于演示目的）显示了在 UI 线程上调用的异步方法（它是 TouchUpInside 处理程序）。 由于在 UI 线程上调用了包含方法，因此在 `UILabel` `UIAlertView` 后台线程上完成异步操作后，可以安全地调用在上设置或显示的 UI 操作。
 
 ```csharp
 async partial void button2_TouchUpInside (UIButton sender)
@@ -89,7 +89,7 @@ async partial void button2_TouchUpInside (UIButton sender)
 }
 ```
 
-如果异步方法是从后台线程（而不是主 UI 线程）调用的，则仍需要 `InvokeOnMainThread`。
+如果异步方法是从后台线程（而不是主 UI 线程）调用的，则 `InvokeOnMainThread` 仍需要。
 
 ## <a name="related-links"></a>相关链接
 

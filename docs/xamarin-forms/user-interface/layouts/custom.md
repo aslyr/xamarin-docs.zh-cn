@@ -1,22 +1,8 @@
 ---
-title: 在中创建自定义布局Xamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 2beb00e0587a0e47a29d6f5628a5d6623514eade
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137327"
+标题： "description：" 中的 "创建自定义布局" Xamarin.Forms 本文介绍了如何编写自定义布局类，并演示了一个区分方向的 WrapLayout 类，该类在页面上水平排列其子级，然后将后续子项的显示内容包装到其他行。 "
+ms-chap： xamarin assetid： B0CFDB59-14E5-49E9-965A-3DCCEDAC2E31： xamarin 窗体作者： davidbritch： dabritch ms. 日期：03/29/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="create-a-custom-layout-in-xamarinforms"></a>在中创建自定义布局Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
@@ -66,29 +52,27 @@ Xamarin.Forms具有或属性的每个类 `Content` `Children` 都具有可重写
 
 [`Layout`](xref:Xamarin.Forms.Layout)该类还定义了一个 [`InvalidateLayout`](xref:Xamarin.Forms.Layout.InvalidateLayout) 方法，该方法具有与方法类似的用途 [`InvalidateMeasure`](xref:Xamarin.Forms.VisualElement.InvalidateMeasure) 。 `InvalidateLayout`无论布局的位置和大小如何调整其子级，都应调用方法。 例如，只要在 `Layout` `InvalidateLayout` 布局中添加或删除子级，类就会调用方法。
 
-[`InvalidateLayout`](xref:Xamarin.Forms.Layout.InvalidateLayout)可以重写以实现缓存，以最大程度地减少 [ `Measure` ] （x：）的重复调用 Xamarin.Forms 。VisualElement （system.string，System.web，. double， Xamarin.Forms 。MeasureFlags））的子级。 重写 `InvalidateLayout` 方法将提供在布局中添加或删除子级时的通知。 同样， [`OnChildMeasureInvalidated`](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) 可以重写方法，以便在布局中的一个子级更改大小时提供通知。 对于这两种方法重写，自定义布局应通过清除缓存来做出响应。 有关详细信息，请参阅[计算和缓存数据](#caching)。
+[`InvalidateLayout`](xref:Xamarin.Forms.Layout.InvalidateLayout)可以重写以实现缓存，以最大程度地减少 [ `Measure` ] （x：）的重复调用 Xamarin.Forms 。VisualElement （system.string，System.web，. double， Xamarin.Forms 。MeasureFlags））的子级。 重写 `InvalidateLayout` 方法将提供在布局中添加或删除子级时的通知。 同样， [`OnChildMeasureInvalidated`](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) 可以重写方法，以便在布局中的一个子级更改大小时提供通知。 对于这两种方法重写，自定义布局应通过清除缓存来做出响应。 有关详细信息，请参阅[计算和缓存布局数据](#calculate-and-cache-layout-data)。
 
 ## <a name="create-a-custom-layout"></a>创建自定义布局
 
 创建自定义布局的过程如下所示：
 
-1. 创建一个从 `Layout<View>` 类派生的类。 有关详细信息，请参阅[创建 WrapLayout](#creating)。
-1. [*可选*]为应在 layout 类上设置的任何参数，添加由可绑定属性支持的属性。 有关详细信息，请参阅[添加由可绑定属性支持的属性](#adding_properties)。
-1. 重写 [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) 方法以调用 [ `Measure` ] （x： Xamarin.Forms 。VisualElement （system.string，System.web，. double， Xamarin.Forms 。MeasureFlags））方法，并返回布局的请求大小。 有关详细信息，请参阅[重写 OnMeasure 方法](#onmeasure)。
-1. 重写 [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) 方法以调用 [ `Layout` ] （x： Xamarin.Forms 。VisualElement （ Xamarin.Forms 。Rectangle））方法。 未能调用 [ `Layout` ] （x： Xamarin.Forms 。VisualElement （ Xamarin.Forms 。矩形）））方法，在布局中的每个子元素上，子元素永远不会收到正确的大小或位置，因此，子页面不会在页面上变得可见。 有关详细信息，请参阅[重写 LayoutChildren 方法](#layoutchildren)。
+1. 创建一个从 `Layout<View>` 类派生的类。 有关详细信息，请参阅[创建 WrapLayout](#create-a-wraplayout)。
+1. [*可选*]为应在 layout 类上设置的任何参数，添加由可绑定属性支持的属性。 有关详细信息，请参阅[添加由可绑定属性支持的属性](#add-properties-backed-by-bindable-properties)。
+1. 重写 [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) 方法以调用 [ `Measure` ] （x： Xamarin.Forms 。VisualElement （system.string，System.web，. double， Xamarin.Forms 。MeasureFlags））方法，并返回布局的请求大小。 有关详细信息，请参阅[重写 OnMeasure 方法](#override-the-onmeasure-method)。
+1. 重写 [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) 方法以调用 [ `Layout` ] （x： Xamarin.Forms 。VisualElement （ Xamarin.Forms 。Rectangle））方法。 未能调用 [ `Layout` ] （x： Xamarin.Forms 。VisualElement （ Xamarin.Forms 。矩形）））方法，在布局中的每个子元素上，子元素永远不会收到正确的大小或位置，因此，子页面不会在页面上变得可见。 有关详细信息，请参阅[重写 LayoutChildren 方法](#override-the-layoutchildren-method)。
 
     > [!NOTE]
     > 枚举和重写中的子级时 [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) ，跳过其 [`IsVisible`](xref:Xamarin.Forms.VisualElement.IsVisible) 属性设置为的任何子级 `false` 。 这将确保自定义布局不会为不可见子级留出空间。
 
-1. [*可选*]重写 [`InvalidateLayout`](xref:Xamarin.Forms.Layout.InvalidateLayout) 方法，以便在布局中添加或删除子级时收到通知。 有关详细信息，请参阅[重写 InvalidateLayout 方法](#invalidatelayout)。
-1. [*可选*]重写 [`OnChildMeasureInvalidated`](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) 方法，以便在布局中的某个子元素的大小改变时收到通知。 有关详细信息，请参阅[重写 OnChildMeasureInvalidated 方法](#onchildmeasureinvalidated)。
+1. [*可选*]重写 [`InvalidateLayout`](xref:Xamarin.Forms.Layout.InvalidateLayout) 方法，以便在布局中添加或删除子级时收到通知。 有关详细信息，请参阅[重写 InvalidateLayout 方法](#override-the-invalidatelayout-method)。
+1. [*可选*]重写 [`OnChildMeasureInvalidated`](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) 方法，以便在布局中的某个子元素的大小改变时收到通知。 有关详细信息，请参阅[重写 OnChildMeasureInvalidated 方法](#override-the-onchildmeasureinvalidated-method)。
 
 > [!NOTE]
-> 请注意， [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) 如果布局的大小由父级而不是其子级控制，则不会调用该重写。 但是，如果其中一个或两个约束都是无限的，或者如果布局类具有非默认 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 值或属性值，则将调用该重写 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 。 出于此原因， [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) 重写不能依赖于方法调用期间获得的子大小 [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) 。 相反， `LayoutChildren` 必须调用 [ `Measure` ] （x： Xamarin.Forms 。VisualElement （system.string，System.web，. double， Xamarin.Forms 。MeasureFlags））方法，然后调用 [ `Layout` ] （x： Xamarin.Forms 。VisualElement （ Xamarin.Forms 。Rectangle）方法。 或者，可以缓存在重写中获得的子级的大小 `OnMeasure` ，以避免 `Measure` 在重写中出现以后的调用 `LayoutChildren` ，但 layout 类需要知道何时需要重新获得大小。 有关详细信息，请参阅[计算和缓存布局数据](#caching)。
+> 请注意， [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) 如果布局的大小由父级而不是其子级控制，则不会调用该重写。 但是，如果其中一个或两个约束都是无限的，或者如果布局类具有非默认 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 值或属性值，则将调用该重写 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 。 出于此原因， [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) 重写不能依赖于方法调用期间获得的子大小 [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) 。 相反， `LayoutChildren` 必须调用 [ `Measure` ] （x： Xamarin.Forms 。VisualElement （system.string，System.web，. double， Xamarin.Forms 。MeasureFlags））方法，然后调用 [ `Layout` ] （x： Xamarin.Forms 。VisualElement （ Xamarin.Forms 。Rectangle）方法。 或者，可以缓存在重写中获得的子级的大小 `OnMeasure` ，以避免 `Measure` 在重写中出现以后的调用 `LayoutChildren` ，但 layout 类需要知道何时需要重新获得大小。 有关详细信息，请参阅[计算和缓存布局数据](#calculate-and-cache-layout-data)。
 
-然后，可以通过将布局类添加到 [`Page`](xref:Xamarin.Forms.Page) ，并将子级添加到布局来使用布局类。 有关详细信息，请参阅[使用 WrapLayout](#consuming)。
-
-<a name="creating" />
+然后，可以通过将布局类添加到 [`Page`](xref:Xamarin.Forms.Page) ，并将子级添加到布局来使用布局类。 有关详细信息，请参阅[使用 WrapLayout](#consume-the-wraplayout)。
 
 ### <a name="create-a-wraplayout"></a>创建 WrapLayout
 
@@ -105,8 +89,6 @@ public class WrapLayout : Layout<View>
   ...
 }
 ```
-
-<a name="caching" />
 
 #### <a name="calculate-and-cache-layout-data"></a>计算和缓存布局数据
 
@@ -199,8 +181,6 @@ LayoutData GetLayoutData(double width, double height)
 - 如果至少有一个可见子级，它将计算所需的行数和列数，然后根据的尺寸计算子级的单元大小 `WrapLayout` 。 请注意，单元格的大小通常比最大子大小稍微大一些，但如果对于最大的子级或更高的子级足够宽，则该单元格的大小也可能更小 `WrapLayout` 。
 - 它将新 `LayoutData` 值存储在缓存中。
 
-<a name="adding_properties" />
-
 #### <a name="add-properties-backed-by-bindable-properties"></a>添加可绑定属性支持的属性
 
 `WrapLayout`类定义 `ColumnSpacing` 和 `RowSpacing` 属性，其值用于分隔布局中的行和列，以及由可绑定属性支持的列。 下面的代码示例显示了可绑定的属性：
@@ -227,9 +207,7 @@ public static readonly BindableProperty RowSpacingProperty = BindableProperty.Cr
   });
 ```
 
-每个可绑定属性的属性更改处理程序将调用 `InvalidateLayout` 方法重写，以在上触发新的布局传递 `WrapLayout` 。 有关详细信息，请参阅[重写 InvalidateLayout 方法](#invalidatelayout)和[重写 OnChildMeasureInvalidated 方法](#onchildmeasureinvalidated)。
-
-<a name="onmeasure" />
+每个可绑定属性的属性更改处理程序将调用 `InvalidateLayout` 方法重写，以在上触发新的布局传递 `WrapLayout` 。 有关详细信息，请参阅[重写 InvalidateLayout 方法](#override-the-invalidatelayout-method)并重[写 OnChildMeasureInvalidated 方法](#override-the-onchildmeasureinvalidated-method)。
 
 #### <a name="override-the-onmeasure-method"></a>重写 OnMeasure 方法
 
@@ -250,12 +228,10 @@ protected override SizeRequest OnMeasure(double widthConstraint, double heightCo
 }
 ```
 
-重写调用 `GetLayoutData` 方法，并 `SizeRequest` 从返回的数据构造对象，同时考虑 `RowSpacing` 和 `ColumnSpacing` 属性值。 有关方法的详细信息 `GetLayoutData` ，请参阅[计算和缓存数据](#caching)。
+重写调用 `GetLayoutData` 方法，并 `SizeRequest` 从返回的数据构造对象，同时考虑 `RowSpacing` 和 `ColumnSpacing` 属性值。 有关方法的详细信息 `GetLayoutData` ，请参阅[计算和缓存布局数据](#calculate-and-cache-layout-data)。
 
 > [!IMPORTANT]
 > [ `Measure` ] （X： Xamarin.Forms 。VisualElement （system.string，System.web，. double， Xamarin.Forms 。MeasureFlags））和 [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) 方法不应通过返回 [`SizeRequest`](xref:Xamarin.Forms.SizeRequest) 属性设置为的值来请求无限维度 `Double.PositiveInfinity` 。 但至少有一个约束参数 `OnMeasure` 可以为 `Double.PositiveInfinity` 。
-
-<a name="layoutchildren" />
 
 #### <a name="override-the-layoutchildren-method"></a>重写 LayoutChildren 方法
 
@@ -304,11 +280,9 @@ protected override void LayoutChildren(double x, double y, double width, double 
 > [!NOTE]
 > 请注意，传递给方法的矩形 `LayoutChildIntoBoundingRegion` 包括子可驻留的整个区域。
 
-有关方法的详细信息 `GetLayoutData` ，请参阅[计算和缓存数据](#caching)。
+有关方法的详细信息 `GetLayoutData` ，请参阅[计算和缓存布局数据](#calculate-and-cache-layout-data)。
 
-<a name="invalidatelayout" />
-
-#### <a name="overridethe-invalidatelayout-method"></a>Overridethe InvalidateLayout 方法
+#### <a name="override-the-invalidatelayout-method"></a>重写 InvalidateLayout 方法
 
 在将 [`InvalidateLayout`](xref:Xamarin.Forms.Layout.InvalidateLayout) 子级添加到布局中或从布局中删除子级时，或在其中一个 `WrapLayout` 属性更改值时调用替代，如下面的代码示例所示：
 
@@ -325,8 +299,6 @@ protected override void InvalidateLayout()
 > [!NOTE]
 > 若要在 [`Layout`](xref:Xamarin.Forms.Layout) [`InvalidateLayout`](xref:Xamarin.Forms.Layout.InvalidateLayout) 从布局中添加或删除子级时停止调用方法的类，请重写 [ `ShouldInvalidateOnChildAdded` ] （x： Xamarin.Forms 。ShouldInvalidateOnChildAdded （ Xamarin.Forms 。查看））和 [ `ShouldInvalidateOnChildRemoved` ] （x： Xamarin.Forms 。ShouldInvalidateOnChildRemoved （ Xamarin.Forms 。查看））方法，并返回 `false` 。 然后，layout 类可以在添加或移除子级时实现自定义进程。
 
-<a name="onchildmeasureinvalidated" />
-
 #### <a name="override-the-onchildmeasureinvalidated-method"></a>重写 OnChildMeasureInvalidated 方法
 
 [`OnChildMeasureInvalidated`](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated)当某个布局的子级更改大小时，将调用替代，如以下代码示例所示：
@@ -340,8 +312,6 @@ protected override void OnChildMeasureInvalidated()
 ```
 
 重写会使子布局失效，并放弃所有缓存的布局信息。
-
-<a name="consuming" />
 
 ### <a name="consume-the-wraplayout"></a>使用 WrapLayout
 

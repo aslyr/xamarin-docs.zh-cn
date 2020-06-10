@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsAbsoluteLayout
-description: 本文介绍如何使用 Xamarin.Forms AbsoluteLayout 类创建完全像素的 ui。 此类根据子元素的大小和位置或绝对值来定位和调整其大小。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d81a80e1f1190cbdffd578024cf9c6db1e7737e1
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139238"
+标题： " Xamarin.Forms AbsoluteLayout" 说明： "本文介绍了如何使用 Xamarin.Forms AbsoluteLayout 类来创建像素理想的 ui。 此类根据子元素的大小和位置或绝对值来定位和调整其大小。
+ms-chap： xamarin assetid：01A5CCE0-AD45-4806-84FD-72C007005B38： xamarin 窗体作者： davidbritch： dabritch ms. 日期：11/25/2015 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-absolutelayout"></a>Xamarin.FormsAbsoluteLayout
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
@@ -27,14 +13,12 @@ ms.locfileid: "84139238"
 
 本文介绍：
 
-- **[目的](#Purpose)** &ndash;的常见用途 `AbsoluteLayout` 。
-- **[使用情况](#Usage)** &ndash;如何使用 `AbsoluteLayout` 来实现所需的设计。
-  - **[比例布局](#Proportional_Layouts)** &ndash;了解中的比例值如何工作 `AbsoluteLayout` 。
-  - **[指定值](#Specifying_Values)** &ndash;了解如何指定比例值和绝对值。
-  - **[比例值](#Proportional_Values)** &ndash;了解比例值的工作方式。
-    - **[绝对值](#Absolute_Values)** &ndash;了解绝对值的工作方式。
-
-<a name="Purpose" />
+- **[目的](#purpose)** &ndash;的常见用途 `AbsoluteLayout` 。
+- **[使用情况](#usage)** &ndash;如何使用 `AbsoluteLayout` 来实现所需的设计。
+  - **[比例布局](#proportional-layouts)** &ndash;了解中的比例值如何工作 `AbsoluteLayout` 。
+  - **[指定值](#specifying-values)** &ndash;了解如何指定比例值和绝对值。
+  - **[比例值](#proportional-values)** &ndash;了解比例值的工作方式。
+    - **[绝对值](#absolute-values)** &ndash;了解绝对值的工作方式。
 
 ## <a name="purpose"></a>目的
 
@@ -42,11 +26,7 @@ ms.locfileid: "84139238"
 
 `AbsoluteLayout`可用于任何需要在视图中定位的元素，在将元素对齐到边缘时特别有用。
 
-<a name="Usage" />
-
 ## <a name="usage"></a>使用情况
-
-<a name="Proportional_Layouts" />
 
 ### <a name="proportional-layouts"></a>比例布局
 
@@ -63,8 +43,6 @@ ms.locfileid: "84139238"
 ![](absolute-layout-images/anchor-center.png "Anchor at Center")
 ![](absolute-layout-images/anchor-end.png "Anchor at End")
 
-<a name="Specifying_Values" />
-
 ### <a name="specifying-values"></a>指定值
 
 `AbsoluteLayout`使用四个值定位中的视图：
@@ -74,7 +52,7 @@ ms.locfileid: "84139238"
 - **宽度** &ndash;视图的宽度
 - **高度** &ndash;视图的高度
 
-这些值中的每一个都可以设置为[成比例](#Proportional_Values)值或[绝对值](#Absolute_Values)。
+这些值中的每一个都可以设置为[成比例](#proportional-values)值或[绝对值](#absolute-values)。
 
 值指定为界限和标志的组合。 `LayoutBounds`由 [`Rectangle`](xref:Xamarin.Forms.Rectangle) 四个值组成： `x` 、 `y` 、 `width` 和 `height` 。
 
@@ -91,7 +69,7 @@ ms.locfileid: "84139238"
 - **PositionProportional** &ndash;将 `X` 和 `Y` 值解释为成比例，而大小值解释为绝对。
 - **SizeProportional** &ndash;将 `Width` 和 `Height` 值解释为比例，而位置值是绝对的。
 
-在 XAML 中，使用属性将边界和标志设置为布局中的视图定义的一部分 `AbsoluteLayout.LayoutBounds` 。 界限设置为以逗号分隔的值列表，按 `X` `Y` `Width` `Height` 顺序排列。 还可以使用属性在布局中的视图声明中指定标志 `AbsoluteLayout.LayoutFlags` 。 请注意，可以使用以逗号分隔的列表将标志组合到 XAML 中。 请考虑以下示例：
+在 XAML 中，使用属性将边界和标志设置为布局中的视图定义的一部分 `AbsoluteLayout.LayoutBounds` 。 界限设置为以逗号分隔的值列表，按 `X` `Y` `Width` `Height` 顺序排列。 还可以使用属性在布局中的视图声明中指定标志 `AbsoluteLayout.LayoutFlags` 。 请注意，可以使用以逗号分隔的列表将标志组合到 XAML 中。 请看下面的示例：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -169,8 +147,6 @@ public class AbsoluteLayoutExplorationCode : ContentPage
 }
 ```
 
-<a name="Proportional_Values" />
-
 ### <a name="proportional-values"></a>比例值
 
 比例值定义了布局和视图之间的关系。 此关系将子视图的位置或刻度值定义为父布局的相应值的比例值。 这些值用 `double` 0 到1之间的值表示。
@@ -193,8 +169,6 @@ var label = new Label {Text = "I'm bottom center on every device."};
 AbsoluteLayout.SetLayoutBounds(label, new Rectangle(.5,1,.5,.1));
 AbsoluteLayout.SetLayoutFlags(label, AbsoluteLayoutFlags.All);
 ```
-
-<a name="Absolute_Values" />
 
 ### <a name="absolute-values"></a>绝对值
 

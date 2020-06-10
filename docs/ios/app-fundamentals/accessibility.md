@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/18/2016
-ms.openlocfilehash: 31cae6d6770b4c8fc4ff722e67f4ddce8ffdd7c6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2259566fc6342a40a8c0a94bacd1c146b6509d52
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73011305"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574153"
 ---
 # <a name="accessibility-on-ios"></a>IOS 上的辅助功能
 
@@ -21,9 +21,9 @@ ms.locfileid: "73011305"
 
 ## <a name="describing-ui-elements"></a>描述 UI 元素
 
-iOS 提供 `AccessibilityLabel` 和 `AccessibilityHint` 属性，使开发人员能够添加 VoiceOver 屏幕阅读器可使用的描述性文本，使控件更易于访问。 控件还可以用一个或多个特征进行标记，这些特征在可访问模式下提供其他上下文。
+iOS 为 `AccessibilityLabel` 开发人员提供了和 `AccessibilityHint` 属性，以添加可供 VoiceOver 屏幕阅读器使用的描述性文本，使控件更易于访问。 控件还可以用一个或多个特征进行标记，这些特征在可访问模式下提供其他上下文。
 
-某些控件可能不需要访问（例如，文本输入中的标签或纯粹装饰的图像）–提供 `IsAccessibilityElement` 以在这些情况下禁用可访问性。
+某些控件可能不需要访问（例如，文本输入中的标签或纯粹装饰的图像）– `IsAccessibilityElement` 提供此功能可在这些情况下禁用辅助功能。
 
 **UI 设计器**
 
@@ -44,15 +44,15 @@ displayOnlyText.AccessibilityTraits = UIAccessibilityTrait.Header | UIAccessibil
 
 ### <a name="what-is-accessibilityidentifier"></a>什么是 AccessibilityIdentifier？
 
-`AccessibilityIdentifier` 用于设置唯一密钥，该密钥可用于通过 UIAutomation API 引用用户界面元素。
+`AccessibilityIdentifier`用于设置唯一键，该键可用于通过 UIAUTOMATION API 引用用户界面元素。
 
-`AccessibilityIdentifier` 的值永远不会被口述或显示给用户。
+的值永远不会 `AccessibilityIdentifier` 被口述或显示给用户。
 
-<a name="postnotification" />
+<a name="postnotification"></a>
 
 ## <a name="postnotification"></a>PostNotification
 
-`UIAccessibility.PostNotification` 方法允许事件在直接交互之外（例如，当与特定控件交互时）向用户引发。
+`UIAccessibility.PostNotification`方法允许事件在直接交互之外（例如，当用户与特定控件交互时）向用户引发。
 
 ### <a name="announcement"></a>公告
 
@@ -66,7 +66,7 @@ UIAccessibility.PostNotification (
 
 ### <a name="layoutchanged"></a>LayoutChanged
 
-屏幕布局时，将使用 `LayoutChanged` 公告：
+`LayoutChanged`屏幕布局时使用公告：
 
 ```csharp
 UIAccessibility.PostNotification (
@@ -80,7 +80,7 @@ UIAccessibility.PostNotification (
 
 **Mainstoryboard.storyboard**
 
-如果用户界面在情节提要中布局，则可以采用与其他属性相同的方式为辅助功能属性提供翻译。 在下面的示例中，`UITextField` 的**本地化 ID**为 `Pqa-aa-ury`，而两个可访问性属性是在西班牙语中设置的：
+如果用户界面在情节提要中布局，则可以采用与其他属性相同的方式为辅助功能属性提供翻译。 在下面的示例中，的 `UITextField` **本地化 ID**为 `Pqa-aa-ury` ，并且在西班牙语中设置了两个可访问性属性：
 
 ```csharp
 /* Accessibility */
@@ -100,7 +100,7 @@ UIAccessibility.PostNotification (
 "Provide more information" = "escriba más información";
 ```
 
-可以C#通过 `LocalizedString` 方法使用这些翻译：
+这些翻译可通过方法在 c # 中使用 `LocalizedString` ：
 
 ```csharp
 notesText.AccessibilityLabel = NSBundle.MainBundle.LocalizedString ("Notes", "");
@@ -109,7 +109,7 @@ notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more
 
 有关本地化内容的更多详细信息，请参阅[iOS 本地化指南](~/ios/app-fundamentals/localization/index.md)。
 
-<a name="testing" />
+<a name="testing"></a>
 
 ## <a name="testing-accessibility"></a>测试辅助功能
 
