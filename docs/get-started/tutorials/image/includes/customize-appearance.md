@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a83e3ae4069657df06967b7157809c7dc86ad941
-ms.sourcegitcommit: 99aa05bd9b5e3f66d134066b860f41b54fa2d850
+ms.openlocfilehash: 58ed33adbc25e026431609370075c24c3b6ba690
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82109703"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574667"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -20,7 +20,7 @@ ms.locfileid: "82109703"
 
     此代码将 [`Aspect`](xref:Xamarin.Forms.Image.Aspect) 属性设置为 [`Fill`](xref:Xamarin.Forms.Aspect.Fill)，该属性定义了图像的缩放模式。 `Fill` 成员在 [`Aspect`](xref:Xamarin.Forms.Aspect) 枚举中定义，并拉伸图像以完全填充视图，而不管图像是否扭曲。 有关图像缩放的详细信息，请参阅 [Xamarin.Forms 中的图像](~/xamarin-forms/user-interface/images.md)指南中的[显示图像](~/xamarin-forms/user-interface/images.md#display-images)。
 
-    通过 `OnPlatform` 标记扩展可基于每个平台自定义 UI 外观。 在此示例中，标记扩展程序用于将 [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) 和 [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) 属性设置为 iOS 上的 300 个与设备无关的单元，以及 Android 上的 250 个与设备无关的单元。 有关 `OnPlatform` 标记扩展的详细信息，请参阅[使用 XAML 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md)指南中的 [OnPlatform 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)。
+    通过 `OnPlatform` 标记扩展可基于每个平台自定义 UI 外观。 在此示例中，标记扩展程序用于将 [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) 和 [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) 属性设置为 iOS 上的 300 个与设备无关的单元，以及 Android 上的 250 个与设备无关的单元。 有关 `OnPlatform` 标记扩展的详细信息，请参阅[使用 XAML 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md)指南中的 [OnPlatform 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)。
 
     此外，[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 属性指定图像将水平居中。
 
@@ -42,7 +42,7 @@ ms.locfileid: "82109703"
 
     此代码将 [`Aspect`](xref:Xamarin.Forms.Image.Aspect) 属性设置为 [`Fill`](xref:Xamarin.Forms.Aspect.Fill)，该属性定义了图像的缩放模式。 `Fill` 成员在 [`Aspect`](xref:Xamarin.Forms.Aspect) 枚举中定义，并拉伸图像以完全填充视图，而不管图像是否扭曲。 有关图像缩放的详细信息，请参阅 [Xamarin.Forms 中的图像](~/xamarin-forms/user-interface/images.md)指南中的[显示图像](~/xamarin-forms/user-interface/images.md#display-images)。
 
-    通过 `OnPlatform` 标记扩展可基于每个平台自定义 UI 外观。 在此示例中，标记扩展程序用于在 iOS 上将 [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) 和 [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) 属性设置为 300，在 Android 上设置为 250。 有关 `OnPlatform` 标记扩展的详细信息，请参阅[使用 XAML 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md)指南中的 [OnPlatform 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)。
+    通过 `OnPlatform` 标记扩展可基于每个平台自定义 UI 外观。 在此示例中，标记扩展程序用于在 iOS 上将 [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) 和 [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) 属性设置为 300，在 Android 上设置为 250。 有关 `OnPlatform` 标记扩展的详细信息，请参阅[使用 XAML 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md)指南中的 [OnPlatform 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)。
 
     此外，[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 属性指定图像将水平居中。
 
