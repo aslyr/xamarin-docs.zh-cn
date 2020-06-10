@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 207b16f062a5c2137ac5fc3c21775d2486fda57d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135858"
+标题： "倾斜变换" 说明： "本文介绍了倾斜变换如何在 SkiaSharp 中创建倾斜的图形对象，并通过示例代码对此进行了演示。"
+ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： FDD16186-E3B7-4FF6-9BC2-8A2974BFF616 author： davidbritch： dabritch ms. 日期：03/20/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="the-skew-transform"></a>倾斜转换
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

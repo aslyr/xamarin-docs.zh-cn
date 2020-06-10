@@ -1,22 +1,8 @@
 ---
-title: ''
-description: '可以直接从 Xamarin.Forms 使用 c # 创建的页面中引用 iOS、Android 和 UWP 的本机视图。 本文演示如何将本机视图添加到 Xamarin.Forms 使用 c # 创建的布局中，以及如何替代自定义视图的布局来更正其度量 API 使用情况。'
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 18cdeccbdff86a6b20aab4b33db259f1f06ee096
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139589"
+标题： "c # 中的本机视图" 说明：可以直接从 Xamarin.Forms 使用 c # 创建的页面中引用 iOS、Android 和 UWP 的本机视图。 本文演示如何将本机视图添加到 Xamarin.Forms 使用 c # 创建的布局中，以及如何替代自定义视图的布局来更正其度量 API 使用情况。
+ms-chap： xamarin assetid：230F937C-F914-4B21-8EA1-1A2A9E644769： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/27/2016 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="native-views-in-c"></a>C 中的本机视图\#
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
@@ -38,9 +24,9 @@ Xamarin.Forms允许 `Content` 设置或具有集合的任何控件 `Children` �
 
 在共享项目中使用这些方法 Xamarin.Forms 需要导入相应的特定于平台的 Xamarin.Forms 命名空间：
 
-- **iOS** – Xamarin.Forms 。Platform.string
-- **Android** – Xamarin.Forms 。Platform.string
-- **通用 Windows 平台（UWP）** – Xamarin.Forms 。Platform.string
+- **iOS** – Xamarin.Forms.Platform.iOS
+- **Android** – Xamarin.Forms.Platform.Android
+- **通用 Windows 平台 (UWP)** – Xamarin.Forms.Platform.UWP
 
 ## <a name="adding-platform-specific-views-on-each-platform"></a>在每个平台上添加平台特定的视图
 

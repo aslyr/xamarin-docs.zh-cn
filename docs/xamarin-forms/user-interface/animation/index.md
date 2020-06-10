@@ -1,9 +1,6 @@
 ---
-标题： "说明：" 中的 "动画" Xamarin.Forms Xamarin.Forms 包含自己的动画基础结构，该基础结构简单地用于创建简单的动画，同时也足以创建复杂的动画。
-ms-chap： assetid： ms-chap： author： ms. 作者： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+标题： "说明：" 中的动画 Xamarin.Forms Xamarin.Forms 包含自己的动画基础结构，该基础结构简单地用于创建简单的动画，同时也足以创建复杂的动画。 "
+ms-chap： xamarin assetid： AC0B4127-ECA3-44DA-8A24-A2B10A275083： xamarin 窗体作者： davidbritch： dabritch ms. 日期：07/14/2016 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="animation-in-xamarinforms"></a>动画Xamarin.Forms

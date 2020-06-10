@@ -1,23 +1,7 @@
 ---
-title: ''
-description: Xamarin.Forms现在对 WPF 平台提供预览版支持
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: bbb9ea950c9f1daa1b5ee4762527d689f3cdd483
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139524"
+标题： "WPF 平台设置" 说明： " Xamarin.Forms 现在为 wpf 平台提供预览版支持" assetid： xamarin： xamarin： xamarin： xamarin： xamarin： xamarin：650723F2-4279-4B7B-B0A1-D7F8FF26BF1E： xamu：：： davidbritch： dabritch： ms. 日期： 04/09/2020 Xamarin.Forms Xamarin.Essentials
 ---
+
 # <a name="wpf-platform-setup"></a>WPF 平台安装
 
 ![预览](~/media/shared/preview.png)

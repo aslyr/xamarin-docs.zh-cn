@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b0fecac02c44e3ba721dd4625e7bee264c6869d0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134753"
+title： "显示 SkiaSharp 位图" 说明： "了解如何以像素大小显示 SkiaSharp 位图并在保持纵横比的同时扩展以填充矩形。"
+ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 8E074F8D-4715-4146-8CC0-FD7A8290EDE9 author： davidbritch： dabritch ms. 日期：07/17/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="displaying-skiasharp-bitmaps"></a>显示 SkiaSharp 位图
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

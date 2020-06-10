@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 52be7641ac3b2983f537e11bccd76f2a5b52574d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130177"
+标题： "不可分离的混合模式" 说明： "使用非分离混合模式改变色相、饱和度或发光度"。
+ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 97FA2730-87C0-4914-8C9F-C64A02CF9EEF author： davidbritch： dabritch ms. 日期：08/23/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="the-non-separable-blend-modes"></a>非分离混合模式
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -46,125 +32,11 @@ HSL 值（0，100，50）是 RGB 值（FF，00，00），这是纯红色。 HSL 
 与其他混合模式一样，四个非分离混合模式都涉及目标（通常是位图图像）和源（通常是一种颜色或渐变）。 混合模式结合了目标和源中的色相、饱和度和明度值：
 
 | 混合模式   | 来自源的组件 | 目标中的组件 |
-| ---
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------- |---标题：说明： ms. 生产： assetid： author： author： ms-chap：不是-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------------ |---标题：说明： ms. 生产： assetid： author： author： ms-chap：不是-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--------------- | |`Hue`        |色调 |饱和度和发光度 | |`Saturation` |饱和度 |色调和发光度 | |`Color`      |色调和饱和度 |发光度 | |`Luminosity` |发光度 |色调和饱和度 | 
+| ------------ | ---------------------- | --------------------------- |
+| `Hue`        | 色调                    | 饱和度和发光度   |
+| `Saturation` | 饱和度             | 色调和发光度          |
+| `Color`      | 色调和饱和度     | 明度                  | 
+| `Luminosity` | 明度             | 色调和饱和度          | 
 
 请参阅算法的 W3C[**合成和混合等级 1**](https://www.w3.org/TR/compositing-1/)规范。
 
@@ -325,11 +197,11 @@ public partial class NonSeparableBlendModesPage : ContentPage
 
 ## <a name="a-matte-for-a-separable-mode"></a>分离模式的遮罩
 
-下面是[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例中作为一项资源包含的位图。 文件名为**香蕉**：
+下面是[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例中作为一项资源包含的位图。 文件名为**Banana.jpg**：
 
 ![香蕉猴子](non-separable-images/Banana.jpg "香蕉猴子")
 
-可以创建只包含香蕉的遮罩。 这也是[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例中的资源。 文件名为**BananaMatte**：
+可以创建只包含香蕉的遮罩。 这也是[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例中的资源。 文件名为**BananaMatte.png**：
 
 ![香蕉遮罩](non-separable-images/BananaMatte.png "香蕉遮罩")
 
@@ -337,7 +209,7 @@ public partial class NonSeparableBlendModesPage : ContentPage
 
 **Blue 香蕉**页面使用该遮罩改变猴子所持有的香蕉的色调和饱和度，但不更改图像中的任何其他内容。 
 
-在下面的 `BlueBananaPage` 类中，**香蕉**位图作为一个字段加载。 构造函数将**BananaMatte**位图作为 `matteBitmap` 对象加载，但它不会将该对象保留在构造函数之外。 而是创建一个名为的第三个位图 `blueBananaBitmap` 。 `matteBitmap`绘制 `blueBananaBitmap` 后跟一个， `SKPaint` 其 `Color` 设置为蓝色，其 `BlendMode` 设置为 `SKBlendMode.SrcIn` 。 `blueBananaBitmap`通常是透明的，但具有纯纯蓝色的香蕉图像：
+在下面的 `BlueBananaPage` 类中， **Banana.jpg**位图作为一个字段加载。 构造函数将**BananaMatte.png**位图作为对象加载 `matteBitmap` ，但它不会将该对象保留在构造函数之外。 而是创建一个名为的第三个位图 `blueBananaBitmap` 。 `matteBitmap`绘制 `blueBananaBitmap` 后跟一个， `SKPaint` 其 `Color` 设置为蓝色，其 `BlendMode` 设置为 `SKBlendMode.SrcIn` 。 `blueBananaBitmap`通常是透明的，但具有纯纯蓝色的香蕉图像：
 
 ```csharp
 public class BlueBananaPage : ContentPage

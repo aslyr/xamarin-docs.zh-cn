@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e8d11add988828fa4e26d3f6728dd0b4319b3630
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133297"
+标题： "SkiaSharp 中的矩阵转换" 说明： "此文章深入更深入地介绍了通用转换矩阵的 SkiaSharp 转换，并通过示例代码演示了这一点。"
+ms-chap： xamarin ms. 技术： xamarin-skiasharp assetid： 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4 author： davidbritch： dabritch ms. 日期：04/12/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="matrix-transforms-in-skiasharp"></a>SkiaSharp 中的矩阵转换
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

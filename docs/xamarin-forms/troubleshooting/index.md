@@ -1,24 +1,8 @@
 ---
-title: ''
-description: ''
-ms.topic: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 237dfd637d5456636afd19ea0175cb388773d273
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135910"
+标题： "故障排除" 说明： "常见错误情况和解决方法"。主题：疑难解答 ms-chap： xamarin assetid：63291951-7375-4CBF-BCC3-2E4AD157A2C8 毫秒。技术： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/25/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
-# <a name="troubleshooting"></a>故障排除
+
+# <a name="troubleshooting"></a>疑难解答
 
 _常见错误情况和解决方法_
 

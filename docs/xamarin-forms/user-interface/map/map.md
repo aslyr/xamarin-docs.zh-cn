@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsMap Control
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 32564b48b6d5e7acc619a966af30a086fb56d5e6
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129397"
+title： " Xamarin.Forms Map Control" 说明： "地图控件是一个跨平台视图，用于显示和批注地图。 它使用每个平台的本机地图控件，为用户提供快速且熟悉的地图体验。 "
+ms-chap： xamarin assetid：22C99029-0B16-43A6-BF58-26B48C4AED38： xamarin 窗体作者： davidbritch： dabritch ms. 日期：10/29/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-map-control"></a>Xamarin.FormsMap Control
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

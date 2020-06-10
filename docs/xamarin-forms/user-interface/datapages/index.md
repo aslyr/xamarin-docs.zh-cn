@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsDataPages
-description: 本文介绍 Xamarin.Forms DataPages，它提供了一个 API，用于快速轻松地将数据源绑定到预先生成的视图。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 7d99870dd975d0996ffcd05d4aef153f3515ec9e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134311"
+标题： " Xamarin.Forms DataPages" 说明： "本文介绍了 Xamarin.Forms DataPages，它提供了一个 API，可快速轻松地将数据源绑定到预先生成的视图。"
+ms-chap： xamarin assetid： DF16EAEE-DB78-42CA-9C59-51D9D6CB6B95： xamarin 窗体作者： davidbritch： dabritch ms. 日期：12/01/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-datapages"></a>Xamarin.FormsDataPages
 
 ![](~/media/shared/preview.png "This API is currently in preview")
@@ -32,13 +18,13 @@ DataPages 提供了一个 API，用于快速轻松地将数据源绑定到预先
 
 [![](images/demo-sml.png "DataPages Sample Application")](images/demo.png#lightbox "DataPages Sample Application")
 
-## <a name="introduction"></a>简介
+## <a name="introduction"></a>介绍
 
 数据源和关联的数据页使开发人员能够快速轻松地使用受支持的数据源，并使用可使用主题自定义的内置 UI 基架对其进行呈现。
 
 通过包括将 DataPages 添加到 Xamarin.Forms 应用程序** Xamarin.Forms 。页面**NuGet 包。
 
-### <a name="data-sources"></a>数据源
+### <a name="data-sources"></a>Data Sources
 
 预览版有一些可供使用的预生成数据源：
 

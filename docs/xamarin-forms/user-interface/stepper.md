@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms步进
-description: Xamarin.Forms分档器允许用户从一系列值中选择一个数值。 它包含以减号和加号标记的两个按钮。 操作这两个按钮会以增量方式更改所选值。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4f071530fb17de44d8ede786ca1b42f5e11f4f7c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130541"
+title： " Xamarin.Forms 分档器" 说明： " Xamarin.Forms 分档器允许用户从一系列值中选择一个数值。 它包含以减号和加号标记的两个按钮。 操作这两个按钮会以增量方式更改所选的值。 "
+ms-chap： xamarin assetid：62571B3E-D84B-4F52-9FC7-C105D6733B16： xamarin 窗体作者： davidbritch： dabritch ms. 日期：10/17/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-stepper"></a>Xamarin.Forms步进
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)

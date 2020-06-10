@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCarouselView 数据
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1081bfafae8e4d7a7a522414e9b45cde48037f1d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136547"
+标题： " Xamarin.Forms CarouselView data" 说明： "CarouselView 是通过将数据的 system.windows.controls.itemscontrol.itemssource 属性设置为任何实现 IEnumerable 的集合来填充的。"
+ms-chap： xamarin assetid：20DB2C57-CE3A-4D91-80DC-73AE361A3CB0： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/29/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-carouselview-data"></a>Xamarin.FormsCarouselView 数据
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -103,7 +89,7 @@ carouselView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 > [!NOTE]
 > 可以启用编译的绑定以提高应用程序中的数据绑定性能 Xamarin.Forms 。 有关详细信息，请参阅[已编译的绑定](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)。
 
-有关数据绑定的详细信息，请参阅[ Xamarin.Forms 数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
+若要深入了解数据绑定，请参阅 [Xamarin.Forms 数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
 
 ## <a name="define-item-appearance"></a>定义项外观
 
@@ -198,7 +184,7 @@ public class Monkey
 
 [![IOS 和 Android 上每个项的模板 CarouselView 的屏幕截图](populate-data-images/datatemplate.png "CarouselView 中的模板化项")](populate-data-images/datatemplate-large.png#lightbox "CarouselView 中的模板化项")
 
-有关数据模板的详细信息，请参阅[ Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
+有关数据模板的详细信息，请参阅 [Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
 
 ## <a name="choose-item-appearance-at-runtime"></a>在运行时选择项外观
 

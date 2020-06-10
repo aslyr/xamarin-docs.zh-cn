@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms提货
-description: Xamarin.Forms选取器将显示项目的简短列表，用户可从中选择项。 本文介绍如何使用选取器类从数据列表中选择文本项。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 50f605f4ad9839521fd4169531ad46d197f20dbf
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139645"
+标题： " Xamarin.Forms 选取器" 说明： " Xamarin.Forms 选取器显示一小项列表，用户可从该列表中选择项。 本文介绍如何使用选取器类从数据列表中选择文本项。 "
+ms-chap： xamarin assetid： D4815A4B-104B-4294-951B-BD8F2EC33C86： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/26/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-picker"></a>Xamarin.Forms提货
 
 _"选取器" 视图是用于从数据列表中选择文本项的控件。_

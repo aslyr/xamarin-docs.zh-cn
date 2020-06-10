@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCarouselView 滚动
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 462948905f40679e2b931d4aa0039308c64a0a8f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136486"
+标题： " Xamarin.Forms CarouselView 滚动" 说明： "当用户 swipes 启动滚动时，可以控制滚动的结束位置，以便完全显示项。 此外，CarouselView 还定义了两个 ScrollTo 方法，这些方法以编程方式将项滚动到视图。 "
+ms-chap： xamarin assetid：92D7B618-07FA-4343-9D0F-212525E92C39： xamarin 窗体作者： davidbritch： dabritch ms. 日期：01/28/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-carouselview-scrolling"></a>Xamarin.FormsCarouselView 滚动
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -135,7 +121,7 @@ carouselView.ScrollTo(monkey, position: ScrollToPosition.MakeVisible);
 > [!NOTE]
 > [`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition)默认情况下，如果在 `position` 调用方法时未指定参数，则使用成员 `ScrollTo` 。
 
-### <a name="start"></a>开始
+### <a name="start"></a>启动
 
 [`ScrollToPosition.Start`](xref:Xamarin.Forms.ScrollToPosition)成员指示该项应滚动到视图的开头：
 
@@ -231,7 +217,7 @@ CarouselView carouselView = new CarouselView
 > [!IMPORTANT]
 > [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)仅当 [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) 属性设置为或时，才考虑属性的值 `Mandatory` `MandatorySingle` 。
 
-#### <a name="start"></a>开始
+#### <a name="start"></a>启动
 
 `SnapPointsAlignment.Start`成员指示对齐点与项的开头边缘对齐。 下面的 XAML 示例演示如何设置此枚举成员：
 

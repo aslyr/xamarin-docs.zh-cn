@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms旁边
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8399dde2e4e2c9fb53b38fca2923eb0e3bfc6ce3
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136469"
+标题： " Xamarin.Forms 复选框" 说明： " Xamarin.Forms 复选框是可以选中或为空的按钮类型。 选中复选框后，它将被视为已启用。 如果复选框为空，则将其视为关闭。 "
+ms-chap： xamarin assetid： B8B9268B-BCB8-42B9-B08C-C0F22C137238： xamarin 窗体作者： davidbritch： dabritch ms. 日期：06/11/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-checkbox"></a>Xamarin.Forms旁边
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
@@ -161,10 +147,10 @@ checkBox.CheckedChanged += (sender, e) =>
 
 在此示例中， `IsChecked` [`VisualState`](xref:Xamarin.Forms.VisualState) 指定在选中时 `CheckBox` ，其 `Color` 属性将设置为绿色。 `Normal` `VisualState` 指定在 `CheckBox` 处于正常状态时，其 `Color` 属性将设置为红色。 因此，整体效果是在为 `CheckBox` 空时为红色，选中时为绿色。
 
-有关可视状态的详细信息，请参阅[ Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)。
+若要详细了解可视状态，请参阅 [Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)。
 
 ## <a name="related-links"></a>相关链接
 
 - [复选框演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
-- [Xamarin.Forms导致](~/xamarin-forms/app-fundamentals/triggers.md)
-- [Xamarin.Forms视觉状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.Forms 触发器](~/xamarin-forms/app-fundamentals/triggers.md)
+- [Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)

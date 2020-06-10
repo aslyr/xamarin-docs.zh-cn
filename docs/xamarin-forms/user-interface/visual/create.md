@@ -1,22 +1,8 @@
 ---
-title: 创建 Xamarin.Forms 可视化呈现器
-description: 创建 Xamarin.Forms 可有选择地应用于 VisualElement 对象的视觉对象，而无需为视图创建子类 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 23edbb007e912d13858686d1c5ec574c9e3349c7
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127135"
+标题： "创建 Xamarin.Forms 视觉对象呈现器" 说明： "创建 Xamarin.Forms 可有选择地应用于 VisualElement 对象的视觉对象，而无需为视图创建子类 Xamarin.Forms 。"
+ms-chap： xamarin assetid：80BF9C72-AC28-4AAF-9DDD-B60CBDD1CD59： xamarin 窗体作者： davidbritch： dabritch ms. 日期：03/12/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="create-a-xamarinforms-visual-renderer"></a>创建 Xamarin.Forms 可视化呈现器
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
@@ -176,5 +162,5 @@ button.Visual = new CustomVisual();
 ## <a name="related-links"></a>相关链接
 
 - [材料视觉对象（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
-- [Xamarin.Forms材料视觉对象](material-visual.md)
+- [Xamarin.Forms 材料视觉对象](material-visual.md)
 - [自定义呈现器](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)

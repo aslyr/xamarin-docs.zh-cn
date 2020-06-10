@@ -1,25 +1,11 @@
 ---
-title: Xamarin.Forms和 Azure 认知服务
-description: Xamarin.Forms利用 Azure 认知服务将智能添加到应用程序，包括语音识别、拼写检查、文本翻译和情感识别。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 64f5dce9337444a1e910a11a69426964a09ac05a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136014"
+标题： " Xamarin.Forms 和 Azure 认知服务" 说明： " Xamarin.Forms 通过 Azure 认知服务将智能添加到应用程序，包括语音识别、拼写检查、文本翻译和情感识别"。
+ms-chap： xamarin assetid：64386A65-FD31-4A1B-A769-91495E57345A： xamarin 窗体作者： davidbritch： dabritch ms. 日期：06/27/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-and-azure-cognitive-services"></a>Xamarin.Forms和 Azure 认知服务
 
-## <a name="introduction"></a>[简介](introduction.md)
+## <a name="introduction"></a>[介绍](introduction.md)
 
 Microsoft 认知服务是一组可供开发人员使用的 Api、Sdk 和服务，通过添加面部识别、语音识别和语言理解等功能，使应用程序更智能。 本文介绍了演示如何从应用程序调用某些 Microsoft 认知服务 Api 的示例应用程序 Xamarin.Forms 。
 

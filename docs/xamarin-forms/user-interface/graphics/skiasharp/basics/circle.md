@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文介绍了 SkiaSharp 的基础知识，包括画布和画图对象（在应用程序中）， Xamarin.Forms 并通过示例代码对此进行了演示。
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: fb873102bfb8568b8298a39ea2429fb6c27af175
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137717"
+标题： "在 SkiaSharp 中绘制简单圆圈" 说明： "本文介绍了 SkiaSharp 绘图的基本知识，包括画布和画图对象，在 Xamarin.Forms 应用程序中，并使用示例代码演示了这一点。"
+ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： E3A4E373-F65D-45C8-8E77-577A804AC3F8 author： davidbritch： dabritch ms. 日期：03/10/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>在 SkiaSharp 中绘制简单圆圈
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -63,8 +49,8 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [`SKPaintSurfaceEventArgs`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs)事件附带的对象有两个属性：
 
-- [`Info`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Info)类型为[`SKImageInfo`](xref:SkiaSharp.SKImageInfo)
-- [`Surface`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Surface)类型为[`SKSurface`](xref:SkiaSharp.SKSurface)
+- [`SKImageInfo`](xref:SkiaSharp.SKImageInfo) 类型的 [`Info`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Info)
+- [`SKSurface`](xref:SkiaSharp.SKSurface) 类型的 [`Surface`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Surface)
 
 `SKImageInfo`结构包含有关绘制图面的信息，最重要的是，它的宽度和高度（以像素为单位）。 `SKSurface`对象表示绘图图面本身。 在此程序中，绘图图面为视频显示，但在其他程序中， `SKSurface` 对象还可以表示使用 SkiaSharp 在上进行绘制的位图。
 

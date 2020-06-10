@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Xamarin.Forms提供三个类似于弹出式的用户界面元素-警报、操作表和提示。 本文演示如何使用警报、操作表和提示 Api 来显示询问用户简单问题的对话框、指导用户完成任务以及显示提示。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a7ddd9134b7214b84a883e171d7b0cadaba3390b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136313"
+标题： "显示弹出窗口" 说明： " Xamarin.Forms 提供三个类似于弹出式的用户界面元素-警报、操作表和提示。 本文演示如何使用警报、操作表和提示 Api 来显示询问用户简单问题的对话框、指导用户完成任务以及显示提示。 "
+ms-chap： xamarin assetid：46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E： xamarin 窗体作者： davidbritch： dabritch ms. 日期：03/10/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="display-pop-ups"></a>显示弹出窗口
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)

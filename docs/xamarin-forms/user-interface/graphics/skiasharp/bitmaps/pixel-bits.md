@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9018cbe6e41350b22a0f1f91858017531c75a0ac
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135574"
+标题： "访问 SkiaSharp 位图像素位" 说明： "发现用于访问和修改 SkiaSharp 位图的像素位的各种技术。"
+ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： DBB58522-F816-4A8C-96A5-E0236F16A5C6 author： davidbritch： dabritch ms. 日期：07/11/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>访问 SkiaSharp 位图像素位
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -490,30 +476,15 @@ public class GradientBitmapPage : ContentPage
 下面是以毫秒为单位的表，用于合并执行时间：
 
 | API       | 数据类型 | iOS  | Android | UWP  |
-| ---
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ |---标题：说明： ms. 生产： assetid： author： author： ms-chap：不是-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ |----： |---标题：说明： assetid： ms. 技术： ms.：作者：： ms. 作者： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
-----:| ----:| |SetPixel |          |3.17 |  10.77 |3.49 | |像素 |          |0.32 |   1.23 |0.07 | |GetPixels |byte |0.09 |   0.24 |0.10 | |          |uint |0.06 |   0.26 |0.05 | |          |SKColor |0.29 |   0.99 |0.07 | |SetPixels |byte |1.33 |   6.78 |0.11 | |          |uint |0.14 |   0.69 |0.06 | |          |SKColor |0.35 |   1.93 |0.10 |
+| --------- | --------- | ----:| -------:| ----:|
+| SetPixel  |           | 3.17 |   10.77 | 3.49 |
+| 像素    |           | 0.32 |    1.23 | 0.07 |
+| GetPixels | 字节      | 0.09 |    0.24 | 0.10 |
+|           | uint      | 0.06 |    0.26 | 0.05 |
+|           | SKColor   | 0.29 |    0.99 | 0.07 |
+| SetPixels | 字节      | 1.33 |    6.78 | 0.11 |
+|           | uint      | 0.14 |    0.69 | 0.06 |
+|           | SKColor   | 0.35 |    1.93 | 0.10 |
 
 如预期那样，调用 `SetPixel` 65536 时间是设置位图像素的最 effeicient 方法。 填充 `SKColor` 数组并设置 `Pixels` 属性要好得多，甚至比较了一些 `GetPixels` 和 `SetPixels` 技巧。 通常，使用 `uint` 像素值的速度要快于设置单独的 `byte` 组件，并将 `SKColor` 值转换为无符号整数会给进程增加一些开销。
 

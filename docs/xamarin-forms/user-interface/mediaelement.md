@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsMediaElement
-description: 本文介绍如何使用 MediaElement 在应用程序中播放视频和音频 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1dfa51177bba3ebf1e3e29208cc926c77567a048
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134233"
+标题： " Xamarin.Forms MediaElement" 说明： "本文介绍了如何在应用程序中使用 MediaElement 播放视频和音频 Xamarin.Forms 。"
+ms-chap： xamarin assetid： e65f1e56-a80d-46c7-9ff4-7ae6650a3165： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/18/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-mediaelement"></a>Xamarin.FormsMediaElement
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -103,7 +89,7 @@ Device.SetFlags(new string[]{ "MediaElement_Experimental" });
 对于每个平台，将媒体文件存储在平台项目中是不同的：
 
 - 在 iOS 上，必须将媒体文件存储在**resources 文件夹或** **resources**文件夹的子文件夹中。 媒体文件必须具有 `Build Action` 的 `BundleResource` 。
-- 在 Android 上，媒体文件必须存储在名为**raw**的**资源**的子文件夹中。 “raw”文件夹不能包含子文件夹****。 媒体文件必须具有 `Build Action` 的 `AndroidResource` 。
+- 在 Android 上，媒体文件必须存储在名为**raw**的**资源**的子文件夹中。 “raw”文件夹不能包含子文件夹。 媒体文件必须具有 `Build Action` 的 `AndroidResource` 。
 - 在 UWP 上，媒体文件可以存储在项目中的任何文件夹中。 媒体文件必须具有 `BuildAction` 的 `Content` 。
 
 然后，可以使用 URI 方案播放满足这些条件的媒体文件 `ms-appx:///` ：
@@ -324,7 +310,7 @@ protected override void OnDisappearing()
 
 ## <a name="implement-custom-transport-controls"></a>实现自定义传输控件
 
-媒体播放器的传输控制包括执行这些功能的按钮： "**播放**"、"**暂停**" 和 "**停止**"。 这些按钮通常使用熟悉的图标而非文本来标识，且“播放”和“暂停”功能通常合并成一个按钮********。
+媒体播放器的传输控制包括执行这些功能的按钮： "**播放**"、"**暂停**" 和 "**停止**"。 这些按钮通常使用熟悉的图标而非文本来标识，且“播放”和“暂停”功能通常合并成一个按钮 。
 
 默认情况下， [`MediaElement`](xref:Xamarin.Forms.MediaElement) 播放控件处于禁用状态。 这使你能够以 `MediaElement` 编程方式控制，或者提供自己的传输控件。 为支持此， `MediaElement` 包括 [`Play`](xref:Xamarin.Forms.MediaElement.Play) 、 [`Pause`](xref:Xamarin.Forms.MediaElement.Pause) 和 [`Stop`](xref:Xamarin.Forms.MediaElement.Stop) 方法。
 
@@ -542,7 +528,7 @@ public class PositionSlider : Slider
 
 - [MediaElementDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
 - [URI 方案](/windows/uwp/app-resources/uri-schemes)
-- [Xamarin.Forms导致](~/xamarin-forms/app-fundamentals/triggers.md)
+- [Xamarin.Forms 触发器](~/xamarin-forms/app-fundamentals/triggers.md)
 - [Xamarin.Forms滑动](~/xamarin-forms/user-interface/slider.md)
 - [Android：支持的媒体格式](https://developer.android.com/guide/topics/media/media-formats)
 - [UWP：支持的编解码器](/windows/uwp/audio-video-camera/supported-codecs)

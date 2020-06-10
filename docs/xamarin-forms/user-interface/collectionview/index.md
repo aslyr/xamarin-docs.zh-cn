@@ -1,25 +1,11 @@
 ---
-title: Xamarin.FormsCollectionView
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a2c9fd9e6e48192bc2237d6b451b533fcee6e6ed
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136443"
+标题： " Xamarin.Forms CollectionView" 说明： "CollectionView 是一种灵活且高性能的视图，可使用不同的布局规范呈现数据列表。"
+ms-chap： xamarin assetid：2BC9B223-2D5C-4B09-849C-B9D578954557： xamarin 窗体作者： davidbritch： dabritch ms. 日期：07/24/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
-# <a name="xamarinforms-collectionview"></a>Xamarin.FormsCollectionView
 
-## <a name="introduction"></a>[简介](introduction.md)
+# <a name="xamarinforms-collectionview"></a>Xamarin.Forms CollectionView
+
+## <a name="introduction"></a>[介绍](introduction.md)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)是一个灵活且高性能的视图，可使用不同的布局规范呈现数据列表。
 
@@ -43,6 +29,6 @@ ms.locfileid: "84136443"
 
 当用户 swipes 启动滚动时，可以控制滚动的结束位置，以便完全显示项。 此外，还 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 定义了两种 [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) 方法，这些方法以编程方式将项滚动到视图中。 其中一个重载将指定索引处的项滚动到视图中，而另一个重载将指定项滚动到视图中。
 
-## <a name="grouping"></a>[对](grouping.md)
+## <a name="grouping"></a>[分组](grouping.md)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)可以通过将其属性设置为，来显示正确分组的数据 `IsGrouped` `true` 。

@@ -1,9 +1,6 @@
 ---
-标题： " Xamarin.Forms 映射初始化和配置" 说明： " Xamarin.Forms 。在应用程序中使用地图功能需要 maps NuGet 包。 此外，访问用户的位置时，需要向应用程序授予 location 权限。
-ms-chap： assetid： ms-chap： author： ms. 作者： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+标题： " Xamarin.Forms 映射初始化和配置" 说明： " Xamarin.Forms 。在应用程序中使用地图功能需要 maps NuGet 包。 此外，访问用户的位置时，需要向应用程序授予 location 权限。 "
+ms-chap： xamarin assetid：59CD1344-8248-406C-9144-0C8A67141E5B： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/07/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin.Forms映射初始化和配置
@@ -87,13 +84,13 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 1. 可有可无指定清单中的位置权限。
 1. 可有可无类中的请求运行时位置权限 `MainActivity` 。
 
-有关正确配置的清单文件的示例，请参见示例应用程序中的[androidmanifest.xml](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/WorkingWithMaps.Android/Properties/AndroidManifest.xml) 。
+有关正确配置的清单文件的示例，请参阅示例应用程序中的[AndroidManifest.xml](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/WorkingWithMaps.Android/Properties/AndroidManifest.xml) 。
 
 #### <a name="get-a-google-maps-api-key"></a>获取 Google Maps API 密钥
 
 若要在 Android 上使用[Google MAPS api](https://developers.google.com/maps/documentation/android/) ，必须生成 API 密钥。 为此，请按照[获取 Google MAPS API 密钥](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)中的说明进行操作。
 
-获取 API 密钥后，必须将其添加到 `<application>` **Properties/androidmanifest.xml**文件的元素中：
+获取 API 密钥后，必须将其添加到 `<application>` **Properties/AndroidManifest.xml**文件的元素中：
 
 ```xml
 <application ...>
@@ -110,7 +107,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 #### <a name="specify-the-google-play-services-version-number"></a>指定 Google Play 服务版本号
 
-在 Androidmanifest.xml 的元素中添加以下声明 `<application>` ： **AndroidManifest.xml**
+在AndroidManifest.xml的元素中添加以下声明 `<application>` ： ** **
 
 ```xml
 <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
@@ -120,7 +117,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 #### <a name="specify-the-requirement-for-the-apache-http-legacy-library"></a>指定 Apache HTTP 旧版本库的要求
 
-如果 Xamarin.Forms 应用程序面向 API 28 或更高版本，则必须在 androidmanifest.xml 的元素中添加以下声明 `<application>` ： **AndroidManifest.xml**
+如果 Xamarin.Forms 应用程序面向 API 28 或更高版本，则必须在AndroidManifest.xml的元素中添加以下声明 `<application>` ： ** **
 
 ```xml
 <uses-library android:name="org.apache.http.legacy" android:required="false" />    

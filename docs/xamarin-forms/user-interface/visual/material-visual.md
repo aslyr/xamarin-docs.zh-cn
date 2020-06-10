@@ -1,23 +1,9 @@
 ---
-title: Xamarin.Forms材料视觉对象
-description: Xamarin.Forms材料视觉对象可用于创建 Xamarin.Forms 在 iOS 和 Android 上大致完全相同的应用程序。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: bba7d77d8cf565b1b2db2c1324e171389c5d0280
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127162"
+标题： " Xamarin.Forms 材料视觉对象描述：" Xamarin.Forms 可以使用 "材料视觉对象" 创建 Xamarin.Forms 在 iOS 和 Android 上大致相同的应用程序。
+ms-chap： xamarin assetid： B774F68C-EF9E-49E1-B738-CDC64879ADA2： xamarin 窗体作者： profexorgeek： jusjohns ms. 日期：11/25/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
-# <a name="xamarinforms-material-visual"></a>Xamarin.Forms材料视觉对象
+
+# <a name="xamarinforms-material-visual"></a>Xamarin.Forms 材料视觉对象
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
 

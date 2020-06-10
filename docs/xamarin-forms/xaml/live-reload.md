@@ -1,23 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-robots: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b67594e2675c774512f3bf64f2e91ef10dbff444
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134207"
+标题： "Xamarin Live 重载（预览版）" 说明： "查看对 XAML 所做的更改，无需另一个编译和部署。"
+ms-chap： xamarin assetid：4917273d-32f9-401a-a52c-5cfb53a2170d： xamarin 窗体作者： pierceboggan： piboggan 机器人： noindex ms. 日期：10/26/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarin-live-reload-preview"></a>Xamarin Live 重载（预览版）
 
 > [!NOTE]
@@ -111,7 +96,7 @@ public partial class App : Application
 
 ### <a name="does-it-require-debugging-the-app"></a>是否需要调试应用？ 
 
-不能。 事实上，您甚至可以在任意数量的设备或模拟器/仿真器上启动所有受支持的应用程序目标（Android、iOS 和 UWP），并同时查看所有更新。 
+不是。 事实上，您甚至可以在任意数量的设备或模拟器/仿真器上启动所有受支持的应用程序目标（Android、iOS 和 UWP），并同时查看所有更新。 
 
 ## <a name="limitations"></a>限制
 
@@ -127,7 +112,7 @@ public partial class App : Application
 * 包含 AutomationId 的元素可能会导致重新加载失败。
 * 在调试 UWP 的同时编辑 XAML 可能会导致运行时崩溃。 解决方法：使用 "**开始执行（不调试）" （Ctrl + F5）** 而不是 "**启动调试" （F5）**。
 
-## <a name="troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>疑难解答
 
 ### <a name="error-codes"></a>错误代码
 

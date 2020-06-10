@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文介绍如何定义你自己的自定义 Xamarin.Forms XAML 标记扩展。 XAML 标记扩展是实现 IMarkupExtension 或 IMarkupExtension 接口的类 <T> 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 878ebcaa5249261afac2776a9e7cf47c0c047135
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130528"
+标题： "创建 XAML 标记扩展" 说明： "本文介绍如何定义你自己的自定义 Xamarin.Forms XAML 标记扩展。 XAML 标记扩展是实现 IMarkupExtension 或 IMarkupExtension 接口的类 <T> 。 "
+ms-chap： xamarin assetid：797C1EF9-1C8E-4208-8610-9B79CCF17D46： xamarin 窗体作者： davidbritch： dabritch ms. 日期：01/05/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="creating-xaml-markup-extensions"></a>创建 XAML 标记扩展
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
@@ -25,11 +11,11 @@ ms.locfileid: "84130528"
 
 还可以通过从或派生来定义自己的自定义 XAML 标记扩展 `IMarkupExtension` `IMarkupExtension<T>` 。 如果标记扩展获取特定类型的值，则使用一般窗体。 下面是几个标记扩展的情况 Xamarin.Forms ：
 
-- `TypeExtension`派生自`IMarkupExtension<Type>`
-- `ArrayExtension`派生自`IMarkupExtension<Array>`
-- `DynamicResourceExtension`派生自`IMarkupExtension<DynamicResource>`
-- `BindingExtension`派生自`IMarkupExtension<BindingBase>`
-- `ConstraintExpression`派生自`IMarkupExtension<Constraint>`
+- `TypeExtension` 派生自 `IMarkupExtension<Type>`
+- `ArrayExtension` 派生自 `IMarkupExtension<Array>`
+- `DynamicResourceExtension` 派生自 `IMarkupExtension<DynamicResource>`
+- `BindingExtension` 派生自 `IMarkupExtension<BindingBase>`
+- `ConstraintExpression` 派生自 `IMarkupExtension<Constraint>`
 
 这两个 `IMarkupExtension` 接口仅定义了一个名为的方法 `ProvideValue` ：
 
@@ -200,7 +186,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 
 `GetService`实参为的调用 `typeof(IProvideValueTarget)` 实际上返回一个类型为的对象 `SimpleValueTargetProvider` ，该对象在 `Xamarin.Forms.Xaml.Internals` 命名空间中定义。 如果将的返回值强制转换 `GetService` 为该类型，则还可以访问一个 `ParentObjects` 属性，该属性是一个包含 `Image` 元素、 `Grid` 父元素和 `ImageResourceDemoPage` 父级的数组 `Grid` 。
 
-## <a name="conclusion"></a>结束语
+## <a name="conclusion"></a>结论
 
 XAML 标记扩展在 XAML 中发挥着重要作用，因为它扩展了从多个源设置属性的功能。 此外，如果现有的 XAML 标记扩展不能准确提供所需的内容，也可以编写自己的扩展。
 

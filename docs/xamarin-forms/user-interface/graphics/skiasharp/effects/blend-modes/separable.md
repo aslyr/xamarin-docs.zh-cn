@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c1939c30cbefdbf8d6546761a8c6ac7199bfff62
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139680"
+标题： "分离混合模式" 说明： "使用分离混合模式来更改红色、绿色和蓝色颜色。"
+ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 66D1A537-A247-484E-B5B9-FBCB7838FBE9 author： davidbritch： dabritch ms. 日期：08/23/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="the-separable-blend-modes"></a>分离混合模式
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -150,46 +136,21 @@ public partial class LightenAndDarkenPage : ContentPage
 
 下表显示了所有可分离混合模式，并简要说明了它们的作用。 第二列显示不产生变化的源颜色：
 
-| 混合模式   | 没有变化 | 操作 |
-| ---
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------- |---标题：说明： ms. 生产： assetid： author： author： ms-chap：不是-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ |---标题：说明： ms. 生产： assetid： author： author： ms-chap：不是-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ | |`Plus`       |黑色 |通过添加颜色变亮： Sc + Dc | |`Modulate`   |白色 |通过按颜色加深： Sc ·Dc | |`Screen`     |黑色 |补充的产品： Sc + Dc &ndash; Sc ·Dc | |`Overlay`    |灰色 |反转 `HardLight` | | `Darken`    |白色 |最小颜色： min （Sc，Dc） | |`Lighten`    |黑色 |最大颜色：最大值（Sc，Dc） | |`ColorDodge` |黑色 |基于源的变亮目标 | |`ColorBurn`  |白色 |基于源变暗目标 | |`HardLight`  |灰色 |类似于恶劣聚光灯的效果 | |`SoftLight`  |灰色 |类似于 "软聚焦" 的效果 | |`Difference` |黑色 |从较浅的： Abs （Dc &ndash; Sc） | | `Exclusion` |黑色 |类似于， `Difference` 但对比度更低 | | `Multiply`  |白色 |通过按颜色加深： Sc ·Dc |
+| 混合模式   | 没有变化 | Operation |
+| ------------ | --------- | --------- |
+| `Plus`       | 黑色     | 通过添加颜色变亮： Sc + Dc |
+| `Modulate`   | 白色     | 通过按颜色加深： Sc ·台 | 
+| `Screen`     | 黑色     | 补充的产品： Sc + Dc &ndash; Sc ·台 |
+| `Overlay`    | 灰色      | 逆变`HardLight` |
+| `Darken`     | 白色     | 最小颜色： min （Sc，Dc） |
+| `Lighten`    | 黑色     | 最大颜色：最大值（Sc，Dc） |
+| `ColorDodge` | 黑色     | 基于源的变亮目标 |
+| `ColorBurn`  | 白色     | 基于源加深目标 | 
+| `HardLight`  | 灰色      | 类似于恶劣聚光灯的效果 |
+| `SoftLight`  | 灰色      | 类似于软聚光灯的效果 | 
+| `Difference` | 黑色     | 从较浅的中减去较暗的： Abs （Dc &ndash; Sc） | 
+| `Exclusion`  | 黑色     | 类似于， `Difference` 但对比度更低 |
+| `Multiply`   | 白色     | 通过按颜色加深： Sc ·台 |
 
 虽然这两个源中的表示法不相同，但可以在 W3C[**合成和混合级别 1**](https://www.w3.org/TR/compositing-1/)规范和 Skia [**SkBlendMode 引用**](https://skia.org/user/api/SkBlendMode_Reference)中找到更详细的算法。 请记住， `Plus` 通常被视为 Porter-Duff blend 模式，并且 `Modulate` 不是 W3C 规范的组成部分。
 

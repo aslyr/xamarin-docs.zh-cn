@@ -1,22 +1,8 @@
 ---
-title: 使用 Apple for 的登录Xamarin.Forms
-description: 了解如何在移动应用程序中实现 Apple 的登录 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: fb37f8fb2d01154bf2e749e685c4e96c12d6bc5e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139485"
+标题： "对 Apple 使用登录 Xamarin.Forms " 说明： "了解如何在移动应用程序中使用 apple 实现登录 Xamarin.Forms "。
+ms-chap： xamarin assetid：2E47E7F2-93D4-4CA3-9E66-247466D25E4D： xamarin 窗体作者： davidortinau： daortin ms. 日期：09/10/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="use-sign-in-with-apple-in-xamarinforms"></a>使用 Apple in 中的登录Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/signinwithapple/)

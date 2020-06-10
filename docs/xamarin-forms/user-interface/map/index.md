@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms将
-description: 地图控件显示一个映射，并需要 Xamarin.Forms 。映射 NuGet 包。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 2461ffa8168207e6a57fae005f752be48772a34a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139823"
+标题： " Xamarin.Forms 地图" 说明： "地图控件显示一个地图，并需要 Xamarin.Forms 。映射 NuGet 包。 "
+ms-chap： xamarin assetid： B669B5EE-D24C-4C69-93E1-2CA5CC9108B5： xamarin 窗体作者： davidbritch： dabritch ms. 日期：10/29/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-map"></a>Xamarin.Forms将
 
 ## <a name="initialization-and-configuration"></a>[初始化和配置](setup.md)

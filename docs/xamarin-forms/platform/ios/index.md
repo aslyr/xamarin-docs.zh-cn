@@ -1,22 +1,8 @@
 ---
-title: 中的 iOS 平台功能Xamarin.Forms
-description: 将 iOS 特定功能添加到 Xamarin.Forms 应用程序。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1008eab6e56be7a235498e01ffd3ea1b27d2bbae
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130164"
+标题： "" 中的 iOS 平台功能 Xamarin.Forms "说明：" 将 ios 特定功能添加到 Xamarin.Forms 应用程序 "。
+ms-chap： xamarin assetid：634AB62E-68C8-454C-838B-F1CC4E4E21BC： xamarin 窗体作者： davidbritch： dabritch ms. 日期：03/05/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="ios-platform-features-in-xamarinforms"></a>中的 iOS 平台功能Xamarin.Forms
 
 开发 Xamarin.Forms 适用于 iOS 的应用程序需要 Visual Studio。 "[支持的平台" 页](~/get-started/supported-platforms.md)包含有关先决条件的详细信息。

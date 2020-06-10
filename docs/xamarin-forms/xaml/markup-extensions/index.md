@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文介绍如何 Xamarin.Forms 通过允许从文本字符串以外的源设置元素特性来使用 xaml 标记扩展来扩展 XAML 的强大功能和灵活性。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 568cffc335f28b1a47f3278ad061d851ebef84b6
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130385"
+title： "XAML 标记扩展" 说明： "本文介绍如何 Xamarin.Forms 通过允许从文本字符串以外的源设置元素特性来使用 xaml 标记扩展来扩展 XAML 的强大功能和灵活性。
+ms-chap： xamarin assetid： EB06C8B7-3FD5-47B7-A09C-A13063BD110F： xamarin 窗体作者： davidbritch： dabritch ms. 日期：01/05/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xaml-markup-extensions"></a>XAML 标记扩展
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)

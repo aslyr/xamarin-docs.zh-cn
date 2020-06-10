@@ -1,9 +1,6 @@
 ---
-标题： "XAML 热重载 Xamarin.Forms " 说明： "立即在正在运行的应用程序上重新加载对 XAML 文件所做的更改，这样就不必在 Xamarin.Forms 每次 XAML 更改后生成项目。"
-ms-chap： assetid： ms-chap： author： ms. 作者： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+标题： "XAML 热重载 Xamarin.Forms " 说明： "在运行的应用程序上立即重新加载对 XAML 文件所做的更改，使你无需在 Xamarin.Forms 每次 XAML 更改后生成项目。"
+ms-chap： xamarin assetid： E220F054-32EE-424C-A7E5-6156BE271519： xamarin 窗体作者： maddyleger1： maleger ms. 日期：03/14/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="xaml-hot-reload-for-xamarinforms"></a>的 XAML 热重载Xamarin.Forms
@@ -18,54 +15,10 @@ XAML 热重载将插入现有的工作流，以提高工作效率并节省时间
 ## <a name="system-requirements"></a>系统要求
 
 | IDE/框架 | 所需版本 |
-|---
-标题： "XAML 热重载 Xamarin.Forms " 说明： "立即在正在运行的应用程序上重新加载对 XAML 文件所做的更改，这样就不必在 Xamarin.Forms 每次 XAML 更改后生成项目。"
-ms-chap： assetid： ms-chap： author： ms. 作者： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----|---title： "XAML 热重载 Xamarin.Forms " 说明： "在运行的应用程序上立即重新加载对 XAML 文件所做的更改，这样就不必在 Xamarin.Forms 每次 XAML 更改后生成项目。"
-ms-chap： assetid： ms-chap： author： ms. 作者： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题： "XAML 热重载 Xamarin.Forms " 说明： "立即在正在运行的应用程序上重新加载对 XAML 文件所做的更改，这样就不必在 Xamarin.Forms 每次 XAML 更改后生成项目。"
-ms-chap： assetid： ms-chap： author： ms. 作者： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题： "XAML 热重载 Xamarin.Forms " 说明： "立即在正在运行的应用程序上重新加载对 XAML 文件所做的更改，这样就不必在 Xamarin.Forms 每次 XAML 更改后生成项目。"
-ms-chap： assetid： ms-chap： author： ms. 作者： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题： "XAML 热重载 Xamarin.Forms " 说明： "立即在正在运行的应用程序上重新加载对 XAML 文件所做的更改，这样就不必在 Xamarin.Forms 每次 XAML 更改后生成项目。"
-ms-chap： assetid： ms-chap： author： ms. 作者： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题： "XAML 热重载 Xamarin.Forms " 说明： "立即在正在运行的应用程序上重新加载对 XAML 文件所做的更改，这样就不必在 Xamarin.Forms 每次 XAML 更改后生成项目。"
-ms-chap： assetid： ms-chap： author： ms. 作者： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题： "XAML 热重载 Xamarin.Forms " 说明： "立即在正在运行的应用程序上重新加载对 XAML 文件所做的更改，这样就不必在 Xamarin.Forms 每次 XAML 更改后生成项目。"
-ms-chap： assetid： ms-chap： author： ms. 作者： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题： "XAML 热重载 Xamarin.Forms " 说明： "立即在正在运行的应用程序上重新加载对 XAML 文件所做的更改，这样就不必在 Xamarin.Forms 每次 XAML 更改后生成项目。"
-ms-chap： assetid： ms-chap： author： ms. 作者： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----------| |Visual Studio 2019 |16.4 或更高版本的 Visual Studio 2019 for Mac |8.4 或更高版本 Xamarin.Forms | 4.1 或更高版本
+|------|------------------|
+|Visual Studio 2019 | 16.4 或更高版本
+Visual Studio 2019 for Mac | 8.4 或更高版本
+Xamarin.Forms | 4.1 或更高版本
 
 ## <a name="enable-xaml-hot-reload-for-xamarinforms"></a>为启用 XAML 热重载Xamarin.Forms
 
@@ -108,7 +61,7 @@ XAML 热重载支持在 Visual Studio 中同时进行调试，并 Visual Studio 
 * [XAML 热重载提示和技巧](https://devblogs.microsoft.com/xamarin/tips-tricks-xaml-hot-reload/)
 * [XAML 热重载 Xamarin.Forms 深入了解： Xamarin Show](https://www.youtube.com/watch?v=crhjjPjzknk)
 
-## <a name="troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>疑难解答
 
 * 如果 XAML 热重载未能初始化：
   * 更新 Xamarin.Forms 版本。

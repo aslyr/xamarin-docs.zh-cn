@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 873e243be3b90023ac8f58c2a29df89806b22658
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139511"
+标题： "Tizen .NET" description： "Tizen .NET 允许开发 Tizen 操作系统的应用程序，该操作系统在 Samsung 设备上运行，包括电视、可穿戴设备、移动设备和其他 IoT 设备。"
+ms-chap： xamarin assetid：5A22A354-A4DD-480D-A1BB-6D0C38592E55： xamarin 窗体作者： davidbritch： dabritch ms. 日期：09/26/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="tizen-net"></a>Tizen .NET
 
 _Tizen .NET 允许开发 Tizen 应用程序以在 Samsung 设备上运行，包括电视、可穿戴设备、移动设备和其他 IoT 设备。_

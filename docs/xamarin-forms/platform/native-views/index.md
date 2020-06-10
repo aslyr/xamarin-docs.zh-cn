@@ -1,22 +1,8 @@
 ---
-title: 本机视图Xamarin.Forms
-description: 可以直接从 iOS、Android 和通用 Windows 平台（UWP）中引用 iOS、Android 和（UWP）， Xamarin.Forms 并且可以与视图进行交互 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b622d19675694f4d4c7816a81f969b93cdfb5828
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139563"
+标题： "描述中的本机视图" Xamarin.Forms 说明： "iOS、Android 和通用 Windows 平台（UWP）中的本机视图可以从直接引用， Xamarin.Forms 并且可以与 Xamarin.Forms 视图交互。"
+ms-chap： xamarin assetid：2294a023-d763-41de-a9da-c2bfc239a132： xamarin 窗体作者： davidbritch： dabritch ms. 日期：11/24/2016 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="native-views-in-xamarinforms"></a>本机视图Xamarin.Forms
 
 _可以直接从 iOS、Android 和通用 Windows 平台（UWP）引用本地视图 Xamarin.Forms 。可以在本机视图上设置属性和事件处理程序，并且可以与视图进行交互 Xamarin.Forms 。_

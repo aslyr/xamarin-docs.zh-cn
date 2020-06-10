@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCollectionView 数据
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e381184271d4a7bfa9872d2502d2281b1f3864bf
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134558"
+标题： " Xamarin.Forms CollectionView data" 说明： "CollectionView 是通过将数据的 system.windows.controls.itemscontrol.itemssource 属性设置为任何实现 IEnumerable 的集合来填充的。"
+ms-chap： xamarin assetid： E1783E34-1C0F-401A-80D5-B2BE5508F5F8： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/29/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-collectionview-data"></a>Xamarin.FormsCollectionView 数据
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
@@ -104,7 +90,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 > [!NOTE]
 > 可以启用编译的绑定以提高应用程序中的数据绑定性能 Xamarin.Forms 。 有关详细信息，请参阅[已编译的绑定](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)。
 
-有关数据绑定的详细信息，请参阅[ Xamarin.Forms 数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
+若要深入了解数据绑定，请参阅 [Xamarin.Forms 数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
 
 ## <a name="define-item-appearance"></a>定义项外观
 
@@ -192,7 +178,7 @@ public class Monkey
 
 [![IOS 和 Android 上每个项的模板 CollectionView 的屏幕截图](populate-data-images/datatemplate.png "CollectionView 中的模板化项")](populate-data-images/datatemplate-large.png#lightbox "CollectionView 中的模板化项")
 
-有关数据模板的详细信息，请参阅[ Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
+有关数据模板的详细信息，请参阅 [Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
 
 ## <a name="choose-item-appearance-at-runtime"></a>在运行时选择项外观
 

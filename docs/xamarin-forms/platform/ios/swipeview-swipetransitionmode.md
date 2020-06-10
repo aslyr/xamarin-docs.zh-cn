@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4b2030461025c1cd647595a1ecc22c5589e99fef
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137041"
+标题： "iOS 上的 SwipeView 轻扫过渡模式" 说明： "平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 平台特定的来控制打开 SwipeView 时所使用的转换。
+ms-chap： xamarin assetid： C667F24C-BAD8-47E0-9285-D3546BEF703B： xamarin 窗体作者： davidbritch： dabritch ms. 日期：12/11/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="swipeview-swipe-transition-mode-on-ios"></a>IOS 上的 SwipeView 滑动过渡模式
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9aa29ba4d8e6bda9126ec211af1b4febebd5bab9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84128266"
+标题： "iOS 上命名字体大小的辅助功能缩放" 说明： "平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用特定于 iOS 平台的来禁用命名字体大小的辅助功能缩放。
+ms-chap： xamarin assetid： B443BAF6-E6F6-4A0E-80B5-CAACE6B550EF： xamarin 窗体作者： davidbritch： dabritch ms. 日期：06/28/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="accessibility-scaling-for-named-font-sizes-on-ios"></a>IOS 上命名字体大小的辅助功能缩放
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
