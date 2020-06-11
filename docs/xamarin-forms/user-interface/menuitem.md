@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms项
-description: ''
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: de8c6bff2c9dc72821692708f5852cd874c31ede
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139199"
+title： " Xamarin.Forms menuitem" 说明： "menuitem 类用于为 ListView 项上下文菜单和 Shell 应用程序飞出菜单等菜单创建菜单项。"
+ms-chap： xamarin assetId：62655C21-6053-466D-A7F4-DE2BE36538F5： xamarin 窗体作者： profexorgeek： jusjohns ms. 日期：08/01/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-menuitem"></a>Xamarin.Forms项
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-menuitemdemos/)

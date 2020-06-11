@@ -3,7 +3,7 @@ title： " Xamarin.Forms Fast 呈现器" 说明： "本文介绍了快速呈现�
 ms-chap： xamarin assetid：097f87f2-d891-4f3c-be02-fb7d195a481a： xamarin 窗体作者： davidbritch： dabritch ms. 日期：05/28/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
-# <a name="xamarinforms-fast-renderers"></a>Xamarin.Forms快速呈现器
+# <a name="xamarinforms-fast-renderers"></a>Xamarin.Forms 快速呈现器
 
 通常，Android 上的大多数原始控件呈现器都由两个视图组成：
 

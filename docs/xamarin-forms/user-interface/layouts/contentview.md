@@ -1,23 +1,9 @@
 ---
-title: Xamarin.FormsContentView
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 46d2abf895ffe31bd1dc1c22caf36440c54b331c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130099"
+标题： " Xamarin.Forms ContentView" 说明： "本文介绍了如何使用 ContentView 类来创建自定义控件，如 Example CardView。"
+ms-chap： xamarin assetid：638402E7-CA44-456B-863B-791F6B6B561D： xamarin 窗体作者： profexorgeek： jusjohns ms. 日期：08/14/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
-# <a name="xamarinforms-contentview"></a>Xamarin.FormsContentView
+
+# <a name="xamarinforms-contentview"></a>Xamarin.Forms ContentView
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 
@@ -121,7 +107,7 @@ public string CardTitle
 
 `ContentView`元素将属性设置 `x:Name` 为**this，这**可用于访问绑定到实例的对象 `CardView` 。 布局中的元素会将其属性的绑定设置为绑定对象上定义的值。
 
-有关数据绑定的详细信息，请参阅[ Xamarin.Forms 数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
+若要深入了解数据绑定，请参阅 [Xamarin.Forms 数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
 
 > [!NOTE]
 > `FallbackValue`属性提供了一个默认值（如果绑定为） `null` 。 这也允许 Visual Studio 中的[XAML 预览](~/xamarin-forms/xaml/xaml-previewer/index.md)器呈现 `CardView` 控件。
@@ -207,11 +193,11 @@ CardView card = new CardView
 
 [![CardView System.windows.controls.controltemplate> 屏幕快照](contentview-images/cardview-controltemplates-cropped.png)](contentview-images/cardview-controltemplates.png#lightbox)
 
-有关控件模板的详细信息，请参阅[ Xamarin.Forms 控件模板](~/xamarin-forms/app-fundamentals/templates/control-template.md)。
+有关控件模板的详细信息，请参阅 [Xamarin.Forms 控件模板](~/xamarin-forms/app-fundamentals/templates/control-template.md)。
 
 ## <a name="related-links"></a>相关链接
 
 * [ContentView 示例应用程序](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 * [Xamarin.Forms数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 * 可[绑定属性](~/xamarin-forms/xaml/bindable-properties.md)。
-* [Xamarin.Forms控件模板](~/xamarin-forms/app-fundamentals/templates/control-template.md)
+* [Xamarin.Forms 控件模板](~/xamarin-forms/app-fundamentals/templates/control-template.md)

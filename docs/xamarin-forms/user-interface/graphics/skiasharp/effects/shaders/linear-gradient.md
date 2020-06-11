@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 43aa429046c1b0f72a1cbe6a5b921da9b8907a49
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132218"
+title： "SkiaSharp 线性渐变" 说明： "了解如何使用两种颜色的渐变混合绘制线条或填充区域。"
+ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 20A2A8C4-FEB7-478D-BF57-C92E26117B6A author： davidbritch： dabritch ms. 日期：08/23/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="the-skiasharp-linear-gradient"></a>SkiaSharp 线性渐变
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -103,7 +89,7 @@ public class CornerToCornerGradientPage : ContentPage
 
 `float`指定为第四个参数的值数组与颜色数组之间具有一对一的对应关系。 值指示在渐变线上出现这些颜色的相对位置。 此处，0表示 `Red` 在渐变线的开头发生，1表示 `Blue` 在行尾发生。 数字必须是升序，并且应在0到1的范围内。 如果它们不在该范围内，则将其调整为在该范围内。
 
-数组中的两个值可以设置为0和1以外的值。 试运行以下代码：
+数组中的两个值可以设置为0和1以外的值。 试试看：
 
 ```csharp
 new float[] { 0.25f, 0.75f }

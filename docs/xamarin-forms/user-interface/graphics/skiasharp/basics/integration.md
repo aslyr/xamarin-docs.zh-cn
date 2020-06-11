@@ -1,22 +1,8 @@
 ---
-title: 与集成Xamarin.Forms
-description: 本文介绍如何创建响应触控和元素的 SkiaSharp 图形 Xamarin.Forms ，并通过示例代码对此进行演示。
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9e763184f38719cda4526eb0a2dfdf39b2191a03
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137691"
+标题： "与 Xamarin.Forms 以下内容集成" 说明： "本文介绍了如何创建响应触控和元素的 SkiaSharp 图形 Xamarin.Forms ，并通过示例代码对此进行了演示。"
+ms-chap： xamarin ms. 技术： xamarin-skiasharp assetid： 288224F1-7AEE-4148-A88D-A70C03F83D7A author： davidbritch： dabritch ms. 日期：02/09/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="integrating-with-xamarinforms"></a>与集成Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

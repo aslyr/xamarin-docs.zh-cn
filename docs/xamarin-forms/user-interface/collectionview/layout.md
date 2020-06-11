@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCollectionView 布局
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 425eb7abc14fb941dbfc28219907d98558cbfabb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137427"
+标题： " Xamarin.Forms CollectionView Layout" description： "默认情况下，CollectionView 会在垂直列表中显示其项。 但是，可以指定垂直和水平列表以及网格。
+ms-chap： xamarin assetid：5FE78207-1BD6-4706-91EF-B13932321FC9： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/22/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-collectionview-layout"></a>Xamarin.FormsCollectionView 布局
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
@@ -600,5 +586,5 @@ void OnImageTapped(object sender, EventArgs e)
 ## <a name="related-links"></a>相关链接
 
 - [CollectionView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
-- [从右到左的本地化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)
+- [从右到左本地化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)
 - [Xamarin.FormsCollectionView 滚动](scrolling.md)

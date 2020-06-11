@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b9c89d4d426884d678e77687ffa226cced97be58
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136378"
+标题： "SkiaSharp 颜色筛选器" 说明： "使用颜色筛选器转换具有转换或表的颜色。"
+ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 774E7B55-AEC8-4F12-B657-1C0CEE01AD63 author： davidbritch： dabritch ms. 日期：08/28/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="skiasharp-color-filters"></a>SkiaSharp 颜色筛选器
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

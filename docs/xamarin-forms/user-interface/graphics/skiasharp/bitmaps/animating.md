@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 763f44c26d653aa32429b2aa764989e18e8b8078
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139966"
+title： "对 SkiaSharp 位图进行动画处理" 说明： "了解如何按顺序显示一系列位图并呈现动画 GIF 文件。"
+ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 97142ADC-E2FD-418C-8A09-9C561AEE5BFD author： davidbritch： dabritch ms. 日期：07/12/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="animating-skiasharp-bitmaps"></a>动画处理 SkiaSharp 位图
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -472,7 +458,7 @@ public partial class MainPage : ContentPage
 
 图形交换格式（GIF）规范包括一项功能，该功能允许单个 GIF 文件包含多个连续帧，这种情况通常会出现在循环中。 这些文件称为_动画 gif_。 Web 浏览器可以播放动态 Gif，SkiaSharp 允许应用程序从动画 GIF 文件中提取帧并按顺序显示。
 
-[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例包含一个名为**Newtons_cradle_animation_book_2 .GIF**的动画 gif 资源，该资源由 DemonDeLuxe 创建并从维基百科的[牛顿底座](https://en.wikipedia.org/wiki/Newton%27s_cradle)页面下载。 **动画 GIF**页面包含一个 XAML 文件，该文件提供该信息并实例化 `SKCanvasView` ：
+[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例包含一个名为**Newtons_cradle_animation_book_2.gif**的动画 GIF 资源，由 DemonDeLuxe 创建并从维基百科的[牛顿底座](https://en.wikipedia.org/wiki/Newton%27s_cradle)页面下载。 **动画 GIF**页面包含一个 XAML 文件，该文件提供该信息并实例化 `SKCanvasView` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

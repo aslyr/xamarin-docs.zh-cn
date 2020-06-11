@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms& 内部的高级概念
-description: 了解的高级概念和内部机制 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 410aadcb885ed66283eb306cb9aa4c5e764fa8ec
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139030"
+标题： " Xamarin.Forms 高级概念 & 内部" 说明： "了解高级概念和内部机制 Xamarin.Forms 。"
+ms-chap： xamarin assetid：2273a31c-4022-42ba-befe-0d23ce2ff3b5： xamarin 窗体作者： davidbritch： dabritch ms. 日期：03/20/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-advanced-concepts--internals"></a>Xamarin.Forms& 内部的高级概念
 
 _了解的高级概念和内部机制 Xamarin.Forms 。_

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsSwipeView
-description: Xamarin.FormsSwipeView 是一个容器控件，该控件环绕一项内容，并提供通过轻扫手势显示的上下文菜单项。
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9c9d0621cdd5bb85690771d8bdfd0060b6a352cb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136248"
+标题： " Xamarin.Forms SwipeView" 说明： " Xamarin.Forms SwipeView 是一个容器控件，该控件环绕一项内容，并提供通过轻扫手势显示的上下文菜单项。"
+ms-chap： xamarin assetId： 602456B5-701B-4948-B454-B1F31283F1CF 毫秒： xamarin 窗体作者： davidbritch 毫秒. 作者： dabritch 毫秒。日期：03/26/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-swipeview"></a>Xamarin.FormsSwipeView
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

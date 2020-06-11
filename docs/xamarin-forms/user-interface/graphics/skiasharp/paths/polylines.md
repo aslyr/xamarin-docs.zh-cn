@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b435e99180791b64e0a8ad975527fb3cb5316b7d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140213"
+title： "折线和参数方程" description： "本文介绍了如何使用 SkiaSharp 来呈现可以使用参数化公式定义的任何行，并使用示例代码对此进行演示。"
+ms-chap： xamarin assetid：85AEBB33-E954-4364-A6E1-808FAB197BEE： xamarin-skiasharp author： davidbritch： dabritch 毫秒。日期：03/10/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="polylines-and-parametric-equations"></a>折线和参数等式
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms扩展器
-description: Xamarin.Forms扩展器控件提供了一个可扩展容器来托管任何内容。 通过点击扩展器标头来显示或隐藏内容。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5e9afa0f6d27003891963af5715d5721e3129306
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129528"
+title： " Xamarin.Forms 扩展器" 说明： " Xamarin.Forms 扩展器控件提供了一个可展开的容器来托管任何内容。 通过点击扩展器标头显示或隐藏内容。 "
+ms-chap： xamarin assetid： 381DCB55-522D-4414-B45B-E8DD70AA9985 毫秒： xamarin 窗体作者： davidbritch 毫秒. 作者： dabritch 毫秒。日期：04/15/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-expander"></a>Xamarin.Forms扩展器
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)
@@ -376,5 +362,5 @@ void OnLabelTapped(object sender, EventArgs e)
 
 - [扩展器演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)
 - [Xamarin.Forms缓动函数](~/xamarin-forms/user-interface/animation/easing.md)
-- [Xamarin.Forms导致](~/xamarin-forms/app-fundamentals/triggers.md)
+- [Xamarin.Forms 触发器](~/xamarin-forms/app-fundamentals/triggers.md)
 - [Xamarin.Forms可绑定布局](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)

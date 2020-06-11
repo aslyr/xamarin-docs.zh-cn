@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsTimePicker
-description: TimePicker 是 Xamarin.Forms 允许用户选择时间的视图。 本文介绍如何在应用程序中使用 TimePicker Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 7c2e6b97f2207ebb6543fb6a720cd430331f989b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138224"
+标题： " Xamarin.Forms TimePicker" 说明： "TimePicker 是 Xamarin.Forms 允许用户选择时间的视图。 本文介绍如何在应用程序中使用 TimePicker Xamarin.Forms 。 "
+ms-chap： xamarin assetid：2E99FB23-B82D-4EB4-AFB3-5002E736E7B2： xamarin 窗体作者： davidbritch： dabritch ms. 日期：10/16/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-timepicker"></a>Xamarin.FormsTimePicker
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-timepicker)

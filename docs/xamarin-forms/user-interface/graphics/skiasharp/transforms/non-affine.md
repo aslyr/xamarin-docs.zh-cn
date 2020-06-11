@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 91a639b2d3c2f6a8437a09a70808dc6d793ba76b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131750"
+title： "非仿射转换" 说明： "本文介绍了如何在转换矩阵的第三列中创建透视和锥度效果，并通过示例代码对此进行了演示。"
+ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 785F4D13-7430-492E-B24E-3B45C560E9F1 author： davidbritch： dabritch ms. 日期：04/14/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="non-affine-transforms"></a>非仿射转换
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

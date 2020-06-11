@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文介绍如何使用 SkiaSharp 在应用程序中使用不同的笔划帽绘制线条 Xamarin.Forms ，并使用示例代码对此进行演示。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 87b97ad913e08c42d16bbf055f168c07b9bd60e8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137197"
+标题： "线条和笔划大写" 说明： "本文介绍了如何使用 SkiaSharp 在应用程序中使用不同的笔划 cap 绘制线条 Xamarin.Forms ，并使用示例代码演示了这一点。"
+ms-chap： xamarin assetid：1F854DDD-5D1B-4DE4-BD2D-584439429FDB： xamarin-skiasharp author： davidbritch： dabritch 毫秒。日期：03/10/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="lines-and-stroke-caps"></a>线和笔划大写字母
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

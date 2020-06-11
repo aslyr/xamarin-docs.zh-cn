@@ -82,7 +82,7 @@ ms-chap： xamarin assetid：8F712802-395B-469B-B5BE-C927AD1A8391： xamarin 窗
 
 单击 "**继续**"，然后单击 "**注册**" 以创建新密钥。
 
-接下来，你将只有一个机会下载刚刚生成的密钥。  单击“下载”  。
+接下来，你将只有一个机会下载刚刚生成的密钥。  单击“下载”。
 
 ![下载密钥](sign-in-images/readme-key-download.png)
 
@@ -91,11 +91,19 @@ ms-chap： xamarin assetid：8F712802-395B-469B-B5BE-C927AD1A8391： xamarin 窗
 你将下载一个 `.p8` 密钥文件。  可以在记事本或 VSCode 中打开此文件以查看文本内容。  它们应该如下所示：
 
 ```
------BEGIN PRIVATE KEY-----
-MIGTAgEAMBMGBasGSM49AgGFCCqGSM49AwEHBHkwdwIBAQQg3MX8n6VnQ2WzgEy0
-Skoz9uOvatLMKTUIPyPCAejzzUCgCgYIKoZIzj0DAQehRANCAARZ0DoM6QPqpJxP
-JKSlWz0AohFhYre10EXPkjrih4jTm+b0AeG2BGuoIWd18i8FimGDgK6IzHHPsEqj
-DHF5Svq0
+---
+title: "Setup Steps - Sign In with Apple for Xamarin.Forms"
+description: Sign In with Apple setup differs depending on the different platforms your mobile application targets.
+ms.prod: xamarin
+ms.assetid: 8F712802-395B-469B-B5BE-C927AD1A8391
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 09/10/2019
+no-loc:
+- "Xamarin.Forms"
+- "Xamarin.Essentials"
+
 -----END PRIVATE KEY-----
 ```
 

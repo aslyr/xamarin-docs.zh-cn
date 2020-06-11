@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsDatePicker
-description: DatePicker 是 Xamarin.Forms 允许用户选择日期的视图。 本文介绍如何在应用程序中使用 DatePicker Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5c1de52e2a173e7d9a366d8fd7cbd63998b3a6d1
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137353"
+标题： " Xamarin.Forms DatePicker" 说明： "DatePicker 是 Xamarin.Forms 允许用户选择日期的视图。 本文介绍如何在应用程序中使用 DatePicker Xamarin.Forms 。 "
+ms-chap： xamarin assetid：68E8EF8A-42E7-4939-8ABE-64D060E609D9： xamarin 窗体作者： davidbritch： dabritch ms. 日期：06/04/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-datepicker"></a>Xamarin.FormsDatePicker
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-datepicker)

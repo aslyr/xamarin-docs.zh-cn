@@ -73,7 +73,7 @@ image.Source = Device.RuntimePlatform == Device.Android
 ```
 
 > [!IMPORTANT]
-> 若要在所有平台上使用相同的映像文件名，该名称必须在所有平台上都有效。 Android 绘图具有命名限制–只允许使用小写字母、数字、下划线和句点–对于跨平台兼容性，还必须在所有其他平台上遵循这一点。 示例 filename**海滨**遵循规则，但无效文件名的示例包括 "水源 front .png"、"海滨"、"water-front" 和 "wåterfront"。
+> 若要在所有平台上使用相同的映像文件名，该名称必须在所有平台上都有效。 Android 绘图具有命名限制–只允许使用小写字母、数字、下划线和句点–对于跨平台兼容性，还必须在所有其他平台上遵循这一点。 示例文件名**waterfront.png**遵循规则，但无效文件名的示例包括 "水 front.png"、"WaterFront.png"、"water-front.png" 和 "wåterfront.png"。
 
 ### <a name="native-resolutions-retina-and-high-dpi"></a>本机分辨率（retina 和高 DPI）
 
@@ -87,7 +87,7 @@ Android 备用分辨率图像应放置在 Android 项目的[特殊命名目录](
 
 [![Android 多分辨率图像位置](images-images/xs-highdpisolution-sml.png)](images-images/xs-highdpisolution.png#lightbox)
 
-UWP 图像文件名[可以在 `.scale-xxx` 文件扩展名之前带有后缀](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast)，其中 `xxx` 是应用于资产的缩放百分比，例如**myimage. scale-200**。 然后，在不带缩放修饰符的情况下，可以在代码或 XAML 中引用图像，例如仅**myimage**。 平台将基于显示器的当前 DPI 选择最接近的适当资产规模。
+UWP 图像文件名称[可以在 `.scale-xxx` 文件扩展名之前带有后缀](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast)，其中 `xxx` 是应用于资产的缩放百分比，例如**myimage.scale-200.png**。 然后，在不带缩放修饰符的情况下，可以在代码或 XAML 中引用图像，例如仅**myimage.png**。 平台将基于显示器的当前 DPI 选择最接近的适当资产规模。
 
 ### <a name="additional-controls-that-display-images"></a>显示图像的其他控件
 
@@ -116,7 +116,7 @@ UWP 图像文件名[可以在 `.scale-xxx` 文件扩展名之前带有后缀](ht
 
 可以在文件的 "**属性**" 窗口中查看和更改**生成操作**。
 
-在此示例中，资源 ID 为**WorkingWithImages**。
+在此示例中，资源 ID **WorkingWithImages.beach.jpg**。
 IDE 通过使用文件名连接此项目的**默认命名空间**（在每个值之间使用句点（.））来生成此默认值。
 <!-- https://msdn.microsoft.com/library/ms950960.aspx -->
 
@@ -125,15 +125,15 @@ IDE 通过使用文件名连接此项目的**默认命名空间**（在每个值
 ![](images-images/xs-buildaction.png "Set Build Action: EmbeddedResource")
 
 还可以在文件的**Properties** pad 中查看和更改**生成操作**。
-此面板显示用于在代码中引用资源的**资源 ID** 。 在下面的屏幕截图中，**资源 ID**为**WorkingWithImages**。
+此面板显示用于在代码中引用资源的**资源 ID** 。 在下面的屏幕截图中，**资源 ID**是**WorkingWithImages.beach.jpg**。
 IDE 通过使用文件名连接此项目的**默认命名空间**（在每个值之间使用句点（.））来生成此默认值。
-可以在**Properties** pad 中编辑此 ID，但对于这些示例，将使用值**WorkingWithImages** 。
+可以在**Properties** pad 中编辑此 ID，但对于这些示例，将使用**WorkingWithImages.beach.jpg**值。
 
 [![嵌入的资源属性板](images-images/xs-embeddedproperties-sml.png)](images-images/xs-embeddedproperties.png#lightbox)
 
 -----
 
-如果将嵌入的图像放入项目中的文件夹，则在资源 ID 中，文件夹名称还由句点（.）分隔。 将**海滩 .jpg**图像移到名为**MyImages**的文件夹中会生成**WorkingWithImages**的资源 ID。
+如果将嵌入的图像放入项目中的文件夹，则在资源 ID 中，文件夹名称还由句点（.）分隔。 将**beach.jpg**图像移动到名为**MyImages**的文件夹中会导致资源 ID 为**WorkingWithImages.MyImages.beach.jpg**
 
 加载嵌入图像的代码只是将**资源 ID**传递到方法，如下 [`ImageSource.FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) 所示：
 

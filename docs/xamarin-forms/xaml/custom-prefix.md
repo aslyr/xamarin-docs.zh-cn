@@ -1,22 +1,8 @@
 ---
-title: XAML 命名空间中建议的前缀Xamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 71ae523f40f3f7529c12f853778404e224fbae30
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138133"
+标题： "说明：" 中的 XAML 命名空间建议的前缀 Xamarin.Forms ，控件作者可以使用 XmlnsPrefixAttribute 类来指定与 xaml 命名空间关联的建议前缀（适用于 xaml 用法）。
+ms-chap： xamarin assetid：7B315BEC-7A35-48F4-A9C7-EF40255E95FF： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/28/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xaml-namespace-recommended-prefixes-in-xamarinforms"></a>XAML 命名空间中建议的前缀Xamarin.Forms
 
 `XmlnsPrefixAttribute`控件作者可以使用类来指定建议用于与 xaml 命名空间关联的前缀，以供 xaml 使用。 当支持对象树序列化到 XAML 时，或与具有 XAML 编辑功能的设计环境进行交互时，前缀非常有用。 例如：

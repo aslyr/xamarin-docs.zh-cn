@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 必应拼写检查对文本执行上下文拼写检查，并为拼写错误的单词提供内联建议。 本文介绍如何使用必应拼写检查 REST API 更正应用程序中的拼写错误 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1703f0049408381a86da73fb28696ef8708cc790
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139290"
+标题： "使用必应拼写检查 API 进行拼写检查" 说明： "必应拼写检查对文本执行上下文拼写检查，并为拼写错误的单词提供内联建议。 本文介绍如何使用必应拼写检查 REST API 更正应用程序中的拼写错误 Xamarin.Forms 。
+ms-chap： xamarin assetid： B40EB103-FDC0-45C6-9940-FB4ACDC2F4F9： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/08/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>使用必应拼写检查 API 进行拼写检查
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

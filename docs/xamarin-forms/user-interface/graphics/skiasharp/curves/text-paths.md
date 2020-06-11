@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b0cbb7d26a2aea02a3255fc75947c20a3d803b86
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131893"
+title： "SkiaSharp 中的路径和文本" 说明： "本文探讨了 SkiaSharp 路径和文本的交集，并通过示例代码演示了这一点。"
+ms-chap： xamarin assetid： C14C07F6-4A84-4A8C-BDB4-CD61FBF0F79B： xamarin-skiasharp author： davidbritch： dabritch 毫秒。日期：08/01/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="paths-and-text-in-skiasharp"></a>SkiaSharp 中的路径和文本
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

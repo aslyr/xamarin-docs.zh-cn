@@ -11,7 +11,7 @@ ms-chap： xamarin assetid： E44F5D0F-DB8E-46C7-8789-114F1652A6C5： xamarin �
 
 ![在应用浏览器中](webview-images/in-app-browser.png)
 
-## <a name="content"></a>内容
+## <a name="content"></a>Content
 
 `WebView`支持以下类型的内容：
 

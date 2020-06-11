@@ -1,23 +1,9 @@
 ---
-title: Xamarin.Forms样式类
-description: Xamarin.Forms样式类可以将多个样式应用于控件，而无需采用样式继承。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 2afb06c2d97e6f15c2041b9c2e9cad092b13d90d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138757"
+标题： " Xamarin.Forms 样式类" 说明： " Xamarin.Forms 样式类可以将多个样式应用于控件，而无需采用样式继承。"
+ms-chap： xamarin assetid：4762401E-2B48-48F1-B6E4-61F7AF8AA46F： xamarin 窗体作者： davidbritch： dabritch ms. 日期：01/30/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
-# <a name="xamarinforms-style-classes"></a>Xamarin.Forms样式类
+
+# <a name="xamarinforms-style-classes"></a>Xamarin.Forms 样式类
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 

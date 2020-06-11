@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms视图
-description: Xamarin.Forms视图是跨平台移动用户界面的构建基块。 本文列出了包含在中的视图 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8c15626e405645d28a785c32d276860f9751ea25
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132361"
+标题： " Xamarin.Forms 视图" 说明： " Xamarin.Forms 视图是跨平台移动用户界面的构建基块。 本文列出了中包含的视图 Xamarin.Forms 。 "
+ms-chap： xamarin assetid： AC070686-A423-4A98-8BB6-0B9F94C062CC： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/16/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-views"></a>Xamarin.Forms视图
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
@@ -48,7 +34,7 @@ _Xamarin. Forms 视图是跨平台移动用户界面的构建基块。_
 | [`Label`](xref:Xamarin.Forms.Label)用常量或可变格式设置显示单行文本字符串或文本的多行块。 将 [`Text`](xref:Xamarin.Forms.Label.Text) 属性设置为字符串进行格式设置，或将属性设置为 [`FormattedText`](xref:Xamarin.Forms.Label.FormattedText) 一个 [`FormattedString`](xref:Xamarin.Forms.FormattedString) 对象以进行可变格式设置。<br /><br />[API 文档](xref:Xamarin.Forms.Label)  / [指南](~/xamarin-forms/user-interface/text/label.md)  / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text) | [![标签示例](views-images/Label.png "标签示例")](views-images/Label-Large.png#lightbox "标签示例")<br /> [此页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/LabelDemoPage.cs)  /  的 c # 代码[XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/LabelDemoPage.xaml) |
 |     |     |
 
-### <a name="image"></a>映像
+### <a name="image"></a>图像
 
 |     |     |
 | --- | --- |
@@ -136,7 +122,7 @@ _Xamarin. Forms 视图是跨平台移动用户界面的构建基块。_
 | `CheckBox`允许用户使用可以选中或空的按钮类型选择布尔值。 `IsChecked`属性是的状态 `CheckBox` ，在 `CheckedChanged` 状态更改时激发事件。<br /><br />API 文档/[指南](~/xamarin-forms/user-interface/checkbox.md)  /  [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos) | [![复选框示例](views-images/CheckBox.png "复选框示例")](views-images/CheckBox-Large.png#lightbox "复选框示例")<br />[此页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CheckBoxPage.cs)  /  的 c # 代码[XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CheckBoxPage.xaml) |
 |     |     |
 
-### <a name="slider"></a>滑块
+### <a name="slider"></a>Slider
 
 |     |     |
 | --- | --- |
@@ -150,7 +136,7 @@ _Xamarin. Forms 视图是跨平台移动用户界面的构建基块。_
 | [`Stepper`](xref:Xamarin.Forms.Stepper)允许用户 `double` 从使用 [`Minimum`](xref:Xamarin.Forms.Stepper.Minimum) 、 [`Maximum`](xref:Xamarin.Forms.Stepper.Maximum) 和属性指定的增量值的范围中选择值 [`Increment`](xref:Xamarin.Forms.Stepper.Increment) 。<br /><br />[API 文档](xref:Xamarin.Forms.Stepper)   / [指南](~/xamarin-forms/user-interface/stepper.md)  / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos) | [![分档器示例](views-images/Stepper.png "分档器示例")](views-images/Stepper-Large.png#lightbox "分档器示例")<br />[此页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StepperDemoPage.cs)  /  的 c # 代码[XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StepperDemoPage.xaml) |
 |     |     |
 
-### <a name="switch"></a>Switch
+### <a name="switch"></a>开关
 
 |     |     |
 | --- | --- |
@@ -252,5 +238,5 @@ _Xamarin. Forms 视图是跨平台移动用户界面的构建基块。_
 ## <a name="related-links"></a>相关链接
 
 - [Xamarin.FormsFormsGallery 示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
-- [Xamarin.Forms范例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- [Xamarin.Forms 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
 - [Xamarin.FormsAPI 文档](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

@@ -1,22 +1,8 @@
 ---
-title: 样式简介 Xamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5766af7da3a0cf550a2ccb3a926dad25fd7962eb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138811"
+title： "样式简介 Xamarin.Forms " 说明： "样式允许自定义视觉对象的外观。 样式是针对特定类型定义的，包含该类型的可用属性的值。 "
+ms-chap： xamarin assetid：3FF899C0-6CFB-4C1D-837D-9E9E10181967： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/27/2016 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="introduction-to-xamarinforms-styles"></a>样式简介 Xamarin.Forms
 
 _样式允许自定义视觉对象的外观。样式是针对特定类型定义的，其中包含可用于该类型的属性的值。_
@@ -93,27 +79,27 @@ public class NoStylesPageCS : ContentPage
 
 ## <a name="create-a-style"></a>创建样式
 
-[`Style`](xref:Xamarin.Forms.Style)类将属性值的集合分组到一个对象中，然后可以将该对象应用于多个视觉元素实例。 这有助于减少重复的标记，并允许更轻松地更改应用程序的外观。
+[`Style`](xref:Xamarin.Forms.Style) 类将属性值的集合分组到一个对象中，然后可以将该对象应用于多个视觉对象元素实例。 这有助于减少重复的标记，并允许更轻松地更改应用程序的外观。
 
 虽然样式主要设计用于基于 XAML 的应用程序，但也可在 c # 中创建：
 
 - [`Style`](xref:Xamarin.Forms.Style)通常会在为 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) [`Resources`](xref:Xamarin.Forms.VisualElement.Resources) 控件、页或应用程序集合分配的中定义在 XAML 中创建的实例 [`Resources`](xref:Xamarin.Forms.Application.Resources) 。
 - [`Style`](xref:Xamarin.Forms.Style)用 c # 创建的实例通常在页的类中定义，或在可全局访问的类中定义。
 
-选择定义 [`Style`](xref:Xamarin.Forms.Style) 可使用的影响的位置：
+选择在何处定义 [`Style`](xref:Xamarin.Forms.Style) 会影响其应用范围：
 
 - [`Style`](xref:Xamarin.Forms.Style)在控件级别定义的实例只能应用于控件及其子级。
 - [`Style`](xref:Xamarin.Forms.Style)在页面级别定义的实例只能应用于页面及其子页面。
-- [`Style`](xref:Xamarin.Forms.Style)可以在应用程序中应用在应用程序级别定义的实例。
+- 在应用程序级别定义的 [`Style`](xref:Xamarin.Forms.Style) 实例可以应用于整个应用程序。
 
-每个 [`Style`](xref:Xamarin.Forms.Style) 实例都包含一个或多个 [`Setter`](xref:Xamarin.Forms.Setter) 对象的集合，每个对象都有一个 `Setter` [`Property`](xref:Xamarin.Forms.Setter.Property) 和一个 [`Value`](xref:Xamarin.Forms.Setter.Value) 。 `Property` 是应用样式的元素的可绑定属性的名称，而 `Value` 是应用于属性的值。
+每个 [`Style`](xref:Xamarin.Forms.Style) 实例都包含一个或多个 [`Setter`](xref:Xamarin.Forms.Setter) 对象的集合，其中每个 `Setter` 都具有 [`Property`](xref:Xamarin.Forms.Setter.Property) 和 [`Value`](xref:Xamarin.Forms.Setter.Value)。 `Property` 是应用样式的元素的可绑定属性的名称，而 `Value` 是应用于属性的值。
 
 每个 [`Style`](xref:Xamarin.Forms.Style) 实例可以为*显式*或*隐式*：
 
 - *显式* [`Style`](xref:Xamarin.Forms.Style) 实例是通过指定 [`TargetType`](xref:Xamarin.Forms.Style.TargetType) 和 `x:Key` 值，并将目标元素的 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 属性设置为 `x:Key` 引用来定义的。 有关*显式*样式的详细信息，请参阅[显式样式](~/xamarin-forms/user-interface/styles/explicit.md)。
 - *隐式* [`Style`](xref:Xamarin.Forms.Style) 实例是通过仅指定指定的来定义的 [`TargetType`](xref:Xamarin.Forms.Style.TargetType) 。 `Style`然后，实例将自动应用于该类型的所有元素。 请注意，的子类 `TargetType` 不会自动 `Style` 应用。 有关*隐式*样式的详细信息，请参阅[隐式样式](~/xamarin-forms/user-interface/styles/implicit.md)。
 
-创建时 [`Style`](xref:Xamarin.Forms.Style) ， [`TargetType`](xref:Xamarin.Forms.Style.TargetType) 始终需要属性。 下面的代码示例演示了在 XAML 中创建的*显式*样式（注意 `x:Key` ）：
+创建 [`Style`](xref:Xamarin.Forms.Style) 时，始终需要 [`TargetType`](xref:Xamarin.Forms.Style.TargetType) 属性。 下面的代码示例演示了在 XAML 中创建的*显式*样式（注意 `x:Key` ）：
 
 ```xaml
 <Style x:Key="labelStyle" TargetType="Label">

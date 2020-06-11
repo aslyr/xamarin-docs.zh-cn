@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文探讨了在应用程序中呈现数据的选项 Xamarin.Forms ，并利用了 ListView 控件的便利。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: cdede547e3ef7cf9f7b6d89751c7476a2ce66d3d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129007"
+title： "自定义 ListView 单元格外观" 说明： "本文探讨了用于在应用程序中呈现数据的选项 Xamarin.Forms ，同时利用了 ListView 控件的便利。"
+ms-chap： xamarin assetid： FD45CB91-1A8F-46FB-B432-6BC20492E456： xamarin 窗体作者： davidbritch： dabritch ms. 日期：09/12/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="customizing-listview-cell-appearance"></a>自定义 ListView 单元格外观
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)

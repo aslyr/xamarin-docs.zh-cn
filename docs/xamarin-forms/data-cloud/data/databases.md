@@ -25,8 +25,8 @@ SQLite 数据库引擎允许 Xamarin.Forms 应用程序加载和保存共享代�
 
 许多 NuGet 包都有着类似的名称。 正确的包具有以下属性：
 
-- **创建者：** Frank Krueger （praeclarum）
-- **ID：** sqlite 网络-pcl
+- **创建者：** Frank A. Krueger (praeclarum)
+- **ID：** sqlite net pcl
 - **NuGet 链接：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 > [!NOTE]

@@ -1,25 +1,11 @@
 ---
-title: Xamarin.FormsC
-description: Xamarin.Forms通过视觉对象，可以有选择地将呈现器应用到 VisualElement 对象，而无需为视图提供子类 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5c0afcaa75029288d527fac2a2b21bcd614fd4dc
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127122"
+标题： " Xamarin.Forms 视觉对象说明：" Xamarin.Forms 视觉对象允许有选择地将呈现器应用到 VisualElement 对象，而无需为视图提供子类 Xamarin.Forms 。 "
+ms-chap： xamarin assetid：69228A9C-39C4-46AE-A803-C38EED6FB965： xamarin 窗体作者： davidbritch： dabritch ms. 日期：03/05/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-visual"></a>Xamarin.FormsC
 
-## <a name="xamarinforms-material-visualmaterial-visualmd"></a>[Xamarin.Forms材料视觉对象](material-visual.md)
+## <a name="xamarinforms-material-visualmaterial-visualmd"></a>[Xamarin.Forms 材料视觉对象](material-visual.md)
 
 Xamarin.Forms材料视觉对象可用于创建 Xamarin.Forms 在 iOS 和 Android 上看起来完全相同或大致相同的应用程序。
 

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文演示如何从应用程序中使用 WCF 简单对象访问协议（SOAP）服务 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: cf95427807e0179a608b428bc7e02499c9616fe7
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139147"
+title： "使用 Windows Communication Foundation （WCF） Web 服务" 说明： "本文演示如何从应用程序使用 WCF 简单对象访问协议（SOAP）服务 Xamarin.Forms 。"
+ms-chap： xamarin assetid：5696FF04-EF21-4B7A-8C8B-26DE28B5C0AD： xamarin 窗体作者： davidbritch： dabritch ms. 日期：03/28/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>使用 Windows Communication Foundation （WCF） Web 服务
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
@@ -52,7 +38,7 @@ ASP.NET Web Services （.ASMX）和 WCF 之间存在差异，但 WCF 支持与�
 
 WCF 服务提供以下操作：
 
-|操作|说明|参数|
+|Operation|说明|参数|
 |--- |--- |--- |
 |GetTodoItems|获取待办事项的列表|
 |CreateTodoItem|创建新的待办事项|XML 序列化 TodoItem|
@@ -61,7 +47,7 @@ WCF 服务提供以下操作：
 
 有关应用程序中使用的数据模型的详细信息，请参阅[对数据进行建模](~/xamarin-forms/data-cloud/web-services/introduction.md)。
 
-必须生成*代理*以使用 WCF 服务，该服务允许应用程序连接到服务。 代理通过使用定义方法和关联服务配置的服务元数据来构造。 此元数据以 web 服务所生成的 Web 服务描述语言（WSDL）文档的形式公开。 可以使用 Visual Studio 2017 中的 Microsoft WCF Web Service Reference Provider 生成代理，以将 Web 服务的服务引用添加到 .NET Standard 库中。 在 Visual Studio 2017 中使用 Microsoft WCF Web Service Reference Provider 创建代理的替代方法是使用 "svcutil.exe" 元数据实用工具（）。 有关详细信息，请参阅 " [svcutil.exe" 元数据实用工具（）](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/)。
+必须生成*代理*以使用 WCF 服务，该服务允许应用程序连接到服务。 代理通过使用定义方法和关联服务配置的服务元数据来构造。 此元数据以 web 服务所生成的 Web 服务描述语言（WSDL）文档的形式公开。 可以使用 Visual Studio 2017 中的 Microsoft WCF Web Service Reference Provider 生成代理，以将 Web 服务的服务引用添加到 .NET Standard 库中。 在 Visual Studio 2017 中使用 Microsoft WCF Web Service Reference Provider 创建代理的一种替代方法是使用 "（svcutil.exe）"。 有关详细信息， [Svcutil.exe](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/)请参阅 ""
 
 生成的代理类提供使用异步编程模型（APM）设计模式的 web 服务的方法。 在此模式下，异步操作作为名为*BeginOperationName*和*EndOperationName*的两个方法实现，该方法用于开始和结束异步操作。
 
@@ -240,7 +226,7 @@ public async Task DeleteTodoItemAsync (string id)
     netsh advfirewall firewall add rule name="TodoWCFService" dir=in protocol=tcp localport=49393 profile=private remoteip=localsubnet action=allow
     ```
 
-1. **将 IIS Express 配置为接受远程连接**。 您可以通过在 **[解决方案目录] \. vs\config\applicationhost.config**中编辑 IIS Express 的配置文件来配置 IIS Express。查找名称为的 `site` 元素 `TodoWCFService` 。 它应类似于以下 XML：
+1. **将 IIS Express 配置为接受远程连接**。 您可以通过在 **[解决方案目录] \.vs\config\applicationhost.config**编辑 IIS Express 的配置文件来配置 IIS Express。查找名称为的 `site` 元素 `TodoWCFService` 。 它应类似于以下 XML：
 
     ```xml
     <site name="TodoWCFService" id="2">
@@ -317,4 +303,4 @@ public async Task DeleteTodoItemAsync (string id)
 
 - [TodoWCF （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
 - [如何：创建 Windows Communication Foundation 客户端](https://docs.microsoft.com/dotnet/framework/wcf/how-to-create-a-wcf-client)
-- [Svcutil.exe 元数据实用工具（）](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
+- [System.servicemodel 元数据实用工具（svcutil.exe）](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)

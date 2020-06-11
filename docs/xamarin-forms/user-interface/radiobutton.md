@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsRadioButton
-description: Xamarin.Forms单选按钮是一种允许用户从集中选择一个选项的按钮。 每个选项都由一个单选按钮表示，您只能在组中选择一个单选按钮。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f7cbd11f98127cb73514112dae785102ff9c51c0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127616"
+title： " Xamarin.Forms 单选按钮" 说明： " Xamarin.Forms 单选按钮是一种允许用户从集中选择一个选项的按钮。 每个选项都由一个单选按钮表示，您只能在组中选择一个单选按钮。 "
+ms-chap： xamarin assetid： E2AA40E0-69A5-41DF-BFC4-C151CA657451： xamarin 窗体作者： davidbritch： dabritch ms. 日期：03/13/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-radiobutton"></a>Xamarin.FormsRadioButton
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-radiobuttondemos/)
@@ -203,7 +189,7 @@ radioButton.CheckedChanged += (sender, e) =>
 
 ![在 iOS 和 Android 上按视觉状态设置的单选按钮外观的屏幕截图](radiobutton-images/ischecked-visualstate.png "IOS 和 Android 上的单选按钮视觉状态")
 
-有关可视状态的详细信息，请参阅[ Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)。
+若要详细了解可视状态，请参阅 [Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)。
 
 ## <a name="disable-a-radiobutton"></a>禁用单选按钮
 
@@ -212,5 +198,5 @@ radioButton.CheckedChanged += (sender, e) =>
 ## <a name="related-links"></a>相关链接
 
 - [单选按钮演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-radiobuttondemos/)
-- [Xamarin.Forms鼠标](~/xamarin-forms/user-interface/button.md)
-- [Xamarin.Forms视觉状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.Forms 按钮](~/xamarin-forms/user-interface/button.md)
+- [Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)

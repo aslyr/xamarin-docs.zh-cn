@@ -1,22 +1,8 @@
 ---
-title: 'Xamarin.FormsC # 标记'
-description: 'C # 标记是一组乐观的帮助器方法和类，用于简化 Xamarin.Forms 在 c # 中生成声明性用户界面的过程。'
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 939727d3dd8d419cdc020d33d3e7241dcedb8158
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137740"
+title： " Xamarin.Forms c # 标记" 说明： "c # 标记是一组可感知帮助程序方法和类，以简化 Xamarin.Forms 在 c # 中生成声明性用户界面的过程。"
+ms-chap： xamarin assetid： D41B9DCD-5C34-4C2F-B177-FC082AB2E9E0： xamarin 窗体作者： davidbritch： dabritch ms. 日期：05/15/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-c-markup"></a>Xamarin.FormsC # 标记
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -231,7 +217,7 @@ new Label { Text = "Tap Me" }
 
 由于笔势识别器是 `BindableObject` ，因此你可以在 `Bind` 初始化时使用和 `BindCommand` 扩展方法。 还可以用扩展方法初始化自定义笔势识别器类型 `Gesture<TGestureElement, TGestureRecognizer>` 。
 
-## <a name="layout"></a>Layout
+## <a name="layout"></a>布局
 
 C # 标记包含一系列布局扩展方法，这些方法支持布局中的定位视图和视图中的内容：
 

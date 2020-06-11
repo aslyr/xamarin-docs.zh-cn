@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCarouselView 布局
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 44df710df0272afe3c6f6911381af1a88c8cf923
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140278"
+标题： " Xamarin.Forms CarouselView Layout" description： "默认情况下，CarouselView 会水平显示其项。 不过，也可以使用垂直方向。 "
+ms-chap： xamarin assetid： fede0382-c972-4023-a4ea-fe5cadec91a6： xamarin 窗体作者： davidbritch： dabritch ms. 日期：01/28/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-carouselview-layout"></a>Xamarin.FormsCarouselView 布局
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -274,5 +260,5 @@ void OnImageTapped(object sender, EventArgs e)
 ## <a name="related-links"></a>相关链接
 
 - [CarouselView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
-- [从右到左的本地化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)
+- [从右到左本地化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)
 - [Xamarin.FormsCarouselView 滚动](scrolling.md)

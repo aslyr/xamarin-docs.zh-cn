@@ -1,22 +1,8 @@
 ---
-title: 样式继承Xamarin.Forms
-description: 样式可以从其他样式继承，以减少重复并实现重复使用。 本文介绍如何在应用程序中执行样式继承 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 80cc419ae098f4a0cbbd782785c0ec5ba03fa703
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138952"
+标题： "description：" 中的样式继承 Xamarin.Forms ：样式可以从其他样式继承，以减少重复并实现重复使用。 本文介绍如何在应用程序中执行样式继承 Xamarin.Forms 。 "
+ms-chap： xamarin assetid： 67A3A39C-8CC0-446D-8162-FFA73582D3B8 毫秒： xamarin 窗体作者： davidbritch 毫秒. 作者： dabritch 毫秒。日期：02/17/2016 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="style-inheritance-in-xamarinforms"></a>样式继承Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)

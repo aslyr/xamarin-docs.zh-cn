@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文介绍如何从各种源加载 SkiaSharp 中的位图并在应用程序中显示它们 Xamarin.Forms ，并通过示例代码对此进行演示。
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1e4c170f818dc62640b1cd72ec3b70f48d227d93
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137730"
+title： "SkiaSharp 中的 Bitmap 基础知识" 说明： "本文介绍了如何从不同的源加载 SkiaSharp 中的位图并在应用程序中显示它们 Xamarin.Forms ，并通过示例代码对此进行了演示。"
+ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 32C95DFF-9065-42D7-966C-D3DBD16906B3 author： davidbritch： dabritch ms. 日期：07/17/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp 中的位图基础知识
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -104,9 +90,9 @@ protected override async void OnAppearing()
 
 ## <a name="loading-a-bitmap-resource"></a>加载位图资源
 
-就代码而言，加载位图的最简单方法是直接在应用程序中包括位图资源。 **SkiaSharpFormsDemos**程序包含一个名为**Media**的文件夹，其中包含多个位图文件，其中包含一个名为 "**猴子**" 的文件。 对于存储为程序资源的位图，必须使用 "**属性**" 对话框为该文件提供**嵌入资源**的**生成操作**！
+就代码而言，加载位图的最简单方法是直接在应用程序中包括位图资源。 **SkiaSharpFormsDemos**程序包含一个名为**Media**的文件夹，其中包含多个位图文件，其中包含一个名为**monkey.png**。 对于存储为程序资源的位图，必须使用 "**属性**" 对话框为该文件提供**嵌入资源**的**生成操作**！
 
-每个嵌入资源都有一个*资源 ID* ，其中包含项目名称、文件夹和文件名，所有这些都按句点进行连接： **SkiaSharpFormsDemos**。 可以通过指定资源 ID 作为类的方法的参数来获取对此资源的访问权限 [`GetManifestResourceStream`](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) [`Assembly`](xref:System.Reflection.Assembly) ：
+每个嵌入资源都有一个*资源 ID* ，其中包含项目名称、文件夹和文件名，所有这些都按句点进行连接： **SkiaSharpFormsDemos.Media.monkey.png**。 可以通过指定资源 ID 作为类的方法的参数来获取对此资源的访问权限 [`GetManifestResourceStream`](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) [`Assembly`](xref:System.Reflection.Assembly) ：
 
 ```csharp
 string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";

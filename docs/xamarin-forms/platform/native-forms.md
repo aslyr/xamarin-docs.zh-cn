@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms在 Xamarin 本机项目中
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9fb741a03d1c8dd2a8754120d0b46567d8889a0b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132270"
+标题： " Xamarin.Forms 在 Xamarin 本机项目中" 说明： "本文介绍了如何使用直接添加到 Xamarin 本机项目的 ContentPage 派生页面，以及如何在这些页面之间导航。"
+ms-chap： xamarin assetid： f343fc21-dfb1-4364-a332-9da6705d36bc： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/19/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms在 Xamarin 本机项目中
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/native2forms)

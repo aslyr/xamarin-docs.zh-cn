@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d9fa710f5dfc61c2892b8fc409a39b37cf449018
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136300"
+title： "SkiaSharp 效果" 说明： "了解如何通过渐变、位图平铺、blend 模式、模糊和其他效果更改图形的正常显示。
+ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： B3E06572-8E2A-49FA-90D1-444C394CD516 author： davidbritch： dabritch ms. 日期：08/22/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="skiasharp-effects"></a>SkiaSharp 效果
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

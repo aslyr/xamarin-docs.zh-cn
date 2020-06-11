@@ -1,21 +1,6 @@
 ---
-title: Xamarin.Forms期限
-description: Xamarin.FormsFrame 类是一种布局，用于使用可以配置为颜色、阴影和其他选项的边框来包装视图或布局。
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 42192111befbefda7e0f62b7691a8392c2828818
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137184"
+标题： " Xamarin.Forms frame" 说明： " Xamarin.Forms frame 类是一种布局，用来用可以配置颜色、阴影和其他选项的边框来包装视图或布局。"
+ms-chap： xamarin assetId：4E074714-0928-41C8-A468-B60E23236A8C： xamarin 窗体作者： profexorgeek： jusjohns ms. 日期：08/06/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 # <a name="xamarinforms-frame"></a>Xamarin.Forms期限
 
@@ -189,7 +174,7 @@ Frame circleImageFrame = new Frame
 };
 ```
 
-必须将**室外**映像添加到每个平台项目中，并使其实现方式因平台而异。 有关详细信息，请参阅[中 Xamarin.Forms 的图像](~/xamarin-forms/user-interface/images.md)。
+必须将**outdoors.jpg**映像添加到每个平台项目中，此操作的实现方式因平台而异。 有关详细信息，请参阅[中 Xamarin.Forms 的图像](~/xamarin-forms/user-interface/images.md)。
 
 > [!NOTE]
 > 圆角在各种平台上的行为略有不同。 `Image`对象的长度 `Margin` 应为图像宽度和父框架宽度之间的一半，并且应为负数以使图像在对象内均匀对齐 `Frame` 。 但是，不能保证请求的宽度和高度，因此 `Margin` ， `HeightRequest` 和 `WidthRequest` 属性可能需要根据映像大小和其他布局选项进行更改。

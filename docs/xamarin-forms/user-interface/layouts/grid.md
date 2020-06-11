@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms格
-description: Xamarin.Forms网格是一种布局，可将其子级组织到单元格的行和列中。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c4e63d6c1701d9eb247ecb7c52188e5dbc045934
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138068"
+标题： " Xamarin.Forms 网格" 说明： " Xamarin.Forms 网格是一种布局，它将其子级组织到单元格的行和列中。"
+ms-chap： xamarin assetid：762B1802-D185-494C-B643-74EED55882FE： xamarin 窗体作者： davidbritch： dabritch ms. 日期：05/15/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-grid"></a>Xamarin.Forms格
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)

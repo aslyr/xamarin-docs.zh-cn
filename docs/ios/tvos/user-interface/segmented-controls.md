@@ -214,7 +214,7 @@ SegmentedControl.SetBackgroundImage (UIImage.FromFile("background.png"), UIContr
 
 并 `UIBarMetrics` 指定要使用的度量值：
 
-- 默认值
+- 默认
 - 精简
 - DefaultPrompt
 - CompactPrompt

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文演示如何从应用程序使用 .ASMX SOAP 服务 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1f7a0d04d1e7b6abc9931c05c0e46ef49f8ba09c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138458"
+title： "使用 ASP.NET Web 服务（.ASMX）" 说明： "本文介绍了如何从应用程序使用 .ASMX SOAP 服务 Xamarin.Forms 。"
+ms-chap： xamarin assetid： D5533964-5528-4D35-9C2B-FAFB632472AC： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/02/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="consume-an-aspnet-web-service-asmx"></a>使用 ASP.NET Web 服务 (ASMX)
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
@@ -44,7 +30,7 @@ SOAP 可以在许多传输协议（包括 HTTP、SMTP、TCP 和 UDP）上运行�
 
 .ASMX 服务提供以下操作：
 
-|操作|说明|参数|
+|Operation|说明|参数|
 |--- |--- |--- |
 |GetTodoItems|获取待办事项的列表|
 |CreateTodoItem|创建新的待办事项|XML 序列化 TodoItem|

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsStackLayout
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f624674cc6d4ba1bdc34a42fb52fb63ff8a7135a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137964"
+标题： " Xamarin.Forms StackLayout" 说明： "StackLayout 以水平或垂直方式在一维堆栈中组织子视图。"
+ms-chap： xamarin assetid：6A91EA70-268C-462C-AAAF-F8DA011403F8： xamarin 窗体作者： davidbritch： dabritch ms. 日期：05/11/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-stacklayout"></a>Xamarin.FormsStackLayout
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
@@ -273,7 +259,7 @@ public class AlignmentPageCS : ContentPage
 }
 ```
 
-### <a name="expansion"></a>膨胀
+### <a name="expansion"></a>扩展
 
 下面的 XAML 示例对中的每个设置了扩展首选项 [`Label`](xref:Xamarin.Forms.Label) [`StackLayout`](xref:Xamarin.Forms.StackLayout) ：
 

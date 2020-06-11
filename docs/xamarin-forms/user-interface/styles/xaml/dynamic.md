@@ -1,23 +1,8 @@
 ---
-title: 中的动态样式Xamarin.Forms
-description: 本文说明了 Xamarin.Forms 应用程序如何在运行时使用动态资源动态响应样式更改。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.custom: ''
-ms.openlocfilehash: d40ca3423cca68757cf458faf5cca1138aec5461
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140083"
+标题： "说明中的动态样式" Xamarin.Forms ：本文说明了 Xamarin.Forms 应用程序如何在运行时使用动态资源动态响应样式更改。
+ms-chap： xamarin assetid：13D4FA4B-DF10-42BF-B001-2C49367FC216： xamarin 窗体作者： davidbritch： dabritch ms. 日期：05/28/2019： [ Xamarin.Forms ， Xamarin.Essentials ] ms. 自定义：视频
 ---
+
 # <a name="dynamic-styles-in-xamarinforms"></a>中的动态样式Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)

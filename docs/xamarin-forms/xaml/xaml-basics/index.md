@@ -1,23 +1,8 @@
 ---
-title: Xamarin.FormsXAML 基础知识
-description: 本指南介绍了如何开始对移动设备进行跨平台 XAML。 XAML 允许开发人员 Xamarin.Forms 使用标记而不是代码来定义应用程序中的用户界面。
-ms.prod: ''
-ms.custom: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8f5f69038f7d5cfe7ad46f013acb1519c4e9569f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138614"
+title： " Xamarin.Forms XAML 基础知识" 说明： "本指南介绍了如何开始对移动设备进行跨平台 XAML。 XAML 允许开发人员 Xamarin.Forms 使用标记而不是代码来定义应用程序中的用户界面。
+ms-chap： xamarin ms-chap： xamarin ms-chap： assetid：67CC2CD6-D10A-4B14-9696-1D3A410EFFBF： xamarin 窗体 author： davidbritch： dabritch ms. 日期：10/25/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-xaml-basics"></a>Xamarin.FormsXAML 基础知识
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
@@ -62,7 +47,7 @@ XAML 本质上是 XML，但 XAML 具有一些独特的语法功能。 最重要�
 
 - [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [创建移动应用书籍](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)
-- [Xamarin.Forms范例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- [Xamarin.Forms 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
 
 ## <a name="related-video"></a>相关视频
 

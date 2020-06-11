@@ -1,22 +1,8 @@
 ---
-title: AndroidX 迁移Xamarin.Forms
-description: 本文介绍 AndroidX 存在的原因，以及如何在应用中迁移到 AndroidX Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c2df309a8a12a05a4b492bb66977aa2411142850
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138263"
+标题： "说明：" 中的 "AndroidX 迁移" 本文 Xamarin.Forms 介绍了 AndroidX 存在的原因，以及如何迁移到应用中的 AndroidX Xamarin.Forms 。
+ms-chap： xamarin assetid： 98884003-E65A-4EB4-842D-66CFE27344A4 毫秒： xamarin 窗体作者： profexorgeek 毫秒. 作者： jusjohns 毫秒。日期：01/22/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="androidx-migration-in-xamarinforms"></a>AndroidX 迁移Xamarin.Forms
 
 AndroidX 替换 Android 支持库。 本文介绍了 AndroidX 存在的原因、它 Xamarin.Forms 的影响，以及如何将应用程序迁移为使用 AndroidX 库。

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms视图
-description: 本指南介绍了 Xamarin.Forms ListView，可用于在交互式列表中显示数据。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a1ff8dd5c8a8a4051cea8ce4b288c42bdbaa8d31
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139901"
+标题： " Xamarin.Forms listview" 说明： "本指南介绍了 Xamarin.Forms ListView，可用于在交互式列表中显示数据。"
+ms-chap： xamarin assetid： FEFDF7E0-720F-4BD1-863F-4477226AA695： xamarin 窗体作者： davidbritch： dabritch ms. 日期：09/04/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-listview"></a>Xamarin.Forms视图
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)
@@ -24,7 +10,7 @@ ms.locfileid: "84139901"
 [`ListView`](xref:Xamarin.Forms.ListView)是用于显示数据列表的视图，特别是需要滚动的长列表。
 
 > [!IMPORTANT]
-> [`CollectionView`](xref:Xamarin.Forms.CollectionView)是一个视图，用于显示使用不同布局规范的数据列表。 它旨在提供更灵活、更高的性能替代方法 [`ListView`](xref:Xamarin.Forms.ListView) 。 有关详细信息，请参阅[ Xamarin.Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)。
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView) 是使用不同布局规范显示数据列表的视图。 它旨在提供更灵活、更高的性能替代方法 [`ListView`](xref:Xamarin.Forms.ListView) 。 有关详细信息，请参阅 [Xamarin.Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)。
 
 ## <a name="use-cases"></a>用例
 

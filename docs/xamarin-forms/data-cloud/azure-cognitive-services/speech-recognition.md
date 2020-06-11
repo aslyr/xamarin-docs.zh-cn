@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文介绍如何使用 Azure Speech Service API 将语音转录到应用程序中的文本 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 171ecc02fda304135e5f535c3e798067595d7047
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139316"
+标题： "使用语音服务 API 的语音识别" 说明： "本文介绍了如何使用 Azure Speech Service API 将语音转录到应用程序中的文本 Xamarin.Forms 。"
+ms-chap： xamarin assetid： B435FF6B-8785-48D9-B2D9-1893F5A87EA1： xamarin 窗体作者： profexorgeek： jusjohns ms. 日期：01/14/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="speech-recognition-using-azure-speech-service"></a>使用 Azure Speech Service 进行语音识别
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-cognitivespeechservice)
@@ -347,7 +333,7 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 
 `MainActivity`类定义了一个名为的静态引用 `Instance` ， `AndroidMicrophoneService` 对象在请求权限时需要该引用。 `OnRequestPermissionsResult` `AndroidMicrophoneService` 当用户批准或拒绝了权限请求时，它将重写方法以更新对象。
 
-最后，Android 应用程序必须包括在**androidmanifest.xml**文件中录制音频的权限：
+最后，Android 应用程序必须包括在**AndroidManifest.xml**文件中录制音频的权限：
 
 ```xml
 <manifest ...>

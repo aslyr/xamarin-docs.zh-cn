@@ -1,22 +1,8 @@
 ---
-title: 选择 Xamarin.Forms 布局
-description: Xamarin.Forms布局类使你能够在应用程序中排列和分组 UI 控件。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 16a48423d05ce1cede75c0020bf18f4f398f5adc
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138497"
+标题： "选择 Xamarin.Forms 布局" 说明： " Xamarin.Forms 布局类使你能够在应用程序中排列和分组 UI 控件。"
+ms-chap： xamarin assetid：05A39752-A174-447E-A30D-3CC9EF98CB96： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/21/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="choose-a-xamarinforms-layout"></a>选择 Xamarin.Forms 布局
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
@@ -78,7 +64,7 @@ Xamarin.Forms布局类使你能够在应用程序中排列和分组 UI 控件。
 
 有关详细信息，请参阅[ Xamarin.Forms StackLayout](stacklayout.md)。
 
-## <a name="grid"></a>网格
+## <a name="grid"></a>Grid
 
 [`Grid`](xref:Xamarin.Forms.Grid)用于显示行和列中的元素，这些元素的大小可以是比例的也可以是绝对的。 网格的行和列使用 [`RowDefinitions`](xref:Xamarin.Forms.Grid.RowDefinitions) 和 [`ColumnDefinitions`](xref:Xamarin.Forms.Grid.ColumnDefinitions) 属性指定。
 
@@ -203,7 +189,7 @@ Xamarin.Forms布局类使你能够在应用程序中排列和分组 UI 控件。
 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)应视为只在您可以对子级施加大小或元素的大小不会影响其他子级的位置时使用的特殊用途的布局。 此布局的标准用途是创建覆盖层，其中包含具有其他控件的页面，可能是为了防止用户与页面上的普通控件交互。
 
 > [!IMPORTANT]
-> `HorizontalOptions`和 `VerticalOptions` 属性对的子级不起作用 `AbsoluteLayout` 。
+> `HorizontalOptions` 和 `VerticalOptions` 属性对 `AbsoluteLayout` 的子级不起作用。
 
 在中 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) ， [`AbsoluteLayout.LayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty) 附加属性用于指定元素的水平位置、垂直位置、宽度和高度。 此外， [`AbsoluteLayout.LayoutFlags`](xref:Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty) 附加属性指定将如何解释布局边界。
 

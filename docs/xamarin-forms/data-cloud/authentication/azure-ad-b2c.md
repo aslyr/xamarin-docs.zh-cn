@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 64529b81a375ee5a8cc8a96ec557c03401e60495
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130567"
+标题： "使用 Azure Active Directory B2C 对用户进行身份验证" 说明： "Azure Active Directory B2C 为面向消费者的 web 和移动应用程序提供云标识管理。 本文介绍如何使用 Azure Active Directory B2C 将标识管理集成到使用 Microsoft 身份验证库的移动应用程序中。 "
+ms-chap： xamarin assetid： B0A5DB65-0585-4A00-B908-22CCC286E6B6： xamarin 窗体作者： davidbritch： dabritch ms. 日期：12/04/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="authenticate-users-with-azure-active-directory-b2c"></a>使用 Azure Active Directory B2C 对用户进行身份验证
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azureadb2cauth)
@@ -70,7 +56,7 @@ Microsoft 身份验证库需要将你的应用程序的**重定向 URL**作为�
 
 ![Azure 应用程序的 "属性" 视图中的自定义重定向 URI](azure-ad-b2c-images/azure-redirect-uri.png)
 
-稍后将在 Android **applicationmanifest.xml**和 iOS**信息. INFO.PLIST**中使用 URL。
+稍后将在 Android **ApplicationManifest.xml**和 iOS **INFO.PLIST**中使用 URL。
 
 在示例项目中，编辑**Constants.cs**文件以将字段设置 `clientId` 为你的**应用程序 ID**。 下面的代码演示如果你的应用程序 ID 为，应如何设置此值 `1234abcd` ：
 
@@ -286,7 +272,7 @@ namespace TodoAzure.iOS
 
 ### <a name="android"></a>Android
 
-在 Android 上，必须在**androidmanifest.xml**中注册注册到 Azure Active Directory B2C 的自定义 URL 方案。 MSAL 要求 URL 方案符合特定模式，前面介绍了如何将[移动应用程序注册到 Azure Active Directory B2C](~/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c)。 下面的示例显示了**androidmanifest.xml**中的自定义 URL 方案。
+在 Android 上，必须在**AndroidManifest.xml**中注册 Azure Active Directory B2C 向注册的自定义 URL 方案。 MSAL 要求 URL 方案符合特定模式，前面介绍了如何将[移动应用程序注册到 Azure Active Directory B2C](~/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c)。 下面的示例演示了**AndroidManifest.xml**中的自定义 URL 方案。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -307,7 +293,7 @@ namespace TodoAzure.iOS
 </manifest>
 ```
 
-`MainActivity`必须修改类，以便在 `UIParent` 调用期间向应用程序提供对象 `OnCreate` 。 Azure Active Directory B2C 完成授权请求后，它将从**androidmanifest.xml**重定向到注册的 URL 方案。 已注册的 URI 方案导致 Android `OnActivityResult` 使用 URL 作为启动参数调用方法，该参数由方法进行处理 `SetAuthenticationContinuationEventArgs` 。
+`MainActivity`必须修改类，以便在 `UIParent` 调用期间向应用程序提供对象 `OnCreate` 。 Azure Active Directory B2C 完成授权请求后，它将从**AndroidManifest.xml**重定向到注册的 URL 方案。 已注册的 URI 方案导致 Android `OnActivityResult` 使用 URL 作为启动参数调用方法，该参数由方法进行处理 `SetAuthenticationContinuationEventArgs` 。
 
 ```csharp
 public class MainActivity : FormsAppCompatActivity
@@ -336,7 +322,7 @@ public class MainActivity : FormsAppCompatActivity
 
 在通用 Windows 平台上使用 MSAL 不需要其他设置
 
-## <a name="run-the-project"></a>运行项目
+## <a name="run-the-project"></a>运行该项目
 
 在虚拟或物理设备上运行该应用程序。 点击 "**登录**" 按钮会打开浏览器并导航到可在其中登录或创建帐户的页面。 完成登录过程后，应返回到应用程序的注销页面。 以下屏幕截图显示了在 Android 和 iOS 上运行的用户登录屏幕：
 

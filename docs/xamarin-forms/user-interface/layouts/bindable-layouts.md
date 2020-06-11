@@ -1,22 +1,8 @@
 ---
-title: 可绑定布局Xamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9d0497c0c0593b54f69bac84307976c4050e9c95
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138237"
+标题： "描述中的可绑定布局 Xamarin.Forms ：" 可绑定布局通过绑定到项的集合使布局类能够生成其内容，并可选择使用 system.windows.datatemplate> 设置每个项的外观。
+ms-chap： xamarin assetid：824C3319-20A0-42D0-8632-CDECD98349C3： xamarin 窗体作者： davidbritch： dabritch ms. 日期：03/09/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="bindable-layouts-in-xamarinforms"></a>可绑定布局Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
@@ -98,7 +84,7 @@ BindableLayout.SetItemTemplate(stackLayout, circleImageTemplate);
 
 ![具有 System.windows.datatemplate> 的可绑定布局](bindable-layouts-images/top-followers.png "使用数据模板的可绑定布局")
 
-有关数据模板的详细信息，请参阅[ Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
+有关数据模板的详细信息，请参阅 [Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
 
 ## <a name="choose-item-appearance-at-runtime"></a>在运行时选择项外观
 

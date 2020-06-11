@@ -7,13 +7,13 @@ ms.assetid: B50FE9BD-9E01-AE88-B178-10061E3986DA
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
-ms.date: 05/22/2018
-ms.openlocfilehash: 6368c3a4b128c06687b23b965b308ad6a788188b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.date: 06/10/2020
+ms.openlocfilehash: 1b3eb61bf08eb006890b8b879c560163bd131844
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574482"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84655082"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin 的故障排除提示
 
@@ -48,7 +48,7 @@ ms.locfileid: "84574482"
 - 向 [`[Preserve]`](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute) 成员添加属性。  这会阻止链接器删除它。
 - 调用[**mtouch**](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29)时，请使用 **-nolink**或 **-linksdkonly**选项：
   - **-nolink**禁用所有链接。
-  - **-linksdkonly**将仅链接 xamarin 提供的程序集（如**xamarin**），同时保留用户创建的程序集中的所有类型（即应用项目）。
+  - **-linksdkonly**将仅链接 Xamarin 提供的程序集（如**xamarin.ios.dll**），同时保留用户创建的程序集中的所有类型（即应用项目）。
 
 请注意，对程序集进行了链接，使生成的可执行文件更小;因此，禁用链接可能导致比预期更大的可执行文件。
 
@@ -166,7 +166,7 @@ public Bar (IntPtr handle) : base (handle) { }
 
 ## <a name="visual-studio-for-mac-complains-about-mono-24-required"></a>Visual Studio for Mac 投诉原因有关 Mono 2.4 的要求
 
-如果由于最近的更新而更新了 Visual Studio for Mac，并且当你尝试再次启动时，投诉原因不存在 Mono 2.4，你只需[升级 mono 2.4 安装](http://www.go-mono.com/mono-downloads/download.html)即可。  
+如果由于最近的更新而更新了 Visual Studio for Mac，并且当你尝试再次启动时，投诉原因不存在 Mono 2.4，你只需[升级 mono 2.4 安装](http://www.go-mono.com/mono-downloads/download.html)即可。
 
 Mono 2.4.2.3 _6 修复了一些 Visual Studio for Mac 无法可靠运行的重要问题，有时会在启动时挂起 Visual Studio for Mac 或阻止生成代码完成数据库。
 
@@ -186,7 +186,7 @@ Stacktrace:
 
 这意味着你要将使用 thumb 代码编译的静态库链接到你的项目中。 从 iPhone SDK 版本3.1 （在撰写本文时，或更高版本），Apple 在使用 Thumb 代码（静态库）链接非 Thumb 代码（Xamarin）时在其链接器中引入了 bug。你将需要与静态库的非 Thumb 版本链接，以减轻此问题。
 
-## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>ExecutionEngineException：尝试 JIT 编译方法（由托管到托管的包装） Foo []： System.web. get_Count （）
+## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>System.ExecutionEngineException：尝试 JIT 编译方法（托管到托管的包装） Foo []： System.web. get_Count （）
 
 [] 后缀指示你或类库通过泛型集合（如 IEnumerable<>、ICollection<> 或 IList<>）在数组上调用方法。 作为一种解决方法，你可以通过自行调用方法，并确保在触发异常的调用之前执行此代码，从而显式强制 AOT 编译器包含此类方法。 在这种情况下，可以编写：
 
@@ -217,7 +217,7 @@ int count = ((ICollection<Foo>) array).Count;
 
 为了支持调试，调试版本包含其他代码。 在发布模式下生成的项目是大小的一小部分。
 
-自 Xamarin. iOS 1.3，调试版本包括针对 Mono 的每个组件（每类框架的每个方法）的调试支持。  
+自 Xamarin. iOS 1.3，调试版本包括针对 Mono 的每个组件（每类框架的每个方法）的调试支持。
 
 使用 Xamarin 1.4，我们将介绍一种更细化的调试方法，默认情况下，它只是为您的代码和库提供调试检测，而不是为所有[Mono 程序集](~/cross-platform/internals/available-assemblies.md)提供调试工具（这仍是可行的，但您必须选择对这些程序集进行调试）。
 
@@ -226,33 +226,6 @@ int count = ((ICollection<Foo>) array).Count;
 如果你正在运行 iPhone 模拟器，则 Mono 和 Xamarin iOS 安装程序都挂起。 此问题并不局限于 Mono 或 Xamarin，这是在安装时在 MacOS 雪 Leopard 上尝试安装软件的任何软件的一致性问题。
 
 请确保退出 iPhone 模拟器，然后重试安装。
-
-<a name="trampolines"></a>
-
-## <a name="ran-out-of-trampolines-of-type-0"></a>已用完类型为0的 trampolines
-
-如果在运行设备时收到此消息，则可以通过修改项目选项 "iPhone Build" 部分来创建更多类型 0 trampolines （类型特定）。  要为设备生成目标添加额外参数：
-
- `-aot "ntrampolines=2048"`
-
-Trampolines 的默认数目为1024。 尝试增加此数量，直到你的应用程序已足够。
-
-## <a name="ran-out-of-trampolines-of-type-1"></a>已用完类型为1的 trampolines
-
-如果大量使用递归泛型，则可能会在设备上收到此消息。  可以通过修改项目选项 "iPhone Build" 部分来创建更多类型 1 trampolines （类型 RGCTX）。  要为设备生成目标添加额外参数：
-
- `-aot "nrgctx-trampolines=2048"`
-
-Trampolines 的默认数目为1024。 请尝试增加此数量，直到你已有足够的使用泛型。
-
-## <a name="ran-out-of-trampolines-of-type-2"></a>已用完类型为2的 trampolines
-
-如果使用接口，则可能会在设备上收到此消息。
-可以通过修改项目选项 "iPhone Build" 部分来创建更多类型 2 trampolines （类型 IMT Thunk）。  要为设备生成目标添加额外参数：
-
- `-aot "nimt-trampolines=512"`
-
-IMT Thunk trampolines 的默认数目为128。 请尝试增加此数量，直到你使用了接口。
 
 ## <a name="debugger-is-unable-to-connect-with-the-device"></a>调试器无法与设备连接
 
@@ -309,7 +282,7 @@ Visual Studio for Mac 2.2 有一个 bug，该 bug 导致无法检测包含逗号
 
 （由 Ed Anuff 提供）
 
-执行以下步骤：
+执行以下步骤:
 
 - 将 iPhone Build 中的 SDK 版本更改为3.2 或 iTunes connect 将在上传时拒绝它，因为它看到使用小于3.2 的 SDK 版本生成的 iPad 兼容的应用
 - 为项目创建自定义 info.plist，并在其中将 MinimumOSVersion 显式设置为3.0。   这将覆盖 Xamarin 设置的 MinimumOSVersion 3.2 值。   如果未执行此操作，应用将无法在 iPhone 上运行。
@@ -384,7 +357,7 @@ SDK 版本不应与 "最低操作系统版本" 设置混淆。
   at (wrapper runtime-invoke) <Module>.runtime_invoke_void_object (object,intptr,intptr,intptr)
 ```
 
-...那么，你可能会在模拟器应用程序目录中具有一个（或多个）过时的程序集。 此类程序集可能存在，因为 Apple iOS 模拟器添加并更新文件，但不会删除它们。 如果发生这种情况，最简单的解决方法是选择 "重置和内容和设置 ..."从模拟器菜单。   
+...那么，你可能会在模拟器应用程序目录中具有一个（或多个）过时的程序集。 此类程序集可能存在，因为 Apple iOS 模拟器添加并更新文件，但不会删除它们。 如果发生这种情况，最简单的解决方法是选择 "重置和内容和设置 ..."从模拟器菜单。
 
 > [!WARNING]
 > 这会从模拟器中删除所有文件、应用程序和数据。   下一次执行应用程序时，Visual Studio for Mac 会将其部署到模拟器，并且没有旧的过时程序集可导致崩溃。
@@ -413,3 +386,18 @@ SDK 版本不应与 "最低操作系统版本" 设置混淆。
 当在你的 Xamarin iOS 应用中包括第三方库时，尝试编译和运行该应用时，你可能会收到 "NotSupportedException：无数据可用于编码 437" 形式的错误。 例如，库（如 `Ionic.Zip.ZipFile` ）可能会在操作过程中引发此异常。
 
 若要解决此情况，可以打开 Xamarin 项目的选项，转到**iOS 生成**  >  **国际化**并检查**西**国际化。
+
+## <a name="could-not-launch-xamarinlauncher-could-not-find-the-executable-mlaunchexe"></a>无法启动 Xamarin。启动器找不到可执行文件 "mlaunch.exe"
+
+在某些情况下，防病毒软件可能会错误地将 Xamarin SDK 标记为恶意软件并删除所需的文件，从而破坏 SDK。 这会导致错误，如 "无法启动 Xamarin。启动程序找不到可执行文件 ' mlaunch.exe '"。
+
+如果受到影响，请从防病毒扫描程序中排除 mlaunch.exe 以防再次出现。 有关详细信息，请参阅[如何在 Symantec 的 Symantex Endpoint Protection 管理员中创建应用程序例外](https://knowledge.broadcom.com/external/article/180778/how-to-create-an-application-exception-i.html)，并[排除诺顿自动保护、Sonar.projectname 和下载智能扫描中的文件和文件夹](https://support.norton.com/sp/en/uk/home/current/solutions/v3672136)。 此外，请考虑向[Symantec](https://symsubmit.symantec.com)或[诺顿](https://submit.norton.com/?type=FP)报告误报。
+
+为 mlaunch.exe 添加了排除项后，将需要重新安装才能还原缺少的文件。 执行此操作的最简单方法是在更新程序中切换通道：
+
+- **Visual Studio**菜单 >**检查更新**。
+- 在下拉列表中选择不同的更新通道，并按 "**切换频道**" 按钮。
+- 等待下载更新。
+- 切换回原始通道并安装更新。
+
+如果这些说明不能解决你的问题，请添加以下 GitHub 问题的注释： [8736](https://github.com/xamarin/xamarin-macios/issues/8736)。

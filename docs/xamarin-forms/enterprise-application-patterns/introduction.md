@@ -125,14 +125,14 @@ EShopOnContainers 移动应用中的类可在任何应用程序中重复使用 X
 
 EShopOnContainers PCL 项目包含以下文件夹：
 
-|文件夹|说明|
+|Folder|说明|
 |--- |--- |
 |动画|包含使动画可在 XAML 中使用的类。|
 |行为|包含向视图类公开的行为。|
 |控件|包含应用程序使用的自定义控件。|
 |转换器|包含将自定义逻辑应用于绑定的值转换器。|
 |效果|包含 `EntryLineColorEffect` 类，该类用于更改特定控件的边框颜色 `Entry` 。|
-|异常|包含自定义 `ServiceAuthenticationException` 。|
+|例外|包含自定义 `ServiceAuthenticationException` 。|
 |扩展|包含和类的扩展 `VisualElement` 方法 `IEnumerable` 。|
 |帮助程序|包含应用程序的帮助器类。|
 |模型|包含应用程序的模型类。|

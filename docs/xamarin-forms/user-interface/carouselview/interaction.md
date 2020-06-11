@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCarouselView 交互
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 57c501c0f789ce448d8381cbbccb46666cf06305
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137405"
+title： " Xamarin.Forms CarouselView 交互" 说明： "CarouselView 中当前显示的项可通过 CurrentItem 和位置属性访问。"
+ms-chap： xamarin assetid：854D97E5-D119-4BE2-AE7C-BD428792C992： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/11/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-carouselview-interaction"></a>Xamarin.FormsCarouselView 交互
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
@@ -346,7 +332,7 @@ public class MonkeysViewModel : INotifyPropertyChanged
 
 [![在 iOS 和 Android 上使用可视状态显示 CarouselView 的屏幕截图](interaction-images/visual-states.png "CarouselView 视觉状态")](interaction-images/visual-states-large.png#lightbox "CarouselView 视觉状态")
 
-有关可视状态的详细信息，请参阅[ Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)。
+若要详细了解可视状态，请参阅 [Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)。
 
 ## <a name="clear-the-current-item"></a>清除当前项
 
@@ -363,4 +349,4 @@ public class MonkeysViewModel : INotifyPropertyChanged
 ## <a name="related-links"></a>相关链接
 
 - [CarouselView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
-- [Xamarin.Forms视觉状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)

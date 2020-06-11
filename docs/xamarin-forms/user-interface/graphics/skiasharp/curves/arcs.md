@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4eea7d500876793357113453493fa2fe2ede6cc4
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139992"
+title： "绘制弧线的三种方式" 说明： "本文介绍如何使用 SkiaSharp 以三种不同方式定义弧线，并使用示例代码演示这一点。"
+ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： F1DA55E4-0182-4388-863C-5C340213BF3C author： davidbritch： dabritch ms. 日期：05/10/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="three-ways-to-draw-an-arc"></a>绘制弧线的三个方法
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -315,7 +301,7 @@ public class InteractivePage : ContentPage
 }
 ```
 
-`TangentArcPage` 类派生自 `InteractivePage`。 [**TangentArcPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml.cs)文件中的构造函数负责实例化和初始化 `touchPoints` 数组，并将 `baseCanvasView` （在中 `InteractivePage` ）设置为 `SKCanvasView` [**TangentArcPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml)文件中实例化的对象：
+`TangentArcPage` 类从 `InteractivePage` 派生。 [**TangentArcPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml.cs)文件中的构造函数负责实例化和初始化 `touchPoints` 数组，并将 `baseCanvasView` （在中 `InteractivePage` ）设置为 `SKCanvasView` [**TangentArcPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml)文件中实例化的对象：
 
 ```csharp
 public partial class TangentArcPage : InteractivePage

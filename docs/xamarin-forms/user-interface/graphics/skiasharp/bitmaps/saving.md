@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 01f4fcf1953658af44d2a8996913860a3b605abf
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138653"
+标题： "将 SkiaSharp 位图保存到文件" 说明： "浏览 SkiaSharp 支持的各种文件格式，以便在用户的照片库中保存位图。"
+ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C author： davidbritch： dabritch ms. 日期：07/10/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="saving-skiasharp-bitmaps-to-files"></a>将 SkiaSharp 位图保存到文件中
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -176,7 +162,7 @@ public class PhotoLibrary : IPhotoLibrary
 
 对的调用 `MediaScannerConnection.ScanFile` 并不是绝对必需的，但如果您通过立即检查照片库来测试您的程序，它将通过更新库的 "库" 视图来提供很多帮助。
 
-**Androidmanifest.xml**文件需要以下权限标记：
+**AndroidManifest.xml**文件需要以下权限标记：
 
 ```xml
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -457,16 +443,14 @@ public partial class SaveFileFormatsPage : ContentPage
 **保存文件格式**页保存的位图为600像素的正方形。 对于每个像素4个字节，这是内存中的总1440000字节。 下表显示了文件格式和质量的各种组合的文件大小：
 
 |格式|质量|大小|
-|---
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----|---标题：说明： assetid： ms. 技术： ms.：作者： ms. 作者： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----:|---:| |PNG |不适用 |492K | |JPEG |0 |2.95 k | |     |50 |22.1 k | |     |100 |206K | |WebP |0 |2.71 k | |     |50 |11.9 k | |     |100 |101K |
+|------|------:|---:|
+| PNG | 空值 | 492K |
+| JPEG | 0 | 2.95 k |
+|      | 50 | 22.1 k |
+|      | 100 | 206K |
+| WebP | 0 | 2.71 k |
+|      | 50 | 11.9 k |
+|      | 100 | 101K |
 
 可以尝试各种质量设置并检查结果。
 

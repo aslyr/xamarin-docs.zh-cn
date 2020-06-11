@@ -1,22 +1,8 @@
 ---
-title: 主题 Xamarin.Forms 应用程序
-description: 在 Xamarin.Forms 应用程序中，可以通过为每个主题创建 ResourceDictionary 并使用 DynamicResource 标记扩展来加载资源，来实现主题。
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3341ada6c5605917eeec79aac96e38cb99b40fc4
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138198"
+标题： "主题 a Xamarin.Forms 应用程序" 说明： "主题可在 Xamarin.Forms 应用程序中实现，方法是为每个主题创建 ResourceDictionary，然后使用 DynamicResource 标记扩展加载资源。"
+ms-chap： xamarin assetId： B7B17F66-4E37-4B50-9A57-351B62BE4FED： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/07/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="theme-a-xamarinforms-application"></a>主题 Xamarin.Forms 应用程序
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
@@ -229,4 +215,4 @@ void OnPickerSelectionChanged(object sender, EventArgs e)
 - [响应系统主题更改](system-theme-changes.md)
 - [资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [中的动态样式Xamarin.Forms](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)
-- [Xamarin.Forms使用 XAML 样式设置应用样式](~/xamarin-forms/user-interface/styles/xaml/index.md)
+- [使用 XAML 样式设置 Xamarin.Forms 应用的样式](~/xamarin-forms/user-interface/styles/xaml/index.md)

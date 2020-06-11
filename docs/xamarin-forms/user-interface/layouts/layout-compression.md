@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 40af5aeaa51025dae70113faa6f7ff83edf43c73
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138020"
+标题： "布局压缩" 说明： "布局压缩从可视化树中删除指定的布局，以尝试改善页面呈现性能。 本文介绍如何启用布局压缩以及它可以带来的好处。 "
+ms-chap： xamarin assetid： da9e1b26-9d31-4762-94c3-4039f306b7f2： xamarin 窗体作者： davidbritch： dabritch ms. 日期：12/13/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="layout-compression"></a>布局压缩
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)

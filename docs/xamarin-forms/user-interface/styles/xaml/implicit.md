@@ -1,22 +1,8 @@
 ---
-title: 隐式样式Xamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3fb6ea40ced93103ec9cc92fa707f68c674d7826
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139004"
+标题： "说明中的隐式样式" Xamarin.Forms ： "隐式样式是同一 TargetType 的所有控件使用的样式，无需每个控件都引用该样式。"
+ms-chap： xamarin assetid：02A75F3B-4389-49D4-A2F4-AFD473A4A161： xamarin 窗体作者： davidbritch： dabritch ms. 日期：01/30/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="implicit-styles-in-xamarinforms"></a>隐式样式Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)

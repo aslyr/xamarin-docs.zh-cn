@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCollectionView 选择
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 39f118d7073fc551923f891681c8c6cf6a4c5ddd
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137379"
+标题： " Xamarin.Forms CollectionView 选择" 说明： "默认情况下，CollectionView 选择处于禁用状态。 但是，可以启用单个和多个选择。
+ms-chap： xamarin assetid：423D91C7-1E58-4735-9E80-58F11CDFD953： xamarin 窗体作者： davidbritch： dabritch ms. 日期：05/06/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-collectionview-selection"></a>Xamarin.FormsCollectionView 选择
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
@@ -87,7 +73,7 @@ void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e
 
 [![在 iOS 和 Android 上进行单项选择的 CollectionView 垂直列表屏幕截图](selection-images/single-selection.png "带有单项选择的 CollectionView 垂直列表")](selection-images/single-selection-large.png#lightbox "带有单项选择的 CollectionView 垂直列表")
 
-## <a name="multiple-selection"></a>多选
+## <a name="multiple-selection"></a>多重选择
 
 当 [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode) 属性设置为时 `Multiple` ，可以选择中的多个项 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 。 选择项时， [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems) 属性将设置为所选的项。 此属性发生更改时，将 [`SelectionChangedCommand`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommand) 执行（将的值 [`SelectionChangedCommandParameter`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommandParameter) 传递到 `ICommand` ），并 [`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged) 触发事件。
 
@@ -310,7 +296,7 @@ namespace CollectionViewDemos.ViewModels
 
 [![在 iOS 和 Android 上使用自定义单项选择颜色的 CollectionView 垂直列表屏幕截图](selection-images/single-selection-color.png "使用自定义单项选择颜色的 CollectionView 垂直列表")](selection-images/single-selection-color-large.png#lightbox "使用自定义单项选择颜色的 CollectionView 垂直列表")
 
-有关可视状态的详细信息，请参阅[ Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)。
+若要详细了解可视状态，请参阅 [Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)。
 
 ## <a name="disable-selection"></a>禁用选定内容
 
@@ -339,4 +325,4 @@ CollectionView collectionView = new CollectionView
 ## <a name="related-links"></a>相关链接
 
 - [CollectionView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
-- [Xamarin.Forms视觉状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)

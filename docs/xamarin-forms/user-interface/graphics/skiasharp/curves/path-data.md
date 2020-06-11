@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 680c924280f8f3a6080b2fcc1968ecaf308f33a0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138055"
+标题： "SkiaSharp 中的 SVG 路径数据" 说明： "本文介绍了如何使用可缩放矢量图形格式的文本字符串定义 SkiaSharp 路径，并使用示例代码对此进行了演示。"
+ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 1D53067B-3502-4D74-B89D-7EC496901AE2 author： davidbritch： dabritch ms. 日期：05/24/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="svg-path-data-in-skiasharp"></a>SkiaSharp 中的 SVG 路径数据
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

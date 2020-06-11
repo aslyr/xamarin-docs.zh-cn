@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms实验性标志
-description: Xamarin.Forms试验性标志使工程团队能够更快地向用户交付新功能，同时还能在功能 Api 迁移到稳定版本之前对其进行更改。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b548323330ccdce6fb01e83c7e8ab7c2d5307125
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139056"
+title： " Xamarin.Forms 实验标志" 说明： " Xamarin.Forms 试验性标志使工程团队能够更快地向用户交付新功能，同时仍然能够在功能 api 迁移到稳定版本之前对其进行更改。"
+ms-chap： xamarin assetid： AF4BDD27-89F6-48AE-A8CD-D7E4DDA2CCA2： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/14/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-experimental-flags"></a>Xamarin.Forms实验性标志
 
 Xamarin.Forms实现新功能时，有时会将其置于实验标志之后。 这使得工程团队能够更快地为你提供新功能，同时还能在功能 Api 迁移到稳定版本之前对其进行更改。 一旦将此功能移到稳定版本，就会删除该实验标志。

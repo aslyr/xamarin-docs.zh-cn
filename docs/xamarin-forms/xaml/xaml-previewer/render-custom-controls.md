@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4f20a0586aee998c10372c60c96577321e697aad
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137262"
+title： "在 XAML 预览器中呈现自定义控件" 说明： "本文介绍如何在 XAML 预览程序中显示自定义控件。"
+ms-chap： xamarin assetid：4D795372-CB8F-48F4-B63D-845E44B261F7： xamarin 窗体作者： maddyleger1： maleger ms. 日期：03/27/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="render-custom-controls-in-the-xaml-previewer"></a>在 XAML 预览器中呈现自定义控件
 
 _自定义控件有时在 XAML 预览器中不按预期方式工作。使用本文中的指南来了解预览自定义控件的限制。_
@@ -47,7 +33,7 @@ namespace MyProject
 
 目前，仅当你在 iOS 上预览时，才支持 SkiaSharp 控件。 它们不会在 Android 预览版中呈现。
 
-## <a name="troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>疑难解答
 
 ### <a name="check-your-xamarinforms-version"></a>检查 Xamarin.Forms 版本
 请确保至少 Xamarin.Forms 安装了3.6。 可以 Xamarin.Forms 在 NuGet 上更新版本。

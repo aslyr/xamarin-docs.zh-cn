@@ -40,7 +40,7 @@ REST 的简单性有助于使其成为在移动应用程序中访问 web 服务�
 
 REST 服务使用 ASP.NET Core 编写，并提供以下操作：
 
-|操作|HTTP 方法|相对 URI|参数|
+|Operation|HTTP 方法|相对 URI|参数|
 |--- |--- |--- |--- |
 |获取待办事项的列表|GET|/api/todoitems/|
 |创建新的待办事项|POST|/api/todoitems/|JSON 格式的 TodoItem|

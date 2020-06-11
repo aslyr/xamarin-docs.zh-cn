@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCarouselView EmptyView
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a9f952da75e68e9ad39e0a15f57fbd0379233d7e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137392"
+标题： " Xamarin.Forms CarouselView EmptyView" 说明： "在 CarouselView 中，可以指定一个空视图，当没有可显示的数据时为用户提供反馈。 空视图可以是字符串、视图或多个视图。 "
+ms-chap： xamarin assetid： C6DEE1A9-63FC-4889-BC77-F401D5D7DF32 毫秒： xamarin 窗体作者： davidbritch 毫秒. 作者： dabritch 毫秒。日期：10/03/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-carouselview-emptyview"></a>Xamarin.FormsCarouselView EmptyView
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -35,7 +21,7 @@ ms.locfileid: "84137392"
 > [!NOTE]
 > [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)如果需要，可以将属性设置为包含交互式内容的视图。
 
-有关数据模板的详细信息，请参阅[ Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
+有关数据模板的详细信息，请参阅 [Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
 
 ## <a name="display-a-string-when-data-is-unavailable"></a>数据不可用时显示字符串
 
@@ -323,5 +309,5 @@ public class SearchTermDataTemplateSelector : DataTemplateSelector
 
 - [CarouselView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 - [Xamarin.Forms数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
-- [Xamarin.Forms资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [Xamarin.Forms 资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [创建 Xamarin.Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

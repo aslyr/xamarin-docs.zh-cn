@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a1e6290c0f85b54c3fd8958bc43667714bdece20
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131048"
+title： "Porter-Duff blend 模式" description： "使用 Porter-Duff blend 模式根据源和目标映像编写场景。"
+ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 57F172F8-BA03-43EC-A215-ED6B78696BB5 author： davidbritch： dabritch ms. 日期：08/23/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="porter-duff-blend-modes"></a>Porter-Duff blend 模式
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -71,60 +57,22 @@ Skia 添加了一个名为 `Modulate` 的14模式，它非常类似于， `Plus`
 
 下面是 SkiaSharp 中定义的 14 Porter Duff 模式。 该表显示了如何为上面的关系图中三个非空白区域的每个区域着色：
 
-| 模式       | 目标 | 线 | 源 |
-| ---
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------|：---标题：说明： assetid：： ms. 技术： ms.：作者： ms. 作者： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
-------： |：---title： description： assetid：： ms. 技术协会：： author： ms-chap： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
-------： |：---title： description： assetid：： ms. 技术协会：： author： ms-chap： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----:| |`Clear`    |            |             |       | |`Src`      |            |源 |X | |`Dst`      |X |目标 |       | |`SrcOver`  |X |源 |X | |`DstOver`  |X |目标 |X | |`SrcIn`    |            |源 |       | |`DstIn`    |            |目标 |       | |`SrcOut`   |            |             |X | |`DstOut`   |X |             |       | |`SrcATop`  |X |源 |       | |`DstATop`  |            |目标 |X | |`Xor`      |X |             |X | |`Plus`     |X |Sum |X | |`Modulate` |            |产品 |       | 
+| Mode       | 目标 | 线 | 源 |
+| ---------- |:-----------:|:------------:|:------:|
+| `Clear`    |             |              |        |
+| `Src`      |             | 源       | X      |
+| `Dst`      | X           | 目标  |        |
+| `SrcOver`  | X           | 源       | X      |
+| `DstOver`  | X           | 目标  | X      |
+| `SrcIn`    |             | 源       |        |
+| `DstIn`    |             | 目标  |        |
+| `SrcOut`   |             |              | X      |
+| `DstOut`   | X           |              |        |
+| `SrcATop`  | X           | 源       |        |
+| `DstATop`  |             | 目标  | X      |
+| `Xor`      | X           |              | X      |
+| `Plus`     | X           | SUM          | X      |
+| `Modulate` |             | 产品      |        | 
 
 这些 blend 模式为对称模式。 可以交换源和目标，并且所有模式仍可用。
 
@@ -320,11 +268,11 @@ canvas.Clear(SKColors.White);
 
 ## <a name="using-mattes-with-porter-duff"></a>将 Porter 与 Duff 配合使用
 
-"**砖墙合成**" 页显示了一个经典合成任务的示例：需要从多个部分组合图片，包括需要消除背景的位图。 下面是有问题背景的**SeatedMonkey**位图：
+"**砖墙合成**" 页显示了一个经典合成任务的示例：需要从多个部分组合图片，包括需要消除背景的位图。 下面是有问题背景的**SeatedMonkey.jpg**位图：
 
 ![本身的猴子](porter-duff-images/SeatedMonkey.jpg "本身的猴子")
 
-为准备合成，将创建相应的_遮罩_，这是一个黑色的另一个位图，你希望图像显示为黑色，否则为透明。 此文件名为**SeatedMonkeyMatte** ，位于[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例的**Media**文件夹中的资源内：
+为准备合成，将创建相应的_遮罩_，这是一个黑色的另一个位图，你希望图像显示为黑色，否则为透明。 此文件的名称为 " **SeatedMonkeyMatte.png** "，位于[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例中 "**媒体**" 文件夹的资源中：
 
 ![固定的猴子遮罩](porter-duff-images/SeatedMonkeyMatte.png "固定的猴子遮罩")
 
@@ -406,7 +354,7 @@ public partial class BrickWallCompositingPage : ContentPage
 
 [![砖墙合成步骤0](porter-duff-images/BrickWallCompositing0.png "砖墙合成步骤0")](porter-duff-images/BrickWallCompositing0-Large.png#lightbox)
 
-按 `Button` 一次会使 `step` 增量为1， `PaintSurface` 处理程序现在显示**SeatedMonkey**：
+按 `Button` 一次会使 `step` 增量为1， `PaintSurface` 处理程序现在显示**SeatedMonkey.jpg**：
 
 ```csharp
 public partial class BrickWallCompositingPage : ContentPage
@@ -432,7 +380,7 @@ public partial class BrickWallCompositingPage : ContentPage
 
 [![砖墙合成步骤1](porter-duff-images/BrickWallCompositing1.png "砖墙合成步骤1")](porter-duff-images/BrickWallCompositing1-Large.png#lightbox)
 
-再次按 `Button` ，并按 `step` 2 递增。 这是显示**SeatedMonkeyMatte**文件的关键步骤：
+再次按 `Button` ，并按 `step` 2 递增。 这是显示**SeatedMonkeyMatte.png**文件的关键步骤：
 
 ```csharp
 public partial class BrickWallCompositingPage : ContentPage
@@ -550,32 +498,22 @@ RGB 颜色按照 alpha 值进行预处理。 例如，如果**Sc**表示纯红�
 
 结果显示在带 alpha 通道的方括号中，RGB 颜色用逗号分隔： **[alpha，color]**。 对于颜色，为红色、绿色和蓝色分量单独执行计算：
 
-| 模式       | 操作 |
-| ---
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ |---标题：说明： ms. 生产： assetid： author： author： ms-chap：不是-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-标题：说明： ms. 生产： ms-chap： assetid： author： author： ms-chap：不是：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ | |`Clear`    |[0，0] | |`Src`      |[Sa，Sc] | |`Dst`      |[Da，Dc] | |`SrcOver`  |[Sa + Da ·（1-Sa），Sc + Dc ·（1– Sa） | |`DstOver`  |[Da + Sa ·（1– Da），Dc + Sc ·（1– Da） | |`SrcIn`    |成为Da，Sc ·Da] | |`DstIn`    |特里斯坦Sa，Dc ·Sa] | |`SrcOut`   |成为（1– Da），Sc ·（1– Da）]| |`DstOut`   |特里斯坦（1-Sa），Dc ·（1– Sa）]| |`SrcATop`  |[Da，Sc ·Da + Dc ·（1– Sa）]| |`DstATop`  |[Sa，Dc ·Sa + Sc ·（1– Da）]| |`Xor`      |[Sa + Da –2·成为Da，Sc ·（1– Da） + Dc ·（1– Sa）]| |`Plus`     |[Sa + Da，Sc + Dc] | |`Modulate` |成为Da，Sc ·Dc] | 
+| Mode       | Operation |
+| ---------- | --------- |
+| `Clear`    | [0，0]    |
+| `Src`      | [Sa，Sc]  |
+| `Dst`      | [Da，Dc]  |
+| `SrcOver`  | [Sa + Da ·（1-Sa），Sc + Dc ·（1– Sa） | 
+| `DstOver`  | [Da + Sa ·（1– Da），Dc + Sc ·（1– Da） |
+| `SrcIn`    | 成为Da，Sc ·特里斯坦 |
+| `DstIn`    | 特里斯坦Sa，Dc ·成为 |
+| `SrcOut`   | 成为（1– Da），Sc ·（1– Da）] |
+| `DstOut`   | 特里斯坦（1-Sa），Dc ·（1– Sa）] |
+| `SrcATop`  | [Da，Sc ·Da + Dc ·（1– Sa）] |
+| `DstATop`  | [Sa，Dc ·Sa + Sc ·（1– Da）] |
+| `Xor`      | [Sa + Da –2·成为Da，Sc ·（1– Da） + Dc ·（1– Sa）] |
+| `Plus`     | [Sa + Da，Sc + Dc] |
+| `Modulate` | 成为Da，Sc ·台 | 
 
 当**Da**和**Sa**为0或1时，可以更轻松地分析这些操作。 例如，对于默认 `SrcOver` 模式，如果**Sa**为0，则**Sc**也是0，结果为 **[Da，Dc]**，目标 alpha 和颜色。 如果**Sa**为1，则结果为 **[Sa，Sc]**，源 alpha 和颜色，或者 **[1，Sc]**。
 

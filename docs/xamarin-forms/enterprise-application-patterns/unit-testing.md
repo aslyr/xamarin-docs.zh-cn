@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a05de34089fdf6ad90740067b88edea0b62f55a7
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134649"
+标题： "单元测试企业应用" 说明： "此章介绍了如何在 eShopOnContainers 移动应用中执行单元测试。"
+ms-chap： xamarin assetid：4af82e52-f99b-4cad-b278-1745f190c240： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/07/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="unit-testing-enterprise-apps"></a>对企业应用进行单元测试
 
 移动应用具有独特的问题，因为桌面和基于 web 的应用程序无需担心。 移动用户使用的设备、网络连接、服务可用性和其他因素范围会有所不同。 因此，应测试移动应用，因为它们将在现实世界中用于提高其质量、可靠性和性能。 应该对应用执行多种类型的测试，包括单元测试、集成测试和用户界面测试，并将单元测试作为最常见的测试形式。

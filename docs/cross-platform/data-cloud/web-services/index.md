@@ -6,12 +6,12 @@ ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 4012b648bd451907bdb91221aba13df5ed3d34e3
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 06a3197cfcd3b49538cfa5fa97e40a9f50c7a244
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571020"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84655097"
 ---
 # <a name="introduction-to-web-services"></a>Web 服务简介
 
@@ -190,7 +190,7 @@ RESTful web 服务通常使用 JSON 消息将数据返回到客户端。 JSON �
 
 <a name="Using_System.JSON"></a>
 
-### <a name="systemjson"></a>System.object
+### <a name="systemjson"></a>System.JS
 
 Xamarin 平台随附了对 JSON 的支持。 使用 `JsonObject` 可以检索结果，如以下代码示例所示：
 
@@ -301,7 +301,7 @@ file:///Users/myUserName/projects/MyProjectName/service.wsdl
 
 #### <a name="manually-adding-a-proxy-to-a-project"></a>手动将代理添加到项目
 
-如果有一个使用兼容工具生成的现有代理，则当作为项目的一部分包含时，可以使用此输出。 在 Visual Studio for Mac 中，使用 "**添加文件 ...** " 用于添加代理的菜单选项。 此外，这需要使用 "**添加引用 ...** " 来显式引用*system.web* 。 对话框中的字段。
+如果有一个使用兼容工具生成的现有代理，则当作为项目的一部分包含时，可以使用此输出。 在 Visual Studio for Mac 中，使用 "**添加文件 ...** " 用于添加代理的菜单选项。 此外，这需要使用 "**添加引用 ...** " 显式引用*System.Web.Services.dll* 对话框中的字段。
 
 ### <a name="consuming-the-proxy"></a>使用代理
 
@@ -352,7 +352,7 @@ ASP.NET Web Services （.ASMX）和 WCF 之间存在差异，但请务必了解 
 
 必须生成*代理*以使用 WCF 服务，该服务允许应用程序连接到服务。 代理通过使用定义方法和关联服务配置的服务元数据来构造。 此元数据以 web 服务所生成的 Web 服务描述语言（WSDL）文档的形式公开。 可以使用 Visual Studio 2017 中的 Microsoft WCF Web Service Reference Provider 生成代理，以将 Web 服务的服务引用添加到 .NET Standard 库中。
 
-在 Visual Studio 2017 中使用 Microsoft WCF Web Service Reference Provider 创建代理的替代方法是使用 "svcutil.exe" 元数据实用工具（）。 有关详细信息，请参阅 " [svcutil.exe" 元数据实用工具（）](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)。
+在 Visual Studio 2017 中使用 Microsoft WCF Web Service Reference Provider 创建代理的一种替代方法是使用 "（svcutil.exe）"。 有关详细信息， [Svcutil.exe](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)请参阅 ""
 
 <a name="Calling_a_WCF_Service_with_Client_Credential_Security"></a>
 
@@ -438,12 +438,10 @@ client.ClientCredentials.UserName.UserName = @"foo";
 client.ClientCredentials.UserName.Password = @"mrsnuggles";
 ```
 
-在上述示例中，如果您收到消息 "trampolines of 类型 0"，则可以通过将参数添加到生成中来增加类型 0 trampolines 的数目 `–aot “trampolines={number of trampolines}”` 。 有关详细信息，请参阅 [故障排除](~/ios/troubleshooting/troubleshooting.md#trampolines)。
-
 有关 HTTP 基本身份验证的详细信息，请参阅对[RESTful Web 服务进行身份验证](~/xamarin-forms/data-cloud/authentication/rest.md)。
 
 ## <a name="related-links"></a>相关链接
 
 - [Xamarin 中的 Web 服务](~/xamarin-forms/data-cloud/index.yml)
-- [Svcutil.exe 元数据实用工具（）](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
+- [System.servicemodel 元数据实用工具（svcutil.exe）](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
 - [BasicHttpBinding](https://msdn.microsoft.com/library/system.servicemodel.basichttpbinding.aspx)

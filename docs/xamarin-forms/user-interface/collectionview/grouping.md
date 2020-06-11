@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCollectionView 分组
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 51661d6573d78386f4ca8bfea0063b752295c2d8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136456"
+标题： " Xamarin.Forms CollectionView 分组" 说明： "CollectionView 可以通过将其 IsGrouped 属性设置为 true 来显示已正确分组的数据。"
+ms-chap： xamarin assetid：7E494245-FDBD-49D6-B7FA-CEF976EB59BB： xamarin 窗体作者： davidbritch： dabritch ms. 日期：09/17/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-collectionview-grouping"></a>Xamarin.FormsCollectionView 分组
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
@@ -35,7 +21,7 @@ ms.locfileid: "84136456"
 
 [![IOS 和 Android 上的 CollectionView 中的分组数据的屏幕截图](grouping-images/grouped-data.png "带有分组数据的 CollectionView")](grouping-images/grouped-data-large.png#lightbox "带有分组数据的 CollectionView")
 
-有关数据模板的详细信息，请参阅[ Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
+有关数据模板的详细信息，请参阅 [Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
 
 ## <a name="group-data"></a>组数据
 

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文介绍如何确定呈现的文本字符串的大小，以将包含 SkiaSharp 图形的文本集成到 Xamarin.Forms 应用程序中，并通过示例代码对此进行演示。
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: ee97ee2aae11e4e54a0d25e80ffd7bce301fa2f3
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137678"
+标题： "集成文本和图形" 说明： "本文介绍了如何确定呈现的文本字符串的大小，以将包含 SkiaSharp 图形的文本集成到 Xamarin.Forms 应用程序中，并通过示例代码演示了这一点。"
+ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： A0B5AC82-7736-4AD8-AA16-FE43E18D203C author： davidbritch： dabritch ms. 日期：03/10/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="integrating-text-and-graphics"></a>将文本和图形集成
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

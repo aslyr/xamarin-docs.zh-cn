@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文介绍如何使用 SkiaSharp 在应用程序中呈现三次方贝塞尔曲线，并使用 Xamarin.Forms 示例代码对此进行演示。
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1ad548846500ccbacc2a3d117919bfb4df1a1d79
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138679"
+title： "三种贝塞尔曲线类型" 说明： "本文介绍了如何使用 SkiaSharp 在应用程序中呈现三次方贝塞尔曲线， Xamarin.Forms 并使用示例代码说明这一点。"
+ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 8FE0F6DC-16BC-435F-9626-DD1790C0145A author： davidbritch： dabritch ms. 日期：05/25/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="three-types-of-bzier-curves"></a>贝塞尔曲线的三种类型
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -444,7 +430,7 @@ public void ConicTo (Single x1, Single y1, Single x2, Single y2, Single weight)
 
 请注意最后一个 `weight` 参数。
 
-"**圆锥曲线**" 页允许您试验这些曲线。 `ConicCurvePage` 类派生自 `InteractivePage`。 [**ConicCurvePage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml)文件实例化 `Slider` ，以选择–2到2之间的权重值。 [**ConicCurvePage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs)代码隐藏文件会创建三个 `TouchPoint` 对象，并且 `PaintSurface` 处理程序只会将具有切线的结果曲线渲染到控制点：
+"**圆锥曲线**" 页允许您试验这些曲线。 `ConicCurvePage` 类从 `InteractivePage` 派生。 [**ConicCurvePage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml)文件实例化 `Slider` ，以选择–2到2之间的权重值。 [**ConicCurvePage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs)代码隐藏文件会创建三个 `TouchPoint` 对象，并且 `PaintSurface` 处理程序只会将具有切线的结果曲线渲染到控制点：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

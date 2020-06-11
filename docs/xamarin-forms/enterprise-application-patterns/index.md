@@ -1,23 +1,9 @@
 ---
-title: 使用电子书的企业应用程序模式 Xamarin.Forms
-description: 此电子书提供了开发可自适应、可维护且可测试的企业应用程序的体系结构指南 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: cc0f98d94c76ff63e7a002dfb92b51eae153d7b4
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139394"
+title： "使用电子书的企业应用程序模式 Xamarin.Forms " 说明： "此电子书提供了开发可自适应、可维护且可测试的企业应用程序的体系结构指南 Xamarin.Forms 。
+ms-chap： xamarin assetid： 28cfed6c-6175-4223-a8cc-798d40bf0832 ms. 技术协会： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/07/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
-# <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>使用电子书的企业应用程序模式 Xamarin.Forms
+
+# <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>《使用 Xamarin.Forms企业应用程序模式》电子书
 
 _用于开发可自适应、可维护且可测试的 Xamarin.Forms 企业应用程序的体系结构指南_
 
@@ -29,7 +15,7 @@ _用于开发可自适应、可维护且可测试的 Xamarin.Forms 企业应用�
 
 本章介绍指南的目的和范围，以及其目标。
 
-## <a name="introduction"></a>[简介](introduction.md)
+## <a name="introduction"></a>[介绍](introduction.md)
 
 企业应用程序的开发者面临着几个难题，可以在开发过程中更改应用程序的体系结构。 因此，生成应用以便在一段时间内修改或扩展应用程序非常重要。 设计此类适应性很困难，但通常会将应用分区为分离、松散耦合的组件，这些组件可以轻松集成到应用中。
 
@@ -45,7 +31,7 @@ _用于开发可自适应、可维护且可测试的 Xamarin.Forms 企业应用�
 
 ## <a name="communicating-between-loosely-coupled-components"></a>[松散耦合组件之间的通信](communicating-between-loosely-coupled-components.md)
 
-Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 类实现发布-订阅模式，允许在不方便地通过对象和类型引用进行链接的组件之间进行基于消息的通信。 此机制使发布服务器和订阅服务器无需彼此引用即可进行通信，有助于减少组件之间的依赖关系，同时允许单独开发和测试组件。
+Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 类可实现发布-订阅模式，允许不便按对象和类型引用进行链接的组件之间进行基于消息的通信。 此机制使发布服务器和订阅服务器无需彼此引用即可进行通信，有助于减少组件之间的依赖关系，同时允许单独开发和测试组件。
 
 ## <a name="navigation"></a>[导航](navigation.md)
 

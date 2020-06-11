@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d62e533d127294c77c0779c20fd9c78ef2231200
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135715"
+标题： "对 RESTful Web 服务进行身份验证" 说明： "基本身份验证仅向具有正确凭据的客户端提供对资源的访问权限。 本文介绍如何使用基本身份验证来保护对 RESTful web 服务资源的访问。
+ms-chap： xamarin assetid：7B5FFDC4-F2AA-4B12-A30A-1DACC7FECBF1： xamarin 窗体作者： davidbritch： dabritch ms. 日期：01/22/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="authenticate-a-restful-web-service"></a>对 RESTful Web 服务进行身份验证
 
 _HTTP 支持使用多种身份验证机制来控制对资源的访问。基本身份验证仅向具有正确凭据的客户端提供对资源的访问权限。本文演示如何使用基本身份验证来保护对 RESTful web 服务资源的访问。_
@@ -80,7 +66,7 @@ public class RestService : IRestService
 
 ## <a name="processing-the-authorization-header-server-side"></a>处理授权标头服务器端
 
-REST 服务应用属性修饰每个操作 `[BasicAuthentication]` 。 此特性用于分析 `Authorization` 标头并确定 base64 编码的凭据是否有效，方法是将它们与 web.config 中存储的*Web.config*值进行比较。虽然这种方法适用于示例服务，但它需要为面向公众的 web 服务进行扩展。
+REST 服务应用属性修饰每个操作 `[BasicAuthentication]` 。 此特性用于分析 `Authorization` 标头并确定 base64 编码的凭据是否有效，方法是将它们与*Web.config*中存储的值进行比较。虽然这种方法适用于示例服务，但它需要为面向公众的 web 服务进行扩展。
 
 在 IIS 使用的基本身份验证模块中，将根据用户的 Windows 凭据对用户进行身份验证。 因此，用户必须拥有服务器域上的帐户。 但是，可以将基本身份验证模型配置为允许自定义身份验证，其中用户帐户根据外部源（例如数据库）进行身份验证。 有关详细信息，请参阅 ASP.NET 网站上[ASP.NET Web API 中的基本身份验证](https://www.asp.net/web-api/overview/security/basic-authentication)。
 

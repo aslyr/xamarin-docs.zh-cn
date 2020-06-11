@@ -1,22 +1,8 @@
 ---
-title: 颜色Xamarin.Forms
-description: Xamarin.Forms提供灵活的跨平台颜色类。 本文介绍了 Color 类提供的功能，以及如何使用它。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a02fe7451702367d85d322b756df4a547a009454
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137340"
+标题： "描述中 Xamarin.Forms 的颜色：" Xamarin.Forms 提供一个灵活的跨平台颜色类。 本文介绍了 Color 类提供的功能以及如何使用它。 "
+ms-chap： xamarin assetid：22288ABF-57BE-47A9-ACC3-AC604D787C46： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/02/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="colors-in-xamarinforms"></a>颜色Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithcolors)

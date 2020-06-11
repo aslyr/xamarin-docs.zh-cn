@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms和 Azure 认知服务简介
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 7c2a63c40d1006c7d83c9dde871e17d4b194bdca
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129709"
+标题： " Xamarin.Forms 和 Azure 认知服务简介" 说明： "本文介绍了一个示例应用程序，演示如何调用某些 Microsoft 认知服务 api。"
+ms-chap： xamarin assetid：74121ADB-1322-4C1E-A103-F37257BC7CB0： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/08/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin.Forms和 Azure 认知服务简介
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
@@ -60,7 +46,7 @@ _Microsoft 认知服务是一组可供开发人员使用的 Api、Sdk 和服务�
 
 示例应用程序的共享代码项目包含五个主要文件夹：
 
-|文件夹|目的|
+|Folder|目的|
 |--- |--- |
 |模型|包含应用程序的数据模型类。 这包括 `TodoItem` 类，该类用于对应用程序使用的单个数据项建模。 此文件夹还包括用于对从不同 Microsoft 认知服务 Api 返回的 JSON 响应建模的类。|
 |存储库|包含 `ITodoItemRepository` `TodoItemRepository` 用于执行数据库操作的接口和类。|

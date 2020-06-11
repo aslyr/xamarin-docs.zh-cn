@@ -1,27 +1,13 @@
 ---
-title: Xamarin.FormsCollectionView 简介
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d6a09ead9c3def2f58ad2755de4574f6d6e331e8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136430"
+标题： " Xamarin.Forms CollectionView 简介" 说明： "CollectionView 是一种灵活且高性能的视图，可使用不同的布局规范呈现数据列表。"
+ms-chap： xamarin assetid：5C08F687-B9E6-4CE4-8726-F287F6D0B6A7： xamarin 窗体作者： davidbritch： dabritch ms. 日期：12/11/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-collectionview-introduction"></a>Xamarin.FormsCollectionView 简介
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)是一个视图，用于显示使用不同布局规范的数据列表。 它旨在提供更灵活、更高的性能替代方法 [`ListView`](xref:Xamarin.Forms.ListView) 。 例如，下面的屏幕截图显示了一个 `CollectionView` 使用两个垂直网格网格的，它允许多个选择：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 是使用不同布局规范显示数据列表的视图。 它旨在提供更灵活、更高的性能替代方法 [`ListView`](xref:Xamarin.Forms.ListView) 。 例如，下面的屏幕截图显示了一个 `CollectionView` 使用两个垂直网格网格的，它允许多个选择：
 
 [![IOS 和 Android 上的 CollectionView 垂直网格布局的屏幕截图](introduction-images/verticalgrid-multipleselection.png "具有多个选定内容的 CollectionView 垂直网格布局")](introduction-images/verticalgrid-multipleselection-large.png#lightbox "具有多个选定内容的 CollectionView 垂直网格布局")
 
@@ -54,7 +40,7 @@ ms.locfileid: "84136430"
 | 行分隔符 | `SeparatorColor`, `SeparatorVisibility` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)不包含内置分隔符。 如果需要，可在项模板中提供这些项。 |
 | 选择 | `SelectionMode`, `SelectedItem` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)支持单个和多个选择。 有关详细信息，请参阅[ Xamarin.Forms CollectionView 选择](selection.md)。 |
 | 行高 | `HasUnevenRows`, `RowHeight` | 在中 `CollectionView` ，每个项的行高由 `ItemSizingStrategy` 属性确定。 有关详细信息，请参阅[项大小调整](layout.md#item-sizing)。|
-| Caching | `CachingStrategy` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)自动使用基础本机控件提供的虚拟化。 |
+| 缓存 | `CachingStrategy` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)自动使用基础本机控件提供的虚拟化。 |
 | 页眉和页脚 | `Header`, `HeaderElement`, `HeaderTemplate`, `Footer`, `FooterElement`, `FooterTemplate` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)可以通过 `Header` 、、 `Footer` `HeaderTemplate` 和属性，提供滚动列表中的项的页眉和页脚 `FooterTemplate` 。 有关详细信息，请参阅[页眉和页脚](layout.md#headers-and-footers)。 |
 | 分组 | `GroupDisplayBinding`, `GroupHeaderTemplate`, `GroupShortNameBinding`, `IsGroupingEnabled` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)通过将其属性设置为，显示正确分组的数据 `IsGrouped` `true` 。 可以通过将 `GroupHeaderTemplate` 和 `GroupFooterTemplate` 属性设置为对象来自定义组头和组尾 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。 有关详细信息，请参阅[ Xamarin.Forms CollectionView 分组](grouping.md)。 |
 | 下拉刷新 | `IsPullToRefreshEnabled`, `IsRefreshing`, `RefreshAllowed`, `RefreshCommand`, `RefreshControlColor`, `BeginRefresh()`, `EndRefresh()` | 通过将设置为的子级，支持拉取到刷新功能 [`CollectionView`](xref:Xamarin.Forms.CollectionView) `RefreshView` 。 有关详细信息，请参阅[请求刷新](populate-data.md#pull-to-refresh)。 |

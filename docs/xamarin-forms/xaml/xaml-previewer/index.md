@@ -1,23 +1,8 @@
 ---
-title: 的 XAML 预览器Xamarin.Forms
-description: 本文介绍如何使用 XAML 预览器来查看你 Xamarin.Forms 键入时呈现的布局。 Visual Studio 2019 和 Visual Studio 2019 for Mac 中提供了 XAML 预览器。
-zone_pivot_groups: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 6916d5fde688c5b1162f12db0d36bc3ca27156d8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137314"
+title： "XAML 预览器 Xamarin.Forms " 说明： "本文介绍了如何使用 Xaml 预览器来查看你 Xamarin.Forms 键入时呈现的布局。 Visual Studio 2019 和 Visual Studio 2019 for Mac 中提供了 XAML 预览器。
+zone_pivot_groups： platform ms-chap： xamarin assetid：84769ff1-72fd-4c44-8251-dd6d5bf8c7b2： xamarin 窗体作者： maddyleger1： maleger ms. 日期：03/16/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xaml-previewer-for-xamarinforms"></a>的 XAML 预览器Xamarin.Forms
 
 _查看在 Xamarin.Forms 键入时呈现的布局_
@@ -26,7 +11,7 @@ _查看在 Xamarin.Forms 键入时呈现的布局_
 
 XAML 预览器显示 Xamarin.Forms xaml 页面在 iOS 和 Android 上的外观。 当你对 XAML 进行更改时，你会看到它们会立即与你的代码一起预览。 Visual Studio 和 Visual Studio for Mac 中提供了 XAML 预览器。
 
-## <a name="getting-started"></a>开始使用
+## <a name="getting-started"></a>入门
 
 ::: zone pivot="windows"
 
@@ -98,7 +83,7 @@ if (!DesignMode.IsDesignModeEnabled)
 
 如果在无法在设计时运行的页面构造函数中初始化库，此属性将非常有用。
 
-## <a name="troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>疑难解答
 
 如果预览器不起作用，请检查以下问题和[Xamarin 论坛](https://forums.xamarin.com/categories/xamarin-forms)。
 

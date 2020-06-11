@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsControls 类层次结构
-description: 开发人员应熟悉用于创建应用程序用户界面的类型的层次结构 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 0087e2bb81c7c9204a782519a9eeb9891adc297a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138629"
+title： " Xamarin.Forms Controls 类层次结构" 说明： "开发人员应熟悉用于创建应用程序用户界面的类型的层次结构 Xamarin.Forms 。"
+ms-chap： xamarin assetid： C89E6B98-464D-4BBE-BF11-13A5FCBBF420： xamarin 窗体作者： davidbritch： dabritch ms. 日期：01/07/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-controls-class-hierarchy"></a>Xamarin.FormsControls 类层次结构
 
 Xamarin.Forms由多个命名空间中的数百个类型组成。 开发人员应最熟悉用于创建应用程序的用户界面的类型的层次结构 Xamarin.Forms ，该应用程序位于 `Xamarin.Forms` 命名空间中。

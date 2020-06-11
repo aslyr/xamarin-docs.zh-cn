@@ -1,22 +1,8 @@
 ---
-title: XAML 字段修饰符Xamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: db00f522b71a8993ef0f7f6cf5070813ce07396a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138120"
+title： " Xamarin.Forms description：" 中的 XAML 字段修饰符： x:FieldModifier namespace 特性指定了用于已命名 XAML 元素的生成字段的访问级别。 "
+ms-chap： xamarin assetid：12357CE0-3C11-4B62-947F-72DB6DFC23A2： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/02/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xaml-field-modifiers-in-xamarinforms"></a>XAML 字段修饰符Xamarin.Forms
 
 `x:FieldModifier`Namespace 特性指定为命名 XAML 元素生成的字段的访问级别。 特性的有效值为：

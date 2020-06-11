@@ -1,23 +1,8 @@
 ---
-title: Xamarin.Forms资源字典
-description: Xamarin.FormsXAML 资源是可在整个应用程序中共享和重用的对象 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.custom: ''
-ms.openlocfilehash: a1c7cfd4a0f3549b11ac51dc13b40da552f6b758
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139407"
+标题： " Xamarin.Forms 资源字典" 说明： " Xamarin.Forms XAML 资源是可在整个应用程序中共享和重复使用的对象 Xamarin.Forms 。"
+ms-chap： xamarin assetid： DF103686-4A92-40FA-9CF1-A9376293B13C： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/01/2020： [ Xamarin.Forms ， Xamarin.Essentials ] ms. 自定义：视频
 ---
+
 # <a name="xamarinforms-resource-dictionaries"></a>Xamarin.Forms资源字典
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
@@ -238,7 +223,7 @@ Xamarin.Forms应用程序仅包含从派生的类 [`Application`](xref:Xamarin.F
 
 - [资源字典（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
 - [XAML 标记扩展](~/xamarin-forms/xaml/markup-extensions/index.md)
-- [Xamarin.Forms字体](~/xamarin-forms/user-interface/styles/index.md)
+- [Xamarin.Forms 样式](~/xamarin-forms/user-interface/styles/index.md)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 
 ## <a name="related-video"></a>相关视频

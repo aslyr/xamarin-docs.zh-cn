@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8698bacd7257df431b12166c749f5826e8d6fd3c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138445"
+标题： "SkiaSharp 中的点和短划线" 说明： "本文探讨了如何在 SkiaSharp 中掌握绘制点线和虚线的复杂性，并通过示例代码对此进行了演示。
+ms-chap： xamarin assetid：8E9BCC13-830C-458C-9FC8-ECB4EAE66078： xamarin-skiasharp author： davidbritch： dabritch 毫秒。日期：03/10/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="dots-and-dashes-in-skiasharp"></a>SkiaSharp 中的点和短划线
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

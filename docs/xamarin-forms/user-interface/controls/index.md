@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 用于构造应用程序的所有用户界面元素的说明 Xamarin.Forms 。 本文列出了构成应用程序的用户界面的控件组 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e843f0e42f4f66a6ce4e60c2f5d8a233d19f1df6
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136391"
+title： "Controls Reference" description： "用于构造应用程序的所有用户界面元素的说明 Xamarin.Forms 。 本文列出了构成应用程序的用户界面的控件组 Xamarin.Forms 。
+ms-chap： xamarin assetid： F2A02DEE-7137-42F4-9C0A-4E1CF75EA08F： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/08/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="controls-reference"></a>控件引用
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
@@ -25,7 +11,7 @@ ms.locfileid: "84136391"
 
 用于创建应用程序的用户界面的四个主要控件组 Xamarin.Forms 如下所示：
 
-- [**页数**](pages.md)
+- [**页**](pages.md)
 - [**布局**](layouts.md)
 - [**视图**](views.md)
 - [**单元**](cells.md)

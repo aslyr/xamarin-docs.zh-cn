@@ -1,22 +1,7 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c35cd6e30e7843cda0431581025aa7440a21cc29
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140044"
+标题： "松散耦合组件之间的通信" 说明： "本章介绍了 eShopOnContainers 移动应用如何实现发布-订阅模式，允许在不方便的组件之间进行基于消息的通信，这些组件不方便地通过对象和类型引用进行链接，例如： xamarin： xamarin assetid： 1194af33-8a91-48d2-88b5-b84d77f2ce69 ms。技术： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/07/2017： Xamarin.Forms Xamarin.Essentials
 ---
+
 # <a name="communicating-between-loosely-coupled-components"></a>松散耦合组件之间的通信
 
 发布-订阅模式是一种消息传递模式，在此模式下，发布者可在无需知道任何接收方（称为订阅方）的情况下发送消息。 同样，订阅方可在不了解任何发布方的情况下侦听特定消息。
@@ -25,17 +10,17 @@ ms.locfileid: "84140044"
 
 ## <a name="introduction-to-messagingcenter"></a>MessagingCenter 简介
 
-Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 类实现发布-订阅模式，允许在不方便地通过对象和类型引用进行链接的组件之间进行基于消息的通信。 此机制使发布服务器和订阅服务器无需彼此引用即可进行通信，有助于减少组件之间的依赖关系，同时允许单独开发和测试组件。
+Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 类可实现发布-订阅模式，允许不便按对象和类型引用进行链接的组件之间进行基于消息的通信。 此机制使发布服务器和订阅服务器无需彼此引用即可进行通信，有助于减少组件之间的依赖关系，同时允许单独开发和测试组件。
 
-[`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)类提供多播发布-订阅功能。 这意味着可以有多个发布者发布单个消息，并且可以有多个订阅服务器侦听同一消息。 图4-1 说明了此关系：
+[`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 类提供多播发布-订阅功能。 这意味着可以有多个发布者发布单个消息，并且可以有多个订阅服务器侦听同一消息。 图4-1 说明了此关系：
 
 ![](communicating-between-loosely-coupled-components-images/messagingcenter.png "Multicast publish-subscribe functionality")
 
 **图4-1：** 多播发布-订阅功能
 
-发布服务器使用方法发送消息 [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*) ，而订阅服务器使用方法来侦听消息 [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) 。 此外，订阅服务器还可以通过方法取消订阅消息订阅（如果需要） [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) 。
+发布方使用 [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*) 方法发送消息，而订阅方使用 [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) 方法侦听消息。 此外，订阅方还可以使用 [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) 方法取消消息订阅（如果需要）。
 
-类在内部 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 使用弱引用。 这意味着它不会使对象保持活动状态，而是允许对它们进行垃圾回收。 因此，只有当类不再希望接收消息时才需要取消订阅消息。
+在内部，[`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 类使用弱引用。 这意味着它不会使对象保持活动状态，而是允许对它们进行垃圾回收。 因此，只有当类不再希望接收消息时才需要取消订阅消息。
 
 EShopOnContainers 移动应用使用类在 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 松耦合组件之间进行通信。 该应用程序定义了三个消息：
 
@@ -75,7 +60,7 @@ public class MessengerKeys
 
 ## <a name="publishing-a-message"></a>发布消息
 
-发布者通过其中一项重载通知订阅者 [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*) 。 下面的代码示例演示如何发布 `AddProduct` 消息：
+发布方通过一种 [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*) 重载通知订阅方查看消息。 下面的代码示例演示如何发布 `AddProduct` 消息：
 
 ```csharp
 MessagingCenter.Send(this, MessengerKeys.AddProduct, catalogItem);
@@ -94,7 +79,7 @@ MessagingCenter.Send(this, MessengerKeys.AddProduct, catalogItem);
 
 ## <a name="subscribing-to-a-message"></a>订阅消息
 
-订户可以注册以使用其中一个重载接收消息 [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) 。 下面的代码示例演示 eShopOnContainers 移动应用如何订阅和处理 `AddProduct` 消息：
+订阅方可以使用一种 [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) 重载进行注册以接收消息。 下面的代码示例演示 eShopOnContainers 移动应用如何订阅和处理 `AddProduct` 消息：
 
 ```csharp
 MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(  
@@ -111,7 +96,7 @@ MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(
 > [!TIP]
 > 请考虑使用不可变的有效负载数据。 不要尝试在回调委托内修改有效负载数据，因为多个线程可以同时访问接收的数据。 在这种情况下，负载数据应是不可变的，以避免并发错误。
 
-订阅服务器可能不需要处理已发布消息的每个实例，这可由方法上指定的泛型类型参数控制 [`Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) 。 在此示例中，订阅服务器将只接收 `AddProduct` 从类发送的消息 `CatalogViewModel` ，其有效负载数据是 `CatalogItem` 实例。
+订阅方可能不需要处理已发布消息的每个实例，这可以通过 [`Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) 方法中指定的泛型类型参数来控制。 在此示例中，订阅服务器将只接收 `AddProduct` 从类发送的消息 `CatalogViewModel` ，其有效负载数据是 `CatalogItem` 实例。
 
 ## <a name="unsubscribing-from-a-message"></a>取消订阅消息
 
@@ -125,7 +110,7 @@ MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessengerKeys
 
 ## <a name="summary"></a>总结
 
-Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 类实现发布-订阅模式，允许在不方便地通过对象和类型引用进行链接的组件之间进行基于消息的通信。 此机制使发布服务器和订阅服务器无需彼此引用即可进行通信，有助于减少组件之间的依赖关系，同时允许单独开发和测试组件。
+Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 类可实现发布-订阅模式，允许不便按对象和类型引用进行链接的组件之间进行基于消息的通信。 此机制使发布服务器和订阅服务器无需彼此引用即可进行通信，有助于减少组件之间的依赖关系，同时允许单独开发和测试组件。
 
 ## <a name="related-links"></a>相关链接
 

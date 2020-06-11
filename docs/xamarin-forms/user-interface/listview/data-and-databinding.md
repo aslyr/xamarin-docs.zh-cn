@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文介绍如何 Xamarin.Forms 使用数据填充 listview，以及如何将数据绑定与 ListView 一起使用。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 38a895c9064fc012aec35b37eac78bb16ff009a9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131503"
+title： "ListView 数据源" 说明： "本文介绍了如何 Xamarin.Forms 使用数据填充 listview，以及如何将数据绑定与 ListView 一起使用。"
+ms-chap： xamarin assetid： B5571660-1E82-4379-95C3-0725288CF5D9： xamarin 窗体作者： davidbritch： dabritch ms. 日期：03/23/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="listview-data-sources"></a>ListView 数据源
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)

@@ -1,27 +1,13 @@
 ---
-title: Xamarin.FormsCarouselView
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 891f1ff8ad8f254ff3a2805d08d0f7e115bb0fff
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137366"
+标题： " Xamarin.Forms CarouselView" 说明： "CarouselView 是一个视图，用于在可滚动的布局中显示数据，用户可在此视图中翻阅项目集合。"
+ms-chap： xamarin assetid：5b673347-cdba-4532-820f-fb5f070c86bc： xamarin 窗体作者： davidbritch： dabritch ms. 日期：10/08/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-carouselview"></a>Xamarin.FormsCarouselView
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-## <a name="introduction"></a>[简介](introduction.md)
+## <a name="introduction"></a>[介绍](introduction.md)
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)是一个视图，用于以可滚动的布局显示数据，用户可在此视图中轻扫以便在项集合中移动。
 

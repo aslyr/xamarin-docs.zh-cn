@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a4bb6c30ada13691146d00d2094df8f13ca453b9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140252"
+title： "带有路径和区域的剪辑" 说明： "本文介绍了如何使用 SkiaSharp 路径将图形剪辑到特定区域和创建区域，并使用示例代码对此进行演示。"
+ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F author： davidbritch： dabritch ms. 日期：06/16/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="clipping-with-paths-and-regions"></a>按路径和区域进行剪裁
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,12 +1,9 @@
 ---
-标题： ' 说明中的依赖关系解析 Xamarin.Forms ： ' 本文介绍了如何将依赖项解析方法注入到， Xamarin.Forms 以便应用程序的依赖关系注入容器能够控制自定义呈现器、效果和 DependencyService 实现的创建和生存期。
-ms-chap： assetid： ms-chap： author： ms. 作者： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+标题： "说明中的依赖关系解析 Xamarin.Forms ：" 本文介绍了如何将依赖项解析方法注入到， Xamarin.Forms 以便应用程序的依赖关系注入容器能够控制自定义呈现器、效果和 DependencyService 实现的创建和生存期。 "
+ms-chap： xamarin assetid：491B87DC-14CB-4ADC-AC6C-40A7627B2524： xamarin 窗体作者： davidbritch： dabritch ms. 日期：07/27/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
-# <a name="dependency-resolution-in-xamarinforms"></a>依赖项解析Xamarin.Forms
+# <a name="dependency-resolution-in-xamarinforms"></a>Xamarin.Forms 中的依赖项解析
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
 
@@ -294,7 +291,7 @@ async void OnSelectPhotoButtonClicked(object sender, EventArgs e)
 ## <a name="related-links"></a>相关链接
 
 - [使用容器的依赖项解析（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
-- [依赖项注入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)
+- [依赖关系注入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)
 - [实现视频播放器](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)
 - [从效果调用事件](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)
 - [从图片库中选取照片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)

@@ -1,22 +1,8 @@
 ---
-title: 响应应用程序中的系统主题更改 Xamarin.Forms
-description: Xamarin.Forms应用程序可以使用 OnAppTheme 类型和 DynamicResource 标记扩展对操作系统主题更改做出响应。
-ms.assetid: ''
-ms.prod: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 2bb83f4ad5c30adccfc961938df64dda9cef1f6b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140057"
+标题： "响应应用程序中的系统主题更改 Xamarin.Forms " 说明： " Xamarin.Forms 应用程序可以通过使用 OnAppTheme 类型和 DynamicResource 标记扩展来响应操作系统主题更改。"
+assetid： D10506DD-BAA0-437F-A4AD-882D16E7B60D： xamarin： xamarin ms. 技术： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/22/2020： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="respond-to-system-theme-changes-in-xamarinforms-applications"></a>响应应用程序中的系统主题更改 Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
@@ -195,4 +181,4 @@ Application.Current.RequestedThemeChanged += (s, a) =>
 - [OnAppTheme 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onapptheme-markup-extension)
 - [资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [中的动态样式Xamarin.Forms](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)
-- [Xamarin.Forms使用 XAML 样式设置应用样式](~/xamarin-forms/user-interface/styles/xaml/index.md)
+- [使用 XAML 样式设置 Xamarin.Forms 应用的样式](~/xamarin-forms/user-interface/styles/xaml/index.md)

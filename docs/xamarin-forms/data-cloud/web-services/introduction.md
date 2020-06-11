@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsWeb 服务简介
-description: 本指南提供了 Xamarin.Forms 演示如何与不同 web 服务通信的示例应用程序的演练。 虽然每个 web 服务使用单独的示例应用程序，但它们在功能上类似并共享公共类。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d714b4c9d598d8cca26ae992abf3f15df703d11b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139173"
+标题： " Xamarin.Forms Web 服务简介" 说明： "本指南提供了 Xamarin.Forms 演示如何与不同 Web 服务通信的示例应用程序的演练。 虽然每个 web 服务使用单独的示例应用程序，但它们在功能上类似并共享公共类。 "
+ms-chap： xamarin assetid： A3FEB262-0D79-42E6-8F8B-A565618C490B： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/28/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-web-services-introduction"></a>Xamarin.FormsWeb 服务简介
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
@@ -43,7 +29,7 @@ _本主题提供了 Xamarin.Forms 演示如何与不同 web 服务通信的示�
 
 每个示例应用程序的共享代码项目由三个主要文件夹组成：
 
-|文件夹|目的|
+|Folder|目的|
 |--- |--- |
 |数据|包含用于管理数据项以及与 web 服务进行通信的类和接口。 其中至少包括 `TodoItemManager` 类，该类通过类中的属性公开， `App` 用于调用 web 服务操作。|
 |模型|包含应用程序的数据模型类。 其中至少包括 `TodoItem` 类，该类对应用程序使用的单个数据项建模。 此文件夹还可以包含用于对用户数据建模的任何其他类。|

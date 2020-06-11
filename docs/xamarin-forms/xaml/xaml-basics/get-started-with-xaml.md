@@ -23,7 +23,7 @@ _在 Xamarin.Forms 应用程序中，XAML 主要用于定义页面的视觉内�
 
 ![新建解决方案窗口](get-started-with-xaml-images/win/new-solution-2019.png)
 
-在 "新建**项目**" 窗口的 "**项目类型**" 下拉菜单中选择 "**移动**"，选择 "**移动应用（ Xamarin.Forms ）** " 模板，然后单击 "**下一步**" 按钮：
+在“创建新项目”窗口中，在“项目类型”下拉菜单中选择“移动”，选择“移动应用(Xamarin.Forms)”，然后单击“下一步”按钮：
 
 !["新建项目" 窗口](get-started-with-xaml-images/win/new-project-2019.png)
 

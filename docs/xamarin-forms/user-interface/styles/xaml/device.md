@@ -1,22 +1,8 @@
 ---
-title: 设备样式Xamarin.Forms
-description: Xamarin.Forms在 Device 类中包含六种动态样式，称为设备样式。 本文介绍如何在应用程序中使用设备样式 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b835847fea39e1c2f968e7b81fb9d22f68ea461c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140096"
+标题： " Xamarin.Forms description：" 中的设备样式在 Xamarin.Forms Device 类中包含六个动态样式（称为设备样式）。 本文介绍如何在应用程序中使用设备样式 Xamarin.Forms 。
+ms-chap： xamarin assetid：7FF19ED1-0822-4238-9435-AD970317A2F8： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/17/2016 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="device-styles-in-xamarinforms"></a>设备样式Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
@@ -114,7 +100,7 @@ public class DeviceStylesPageCS : ContentPage
 
 [`Style`](xref:Xamarin.Forms.NavigableElement.Style)每个实例的属性 [`Label`](xref:Xamarin.Forms.Label) 都设置为类中的相应属性 [`Devices.Styles`](xref:Xamarin.Forms.Device.Styles) 。
 
-## <a name="accessibility"></a>辅助功能
+## <a name="accessibility"></a>可访问性
 
 *设备*样式遵循辅助功能首选项，因此在每个平台上更改辅助功能首选项时，字体大小将会改变。 因此，为了支持可访问的文本，请确保将*设备*样式用作应用程序内任何文本样式的基础。
 

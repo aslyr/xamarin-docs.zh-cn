@@ -1,23 +1,8 @@
 ---
-title: 源链接与Xamarin.Forms
-description: 本文介绍如何使用源链接进行调试 Xamarin.Forms 。
-zone_pivot_groups: ''
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 57db314538c42ef9d58691ba16ab68371ff092b7
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138284"
+title： "源链接" Xamarin.Forms 说明： "本文介绍了如何使用源链接调试到 Xamarin.Forms 。"
+zone_pivot_groups： "platform" ms-chap： xamarin assetId：1E13FCD9-5607-46E8-80E4-87A58B389BEB： xamarin 窗体 author： profexorgeek： jusjohns ms. 日期：09/26/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="source-link-with-xamarinforms"></a>源链接与Xamarin.Forms
 
 Xamarin.FormsNuGet 包包含源链接映射。 源链接将包含在 NuGet 包中的已编译库映射到源代码存储库。 Visual Studio 将在调试期间下载源代码文件，使开发人员可以单步执行代码，从而启用包调试，而无需从源生成。

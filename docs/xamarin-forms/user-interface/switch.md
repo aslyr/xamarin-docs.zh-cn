@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms转
-description: Xamarin.Forms开关是一种按钮类型，用户可以对其进行操作以在开启和关闭状态之间切换。 本文介绍如何使用 Switch 类显示切换 UI 元素。
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a5c2583b7632acdfa7d8439dc96b3964fa3cfcab
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136235"
+标题： " Xamarin.Forms switch" 说明： " Xamarin.Forms 开关是一种按钮类型，用户可以对其进行操作以在开启和关闭状态之间切换。 本文介绍如何使用 Switch 类显示切换 UI 元素。
+ms-chap： xamarin assetId： B2F9CC65-481B-4323-8E77-C6BE29C90DE9： xamarin 窗体作者： profexorgeek： jusjohns ms. 日期：07/18/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-switch"></a>Xamarin.Forms转
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
@@ -130,4 +116,4 @@ switchControl.Toggled += (sender, e) =>
 ## <a name="related-links"></a>相关链接
 
 * [切换演示](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
-* [Xamarin.Forms导致](~/xamarin-forms/app-fundamentals/triggers.md)
+* [Xamarin.Forms 触发器](~/xamarin-forms/app-fundamentals/triggers.md)

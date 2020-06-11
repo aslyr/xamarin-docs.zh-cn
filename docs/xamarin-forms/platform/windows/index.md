@@ -1,9 +1,6 @@
 ---
-标题：说明： ' 本文介绍了中提供的 Windows 平台支持 Xamarin.Forms 。 "
-ms-chap： assetid： ms-chap： author： ms. 作者： ms. 日期：非 loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+标题： "Windows 平台功能" 说明： "本文介绍了中提供的 Windows 平台支持 Xamarin.Forms 。"
+ms-chap： xamarin assetid： F6EA9E49-FB3E-442F-AF13-B7AD0C80D11F： xamarin 窗体作者： davidbritch： dabritch ms. 日期：01/16/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="windows-platform-features"></a>Windows 平台功能
@@ -46,7 +43,7 @@ Xamarin.FormsVisual Studio 中提供的模板包含通用 Windows 平台（UWP�
 > [!NOTE]
 > Xamarin.Forms1.x 和2.x 支持_Windows Phone 8 个 Silverlight_， _Windows Phone 8.1_， _Windows 8.1_应用程序开发。 但是，这些项目类型已弃用。
 
-## <a name="getting-started"></a>开始使用
+## <a name="getting-started"></a>入门
 
 转到文件 > Visual Studio 中的**新 > 项目**，然后选择一个**跨平台 > 空白应用（ Xamarin.Forms ）** 模板以开始。
 

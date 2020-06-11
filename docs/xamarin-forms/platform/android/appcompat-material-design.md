@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文介绍如何转换现有 Xamarin.Forms Android 应用程序以使用 AppCompat 和材料设计。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 24206f6d6764c73f13a4b06fb44fa746f9d353af
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135702"
+标题： "添加 AppCompat 和材料设计" 说明： "本文介绍了如何转换现有 Xamarin.Forms Android 应用程序以使用 AppCompat 和材料设计。"
+ms-chap： xamarin assetid： 045FBCDF-4D45-48BB-9911-BD3938C87D58 毫秒： xamarin 窗体作者： davidbritch 毫秒. 作者： dabritch 毫秒。日期：06/27/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="adding-appcompat-and-material-design"></a>添加 AppCompat 和材料设计
 
 _请按照以下步骤将现有 Xamarin.Forms Android 应用转换为使用 AppCompat 和材料设计_
@@ -43,7 +29,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 
 在 Android 项目中创建以下三个文件，并粘贴以下内容。 Google 提供了[样式指南](https://www.google.com/design/spec/style/color.html#color-color-palette)和[调色板生成器](https://www.materialpalette.com/)，可帮助你为指定的配色方案选择一个替代配色方案。
 
-**资源/值/颜色 .xml**
+**资源/值/colors.xml**
 
 ```xml
 <resources>
@@ -54,7 +40,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 </resources>
 ```
 
-**资源/值/样式 .xml**
+**资源/值/style.xml**
 
 ```xml
 <resources>
@@ -72,7 +58,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 
 在 Android 棒糖和更高版本上运行时，必须在**v21**文件夹中包含附加样式，以应用特定属性。
 
-**Resources/values-v21/style .xml**
+**资源/值-v21/style.xml**
 
 ```xml
 <resources>
@@ -84,11 +70,11 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 </resources>
 ```
 
-### <a name="4-update-androidmanifestxml"></a>4. 更新 Androidmanifest.xml
+### <a name="4-update-androidmanifestxml"></a>4. 更新 AndroidManifest.xml
 
 若要确保使用这一新的主题信息，请在**androidmanifest.xml**文件中添加 "主题"，方法是添加 `android:theme="@style/MyTheme"` （保留 XML 的其余部分）。
 
-**Properties/Androidmanifest.xml**
+**Properties/AndroidManifest.xml**
 
 ```xml
 ...

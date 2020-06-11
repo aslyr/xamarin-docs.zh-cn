@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文探讨了用于在应用程序中显示 SkiaSharp 图形的转换 Xamarin.Forms ，并通过示例代码对此进行了演示。
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e20ea5d1d3f813b04a927601fbe1180ff39ed176
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140187"
+title： "SkiaSharp 转换" 说明： "本文探讨了用于在应用程序中显示 SkiaSharp 图形的转换 Xamarin.Forms ，并通过示例代码对此进行了演示。"
+ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： E9BE322E-ECB3-4395-AFE4-4474A0F25551 author： davidbritch： dabritch ms. 日期：03/10/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="skiasharp-transforms"></a>SkiaSharp 转换
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -40,9 +26,9 @@ SkiaSharp 还支持基于标准的 3 x 3 变换矩阵的非仿射转换（也称
 
 Xamarin.Forms还支持类似于 SkiaSharp 中的转换。 Xamarin.Forms [`VisualElement`](xref:Xamarin.Forms.VisualElement) 类定义下列转换属性：
 
-- [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX)与[`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY)
+- [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) 和 [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY)
 - [`Scale`](xref:Xamarin.Forms.VisualElement.Scale)
-- [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation)、 [`RotationX`](xref:Xamarin.Forms.VisualElement.RotationX) 和[`RotationY`](xref:Xamarin.Forms.VisualElement.RotationY)
+- [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation)、[`RotationX`](xref:Xamarin.Forms.VisualElement.RotationX) 和 [`RotationY`](xref:Xamarin.Forms.VisualElement.RotationY)
 
 `RotationX`和 `RotationY` 属性是创建准三维效果的透视转换。
 
