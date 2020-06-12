@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 58fbe6d688ffb506db4316ee29d79a364f849a97
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: b9254afdcb6286edcffc67a1a69af8b049f08b6b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73030425"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573217"
 ---
 # <a name="ipa-support-in-xamarinios"></a>Xamarin.iOS 中的 IPA 支持
 
@@ -25,7 +25,7 @@ ms.locfileid: "73030425"
 
 在任一情况下，都必须创建 IPA 包（特殊类型的 zip 文件），并使用正确的分发配置文件进行数码签名。 本文介绍在 Mac 或 Windows 电脑上使用 iTunes 生成 IPA 包，并在 iOS 设备上进行安装的所需步骤。
 
-<a name="iTunesMetadata" />
+<a name="iTunesMetadata"></a>
 
 ## <a name="the-itunesmetadataplist-file"></a>iTunesMetadata.plist 文件
 
@@ -35,7 +35,7 @@ ms.locfileid: "73030425"
 
 也可创建自定义 **iTunesMetadata.plist** 提供分发的其他信息。 若要了解有关此文件内容以及如何创建该文件的详细信息，请参阅 [iTunesMetadata.plist 内容](~/ios/deploy-test/app-distribution/itunesmetadata.md#iTunesMetadata_contents)和[创建 iTunesMetadata.plist 文件](~/ios/deploy-test/app-distribution/itunesmetadata.md#iTunesMetadata_creating)文档。
 
-<a name="iTunesArtwork" />
+<a name="iTunesArtwork"></a>
 
 ## <a name="itunes-artwork"></a>iTunes 图稿
 
@@ -50,7 +50,7 @@ ms.locfileid: "73030425"
 
 请参阅 [iTunes 图稿](~/ios/app-fundamentals/images-icons/app-icons.md)文档，了解详细信息。
 
-<a name="createipa" />
+<a name="createipa"></a>
 
 ## <a name="creating-an-ipa"></a>创建 IPA
 
@@ -165,7 +165,7 @@ ms.locfileid: "73030425"
 
 -----
 
-<a name="Customizing-the-IPA-Location" />
+<a name="Customizing-the-IPA-Location"></a>
 
 ## <a name="customizing-the-ipa-location"></a>自定义 IPA 位置
 
@@ -221,7 +221,7 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:ServerAddress="192.16
 msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/Builds" /t:Build SingleViewIphone1.sln
 ```
 
-<a name="installipa" />
+<a name="installipa"></a>
 
 ## <a name="installing-an-ipa-using-itunes"></a>使用 iTunes 安装 IPA
 
@@ -241,7 +241,7 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 
 用户现可将 iTunes 与设备同步，以安装新的 iOS 应用程序。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>总结
 

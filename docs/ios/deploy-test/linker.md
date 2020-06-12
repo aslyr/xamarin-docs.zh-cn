@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: 284705973f9c0ec606572170f7e927ed4745ddd1
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 263c48c5006ba0060756e1050497c38dfb7c8eae
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73030223"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567770"
 ---
 # <a name="linking-xamarinios-apps"></a>链接 Xamarin.iOS 应用
 
@@ -22,7 +22,7 @@ ms.locfileid: "73030223"
 
 由于链接器是静态工具，它无法标记通过反射调用或已动态实例化的包含类型和方法。 有几个选项可用于解决这一限制。
 
-<a name="Linker_Behavior" />
+<a name="Linker_Behavior"></a>
 
 ## <a name="linker-behavior"></a>链接器行为
 
@@ -56,7 +56,7 @@ ms.locfileid: "73030223"
 
 使用命令行工具 mtouch 时，它对应于 -nolink 选项  。
 
-<a name="Link_SDK_assemblies_only" />
+<a name="Link_SDK_assemblies_only"></a>
 
 ### <a name="link-sdk-assemblies-only"></a>仅链接 SDK 程序集
 
@@ -66,7 +66,7 @@ ms.locfileid: "73030223"
 
 使用命令行工具 mtouch 时，它对应于 -linksdk  选项。
 
-<a name="Link_all_assemblies" />
+<a name="Link_all_assemblies"></a>
 
 ### <a name="link-all-assemblies"></a>链接所有程序集
 
@@ -74,13 +74,13 @@ ms.locfileid: "73030223"
 
 使用命令行工具 mtouch  时，它对应于 -linkall  选项。
 
-<a name="Controlling_the_Linker" />
+<a name="Controlling_the_Linker"></a>
 
 ## <a name="controlling-the-linker"></a>控制链接器
 
 使用链接器时，它有时会删除可能以动态方式（甚至以间接方式）调用的代码。 为了涵盖这些情况，链接器会提供几种功能和选项，以让你更好地控制其操作。
 
-<a name="Preserving_Code" />
+<a name="Preserving_Code"></a>
 
 ### <a name="preserving-code"></a>保留代码
 
@@ -108,7 +108,7 @@ public sealed class PreserveAttribute : System.Attribute {
 
 在哪个命名空间中定义它并不太重要，链接器会按类型名称查找此属性。
 
- <a name="Skipping_Assemblies" />
+ <a name="Skipping_Assemblies"></a>
 
 ### <a name="skipping-assemblies"></a>跳过程序集
 
@@ -130,7 +130,7 @@ public sealed class PreserveAttribute : System.Attribute {
 
 没有使用此选项的用户界面，但可以在 Visual Studio for Mac 项目选项对话框或 Visual Studio 项目属性窗格中的“其他 mtouch 参数”  文本字段内提供。 （例如， --linkskip=mscorlib  不会链接 mscorlib.dll，但会链接解决方案中的其他程序集）。
 
-<a name="Disabling_Link_Away" />
+<a name="Disabling_Link_Away"></a>
 
 ### <a name="disabling-link-away"></a>禁用“离开链接”
 

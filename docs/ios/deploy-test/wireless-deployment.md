@@ -8,12 +8,12 @@ author: davidortinau
 ms.author: daortin
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: b0eb471bd41bb38d62ced38ed66cfa0dfee37bbf
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 58a7b6af2b21d2ca2106f78b833ff846c9daa7ac
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73023419"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572606"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>适用于 Xamarin.iOS 和 tvOS 应用的无线部署
 
@@ -53,7 +53,7 @@ Visual Studio for Mac 和 Visual Studio 提供无线部署功能。
 
 以下配对过程应只需在每个设备上执行一次。 Xcode 将保留连接设置。
 
-<a name="pair" />
+<a name="pair"></a>
 
 ### <a name="pairing-an-ios-device-with-xcode"></a>将 iOS 设备与 Xcode 配对
 

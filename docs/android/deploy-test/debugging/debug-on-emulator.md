@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: 2bc8f82db29ed3c07c67293a83e6874f0cc6acb2
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 36538435066bc94a81f6449774718afe9a5ce7d7
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75556517"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571982"
 ---
 # <a name="debug-on-the-android-emulator"></a>在 Android Emulator 上调试
 
@@ -63,7 +63,7 @@ Visual Studio for Mac 包含预配置虚拟设备，可在“设备”下拉菜�
 
 若要修改虚拟设备（或创建新的虚拟设备），必须使用 [Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)。
 
-<a name="launching" />
+<a name="launching"></a>
 
 ## <a name="launching-the-emulator"></a>启动仿真器
 
@@ -85,7 +85,7 @@ Visual Studio for Mac 包含预配置虚拟设备，可在“设备”下拉菜�
 
 可以一直运行仿真器：无需关闭仿真器并在每次启动应用时等待重启。 当 Xamarin.Android 应用首次在仿真器中运行时，将会先安装面向目标 API 级别的 Xamarin.Android 共享运行时，再安装应用。 运行时安装过程可能需要一段时间，请耐心等待。 仅当首次向仿真器部署 Xamarin.Android 应用时，才会安装运行时 &ndash; 后续部署速度更快，因为仅将应用复制到仿真器。
 
-<a name="quick-boot" />
+<a name="quick-boot"></a>
 
 ## <a name="quick-boot"></a>快速启动
 

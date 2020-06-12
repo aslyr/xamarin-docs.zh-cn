@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: f744f4ed5619e4e7f4a9d85897c4451bf7e5b9bc
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 314c94fc9208a63e2f9305511df262327df921a5
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73022351"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84565065"
 ---
 # <a name="nsstring-in-xamarinios-and-xamarinmac"></a>Xamarin.iOS 和 Xamarin.Mac 中的 NSString
 
@@ -38,7 +38,7 @@ class UILabel {
 
 有少量的第三方 Objective-C API 不使用 `NSString`，而使用 C 字符串（“char  ”）。 在这些情况下，仍可以使用 C# 字符串数据类型，但必须使用 [[PlainString]](~/cross-platform/macios/binding/objective-c-libraries.md) 属性来通知绑定生成器，告知它此字符串不应作为 `NSString` 封送，而应作为 C 字符串封送。
 
- <a name="Exceptions_to_the_Rule" />
+ <a name="Exceptions_to_the_Rule"></a>
 
 ## <a name="exceptions-to-the-rule"></a>规则的例外情况
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 620a7edd4467a5a2bae60bbd82d0e1460c9f0040
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 63365ebc12089ced7de621b3a510996fa66119ce
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73021411"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571956"
 ---
 # <a name="xamarinandroid-performance"></a>Xamarin.Android 性能
 
@@ -38,7 +38,7 @@ _可以通过很多方法来提高使用 Xamarin.Android 构建的应用程序�
 > [!NOTE]
 > 阅读本文之前，首先应阅读[跨平台性能](~/cross-platform/deploy-test/memory-perf-best-practices.md)，其中讨论了非平台特定方法，可用于改善使用 Xamarin 平台生成的应用程序的内存使用情况和性能。
 
-<a name="optimizelayout" />
+<a name="optimizelayout"></a>
 
 ## <a name="optimize-layout-hierarchies"></a>优化布局层次结构
 
@@ -119,7 +119,7 @@ _可以通过很多方法来提高使用 Xamarin.Android 构建的应用程序�
 
 以前的 3 级层次结构已缩减为 2 级层次结构，并且一个 [`RelativeLayout`](xref:Android.Widget.RelativeLayout) 取代了两个 [`LinearLayout`](xref:Android.Widget.LinearLayout) 实例。 放大布局的每个 [`ListView`](xref:Android.Widget.ListView) 行时，性能将显著提高。
 
-<a name="optimizelistviews" />
+<a name="optimizelistviews"></a>
 
 ## <a name="optimize-list-views"></a>优化列表视图
 
@@ -132,7 +132,7 @@ _可以通过很多方法来提高使用 Xamarin.Android 构建的应用程序�
 
 结合使用这些方法有助于保持 [`ListView`](xref:Android.Widget.ListView) 实例的平滑滚动。
 
-<a name="reuserowviews" />
+<a name="reuserowviews"></a>
 
 ### <a name="reuse-row-views"></a>重复使用行视图
 
@@ -157,7 +157,7 @@ public override View GetView(int position, View convertView, ViewGroup parent)
 
 有关详细信息，请参阅[用数据填充 ListView](~/android/user-interface/layouts/list-view/populating.md) 中的[重复使用行视图](~/android/user-interface/layouts/list-view/populating.md#row-view-re-use)。
 
-<a name="removeeventhandlers" />
+<a name="removeeventhandlers"></a>
 
 ## <a name="remove-event-handlers-in-activities"></a>在活动中删除事件处理程序
 
@@ -186,7 +186,7 @@ App.Current.Service1.Updated += service1UpdateHandler;
 App.Current.Service1.Updated -= service1UpdateHandler;
 ```
 
-<a name="limitservices" />
+<a name="limitservices"></a>
 
 ## <a name="limit-the-lifespan-of-services"></a>限制服务的有效期
 
@@ -194,15 +194,15 @@ App.Current.Service1.Updated -= service1UpdateHandler;
 
 使用 `IntentService` 可以限制服务的有效期，处理完最初启动的目的时服务便可自动终止。
 
-<a name="releaseresources" />
+<a name="releaseresources"></a>
 
 ## <a name="release-resources-when-notified"></a>收到通知时释放资源
 
 在应用程序生命周期内，[`OnTrimMemory`](xref:Android.App.Activity.OnTrimMemory*) 回调会在设备内存较低时发出通知。 应实现此回调以侦听以下内存级别的通知：
 
-- [`TrimMemoryRunningModerate`](xref:Android.Content.ComponentCallbacks2.TrimMemoryRunningModerate) - 应用程序可能  需要释放一些不需要的资源。
-- [`TrimMemoryRunningLow`](xref:Android.Content.ComponentCallbacks2.TrimMemoryRunningLow) - 应用程序应  释放不需要的资源。
-- [`TrimMemoryRunningCritical`](xref:Android.Content.ComponentCallbacks2.TrimMemoryRunningCritical) - 应用程序应  尽可能多地释放非关键进程。
+- [`TrimMemoryRunningModerate`](xref:Android.Content.ComponentCallbacks2.TrimMemoryRunningModerate) - 应用程序可能需要释放一些不需要的资源。
+- [`TrimMemoryRunningLow`](xref:Android.Content.ComponentCallbacks2.TrimMemoryRunningLow) - 应用程序应释放不需要的资源。
+- [`TrimMemoryRunningCritical`](xref:Android.Content.ComponentCallbacks2.TrimMemoryRunningCritical) - 应用程序应尽可能多地释放非关键进程。
 
 此外，缓存应用程序进程时，[`OnTrimMemory`](xref:Android.App.Activity.OnTrimMemory*) 回调可能会收到以下内存级别的通知：
 
@@ -212,15 +212,15 @@ App.Current.Service1.Updated -= service1UpdateHandler;
 
 应根据接收到的级别释放资源来响应通知。
 
-<a name="releaseresourcesuihidden" />
+<a name="releaseresourcesuihidden"></a>
 
 ## <a name="release-resources-when-the-user-interface-is-hidden"></a>隐藏用户界面时释放资源
 
 在用户导航到另一应用时，释放该应用的用户界面使用的所有资源，因为这样可以显著提高 Android 的缓存进程容量，这反过来会影响用户体验质量。
 
-若要在用户退出用户界面时接收通知，需在 `Activity` 类中实现 [`OnTrimMemory`](xref:Android.App.Activity.OnTrimMemory*) 回调，并侦听 [`TrimMemoryUiHidden`](xref:Android.Content.ComponentCallbacks2.TrimMemoryUiHidden) 级别，该值指示用户界面已从视图中隐藏。 仅当应用程序的所有  用户界面组件均对用户隐藏时，才会收到此通知。 收到此通知时释放用户界面资源，可确保当用户从应用中的另一个活动导航回来后，用户界面资源仍可用于快速恢复活动。
+若要在用户退出用户界面时接收通知，需在 `Activity` 类中实现 [`OnTrimMemory`](xref:Android.App.Activity.OnTrimMemory*) 回调，并侦听 [`TrimMemoryUiHidden`](xref:Android.Content.ComponentCallbacks2.TrimMemoryUiHidden) 级别，该值指示用户界面已从视图中隐藏。 仅当应用程序的所有用户界面组件均对用户隐藏时，才会收到此通知。 收到此通知时释放用户界面资源，可确保当用户从应用中的另一个活动导航回来后，用户界面资源仍可用于快速恢复活动。
 
-<a name="optimizeimages" />
+<a name="optimizeimages"></a>
 
 ## <a name="optimize-image-resources"></a>优化图像资源
 
@@ -228,7 +228,7 @@ App.Current.Service1.Updated -= service1UpdateHandler;
 
 有关详细信息，请参阅[跨平台性能](~/cross-platform/deploy-test/memory-perf-best-practices.md)指南中的[优化图像资源](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages)。
 
-<a name="disposeimages" />
+<a name="disposeimages"></a>
 
 ## <a name="dispose-of-unused-image-resources"></a>释放未使用的图像资源
 
@@ -245,7 +245,7 @@ using (Bitmap smallPic = BitmapFactory.DecodeByteArray(smallImageByte, 0, smallI
 
 有关释放可释放资源的详细信息，请参阅[释放 IDisposable 资源](~/cross-platform/deploy-test/memory-perf-best-practices.md#idisposable)。  
 
-<a name="avoidfloats" />
+<a name="avoidfloats"></a>
 
 ## <a name="avoid-floating-point-arithmetic"></a>避免使用浮点运算
 
@@ -254,7 +254,7 @@ using (Bitmap smallPic = BitmapFactory.DecodeByteArray(smallImageByte, 0, smallI
 > [!NOTE]
 > 甚至对于整数运算，一些 CPU 也缺少硬件划分功能。 因此，通常在软件中执行整数除法和取模运算。
 
-<a name="dismissdialogs" />
+<a name="dismissdialogs"></a>
 
 ## <a name="dismiss-dialogs"></a>关闭对话框
 

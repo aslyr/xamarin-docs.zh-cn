@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: jondouglas
 ms.author: jodou
 ms.date: 02/13/2020
-ms.openlocfilehash: faab613d88a7f59d1095021d2b21faf9223ae33b
-ms.sourcegitcommit: 3fb407841dbe46b8b23573f08591228b7c0e2726
+ms.openlocfilehash: a776dbb2ecfaf0942d79c2b403c13f98cdc7c2e2
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81488905"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571969"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>通过硬件加速提高仿真器性能 (Hyper-V & HAXM)
 
@@ -53,7 +53,7 @@ Visual Studio 便于开发人员在无法使用 Android 设备的情况下通过
 
 有关使用 Android Emulator 进行启动和调试的信息，请参阅 [Android Emulator 调试](~/android/deploy-test/debugging/debug-on-emulator.md)。
 
-<a name="hyper-v-win" />
+<a name="hyper-v-win"></a>
 
 ## <a name="accelerating-with-hyper-v"></a>使用 HYPER-V 加速
 
@@ -138,7 +138,7 @@ systeminfo
 
 如果计算机可以支持 HAXM 但未安装 HAXM，请按照下一部分中的步骤安装 HAXM。
 
-<a name="install-haxm-win" />
+<a name="install-haxm-win"></a>
 
 ### <a name="installing-haxm"></a>安装 HAXM
 
@@ -181,7 +181,7 @@ systeminfo
 
 有关使用 Android Emulator 进行启动和调试的信息，请参阅 [Android Emulator 调试](~/android/deploy-test/debugging/debug-on-emulator.md)。
 
-<a name="hypervisor" />
+<a name="hypervisor"></a>
 
 ## <a name="accelerating-with-the-hypervisor-framework"></a>使用虚拟机监控程序框架加速
 
@@ -195,7 +195,7 @@ systeminfo
 
 如果 Mac 不支持虚拟机监控程序框架，可以使用 HAXM 加速 Android Emulator（如下所述）。
 
-<a name="haxm-mac" />
+<a name="haxm-mac"></a>
 
 ## <a name="accelerating-with-haxm"></a>使用 HAXM 加速
 
@@ -229,7 +229,7 @@ systeminfo
 
 如果未安装 HAXM，请按照下一部分的步骤安装 HAXM。
 
-<a name="install-haxm-mac" />
+<a name="install-haxm-mac"></a>
 
 ### <a name="installing-haxm"></a>安装 HAXM
 

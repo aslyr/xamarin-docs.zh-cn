@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 48aba9ead925d3404146795eb9a3e0588d7b600d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 141d268e7a5670f9ba8002ae9edda828538a01a4
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76724691"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571787"
 ---
 # <a name="debugging-xamarinios-apps"></a>调试 Xamarin.iOS 应用
 
@@ -174,7 +174,7 @@ Xamarin.iOS 调试器使用 [Mono 软调试器](https://www.mono-project.com/doc
 
 如果设置调试器时出错，可以通过向“项目选项”中的其他 mtouch 参数添加“-v -v -v”启用详细诊断。 这将打印设备控制台详细的错误信息。
 
- <a name="WiFi_Debugging" />
+ <a name="WiFi_Debugging"></a>
 
 ## <a name="wireless-debugging"></a>无线调试
 
@@ -182,7 +182,7 @@ Xamarin.iOS 中的默认设置是通过 USB 连接，在设备上调试应用程
 
 有关无线部署和调试的详细信息，请参阅[无线部署](~/ios/deploy-test/wireless-deployment.md)指南。
 
-<a name="Technical_Details" />
+<a name="Technical_Details"></a>
 
 ## <a name="technical-details"></a>技术详细信息
 
@@ -192,7 +192,7 @@ Xamarin.iOS 使用新的 Mono 软调试器。 与标准 Mono 调试器不同，�
 
 在设备上运行时，此软调试器需要协作调试方案。 这意味着调试时二进制文件生成版本将变复杂，因为需要检测代码才能在每个序列点包含额外的代码，以便支持调试。
 
-<a name="Accessing_the_Console" />
+<a name="Accessing_the_Console"></a>
 
 ## <a name="accessing-the-console"></a>访问控制台
 
@@ -204,7 +204,7 @@ Xamarin.iOS 使用新的 Mono 软调试器。 与标准 Mono 调试器不同，�
 
 -----
 
-<a name="Debugging_Mono's_Class_Libraries" />
+<a name="Debugging_Mono's_Class_Libraries"></a>
 
 ## <a name="debugging-monos-class-libraries"></a>调试 Mono 类库
 

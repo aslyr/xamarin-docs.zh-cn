@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: c8c1a5d284e5faaffae33a724c461b6fd74cf39b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 1932bc8bf5362a284ed62aa241170264826baa9e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73028578"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567549"
 ---
 # <a name="icloud-capabilities-in-xamarinios"></a>Xamarin.iOS 中的 iCloud 功能
 
@@ -25,7 +25,7 @@ iCloud 向 iOS 用户提供了一种方便简单的方式来存储内容并在�
 > [!IMPORTANT]
 > Apple [提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)，用于帮助开发人员正确处理欧盟一般数据保护条例 (GDPR)。
 
-<a name="icloud-developer-center" />
+<a name="icloud-developer-center"></a>
 
 ## <a name="developer-center"></a>开发人员中心
 

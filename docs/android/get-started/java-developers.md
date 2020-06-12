@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/13/2018
-ms.openlocfilehash: b9c6694ea49607b839a3658e5cc8bac5fb529c85
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: eed18890c185ccd35d728176348c9fac481407e1
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75728052"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571397"
 ---
 # <a name="xamarin-for-java-developers"></a>面向 Java 开发者的 Xamarin
 
@@ -86,7 +86,7 @@ C# 为 Xamarin.Android 提供了许多主要功能，Java 开发人员当前尚�
 >
 > 此页上提到的某些功能（例如，C# 中的 `var` 关键字）在较新版本的 Java（例如，[Java 10 中的 `var`](https://developer.oracle.com/java/jdk-10-local-variable-type-inference.html)）中提供，但仍不可用于 Android 开发人员。
 
-<a name="fundamentals" />
+<a name="fundamentals"></a>
 
 ## <a name="going-from-java-to-c-development"></a>从 Java 到 C# 开发
 
@@ -155,7 +155,7 @@ TextView label = FindViewById<TextView> (Resource.Id.Label);
 有关泛型的更多信息，请参阅[泛型](https://docs.microsoft.com/dotnet/csharp/programming-guide/generics/index)主题。
 请注意，Xamarin.Android 对泛型 C# 类的支持存在一些限制；有关详细信息，请参阅[限制](~/android/internals/limitations.md)。
 
-<a name="oopfeatures" />
+<a name="oopfeatures"></a>
 
 ## <a name="object-oriented-programming-features"></a>面向对象的编程功能
 
@@ -293,7 +293,7 @@ Java 和 C# 均支持多形性  ，即能够以相同方式处理相关对象。
 
 有关 C# 对多形性支持的详细信息，请参阅[多形性](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/polymorphism)主题。
 
-<a name="lambdas" />
+<a name="lambdas"></a>
 
 ## <a name="lambda-expressions"></a>Lambda 表达式
 
@@ -323,7 +323,7 @@ button.Click += (sender, args) => {
 
 有关 C# 和 lambda 表达式的详细信息，请参阅[Lambda 表达式](https://docs.microsoft.com/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions)主题。
 
-<a name="events" />
+<a name="events"></a>
 
 ## <a name="event-handling"></a>事件处理
 
@@ -371,7 +371,7 @@ startActivityButton.Click += (sender, e) => {
 
 通常，lambda 表达式用于声明 Xamarin.Android 代码中的事件处理程序。 此用于声明事件处理程序的速记方法乍一看可能比较晦涩，但在你写入和读取代码时它将帮你节省大量的时间。 随着熟悉程度的增加，你将习惯于识别此模式（这在 Xamarin.Android 代码中经常出现），可以花更多的时间思考应用程序的业务逻辑，而不需要花太多时间在语法开销上。
 
-<a name="async" />
+<a name="async"></a>
 
 ## <a name="asynchronous-programming"></a>异步编程
 
@@ -406,7 +406,7 @@ async void downloadAsync(object sender, System.EventArgs e)
 有关 C# 中 `async`/`await` 的说明，请参阅[使用 Async 和 Await 的异步编程](https://docs.microsoft.com/dotnet/csharp/async)主题。
 有关 Xamarin 对异步编程功能的支持的详细信息，请参阅[异步支持概述](~/cross-platform/platform/async.md)。
 
-<a name="keywords" />
+<a name="keywords"></a>
 
 ## <a name="keyword-differences"></a>关键字差异
 
@@ -454,7 +454,7 @@ Java 中使用的很多语言关键字也在 C# 中使用。 还有大量的 Jav
 |[value](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value)|引用客户端代码想要分配到属性的值。|
 |[virtual](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/virtual)|允许在派生类中重写方法。|
 
-<a name="interop" />
+<a name="interop"></a>
 
 ## <a name="interoperating-with-existing-java-code"></a>与现有的 Java 代码交互操作
 

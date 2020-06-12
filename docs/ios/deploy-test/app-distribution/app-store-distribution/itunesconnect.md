@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: aefd649fe1859306e5499addc1c08f4e42b2b424
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 172fd6a8c7ac1cfc0cfdaa428809a173b4999301
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73026684"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570084"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>在 iTunes Connect 中配置应用
 
@@ -51,7 +51,7 @@ iTunes Connect 的**协议、税款和银行**部分提供有关 iTunes 开发�
 
 同样，_必须_正确设置、使用此信息并保持最新状态，才能将要审核和发布的 iOS 应用程序提交到 iTunes Connect。 有关详细信息，请参阅 Apple 的 [Managing Agreements, Tax and Banking](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/ManagingContractsandBanking.html#//apple_ref/doc/uid/TP40011225-CH21-SW1)（管理协议、税款和银行）文档。
 
-<a name="creating" />
+<a name="creating"></a>
 
 ## <a name="creating-an-itunes-connect-record"></a>创建 iTunes Connect 记录
 
@@ -80,7 +80,7 @@ iTunes Connect 的**协议、税款和银行**部分提供有关 iTunes 开发�
 
 [![](itunesconnect-images/add04.png "The new application will be created in iTunes Connect")](itunesconnect-images/add04.png#lightbox)
 
-<a name="managing" />
+<a name="managing"></a>
 
 ## <a name="managing-app-videos-and-screenshots"></a>管理应用视频和屏幕快照
 
@@ -119,7 +119,7 @@ Apple 要求提供应用程序支持的每种屏幕大小和分辨率的屏幕�
 > [!NOTE]
 > 注意：如果屏幕截图或应用预览视频与应用程序中的当前功能不匹配，Apple 将拒绝你的提交。
 
-<a name="metadata" />
+<a name="metadata"></a>
 
 ## <a name="managing-name-description-whats-new-keywords-and-urls"></a>管理名称、说明、新增功能、关键字和 URL
 
@@ -191,7 +191,7 @@ Apple 要求开发人员提供其网站的链接，用于支持用户可能遇�
 > [!IMPORTANT]
 > 注意：如果名称、说明、新增功能、关键字或 URL 与应用程序中的当前功能不匹配，Apple 将拒绝你的提交。
 
-<a name="general" />
+<a name="general"></a>
 
 ## <a name="maintaining-general-app-information"></a>维护常规应用信息
 
@@ -259,7 +259,7 @@ Apple 允许提供应用程序的版权信息，并要求提供发布应用程�
 > [!NOTE]
 > 注意：如果类别或评级与应用程序中的当前功能不匹配，Apple 将拒绝你的提交。
 
-<a name="game-center" />
+<a name="game-center"></a>
 
 ## <a name="maintaining-game-center-information"></a>维护 Game Center 信息
 
@@ -336,7 +336,7 @@ Apple 允许提供应用程序的版权信息，并要求提供发布应用程�
 7. （可选）将应用程序定义为“自定义企业到企业应用程序”  。
 8. 单击“保存”  按钮保存更改。
 
-<a name="iap" />
+<a name="iap"></a>
 
 ## <a name="maintaining-in-app-purchase-information"></a>维护应用内购买信息
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 16ae440ec2fe3b5898c8f92d993279ef5e7e9794
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: ae3c60699f7e31c66893723ac73248ced9a2d72a
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75607914"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567965"
 ---
 # <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Xamarin.iOS 应用的临时分发
 
@@ -30,7 +30,7 @@ Ad Hoc 分发需要应用程序使用包含代码签名信息的 Ad Hoc 配置�
 
 本指南介绍如何对 Ad Hoc 分发进行设置，以及如何分发 Xamarin.iOS 应用。
 
-<a name="setup" />
+<a name="setup"></a>
 
 ## <a name="setting-up-for-distribution"></a>设置分发
 
@@ -41,7 +41,7 @@ Ad Hoc 分发需要应用程序使用包含代码签名信息的 Ad Hoc 配置�
 > [!NOTE]
 > 只有团队代理和管理员可创建分发证书和预配配置文件。
 
-<a name="createcertificate" />
+<a name="createcertificate"></a>
 
 ## <a name="create-a-distribution-certificate"></a>创建分发证书
 
@@ -70,11 +70,11 @@ Ad Hoc 分发需要应用程序使用包含代码签名信息的 Ad Hoc 配置�
 
 2. 接下来，单击加号 (+) 按钮，然后选择“iOS App Store”   ：[![选择“iOS App Store”](ad-hoc-distribution-images/selectcert.png)](ad-hoc-distribution-images/selectcert.png#lightbox)
 
-<a name="createprofile" />
+<a name="createprofile"></a>
 
 ## <a name="create-a-distribution-provisioning-profile"></a>创建分发预配配置文件
 
-<a name="createappid" />
+<a name="createappid"></a>
 
 ### <a name="create-an-app-id"></a>创建 App ID
 与创建的任何其他设置配置文件一样，需使用应用程序 ID 来确认分发到用户设备的应用。 如果尚未创建此项，请按照以下步骤创建：
@@ -119,7 +119,7 @@ Ad Hoc 分发需要应用程序使用包含代码签名信息的 Ad Hoc 配置�
 
 -----
 
-<a name="selectprofile" />
+<a name="selectprofile"></a>
 
 ## <a name="selecting-a-distribution-profile-in-a-xamarinios-project"></a>在 Xamarin.iOS 项目中选择分发配置文件
 
@@ -158,7 +158,7 @@ Ad Hoc 分发需要应用程序使用包含代码签名信息的 Ad Hoc 配置�
 
 -----
 
-<a name="adhoc" />
+<a name="adhoc"></a>
 
 ## <a name="ad-hoc-distribution"></a>Ad Hoc 分发
 
@@ -166,7 +166,7 @@ Ad Hoc 分发需要应用程序使用包含代码签名信息的 Ad Hoc 配置�
 
 如果 iTunes connect 不可选，那么 Ad Hoc 分发允许开发人员在许多设备上对应用进行 Beta 测试。 Ad Hoc 分发的工作方式与 In-House 分发类似，需要创建 IPA，IPA 可无线分发，或通过 iTunes 手动分发。
 
-<a name="IPA_Creation" />
+<a name="IPA_Creation"></a>
 
 ### <a name="ipa-support-for-ad-hoc-deployment"></a>Ad Hoc 部署的 IPA 支持
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2020
-ms.openlocfilehash: bce2b6f29129894ed446100c87b5e92d3572ed2f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 202041614d6a5b632aba6e92a77869effc21bb4f
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "78946273"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84568316"
 ---
 # <a name="build-process"></a>生成过程
 
@@ -35,7 +35,7 @@ Xamarin.Android 生成过程负责将所有内容集合在一起：[生成 `Reso
 
 通过将 `$(AndroidUseSharedRuntime)` 属性设置为 `False`，可以在调试版本中禁用共享运行时。
 
-<a name="Fast_Deployment" />
+<a name="Fast_Deployment"></a>
 
 ### <a name="fast-deployment"></a>快速部署
 
@@ -53,7 +53,7 @@ Xamarin.Android 生成过程基于 MSBuild，它也是 Visual Studio for Mac 和
 高级用户可能希望执行 IDE 的 GUI 不支持的操作，因此，可通过直接编辑项目文件来自定义生成过程。
 本页仅记录 Xamarin.Android 特定的功能和自定义 &ndash; 可以使用正常的 MSBuild 项目、属性和目标执行更多的操作。
 
-<a name="Build_Targets" />
+<a name="Build_Targets"></a>
 
 ## <a name="build-targets"></a>生成目标
 
@@ -726,7 +726,7 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
   默认值为 `Resources`。 将此项更改为 `res` 以获得 Java 项目结构。
 
-<a name="Signing_Properties" />
+<a name="Signing_Properties"></a>
 
 ### <a name="signing-properties"></a>签名属性
 
@@ -845,7 +845,7 @@ Enter key password for keystore.alias
 </PropertyGroup>
 ```
 
-<a name="Build_Actions" />
+<a name="Build_Actions"></a>
 
 ## <a name="build-actions"></a>生成操作
 
@@ -865,7 +865,7 @@ Enter key password for keystore.alias
 <AndroidBoundLayout Include="Resources\layout\Main.axml" />
 ```
 
-<a name="AndroidEnvironment" />
+<a name="AndroidEnvironment"></a>
 
 ### <a name="androidenvironment"></a>AndroidEnvironment
 
@@ -968,7 +968,7 @@ Enter key password for keystore.alias
 
 生成操作为 LinkDescription  的文件用于[控制链接器行为](~/cross-platform/deploy-test/linker.md)。
 
-<a name="ProguardConfiguration" />
+<a name="ProguardConfiguration"></a>
 
 ### <a name="proguardconfiguration"></a>ProguardConfiguration
 

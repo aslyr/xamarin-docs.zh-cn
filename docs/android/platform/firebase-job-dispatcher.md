@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2018
-ms.openlocfilehash: 280fe11f935db0a364f3342b22bb9544cdda1e6d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 0ade609997e391e24d4a6da250172efa81a5d490
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73020236"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571332"
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase 作业调度程序
 
@@ -173,7 +173,7 @@ int scheduleResult = dispatcher.Schedule(myJob);
 
 以下各节将分别详细介绍这些主题。
 
-<a name="Passing_Parameters_to_a_Job" />
+<a name="Passing_Parameters_to_a_Job"></a>
 
 #### <a name="passing-parameters-to-a-job"></a>向作业传递参数
 
@@ -201,7 +201,7 @@ public override bool OnStartJob(IJobParameters jobParameters)
 } 
 ```
 
-<a name="Setting_Constraints" />
+<a name="Setting_Constraints"></a>
 
 #### <a name="setting-constraints"></a>设置约束
 
@@ -220,7 +220,7 @@ Job myJob = dispatcher.NewJobBuilder()
                       .Build();
 ```
 
-<a name="Setting_Job_Triggers" />
+<a name="Setting_Job_Triggers"></a>
 
 `JobTrigger` 可以让操作系统了解应启动作业的时间。 `JobTrigger` 有一个执行时段  ，用于定义应运行 `Job` 的计划时间。 执行时段包含“开始时段”  值和“结束时段”  值。 “开始时段”是设备在运行作业之前应等待的秒数，“结束时段”值是在运行 `Job` 之前要等待的秒数上限。 
 
@@ -236,7 +236,7 @@ Job myJob = dispatcher.NewJobBuilder()
 
 作业的默认 `JobTrigger` 由 `Trigger.Now` 值表示，它指定在计划作业后尽快运行作业。
 
-<a name="Setting_a_RetryStrategy" />
+<a name="Setting_a_RetryStrategy"></a>
 
 #### <a name="setting-a-retrystrategy"></a>设置 RetryStrategy
 

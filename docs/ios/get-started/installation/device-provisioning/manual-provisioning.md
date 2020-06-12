@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2020
-ms.openlocfilehash: 04cb1b9303e571b2a10cdfa621dcd312162e2893
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 9333750432395d008a5454e293648f4e594ae112
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303749"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571683"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Xamarin.iOS 的手动预配
 
@@ -51,13 +51,13 @@ Xamarin.iOS 成功安装后，iOS 开发的下一步是预配 iOS 设备。_本�
 > [!WARNING]
 > 丢失证书和关联密钥会很麻烦，因为需要撤销现有证书并重新预配任何关联的设备，包括为临时部署注册的设备。 成功设置开发证书后，导出备份副本并将其存储在安全位置。 有关如何执行此操作的详细信息，请参阅 Apple 文档中[维护证书](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingCertificates/MaintainingCertificates.html)指南的“导出与导入证书和配置文件”部分。
 
-<a name="provisioning" />
+<a name="provisioning"></a>
 
 ## <a name="provision-an-ios-device-for-development"></a>预配 iOS 设备进行开发
 
 现在你已经生成 Apple 标识，并且已具有开发证书，现在必须设置预配配置文件和所需实体，以便将应用部署到 Apple 设备。 设备必须运行 Xcode 支持的 iOS 版本 - 可能需要更新设备和/或 Xcode。
 
-<a name="adddevice" />
+<a name="adddevice"></a>
 
 ## <a name="add-a-device"></a>添加设备
 
@@ -83,7 +83,7 @@ Xamarin.iOS 成功安装后，iOS 开发的下一步是预配 iOS 设备。_本�
 
 对将用于测试或调试 Xamarin.iOS 应用程序的任何 iOS 设备重复上述步骤。
 
-<a name="provisioningprofile" />
+<a name="provisioningprofile"></a>
 
 ## <a name="create-a-development-provisioning-profile"></a>创建开发预配配置文件
 
@@ -122,7 +122,7 @@ Xamarin.iOS 成功安装后，iOS 开发的下一步是预配 iOS 设备。_本�
 
 7. 你可以根据需要单击下一页上的“下载”，将预配配置文件下载到 Mac 上  。
 
-<a name="download" />
+<a name="download"></a>
 
 ## <a name="download-provisioning-profiles-in-visual-studio"></a>在 Visual Studio 中下载预配配置文件
 

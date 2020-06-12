@@ -41,8 +41,8 @@ Android 要求设置意图筛选器来处理回调 URI。 这很容易实现，�
 const string CALLBACK_SCHEME = "myapp";
 
 [Activity(NoHistory = true, LaunchMode = LaunchMode.SingleTop)]
-[IntentFilter(new[] { Intent.ActionView },
-    Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable },
+[IntentFilter(new[] { Android.Content.Intent.ActionView },
+    Categories = new[] { Android.Content.Intent.CategoryDefault, Android.Content.Intent.CategoryBrowsable },
     DataScheme = CALLBACK_SCHEME)]
 public class WebAuthenticationCallbackActivity : Xamarin.Essentials.WebAuthenticatorCallbackActivity
 {

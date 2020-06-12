@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 09/07/2018
-ms.openlocfilehash: adcfb1457742d343f87a602885566107cf327e2d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 2779019fff1354b18d285775daf224ffc1402fd4
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73027152"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571358"
 ---
 # <a name="using-the-google-maps-api-in-your-application"></a>在应用程序中使用 Google Maps API
 
@@ -36,11 +36,11 @@ Xamarin.Android 应用必须先满足一些强制性先决条件，然后才能�
 - [指定所需的权限](#declare-permissions)
 - [（可选）使用 Google API 创建仿真器](#create-emulator-with-google-api)
 
-### <a name="obtain-a-google-maps-api-key"></a><a name="obtain-maps-key" />获取 Google Maps API 密钥
+### <a name="obtain-a-google-maps-api-key"></a><a name="obtain-maps-key"></a>获取 Google Maps API 密钥
 
 第一步是获取 Google Maps API 密钥（请注意，你不能重复使用旧版 Google Maps v1 API 的 API 密钥）。 有关如何通过 Xamarin.Android 获取和使用 API ​​密钥的信息，请参阅[获取 Google Maps API 密钥](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)。
 
-### <a name="install-the-google-play-services-sdk"></a><a name="install-gps-sdk" />安装 Google Play Services SDK
+### <a name="install-the-google-play-services-sdk"></a><a name="install-gps-sdk"></a>安装 Google Play Services SDK
 
 Google Play Services 是 Google 的一项技术，它让 Android 应用程序能够利用各种 Google 功能，例如 Google+、In-App Billing 和 Maps。 这些功能可在 Android 设备上作为后台服务进行访问，这些服务包含在 [Google Play Services APK](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en) 中。
 
@@ -56,7 +56,7 @@ Xamarin.Android 应用程序必须先使用 [Android SDK 管理器](~/android/ge
 > [!NOTE]
 > Google Play Services APK 是许可产品，并非所有设备都会提供该产品。 如果未安装，则 Google Maps 将无法在设备上运行。
 
-### <a name="install-the-xamaringoogleplayservicesmaps-package-from-nuget"></a><a name="install-gpsmaps-nuget" />从 NuGet 安装 Xamarin.GooglePlayServices.Maps 包
+### <a name="install-the-xamaringoogleplayservicesmaps-package-from-nuget"></a><a name="install-gpsmaps-nuget"></a>从 NuGet 安装 Xamarin.GooglePlayServices.Maps 包
 
 [Xamarin.GooglePlayServices.Maps 包](https://www.nuget.org/packages/Xamarin.GooglePlayServices.Maps)包含适用于 Google Play Services Maps API 的 Xamarin.Android 绑定。
 若要添加 Google Play Services Maps 包，请在解决方案资源管理器中右键单击项目的“References”文件夹，然后单击“管理 NuGet 包...”   ：
@@ -73,7 +73,7 @@ Xamarin.Android 应用程序必须先使用 [Android SDK 管理器](~/android/ge
 - **Xamarin.GooglePlayServices.Basement**
 - **Xamarin.GooglePlayServices.Tasks**
 
-### <a name="specify-the-required-permissions"></a><a name="declare-permissions" />指定所需的权限
+### <a name="specify-the-required-permissions"></a><a name="declare-permissions"></a>指定所需的权限
 
 应用必须标识硬件和权限要求才能使用 Google Maps API。  一些权限由 Google Play Services SDK 自动授予，开发人员无需将其显式添加到 **AndroidManfest.XML** 中：
 
@@ -142,7 +142,7 @@ Xamarin.Android 应用程序必须先使用 [Android SDK 管理器](~/android/ge
 
 除请求 **AndroidManifest.XML** 权限外，应用还必须对 `ACCESS_COARSE_LOCATION` 和 `ACCESS_FINE_LOCATION` 权限执行运行时权限检查。 有关执行运行时权限检查的详细信息，请参阅 [Xamarin.Android 权限](~/android/app-fundamentals/permissions.md)指南。
 
-### <a name="create-an-emulator-with-google-apis"></a><a name="create-emulator-with-google-api" />使用 Google API 创建仿真器
+### <a name="create-an-emulator-with-google-apis"></a><a name="create-emulator-with-google-api"></a>使用 Google API 创建仿真器
 
 如果 Android 物理设备未安装 Google Play Services，则可以创建用于开发的仿真器映像。 有关详细信息，请参阅[设备管理器](~/android/get-started/installation/android-emulator/device-manager.md)。
 
@@ -250,7 +250,7 @@ public void OnMapReady(GoogleMap map)
 }
 ```
 
-### <a name="googlemap-properties"></a><a name="googlemap_object" />GoogleMap 属性
+### <a name="googlemap-properties"></a><a name="googlemap_object"></a>GoogleMap 属性
 
 `GoogleMap` 定义可控制地图的功能和外观的多个属性。 配置 `GoogleMap` 的初始状态的一种方法是在创建 `MapFragment` 时传递 [GoogleMapOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMapOptions) 对象。 以下代码片段是在创建 `MapFragment` 时使用 `GoogleMapOptions` 对象的一个​​示例：
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 2f5d04b49658abe9d366e264d8f1a659732a2c33
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 86b887b7aa913572d5fb6093fe682cd2933b282e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303593"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573178"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>使用 TestFlight 来分发 Xamarin.iOS 应用
 
@@ -165,7 +165,7 @@ TestFlight 是 Apple 向 iOS 应用推出的 Beta 测试服务，仅可通过 [i
 
 请注意，此元数据对内部测试员而言**不是**必需的，但对外部测试员**是**必需的。
 
-<a name="beta-testing" />
+<a name="beta-testing"></a>
 
 ### <a name="enable-beta-testing"></a>启用 Beta 测试
 

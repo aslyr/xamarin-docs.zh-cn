@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 2a0f9d063b319c0f412f6e8f47a59f0f994678ae
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 154cb6004bad5a12c98a22fa7522a9cc7a7c757a
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73026286"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567471"
 ---
 # <a name="using-mtouch-to-bundle-xamarinios-apps"></a>使用 mtouch 捆绑 Xamarin.iOS 应用
 
@@ -67,7 +67,7 @@ $ mtouch -dev -c "iPhone Developer: Miguel de Icaza" foo.exe
 
 在此特定情况下，我们将使用“iPhone Developer:Miguel de Icaza”证书来对此应用程序签名。 此步骤非常重要，否则，物理设备将拒绝加载应用程序。
 
- <a name="Running_your_Application" />
+ <a name="Running_your_Application"></a>
 
 ## <a name="running-your-application"></a>运行应用程序
 

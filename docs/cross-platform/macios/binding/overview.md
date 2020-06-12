@@ -6,12 +6,12 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: davidortinau
 ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: be2f7f555b76d472f7a66d95e661bb2f5884c58f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: ca83f6ced2e9c2f5380d3bf760e00d613cb0acb0
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76725339"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570968"
 ---
 # <a name="overview-of-objective-c-bindings"></a>Objective-C 绑定概述
 
@@ -19,19 +19,17 @@ _绑定过程工作原理的详细信息_
 
 绑定用于 Xamarin 的 Objective-C 库需要三个步骤：
 
-1. 编写 C#“API 定义”来说明如何在 .NET 中公开本机 API，以及如何将其映射到基础 Objective-C。 这是使用标准 C# 构造（如 `interface` 和各种绑定属性  ）实现的（请参阅此[简单示例](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)）。
+1. 编写 C#“API 定义”来说明如何在 .NET 中公开本机 API，以及如何将其映射到基础 Objective-C。 这是使用标准 C# 构造（如 `interface` 和各种绑定属性）实现的（请参阅此[简单示例](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)）。
 
-2. 使用 C# 编写了“API 定义”后，就可以对其进行编译以生成“绑定”程序集了。 此操作可以在[命令行  ](#commandline)上完成，也可以在 Visual Studio for Mac 或 Visual Studio 中使用[绑定项目  ](#bindingproject)来完成。
+2. 使用 C# 编写了“API 定义”后，就可以对其进行编译以生成“绑定”程序集了。 此操作可以在[命令行](#command-line-bindings)上完成，也可以在 Visual Studio for Mac 或 Visual Studio 中使用[绑定项目](#bindingproject)来完成。
 
 3. 然后，该“绑定”程序集将添加到你的 Xamarin 应用程序项目中，方便你使用定义的 API 访问本机功能。
    绑定项目与你的应用程序项目完全分开。
 
    > [!NOTE]
-   > 借助 [Objective Sharpie  ](#objectivesharpie)，可以自动执行第 1 步。 它会检查 Objective-C API 并生成建议的 C#“API 定义”。 你可以自定义由 Objective Sharpie 创建的文件，并在绑定项目中（或在命令行上）使用它们来创建绑定程序集。 Objective Sharpie 不会自行创建绑定，它只是较大过程中的一个可选部分。
+   > 借助 [Objective Sharpie](#objectivesharpie)，可以自动执行第 1 步。 它会检查 Objective-C API 并生成建议的 C#“API 定义”。 你可以自定义由 Objective Sharpie 创建的文件，并在绑定项目中（或在命令行上）使用它们来创建绑定程序集。 Objective Sharpie 不会自行创建绑定，它只是较大过程中的一个可选部分。
 
 除此之外，还可以了解有关其[工作原理](#howitworks)的更多技术细节，这将有助于你编写绑定。
-
-<a name="Command_Line_Bindings" /><a name="commandline" />
 
 ## <a name="command-line-bindings"></a>命令行绑定
 
@@ -51,7 +49,7 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 
 上面的命令将在当前目录中生成 `cocos2d.dll` 文件，并且它将包含你可以在项目中使用的完全绑定的库。 如果使用绑定项目（如[下面](#bindingproject)所述），则这是 Visual Studio for Mac 用于创建绑定的工具。
 
-<a name="bindingproject" />
+<a name="bindingproject"></a>
 
 ## <a name="binding-project"></a>绑定项目
 
@@ -59,7 +57,7 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 
 请参阅此[入门指南](~/cross-platform/macios/binding/objective-c-libraries.md#Getting_Started)，了解如何创建和使用绑定项目来生成绑定。
 
-<a name="objectivesharpie" />
+<a name="objectivesharpie"></a>
 
 ## <a name="objective-sharpie"></a>目标 Sharpie
 
@@ -67,7 +65,7 @@ Objective Sharpie 是另一个单独的命令行工具，可在创建绑定的�
 
 请参阅 [Objective Sharpie docs](~/cross-platform/macios/binding/objective-sharpie/index.md)，了解如何将本机库、本机框架和 CocoaPods 分析为可内置到绑定中的 API 定义。
 
-<a name="howitworks" />
+<a name="howitworks"></a>
 
 ## <a name="how-binding-works"></a>绑定的工作原理
 
@@ -95,7 +93,7 @@ static Selector selAllObjects = new Selector("allObjects");
 static Selector selNextObject = new Selector("nextObject");
 ```
 
-第四，类型将需要提供构造函数。 必须  将构造函数调用链接到基类构造函数。 这些 `[Export]` 属性允许 Objective-C 代码使用指定的选择器名称来调用构造函数：
+第四，类型将需要提供构造函数。 必须将构造函数调用链接到基类构造函数。 这些 `[Export]` 属性允许 Objective-C 代码使用指定的选择器名称来调用构造函数：
 
 ```csharp
 [Export("init")]
@@ -115,7 +113,7 @@ public NSEnumerator(IntPtr handle)
 }
 ```
 
-第五，为第 3 步中声明的每个选择器提供方法。 这些方法将使用 `objc_msgSend()` 来调用本机对象上的选择器。 请注意使用 [Runtime.GetNSObject()](xref:ObjCRuntime.Runtime.GetNSObject*) 将 `IntPtr` 转换为适当类型的 `NSObject`（子）类型。 如果需要从 Objective-C 代码中调用该方法，则成员必须是虚拟的   。
+第五，为第 3 步中声明的每个选择器提供方法。 这些方法将使用 `objc_msgSend()` 来调用本机对象上的选择器。 请注意使用 [Runtime.GetNSObject()](xref:ObjCRuntime.Runtime.GetNSObject*) 将 `IntPtr` 转换为适当类型的 `NSObject`（子）类型。 如果需要从 Objective-C 代码中调用该方法，则成员必须是虚拟的。
 
 ```csharp
 [Export("nextObject")]

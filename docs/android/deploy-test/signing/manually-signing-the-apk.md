@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 2d84d149b2eb4194de35fabc69cf44af99c04d25
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 5dee7e18b7f9f47493293bc552cd4f44da56ceec
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76724121"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571423"
 ---
 # <a name="manually-signing-the-apk"></a>对 APK 进行手动签名
 
@@ -120,7 +120,7 @@ $ apksigner sign --ks xample.keystore --ks-key-alias publishingdoc mono.samples.
 > [!NOTE]
 > 根据 [Google 问题 62696222](https://issuetracker.google.com/issues/62696222)，Android SDK 中“缺少”apksigner  。 此问题的解决方案是安装 Android SDK 生成工具 v25.0.3，并使用该版本的 apksigner。   
 
-<a name="Sign_the_APK_with_jarsigner" />
+<a name="Sign_the_APK_with_jarsigner"></a>
 
 ### <a name="sign-the-apk-with-jarsigner"></a>使用 jarsigner 对 APK 进行签名
 

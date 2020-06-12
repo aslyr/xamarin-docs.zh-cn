@@ -6,18 +6,18 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: f99b64b67f4f1cabf3a5884fabb1301e5ee39eee
-ms.sourcegitcommit: 06043f6a5628a7326ac6690eb62ead8e4780f4a7
+ms.openlocfilehash: d21394b3c33b3f415cbe45ae13c84cabab1ec30b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82738798"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571033"
 ---
 # <a name="cross-platform-performance"></a>跨平台性能
 
 应用程序性能差表现在许多方面。 这会造成应用程序看起来无响应，导致滚动缓慢，还可降低电池寿命。 但是，优化性能不止需要实现高效的代码。 还必须考虑用户对应用程序性能的体验。 例如，确保操作执行不会妨碍用户执行其他活动，这有助于改进用户的体验。
 
-<a name="profiler" />
+<a name="profiler"></a>
 
 ## <a name="use-the-profiler"></a>使用 Profiler
 
@@ -31,7 +31,7 @@ Xamarin Profiler 将测量、评估和帮助查找应用程序中的性能相关
 - 理想情况下，可在各种设备上执行分析，因为在某一设备上采取性能测量不会始终显示其他设备的性能特征。 但是，至少应在具有最低预期规范的设备上执行分析。
 - 关闭所有其他应用程序可确保测量所分析应用程序（而不是其他应用程序）的总体影响。
 
-<a name="idisposable" />
+<a name="idisposable"></a>
 
 ## <a name="release-idisposable-resources"></a>释放 IDisposable 资源
 
@@ -89,7 +89,7 @@ public void ReadText (string filename)
 
 有关详细信息，请参阅 [IDisposable 接口](xref:System.IDisposable)。
 
-<a name="events" />
+<a name="events"></a>
 
 ## <a name="unsubscribe-from-events"></a>取消订阅事件
 
@@ -160,14 +160,14 @@ public class Subscriber : IDisposable
 
 `handler` 字段维护对匿名方法的引用，并用于订阅和取消订阅事件。
 
-<a name="weakreferences" />
+<a name="weakreferences"></a>
 
 ## <a name="use-weak-references-to-prevent-immortal-objects"></a>使用弱引用来阻止不变对象
 
 > [!NOTE]
 > iOS 开发者应查看有关[在 iOS 中避免循环引用](~/ios/deploy-test/performance.md#avoid-strong-circular-references)的文档，确保其应用高效使用内存。
 
-<a name="lazy" />
+<a name="lazy"></a>
 
 ## <a name="delay-the-cost-of-creating-objects"></a>延迟创建对象的开销
 
@@ -209,7 +209,7 @@ double Compute(double x)
 
 有关延迟初始化的详细信息，请参阅[延迟初始化](https://msdn.microsoft.com/library/dd997286(v=vs.110).aspx)。
 
-<a name="async" />
+<a name="async"></a>
 
 ## <a name="implement-asynchronous-operations"></a>实现异步操作
 
@@ -248,7 +248,7 @@ public class FaceDetection
 
 有关详细信息，请参阅[异步支持概述](~/cross-platform/platform/async.md)。
 
-<a name="sgen" />
+<a name="sgen"></a>
 
 ## <a name="use-the-sgen-garbage-collector"></a>使用 SGen 垃圾回收器
 
@@ -282,7 +282,7 @@ SGen 启动垃圾回收时，将在回收内存的同时停止应用程序的线
 - 不再需要流、网络连接、较大内存块和文件等资源后，立即显式释放这些资源。 有关详细信息，请参阅[释放 IDisposable 资源](#idisposable)。
 - 不再需要事件处理程序后立即将它们注销，使系统可收集对象。 有关详细信息，请参阅[取消订阅事件](#events)。
 
-<a name="linker" />
+<a name="linker"></a>
 
 ## <a name="reduce-the-size-of-the-application"></a>缩减应用程序大小
 
@@ -335,7 +335,7 @@ SGen 启动垃圾回收时，将在回收内存的同时停止应用程序的线
 对于每个 ABI，Android 应用也能拆分为单独的 APK（“体系结构”）。
 通过此博客文章详细了解：[如何减小 Android 应用大小](https://montemagno.com/how-to-keep-your-android-app-size-down/)。
 
-<a name="optimizeimages" />
+<a name="optimizeimages"></a>
 
 ## <a name="optimize-image-resources"></a>优化图像资源
 
@@ -343,7 +343,7 @@ SGen 启动垃圾回收时，将在回收内存的同时停止应用程序的线
 
 无论图像分辨率高低，显示图像资源都可能大大提高应用的内存占用量。 因此，仅应在必要时创建图像，应用程序不再需要图像后应立即将其释放。
 
-<a name="activationperiod" />
+<a name="activationperiod"></a>
 
 ## <a name="reduce-the-application-activation-period"></a>缩短应用程序激活期限
 
@@ -353,7 +353,7 @@ SGen 启动垃圾回收时，将在回收内存的同时停止应用程序的线
 
 激活期间，应用程序会执行激活逻辑，通常包括加载和处理资源。 通过确保所需资源已打包在应用内，而不用远程检索，可缩短激活期限。 例如，某些情况可能适合在激活期间加载存储在本地的占位符数据。 然后，显示初始 UI 后，用户便可与应用交互，占位符数据可逐渐替换为远程源。 此外，应用的激活逻辑仅应执行让用户开始使用应用程序所需的工作。 这在激活逻辑延迟加载其他程序集时可起到帮助，因为程序集在首次使用时需完成加载。
 
-<a name="webservicecommunication" />
+<a name="webservicecommunication"></a>
 
 ## <a name="reduce-web-service-communication"></a>减少 Web 服务通信
 

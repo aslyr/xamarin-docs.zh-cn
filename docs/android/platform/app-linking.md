@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: af90c286d2bb960a9f78547dd15c3d98a69529ae
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: bdcefd6a1b0192dc337afd5b5a5535a20eeaef9e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75487823"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571384"
 ---
 # <a name="app-linking-in-android"></a>Android 中的应用链接
 
@@ -49,7 +49,7 @@ Android 6.0 使用自动链接处理改进了这一点。 Android 可以自动�
 1. 为网站 URI 添加一个或多个意向筛选器  &ndash; 意向筛选器在如何处理移动浏览器中的 URL 单击方面指导 Android。
 2. 在网站上发布数字资产链接 JSON  文件  &ndash; 这是上传到网站，由 Android 用于验证移动应用与网站域之间的关系的文件。 如果不进行此操作，则 Android 无法安装应用作为 URI 的默认处理程序；用户必须手动执行此操作。
 
-<a name="configure-intent-filter" />
+<a name="configure-intent-filter"></a>
 
 ### <a name="configuring-the-intent-filter"></a>配置意向筛选器
 

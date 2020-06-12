@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 9b9db3e6ae081a02d2b2297e70c216015dceade6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 854fecd7945c1090b475b3571678388b8e1cf127
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73026548"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573230"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Xamarin.iOS 应用的内部分发
 
@@ -31,13 +31,13 @@ _本文档简要概述了应用程序作为 Apple Enterprise Developer Program �
 
 所有应用仍需要由 Apple 签名。
 
-<a name="testing" />
+<a name="testing"></a>
 
 ## <a name="testing-your-application"></a>测试应用程序
 
 通过 Ad Hoc 分发执行应用程序的测试。 有关测试的详细信息，请按照 [Ad-Hoc 分发](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)指南中的步骤操作。 请注意，最多只能测试 100 台设备。
 
-<a name="setup" />
+<a name="setup"></a>
 
 ## <a name="getting-set-up-for-distribution"></a>设置分发
 
@@ -47,7 +47,7 @@ Apple Developer Enterprise Program 证书将持续 3 年，配置文件将在 1 
 
 务必注意，不可续订已过期的证书，而需要将过期的证书替换为新的证书，如[下面](#certificate)所详述。
 
-<a name="certificate" />
+<a name="certificate"></a>
 
 ## <a name="creating-a-distribution-certificate"></a>创建分发证书
 
@@ -84,11 +84,11 @@ Apple Developer Enterprise Program 证书将持续 3 年，配置文件将在 1 
 
    [![](in-house-distribution-images/selectcert.png "Select iOS App Store")](in-house-distribution-images/selectcert.png#lightbox)
 
-<a name="profile" />
+<a name="profile"></a>
 
 ## <a name="creating-a-distribution-provisioning-profile"></a>创建分发配置文件
 
-<a name="appid" />
+<a name="appid"></a>
 
 ### <a name="creating-an-app-id"></a>创建应用 ID
 
@@ -134,7 +134,7 @@ Apple Developer Enterprise Program 证书将持续 3 年，配置文件将在 1 
 
 -----
 
-<a name="inhouse" />
+<a name="inhouse"></a>
 
 ## <a name="distributing-your-app-in-house"></a>实现应用的 In-House 分发
 

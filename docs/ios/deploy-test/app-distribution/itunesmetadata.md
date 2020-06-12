@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 63a5ed357a903700ea89d858bcde9798ddf97942
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 65a89afb3f301fd88ac4819bb8c3658a2be5e29d
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76724615"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573191"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Xamarin.iOS 应用中的 iTunesMetadata.plist 文件
 
@@ -22,7 +22,7 @@ ms.locfileid: "76724615"
 
 若要向 Ad Hoc 分发提供缺少的信息，可选择创建可选的 `iTunesMetadata.plist` 文件，然后将其包含在应用程序 IPA 文件中。 此 plist 文件是特殊格式的 XML 文件（详情请参阅[属性列表编程指南](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html)），其中包含定义给定 iOS 应用程序相关信息的键/值对。
 
-<a name="iTunesMetadata_contents" />
+<a name="iTunesMetadata_contents"></a>
 
 ## <a name="the-itunesmetadataplist-contents"></a>iTunesMetadata.plist 内容
 
@@ -280,7 +280,7 @@ ms.locfileid: "76724615"
 <integer>16843008</integer>
 ```
 
-<a name="iTunesMetadata_creating" />
+<a name="iTunesMetadata_creating"></a>
 
 ## <a name="creating-an-itunesmetadataplist-file"></a>创建 iTunesMetadata.plist 文件
 

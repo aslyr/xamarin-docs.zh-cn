@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: 54fcc3bb683f6ca4515d807da5c3345cf71a2df3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 4f8e45aab8b6c92cb72a5d7cde35458c7b64b816
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303707"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573204"
 ---
 # <a name="apple-pay-capabilities-in-xamarinios"></a>Xamarin.iOS 中的 Apple Pay 功能
 
@@ -28,7 +28,7 @@ _向应用程序添加功能通常需要其他预配设置。本指南将介绍 
 
 下述步骤将引导你完成创建上述各项：
 
-<a name="merchantid" />
+<a name="merchantid"></a>
 
 ## <a name="create-merchant-id"></a>创建商户 ID
 
@@ -48,7 +48,7 @@ _向应用程序添加功能通常需要其他预配设置。本指南将介绍 
 
     ![商户 ID 确认](apple-pay-capabilities-images/image59.png)
 
-<a name="appid" />
+<a name="appid"></a>
 
 ## <a name="create-an-app-id-with-the-apple-pay-capability-that-includes-the-merchant-id"></a>创建一个应用 ID，其中具有包含此商户 ID 的 Apple Pay 功能
 
@@ -91,7 +91,7 @@ _向应用程序添加功能通常需要其他预配设置。本指南将介绍 
 
 现在此应用 ID 可用于生成或再生成新的预配配置文件，正如[使用功能](~/ios/deploy-test/provisioning/capabilities/index.md)指南中所述。
 
-<a name="certificate" />
+<a name="certificate"></a>
 
 ## <a name="create-a-certificate-for-your-merchant-id"></a>创建商户 ID 的证书
 

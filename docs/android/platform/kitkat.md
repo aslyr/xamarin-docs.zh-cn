@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 43061272f3d3486926f38af792ee3b9df0c53670
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 7a3fd9e22bcf037ec669c77ac919035b0d04b942
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73027231"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567926"
 ---
 # <a name="kitkat-features"></a>KitKat 功能
 
@@ -38,7 +38,7 @@ Android 4.4（API 级别 19）也称为“KitKat”，发布于 2013 年底。 K
 
 [![在 Android SDK 管理器中选择 Android 4.4](kitkat-images/api19.png)](kitkat-images/api19.png#lightbox)
 
-<a name="Migrating_Your_App_to_KitKat" />
+<a name="Migrating_Your_App_to_KitKat"></a>
 
 ## <a name="migrating-your-app-to-kitkat"></a>将应用迁移到 KitKat
 
@@ -97,7 +97,7 @@ KitKat 将所有短信内容聚合到用户选择的一个默认应用程序，�
 
 [WebView](xref:Android.Webkit.WebView)在 KitKat 中进行了改进。 最大的变化是增加了将内容加载到 `WebView` 的安全性。 虽然面向早期 API 版本的大多数应用程序应该都可以正常工作，但强烈建议测试使用 `WebView` 类的应用程序。 有关受影响的 WebView API 的详细信息，请参阅 Android [迁移到 Android 4.4 中的 WebView](https://developer.android.com/guide/webapps/migrating.html) 文档。
 
-<a name="user_experience" />
+<a name="user_experience"></a>
 
 ## <a name="user-experience"></a>用户体验
 
@@ -310,7 +310,7 @@ TransitionManager.Go (scene1, transition);
 
 [![具有半透明状态和导航栏的应用的示例屏幕截图](kitkat-images/theme.png)](kitkat-images/theme.png#lightbox)
 
-<a name="user_content" />
+<a name="user_content"></a>
 
 ## <a name="user-content"></a>用户内容
 
@@ -505,7 +505,7 @@ void PrintPage ()
 
 [![显示“另存为 PDF”菜单的 PrintHtmlActivity 的屏幕截图](kitkat-images/print2.png)](kitkat-images/print2.png#lightbox)
 
-<a name="hardware" />
+<a name="hardware"></a>
 
 ## <a name="hardware"></a>硬件
 
@@ -639,7 +639,7 @@ protected override void OnPause()
 > [!NOTE]
 > 尽管 KitKat 附带了用于进行步骤检测和计数的 API，但并不是所有手机都配备了传感器。 你可以通过运行 `PackageManager.HasSystemFeature(PackageManager.FeatureSensorStepCounter);` 来检查传感器是否可用，也可检查以确保 `GetDefaultSensor` 的返回值不是 `null`。
 
-<a name="developer_tools" />
+<a name="developer_tools"></a>
 
 ## <a name="developer-tools"></a>开发人员工具
 

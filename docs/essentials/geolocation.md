@@ -179,7 +179,7 @@ catch (Exception ex)
 | iOS | ~0 |
 | UWP | <= 10 |
 
-<a name="calculate-distance" />
+<a name="calculate-distance"></a>
 
 ## <a name="detecting-mock-locations"></a>检测模拟位置
 一些设备可能会从提供程序或通过提供模拟位置的应用程序返回模拟位置。 可以通过使用位于任何 [`Location`](xref:Xamarin.Essentials.Location) 的 `IsFromMockProvider` 进行检测。
