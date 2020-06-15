@@ -30,7 +30,7 @@ landingContent:
       url: app-lifecycle.md
     - text: 数据绑定
       url: data-binding/index.md
-    - text: 笔势
+    - text: 手势
       url: gestures/index.md
     - text: 本地化
       url: localization/index.md
