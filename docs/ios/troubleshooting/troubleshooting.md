@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/10/2020
-ms.openlocfilehash: 1b3eb61bf08eb006890b8b879c560163bd131844
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: c3b0749fae9a035c234961880a4a7059ccba2349
+ms.sourcegitcommit: 8f558dba59bfb95da0ee9154c94d7121b6a59037
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84655082"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84767340"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin 的故障排除提示
 
@@ -25,7 +25,7 @@ ms.locfileid: "84655082"
 
 - **Visual Studio 2017 Update 2** （版本15.2 或更高版本）仅与**ValueTuple NuGet 4.3.1**或更高版本兼容。
 
-请选择与你的 Visual Studio 2017 安装相对应的正确 ValueTuple NuGet。
+请选择与 Visual Studio 2017 安装相对应的正确 System.ValueTuple NuGet。
 
 ## <a name="receiving-error-retrieving-update-information-error-message"></a>正在接收 "检索更新信息时出错" 错误消息
 
@@ -282,7 +282,7 @@ Visual Studio for Mac 2.2 有一个 bug，该 bug 导致无法检测包含逗号
 
 （由 Ed Anuff 提供）
 
-执行以下步骤:
+执行以下步骤：
 
 - 将 iPhone Build 中的 SDK 版本更改为3.2 或 iTunes connect 将在上传时拒绝它，因为它看到使用小于3.2 的 SDK 版本生成的 iPad 兼容的应用
 - 为项目创建自定义 info.plist，并在其中将 MinimumOSVersion 显式设置为3.0。   这将覆盖 Xamarin 设置的 MinimumOSVersion 3.2 值。   如果未执行此操作，应用将无法在 iPhone 上运行。
@@ -392,6 +392,9 @@ SDK 版本不应与 "最低操作系统版本" 设置混淆。
 在某些情况下，防病毒软件可能会错误地将 Xamarin SDK 标记为恶意软件并删除所需的文件，从而破坏 SDK。 这会导致错误，如 "无法启动 Xamarin。启动程序找不到可执行文件 ' mlaunch.exe '"。
 
 如果受到影响，请从防病毒扫描程序中排除 mlaunch.exe 以防再次出现。 有关详细信息，请参阅[如何在 Symantec 的 Symantex Endpoint Protection 管理员中创建应用程序例外](https://knowledge.broadcom.com/external/article/180778/how-to-create-an-application-exception-i.html)，并[排除诺顿自动保护、Sonar.projectname 和下载智能扫描中的文件和文件夹](https://support.norton.com/sp/en/uk/home/current/solutions/v3672136)。 此外，请考虑向[Symantec](https://symsubmit.symantec.com)或[诺顿](https://submit.norton.com/?type=FP)报告误报。
+
+> [!IMPORTANT]
+> 对于诺顿用户，社区成员还报告，你可能需要禁用空闲扫描，如此处所述： [Windows](https://community.norton.com/en/comment/5179683#comment-5179683)、 [Mac](https://github.com/xamarin/xamarin-macios/issues/8736#issuecomment-642874505)。
 
 为 mlaunch.exe 添加了排除项后，将需要重新安装才能还原缺少的文件。 执行此操作的最简单方法是在更新程序中切换通道：
 
