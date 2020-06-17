@@ -199,7 +199,7 @@ selectedBarSlider.ValueChanged += OnValuesSliderValueChanged;
 
 [页面顶部](#what-is-urhosharp)的动画显示运行的示例。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 此页说明如何使用 UrhoSharp 将三维数据可视化添加到 Xamarin.Forms 。 请参阅[UrhoSharp 文档](~/graphics-games/urhosharp/index.md)，了解有关如何 Xamarin.Forms 使用上面所示的方法生成可包括在应用中的 Urho 场景的详细信息。
 

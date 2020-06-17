@@ -61,7 +61,7 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 
 -----
 
-`GetManifestResourceStream` 用于使用其“资源 ID”访问嵌入文件****。 默认情况下，资源 ID 是以其嵌入的项目的默认命名空间为前缀的文件名，在这种情况下，程序集是**WorkingWithFiles**的，文件名为**LibTextResource**，因此资源 ID 是 `WorkingWithFiles.LibTextResource.txt` 。
+`GetManifestResourceStream` 用于使用其“资源 ID”访问嵌入文件****。 默认情况下，资源 ID 是以其嵌入的项目的默认命名空间为前缀的文件名，在这种情况下，程序集是**WorkingWithFiles**的，文件名是**LibTextResource.txt**的，因此资源 ID 是 `WorkingWithFiles.LibTextResource.txt` 。
 
 ```csharp
 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
@@ -139,7 +139,7 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 }
 ```
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了一些用于在设备上保存和加载文本以及加载嵌入式资源的简单文件操作。 使用 .NET Standard 2.0，可以共享 .NET Standard 库中的文件访问代码。
 

@@ -387,7 +387,7 @@ EShopOnContainers 移动应用当前未实现断路器模式。 但是，eShopOn
 
 有关断路器模式的详细信息，请[参阅断路器模式。](/azure/architecture/patterns/circuit-breaker/)
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 许多基于 web 的新式解决方案都利用 web 服务器托管的 web 服务，为远程客户端应用程序提供功能。 Web 服务公开的操作构成 web API，客户端应用程序应能够利用 web API，而无需知道 API 公开的数据或操作是如何实现的。
 

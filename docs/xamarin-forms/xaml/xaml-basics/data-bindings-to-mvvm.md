@@ -693,7 +693,7 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 
 **Xamarin 演化2016： MVVM 使和 Prism 变得简单 Xamarin.Forms**
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 XAML 是一种功能强大的工具，用于在应用程序中定义用户界面 Xamarin.Forms ，在使用数据绑定和 MVVM 时尤其如此。 结果是用户界面的简洁、优雅且可能的 toolable 表示形式，其中包含代码中的所有背景支持。
 

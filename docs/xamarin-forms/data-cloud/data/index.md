@@ -5,7 +5,7 @@ ms-chap： xamarin assetid： A324C247-7DA8-4B14-A813-25F85525E32B： xamarin �
 
 # <a name="xamarinforms-local-data-storage"></a>Xamarin.Forms本地数据存储
 
-## <a name="files"></a>[附件](files.md)
+## <a name="files"></a>[文件](files.md)
 
 使用 Xamarin.Forms .NET Standard 库中的代码或使用嵌入的资源即可实现文件处理。 本文介绍如何从应用程序中的共享代码执行文件处理 Xamarin.Forms 。
 

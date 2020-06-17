@@ -457,7 +457,7 @@ httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValu
 
 有关 eShopOnContainers 移动应用程序如何进行 web 请求的详细信息，请参阅[访问远程数据](~/xamarin-forms/enterprise-application-patterns/accessing-remote-data.md)。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 有多种方法可以将身份验证和授权集成到 Xamarin.Forms 与 ASP.NET MVC web 应用程序通信的应用程序中。 EShopOnContainers 移动应用使用 IdentityServer 4 的容器化标识微服务执行身份验证和授权。 IdentityServer 是一个开源 OpenID Connect 和 OAuth 2.0 framework，适用于与 ASP.NET Core 标识集成以执行持有者令牌身份验证的 ASP.NET Core。
 
