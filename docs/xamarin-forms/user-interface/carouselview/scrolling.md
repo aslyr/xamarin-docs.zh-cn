@@ -121,7 +121,7 @@ carouselView.ScrollTo(monkey, position: ScrollToPosition.MakeVisible);
 > [!NOTE]
 > [`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition)默认情况下，如果在 `position` 调用方法时未指定参数，则使用成员 `ScrollTo` 。
 
-### <a name="start"></a>启动
+### <a name="start"></a>开始
 
 [`ScrollToPosition.Start`](xref:Xamarin.Forms.ScrollToPosition)成员指示该项应滚动到视图的开头：
 
@@ -217,7 +217,7 @@ CarouselView carouselView = new CarouselView
 > [!IMPORTANT]
 > [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)仅当 [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) 属性设置为或时，才考虑属性的值 `Mandatory` `MandatorySingle` 。
 
-#### <a name="start"></a>启动
+#### <a name="start"></a>开始
 
 `SnapPointsAlignment.Start`成员指示对齐点与项的开头边缘对齐。 下面的 XAML 示例演示如何设置此枚举成员：
 

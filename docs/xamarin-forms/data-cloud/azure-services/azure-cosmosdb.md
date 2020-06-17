@@ -208,7 +208,7 @@ await client.DeleteDatabaseAsync(UriFactory.CreateDatabaseUri(Constants.Database
 
 `DeleteDatabaseAsync`方法指定一个 `Uri` 参数，该参数表示要删除的数据库。 请注意，调用此方法还将删除存储在数据库中的文档集，以及存储在文档集合中的文档。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了如何使用 Azure Cosmos DB .NET Standard 客户端库将 Azure Cosmos DB 文档数据库集成到 Xamarin.Forms 应用程序中。 Azure Cosmos DB 文档数据库是一种 NoSQL 数据库，可提供对 JSON 文档的低延迟访问，为需要无缝缩放和全局复制的应用程序提供快速、高度可用、可缩放的数据库服务。
 

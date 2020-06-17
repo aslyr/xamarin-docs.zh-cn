@@ -391,7 +391,7 @@ namespace XamlSamples
 
 如果项的属性在运行时本身发生了更改，则集合中的项应实现 `INotifyPropertyChanged` 接口，并使用事件对属性值进行信号更改 `PropertyChanged` 。 本系列的下一部分中对此进行了说明，第[5 部分。从数据绑定到 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 数据绑定提供一种功能强大的机制，用于在页面内的两个对象之间或在视觉对象与基础数据之间链接属性。 但当应用程序开始使用数据源时，常用的应用程序体系结构模式就会成为一种非常有用的范例。 第5部分对此进行了介绍[。从数据绑定到 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
 

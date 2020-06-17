@@ -131,7 +131,7 @@ API 响应以 XML 格式返回。 以下 XML 数据显示了一个典型的成�
 
 ![](text-translation-images/text-translation.png "Text Translation to German")
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了如何使用 Microsoft 文本翻译 API 将文本从一种语言转换为应用程序中的另一种语言的文本 Xamarin.Forms 。 除了翻译文本以外，Microsoft Translator API 还可以将一种语言的语音转录为其他语言的文本。
 

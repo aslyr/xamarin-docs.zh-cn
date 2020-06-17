@@ -244,7 +244,7 @@ await client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(Constants.Database
 
 有关从文档集合中删除文档的详细信息，请参阅[从文档集合中删除文档](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#deleting-a-document-from-a-document-collection)。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了如何结合使用访问控制和分区集合，使用户只能在应用程序中访问他们自己的文档数据库文档 Xamarin.Forms 。 将用户标识指定为分区键可确保分区集合只能存储该用户的文档。
 

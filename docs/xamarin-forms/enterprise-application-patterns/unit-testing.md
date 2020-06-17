@@ -207,7 +207,7 @@ public void CheckValidationFailsWhenOnlyForenameHasDataTest()
 
 此单元测试检查在 `Surname` 的属性没有 `MockViewModel` 任何数据，且 `Value` `IsValid` `Errors` 每个实例的、和属性 `ValidatableObject<T>` 设置正确时，验证是否失败。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 单元测试采用一小部分应用，通常是一种方法，将其与代码的其余部分隔离，并验证它是否按预期方式工作。 其目标是检查每个功能单元是否按预期执行，以便不会在整个应用中传播错误。
 

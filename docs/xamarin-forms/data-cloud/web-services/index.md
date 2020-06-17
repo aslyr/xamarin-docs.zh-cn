@@ -5,7 +5,7 @@ ms-chap： xamarin assetid：8B360BDA-E4E3-4A3F-9004-0E35362F49F8： xamarin 窗
 
 # <a name="xamarinforms-and-web-services"></a>Xamarin.Forms和 Web 服务
 
-## <a name="introduction"></a>[介绍](introduction.md)
+## <a name="introduction"></a>[简介](introduction.md)
 
 本文提供了 Xamarin.Forms 演示如何与不同 web 服务通信的示例应用程序的演练。 涉及的主题包括应用程序解析、页面、数据模型和调用 web 服务操作。
 

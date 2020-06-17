@@ -514,7 +514,7 @@ if (Device.RuntimePlatform == Device.iOS)
 > [!NOTE]
 > `OnPlatform`标记扩展还可以在 XAML 中用于根据每个平台自定义 UI 外观。 它提供与和类相同的 `OnPlatform` 功能 `On` ，但具有更简洁的表示形式。 有关详细信息，请参阅[OnPlatform 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 对于属性元素和附加属性，已经建立了许多基本 XAML 语法。 但是，有时需要以间接方式（例如，从资源字典）将属性设置为对象。 下一部分第3部分介绍了此方法[。XAML 标记扩展](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)。
 

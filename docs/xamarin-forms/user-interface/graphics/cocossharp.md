@@ -300,7 +300,7 @@ void CreateBottomHalf(Grid grid)
 
 ![](cocossharp-images/image8.png "GameScene with Moving Circle")
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本指南介绍如何将 CocosSharp 添加到现有 Xamarin.Forms 项目，如何创建 Xamarin.Forms 和 CocosSharp 之间的交互，并讨论在 CocosSharp 中创建布局时的各种注意事项。
 

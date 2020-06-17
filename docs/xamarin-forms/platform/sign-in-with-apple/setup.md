@@ -109,7 +109,7 @@ no-loc:
 
 命名此密钥 `P8FileContents` 并将其保存在安全的位置。 将此服务集成到移动应用程序时将使用它。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了在应用程序中使用 Apple 进行登录以供使用的必要步骤 Xamarin.Forms 。
 

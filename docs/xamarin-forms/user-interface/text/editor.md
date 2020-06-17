@@ -271,7 +271,7 @@ public partial class EditorPage : ContentPage
 > [!NOTE]
 > [`VisualElement`](xref:Xamarin.Forms.VisualElement)从其继承的类 [`Entry`](xref:Xamarin.Forms.Entry) 也具有 [`Focused`](xref:Xamarin.Forms.VisualElement.Focused) 和 [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused) 事件。
 
-### <a name="completed"></a>完成
+### <a name="completed"></a>已完成
 
 `Completed`事件用于响应与的交互的完成 `Editor` 。 `Completed`如果用户通过输入键盘上的 return 键（或按 UWP 上的 Tab 键）来结束输入，则会引发。 事件的处理程序是一个一般事件处理程序，该处理程序使用发送方和 `EventArgs` ：
 

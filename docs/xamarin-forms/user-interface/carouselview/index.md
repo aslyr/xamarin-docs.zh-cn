@@ -7,7 +7,7 @@ ms-chap： xamarin assetid：5b673347-cdba-4532-820f-fb5f070c86bc： xamarin 窗
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-## <a name="introduction"></a>[介绍](introduction.md)
+## <a name="introduction"></a>[简介](introduction.md)
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)是一个视图，用于以可滚动的布局显示数据，用户可在此视图中轻扫以便在项集合中移动。
 

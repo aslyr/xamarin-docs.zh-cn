@@ -112,7 +112,7 @@ label.Style = (Style)Resources["LabelStyle"];
 label.Style = Device.Styles.TitleStyle;
 ```
 
-## <a name="accessibility"></a>可访问性
+## <a name="accessibility"></a>辅助功能
 
 存在内置样式，使其更易于遵循辅助功能首选项。 使用任何内置样式时，如果用户设置其辅助功能首选项，字体大小将自动增加。
 

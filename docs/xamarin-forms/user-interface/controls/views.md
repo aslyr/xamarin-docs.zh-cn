@@ -27,14 +27,14 @@ _Xamarin. Forms 视图是跨平台移动用户界面的构建基块。_
 | `Expander`提供可扩展容器来托管任何内容，由标头和内容组成。 将 `Header` 属性设置为 [`View`](xref:Xamarin.Forms.View) ，它将显示为标题，并将属性设置为，在 `Content` [`View`](xref:Xamarin.Forms.View) 通过点击展开标题时将显示的。<br /><br />[指南](~/xamarin-forms/user-interface/expander.md)  / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos) | [![扩展器示例](views-images/Expander.png "扩展器示例")](views-images/Expander-Large.png#lightbox "扩展器示例")<br /> [此页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ExpanderDemoPage.cs)  /  的 c # 代码[XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ExpanderDemoPage.xaml) |
 |     |     |
 
-### <a name="label"></a>Label
+### <a name="label"></a>标签
 
 |     |     |
 | --- | --- |
 | [`Label`](xref:Xamarin.Forms.Label)用常量或可变格式设置显示单行文本字符串或文本的多行块。 将 [`Text`](xref:Xamarin.Forms.Label.Text) 属性设置为字符串进行格式设置，或将属性设置为 [`FormattedText`](xref:Xamarin.Forms.Label.FormattedText) 一个 [`FormattedString`](xref:Xamarin.Forms.FormattedString) 对象以进行可变格式设置。<br /><br />[API 文档](xref:Xamarin.Forms.Label)  / [指南](~/xamarin-forms/user-interface/text/label.md)  / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text) | [![标签示例](views-images/Label.png "标签示例")](views-images/Label-Large.png#lightbox "标签示例")<br /> [此页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/LabelDemoPage.cs)  /  的 c # 代码[XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/LabelDemoPage.xaml) |
 |     |     |
 
-### <a name="image"></a>图像
+### <a name="image"></a>映像
 
 |     |     |
 | --- | --- |

@@ -89,7 +89,7 @@ await image.TranslateTo (0, 200, 2000, new Easing (t => 1 - Math.Cos (10 * Math.
 
 自定义缓动函数指定为构造函数的 lambda 函数参数 [`Easing`](xref:Xamarin.Forms.Easing) ，并使用 `Math.Cos` 方法来创建由方法阻碍的慢速删除效果 `Math.Exp` 。 因此， [`Image`](xref:Xamarin.Forms.Image) 实例将被转换，以使其显示在其最终的静止位置。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文演示了如何使用预定义的缓动函数，以及如何创建自定义缓动函数。 Xamarin.Forms包含一个 [`Easing`](xref:Xamarin.Forms.Easing) 类，它允许您指定一个传输函数，该函数控制动画在运行时的速度如何提高或减速。
 

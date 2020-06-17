@@ -348,12 +348,12 @@ stacklayout>image {
 |`align-content`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial` |`align-content: space-between;`|
 |`align-items`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial` |`align-items: flex-start;`|
 |`align-self`|`VisualElement`| `auto` \| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial`|`align-self: flex-end;`|
-|`background-color`|`VisualElement`|_颜色_ \|`initial` |`background-color: springgreen;`|
+|`background-color`|`VisualElement`|_color_ \| `initial` |`background-color: springgreen;`|
 |`background-image`|`Page`|_字符串_ \|`initial` |`background-image: bg.png;`|
-|`border-color`|`Button`, `Frame`, `ImageButton`|_颜色_ \|`initial`|`border-color: #9acd32;`|
+|`border-color`|`Button`, `Frame`, `ImageButton`|_color_ \| `initial`|`border-color: #9acd32;`|
 |`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_double_ \|`initial` |`border-radius: 10;`|
 |`border-width`|`Button`, `ImageButton`|_double_ \|`initial` |`border-width: .5;`|
-|`color`|`ActivityIndicator`, `BoxView`, `Button`, `CheckBox`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `ProgressBar`, `SearchBar`, `Switch`, `TimePicker`|_颜色_ \|`initial` |`color: rgba(255, 0, 0, 0.3);`|
+|`color`|`ActivityIndicator`, `BoxView`, `Button`, `CheckBox`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `ProgressBar`, `SearchBar`, `Switch`, `TimePicker`|_color_ \| `initial` |`color: rgba(255, 0, 0, 0.3);`|
 |`column-gap`|`Grid`|_double_ \|`initial`|`column-gap: 9;`|
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|
 |`flex-direction`|`FlexLayout`| `column` \| `columnreverse` \| `row` \| `rowreverse` \| `row-reverse` \| `column-reverse` \| `initial`|`flex-direction: column-reverse;`|
@@ -373,11 +373,11 @@ stacklayout>image {
 |`margin-top`|`View`|_粗细_ \|`initial` |`margin-top: 2;`|
 |`margin-right`|`View`|_粗细_ \|`initial` |`margin-right: 1;`|
 |`margin-bottom`|`View`|_粗细_ \|`initial` |`margin-bottom: 6;`|
-|`max-lines`|`Label`|_int_ \|`initial`|`max-lines: 2;`|
+|`max-lines`|`Label`|_int_ \| `initial`|`max-lines: 2;`|
 |`min-height`|`VisualElement`|_double_ \|`initial` |`min-height: 50;`|
 |`min-width`|`VisualElement`|_double_ \|`initial` |`min-width: 112;`|
 |`opacity`|`VisualElement`|_double_ \|`initial` |`opacity: .3;`|
-|`order`|`VisualElement`|_int_ \|`initial`|`order: -1;`|
+|`order`|`VisualElement`|_int_ \| `initial`|`order: -1;`|
 |`padding`|`Button`, `ImageButton`, `Layout`, `Page`|_粗细_ \|`initial` |`padding: 6 12 12;`|
 |`padding-left`|`Button`, `ImageButton`, `Layout`, `Page`|_double_ \|`initial`|`padding-left: 3;`|
 |`padding-top`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \|`initial` |`padding-top: 4;`|
@@ -412,17 +412,17 @@ Xamarin.Forms还支持以下特定 CSS 属性（在 "**值**" 列中，类型为
 
 |properties|适用于|值|示例|
 |---|---|---|---|
-|`-xf-bar-background-color`|`NavigationPage`, `TabbedPage`|_颜色_ \|`initial` |`-xf-bar-background-color: teal;`|
-|`-xf-bar-text-color`|`NavigationPage`, `TabbedPage`|_颜色_ \|`initial` |`-xf-bar-text-color: gray`|
+|`-xf-bar-background-color`|`NavigationPage`, `TabbedPage`|_color_ \| `initial` |`-xf-bar-background-color: teal;`|
+|`-xf-bar-text-color`|`NavigationPage`, `TabbedPage`|_color_ \| `initial` |`-xf-bar-text-color: gray`|
 |`-xf-horizontal-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-horizontal-scroll-bar-visibility: never;`|
-|`-xf-max-length`|`Entry`, `Editor`, `SearchBar`|_int_ \|`initial` |`-xf-max-length: 20;`|
-|`-xf-max-track-color`|`Slider`|_颜色_ \|`initial` |`-xf-max-track-color: red;`|
-|`-xf-min-track-color`|`Slider`|_颜色_ \|`initial` |`-xf-min-track-color: yellow;`|
+|`-xf-max-length`|`Entry`, `Editor`, `SearchBar`|_int_ \| `initial` |`-xf-max-length: 20;`|
+|`-xf-max-track-color`|`Slider`|_color_ \| `initial` |`-xf-max-track-color: red;`|
+|`-xf-min-track-color`|`Slider`|_color_ \| `initial` |`-xf-min-track-color: yellow;`|
 |`-xf-orientation`|`ScrollView`, `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`. `both`仅在上受支持 `ScrollView` 。 |`-xf-orientation: horizontal;`|
 |`-xf-placeholder`|`Entry`, `Editor`, `SearchBar`|_带引号文本_ \|`initial` |`-xf-placeholder: Enter name;`|
-|`-xf-placeholder-color`|`Entry`, `Editor`, `SearchBar`|_颜色_ \|`initial` |`-xf-placeholder-color: green;`|
+|`-xf-placeholder-color`|`Entry`, `Editor`, `SearchBar`|_color_ \| `initial` |`-xf-placeholder-color: green;`|
 |`-xf-spacing`|`StackLayout`|_double_ \|`initial` |`-xf-spacing: 8;`|
-|`-xf-thumb-color`|`Slider`, `Switch`|_颜色_ \|`initial` |`-xf-thumb-color: limegreen;`|
+|`-xf-thumb-color`|`Slider`, `Switch`|_color_ \| `initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-vertical-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-vertical-scroll-bar-visibility: always;`|
 |`-xf-vertical-text-alignment`|`Label`| `start` \| `center` \| `end` \| `initial`|`-xf-vertical-text-alignment: end;`|
 |`-xf-visual`|`VisualElement`|_字符串_ \|`initial` |`-xf-visual: material;`|
@@ -433,17 +433,17 @@ Xamarin.Forms还支持以下 Shell 特定 CSS 属性（在 "**值**" 列中，�
 
 |properties|适用于|值|示例|
 |---|---|---|---|
-|`-xf-flyout-background`|`Shell`|_颜色_ \|`initial` |`-xf-flyout-background: red;`|
-|`-xf-shell-background`|`Element`|_颜色_ \|`initial` |`-xf-shell-background: green;`|
-|`-xf-shell-disabled`|`Element`|_颜色_ \|`initial` |`-xf-shell-disabled: blue;`|
-|`-xf-shell-foreground`|`Element`|_颜色_ \|`initial` |`-xf-shell-foreground: yellow;`|
-|`-xf-shell-tabbar-background`|`Element`|_颜色_ \|`initial` |`-xf-shell-tabbar-background: white;`|
-|`-xf-shell-tabbar-disabled`|`Element`|_颜色_ \|`initial` |`-xf-shell-tabbar-disabled: black;`|
-|`-xf-shell-tabbar-foreground`|`Element`|_颜色_ \|`initial` |`-xf-shell-tabbar-foreground: gray;`|
-|`-xf-shell-tabbar-title`|`Element`|_颜色_ \|`initial` |`-xf-shell-tabbar-title: lightgray;`|
-|`-xf-shell-tabbar-unselected`|`Element`|_颜色_ \|`initial` |`-xf-shell-tabbar-unselected: cyan;`|
-|`-xf-shell-title`|`Element`|_颜色_ \|`initial` |`-xf-shell-title: teal;`|
-|`-xf-shell-unselected`|`Element`|_颜色_ \|`initial` |`-xf-shell-unselected: limegreen;`|
+|`-xf-flyout-background`|`Shell`|_color_ \| `initial` |`-xf-flyout-background: red;`|
+|`-xf-shell-background`|`Element`|_color_ \| `initial` |`-xf-shell-background: green;`|
+|`-xf-shell-disabled`|`Element`|_color_ \| `initial` |`-xf-shell-disabled: blue;`|
+|`-xf-shell-foreground`|`Element`|_color_ \| `initial` |`-xf-shell-foreground: yellow;`|
+|`-xf-shell-tabbar-background`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-background: white;`|
+|`-xf-shell-tabbar-disabled`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-disabled: black;`|
+|`-xf-shell-tabbar-foreground`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-foreground: gray;`|
+|`-xf-shell-tabbar-title`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-title: lightgray;`|
+|`-xf-shell-tabbar-unselected`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-unselected: cyan;`|
+|`-xf-shell-title`|`Element`|_color_ \| `initial` |`-xf-shell-title: teal;`|
+|`-xf-shell-unselected`|`Element`|_color_ \| `initial` |`-xf-shell-unselected: limegreen;`|
 
 ### <a name="color"></a>颜色
 

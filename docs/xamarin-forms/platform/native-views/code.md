@@ -305,7 +305,7 @@ stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, final
 
 ![](code-images/winrt-good-measurement.png "UWP CustomControl with ArrangeOverride Delegate")
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了如何向 Xamarin.Forms 使用 c # 创建的布局添加本机视图，以及如何重写自定义视图的布局来纠正其度量 API 使用。
 

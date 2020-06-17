@@ -54,7 +54,7 @@ Xamarin.Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) 是版本3.0 中的�
 
 `FlexLayout` **SimpleStackPage**文件中显示了的三个属性：
 
-- [`Direction`](xref:Xamarin.Forms.FlexLayout.Direction)属性设置为枚举的值 [`FlexDirection`](xref:Xamarin.Forms.FlexDirection) 。 默认值为 `Row`。 如果将属性设置为， `Column` 则会 `FlexLayout` 在单个项列中排列的子级。
+- [`Direction`](xref:Xamarin.Forms.FlexLayout.Direction)属性设置为枚举的值 [`FlexDirection`](xref:Xamarin.Forms.FlexDirection) 。 默认为 `Row`。 如果将属性设置为， `Column` 则会 `FlexLayout` 在单个项列中排列的子级。
 
     如果中的项 `FlexLayout` 排列在列中， `FlexLayout` 则称其为垂直_主轴_和水平_交叉轴_。
 

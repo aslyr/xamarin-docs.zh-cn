@@ -11,7 +11,7 @@ ms-chap： xamarin assetid： E44F5D0F-DB8E-46C7-8789-114F1652A6C5： xamarin �
 
 ![在应用浏览器中](webview-images/in-app-browser.png)
 
-## <a name="content"></a>Content
+## <a name="content"></a>内容
 
 `WebView`支持以下类型的内容：
 
@@ -416,7 +416,7 @@ webView.Reload();
 - **Android** &ndash;`INTERNET`仅当显示网络中的内容时才需要。 本地内容不需要特殊权限。
 - **iOS** &ndash;不需要任何特殊权限。
 
-## <a name="layout"></a>布局
+## <a name="layout"></a>Layout
 
 与大多数其他 Xamarin.Forms 视图不同， `WebView` 需要 `HeightRequest` `WidthRequest` 在 StackLayout 或 RelativeLayout 中包含和时指定和。 如果无法指定这些属性，则 `WebView` 不会呈现。
 

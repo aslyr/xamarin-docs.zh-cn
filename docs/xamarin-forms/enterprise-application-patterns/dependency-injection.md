@@ -146,7 +146,7 @@ _container.Register<LoginViewModel>().AsSingleton();
 > [!NOTE]
 > 注册为单一实例的类型会在容器被释放时释放。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 依赖关系注入允许从依赖于这些类型的代码分离具体类型。 它通常使用容器来保存接口与抽象类型之间的注册和映射列表，以及实现或扩展这些类型的具体类型。
 

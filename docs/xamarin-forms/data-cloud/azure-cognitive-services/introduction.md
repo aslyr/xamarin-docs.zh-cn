@@ -46,7 +46,7 @@ _Microsoft 认知服务是一组可供开发人员使用的 Api、Sdk 和服务�
 
 示例应用程序的共享代码项目包含五个主要文件夹：
 
-|Folder|目的|
+|文件夹|目的|
 |--- |--- |
 |模型|包含应用程序的数据模型类。 这包括 `TodoItem` 类，该类用于对应用程序使用的单个数据项建模。 此文件夹还包括用于对从不同 Microsoft 认知服务 Api 返回的 JSON 响应建模的类。|
 |存储库|包含 `ITodoItemRepository` `TodoItemRepository` 用于执行数据库操作的接口和类。|

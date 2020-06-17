@@ -230,7 +230,7 @@ public class WebAppleSignInService : IAppleSignInService
 }
 ```
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了在应用程序中使用 Apple 进行登录以供使用的必要步骤 Xamarin.Forms 。
 

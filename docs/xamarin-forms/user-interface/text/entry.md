@@ -358,7 +358,7 @@ entry.BackgroundColor = Color.FromHex("#2c3e50");
 > [!NOTE]
 > [`VisualElement`](xref:Xamarin.Forms.VisualElement)从其继承的类 [`Entry`](xref:Xamarin.Forms.Entry) 也具有 [`Focused`](xref:Xamarin.Forms.VisualElement.Focused) 和 [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused) 事件。
 
-### <a name="completed"></a>完成
+### <a name="completed"></a>已完成
 
 `Completed`事件用于响应与项的交互的完成。 `Completed`当用户通过按键盘上的返回键（或按 UWP 上的 Tab 键）以字段结束输入时，将引发。 事件的处理程序是一个一般事件处理程序，该处理程序使用发送方和 `EventArgs` ：
 

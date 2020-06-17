@@ -291,7 +291,7 @@ async void OnSelectPhotoButtonClicked(object sender, EventArgs e)
 ## <a name="related-links"></a>相关链接
 
 - [使用容器的依赖项解析（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
-- [依赖关系注入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)
+- [依赖项注入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)
 - [实现视频播放器](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)
 - [从效果调用事件](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)
 - [从图片库中选取照片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)

@@ -150,7 +150,7 @@ foreach (var flaggedToken in spellCheckResult.FlaggedTokens)
 > [!NOTE]
 > 上面的示例使用 `Replace` 简单，但在大量文本中，它可以替换错误的标记。 API 提供了一个 `offset` 值，应在生产应用中使用该值来识别源文本中用于执行更新的正确位置。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了如何使用必应拼写检查 REST API 更正应用程序中的拼写错误 Xamarin.Forms 。 必应拼写检查对文本执行上下文拼写检查，并为拼写错误的单词提供内联建议。
 

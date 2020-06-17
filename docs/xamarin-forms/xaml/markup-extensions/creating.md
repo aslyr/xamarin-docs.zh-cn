@@ -186,7 +186,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 
 `GetService`实参为的调用 `typeof(IProvideValueTarget)` 实际上返回一个类型为的对象 `SimpleValueTargetProvider` ，该对象在 `Xamarin.Forms.Xaml.Internals` 命名空间中定义。 如果将的返回值强制转换 `GetService` 为该类型，则还可以访问一个 `ParentObjects` 属性，该属性是一个包含 `Image` 元素、 `Grid` 父元素和 `ImageResourceDemoPage` 父级的数组 `Grid` 。
 
-## <a name="conclusion"></a>结论
+## <a name="conclusion"></a>结束语
 
 XAML 标记扩展在 XAML 中发挥着重要作用，因为它扩展了从多个源设置属性的功能。 此外，如果现有的 XAML 标记扩展不能准确提供所需的内容，也可以编写自己的扩展。
 

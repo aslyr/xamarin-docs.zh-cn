@@ -5,7 +5,7 @@ ms-chap： xamarin assetid：64386A65-FD31-4A1B-A769-91495E57345A： xamarin 窗
 
 # <a name="xamarinforms-and-azure-cognitive-services"></a>Xamarin.Forms和 Azure 认知服务
 
-## <a name="introduction"></a>[介绍](introduction.md)
+## <a name="introduction"></a>[简介](introduction.md)
 
 Microsoft 认知服务是一组可供开发人员使用的 Api、Sdk 和服务，通过添加面部识别、语音识别和语言理解等功能，使应用程序更智能。 本文介绍了演示如何从应用程序调用某些 Microsoft 认知服务 Api 的示例应用程序 Xamarin.Forms 。
 

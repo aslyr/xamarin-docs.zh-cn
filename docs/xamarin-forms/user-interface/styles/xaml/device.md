@@ -100,7 +100,7 @@ public class DeviceStylesPageCS : ContentPage
 
 [`Style`](xref:Xamarin.Forms.NavigableElement.Style)每个实例的属性 [`Label`](xref:Xamarin.Forms.Label) 都设置为类中的相应属性 [`Devices.Styles`](xref:Xamarin.Forms.Device.Styles) 。
 
-## <a name="accessibility"></a>可访问性
+## <a name="accessibility"></a>辅助功能
 
 *设备*样式遵循辅助功能首选项，因此在每个平台上更改辅助功能首选项时，字体大小将会改变。 因此，为了支持可访问的文本，请确保将*设备*样式用作应用程序内任何文本样式的基础。
 

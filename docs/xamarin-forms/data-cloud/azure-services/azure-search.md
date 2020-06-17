@@ -262,7 +262,7 @@ async Task AzureSuggestions(string text)
 
 请注意，在示例应用程序中， `SuggestAsync` 仅当用户完成输入搜索词时才会调用方法。 不过，它还可用于通过对每个按键执行来支持自动完成的搜索查询。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文演示了如何使用 Microsoft Azure 搜索库将 Azure 搜索集成到 Xamarin.Forms 应用程序中。 Azure 搜索是一种云服务，可为上载的数据提供索引和查询功能。 这消除了传统上与在应用程序中实现搜索功能相关的基础结构要求和搜索算法复杂性。
 

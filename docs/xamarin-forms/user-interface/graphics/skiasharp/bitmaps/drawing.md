@@ -188,7 +188,7 @@ Color = new SKColor(0, 0, 0, 0)
 
 不需要创建新的位图来绘制它。 您还可以在现有位图上绘图。
 
-"**猴子 Moustache** " 页使用其构造函数加载**MonkeyFace**映像。 然后 `SKCanvas` ，它基于该位图创建一个对象，并使用 `SKPaint` 和 `SKPath` 对象在其上绘制 moustache：
+"**猴子 Moustache** " 页使用其构造函数加载**MonkeyFace.png**映像。 然后 `SKCanvas` ，它基于该位图创建一个对象，并使用 `SKPaint` 和 `SKPath` 对象在其上绘制 moustache：
 
 ```csharp
 public partial class MonkeyMoustachePage : ContentPage

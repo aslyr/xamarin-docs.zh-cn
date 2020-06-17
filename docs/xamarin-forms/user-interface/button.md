@@ -747,7 +747,7 @@ public partial class ToggleButtonDemoPage : ContentPage
 
 在 iOS 项目中， **Resources**文件夹包含三种大小的图像：
 
-- 存储为 **/Resources/MonkeyFace.png**的48像素正方形位图
+- 存储为/Resources/的48像素正方形位图**MonkeyFace.png**
 - 一个存储为的96像素的正方形位图**/Resource/MonkeyFace@2x.png**
 - 一个存储为的144像素的正方形位图**/Resource/MonkeyFace@3x.png**
 
@@ -755,18 +755,18 @@ public partial class ToggleButtonDemoPage : ContentPage
 
 对于 Android 项目，位图都具有相同的名称，但它们存储在**Resources**文件夹的不同子文件夹中：
 
-- 存储为 **/Resources/drawable-hdpi/MonkeyFace.png**的72像素正方形位图
-- 存储为 **/Resources/drawable-xhdpi/MonkeyFace.png**的96像素正方形位图
-- 存储为 **/Resources/drawable-xxhdpi/MonkeyFace.png**的144像素正方形位图
-- 存储为 **/Resources/drawable-xxxhdpi/MonkeyFace.png**的192像素正方形位图
+- 存储为/Resources/drawable-hdpi/的72像素正方形位图**MonkeyFace.png**
+- 存储为/Resources/drawable-xhdpi/的96像素正方形位图**MonkeyFace.png**
+- 存储为/Resources/drawable-xxhdpi/的144像素正方形位图**MonkeyFace.png**
+- 存储为/Resources/drawable-xxxhdpi/的192像素正方形位图**MonkeyFace.png**
 
 提供了**AndroidResource**的**生成操作**。
 
 在 UWP 项目中，可以将位图存储在项目中的任何位置，但它们通常存储在自定义文件夹或**资产**现有文件夹中。 UWP 项目包含以下位图：
 
-- 存储为 **/Assets/MonkeyFace.scale-100.png**的48像素正方形位图
-- 存储为 **/Assets/MonkeyFace.scale-200.png**的96像素正方形位图
-- 存储为 **/Assets/MonkeyFace.scale-400.png**的192像素正方形位图
+- 存储为/Assets/的48像素正方形位图**MonkeyFace.scale-100.png**
+- 存储为/Assets/的96像素正方形位图**MonkeyFace.scale-200.png**
+- 存储为/Assets/的192像素正方形位图**MonkeyFace.scale-400.png**
 
 它们都是**内容**的**生成操作**。
 

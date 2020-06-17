@@ -90,7 +90,7 @@ XAML 使用前缀来声明非默认命名空间，并在引用命名空间中的
 
 有关定义自定义命名空间架构的信息，请参阅[XAML 自定义命名空间架构](custom-namespace-schemas.md)。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了 XAML 命名空间语法，并演示了如何声明 XAML 命名空间来访问类型。 XAML 将 `xmlns` XML 特性用于命名空间声明，在 xaml 中，可以通过使用前缀声明 xaml 命名空间来引用类型。
 

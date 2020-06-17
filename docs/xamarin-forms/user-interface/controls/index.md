@@ -11,7 +11,7 @@ ms-chap： xamarin assetid： F2A02DEE-7137-42F4-9C0A-4E1CF75EA08F： xamarin �
 
 用于创建应用程序的用户界面的四个主要控件组 Xamarin.Forms 如下所示：
 
-- [**页**](pages.md)
+- [**页数**](pages.md)
 - [**布局**](layouts.md)
 - [**视图**](views.md)
 - [**单元**](cells.md)

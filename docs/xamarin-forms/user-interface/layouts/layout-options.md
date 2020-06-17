@@ -137,7 +137,7 @@ Content = new StackLayout
 
 每个在 [`Label`](xref:Xamarin.Forms.Label) 中占据相同的空间量 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 但是，只有最后一个 `Label`（可将 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 属性设置为 [`FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand)）具有不同的大小。 此外，每个 `Label` 都由一个小红色分隔 [`BoxView`](xref:Xamarin.Forms.BoxView) ，使占有的空间 `Label` 易于查看。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了每个 [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) 结构值相对于其父级的对齐和展开的影响。 `Start`、、 `Center` `End` 和 `Fill` 字段用于定义视图在父布局中的对齐方式， `StartAndExpand` 、、 `CenterAndExpand` `EndAndExpand` 和 `FillAndExpand` 字段用于定义对齐首选项，并用于确定视图是否在中占用更多空间（如果有） [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。
 

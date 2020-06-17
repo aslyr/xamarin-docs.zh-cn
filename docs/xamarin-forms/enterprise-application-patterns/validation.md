@@ -407,7 +407,7 @@ UI 在其数据验证失败的每个控件下的标签控件中显示验证错�
 
 每个 [`Label`](xref:Xamarin.Forms.Label) 绑定到要 `Errors` 验证的视图模型对象的属性。 `Errors`属性由 `ValidatableObject<T>` 类提供，且的类型为 `List<string>` 。 由于 `Errors` 属性可能包含多个验证错误，因此将 `FirstValidationErrorConverter` 使用实例来检索要显示的集合中的第一个错误。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 EShopOnContainers 移动应用执行视图模型属性的同步客户端验证，通过突出显示包含无效数据的控件，并通过显示错误消息通知用户数据无效的原因，向用户通知任何验证错误。
 

@@ -438,7 +438,7 @@ public partial class XamlPlusCodePage : ContentPage {
 
 欢迎。 这是您的页面，而 XAML 只是生成其内容的工具。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了 XAML 文件和代码文件如何影响类定义以及 XAML 和代码文件如何交互。 但 XAML 还具有自己独特的语法功能，使其能够以非常灵活的方式使用。 你可以在第2部分中开始浏览这些项[。基本 XAML 语法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)。
 

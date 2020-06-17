@@ -95,7 +95,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 - [`Stroke`](xref:SkiaSharp.SKPaintStyle.Stroke)
 - [`StrokeAndFill`](xref:SkiaSharp.SKPaintStyle.StrokeAndFill)
 
-默认值为 `Fill`。 使用第三个选项可以为线条描边，并使用相同的颜色填充内部。
+默认为 `Fill`。 使用第三个选项可以为线条描边，并使用相同的颜色填充内部。
 
 将 [`Color`](xref:SkiaSharp.SKPaint.Color) 属性设置为类型的值 [`SKColor`](xref:SkiaSharp.SKColor) 。 获取值的一种方法 `SKColor` 是 Xamarin.Forms `Color` 使用扩展方法将值转换为 `SKColor` 值 [`ToSKColor`](xref:SkiaSharp.Views.Forms.Extensions.ToSKColor*) 。 [`Extensions`](xref:SkiaSharp.Views.Forms.Extensions)命名空间中的类 `SkiaSharp.Views.Forms` 包括在 Xamarin.Forms 值和 SkiaSharp 值之间进行转换的其他方法。
 

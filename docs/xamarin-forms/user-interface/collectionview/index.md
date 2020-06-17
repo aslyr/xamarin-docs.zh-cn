@@ -5,7 +5,7 @@ ms-chap： xamarin assetid：2BC9B223-2D5C-4B09-849C-B9D578954557： xamarin 窗
 
 # <a name="xamarinforms-collectionview"></a>Xamarin.Forms CollectionView
 
-## <a name="introduction"></a>[介绍](introduction.md)
+## <a name="introduction"></a>[简介](introduction.md)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)是一个灵活且高性能的视图，可使用不同的布局规范呈现数据列表。
 

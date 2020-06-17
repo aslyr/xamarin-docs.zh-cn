@@ -13,7 +13,7 @@ _Xamarin. Forms 页面表示跨平台的移动应用程序屏幕。_
 
 [![](pages-images/pages-sml.png "Xamarin.Forms Page Types")](pages-images/pages.png#lightbox "Xamarin.Forms Page Types")
 
-## <a name="pages"></a>Pages
+## <a name="pages"></a>页数
 
 Xamarin.Forms支持以下页类型：
 

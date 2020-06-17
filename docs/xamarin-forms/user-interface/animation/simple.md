@@ -216,7 +216,7 @@ ViewExtensions.CancelAnimations (image);
 
 这会立即取消当前正在实例上运行的所有动画 [`Image`](xref:Xamarin.Forms.Image) 。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文演示了如何使用类创建和取消动画 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 。 此类提供扩展方法，这些方法可用于构造旋转、缩放、平移和淡化实例的简单动画 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
 

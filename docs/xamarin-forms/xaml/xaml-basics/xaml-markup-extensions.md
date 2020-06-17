@@ -543,7 +543,7 @@ xmlns:sys="clr-namespace:System;assembly=netstandard"
 
 [![使用约束的相对布局](xaml-markup-extensions-images/relativelayout.png)](xaml-markup-extensions-images/relativelayout-large.png#lightbox)
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 此处显示的 XAML 标记扩展为 XAML 文件提供重要支持。 但最有价值的 XAML 标记扩展可能是 `Binding` ，这将在本系列的下一部分中涵盖，[第4部分。数据绑定基础知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
 

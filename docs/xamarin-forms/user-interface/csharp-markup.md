@@ -217,7 +217,7 @@ new Label { Text = "Tap Me" }
 
 由于笔势识别器是 `BindableObject` ，因此你可以在 `Bind` 初始化时使用和 `BindCommand` 扩展方法。 还可以用扩展方法初始化自定义笔势识别器类型 `Gesture<TGestureElement, TGestureRecognizer>` 。
 
-## <a name="layout"></a>布局
+## <a name="layout"></a>Layout
 
 C # 标记包含一系列布局扩展方法，这些方法支持布局中的定位视图和视图中的内容：
 
