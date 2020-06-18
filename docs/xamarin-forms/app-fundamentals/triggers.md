@@ -1,12 +1,12 @@
 ---
 title: Xamarin.Forms 触发器
 description: 此文章介绍了如何使用 Xamarin.Forms 触发器来响应 XAML 的用户界面更改。 触发器允许你在根据事件或属性更改更改控件外观的 XAML 中以声明的方式表达操作。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials

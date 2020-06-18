@@ -1,20 +1,20 @@
 ---
 title: Xamarin.Essentials 颜色转换器
 description: Xamarin.Essentials 中的 ColorConverters 类提供了几种帮助程序方法和扩展方法，以使用 System.Drawing.Color。
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-ms.custom: ''
+ms.assetid: B10428D6-89E2-4714-A39F-7E6E626391B2
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/06/2020
+ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 57b85a909855594c70bfd529d7a794b4bd7bca7e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: ff6a5bed600f45dcd48867596a7fc8aa45decb82
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130216"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802446"
 ---
 # <a name="xamarinessentials-color-converters"></a>Xamarin.Essentials：颜色转换器
 
@@ -83,9 +83,9 @@ var system = platform.ToSystemColor();
 
 ## <a name="api"></a>API
 
-- [颜色转换器源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Types/ColorConverters.shared.cs)
+- [颜色转换器源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Types/ColorConverters.shared.cs)
 - [颜色转换器 API 文档](xref:Xamarin.Essentials.ColorConverters)
-- [颜色扩展源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Types/ColorConverters.shared.cs)
+- [颜色扩展源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Types/ColorConverters.shared.cs)
 - [颜色扩展 API 文档](xref:Xamarin.Essentials.ColorExtensions)
 
 ## <a name="related-video"></a>相关视频

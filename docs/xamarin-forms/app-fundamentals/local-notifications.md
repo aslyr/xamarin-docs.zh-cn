@@ -1,12 +1,12 @@
 ---
 title: Xamarin.Forms 本地通知
 description: 本文介绍如何在 Xamarin.Forms 中发送和接收本地通知。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 10/10/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials

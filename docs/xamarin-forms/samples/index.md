@@ -1,12 +1,12 @@
 ---
 title: Xamarin.Forms 示例
 description: 帮助你入门以及了解 Xamarin.Forms 中的概念的 Xamarin.Forms 示例应用和代码演示。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: AB986E8E-E831-4E0A-9F1D-6C3D88F35E9C
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 12/27/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials

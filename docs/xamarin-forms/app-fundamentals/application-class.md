@@ -1,29 +1,29 @@
 ---
 title: Xamarin.Forms 应用类
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
+description: 本文说明默认 App 类的功能，其中包括一个可设置应用初始页面的属性，以及一个跨生命周期状态更改存储简单值的持久字典。
+ms.prod: xamarin
+ms.assetid: 421F8294-1944-46A4-8459-D2BD5AAABC9D
+ms.technology: xamarin-forms
+ms.custom: video
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/19/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2f4b568809f949d813de86ae88cbe621cfa3161c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: 1e761830fb08662a82a8bf98b4544aafaa6eccf7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129683"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573347"
 ---
 # <a name="xamarinforms-app-class"></a>Xamarin.Forms 应用类
 
 `Application` 基类提供以下功能，这些功能在项目的默认 `App` 子类中公开：
 
 * `MainPage` 属性，可在其中设置应用的初始页面。
-* 持久 [`Properties` 字典](#Properties_Dictionary)，用于跨生命周期状态更改存储简单值。
+* 持久 [`Properties` 字典](#properties-dictionary)，用于跨生命周期状态更改存储简单值。
 * 静态 `Current` 属性，其中包含对当前应用程序对象的引用。
 
 它还公开[生命周期方法](~/xamarin-forms/app-fundamentals/app-lifecycle.md)，例如 `OnStart`、`OnSleep` 和 `OnResume` 以及模式导航事件。
@@ -76,8 +76,6 @@ public class App : Xamarin.Forms.Application
     }
 }
 ```
-
-<a name="Properties_Dictionary" />
 
 ## <a name="properties-dictionary"></a>属性字典
 

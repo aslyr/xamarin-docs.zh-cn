@@ -1,20 +1,20 @@
 ---
 title: Xamarin.Essentials 单位转换器
 description: Xamarin.Essentials 中的 UnitConverters 类提供了几种单位转换器，以在开发人员使用 Xamarin.Essentials 时为其提供帮助。
-ms.assetid: ''
-author: ''
-ms.custom: ''
-ms.author: ''
-ms.date: ''
+ms.assetid: 35DE2704-E730-4337-9476-66CD53376943
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 01/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: deff6997ff921e6048ccb2497a0747c770501a04
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: 332762a83796fef24278c6685a29f7d31a10dadc
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137132"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801850"
 ---
 # <a name="xamarinessentials-unit-converters"></a>Xamarin.Essentials：单位转换器
 
@@ -72,7 +72,7 @@ var celsius = UnitConverters.FahrenheitToCelsius(32.0);
 
 ## <a name="api"></a>API
 
-- [单位转换器源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Types/UnitConverters.shared.cs)
+- [单位转换器源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Types/UnitConverters.shared.cs)
 - [单位转换器 API 文档](xref:Xamarin.Essentials.UnitConverters)
 
 ## <a name="related-video"></a>相关视频

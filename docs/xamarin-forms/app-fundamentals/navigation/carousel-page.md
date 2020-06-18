@@ -1,21 +1,21 @@
 ---
 title: Xamarin.Forms 传送页
 description: Xamarin.Forms CarouselPage 页面就像一个库，用户可从一侧轻扫到另一侧以浏览内容页面。 本文演示如何使用 CarouselPage 浏览页集合。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 2D14FC9D-DF5F-427E-9006-2AAE61ECF8DC
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4d0cebe98b66f3596e72624efed90e965b942bfc
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: 896f652d69bca0f186e53185926ee5c46d87fa7c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137522"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570669"
 ---
 # <a name="xamarinforms-carousel-page"></a>Xamarin.Forms 传送页
 
@@ -51,15 +51,13 @@ _ CarouselPage 页面就像一个库，用户可从一侧轻扫到另一侧以�
 
 可以使用两种方法创建 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)：
 
-- 使用子 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 实例集合[填充](#Populating_a_CarouselPage_with_a_Page_Collection)`CarouselPage`。
-- 将集合[分配](#Populating_a_CarouselPage_with_a_Template)给 [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) 属性并将 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 分配给 [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) 属性以返回集合中对象的 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 实例。
+- 使用子 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 实例集合[填充](#populate-a-carouselpage-with-a-page-collection)`CarouselPage`。
+- 将集合[分配](#populate-a-carouselpage-with-a-template)给 [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) 属性并将 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 分配给 [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) 属性以返回集合中对象的 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 实例。
 
 使用这两种方法，`CarouselPage` 将依次显示每个页面，轻扫交互会移动到要显示的下一个页面。
 
 > [!NOTE]
 > [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 仅可以使用 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 实例或 `ContentPage` 派生类填充。
-
-<a name="Populating_a_CarouselPage_with_a_Page_Collection" />
 
 ### <a name="populate-a-carouselpage-with-a-page-collection"></a>使用页集合填充 CarouselPage
 
@@ -148,8 +146,6 @@ public class MainPageCS : CarouselPage
 ```
 
 每个 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 只显示特定颜色的 [`Label`](xref:Xamarin.Forms.Label) 和该颜色的 [`BoxView`](xref:Xamarin.Forms.BoxView)。
-
-<a name="Populating_a_CarouselPage_with_a_Template" />
 
 ### <a name="populate-a-carouselpage-with-a-template"></a>使用模板填充 CarouselPage
 

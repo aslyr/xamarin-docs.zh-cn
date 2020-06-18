@@ -1,19 +1,19 @@
 ---
 title: Xamarin.Essentials 平台扩展
 description: 必须使用矩形、大小和点等平台类型时，Xamarin.Essentials 提供了几种平台扩展方法。
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.assetid: AB4D198A-4FD7-479E-8627-01F887A6D056
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 03/13/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3266d3870dc0d1ddef747168b2ac6b4d397a7c33
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: 56cb9619a4132f6568cee8fbf590965934024639
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135351"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801889"
 ---
 # <a name="xamarinessentials-platform-extensions"></a>Xamarin.Essentials：平台扩展
 
@@ -147,7 +147,7 @@ var system2 = platform.ToSystemRectangle();
 
 ## <a name="api"></a>API
 
-- [转换器源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Types/PlatformExtensions)
+- [转换器源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Types/PlatformExtensions)
 - [点转换器 API 文档](xref:Xamarin.Essentials.PointExtensions)
 - [矩形转换器 API 文档](xref:Xamarin.Essentials.RectangleExtensions)
 - [大小转换器 API 文档](xref:Xamarin.Essentials.SizeExtensions)

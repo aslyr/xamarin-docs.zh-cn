@@ -1,12 +1,12 @@
 ---
 title: Xamarin.Forms MessagingCenter
 description: Xamarin.Forms MessagingCenter 类可实现发布-订阅模式，允许不便按对象和类型引用进行链接的组件之间进行基于消息的通信。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: EDFE7B19-C5FD-40D5-816C-FAE56532E885
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/08/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials

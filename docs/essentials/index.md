@@ -1,10 +1,10 @@
 ---
 title: Xamarin.Essentials
 description: 本文档链接到介绍可为开发人员提供其移动应用程序的跨平台 API 的 Xamarin.Essentials 的各个指南。
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 02/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials

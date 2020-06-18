@@ -1,21 +1,21 @@
 ---
 title: Xamarin.Forms 模式页面
 description: Xamarin.Forms 支持模式页面。 模式页面鼓励用户完成独立任务，在完成或取消该任务之前，不允许导航离开该任务。 本文演示如何导航到模式页面。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4f6547049f2801e5d15115c0ae80af9a07034731
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: aecab26efaed9815ec6916877b5f42297821582c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137821"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84569603"
 ---
 # <a name="xamarinforms-modal-pages"></a>Xamarin.Forms 模式页面
 
@@ -25,8 +25,8 @@ Xamarin.Forms 支持模式页面。模式页面鼓励用户完成独立任务，
 
 本文讨论以下主题：
 
-- [执行导航](#Performing_Navigation) - 将页面推送到模式堆栈、从模式堆栈中弹出页面、禁用“后退”按钮并对页面过渡效果进行动画处理。
-- [导航时传递数据](#Passing_Data_when_Navigating) - 通过页面构造函数和 `BindingContext` 传递数据。
+- [执行导航](#performing-navigation) - 将页面推送到模式堆栈、从模式堆栈中弹出页面、禁用“后退”按钮并对页面过渡效果进行动画处理。
+- [导航时传递数据](#passing-data-when-navigating) - 通过页面构造函数和 `BindingContext` 传递数据。
 
 ## <a name="overview"></a>概述
 
@@ -38,18 +38,14 @@ Xamarin.Forms 支持模式页面。模式页面鼓励用户完成独立任务，
 
 ![](modal-images/popping.png "Popping a Page from the Modal Stack")
 
-<a name="Performing_Navigation" />
-
 ## <a name="performing-navigation"></a>执行导航
 
-可以由任何 [`Page`](xref:Xamarin.Forms.Page) 派生类型上的 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 属性公开模式导航方法。 可通过这些方法将[模式页面推送](#Pushing_Pages_to_the_Modal_Stack)到模式堆栈中，还可从模式堆栈中[弹出模式页面](#Popping_Pages_from_the_Modal_Stack)。
+可以由任何 [`Page`](xref:Xamarin.Forms.Page) 派生类型上的 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 属性公开模式导航方法。 可通过这些方法将[模式页面推送](#pushing-pages-to-the-modal-stack)到模式堆栈中，还可从模式堆栈中[弹出模式页面](#popping-pages-from-the-modal-stack)。
 
 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 属性也可公开 [`ModalStack`](xref:Xamarin.Forms.INavigation.ModalStack) 属性，并从中获得模式堆栈中的模式页面。 但是，在模式导航中没有执行模式堆栈操作或弹出到根页的概念。 这是因为基础平台普遍都不支持这些操作。
 
 > [!NOTE]
 > 执行模式页面导航无需具有 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 实例。
-
-<a name="Pushing_Pages_to_the_Modal_Stack" />
 
 ### <a name="pushing-pages-to-the-modal-stack"></a>将页面推送到模式堆栈
 
@@ -80,8 +76,6 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 
 > [!NOTE]
 > 不能将对 [`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing) 和 [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) 替代的调用视为绝对的页面导航指示。 例如，在 iOS 上，应用程序终止后，将对活动页面调用 `OnDisappearing` 替代。
-
-<a name="Popping_Pages_from_the_Modal_Stack" />
 
 ### <a name="popping-pages-from-the-modal-stack"></a>从模式堆栈中弹出页面
 
@@ -127,8 +121,6 @@ async void OnDismissButtonClicked (object sender, EventArgs args)
 ```
 
 将 `boolean` 参数设置为 `false` 会禁用页面过渡动画，而将参数设置为 `true` 则会启用页面过渡动画，前提是基础平台支持该动画。 但是，缺少此参数的 push 和 pop 方法默认启用该动画。
-
-<a name="Passing_Data_when_Navigating" />
 
 ## <a name="passing-data-when-navigating"></a>导航时传递数据
 

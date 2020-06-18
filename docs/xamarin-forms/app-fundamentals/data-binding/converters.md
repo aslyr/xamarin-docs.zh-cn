@@ -1,12 +1,12 @@
 ---
 title: Xamarin.Forms 绑定值转换器
 description: 此文章介绍了如何通过实现值转换器（也称为绑定转换器或绑定值转换器）来强制转换或转换 Xamarin.Forms 数据绑定中的值。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 02B1BBE6-D804-490D-BDD4-8ACED8B70C92
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials

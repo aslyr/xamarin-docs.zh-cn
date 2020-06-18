@@ -1,12 +1,12 @@
 ---
 title: Xamarin.Forms 控件模板
 description: Xamarin.Forms 控件模板定义 ContentView 派生的自定义控件和 ContentPage 派生的页面的可视结构。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 8B8E2360-6531-44A3-A7C8-9A8808DE9B86
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/13/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials

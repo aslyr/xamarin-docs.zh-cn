@@ -1,21 +1,21 @@
 ---
 title: Xamarin.Forms 母版页详细信息页
 description: Xamarin.Forms MasterDetailPage 页面用于管理两个相关信息页，其中一个为显示项的母版页，另一个为详细信息页，显示母版页上各项的详细信息。 本文介绍如何使用 MasterDetailPage 并在其信息页面之间导航。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 119945E3-58B8-4630-A3D2-8B561529D53B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 89b1dedcb6219a32332641550018405abd4b6870
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: c751a1843479f1e98739964631999dfdb0e3b634
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137808"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84569629"
 ---
 # <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms 母版页详细信息页
 
@@ -51,11 +51,11 @@ _Xamarin.Forms MasterDetailPage 页面用于管理两个相关信息页，其中
 
 - 在 iOS 中，当母版页从左侧滑动时，详细信息页向右滑动，并且详细信息页的左侧部分仍然可见。
 - 在 Android 中，详细信息和母版页相互叠加。
-- 在 UWP 上，如果 [`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) 属性设置为 `Popover`，母版页会从左侧滑动到部分详细信息页上方。 有关更多信息，请参阅[控制详细信息页显示行为](#Controlling_the_Detail_Page_Display_Behavior)。
+- 在 UWP 上，如果 [`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) 属性设置为 `Popover`，母版页会从左侧滑动到部分详细信息页上方。 有关更多信息，请参阅[控制详细信息页显示行为](#controlling-the-detail-page-display-behavior)。
 
 在横向模式下将观察到类似的行为，除了 iOS 和 Android 中的母版页在纵向模式下具有与母版页类似的宽度，因此将显示更多详细信息页。
 
-有关如何控制导航行为的信息，请参阅[控制详细信息页显示行为](#Controlling_the_Detail_Page_Display_Behavior)。
+有关如何控制导航行为的信息，请参阅[控制详细信息页显示行为](#controlling-the-detail-page-display-behavior)。
 
 ## <a name="creating-a-masterdetailpage"></a>创建 MasterDetailPage
 
@@ -249,8 +249,6 @@ public partial class MainPage : MasterDetailPage
 以下屏幕截图显示了 `ContactPage` 详细信息页，在母版页上选择它后将显示：
 
 ![](master-detail-page-images/detailpage.png "Detail Page Example")
-
-<a name="Controlling_the_Detail_Page_Display_Behavior" />
 
 ### <a name="controlling-the-detail-page-display-behavior"></a>控制详细信息页显示行为
 

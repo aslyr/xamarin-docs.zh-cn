@@ -1,15 +1,15 @@
 ---
 title: Xamarin.Forms 快速入门深入探讨
 description: 本文介绍了使用 Xamarin.Forms 开发应用程序的基础知识。 涵盖的主题包括：Xamarin.Forms 应用程序剖析、体系结构和应用程序基础知识以及用户界面。
-zone_pivot_groups: ''
-ms.topic: ''
-ms.prod: ''
-ms.custom: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+zone_pivot_groups: platform
+ms.topic: quickstart
+ms.prod: xamarin
+ms.custom: video
+ms.assetid: 7B2340A1-6883-41D8-860C-0BB6C4E0C316
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials

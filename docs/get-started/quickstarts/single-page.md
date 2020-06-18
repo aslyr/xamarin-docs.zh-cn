@@ -1,14 +1,14 @@
 ---
 title: 创建单页 Xamarin.Forms 应用程序
 description: 本文说明如何创建单页跨平台 Xamarin.Forms 应用程序，使你可输入便笺内容并将其保存到设备存储。
-zone_pivot_groups: ''
-ms.topic: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+zone_pivot_groups: platform-dev16
+ms.topic: quickstart
+ms.prod: xamarin
+ms.assetid: E8CF05B1-54B9-428B-8518-D068837BD61E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials

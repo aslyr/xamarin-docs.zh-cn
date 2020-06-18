@@ -1,12 +1,12 @@
 ---
 title: Xamarin.Forms 双屏
 description: 本指南介绍了如何构建适用于双屏设备的 Xamarin.Forms 应用。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: f9906e83-f8ae-48f9-997b-e1540b96ee8e
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials

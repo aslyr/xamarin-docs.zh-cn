@@ -1,21 +1,21 @@
 ---
 title: Xamarin.Forms 编译的绑定
 description: 本文介绍如何使用已编译的绑定来提升 Xamarin.Forms 应用程序中的数据绑定性能。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: ABE6B7F7-875E-4402-A1D2-845CE374402B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/18/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1f811de95009900016bb8b442265a9a079e0f612
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: 094691796fed9653f2a2e468ccb1c33d1a408a49
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139734"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84571553"
 ---
 # <a name="xamarinforms-compiled-bindings"></a>Xamarin.Forms 编译的绑定
 
@@ -73,7 +73,7 @@ ms.locfileid: "84139734"
 </ContentPage>
 ```
 
-根 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 实例化 `HslColorViewModel` 并初始化 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 属性的属性元素标记内的 `Color` 属性。 此根 `StackLayout` 还将 `x:DataType` 属性定义为 viewmodel 类型，指示将编译根 `StackLayout` 视图层次结构中的任何绑定表达式。 通过更改任何绑定表达式以绑定到不存在的 viewmodel 属性，可对此进行验证，这将导致生成错误。 尽管此示例将 `x:DataType` 特性设置为字符串文字，但也可以将其设置为具有 `x:Type` 标记扩展的类型。 有关 `x:Type` 标记扩展的详细信息，请参阅 [x:Type 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#type)。
+根 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 实例化 `HslColorViewModel` 并初始化 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 属性的属性元素标记内的 `Color` 属性。 此根 `StackLayout` 还将 `x:DataType` 属性定义为 viewmodel 类型，指示将编译根 `StackLayout` 视图层次结构中的任何绑定表达式。 通过更改任何绑定表达式以绑定到不存在的 viewmodel 属性，可对此进行验证，这将导致生成错误。 尽管此示例将 `x:DataType` 特性设置为字符串文字，但也可以将其设置为具有 `x:Type` 标记扩展的类型。 有关 `x:Type` 标记扩展的详细信息，请参阅 [x:Type 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#xtype-markup-extension)。
 
 > [!IMPORTANT]
 > 可以在视图层次结构中的任意点重新定义 `x:DataType` 属性。
@@ -127,7 +127,7 @@ ms.locfileid: "84139734"
 
 将 [`ListView.ItemsSource`](xref:Xamarin.Forms.ListView) 属性设置为静态 `NamedColor.All` 属性。 `NamedColor` 类使用 .NET 反射来枚举 [`Color`](xref:Xamarin.Forms.Color) 结构中的所有静态公共字段，并将它们以及它们的名称存储在可从静态 `All` 属性访问的集合中。 因此，`ListView` 由所有 `NamedColor` 实例填充。 对于 `ListView` 中的每个项，项的绑定上下文都被设置为 `NamedColor` 对象。 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 中的 [`BoxView`](xref:Xamarin.Forms.BoxView) 和 [`Label`](xref:Xamarin.Forms.Label) 元素被绑定到 `NamedColor` 属性。
 
-请注意，[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 将 `x:DataType` 属性定义为 `NamedColor` 类型，表示将编译 `DataTemplate` 视图结构中的任意绑定表达式。 通过更改任何绑定表达式来绑定到不存在的 `NamedColor` 属性，可对此进行验证，这将导致生成错误。  尽管此示例将 `x:DataType` 特性设置为字符串文字，但也可以将其设置为具有 `x:Type` 标记扩展的类型。 有关 `x:Type` 标记扩展的详细信息，请参阅 [x:Type 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#type)。
+请注意，[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 将 `x:DataType` 属性定义为 `NamedColor` 类型，表示将编译 `DataTemplate` 视图结构中的任意绑定表达式。 通过更改任何绑定表达式来绑定到不存在的 `NamedColor` 属性，可对此进行验证，这将导致生成错误。  尽管此示例将 `x:DataType` 特性设置为字符串文字，但也可以将其设置为具有 `x:Type` 标记扩展的类型。 有关 `x:Type` 标记扩展的详细信息，请参阅 [x:Type 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#xtype-markup-extension)。
 
 首次运行应用程序时，[`ListView`](xref:Xamarin.Forms.ListView) 由 `NamedColor` 实例填充。 选中 `ListView` 中的项时，[`BoxView.Color`](xref:Xamarin.Forms.BoxView.Color) 属性被设置为 `ListView` 中所选项的颜色：
 
@@ -163,7 +163,7 @@ ms.locfileid: "84139734"
 
 根 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 将 `x:DataType` 属性设置为 `HslColorViewModel` 类型，表示将编译根 `StackLayout` 视图结构中的任意绑定表达式。 但是，内部 `StackLayout` 使用 `x:Null` 标记表达式将 `x:DataType` 属性重新定义为 `null`。 因此，内部 `StackLayout` 中的绑定表达式使用传统绑定。 只有根 `StackLayout` 视图结构层次中的 [`BoxView`](xref:Xamarin.Forms.BoxView) 使用已编译的绑定。
 
-有关 `x:Null` 标记表达式的详细信息，请参阅 [x:Null 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#null)。
+有关 `x:Null` 标记表达式的详细信息，请参阅 [x:Null 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#xnull-markup-extension)。
 
 ## <a name="performance"></a>性能
 

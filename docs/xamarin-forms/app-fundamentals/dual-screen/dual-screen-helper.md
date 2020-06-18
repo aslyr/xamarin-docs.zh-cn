@@ -1,12 +1,12 @@
 ---
 title: Xamarin.Forms 双屏平台帮助程序
 description: 本指南介绍了如何使用 Xamarin.Forms DualScreenHelper 类来优化 Surface Duo 和 Surface Neo 等双屏设备的应用体验。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 5aa184c2-5611-427d-85c7-1c56486c3e1b
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials

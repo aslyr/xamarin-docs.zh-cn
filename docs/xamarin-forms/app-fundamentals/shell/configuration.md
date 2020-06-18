@@ -1,12 +1,12 @@
 ---
 title: Xamarin.Forms Shell 页面配置
 description: Shell 类定义了可用于在 Xamarin.Forms Shell 应用程序中配置页面外观的附加属性。 这包括设置页面颜色、禁用导航栏、禁用选项卡栏以及在导航栏中显示视图。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 3FC2FBD1-C30B-4408-97B2-B04E3A2E4F03
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/29/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials

@@ -1,8 +1,22 @@
 ---
-title:"呈现器基类和本机控件" description:"每个 Xamarin.Forms 控件都有一个附带的呈现器，适用于创建本机控件实例的各个平台。 本文列出了用于实现每个 Xamarin.Forms 页面、布局、视图和单元的呈现器和本机控件类。"
-ms.prod: xamarin ms.assetid:A8909AE3-ED0E-4D24-BF96-B49E732E3B93 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2020 年 4 月 17 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: title:"呈现器基类和本机控件" description:"每个 Xamarin.Forms 控件都有一个附带的呈现器，适用于创建本机控件实例的各个平台。
+description: '本文列出了用于实现每个 Xamarin.Forms 页面、布局、视图和单元的呈现器和本机控件类。" ms.prod: xamarin ms.assetid:A8909AE3-ED0E-4D24-BF96-B49E732E3B93 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2020 年 4 月 17 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: A8909AE3-ED0E-4D24-BF96-B49E732E3B93
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/17/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9f6eff831f3eb653e281dd9ee750bae7f7dfda06
+ms.sourcegitcommit: 2105091f2eeb7844b19ae94708a6ab07e3e79bce
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84198386"
 ---
-
 # <a name="renderer-base-classes-and-native-controls"></a>呈现器基类和本机控件
 
 每个 Xamarin.Forms 控件都有一个附带的呈现器，适用于创建本机控件实例的各个平台。本文列出了用于实现每个 Xamarin.Forms 页面、布局、视图和单元的呈现器和本机控件类。

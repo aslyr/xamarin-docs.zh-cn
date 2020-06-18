@@ -1,21 +1,21 @@
 ---
 title: Xamarin.Forms 绑定路径
 description: 本文介绍如何使用 Xamarin.Forms 数据绑定通过 Binding 类的 Path 属性访问子属性和集合成员。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0657f39d0584405ea1a6d7611ac789488817770f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: a0ac8a568c3e8c46fa7e53112461aa0bff5684ae
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139733"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570786"
 ---
 # <a name="xamarinforms-binding-path"></a>Xamarin.Forms 绑定路径
 
@@ -127,7 +127,7 @@ ms.locfileid: "84139733"
 </Label>
 ```
 
-有关使用 XAML 指定构造函数参数的详细信息，请参阅[传递构造函数参数](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments)。
+有关使用 XAML 指定构造函数参数的详细信息，请参阅[传递构造函数参数](~/xamarin-forms/xaml/passing-arguments.md#passing-constructor-arguments)。
 
 最后一个示例与第二个相似，只不过它引用了 `StackLayout` 的一个子级：
 

@@ -1,12 +1,12 @@
 ---
 title: Xamarin.Forms 双屏布局
 description: 本指南介绍了如何使用 Xamarin.Forms TwoPaneView 来优化 Surface Duo 和 Surface Neo 等双屏设备的应用体验。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 17ee8afa-5e7c-4a4f-a9b6-2aca03f30fe3
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials

@@ -1,10 +1,10 @@
 ---
 title: Xamarin.Essentials 平台与功能支持
 description: Xamarin.Essentials 提供了适用于任何 iOS、Android 或 UWP 应用程序的单一跨平台 API，不管如何创建用户界面，都可以通过共享代码进行访问。
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.assetid: 63FA28A5-6F52-4CB7-AF39-8DF7B436B5A4
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 08/20/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
