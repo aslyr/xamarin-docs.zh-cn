@@ -10,12 +10,12 @@ ms.date: 04/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5e9afa0f6d27003891963af5715d5721e3129306
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 33659dd52452c575c403d0a25b24f17daf9e3f17
+ms.sourcegitcommit: 8a18471b3d96f3f726b66f9bc50a829f1c122f29
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/18/2020
-ms.locfileid: "84129528"
+ms.locfileid: "84988219"
 ---
 # <a name="xamarinforms-expander"></a>Xamarin.Forms扩展器
 
@@ -45,7 +45,6 @@ Xamarin.Forms `Expander` 控件提供可扩展容器以承载任何内容。 控
 - `ForceUpdateSizeCommand`，类型为 `ICommand` ，它定义强制更新的大小时执行的命令 `Expander` 。 此属性使用 `OneWayToSource` 绑定模式。
 - `Header`，类型为 [`View`](xref:Xamarin.Forms.View) ，用于定义标头内容。
 - `IsExpanded`，类型为 `bool` ，确定 `Expander` 是否已展开。 此属性使用 `TwoWay` 绑定模式，其默认值为 `false` 。
-- `Spacing`，类型为 `double` ，它表示标头与其内容之间的间距。 此属性的默认值为 0。
 - `State`，类型为 `ExpanderState` ，表示的状态 `Expander` 。 此属性使用 `OneWayToSource` 绑定模式。
 
 这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
@@ -224,51 +223,18 @@ expander.Content = grid;
 
 有关触发器的详细信息，请参阅[ Xamarin.Forms 触发器](~/xamarin-forms/app-fundamentals/triggers.md)。
 
-## <a name="define-the-space-between-header-and-content"></a>定义标题和内容之间的空间
-
-默认情况下，中的内容 `Expander` 会直接显示在其标题的下方。 但是，可以通过将 `Spacing` 属性设置为一个 `double` 表示内容和标题的空白间距的值来更改此行为：
-
-```xaml
-<Expander Spacing="50"
-          IsExpanded="true">
-    <Expander.Header>
-        <Label Text="Baboon"
-               FontAttributes="Bold"
-               FontSize="Medium" />
-    </Expander.Header>
-    <Grid Padding="10">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-        </Grid.ColumnDefinitions>
-        <Image Source="http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
-               Aspect="AspectFill"
-               HeightRequest="120"
-               WidthRequest="120" />
-        <Label Grid.Column="1"
-               Text="Baboons are African and Arabian Old World monkeys belonging to the genus Papio, part of the subfamily Cercopithecinae."
-               FontAttributes="Italic" />
-    </Grid>
-</Expander>
-```
-
-在此示例中， `Expander` 内容显示在其标头下方50与设备无关的单位：
-
-![在 iOS 和 Android 上具有间距集的扩展器的屏幕截图](expander-images/expander-spacing.png "在 iOS 和 Android 上设置了间距的扩展器")
-
 ## <a name="embed-an-expander-in-an-expander"></a>在扩展器中嵌入扩展器
 
 的内容 `Expander` 可以设置为另一个 `Expander` 控件，以启用多个级别的扩展。 以下 XAML 显示了 `Expander` 其内容为另一个 `Expander` 对象的：
 
 ```xaml
-<Expander Spacing="10">
+<Expander>
     <Expander.Header>
         <Label Text="{Binding Name}"
                FontAttributes="Bold"
                FontSize="Medium" />
     </Expander.Header>
-    <Expander Padding="10"
-              Spacing="10">
+    <Expander Padding="10">
         <Expander.Header>
             <Label Text="{Binding Location}"
                    FontSize="Medium" />

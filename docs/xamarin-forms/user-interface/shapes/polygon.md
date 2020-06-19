@@ -10,12 +10,12 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: de1848f7439e62e84daea56defa3f4583f5758ea
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 455221b71c612b7987f876e8e9b82e33e5d91129
+ms.sourcegitcommit: 34fa3086c55b1e01838419c930f839c20662c362
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/18/2020
-ms.locfileid: "84947288"
+ms.locfileid: "84990869"
 ---
 # <a name="xamarinforms-shapes-polygon"></a>Xamarin.Forms形状：多边形
 
@@ -47,5 +47,5 @@ ms.locfileid: "84947288"
 
 ## <a name="related-links"></a>相关链接
 
-- [ShapeDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapedemos/)
+- [ShapeDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms形状](index.md)

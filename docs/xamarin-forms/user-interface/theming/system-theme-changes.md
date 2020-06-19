@@ -10,12 +10,12 @@ ms.date: 06/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 86ad823466470033c458ad44a404e8ab667c1b95
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 28bcbed3a03a2abbec42a619062579419a3063a4
+ms.sourcegitcommit: 8a18471b3d96f3f726b66f9bc50a829f1c122f29
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/18/2020
-ms.locfileid: "84903072"
+ms.locfileid: "84988210"
 ---
 # <a name="respond-to-system-theme-changes-in-xamarinforms-applications"></a>响应应用程序中的系统主题更改 Xamarin.Forms
 
@@ -135,13 +135,16 @@ OSAppTheme currentTheme = Application.Current.RequestedTheme;
 
 ## <a name="set-the-current-user-theme"></a>设置当前用户主题
 
-应用程序使用的主题可以通过属性进行设置 `Application.UserTheme` ，该属性的类型为 `OSAppTheme` ：
+应用程序使用的主题可以通过属性进行设置，该 `Application.UserAppTheme` 属性的类型为 `OSAppTheme` ，而不考虑当前运行的是哪个系统主题：
 
 ```csharp
 Application.Current.UserAppTheme = OSAppTheme.Dark;
 ```
 
-在此示例中，应用程序设置为使用为系统暗色模式定义的主题。
+在此示例中，应用程序设置为使用为系统暗色模式定义的主题，而不管当前操作的是哪个主题。
+
+> [!NOTE]
+> 将 `UserAppTheme` 属性设置为， `OSAppTheme.Unspecified` 默认为操作系统主题。
 
 ## <a name="react-to-theme-changes"></a>主题更改的响应
 
