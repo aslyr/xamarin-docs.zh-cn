@@ -1,8 +1,22 @@
 ---
-title： "SkiaSharp 转换" 说明： "本文探讨了用于在应用程序中显示 SkiaSharp 图形的转换 Xamarin.Forms ，并通过示例代码对此进行了演示。"
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： E9BE322E-ECB3-4395-AFE4-4474A0F25551 author： davidbritch： dabritch ms. 日期：03/10/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: SkiaSharp 转换
+description: 本文探讨了用于在应用程序中显示 SkiaSharp 图形的转换 Xamarin.Forms ，并通过示例代码对此进行了演示。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: E9BE322E-ECB3-4395-AFE4-4474A0F25551
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e20ea5d1d3f813b04a927601fbe1180ff39ed176
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140187"
 ---
-
 # <a name="skiasharp-transforms"></a>SkiaSharp 转换
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

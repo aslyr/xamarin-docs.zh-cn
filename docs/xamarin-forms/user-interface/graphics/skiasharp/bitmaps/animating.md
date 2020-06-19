@@ -1,8 +1,22 @@
 ---
-title： "对 SkiaSharp 位图进行动画处理" 说明： "了解如何按顺序显示一系列位图并呈现动画 GIF 文件。"
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 97142ADC-E2FD-418C-8A09-9C561AEE5BFD author： davidbritch： dabritch ms. 日期：07/12/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 动画处理 SkiaSharp 位图
+description: 了解如何按顺序显示一系列位图并渲染动画 GIF 文件，从而执行位图动画。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 97142ADC-E2FD-418C-8A09-9C561AEE5BFD
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/12/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 763f44c26d653aa32429b2aa764989e18e8b8078
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139966"
 ---
-
 # <a name="animating-skiasharp-bitmaps"></a>动画处理 SkiaSharp 位图
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

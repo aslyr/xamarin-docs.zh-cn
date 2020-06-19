@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms listview" 说明： "本指南介绍了 Xamarin.Forms ListView，可用于在交互式列表中显示数据。"
-ms-chap： xamarin assetid： FEFDF7E0-720F-4BD1-863F-4477226AA695： xamarin 窗体作者： davidbritch： dabritch ms. 日期：09/04/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms视图
+description: 本指南介绍了 Xamarin.Forms ListView，可用于在交互式列表中显示数据。
+ms.prod: xamarin
+ms.assetid: FEFDF7E0-720F-4BD1-863F-4477226AA695
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/04/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a1ff8dd5c8a8a4051cea8ce4b288c42bdbaa8d31
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139901"
 ---
-
 # <a name="xamarinforms-listview"></a>Xamarin.Forms视图
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)
@@ -24,7 +38,7 @@ ms-chap： xamarin assetid： FEFDF7E0-720F-4BD1-863F-4477226AA695： xamarin �
 
 有关将数据绑定到实例的详细信息 `ListView` ，请参阅[ListView 数据源](~/xamarin-forms/user-interface/listview/data-and-databinding.md)。
 
-## <a name="components"></a>组件
+## <a name="components"></a>组件数
 
 `ListView`控件具有许多可用于测试每个平台的本机功能的组件。 以下部分定义了这些组件。
 

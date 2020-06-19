@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms 说明：" 中的图像可以在平台之间共享 Xamarin.Forms ，它们可以专门针对每个平台进行加载，也可以下载以便显示。 "
-ms-chap： xamarin assetid： C025AB53-05CC-49BA-9815-75D6DF9E40B7： xamarin 窗体作者： davidbritch： dabritch ms. 日期：12/04/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 中的映像Xamarin.Forms
+description: 可以在平台之间共享映像 Xamarin.Forms ，可以为每个平台专门加载映像，也可以下载映像以供显示。
+ms.prod: xamarin
+ms.assetid: C025AB53-05CC-49BA-9815-75D6DF9E40B7
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/19/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7117bb809c43ab5edb67e8367840b17cd1d97ef9
+ms.sourcegitcommit: c000c0ed15b7b2ef2a8f46a39171e11b6d9f8a5d
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84980085"
 ---
-
 # <a name="images-in-xamarinforms"></a>中的映像Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
@@ -15,7 +29,7 @@ _可以在平台之间共享映像 Xamarin.Forms ，可以为每个平台专门�
 
 ## <a name="display-images"></a>显示图像
 
-Xamarin.Forms使用 [`Image`](xref:Xamarin.Forms.Image) 视图在页面上显示图像。 它有两个重要属性：
+Xamarin.Forms使用 [`Image`](xref:Xamarin.Forms.Image) 视图在页面上显示图像。 它有几个重要属性：
 
 - [`Source`](xref:Xamarin.Forms.Image.Source)- [`ImageSource`](xref:Xamarin.Forms.ImageSource) 实例，文件、Uri 或资源，用于设置要显示的图像。
 - [`Aspect`](xref:Xamarin.Forms.Image.Aspect)-如何在它所显示的边界内调整图像大小（是伸展、裁剪还是黑边）。
@@ -39,7 +53,7 @@ Xamarin.Forms使用 [`Image`](xref:Xamarin.Forms.Image) 视图在页面上显示
 
 可以将图像文件添加到每个应用程序项目并从 Xamarin.Forms 共享代码中引用。 当图像特定于平台时，例如在不同平台上使用不同分辨率或稍微不同的设计时，需要这种分发图像的方法。
 
-若要在所有应用中使用单个图像，*必须在每个平台上使用相同的文件名*，并且它应是有效的 Android 资源名称（即，只允许使用小写字母、数字、下划线和句点）。
+若要在所有应用中使用单个图像，*必须在每个平台上使用相同的文件名*，并且它应该是有效的 Android 资源名称（即，只允许使用小写字母、数字、下划线和句点）。
 
 - **ios** -从 ios 9 开始管理和支持映像的首选方法是使用**资产目录映像集，该映像集**应包含支持各种设备所需的所有版本映像和应用程序的缩放比例。 有关详细信息，请参阅[将图像添加到资产目录映像集](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
 - 带有生成操作的 "**资源/** 图形目录" 中的**Android**位置图像 **： AndroidResource**。 还可以提供图像的高 DPI 和低 DPI 版本（在适当命名的**资源**子目录中，如**ldpi**、 **hdpi**和可**绘制-xhdpi**）。
@@ -231,14 +245,13 @@ var imageSource = ImageSource.FromResource("filename.png",
 可以自动下载图像以进行显示，如下面的 XAML 所示：
 
 ```xaml
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
        x:Class="WorkingWithImages.DownloadImagesXaml">
   <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
     <Label Text="Image UriSource Xaml" />
-    <Image Source="https://xamarin.com/content/images/pages/forms/example-app.png" />
-    <Label Text="example-app.png gets downloaded from xamarin.com" />
+    <Image Source="https://aka.ms/campus.jpg" />
+    <Label Text="campus.jpg gets downloaded from microsoft.com" />
   </StackLayout>
 </ContentPage>
 ```
@@ -248,7 +261,7 @@ var imageSource = ImageSource.FromResource("filename.png",
 ```csharp
 var webImage = new Image {
      Source = ImageSource.FromUri(
-        new Uri("https://xamarin.com/content/images/pages/forms/example-app.png")
+        new Uri("https://aka.ms/campus.jpg")
      ) };
 ```
 
@@ -257,7 +270,7 @@ var webImage = new Image {
 还存在对 URI 字符串的隐式转换，因此下面的示例也适用：
 
 ```csharp
-webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.png";
+webImage.Source = "https://aka.ms/campus.jpg";
 ```
 
 以下屏幕截图显示了在每个平台上显示远程映像的结果：
@@ -274,7 +287,7 @@ webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.pn
 默认情况下，缓存处于启用状态，并将在本地存储该图像24小时。 若要为特定映像禁用缓存，请按如下所示实例化映像源：
 
 ```csharp
-image.Source = new UriImageSource { CachingEnabled = false, Uri = new Uri("http://server.com/image") };
+image.Source = new UriImageSource { CachingEnabled = false, Uri = new Uri("https://server.com/image") };
 ```
 
 若要设置特定的缓存时间段（例如5天），请按如下所示实例化映像源：
@@ -282,7 +295,7 @@ image.Source = new UriImageSource { CachingEnabled = false, Uri = new Uri("http:
 ```csharp
 webImage.Source = new UriImageSource
 {
-    Uri = new Uri("https://xamarin.com/content/images/pages/forms/example-app.png"),
+    Uri = new Uri("https://aka.ms/campus.jpg"),
     CachingEnabled = true,
     CacheValidity = new TimeSpan(5,0,0,0)
 };

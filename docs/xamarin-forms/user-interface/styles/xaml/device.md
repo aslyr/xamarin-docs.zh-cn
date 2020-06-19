@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms description：" 中的设备样式在 Xamarin.Forms Device 类中包含六个动态样式（称为设备样式）。 本文介绍如何在应用程序中使用设备样式 Xamarin.Forms 。
-ms-chap： xamarin assetid：7FF19ED1-0822-4238-9435-AD970317A2F8： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/17/2016 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 设备样式Xamarin.Forms
+description: Xamarin.Forms在 Device 类中包含六种动态样式，称为设备样式。 本文介绍如何在应用程序中使用设备样式 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 7FF19ED1-0822-4238-9435-AD970317A2F8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/17/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b835847fea39e1c2f968e7b81fb9d22f68ea461c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140096"
 ---
-
 # <a name="device-styles-in-xamarinforms"></a>设备样式Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)

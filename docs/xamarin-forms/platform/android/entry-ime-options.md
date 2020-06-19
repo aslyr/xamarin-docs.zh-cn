@@ -1,8 +1,22 @@
 ---
-title： "Android 上的条目输入法编辑器选项" 说明： "平台细节使你可以使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 平台特定的，它为输入的软键盘设置输入法编辑器选项。
-ms-chap： xamarin assetid：7909C738-04B2-4476-9A3B-A6D79BC3B9B2： xamarin 窗体作者： davidbritch： dabritch ms. 日期：07/10/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Android 上的条目输入法编辑器选项
+description: 平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 平台特定的，它为输入的软键盘设置输入法编辑器选项。
+ms.prod: xamarin
+ms.assetid: 7909C738-04B2-4476-9A3B-A6D79BC3B9B2
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: bb77e9fafe39bf76a7d4290dba0bc658cd15094f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140031"
 ---
-
 # <a name="entry-input-method-editor-options-on-android"></a>Android 上的条目输入法编辑器选项
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

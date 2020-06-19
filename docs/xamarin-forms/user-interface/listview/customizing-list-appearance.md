@@ -1,8 +1,22 @@
 ---
-标题： "ListView 外观" 说明： "本文介绍了如何 Xamarin.Forms 使用标题、表尾、组和可变高度单元在应用程序中自定义 listview。"
-ms-chap： xamarin assetid： DC8009B0-4371-4D60-885A-5362FC7EE3E5： xamarin 窗体作者： davidbritch： dabritch ms. 日期：12/13/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: ListView 外观
+description: 本文介绍如何 Xamarin.Forms 使用标题、页脚、组和可变高度单元在应用程序中自定义 listview。
+ms.prod: xamarin
+ms.assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/13/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c7fdecdb0ce209c88dbe9e6f4e6e6588ec4fd3fd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139914"
 ---
-
 # <a name="listview-appearance"></a>ListView 外观
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)

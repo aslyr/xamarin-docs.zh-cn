@@ -1,7 +1,22 @@
 ---
-标题： "松散耦合组件之间的通信" 说明： "本章介绍了 eShopOnContainers 移动应用如何实现发布-订阅模式，允许在不方便的组件之间进行基于消息的通信，这些组件不方便地通过对象和类型引用进行链接，例如： xamarin： xamarin assetid： 1194af33-8a91-48d2-88b5-b84d77f2ce69 ms。技术： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/07/2017： Xamarin.Forms Xamarin.Essentials
+title: 松散耦合组件之间的通信
+description: '本章介绍了 eShopOnContainers 移动应用如何实现发布-订阅模式，允许在不方便地通过对象和类型引用进行链接的组件之间进行基于消息的通信 '
+ms.prod: xamarin
+ms.assetid: 1194af33-8a91-48d2-88b5-b84d77f2ce69
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c35cd6e30e7843cda0431581025aa7440a21cc29
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140044"
 ---
-
 # <a name="communicating-between-loosely-coupled-components"></a>松散耦合组件之间的通信
 
 发布-订阅模式是一种消息传递模式，在此模式下，发布者可在无需知道任何接收方（称为订阅方）的情况下发送消息。 同样，订阅方可在不了解任何发布方的情况下侦听特定消息。

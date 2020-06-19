@@ -1,8 +1,22 @@
 ---
-标题： "说明中使用 UrhoSharp Xamarin.Forms ：" 本文介绍了如何使用 UrhoSharp 将3d 图形添加到 Xamarin.Forms 应用程序以实现高级可视化。 "
-ms-chap： xamarin assetid：0646B98E-CC04-4537-9715-9F82338FD7FF： xamarin 窗体作者： davidbritch： dabritch ms. 日期：03/11/2016 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用 UrhoSharpXamarin.Forms
+description: 本文介绍如何使用 UrhoSharp 将三维图形添加到 Xamarin.Forms 应用程序中，以便进行高级可视化。
+ms.prod: xamarin
+ms.assetid: 0646B98E-CC04-4537-9715-9F82338FD7FF
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/11/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fbf717092da7f77e265803fae87efb5bf0e9876f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84574361"
 ---
-
 # <a name="using-urhosharp-in-xamarinforms"></a>使用 UrhoSharpXamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/urho-samples/tree/master/FormsSample)

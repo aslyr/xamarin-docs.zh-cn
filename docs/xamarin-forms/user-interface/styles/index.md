@@ -1,8 +1,22 @@
 ---
-标题： "设置 Xamarin.Forms 应用样式" 说明： "本指南说明如何 Xamarin.Forms 使用 XAML 样式和级联样式表来设置应用程序的样式。"
-ms-chap： xamarin assetid： EABF5072-B89B-4356-B7B3-1C6B40358926 毫秒： xamarin 窗体作者： davidbritch 毫秒. 作者： dabritch 毫秒。日期：04/28/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 设置 Xamarin.Forms 应用样式
+description: 本指南说明如何 Xamarin.Forms 使用 XAML 样式和级联样式表来为应用程序应用样式。
+ms.prod: xamarin
+ms.assetid: EABF5072-B89B-4356-B7B3-1C6B40358926
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/28/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8775793c2d9ae1ba6e1eba38fe48647b43056bf8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140107"
 ---
-
 # <a name="styling-xamarinforms-apps"></a>设置 Xamarin.Forms 应用样式
 
 ## <a name="styling-xamarinforms-apps-using-xaml-stylesxamlindexmd"></a>[使用 XAML 样式设置 Xamarin.Forms 应用的样式](xaml/index.md)

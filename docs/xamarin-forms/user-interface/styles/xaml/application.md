@@ -1,8 +1,22 @@
 ---
-标题： "说明：" 中的全局样式 Xamarin.Forms 可通过将样式添加到应用程序的资源字典中来全局使用。 这有助于避免跨页面或控件的样式的重复。 "
-ms-chap： xamarin assetid： BDC65F82-65E0-4C8E-BB91-8E340EB2D15A： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/17/2016 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 中的全局样式Xamarin.Forms
+description: 通过将样式添加到应用程序的资源字典中，可以全局使用样式。 这有助于避免跨页面或控件的样式的重复。
+ms.prod: xamarin
+ms.assetid: BDC65F82-65E0-4C8E-BB91-8E340EB2D15A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/17/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2a222c3ee2234904cce94b52a14654728a1aa6d1
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140122"
 ---
-
 # <a name="global-styles-in-xamarinforms"></a>中的全局样式Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)

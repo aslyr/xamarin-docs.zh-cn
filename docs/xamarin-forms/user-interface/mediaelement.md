@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms MediaElement" 说明： "本文介绍了如何在应用程序中使用 MediaElement 播放视频和音频 Xamarin.Forms 。"
-ms-chap： xamarin assetid： e65f1e56-a80d-46c7-9ff4-7ae6650a3165： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/18/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsMediaElement
+description: 本文介绍如何使用 MediaElement 在应用程序中播放视频和音频 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: e65f1e56-a80d-46c7-9ff4-7ae6650a3165
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/18/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1dfa51177bba3ebf1e3e29208cc926c77567a048
+ms.sourcegitcommit: c000c0ed15b7b2ef2a8f46a39171e11b6d9f8a5d
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84980098"
 ---
-
 # <a name="xamarinforms-mediaelement"></a>Xamarin.FormsMediaElement
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

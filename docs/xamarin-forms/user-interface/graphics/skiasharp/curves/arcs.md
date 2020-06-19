@@ -1,8 +1,22 @@
 ---
-title： "绘制弧线的三种方式" 说明： "本文介绍如何使用 SkiaSharp 以三种不同方式定义弧线，并使用示例代码演示这一点。"
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： F1DA55E4-0182-4388-863C-5C340213BF3C author： davidbritch： dabritch ms. 日期：05/10/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 绘制弧线的三个方法
+description: 本文介绍如何使用 SkiaSharp 以三种不同方式定义弧线，并使用示例代码对此进行演示。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/10/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4eea7d500876793357113453493fa2fe2ede6cc4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139992"
 ---
-
 # <a name="three-ways-to-draw-an-arc"></a>绘制弧线的三个方法
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

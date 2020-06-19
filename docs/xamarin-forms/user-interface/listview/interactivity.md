@@ -1,8 +1,22 @@
 ---
-标题： "ListView 交互" 说明： "本文介绍了如何 Xamarin.Forms 通过实现选择、上下文操作和请求刷新来向 ListView 添加交互性。"
-ms-chap： xamarin assetid： CD14EB90-B08C-4E8F-A314-DA0EEC76E647： xamarin 窗体作者： davidbritch： dabritch ms. 日期：09/25/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: ListView 交互
+description: 本文介绍如何 Xamarin.Forms 通过实现选择、上下文操作和请求刷新来向 ListView 添加交互性。
+ms.prod: xamarin
+ms.assetid: CD14EB90-B08C-4E8F-A314-DA0EEC76E647
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/25/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5142965216b328172ae7fa04cdc0c13590f5ff38
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139881"
 ---
-
 # <a name="listview-interactivity"></a>ListView 交互性
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)

@@ -1,8 +1,22 @@
 ---
-标题： "缩放转换" 说明： "Thhis 文章探讨了用于将对象缩放到各种大小的 SkiaSharp 缩放转换，并通过示例代码对此进行了演示。"
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B author： davidbritch： dabritch ms. 日期：03/23/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 缩放转换
+description: Thhis 文章探讨了用于将对象缩放到各种大小的 SkiaSharp 缩放转换，并通过示例代码对此进行了演示。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/23/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: bdf33f499bf43d99436cef815c03d35b27866b80
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140174"
 ---
-
 # <a name="the-scale-transform"></a>缩放转换
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

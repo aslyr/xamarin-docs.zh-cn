@@ -1,8 +1,22 @@
 ---
-title： "SkiaSharp 位图" description： "了解如何加载、保存、显示、创建、绘制、绘制和访问 SkiaSharp 位图的位。"
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 70C19370-157A-4B1B-9532-F77E32AC21BC author： davidbritch： dabritch ms. 日期：07/17/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: SkiaSharp 位图
+description: 了解如何加载、保存、显示、创建、绘制、动态显示和访问 SkiaSharp 位图的位。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 70C19370-157A-4B1B-9532-F77E32AC21BC
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/17/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1d21fc199dd67471440ca0e3eeaf9a140e7a1967
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140226"
 ---
-
 # <a name="skiasharp-bitmaps"></a>SkiaSharp 位图
 
 位图是与显示设备的像素相对应的数据的矩形数组。 与位图关联的图形编程区域有时称为_光栅图形_（在早期视频显示的扫描行之后），与线条和曲线的_矢量图形_不同。 

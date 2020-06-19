@@ -1,8 +1,22 @@
 ---
-title： "SkiaSharp 中的3D 旋转" 说明： "本文介绍了如何使用非仿射转换在三维空间中旋转2D 对象，并使用示例代码对此进行了演示。"
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： B5894EA0-C415-41F9-93A4-BBF6EC72AFB9 author： davidbritch： dabritch ms. 日期：04/14/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: SkiaSharp 中的三维旋转
+description: 本文介绍如何使用非仿射转换在三维空间中旋转2D 对象，并使用示例代码对此进行演示。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/14/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3706139a2c15d01af67203c2bd09b281de80ed52
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140200"
 ---
-
 # <a name="3d-rotations-in-skiasharp"></a>SkiaSharp 中的三维旋转
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

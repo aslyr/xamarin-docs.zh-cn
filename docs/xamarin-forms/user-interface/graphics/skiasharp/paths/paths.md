@@ -1,8 +1,22 @@
 ---
-title： "SkiaSharp 中的路径基础知识" 说明： "本文探讨了用于组合连接的线条和曲线的 SkiaSharp SKPath 对象，并通过示例代码演示了这一点。"
-ms-chap： xamarin assetid： A7EDA6C2-3921-4021-89F3-211551E430F1： xamarin-skiasharp author： davidbritch： dabritch 毫秒。日期：03/10/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: SkiaSharp 中的路径基础知识
+description: 本文探讨了用于组合已连接线条和曲线的 SkiaSharp SKPath 对象，并通过示例代码对此进行了演示。
+ms.prod: xamarin
+ms.assetid: A7EDA6C2-3921-4021-89F3-211551E430F1
+ms.technology: xamarin-skiasharp
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6ceac2d866e67af5cf3496fcf8c072ae83ecfe38
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140239"
 ---
-
 # <a name="path-basics-in-skiasharp"></a>SkiaSharp 中的路径基础知识
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
