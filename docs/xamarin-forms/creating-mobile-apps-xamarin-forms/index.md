@@ -1,8 +1,22 @@
 ---
-title:"《使用 Xamarin.Forms 创建移动应用》书籍" description:"阅读 Charles Petzold 撰写的《使用 Xamarin.Forms 创建移动应用》一书的电子版，了解如何开发 Xamarin.Forms 应用程序。"
-ms.prod: xamarin ms.assetid:CDE99818-689B-4376-9DC4-C4102AC0F931 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2018 年 7 月 19 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 《使用 Xamarin.Forms 创建移动应用》书籍
+description: 阅读 Charles Petzold 撰写的《使用 Xamarin.Forms 创建移动应用》一书的电子版，了解如何开发 Xamarin.Forms 应用程序。
+ms.prod: xamarin
+ms.assetid: CDE99818-689B-4376-9DC4-C4102AC0F931
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/19/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e38c319db0d0adf23a2ec0d328ccc3822e33f66d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198285"
 ---
-
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>《使用 Xamarin.Forms 创建移动应用》书籍
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-book-samples)

@@ -1,9 +1,21 @@
 ---
-title:"什么是 Xamarin.Forms？"
-description:"本文介绍 Xamarin.Forms 和相关库。"
-ms.prod: xamarin ms.assetid:C1E24DB9-3099-4F79-BB88-10AABF7D4614 author: profexorgeek ms.author: jusjohns ms.date:2020 年 5 月 28 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 什么是 Xamarin.Forms？
+description: 本文介绍 Xamarin.Forms 和相关库。
+ms.prod: xamarin
+ms.assetid: C1E24DB9-3099-4F79-BB88-10AABF7D4614
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 05/28/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: eb76da9be7fcb227c465c0a046b967b2f70b1cfb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198308"
 ---
-
 # <a name="what-is-xamarinforms"></a>什么是 Xamarin.Forms？
 
 [![iOS 和 Android 中的示例 Xamarin.Forms 应用程序的屏幕截图](what-is-xamarin-forms-images/xamarin-forms-app-cropped.png)](what-is-xamarin-forms-images/xamarin-forms-app.png#lightbox)
@@ -63,7 +75,7 @@ Xamarin.Forms Shell 简化了移动应用程序开发，方法是提供大多数
 
 Xamarin.Forms 提供了一个公共 API，它可跨平台呈现本机控件，但特定平台的功能可能在其他平台上不存在。 例如，Android 平台具有用于在 `ListView` 中快速滚动的本机功能，但 iOS 却没有。 通过 Xamarin.Forms 平台特定内容可以使用仅在特定平台上提供的功能，而无需创建自定义呈现器或效果。
 
-Xamarin.Forms 包括用于各种特定于平台的功能的预建解决方案。 有关详细信息，请参见:
+Xamarin.Forms 包括用于各种特定于平台的功能的预建解决方案。 有关详情，请参阅：
 
 - [Xamarin.Forms 平台特定内容](~/xamarin-forms/platform/platform-specifics/index.md)
 - [Android 平台特定内容](~/xamarin-forms/platform/android/index.md)
