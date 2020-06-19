@@ -1,8 +1,22 @@
 ---
-标题： "在 SkiaSharp 位图上创建和绘制" 说明： "了解如何创建 SkiaSharp 位图，然后通过创建基于它们的画布在这些位图上进行绘制。"
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 79BD3266-D457-4E50-BDDF-33450035FA0F author： davidbritch： dabritch ms. 日期：07/17/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 在 SkiaSharp 位图上创建和绘制
+description: 了解如何创建 SkiaSharp 位图，然后在这些位图上创建基于它们的画布。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/17/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c045e297beca675c0582efc2f75b1d6b2bcedcf8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573285"
 ---
-
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>在 SkiaSharp 位图上创建和绘制
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,7 +1,21 @@
 ---
-标题： "Azure SignalR Service with Xamarin.Forms " 说明： "Azure SignalR service 和 Azure Functions 入门"，其中包含 Xamarin.Forms "： xamarin assetid： 1B9A69EF-C200-41BF-B098-D978D7F9CD8F author： profexorgeek ms. 作者： jusjohns ms. 日期：06/07/2019： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Azure SignalR 服务Xamarin.Forms
+description: Azure SignalR Service 和 Azure Functions 入门Xamarin.Forms
+ms.prod: xamarin
+ms.assetid: 1B9A69EF-C200-41BF-B098-D978D7F9CD8F
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 06/07/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ffa44beb68dc845a64d8bf2a9f86f6d7e56df8f9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139433"
 ---
-
 # <a name="azure-signalr-service-with-xamarinforms"></a>Azure SignalR 服务Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresignalr/)

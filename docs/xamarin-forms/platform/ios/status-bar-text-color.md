@@ -1,8 +1,22 @@
 ---
-标题： "iOS 上的 NavigationPage 栏文本颜色模式" 说明： "平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 平台特定的来控制 NavigationPage 上的状态栏文本颜色是否与导航栏的发光度相匹配。
-ms-chap： xamarin assetid：03698A44-39F1-4030-9AF5-F10A6713828A： xamarin 窗体作者： davidbritch： dabritch ms. 日期：10/24/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: IOS 上的 NavigationPage 栏文本颜色模式
+description: 平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 平台特定的来控制 NavigationPage 上的状态栏文本颜色是否与导航栏的发光度相匹配。
+ms.prod: xamarin
+ms.assetid: 03698A44-39F1-4030-9AF5-F10A6713828A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: dcbc20139b989ced11f2d1d890ca7dd99a780e96
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137054"
 ---
-
 # <a name="navigationpage-bar-text-color-mode-on-ios"></a>IOS 上的 NavigationPage 栏文本颜色模式
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

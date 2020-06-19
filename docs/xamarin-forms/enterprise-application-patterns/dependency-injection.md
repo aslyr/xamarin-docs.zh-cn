@@ -1,8 +1,22 @@
 ---
-标题： "依赖关系注入" 说明： "本章节介绍了 eShopOnContainers 移动应用如何使用依赖关系注入将具体类型从依赖于这些类型的代码中分离出来。"
-ms-chap： xamarin assetid： a150f2d1-06f8-4aed-ab4e-7a847d69f103： xamarin 窗体作者： davidbritch： dabritch ms. 日期：11/04/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 依赖关系注入
+description: 本章介绍了 eShopOnContainers 移动应用如何使用依赖关系注入将具体类型从依赖于这些类型的代码中分离出来。
+ms.prod: xamarin
+ms.assetid: a150f2d1-06f8-4aed-ab4e-7a847d69f103
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/04/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 99cac3c597cf1d7351d3214ce59fd0a0a0a46400
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572346"
 ---
-
 # <a name="dependency-injection"></a>依赖关系注入
 
 通常，在实例化对象时将调用类构造函数，并且该对象需要的任何值都将作为参数传递到构造函数。 这是依赖关系注入的示例，专门称为*构造函数注入*。 将对象所需的依赖项注入构造函数。

@@ -1,8 +1,23 @@
 ---
-title： " Xamarin.Forms XAML 基础知识" 说明： "本指南介绍了如何开始对移动设备进行跨平台 XAML。 XAML 允许开发人员 Xamarin.Forms 使用标记而不是代码来定义应用程序中的用户界面。
-ms-chap： xamarin ms-chap： xamarin ms-chap： assetid：67CC2CD6-D10A-4B14-9696-1D3A410EFFBF： xamarin 窗体 author： davidbritch： dabritch ms. 日期：10/25/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsXAML 基础知识
+description: 本指南介绍了如何开始对移动设备进行跨平台 XAML。 XAML 允许开发人员 Xamarin.Forms 使用标记而不是代码来定义应用程序中的用户界面。
+ms.prod: xamarin
+ms.custom: video
+ms.assetid: 67CC2CD6-D10A-4B14-9696-1D3A410EFFBF
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/25/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8f5f69038f7d5cfe7ad46f013acb1519c4e9569f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138614"
 ---
-
 # <a name="xamarinforms-xaml-basics"></a>Xamarin.FormsXAML 基础知识
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)

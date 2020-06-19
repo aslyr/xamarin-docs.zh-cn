@@ -1,8 +1,22 @@
 ---
-标题： "企业应用导航" 说明： "本章节介绍了 eShopOnContainers 移动应用如何执行视图模型的第一个导航。
-ms-chap： xamarin assetid：4cad57b5-7fe4-4527-a988-d9b60c9620b4： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/07/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 企业应用导航
+description: 本章介绍了 eShopOnContainers 移动应用如何从视图模型执行视图模型优先导航。
+ms.prod: xamarin
+ms.assetid: 4cad57b5-7fe4-4527-a988-d9b60c9620b4
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ca562120a819d4d9fe09b2ee5891a78f1010b1a5
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572021"
 ---
-
 # <a name="enterprise-app-navigation"></a>企业应用导航
 
 Xamarin.Forms支持页面导航，这通常是由于用户与 UI 交互引起的，或者由于内部逻辑驱动状态更改而导致的应用本身。 但是，导航可能会很复杂，无法在使用模型-视图-ViewModel （MVVM）模式的应用程序中实现，因为必须满足以下挑战：

@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms 滑块" 说明： " Xamarin.Forms 滑块是一个水平条，用户可以操作它来从连续范围中选择双精度值。 本文介绍如何使用 Slider 类从连续值的范围中选择一个值。 "
-ms-chap： xamarin assetid：36B1C645-26E0-4874-B6B6-BDBF77662878： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/27/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms滑动
+description: Xamarin.Forms滚动条是一个水平条，用户可以对其进行操作，以从连续范围中选择双精度值。 本文介绍如何使用 Slider 类从连续值的范围中选择值。
+ms.prod: xamarin
+ms.assetid: 36B1C645-26E0-4874-B6B6-BDBF77662878
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/27/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9fc61dcac588f49fc1df7ee96792cf55bdfa46c5
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572034"
 ---
-
 # <a name="xamarinforms-slider"></a>Xamarin.Forms滑动
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)

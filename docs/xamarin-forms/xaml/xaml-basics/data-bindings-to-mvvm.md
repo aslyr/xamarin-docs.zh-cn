@@ -1,8 +1,23 @@
 ---
-title： "第5部分。 从数据绑定到 MVVM "description：" MVVM 模式强制分离三个软件层（XAML 用户界面，称为视图）基本数据，称为模型;在视图和模型之间使用中间名为 "ViewModel"。
-ms-chap： xamarin ms-chap： xamarin ms-chap： assetid：48B37D44-4FB1-41B2-9A5E-6D383B041F81： xamarin 窗体 author： davidbritch： dabritch ms. 日期：10/25/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 第 5 部分。 从数据绑定到 MVVM
+description: MVVM 模式强制分隔三个软件层（XAML 用户界面，称作视图）：基本数据，称为模型;在视图和模型之间使用中间名为 ViewModel。
+ms.prod: xamarin
+ms.custom: video
+ms.assetid: 48B37D44-4FB1-41B2-9A5E-6D383B041F81
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/25/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 047cf963394325e8f88759ffe9da7dcf2ca3ad12
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127525"
 ---
-
 # <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部分。 从数据绑定到 MVVM
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)

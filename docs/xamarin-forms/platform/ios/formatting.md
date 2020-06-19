@@ -1,8 +1,22 @@
 ---
-标题： "添加特定于 iOS 的格式设置" 说明： "本文介绍了如何设置特定于 iOS 的外观，而无需使用 Xamarin.Forms 自定义呈现器。"
-ms-chap： xamarin assetid： CE50E207-D092-4D88-8439-1B51F178E7ED： xamarin 窗体作者： davidbritch： dabritch ms. 日期：01/29/2016 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 添加特定于 iOS 的格式
+description: 本文介绍如何在不使用自定义呈现器的情况下设置特定于 iOS 的外观 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: CE50E207-D092-4D88-8439-1B51F178E7ED
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/29/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 062dd77f1dc7b82f16bfbc6d46e44d4adeb73350
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84564701"
 ---
-
 # <a name="adding-ios-specific-formatting"></a>添加特定于 iOS 的格式
 
 设置特定于 iOS 格式的一种方法是为控件创建[自定义呈现](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)器，并为每个平台设置特定于平台的样式和颜色。

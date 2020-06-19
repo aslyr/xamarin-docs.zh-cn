@@ -1,8 +1,22 @@
 ---
-title： "SkiaSharp 着色器" 说明： "使用着色器创建渐变、位图图块和 Perlin 杂色"。
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 272B1BEB-0CBC-4E81-A3B9-A9C69AEE3722 author： davidbritch： dabritch ms. 日期：08/23/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: SkiaSharp 着色器
+description: 使用着色器可以创建渐变、位图图块和 Perlin 干扰。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 272B1BEB-0CBC-4E81-A3B9-A9C69AEE3722
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8f4ef3a583a7f9078f62c899d3b2abfc0848cc79
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135429"
 ---
-
 # <a name="skiasharp-shaders"></a>SkiaSharp 着色器
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

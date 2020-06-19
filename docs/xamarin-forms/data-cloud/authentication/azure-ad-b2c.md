@@ -1,8 +1,22 @@
 ---
-标题： "使用 Azure Active Directory B2C 对用户进行身份验证" 说明： "Azure Active Directory B2C 为面向消费者的 web 和移动应用程序提供云标识管理。 本文介绍如何使用 Azure Active Directory B2C 将标识管理集成到使用 Microsoft 身份验证库的移动应用程序中。 "
-ms-chap： xamarin assetid： B0A5DB65-0585-4A00-B908-22CCC286E6B6： xamarin 窗体作者： davidbritch： dabritch ms. 日期：12/04/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用 Azure Active Directory B2C 对用户进行身份验证
+description: Azure Active Directory B2C 为面向消费者的 web 和移动应用程序提供云标识管理。 本文介绍如何使用 Azure Active Directory B2C 将标识管理集成到使用 Microsoft 身份验证库的移动应用程序中。
+ms.prod: xamarin
+ms.assetid: B0A5DB65-0585-4A00-B908-22CCC286E6B6
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/04/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 64529b81a375ee5a8cc8a96ec557c03401e60495
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84130567"
 ---
-
 # <a name="authenticate-users-with-azure-active-directory-b2c"></a>使用 Azure Active Directory B2C 对用户进行身份验证
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azureadb2cauth)

@@ -1,8 +1,22 @@
 ---
-标题： "Android 平台功能" 说明： "本文介绍如何向应用程序添加特定于 Android 的功能 Xamarin.Forms 。"
-ms-chap： xamarin assetid： E24168F3-0138-4814-86EA-B467F6B8A545： xamarin 窗体作者： davidbritch： dabritch ms. 日期：12/11/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Android 平台功能
+description: 本文介绍如何将特定于 Android 的功能添加到 Xamarin.Forms 应用程序。
+ms.prod: xamarin
+ms.assetid: E24168F3-0138-4814-86EA-B467F6B8A545
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/11/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3045db1248aa16529d4e43b9a8afc97377cfd9cb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128934"
 ---
-
 # <a name="android-platform-features"></a>Android 平台功能
 
 开发 Xamarin.Forms 适用于 Android 的应用程序需要 Visual Studio。 "[支持的平台" 页](~/get-started/supported-platforms.md)包含有关先决条件的详细信息。

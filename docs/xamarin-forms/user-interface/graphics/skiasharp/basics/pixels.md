@@ -1,8 +1,22 @@
 ---
-标题： "像素和与设备无关的单位" 说明： "本文探讨了 SkiaSharp 坐标和坐标之间的差异 Xamarin.Forms ，并通过示例代码演示了这一点。"
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 26C25BB8-FBE8-4B77-B01D-16A163A16890 author： davidbritch： dabritch ms. 日期：02/09/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 像素和与设备无关的单位
+description: 本文探讨了 SkiaSharp 坐标和坐标之间的差异 Xamarin.Forms ，并通过示例代码对此进行了演示。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/09/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6d01018f4393ac5562220fa1f9524bc0d9872c67
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137665"
 ---
-
 # <a name="pixels-and-device-independent-units"></a>像素和与设备无关的单位
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

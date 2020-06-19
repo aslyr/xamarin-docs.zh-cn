@@ -1,8 +1,22 @@
 ---
-标题： "Android 上的 Web 上的混合内容" 说明： "平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 平台特定的，它在面向 API 21 或更高版本的应用程序中显示 Web 视图中的混合内容。 "
-ms-chap： xamarin assetid：68F908F3-04C5-4B91-B6E5-B7E8357B4154： xamarin 窗体作者： davidbritch： dabritch ms. 日期：07/10/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Android 上的 Web 视图混合内容
+description: 平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 平台特定的，在面向 API 21 或更高版本的应用程序中显示 Web 视图中的混合内容。
+ms.prod: xamarin
+ms.assetid: 68F908F3-04C5-4B91-B6E5-B7E8357B4154
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7269b0617be7199c365f350fc26ecd42256e28f3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128448"
 ---
-
 # <a name="webview-mixed-content-on-android"></a>Android 上的 Web 视图混合内容
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

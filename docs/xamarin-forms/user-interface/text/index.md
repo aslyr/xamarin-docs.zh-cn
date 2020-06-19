@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms 说明：" 中的文本 Xamarin.Forms 具有三个用于处理文本的主要视图，本文介绍如何使用它们在应用程序中输入和显示文本 Xamarin.Forms 。 "
-ms-chap： xamarin assetid：4DBA7689-E5C8-4583-8FB4-02AB208B4416： xamarin 窗体作者： davidbritch： dabritch ms. 日期：10/26/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 文本在Xamarin.Forms
+description: Xamarin.Forms具有三个用于处理文本的主要视图，本文介绍如何使用它们在应用程序中输入和显示文本 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 4DBA7689-E5C8-4583-8FB4-02AB208B4416
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/26/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b44a0b3e3542638874ee366a86967d73c0d53652
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573789"
 ---
-
 # <a name="text-in-xamarinforms"></a>文本在Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)

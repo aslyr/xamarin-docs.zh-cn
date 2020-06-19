@@ -1,8 +1,22 @@
 ---
-title： "SkiaSharp 线性渐变" 说明： "了解如何使用两种颜色的渐变混合绘制线条或填充区域。"
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 20A2A8C4-FEB7-478D-BF57-C92E26117B6A author： davidbritch： dabritch ms. 日期：08/23/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: SkiaSharp 线性渐变
+description: 了解如何使用两种颜色的渐变混合绘制线条或填充区域。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 20A2A8C4-FEB7-478D-BF57-C92E26117B6A
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 43aa429046c1b0f72a1cbe6a5b921da9b8907a49
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84132218"
 ---
-
 # <a name="the-skiasharp-linear-gradient"></a>SkiaSharp 线性渐变
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

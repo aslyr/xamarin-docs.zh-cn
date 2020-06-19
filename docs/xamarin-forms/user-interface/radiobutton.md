@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms 单选按钮" 说明： " Xamarin.Forms 单选按钮是一种允许用户从集中选择一个选项的按钮。 每个选项都由一个单选按钮表示，您只能在组中选择一个单选按钮。 "
-ms-chap： xamarin assetid： E2AA40E0-69A5-41DF-BFC4-C151CA657451： xamarin 窗体作者： davidbritch： dabritch ms. 日期：03/13/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsRadioButton
+description: Xamarin.Forms单选按钮是一种允许用户从集中选择一个选项的按钮。 每个选项都由一个单选按钮表示，您只能在组中选择一个单选按钮。
+ms.prod: xamarin
+ms.assetid: E2AA40E0-69A5-41DF-BFC4-C151CA657451
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/13/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f7cbd11f98127cb73514112dae785102ff9c51c0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127616"
 ---
-
 # <a name="xamarinforms-radiobutton"></a>Xamarin.FormsRadioButton
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-radiobuttondemos/)

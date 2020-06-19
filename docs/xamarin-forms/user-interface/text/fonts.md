@@ -1,8 +1,22 @@
 ---
-标题： "说明中的字体" Xamarin.Forms ：本文介绍如何在应用程序中显示文本的控件上指定字体信息 Xamarin.Forms 。
-ms-chap： xamarin assetid：49DD2249-C575-41AE-AE06-08F890FD6031： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/01/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 字体Xamarin.Forms
+description: 本文介绍如何在应用程序中显示文本的控件上指定字体信息 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 49DD2249-C575-41AE-AE06-08F890FD6031
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/01/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a657915edb41573f9637128b4c88233d58a5909a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572203"
 ---
-
 # <a name="fonts-in-xamarinforms"></a>字体Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfonts)

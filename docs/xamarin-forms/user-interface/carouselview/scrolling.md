@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms CarouselView 滚动" 说明： "当用户 swipes 启动滚动时，可以控制滚动的结束位置，以便完全显示项。 此外，CarouselView 还定义了两个 ScrollTo 方法，这些方法以编程方式将项滚动到视图。 "
-ms-chap： xamarin assetid：92D7B618-07FA-4343-9D0F-212525E92C39： xamarin 窗体作者： davidbritch： dabritch ms. 日期：01/28/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsCarouselView 滚动
+description: 当用户 swipes 启动滚动时，可以控制滚动的结束位置，以便完全显示项。 此外，CarouselView 还定义了两个 ScrollTo 方法，这些方法以编程方式将项滚动到视图中。
+ms.prod: xamarin
+ms.assetid: 92D7B618-07FA-4343-9D0F-212525E92C39
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/28/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 462948905f40679e2b931d4aa0039308c64a0a8f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136486"
 ---
-
 # <a name="xamarinforms-carouselview-scrolling"></a>Xamarin.FormsCarouselView 滚动
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms 和 Azure 认知服务简介" 说明： "本文介绍了一个示例应用程序，演示如何调用某些 Microsoft 认知服务 api。"
-ms-chap： xamarin assetid：74121ADB-1322-4C1E-A103-F37257BC7CB0： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/08/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms和 Azure 认知服务简介
+description: 本文介绍了一个示例应用程序，演示如何调用某些 Microsoft 认知服务 Api。
+ms.prod: xamarin
+ms.assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/08/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7c2a63c40d1006c7d83c9dde871e17d4b194bdca
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84129709"
 ---
-
 # <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin.Forms和 Azure 认知服务简介
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

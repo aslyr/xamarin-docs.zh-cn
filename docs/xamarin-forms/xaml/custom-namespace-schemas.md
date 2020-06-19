@@ -1,8 +1,22 @@
 ---
-标题： "说明中的 XAML 自定义命名空间架构" Xamarin.Forms 说明： "可以使用 system.windows.markup.xmlnsdefinitionattribute> 类定义 xaml 自定义命名空间架构，该架构指定自定义 URL 和一个或多个 CLR 命名空间之间的映射。 然后，可以在 XAML 命名空间声明中使用自定义命名空间架构。 "
-ms-chap： xamarin assetid： FDF201A1-8C35-4569-A728-F9B0A0C5B31A： xamarin 窗体作者： davidbritch： dabritch ms. 日期：12/21/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: XAML 自定义命名空间架构Xamarin.Forms
+description: 可以使用 System.windows.markup.xmlnsdefinitionattribute> 类定义 XAML 自定义命名空间架构，该类指定自定义 URL 和一个或多个 CLR 命名空间之间的映射。 然后，可以在 XAML 命名空间声明中使用自定义命名空间架构。
+ms.prod: xamarin
+ms.assetid: FDF201A1-8C35-4569-A728-F9B0A0C5B31A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/21/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 41a95b1a82ab8aa1f6938e5a2bcdebcef368e72d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138159"
 ---
-
 # <a name="xaml-custom-namespace-schemas-in-xamarinforms"></a>XAML 自定义命名空间架构Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)

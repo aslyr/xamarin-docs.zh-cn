@@ -1,8 +1,23 @@
 ---
-标题： "Mac 平台设置" 说明： "本文介绍如何向项目中添加 Mac 项目 Xamarin.Forms ，该项目将生成一个能够在 macOS Sierra 和 MacOS El Capitan 上运行的应用程序。
-ms-chap： xamarin assetid： EEC549E0-F182-4F9C-B2BA-B31D19569AA5： xamarin。 custom： xamu：： davidbritch： dabritch：：05/03/2017 不，不是： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Mac 平台设置
+description: 本文介绍如何向项目中添加 Mac 项目 Xamarin.Forms ，该项目将生成一个应用程序，该应用程序能够在 macOS Sierra 和 MacOS El Capitan 上运行。
+ms.prod: xamarin
+ms.assetid: EEC549E0-F182-4F9C-B2BA-B31D19569AA5
+ms.technology: xamarin-forms
+ms.custom: xamu-video
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/03/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 11897d2d3b8b7ba0a62956f1dbe4d8b873352e7a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139550"
 ---
-
 # <a name="mac-platform-setup"></a>Mac 平台设置
 
 ![预览](~/media/shared/preview.png)

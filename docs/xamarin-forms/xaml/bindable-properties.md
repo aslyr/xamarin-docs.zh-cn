@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms 可绑定属性" 说明： "本文介绍了可绑定的属性，并演示了如何创建和使用它们。"
-ms-chap： xamarin assetid：1EE869D8-6FE1-45CA-A0AD-26EC7D032AD7： xamarin 窗体作者： davidbritch： dabritch ms. 日期：01/16/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms可绑定属性
+description: 本文介绍了可绑定的属性，并演示了如何创建和使用它们。
+ms.prod: xamarin
+ms.assetid: 1EE869D8-6FE1-45CA-A0AD-26EC7D032AD7
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/16/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 33b3763075b64ea8af615465825313a527d20db2
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138172"
 ---
-
 # <a name="xamarinforms-bindable-properties"></a>Xamarin.Forms可绑定属性
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)

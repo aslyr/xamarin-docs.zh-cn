@@ -1,8 +1,22 @@
 ---
-title： "SkiaSharp 位图的分段显示" 说明： "显示 SkiaSharp 位图，使某些区域延伸，某些区域不显示。"
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 79AE2033-C41C-4447-95A6-76D22E913D19 author： davidbritch： dabritch ms. 日期：07/17/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: SkiaSharp 位图的分段显示
+description: 显示 SkiaSharp 位图，以便拉伸某些区域，而不是某些区域。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 79AE2033-C41C-4447-95A6-76D22E913D19
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/17/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5c3909271580d0568d7c603de0d434ff5b3f3bc4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138666"
 ---
-
 # <a name="segmented-display-of-skiasharp-bitmaps"></a>SkiaSharp 位图的分段显示
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

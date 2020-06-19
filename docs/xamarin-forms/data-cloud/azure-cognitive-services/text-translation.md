@@ -1,8 +1,22 @@
 ---
-title： "使用 Translator API 的文本翻译" 说明： "Microsoft Translator API 可用于通过 REST API 翻译语音和文本。 本文介绍如何使用 Microsoft 文本翻译 API 在应用程序中将文本从一种语言翻译成另一种语言 Xamarin.Forms 。 "
-ms-chap： xamarin assetid：68330242-92C5-46F1-B1E3-2395D8823B0C： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/08/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用转换器 API 进行文本翻译
+description: Microsoft Translator API 可用于通过 REST API 翻译语音和文本。 本文介绍如何使用 Microsoft 文本翻译 API 在应用程序中将文本从一种语言翻译成另一种语言 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 68330242-92C5-46F1-B1E3-2395D8823B0C
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/08/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f0f43f8f2113b6bd0a800ed3e0bd96b641575b1c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139277"
 ---
-
 # <a name="text-translation-using-the-translator-api"></a>使用转换器 API 进行文本翻译
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

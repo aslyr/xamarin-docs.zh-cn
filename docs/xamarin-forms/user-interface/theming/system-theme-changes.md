@@ -1,8 +1,22 @@
 ---
-标题： "响应应用程序中的系统主题更改 Xamarin.Forms " 说明： " Xamarin.Forms 应用程序可以通过使用 OnAppTheme 类型和 DynamicResource 标记扩展来响应操作系统主题更改。"
-assetid： D10506DD-BAA0-437F-A4AD-882D16E7B60D： xamarin： xamarin ms. 技术： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/22/2020： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 响应应用程序中的系统主题更改 Xamarin.Forms
+description: Xamarin.Forms应用程序可以使用 OnAppTheme 类型和 DynamicResource 标记扩展对操作系统主题更改做出响应。
+ms.assetid: D10506DD-BAA0-437F-A4AD-882D16E7B60D
+ms.prod: xamarin
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/17/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 86ad823466470033c458ad44a404e8ab667c1b95
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84903072"
 ---
-
 # <a name="respond-to-system-theme-changes-in-xamarinforms-applications"></a>响应应用程序中的系统主题更改 Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
@@ -11,14 +25,14 @@ assetid： D10506DD-BAA0-437F-A4AD-882D16E7B60D： xamarin： xamarin ms. 技术
 
 根据设备配置的不同原因，系统主题可能会发生变化。 这包括用户显式更改的系统主题，它因一天中的某个时间而变化，并因环境因素（如低亮度）而变化。
 
-Xamarin.Forms应用程序可以通过使用 `AppThemeColor` 类、 `OnAppTheme<T>` 类和标记扩展来定义资源来响应系统主题更改 `OnAppTheme` 。 然后，应使用标记扩展来使用这些资源 `DynamicResource` 。
+Xamarin.Forms应用程序可以通过使用带有 `AppThemeBinding` 标记扩展的资源和 `SetAppThemeColor` 和扩展方法来响应系统主题更改 `SetOnAppTheme<T>` 。
 
 > [!IMPORTANT]
 > 对系统主题更改的响应当前为试验性，只能通过设置标志来使用 `AppTheme_Experimental` 。 有关详细信息，请参阅[实验标志](~/xamarin-forms/internals/experimental-flags.md)。
 
 Xamarin.Forms为了响应系统主题更改，必须满足以下要求：
 
-- Xamarin.Forms4.6 或更高版本。
+- Xamarin.Forms4.6.0.967 或更高版本。
 - iOS 13 或更高版本。
 - Android 10 （API 29）或更高版本。
 - UWP 版本14393或更高版本。
@@ -30,123 +44,80 @@ Xamarin.Forms为了响应系统主题更改，必须满足以下要求：
 
 ## <a name="define-and-consume-theme-resources"></a>定义和使用主题资源
 
-适用于浅色和深色主题的资源可通过 `AppThemeColor` 类、 `OnAppTheme<T>` 类和标记扩展进行定义 `OnAppTheme` 。 对于每种方法，将根据当前系统主题的值自动应用这些资源。 此外，如果在应用程序运行时系统主题发生更改，则会自动更新使用这些资源的对象。
+用于浅和深色主题的资源可与 `AppThemeBinding` 标记扩展一起使用，以及 `SetAppThemeColor` 和 `SetOnAppTheme<T>` 扩展方法。 利用这些方法，将根据当前系统主题的值自动应用资源。 此外，如果在应用程序运行时系统主题发生更改，则会自动更新使用这些资源的对象。
 
-### <a name="appthemecolor"></a>AppThemeColor
+### <a name="appthemebinding-markup-extension"></a>AppThemeBinding 标记扩展
 
-`AppThemeColor`类用于定义 [`Color`](xref:Xamarin.Forms.Color) 轻薄系统主题的资源。 `AppThemeColor`应在中定义资源 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ：
-
-```xaml
-<Application ...>
-    <Application.Resources>
-        <AppThemeColor x:Key="PageBackgroundColor"
-                       Light="White"
-                       Dark="Black" />
-        <AppThemeColor x:Key="NavigationBarColor"
-                       Light="WhiteSmoke"
-                       Dark="Teal" />
-        <AppThemeColor x:Key="PrimaryColor"
-                       Light="WhiteSmoke"
-                       Dark="Teal" />
-        <AppThemeColor x:Key="SecondaryColor"
-                       Light="Black"
-                       Dark="White" />
-        <AppThemeColor x:Key="PrimaryTextColor"
-                       Light="Black"
-                       Dark="White" />
-        <AppThemeColor x:Key="SecondaryTextColor"
-                       Light="White"
-                       Dark="White" />
-        <AppThemeColor x:Key="TertiaryTextColor"
-                       Light="Gray"
-                       Dark="WhiteSmoke" />
-        <AppThemeColor x:Key="TransparentColor"
-                       Light="Transparent"
-                       Dark="Transparent" />
-    </Application.Resources>
-</Application>
-```
-
-每个 `AppThemeColor` 资源都必须具有一个 `x:Key` 属性，该属性在中为其提供一个描述性密钥 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 。 和属性的值 `Light` `Dark` 应为 [`Color`](xref:Xamarin.Forms.Color) 对象。 此外， `Default` 可以将属性设置为 `Color` ，以供使用对象默认使用。
-
-`AppThemeColor`资源可以内联使用：
-
-```xaml
-<Label Text="This monkey reacts appropriately to ridiculous assertions and actions"
-       TextColor="{DynamicResource PrimaryTextColor}" />
-```
-
-或者， `AppThemeColor` 可通过隐式或显式对象使用资源 [`Style`](xref:Xamarin.Forms.Style) ：
-
-```xaml
-<Style TargetType="NavigationPage">
-    <Setter Property="BarBackgroundColor"
-            Value="{DynamicResource NavigationBarColor}" />
-    <Setter Property="BarTextColor"
-            Value="{DynamicResource SecondaryColor}" />
-</Style>
-```
-
-> [!IMPORTANT]
-> `AppThemeColor`应使用标记扩展来使用资源 `DynamicResource` 。 这可确保在系统主题发生更改时，使用对象的外观会更新。
-
-### <a name="onappthemelttgt"></a>OnAppTheme &lt; T&gt;
-
-`OnAppTheme<T>`类用于为光速和深色系统主题定义任意类型的资源。 `OnAppTheme<T>`应在中定义资源 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ，并将 `T` 参数指定为特性的值 `x:TypeArguments` ：
-
-```xaml
-<Application ...>
-    <Application.Resources>
-        <OnAppTheme x:Key="ImageLogo"
-                    x:TypeArguments="FileImageSource"
-                    Light="lightlogo.png"
-                    Dark="darklogo.png" />
-    </Application.Resources>
-</Application>
-```
-
-每个 `OnAppTheme<T>` 资源都必须具有一个 `x:Key` 属性，该属性在中为其提供一个描述性密钥 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 。 和属性的值 `Light` `Dark` 应为定义为特性的类型的对象 `x:TypeArguments` 。 此外， `Default` 可以将属性设置为 `T` 默认情况下使用的对象类型的对象。
-
-`OnAppTheme<T>`资源可以内联使用：
-
-```xaml
-<Image Source="{DynamicResource ImageLogo}"
-       Aspect="AspectFit"
-       HeightRequest="200" /
-```
-
-或者， `OnAppTheme<T>` 可通过隐式或显式对象使用资源 [`Style`](xref:Xamarin.Forms.Style) ：
-
-```xaml
-<Style x:Key="imageLogoStyle"
-       TargetType="Image">
-    <Setter Property="Source"
-            Value="{DynamicResource ImageLogo}" />
-    <Setter Property="Aspect"
-            Value="AspectFit" />
-</Style>
-```
-
-> [!IMPORTANT]
-> `OnAppTheme<T>`应使用标记扩展来使用资源 `DynamicResource` 。 这可确保在系统主题发生更改时，使用对象的外观会更新。
-
-### <a name="onapptheme-markup-extension"></a>OnAppTheme 标记扩展
-
-`OnAppTheme`标记扩展使你能够根据当前系统主题指定要使用的资源（如图像或颜色）。 它提供与类相同的功能 `OnAppTheme<T>` ，但具有更简洁的表示形式：
+`AppThemeBinding`标记扩展使你能够根据当前系统主题使用图像或颜色等资源：
 
 ```xaml
 <ContentPage ...>
     <StackLayout Margin="20">
         <Label Text="This text is green in light mode, and red in dark mode."
-               TextColor="{OnAppTheme Light=Green, Dark=Red}" />
-        <Image Source="{OnAppTheme Light=lightlogo.png, Dark=darklogo.png}" />
+               TextColor="{AppThemeBinding Light=Green, Dark=Red}" />
+        <Image Source="{AppThemeBinding Light=lightlogo.png, Dark=darklogo.png}" />
     </StackLayout>
 </ContentPage>
 ```
 
 在此示例中， [`Label`](xref:Xamarin.Forms.Label) 当设备使用光源主题时，第一个的文本颜色设置为绿色; 当设备使用其深主题时，将设置为红色。 同样， [`Image`](xref:Xamarin.Forms.Image) 根据当前系统主题显示不同的图像文件。
 
-有关标记扩展的详细信息 `OnAppTheme` ，请参阅[OnAppTheme 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onapptheme-markup-extension)。
+此外，在中定义的资源 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 可与 `StaticResource` 标记扩展一起使用：
+
+```xaml
+<ContentPage ...>
+    <ContentPage.Resources>
+
+        <!-- Light colors -->
+        <Color x:Key="LightPrimaryColor">WhiteSmoke</Color>
+        <Color x:Key="LightSecondaryColor">Black</Color>
+
+        <!-- Dark colors -->
+        <Color x:Key="DarkPrimaryColor">Teal</Color>
+        <Color x:Key="DarkSecondaryColor">White</Color>
+
+        <Style x:Key="ButtonStyle"
+               TargetType="Button">
+            <Setter Property="BackgroundColor"
+                    Value="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}" />
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" />
+        </Style>
+
+    </ContentPage.Resources>
+
+    <Grid BackgroundColor="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}">
+      <Button Text="MORE INFO"
+              Style="{StaticResource ButtonStyle}" />
+    </Grid>    
+</ContentPage>    
+```
+
+在此示例中，的背景色 [`Grid`](xref:Xamarin.Forms.Grid) 和样式根据 [`Button`](xref:Xamarin.Forms.Button) 设备使用的是背景色还是深色主题而变化。
+
+有关标记扩展的详细信息 `AppThemeBinding` ，请参阅[AppThemeBinding 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#appthemebinding-markup-extension)。
+
+### <a name="extension-methods"></a>扩展方法
+
+Xamarin.Forms包含 `SetAppThemeColor` 和 `SetOnAppTheme<T>` 扩展方法，这些方法使 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 对象能够响应系统主题更改。
+
+`SetAppThemeColor`方法启用 [`Color`](xref:Xamarin.Forms.Color) 要根据当前系统主题在目标属性上设置的对象：
+
+```csharp
+Label label = new Label();
+label.SetAppThemeColor(Label.TextColorProperty, Color.Green, Color.Red);
+```
+
+在此示例中， [`Label`](xref:Xamarin.Forms.Label) 当设备使用光源主题时，的文本颜色设置为绿色; 当设备使用其深色主题时，将设置为红色。
+
+`SetOnAppTheme<T>`方法启用 `T` 将基于当前系统主题在目标属性上设置的类型的对象：
+
+```csharp
+Image image = new Image();
+image.SetOnAppTheme<FileImageSource>(Image.SourceProperty, "lightlogo.png", "darklogo.png");
+```
+
+在此示例中， [`Image`](xref:Xamarin.Forms.Image) `lightlogo.png` 当设备使用其轻型主题时，以及 `darklogo.png` 当设备使用其深主题时，会显示。
 
 ## <a name="detect-the-current-system-theme"></a>检测当前系统主题
 
@@ -161,6 +132,16 @@ OSAppTheme currentTheme = Application.Current.RequestedTheme;
 - `Unspecified`，它指示设备使用未指定的主题。
 - `Light`，它指示设备使用的是光源主题。
 - `Dark`，它指示设备使用的是深色主题。
+
+## <a name="set-the-current-user-theme"></a>设置当前用户主题
+
+应用程序使用的主题可以通过属性进行设置 `Application.UserTheme` ，该属性的类型为 `OSAppTheme` ：
+
+```csharp
+Application.Current.UserAppTheme = OSAppTheme.Dark;
+```
+
+在此示例中，应用程序设置为使用为系统暗色模式定义的主题。
 
 ## <a name="react-to-theme-changes"></a>主题更改的响应
 
@@ -178,7 +159,6 @@ Application.Current.RequestedThemeChanged += (s, a) =>
 ## <a name="related-links"></a>相关链接
 
 - [SystemThemes （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
-- [OnAppTheme 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onapptheme-markup-extension)
+- [AppThemeBinding 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#appthemebinding-markup-extension)
 - [资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [中的动态样式Xamarin.Forms](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)
 - [使用 XAML 样式设置 Xamarin.Forms 应用的样式](~/xamarin-forms/user-interface/styles/xaml/index.md)

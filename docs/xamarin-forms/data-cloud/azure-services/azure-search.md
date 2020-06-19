@@ -1,8 +1,22 @@
 ---
-标题：使用 Azure 搜索和 "说明：" 搜索数据- Xamarin.Forms 本文演示了如何使用 Microsoft Azure 搜索库将 Azure 搜索集成到 Xamarin.Forms 应用程序中。 "
-ms-chap： xamarin assetid： A4AEF233-3672-4174-9DBA-15BEE3030C0B： xamarin 窗体作者： davidbritch： dabritch ms. 日期：12/05/2016 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 在 Azure 搜索中搜索数据Xamarin.Forms
+description: 本文演示如何使用 Microsoft Azure 搜索库将 Azure 搜索集成到 Xamarin.Forms 应用程序中。
+ms.prod: xamarin
+ms.assetid: A4AEF233-3672-4174-9DBA-15BEE3030C0B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/05/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 33675fbb644c5967726fee29b3e235247aec633a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84565352"
 ---
-
 # <a name="search-data-with-azure-search-and-xamarinforms"></a>在 Azure 搜索中搜索数据Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)

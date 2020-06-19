@@ -1,8 +1,23 @@
 ---
-标题： " Xamarin.Forms 资源字典" 说明： " Xamarin.Forms XAML 资源是可在整个应用程序中共享和重复使用的对象 Xamarin.Forms 。"
-ms-chap： xamarin assetid： DF103686-4A92-40FA-9CF1-A9376293B13C： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/01/2020： [ Xamarin.Forms ， Xamarin.Essentials ] ms. 自定义：视频
+title: Xamarin.Forms资源字典
+description: Xamarin.FormsXAML 资源是可在整个应用程序中共享和重用的对象 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/01/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.custom: video
+ms.openlocfilehash: a1c7cfd4a0f3549b11ac51dc13b40da552f6b758
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139407"
 ---
-
 # <a name="xamarinforms-resource-dictionaries"></a>Xamarin.Forms资源字典
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)

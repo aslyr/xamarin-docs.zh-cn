@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms 扩展器" 说明： " Xamarin.Forms 扩展器控件提供了一个可展开的容器来托管任何内容。 通过点击扩展器标头显示或隐藏内容。 "
-ms-chap： xamarin assetid： 381DCB55-522D-4414-B45B-E8DD70AA9985 毫秒： xamarin 窗体作者： davidbritch 毫秒. 作者： dabritch 毫秒。日期：04/15/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms扩展器
+description: Xamarin.Forms扩展器控件提供了一个可扩展容器来托管任何内容。 通过点击扩展器标头来显示或隐藏内容。
+ms.prod: xamarin
+ms.assetid: 381DCB55-522D-4414-B45B-E8DD70AA9985
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/15/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5e9afa0f6d27003891963af5715d5721e3129306
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84129528"
 ---
-
 # <a name="xamarinforms-expander"></a>Xamarin.Forms扩展器
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)

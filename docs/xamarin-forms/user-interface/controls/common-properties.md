@@ -1,13 +1,27 @@
 ---
-title： " Xamarin.Forms 公共控件属性、方法和事件" 说明： "本文介绍了在 VisualElement 类上定义的公共属性、方法和事件，这些属性通常用于派生类。"
-ms-chap： xamarin assetId：85A0CCF5-C1D8-40BB-927F-A4D944E5534D： xamarin 窗体作者： profexorgeek： jusjohns ms. 日期：08/21/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms公共控件属性、方法和事件
+description: 本文介绍了在 VisualElement 类中定义的、通常用于派生类的常见属性、方法和事件。
+ms.prod: xamarin
+ms.assetId: 85A0CCF5-C1D8-40BB-927F-A4D944E5534D
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 08/21/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: deb894cccd5b6a2a9d908ef8967de91f00e7d297
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136417"
 ---
-
 # <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Forms公共控件属性、方法和事件
 
 Xamarin.Forms `VisualElement` 类是应用程序中使用的大多数控件的基类 Xamarin.Forms 。 `VisualElement`类定义了许多用于派生类的[属性](#properties)、[方法](#methods)和[事件](#events)。
 
-## <a name="properties"></a>属性
+## <a name="properties"></a>“属性”
 
 以下属性在实例上可用 `VisualElement` 。 有关完整列表，请参阅[VISUALELEMENT API Properties](xref:Xamarin.Forms.VisualElement#properties)。
 

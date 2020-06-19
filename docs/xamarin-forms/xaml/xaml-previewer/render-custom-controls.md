@@ -1,8 +1,22 @@
 ---
-title： "在 XAML 预览器中呈现自定义控件" 说明： "本文介绍如何在 XAML 预览程序中显示自定义控件。"
-ms-chap： xamarin assetid：4D795372-CB8F-48F4-B63D-845E44B261F7： xamarin 窗体作者： maddyleger1： maleger ms. 日期：03/27/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 在 XAML 预览器中呈现自定义控件
+description: 本文介绍如何在 XAML 预览程序中显示自定义控件。
+ms.prod: xamarin
+ms.assetid: 4D795372-CB8F-48F4-B63D-845E44B261F7
+ms.technology: xamarin-forms
+author: maddyleger1
+ms.author: maleger
+ms.date: 03/27/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4f20a0586aee998c10372c60c96577321e697aad
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137262"
 ---
-
 # <a name="render-custom-controls-in-the-xaml-previewer"></a>在 XAML 预览器中呈现自定义控件
 
 _自定义控件有时在 XAML 预览器中不按预期方式工作。使用本文中的指南来了解预览自定义控件的限制。_

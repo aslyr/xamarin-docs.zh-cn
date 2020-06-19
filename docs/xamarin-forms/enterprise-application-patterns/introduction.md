@@ -1,8 +1,22 @@
 ---
-标题： "企业应用开发简介" 说明： "本章节介绍了企业应用开发，并介绍了 eShopOnContainers 移动应用。"
-ms-chap： xamarin assetid： cbce0659-fa03-447a-86ec-140438143230。技术： xamarin 窗体作者： davidbritch 毫秒. 作者： dabritch 毫秒。日期：08/07/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 企业应用程序开发简介
+description: 本章介绍了企业应用程序开发，并介绍了 eShopOnContainers 移动应用。
+ms.prod: xamarin
+ms.assetid: cbce0659-fa03-447a-86ec-140438143230
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e78e7c3056d4f1e22114819f54c1df261aec70e1
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198119"
 ---
-
 # <a name="introduction-to-enterprise-app-development"></a>企业应用程序开发简介
 
 无论采用何种平台，企业应用程序的开发人员都面临着几个难题：
@@ -133,10 +147,10 @@ EShopOnContainers PCL 项目包含以下文件夹：
 |转换器|包含将自定义逻辑应用于绑定的值转换器。|
 |效果|包含 `EntryLineColorEffect` 类，该类用于更改特定控件的边框颜色 `Entry` 。|
 |例外|包含自定义 `ServiceAuthenticationException` 。|
-|扩展|包含和类的扩展 `VisualElement` 方法 `IEnumerable` 。|
+|Extensions|包含和类的扩展 `VisualElement` 方法 `IEnumerable` 。|
 |帮助程序|包含应用程序的帮助器类。|
 |模型|包含应用程序的模型类。|
-|属性|包含 `AssemblyInfo.cs` .net 程序集元数据文件。|
+|“属性”|包含 `AssemblyInfo.cs` .net 程序集元数据文件。|
 |服务|包含接口和类，这些接口和类实现提供给应用程序的服务。|
 |触发器|包含 `BeginAnimation` 触发器，该触发器用于调用 XAML 中的动画。|
 |验证|包含用于验证数据输入的类。|

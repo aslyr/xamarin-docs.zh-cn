@@ -1,8 +1,22 @@
 ---
-标题： "转换转换" 说明： "本文介绍了如何使用转换转换在应用程序中转换 SkiaSharp 图形 Xamarin.Forms ，并使用示例代码对此进行了演示。"
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： BD28ADA1-49F9-44E2-A548-46024A29882F author： davidbritch： dabritch ms. 日期：03/10/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 翻译转换
+description: 本文介绍如何使用转换转换在应用程序中转换 SkiaSharp 图形 Xamarin.Forms ，并使用示例代码对此进行演示。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0eb3b4a6b37d59363984c9248cc39de91a6819e0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138250"
 ---
-
 # <a name="the-translate-transform"></a>翻译转换
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

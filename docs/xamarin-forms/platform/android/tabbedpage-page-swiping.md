@@ -1,8 +1,22 @@
 ---
-标题： "Android on Android" 说明： "平台细节使你可以使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 平台特定的，以便在 TabbedPage 中的页面之间使用水平手指手势进行轻扫。
-ms-chap： xamarin assetid： D1C09CCB-7246-41A4-8BD2-FA6FABCF1C72： xamarin 窗体作者： davidbritch： dabritch ms. 日期：07/10/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Android 上的 TabbedPage 页刷
+description: 平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 平台特定的，该平台允许在 TabbedPage 的页面之间通过水平手指进行轻扫。
+ms.prod: xamarin
+ms.assetid: D1C09CCB-7246-41A4-8BD2-FA6FABCF1C72
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 61c0137788303363769fdec80a16542e2d8bea5e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128604"
 ---
-
 # <a name="tabbedpage-page-swiping-on-android"></a>Android 上的 TabbedPage 页刷
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms ToolbarItem" 说明： "ToolbarItem 类是应用程序导航栏中使用的特殊类型的按钮。"
-ms-chap： xamarin assetId： CC737D54-0280-46BD-A2BC-A0FB67DDD6A1： xamarin 窗体作者： profexorgeek： jusjohns ms. 日期：07/29/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsToolbarItem
+description: ToolbarItem 类是应用程序导航栏中使用的一种特殊类型的按钮。
+ms.prod: xamarin
+ms.assetId: CC737D54-0280-46BD-A2BC-A0FB67DDD6A1
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 07/29/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 46aba32ebbae1646b9af00877bba530b619210cd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138211"
 ---
-
 # <a name="xamarinforms-toolbaritem"></a>Xamarin.FormsToolbarItem
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)

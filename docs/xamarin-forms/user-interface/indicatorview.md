@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms IndicatorView" 说明： "IndicatorView 是一个控件，它显示表示项数的指示器，并在 CarouselView 中显示当前位置。"
-ms-chap： xamarin assetId： BBCC223B-4B02-46B7-80BB-EE0E86A67CE2： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/27/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsIndicatorView
+description: IndicatorView 是一个控件，用于显示表示 CarouselView 中的项数和当前位置的指示器。
+ms.prod: xamarin
+ms.assetId: BBCC223B-4B02-46B7-80BB-EE0E86A67CE2
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/27/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e4c7d528cc61bb71fc495c830780ea4245ff3d87
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946372"
 ---
-
 # <a name="xamarinforms-indicatorview"></a>Xamarin.FormsIndicatorView
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -12,12 +26,6 @@ ms-chap： xamarin assetId： BBCC223B-4B02-46B7-80BB-EE0E86A67CE2： xamarin �
 `IndicatorView`是一个控件，该控件在中显示表示项数以及当前位置的指示器 `CarouselView` 。
 
 [![IOS 和 Android 上的 CarouselView 和 IndicatorView 屏幕截图](indicatorview-images/circles.png "IndicatorView 圆圈")](indicatorview-images/circles-large.png#lightbox "IndicatorView 圆圈")
-
-`IndicatorView`在 Xamarin.Forms iOS 和 Android 平台上的4.4 中提供，在通用 Windows 平台中提供4.5。 但是，它当前是实验性的，只能通过将以下代码行添加到 `AppDelegate` iOS 上的类，或者添加到 `MainActivity` Android 上的类，然后再调用 `Forms.Init` ：
-
-```csharp
-Forms.SetFlags("IndicatorView_Experimental");
-```
 
 `IndicatorView` 定义以下属性:
 

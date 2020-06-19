@@ -1,8 +1,22 @@
 ---
-标题： "在 SkiaSharp 中使用 Finger 绘图" 说明： "本文介绍了如何使用手指在应用程序的 SkiaSharp 画布上绘制 Xamarin.Forms ，并使用示例代码演示了这一点。"
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B author： davidbritch： dabritch ms. 日期：04/05/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: SkiaSharp 中的 Finger 绘图
+description: 本文介绍如何使用手指在应用程序的 SkiaSharp 画布上进行绘制 Xamarin.Forms ，并使用示例代码对此进行演示。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/05/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 61ae651a2402204f69f642235d74d8d641b47988
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139017"
 ---
-
 # <a name="finger-painting-in-skiasharp"></a>SkiaSharp 中的 Finger 绘图
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

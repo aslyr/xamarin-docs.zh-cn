@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms SearchBar" 说明： " Xamarin.Forms SearchBar 是用于启动搜索的用户输入控件。 SearchBar 控件支持占位符文本、查询输入、执行和取消。 本文介绍如何使用 XAML 和代码中的 SearchBar。
-ms-chap： xamarin assetId： F5EFEA72-CB23-4DD6-9545-D9BB755AF3CB： xamarin 窗体作者： profexorgeek： jusjohns ms. 日期：11/04/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsSearchBar
+description: Xamarin.FormsSearchBar 是用于启动搜索的用户输入控件。 SearchBar 控件支持占位符文本、查询输入、执行和取消。 本文介绍如何使用 XAML 和代码中的 SearchBar。
+ms.prod: xamarin
+ms.assetId: F5EFEA72-CB23-4DD6-9545-D9BB755AF3CB
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 11/04/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d8ceb139b1b9cd77aa922f98c80884d5c3e1a474
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127538"
 ---
-
 # <a name="xamarinforms-searchbar"></a>Xamarin.FormsSearchBar
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)

@@ -1,8 +1,22 @@
 ---
-title： "容器化微服务" 说明： "本章节介绍了如何使用微服务和容器来构建灵活、可缩放且可靠的新式云应用程序。"
-ms-chap： xamarin assetid：5872ad92-04e0-4f1a-9691-79d5602f5683： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/07/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 容器化微服务
+description: 本章介绍了如何使用微服务和容器来构建灵活、可缩放且可靠的新式云应用程序。
+ms.prod: xamarin
+ms.assetid: 5872ad92-04e0-4f1a-9691-79d5602f5683
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3ebd3940cbd61342977bde60addc773460a08854
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84569564"
 ---
-
 # <a name="containerized-microservices"></a>容器化微服务
 
 开发客户端-服务器应用程序已导致重点介绍如何构建使用每个层中特定技术的分层应用程序。 此类应用程序通常称为*单片*应用程序，并打包到针对峰值负载进行预缩放的硬件上。 此开发方法的主要缺点是每个层内组件之间的紧密耦合，无法轻松缩放单个组件以及测试成本。 简单的更新可能会对层的其余部分产生不可预见的影响，因此对应用程序组件的更改需要重新测试和重新部署其整个层。

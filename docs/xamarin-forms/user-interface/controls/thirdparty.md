@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms 第三方控件" 说明： "适用于开发的其他控件 Xamarin.Forms 可从公司（如 Telerik、SyncFusion、DevExpress、Infragistics、ComponentOne 和 Steema）中获得。
-ms-chap： xamarin assetid： C33A4848-3FC8-4A20-8275-387039F541AD： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/08/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms第三方控件
+description: 其他 Xamarin.Forms 公司提供了用于开发的其他控件，如 Telerik、SyncFusion、DevExpress、Infragistics、ComponentOne 和 Steema。
+ms.prod: xamarin
+ms.assetid: C33A4848-3FC8-4A20-8275-387039F541AD
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/08/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e0881296664ec20eeefe02c9db57a2fd76cd999b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84132413"
 ---
-
 # <a name="xamarinforms-third-party-controls"></a>Xamarin.Forms第三方控件
 
 除了使用提供的控件以外 Xamarin.Forms ，还可以从以下公司获取第三方控件：

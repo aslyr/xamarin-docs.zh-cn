@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms 本地数据库" 说明： " Xamarin.Forms 使用 SQLite 数据库引擎支持数据库驱动的应用程序，这样就可以在共享代码中加载和保存对象。 本文介绍 Xamarin.Forms 应用程序如何使用 SQLite.Net 将数据读取和写入本地 SQLite 数据库。
-ms-chap： xamarin assetid： F687B24B-7DF0-4F8E-A21A-A9BB507480EB： xamarin 窗体作者： profexorgeek： jusjohns ms. 日期：12/05/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms本地数据库
+description: Xamarin.Forms使用 SQLite 数据库引擎支持数据库驱动的应用程序，这样就可以在共享代码中加载和保存对象。 本文介绍 Xamarin.Forms 应用程序如何使用 SQLite.Net 将数据读取和写入本地 SQLite 数据库。
+ms.prod: xamarin
+ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 12/05/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f7cef5fd39d82cf0a4b55337835c0fe1d57b8bf9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84197596"
 ---
-
 # <a name="xamarinforms-local-databases"></a>Xamarin.Forms本地数据库
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)

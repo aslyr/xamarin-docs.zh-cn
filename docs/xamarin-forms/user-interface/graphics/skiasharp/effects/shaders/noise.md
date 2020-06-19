@@ -1,8 +1,22 @@
 ---
-title： "SkiaSharp 杂色 and 撰写" 说明： "生成 Perlin 杂色着色器并与其他着色器组合"。
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 90C2D00A-2876-43EA-A836-538C3318CF93 author： davidbritch： dabritch ms. 日期：08/23/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: SkiaSharp 干扰和撰写
+description: 生成 Perlin 杂色着色器并与其他着色器组合。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 90C2D00A-2876-43EA-A836-538C3318CF93
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 45ec48c0b7b58e26fa47d7343e96bb49591cb339
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127759"
 ---
-
 # <a name="skiasharp-noise-and-composing"></a>SkiaSharp 干扰和撰写
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

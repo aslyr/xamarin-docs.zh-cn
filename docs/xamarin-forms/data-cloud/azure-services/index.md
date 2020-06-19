@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms 和 Azure 服务" 说明： "本文介绍了如何使用 Azure 通知中心将跨平台推送通知发送到 Xamarin.Forms 应用程序。"
-ms-chap： xamarin assetid：07C60A42-A9E1-4DD0-8874-BD9487DC3EA2： xamarin 窗体作者： davidbritch： dabritch ms. 日期：06/28/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms和 Azure 服务
+description: 本文介绍如何使用 Azure 通知中心将跨平台推送通知发送到 Xamarin.Forms 应用程序。
+ms.prod: xamarin
+ms.assetid: 07C60A42-A9E1-4DD0-8874-BD9487DC3EA2
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/28/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a63b6329b9e8f4bcdc18a973b538e1e2e44bca67
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84130970"
 ---
-
 # <a name="xamarinforms-and-azure-services"></a>Xamarin.Forms和 Azure 服务
 
 ## <a name="consume-an-azure-cosmos-db-document-database-in-xamarinformsazure-cosmosdbmd"></a>[在中使用 Azure Cosmos DB 文档数据库Xamarin.Forms](azure-cosmosdb.md)

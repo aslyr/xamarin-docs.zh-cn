@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms CollectionView Layout" description： "默认情况下，CollectionView 会在垂直列表中显示其项。 但是，可以指定垂直和水平列表以及网格。
-ms-chap： xamarin assetid：5FE78207-1BD6-4706-91EF-B13932321FC9： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/22/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsCollectionView 布局
+description: 默认情况下，CollectionView 会在垂直列表中显示其项。 但是，可以指定垂直和水平列表以及网格。
+ms.prod: xamarin
+ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/22/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 425eb7abc14fb941dbfc28219907d98558cbfabb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137427"
 ---
-
 # <a name="xamarinforms-collectionview-layout"></a>Xamarin.FormsCollectionView 布局
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

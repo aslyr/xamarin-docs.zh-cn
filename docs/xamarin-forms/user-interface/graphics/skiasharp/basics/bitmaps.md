@@ -1,8 +1,22 @@
 ---
-title： "SkiaSharp 中的 Bitmap 基础知识" 说明： "本文介绍了如何从不同的源加载 SkiaSharp 中的位图并在应用程序中显示它们 Xamarin.Forms ，并通过示例代码对此进行了演示。"
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 32C95DFF-9065-42D7-966C-D3DBD16906B3 author： davidbritch： dabritch ms. 日期：07/17/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: SkiaSharp 中的位图基础知识
+description: 本文介绍如何从各种源加载 SkiaSharp 中的位图并在应用程序中显示它们 Xamarin.Forms ，并通过示例代码对此进行演示。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/17/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1e4c170f818dc62640b1cd72ec3b70f48d227d93
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137730"
 ---
-
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp 中的位图基础知识
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

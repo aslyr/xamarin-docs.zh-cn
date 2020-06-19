@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms 实验标志" 说明： " Xamarin.Forms 试验性标志使工程团队能够更快地向用户交付新功能，同时仍然能够在功能 api 迁移到稳定版本之前对其进行更改。"
-ms-chap： xamarin assetid： AF4BDD27-89F6-48AE-A8CD-D7E4DDA2CCA2： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/14/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms实验性标志
+description: Xamarin.Forms试验性标志使工程团队能够更快地向用户交付新功能，同时还能在功能 Api 迁移到稳定版本之前对其进行更改。
+ms.prod: xamarin
+ms.assetid: AF4BDD27-89F6-48AE-A8CD-D7E4DDA2CCA2
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/15/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 17fcc996b4dc8013a23a598ece8e240caba3f775
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946112"
 ---
-
 # <a name="xamarinforms-experimental-flags"></a>Xamarin.Forms实验性标志
 
 Xamarin.Forms实现新功能时，有时会将其置于实验标志之后。 这使得工程团队能够更快地为你提供新功能，同时还能在功能 Api 迁移到稳定版本之前对其进行更改。 一旦将此功能移到稳定版本，就会删除该实验标志。
@@ -12,10 +26,10 @@ Xamarin.Forms包括以下实验标志：
 - `AppTheme_Experimental`
 - `CarouselView_Experimental`
 - `Expander_Experimental`
-- `IndicatorView_Experimental`
 - `Markup_Experimental`
 - `MediaElement_Experimental`
 - `RadioButton_Experimental`
+- `Shapes_Experimental`
 - `Shell_UWP_Experimental`
 - `StateTriggers_Experimental`
 - `SwipeView_Experimental`
@@ -44,7 +58,7 @@ Xamarin.Forms.Forms.SetFlags("CarouselView_Experimental");
 `Xamarin.Forms.Forms.SetFlags`方法接受一个 `string` 数组参数，这使得可以在一个方法调用中启用多个实验标志：
 
 ```csharp
-Xamarin.Forms.Forms.SetFlags(new string[] { "CarouselView_Experimental", "IndicatorView_Experimental", "SwipeView_Experimental" });
+Xamarin.Forms.Forms.SetFlags(new string[] { "CarouselView_Experimental", "MediaElement_Experimental", "SwipeView_Experimental" });
 ```
 
 > [!WARNING]

@@ -1,6 +1,22 @@
 ---
-标题： " Xamarin.Forms 使用级联样式表（css）设置应用样式" 说明： " Xamarin.Forms 支持使用级联样式表（css）对视觉元素进行样式设置。"
-ms-chap： xamarin assetid： C89D57A6-DAB9-4C42-963F-26D67627DDC2： xamarin。 custom： xamu：： davidbritch： dabritch：：04/17/2020 不，不是： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms使用级联样式表设置应用样式（CSS）
+description: Xamarin.Forms支持使用级联样式表（CSS）对视觉元素进行样式设置。
+ms.prod: xamarin
+ms.assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2
+ms.technology: xamarin-forms
+ms.custom: xamu-video
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/20/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9375c4078c75d8e4788cb31a3d6a6a3a10100f49
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946216"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>Xamarin.Forms使用级联样式表设置应用样式（CSS）
 
@@ -145,6 +161,12 @@ public partial class MyPage : ContentPage
 CSS 使用选择器来确定要定位的元素。 具有匹配选择器的样式按定义顺序连续应用。 在特定项上定义的样式始终是最后应用的。 有关支持的选择器的详细信息，请参阅[选择器引用](#selector-reference)。
 
 CSS 使用属性对选定元素进行样式。 每个属性都具有一组可能的值，而某些属性可能会影响任何类型的元素，而另一些属性则应用于元素组。 有关支持的属性的详细信息，请参阅[属性参考](#property-reference)。
+
+如果子样式设置相同的属性，则它始终覆盖父样式表。 因此，在应用设置相同属性的样式时遵循下列优先规则：
+
+- 如果在应用程序资源中定义的样式设置相同的属性，则它将被在页资源中定义的样式覆盖。
+- 如果控件资源中定义的样式设置相同的属性，则在页资源中定义的样式将覆盖该样式。
+- 如果在应用程序资源中定义的样式设置相同的属性，则该样式将被在控件资源中定义的样式覆盖。
 
 > [!IMPORTANT]
 > 不支持 CSS 变量。
@@ -343,13 +365,13 @@ stacklayout>image {
 
 支持以下 CSS 属性 Xamarin.Forms （在 "**值**" 列中，类型为 "_斜体_"，字符串文本为 `gray` ）：
 
-|properties|适用于|值|示例|
+|属性|适用于|值|示例|
 |---|---|---|---|
 |`align-content`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial` |`align-content: space-between;`|
 |`align-items`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial` |`align-items: flex-start;`|
 |`align-self`|`VisualElement`| `auto` \| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial`|`align-self: flex-end;`|
 |`background-color`|`VisualElement`|_color_ \| `initial` |`background-color: springgreen;`|
-|`background-image`|`Page`|_字符串_ \|`initial` |`background-image: bg.png;`|
+|`background-image`|`Page`|_字符串_ \| `initial` |`background-image: bg.png;`|
 |`border-color`|`Button`, `Frame`, `ImageButton`|_color_ \| `initial`|`border-color: #9acd32;`|
 |`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_double_ \|`initial` |`border-radius: 10;`|
 |`border-width`|`Button`, `ImageButton`|_double_ \|`initial` |`border-width: .5;`|
@@ -361,7 +383,7 @@ stacklayout>image {
 |`flex-grow`|`VisualElement`|_float_ \|`initial`|`flex-grow: 1.5;`|
 |`flex-shrink`|`VisualElement`|_float_ \|`initial`|`flex-shrink: 1;`|
 |`flex-wrap`|`VisualElement`| `nowrap` \| `wrap` \| `reverse` \| `wrap-reverse` \| `initial`|`flex-wrap: wrap-reverse;`|
-|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_字符串_ \|`initial` |`font-family: Consolas;`|
+|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_字符串_ \| `initial` |`font-family: Consolas;`|
 |`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_double_ \|_namedsize_ \|  `initial` |`font-size: 12;`|
 |`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
 |`height`|`VisualElement`|_double_ \|`initial` |`min-height: 250;`|
@@ -410,7 +432,7 @@ stacklayout>image {
 
 Xamarin.Forms还支持以下特定 CSS 属性（在 "**值**" 列中，类型为 "_斜体_"，字符串文本为 `gray` ）：
 
-|properties|适用于|值|示例|
+|属性|适用于|值|示例|
 |---|---|---|---|
 |`-xf-bar-background-color`|`NavigationPage`, `TabbedPage`|_color_ \| `initial` |`-xf-bar-background-color: teal;`|
 |`-xf-bar-text-color`|`NavigationPage`, `TabbedPage`|_color_ \| `initial` |`-xf-bar-text-color: gray`|
@@ -425,13 +447,13 @@ Xamarin.Forms还支持以下特定 CSS 属性（在 "**值**" 列中，类型为
 |`-xf-thumb-color`|`Slider`, `Switch`|_color_ \| `initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-vertical-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-vertical-scroll-bar-visibility: always;`|
 |`-xf-vertical-text-alignment`|`Label`| `start` \| `center` \| `end` \| `initial`|`-xf-vertical-text-alignment: end;`|
-|`-xf-visual`|`VisualElement`|_字符串_ \|`initial` |`-xf-visual: material;`|
+|`-xf-visual`|`VisualElement`|_字符串_ \| `initial` |`-xf-visual: material;`|
 
 ### <a name="xamarinforms-shell-specific-properties"></a>Xamarin.FormsShell 特定属性
 
 Xamarin.Forms还支持以下 Shell 特定 CSS 属性（在 "**值**" 列中，类型为 "_斜体_"，字符串文本为 `gray` ）：
 
-|properties|适用于|值|示例|
+|属性|适用于|值|示例|
 |---|---|---|---|
 |`-xf-flyout-background`|`Shell`|_color_ \| `initial` |`-xf-flyout-background: red;`|
 |`-xf-shell-background`|`Element`|_color_ \| `initial` |`-xf-shell-background: green;`|

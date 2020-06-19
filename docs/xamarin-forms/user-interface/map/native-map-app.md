@@ -1,8 +1,22 @@
 ---
-标题： "从以下项启动本机地图应用 Xamarin.Forms 程序：" 说明：在每个平台上的本机地图应用 Xamarin.Forms 程序可由启动器类从应用程序启动 Xamarin.Essentials 。
-ms-chap： xamarin assetid：5CF7CD67-3F20-4D80-B99E-D35A5FD1019A： xamarin 窗体作者： davidbritch： dabritch ms. 日期：10/30/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 从启动本机映射应用Xamarin.Forms
+description: 可以 Xamarin.Forms 通过启动器类从应用程序启动每个平台上的本机地图应用 Xamarin.Essentials 。
+ms.prod: xamarin
+ms.assetid: 5CF7CD67-3F20-4D80-B99E-D35A5FD1019A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/30/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c135d5dd02bba5102f5a93132f079526c84865d5
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84129332"
 ---
-
 # <a name="launch-the-native-map-app-from-xamarinforms"></a>从启动本机映射应用Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

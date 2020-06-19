@@ -1,8 +1,22 @@
 ---
-标题： "旋转变换" 说明： "本文探讨了 SkiaSharp 旋转变换可能产生的效果和动画，并通过示例代码对此进行了演示。"
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： CBB3CD72-4377-4EA3-A768-0C4228229FC2 author： davidbritch： dabritch ms. 日期：03/23/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 旋转转换
+description: 本文探讨了 SkiaSharp 旋转转换可以实现的效果和动画，并通过示例代码对此进行了演示。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: CBB3CD72-4377-4EA3-A768-0C4228229FC2
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/23/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 520c4c3b61049bf17c2c964523714db196da6839
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84132179"
 ---
-
 # <a name="the-rotate-transform"></a>旋转转换
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

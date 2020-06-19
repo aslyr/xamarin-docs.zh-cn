@@ -1,8 +1,22 @@
 ---
-title： "使用 ASP.NET Web 服务（.ASMX）" 说明： "本文介绍了如何从应用程序使用 .ASMX SOAP 服务 Xamarin.Forms 。"
-ms-chap： xamarin assetid： D5533964-5528-4D35-9C2B-FAFB632472AC： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/02/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用 ASP.NET Web 服务 (ASMX)
+description: 本文演示如何从应用程序使用 .ASMX SOAP 服务 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: D5533964-5528-4D35-9C2B-FAFB632472AC
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/02/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1f7a0d04d1e7b6abc9931c05c0e46ef49f8ba09c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138458"
 ---
-
 # <a name="consume-an-aspnet-web-service-asmx"></a>使用 ASP.NET Web 服务 (ASMX)
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)

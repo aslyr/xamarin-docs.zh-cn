@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms 和 Web 服务" 说明： "本指南说明如何与不同 Web 服务通信，以便为应用程序提供创建、读取、更新和删除（CRUD）功能 Xamarin.Forms 。 涉及的主题包括与 .ASMX 服务、WCF 服务、REST 服务通信。
-ms-chap： xamarin assetid：8B360BDA-E4E3-4A3F-9004-0E35362F49F8： xamarin 窗体作者： davidbritch： dabritch ms. 日期：06/27/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms和 Web 服务
+description: 本指南说明如何与不同的 web 服务进行通信，以便为应用程序提供创建、读取、更新和删除（CRUD）功能 Xamarin.Forms 。 涉及的主题包括与 .ASMX 服务、WCF 服务、REST 服务通信。
+ms.prod: xamarin
+ms.assetid: 8B360BDA-E4E3-4A3F-9004-0E35362F49F8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/27/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5b2613b94d2c347d9bc6a94086f869b07ab8a55b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84131880"
 ---
-
 # <a name="xamarinforms-and-web-services"></a>Xamarin.Forms和 Web 服务
 
 ## <a name="introduction"></a>[简介](introduction.md)

@@ -1,8 +1,22 @@
 ---
-title： "使用电子书的企业应用程序模式 Xamarin.Forms " 说明： "此电子书提供了开发可自适应、可维护且可测试的企业应用程序的体系结构指南 Xamarin.Forms 。
-ms-chap： xamarin assetid： 28cfed6c-6175-4223-a8cc-798d40bf0832 ms. 技术协会： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/07/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 《使用 Xamarin.Forms企业应用程序模式》电子书
+description: 此电子书提供了开发可自适应、可维护且可测试的企业应用程序的体系结构指南 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 28cfed6c-6175-4223-a8cc-798d40bf0832
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: cc0f98d94c76ff63e7a002dfb92b51eae153d7b4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139394"
 ---
-
 # <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>《使用 Xamarin.Forms企业应用程序模式》电子书
 
 _用于开发可自适应、可维护且可测试的 Xamarin.Forms 企业应用程序的体系结构指南_

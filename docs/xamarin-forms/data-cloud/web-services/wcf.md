@@ -1,8 +1,22 @@
 ---
-title： "使用 Windows Communication Foundation （WCF） Web 服务" 说明： "本文演示如何从应用程序使用 WCF 简单对象访问协议（SOAP）服务 Xamarin.Forms 。"
-ms-chap： xamarin assetid：5696FF04-EF21-4B7A-8C8B-26DE28B5C0AD： xamarin 窗体作者： davidbritch： dabritch ms. 日期：03/28/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用 Windows Communication Foundation （WCF） Web 服务
+description: 本文演示如何从应用程序中使用 WCF 简单对象访问协议（SOAP）服务 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 5696FF04-EF21-4B7A-8C8B-26DE28B5C0AD
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/28/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: cf95427807e0179a608b428bc7e02499c9616fe7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139147"
 ---
-
 # <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>使用 Windows Communication Foundation （WCF） Web 服务
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)

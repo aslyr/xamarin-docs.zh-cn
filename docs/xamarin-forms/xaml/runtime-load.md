@@ -1,8 +1,22 @@
 ---
-标题： "在运行时加载 XAML Xamarin.Forms " 说明： "xaml 可在运行时通过 LoadFromXaml 扩展方法进行加载和分析。"
-ms-chap： xamarin assetid：25F73FBF-2DD3-468E-A2D8-0897414F0F4A： xamarin 窗体作者： davidbritch： dabritch ms. 日期：12/12/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 在运行时加载 XAMLXamarin.Forms
+description: 可以在运行时通过 LoadFromXaml 扩展方法加载和分析 XAML。
+ms.prod: xamarin
+ms.assetid: 25F73FBF-2DD3-468E-A2D8-0897414F0F4A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/12/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d750aa84a48ad4c8015a619d819134cefc63c3d9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139342"
 ---
-
 # <a name="loading-xaml-at-runtime-in-xamarinforms"></a>在运行时加载 XAMLXamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)

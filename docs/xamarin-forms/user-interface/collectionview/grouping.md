@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms CollectionView 分组" 说明： "CollectionView 可以通过将其 IsGrouped 属性设置为 true 来显示已正确分组的数据。"
-ms-chap： xamarin assetid：7E494245-FDBD-49D6-B7FA-CEF976EB59BB： xamarin 窗体作者： davidbritch： dabritch ms. 日期：09/17/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsCollectionView 分组
+description: CollectionView 可以通过将其 IsGrouped 属性设置为 true 来显示正确分组的数据。
+ms.prod: xamarin
+ms.assetid: 7E494245-FDBD-49D6-B7FA-CEF976EB59BB
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/17/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 51661d6573d78386f4ca8bfea0063b752295c2d8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136456"
 ---
-
 # <a name="xamarinforms-collectionview-grouping"></a>Xamarin.FormsCollectionView 分组
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

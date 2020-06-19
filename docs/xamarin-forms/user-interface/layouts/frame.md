@@ -1,6 +1,21 @@
 ---
-标题： " Xamarin.Forms frame" 说明： " Xamarin.Forms frame 类是一种布局，用来用可以配置颜色、阴影和其他选项的边框来包装视图或布局。"
-ms-chap： xamarin assetId：4E074714-0928-41C8-A468-B60E23236A8C： xamarin 窗体作者： profexorgeek： jusjohns ms. 日期：08/06/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms期限
+description: Xamarin.FormsFrame 类是一种布局，用于使用可以配置为颜色、阴影和其他选项的边框来包装视图或布局。
+ms.prod: xamarin
+ms.assetId: 4E074714-0928-41C8-A468-B60E23236A8C
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 08/06/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 42192111befbefda7e0f62b7691a8392c2828818
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137184"
 ---
 # <a name="xamarinforms-frame"></a>Xamarin.Forms期限
 

@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms 地图多边形、折线和圆圈" 说明： "本文介绍了如何在地图实例上创建多边形、折线和圆圈 Xamarin.Forms 。
-ms-chap： xamarin assetid： CDAF0B02-1AA8-4AD6-94A7-ABFC18006A2D： xamarin 窗体作者： davidbritch： dabritch ms. 日期：03/10/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms地图多边形、折线和圆圈
+description: 本文介绍如何在地图实例上创建多边形、折线和圆圈 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: CDAF0B02-1AA8-4AD6-94A7-ABFC18006A2D
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ca813f9f0f75aeaf4a2502faa7cb96d1fbead471
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138406"
 ---
-
 # <a name="xamarinforms-map-polygons-and-polylines"></a>Xamarin.Forms地图多边形和折线
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

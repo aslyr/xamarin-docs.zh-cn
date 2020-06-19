@@ -1,8 +1,22 @@
 ---
-title： "SkiaSharp 圆形渐变" 说明： "了解基于圆的不同渐变类型。"
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 400AE23A-6A0B-4FA8-BD6B-DE4146B04732 author： davidbritch： dabritch ms. 日期：08/23/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: SkiaSharp 循环渐变
+description: 了解基于圆圈的不同类型的渐变。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 400AE23A-6A0B-4FA8-BD6B-DE4146B04732
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 418d29010a8cce81d2bb8c365608c54b61739622
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135637"
 ---
-
 # <a name="the-skiasharp-circular-gradients"></a>SkiaSharp 循环渐变
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

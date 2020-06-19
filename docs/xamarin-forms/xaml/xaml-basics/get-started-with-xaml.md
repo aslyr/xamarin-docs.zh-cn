@@ -1,8 +1,22 @@
 ---
-title： "Part 1"。 在应用程序中，使用 XAML "description：" 入门 Xamarin.Forms xaml 主要用于定义页面的视觉内容，并与代码隐藏文件一起工作。 "
-ms-chap： xamarin assetid：9073FA0E-BD5A-4492-8A93-54C466F6EDB9： xamarin 窗体作者： davidbritch： dabritch ms. 日期：09/30/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 第 1 部分。 XAML 入门
+description: 在 Xamarin.Forms 应用程序中，XAML 主要用于定义页面的视觉内容，并与代码隐藏文件一起工作。
+ms.prod: xamarin
+ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/30/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e38080fc9bc4ef0b74eb8c12c3a3f646c4888f53
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198082"
 ---
-
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部分。 XAML 入门
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)

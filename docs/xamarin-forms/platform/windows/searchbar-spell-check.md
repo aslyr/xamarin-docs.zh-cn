@@ -1,8 +1,22 @@
 ---
-标题： "SearchBar 拼写检查 on Windows" 说明： "平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用特定于 Windows 平台的，使 SearchBar 能够与拼写检查引擎进行交互。
-ms-chap： xamarin assetid：7974C91F-7502-4DB3-B0E9-C45E943DDA26： xamarin 窗体作者： davidbritch： dabritch ms. 日期：10/24/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: " Windows 上的 SearchBar 拼写检查"
+description: 平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用特定于 Windows 平台的，使 SearchBar 能够与拼写检查引擎进行交互。
+ms.prod: xamarin
+ms.assetid: 7974C91F-7502-4DB3-B0E9-C45E943DDA26
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f6c8810ea37c767ef67c7f53d312b63a9de09f26
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136560"
 ---
-
 # <a name="searchbar-spell-check-on-windows"></a>Windows 上的 SearchBar 拼写检查
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

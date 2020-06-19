@@ -1,8 +1,22 @@
 ---
-title： "Porter-Duff blend 模式" description： "使用 Porter-Duff blend 模式根据源和目标映像编写场景。"
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 57F172F8-BA03-43EC-A215-ED6B78696BB5 author： davidbritch： dabritch ms. 日期：08/23/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Porter-Duff blend 模式
+description: 使用 Porter-Duff blend 模式来基于源和目标映像编写场景。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 57F172F8-BA03-43EC-A215-ED6B78696BB5
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a1e6290c0f85b54c3fd8958bc43667714bdece20
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84131048"
 ---
-
 # <a name="porter-duff-blend-modes"></a>Porter-Duff blend 模式
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -72,7 +86,7 @@ Skia 添加了一个名为 `Modulate` 的14模式，它非常类似于， `Plus`
 | `DstATop`  |             | 目标  | X      |
 | `Xor`      | X           |              | X      |
 | `Plus`     | X           | SUM          | X      |
-| `Modulate` |             | 产品      |        | 
+| `Modulate` |             | Products      |        | 
 
 这些 blend 模式为对称模式。 可以交换源和目标，并且所有模式仍可用。
 

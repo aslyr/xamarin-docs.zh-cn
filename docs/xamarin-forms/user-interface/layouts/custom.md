@@ -1,8 +1,22 @@
 ---
-标题： "description：" 中的 "创建自定义布局" Xamarin.Forms 本文介绍了如何编写自定义布局类，并演示了一个区分方向的 WrapLayout 类，该类在页面上水平排列其子级，然后将后续子项的显示内容包装到其他行。 "
-ms-chap： xamarin assetid： B0CFDB59-14E5-49E9-965A-3DCCEDAC2E31： xamarin 窗体作者： davidbritch： dabritch ms. 日期：03/29/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 在中创建自定义布局Xamarin.Forms
+description: 本文介绍如何编写自定义布局类，并演示一个区分方向的 WrapLayout 类，该类在页面上水平排列其子元素，然后将后续子项的显示范围封装到其他行。
+ms.prod: xamarin
+ms.assetid: B0CFDB59-14E5-49E9-965A-3DCCEDAC2E31
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/29/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2c1a958bd4cb56096f554acf26756019eeb0693c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572229"
 ---
-
 # <a name="create-a-custom-layout-in-xamarinforms"></a>在中创建自定义布局Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)

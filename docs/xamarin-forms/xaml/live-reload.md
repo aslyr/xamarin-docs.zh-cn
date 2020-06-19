@@ -1,8 +1,23 @@
 ---
-标题： "Xamarin Live 重载（预览版）" 说明： "查看对 XAML 所做的更改，无需另一个编译和部署。"
-ms-chap： xamarin assetid：4917273d-32f9-401a-a52c-5cfb53a2170d： xamarin 窗体作者： pierceboggan： piboggan 机器人： noindex ms. 日期：10/26/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin Live 重载（预览版）
+description: 查看 XAML 中反映的更改，无需另一个编译和部署。
+ms.prod: xamarin
+ms.assetid: 4917273d-32f9-401a-a52c-5cfb53a2170d
+ms.technology: xamarin-forms
+author: pierceboggan
+ms.author: piboggan
+robots: noindex
+ms.date: 10/26/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b67594e2675c774512f3bf64f2e91ef10dbff444
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84134207"
 ---
-
 # <a name="xamarin-live-reload-preview"></a>Xamarin Live 重载（预览版）
 
 > [!NOTE]
@@ -96,7 +111,7 @@ public partial class App : Application
 
 ### <a name="does-it-require-debugging-the-app"></a>是否需要调试应用？ 
 
-不是。 事实上，您甚至可以在任意数量的设备或模拟器/仿真器上启动所有受支持的应用程序目标（Android、iOS 和 UWP），并同时查看所有更新。 
+不能。 事实上，您甚至可以在任意数量的设备或模拟器/仿真器上启动所有受支持的应用程序目标（Android、iOS 和 UWP），并同时查看所有更新。 
 
 ## <a name="limitations"></a>限制
 

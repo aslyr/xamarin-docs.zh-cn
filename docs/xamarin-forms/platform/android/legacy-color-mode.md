@@ -1,8 +1,22 @@
 ---
-title： "VisualElement 旧版彩色模式" 说明： "平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用禁用旧版颜色模式的 Android 平台特定的 Xamarin.Forms 。
-ms-chap： xamarin assetid：37D95A2D-74AC-488A-B903-2BDD799EAA5C： xamarin 窗体作者： davidbritch： dabritch ms. 日期：07/10/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Android 上的 VisualElement 旧版颜色模式
+description: 平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用禁用旧版颜色模式的 Android 平台特定 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 37D95A2D-74AC-488A-B903-2BDD799EAA5C
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9fe0d751b1aa1cb609100e43c0f0015fd804327a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128838"
 ---
-
 # <a name="visualelement-legacy-color-mode-on-android"></a>Android 上的 VisualElement 旧版颜色模式
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

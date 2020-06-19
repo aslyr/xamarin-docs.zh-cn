@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms Web 服务简介" 说明： "本指南提供了 Xamarin.Forms 演示如何与不同 Web 服务通信的示例应用程序的演练。 虽然每个 web 服务使用单独的示例应用程序，但它们在功能上类似并共享公共类。 "
-ms-chap： xamarin assetid： A3FEB262-0D79-42E6-8F8B-A565618C490B： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/28/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsWeb 服务简介
+description: 本指南提供了 Xamarin.Forms 演示如何与不同 web 服务通信的示例应用程序的演练。 虽然每个 web 服务使用单独的示例应用程序，但它们在功能上类似并共享公共类。
+ms.prod: xamarin
+ms.assetid: A3FEB262-0D79-42E6-8F8B-A565618C490B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/28/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d714b4c9d598d8cca26ae992abf3f15df703d11b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139173"
 ---
-
 # <a name="xamarinforms-web-services-introduction"></a>Xamarin.FormsWeb 服务简介
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)

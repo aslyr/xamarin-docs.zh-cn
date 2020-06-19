@@ -1,6 +1,21 @@
 ---
-标题： "Azure Functions" Xamarin.Forms 说明： "使用 Azure Functions 开始使用" Xamarin.Forms 。
-ms-chap： xamarin assetid： 2F311A60-A6FC-4051-B938-AEF32086642F author： conceptdev： crdun： ms-chap：毫秒。自定义：视频毫秒。日期：04/02/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Azure FunctionsXamarin.Forms
+description: 开始使用 Azure Functions Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 2F311A60-A6FC-4051-B938-AEF32086642F
+author: conceptdev
+ms.author: crdun
+ms.custom: video
+ms.date: 04/02/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 420cead8a43f35815110eb7ce3b183f10bb3ccd4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84197563"
 ---
 # <a name="get-started-with-azure-functions"></a>Azure Functions 入门
 

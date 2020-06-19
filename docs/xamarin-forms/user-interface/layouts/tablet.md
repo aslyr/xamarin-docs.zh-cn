@@ -1,8 +1,22 @@
 ---
-标题： "Tablet 和桌面应用的布局" 说明： "本文介绍如何优化 Xamarin.Forms 平板电脑的应用程序布局，而不是手机。"
-ms-chap： xamarin assetid： D62F472B-4345-4983-8403-659A538B591F： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/01/2016 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 平板电脑和桌面应用的布局
+description: 本文介绍如何优化 Xamarin.Forms 平板电脑的应用程序布局，而不是手机。
+ms.prod: xamarin
+ms.assetid: D62F472B-4345-4983-8403-659A538B591F
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/01/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0ecbc850960465296dc4047277bdafe78ac800a4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573243"
 ---
-
 # <a name="layout-for-tablet-and-desktop-apps"></a>平板电脑和桌面应用的布局
 
 Xamarin.Forms支持在受支持的平台上使用的所有设备类型，因此除了手机外，应用程序还可以在以下设备上运行：

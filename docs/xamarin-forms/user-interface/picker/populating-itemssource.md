@@ -1,8 +1,22 @@
 ---
-title： "设置选取器的 System.windows.controls.itemscontrol.itemssource 属性" description： "选取器视图是用于从数据列表中选择文本项的控件。 本文介绍如何通过设置 System.windows.controls.itemscontrol.itemssource 属性来使用数据填充选取器，以及如何响应用户选择的项。 "
-ms-chap： xamarin assetid：8ECF390C-9DB2-4441-B9A3-101AE7E5AEC5： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/26/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 设置选取器的 ItemsSource 属性
+description: "\"选取器\" 视图是用于从数据列表中选择文本项的控件。 本文介绍如何通过设置 System.windows.controls.itemscontrol.itemssource 属性来使用数据填充选取器，以及如何响应用户选择的项。"
+ms.prod: xamarin
+ms.assetid: 8ECF390C-9DB2-4441-B9A3-101AE7E5AEC5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/26/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8c4fc732082a77a2e471465af448a487862b513c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136287"
 ---
-
 # <a name="setting-a-pickers-itemssource-property"></a>设置选取器的 ItemsSource 属性
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-monkeyapppicker)

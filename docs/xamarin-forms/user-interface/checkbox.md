@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms 复选框" 说明： " Xamarin.Forms 复选框是可以选中或为空的按钮类型。 选中复选框后，它将被视为已启用。 如果复选框为空，则将其视为关闭。 "
-ms-chap： xamarin assetid： B8B9268B-BCB8-42B9-B08C-C0F22C137238： xamarin 窗体作者： davidbritch： dabritch ms. 日期：06/11/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms旁边
+description: Xamarin.Forms复选框是可以选中或为空的按钮类型。 选中复选框后，它将被视为已启用。 如果复选框为空，则将其视为关闭。
+ms.prod: xamarin
+ms.assetid: B8B9268B-BCB8-42B9-B08C-C0F22C137238
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/11/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8399dde2e4e2c9fb53b38fca2923eb0e3bfc6ce3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136469"
 ---
-
 # <a name="xamarinforms-checkbox"></a>Xamarin.Forms旁边
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)

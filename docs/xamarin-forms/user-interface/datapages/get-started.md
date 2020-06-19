@@ -1,8 +1,22 @@
 ---
-标题： "入门与 DataPages" 说明： "本文介绍了如何使用 DataPages 开始构建简单的数据驱动页面 Xamarin.Forms 。"
-ms-chap： xamarin assetid： 6416E5FA-6384-4298-BAA1-A89381E47210 ms. 技术协会： xamarin 窗体作者： davidbritch： dabritch ms. 日期：12/01/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 入门与 DataPages
+description: 本文介绍如何使用 DataPages 开始构建简单的数据驱动页面 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 6416E5FA-6384-4298-BAA1-A89381E47210
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/01/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: bb08d359048d53639a700cc5ff526f26d6b077b6
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84571462"
 ---
-
 # <a name="getting-started-with-datapages"></a>入门与 DataPages
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/Pages/DataPagesDemo)

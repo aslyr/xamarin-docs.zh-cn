@@ -1,8 +1,22 @@
 ---
-标题： "设置 Windows 项目" 说明： "较早的 Xamarin.Forms 解决方案（或在 macOS 上创建的解决方案）将不包含通用 Windows 平台项目，因此本文介绍如何向现有解决方案添加新的 UWP 项目 Xamarin.Forms 。"
-ms-chap： xamarin assetid： A0774D2E-6994-4D91-84E8-DAB66FC92320： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/10/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 设置 Windows 项目
+description: 旧 Xamarin.Forms 解决方案（或在 macOS 上创建的解决方案）将不通用 Windows 平台项目，因此本文介绍如何向现有解决方案添加新的 UWP 项目 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: A0774D2E-6994-4D91-84E8-DAB66FC92320
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 13b46fd06b0116332241b0d523aea707d56b39ec
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573360"
 ---
-
 # <a name="setup-windows-projects"></a>设置 Windows 项目
 
 _向现有解决方案中添加新的 Windows 项目 Xamarin.Forms_

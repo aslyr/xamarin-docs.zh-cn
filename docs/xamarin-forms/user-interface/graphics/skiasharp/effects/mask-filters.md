@@ -1,8 +1,22 @@
 ---
-标题： "SkiaSharp 掩码筛选器" 说明： "了解如何使用掩码筛选器来创建模糊和其他 alpha 效果。"
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 940422A1-8BC0-4039-8AD7-26C61320F858 author： davidbritch： dabritch ms. 日期：08/27/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: SkiaSharp 掩码筛选器
+description: 了解如何使用掩码筛选器创建模糊和其他 alpha 效果。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 940422A1-8BC0-4039-8AD7-26C61320F858
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/27/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 10192e93d2e20f9aa58ca95dd81c07f560193905
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136404"
 ---
-
 # <a name="skiasharp-mask-filters"></a>SkiaSharp 掩码筛选器
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,8 +1,22 @@
 ---
-标题： "说明中的显式样式 Xamarin.Forms ：" 显式样式是通过设置控件的样式属性，有选择地应用于控件的样式。 本文介绍如何在应用程序中使用显式样式 Xamarin.Forms 。 "
-ms-chap： xamarin assetid： C0DF9F8F-B431-4374-A574-325BC3C41A3B： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/17/2016 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 显式样式Xamarin.Forms
+description: 显式样式是通过设置控件的样式属性有选择地应用于控件的样式。 本文介绍如何在应用程序中使用显式样式 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: C0DF9F8F-B431-4374-A574-325BC3C41A3B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/17/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 62b84a5028c17c28a69a887a832028c2064fa78d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136261"
 ---
-
 # <a name="explicit-styles-in-xamarinforms"></a>显式样式Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)

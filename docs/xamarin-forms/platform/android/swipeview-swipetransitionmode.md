@@ -1,8 +1,22 @@
 ---
-标题： "Android 上的 SwipeView 刷卡器过渡模式" 说明： "平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 平台特定的来控制打开 SwipeView 时所使用的转换。
-ms-chap： xamarin assetid：6B1F8213-9D62-4C40-9F04-881F1371B5AA： xamarin 窗体作者： davidbritch： dabritch ms. 日期：12/11/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Android 上的 SwipeView 滑动过渡模式
+description: 平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 平台特定的来控制打开 SwipeView 时所使用的转换。
+ms.prod: xamarin
+ms.assetid: 6B1F8213-9D62-4C40-9F04-881F1371B5AA
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/11/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c420fe65b020067169230dd06dbcd5ce65c036ab
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128617"
 ---
-
 # <a name="swipeview-swipe-transition-mode-on-android"></a>Android 上的 SwipeView 滑动过渡模式
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

@@ -1,8 +1,22 @@
 ---
-标题： "身份验证和授权" 说明： "本章节介绍了 eShopOnContainers mobile 应用如何针对容器化微服务执行身份验证和授权。"
-ms-chap： xamarin assetid： e3f27b4c-f7f5-4839-a48c-30bcb919c59e： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/08/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 身份验证和授权
+description: 本章介绍了 eShopOnContainers mobile 应用如何针对容器化微服务执行身份验证和授权。
+ms.prod: xamarin
+ms.assetid: e3f27b4c-f7f5-4839-a48c-30bcb919c59e
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/08/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8b712b2a5d7eeb2ee5e71047b9e6c460eb10d72a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573828"
 ---
-
 # <a name="authentication-and-authorization"></a>身份验证和授权
 
 身份验证是从用户获取标识凭据（例如用户名和密码）的过程，并根据机构验证这些凭据。 如果凭据有效，则提交凭据的实体被视为经过身份验证的标识。 身份验证后，授权过程会确定该标识是否有权访问给定的资源。

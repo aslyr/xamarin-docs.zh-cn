@@ -1,8 +1,23 @@
 ---
-title： " Xamarin.Forms FlexLayout" 说明： "使用 FlexLayout 来堆积或包装子视图的集合"。
-ms-chap： xamarin assetid：6A91EA70-268C-462C-AAAF-F8DA011403F8： xamarin。 custom： xamu：： davidbritch： dabritch：：05/07/2018 不，不是： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsFlexLayout
+description: 使用 FlexLayout 来堆积或包装子视图的集合。
+ms.prod: xamarin
+ms.assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8
+ms.technology: xamarin-forms
+ms.custom: xamu-video
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/07/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 518bf97be3dd9d906d574b15434b0bfa67612516
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570682"
 ---
-
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.FormsFlexLayout
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)

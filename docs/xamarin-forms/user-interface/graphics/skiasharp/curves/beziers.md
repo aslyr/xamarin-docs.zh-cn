@@ -1,8 +1,22 @@
 ---
-title： "三种贝塞尔曲线类型" 说明： "本文介绍了如何使用 SkiaSharp 在应用程序中呈现三次方贝塞尔曲线， Xamarin.Forms 并使用示例代码说明这一点。"
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 8FE0F6DC-16BC-435F-9626-DD1790C0145A author： davidbritch： dabritch ms. 日期：05/25/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 贝塞尔曲线的三种类型
+description: 本文介绍如何使用 SkiaSharp 在应用程序中呈现三次方贝塞尔曲线，并使用 Xamarin.Forms 示例代码对此进行演示。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/25/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1ad548846500ccbacc2a3d117919bfb4df1a1d79
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138679"
 ---
-
 # <a name="three-types-of-bzier-curves"></a>贝塞尔曲线的三种类型
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

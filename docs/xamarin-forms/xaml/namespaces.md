@@ -1,8 +1,22 @@
 ---
-标题： "说明中的 XAML 命名空间" Xamarin.Forms ： xaml 使用命名空间声明的 XMLNS XML 特性。 本文介绍 XAML 命名空间语法，并演示如何声明 XAML 命名空间来访问类型。
-ms-chap： xamarin assetid： C03B5553-B199-4A19-9F0F-E5BCE1DB268F： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/21/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: XAML 命名空间Xamarin.Forms
+description: XAML 使用 xmlns XML 特性进行命名空间声明。 本文介绍 XAML 命名空间语法，并演示如何声明 XAML 命名空间来访问类型。
+ms.prod: xamarin
+ms.assetid: C03B5553-B199-4A19-9F0F-E5BCE1DB268F
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/21/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7f35342134767ccdadfab086bfa14f6b610b325d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84130372"
 ---
-
 # <a name="xaml-namespaces-in-xamarinforms"></a>XAML 命名空间Xamarin.Forms
 
 _XAML 使用 xmlns XML 特性进行命名空间声明。本文介绍 XAML 命名空间语法，并演示如何声明 XAML 命名空间来访问类型。_

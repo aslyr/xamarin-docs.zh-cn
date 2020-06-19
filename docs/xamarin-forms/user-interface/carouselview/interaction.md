@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms CarouselView 交互" 说明： "CarouselView 中当前显示的项可通过 CurrentItem 和位置属性访问。"
-ms-chap： xamarin assetid：854D97E5-D119-4BE2-AE7C-BD428792C992： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/11/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsCarouselView 交互
+description: 可以通过 CurrentItem 和位置属性访问 CarouselView 中当前显示的项。
+ms.prod: xamarin
+ms.assetid: 854D97E5-D119-4BE2-AE7C-BD428792C992
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/11/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 57c501c0f789ce448d8381cbbccb46666cf06305
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137405"
 ---
-
 # <a name="xamarinforms-carouselview-interaction"></a>Xamarin.FormsCarouselView 交互
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)

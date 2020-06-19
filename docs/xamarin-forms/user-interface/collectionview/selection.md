@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms CollectionView 选择" 说明： "默认情况下，CollectionView 选择处于禁用状态。 但是，可以启用单个和多个选择。
-ms-chap： xamarin assetid：423D91C7-1E58-4735-9E80-58F11CDFD953： xamarin 窗体作者： davidbritch： dabritch ms. 日期：05/06/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsCollectionView 选择
+description: 默认情况下，CollectionView 选择处于禁用状态。 但是，可以启用单个和多个选择。
+ms.prod: xamarin
+ms.assetid: 423D91C7-1E58-4735-9E80-58F11CDFD953
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/06/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 39f118d7073fc551923f891681c8c6cf6a4c5ddd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137379"
 ---
-
 # <a name="xamarinforms-collectionview-selection"></a>Xamarin.FormsCollectionView 选择
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

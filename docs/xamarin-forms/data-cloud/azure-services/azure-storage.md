@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms 描述：" Azure 存储是一个可缩放的云存储解决方案，可用于存储非结构化和结构化数据。 本文介绍如何使用 Xamarin.Forms 在 Azure 存储中存储文本和二进制数据，以及如何访问数据。
-ms-chap： xamarin assetid：5B10D37B-839B-4CD0-9C65-91014A93F3EB： xamarin 窗体作者： davidbritch： dabritch ms. 日期：12/28/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 在 Azure 存储中存储和访问数据Xamarin.Forms
+description: Azure 存储是一种可缩放的云存储解决方案，可用于存储非结构化和结构化数据。 本文介绍如何使用 Xamarin.Forms 在 Azure 存储中存储文本和二进制数据，以及如何访问数据。
+ms.prod: xamarin
+ms.assetid: 5B10D37B-839B-4CD0-9C65-91014A93F3EB
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/28/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a69edd3bf014809cc479dcb7cba0e430dcefbe5b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84564675"
 ---
-
 # <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>在 Azure 存储中存储和访问数据Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)

@@ -1,8 +1,22 @@
 ---
-title： "SkiaSharp 中的路径效果" 说明： "本文介绍了各种 SkiaSharp 路径效果，这些效果允许将路径用于描边和填充，并使用示例代码对此进行了演示。"
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 95167D1F-A718-405A-AFCC-90E596D422F3 author： davidbritch： dabritch ms. 日期：07/29/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: SkiaSharp 中的路径效果
+description: 本文介绍了各种 SkiaSharp 路径效果，这些效果允许将路径用于描边和填充，并使用示例代码对此进行演示。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/29/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f3a5a581ffb4ca2acf1d4209b8b7a744f0daa5eb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128037"
 ---
-
 # <a name="path-effects-in-skiasharp"></a>SkiaSharp 中的路径效果
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

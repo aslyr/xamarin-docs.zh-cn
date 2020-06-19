@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms 网格" 说明： " Xamarin.Forms 网格是一种布局，它将其子级组织到单元格的行和列中。"
-ms-chap： xamarin assetid：762B1802-D185-494C-B643-74EED55882FE： xamarin 窗体作者： davidbritch： dabritch ms. 日期：05/15/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms格
+description: Xamarin.Forms网格是一种布局，可将其子级组织到单元格的行和列中。
+ms.prod: xamarin
+ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/15/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9d2e697a07e033fd7c3c8d3efffa1d67f6c097c3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946333"
 ---
-
 # <a name="xamarinforms-grid"></a>Xamarin.Forms格
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
@@ -274,6 +288,21 @@ grid.Children.Add(bottomRight, 1, 2, 1, 2); // second column, second row
 
 > [!NOTE]
 > 此外，可以使用和方法将子视图添加到， [`Grid`](xref:Xamarin.Forms.Grid) [`AddHorizontal`](xref:Xamarin.Forms.Grid.IGridList`1.AddHorizontal*) 这会 [`AddVertical`](xref:Xamarin.Forms.Grid.IGridList`1.AddVertical*) 将子级添加到单个行或单个列 `Grid` 。 `Grid`然后，在进行这些调用时，将在行或列中展开，并自动定位正确单元中的子级。
+
+### <a name="simplify-row-and-column-definitions"></a>简化行和列定义
+
+在 XAML 中，可以使用简化的语法来指定的行和列特征，以 [`Grid`](xref:Xamarin.Forms.Grid) 避免为 [`RowDefinition`](xref:Xamarin.Forms.RowDefinition) [`ColumnDefinition`](xref:Xamarin.Forms.ColumnDefinition) 每个行和列定义和对象。 相反， [`RowDefinitions`](xref:Xamarin.Forms.Grid.RowDefinitions) 和 [`ColumnDefinitions`](xref:Xamarin.Forms.Grid.ColumnDefinitions) 属性可以设置为包含逗号分隔值的字符串 [`GridUnitType`](xref:Xamarin.Forms.GridUnitType) ，从该值开始 Xamarin.Forms 创建 `RowDefinition` 和对象中生成的类型转换器 `ColumnDefinition` ：
+
+```xaml
+<Grid RowDefinitions="1*, Auto, 25, 14, 20"
+      ColumnDefinitions="*, 2*, Auto, 300">
+    ...
+</Grid>
+```
+
+在此示例中， [`Grid`](xref:Xamarin.Forms.Grid) 有五行和四列。 第三个、第三行和第五行设置为绝对高度，第二行自动调整其内容的大小。 然后，将剩余的高度分配给第一行。
+
+将第三列设置为绝对宽度，第三列自动调整其内容的大小。 在第一列和第二列之间按星号前面的数字分配剩余宽度。 在此示例中，第二列的宽度是第一列的两倍（因为与 `*` 相同 `1*` ）。
 
 ## <a name="space-between-rows-and-columns"></a>行和列之间的间距
 

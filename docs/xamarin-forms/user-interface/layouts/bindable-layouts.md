@@ -1,8 +1,22 @@
 ---
-标题： "描述中的可绑定布局 Xamarin.Forms ：" 可绑定布局通过绑定到项的集合使布局类能够生成其内容，并可选择使用 system.windows.datatemplate> 设置每个项的外观。
-ms-chap： xamarin assetid：824C3319-20A0-42D0-8632-CDECD98349C3： xamarin 窗体作者： davidbritch： dabritch ms. 日期：03/09/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 可绑定布局Xamarin.Forms
+description: 可绑定布局通过绑定到项的集合，使布局类能够生成其内容，并且可以选择使用 System.windows.datatemplate> 设置每个项的外观。
+ms.prod: xamarin
+ms.assetid: 824C3319-20A0-42D0-8632-CDECD98349C3
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/09/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9d0497c0c0593b54f69bac84307976c4050e9c95
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138237"
 ---
-
 # <a name="bindable-layouts-in-xamarinforms"></a>可绑定布局Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)

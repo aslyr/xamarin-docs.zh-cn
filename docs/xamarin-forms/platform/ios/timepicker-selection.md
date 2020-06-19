@@ -1,8 +1,22 @@
 ---
-标题： "iOS 上的 TimePicker 项选择" 说明： "平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用特定于 iOS 平台的，该特定于控制何时在 TimePicker 中进行项目选择。
-ms-chap： xamarin assetid：554AC877-8698-4B8C-A676-80DD64305A06： xamarin 窗体作者： davidbritch： dabritch ms. 日期：01/15/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: IOS 上的 TimePicker 项选择
+description: 平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用特定于 iOS 平台的来控制何时在 TimePicker 中进行项目选择。
+ms.prod: xamarin
+ms.assetid: 554AC877-8698-4B8C-A676-80DD64305A06
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/15/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 009482c8f1e90aaa2f592ea04d8fd4f0f31324e8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137015"
 ---
-
 # <a name="timepicker-item-selection-on-ios"></a>IOS 上的 TimePicker 项选择
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

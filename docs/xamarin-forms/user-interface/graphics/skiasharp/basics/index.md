@@ -1,8 +1,22 @@
 ---
-标题： "SkiaSharp 绘图基础知识" 说明： "本指南介绍了 SkiaSharp graphics 概念的基础知识和 Xamarin.Forms 应用程序中的坐标。"
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 25141E3E-D22E-44B1-A647-7E6FA0C9737B author： davidbritch： dabritch ms. 日期：03/10/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: SkiaSharp 绘制基础知识
+description: 本指南说明 SkiaSharp 图形概念和应用程序中的坐标 Xamarin.Forms 。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 25141E3E-D22E-44B1-A647-7E6FA0C9737B
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fd82f7ffe135c12c9dfc59c3353d7d9f5d73068c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137704"
 ---
-
 # <a name="skiasharp-drawing-basics"></a>SkiaSharp 绘制基础知识
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

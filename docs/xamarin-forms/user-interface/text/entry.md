@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms Entry" 说明： "本文介绍了如何使用 Xamarin.Forms Entry 类在应用程序中接受单行文本或密码输入。"
-ms-chap： xamarin assetid：9923C541-3C10-4D14-BAB5-C4D6C514FB1E： xamarin 窗体作者： davidbritch： dabritch ms. 日期：09/25/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms条目
+description: 本文介绍如何使用 Xamarin.Forms Entry 类在应用程序中接受单行文本或密码输入。
+ms.prod: xamarin
+ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/25/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5c17d6a106474c4c5b183bd41923533ffc95789b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136196"
 ---
-
 # <a name="xamarinforms-entry"></a>Xamarin.Forms条目
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)

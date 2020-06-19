@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms CollectionView 简介" 说明： "CollectionView 是一种灵活且高性能的视图，可使用不同的布局规范呈现数据列表。"
-ms-chap： xamarin assetid：5C08F687-B9E6-4CE4-8726-F287F6D0B6A7： xamarin 窗体作者： davidbritch： dabritch ms. 日期：12/11/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsCollectionView 简介
+description: CollectionView 是一种灵活且高性能的视图，可使用不同的布局规范呈现数据列表。
+ms.prod: xamarin
+ms.assetid: 5C08F687-B9E6-4CE4-8726-F287F6D0B6A7
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/11/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d6a09ead9c3def2f58ad2755de4574f6d6e331e8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136430"
 ---
-
 # <a name="xamarinforms-collectionview-introduction"></a>Xamarin.FormsCollectionView 简介
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

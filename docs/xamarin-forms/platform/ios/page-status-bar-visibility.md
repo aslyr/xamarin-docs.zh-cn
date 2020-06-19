@@ -1,8 +1,22 @@
 ---
-标题： "iOS 上的页面状态栏可见性" 说明： "平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 平台特定的来设置页面上状态栏的可见性。
-ms-chap： xamarin assetid： D8BB7C24-A27F-4758-8557-6A81F909ABD9： xamarin 窗体作者： davidbritch： dabritch ms. 日期：10/24/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: IOS 上的页面状态栏可见性
+description: 平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 平台特定的来设置页面上状态栏的可见性。
+ms.prod: xamarin
+ms.assetid: D8BB7C24-A27F-4758-8557-6A81F909ABD9
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 69594924f26afff133d8f211199cac44e66254d9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128019"
 ---
-
 # <a name="page-status-bar-visibility-on-ios"></a>IOS 上的页面状态栏可见性
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

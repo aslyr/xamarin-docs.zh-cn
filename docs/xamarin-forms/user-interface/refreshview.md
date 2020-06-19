@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms RefreshView" 说明： " Xamarin.Forms RefreshView 是一个容器控件，它为可滚动内容的" 拉到刷新 "功能提供请求。
-ms-chap： xamarin assetId：58DBD23B-ADB9-40DA-B331-4DDB6E698990： xamarin 窗体作者： davidbritch： dabritch ms. 日期：09/19/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsRefreshView
+description: Xamarin.FormsRefreshView 是一个容器控件，为可滚动的内容提供拉取到刷新功能。
+ms.prod: xamarin
+ms.assetId: 58DBD23B-ADB9-40DA-B331-4DDB6E698990
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/19/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d84e6bb6ed41f2fbc213cd15051d071521f588cd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127590"
 ---
-
 # <a name="xamarinforms-refreshview"></a>Xamarin.FormsRefreshView
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)

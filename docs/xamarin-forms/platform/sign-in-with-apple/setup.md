@@ -1,8 +1,22 @@
 ---
-标题： "设置步骤-通过 Apple 登录 Xamarin.Forms " 说明： "基于移动应用程序目标的不同平台，用 apple 安装程序登录。"
-ms-chap： xamarin assetid：8F712802-395B-469B-B5BE-C927AD1A8391： xamarin 窗体作者： davidortinau： daortin ms. 日期：09/10/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 安装步骤-用 Apple for 登录Xamarin.Forms
+description: 根据移动应用程序目标的不同平台，用 Apple 安装程序登录。
+ms.prod: xamarin
+ms.assetid: 8F712802-395B-469B-B5BE-C927AD1A8391
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 09/10/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 95fc2547dd2f17f7aa2b2e8ca4c70915c6542318
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198035"
 ---
-
 # <a name="setup-sign-in-with-apple-for-xamarinforms"></a>安装程序登录Xamarin.Forms
 
 本指南介绍了设置跨平台应用程序以使用 Apple 进行登录高级操作所需的一系列步骤。 Apple 开发人员门户中的 Apple 安装程序是直接的，而在 Android 和 Apple 之间创建安全关系则需要执行其他步骤。 
@@ -91,19 +105,11 @@ ms-chap： xamarin assetid：8F712802-395B-469B-B5BE-C927AD1A8391： xamarin 窗
 你将下载一个 `.p8` 密钥文件。  可以在记事本或 VSCode 中打开此文件以查看文本内容。  它们应该如下所示：
 
 ```
----
-title: "Setup Steps - Sign In with Apple for Xamarin.Forms"
-description: Sign In with Apple setup differs depending on the different platforms your mobile application targets.
-ms.prod: xamarin
-ms.assetid: 8F712802-395B-469B-B5BE-C927AD1A8391
-ms.technology: xamarin-forms
-author: davidortinau
-ms.author: daortin
-ms.date: 09/10/2019
-no-loc:
-- "Xamarin.Forms"
-- "Xamarin.Essentials"
-
+-----BEGIN PRIVATE KEY-----
+MIGTAgEAMBMGBasGSM49AgGFCCqGSM49AwEHBHkwdwIBAQQg3MX8n6VnQ2WzgEy0
+Skoz9uOvatLMKTUIPyPCAejzzUCgCgYIKoZIzj0DAQehRANCAARZ0DoM6QPqpJxP
+JKSlWz0AohFhYre10EXPkjrih4jTm+b0AeG2BGuoIWd18i8FimGDgK6IzHHPsEqj
+DHF5Svq0
 -----END PRIVATE KEY-----
 ```
 

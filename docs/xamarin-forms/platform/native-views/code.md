@@ -1,8 +1,22 @@
 ---
-标题： "c # 中的本机视图" 说明：可以直接从 Xamarin.Forms 使用 c # 创建的页面中引用 iOS、Android 和 UWP 的本机视图。 本文演示如何将本机视图添加到 Xamarin.Forms 使用 c # 创建的布局中，以及如何替代自定义视图的布局来更正其度量 API 使用情况。
-ms-chap： xamarin assetid：230F937C-F914-4B21-8EA1-1A2A9E644769： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/27/2016 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 采用 C# 的本机视图
+description: '可以直接从 Xamarin.Forms 使用 c # 创建的页面中引用 iOS、Android 和 UWP 的本机视图。 本文演示如何将本机视图添加到 Xamarin.Forms 使用 c # 创建的布局中，以及如何替代自定义视图的布局来更正其度量 API 使用情况。'
+ms.prod: xamarin
+ms.assetid: 230F937C-F914-4B21-8EA1-1A2A9E644769
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/27/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 18cdeccbdff86a6b20aab4b33db259f1f06ee096
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139589"
 ---
-
 # <a name="native-views-in-c"></a>C 中的本机视图\#
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)

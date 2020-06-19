@@ -1,8 +1,22 @@
 ---
-标题： "访问 SkiaSharp 位图像素位" 说明： "发现用于访问和修改 SkiaSharp 位图的像素位的各种技术。"
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： DBB58522-F816-4A8C-96A5-E0236F16A5C6 author： davidbritch： dabritch ms. 日期：07/11/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 访问 SkiaSharp 位图像素位
+description: 了解访问和修改 SkiaSharp 位图的像素位的各种方法。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: DBB58522-F816-4A8C-96A5-E0236F16A5C6
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/11/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9018cbe6e41350b22a0f1f91858017531c75a0ac
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135574"
 ---
-
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>访问 SkiaSharp 位图像素位
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

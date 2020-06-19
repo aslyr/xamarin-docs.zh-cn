@@ -1,8 +1,22 @@
 ---
-标题： "Android 上的 ViewCell 上下文操作" 说明： "平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 平台特定的，该平台启用了 ViewCell 上下文操作传统模式。 "
-ms-chap： xamarin assetid： 8BD71B10-5037-443F-9975-B941CE393E5A 毫秒： xamarin 窗体作者： davidbritch 毫秒. 作者： dabritch 毫秒。日期：09/24/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Android 上的 ViewCell 上下文操作
+description: 平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用 Android 平台特定的，该平台启用了 ViewCell 上下文操作传统模式。
+ms.prod: xamarin
+ms.assetid: 8BD71B10-5037-443F-9975-B941CE393E5A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/24/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 053697921f1adacc102e9e9bee9dd17f8d44526b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128552"
 ---
-
 # <a name="viewcell-context-actions-on-android"></a>Android 上的 ViewCell 上下文操作
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

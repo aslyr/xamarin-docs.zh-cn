@@ -1,8 +1,22 @@
 ---
-标题： "说明：" 中的 XAML 编译 Xamarin.Forms ： "本文介绍了如何选择性地将 xaml 编译为带有 Xamarin.Forms xaml 编译器（XAMLC）的中间语言（IL）。"
-ms-chap： xamarin assetid：9A2D10A6-5DFC-485F-A75A-2F7B98314025： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/22/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: XAML 编译Xamarin.Forms
+description: 本文介绍如何以 Xamarin.Forms xaml 编译器（XAMLC）的方式将 XAML 直接编译为中间语言（IL）。
+ms.prod: xamarin
+ms.assetid: 9A2D10A6-5DFC-485F-A75A-2F7B98314025
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/22/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: eebbb3040175118320639bcb4482ec77b5c16ac7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137288"
 ---
-
 # <a name="xaml-compilation-in-xamarinforms"></a>XAML 编译Xamarin.Forms
 
 _XAML 可以根据需要使用 XAML 编译器 (XAMLC) 直接编译为中间语言 (IL)。_

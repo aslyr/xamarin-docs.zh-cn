@@ -1,8 +1,22 @@
 ---
-标题： "以 Apple 身份登录 Xamarin.Forms " 描述： "通过 Apple 登录可为用户提供标识保护，并可针对中的跨平台移动方案实施 Xamarin.Forms 。"
-ms-chap： xamarin assetid：414465F8-0CC8-4078-B3D1-F36983069658： xamarin 窗体作者： davidortinau： daortin ms. 日期：09/10/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 通过 Apple in 登录Xamarin.Forms
+description: 通过 Apple 登录可为用户提供标识保护，并可针对中的跨平台移动方案实施 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 414465F8-0CC8-4078-B3D1-F36983069658
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 09/10/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 84c7fdef5d12dfe6fca6294b3125e90761349002
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139446"
 ---
-
 # <a name="sign-in-with-apple-in-xamarinforms"></a>通过 Apple in 登录Xamarin.Forms
 
 使用 Apple 登录会引入一项新服务，为用户提供标识保护。 在 iOS 13 中，Apple 要求使用第三方身份验证提供程序的任何应用程序也提供与 Apple 的登录。 有关将此功能与 Xamarin 一起使用的说明，请[参阅此处](~/ios/platform/ios13/sign-in.md)。

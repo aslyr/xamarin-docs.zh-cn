@@ -1,8 +1,22 @@
 ---
-title： "附加属性" 说明： "本文提供附加属性的简介，并演示如何创建和使用它们。"
-ms-chap： xamarin assetid：6E9DCDC3-A0E4-46A6-BAA9-4FEB6DF8A5A8： xamarin 窗体作者： davidbritch： dabritch ms. 日期：06/02/2016 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 附加属性
+description: 本文提供附加属性的简介，并演示如何创建和使用它们。
+ms.prod: xamarin
+ms.assetid: 6E9DCDC3-A0E4-46A6-BAA9-4FEB6DF8A5A8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/02/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1f26a4415a75b2b02fd7d6893e366ef81156f077
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138185"
 ---
-
 # <a name="attached-properties"></a>附加属性
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)

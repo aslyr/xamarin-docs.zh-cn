@@ -1,8 +1,22 @@
 ---
-标题： "XAML 热重载 Xamarin.Forms " 说明： "在运行的应用程序上立即重新加载对 XAML 文件所做的更改，使你无需在 Xamarin.Forms 每次 XAML 更改后生成项目。"
-ms-chap： xamarin assetid： E220F054-32EE-424C-A7E5-6156BE271519： xamarin 窗体作者： maddyleger1： maleger ms. 日期：03/14/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 的 XAML 热重载Xamarin.Forms
+description: 立即在正在运行的应用程序上重新加载对 XAML 文件所做的更改，这样就无需在 Xamarin.Forms 每次 XAML 更改后生成项目。
+ms.prod: xamarin
+ms.assetid: E220F054-32EE-424C-A7E5-6156BE271519
+ms.technology: xamarin-forms
+author: maddyleger1
+ms.author: maleger
+ms.date: 03/14/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0655739c95ba58b8d93aae6d3987d54bd0582c7b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127447"
 ---
-
 # <a name="xaml-hot-reload-for-xamarinforms"></a>的 XAML 热重载Xamarin.Forms
 
 XAML 热重载将插入现有的工作流，以提高工作效率并节省时间。 如果不使用 XAML 热重载，则必须在每次想要查看 XAML 更改时生成并部署应用。 如果是热重载，则保存 XAML 文件时，所做的更改将反映在正在运行的应用程序中。 此外，还将保留你的导航状态和数据，从而使你可以快速循环访问 UI，而不会丢失你在应用中的位置。 因此，通过 XAML 热重载，你将花费更少的时间来重新生成和部署应用，以验证 UI 更改。

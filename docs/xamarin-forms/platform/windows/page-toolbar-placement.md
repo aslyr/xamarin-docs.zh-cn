@@ -1,8 +1,22 @@
 ---
-title： "页面工具栏在 Windows 上的位置" 说明： "平台细节使你可以使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用 Windows 平台特定的来更改页面上工具栏的位置。
-ms-chap： xamarin assetid：99F29E95-0C36-4A3B-BDE8-7E9F119E844E： xamarin 窗体作者： davidbritch： dabritch ms. 日期：10/24/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Windows 上的页面工具栏布局
+description: 平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用 Windows 平台特定的，该平台更改了页面上工具栏的位置。
+ms.prod: xamarin
+ms.assetid: 99F29E95-0C36-4A3B-BDE8-7E9F119E844E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 76b4633e6b224e234f9d5f693f4e01ed7a35d6db
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138042"
 ---
-
 # <a name="page-toolbar-placement-on-windows"></a>Windows 上的页面工具栏布局
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

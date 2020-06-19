@@ -1,8 +1,22 @@
 ---
-标题： "选择 Xamarin.Forms 布局" 说明： " Xamarin.Forms 布局类使你能够在应用程序中排列和分组 UI 控件。"
-ms-chap： xamarin assetid：05A39752-A174-447E-A30D-3CC9EF98CB96： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/21/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 选择 Xamarin.Forms 布局
+description: Xamarin.Forms布局类使你能够在应用程序中排列和分组 UI 控件。
+ms.prod: xamarin
+ms.assetid: 05A39752-A174-447E-A30D-3CC9EF98CB96
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/21/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 16a48423d05ce1cede75c0020bf18f4f398f5adc
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138497"
 ---
-
 # <a name="choose-a-xamarinforms-layout"></a>选择 Xamarin.Forms 布局
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)

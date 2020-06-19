@@ -1,8 +1,22 @@
 ---
-标题： "将设计时数据与 XAML 预览器结合使用" 说明： "本文介绍了如何使用设计时数据在 XAML 预览器中显示数据密集型布局，而不运行你的应用程序。"
-ms-chap： xamarin assetid：0F608019-5951-4BE6-80E0-9EEE1733D642： xamarin 窗体作者： maddyleger1： maleger ms. 日期：03/27/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 将设计时数据与 XAML 预览器结合使用
+description: 本文介绍如何使用设计时数据来显示 XAML 预览器中的数据密集型布局，而不运行您的应用程序。
+ms.prod: xamarin
+ms.assetid: 0F608019-5951-4BE6-80E0-9EEE1733D642
+ms.technology: xamarin-forms
+author: maddyleger1
+ms.author: maleger
+ms.date: 03/27/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 182256fd572a370a7b322898b1e24ade12e971fd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127338"
 ---
-
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>将设计时数据与 XAML 预览器结合使用
 
 _某些布局难以直观显示，无需数据。使用这些提示可充分利用 XAML 预览器中的数据密集型页面。_

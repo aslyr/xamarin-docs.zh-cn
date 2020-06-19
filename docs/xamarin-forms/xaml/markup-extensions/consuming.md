@@ -1,8 +1,22 @@
 ---
-title： "使用 XAML 标记扩展" 说明： "本文介绍了如何 Xamarin.Forms 通过允许从各种源设置元素特性来使用 xaml 标记扩展来增强 xaml 的强大功能和灵活性。"
-ms-chap： xamarin assetid： CE686893-609C-4EC3-9225-6C68D2A9F79C： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/21/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用 XAML 标记扩展
+description: 本文介绍如何 Xamarin.Forms 通过允许从各种源设置元素特性来使用 xaml 标记扩展来增强 xaml 的强大功能和灵活性。
+ms.prod: xamarin
+ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/17/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e1429c3f39e37dc552d7f6ca8767058e5aec853b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84903099"
 ---
-
 # <a name="consuming-xaml-markup-extensions"></a>使用 XAML 标记扩展
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
@@ -18,7 +32,7 @@ XAML 标记扩展允许从多个源设置元素特性，从而帮助提高 XAML 
 - [`OnIdiom`](#onidiom-markup-extension)-基于运行应用程序的设备的用法自定义 UI 外观。
 - [`DataTemplate`](#datatemplate-markup-extension)–将类型转换为 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。
 - [`FontImage`](#fontimage-markup-extension)–在可以显示的任何视图中显示字体图标 `ImageSource` 。
-- [`OnAppTheme`](#onapptheme-markup-extension)–根据当前系统主题使用资源。
+- [`AppThemeBinding`](#appthemebinding-markup-extension)–根据当前系统主题使用资源。
 
 其他 xaml 实现一直以来已支持其他 XAML 标记扩展，并且也支持 Xamarin.Forms 。 其他文章中更全面地描述了这些内容：
 
@@ -566,60 +580,55 @@ public partial class TypeDemoPage : ContentPage
 
 有关通过在对象中指定字体图标数据来显示字体图标的信息 `FontImageSource` ，请参阅[显示字体图标](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)。
 
-## <a name="onapptheme-markup-extension"></a>OnAppTheme 标记扩展
+## <a name="appthemebinding-markup-extension"></a>AppThemeBinding 标记扩展
 
-`OnAppTheme`标记扩展使你能够根据当前系统主题指定要使用的资源（如图像或颜色）。 它提供与类相同的功能 `OnAppTheme<T>` ，但具有更简洁的表示形式。
+`AppThemeBinding`标记扩展使你能够根据当前系统主题指定要使用的资源（如图像或颜色）。
 
 > [!IMPORTANT]
-> `OnAppTheme`标记扩展具有最低操作系统要求。 有关详细信息，请参阅[响应 Xamarin.Forms 应用程序中的系统主题更改](~/xamarin-forms/user-interface/theming/system-theme-changes.md)。
+> `AppThemeBinding`标记扩展具有最低操作系统要求。 有关详细信息，请参阅[响应 Xamarin.Forms 应用程序中的系统主题更改](~/xamarin-forms/user-interface/theming/system-theme-changes.md)。
 
-`OnAppThemeExtension` 类支持 `OnAppTheme` 标记扩展，并定义以下属性：
+`AppThemeBindingExtension` 类支持 `AppThemeBinding` 标记扩展，并定义以下属性：
 
 - `Default`，类型为 `object` ，默认情况下，你设置为要使用的资源。
 - `Light`，类型为 `object` ，在设备使用光源主题时，将设置为要使用的资源。
 - `Dark`，类型为 `object` ，在设备使用其深色主题时，将设置为要使用的资源。
 - `Value`，类型为 `object` ，返回当前正在由标记扩展使用的资源。
-- `Converter`类型的 `IValueConverter` ，可以设置为 `IValueConverter` 实现。
-- `ConverterParameter`类型的 `object` ，可设置为要传递到实现的值 `IValueConverter` 。
 
 > [!NOTE]
-> XAML 分析程序允许将 `OnAppThemeExtension` 类缩写为 `OnAppTheme`。
+> XAML 分析程序允许将 `AppThemeBindingExtension` 类缩写为 `AppBindingTheme`。
 
-`Default`属性是的内容属性 `OnAppThemeExtension` 。 因此，对于用大括号表示的 XAML 标记表达式，可以消除 `Default=` 表达式的部分，前提是它是第一个参数。
+`Default`属性是的内容属性 `AppThemeBindingExtension` 。 因此，对于用大括号表示的 XAML 标记表达式，可以消除 `Default=` 表达式的部分，前提是它是第一个参数。
 
-**OnAppTheme 演示**页显示了如何使用 `OnAppTheme` 标记扩展：
+**AppThemeBinding 演示**页显示了如何使用 `AppThemeBinding` 标记扩展：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MarkupExtensions.OnAppThemeDemoPage"
-             Title="OnAppTheme Demo">
+             x:Class="MarkupExtensions.AppThemeBindingDemoPage"
+             Title="AppThemeBinding Demo">
     <ContentPage.Resources>
 
         <Style x:Key="labelStyle"
                TargetType="Label">
             <Setter Property="TextColor"
-                    Value="{OnAppTheme Black, Light=Blue, Dark=Teal}" />
+                    Value="{AppThemeBinding Black, Light=Blue, Dark=Teal}" />
         </Style>
 
     </ContentPage.Resources>
     <StackLayout Margin="20">
         <Label Text="This text is green in light mode, and red in dark mode."
-               TextColor="{OnAppTheme Light=Green, Dark=Red}" />
+               TextColor="{AppThemeBinding Light=Green, Dark=Red}" />
         <Label Text="This text is black by default, blue in light mode, and teal in dark mode."
-               Style="{DynamicResource labelStyle}" />
+               Style="{StaticResource labelStyle}" />
     </StackLayout>
 </ContentPage>
 ```
 
 在此示例中， [`Label`](xref:Xamarin.Forms.Label) 当设备使用光源主题时，第一个的文本颜色设置为绿色; 当设备使用其深主题时，将设置为红色。 第二个 `Label` [`TextColor`](xref:Xamarin.Forms.Label.TextColor) 属性通过设置 [`Style`](xref:Xamarin.Forms.Style) 。 默认情况下，这会将 `Style` 的文本颜色设置为 `Label` 黑色; 当设备使用光源主题时，将设置为蓝色; 当设备使用其深主题时，将设置为蓝绿色。
 
-> [!NOTE]
-> 使用 [`Style`](xref:Xamarin.Forms.Style) `OnAppTheme` 标记扩展的将应用于带有标记扩展的控件 `DynamicResource` ，以便在系统主题发生更改时更新应用的 UI。
-
 下面是正在运行的程序：
 
-![OnAppTheme 演示](consuming-images/onappthemedemo.png "OnAppTheme 演示")
+![AppThemeBinding 演示](consuming-images/appthemebindingdemo.png "AppThemeBinding 演示")
 
 ## <a name="define-markup-extensions"></a>定义标记扩展
 

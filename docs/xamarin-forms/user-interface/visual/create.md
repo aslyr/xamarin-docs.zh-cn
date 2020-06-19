@@ -1,8 +1,22 @@
 ---
-标题： "创建 Xamarin.Forms 视觉对象呈现器" 说明： "创建 Xamarin.Forms 可有选择地应用于 VisualElement 对象的视觉对象，而无需为视图创建子类 Xamarin.Forms 。"
-ms-chap： xamarin assetid：80BF9C72-AC28-4AAF-9DDD-B60CBDD1CD59： xamarin 窗体作者： davidbritch： dabritch ms. 日期：03/12/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 创建 Xamarin.Forms 可视化呈现器
+description: 创建 Xamarin.Forms 可有选择地应用于 VisualElement 对象的视觉对象，而无需为视图创建子类 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 80BF9C72-AC28-4AAF-9DDD-B60CBDD1CD59
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/12/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 23edbb007e912d13858686d1c5ec574c9e3349c7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127135"
 ---
-
 # <a name="create-a-xamarinforms-visual-renderer"></a>创建 Xamarin.Forms 可视化呈现器
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)

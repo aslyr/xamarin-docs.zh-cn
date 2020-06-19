@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms web 视图" 说明： "本文介绍了如何使用 web Xamarin.Forms 视图类向用户显示本地或网络 web 内容和文档。"
-ms-chap： xamarin assetid： E44F5D0F-DB8E-46C7-8789-114F1652A6C5： xamarin 窗体作者： davidbritch： dabritch ms. 日期：05/06/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms切换
+description: 本文介绍如何使用 web Xamarin.Forms 视图类向用户显示本地或网络 web 内容和文档。
+ms.prod: xamarin
+ms.assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/06/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9b07e044e55f99a7a183e55c566bf59dbd082655
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198173"
 ---
-
 # <a name="xamarinforms-webview"></a>Xamarin.Forms切换
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)

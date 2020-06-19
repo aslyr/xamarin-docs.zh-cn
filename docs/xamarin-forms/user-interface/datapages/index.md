@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms DataPages" 说明： "本文介绍了 Xamarin.Forms DataPages，它提供了一个 API，可快速轻松地将数据源绑定到预先生成的视图。"
-ms-chap： xamarin assetid： DF16EAEE-DB78-42CA-9C59-51D9D6CB6B95： xamarin 窗体作者： davidbritch： dabritch ms. 日期：12/01/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsDataPages
+description: 本文介绍 Xamarin.Forms DataPages，它提供了一个 API，用于快速轻松地将数据源绑定到预先生成的视图。
+ms.prod: xamarin
+ms.assetid: DF16EAEE-DB78-42CA-9C59-51D9D6CB6B95
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/01/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7d99870dd975d0996ffcd05d4aef153f3515ec9e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84134311"
 ---
-
 # <a name="xamarinforms-datapages"></a>Xamarin.FormsDataPages
 
 ![](~/media/shared/preview.png "This API is currently in preview")

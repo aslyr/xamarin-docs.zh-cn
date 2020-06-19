@@ -1,8 +1,22 @@
 ---
-标题： "XAML 中的本机视图" 说明： "iOS、Android 和通用 Windows 平台中的本机视图可以从 Xamarin.Forms XAML 文件直接引用。 可以在本机视图上设置属性和事件处理程序，并且可以与视图进行交互 Xamarin.Forms 。 本文演示如何从 XAML 文件使用本机视图 Xamarin.Forms 。 "
-ms-chap： xamarin assetid：7A856D31-B300-409E-9AEB-F8A4DB99B37E： xamarin 窗体作者： davidbritch： dabritch ms. 日期：03/23/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 采用 XAML 的本机视图
+description: 可以直接从 XAML 文件引用 iOS、Android 和通用 Windows 平台中的本机视图 Xamarin.Forms 。 可以在本机视图上设置属性和事件处理程序，并且可以与视图进行交互 Xamarin.Forms 。 本文演示如何从 XAML 文件使用本机视图 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 7A856D31-B300-409E-9AEB-F8A4DB99B37E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/23/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0d6aa84a886d450d1dc42ec31edf16380b795404
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84564627"
 ---
-
 # <a name="native-views-in-xaml"></a>采用 XAML 的本机视图
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)

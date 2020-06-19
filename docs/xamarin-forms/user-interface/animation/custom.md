@@ -1,8 +1,22 @@
 ---
-标题： "说明中的自定义动画" Xamarin.Forms 说明： "本文演示了如何使用 Xamarin 动画类来创建和取消动画、同步多个动画以及创建自定义动画，以对现有动画方法未进行动画处理的属性进行动画处理。"
-ms-chap： xamarin assetid：03B2E3FC-E720-4D45-B9A0-711081FC1907： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/10/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 自定义动画Xamarin.Forms
+description: 本文演示如何使用 Xamarin 动画类来创建和取消动画、同步多个动画以及创建自定义动画，以对现有动画方法未进行动画处理的属性进行动画处理。
+ms.prod: xamarin
+ms.assetid: 03B2E3FC-E720-4D45-B9A0-711081FC1907
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/10/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 573f18de0d7593d832505eb6bb2b492caea024a1
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946099"
 ---
-
 # <a name="custom-animations-in-xamarinforms"></a>自定义动画Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
@@ -37,7 +51,7 @@ animation.Commit (this, "SimpleAnimation", 16, 2000, Easing.Linear, (v, c) => im
 
 - 第一个参数（*所有者*）标识动画的所有者。 这可以是应用动画的视觉元素，也可以是另一个可视元素（如页面）。
 - 第二个参数（*名称*）用名称标识动画。 该名称与用于唯一标识动画的所有者组合在一起。 然后，可以使用此唯一标识来确定动画是否正在运行（[ `AnimationIsRunning` ] （x：） Xamarin.Forms 。AnimationExtensions. AnimationIsRunning （ Xamarin.Forms 。System.windows.media.animation.ianimatable>，System.string）））或将其取消（[ `AbortAnimation` ] （x：） Xamarin.Forms 。AnimationExtensions. AbortAnimation （ Xamarin.Forms 。System.windows.media.animation.ianimatable>））。
-- 第三个参数（*rate*）指示每次调用 [`Animation`](xref:Xamarin.Forms.Animation) 构造函数中定义的回调方法之间的时间间隔（以毫秒为单位）
+- 第三个参数（*rate*）指示每次调用构造函数中定义的回调方法之间的毫秒数 [`Animation`](xref:Xamarin.Forms.Animation) 。
 - 第四个参数（*长度*）指示动画的持续时间（以毫秒为单位）。
 - 第五个参数（*缓动*）定义要在动画中使用的缓动函数。 或者，可将缓动函数指定为构造函数的参数 [`Animation`](xref:Xamarin.Forms.Animation) 。 有关缓动函数的详细信息，请参阅[缓动函数](~/xamarin-forms/user-interface/animation/easing.md)。
 - 第六个参数（*完成*）是在动画完成后将执行的回调。 此回调采用两个参数，第一个参数指示最终值，第二个参数 `bool` 设置为（ `true` 如果动画已取消）。 此外，还可以将*已完成*的回调指定为 [`Animation`](xref:Xamarin.Forms.Animation) 构造函数的参数。 但是，对于单个动画，如果在构造函数和方法中同时指定了*完成* `Animation` 的回调，则只会 `Commit` 执行方法中指定的回调 `Commit` 。

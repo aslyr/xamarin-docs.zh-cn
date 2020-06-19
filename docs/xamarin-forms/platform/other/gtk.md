@@ -1,7 +1,22 @@
 ---
-标题： "GTK # Platform 安装程序" 说明： " Xamarin.Forms 现在为 GTK # 平台提供预览版支持" ms-chap： xamarin assetid：3417FB95-3E4B-47DA-85D0-F34832747236： xamarin： xamarin： davidbritch：： dabritch ms. 日期：04/10/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 'GTK # 平台设置'
+description: 'Xamarin.Forms现在为 GTK # 平台提供预览版支持'
+ms.prod: xamarin
+ms.assetid: 3417FB95-3E4B-47DA-85D0-F34832747236
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a5635da9f7c083609ce1e0f120d0613fff9bd77b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198096"
 ---
-
 # <a name="gtk-platform-setup"></a>GTK # 平台设置
 
 ![预览](~/media/shared/preview.png)

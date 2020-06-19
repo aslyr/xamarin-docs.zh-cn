@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms Fast 呈现器" 说明： "本文介绍了快速呈现器， Xamarin.Forms 通过平展生成的本机控件层次结构，减少了 Android 上控件的通货膨胀和呈现成本。"
-ms-chap： xamarin assetid：097f87f2-d891-4f3c-be02-fb7d195a481a： xamarin 窗体作者： davidbritch： dabritch ms. 日期：05/28/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms 快速呈现器
+description: 本文介绍快速呈现器， Xamarin.Forms 通过平展生成的本机控件层次结构，减少了 Android 上控件的通货膨胀和呈现成本。
+ms.prod: xamarin
+ms.assetid: 097f87f2-d891-4f3c-be02-fb7d195a481a
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/28/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 29f79e4aed0314fe1590fa26c8e4b052e14a94d6
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198063"
 ---
-
 # <a name="xamarinforms-fast-renderers"></a>Xamarin.Forms 快速呈现器
 
 通常，Android 上的大多数原始控件呈现器都由两个视图组成：

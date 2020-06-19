@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms 文本样式" 说明： "本文介绍了如何设置应用程序中文本的样式 Xamarin.Forms 。 样式可定义一次，可供多个视图使用，但样式只能与一种类型的视图一起使用。
-ms-chap： xamarin assetid：57C0CFD6-A568-46B8-ADA1-BF25681893CF： xamarin 窗体作者： davidbritch： dabritch ms. 日期：05/22/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms文本样式
+description: 本文介绍如何在应用程序中设置文本的样式 Xamarin.Forms 。 样式可定义一次，可供多个视图使用，但样式只能与一种类型的视图一起使用。
+ms.prod: xamarin
+ms.assetid: 57C0CFD6-A568-46B8-ADA1-BF25681893CF
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/22/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7d82348231c4b4905f2f70b80f73c45f2f0bf66b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84571995"
 ---
-
 # <a name="xamarinforms-text-styles"></a>Xamarin.Forms文本样式
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)

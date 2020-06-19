@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms switch" 说明： " Xamarin.Forms 开关是一种按钮类型，用户可以对其进行操作以在开启和关闭状态之间切换。 本文介绍如何使用 Switch 类显示切换 UI 元素。
-ms-chap： xamarin assetId： B2F9CC65-481B-4323-8E77-C6BE29C90DE9： xamarin 窗体作者： profexorgeek： jusjohns ms. 日期：07/18/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms转
+description: Xamarin.Forms开关是一种按钮类型，用户可以对其进行操作以在开启和关闭状态之间切换。 本文介绍如何使用 Switch 类显示切换 UI 元素。
+ms.prod: xamarin
+ms.assetId: B2F9CC65-481B-4323-8E77-C6BE29C90DE9
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 05/19/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 12831eec6ba97eee7cde7479729c5c22dce78e90
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946413"
 ---
-
 # <a name="xamarinforms-switch"></a>Xamarin.Forms转
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
@@ -15,9 +29,9 @@ Xamarin.Forms [`Switch`](xref:Xamarin.Forms.Switch) 控件是一个水平切换�
 
 `Switch`控件定义以下属性：
 
-* [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)指示是否 `boolean` `Switch` **打开**的值。
-* [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)是一个 `Color` ，它会影响 `Switch` 在切换或**开启**状态下呈现的方式。
-* `ThumbColor`是 `Color` 交换机拇指的。
+- [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)指示是否 `boolean` `Switch` **打开**的值。
+- [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)是一个 `Color` ，它会影响 `Switch` 在切换或**开启**状态下呈现的方式。
+- `ThumbColor`是 `Color` 交换机拇指的。
 
 对象支持这些属性 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着可以对其进行 `Switch` 样式化并成为数据绑定的目标。
 
@@ -109,11 +123,46 @@ switchControl.Toggled += (sender, e) =>
 
 有关触发器的信息，请参阅[ Xamarin.Forms 触发器](~/xamarin-forms/app-fundamentals/triggers.md)。
 
+## <a name="switch-visual-states"></a>切换可视状态
+
+[`Switch`](xref:Xamarin.Forms.Switch)具有 `On` 和 `Off` 可视状态，可用于在属性更改时启动视觉对象更改 [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled) 。
+
+下面的 XAML 示例演示如何定义和状态的可视状态 `On` `Off` ：
+
+```xaml
+<Switch IsToggled="True">
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="CommonStates">
+            <VisualState x:Name="On">
+                <VisualState.Setters>
+                    <Setter Property="ThumbColor"
+                            Value="MediumSpringGreen" />
+                </VisualState.Setters>
+            </VisualState>
+            <VisualState x:Name="Off">
+                <VisualState.Setters>
+                    <Setter Property="ThumbColor"
+                            Value="Red" />
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+</Switch>
+```
+
+在此示例中， `On` [`VisualState`](xref:Xamarin.Forms.VisualState) 指定当 [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled) 属性为时 `true` ， `ThumbColor` 属性将设置为 "中等弹簧绿色"。 `Off` `VisualState` 指定当 `IsToggled` 属性为时 `false` ， `ThumbColor` 属性将设置为红色。 因此，整体效果是，当处于 `Switch` 远离其拇指的位置时，如果处于 "开" 位置，则其拇指为 "中" 的 "中" `Switch` 。
+
+![IOS 和 Android](switch-images/on-visualstate.png "VisualState 上的开关") 
+ 上的 VisualState 上的开关屏幕截图![在 iOS 和 Android 上关闭 VisualState 的屏幕截图](switch-images/off-visualstate.png "关闭 VisualState")
+
+若要详细了解可视状态，请参阅 [Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)。
+
 ## <a name="disable-a-switch"></a>禁用交换机
 
 应用程序可能进入正在切换的状态， `Switch` 这是无效操作。 在这种情况下， `Switch` 可以通过将其 `IsEnabled` 属性设置为来禁用 `false` 。 这会阻止用户操作 `Switch` 。
 
 ## <a name="related-links"></a>相关链接
 
-* [切换演示](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
-* [Xamarin.Forms 触发器](~/xamarin-forms/app-fundamentals/triggers.md)
+- [切换演示](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
+- [Xamarin.Forms 触发器](~/xamarin-forms/app-fundamentals/triggers.md)
+- [Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)

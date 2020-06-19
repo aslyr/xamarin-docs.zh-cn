@@ -1,8 +1,22 @@
 ---
-标题： "说明中的依赖关系解析 Xamarin.Forms ：" 本文介绍了如何将依赖项解析方法注入到， Xamarin.Forms 以便应用程序的依赖关系注入容器能够控制自定义呈现器、效果和 DependencyService 实现的创建和生存期。 "
-ms-chap： xamarin assetid：491B87DC-14CB-4ADC-AC6C-40A7627B2524： xamarin 窗体作者： davidbritch： dabritch ms. 日期：07/27/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms 中的依赖项解析
+description: 本文介绍如何将依赖项解析方法注入到， Xamarin.Forms 以便应用程序的依赖关系注入容器能够控制自定义呈现器、效果和 DependencyService 实现的创建和生存期。
+ms.prod: xamarin
+ms.assetid: 491B87DC-14CB-4ADC-AC6C-40A7627B2524
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/27/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ae30b4a4b75906613baf8a2568548c8890ccb33a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139082"
 ---
-
 # <a name="dependency-resolution-in-xamarinforms"></a>Xamarin.Forms 中的依赖项解析
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)

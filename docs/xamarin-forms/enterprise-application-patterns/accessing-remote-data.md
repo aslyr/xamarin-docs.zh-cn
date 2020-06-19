@@ -1,8 +1,22 @@
 ---
-标题： "访问远程数据" 说明： "本章节介绍了 eShopOnContainers 移动应用如何从容器化微服务访问数据。"
-ms-chap： xamarin assetid：42eba6f5-9784-4e1a-9943-5c1fbeea7452： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/07/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 访问远程数据
+description: 本章介绍了 eShopOnContainers 移动应用如何从容器化微服务访问数据。
+ms.prod: xamarin
+ms.assetid: 42eba6f5-9784-4e1a-9943-5c1fbeea7452
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: cef3c2369bb4aee81a52ddd27d6ad732d7544dfa
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573841"
 ---
-
 # <a name="accessing-remote-data"></a>访问远程数据
 
 许多基于 web 的新式解决方案都利用 web 服务器托管的 web 服务，为远程客户端应用程序提供功能。 Web 服务公开的操作构成 Web API。

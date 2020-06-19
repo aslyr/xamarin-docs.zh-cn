@@ -1,8 +1,22 @@
 ---
-标题： "description 中的简单动画" Xamarin.Forms ： "ViewExtensions" 类提供可用于构建简单动画的扩展方法。 本文演示如何使用 ViewExtensions 类创建和取消动画。
-ms-chap： xamarin assetid：4A6FAE5A-848F-4CE0-BFA1-22A6309B5225： xamarin 窗体作者： davidbritch： dabritch ms. 日期：11/05/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 简单动画Xamarin.Forms
+description: ViewExtensions 类提供了可用于构建简单动画的扩展方法。 本文演示如何使用 ViewExtensions 类创建和取消动画。
+ms.prod: xamarin
+ms.assetid: 4A6FAE5A-848F-4CE0-BFA1-22A6309B5225
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/05/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 89f0182bfebc4d018eb083904595f0fbb211e3ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573373"
 ---
-
 # <a name="simple-animations-in-xamarinforms"></a>简单动画Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)
@@ -39,7 +53,7 @@ _ViewExtensions 类提供了可用于构建简单动画的扩展方法。本文�
 
 中的每个扩展方法 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 实现一个动画操作，该操作在一段时间内从一个值逐渐更改一个值到另一个值。 本部分将探讨每个动画操作。
 
-### <a name="rotation"></a>轮换
+### <a name="rotation"></a>旋转
 
 下面的代码示例演示如何使用 [ `RotateTo` ] （x： Xamarin.Forms 。ViewExtensions. RotateTo （ Xamarin.Forms 。VisualElement、system.string、 Xamarin.Forms system.object。缓动））方法对的属性进行动画处理 [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation) [`Image`](xref:Xamarin.Forms.Image) ：
 

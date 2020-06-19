@@ -1,7 +1,22 @@
 ---
-标题： "在以下项中使用 CocosSharp" Xamarin.Forms 说明： "CocosSharp 可用于将精确的形状、图像和文本呈现功能添加到应用程序中，以实现高级可视化效果"： xamarin： xamarin assetid： E0F404D5-5C6B-4288-92EC-78996C674E4E ms. 技术： xamarin 窗体作者： davidbritch 毫秒。作者： dabritch 毫秒。日期：05/03/2016 非位置： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用 CocosSharpXamarin.Forms
+description: CocosSharp 可用于将精确的形状、图像和文本呈现添加到应用程序以实现高级可视化
+ms.prod: xamarin
+ms.assetid: E0F404D5-5C6B-4288-92EC-78996C674E4E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/03/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a3183997eb229fd3548a1afeccf82670cf651a71
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84565299"
 ---
-
 # <a name="using-cocossharp-in-xamarinforms"></a>使用 CocosSharpXamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/CocosSharpForms)

@@ -1,8 +1,22 @@
 ---
-标题： "在 SkiaSharp 中绘制简单圆圈" 说明： "本文介绍了 SkiaSharp 绘图的基本知识，包括画布和画图对象，在 Xamarin.Forms 应用程序中，并使用示例代码演示了这一点。"
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： E3A4E373-F65D-45C8-8E77-577A804AC3F8 author： davidbritch： dabritch ms. 日期：03/10/2017： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 在 SkiaSharp 中绘制简单圆圈
+description: 本文介绍了 SkiaSharp 的基础知识，包括画布和画图对象（在应用程序中）， Xamarin.Forms 并通过示例代码对此进行了演示。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fb873102bfb8568b8298a39ea2429fb6c27af175
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137717"
 ---
-
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>在 SkiaSharp 中绘制简单圆圈
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

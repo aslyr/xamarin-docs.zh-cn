@@ -1,8 +1,22 @@
 ---
-title： "向选取器的 Items 集合添加数据" 说明： "选取器视图是用于从数据列表中选择文本项的控件。 本文介绍如何通过将数据添加到 Items 集合，以及如何响应用户选择的项，来用数据填充选取器。
-ms-chap： xamarin assetid：3C840F64-A430-457D-A4B2-3D7AF46F9DBE： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/26/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 将数据添加到选取器的项集合
+description: "\"选取器\" 视图是用于从数据列表中选择文本项的控件。 本文介绍如何通过将数据添加到 Items 集合来使用数据填充选取器，以及如何响应用户选择的项目。"
+ms.prod: xamarin
+ms.assetid: 3C840F64-A430-457D-A4B2-3D7AF46F9DBE
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/26/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8872c6748ba778a2622d82803d580c781bd282cd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139628"
 ---
-
 # <a name="adding-data-to-a-pickers-items-collection"></a>将数据添加到选取器的项集合
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)

@@ -1,8 +1,22 @@
 ---
-标题： "说明：" 中的文件处理 Xamarin.Forms Xamarin.Forms 可以通过使用 .NET Standard 库中的代码或使用嵌入的资源来实现。 "
-ms-chap： xamarin assetid：9987C3F6-5F04-403B-BBB4-ECB024EA6CC8： xamarin 窗体作者： davidbritch： dabritch ms. 日期：06/21/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 文件处理Xamarin.Forms
+description: 使用 Xamarin.Forms .NET Standard 库中的代码或使用嵌入的资源即可实现文件处理。
+ms.prod: xamarin
+ms.assetid: 9987C3F6-5F04-403B-BBB4-ECB024EA6CC8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/21/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f62e5522b5b9a10a3806a70fe949561d77ce0d4e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84574348"
 ---
-
 # <a name="file-handling-in-xamarinforms"></a>文件处理Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)

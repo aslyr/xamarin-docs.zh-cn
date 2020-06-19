@@ -1,8 +1,22 @@
 ---
-标题： "说明：" 中的 "布局选项" Xamarin.Forms ：每个 Xamarin.Forms 视图都有 HorizontalOptions 和 VerticalOptions 属性，其类型为 LayoutOptions。 本文说明每个 LayoutOptions 值对视图对齐和展开的影响。
-ms-chap： xamarin assetid：7CAB5631-5153-4DEF-8AD7-C6011CE44307： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/10/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 布局选项Xamarin.Forms
+description: 每个 Xamarin.Forms 视图都具有类型为 LayoutOptions 的 HorizontalOptions 和 VerticalOptions 属性。 本文说明每个 LayoutOptions 值对视图对齐和展开的影响。
+ms.prod: xamarin
+ms.assetid: 7CAB5631-5153-4DEF-8AD7-C6011CE44307
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/10/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6fa03cf5c18e21ce5ca9e7ea907f50c8de6f3e6c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573256"
 ---
-
 # <a name="layout-options-in-xamarinforms"></a>布局选项Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)

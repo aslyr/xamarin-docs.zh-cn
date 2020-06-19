@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms CollectionView EmptyView" 说明： "在 CollectionView 中，可以指定一个空视图，当没有可显示的数据时为用户提供反馈。 空视图可以是字符串、视图或多个视图。 "
-ms-chap： xamarin assetid：6CEBCFE6-5577-4F68-9709-431062609153： xamarin 窗体作者： davidbritch： dabritch ms. 日期：05/06/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsCollectionView EmptyView
+description: 在 CollectionView 中，可以指定一个空视图，在没有可显示的数据时向用户提供反馈。 空视图可以是字符串、视图或多个视图。
+ms.prod: xamarin
+ms.assetid: 6CEBCFE6-5577-4F68-9709-431062609153
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/06/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d35e39e55d66452e47c7a3e3faf86a7a7d6adaca
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136482"
 ---
-
 # <a name="xamarinforms-collectionview-emptyview"></a>Xamarin.FormsCollectionView EmptyView
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

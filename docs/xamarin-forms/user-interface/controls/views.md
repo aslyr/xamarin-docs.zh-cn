@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms 视图" 说明： " Xamarin.Forms 视图是跨平台移动用户界面的构建基块。 本文列出了中包含的视图 Xamarin.Forms 。 "
-ms-chap： xamarin assetid： AC070686-A423-4A98-8BB6-0B9F94C062CC： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/16/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms视图
+description: Xamarin.Forms视图是跨平台移动用户界面的构建基块。 本文列出了包含在中的视图 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/16/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8c15626e405645d28a785c32d276860f9751ea25
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84132361"
 ---
-
 # <a name="xamarinforms-views"></a>Xamarin.Forms视图
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
@@ -41,7 +55,7 @@ _Xamarin. Forms 视图是跨平台移动用户界面的构建基块。_
 | [`Image`](xref:Xamarin.Forms.Image)显示位图。 可以通过 Web 下载位图，将其作为资源嵌入到公共项目或平台项目中，或使用 .NET 对象创建 `Stream` 。<br /><br />[API 文档](xref:Xamarin.Forms.Image)  / [指南](~/xamarin-forms/user-interface/images.md)  / [示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages) | [![图像示例](views-images/Image.png "图像示例")](views-images/Image-Large.png#lightbox "图像示例")<br />[此页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageDemoPage.cs)  /  的 c # 代码[XAML 页](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageDemoPage.xaml) |
 |     |     |
 
-### <a name="map"></a>地图
+### <a name="map"></a>映射
 
 |     |     |
 | --- | --- |

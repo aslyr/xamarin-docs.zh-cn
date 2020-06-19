@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms 设备类" 说明： "本文介绍了如何使用 Xamarin.Forms Device 类，以便对每个平台的功能和布局进行精细的控制。"
-ms-chap： xamarin assetid：2F304AEC-8612-4833-81E5-B2F3F469B2DF： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/17/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms设备类
+description: 本文介绍如何使用 Xamarin.Forms Device 类，以便对每个平台的功能和布局进行精细的控制。
+ms.prod: xamarin
+ms.assetid: 2F304AEC-8612-4833-81E5-B2F3F469B2DF
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/17/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ba4e93b8f364d6887439b05017a9cd373dce5985
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572320"
 ---
-
 # <a name="xamarinforms-device-class"></a>Xamarin.Forms设备类
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)

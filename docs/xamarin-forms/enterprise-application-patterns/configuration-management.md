@@ -1,8 +1,22 @@
 ---
-标题： "配置管理" 说明： "本章节介绍了 eShopOnContainers 移动应用如何实现配置管理，以提供应用设置和用户设置。"
-ms-chap： xamarin assetid：50d6e780-e768-47f8-9361-3af11e56b87b： xamarin 窗体作者： davidbritch： dabritch ms. 日期：08/07/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 配置管理
+description: 本章介绍了 eShopOnContainers 移动应用如何实现配置管理，以提供应用设置和用户设置。
+ms.prod: xamarin
+ms.assetid: 50d6e780-e768-47f8-9361-3af11e56b87b
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f6f61503f619c08ed3e4eae2adf6ddb2c474f99f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84571475"
 ---
-
 # <a name="configuration-management"></a>配置管理
 
 设置允许将配置应用行为的数据与代码分离，从而允许更改行为而无需重新生成应用。 有两种类型的设置： "应用设置" 和 "用户设置"。

@@ -1,8 +1,22 @@
 ---
-title： "第3部分。 XAML 标记扩展 "说明：" xaml 标记扩展在 XAML 中构成了一项重要功能，该功能允许将属性设置为间接从其他源引用的对象或值。 "
-ms-chap： xamarin ms. 技术： xamarin assetid： F4A37564-B18B-42FF-B841-9A1949895AB6 author： davidbritch： dabritch ms. 日期：03/27/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 第 3 部分。 XAML 标记扩展
+description: XAML 标记扩展在 XAML 中构成了一项重要功能，该功能允许将属性设置为间接从其他源引用的对象或值。
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/27/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3fcea963b253ea34601a36434007f18d925975eb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84131334"
 ---
-
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部分。 XAML 标记扩展
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)

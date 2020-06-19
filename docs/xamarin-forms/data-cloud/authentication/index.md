@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms Web 服务身份验证" 说明： "本指南说明如何将身份验证服务集成到 Xamarin.Forms 应用程序中，使用户能够在仅有权访问自己的数据的情况下共享后端。"
-ms-chap： xamarin assetid： E6FCFAE1-4F83-4F93-9190-EC5290360C54： xamarin 窗体作者： davidbritch： dabritch ms. 日期：06/27/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsWeb 服务身份验证
+description: 本指南说明如何将身份验证服务集成到 Xamarin.Forms 应用程序中，使用户能够在仅有权访问自己的数据时共享后端。
+ms.prod: xamarin
+ms.assetid: E6FCFAE1-4F83-4F93-9190-EC5290360C54
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/27/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 59130739617f38ce32e0d241f8e068cf077997ac
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136079"
 ---
-
 # <a name="xamarinforms-web-service-authentication"></a>Xamarin.FormsWeb 服务身份验证
 
 ## <a name="authenticate-a-restful-web-service"></a>[对 RESTful Web 服务进行身份验证](rest.md)

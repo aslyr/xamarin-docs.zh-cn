@@ -1,8 +1,22 @@
 ---
-标题： "设备方向" 说明： "本文介绍了如何布局 Xamarin.Forms 在纵向和横向方向上美观的应用程序。"
-ms-chap： xamarin assetid：11A1D327-2DF3-4F3B-810D-6C95B71D27B2： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/24/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 设备方向
+description: 本文介绍如何布局 Xamarin.Forms 在纵向和横向方向上非常美观的应用程序。
+ms.prod: xamarin
+ms.assetid: 11A1D327-2DF3-4F3B-810D-6C95B71D27B2
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/24/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0b1a47d4dcc92fca4d280708a2cbbe9374c17da8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573282"
 ---
-
 # <a name="device-orientation"></a>设备方向
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)

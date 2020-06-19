@@ -1,8 +1,22 @@
 ---
-标题： "第2部分。 基本 XAML 语法 "说明：" 本文介绍属性元素和附加属性的基本 XAML 语法功能。 "
-ms-chap： xamarin assetid： 4022F1DC-3802-4635-A553-688ABD3F0D5A ms. 技术协会： xamarin 窗体作者： davidbritch： dabritch ms. 日期：10/25/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 第 2 部分。 基本 XAML 语法
+description: 本文介绍属性元素和附加属性的基本 XAML 语法功能。
+ms.prod: xamarin
+ms.assetid: 4022F1DC-3802-4635-A553-688ABD3F0D5A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/25/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c400bb342568a0399e2a582496f85ead273b6994
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572177"
 ---
-
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部分。 基本 XAML 语法
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)

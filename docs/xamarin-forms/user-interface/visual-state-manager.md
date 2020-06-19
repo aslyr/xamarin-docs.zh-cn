@@ -1,8 +1,23 @@
 ---
-标题： " Xamarin.Forms 视觉状态管理器" 说明： "使用可视状态管理器根据代码中的可视状态集对 XAML 元素进行更改。"
-ms-chap： xamarin assetid：17296F14-640D-484B-A24C-A4E9B7013E4F： xamarin。 custom： xamu：： davidbritch： dabritch：：02/21/2020 不，不是： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms 可视状态管理器
+description: 使用可视状态管理器根据代码中的可视状态集对 XAML 元素进行更改。
+ms.prod: xamarin
+ms.assetid: 17296F14-640D-484B-A24C-A4E9B7013E4F
+ms.technology: xamarin-forms
+ms.custom: xamu-video
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/19/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3dda730446ec2b4268f42ee5af853400b33565d9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946221"
 ---
-
 # <a name="xamarinforms-visual-state-manager"></a>Xamarin.Forms 可视状态管理器
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)
@@ -400,6 +415,7 @@ VSM 标记的剩余部分与之前相同。
 | `CarouselView` | `DefaultItem`, `CurrentItem`, `PreviousItem`, `NextItem` | [CarouselView 视觉状态](~/xamarin-forms/user-interface/carouselview/interaction.md#define-visual-states) |
 | `ImageButton` | `Pressed` | [ImageButton 视觉状态](~/xamarin-forms/user-interface/imagebutton.md#imagebutton-visual-states) |
 | `RadioButton` | `IsChecked` | [单选按钮视觉状态](~/xamarin-forms/user-interface/radiobutton.md#radiobutton-visual-states) |
+| `Switch` | `On`, `Off` | [切换可视状态](~/xamarin-forms/user-interface/switch.md#switch-visual-states) |
 | `VisualElement` | `Normal`, `Disabled`, `Focused`, `Selected` | [常见状态](#common-states) |
 
 每个状态都可以通过名为的视觉状态组进行访问 `CommonStates` 。

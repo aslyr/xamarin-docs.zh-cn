@@ -1,8 +1,22 @@
 ---
-标题： "分离混合模式" 说明： "使用分离混合模式来更改红色、绿色和蓝色颜色。"
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 66D1A537-A247-484E-B5B9-FBCB7838FBE9 author： davidbritch： dabritch ms. 日期：08/23/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 分离混合模式
+description: 使用 "可分离混合模式" 更改红色、绿色和蓝色颜色。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 66D1A537-A247-484E-B5B9-FBCB7838FBE9
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c1939c30cbefdbf8d6546761a8c6ac7199bfff62
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139680"
 ---
-
 # <a name="the-separable-blend-modes"></a>分离混合模式
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

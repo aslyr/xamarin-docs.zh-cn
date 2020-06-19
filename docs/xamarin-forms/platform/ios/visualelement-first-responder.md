@@ -1,8 +1,22 @@
 ---
-标题： "VisualElement 第一个在 iOS 上的响应者" 说明： "平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用特定于 iOS 平台的，使 VisualElement 对象成为触控事件的第一个响应方。
-ms-chap： xamarin assetid：3A77BA02-B87A-44EC-AC51-9D3130EF314C： xamarin 窗体作者： davidbritch： dabritch ms. 日期：01/15/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: IOS 上的 VisualElement 第一个响应程序
+description: 平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用特定于 iOS 平台的，使 VisualElement 对象成为触控事件的第一个响应方。
+ms.prod: xamarin
+ms.assetid: 3A77BA02-B87A-44EC-AC51-9D3130EF314C
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/15/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d8bd539c2bb0e8963afae3392b6f8e99d79af9af
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136963"
 ---
-
 # <a name="visualelement-first-responder-on-ios"></a>IOS 上的 VisualElement 第一个响应程序
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

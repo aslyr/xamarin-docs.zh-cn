@@ -1,8 +1,22 @@
 ---
-标题： "对 RESTful Web 服务进行身份验证" 说明： "基本身份验证仅向具有正确凭据的客户端提供对资源的访问权限。 本文介绍如何使用基本身份验证来保护对 RESTful web 服务资源的访问。
-ms-chap： xamarin assetid：7B5FFDC4-F2AA-4B12-A30A-1DACC7FECBF1： xamarin 窗体作者： davidbritch： dabritch ms. 日期：01/22/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 对 RESTful Web 服务进行身份验证
+description: 基本身份验证仅向具有正确凭据的客户端提供对资源的访问权限。 本文介绍如何使用基本身份验证来保护对 RESTful web 服务资源的访问。
+ms.prod: xamarin
+ms.assetid: 7B5FFDC4-F2AA-4B12-A30A-1DACC7FECBF1
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/22/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d62e533d127294c77c0779c20fd9c78ef2231200
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135715"
 ---
-
 # <a name="authenticate-a-restful-web-service"></a>对 RESTful Web 服务进行身份验证
 
 _HTTP 支持使用多种身份验证机制来控制对资源的访问。基本身份验证仅向具有正确凭据的客户端提供对资源的访问权限。本文演示如何使用基本身份验证来保护对 RESTful web 服务资源的访问。_

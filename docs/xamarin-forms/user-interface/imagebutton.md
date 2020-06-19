@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms ImageButton" 说明： "ImageButton 显示一个图像，并响应一个点击或单击来指示应用程序执行特定任务。"
-ms-chap： xamarin assetid： B5906AB6-3F79-4FCB-8C78-1F0AF18AB39E： xamarin 窗体作者： davidbritch： dabritch ms. 日期：12/04/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsImageButton
+description: ImageButton 会显示一个图像，并对指示应用程序的点击或单击进行响应，以执行特定任务。
+ms.prod: xamarin
+ms.assetid: B5906AB6-3F79-4FCB-8C78-1F0AF18AB39E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/04/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7d81c0ce4dc2a46a840a34cc9084c8f2388a0169
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137639"
 ---
-
 # <a name="xamarinforms-imagebutton"></a>Xamarin.FormsImageButton
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)

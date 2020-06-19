@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms 布局" 说明： " Xamarin.Forms 用于将用户界面控件组合到可视结构中的布局。 本文列出了中包含的布局 Xamarin.Forms 。
-ms-chap： xamarin assetid： F4180997-BA21-453A-9958-D1E2940DF050 毫秒： xamarin 窗体作者： davidbritch 毫秒. 作者： dabritch 毫秒。日期：05/21/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms布局
+description: Xamarin.Forms布局用于将用户界面控件组合到可视结构中。 本文列出了中包含的布局 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: F4180997-BA21-453A-9958-D1E2940DF050
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/21/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 751a004e0051fcbfd0592654b0e73f26874b15d3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84567081"
 ---
-
 # <a name="xamarinforms-layouts"></a>Xamarin.Forms布局
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)

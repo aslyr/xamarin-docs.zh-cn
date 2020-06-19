@@ -1,8 +1,22 @@
 ---
-标题： "使用语音服务 API 的语音识别" 说明： "本文介绍了如何使用 Azure Speech Service API 将语音转录到应用程序中的文本 Xamarin.Forms 。"
-ms-chap： xamarin assetid： B435FF6B-8785-48D9-B2D9-1893F5A87EA1： xamarin 窗体作者： profexorgeek： jusjohns ms. 日期：01/14/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用语音服务 API 的语音识别
+description: 本文介绍如何使用 Azure Speech Service API 将语音转录到应用程序中的文本 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: B435FF6B-8785-48D9-B2D9-1893F5A87EA1
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 01/14/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 171ecc02fda304135e5f535c3e798067595d7047
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139316"
 ---
-
 # <a name="speech-recognition-using-azure-speech-service"></a>使用 Azure Speech Service 进行语音识别
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-cognitivespeechservice)

@@ -1,8 +1,22 @@
 ---
-标题： "边距和填充" 说明： "在用户界面中呈现元素时，边距和填充属性控制布局的行为。 本文说明了这两个属性之间的区别，以及如何设置它们。
-ms-chap： xamarin assetid： BEB096BB-51DF-410F-B0F1-D235287B0F4A： xamarin 窗体作者： davidbritch： dabritch ms. 日期：04/27/2016 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 边距和填充
+description: 在用户界面中呈现元素时，边距和填充属性控制布局的行为。 本文说明了这两个属性之间的差异，以及如何设置它们。
+ms.prod: xamarin
+ms.assetid: BEB096BB-51DF-410F-B0F1-D235287B0F4A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/27/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6ae4116be99f076a7afd5ed9c2823bc12f445e18
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137979"
 ---
-
 # <a name="margin-and-padding"></a>边距和填充
 
 _在用户界面中呈现元素时，边距和填充属性控制布局的行为。本文说明了这两个属性之间的差异，以及如何设置它们。_

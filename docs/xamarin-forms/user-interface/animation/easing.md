@@ -1,8 +1,22 @@
 ---
-title： "描述中的缓动函数" Xamarin.Forms 说明： " Xamarin.Forms 包含一个缓动类，使你能够指定传输函数，该函数控制动画在运行时的速度如何提高或减速。 本文演示如何使用预定义的缓动函数，以及如何创建自定义缓动函数。
-ms-chap： xamarin assetid： E6F124C7-A161-4C1F-AF40-52F0935E54DE： xamarin 窗体作者： davidbritch： dabritch ms. 日期：07/14/2016 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 缓动函数Xamarin.Forms
+description: Xamarin.Forms包含一个缓动类，可用于指定一个传输函数，该函数控制动画在运行时的速度如何提高或减速。 本文演示如何使用预定义的缓动函数，以及如何创建自定义缓动函数。
+ms.prod: xamarin
+ms.assetid: E6F124C7-A161-4C1F-AF40-52F0935E54DE
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/14/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 574b6f82aea3c71d43799c6ca86997d895eed4c5
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573799"
 ---
-
 # <a name="easing-functions-in-xamarinforms"></a>缓动函数Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-easing)

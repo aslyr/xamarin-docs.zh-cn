@@ -1,11 +1,25 @@
 ---
-标题： " Xamarin.Forms 使用 Xaml 样式设置应用样式" 说明： "本指南说明如何 Xamarin.Forms 使用 xaml 样式自定义应用程序的外观。"
-ms-chap： xamarin assetid： 344A34AA-B19A-4765-BC8A-875D9A6B5EA8 毫秒： xamarin 窗体作者： davidbritch 毫秒. 作者： dabritch 毫秒。日期：01/30/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用 XAML 样式设置 Xamarin.Forms 应用的样式
+description: 本指南说明如何 Xamarin.Forms 使用 XAML 样式自定义应用程序的外观。
+ms.prod: xamarin
+ms.assetid: 344A34AA-B19A-4765-BC8A-875D9A6B5EA8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/30/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 72effe15d3456b5a48cbf5d09e889600134ac686
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84903085"
 ---
-
 # <a name="styling-xamarinforms-apps-using-xaml-styles"></a>使用 XAML 样式设置 Xamarin.Forms 应用的样式
 
-## <a name="introduction"></a>[介绍](introduction.md)
+## <a name="introduction"></a>[简介](introduction.md)
 
 Xamarin.Forms应用程序通常包含多个具有相同外观的控件。 设置各个控件的外观可能是重复性的并且容易出错。 相反，可以通过对控件类型进行分组和设置属性来创建自定义控件外观的样式。
 

@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms CollectionView 滚动" 说明： "当用户 swipes 启动滚动时，可以控制滚动的结束位置，以便完全显示项。 此外，CollectionView 还定义了两个 ScrollTo 方法，这些方法以编程方式将项滚动到视图。 "
-ms-chap： xamarin assetid：2ED719AF-33D2-434D-949A-B70B479C9BA5： xamarin 窗体作者： davidbritch： dabritch ms. 日期：09/17/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsCollectionView 滚动
+description: 当用户 swipes 启动滚动时，可以控制滚动的结束位置，以便完全显示项。 此外，CollectionView 还定义了两个 ScrollTo 方法，这些方法以编程方式将项滚动到视图中。
+ms.prod: xamarin
+ms.assetid: 2ED719AF-33D2-434D-949A-B70B479C9BA5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/17/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 04d190971fa5ef16e08091600558f7f016bc8605
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84134506"
 ---
-
 # <a name="xamarinforms-collectionview-scrolling"></a>Xamarin.FormsCollectionView 滚动
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

@@ -1,8 +1,22 @@
 ---
-标题： "不可分离的混合模式" 说明： "使用非分离混合模式改变色相、饱和度或发光度"。
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 97FA2730-87C0-4914-8C9F-C64A02CF9EEF author： davidbritch： dabritch ms. 日期：08/23/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 非分离混合模式
+description: 使用非分离混合模式可更改色调、饱和度或发光度。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 97FA2730-87C0-4914-8C9F-C64A02CF9EEF
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 52be7641ac3b2983f537e11bccd76f2a5b52574d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84130177"
 ---
-
 # <a name="the-non-separable-blend-modes"></a>非分离混合模式
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

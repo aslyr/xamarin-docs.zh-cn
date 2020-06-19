@@ -1,8 +1,22 @@
 ---
-标题： "使用人脸 API 感知情感识别" 说明： "人脸 API 将图像中的面部表情作为输入，并返回数据，这些数据包括图像中每个人脸的一组情感的置信度级别。 本文介绍如何使用人脸 API 来识别情感，对 Xamarin.Forms 应用程序进行评级。
-ms-chap： xamarin assetid：19D36A7C-E8D8-43D1-BE80-48DE6C02879A： xamarin 窗体作者： davidbritch： dabritch ms. 日期：05/10/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用人脸 API 感知情感识别
+description: 人脸 API 将图像中的面部表情作为输入，并返回数据，这些数据包括图像中每个人脸的一组情感的置信度。 本文介绍如何使用人脸 API 来识别情感，以对应用程序进行评级 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 19D36A7C-E8D8-43D1-BE80-48DE6C02879A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ff384605b35f6406b628da99de500b550da811c9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136053"
 ---
-
 # <a name="perceived-emotion-recognition-using-the-face-api"></a>使用人脸 API 感知情感识别
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

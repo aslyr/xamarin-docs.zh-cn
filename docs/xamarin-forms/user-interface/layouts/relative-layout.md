@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms RelativeLayout" 说明： "本文介绍了如何使用 Xamarin.Forms RelativeLayout 类来创建可缩放以适合任何屏幕大小的 ui。"
-ms-chap： xamarin assetid：2530BCB8-01B8-4C4F-BF14-CA53659F1B5A： xamarin 窗体作者： davidbritch： dabritch ms. 日期：11/25/2015 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsRelativeLayout
+description: 本文介绍如何使用 Xamarin.Forms RelativeLayout 类来创建可进行缩放以适合任何屏幕大小的 ui。
+ms.prod: xamarin
+ms.assetid: 2530BCB8-01B8-4C4F-BF14-CA53659F1B5A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/25/2015
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f250b109f759bcf6bb7fa4ac0573743ac12c4bc1
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127184"
 ---
-
 # <a name="xamarinforms-relativelayout"></a>Xamarin.FormsRelativeLayout
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
@@ -17,7 +31,7 @@ ms-chap： xamarin assetid：2530BCB8-01B8-4C4F-BF14-CA53659F1B5A： xamarin 窗
 
 ![](relative-layout-images/flag.png "RelativeLayout Exploration")
 
-## <a name="usage"></a>使用情况
+## <a name="usage"></a>用法
 
 ### <a name="understanding-constraints"></a>了解约束
 
@@ -29,7 +43,7 @@ ms-chap： xamarin assetid：2530BCB8-01B8-4C4F-BF14-CA53659F1B5A： xamarin 窗
 - **常量** &ndash;要用作值偏移量的值。
 - **ElementName** &ndash;与约束相关的视图的名称。
 
-在 XAML 中，约束表示为 `ConstraintExpression` s。 请看下面的示例：
+在 XAML 中，约束表示为 `ConstraintExpression` s。 请考虑以下示例：
 
 ```xaml
 <BoxView Color="Green" WidthRequest="50" HeightRequest="50"

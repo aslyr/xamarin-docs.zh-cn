@@ -1,8 +1,22 @@
 ---
-标题： "使用 RESTful Web 服务" 说明： "将 Web 服务集成到应用程序中是一种常见方案。 本文演示如何从应用程序使用 RESTful web 服务 Xamarin.Forms 。
-ms-chap： xamarin assetid： B540910C-9C51-416A-AAB9-057BF76489C3： xamarin 窗体作者： davidbritch： dabritch ms. 日期：05/28/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用 RESTful Web 服务
+description: 将 web 服务集成到应用程序是一种常见方案。 本文演示如何从应用程序使用 RESTful web 服务 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: B540910C-9C51-416A-AAB9-057BF76489C3
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/28/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8d7ae5eb16b8a94f16b6eca013b4ec7a93f427bd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198132"
 ---
-
 # <a name="consume-a-restful-web-service"></a>使用 RESTful Web 服务
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)

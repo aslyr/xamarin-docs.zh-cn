@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms Map Control" 说明： "地图控件是一个跨平台视图，用于显示和批注地图。 它使用每个平台的本机地图控件，为用户提供快速且熟悉的地图体验。 "
-ms-chap： xamarin assetid：22C99029-0B16-43A6-BF58-26B48C4AED38： xamarin 窗体作者： davidbritch： dabritch ms. 日期：10/29/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsMap Control
+description: 地图控件是一个跨平台视图，用于显示和批注地图。 它使用每个平台的本机地图控件，为用户提供快速且熟悉的地图体验。
+ms.prod: xamarin
+ms.assetid: 22C99029-0B16-43A6-BF58-26B48C4AED38
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/20/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1aee81b6988e1f3a7099c2722b6f336f071ad8c0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946359"
 ---
-
 # <a name="xamarinforms-map-control"></a>Xamarin.FormsMap Control
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
@@ -23,6 +37,7 @@ ms-chap： xamarin assetid：22C99029-0B16-43A6-BF58-26B48C4AED38： xamarin 窗
 - [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)类型为的 [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType) 指示地图的显示样式。
 - `MoveToLastRegionOnLayoutChange`，类型为 `bool` ，用于控制在发生布局更改时，所显示的地图区域是否将从其当前区域移动到以前设置的区域。
 - [`Pins`](xref:Xamarin.Forms.Maps.Map.Pins)类型为的， `IList<Pin>` 表示地图上的 pin 列表。
+- `TrafficEnabled`类型为的， `bool` 指示是否在映射上重叠流量数据。
 - [`VisibleRegion`](xref:Xamarin.Forms.Maps.Map.VisibleRegion)类型为的 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) 返回当前显示的地图区域。
 
 这些属性（ `MapElements` 、 `Pins` 和 `VisibleRegion` 属性除外）由对象提供支持， [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 这意味着它们可以是数据绑定的目标。
@@ -196,6 +211,23 @@ if (map.VisibleRegion != null)
 
 > [!NOTE]
 > 可以通过创建地图自定义呈现器来实现其他映射行为自定义。 有关详细信息，请参阅[自定义 Xamarin.Forms 映射](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)。
+
+### <a name="show-traffic-data"></a>显示交通情况数据
+
+[`Map`](xref:Xamarin.Forms.Maps.Map)类定义 `TrafficEnabled` 类型的属性 `bool` 。 默认情况下，此属性为 `false` ，表示不会在地图上重叠流量数据。 当此属性设置为时 `true` ，将在地图上重叠流量数据。 下面的示例演示如何设置此属性：
+
+```xaml
+<maps:Map TrafficEnabled="true" />
+```
+
+等效 C# 代码如下：
+
+```csharp
+Map map = new Map
+{
+    TrafficEnabled = true
+};
+```
 
 ### <a name="disable-scroll"></a>禁用滚动
 

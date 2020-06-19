@@ -1,8 +1,22 @@
 ---
-标题： "在 iOS 上同时进行的平移手势识别" 说明： "平台细节使你可以使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 平台特定的，以便在应用程序中使用启用同时平移手势识别。
-ms-chap： xamarin assetid：883D89DA-F8FF-4B97-9C3F-2DD05C96A495： xamarin 窗体作者： davidbritch： dabritch ms. 日期：10/24/2018 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: IOS 上的并发平移手势识别
+description: 平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用 iOS 平台特定的，以便能够在应用程序中使用同时使用的平移手势识别。
+ms.prod: xamarin
+ms.assetid: 883D89DA-F8FF-4B97-9C3F-2DD05C96A495
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 125685150243ba8e8099cbfbdfec90e5a0b4d6b7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138572"
 ---
-
 # <a name="simultaneous-pan-gesture-recognition-on-ios"></a>IOS 上的并发平移手势识别
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

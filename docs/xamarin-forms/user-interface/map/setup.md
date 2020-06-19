@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms 映射初始化和配置" 说明： " Xamarin.Forms 。在应用程序中使用地图功能需要 maps NuGet 包。 此外，访问用户的位置时，需要向应用程序授予 location 权限。 "
-ms-chap： xamarin assetid：59CD1344-8248-406C-9144-0C8A67141E5B： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/07/2020 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms映射初始化和配置
+description: Xamarin.Forms。在应用程序中使用地图功能需要 maps NuGet 包。 此外，访问用户的位置时，需要向应用程序授予 location 权限。
+ms.prod: xamarin
+ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/07/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 52e2ac5f8075c57f533fcba064223f355e07ba48
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139836"
 ---
-
 # <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin.Forms映射初始化和配置
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

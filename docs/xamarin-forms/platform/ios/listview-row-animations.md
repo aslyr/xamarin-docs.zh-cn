@@ -1,8 +1,22 @@
 ---
-title： "ListView 上的 ListView 行动画" 说明： "平台细节使你可以使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用特定于 iOS 平台的来控制在更新 ListView 项集合时是否禁用行动画。
-ms-chap： xamarin assetid： E8F5103F-4D8E-4A5A-A16C-7FA14EE786AC： xamarin 窗体作者： davidbritch： dabritch ms. 日期：02/21/2019 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: IOS 上的 ListView 行动画
+description: 平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。 本文介绍如何使用特定于 iOS 平台的来控制在更新 ListView 项集合时是否禁用行动画。
+ms.prod: xamarin
+ms.assetid: E8F5103F-4D8E-4A5A-A16C-7FA14EE786AC
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/21/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 594e436c9db7c123fea4f9aa262c9d27af765b07
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136001"
 ---
-
 # <a name="listview-row-animations-on-ios"></a>IOS 上的 ListView 行动画
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

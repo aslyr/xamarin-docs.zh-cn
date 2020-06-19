@@ -1,8 +1,22 @@
 ---
-标题： " Xamarin.Forms 页面" 说明： " Xamarin.Forms 页面表示跨平台移动应用程序屏幕。 本文列出了中包含的页 Xamarin.Forms 。 "
-ms-chap： xamarin assetid： 9C8C710F-E312-420B-9324-A7A20CEDB7EC 毫秒： xamarin 窗体作者： davidbritch 毫秒. 作者： dabritch 毫秒。日期：01/12/2016 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms Pages
+description: Xamarin.Forms页面表示跨平台的移动应用程序屏幕。 本文列出了中包含的页 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 9C8C710F-E312-420B-9324-A7A20CEDB7EC
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/12/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b72564ebbb057c8154140c9845961d4c42e93db3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573308"
 ---
-
 # <a name="xamarinforms-pages"></a>Xamarin.Forms Pages
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)

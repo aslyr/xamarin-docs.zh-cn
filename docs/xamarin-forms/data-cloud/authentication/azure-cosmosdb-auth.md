@@ -1,8 +1,22 @@
 ---
-标题： "使用 Azure Cosmos DB 文档数据库进行用户身份验证" 和 Xamarin.Forms "说明：" 本文介绍如何将 access control 与 Azure Cosmos DB 分区集合结合使用，以便用户只能在应用程序中访问他们自己的文档 Xamarin.Forms 。 "
-ms-chap： xamarin assetid：11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D： xamarin 窗体作者： davidbritch： dabritch ms. 日期：06/16/2017 非 loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用 Azure Cosmos DB 文档数据库对用户进行身份验证并Xamarin.Forms
+description: 本文介绍如何将 access control 与 Azure Cosmos DB 分区集合结合使用，以便用户只能在应用程序中访问他们自己的文档 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/16/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7e1fb6342db4c97ea6946db366d356267c8c1b90
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570552"
 ---
-
 # <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>使用 Azure Cosmos DB 文档数据库对用户进行身份验证并Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)

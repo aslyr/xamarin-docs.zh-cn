@@ -1,8 +1,22 @@
 ---
-标题： "SkiaSharp 图像筛选器" 说明： "了解如何使用图像筛选器创建模糊和投影。"
-ms-chap： xamarin ms-chap： xamarin-skiasharp assetid： 173E7B22-AEC8-4F12-B657-1C0CEE01AD63 author： davidbritch： dabritch ms. 日期：08/27/2018： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: SkiaSharp 图像筛选器
+description: 了解如何使用图像筛选器创建模糊和投影。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 173E7B22-AEC8-4F12-B657-1C0CEE01AD63
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/27/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: eedbca080fce9f3001a7b1e2358845fd63c6121b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136339"
 ---
-
 # <a name="skiasharp-image-filters"></a>SkiaSharp 图像筛选器
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
