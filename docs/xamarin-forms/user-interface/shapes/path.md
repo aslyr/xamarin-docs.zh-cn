@@ -10,18 +10,18 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 48d68d2597986a941a6ac3a8df0d99f09f421e62
-ms.sourcegitcommit: 34fa3086c55b1e01838419c930f839c20662c362
+ms.openlocfilehash: cb2e3ea68f181f0a6e6392c012db221ef35d65bd
+ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990878"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85104293"
 ---
 # <a name="xamarinforms-shapes-path"></a>Xamarin.Forms形状：路径
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
 
 `Path`类派生自 `Shape` 类，可用于绘制曲线和复杂形状。 这些曲线和形状通常使用对象进行描述 `Geometry` 。 有关 `Path` 该类继承自类的属性的信息 `Shape` ，请参阅[ Xamarin.Forms 形状](index.md)。
 
@@ -36,7 +36,7 @@ ms.locfileid: "84990878"
 
 ## <a name="create-a-path"></a>创建路径
 
-下面的 XAML 示例演示如何使用特殊的缩写语法绘制多边形：
+下面的 XAML 示例演示如何使用称为路径标记语法的特殊缩写语法绘制多边形：
 
 ```xaml
 <Path Data="M 10,50 L 200,70"
@@ -48,7 +48,12 @@ ms.locfileid: "84990878"
       WidthRequest="100" />
 ```
 
-`Data`字符串以 "moveto" 命令开头，该命令由指示 `M` ，这将为路径建立起点。 路径数据参数区分大小写。 资本 `M` 表示开始点的绝对位置。 小写 `m` 会指示相对坐标。 `L`line 命令，它创建从起点到指定终点的直线。
+`Data`字符串以 "moveto" 命令开头，该命令由指示 `M` ，这将为路径建立起点。 `L`line 命令，它创建从起点到指定终点的直线。
+
+> [!NOTE]
+> 路径标记语法仅适用于 XAML。
+
+有关路径标记语法的详细信息，请参阅[ Xamarin.Forms 路径标记语法](path-markup-syntax.md)。
 
 ## <a name="path-geometry"></a>路径几何图形
 
@@ -91,7 +96,8 @@ ms.locfileid: "84990878"
 
 ## <a name="related-links"></a>相关链接
 
-- [ShapeDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [ShapeDemos （示例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
 - [Xamarin.Forms形状](index.md)
-- [Xamarin.Forms形状几何图形](geometries.md)
+- [Xamarin.Forms几何图形](geometries.md)
+- [Xamarin.Forms路径标记语法](path-markup-syntax.md)
 - [Xamarin.Forms路径转换](path-transforms.md)

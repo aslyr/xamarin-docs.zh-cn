@@ -6,24 +6,24 @@ ms.assetId: 85A0CCF5-C1D8-40BB-927F-A4D944E5534D
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 08/21/2019
+ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: deb894cccd5b6a2a9d908ef8967de91f00e7d297
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f3ab70dc20dda78e3acf400cf51d0ee9df84ff93
+ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136417"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85104323"
 ---
 # <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Forms公共控件属性、方法和事件
 
 Xamarin.Forms `VisualElement` 类是应用程序中使用的大多数控件的基类 Xamarin.Forms 。 `VisualElement`类定义了许多用于派生类的[属性](#properties)、[方法](#methods)和[事件](#events)。
 
-## <a name="properties"></a>“属性”
+## <a name="properties"></a>属性
 
-以下属性在实例上可用 `VisualElement` 。 有关完整列表，请参阅[VISUALELEMENT API Properties](xref:Xamarin.Forms.VisualElement#properties)。
+以下属性在对象上可用 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
 
 ### [`AnchorX`](xref:Xamarin.Forms.VisualElement.AnchorX)
 
@@ -44,6 +44,10 @@ Xamarin.Forms `VisualElement` 类是应用程序中使用的大多数控件的�
 ### [`Bounds`](xref:Xamarin.Forms.VisualElement.Bounds)
 
 `Bounds`属性是一个只读 `Rectangle` 对象，它表示控件占用的空间。 `Bounds`属性值在布局周期期间分配。 `Rectangle` `struct` 包含用于测试矩形的交集和包容的有用属性和方法。 有关详细信息，请参阅[ Xamarin.Forms 矩形 API](xref:Xamarin.Forms.Rectangle)。
+
+### `Clip`
+
+`Clip`属性是一个 `Geometry` 对象，该对象定义元素内容的轮廓。 若要定义剪辑，请使用 `Geometry` 对象（例如） `EllipseGeometry` 来设置元素的 `Clip` 属性。 只有位于几何区域内的区域才可见。 有关详细信息，请参阅[剪辑几何图形](~/xamarin-forms/user-interface/shapes/geometries.md#clip-geometries)。
 
 ### [`Effects`](xref:Xamarin.Forms.Element.Effects)
 
@@ -67,7 +71,7 @@ Xamarin.Forms `VisualElement` 类是应用程序中使用的大多数控件的�
 
 ### [`IsEnabled`](xref:Xamarin.Forms.VisualElement.IsEnabled)
 
-`IsEnabled`属性是一个 `bool` 值，该值确定控件是否响应用户输入。 默认值为 `true`。 如果将此属性设置为 false，则控件不接受用户输入。
+`IsEnabled`属性是一个 `bool` 值，该值确定控件是否响应用户输入。 默认值是 `true`。 如果将此属性设置为 false，则控件不接受用户输入。
 
 ### [`IsFocused`](xref:Xamarin.Forms.VisualElement.IsFocused)
 
@@ -268,4 +272,4 @@ Android、iOS 和 UWP 平台都有不同的度量单位，它们在不同的设�
 
 ## <a name="related-links"></a>相关链接
 
-* [VisualElement API 文档](xref:Xamarin.Forms.VisualElement)
+- [VisualElement API](xref:Xamarin.Forms.VisualElement)

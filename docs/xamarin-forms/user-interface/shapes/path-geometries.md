@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms形状：几何图形
-description: Xamarin.Forms使用 geometry 类可以描述二维形状的几何。
+title: Xamarin.Forms形状：路径几何图形
+description: Xamarin.Forms使用路径几何图形类可以描述二维形状的几何。
 ms.prod: xamarin
 ms.assetid: 07DE3D66-1820-4642-BDDF-84146D40C99D
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 05fcd1ada62bffa4829ad422ee5eda36d9d75ae3
-ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
+ms.openlocfilehash: 5718b0594581928e6f00e11a15163d176615378f
+ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 06/19/2020
-ms.locfileid: "85104260"
+ms.locfileid: "85101874"
 ---
-# <a name="xamarinforms-shapes-geometries"></a>Xamarin.Forms形状：几何图形
+# <a name="xamarinforms-shapes-path-geometries"></a>Xamarin.Forms形状：路径几何图形
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
@@ -189,29 +189,6 @@ ms.locfileid: "85104260"
 ```
 
 在此示例中， `EllipseGeometry` 组合了具有相同 x 半径和 y 轴坐标但具有不同中心坐标的四个对象。 这会创建四个重叠圆圈，它们的内部填充了 `EvenOdd` 填充规则橙色。
-
-## <a name="clip-geometries"></a>剪辑几何图形
-
-[`VisualElement`](xref:Xamarin.Forms.VisualElement)类具有一个类型为的 `Clip` 属性 `Geometry` ，该属性定义元素内容的轮廓。 当 `Clip` 属性设置为 `Geometry` 对象时，只有区域中的区域才 `Geometry` 可见。
-
-下面的示例演示如何使用 `Geometry` 对象作为的剪辑区域 [`Image`](xref:Xamarin.Forms.Image) ：
-
-```xaml
-<Image Source="monkeyface.png">
-    <Image.Clip>
-        <EllipseGeometry RadiusX="100"
-                         RadiusY="100"
-                         Center="180,180" />
-    </Image.Clip>
-</Image>
-```
-
-在此示例中， `EllipseGeometry` 的 `RadiusX` 和 `RadiusY` 值为100， `Center` 值（180180）设置为的 `Clip` 属性 [`Image`](xref:Xamarin.Forms.Image) 。 仅显示位于椭圆区域内的图像部分：
-
-![使用 System.windows.media.ellipsegeometry> 剪切图像](geometries-images/clip-ellipsegeometry.png "使用 System.windows.media.ellipsegeometry> 剪切图像")
-
-> [!NOTE]
-> 简单的几何图形、路径几何图形和复合几何图形都可用于剪辑 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 对象。
 
 ## <a name="other-features"></a>其他功能
 

@@ -10,16 +10,14 @@ ms.date: 02/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e4c7d528cc61bb71fc495c830780ea4245ff3d87
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0e6d223fd10e7b792f2d145a7cdd417865a095bb
+ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946372"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85101438"
 ---
 # <a name="xamarinforms-indicatorview"></a>Xamarin.FormsIndicatorView
-
-![](~/media/shared/preview.png "This API is currently pre-release")
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/)
 
@@ -30,14 +28,14 @@ ms.locfileid: "84946372"
 `IndicatorView` 定义以下属性:
 
 - `Count`，类型为 `int` ，指示器的数目。
-- `HideSingle`类型为的， `bool` 指示指示器是否应仅在存在时隐藏。 默认值为 `true`。
+- `HideSingle`类型为的， `bool` 指示指示器是否应仅在存在时隐藏。 默认值是 `true`。
 - `IndicatorColor`，类型为 `Color` ，指示器的颜色。
 - `IndicatorSize`，类型为 `double` ，指示器的大小。 默认值为6.0。
 - `IndicatorLayout`类型为的， `Layout<View>` 用于定义用于呈现的布局类 `IndicatorView` 。 此属性由设置 Xamarin.Forms ，并且通常不需要由开发人员设置。
 - `IndicatorTemplate`类型为的 `DataTemplate` 模板，用于定义每个指示器的外观。
 - `IndicatorsShape`，类型为 `IndicatorShape` ，每个指示器的形状。
 - `ItemsSource`，类型为 `IEnumerable` ，将为其显示指示器的集合。 设置属性时，将自动设置此属性 `CarouselView.IndicatorView` 。
-- `MaximumVisible`，类型为 `int` ，可见指示器的最大数目。 默认值为 `int.MaxValue`。
+- `MaximumVisible`，类型为 `int` ，可见指示器的最大数目。 默认值是 `int.MaxValue`。
 - `Position`类型为的， `int` 当前选定的指示器索引。 此属性使用 `TwoWay` 绑定。 设置属性时，将自动设置此属性 `CarouselView.IndicatorView` 。
 - `SelectedIndicatorColor`，类型为 `Color` ，表示中的当前项的指示器的颜色 `CarouselView` 。
 
