@@ -1,6 +1,6 @@
 ---
-title: 为跨平台 Xamarin.Forms 应用程序设置样式
-description: 本文说明如何使用 XAML 样式为跨平台 Xamarin.Forms 应用程序设置样式。
+title: title:“为跨平台 Xamarin.Forms 应用程序设置样式”说明：“本文说明如何使用 XAML 样式为跨平台 Xamarin.Forms 应用程序设置样式。”
+description: 'zone_pivot_groups: platform ms.topic: quickstart ms.prod: xamarin ms.assetid:CCCF8E57-D021-4542-8709-5808570FC26A ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2020/02/07 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
@@ -13,10 +13,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 2d458bafc5bb1c8dcffc7858fd15734187f7612b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84134064"
 ---
 # <a name="style-a-cross-platform-xamarinforms-application"></a>为跨平台 Xamarin.Forms 应用程序设置样式
@@ -327,4 +327,4 @@ ms.locfileid: "84134064"
 ## <a name="related-links"></a>相关链接
 
 - [便笺（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
-- [Xamarin.Forms快速入门深入探讨](deepdive.md)
+- [Xamarin.Forms 快速入门深入探讨](deepdive.md)

@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms 绑定路径
-description: 本文介绍如何使用 Xamarin.Forms 数据绑定通过 Binding 类的 Path 属性访问子属性和集合成员。
+title: title:"Xamarin.Forms绑定路径”说明：“本文介绍如何使用 Xamarin.Forms 数据绑定通过 Binding 类的 Path 属性访问子属性和集合成员。”
+description: 'ms.prod: xamarin ms.assetid:3CF721A5-E157-468B-AD3A-DA0A45E58E8D ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2018/01/05 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: a0ac8a568c3e8c46fa7e53112461aa0bff5684ae
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
+ms.lasthandoff: 06/09/2020
 ms.locfileid: "84570786"
 ---
 # <a name="xamarinforms-binding-path"></a>Xamarin.Forms 绑定路径

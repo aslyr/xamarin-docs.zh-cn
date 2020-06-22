@@ -1,21 +1,21 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: title:“实现视图”说明：“本文说明如何为 Xamarin.Forms 自定义控件创建自定义呈现器，用于显示设备摄像头的预览视频流。”
+description: 'ms.prod: xamarin ms.assetid:915E25E7-4A6B-4F34-B7B4-07D5F4B240F2 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2018/05/10 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e565a2bcddf292d37bc3dd07a8edbbabec709d8a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: c239955a093120c3a16ea3236946eb645ea9a4b4
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133557"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570799"
 ---
 # <a name="implementing-a-view"></a>实现视图
 
@@ -31,13 +31,11 @@ _Xamarin.Forms 自定义用户界面控件应派生自视图类，该类用于�
 
 通过在每个平台上为 [`View`](xref:Xamarin.Forms.View) 创建自定义呈现器，可以使用呈现过程来实现特定于平台的自定义。 执行此操作的过程如下：
 
-1. [创建](#Creating_the_Custom_Control) Xamarin.Forms 自定义控件。
-1. [使用](#Consuming_the_Custom_Control) Xamarin.Forms 中的自定义控件。
-1. 在每个平台上为控件[创建](#Creating_the_Custom_Renderer_on_each_Platform)自定义呈现器。
+1. [创建](#creating-the-custom-control) Xamarin.Forms 自定义控件。
+1. [使用](#consuming-the-custom-control) Xamarin.Forms 中的自定义控件。
+1. 在每个平台上为控件[创建](#creating-the-custom-renderer-on-each-platform)自定义呈现器。
 
 现在将依次讨论每个项目，以实现 `CameraPreview` 呈现器，该呈现器显示设备摄像头的预览视频流。 点击视频流将停止和启动视频流。
-
-<a name="Creating_the_Custom_Control" />
 
 ## <a name="creating-the-custom-control"></a>创建自定义控件
 
@@ -60,8 +58,6 @@ public class CameraPreview : View
 ```
 
 `CameraPreview` 自定义控件在 .NET Standard 库项目中创建，该控件定义控件的 API。 自定义控件公开 `Camera` 属性，该属性用于控制应该从设备的前置摄像头还是后置摄像头显示视频流。 如果在创建控件时没有为 `Camera` 属性指定值，则默认为指定后置摄像头。
-
-<a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>使用自定义控件
 
@@ -108,8 +104,6 @@ public class MainPageCS : ContentPage
 `CameraPreview` 自定义控件的实例将用于显示设备摄像头的预览视频流。 除了选择为 `Camera` 属性指定值以外，还将在自定义呈现器中执行控件的自定义。
 
 现在可以向每个应用程序项目添加自定义呈现器，以便创建特定于平台的摄像头预览控件。
-
-<a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>在每个平台上创建自定义呈现器
 

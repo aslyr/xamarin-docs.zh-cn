@@ -1,20 +1,20 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 将效果参数作为附加属性传递
+description: 附加属性可用于定义响应运行时属性更改的效果参数。 本文演示如何使用附加属性将参数传递给效果，以及如何在运行时更改参数。
+ms.prod: xamarin
+ms.assetid: DFCDCB9F-17DD-4117-BD53-B4FB206BB387
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/05/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: cf03d0c32d80d7a1821e323acdc84a351413efec
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84138874"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>将效果参数作为附加属性传递

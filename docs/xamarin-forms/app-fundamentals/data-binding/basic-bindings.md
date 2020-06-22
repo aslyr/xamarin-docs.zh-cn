@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms 基本绑定
-description: 本文介绍了如何使用 Xamarin.Forms 数据绑定，将两个对象之间的一对属性连接起来，其中至少有一个通常是用户界面对象。 这两个对象称为“目标”和“源”。
+title: title:"Xamarin.Forms基本绑定”说明：“本文介绍了如何使用 Xamarin.Forms 数据绑定，将两个对象之间的一对属性连接起来，其中至少有一个通常是用户界面对象。
+description: '这两个对象称为“目标”和“源”。” ms.prod: xamarin ms.assetid:96553DF7-12EA-4FB2-AE85-3D1D59382B40 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2019/01/22 no-loc: [Xamarin.Forms, Xamarin.Essentials] ms.custom: video'
 ms.prod: xamarin
 ms.assetid: 96553DF7-12EA-4FB2-AE85-3D1D59382B40
 ms.technology: xamarin-forms
@@ -12,10 +12,10 @@ no-loc:
 - Xamarin.Essentials
 ms.custom: video
 ms.openlocfilehash: c0c6bc6e1005997548952aedc09cd83a451e7caa
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84133518"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms 基本绑定

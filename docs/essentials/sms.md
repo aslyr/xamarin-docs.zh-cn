@@ -1,9 +1,6 @@
 ---
-title: ''Xamarin.Essentials:SMS'' description:'Xamarin.Essentials 中的 SMS 类允许应用程序使用要发送到收件人的指定消息打开默认短信应用程序。'
-ms.assetid: author: ms.custom: ms.author: ms.date: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: "Xamarin.Essentials：SMS”说明：“Xamarin.Essentials 中的 SMS 类允许应用程序使用要发送给收件人的指定消息打开默认短信应用程序。”
+ms.assetid：81A757F2-6F2A-458F-B9BE-770ADEBFAB58 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:2018 年 11 月 4 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 
 # <a name="xamarinessentials-sms"></a>Xamarin.Essentials：SMS

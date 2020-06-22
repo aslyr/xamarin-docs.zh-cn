@@ -234,6 +234,8 @@
               href: app-fundamentals/data-binding/relative-bindings.md
             - name: 绑定回退
               href: app-fundamentals/data-binding/binding-fallbacks.md
+            - name: 多绑定
+              href: app-fundamentals/data-binding/multibinding.md
             - name: 命令界面
               href: app-fundamentals/data-binding/commanding.md
             - name: 编译的绑定
@@ -355,7 +357,7 @@
       items:
         - name: 概述
           href: user-interface/index.yml
-        - name: 'C# 标记'
+        - name: C# 标记
           href: user-interface/csharp-markup.md
         - name: 控件引用
           items:
@@ -535,6 +537,30 @@
               href: user-interface/text/fonts.md
             - name: 使用 SkiaSharp 处理图形
               href: user-interface/graphics/skiasharp/index.md
+            - name: 形状
+              items:
+                - name: 概述
+                  href: user-interface/shapes/index.md
+                - name: 椭圆形
+                  href: user-interface/shapes/ellipse.md
+                - name: 几何图形
+                  href: user-interface/shapes/geometries.md
+                - name: 线
+                  href: user-interface/shapes/line.md
+                - name: 路径
+                  items:
+                    - name: 路径
+                      href: user-interface/shapes/path.md
+                    - name: 路径标记语法
+                      href: user-interface/shapes/path-markup-syntax.md
+                    - name: 路径转换
+                      href: user-interface/shapes/path-transforms.md
+                - name: 多边形
+                  href: user-interface/shapes/polygon.md
+                - name: 折线
+                  href: user-interface/shapes/polyline.md
+                - name: 矩形
+                  href: user-interface/shapes/rectangle.md
             - name: 初始屏幕
               href: user-interface/splashscreen.md
             - name: 样式
@@ -768,7 +794,7 @@
           items:
             - name: 采用 XAML 的本机视图
               href: platform/native-views/xaml.md
-            - name: '采用 C# 的本机视图'
+            - name: 采用 C# 的本机视图
               href: platform/native-views/code.md
         - name: 使用 Apple 登录
           href: platform/sign-in-with-apple/index.md
@@ -782,7 +808,7 @@
         - name: 其他平台
           href: platform/other/index.md
           items:
-            - name: 'GTK#'
+            - name: GTK#
               href: platform/other/gtk.md
             - name: Mac
               href: platform/other/mac.md

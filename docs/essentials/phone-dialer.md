@@ -1,8 +1,5 @@
 ---
-title: ''Xamarin.Essentials:电话拨号程序'' description:'Xamarin.Essentials 中的 PhoneDialer 类使应用程序可以在拨号程序中拨打电话号码' ms.assetid: author: ms.custom: ms.author: ms.date: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: "Xamarin.Essentials：电话拨号程序”说明：“Xamarin.Essentials 中的 PhoneDialer 类使应用程序可以在拨号程序中拨打电话号码”ms.assetid:E7457942-4D7B-4195-A2FF-417919B9537F author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:2019/07/02 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 
 # <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials：电话拨号程序

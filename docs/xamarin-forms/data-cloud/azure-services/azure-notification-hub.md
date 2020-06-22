@@ -1,20 +1,22 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: title:“使用 Azure 通知中心和 Xamarin.Forms 收发推送通知”说明：“本文介绍如何使用 Azure 通知中心向 Xamarin.Forms 应用程序发送跨平台推送通知。”
+description: 'ms.prod: xamarin ms.assetid:07D13195-3A0D-4C95-ACF0-143A9084973C ms.technology: xamarin-forms author: profexorgeek ms.author: jusjohns ms.date:2019/11/27 no-loc: [Xamarin.Forms, Xamarin.Essentials, Firebase]'
+ms.prod: xamarin
+ms.assetid: 07D13195-3A0D-4C95-ACF0-143A9084973C
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 11/27/2019
 no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
 - Firebase
-ms.openlocfilehash: 6b91884124f6c6dac366e30b8437a5f6e06ee162
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: 5f7b83c1fc907de790b382aabde0c5a957e5a8bb
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133323"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84565416"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>使用 Azure 通知中心和 Xamarin.Forms 收发推送通知
 
@@ -138,7 +140,7 @@ public static class AppConstants
 1. 将你在安装 FCM 的过程中下载的 `google-services.json` 文件复制到项目，并将“生成操作”设置为 `GoogleServicesJson`。
 1. 将 `AndroidManifest.xml` [配置](#configure-android-manifest)为与 Firebase 通信。
 1. [重写](#override-firebasemessagingservice-to-handle-messages) `FirebaseMessagingService` 以处理消息。
-1. 将传入的通知[添加](#add-incoming-notifications-to-the-xamarinforms-ui)到 Xamarin.Forms UI。
+1. 将传入通知[添加](#add-incoming-notifications-to-the-xamarinforms-ui)到 Xamarin.Forms UI。
 
 > [!NOTE]
 > `GoogleServicesJson` 生成操作是 `Xamarin.GooglePlayServices.Base` NuGet 包的一部分。 Visual Studio 2019 在启动过程中设置可用的生成操作。 如果在“生成操作”部分未看到 `GoogleServicesJson`，请在安装 NuGet 包后重启 Visual Studio 2019。

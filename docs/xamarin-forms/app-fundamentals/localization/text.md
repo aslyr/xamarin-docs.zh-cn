@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms 中的字符串和图像本地化
-description: 可使用 .NET 资源文件实现 Xamarin.Forms 应用本地化。
+title: title:“Xamarin.Forms 中的字符串和图像本地化”说明：“Xamarin.Forms 应用可以使用 .NET 资源文件进行本地化。”
+description: 'zone_pivot_groups: "platform" ms.prod: xamarin ms.assetid:852B4ED3-2D2D-48A5-A759-A6591F6A1509 ms.technology: xamarin-forms author: profexorgeek ms.author: jusjohns ms.date:2019/11/01 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 zone_pivot_groups: platform
 ms.prod: xamarin
 ms.assetid: 852B4ED3-2D2D-48A5-A759-A6591F6A1509
@@ -12,10 +12,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: af15dc5a23404a11be6207bef7b4fc3e4bf9fad7
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84137593"
 ---
 # <a name="xamarinforms-string-and-image-localization"></a>Xamarin.Forms 字符串和图像本地化

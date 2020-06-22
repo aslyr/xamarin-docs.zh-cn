@@ -1,20 +1,20 @@
 ---
 title: Xamarin.Forms Shell 布局
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+description: 浮出控件后，Shell 应用程序中的下一级别导航为底部选项卡栏。 或者，应用程序的导航模式可以以底部选项卡开头且不使用浮出控件。 在两种情况下，当底部选项卡包含多个页面时，页面将可通过顶部选项卡导航。
+ms.prod: xamarin
+ms.assetid: 318D81DB-E456-4E44-B083-36A27DBD9523
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: fa49cdb7944e3ab942ccda611af906e2822b072a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84139953"
 ---
 # <a name="xamarinforms-shell-tabs"></a>Xamarin.Forms Shell 选项卡

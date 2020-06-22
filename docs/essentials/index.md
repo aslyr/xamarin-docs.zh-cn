@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Essentials
-description: 本文档链接到介绍可为开发人员提供其移动应用程序的跨平台 API 的 Xamarin.Essentials 的各个指南。
+description: 标题：“Xamarin.Essentials”说明：“本文档链接到介绍可为开发人员提供其移动应用程序的跨平台 API 的 Xamarin.Essentials 的各个指南。”
 ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
@@ -9,26 +9,27 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 27421ecc8b089321cd2331829d87365f3cf37a65
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84139459"
 ---
 # Xamarin.Essentials
 
-Xamarin.Essentials 可为开发人员提供其移动应用程序的跨平台 API。
+ms.assetid：4EDC9897-5FD1-44CA-A26D-2E5AB472C99A author: jamesmontemagno ms.author: jamont ms.date:2020/02/26 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 
-Android、iOS 和 UWP 提供了唯一的操作系统和平台 API，开发人员可以利用 Xamarin 访问 C# 中的所有 API。 Xamarin.Essentials 提供了适用于任何 Xamarin.Forms、Android、iOS 或 UWP 应用程序的单一跨平台 API，不管如何创建用户界面，都可以通过共享代码进行访问。
+Xamarin.Essentials 可为开发人员提供其移动应用程序的跨平台 API。 Android、iOS 和 UWP 提供了唯一的操作系统和平台 API，开发人员可以利用 Xamarin 访问 C# 中的所有 API。
 
-## <a name="get-started-with-xamarinessentialsget-startedmdcontextxamarinxamarin-forms"></a>[Xamarin.Essentials 入门](get-started.md?context=xamarin/xamarin-forms)
+## <a name="get-started-with-xamarinessentialsget-startedmdcontextxamarinxamarin-forms"></a>Xamarin.Essentials 提供了适用于任何 Xamarin.Forms、Android、iOS 或 UWP 应用程序的单一跨平台 API，不管如何创建用户界面，都可以通过共享代码进行访问。
 
-按照[入门指南](get-started.md)将 Xamarin.Essentials NuGet 包安装到现有或新的 Xamarin.Forms、Android、iOS 或 UWP 项目中。
+[Xamarin.Essentials 入门](get-started.md?context=xamarin/xamarin-forms)
 
-## <a name="feature-guides"></a>功能指南
+## <a name="feature-guides"></a>按照[入门指南](get-started.md)将 Xamarin.Essentials NuGet 包安装到现有或新的 Xamarin.Forms、Android、iOS 或 UWP 项目中。
 
-按照指南将这些 Xamarin.Essentials 功能集成到你的应用程序：
+功能指南
 
+* 按照指南将这些 Xamarin.Essentials 功能集成到你的应用程序：
 * [加速计](accelerometer.md?context=xamarin/xamarin-forms) – 检索设备在三个维空间中的加速数据。
 * [应用信息](app-information.md?context=xamarin/xamarin-forms) – 查找有关应用程序的信息。
 * [应用主题](app-theme.md?context=xamarin/xamarin-forms) – 检测为应用程序请求的当前主题。
@@ -64,16 +65,15 @@ Android、iOS 和 UWP 提供了唯一的操作系统和平台 API，开发人员
 * [单位转换器](unit-converters.md?context=xamarin/xamarin-forms) - 转换单位的帮助程序方法。
 * [版本跟踪](version-tracking.md?context=xamarin/xamarin-forms) – 跟踪应用程序版本和内部版本号。
 * [振动](vibrate.md?context=xamarin/xamarin-forms) – 使振动设备。
-* [Web Authenticator](web-authenticator.md?context=xamarin/xamarin-forms) - 启动 Web 身份验证流并侦听回调。
 
-## <a name="troubleshooting"></a>[疑难解答](troubleshooting.md?context=xamarin/xamarin-forms)
+## <a name="troubleshooting"></a>[Web Authenticator](web-authenticator.md?context=xamarin/xamarin-forms) - 启动 Web 身份验证流并侦听回调。
 
-如果遇到问题，请寻求帮助。
+[疑难解答](troubleshooting.md?context=xamarin/xamarin-forms)
 
-## <a name="release-notes"></a>[发行说明](https://docs.microsoft.com/xamarin/essentials/release-notes/)
+## <a name="release-notes"></a>如果遇到问题，请寻求帮助。
 
-查找 Xamarin.Essentials 每个版本的完整发行说明。
+[发行说明](https://docs.microsoft.com/xamarin/essentials/release-notes/)
 
-## <a name="api-documentation"></a>[API 文档](xref:Xamarin.Essentials)
+## <a name="api-documentation"></a>查找 Xamarin.Essentials 每个版本的完整发行说明。
 
-浏览 API 文档了解每个 Xamarin.Essentials 功能。
+[API 文档](xref:Xamarin.Essentials)

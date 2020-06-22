@@ -1,9 +1,6 @@
 ---
-title: ''Xamarin.Essentials:文本转语音'' description:'Xamarin.Essentials 中的 TextToSpeech 类允许应用程序使用内置的文本到语音转换引擎回讲设备中的文本并查询引擎可以支持的可用语言。'
-ms.assetid: author: ms.custom: ms.author: ms.date: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: "Xamarin.Essentials：文本转语音”说明：“Xamarin.Essentials 中的 TextToSpeech 类允许应用程序使用内置的文本到语音转换引擎回讲设备中的文本并查询引擎可以支持的可用语言。”
+ms.assetid：AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:2018 年 11 月 4 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials：文本到语音转换

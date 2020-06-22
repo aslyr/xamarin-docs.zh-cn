@@ -1,20 +1,20 @@
 ---
-title: Xamarin.Forms Shell 生命周期
-description: Shell 应用程序遵循 Xamarin.Forms 生命周期，当页面将出现在屏幕上时，将引发 Appearing 事件，当页面将从屏幕上消失时，将引发 Disappearing 事件。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: title:"Xamarin.FormsShell 生命周期”说明：“Shell 应用程序遵循 Xamarin.Forms 生命周期，当页面将出现在屏幕上时，将引发 Appearing 事件，当页面将从屏幕上消失时，将引发 Disappearing 事件。”
+description: 'ms.prod: xamarin ms.assetid:4E4EE50E-3BB4-441D-8355-CD9CD26ED1D0 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2019/07/25 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 4E4EE50E-3BB4-441D-8355-CD9CD26ED1D0
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/25/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 3a7a46187d861098b61f638a3fb460d890b081dd
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84138718"
 ---
 # <a name="xamarinforms-shell-lifecycle"></a>Xamarin.Forms Shell 生命周期

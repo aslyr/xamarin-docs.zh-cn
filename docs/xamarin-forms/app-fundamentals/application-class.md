@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms 应用类
-description: 本文说明默认 App 类的功能，其中包括一个可设置应用初始页面的属性，以及一个跨生命周期状态更改存储简单值的持久字典。
+title: title:"Xamarin.FormsApp 类”说明：“本文说明默认 App 类的功能，其中包括一个可设置应用初始页面的属性，以及一个跨生命周期状态更改存储简单值的持久字典。”
+description: 'ms.prod: xamarin ms.assetid:421F8294-1944-46A4-8459-D2BD5AAABC9D ms.technology: xamarin-forms ms.custom: video author: davidbritch ms.author: dabritch ms.date:2016/02/19 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: 421F8294-1944-46A4-8459-D2BD5AAABC9D
 ms.technology: xamarin-forms
@@ -12,10 +12,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 1e761830fb08662a82a8bf98b4544aafaa6eccf7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
+ms.lasthandoff: 06/09/2020
 ms.locfileid: "84573347"
 ---
 # <a name="xamarinforms-app-class"></a>Xamarin.Forms 应用类

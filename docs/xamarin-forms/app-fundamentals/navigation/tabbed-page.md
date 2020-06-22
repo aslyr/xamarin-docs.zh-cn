@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms TabbedPage
-description: Xamarin.Forms TabbedPage 包含一系列选项卡和较大的详细信息区域，其中每个选项卡都可将内容加载到详细信息区域。 本文演示如何使用 TabbedPage 浏览页集合。
+title: title:"Xamarin.FormsTabbedPage”说明：“Xamarin.Forms TabbedPage 包含一系列选项卡和较大的详细信息区域，其中每个选项卡都可将内容加载到详细信息区域。
+description: '本文演示如何使用 TabbedPage 浏览页集合。” ms.prod: xamarin ms.assetid:C946057F-C77C-412D-82A0-DAF475A24EF5 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2019/11/07 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: C946057F-C77C-412D-82A0-DAF475A24EF5
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 38389867ba52e63d8310e3b59d7838f58e8cf488
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84137509"
 ---
 # <a name="xamarinforms-tabbedpage"></a>Xamarin.Forms TabbedPage

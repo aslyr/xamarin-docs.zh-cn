@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms Shell 导航
-description: Xamarin.Forms Shell 应用程序可以利用基于 URI 的导航体验：可以导航到应用程序中的任何页面，而无需遵循设置的导航层次结构。
+title: title:"Xamarin.FormsShell 导航”说明："Xamarin.FormsShell 应用程序可以利用基于 URI 的导航体验：可以导航到应用程序中的任何页面，而无需遵循设置的导航层次结构。”
+description: 'ms.prod: xamarin ms.assetid:57079D89-D1CB-48BD-9FEE-539CEC29EABB ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2020/04/02 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: 57079D89-D1CB-48BD-9FEE-539CEC29EABB
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: e67d49f300a8a98ec5685c33abf98f5b2ded08ed
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84132387"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Xamarin.Forms Shell 导航

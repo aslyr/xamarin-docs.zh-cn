@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms 编译的绑定
-description: 本文介绍如何使用已编译的绑定来提升 Xamarin.Forms 应用程序中的数据绑定性能。
+title: title:"Xamarin.Forms编译的绑定”说明：“本文介绍如何使用已编译的绑定来提升 Xamarin.Forms 应用程序中的数据绑定性能。”
+description: 'ms.prod: xamarin ms.assetid:ABE6B7F7-875E-4402-A1D2-845CE374402B ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2019/09/18 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: ABE6B7F7-875E-4402-A1D2-845CE374402B
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 094691796fed9653f2a2e468ccb1c33d1a408a49
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
+ms.lasthandoff: 06/09/2020
 ms.locfileid: "84571553"
 ---
 # <a name="xamarinforms-compiled-bindings"></a>Xamarin.Forms 编译的绑定

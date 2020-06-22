@@ -1,21 +1,21 @@
 ---
-title: ''
-description: Xamarin.Forms ListView 是以垂直列表的形式显示数据集合的视图。 本文演示如何创建自定义呈现器来封装特定于平台的列表控件和本机单元布局，从而进一步控制本机列表控件的性能。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: title:“自定义 ListView”说明：“Xamarin.Forms ListView 是以垂直列表的形式显示数据集合的视图。
+description: '本文演示如何创建自定义呈现器来封装特定于平台的列表控件和本机单元布局，从而进一步控制本机列表控件的性能。” ms.prod: xamarin ms.assetid:2FBCB8C8-4F32-45E7-954F-63AD29D5F1B5 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2017/11/29 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 2FBCB8C8-4F32-45E7-954F-63AD29D5F1B5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3403948c2853289610a73bb36073f09c0c86137d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: dc28cdaf78c72c219706a30c30af7f90ae7c4eec
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135299"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569616"
 ---
 # <a name="customizing-a-listview"></a>自定义 ListView
 
@@ -31,13 +31,11 @@ _Xamarin.Forms ListView 是以垂直列表的形式显示数据集合的视图�
 
 通过在每个平台上为 [`ListView`](xref:Xamarin.Forms.ListView) 创建自定义呈现器，可以利用呈现过程来实现特定于平台的自定义。 执行此操作的过程如下：
 
-1. [创建](#Creating_the_Custom_ListView_Control) Xamarin.Forms 自定义控件。
-1. [使用](#Consuming_the_Custom_Control) Xamarin.Forms 中的自定义控件。
-1. 在每个平台上为控件[创建](#Creating_the_Custom_Renderer_on_each_Platform)自定义呈现器。
+1. [创建](#creating-the-custom-listview-control) Xamarin.Forms 自定义控件。
+1. [使用](#consuming-the-custom-control) Xamarin.Forms 中的自定义控件。
+1. 在每个平台上为控件[创建](#creating-the-custom-renderer-on-each-platform)自定义呈现器。
 
 现在将依次讨论每个项目，以实现 `NativeListView` 呈现器，该呈现器利用特定于平台的列表控件和本机单元布局。 移植包含可以重复使用的列表和单元代码的现有本机应用时，此方案很有用。 此外，它还允许对可能影响性能的列表控件功能进行详细自定义，例如数据虚拟化。
-
-<a name="Creating_the_Custom_ListView_Control" />
 
 ## <a name="creating-the-custom-listview-control"></a>创建自定义 ListView 控件
 
@@ -66,8 +64,6 @@ public class NativeListView : ListView
 ```
 
 `NativeListView` 在 .NET Standard 库项目中创建，它定义自定义控件的 API。 此控件公开 `Items` 属性，该属性用于使用数据填充 `ListView`，并且可出于显示目的绑定数据。 它还公开了 `ItemSelected` 事件，只要在特定于平台的本机列表控件中选中了某个项目，就会触发该事件。 若要深入了解数据绑定，请参阅[数据绑定基本知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
-
-<a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>使用自定义控件
 
@@ -142,8 +138,6 @@ public class MainPageCS : ContentPage
 > 由于 `NativeListView` 自定义控件将使用包含滚动功能的特定于平台的列表控件进行呈现，自定义控件不应托管在可滚动的布局控件中，例如 [`ScrollView`](xref:Xamarin.Forms.ScrollView)。
 
 现在可以向每个应用程序项目添加自定义呈现器，以便创建特定于平台的列表控件和本机单元布局。
-
-<a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>在每个平台上创建自定义呈现器
 

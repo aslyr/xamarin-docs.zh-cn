@@ -1,9 +1,6 @@
 ---
-title: ''Xamarin.Essentials:Accelerometer'' description:'Xamarin.Essentials 中的 Accelerometer 类可用于监视设备的加速计传感器，指示设备在三维空间内的加速度。'
-ms.assetid: author: ms.author: ms.date: ms.custom: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: "Xamarin.Essentials：加速计”说明：“Xamarin.Essentials 中的 Accelerometer 类可用于监视设备的加速计传感器，此传感器指示设备在三维空间内的加速度。”
+ms.assetid：97883573-F0D9-4854-AC7C-A654814401C5 author: jamesmontemagno ms.author: jamont ms.date:2019 年 4 月 2 日 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials：加速计

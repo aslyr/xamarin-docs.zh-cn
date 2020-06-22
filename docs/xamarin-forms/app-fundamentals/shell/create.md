@@ -1,11 +1,22 @@
 ---
-title:'创建 Xamarin.Forms Shell 应用程序' description:“创建 XXamarin.Forms Shell 应用程序的过程包括创建可创建 Shell 类的子类的 XAML 文件，将应用程序的 App 类的 MainPage 属性设置为子类 Shell 对象，然后描述子类 Shell 类中的应用程序的视觉层次结构。”
-ms.prod: ms.assetid: ms.technology: author: ms.author: ms.date: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: title:“创建 Xamarin.Forms Shell 应用程序”说明：“创建 Xamarin.Forms Shell 应用程序的过程包括创建可对 Shell 类进行子类化的 XAML 文件，将应用程序的 App 类的 MainPage 属性设置为子类化的 Shell 对象，然后描述子类化的 Shell 类中的应用程序的视觉层次结构。”
+description: 'ms.prod: xamarin ms.assetid:2A51D78F-6CD5-4BC4-A62E-11CEFA799987 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2019/05/24 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 2A51D78F-6CD5-4BC4-A62E-11CEFA799987
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/24/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 62c323dd73f656d5b4f4e06c672fd952845efb22
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84137795"
 ---
-
 # <a name="create-a-xamarinforms-shell-application"></a>创建 Xamarin.Forms Shell 应用程序
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

@@ -1,22 +1,22 @@
 ---
 title: 在多页 Xamarin.Forms 应用程序中执行导航
-description: ''
-zone_pivot_groups: ''
-ms.topic: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+description: 本文说明如何将存储单个便笺的单页应用程序转换为能够存储多个便笺的多页应用程序。
+zone_pivot_groups: platform
+ms.topic: quickstart
+ms.prod: xamarin
+ms.assetid: 9DC3B3D6-6CBC-4705-BE80-3D86A9E65F92
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: b3616d0cf4804dfb37d4fe65034796c672dec828
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84127876"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>在多页 Xamarin.Forms 应用程序中执行导航
@@ -621,4 +621,4 @@ ms.locfileid: "84127876"
 ## <a name="related-links"></a>相关链接
 
 - [便笺（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
-- [Xamarin.Forms快速入门深入探讨](deepdive.md)
+- [Xamarin.Forms 快速入门深入探讨](deepdive.md)

@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms 母版页详细信息页
-description: Xamarin.Forms MasterDetailPage 页面用于管理两个相关信息页，其中一个为显示项的母版页，另一个为详细信息页，显示母版页上各项的详细信息。 本文介绍如何使用 MasterDetailPage 并在其信息页面之间导航。
+title: title:"Xamarin.Forms母版页-详细信息页”说明：“Xamarin.Forms MasterDetailPage 页面用于管理两个相关信息页，其中一个为显示项的母版页，另一个为详细信息页，显示母版页上各项的详细信息。
+description: '本文介绍如何使用 MasterDetailPage 并在其信息页面之间导航。” ms.prod: xamarin ms.assetid:119945E3-58B8-4630-A3D2-8B561529D53B ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2017/12/01 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: 119945E3-58B8-4630-A3D2-8B561529D53B
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: c751a1843479f1e98739964631999dfdb0e3b634
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
+ms.lasthandoff: 06/09/2020
 ms.locfileid: "84569629"
 ---
 # <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms 母版页详细信息页

@@ -1,9 +1,6 @@
 ---
-title: ''Xamarin.Essentials:检测抖动'' description:'Xamarin.Essentials 中的 Accelerometer 类可以检测设备的抖动移动。'
-ms.assetid: author: ms.author: ms.date: ms.custom: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: "Xamarin.Essentials：检测抖动”说明：“Xamarin.Essentials 中的 Accelerometer 类可以检测设备的抖动移动。”
+ms.assetid：07513D32-120F-4F12-8757-A47802A8027B author: jamesmontemagno ms.author: jamont ms.date:2019 年 5 月 28 日 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 
 # <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials：检测抖动

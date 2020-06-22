@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms 本地通知
-description: 本文介绍如何在 Xamarin.Forms 中发送和接收本地通知。
+title: 标题：“Xamarin.Forms 本地通知”说明：“本文介绍如何在 Xamarin.Forms 中发送和接收本地通知。”
+description: 'ms.prod: xamarin ms.assetid:60460F57-63C6-4916-BBB5-A870F1DF53D7 ms.technology: xamarin-forms author: profexorgeek ms.author: jusjohns ms.date:2019/10/10 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 40e040f216ddda40931273f4e7f5614964862fe8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84137587"
 ---
 # <a name="local-notifications-in-xamarinforms"></a>Xamarin.Forms 中的本地通知

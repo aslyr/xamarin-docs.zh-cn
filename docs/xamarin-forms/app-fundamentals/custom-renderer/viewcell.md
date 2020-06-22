@@ -1,11 +1,22 @@
 ---
-title: description:'Xamarin.Forms ViewCell 是可以添加到 ListView 或 TableView 中的单元，它包含开发人员定义的视图。 本文演示如何为 Xamarin.Forms ListView 控件中托管的 ViewCell 创建自定义呈现器。'
-ms.prod: ms.assetid: ms.technology: author: ms.author: ms.date: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: title:“自定义 ViewCell”说明：“Xamarin.Forms ViewCell 是可以添加到 ListView 或 TableView 中的单元，它包含开发人员定义的视图。
+description: '本文演示如何为 Xamarin.Forms ListView 控件中托管的 ViewCell 创建自定义呈现器。” ms.prod: xamarin ms.assetid:61F378C9-6DEF-436B-ACC3-2324B25D404E ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2016/12/07 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 61F378C9-6DEF-436B-ACC3-2324B25D404E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/07/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c908da816352e8b3790ded0bef932e1485170abd
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573867"
 ---
-
 # <a name="customizing-a-viewcell"></a>自定义 ViewCell
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
@@ -20,13 +31,11 @@ Xamarin.Forms ViewCell 是可以添加到 ListView 或 TableView 中的单元，
 
 通过在每个平台上为 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 创建自定义呈现器，可以利用呈现过程来实现特定于平台的自定义。 执行此操作的过程如下：
 
-1. [创建](#Creating_the_Custom_Cell) Xamarin.Forms 自定义单元。
-1. [使用](#Consuming_the_Custom_Cell) Xamarin.Forms 中的自定义单元。
-1. 在每个平台上为单元[创建](#Creating_the_Custom_Renderer_on_each_Platform)自定义呈现器。
+1. [创建](#creating-the-custom-cell) Xamarin.Forms 自定义单元。
+1. [使用](#consuming-the-custom-cell) Xamarin.Forms 中的自定义单元。
+1. 在每个平台上为单元[创建](#creating-the-custom-renderer-on-each-platform)自定义呈现器。
 
 现在将依次讨论每个项，以实现 `NativeCell` 呈现器，该呈现器为 Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 控件中托管的每个单元利用特定于平台的布局。 这可防止在 `ListView` 滚动期间重复调用 Xamarin.Forms 布局计算。
-
-<a name="Creating_the_Custom_Cell" />
 
 ## <a name="creating-the-custom-cell"></a>创建自定义单元
 
@@ -62,8 +71,6 @@ public class NativeCell : ViewCell
 ```
 
 `NativeCell` 类创建在 .NET Standard 库项目中，它定义自定义单元的 API。 自定义单元公开可以通过数据绑定显示的 `Name`、`Category` 和 `ImageFilename` 属性。 若要深入了解数据绑定，请参阅[数据绑定基本知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
-
-<a name="Consuming_the_Custom_Cell" />
 
 ## <a name="consuming-the-custom-cell"></a>使用自定义单元
 
@@ -143,8 +150,6 @@ Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 控件用于显示数据
 列表中的每一行都包含三项数据：名称、类别和图像文件名。 列表中每行的布局由通过 [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) 可绑定属性来引用的 `DataTemplate` 定义。 `DataTemplate` 定义列表中的每行数据将是 `NativeCell`，它通过数据绑定显示其 `Name`、`Category` 和 `ImageFilename` 属性。 有关 `ListView` 控件的详细信息，请参阅 [ListView](~/xamarin-forms/user-interface/listview/index.md)。
 
 现在可以向每个应用程序项目添加自定义呈现器，以便为每个单元自定义特定于平台的布局。
-
-<a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>在每个平台上创建自定义呈现器
 

@@ -1,20 +1,20 @@
 ---
-title: ''
-description: 行为可用于将命令与非旨在与命令交互的控件相关联。 本文演示了如何创建 Xamarin.Forms 行为并在事件触发后使用它来调用命令。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: title:“可重用 EventToCommandBehavior”说明：“行为可用于将命令与并非旨在与命令交互的控件关联。
+description: '本文演示了如何创建 Xamarin.Forms 行为并在事件触发后使用它来调用命令。” ms.prod: xamarin ms.assetid:EC7F6556-9776-40B8-9424-A8094482A2F3 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2018/11/09 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: EC7F6556-9776-40B8-9424-A8094482A2F3
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/09/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 46d1566c89de763a469f30ce8ed2c6ef919f1426
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84135793"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>可重用 EventToCommandBehavior

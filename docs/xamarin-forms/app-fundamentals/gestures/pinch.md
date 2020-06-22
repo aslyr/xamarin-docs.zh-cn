@@ -1,20 +1,20 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: title:“添加收缩手势识别器”说明：“本文介绍如何使用收缩手势在收缩位置对图像进行交互式缩放。”
+description: 'ms.prod: xamarin ms.assetid:832F7810-F0CF-441A-B04A-3975F3FB8B29 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2016/01/21 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 832F7810-F0CF-441A-B04A-3975F3FB8B29
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/21/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: da4a8bc66a7986efd3683de6dce1f6af618b85cc
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84137847"
 ---
 # <a name="adding-a-pinch-gesture-recognizer"></a>添加捏合手势识别器

@@ -1,8 +1,6 @@
 ---
-title: ''Xamarin.Essentials:Magnetometer'' description: ms.assetid: author: ms.author: ms.date: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: "Xamarin.Essentials：磁力计”说明：“Xamarin.Essentials 中的 Magnetometer 类使你能够监视设备的磁力计传感器，此传感器指示设备相对于地球磁场的方向。”
+ms.assetid：64DD0D41-03E2-40DD-9EC8-101CA0ED852B author: jamesmontemagno ms.author: jamont ms.date:2018 年 11 月 4 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 
 # <a name="xamarinessentials-magnetometer"></a>Xamarin.Essentials：磁力计

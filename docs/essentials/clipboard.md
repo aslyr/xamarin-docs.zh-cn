@@ -1,9 +1,6 @@
 ---
-title: ''Xamarin.Essentials:剪贴板'' description:'本文档介绍 Xamarin.Essentials 中的 Clipboard 类，此类使你能够在应用程序之间将文本复制并粘贴到系统剪贴板。'
-ms.assetid: author: ms.author: ms.date: ms.custom: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: "Xamarin.Essentials：剪贴板”说明：“本文档介绍 Xamarin.Essentials 中的 Clipboard 类，此类使你能够在应用程序之间将文本复制并粘贴到系统剪贴板。”
+ms.assetid：C52AE99A-0FB3-425D-9106-3DA5777FEFA0 author: jamesmontemagno ms.author: jamont ms.date:2020 年 1 月 6 日 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 
 # <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials：剪贴板

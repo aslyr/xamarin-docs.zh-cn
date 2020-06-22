@@ -1,20 +1,20 @@
 ---
-title: Xamarin.Forms 导航
-description: 本指南介绍如何在 Xamarin.Forms 应用中执行导航。 Xamarin.Forms 提供多种不同的页面导航体验，具体取决于所使用的页面类型。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: title:"Xamarin.Forms导航”说明：“本指南介绍如何在 Xamarin.Forms 应用中执行导航。
+description: 'Xamarin.Forms 提供多种不同的页面导航体验，具体取决于所使用的页面类型。” ms.prod: xamarin ms.assetid:BC5D0C6C-D5A9-4B12-A492-ED1F570CEC87 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2017/12/01 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: BC5D0C6C-D5A9-4B12-A492-ED1F570CEC87
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 8c907cd8a4a1d14b936dee309610bffc67ef363f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84137834"
 ---
 # <a name="xamarinforms-navigation"></a>Xamarin.Forms 导航

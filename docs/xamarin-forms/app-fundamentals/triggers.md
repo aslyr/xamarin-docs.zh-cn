@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms 触发器
-description: 此文章介绍了如何使用 Xamarin.Forms 触发器来响应 XAML 的用户界面更改。 触发器允许你在根据事件或属性更改更改控件外观的 XAML 中以声明的方式表达操作。
+title: title:"Xamarin.Forms触发器”说明：“本文介绍如何使用 Xamarin.Forms 触发器来响应 XAML 的用户界面更改。
+description: '触发器允许你在根据事件或属性更改更改控件外观的 XAML 中以声明的方式表达操作。” ms.prod: xamarin ms.assetid:60460F57-63C6-4916-BBB5-A870F1DF53D7 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2020 年 4 月 17 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: f92ad47ae883f4b1b413ae5192a9add83045bb77
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84136950"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms 触发器

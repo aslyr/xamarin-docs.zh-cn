@@ -1,20 +1,20 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: title:“从效果调用事件”说明：“一种效果可以定义和调用事件，指示基础本机视图中的更改。
+description: '本文介绍如何实现低级别多点触控手指跟踪，以及如何生成发出触摸活动信号的事件。” ms.prod: xamarin ms.assetid:6A724681-55EB-45B8-9EED-7E412AB19DD2 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2018/12/14 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 6A724681-55EB-45B8-9EED-7E412AB19DD2
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 892bffa4027a1a61d6c22cc26d1556fb007432d8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84136976"
 ---
 # <a name="invoking-events-from-effects"></a>从效果调用事件

@@ -1,20 +1,20 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: title:“添加轻扫手势识别器”说明：“本文介绍如何识别视图上的轻扫手势。”
+description: 'ms.prod: xamarin ms.assetid:164976C2-1429-49FB-9EB6-621E2681C19B ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2018/08/14 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 164976C2-1429-49FB-9EB6-621E2681C19B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 03663803313c870a3361c6e1ffc85cf1f8999068
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84137862"
 ---
 # <a name="adding-a-swipe-gesture-recognizer"></a>添加轻扫手势识别器

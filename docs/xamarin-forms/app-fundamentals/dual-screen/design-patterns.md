@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms 双屏设计模式
-description: 本指南介绍了 Xamarin.Forms 如何支持已针对双屏设备进行优化的各种不同设计模式。
+title: title:"Xamarin.Forms双屏设计模式”说明：“本指南介绍了 Xamarin.Forms 如何支持已针对双屏设备进行优化的各种不同设计模式。”
+description: 'ms.prod: xamarin ms.assetid:3176d792-6dba-4e00-b463-497c58678ee9 ms.technology: xamarin-forms author: davidortinau ms.author: daortin ms.date:2020/02/08 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: 3176d792-6dba-4e00-b463-497c58678ee9
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 277fb67eeea465239d9340e755240288286d2359
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84138783"
 ---
 # <a name="xamarinforms-dual-screen-design-patterns"></a>Xamarin.Forms 双屏设计模式

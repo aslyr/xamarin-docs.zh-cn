@@ -1,20 +1,20 @@
 ---
 title: Xamarin.Forms 绑定模式
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+description: 本文介绍如何使用绑定模式控制源和目标之间的信息流，绑定模式由 BindingMode 枚举的成员指定。 每个可绑定属性都有一个默认绑定模式，该模式指示该属性是数据绑定目标时有效的模式。
+ms.prod: xamarin
+ms.assetid: D087C389-2E9E-47B9-A341-5B14AC732C45
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/01/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: c14215071a1d9d3ec804c307fa6edbbe4ddcf8e9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84139771"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms 绑定模式

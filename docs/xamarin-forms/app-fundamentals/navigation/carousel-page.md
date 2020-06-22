@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms 传送页
-description: Xamarin.Forms CarouselPage 页面就像一个库，用户可从一侧轻扫到另一侧以浏览内容页面。 本文演示如何使用 CarouselPage 浏览页集合。
+title: title:"Xamarin.Forms传送页”说明：“Xamarin.Forms CarouselPage 页面就像一个库，用户可从一侧轻扫到另一侧以浏览内容页面。
+description: '本文演示如何使用 CarouselPage 浏览页集合。” ms.prod: xamarin ms.assetid:2D14FC9D-DF5F-427E-9006-2AAE61ECF8DC ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2017/12/01 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: 2D14FC9D-DF5F-427E-9006-2AAE61ECF8DC
 ms.technology: xamarin-forms
@@ -11,17 +11,17 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 896f652d69bca0f186e53185926ee5c46d87fa7c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
+ms.lasthandoff: 06/09/2020
 ms.locfileid: "84570669"
 ---
 # <a name="xamarinforms-carousel-page"></a>Xamarin.Forms 传送页
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-carouselpage)
 
-_ CarouselPage 页面就像一个库，用户可从一侧轻扫到另一侧以浏览内容页面。本文演示如何使用 CarouselPage 浏览页集合。
+_Xamarin.Forms CarouselPage 页面就像一个库，用户可从一侧轻扫到另一侧以浏览内容页面。本文演示如何使用 CarouselPage 浏览页集合。
 
 > [!IMPORTANT]
 > [`CarouselView`](xref:Xamarin.Forms.CarouselView) 取代了 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)并提供一个可供用户轻扫浏览一系列项的可滚动布局。 有关 `CarouselView` 的详细信息，请参阅 [Xamarin.Forms CarouselView](~/xamarin-forms/user-interface/carouselview/index.md)。

@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms 命令接口
-description: 本文介绍如何使用 Xamarin.Forms 数据绑定实现 Command 属性。 命令接口提供了另一种实现命令的方法，这种方法更适合 MVVM 体系结构。
+title: title:“Xamarin.Forms 命令接口”说明：“本文介绍如何使用 Xamarin.Forms 数据绑定实现 Command 属性。”
+description: '命令接口提供了另一种实现命令的方法，这种方法更适合 MVVM 体系结构。” ms.prod: xamarin ms.assetid:69922284-F398-45C3-B4CC-B8E29BB4C533 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2018/01/05 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: 69922284-F398-45C3-B4CC-B8E29BB4C533
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 253255f08cec6f08e03df94798c8572f7cf10f30
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84139719"
 ---
 # <a name="the-xamarinforms-command-interface"></a>Xamarin.Forms 命令接口

@@ -1,8 +1,6 @@
 ---
-title: ''Xamarin.Essentials:Gyroscope'' description: ms.assetid: author: ms.author: ms.date: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: "Xamarin.Essentials：陀螺仪”说明：“Xamarin.Essentials 中的 Gyroscope 类使你能够监控设备的陀螺仪传感器，此传感器测量围绕设备三个主轴的旋转。”
+ms.assetid：DA4F968A-D988-41F5-8745-1BEE693660A1 author: jamesmontemagno ms.author: jamont ms.date:2018 年 11 月 4 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 
 # <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials：陀螺仪

@@ -1,11 +1,20 @@
 ---
-title: ''Xamarin.Essentials:疑难解答'' description:'本文档介绍如何解决使用 Xamarin.Essentials 库进行开发时遇到的问题。'
-ms.assetid: author: ms.author: ms.date: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: 'title: "Xamarin.Essentials：疑难解答”说明：“本文档介绍如何解决使用 Xamarin.Essentials 库进行开发时遇到的问题。”'
+description: 'ms.assetid：2E474FAF-F841-4E3C-B815-F7ABD8EE3361 author: jamesmontemagno ms.author: jamont ms.date:2020 年 1 月 6 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.assetid: 2E474FAF-F841-4E3C-B815-F7ABD8EE3361
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/06/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 67a060667cef5f96fa864aa2db3356ac5b9b2dfb
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84137119"
 ---
-
 # <a name="xamarinessentials-troubleshooting"></a>Xamarin.Essentials：疑难解答
 
 ## <a name="error-version-conflict-detected-for-xamarinandroidsupportcompat"></a>错误：检测到 Xamarin.Android.Support.Compat 存在版本冲突

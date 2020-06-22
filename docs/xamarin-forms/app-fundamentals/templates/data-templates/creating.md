@@ -1,21 +1,21 @@
 ---
 title: 创建 Xamarin.Forms DataTemplate
 description: 可通过内联方式创建数据模板，也可在 ResourceDictionary 中或根据自定义类型或适当的 Xamarin.Forms 单元类型进行创建。 本文对每种技术进行了探讨。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: CFF4AB5E-9069-461C-84D8-F9F6C38510AB
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3e91d6f091870fe9203e67eda1454b8062383deb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: 3054180a9deb1357357c90db7b7fbdd8058b6773
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139927"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84565494"
 ---
 # <a name="creating-a-xamarinforms-datatemplate"></a>创建 Xamarin.Forms DataTemplate
 
@@ -25,15 +25,13 @@ _可通过内联方式创建数据模板，也可在 ResourceDictionary 中或�
 
 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 的常见使用场景是在 [`ListView`](xref:Xamarin.Forms.ListView) 中显示来自对象集合的数据。 可通过将 [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1) 属性设置为 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)，来管理 [`ListView`](xref:Xamarin.Forms.ListView) 中每个单元的数据外观。 可使用多种技术实现此目的：
 
-- [创建内联 DataTemplate](#inline)。
-- [使用类型创建 DataTemplate](#type)。
-- [将 DataTemplate 创建为资源](#resource)。
+- [创建内联 DataTemplate](#creating-an-inline-datatemplate)。
+- [使用类型创建 DataTemplate](#creating-a-datatemplate-with-a-type)。
+- [将 DataTemplate 创建为资源](#creating-a-datatemplate-as-a-resource)。
 
 无论使用何种技术，结果都是 [`ListView`](xref:Xamarin.Forms.ListView) 中每个单元的外观由 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 定义，如以下屏幕截图所示：
 
 ![](creating-images/data-template-appearance.png "ListView with a DataTemplate")
-
-<a name="inline" />
 
 ## <a name="creating-an-inline-datatemplate"></a>创建内联 DataTemplate
 
@@ -114,8 +112,6 @@ public class WithDataTemplatePageCS : ContentPage
 ```
 
 在 C# 中，内联 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 是使用指定 `Func` 参数的构造函数重载创建的。
-
-<a name="type" />
 
 ## <a name="creating-a-datatemplate-with-a-type"></a>使用类型创建 DataTemplate
 
@@ -220,8 +216,6 @@ public class PersonCellCS : ViewCell
 
 > [!NOTE]
 > 请注意，Xamarin.Forms 还包括可用于在 [`ListView`](xref:Xamarin.Forms.ListView) 单元中显示简单数据的单元类型。 有关详细信息，请参阅[单元外观](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)。
-
-<a name="resource" />
 
 ## <a name="creating-a-datatemplate-as-a-resource"></a>将 DataTemplate 创建为资源
 

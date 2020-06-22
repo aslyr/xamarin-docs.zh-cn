@@ -1,20 +1,20 @@
 ---
 title: Xamarin.Forms 双屏触发器
 description: 本文介绍了如何使用 Xamarin.Forms 双屏触发器来响应 XAML 的用户界面更改。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 2181715D-3995-4E71-9A21-6B892F0B3B59
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: df10327b2ac12d2b119f1ab558d7f27e8c319507
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84131191"
 ---
 # <a name="xamarinforms-dual-screen-triggers"></a>Xamarin.Forms 双屏触发器

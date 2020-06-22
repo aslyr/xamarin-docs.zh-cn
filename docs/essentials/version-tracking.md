@@ -1,9 +1,6 @@
 ---
-title: ''Xamarin.Essentials:版本跟踪'' description:'Xamarin.Essentials 中的 VersionTracking 类使你能够检查应用程序版本和内部版本号以及查看其他信息，例如，此应用程序是第一次启动还是当前版本的第一次启动，以及获取之前的内部版本信息等。'
-ms.assetid: author: ms.author: ms.date: ms.custom: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: "Xamarin.Essentials：版本跟踪”说明：“Xamarin.Essentials 中的 VersionTracking 类使你能够检查应用程序版本和内部版本号、查看其他信息（例如，此应用程序是第一次启动还是当前版本的第一次启动），以及获取之前的内部版本信息等。”
+ms.assetid：670C7E8A-E882-4AC0-97D2-A53D90ADD6A3 author: jamesmontemagno ms.author: jamont ms.date:2019 年 5 月 28 日 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 
 # <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials：版本跟踪

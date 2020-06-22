@@ -1,6 +1,6 @@
 ---
-title: 创建 Xamarin.Forms 行为
-description: Xamarin.Forms 行为是通过从行为或行为 <T> 类派生来创建的。 本文演示如何创建和使用 Xamarin.Forms 行为。
+title: title:“创建 Xamarin.Forms 行为”说明：“Xamarin.Forms 行为是通过从行为或行为 <T> 类派生来创建的。
+description: '本文演示如何创建和使用 Xamarin.Forms 行为。” ms.prod: xamarin ms.assetid:300C16FE-A7E0-445B-9099-8E93ABB6F73D ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2016/04/06 no-loc no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: 300C16FE-A7E0-445B-9099-8E93ABB6F73D
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 67db30b5caadce75a41755530db2b245562d0304
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84135819"
 ---
 # <a name="create-xamarinforms-behaviors"></a>创建 Xamarin.Forms 行为

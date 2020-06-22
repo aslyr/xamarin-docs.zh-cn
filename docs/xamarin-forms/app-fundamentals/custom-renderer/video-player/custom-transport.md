@@ -1,20 +1,20 @@
 ---
-title: ''
+title: 自定义视频传输控件
 description: 本文介绍如何使用 Xamarin.Forms 在视频播放器应用程序中实现自定义传输控件。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: CE9E955D-A9AC-4019-A5D7-6390D80DECA1
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: c72f68f327b6c0df6959d37ed4bf390e3bd7f31d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84135000"
 ---
 # <a name="custom-video-transport-controls"></a>自定义视频传输控件

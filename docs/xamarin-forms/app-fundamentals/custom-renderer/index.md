@@ -1,20 +1,20 @@
 ---
 title: Xamarin.Forms 自定义呈现器
 description: 通过自定义呈现器，开发人员可以自定义 Xamarin.Forms 控件的外观和行为，以此替代各平台上本机控件的呈现。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: BF1CF23A-3BC9-4226-92E6-DAEEB91422F1
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/03/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: be281f9b7987a8d23ba6ac93f0771e432f277d45
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84138913"
 ---
 # <a name="xamarinforms-custom-renderers"></a>Xamarin.Forms 自定义呈现器

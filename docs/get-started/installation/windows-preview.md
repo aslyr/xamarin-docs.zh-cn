@@ -1,19 +1,19 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 在 Windows 上安装 Xamarin 预览版
+description: 本文档介绍了如何使用预览版本通道在 Visual Studio 2019 上安装 Xamarin 预览版本。
+ms.prod: xamarin
+ms.assetid: 9F730444-06E8-4B3F-8A19-CA95CD484FFA
+author: conceptdev
+ms.author: crdun
+ms.date: 03/20/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 5ccd5a610ad41c0160a6778a63a367376bd200b3
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84134012"
 ---
 # <a name="installing-xamarin-preview-on-windows"></a>在 Windows 上安装 Xamarin 预览版

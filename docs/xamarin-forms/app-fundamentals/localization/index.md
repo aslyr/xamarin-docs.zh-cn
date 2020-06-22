@@ -1,20 +1,20 @@
 ---
-title: Xamarin.Forms 本地化
-description: 内置的 .NET 本地化框架可与 Xamarin.Forms 结合使用，从而生成跨平台的多语言应用程序。 文本和图像均可本地化，且应用程序支持从右到左的流方向。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: title:"Xamarin.Forms本地化”说明：“内置的 .NET 本地化框架可与 Xamarin.Forms 结合使用，从而生成跨平台的多语言应用程序。
+description: '文本和图像均可本地化，且应用程序支持从右到左的流方向。” ms.prod: xamarin ms.assetid:97BF843B-BDAA-4CEA-8189-6DB54B291D7F ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2018/11/07 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 97BF843B-BDAA-4CEA-8189-6DB54B291D7F
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/07/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: dddb80e8fb683547d2bf6ba0b74e870fe240695c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/10/2020
 ms.locfileid: "84137561"
 ---
 # <a name="xamarinforms-localization"></a>Xamarin.Forms 本地化
