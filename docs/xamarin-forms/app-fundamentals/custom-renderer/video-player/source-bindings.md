@@ -1,20 +1,20 @@
 ---
-title: ''
+title: 将视频源绑定到播放器
 description: 本文介绍如何使用 Xamarin.Forms 将视频源绑定到视频播放器。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 504E0C7E-051A-4AF2-B654-BAB4D0957928
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: c02764d6160bb8ce2481a3cf67e357933d25934f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84133726"
 ---
 # <a name="binding-video-sources-to-the-player"></a>将视频源绑定到播放器

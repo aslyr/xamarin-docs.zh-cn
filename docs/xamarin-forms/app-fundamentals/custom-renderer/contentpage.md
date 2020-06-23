@@ -1,21 +1,21 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 自定义 ContentPage
+description: ContentPage 是一个可视元素，它显示单个视图并占据大部分屏幕区域。 本文演示了如何为 ContentPage 页面创建自定义呈现器，使开发人员能够使用自己特定于平台的自定义呈现替代默认本机呈现。
+ms.prod: xamarin
+ms.assetid: A4E61D93-73D9-4668-8D1C-DB6FC2491822
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 50e28291d72550264e3806c0911f59a57c6d8bf0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: ca9a541c3d152d1b84ed682881c395f2199b9eaf
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136326"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84574374"
 ---
 # <a name="customizing-a-contentpage"></a>自定义 ContentPage
 
@@ -31,13 +31,11 @@ ContentPage 是一个可视元素，它显示单个视图并占据大部分屏�
 
 通过在每个平台上为 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 创建自定义呈现器，可以利用呈现过程来实现特定于平台的自定义。 执行此操作的过程如下：
 
-1. [创建](#Creating_the_Xamarin.Forms_Page) Xamarin.Forms 页面。
-1. [使用](#Consuming_the_Xamarin.Forms_Page) Xamarin.Forms 中的页面。
-1. 在每个平台上为页面[创建](#Creating_the_Page_Renderer_on_each_Platform)自定义呈现器。
+1. [创建](#creating-the-xamarinforms-page) Xamarin.Forms 页面。
+1. [使用](#consuming-the-xamarinforms-page) Xamarin.Forms 中的页面。
+1. 在每个平台上为页面[创建](#creating-the-page-renderer-on-each-platform)自定义呈现器。
 
 现在将依次介绍每个项，以实现 `CameraPage`，提供实时摄像头源和捕获照片的功能。
-
-<a name="Creating_the_Xamarin.Forms_Page" />
 
 ## <a name="creating-the-xamarinforms-page"></a>创建 Xamarin.Forms 页面
 
@@ -78,8 +76,6 @@ public class CameraPageCS : ContentPage
 
 `CameraPage` 的实例将用于在每个平台上显示实时摄像头源。 控件的自定义内容将在自定义呈现器中进行设置，因此 `CameraPage` 类中无需任何其他实现。
 
-<a name="Consuming_the_Xamarin.Forms_Page" />
-
 ## <a name="consuming-the-xamarinforms-page"></a>使用 Xamarin.Forms 页面
 
 空白的 `CameraPage` 必须由 Xamarin.Forms 应用程序显示。 单击 `MainPage` 实例上的按钮时将发生此情况，这将反过来执行 `OnTakePhotoButtonClicked` 方法，如下面的代码示例中所示：
@@ -92,8 +88,6 @@ async void OnTakePhotoButtonClicked (object sender, EventArgs e)
 ```
 
 此代码只是简单地导航到 `CameraPage`，自定义呈现器将在该页面自定义每个平台上的页面外观。
-
-<a name="Creating_the_Page_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-page-renderer-on-each-platform"></a>在每个平台上创建页面呈现器
 

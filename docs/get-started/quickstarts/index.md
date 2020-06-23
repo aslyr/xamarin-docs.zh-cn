@@ -1,20 +1,20 @@
 ---
 title: Xamarin.Forms 快速入门
 description: 有关使用 Visual Studio 和 Visual Studio for Mac 开发 Xamarin.Forms 应用程序的快速入门。
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: 3318B8F8-3B24-489E-8E7B-28FA948796F8
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 03d20114fb84bf17be40d9166e32c3d631786069
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84132504"
 ---
 # <a name="xamarinforms-quickstarts"></a>Xamarin.Forms 快速入门

@@ -1,21 +1,21 @@
 ---
-title: ''
+title: 自定义 Entry
 description: Xamarin.Forms Entry 控件允许对单行文本进行编辑。 本文演示了如何为 Entry 控件创建自定义呈现器，使开发人员能够使用自己特定于平台的自定义呈现替代默认本机呈现。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 7B5DD10D-0411-424F-88D8-8A474DF16D8D
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/26/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 61bd66fd25b7aea3e5be346f79e63d410164b002
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: d28a9079d27310dde0e5ea5bf80c83895bbcf1d4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138978"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84571566"
 ---
 # <a name="customizing-an-entry"></a>自定义 Entry
 
@@ -31,16 +31,14 @@ Xamarin.Forms Entry 控件允许对单行文本进行编辑。本文演示了如
 
 通过在每个平台上为 [`Entry`](xref:Xamarin.Forms.Entry) 控件创建自定义呈现器，可以利用呈现过程来实现特定于平台的自定义。 执行此操作的过程如下：
 
-1. [创建](#Creating_the_Custom_Entry_Control) Xamarin.Forms 自定义控件。
-1. [使用](#Consuming_the_Custom_Control) Xamarin.Forms 中的自定义控件。
-1. 在每个平台上为控件[创建](#Creating_the_Custom_Renderer_on_each_Platform)自定义呈现器。
+1. [创建](#creating-the-custom-entry-control) Xamarin.Forms 自定义控件。
+1. [使用](#consuming-the-custom-control) Xamarin.Forms 中的自定义控件。
+1. 在每个平台上为控件[创建](#creating-the-custom-renderer-on-each-platform)自定义呈现器。
 
 现在将依次讨论每个项，以在每个平台上实现具有不同背景颜色的 [`Entry`](xref:Xamarin.Forms.Entry) 控件。
 
 > [!IMPORTANT]
 > 本文介绍如何创建简单的自定义呈现器。 但是，要在每个平台上实现具有不同背景色的 `Entry`，无需创建自定义呈现器。 这可以通过使用 [`Device`](xref:Xamarin.Forms.Device) 类或 `OnPlatform` 标记扩展来轻松实现，以提供特定于平台的值。 有关详细信息，请参阅[提供特定于平台的值](~/xamarin-forms/platform/device.md#provide-platform-specific-values)和 [OnPlatform 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)。
-
-<a name="Creating_the_Custom_Entry_Control" />
 
 ## <a name="creating-the-custom-entry-control"></a>创建自定义 Entry 控件
 
@@ -53,8 +51,6 @@ public class MyEntry : Entry
 ```
 
 `MyEntry` 控件创建在 .NET Standard 库项目中，并且只是 [`Entry`](xref:Xamarin.Forms.Entry) 控件。 将在自定义呈现器中进行控件自定义，因此 `MyEntry` 控件中无需任何其他实现。
-
-<a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>使用自定义控件
 
@@ -98,8 +94,6 @@ public class MainPage : ContentPage
 此代码实例化新的 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 对象，该对象将在页面上垂直居中以及水平居中显示 [`Label`](xref:Xamarin.Forms.Label) 和 `MyEntry` 控件。
 
 现在可以向每个应用程序项目添加自定义呈现器，以便在每个平台上自定义控件外观。
-
-<a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>在每个平台上创建自定义呈现器
 

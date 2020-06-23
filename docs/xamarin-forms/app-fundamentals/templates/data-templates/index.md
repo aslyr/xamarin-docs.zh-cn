@@ -1,20 +1,20 @@
 ---
 title: Xamarin.Forms 数据模板
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+description: 数据模板用于指定受支持控件上的数据外观，并且通常会绑定到要显示的数据。
+ms.prod: xamarin
+ms.assetid: 838F4BDB-B719-457F-8633-27E9B267A2A0
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: e0961fad18ccd961a5b84b2a5535bca70781dd8d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84136118"
 ---
 # <a name="xamarinforms-data-templates"></a>Xamarin.Forms 数据模板

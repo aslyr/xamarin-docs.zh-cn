@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials：MainThread”说明：“MainThread 类允许应用程序在主执行线程上运行代码。”
-ms.assetid：CD6D51E7-D933-4FE7-A7F7-392EF27812E1 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:2019 年 8 月 20 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials：MainThread
+description: MainThread 类允许应用程序在主执行线程上运行代码。
+ms.assetid: CD6D51E7-D933-4FE7-A7F7-392EF27812E1
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 08/20/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 82c54a72d0e0bc991644295f05136f89fd280d7f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802270"
 ---
-
 # <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials：MainThread
 
 MainThread 类允许应用程序在主执行线程上运行代码，并确定当前是否在主线程上运行特定代码块。
@@ -100,7 +113,7 @@ _但是，不需要执行此检查。_ `BeginInvokeOnMainThread` 的平台实现
 
 ## <a name="api"></a>API
 
-- [MainThread 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/MainThread)
+- [MainThread 源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/MainThread)
 - [MainThread API 文档](xref:Xamarin.Essentials.MainThread)
 
 ## <a name="related-video"></a>相关视频

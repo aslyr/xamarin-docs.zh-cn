@@ -1,20 +1,20 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: Xamarin 热重启
+description: 本文档介绍如何设置和使用 Xamarin 热重启来调试 iOS 应用。
+ms.prod: xamarin
+ms.assetid: 6BC62A88-9368-41BB-8494-760F2A4805DB
+ms.technology: xamarin-forms
+author: maddyleger1
+ms.author: maleger
+ms.date: 03/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 45b7d0d20c43aa22ebde3a17552f10ceea77a48b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84139134"
 ---
 # <a name="xamarin-hot-restart-preview"></a>Xamarin 热重启（预览版）

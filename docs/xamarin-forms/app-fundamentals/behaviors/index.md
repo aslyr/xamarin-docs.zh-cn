@@ -1,20 +1,20 @@
 ---
 title: Xamarin.Forms 行为
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+description: 通过行为可将功能添加到用户界面控件，且无需将其子类化。 行为由代码编写，并以 XAML 或代码的形式添加到控件中。
+ms.prod: xamarin
+ms.assetid: 42E32AD7-8E3B-48B3-B402-E75B758DA913
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 83952982bd163725fb931c860cac3e267726315c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84135806"
 ---
 # <a name="xamarinforms-behaviors"></a>Xamarin.Forms 行为

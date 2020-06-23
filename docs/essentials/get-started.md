@@ -1,19 +1,19 @@
 ---
 title: Xamarin.Essentials 入门
 description: Xamarin.Essentials 提供了适用于任何 iOS、Android 或 UWP 应用程序的单一跨平台 API，不管如何创建用户界面，都可以通过共享代码进行访问。
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.custom: ''
-ms.date: ''
+ms.assetid: B2669C48-B659-4854-BD80-FEB0E876F5B9
+author: jamesmontemagno
+ms.author: jamont
+ms.custom: video
+ms.date: 05/11/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 0c0052b35475522ffb3634ebe22f69f66fe3b22b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84129306"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Xamarin.Essentials 入门

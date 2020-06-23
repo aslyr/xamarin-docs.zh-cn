@@ -1,20 +1,20 @@
 ---
-title: ''
+title: 加载应用程序资源视频
 description: 本文介绍如何使用 Xamarin.Forms 在视频播放器应用程序中加载以应用程序资源形式存储的视频。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: F75BD540-9354-4C17-A119-57F3DEC66D54
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 472c6c2a7c5a084520aee6b8ae160d9329c3f593
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84133752"
 ---
 # <a name="loading-application-resource-videos"></a>加载应用程序资源视频

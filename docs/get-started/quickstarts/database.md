@@ -1,22 +1,22 @@
 ---
-title: ''
-description: ''
-zone_pivot_groups: ''
-ms.topic: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 将数据存储在本地 SQLite.NET 数据库中
+description: 本文说明如何将数据存储在本地 SQLite.NET 数据库中。
+zone_pivot_groups: platform
+ms.topic: quickstart
+ms.prod: xamarin
+ms.assetid: 5BF901BD-FDE8-4B74-B4AB-418E81745A3B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 2864c7edabde18faec06c2c42042168d3e6c9671
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84139797"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>将数据存储在本地 SQLite.NET 数据库中

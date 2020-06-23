@@ -1,20 +1,20 @@
 ---
 title: Xamarin.Forms 数据模板简介
 description: Xamarin.Forms 数据模板让你可以在支持的控件上定义数据表示形式。 本文介绍了数据模板，并且分析了它们必不可少的原因。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 4ED4ACF4-BE4A-44ED-8EAF-C03947B8663B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: f71e0a67b823d92a17158a076707f606f6a4c73f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84136105"
 ---
 # <a name="introduction-to-xamarinforms-data-templates"></a>Xamarin.Forms 数据模板简介

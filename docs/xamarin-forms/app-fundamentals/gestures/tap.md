@@ -1,21 +1,21 @@
 ---
-title: ''
+title: 添加点击手势识别器
 description: 本文说明如何在 Xamarin.Forms 应用程序中使用轻击手势进行轻击检测。 可通过 TapGestureRecognizer 类实现点击检测。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 1D150BAF-4157-49BC-90A0-153323B8EBCF
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/21/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0470419dd5070424c362dec8d4b1978507985783
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: 1f5b476ac83f801b4ccded3e18bb601c06e0d0ef
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137613"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570604"
 ---
 # <a name="adding-a-tap-gesture-recognizer"></a>添加点击手势识别器
 
@@ -40,8 +40,6 @@ tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap
 ```
 
 当 [`NumberOfTapsRequired`](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) 设置为高于 1 时，只有在设定的时间段（此时间段不可配置）内进行点击时才会执行事件处理程序。 如果在该时间段内没有进行第二次（或后续）点击，系统会有效地忽略它们并重新启动“点击计数”。
-
-<a name="Using_Xaml" />
 
 ## <a name="using-xaml"></a>使用 XAML
 

@@ -1,20 +1,20 @@
 ---
-title: ''
+title: 自定义 WebView
 description: Xamarin.Forms WebView 是在应用中显示 Web 和 HTML 内容的视图。 本文介绍如何创建一个扩展 WebView 以允许从 JavaScript 调用 C# 代码的自定义呈现器。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 58DFFA52-4057-49A8-8682-50A58C7E842C
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/31/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 8c83742896af4a22bcff327df82c1b14ff983bb2
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84138965"
 ---
 # <a name="customizing-a-webview"></a>自定义 WebView

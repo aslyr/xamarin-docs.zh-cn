@@ -1,20 +1,20 @@
 ---
 title: 提高 Xamarin.Forms 应用性能
 description: 可以通过许多方法来提高使用 Xamarin.Forms 应用程序的性能。 这些方法共同可以极大地降低由 CPU 执行的工作量和应用程序占用的内存量。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 0be84c56-6698-448d-be5a-b4205f1caa9f
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/27/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 96b5939fd1f8448d45d1398fd56770f9032de083
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84139108"
 ---
 # <a name="improve-xamarinforms-app-performance"></a>提高 Xamarin.Forms 应用性能

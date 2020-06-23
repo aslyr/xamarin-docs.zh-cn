@@ -1,20 +1,20 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 创建效果
+description: 效果简化了控件的自定义。 本文演示如何创建效果，在指向 Entry 控件时更改其背景颜色。
+ms.prod: xamarin
+ms.assetid: 9E2C8DB0-36A2-4F13-8E3C-A66D7021DB13
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 0ed11ccacec73dd3c5c220c41bffd090af6c5b27
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84139381"
 ---
 # <a name="creating-an-effect"></a>创建效果

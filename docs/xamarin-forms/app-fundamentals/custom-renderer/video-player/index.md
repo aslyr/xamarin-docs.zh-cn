@@ -1,20 +1,20 @@
 ---
-title: ''
+title: 实现视频播放器
 description: 本文介绍如何使用 Xamarin.Forms 实现视频播放器应用程序。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 0CE9BEE7-4F81-4A00-B9B3-5E2535CD3050
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 08bfb86f040bfbce834df5a5d98231afae92e78d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84133754"
 ---
 # <a name="implementing-a-video-player"></a>实现视频播放器

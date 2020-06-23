@@ -1,20 +1,20 @@
 ---
-title: ''
+title: 创建平台视频播放器
 description: 本文介绍如何使用 Xamarin.Forms 在每个平台上实现视频播放器自定义呈现器。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: EEE2FB9B-EB73-4A3F-A859-7A1D4808E149
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: d026ecc3288da155aefb0f68ee0c70721106c0da
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84133739"
 ---
 # <a name="creating-the-platform-video-players"></a>创建平台视频播放器

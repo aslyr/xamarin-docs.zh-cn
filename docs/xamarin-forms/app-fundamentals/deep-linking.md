@@ -1,22 +1,22 @@
 ---
-title: ''
+title: 应用程序索引和深层链接
 description: 本文介绍如何使用应用程序索引和深层链接使 Xamarin.Forms 应用程序内容可在 iOS 和 Android 设备上进行搜索。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 410C5D19-AA3C-4E0D-B799-E288C5803226
+ms.technology: xamarin-forms
+ms.custom: xamu-video
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d93f9bbcfafc3cb71d6b71159f6d3368f50c08be
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: c7f5979b93ff35b14ec7c13418a4565604f46bd7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135728"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570630"
 ---
 # <a name="application-indexing-and-deep-linking"></a>应用程序索引和深层链接
 
@@ -155,8 +155,6 @@ Application.Current.AppLinks.DeregisterLink (appLink);
 
 > [!NOTE]
 > 在 Android 上，不能从搜索结果中删除索引的内容。
-
-<a name="responding" />
 
 ## <a name="responding-to-a-deep-link"></a>响应深层链接
 

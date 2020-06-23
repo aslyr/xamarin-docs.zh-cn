@@ -1,21 +1,21 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 分层导航
+description: 本文演示如何使用 NavigationPage 类在后进先出 (LIFO) 页面的堆栈中执行导航。
+ms.prod: xamarin
+ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 92774cffdfed7412bdb4d44993dc221993ad56c8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: ec35b03e7e96f0730813918bdd96e1408cfabde7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137860"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84571488"
 ---
 # <a name="hierarchical-navigation"></a>分层导航
 
@@ -32,8 +32,6 @@ NavigationPage 类提供分层导航体验，用户可以随心所欲地向前�
 ![](hierarchical-images/popping.png "Popping a Page from the Navigation Stack")
 
 可以由任何 [`Page`](xref:Xamarin.Forms.Page) 派生类型上的 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 属性公开导航方法。 这些方法能够将页面推送到导航堆栈、从导航堆栈中弹出页面以及执行堆栈操作。
-
-<a name="Performing_Navigation" />
 
 ## <a name="performing-navigation"></a>执行导航
 
@@ -154,8 +152,6 @@ async void OnRootPageButtonClicked (object sender, EventArgs e)
 
 将 `boolean` 参数设置为 `false` 会禁用页面过渡动画，而将参数设置为 `true` 则会启用页面过渡动画，前提是基础平台支持该动画。 但是，缺少此参数的 push 和 pop 方法默认启用该动画。
 
-<a name="Passing_Data_when_Navigating" />
-
 ## <a name="passing-data-when-navigating"></a>导航时传递数据
 
 有时，页面必须在导航期间将数据传递到另一个页面。 实现此操作的两种方法是：通过页面构造函数传递数据，将新页面的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 设置为该数据。 下面将依次讨论每种方法。
@@ -274,8 +270,6 @@ public class SecondPageCS : ContentPage
 ![](hierarchical-images/passing-data-bindingcontext.png "Data Passed Through a BindingContext")
 
 若要深入了解数据绑定，请参阅[数据绑定基本知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
-
-<a name="Manipulating_the_Navigation_Stack" />
 
 ## <a name="manipulating-the-navigation-stack"></a>操作导航堆栈
 

@@ -1,21 +1,21 @@
 ---
-title: ''
+title: 自动化属性
 description: 本文介绍如何在 Xamarin.Forms 应用程序中使用 AutomationProperties 类，以便屏幕阅读器可讲述页面上的元素。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: c0bb6893-fd26-47e7-88e5-3c333c9f786c
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/18/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ad6d315ccc5be0a7709164d40685c842b61b90b4
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: 341e1454c37d1fd20423204c95337e580eba7ecb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129956"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573399"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>Xamarin.Forms 中的自动化属性
 
@@ -25,10 +25,10 @@ _Xamarin.Forms 允许通过使用 AutomationProperties 类中的附加属性在�
 
 Xamarin.Forms 允许通过以下附加属性在用户界面元素上设置自动化属性：
 
-- `AutomationProperties.IsInAccessibleTree` - 指示元素是否可用于可访问的应用程序。 有关详细信息，请参阅 [AutomationProperties.IsInAccessibleTree](#isinaccessibletree)。
-- `AutomationProperties.Name` - 元素的简短描述，用作元素的朗读标识符。 有关详细信息，请参阅 [AutomationProperties.Name](#name)。
-- `AutomationProperties.HelpText` - 元素的详细说明，可以视为和元素相关的工具提示文本。 有关详细信息，请参阅 [AutomationProperties.HelpText](#helptext)。
-- `AutomationProperties.LabeledBy` - 允许另一个元素定义当前元素的可访问性信息。 有关详细信息，请参阅 [AutomationProperties.LabeledBy](#labeledby)。
+- `AutomationProperties.IsInAccessibleTree` - 指示元素是否可用于可访问的应用程序。 有关详细信息，请参阅 [AutomationProperties.IsInAccessibleTree](#automationpropertiesisinaccessibletree)。
+- `AutomationProperties.Name` - 元素的简短描述，用作元素的朗读标识符。 有关详细信息，请参阅 [AutomationProperties.Name](#automationpropertiesname)。
+- `AutomationProperties.HelpText` - 元素的详细说明，可以视为和元素相关的工具提示文本。 有关详细信息，请参阅 [AutomationProperties.HelpText](#automationpropertieshelptext)。
+- `AutomationProperties.LabeledBy` - 允许另一个元素定义当前元素的可访问性信息。 有关详细信息，请参阅 [AutomationProperties.LabeledBy](#automationpropertieslabeledby)。
 
 这些附加属性设置了本机可访问性值以便屏幕阅读器可讲述元素。 有关附加属性的详细信息，请参阅[附加属性](~/xamarin-forms/xaml/attached-properties.md)。
 
@@ -51,8 +51,6 @@ Xamarin.Forms 允许通过以下附加属性在用户界面元素上设置自动
 
 此外，讲述人将优先考虑 `AutomationProperties.Name``AutomationProperties.LabeledBy`，然后是 `AutomationProperties.HelpText`。 在 Android 中，TalkBack 可以合并 `AutomationProperties.Name` 和 `AutomationProperties.HelpText` 值。 因此，建议在每个平台上进行彻底的可访问性测试，以确保获得最佳体验。
 
-<a name="isinaccessibletree" />
-
 ## <a name="automationpropertiesisinaccessibletree"></a>AutomationProperties.IsInAccessibleTree
 
 `AutomationProperties.IsInAccessibleTree` 附加属性是 `boolean`，它确定对于屏幕读取器而言元素是否可访问，是否因此可见。 它必须设置为 `true` 以使用其他可访问性附加属性。 这可以通过以下操作在 XAML 中实现：
@@ -70,8 +68,6 @@ AutomationProperties.SetIsInAccessibleTree(entry, true);
 
 > [!NOTE]
 > 请注意，[`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) 方法还可用于设置 `AutomationProperties.IsInAccessibleTree` 附加属性 `entry.SetValue(AutomationProperties.IsInAccessibleTreeProperty, true);`
-
-<a name="name" />
 
 ## <a name="automationpropertiesname"></a>AutomationProperties.Name
 
@@ -92,8 +88,6 @@ AutomationProperties.SetName(activityIndicator, "Progress indicator");
 
 > [!NOTE]
 > 请注意，[`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) 方法还可用于设置 `AutomationProperties.Name` 附加属性 `activityIndicator.SetValue(AutomationProperties.NameProperty, "Progress indicator");`
-
-<a name="helptext" />
 
 ## <a name="automationpropertieshelptext"></a>AutomationProperties.HelpText
 
@@ -117,8 +111,6 @@ AutomationProperties.SetHelpText(button, "Tap to toggle the activity indicator")
 > 请注意，[`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) 方法还可用于设置 `AutomationProperties.HelpText` 附加属性 `button.SetValue(AutomationProperties.HelpTextProperty, "Tap to toggle the activity indicator");`
 
 在某些平台上，为了编辑控件例如 [`Entry`](xref:Xamarin.Forms.Entry)，有时可以省略 `HelpText` 属性并将其替换为占位符文本。 例如，“在此输入名字”是 [`Entry.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) 属性的一个很好的候选对象，它在用户实际输入之前将文本放在控件中。
-
-<a name="labeledby" />
 
 ## <a name="automationpropertieslabeledby"></a>AutomationProperties.LabeledBy
 

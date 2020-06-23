@@ -1,20 +1,20 @@
 ---
 title: Xamarin.Forms 效果
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+description: 凭借效果，无需进行自定义呈现器实现，即可自定义每个平台上的本机控件。
+ms.prod: xamarin
+ms.assetid: 8AF168A7-4CD9-4603-B961-15B8B1543784
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: a6206d2c561df74a01b7d7408e8d542f1e2189d3
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84139329"
 ---
 # <a name="xamarinforms-effects"></a>Xamarin.Forms 效果

@@ -1,19 +1,19 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: Xamarin 防火墙配置说明
+description: 本文档提供了必须在防火墙中允许，以使 Xamarin 能够在企业环境中工作的主机列表。
+ms.prod: xamarin
+ms.assetid: 658f699b-8cca-48f7-ae54-fa956384b6d6
+author: conceptdev
+ms.author: crdun
+ms.date: 07/17/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 71b2754d19d00b7bf4860acd96bfb7ad8dec4ce5
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84132986"
 ---
 # <a name="xamarin-firewall-configuration-instructions"></a>Xamarin 防火墙配置说明

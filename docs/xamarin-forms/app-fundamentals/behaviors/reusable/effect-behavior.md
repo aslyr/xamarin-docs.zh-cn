@@ -1,20 +1,20 @@
 ---
-title: ''
+title: 可重用 EffectBehavior
 description: 行为是一种非常有用的方法，用于向控件添加效果、从代码隐藏文件中删除冗余重复的效果处理代码。 本文演示如何创建 Xamarin.Forms 行为并将其用于向控件添加效果。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: A909B24D-960A-4023-AFF6-4B9256C55ADD
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 0a105548f869eb448a990a1cc12e6feff4197d48
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84135780"
 ---
 # <a name="reusable-effectbehavior"></a>可重用 EffectBehavior

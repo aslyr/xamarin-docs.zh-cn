@@ -1,6 +1,6 @@
 ---
-title: 标题：“Xamarin.Forms 手势”说明：“本指南介绍如何使用 Xamarin.Forms 手势识别器检测用户与 Xamarin.Forms 应用程序中视图的交互。”
-description: 'ms.prod: xamarin ms.assetid:0E197A51-2304-4C09-A710-C7FF24A89F15 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2018/07/25 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms 手势
+description: 本指南介绍如何使用 Xamarin.Forms 手势识别器检测用户与 Xamarin.Forms 应用程序中视图的交互。
 ms.prod: xamarin
 ms.assetid: 0E197A51-2304-4C09-A710-C7FF24A89F15
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 5e1e93f74ab8ef6d63213a8fbdc7ec45a794cf55
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84137872"
 ---
 # <a name="xamarinforms-gestures"></a>Xamarin.Forms 手势

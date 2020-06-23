@@ -1,20 +1,20 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 附加行为
+description: 附加行为是具有一个或多个附加属性的静态类。 本文演示如何创建和使用附加行为。
+ms.prod: xamarin
+ms.assetid: ECEE6AEC-44FA-4AF7-BAD0-88C6EE48422E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 08b1c738dc87bb9373436a3fd96486eb15341112
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84139420"
 ---
 # <a name="attached-behaviors"></a>附加行为

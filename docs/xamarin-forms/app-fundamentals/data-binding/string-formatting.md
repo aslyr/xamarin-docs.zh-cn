@@ -1,20 +1,20 @@
 ---
 title: Xamarin.Forms 字符串格式设置
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+description: 本文介绍如何使用 Xamarin.FOrms 数据绑定设置对象格式并将对象显示为字符串。 通过将绑定的字符串格式设置为带有占位符的标准 .NET 格式设置字符串，可实现实现此操作。
+ms.prod: xamarin
+ms.assetid: 978C85B7-CB58-4483-A131-21B381A865E0
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: d08a89d5394a227e3cee76603e4e97d2cf9495e0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84135754"
 ---
 # <a name="xamarinforms-string-formatting"></a>Xamarin.Forms 字符串格式设置

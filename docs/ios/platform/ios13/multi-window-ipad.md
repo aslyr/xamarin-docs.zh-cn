@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/20/2019
-ms.openlocfilehash: b3f96f342679d8be6d2f8fbc0ad5962ca675d2a5
-ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
+ms.openlocfilehash: ce7df59d41efdd2d151fd2ea73cf26b40ee7fa10
+ms.sourcegitcommit: 834466c9d9cf35e9659e467ce0123e5f5ade6138
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71213803"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85129904"
 ---
 # <a name="multiple-windows-for-ipad"></a>适用于 iPad 的多个窗口
 
@@ -20,7 +20,7 @@ iOS 13 现在支持 iPad 上相同应用的并行窗口。 这可以实现 windo
 
 ## <a name="project-configuration"></a>项目配置
 
-若要为多个窗口配置你的项目`info.plist` ，请`NSUserActivityTypes`修改以声明你的应用程序将处理此类型的`UIApplicationSceneManifest`活动， `UIApplicationSupportsMultipleScenes`并为多个`UISceneConfigurations`窗口启用并将你的带有情节提要的场景。
+若要为多个窗口配置你的项目，请修改 `info.plist` 以声明 `NSUserActivityTypes` 你的应用将处理此类型的活动，并为 `UIApplicationSceneManifest` `UIApplicationSupportsMultipleScenes` 多个窗口启用并且将 `UISceneConfigurations` 场景与情节提要关联。
 
 ```xml
 <key>NSUserActivityTypes</key>
@@ -58,9 +58,9 @@ iOS 13 现在支持 iPad 上相同应用的并行窗口。 这可以实现 windo
 
 您的应用程序中提供了用于进入多窗口模式的其他交互。
 
-**从应用中拖动**-在应用中使用拖动交互，就像在`NSUserActivity`前面的示例中拖动应用图标一样启动新的。
+**从应用中拖动**-在应用中使用拖动交互， `NSUserActivity` 就像在前面的示例中拖动应用图标一样启动新的。
 
-当使用[拖放交互][0]时，您可以创建一个`NSUserActivity`并关联要传递到您要求 iOS 打开的新窗口中的数据。
+当使用[拖放交互][0]时，您可以创建一个 `NSUserActivity` 并关联要传递到您要求 iOS 打开的新窗口中的数据。
 
 ```csharp
 public UIDragItem [] GetItemsForBeginningDragSession (UICollectionView collectionView, IUIDragSession session, NSIndexPath indexPath)
@@ -79,14 +79,14 @@ public UIDragItem [] GetItemsForBeginningDragSession (UICollectionView collectio
 }
 ```
 
-在上面的代码中， `selectedPhoto`模型对象具有返回调用`OpenDetailUserActivity()`的`NSUserActivity`方法。 拖动笔势完成后， `UIDragItem`会`userActivity`通过`NSItemProvider`提供。
+在上面的代码中， `selectedPhoto` 模型对象具有返回调用的方法 `NSUserActivity` `OpenDetailUserActivity()` 。 拖动笔势完成后，会 `UIDragItem` `userActivity` 通过提供 `NSItemProvider` 。
 
 **显式操作**-按钮或链接上的用户笔势提供了打开新窗口的功能。
 
-从中， `RequestSceneSessionActivation` `UISceneSession` `UIApplication`你可以通过调用来启动新的。 如果现有场景已经存在，则应使用该场景。 默认情况下，将为您创建一个新的场景。
+从中， `UIApplication` 你可以通过调用来启动新的 `UISceneSession` `RequestSceneSessionActivation` 。 如果现有场景已经存在，则应使用该场景。 默认情况下，将为您创建一个新的场景。
 
 ```csharp
-pubic void ItemSelected(UICollectionView collectionView, NSIndexPath indexPath)
+public void ItemSelected(UICollectionView collectionView, NSIndexPath indexPath)
 {
     var userActivity = selectedPhoto.OpenDetailUserActivity ();
 
@@ -99,7 +99,7 @@ pubic void ItemSelected(UICollectionView collectionView, NSIndexPath indexPath)
 }
 ```
 
-在此示例中， `userActivity`是传递`RequestSceneSessionActivation`给方法的唯一值，以便基于显式用户操作打开应用程序的新窗口`ItemSelected` ; 在本例中为的处理程序`UICollectionView`。
+在此示例中， `userActivity` 是传递给方法的唯一值，以便 `RequestSceneSessionActivation` 基于显式用户操作打开应用程序的新窗口; 在本例中为的 `ItemSelected` 处理程序 `UICollectionView` 。
 
 ## <a name="related-links"></a>相关链接
 

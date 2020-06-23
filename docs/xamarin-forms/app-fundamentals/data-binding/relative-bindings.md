@@ -1,20 +1,20 @@
 ---
 title: Xamarin.Forms 相对绑定
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+description: 本文介绍如何通过使用 RelativeSource 标记扩展设置相对于绑定目标位的绑定源来创建相对绑定。
+ms.prod: xamarin
+ms.assetid: CC64BB1D-8303-46B1-94B6-4EF2F20317A8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/04/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 8d4e2696e6027f07b7b8e638cd1e0f1d65a5503d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84139706"
 ---
 # <a name="xamarinforms-relative-bindings"></a>Xamarin.Forms 相对绑定

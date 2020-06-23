@@ -1,21 +1,21 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+title: 自定义图钉
+description: 本文介绍如何为地图控件创建自定义呈现器，该控件显示带有自定义图钉的本机地图以及每个平台上图钉数据的自定义视图。
+ms.prod: xamarin
+ms.assetid: C5481D86-80E9-4E3D-9FB6-57B0F93711A6
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 30fcc8304d32d8ebdef38df8550bcd8c26514701
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: 06ff88f1d4f272d9b77737d2168418c007afe8bc
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135312"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573893"
 ---
 # <a name="customizing-a-map-pin"></a>自定义图钉
 
@@ -31,16 +31,14 @@ ms.locfileid: "84135312"
 
 通过在每个平台上为 [`Map`](xref:Xamarin.Forms.Maps.Map) 创建自定义呈现器，可以使用呈现过程来实现特定于平台的自定义。 执行此操作的过程如下：
 
-1. [创建](#Creating_the_Custom_Map) Xamarin.Forms 自定义地图。
-1. [使用](#Consuming_the_Custom_Map) Xamarin.Forms 中的自定义地图。
-1. 在每个平台上为地图[创建](#Creating_the_Custom_Renderer_on_each_Platform)自定义呈现器。
+1. [创建](#creating-the-custom-map) Xamarin.Forms 自定义地图。
+1. [使用](#consuming-the-custom-map) Xamarin.Forms 中的自定义地图。
+1. 在每个平台上为地图[创建](#creating-the-custom-renderer-on-each-platform)自定义呈现器。
 
 现在将依次讨论每个项，以实现 `CustomMap` 呈现器，该呈现器显示具有自定义图钉的本机地图和每个平台上图钉数据的自定义视图。
 
 > [!NOTE]
 > 必须在使用前对 [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) 进行初始化和配置。 有关详细信息，请参阅 [`Maps Control`](~/xamarin-forms/user-interface/map/index.md)。
-
-<a name="Creating_the_Custom_Map" />
 
 ## <a name="creating-the-custom-map"></a>创建自定义地图
 
@@ -64,8 +62,6 @@ public class CustomPin : Pin
 ```
 
 此类将 `CustomPin` 定义为继承 [`Pin`](xref:Xamarin.Forms.Maps.Pin) 类的属性，并添加 `Name` 和 `Url` 属性。
-
-<a name="Consuming_the_Custom_Map" />
 
 ## <a name="consuming-the-custom-map"></a>使用自定义地图
 
@@ -125,8 +121,6 @@ public MapPage()
 此初始化添加自定义图钉，并使用 [`MoveToRegion`](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) 方法定位地图视图，该方法通过从 [`Position`](xref:Xamarin.Forms.Maps.Position) 和 [`Distance`](xref:Xamarin.Forms.Maps.Distance) 创建 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) 来更改地图的位置和缩放级别。
 
 现在可以向每个应用程序项目添加自定义呈现器，以自定义本机地图控件。
-
-<a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>在每个平台上创建自定义呈现器
 
@@ -231,10 +225,8 @@ namespace CustomRenderer.iOS
 
 如果自定义呈现器附加到新的 Xamarin.Forms 元素，则 `OnElementChanged` 方法执行 [`MKMapView`](xref:MapKit.MKMapView) 实例的以下配置：
 
-- [`GetViewForAnnotation`](xref:MapKit.MKMapView.GetViewForAnnotation*) 属性设置为 `GetViewForAnnotation` 方法. 此方法在[地图上显示注释位置](#Displaying_the_Annotation)时调用，用于在显示前自定义注释。
-- 已注册用于 `CalloutAccessoryControlTapped`、`DidSelectAnnotationView` 和 `DidDeselectAnnotationView` 事件的事件处理程序。 这些事件在以下情况下触发：用户[点击标注中的右附件](#Tapping_on_the_Right_Callout_Accessory_View)、用户[选择](#Selecting_the_Annotation)和[取消选择](#Deselecting_the_Annotation)注释。 仅当呈现器附加到的元素更改时，才取消订阅事件。
-
-<a name="Displaying_the_Annotation" />
+- [`GetViewForAnnotation`](xref:MapKit.MKMapView.GetViewForAnnotation*) 属性设置为 `GetViewForAnnotation` 方法. 此方法在[地图上显示注释位置](#displaying-the-annotation)时调用，用于在显示前自定义注释。
+- 已注册用于 `CalloutAccessoryControlTapped`、`DidSelectAnnotationView` 和 `DidDeselectAnnotationView` 事件的事件处理程序。 这些事件在以下情况下触发：用户[点击标注中的右附件](#tapping-on-the-right-callout-accessory-view)、用户[选择](#selecting-the-annotation)和[取消选择](#deselecting-the-annotation)注释。 仅当呈现器附加到的元素更改时，才取消订阅事件。
 
 #### <a name="displaying-the-annotation"></a>显示注释
 
@@ -285,12 +277,10 @@ protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKA
     - `CustomMKAnnotationView.CalloutOffset` 属性设置为 `CGPoint`，它指定在注释上方将标注居中。
     - `CustomMKAnnotationView.LeftCalloutAccessoryView` 属性设置为猴子图像，该图像将出现在注释标题和地址的左侧。
     - `CustomMKAnnotationView.RightCalloutAccessoryView` 属性设置为“信息”按钮，其将出现在注释标题和地址的右侧。
-    - `CustomMKAnnotationView.Name` 属性设置为 `GetCustomPin` 方法返回的 `CustomPin.Name` 属性。 这使得注释能被识别，以便需要时其[标注可以进一步自定义](#Selecting_the_Annotation)。
-    - `CustomMKAnnotationView.Url` 属性设置为 `GetCustomPin` 方法返回的 `CustomPin.Url` 属性。 用户[点击右标注附件视图中显示的按钮](#Tapping_on_the_Right_Callout_Accessory_View)时，将导航到该 URL。
+    - `CustomMKAnnotationView.Name` 属性设置为 `GetCustomPin` 方法返回的 `CustomPin.Name` 属性。 这使得注释能被识别，以便需要时其[标注可以进一步自定义](#selecting-the-annotation)。
+    - `CustomMKAnnotationView.Url` 属性设置为 `GetCustomPin` 方法返回的 `CustomPin.Url` 属性。 用户[点击右标注附件视图中显示的按钮](#tapping-on-the-right-callout-accessory-view)时，将导航到该 URL。
 1. [`MKAnnotationView.CanShowCallout`](xref:MapKit.MKAnnotationView.CanShowCallout*) 属性设置为 `true`，以便点击注释时显示标注。
 1. 返回注释以在地图上显示。
-
-<a name="Selecting_the_Annotation" />
 
 #### <a name="selecting-the-annotation"></a>选择注释
 
@@ -316,8 +306,6 @@ void OnDidSelectAnnotationView(object sender, MKAnnotationViewEventArgs e)
 
 如果所选注释将其 `Name` 属性设置为 `Xamarin`，则此方法通过将 `UIView` 实例添加到包含 Xamarin 徽标图像的现有标注，以扩展现有标注（其中包含左和右附件视图）。 这支持为不同的注释显示不同的标注。 `UIView` 实例会在现有标注上居中显示。
 
-<a name="Tapping_on_the_Right_Callout_Accessory_View" />
-
 #### <a name="tapping-on-the-right-callout-accessory-view"></a>点击右标注附件视图
 
 用户点击右标注附件视图中的“信息”按钮时，触发 `CalloutAccessoryControlTapped` 事件，该事件进而执行 `OnCalloutAccessoryControlTapped` 方法：
@@ -334,8 +322,6 @@ void OnCalloutAccessoryControlTapped(object sender, MKMapViewAccessoryTappedEven
 ```
 
 此方法打开 Web 浏览器并导航到 `CustomMKAnnotationView.Url` 属性中存储的地址。 请注意，地址是在 .NET Standard 库项目中创建 `CustomPin` 集合时定义的。
-
-<a name="Deselecting_the_Annotation" />
 
 #### <a name="deselecting-the-annotation"></a>取消选择注释
 
@@ -407,9 +393,9 @@ namespace CustomRenderer.Droid
 }
 ```
 
-如果自定义呈现器附加到新的 Xamarin.Forms 元素，则 `OnElementChanged` 方法从控件中检索自定义图钉的列表。 一旦 `GoogleMap` 实例可用，将调用 `OnMapReady` 替代。 此方法为 `InfoWindowClick` 事件注册事件处理程序，[信息窗口被点击](#Clicking_on_the_Info_Window)时激发该事件，并且仅当呈现器所附加到的元素更改时才取消订阅该事件。 `OnMapReady` 替代还会调用 `SetInfoWindowAdapter` 方法，以指定 `CustomMapRenderer` 类实例将提供自定义信息窗口的方法。
+如果自定义呈现器附加到新的 Xamarin.Forms 元素，则 `OnElementChanged` 方法从控件中检索自定义图钉的列表。 一旦 `GoogleMap` 实例可用，将调用 `OnMapReady` 替代。 此方法为 `InfoWindowClick` 事件注册事件处理程序，[信息窗口被点击](#clicking-on-the-info-window)时激发该事件，并且仅当呈现器所附加到的元素更改时才取消订阅该事件。 `OnMapReady` 替代还会调用 `SetInfoWindowAdapter` 方法，以指定 `CustomMapRenderer` 类实例将提供自定义信息窗口的方法。
 
-`CustomMapRenderer` 类实现 `GoogleMap.IInfoWindowAdapter` 接口以[自定义信息窗口](#Customizing_the_Info_Window)。 此接口指定必须实现以下方法：
+`CustomMapRenderer` 类实现 `GoogleMap.IInfoWindowAdapter` 接口以[自定义信息窗口](#customizing-the-info-window)。 此接口指定必须实现以下方法：
 
 - `public Android.Views.View GetInfoWindow(Marker marker)` - 调用此方法以返回标记的自定义信息窗口。 如果它返回 `null`，则之后将使用默认窗口呈现。 如果它返回 `View`，则会将 `View` 置于信息窗口框架内。
 - `public Android.Views.View GetInfoContents(Marker marker)` - 调用此方法以返回包含信息窗口内容的 `View`，并且将仅在 `GetInfoWindow` 方法返回 `null` 时调用。 如果它返回 `null`，则将使用信息窗口内容的默认呈现。
@@ -436,8 +422,6 @@ protected override MarkerOptions CreateMarker(Pin pin)
 
 > [!NOTE]
 > 如果需要，可以在地图呈现器中调用 `GetMarkerForPin` 方法以检索 `Pin` 中的 `Marker`。
-
-<a name="Customizing_the_Info_Window" />
 
 #### <a name="customizing-the-info-window"></a>自定义信息窗口
 
@@ -494,8 +478,6 @@ public Android.Views.View GetInfoContents(Marker marker)
 
 > [!NOTE]
 > 信息窗口不是实时的 `View`。 Android 会将 `View` 转换为静态位图并将其显示为图像。 这意味着，尽管信息窗口可以响应单击事件，但它不能响应任何触摸事件或手势，而且信息窗口中的各个控件不能响应它们自己的单击事件。
-
-<a name="Clicking_on_the_Info_Window" />
 
 #### <a name="clicking-on-the-info-window"></a>单击信息窗口
 

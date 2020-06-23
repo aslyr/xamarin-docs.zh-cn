@@ -1,6 +1,6 @@
 ---
-title: title:"Xamarin.FormsDependencyService”说明：“Xamarin.Forms DependencyService 类是允许 Xamarin.Forms 应用程序从共享代码调用本机平台功能的服务定位器。”
-description: 'ms.prod: xamarin ms.assetid:403479F2-6751-41F2-ADCE-3AF595062FE4 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2019/06/05 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms DependencyService
+description: Xamarin.Forms DependencyService 类是允许 Xamarin.Forms 应用程序从共享代码调用本机平台功能的服务定位器。
 ms.prod: xamarin
 ms.assetid: 403479F2-6751-41F2-ADCE-3AF595062FE4
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 126e2d2373bad923fe1d66fe355ad811c15fbe4f
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84138367"
 ---
 # <a name="xamarinforms-dependencyservice"></a>Xamarin.Forms DependencyService
