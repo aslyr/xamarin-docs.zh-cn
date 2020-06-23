@@ -10,18 +10,18 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c0abf7b30192ac9183c28e89d7917ea8d08dfc4f
-ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
+ms.openlocfilehash: 8df87f0ee3be78749d70dfc535b5d4d50874f194
+ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85101337"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85133017"
 ---
 # <a name="xamarinforms-shapes-path-transforms"></a>Xamarin.Forms形状：路径转换
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Transform`定义如何将 `Path` 对象从一个坐标空间转换到另一个坐标空间。 这种映射通过转换进行描述 `Matrix` ，后者是包含三列值的三行的集合 `double` 。
 
@@ -352,5 +352,5 @@ Xamarin.Forms具有两个支持将多个转换应用于 `Path` 对象的类。 �
 
 ## <a name="related-links"></a>相关链接
 
-- [ShapeDemos （示例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+- [ShapeDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms形状](index.md)

@@ -10,18 +10,18 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cb2e3ea68f181f0a6e6392c012db221ef35d65bd
-ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
+ms.openlocfilehash: 384dcef3c2b480166f17e91d547f8cda39c83dc0
+ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85104293"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85132965"
 ---
 # <a name="xamarinforms-shapes-path"></a>Xamarin.Forms形状：路径
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Path`类派生自 `Shape` 类，可用于绘制曲线和复杂形状。 这些曲线和形状通常使用对象进行描述 `Geometry` 。 有关 `Path` 该类继承自类的属性的信息 `Shape` ，请参阅[ Xamarin.Forms 形状](index.md)。
 
@@ -96,7 +96,7 @@ ms.locfileid: "85104293"
 
 ## <a name="related-links"></a>相关链接
 
-- [ShapeDemos （示例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+- [ShapeDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms形状](index.md)
 - [Xamarin.Forms几何图形](geometries.md)
 - [Xamarin.Forms路径标记语法](path-markup-syntax.md)

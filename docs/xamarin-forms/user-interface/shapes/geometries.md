@@ -10,18 +10,18 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 05fcd1ada62bffa4829ad422ee5eda36d9d75ae3
-ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
+ms.openlocfilehash: c3b869d10d454453172065b30eb7ce32da81c8ce
+ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85104260"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85133030"
 ---
 # <a name="xamarinforms-shapes-geometries"></a>Xamarin.Forms形状：几何图形
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Geometry`类以及从中派生的类使你可以描述二维形状的几何。 `Geometry`从两个或多个 geometry 对象创建的对象可以很简单，例如矩形和圆圈，或复合对象。 可以使用类来创建更复杂的几何图形 `PathGeometry` ，这使您能够描述弧线和曲线。
 
@@ -224,5 +224,5 @@ ms.locfileid: "85104260"
 
 ## <a name="related-links"></a>相关链接
 
-- [ShapeDemos （示例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+- [ShapeDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms形状](index.md)
