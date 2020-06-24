@@ -1,10 +1,24 @@
 ---
-title: "Xamarin.Essentials：电话拨号程序”说明：“Xamarin.Essentials 中的 PhoneDialer 类使应用程序可以在拨号程序中拨打电话号码”ms.assetid:E7457942-4D7B-4195-A2FF-417919B9537F author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:2019/07/02 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials：电话拨号程序
+description: Xamarin.Essentials 中的 PhoneDialer 类使应用程序能够在拨号程序中打开一个电话号码
+ms.assetid: E7457942-4D7B-4195-A2FF-417919B9537F
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 07/02/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d642005e9aed663570c251e955c6a3af4704ed5c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802200"
 ---
-
 # <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials：电话拨号程序
 
-PhoneDialer 类使应用程序能够在拨号程序中打开一个电话号码。
+PhoneDialer 类使应用程序能够在拨号程序中打开一个电话号码****。
 
 ## <a name="get-started"></a>入门
 
@@ -47,7 +61,7 @@ public class PhoneDialerTest
 
 ## <a name="api"></a>API
 
-- [电话拨号程序源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/PhoneDialer)
+- [电话拨号程序源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/PhoneDialer)
 - [电话拨号程序 API 文档](xref:Xamarin.Essentials.PhoneDialer)
 
 ## <a name="related-video"></a>相关视频

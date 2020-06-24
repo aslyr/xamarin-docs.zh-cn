@@ -1,11 +1,24 @@
 ---
-title: "Xamarin.Essentials：文本转语音”说明：“Xamarin.Essentials 中的 TextToSpeech 类允许应用程序使用内置的文本到语音转换引擎回讲设备中的文本并查询引擎可以支持的可用语言。”
-ms.assetid：AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:2018 年 11 月 4 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials：文本到语音转换
+description: Xamarin.Essentials 中的 TextToSpeech 类允许应用程序使用内置的文本到语音转换引擎回讲设备中的文本并查询引擎可以支持的可用语言。
+ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 452a54637c270f80c2e1add4d6cadedbb4b27077
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801824"
 ---
-
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials：文本到语音转换
 
-TextToSpeech 类允许应用程序使用内置的文本到语音转换引擎回讲设备中的文本并查询引擎可以支持的可用语言。
+**** TextToSpeech 类允许应用程序使用内置的文本到语音转换引擎回讲设备中的文本并查询引擎可以支持的可用语言。
 
 ## <a name="get-started"></a>入门
 
@@ -139,7 +152,7 @@ public async Task SpeakNow()
 
 ## <a name="api"></a>API
 
-- [TextToSpeech 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/TextToSpeech)
+- [TextToSpeech 源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/TextToSpeech)
 - [TextToSpeech API 文档](xref:Xamarin.Essentials.TextToSpeech)
 
 ## <a name="related-video"></a>相关视频

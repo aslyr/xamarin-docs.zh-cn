@@ -1,36 +1,36 @@
 ---
 title: Xamarin.Forms 绑定回退
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+description: 本文介绍了如何通过定义绑定失败时将使用的回退值来使绑定更加可靠。
+ms.prod: xamarin
+ms.assetid: 637ACD9D-3E5D-4014-86DE-A77D1FEF238A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/16/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f3aadef1960618731c3749507233933b8bf7630e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: 2c5ce10aa0a1137ad4e4832d5dc931c902b82810
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133453"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946203"
 ---
 # <a name="xamarinforms-binding-fallbacks"></a>Xamarin.Forms 绑定回退
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-有时数据绑定会失败，因为无法解析绑定源，或者因为绑定成功但返回 `null` 值。 虽然可以使用值转换器或其他附加代码处理这些情况，但是通过定义在绑定过程失败时要使用的回退值，可以使数据绑定更加可靠。 这可以通过定义绑定表达式中的 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 和 [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 属性来实现。 因为这些属性位于 [`BindingBase`](xref:Xamarin.Forms.BindingBase) 类中，它们可以与绑定、编译绑定和 `Binding` 标记扩展一起使用。
+有时数据绑定会失败，因为无法解析绑定源，或者因为绑定成功但返回 `null` 值。 虽然可以使用值转换器或其他附加代码处理这些情况，但是通过定义在绑定过程失败时要使用的回退值，可以使数据绑定更加可靠。 这可以通过定义绑定表达式中的 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 和 [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 属性来实现。 因为这些属性位于 [`BindingBase`](xref:Xamarin.Forms.BindingBase) 类中，它们可以与绑定、多绑定、编译绑定和 `Binding` 标记扩展一起使用。
 
 > [!NOTE]
 > 可以选择利用绑定表达式中的 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 和 [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 属性。
 
 ## <a name="defining-a-fallback-value"></a>定义一个回退值
 
-[`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 属性允许定义在无法解析绑定源时使用的回退值。 设置此属性的常见方案是绑定到可能不存在于异类类型的绑定集合中的所有对象上的源属性。
+[`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 属性允许定义在无法解析绑定源时使用的回退值**。 设置此属性的常见方案是绑定到可能不存在于异类类型的绑定集合中的所有对象上的源属性。
 
-MonkeyDetail 页说明了设置 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 属性的方法：
+MonkeyDetail 页说明了设置 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 属性的方法****：
 
 ```xaml
 <Label Text="{Binding Population, FallbackValue='Population size unknown'}"
@@ -60,7 +60,7 @@ MonkeyDetail 页说明了设置 [`FallbackValue`](xref:Xamarin.Forms.BindingBase
 
 ## <a name="defining-a-null-replacement-value"></a>定义 null 替换值
 
-[`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 属性允许定义替换值，该值将在解析绑定源时使用，但值为 `null`。 设置此属性的常见方案是绑定到绑定集合中可能为 `null` 的源属性。
+[`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 属性允许定义替换值，该值将在解析绑定源时使用，但值为 `null`**。 设置此属性的常见方案是绑定到绑定集合中可能为 `null` 的源属性。
 
 **Monkeys** 页说明了设置 [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 属性的方法：
 

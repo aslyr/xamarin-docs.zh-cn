@@ -1,11 +1,24 @@
 ---
-title: "Xamarin.Essentials：剪贴板”说明：“本文档介绍 Xamarin.Essentials 中的 Clipboard 类，此类使你能够在应用程序之间将文本复制并粘贴到系统剪贴板。”
-ms.assetid：C52AE99A-0FB3-425D-9106-3DA5777FEFA0 author: jamesmontemagno ms.author: jamont ms.date:2020 年 1 月 6 日 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials：剪贴板
+description: 本文档介绍 Xamarin.Essentials 中的 Clipboard 类，此类使你能够在应用程序之间将文本复制并粘贴到系统剪贴板。
+ms.assetid: C52AE99A-0FB3-425D-9106-3DA5777FEFA0
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/06/2020
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d0a984f0f3bf27447e250c12e38fd9adcfb0029f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802458"
 ---
-
 # <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials：剪贴板
 
-Clipboard 类使你能够在应用程序之间将文本复制并粘贴到系统剪贴板。
+Clipboard 类使你能够在应用程序之间将文本复制并粘贴到系统剪贴板****。
 
 ## <a name="get-started"></a>入门
 
@@ -19,19 +32,19 @@ Clipboard 类使你能够在应用程序之间将文本复制并粘贴到系统�
 using Xamarin.Essentials;
 ```
 
-检查 Clipboard 是否有当前已准备好要粘贴的文本：
+检查 Clipboard 是否有当前已准备好要粘贴的文本****：
 
 ```csharp
 var hasText = Clipboard.HasText;
 ```
 
-将文本设置到 Clipboard：
+将文本设置到 Clipboard****：
 
 ```csharp
 await Clipboard.SetTextAsync("Hello World");
 ```
 
-从 Clipboard 读取文本：
+从 Clipboard 读取文本****：
 
 ```csharp
 var text = await Clipboard.GetTextAsync();
@@ -60,7 +73,7 @@ public class ClipboardTest
 
 ## <a name="api"></a>API
 
-- [Clipboard 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Clipboard)
+- [Clipboard 源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Clipboard)
 - [Clipboard API 文档](xref:Xamarin.Essentials.Clipboard)
 
 ## <a name="related-video"></a>相关视频

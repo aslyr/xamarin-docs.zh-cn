@@ -1,31 +1,31 @@
 ---
 title: Xamarin.Forms 数据绑定
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+description: 数据绑定将两个对象的属性链接起来，如此，对某一属性的更改将自动反映在另一个属性中。 数据绑定是模型-视图-视图模型 (MVVM) 应用程序体系结构必不可少的一部分。
+ms.prod: xamarin
+ms.assetid: 938E85C8-521D-43B9-92CB-D591A06D98A6
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4b99877342ddbaf9ad5606ec5dc284818fcfeffd
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: 9abbe60865cbf5fb9082b5f4882c27fe095b36ac
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139693"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946450"
 ---
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms 数据绑定
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-数据绑定将两个对象的属性链接起来，如此，对某一属性的更改将自动反映在另一个属性中。数据绑定是模型-视图-视图模型 (MVVM) 应用程序体系结构必不可少的一部分。
+数据绑定将两个对象的属性链接起来，如此，对某一属性的更改将自动反映在另一个属性中。__ 数据绑定是模型-视图-视图模型 (MVVM) 应用程序体系结构必不可少的一部分。
 
 ## <a name="the-data-linking-problem"></a>数据链接问题
 
-Xamarin.Forms 应用程序由一个或多个页面组成，每个页面通常包含多个名为“视图”的用户界面对象。 该程序的一项首要任务是确保这些视图保持同步，并跟踪它们所表示的各种值或选项。 通常，视图表示来自基础数据源的值，用户可对这些视图进行处理以更改该数据。 当视图发生更改时，基础数据必会反映该更改；同样，当基础数据发生更改时，该更改必将反映在视图中。
+Xamarin.Forms 应用程序由一个或多个页面组成，每个页面通常包含多个名为“视图”的用户界面对象**。 该程序的一项首要任务是确保这些视图保持同步，并跟踪它们所表示的各种值或选项。 通常，视图表示来自基础数据源的值，用户可对这些视图进行处理以更改该数据。 当视图发生更改时，基础数据必会反映该更改；同样，当基础数据发生更改时，该更改必将反映在视图中。
 
 要成功执行此作业，程序必须知晓这些视图或基础数据的更改。 常用的解决方案是定义一个事件，在发生更改时发出信号。 随后将安装事件处理程序，就这些更改进行通知。 它通过将数据从一个对象传输到另一个对象来响应。 但是，如果存在多个视图，就必须使用多个事件处理程序并将涉及大量代码。
 
@@ -69,6 +69,10 @@ Xamarin.Forms 应用程序由一个或多个页面组成，每个页面通常包
 ## <a name="binding-fallbacks"></a>[绑定回退](binding-fallbacks.md)
 
 通过定义绑定过程失败时要使用的回退值，使数据绑定更加可靠。
+
+## <a name="multi-bindings"></a>[多绑定](multibinding.md)
+
+将 [`Binding`](xref:Xamarin.Forms.Binding) 对象集合附加到单个绑定目标属性。
 
 ## <a name="the-command-interface"></a>[命令界面](commanding.md)
 

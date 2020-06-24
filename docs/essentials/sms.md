@@ -1,11 +1,24 @@
 ---
-title: "Xamarin.Essentials：SMS”说明：“Xamarin.Essentials 中的 SMS 类允许应用程序使用要发送给收件人的指定消息打开默认短信应用程序。”
-ms.assetid：81A757F2-6F2A-458F-B9BE-770ADEBFAB58 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:2018 年 11 月 4 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials：SMS
+description: Xamarin.Essentials 中的 SMS 类允许应用程序使用要发送给收件人的指定消息打开默认短信应用程序。
+ms.assetid: 81A757F2-6F2A-458F-B9BE-770ADEBFAB58
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c3518befc9f26895514bf582a763c1323f336277
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801837"
 ---
-
 # <a name="xamarinessentials-sms"></a>Xamarin.Essentials：SMS
 
-SMS 类允许应用程序使用要发送到收件人的指定消息打开默认短信应用程序。
+**** SMS 类允许应用程序使用要发送到收件人的指定消息打开默认短信应用程序。
 
 ## <a name="get-started"></a>入门
 
@@ -69,7 +82,7 @@ public class SmsTest
 
 ## <a name="api"></a>API
 
-- [SMS 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Sms)
+- [SMS 源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Sms)
 - [SMS API 文档](xref:Xamarin.Essentials.Sms)
 
 ## <a name="related-video"></a>相关视频

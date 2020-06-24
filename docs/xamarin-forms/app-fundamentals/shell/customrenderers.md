@@ -1,6 +1,6 @@
 ---
-title: title:"Xamarin.FormsShell 自定义呈现器”说明："Xamarin.Forms可通过各种 Shell 类公开的属性和方法对 Shell 应用程序进行高度自定义。
-description: '不过，在需要更为复杂的平台特定的自定义时，也可创建 Shell 自定义呈现器。” ms.prod: xamarin ms.assetid:3B1A6AE8-1D1E-4C34-B9AB-48F4444FEF32 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2019/05/06 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms Shell 自定义呈现器
+description: Xamarin.Forms 可通过各种 Shell 类公开的属性和方法对 Shell 应用程序进行高度自定义。 不过，在需要更为复杂的平台特定的自定义时，也可创建 Shell 自定义呈现器。
 ms.prod: xamarin
 ms.assetid: 3B1A6AE8-1D1E-4C34-B9AB-48F4444FEF32
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 321539f877a86804245d27a2d76d1edeb1abd1e9
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84137782"
 ---
 # <a name="xamarinforms-shell-custom-renderers"></a>Xamarin.Forms Shell 自定义呈现器

@@ -1,11 +1,23 @@
 ---
-title: "Xamarin.Essentials：磁力计”说明：“Xamarin.Essentials 中的 Magnetometer 类使你能够监视设备的磁力计传感器，此传感器指示设备相对于地球磁场的方向。”
-ms.assetid：64DD0D41-03E2-40DD-9EC8-101CA0ED852B author: jamesmontemagno ms.author: jamont ms.date:2018 年 11 月 4 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials：磁力计
+description: Xamarin.Essentials 中的 Magnetometer 类使你能够监视设备的磁力计传感器，此传感器指示设备相对于地球磁场的方向。
+ms.assetid: 64DD0D41-03E2-40DD-9EC8-101CA0ED852B
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b01bc1fd9c65186952635c5f472b1ac6beb0c9bd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802279"
 ---
-
 # <a name="xamarinessentials-magnetometer"></a>Xamarin.Essentials：磁力计
 
-Magnetometer 类使你能够监视设备的磁力计传感器，此传感器指示设备相对于地球磁场的方向。
+Magnetometer 类使你能够监视设备的磁力计传感器，此传感器指示设备相对于地球磁场的方向****。
 
 ## <a name="get-started"></a>入门
 
@@ -68,5 +80,5 @@ public class MagnetometerTest
 
 ## <a name="api"></a>API
 
-- [Magnetometer 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Magnetometer)
+- [Magnetometer 源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Magnetometer)
 - [Magnetometer API 文档](xref:Xamarin.Essentials.Magnetometer)

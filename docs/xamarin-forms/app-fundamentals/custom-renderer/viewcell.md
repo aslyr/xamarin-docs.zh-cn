@@ -1,6 +1,6 @@
 ---
-title: title:“自定义 ViewCell”说明：“Xamarin.Forms ViewCell 是可以添加到 ListView 或 TableView 中的单元，它包含开发人员定义的视图。
-description: '本文演示如何为 Xamarin.Forms ListView 控件中托管的 ViewCell 创建自定义呈现器。” ms.prod: xamarin ms.assetid:61F378C9-6DEF-436B-ACC3-2324B25D404E ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2016/12/07 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: 自定义 ViewCell
+description: Xamarin.Forms ViewCell 是可以添加到 ListView 或 TableView 中的单元，它包含开发人员定义的视图。 本文演示如何为 Xamarin.Forms ListView 控件中托管的 ViewCell 创建自定义呈现器。
 ms.prod: xamarin
 ms.assetid: 61F378C9-6DEF-436B-ACC3-2324B25D404E
 ms.technology: xamarin-forms
@@ -11,17 +11,17 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: c908da816352e8b3790ded0bef932e1485170abd
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84573867"
 ---
 # <a name="customizing-a-viewcell"></a>自定义 ViewCell
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
 
-Xamarin.Forms ViewCell 是可以添加到 ListView 或 TableView 中的单元，它包含开发人员定义的视图。本文演示如何为 Xamarin.Forms ListView 控件中托管的 ViewCell 创建自定义呈现器。这可防止在 ListView 滚动期间重复调用 Xamarin.Forms 布局计算。
+Xamarin.Forms ViewCell 是可以添加到 ListView 或 TableView 中的单元，它包含开发人员定义的视图。本文演示如何为 Xamarin.Forms ListView 控件中托管的 ViewCell 创建自定义呈现器。这可防止在 ListView 滚动期间重复调用 Xamarin.Forms 布局计算。__
 
 每个 Xamarin.Forms 单元都有一个附带的呈现器，适用于创建本机控件实例的各个平台。 当 Xamarin.Forms 应用程序呈现 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 时，将在 iOS 中实例化 `ViewCellRenderer` 类，而该操作又会实例化本机 `UITableViewCell` 控件。 在 Android 平台上，`ViewCellRenderer` 类实例化本机 `View` 控件。 在通用 Windows 平台 (UWP) 上，`ViewCellRenderer` 类实例化本机 `DataTemplate`。 有关 Xamarin.Forms 控件映射到的呈现器和本机控件类的详细信息，请参阅[呈现器基类和本机控件](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 

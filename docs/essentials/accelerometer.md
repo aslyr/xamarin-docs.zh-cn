@@ -1,11 +1,24 @@
 ---
-title: "Xamarin.Essentials：加速计”说明：“Xamarin.Essentials 中的 Accelerometer 类可用于监视设备的加速计传感器，此传感器指示设备在三维空间内的加速度。”
-ms.assetid：97883573-F0D9-4854-AC7C-A654814401C5 author: jamesmontemagno ms.author: jamont ms.date:2019 年 4 月 2 日 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials：加速计
+description: Xamarin.Essentials 中的 Accelerometer 类可用于监视设备的加速计传感器，此传感器指示设备在三维空间内的加速度。
+ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 04/02/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f3d7b313039e66294a0095fd34a2caa6689cef2e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802525"
 ---
-
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials：加速计
 
-Accelerometer 类可用于监视设备的加速计传感器，指示设备在三维空间内的加速度。
+Accelerometer**** 类可用于监视设备的加速计传感器，指示设备在三维空间内的加速度。
 
 ## <a name="get-started"></a>入门
 
@@ -80,7 +93,7 @@ X 轴水平向右，Y 轴垂直向上，Z 轴从屏幕正面指向外。 在此�
 
 ## <a name="api"></a>API
 
-- [Accelerometer 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
+- [Accelerometer 源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Accelerometer)
 - [Accelerometer API 文档](xref:Xamarin.Essentials.Accelerometer)
 
 ## <a name="related-video"></a>相关视频

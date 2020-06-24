@@ -1,11 +1,24 @@
 ---
-title: "Xamarin.Essentials：检测抖动”说明：“Xamarin.Essentials 中的 Accelerometer 类可以检测设备的抖动移动。”
-ms.assetid：07513D32-120F-4F12-8757-A47802A8027B author: jamesmontemagno ms.author: jamont ms.date:2019 年 5 月 28 日 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials：检测抖动
+description: Xamarin.Essentials 中的 Accelerometer 类可以检测设备的抖动移动。
+ms.assetid: 07513D32-120F-4F12-8757-A47802A8027B
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 05/28/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4fd4c7d0e3ffe04ebbb936cff0992272a9085649
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802431"
 ---
-
 # <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials：检测抖动
 
-[Accelerometer](accelerometer.md) 类可用于监视设备的加速计传感器，指示设备在三维空间内的加速度。 此外，该类还能够在用户抖动设备时注册事件。
+[Accelerometer](accelerometer.md) 类可用于监视设备的加速计传感器，指示设备在三维空间内的加速度****。 此外，该类还能够在用户抖动设备时注册事件。
 
 ## <a name="get-started"></a>入门
 
@@ -68,7 +81,7 @@ public class DetectShakeTest
 
 ## <a name="api"></a>API
 
-- [Accelerometer 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
+- [Accelerometer 源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Accelerometer)
 - [Accelerometer API 文档](xref:Xamarin.Essentials.Accelerometer)
 
 ## <a name="related-video"></a>相关视频

@@ -1,21 +1,21 @@
 ---
 title: Xamarin.Forms 双屏设备功能
 description: 本指南介绍了如何使用 Xamarin.Forms DualScreenInfo 类来优化 Surface Duo 和 Surface Neo 等双屏设备的应用体验。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: dd5eb074-f4cb-4ab4-b47d-76f862ac7cfa
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 59575823a9ec29847a60209e846ba244e51ca0c0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: 12f3ac86d2418c6516d000371753fc8ae65d557c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138926"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946343"
 ---
 # <a name="xamarinforms-dual-screen-device-capabilities"></a>Xamarin.Forms 双屏设备功能
 
@@ -32,15 +32,15 @@ ms.locfileid: "84138926"
 - `IsLandscape`：指示设备是否横向显示。 这很有用，因为应用程序跨屏显示时，本机方向 API 不会正确报告方向。
 - `SpanMode`：指示布局处于 Tall、Wide 还是 SinglePane 模式下。
 
-此外，任何属性发生更改时都会触发 `PropertyChanged` 事件。
+此外，在任何属性发生更改时，将触发 `PropertyChanged` 事件，当铰链角度改变时，将触发 `HingeAngleChanged` 事件。
 
-## <a name="poll-hinge-angle-on-android"></a>Android 上的轮询铰链角度
+## <a name="poll-hinge-angle-on-android-and-uwp"></a>Android 和 UWP 上的轮询铰链角度
 
-仅在从 Android 平台项目中访问 `DualScreenInfo` 时，才可使用以下属性：
+从 Android 和 UWP 平台项目访问 `DualScreenInfo` 时，可以使用以下方法：
 
 - `GetHingeAngleAsync` 会检索设备铰链的当前角度。 使用模拟器时，可通过修改压力传感器来设置 HingeAngle。
 
-可通过 Android 自定义呈现器使用此属性：
+可从 Android 和 UWP 上的自定义呈现器调用此方法。 以下代码显示了 Android 自定义呈现器示例：
 
 ```csharp
 public class HingeAngleLabelRenderer : Xamarin.Forms.Platform.Android.FastRenderers.LabelRenderer

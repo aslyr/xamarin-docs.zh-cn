@@ -1,6 +1,6 @@
 ---
-title: title:"Xamarin.FormsShell 搜索”说明："Xamarin.FormsShell 应用程序可以使用搜索框提供的集成搜索功能，并且可将搜索框添加到各个页面的顶部。”
-description: 'ms.prod: xamarin ms.assetid:F8F9471D-6771-4D23-96C0-2B79473A06D4 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2019/12/18 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms Shell 搜索
+description: Xamarin.Forms Shell 应用程序可以使用搜索框提供的集成搜索功能，并且可将搜索框添加到各个页面的顶部。
 ms.prod: xamarin
 ms.assetid: F8F9471D-6771-4D23-96C0-2B79473A06D4
 ms.technology: xamarin-forms
@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: cc5e0c4cb8b474a1b7e23b476b0c5125eb2ba298
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84138081"
 ---
 # <a name="xamarinforms-shell-search"></a>Xamarin.Forms Shell 搜索

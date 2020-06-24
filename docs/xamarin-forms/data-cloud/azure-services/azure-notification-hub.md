@@ -1,6 +1,6 @@
 ---
-title: title:“使用 Azure 通知中心和 Xamarin.Forms 收发推送通知”说明：“本文介绍如何使用 Azure 通知中心向 Xamarin.Forms 应用程序发送跨平台推送通知。”
-description: 'ms.prod: xamarin ms.assetid:07D13195-3A0D-4C95-ACF0-143A9084973C ms.technology: xamarin-forms author: profexorgeek ms.author: jusjohns ms.date:2019/11/27 no-loc: [Xamarin.Forms, Xamarin.Essentials, Firebase]'
+title: 使用 Azure 通知中心和 Xamarin.Forms 收发推送通知
+description: 本文介绍如何使用 Azure 通知中心向 Xamarin.Forms 应用程序发送跨平台推送通知。
 ms.prod: xamarin
 ms.assetid: 07D13195-3A0D-4C95-ACF0-143A9084973C
 ms.technology: xamarin-forms
@@ -12,10 +12,10 @@ no-loc:
 - Xamarin.Essentials
 - Firebase
 ms.openlocfilehash: 5f7b83c1fc907de790b382aabde0c5a957e5a8bb
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
+ms.lasthandoff: 06/18/2020
 ms.locfileid: "84565416"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>使用 Azure 通知中心和 Xamarin.Forms 收发推送通知
@@ -44,7 +44,7 @@ ms.locfileid: "84565416"
 1. 定义 Android 包名称，如示例中使用的 `com.xamarin.notifysample`。
 1. 从 Firebase 控制台中下载 `google-services.json`。 在后续步骤中，需要将此文件添加到 Android 应用程序。
 1. 创建 Azure 通知中心实例并命名。 本文和示例使用 `xdocsnotificationhub` 中心名称。
-1. 复制 FCM“服务器密钥”，并保存到 Azure 通知中心内 Google (GCM/FCM) 下的“API 密钥”  。
+1. 复制 FCM“服务器密钥”，并保存到 Azure 通知中心内 Google (GCM/FCM) 下的“API 密钥”**** **** ****。
 
 以下屏幕截图显示了 Azure 通知中心内的 Google 平台配置：
 
@@ -54,7 +54,7 @@ ms.locfileid: "84565416"
 
 1. 定义 iOS 捆绑标识符。 本文和示例使用 `com.xamarin.notifysample` 捆绑标识符。
 1. 创建证书签名请求 (CSR) 文件，并使用它来生成推送通知证书。
-1. 在 Azure 通知中心内的 Apple (APNS) 下上传推送通知证书。
+1. 在 Azure 通知中心内的 Apple (APNS) 下上传推送通知证书****。
 
 以下屏幕截图显示了 Azure 通知中心中内的 Apple 平台配置：
 
@@ -122,7 +122,7 @@ public static class AppConstants
 自定义 `AppConstants` 中的以下值，将示例应用程序连接到 Azure 通知中心：
 
 * `NotificationHubName`：使用在 Azure 门户中创建的 Azure 通知中心的名称。
-* `ListenConnectionString`：此值位于 Azure 通知中心内的“访问策略”下。
+* `ListenConnectionString`：此值位于 Azure 通知中心内的“访问策略”下****。
 
 以下屏幕截图显示了这些值在 Azure 门户中的位置：
 
@@ -132,7 +132,7 @@ public static class AppConstants
 
 完成以下步骤将 Android 应用程序配置为接收和处理通知：
 
-1. 将 Android 包名称配置为与 Firebase 控制台中的包名称一致。
+1. 将 Android 包名称配置为与 Firebase 控制台中的包名称一致****。
 1. 安装以下 NuGet 包以与 Google Play、Firebase 和 Azure 通知中心交互：
     1. `Xamarin.GooglePlayServices.Base`
     1. `Xamarin.Firebase.Messaging`
@@ -362,14 +362,14 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 
 配置 iOS 应用程序以收到通知的过程如下：
 
-1. 将 `Info.plist` 文件中的“捆绑标识符”配置为与预配配置文件中使用的值一致。
-1. 将“启用推送通知”选项添加到 `Entitlements.plist` 文件。
+1. 将 `Info.plist` 文件中的“捆绑标识符”配置为与预配配置文件中使用的值一致****。
+1. 将“启用推送通知”选项添加到 `Entitlements.plist` 文件****。
 1. 将 `Xamarin.Azure.NotificationHubs.iOS` NuGet 包添加到项目。
 1. 向 APNS [注册](#register-for-notifications-with-apns)通知。
 1. 向 Azure 通知中心[注册](#register-with-azure-notification-hub-and-subscribe-to-tags)应用程序并订阅标记。
 1. 将 APNS 通知[添加](#add-apns-notifications-to-xamarinforms-ui)到 Xamarin.Forms UI。
 
-以下屏幕截图显示了在 Visual Studio 的 `Entitlements.plist` 文件中选择了“启用推送通知”选项：
+以下屏幕截图显示了在 Visual Studio 的 `Entitlements.plist` 文件中选择了“启用推送通知”选项****：
 
 ![推送通知权限的屏幕截图](azure-notification-hub-images/push-notification-entitlement.png "推送通知权限")
 
@@ -513,7 +513,7 @@ void ProcessNotification(NSDictionary options, bool fromFinishedLaunching)
 
 ## <a name="test-notifications-in-the-azure-portal"></a>在 Azure 门户中测试通知
 
-利用 Azure 通知中心，你可以检查应用程序能否收到测试消息。 你可以在通知中心内的“发送测试”部分选择目标平台并发送消息。 将“发送到标记表达式”设置为 `default` 会将消息发送到已为 `default` 标记注册了模板的应用程序。 单击“发送”按钮将生成一个报表，其中包含该消息可以到达的设备数。 以下屏幕截图显示了 Azure 门户中的 Android 配置测试：
+利用 Azure 通知中心，你可以检查应用程序能否收到测试消息。 你可以在通知中心内的“发送测试”部分选择目标平台并发送消息****。 将“发送到标记表达式”设置为 `default` 会将消息发送到已为 `default` 标记注册了模板的应用程序****。 单击“发送”按钮将生成一个报表，其中包含该消息可以到达的设备数****。 以下屏幕截图显示了 Azure 门户中的 Android 配置测试：
 
 ![Azure 通知中心测试消息的屏幕截图](azure-notification-hub-images/azure-notification-hub-test-send.png "Azure 通知中心测试消息")
 
@@ -537,7 +537,7 @@ public static class DispatcherConstants
 }
 ```
 
-必须将 `DispatcherConstants.cs` 配置为与 Azure 通知中心配置一致。 `SubscriptionTags` 属性的值应与客户端应用中使用的值一致。 `NotificationHubName` 属性是 Azure 通知中心实例的名称。 `FullAccessConnectionString` 属性是在通知中心“访问策略”下找到的访问密钥。 以下屏幕截图显示了 `NotificationHubName` 和 `FullAccessConnectionString` 属性在 Azure 门户中的位置：
+必须将 `DispatcherConstants.cs` 配置为与 Azure 通知中心配置一致。 `SubscriptionTags` 属性的值应与客户端应用中使用的值一致。 `NotificationHubName` 属性是 Azure 通知中心实例的名称。 `FullAccessConnectionString` 属性是在通知中心“访问策略”下找到的访问密钥****。 以下屏幕截图显示了 `NotificationHubName` 和 `FullAccessConnectionString` 属性在 Azure 门户中的位置：
 
 ![Azure 通知中心名称和 FullAccessConnectionString 的屏幕截图](azure-notification-hub-images/notification-hub-full-access-policy.png "Azure 通知中心名称和 FullAccessConnectionString")
 

@@ -1,21 +1,21 @@
 ---
 title: Xamarin.Forms DependencyService 注册和解析
 description: 本文介绍如何使用 Xamarin.Forms DependencyService 类调用本机平台功能。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
+ms.prod: xamarin
+ms.assetid: 5d019604-4f6f-4932-9b26-1fce3b4d88f8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 50d77e9ba41767aa1f676bf21994431844fc4530
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
+ms.openlocfilehash: 050b53be5e4ae67e2adbc1436bbd56ff824f5f7b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138767"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946385"
 ---
 # <a name="xamarinforms-dependencyservice-registration-and-resolution"></a>Xamarin.Forms DependencyService 注册和解析
 
@@ -27,7 +27,7 @@ ms.locfileid: "84138767"
 
 必须通过 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 注册平台实现，Xamarin.Forms 在运行时才可以找到它们。
 
-可以使用 [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) 或 [`Register`](xref:Xamarin.Forms.DependencyService.Register*) 方法执行注册。
+可以使用 [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute)、[`Register`](xref:Xamarin.Forms.DependencyService.Register*) 和 `RegisterSingleton` 方法执行注册。
 
 > [!IMPORTANT]
 > 使用 NET 本机编译的 UWP 项目的版本生成应使用 [`Register`](xref:Xamarin.Forms.DependencyService.Register*) 方法注册平台实现。
@@ -63,7 +63,7 @@ namespace DependencyServiceDemos.iOS
 
 ### <a name="registration-by-method"></a>使用方法注册
 
-可以使用 [`DependencyService.Register`](xref:Xamarin.Forms.DependencyService.Register*) 方法通过 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 注册平台实现。
+可以使用 [`DependencyService.Register`](xref:Xamarin.Forms.DependencyService.Register*) 方法和 `RegisterSingleton` 方法向 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 注册平台实现。
 
 下面的示例演示如何使用 [`Register`](xref:Xamarin.Forms.DependencyService.Register*) 方法注册 `IDeviceOrientationService` 接口的 iOS 实现：
 
@@ -89,10 +89,19 @@ DependencyService.Register<DeviceOrientationService>();
 
 在此示例中，[`Register`](xref:Xamarin.Forms.DependencyService.Register*) 方法使用 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 注册 `DeviceOrientationService`。 这样就会在具体类型所实现的接口上注册它。
 
-同样，其他平台上的 `IDeviceOrientationService` 接口的实现也可使用 [`Register`](xref:Xamarin.Forms.DependencyService.Register*) 方法注册。
+或者，可以使用 `RegisterSingleton` 方法将现有对象实例注册为单一实例：
+
+```csharp
+var service = new DeviceOrientationService();
+DependencyService.RegisterSingleton<IDeviceOrientationService>(service);
+```
+
+在此示例中，`RegisterSingleton` 方法针对 `IDeviceOrientationService` 接口将 `DeviceOrientationService` 对象实例注册为单一实例。
+
+同样，其他平台上的 `IDeviceOrientationService` 接口的实现也可以使用 [`Register`](xref:Xamarin.Forms.DependencyService.Register*) 方法或 `RegisterSingleton` 方法注册。
 
 > [!IMPORTANT]
-> 必须先在平台项目中执行 [`Register`](xref:Xamarin.Forms.DependencyService.Register*) 注册，然后才可以从共享代码调用平台实现提供的功能。
+> 必须在平台项目中使用 [`Register`](xref:Xamarin.Forms.DependencyService.Register*) 和 `RegisterSingleton` 方法执行注册，才可以从共享代码调用平台实现提供的功能。
 
 ## <a name="resolve-the-platform-implementations"></a>解析平台实现
 
@@ -105,7 +114,12 @@ DependencyService.Register<DeviceOrientationService>();
 
 ### <a name="resolve-using-the-getlttgt-method"></a>使用 Get&lt;T&gt; 方法解析
 
-[`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) 方法在运行时检索接口 `T` 的平台实现，并创建它的实例来作为单一实例。 在应用程序的生存期期间，此实例将持续存在，并且为解析同一平台实现而执行的所有后续调用将检索同一实例。
+[`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) 方法在运行时检索接口 `T` 的平台实现，或者：
+
+- 将它的实例创建为单一实例。
+- 返回一个作为单一实例的现有实例，该实例已使用 `RegisterSingleton` 方法向 `DependencyService` 注册。
+
+在这两种情况下，在应用程序的生存期期间，此实例将持续存在，并且为解析同一平台实现而执行的所有后续调用将检索同一实例。
 
 下面的代码示例说明了如何调用 [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) 方法解析 `IDeviceOrientationService` 接口并调用 `GetOrientation` 方法：
 
@@ -121,7 +135,7 @@ DeviceOrientation orientation = DependencyService.Get<IDeviceOrientationService>
 ```
 
 > [!NOTE]
-> 默认情况下，[`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) 方法创建接口 `T` 的平台实现实例并将其作为单一实例。 但是，可以更改这种行为。 有关详细信息，请参阅[管理解析对象的生存期](#manage-the-lifetime-of-resolved-objects)。
+> 默认情况下，[`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) 方法返回接口 `T` 的平台实现实例并将其作为单一实例。 但是，可以更改这种行为。 有关详细信息，请参阅[管理解析对象的生存期](#manage-the-lifetime-of-resolved-objects)。
 
 ### <a name="resolve-using-the-resolvelttgt-method"></a>使用 Resolve&lt;T&gt; 方法解析
 
@@ -141,7 +155,7 @@ DeviceOrientation orientation = DependencyService.Resolve<IDeviceOrientationServ
 ```
 
 > [!NOTE]
-> 默认情况下，当 [`Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*) 方法回退到调用 [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) 方法时，它将创建接口 `T` 的平台实现实例并将其作为单一实例。 但是，可以更改这种行为。 有关详细信息，请参阅[管理解析对象的生存期](#manage-the-lifetime-of-resolved-objects)。
+> 默认情况下，当 [`Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*) 方法回退到调用 [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) 方法时，它将返回接口 `T` 的平台实现实例并将其作为单一实例。 但是，可以更改这种行为。 有关详细信息，请参阅[管理解析对象的生存期](#manage-the-lifetime-of-resolved-objects)。
 
 ## <a name="manage-the-lifetime-of-resolved-objects"></a>管理解析对象的生存期
 
