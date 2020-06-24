@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials：Preferences" description:"本文档介绍 Xamarin.Essentials 中的 Preferences 类，此类将应用程序首选项保存在键/值存储中。 本文还讨论了如何使用类和可以存储的数据类型。"
-ms.assetid：AA81BCBD-79BA-448F-942B-BA4415CA50FF author: jamesmontemagno ms.author: jamont ms.date:2019 年 1 月 15 日 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials：首选项
+description: 本文档介绍 Xamarin.Essentials 中的 Preferences 类，此类将应用程序首选项保存在键/值存储中。 本文还讨论了如何使用类和可以存储的数据类型。
+ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/15/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: acc0c48776c7a91e9e5a060928564bc6e0c1d775
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801811"
 ---
-
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials：首选项
 
 Preferences 类帮助将应用程序首选项存储在键/值存储中。
@@ -104,7 +117,7 @@ Preferences.Clear();
 
 ## <a name="api"></a>API
 
-- [Preferences 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Preferences)
+- [Preferences 源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Preferences)
 - [Preferences API 文档](xref:Xamarin.Essentials.Preferences)
 
 ## <a name="related-video"></a>相关视频

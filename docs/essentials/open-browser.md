@@ -1,8 +1,21 @@
 ---
-title:"Xamarin.Essentials打开浏览器" description:"Xamarin.Essentials 中的 Browser 类允许应用程序在优化的系统首选浏览器或外部浏览器中打开 Web 链接。"
-ms.assetid：BABF40CC-8BEE-43FD-BE12-6301DF27DD33 author: jamesmontemagno ms.author: jamont ms.date:2019 年 4 月 2 日 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials 打开浏览器
+description: Xamarin.Essentials 中的 Browser 类允许应用程序在优化的系统首选浏览器或外部浏览器中打开 Web 链接。
+ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 04/02/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 997c6b66b5dba43eb440130f3f58d31a5a274815
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802245"
 ---
-
 # <a name="xamarinessentials-browser"></a>Xamarin.Essentials：浏览者
 
 Browser 类允许应用程序在优化的系统首选浏览器或外部浏览器中打开 Web 链接。
@@ -84,7 +97,7 @@ await Browser.OpenAsync(uri, new BrowserLaunchOptions
 
 ## <a name="api"></a>API
 
-- [Browser 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Browser)
+- [Browser 源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Browser)
 - [Browser API 文档](xref:Xamarin.Essentials.Browser)
 
 ## <a name="related-video"></a>相关视频

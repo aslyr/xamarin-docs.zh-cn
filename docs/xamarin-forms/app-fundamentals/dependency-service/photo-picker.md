@@ -1,8 +1,22 @@
 ---
-title:"从图片库中选取照片" description:"本文介绍如何使用 Xamarin.Forms DependencyService 类从手机的图片库中选取照片。"
-ms.prod: xamarin ms.assetid:4F51B0E7-6A63-403C-B488-500CCBCE75DD ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2017 年 3 月 6 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 从图片库中选取照片
+description: 本文介绍如何使用 Xamarin.Forms DependencyService 类从手机的图片库中选取照片。
+ms.prod: xamarin
+ms.assetid: 4F51B0E7-6A63-403C-B488-500CCBCE75DD
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/06/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9f999d56fbf178be160e91756643c127d574b090
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84197559"
 ---
-
 # <a name="picking-a-photo-from-the-picture-library"></a>从图片库中选取照片
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)

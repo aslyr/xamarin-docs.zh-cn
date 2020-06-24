@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials：Permissions" description:"本文档介绍了 Xamarin.Essentials 中的 Permissions 类，它提供了检查和请求运行时权限的功能。"
-ms.assetid：34062D84-3E55-4AF7-A688-8551068B1E57 author: jamesmontemagno ms.author: jamont ms.custom: video ms.date:2020 年 1 月 6 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials：权限
+description: 本文档介绍 Xamarin.Essentials 中的 Permissions 类，它提供了检查和请求运行时权限的功能。
+ms.assetid: 34062D84-3E55-4AF7-A688-8551068B1E57
+author: jamesmontemagno
+ms.author: jamont
+ms.custom: video
+ms.date: 01/06/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5de10511d73614570d6308b6f4deb7b4ca55549a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802231"
 ---
-
 # <a name="xamarinessentials-permissions"></a>Xamarin.Essentials：权限
 
 Permissions 类提供了检查和请求运行时权限的功能。
@@ -214,7 +227,7 @@ Permissions 必须有在包清单中声明的匹配功能。
 
 ## <a name="api"></a>API
 
-- [Permissions 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Permissions)
+- [Permissions 源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Permissions)
 - [Permissions API 文档](xref:Xamarin.Essentials.Permissions)
 
 

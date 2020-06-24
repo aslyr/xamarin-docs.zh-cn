@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials：Geolocation" description:"本文档介绍 Xamarin.Essentials 中的 Geolocation 类，此类提供 API 以检索设备的当前地理位置坐标。"
-ms.assetid：8F66092C-13F0-4FEE-8AA5-901D5F79B357 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:2019 年 3 月 13 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials：地理位置
+description: 本文档介绍 Xamarin.Essentials 中的 Geolocation 类，此类提供 API 以检索设备的当前地理位置坐标。
+ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 03/13/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f54c31afef691d316cbc3108792ab3158359c47c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802327"
 ---
-
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials：地理位置
 
 Geolocation 提供 API 以检索设备的当前地理位置坐标。
@@ -231,7 +244,7 @@ UWP 上以米为单位返回海拔高度。 有关详细信息，请参阅 [Alti
 
 ## <a name="api"></a>API
 
-- [Geolocation 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geolocation)
+- [Geolocation 源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Geolocation)
 - [Geolocation API 文档](xref:Xamarin.Essentials.Geolocation)
 
 ## <a name="related-video"></a>相关视频

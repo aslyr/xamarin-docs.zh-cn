@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials：设备显示信息" description:"本文档介绍 Xamarin.Essentials 中的 DeviceDisplay 类，此类提供运行应用程序的设备的屏幕指标。"
-ms.assetid：2821C908-C613-490D-8E8C-1BD3269FCEEA author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:2018 年 11 月 4 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials：设备显示信息
+description: 本文档介绍 Xamarin.Essentials 中的 DeviceDisplay 类，此类提供运行应用程序的设备的屏幕指标。
+ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 867e6bd1828d4158f70226dbaad678f9d6037bb0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802395"
 ---
-
 # <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials：设备显示信息
 
 DeviceDisplay 类提供有关运行应用程序的设备屏幕指标的信息，并可以请求在应用程序运行时防止屏幕进入睡眠状态。
@@ -92,7 +105,7 @@ public class KeepScreenOnTest
 
 ## <a name="api"></a>API
 
-- [DeviceDisplay 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DeviceDisplay)
+- [DeviceDisplay 源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/DeviceDisplay)
 - [DeviceDisplay API 文档](xref:Xamarin.Essentials.DeviceDisplay)
 
 ## <a name="related-video"></a>相关视频

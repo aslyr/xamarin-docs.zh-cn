@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials：应用主题" description:"本文档介绍了 Xamarin.Essentials 中请求的应用主题 API，它提供了系统为正在运行的应用请求什么主题样式的信息。"
-ms.assetid：F6F6D496-A8A9-4B9A-AF1A-370D937E5073 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:2020 年 1 月 6 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials：应用主题
+description: 本文档介绍 Xamarin.Essentials 中请求的应用主题 API，它提供了系统为正在运行的应用请求什么主题样式的信息。
+ms.assetid: F6F6D496-A8A9-4B9A-AF1A-370D937E5073
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 01/06/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: eca052c82ae3333feb0437b8a4e24bc6b97b836d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802509"
 ---
-
 # <a name="xamarinessentials-app-theme"></a>Xamarin.Essentials：应用主题
 
 RequestedTheme API 属于 [`AppInfo`](app-information.md) 类，它提供了系统为正在运行的应用请求什么主题的信息。
@@ -63,7 +76,7 @@ UWP 应用程序将在 RUWP App.xaml 中的 RequestedTheme 下反映出你的设
 
 ## <a name="api"></a>API
 
-- [AppInfo 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/AppInfo)
+- [AppInfo 源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/AppInfo)
 - [AppInfo API 文档](xref:Xamarin.Essentials.AppInfo)
 
 ## <a name="related-video"></a>相关视频

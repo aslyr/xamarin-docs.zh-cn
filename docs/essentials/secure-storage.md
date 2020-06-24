@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials：安全存储" description:"本文档介绍了 Xamarin.Essentials 中的 SecureStorage 类，该类有助于安全地存储简单的键/值对。 讨论了如何使用类、平台实现细节和限制。"
-ms.assetid：78856C0D-76BB-406E-A880-D5A3987B7D64 author: jamesmontemagno ms.author: jamont ms.date:2019 年 4 月 2 日 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials：安全存储
+description: 本文档介绍了 Xamarin.Essentials 中的 SecureStorage 类，该类有助于安全地存储简单的键/值对。 讨论了如何使用类、平台实现细节和限制。
+ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 04/02/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 061bc1cfe785ad080092ba21340f7d38bc499ed9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801941"
 ---
-
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials：安全存储
 
 SecureStorage 类有助于安全地存储简单的键/值对。
@@ -155,7 +168,7 @@ SecureStorage 使用[首选项](preferences.md) API，并遵循[首选项](prefe
 
 ## <a name="api"></a>API
 
-- [SecureStorage 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/SecureStorage)
+- [SecureStorage 源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/SecureStorage)
 - [SecureStorage API 文档](xref:Xamarin.Essentials.SecureStorage)
 
 ## <a name="related-video"></a>相关视频

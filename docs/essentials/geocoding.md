@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials：Geocoding" description:"Xamarin.Essentials 中的 Geocoding 类提供了 API，既可以将地标地理编码为位置坐标，又可以将坐标反向地理编码为地标。"
-ms.assetid：3ADC440C-B000-4708-A2CC-296F5160AF90 author: jamesmontemagno ms.author: jamont ms.date:2019 年 5 月 28 日 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials：地理编码
+description: Xamarin.Essentials 中的 Geocoding 类提供了 API，既可以将地标地理编码为位置坐标，又可以将坐标反转地理编码为地标。
+ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 05/28/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 66383e441435b5f4bdb48224c9ab602f28072b3d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802342"
 ---
-
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials：地理编码
 
 Geocoding 类提供了 API，既可以将地标地理编码为位置坐标，又可以将坐标反向地理编码为地标。
@@ -109,11 +122,11 @@ catch (Exception ex)
 
 ## <a name="distance-between-two-locations"></a>两个位置之间的距离
 
-[`Location`](xref:Xamarin.Essentials.Location) 和 [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) 类定义了可用于计算两个位置之间的距离的方法。 有关示例，请参阅文章[Xamarin.Essentials：Geolocation](geolocation.md#calculate-distance)。
+[`Location`](xref:Xamarin.Essentials.Location) 和 [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) 类定义了可用于计算两个位置之间的距离的方法。 有关示例，请参阅文章[Xamarin.Essentials：**地理位置**](geolocation.md#calculate-distance)。
 
 ## <a name="api"></a>API
 
-- [Geocoding 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geocoding)
+- [Geocoding 源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Geocoding)
 - [Geocoding API 文档](xref:Xamarin.Essentials.Geocoding)
 
 ## <a name="related-video"></a>相关视频

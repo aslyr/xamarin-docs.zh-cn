@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials：文件系统帮助程序" description:"Xamarin.Essentials 中的 FileSystem 类包含一系列帮助程序，用于查找应用程序的缓存和数据目录以及打开应用包内的文件。"
-ms.assetid：B3EC2DE0-EFC0-410C-AF71-7410AE84CF84 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:2018 年 11 月 4 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials：文件系统帮助程序
+description: Xamarin.Essentials 中的 FileSystem 类包含一系列帮助程序，用于查找应用程序的缓存和数据目录并打开应用包内的文件。
+ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5fafc24d9c4bd35d4ef0010ae4530341316c878a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802364"
 ---
-
 # <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials：文件系统帮助程序
 
 FileSystem 类包含一系列帮助程序，用于查找应用程序的缓存和数据目录以及打开应用包内的文件。
@@ -70,7 +83,7 @@ var mainDir = FileSystem.AppDataDirectory;
 
 ## <a name="api"></a>API
 
-- [文件系统帮助程序源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/FileSystem)
+- [文件系统帮助程序源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/FileSystem)
 - [文件系统 API 文档](xref:Xamarin.Essentials.FileSystem)
 
 ## <a name="related-video"></a>相关视频

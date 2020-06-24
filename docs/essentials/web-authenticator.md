@@ -1,8 +1,20 @@
 ---
-title: "Xamarin.Essentials：Web 验证器" description:"本文档介绍了 Xamarin.Essentials 中的 WebAuthenticator 类，使用此类可以启动基于浏览器的身份验证流，以侦听对应用的回调。"
-ms.assetid：3D95371E-5D59-440E-8D31-F3C04E493DC1 author: redth ms.author: jodick ms.date:2020 年 3 月 26 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials：Web 验证器
+description: 本文档介绍 Xamarin.Essentials 中的 WebAuthenticator 类，使用此类可以启动基于浏览器的身份验证流，以侦听对应用的回调。
+ms.assetid: 3D95371E-5D59-440E-8D31-F3C04E493DC1
+author: redth
+ms.author: jodick
+ms.date: 03/26/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 578e750afd718c684d70217355629a0286d2b028
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801876"
 ---
-
 # <a name="xamarinessentials-web-authenticator"></a>Xamarin.Essentials：Web 验证器
 
 使用 WebAuthenticator 类可以启动基于浏览器的流，以侦听对注册到应用的特定 URL 的回调。
@@ -220,6 +232,6 @@ public class AuthController : ControllerBase
 -----
 ## <a name="api"></a>API
 
-- [WebAuthenticator 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/WebAuthenticator)
+- [WebAuthenticator 源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/WebAuthenticator)
 - [WebAuthenticator API 文档](xref:Xamarin.Essentials.WebAuthenticator)
 - [ASP.NET Core 服务器示例](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/)

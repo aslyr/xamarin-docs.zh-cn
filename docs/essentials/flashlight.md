@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials：Flashlight" description:"本文档介绍 Xamarin.Essentials 中的 Flashlight 类，你可使用此类打开或关闭设备的照相机闪光灯，将其转换为一个手电筒。"
-ms.assetid：06A03553-D212-43A2-9E6E-C2D2D93EB136 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:2018 年 11 月 4 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials：手电筒
+description: 本文档介绍 Xamarin.Essentials 中的 Flashlight 类，你可使用此类打开或关闭设备的照相机闪光灯，将其转换为手电筒。
+ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7a8a90674b395c90f698a4a0854dc0dc3fc5fe15
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802351"
 ---
-
 # <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials：手电筒
 
 Flashlight 类，此类使你能够打开或关闭设备的照相机闪光灯，将其转换为一个手电筒。
@@ -113,7 +126,7 @@ Flashlight 类已根据设备的操作系统进行了优化。
 
 ## <a name="api"></a>API
 
-- [Flashlight 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Flashlight)
+- [Flashlight 源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Flashlight)
 - [Flashlight API 文档](xref:Xamarin.Essentials.Flashlight)
 
 ## <a name="related-video"></a>相关视频

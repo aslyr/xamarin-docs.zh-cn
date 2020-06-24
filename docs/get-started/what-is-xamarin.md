@@ -1,9 +1,22 @@
 ---
-title:"什么是 Xamarin？"
-description:"本文介绍 Xamarin 平台和相关库。"
-ms.prod: xamarin ms.assetid:33C83E13-F3E5-17B4-6512-207F3D3C5AB6 ms.custom: video author: profexorgeek ms.author: jusjohns ms.date:2020 年 5 月 28 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 什么是 Xamarin？
+description: 本文介绍 Xamarin 平台和相关库。
+ms.prod: xamarin
+ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
+ms.custom: video
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 05/28/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 708a310ea015f9e678d534898fde18abc3848120
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198320"
 ---
-
 # <a name="what-is-xamarin"></a>什么是 Xamarin？
 
 [![iOS 和 Android 中的示例 Xamarin 应用程序的屏幕截图](what-is-xamarin-images/xamarin-app-cropped.png)](what-is-xamarin-images/xamarin-app.png#lightbox)

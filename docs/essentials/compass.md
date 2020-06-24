@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials：Compass" description:"本文档介绍 Xamarin.Essentials 中的 Compass 类，你可通过此类监视设备的磁北航向。"
-ms.assetid：BF85B0C3-C686-43D9-811A-07DCAF8CDD86 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:2018 年 11 月 4 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials：指南针
+description: 本文档介绍 Xamarin.Essentials 中的 Compass 类，你可通过此类监视设备的磁北航向。
+ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f85c6c1d262606ce75131e6ba39f326526bb8eb7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802469"
 ---
-
 # <a name="xamarinessentials-compass"></a>Xamarin.Essentials：指南针
 
 Compass 类使你能够监视设备的磁北航向。
@@ -87,7 +100,7 @@ Compass.Start(SensorSpeed.UI, applyLowPassFilter: true);
 
 ## <a name="api"></a>API
 
-- [Compass 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Compass)
+- [Compass 源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Compass)
 - [Campass API 文档](xref:Xamarin.Essentials.Compass)
 
 ## <a name="related-video"></a>相关视频

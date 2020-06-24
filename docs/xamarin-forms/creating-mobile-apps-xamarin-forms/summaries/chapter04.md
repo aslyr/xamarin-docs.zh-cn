@@ -1,7 +1,22 @@
 ---
-title:"摘要：第 4 章. 滚动堆叠" description:"《使用 Xamarin.Forms 创建移动应用》- 摘要：第 4 章. 滚动堆叠" ms.prod: xamarin ms.technology: xamarin-forms ms.assetid:7A39FD4F-15AD-4F94-960E-9FEEB63FFD44 author: davidbritch ms.author: dabritch ms.date:2018 年 7 月 19 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: “第 4 章： 滚动堆叠”摘要
+description: 使用 Xamarin.Forms 创建移动应用：“第 4 章： 滚动堆叠”摘要
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/19/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6b86bfe1e343cd50f4a133726d16364b3efb8bee
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198271"
 ---
-
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>“第 4 章： 滚动堆叠”摘要
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)

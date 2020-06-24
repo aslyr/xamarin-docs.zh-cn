@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials：Connectivity" description:"Xamarin.Essentials 中的 Connectivity 类可用于监视设备的网络状况是否发生变化，检查当前的网络访问权限，以及当前的连接方式。"
-ms.assetid：E1B1F152-B1D5-4227-965E-C0AEBF528F49 author: jamesmontemagno ms.author: jamont ms.date:2019 年 1 月 8 日 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials：连接性
+description: Xamarin.Essentials 中的 Connectivity 类可用于监视设备的网络状况是否发生变化，检查当前的网络访问权限，以及当前的连接方式。
+ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/08/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 056992b06e012845755aa02b2076a1bb80c6f176
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802409"
 ---
-
 # <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials：连接性
 
 Connectivity 类可用于监视设备的网络状况是否发生变化，检查当前的网络访问权限，以及当前的连接方式。
@@ -105,7 +118,7 @@ public class ConnectivityTest
 
 ## <a name="api"></a>API
 
-* [Connectivity 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Connectivity)
+* [Connectivity 源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Connectivity)
 * [Connectivity API 文档](xref:Xamarin.Essentials.Connectivity)
 
 ## <a name="related-video"></a>相关视频

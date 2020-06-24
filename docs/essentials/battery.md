@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials：Battery" description:"本文档介绍 Xamarin.Essentials 中的 Battery 类，你可通过此类查看设备的电池信息并监视更改。"
-ms.assetid：47EB26D8-8C62-477B-A13C-6977F74E6E43 author: jamesmontemagno ms.author: jamont ms.date:2019 年 1 月 22 日 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials：电池
+description: 本文档介绍 Xamarin.Essentials 中的 Battery 类，你可通过此类查看设备的电池信息并监视更改。
+ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/22/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3138db09c2a3d343f36aa48f561930df47f48ae6
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802473"
 ---
-
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials：电池
 
 Battery类允许检查设备的电池信息、监视更改，并提供有关设备的节能模式状态的信息，该状态指示设备是否正在低功耗模式下运行。 如果设备的节能模式状态已打开，则应用程序应避免后台处理。
@@ -171,7 +184,7 @@ public class EnergySaverTest
 
 ## <a name="api"></a>API
 
-- [Battery 源代码](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Battery)
+- [Battery 源代码](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Battery)
 - [Battery API 文档](xref:Xamarin.Essentials.Battery)
 
 ## <a name="related-video"></a>相关视频
