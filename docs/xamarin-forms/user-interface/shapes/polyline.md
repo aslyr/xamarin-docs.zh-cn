@@ -10,12 +10,12 @@ ms.date: 06/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fee7dd2a2e5b713b3a82fc2e1227b21caddbceaa
-ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
+ms.openlocfilehash: 5ffbf452816eb9e60d70175a995419a124bcc457
+ms.sourcegitcommit: 8f6cc5208f675c8cfb645bd9ffb0fc1f8ea71411
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85243781"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85326166"
 ---
 # <a name="xamarinforms-shapes-polyline"></a>Xamarin.Forms形状：折线
 
@@ -34,10 +34,7 @@ ms.locfileid: "85243781"
 
 `PointsCollection`类型是 `ObservableCollection` [`Point`](xref:Xamarin.Forms.Point) 对象的。 `Point`结构定义 `X` 类型的和属性， `Y` `double` 表示二维空间中的 x 坐标和 y 坐标对。 因此， `Points` 应将属性设置为描述折线顶点点的 x 坐标和 y 坐标对的列表，并用单个逗号和/或一个或多个空格分隔。 例如，"40，10 70，80" 和 "40 10，70 80" 都是有效的。
 
-`FillRule` 枚举定义下列成员：
-
-- `EvenOdd`表示一个规则，该规则确定某个点是否位于折线的填充区域。 它在任何方向上从点到无穷画一条射线，并对该射线相交的形状内的段数进行计数。 如果此数为奇数，则该点在内部。 如果此数值为偶数，则该点在外部。
-- `Nonzero`表示一个规则，该规则确定某个点是否位于折线的填充区域。 它在任何方向上从点到无穷画一条射线，然后检查一段形状与射线相交的位置。 从零计数开始，每次段从左到右交叉时，计数就会递增，并且每次从右到左对一段时间都进行递减。 计算交点后，如果结果为零，则点在折线外。 否则，在内部。
+有关枚举的详细信息 `FillRule` ，请参阅[ Xamarin.Forms 形状：填充规则](fillrules.md)。
 
 ## <a name="create-a-polyline"></a>创建折线
 
@@ -104,3 +101,4 @@ ms.locfileid: "85243781"
 
 - [ShapeDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms形状](index.md)
+- [Xamarin.Forms形状：填充规则](fillrules.md)

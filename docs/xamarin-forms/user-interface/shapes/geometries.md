@@ -10,12 +10,12 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c3b869d10d454453172065b30eb7ce32da81c8ce
-ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
+ms.openlocfilehash: 412b0255dafcbd752c7b350ddc25ecd13f8f98d8
+ms.sourcegitcommit: 8f6cc5208f675c8cfb645bd9ffb0fc1f8ea71411
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85133030"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85326180"
 ---
 # <a name="xamarinforms-shapes-geometries"></a>Xamarin.Forms形状：几何图形
 
@@ -37,7 +37,7 @@ ms.locfileid: "85133030"
 
 椭圆几何表示几何或椭圆或圆，并由中心点、x 轴半径和 y 轴半径定义。
 
-`EllipseGeometry`类定义以下属性：
+`EllipseGeometry` 类定义了以下属性：
 
 - `Center``Point`表示几何图形中心点的类型的。
 - `RadiusX`，类型为 `double` ，表示几何图形的 x 轴半径值。 此属性的默认值为0.0。
@@ -65,7 +65,7 @@ ms.locfileid: "85133030"
 
 直线几何表示线条的几何，并通过指定直线的起点和终点来定义。
 
-`LimeGeometry`类定义以下属性：
+`LimeGeometry` 类定义了以下属性：
 
 - `StartPoint`，类型为 `Point` ，它表示线条的起点。
 - `EndPoint`，类型为 `Point` ，它表示线条的终点。
@@ -90,7 +90,7 @@ ms.locfileid: "85133030"
 
 矩形几何图形表示一个矩形，并定义为 `Rect` 指定其相对位置及其高度和宽度的结构。
 
-`RectangleGeometry`类定义以下属性：
+`RectangleGeometry` 类定义了以下属性：
 
 - `Rect`，类型为 `FormsRect` ，它表示矩形的尺寸。
 
@@ -114,7 +114,7 @@ ms.locfileid: "85133030"
 
 路径几何描述了可由弧形、曲线、椭圆、直线和矩形组成的复杂形状。
 
-`PathGeometry`类定义以下属性：
+`PathGeometry` 类定义了以下属性：
 
 - `Figures`，类型为 `PathFigureCollection` ，它表示 `PathFigure` 描述路径内容的对象的集合。
 - `FillRule`，类型为 `FillRule` ，确定如何组合几何图形中包含的相交区域。 此属性的默认值为 `FillRule.EvenOdd`。
@@ -123,6 +123,8 @@ ms.locfileid: "85133030"
 > `Figures`属性是类的 `ContentProperty` `PathGeometry` ，因此不需要从 XAML 显式设置。
 
 这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
+
+有关枚举的详细信息 `FillRule` ，请参阅[ Xamarin.Forms 形状：填充规则](fillrules.md)。
 
 由 `PathGeometry` 对象的集合组成 `PathFigure` ，每个对象 `PathFigure` 描述几何图形中的一个形状。 每个 `PathFigure` 对象都由一个或多个 `PathSegment` 对象组成，其中每个对象都描述了一段形状。 有多种类型的段：
 
@@ -226,3 +228,4 @@ ms.locfileid: "85133030"
 
 - [ShapeDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms形状](index.md)
+- [Xamarin.Forms形状：填充规则](fillrules.md)

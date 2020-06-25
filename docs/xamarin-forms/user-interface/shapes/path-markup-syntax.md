@@ -10,12 +10,12 @@ ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 943636ac82163c3c575577bb4c56f6433cf73339
-ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
+ms.openlocfilehash: d2eb0ac68bf754e45ffcd2a1c77e4347bb3bcf4c
+ms.sourcegitcommit: 8f6cc5208f675c8cfb645bd9ffb0fc1f8ea71411
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85132869"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85326210"
 ---
 # <a name="xamarinforms-shapes-path-markup-syntax"></a>Xamarin.Forms形状：路径标记语法
 
@@ -35,7 +35,7 @@ Xamarin.Forms路径标记语法使你可以简洁地在 XAML 中指定路径几�
 
 采用以下语法：
 
-- *fillRule*是一个可选 `Xamarin.Forms.Shapes.FillRule` 的，它指定几何是否应使用 `EvenOdd` 或 `Nonzero` `FillRule` 。 `F0`指定填充 `EvenOdd` 规则，同时 `F1` 指定 `Nonzero` 填充规则。
+- *fillRule*是一个可选 `Xamarin.Forms.Shapes.FillRule` 的，它指定几何是否应使用 `EvenOdd` 或 `Nonzero` `FillRule` 。 `F0`指定填充 `EvenOdd` 规则，同时 `F1` 指定 `Nonzero` 填充规则。 有关填充规则的详细信息，请参阅[ Xamarin.Forms 形状：填充规则](fillrules.md)。
 -  *figureDescription*表示由移动命令、绘图命令和可选的 "关闭" 命令构成的数字。 Move 命令指定图形的起点。 绘图命令描述了图形的内容，可选的 "关闭" 命令关闭了图形。
 
 在上面的示例中，路径标记语法使用 move 命令（）来指定一个开始点 `M` ，使用 line 命令（）来指定一系列直线 `L` ，并使用 "关闭" 命令关闭该路径（ `Z` ）。
@@ -172,3 +172,4 @@ Close 命令的语法是： `Z` 或 `z` 。
 
 - [ShapeDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms几何图形](geometries.md)
+- [Xamarin.Forms形状：填充规则](fillrules.md)
