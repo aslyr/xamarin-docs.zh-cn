@@ -6,13 +6,13 @@ ms.assetid: E73AE622-664C-4A90-B5B2-BD47D0E7A1A7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/16/2020
-ms.openlocfilehash: 2fc5db2ddb456c9c5c6160b7fc7ce501488722de
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.date: 06/18/2020
+ms.openlocfilehash: dfe6da8a76b447bf0c2a6c0a3bea9823e498d5e4
+ms.sourcegitcommit: 8a18471b3d96f3f726b66f9bc50a829f1c122f29
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84947131"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84988197"
 ---
 # <a name="xamarinforms-multi-bindings"></a>Xamarin.Forms 多绑定
 
@@ -53,15 +53,16 @@ public class AllTrueMultiConverter : IMultiValueConverter
     {
         if (values == null || !targetType.IsAssignableFrom(typeof(bool)))
         {
-            // Return UnsetValue to use the binding FallbackValue
-            return BindableProperty.UnsetValue;
+            return false;
+            // Alternatively, return BindableProperty.UnsetValue to use the binding FallbackValue
         }
 
         foreach (var value in values)
         {
             if (!(value is bool b))
             {
-                return BindableProperty.UnsetValue;
+                return false;
+                // Alternatively, return BindableProperty.UnsetValue to use the binding FallbackValue
             }
             else if (!b)
             {
@@ -106,7 +107,7 @@ public class AllTrueMultiConverter : IMultiValueConverter
 - `null`：指明转换器无法执行转换，绑定将使用 `TargetNullValue`。
 
 > [!IMPORTANT]
-> 多值转换器中的 `Convert` 方法应通过返回 `BindableProperty.UnsetValue` 来处理预期问题。 接收此值的 `MultiBinding` 对象必须定义 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue)。
+> 从 `Convert` 方法接收 `BindableProperty.UnsetValue` 的 `MultiBinding` 必须定义其 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 属性。 同样，从 `Convert` 方法接收 `null` 的 `MultiBinding` 必须定义其 [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 属性。
 
 `ConvertBack` 方法将绑定目标转换为源绑定值。 此方法接受四个参数：
 
@@ -120,9 +121,6 @@ public class AllTrueMultiConverter : IMultiValueConverter
 - `BindableProperty.UnsetValue`（在位置 `i` 处）：指明转换器无法在索引 `i` 处提供源绑定的值，并且不会对源绑定设置任何值。
 - `Binding.DoNothing`（在位置 `i` 处）：指明在索引 `i` 处不会对源绑定设置任何值。
 - `null`：指明转换器无法执行转换，或者不支持此方向的转换。
-
-> [!IMPORTANT]
-> 多值转换器中的 `ConvertBack` 方法应通过返回 `null` 来处理预期问题。
 
 ## <a name="consume-a-imultivalueconverter"></a>使用 IMultiValueConverter
 
@@ -142,8 +140,7 @@ public class AllTrueMultiConverter : IMultiValueConverter
 
     <CheckBox>
         <CheckBox.IsChecked>
-            <MultiBinding Converter="{StaticResource AllTrueConverter}"
-                          FallbackValue="false">
+            <MultiBinding Converter="{StaticResource AllTrueConverter}">
                 <Binding Path="Employee.IsOver16" />
                 <Binding Path="Employee.HasPassedTest" />
                 <Binding Path="Employee.IsSuspended"
@@ -154,7 +151,7 @@ public class AllTrueMultiConverter : IMultiValueConverter
 </ContentPage>    
 ```
 
-在此示例中，`MultiBinding` 对象使用 `AllTrueMultiConverter` 实例将 [`CheckBox.IsChecked`](xref:Xamarin.Forms.CheckBox.IsChecked) 属性设置为 `true`，前提是三个 [`Binding`](xref:Xamarin.Forms.Binding) 对象的计算结果为 `true`。 否则，`CheckBox.IsChecked` 属性设置为 `false`。 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 被定义是因为 `AllTrueMultiConverter` 可以返回 `BindableProperty.UnsetValue`。
+在此示例中，`MultiBinding` 对象使用 `AllTrueMultiConverter` 实例将 [`CheckBox.IsChecked`](xref:Xamarin.Forms.CheckBox.IsChecked) 属性设置为 `true`，前提是三个 [`Binding`](xref:Xamarin.Forms.Binding) 对象的计算结果为 `true`。 否则，`CheckBox.IsChecked` 属性设置为 `false`。
 
 默认情况下，[`CheckBox.IsChecked`](xref:Xamarin.Forms.CheckBox.IsChecked) 属性使用 [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) 绑定。 因此，如果用户取消选中 [`CheckBox`](xref:Xamarin.Forms.CheckBox)（即将源绑定值设置为 `CheckBox.IsChecked` 属性的值），就会执行 `AllTrueMultiConverter` 实例的 `ConvertBack` 方法。
 
@@ -187,7 +184,7 @@ public class AllTrueMultiConverter : IMultiValueConverter
 
 通过定义在绑定过程失败时使用的回退值，可以提高数据绑定的可靠性。 为此，可以视需要选择在 `MultiBinding` 对象上定义 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 和 [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 属性。
 
-当 `IMultiValueConverter` 实例返回 `BindableProperty.UnsetValue`（指明转换器没有生成值）时，`MultiBinding` 就会使用 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue)。 当 `IMultiValueConverter` 实例返回 `null`（指明转换器无法执行转换）时，`MultiBinding` 就会使用 [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue)。
+当 `IMultiValueConverter` 实例的 `Convert` 方法返回 `BindableProperty.UnsetValue`（指明转换器没有生成值）时，`MultiBinding` 就会使用其 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue)。 当 `IMultiValueConverter` 实例的 `Convert` 方法返回 `null`（指明转换器无法执行转换）时，`MultiBinding` 就会使用其 [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue)。
 
 若要详细了解绑定回退，请参阅 [Xamarin.Forms 绑定回退](binding-fallbacks.md)。
 
@@ -210,10 +207,8 @@ public class AllTrueMultiConverter : IMultiValueConverter
 
     <CheckBox>
         <CheckBox.IsChecked>
-            <MultiBinding Converter="{StaticResource AnyTrueConverter}"
-                          FallbackValue="false">
-                <MultiBinding Converter="{StaticResource AllTrueConverter}"
-                              FallbackValue="false">
+            <MultiBinding Converter="{StaticResource AnyTrueConverter}">
+                <MultiBinding Converter="{StaticResource AllTrueConverter}">
                     <Binding Path="Employee.IsOver16" />
                     <Binding Path="Employee.HasPassedTest" />
                     <Binding Path="Employee.IsSuspended" Converter="{StaticResource InverterConverter}" />                        
@@ -242,8 +237,7 @@ public class AllTrueMultiConverter : IMultiValueConverter
                       IsExpanded="{Binding IsExpanded, Source={RelativeSource TemplatedParent}}"
                       BackgroundColor="{Binding CardColor}">
                 <Expander.IsVisible>
-                    <MultiBinding Converter="{StaticResource AllTrueConverter}"
-                                  FallbackValue="false">
+                    <MultiBinding Converter="{StaticResource AllTrueConverter}">
                         <Binding Path="IsExpanded" />
                         <Binding Path="IsEnabled" />
                     </MultiBinding>

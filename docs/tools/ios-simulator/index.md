@@ -6,12 +6,12 @@ ms.assetid: 63c50190-7e54-4140-a30d-1a0e577c47d7
 author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2019
-ms.openlocfilehash: d5898f9c6ee30eb1f12bf6480b93a609e762e6ea
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 84c5a72f887f38c5efcee09cfc19986093db226e
+ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75886588"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85101349"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>适用于 Windows 的远程 iOS 模拟器
 
@@ -23,7 +23,7 @@ ms.locfileid: "75886588"
 
 适用于 Windows 的远程 iOS 模拟器作为 Xamarin 的一部分在 Visual Studio 2019 和 Visual Studio 2017 中自动安装。 若要使用它，请执行以下步骤：
 
-1. [将 Visual 2019 与 Mac 生成主机配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
+1. [将 Visual Studio 2019 与 Mac 生成主机配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 2. 在 Visual Studio 中，开始调试 iOS 或 tvOS 项目。 适用于 Windows 的远程 iOS 模拟器将显示在 Windows 计算机上。
 
 观看[此视频](deploy.md)以获取分步指南。
@@ -42,7 +42,7 @@ ms.locfileid: "75886588"
 
 ## <a name="settings"></a>设置
 
-单击工具栏的齿轮图标将打开“设置”  窗口：
+单击工具栏的齿轮图标将打开“设置”**** 窗口：
 
 [![iOS 模拟器设置](images/settings-sml.png "iOS 模拟器设置")](images/settings.png#lightbox)
 
@@ -67,7 +67,7 @@ Windows 计算机上不会听到 iOS 声音。
 
 ## <a name="disabling-the-remoted-ios-simulator-for-windows"></a>禁用适用于 Windows 的远程 iOS 模拟器
 
-若要禁用适用于 Windows 的远程 iOS 模拟器，请导航到“工具”>“选项”>“Xamarin”>“iOS 设置”  并取消选中“Windows 的远程模拟器”  。
+若要禁用适用于 Windows 的远程 iOS 模拟器，请导航到“工具”>“选项”>“Xamarin”>“iOS 设置”**** 并取消选中“Windows 的远程模拟器”****。
 
 [![表示使用模拟器的复选框](images/options-sml.png "表示使用模拟器的复选框")](images/options.png#lightbox)
 
