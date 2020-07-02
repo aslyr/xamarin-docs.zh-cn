@@ -10,12 +10,12 @@ ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f3ab70dc20dda78e3acf400cf51d0ee9df84ff93
-ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
+ms.openlocfilehash: 9afad335de60e605ef6551b0878455674a40750f
+ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85104323"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85795032"
 ---
 # <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Forms公共控件属性、方法和事件
 
@@ -47,7 +47,7 @@ Xamarin.Forms `VisualElement` 类是应用程序中使用的大多数控件的�
 
 ### `Clip`
 
-`Clip`属性是一个 `Geometry` 对象，该对象定义元素内容的轮廓。 若要定义剪辑，请使用 `Geometry` 对象（例如） `EllipseGeometry` 来设置元素的 `Clip` 属性。 只有位于几何区域内的区域才可见。 有关详细信息，请参阅[剪辑几何图形](~/xamarin-forms/user-interface/shapes/geometries.md#clip-geometries)。
+`Clip`属性是一个 `Geometry` 对象，该对象定义元素内容的轮廓。 若要定义剪辑，请使用 `Geometry` 对象（例如） `EllipseGeometry` 来设置元素的 `Clip` 属性。 只有位于几何区域内的区域才可见。 有关详细信息，请参阅[使用几何图形进行剪辑](~/xamarin-forms/user-interface/shapes/geometries.md#clip-with-a-geometry)。
 
 ### [`Effects`](xref:Xamarin.Forms.Element.Effects)
 
@@ -71,7 +71,7 @@ Xamarin.Forms `VisualElement` 类是应用程序中使用的大多数控件的�
 
 ### [`IsEnabled`](xref:Xamarin.Forms.VisualElement.IsEnabled)
 
-`IsEnabled`属性是一个 `bool` 值，该值确定控件是否响应用户输入。 默认值是 `true`。 如果将此属性设置为 false，则控件不接受用户输入。
+`IsEnabled`属性是一个 `bool` 值，该值确定控件是否响应用户输入。 默认值为 `true`。 如果将此属性设置为 false，则控件不接受用户输入。
 
 ### [`IsFocused`](xref:Xamarin.Forms.VisualElement.IsFocused)
 

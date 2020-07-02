@@ -10,12 +10,12 @@ ms.date: 06/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fdab7d422040aee5a00b16bb1e301f917b0c4883
-ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
+ms.openlocfilehash: 1a1ba09b5be6901b1b07ed9aa3fd9a1b88770efc
+ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85243758"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85795021"
 ---
 # <a name="xamarinforms-shapes"></a>Xamarin.Forms形状
 
@@ -81,7 +81,6 @@ Xamarin.Forms定义派生自类的多个对象 `Shape` 。 它们包括 `Ellipse
 ```xaml
 <Path Aspect="Uniform"
       Stroke="Yellow"
-      StrokeThickness="1"
       Fill="Red"
       BackgroundColor="LightGray"
       HorizontalOptions="Start"

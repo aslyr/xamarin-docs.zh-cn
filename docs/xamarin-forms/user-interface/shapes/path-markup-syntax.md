@@ -10,24 +10,23 @@ ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d2eb0ac68bf754e45ffcd2a1c77e4347bb3bcf4c
-ms.sourcegitcommit: 8f6cc5208f675c8cfb645bd9ffb0fc1f8ea71411
+ms.openlocfilehash: 68b7f4a245a60df1723f5a6442f30dc2b1a15932
+ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85326210"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85794971"
 ---
 # <a name="xamarinforms-shapes-path-markup-syntax"></a>Xamarin.Forms形状：路径标记语法
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 Xamarin.Forms路径标记语法使你可以简洁地在 XAML 中指定路径几何。 语法指定为属性的字符串值 `Path.Data` ：
 
 ```xaml
 <Path Stroke="Black"
-      StrokeThickness="1"
       Data="M13.908992,16.207977 L32.000049,16.207977 32.000049,31.999985 13.908992,30.109983Z" />
 ```
 
@@ -35,8 +34,8 @@ Xamarin.Forms路径标记语法使你可以简洁地在 XAML 中指定路径几�
 
 采用以下语法：
 
-- *fillRule*是一个可选 `Xamarin.Forms.Shapes.FillRule` 的，它指定几何是否应使用 `EvenOdd` 或 `Nonzero` `FillRule` 。 `F0`指定填充 `EvenOdd` 规则，同时 `F1` 指定 `Nonzero` 填充规则。 有关填充规则的详细信息，请参阅[ Xamarin.Forms 形状：填充规则](fillrules.md)。
--  *figureDescription*表示由移动命令、绘图命令和可选的 "关闭" 命令构成的数字。 Move 命令指定图形的起点。 绘图命令描述了图形的内容，可选的 "关闭" 命令关闭了图形。
+- *fillRule*是一个可选 `Xamarin.Forms.Shapes.FillRule` 的，它指定几何是否应使用 `EvenOdd` 或 `Nonzero` `FillRule` 。 `F0`用于指定 `EvenOdd` 填充规则，而 `F1` 用于指定 `Nonzero` 填充规则。 有关填充规则的详细信息，请参阅[ Xamarin.Forms 形状：填充规则](fillrules.md)。
+- *figureDescription*表示由移动命令、绘图命令和可选的 "关闭" 命令构成的数字。 Move 命令指定图形的起点。 绘图命令描述了图形的内容，可选的 "关闭" 命令关闭了图形。
 
 在上面的示例中，路径标记语法使用 move 命令（）来指定一个开始点 `M` ，使用 line 命令（）来指定一系列直线 `L` ，并使用 "关闭" 命令关闭该路径（ `Z` ）。
 
@@ -66,7 +65,7 @@ Move 命令指定新图形的起点。 此命令的语法为： `M` *startPoint*
 - 平滑二次贝塞尔曲线（ `T` or `t` ）。
 - 椭圆弧（ `A` 或 `a` ）。
 
-每个 draw 命令均使用大写或小写字母指定。 当连续输入了同一类型的多个命令时，你可以忽略重复的命令输入。 例如， `L 100,200 300,400` 等效于 `L 100, 200 L 300,400` 。
+使用不区分大小写的字母指定每个 draw 命令。 当连续输入了同一类型的多个命令时，你可以忽略重复的命令输入。 例如， `L 100,200 300,400` 等效于 `L 100,200 L 300,400` 。
 
 ### <a name="line-command"></a>直线命令
 
@@ -150,7 +149,7 @@ Line 命令在当前点和指定的终点之间创建一条直线。 此命令�
 - `sweepDirectionFlag`如果以正角方向绘制弧，则应设置为 1; 否则设置为0。
 - `endPoint`是 [`Point`](xref:Xamarin.Forms.Point) 弧线绘制到的。
 
-`A150,150 0 1,0 150,-150`是有效的椭圆形弧线命令的一个示例。
+`A 150,150 0 1,0 150,-150`是有效的椭圆形弧线命令的一个示例。
 
 ## <a name="close-command"></a>关闭命令
 
@@ -171,5 +170,5 @@ Close 命令的语法是： `Z` 或 `z` 。
 ## <a name="related-links"></a>相关链接
 
 - [ShapeDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.Forms几何图形](geometries.md)
+- [Xamarin.Forms形状：几何图形](geometries.md)
 - [Xamarin.Forms形状：填充规则](fillrules.md)
