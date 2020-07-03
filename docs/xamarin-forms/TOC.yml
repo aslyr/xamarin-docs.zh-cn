@@ -280,7 +280,7 @@
               href: app-fundamentals/effects/touch-tracking.md
             - name: 可重用 RoundEffect
               href: app-fundamentals/effects/reusable-roundeffect.md
-        - name: 笔势
+        - name: 手势
           href: app-fundamentals/gestures/index.md
           items:
             - name: 点击
