@@ -6,16 +6,16 @@ ms.assetid: 07DE3D66-1820-4642-BDDF-84146D40C99D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/16/2020
+ms.date: 07/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 554a9dd0ca8be54c35d1891b60149bbbb66c3e7c
-ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
+ms.openlocfilehash: 41de95c452212dce77d6365265e4813170c9b9b9
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85795004"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853046"
 ---
 # <a name="xamarinforms-shapes-path-transforms"></a>Xamarin.Forms形状：路径转换
 
@@ -23,22 +23,9 @@ ms.locfileid: "85795004"
 
 [![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
-`Transform`定义如何将 `Path` 对象从一个坐标空间转换到另一个坐标空间。 这种映射通过转换进行描述 `Matrix` ，后者是包含三列值的三行的集合 `double` 。
+`Transform`定义如何将 `Path` 对象从一个坐标空间转换到另一个坐标空间。 将转换应用于 `Path` 对象时，它会更改对象在 UI 中的呈现方式。
 
-在 2D x-y 平面中，使用3x3 矩阵进行变换。 仿射转换矩阵可以相乘，以形成任意数量的线性转换，如旋转和斜切，然后是转换。 下表显示了矩阵的结构 Xamarin.Forms ：
-
-| | | |
-|---------|---------|-----|
-| M11     | M12     | 0.0 |
-| M21     | M22     | 0.0 |
-| OffsetX | OffsetY | 1.0 |
-
-通过操作矩阵值，你可以旋转、缩放、倾斜和转换 `Path` 对象。 例如，如果将 `OffsetX` 值更改为100，则可以使用它将 `Path` 100 对象与设备无关的单位沿 x 轴移动。 如果将此 `M22` 值更改为3，则可以使用它将对象拉伸 `Path` 到其当前高度的三倍。 如果更改这两个值，则将 `Path` 沿 x 轴移动与设备无关的对象100，并将其高度拉伸3倍。
-
-> [!NOTE]
-> 仿射转换矩阵的最终列等于（0，0，1），因此只需指定前两列中的成员。 最后一行中的成员 `OffsetX` `OffsetY` 表示转换值。
-
-虽然您可以直接使用 `Matrix` 结构来转换各个点，但 Xamarin.Forms 也提供了以下类，使您能够转换 `Path` 对象，而无需直接使用矩阵：
+转换可以分为四个通用分类：旋转、缩放、倾斜和平移。 Xamarin.Forms为以下每种转换分类定义一个类：
 
 - `RotateTransform`，它 `Path` 通过指定的旋转 `Angle` 。
 - `ScaleTransform`，它 `Path` 按指定 `ScaleX` 和量缩放对象 `ScaleY` 。
@@ -47,11 +34,11 @@ ms.locfileid: "85795004"
 
 Xamarin.Forms还提供了以下类来创建更复杂的转换：
 
-- `TransformGroup`，它表示 `Transform` 由其他对象组成的复合 `Transform` 。
-- `CompositeTransform`，它表示 `Transform` 由其他对象组成的复合 `Transform` 。
-- `MatrixTransform`，它创建其他类未提供的自定义转换 `Transform` 。
+- `TransformGroup`，它表示由多个转换对象组成的复合转换。
+- `CompositeTransform`，它将多个转换操作应用到一个 `Path` 对象。
+- `MatrixTransform`，它创建其他转换类未提供的自定义转换。
 
-所有这些类均派生自 `Transform` 类，该类定义 `Value` 类型的属性 `Matrix` 。 此属性将当前转换表示为 `Matrix` 对象。
+所有这些类均派生自 `Transform` 类，该类定义 `Value` 类型的属性 `Matrix` 。 此属性将当前转换表示为 `Matrix` 对象。 有关结构的详细信息 `Matrix` ，请参阅[变换矩阵](#transform-matrix)。
 
 若要将转换应用到 `Path` ，可以创建转换类并将其设置为属性的值 `Path.RenderTransform` 。
 
@@ -125,13 +112,13 @@ Xamarin.Forms还提供了以下类来创建更复杂的转换：
     <Path.RenderTransform>
         <ScaleTransform CenterX="0"
                         CenterY="0"
-                        ScaleX="2"
-                        ScaleY="2" />
+                        ScaleX="1.5"
+                        ScaleY="1.5" />
     </Path.RenderTransform>
 </Path>
 ```
 
-在此示例中，将 `Path` 对象缩放到大小的两倍。
+在此示例中， `Path` 对象缩放到大小的1.5 倍。
 
 ## <a name="skew-transform"></a>倾斜变换
 
@@ -148,7 +135,8 @@ Xamarin.Forms还提供了以下类来创建更复杂的转换：
 
 若要预测斜切转换的效果，请考虑将 `AngleX` x 轴值与原始坐标系统相对倾斜。 因此，对于 `AngleX` 30，y 轴通过原点旋转30度，并将 x 的值从该原点倾斜30度。 同样，值为30时，将 `AngleY` 对象的 y 值 `Path` 从原点倾斜30度。
 
-若要 `Path` 就地倾斜对象，请将 `CenterX` 和属性设置 `CenterY` 为对象的中心点。
+> [!NOTE]
+> 若要 `Path` 就地倾斜对象，请将 `CenterX` 和属性设置 `CenterY` 为对象的中心点。
 
 下面的示例演示如何倾斜 `Path` 对象：
 
@@ -201,7 +189,7 @@ Xamarin.Forms还提供了以下类来创建更复杂的转换：
 
 在此示例中， `Path` 对象被移动到右侧50个与设备无关的单位，并向下移动50个与设备无关的单位。
 
-## <a name="apply-multiple-transforms"></a>应用多个转换
+## <a name="multiple-transforms"></a>多个转换
 
 Xamarin.Forms具有两个支持将多个转换应用于 `Path` 对象的类。 这些是 `TransformGroup` 、和 `CompositeTransform` 。 `TransformGroup`按任何所需顺序执行转换，同时 `CompositeTransform` 按特定顺序执行转换。
 
@@ -209,11 +197,7 @@ Xamarin.Forms具有两个支持将多个转换应用于 `Path` 对象的类。 �
 
 转换组表示由多个对象组成的复合转换 `Transform` 。
 
-`TransformGroup`派生自类的类 `Transform` 定义以下属性：
-
-- `Children`，类型为 `TransformCollection` ，表示对象的集合 `Transform` 。
-
-这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
+`TransformGroup`派生自类的类 `Transform` 定义 `Children` 类型的属性， `TransformCollection` 该属性表示对象的集合 `Transform` 。 此属性由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象支持，这意味着它可以是数据绑定的目标和样式。
 
 在使用类的复合转换中，转换顺序很重要 `TransformGroup` 。 例如，如果您首先旋转，然后缩放，然后再翻译，则会得到不同于第一次平移、旋转和缩放的结果。 其中一个原因是重要的是，旋转和缩放等转换是相对于坐标系统的原点执行的。 缩放以原点为中心的对象将产生不同的结果，以便缩放已移出原点的对象。 同样，旋转位于原点中心的对象会产生不同的结果，而不是旋转远离原点的对象。
 
@@ -228,14 +212,15 @@ Xamarin.Forms具有两个支持将多个转换应用于 `Path` 对象的类。 �
       Data="M13.908992,16.207977L32.000049,16.207977 32.000049,31.999985 13.908992,30.109983z">
     <Path.RenderTransform>
         <TransformGroup>
-            <ScaleTransform ScaleY="2" />
+            <ScaleTransform ScaleX="1.5"
+                            ScaleY="1.5" />
             <RotateTransform Angle="45" />
         </TransformGroup>
     </Path.RenderTransform>
 </Path>
 ```
 
-在此示例中， `Path` 对象缩放为其大小的两倍，旋转45度。
+在此示例中， `Path` 对象的大小调整为1.5 倍，然后旋转45度。
 
 ## <a name="composite-transforms"></a>复合转换
 
@@ -277,8 +262,8 @@ Xamarin.Forms具有两个支持将多个转换应用于 `Path` 对象的类。 �
       WidthRequest="100"
       Data="M13.908992,16.207977L32.000049,16.207977 32.000049,31.999985 13.908992,30.109983z">
     <Path.RenderTransform>
-        <CompositeTransform ScaleX="2"
-                            ScaleY="2"
+        <CompositeTransform ScaleX="1.5"
+                            ScaleY="1.5"
                             Rotation="45"
                             TranslateX="50"
                             TranslateY="50" />
@@ -286,19 +271,47 @@ Xamarin.Forms具有两个支持将多个转换应用于 `Path` 对象的类。 �
 </Path>
 ```
 
-在此示例中， `Path` 对象缩放为其大小的两倍，旋转45度，并由50个与设备无关的单位转换。
+在此示例中， `Path` 对象的大小调整为1.5 倍，然后旋转45度，然后通过50与设备无关的单位进行转换。
+
+## <a name="transform-matrix"></a>转换矩阵
+
+转换可以按3x3 仿射转换矩阵（在二维空间中执行转换）进行描述。 此3x3 矩阵由 `Matrix` 结构表示，后者是三行和三列值的集合 `double` 。
+
+`Matrix`结构定义以下属性：
+
+- `Determinant`，类型为 `double` ，用于获取矩阵的行列式。
+- `HasInverse`，类型为 `bool` ，指示矩阵是否可反转。
+- `Identity`，类型为 `Matrix` ，用于获取恒等矩阵。
+- `HasIdentity`，类型为 `bool` ，指示矩阵是否为恒等矩阵。
+- `M11`，类型为 `double` ，表示矩阵的第一行和第一列的值。
+- `M12`，类型为 `double` ，表示矩阵的第一行和第二列的值。
+- `M21`，类型为 `double` ，表示矩阵中第二行、第一列的值。
+- `M22`，类型为 `double` ，表示矩阵的第二行和第二列的值。
+- `OffsetX`，类型为 `double` ，表示矩阵中第三行、第一列的值。
+- `OffsetY`，类型为 `double` ，表示矩阵的第三行和第二列的值。
+
+`OffsetX`和 `OffsetY` 属性是如此命名的，因为它们分别指定了沿 x 轴和 y 轴平移坐标空间的量。
+
+此外，该 `Matrix` 结构公开了一系列方法，这些方法可用于操作矩阵值，包括、、 `Append` `Invert` `Multiply` 等 `Prepend` 。
+
+下表显示了矩阵的结构 Xamarin.Forms ：
+
+| | | |
+|---------|---------|-----|
+| M11     | M12     | 0.0 |
+| M21     | M22     | 0.0 |
+| OffsetX | OffsetY | 1.0 |
+
+> [!NOTE]
+> 仿射转换矩阵的最终列等于（0，0，1），因此只需指定前两列中的成员。
+
+通过操作矩阵值，你可以旋转、缩放、倾斜和转换 `Path` 对象。 例如，如果将 `OffsetX` 值更改为100，则可以使用它将 `Path` 100 对象与设备无关的单位沿 x 轴移动。 如果将此 `M22` 值更改为3，则可以使用它将对象拉伸 `Path` 到其当前高度的三倍。 如果更改这两个值，则将 `Path` 沿 x 轴移动与设备无关的对象100，并将其高度拉伸3倍。 此外，可以将仿射变换矩阵相乘以形成任意数量的线性转换，如旋转和斜切，然后是平移。
 
 ## <a name="custom-transforms"></a>自定义转换
 
-矩阵转换使用仿射矩阵操作2D 平面中的对象或坐标系。 一个3x3 矩阵用于转换。 您可以将仿射矩阵转换相乘，以形成线性转换，如转换后的旋转和倾斜。
+`MatrixTransform`派生自类的类 `Transform` 定义 `Matrix` 类型的属性， `Matrix` 该属性表示定义转换的矩阵。 此属性由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象支持，这意味着它可以是数据绑定的目标和样式。
 
-`MatrixTransform`派生自类的类 `Transform` 定义以下属性：
-
-- `Matrix`类型为的， `Matrix` 表示定义转换的矩阵。
-
-此属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它可以是数据绑定的目标和样式。
-
-`MatrixTransform`类用于创建由 `RotateTransform` 、、 `ScaleTransform` `SkewTransform` 或 `TranslateTransform` 类不提供的自定义转换。
+可以使用、、或对象描述的任何转换都 `TranslateTransform` `ScaleTransform` `RotateTransform` `SkewTransform` 可以同样通过进行描述 `MatrixTransform` 。 但是，与 `TranslateTransform` `ScaleTransform` `RotateTransform` `SkewTransform` 在中设置向量组件相比，、、和类更易于理解 `Matrix` 。 因此， `MatrixTransform` 类通常用于创建由 `RotateTransform` 、 `ScaleTransform` 、 `SkewTransform` 或类不提供的自定义转换 `TranslateTransform` 。
 
 下面的示例演示如何 `Path` 使用转换对象 `MatrixTransform` ：
 
@@ -306,8 +319,6 @@ Xamarin.Forms具有两个支持将多个转换应用于 `Path` 对象的类。 �
 <Path Stroke="Black"
       Aspect="Uniform"
       HorizontalOptions="Center"
-      HeightRequest="100"
-      WidthRequest="100"
       Data="M13.908992,16.207977L32.000049,16.207977 32.000049,31.999985 13.908992,30.109983z">
     <Path.RenderTransform>
         <MatrixTransform>
@@ -315,8 +326,8 @@ Xamarin.Forms具有两个支持将多个转换应用于 `Path` 对象的类。 �
                 <!-- M11 stretches, M12 skews -->
                 <Matrix OffsetX="10"
                         OffsetY="100"
-                        M11="3"
-                        M12="2" />
+                        M11="1.5"
+                        M12="1" />
             </MatrixTransform.Matrix>
         </MatrixTransform>
     </Path.RenderTransform>
@@ -331,16 +342,24 @@ Xamarin.Forms具有两个支持将多个转换应用于 `Path` 对象的类。 �
 <Path Stroke="Black"
       Aspect="Uniform"
       HorizontalOptions="Center"
-      HeightRequest="100"
-      WidthRequest="100"
       Data="M13.908992,16.207977L32.000049,16.207977 32.000049,31.999985 13.908992,30.109983z">
     <Path.RenderTransform>
-        <MatrixTransform Matrix="3,2,0,1,10,100" />
+        <MatrixTransform Matrix="1.5,1,0,1,10,100" />
     </Path.RenderTransform>
 </Path>
 ```
 
-在此示例中，将 `Matrix` 属性指定为由六个成员组成的以逗号分隔的字符串： `M11` 、 `M12` 、 `M21` 、、 `M22` `OffsetX` 和 `OffsetY` 。
+在此示例中，将 `Matrix` 属性指定为由六个成员组成的以逗号分隔的字符串： `M11` 、 `M12` 、 `M21` 、、 `M22` `OffsetX` 和 `OffsetY` 。 虽然在此示例中，成员用逗号分隔，但也可以用一个或多个空格来分隔。
+
+此外，通过指定与属性的值相同的六个成员，可以进一步简化前面的示例 `RenderTransform` ：
+
+```xaml
+<Path Stroke="Black"
+      Aspect="Uniform"
+      HorizontalOptions="Center"
+      RenderTransform="1.5 1 0 1 10 100"
+      Data="M13.908992,16.207977L32.000049,16.207977 32.000049,31.999985 13.908992,30.109983z" />
+```
 
 ## <a name="related-links"></a>相关链接
 

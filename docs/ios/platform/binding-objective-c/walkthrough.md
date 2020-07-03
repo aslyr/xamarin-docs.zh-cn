@@ -7,14 +7,17 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 328633bc58f17216c071a2b2cd779704da2bbf74
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: c36159984f314ecbf90f98df6472eee2149eee92
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569408"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853161"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>演练：绑定 iOS Objective-C 库
+
+> [!IMPORTANT]
+> 我们目前正在研究 Xamarin 平台上的自定义绑定使用情况。 请参加[**此调查**](https://www.surveymonkey.com/r/KKBHNLT)，通知未来的开发工作。
 
 _本文介绍了如何为现有的目标-C 库（InfColorPicker）创建 Xamarin iOS 绑定。它介绍了一些主题，如编译静态目标-C 库、绑定和在 Xamarin iOS 应用程序中使用绑定。_
 
@@ -274,7 +277,7 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 1. 从 "**文件**" 菜单中，选择 "**新建**  >  **项目 ...**"：
 
-    ![启动新项目](walkthrough-images/bind01vs.png "启动新项目")
+    ![开始新项目](walkthrough-images/bind01vs.png "开始新项目")
 
 1. 在 "新建项目" 对话框中，选择 " **Visual c # > iPhone & iPad > IOS 绑定库（Xamarin）**"：
 
@@ -670,7 +673,7 @@ private void HandleTouchUpInsideWithStrongDelegate (object sender, EventArgs e)
 
 [![](walkthrough-images/run01.png "Running the Application")](walkthrough-images/run01.png#lightbox)
 
-祝贺！ 此时，您已成功创建并绑定了用于 Xamarin iOS 应用程序的目标-C 库。 接下来，让我们了解如何使用弱委托。
+恭喜！ 此时，您已成功创建并绑定了用于 Xamarin iOS 应用程序的目标-C 库。 接下来，让我们了解如何使用弱委托。
 
 ### <a name="implementing-a-weak-delegate"></a>实现弱委托
 

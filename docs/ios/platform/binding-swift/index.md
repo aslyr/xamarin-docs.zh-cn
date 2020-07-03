@@ -1,20 +1,23 @@
 ---
 title: 绑定 iOS Swift 库
-description: 本文档介绍如何创建C#对 Swift 代码的绑定，使其能够在 Xamarin iOS 应用程序中使用本机库和 CocoaPods。
+description: '本文档介绍如何创建对 Swift 代码的 c # 绑定，使其能够在 Xamarin iOS 应用程序中使用本机库和 CocoaPods。'
 ms.prod: xamarin
 ms.assetid: 890EFCCA-A2A2-4561-88EA-30DE3041F61D
 ms.technology: xamarin-ios
 author: alexeystrakh
 ms.author: alstrakh
 ms.date: 02/11/2020
-ms.openlocfilehash: 9a683f31016a9db4271e3909e421f27ef83c2080
-ms.sourcegitcommit: b751605179bef8eee2df92cb484011a7dceb6fda
+ms.openlocfilehash: 72ab1d9f10ee308313569528d152d5930a258207
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77497958"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85852965"
 ---
 # <a name="bind-ios-swift-libraries"></a>绑定 iOS Swift 库
+
+> [!IMPORTANT]
+> 我们目前正在研究 Xamarin 平台上的自定义绑定使用情况。 请参加[**此调查**](https://www.surveymonkey.com/r/KKBHNLT)，通知未来的开发工作。
 
 IOS 平台及其本机语言和工具不断发展，并使用最新产品/服务开发了大量第三方库。 最大程度地提高代码和组件重复使用是跨平台开发的主要目标之一。 随着开发人员不断增长，使用 Swift 生成的组件的功能对 Xamarin 开发人员越来越重要。 您可能已熟悉了对常规[目标-C](https://docs.microsoft.com/xamarin/ios/platform/binding-objective-c/walkthrough)库的绑定过程。 现在可以使用其他文档介绍[绑定 Swift 框架](walkthrough.md)的过程，以便 Xamarin 应用程序可以采用相同的方式使用它们。 本文档的目的是介绍为 Xamarin 创建 Swift 绑定的高级方法。
 
@@ -23,7 +26,7 @@ IOS 平台及其本机语言和工具不断发展，并使用最新产品/服务
 借助 Xamarin，你可以绑定任何第三方本机库，使其可供 Xamarin 应用程序使用。 Swift 是新语言并为用此语言构建的库创建绑定需要一些额外的步骤和工具。 此方法包括以下四个步骤：
 
 1. 生成本机库
-1. 准备 Xamarin 元数据，使 Xamarin 工具能够生成C#类
+1. 准备 Xamarin 元数据，使 Xamarin 工具能够生成 c # 类
 1. 使用本机库和元数据生成 Xamarin 绑定库
 1. 在 Xamarin 应用程序中使用 Xamarin 绑定库
 
@@ -31,14 +34,14 @@ IOS 平台及其本机语言和工具不断发展，并使用最新产品/服务
 
 ### <a name="build-the-native-library"></a>生成本机库
 
-第一步是使用创建了客观-C 标头的本机 Swift 框架准备就绪。 此文件是一个自动生成的标头，该标头公开所需的 Swift 类、方法和字段，使目标C# -C 和最终通过 Xamarin 绑定库可对其进行访问。 此文件位于以下路径中的框架内： **\<FrameworkName > framework/FrameworkName/\<>** 如果公开的接口具有所有必需的成员，则可以跳到下一步。 否则，需要执行更多步骤才能公开这些成员。 此方法将取决于你是否有权访问 Swift 框架源代码：
+第一步是使用创建了客观-C 标头的本机 Swift 框架准备就绪。 此文件是一个自动生成的标头，该标头公开了所需的 Swift 类、方法和字段，使其可通过 Xamarin 绑定库对 Ansi-c 和最终 c # 均可访问。 此文件位于以下路径中的框架内： ** \<FrameworkName> . Framework/标头/ \<FrameworkName> -Swift。** 如果公开的接口具有所有必需的成员，则可以跳到下一步。 否则，需要执行更多步骤才能公开这些成员。 此方法将取决于你是否有权访问 Swift 框架源代码：
 
-- 如果你有权访问代码，则可以使用 `@objc` 特性来修饰必需的 Swift 成员，并应用一些其他规则，以让 Xcode 生成工具了解这些成员应公开给目标 C 环境和标头。
-- 如果你没有源代码访问权限，则需要创建一个代理 Swift 框架，该框架包装原始 Swift 框架，并使用 `@objc` 特性定义应用程序所需的公共接口。
+- 如果你有权访问代码，则可以使用属性修饰必需的 Swift 成员 `@objc` ，并应用一些其他规则，以让 Xcode 生成工具了解这些成员应公开给目标 C 环境和标头。
+- 如果你没有源代码访问权限，则需要创建一个代理 Swift 框架，该框架包装原始 Swift 框架，并使用属性定义应用程序所需的公共接口 `@objc` 。
 
 ### <a name="prepare-the-xamarin-metadata"></a>准备 Xamarin 元数据
 
-第二步是准备 API 定义接口，绑定项目使用这些接口来生成C#类。 这些定义可以手动创建，也可以由[目标 Sharpie](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/)工具自动创建，也可以由上述自动生成的 **\<FrameworkName >** 。 生成元数据后，应手动对其进行验证和验证。
+第二步是准备 API 定义接口，这些接口由绑定项目用来生成 c # 类。 这些定义可以手动创建，也可以由[目标 Sharpie](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/)工具和前面的自动生成** \<FrameworkName> 的**头文件自动创建。 生成元数据后，应手动对其进行验证和验证。
 
 ### <a name="build-the-xamarinios-binding-library"></a>生成 Xamarin iOS 绑定库
 

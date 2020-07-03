@@ -7,16 +7,19 @@ ms.technology: xamarin-ios
 author: alexeystrakh
 ms.author: alstrakh
 ms.date: 02/11/2020
-ms.openlocfilehash: b650f86a1bba62d5db7463875de3398db9c33842
-ms.sourcegitcommit: b751605179bef8eee2df92cb484011a7dceb6fda
+ms.openlocfilehash: 3c63b1a4ed58b0efcc510085934a5380e6049ae7
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77497982"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853154"
 ---
 # <a name="walkthrough-bind-an-ios-swift-library"></a>演练：绑定 iOS Swift 库
 
-Xamarin 使移动开发人员能够使用 Visual Studio 和C#创建跨平台的本机移动体验。 你可以使用现成的 iOS 平台 SDK 组件。 但在许多情况下，你还希望使用为该平台开发的第三方 Sdk，Xamarin 允许你通过绑定进行操作。 若要将第三方目标 C 框架合并到你的 Xamarin iOS 应用程序中，你需要为其创建 Xamarin iOS 绑定，然后才能在应用程序中使用它。
+> [!IMPORTANT]
+> 我们目前正在研究 Xamarin 平台上的自定义绑定使用情况。 请参加[**此调查**](https://www.surveymonkey.com/r/KKBHNLT)，通知未来的开发工作。
+
+Xamarin 使移动开发人员可以使用 Visual Studio 和 c # 创建跨平台的本机移动体验。 你可以使用现成的 iOS 平台 SDK 组件。 但在许多情况下，你还希望使用为该平台开发的第三方 Sdk，Xamarin 允许你通过绑定进行操作。 若要将第三方目标 C 框架合并到你的 Xamarin iOS 应用程序中，你需要为其创建 Xamarin iOS 绑定，然后才能在应用程序中使用它。
 
 IOS 平台及其本机语言和工具一直在不断发展，Swift 是 iOS 开发世界上最动态的领域之一。 有许多第三方 Sdk，它们已从目标-C 迁移到 Swift，并为我们带来了新的挑战。 即使 Swift 绑定过程与目标-C 类似，它也需要额外的步骤和配置设置，才能成功生成并运行可 AppStore 的 Xamarin 应用程序。
 
@@ -26,7 +29,7 @@ IOS 平台及其本机语言和工具一直在不断发展，Swift 是 iOS 开�
 
 Swift 最初是由 Apple 在2014中引入的，现已在版本5.1 上，第三方框架的采用迅速增长。 您可以使用几个选项来绑定 Swift 框架，本文档概述了使用客观-C 生成的接口标头的方法。 创建框架时，Xcode 工具会自动创建标题，并将其用作从托管世界向 Swift 环境进行通信的方式。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 为了完成本演练，您需要：
 
@@ -37,11 +40,11 @@ Swift 最初是由 Apple 在2014中引入的，现已在版本5.1 上，第三�
 
 ## <a name="build-a-native-library"></a>生成本机库
 
-第一步是生成启用了客观-C 标头的本机 Swift 框架。 该框架通常由第三方开发人员提供，并在以下目录中嵌入到包中： **\<FrameworkName > framework/header/\<FrameworkName >**
+第一步是生成启用了客观-C 标头的本机 Swift 框架。 该框架通常由第三方开发人员提供，并将标题嵌入到包的以下目录中： ** \<FrameworkName> 。 \<FrameworkName> **
 
-此标头公开公共接口，这些接口将用于创建 Xamarin iOS 绑定元数据并生成C#公开 Swift 框架成员的类。 如果标头不存在或者具有不完整的公共接口（例如，您不能看到类/成员），则有两个选项：
+此标头公开公共接口，这些接口将用于创建 Xamarin iOS 绑定元数据并生成用于公开 Swift 框架成员的 c # 类。 如果标头不存在或者具有不完整的公共接口（例如，您不能看到类/成员），则有两个选项：
 
-- 更新 Swift 源代码以生成标题，并将所需成员标记 `@objc` 特性
+- 更新 Swift 源代码以生成标头，并将所需成员标记为 `@objc` 属性
 - 构建一个代理框架，你可以在其中控制公共接口并代理对基础框架的所有调用
 
 在本教程中，我们将介绍第二种方法，因为它具有的依赖项对第三方源代码的依赖项并不始终可用。 避免第一种方法的另一个原因是支持将来框架更改所需的额外工作。 开始将更改添加到第三方源代码后，你将负责支持这些更改，并可能会将其与每个将来的更新合并。
@@ -84,11 +87,11 @@ Swift 最初是由 Apple 在2014中引入的，现已在版本5.1 上，第三�
 
     否则，输出应为空，否则您需要查看特定配置的项目设置。
 
-1. 确保 "**目标-C 生成的接口头名称**" 选项已启用，并指定标头名称。 默认名称是 **\<FrameworkName >** ：
+1. 确保 "**目标-C 生成的接口头名称**" 选项已启用，并指定标头名称。 默认名称为** \<FrameworkName> -Swift .h**：
 
     [![xcode objectice-c header enabled 选项](walkthrough-images/xcode-objcheaderenabled-option.png)](walkthrough-images/xcode-objcheaderenabled-option.png#lightbox)
 
-1. 公开所需的方法，并使用 `@objc` 特性标记这些方法，并应用以下定义的其他规则。 如果不使用此步骤生成框架，则生成的目标 C 标头将为空，并且 Xamarin 将无法访问 Swift 框架成员。 通过创建新的 Swift 文件**SwiftFrameworkProxy**并定义以下代码，公开基础 GIGYA Swift SDK 的初始化逻辑：
+1. 公开所需的方法，并将其标记为 `@objc` 属性，并应用以下定义的其他规则。 如果不使用此步骤生成框架，则生成的目标 C 标头将为空，并且 Xamarin 将无法访问 Swift 框架成员。 通过创建新的 Swift 文件**SwiftFrameworkProxy**并定义以下代码，公开基础 GIGYA Swift SDK 的初始化逻辑：
 
     ```swift
     import Foundation
@@ -111,9 +114,9 @@ Swift 最初是由 Apple 在2014中引入的，现已在版本5.1 上，第三�
     有关上述代码的几个重要说明：
 
     - 从原始第三方 Gigya SDK 将 Gigya 模块导入此处，现在可以访问该框架的任何成员。
-    - 用指定名称的 `@objc` 特性标记 SwiftFrameworkProxy 类，否则将生成唯一的不可读名称，如 `_TtC19SwiftFrameworkProxy19SwiftFrameworkProxy`。 应明确定义类型名称，因为稍后将使用其名称。
-    - 从 `NSObject`中继承代理类，否则不会在目标 C 头文件中生成。
-    - 将作为 `public`公开的所有成员标记为。
+    - 使用指定名称的特性标记 SwiftFrameworkProxy 类 `@objc` ，否则将生成唯一的不可读名称，如 `_TtC19SwiftFrameworkProxy19SwiftFrameworkProxy` 。 应明确定义类型名称，因为稍后将使用其名称。
+    - 从继承代理类 `NSObject` ，否则不会在目标 C 头文件中生成。
+    - 将公开的所有成员标记为 `public` 。
 
 1. 将方案生成配置从 "**调试**" 更改为 "**发布**"。 为此，请打开 " **Xcode > 目标 >" 编辑方案**"对话框，然后将"**生成配置**"选项设置为"**发布**"：
 
@@ -200,7 +203,7 @@ Swift 最初是由 Apple 在2014中引入的，现已在版本5.1 上，第三�
 
 ## <a name="prepare-metadata"></a>准备元数据
 
-此时，你应该有了一个框架，其中的目标为-C 生成的接口标头已准备就绪，可供 Xamarin iOS 绑定使用。  下一步是准备用于生成C#类的绑定项目所使用的 API 定义接口。 可以手动或通过[目标 Sharpie](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/)工具和生成的标头文件自动创建这些定义。 使用 Sharpie 生成元数据：
+此时，你应该有了一个框架，其中的目标为-C 生成的接口标头已准备就绪，可供 Xamarin iOS 绑定使用。  下一步是准备 API 定义接口，这些接口由绑定项目用来生成 c # 类。 可以手动或通过[目标 Sharpie](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/)工具和生成的标头文件自动创建这些定义。 使用 Sharpie 生成元数据：
 
 1. 从官方下载网站下载最新的[客观 Sharpie](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/)工具，并按照向导进行安装。 安装完成后，可以通过运行 sharpie 命令进行验证：
 
@@ -223,7 +226,7 @@ Swift 最初是由 Apple 在2014中引入的，现已在版本5.1 上，第三�
         [write] StructsAndEnums.cs
     ```
 
-    该工具将为C#每个公开的目标 C 成员生成元数据，类似于以下代码。 正如您所看到的，可以手动定义它，因为它具有用户可读的格式和简单的成员映射：
+    该工具将为每个公开的目标 C 成员生成 c # 元数据，类似于以下代码。 正如您所看到的，可以手动定义它，因为它具有用户可读的格式和简单的成员映射：
 
     ```csharp
     [Export ("initForApiKey:")]
@@ -249,7 +252,7 @@ Swift 最初是由 Apple 在2014中引入的，现已在版本5.1 上，第三�
 
     ![visual studio 项目结构元数据](walkthrough-images/visualstudio-project-structure-metadata.png)
 
-    元数据本身使用C#语言描述每个公开的目标 C 类和成员。 您可以看到原始的目标 C 标头定义与C#声明一起显示：
+    元数据本身通过 c # 语言描述每个公开的目标 C 类和成员。 可以在 c # 声明的同时看到原始的目标 C 标头定义：
 
     ```csharp
     // @interface SwiftFrameworkProxy : NSObject
@@ -262,7 +265,7 @@ Swift 最初是由 Apple 在2014中引入的，现已在版本5.1 上，第三�
     }
     ```
 
-    尽管它是有效C#的代码，但它并不是按原样使用，而是由 Xamarin 工具用于基于此元C#数据定义生成类。 因此，你将获得一个同名的C#类，而不是使用接口 SwiftFrameworkProxy，而你的 Xamarin iOS 代码可以对其进行实例化。 此类获取您的元数据定义的方法、属性和其他成员，您将以某种C#方式调用。
+    尽管它是有效的 c # 代码，但它并不是按原样使用，而是由 Xamarin tools 用于基于此元数据定义生成 c # 类。 因此，请不要使用接口 SwiftFrameworkProxy，而是使用同一名称获取一个 c # 类，这可由你的 Xamarin 代码实例化。 此类获取您的元数据定义的方法、属性和其他成员，将以 c # 方式调用。
 
 1. 将本机引用添加到生成的早期 fat 框架，以及该框架的每个依赖项。 在这种情况下，请将 SwiftFrameworkProxy 和 Gigya framework 本机引用添加到绑定项目：
 
@@ -294,9 +297,9 @@ Swift 最初是由 Apple 在2014中引入的，现已在版本5.1 上，第三�
         L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/ -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos -Wl,-rpath -Wl,@executable_path/Frameworks
         ```
 
-        前两个选项（ `-L ...` 一个）告诉本机编译器查找 swift 库的位置。 本机编译器将忽略没有正确的体系结构的库，这意味着可以同时为模拟器库和设备库传递位置，使其适用于模拟器和设备生成（仅适用于 iOS 的路径是正确的;对于 tvOS 和 watchOS，必须更新这些设置。 一个缺点是，此方法要求正确的 Xcode 在/Application/Xcode.app 中，如果绑定库的使用者在不同位置具有 Xcode，则它将不起作用。 替代解决方案是将这些选项添加到可执行项目的 iOS 生成选项（`--gcc_flags -L... -L...`）中的其他 mtouch 参数。 第三个选项使本机链接器将 swift 库的位置存储在可执行文件中，以便 OS 可以找到它们。
+        前两个选项（  `-L ...`   其中一个）告诉本机编译器查找 swift 库的位置。 本机编译器将忽略没有正确的体系结构的库，这意味着可以同时为模拟器库和设备库传递位置，使其适用于模拟器和设备生成（这些路径仅适用于 iOS; 对于 tvOS 和 watchOS，必须更新这些路径）。 一个缺点是，此方法要求正确的 Xcode 在/Application/Xcode.app 中，如果绑定库的使用者在不同位置具有 Xcode，则它将不起作用。 替代解决方案是将这些选项添加到可执行项目的 iOS 生成选项（）中的其他 mtouch 参数 `--gcc_flags -L... -L...` 。 第三个选项使本机链接器将 swift 库的位置存储在可执行文件中，以便 OS 可以找到它们。
 
-1. 最后一个操作是生成库，并确保没有任何编译错误。 你经常会发现，客观 Sharpie 生成的绑定元数据将使用 `[Verify]` 属性进行批注。 这些属性指示您应该通过将绑定与原始目标 C 声明（将在绑定声明中的注释中提供）进行比较来验证目标 Sharpie 是否执行了正确的操作。 可以通过[以下链接](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/platform/verify)了解有关用特性标记的成员的详细信息。 生成项目后，它可供 Xamarin iOS 应用程序使用。
+1. 最后一个操作是生成库，并确保没有任何编译错误。 你经常会发现，客观 Sharpie 生成的绑定元数据将使用属性进行批注  `[Verify]`   。 这些属性指示您应该通过将绑定与原始目标 C 声明（将在绑定声明中的注释中提供）进行比较来验证目标 Sharpie 是否执行了正确的操作。 可以通过[以下链接](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/platform/verify)了解有关用特性标记的成员的详细信息。 生成项目后，它可供 Xamarin iOS 应用程序使用。
 
 ## <a name="consume-the-binding-library"></a>使用绑定库
 
@@ -334,11 +337,11 @@ Swift 最初是由 Apple 在2014中引入的，现已在版本5.1 上，第三�
     }
     ```
 
-1. 运行应用程序，请在调试输出中看到以下行： `Gigya initialized with domain: us1.gigya.com`。 单击按钮以激活身份验证流：
+1. 运行应用程序，请在调试输出中看到以下行： `Gigya initialized with domain: us1.gigya.com` 。 单击按钮以激活身份验证流：
 
     [![swift 代理结果](walkthrough-images/swiftproxy-result.png)](walkthrough-images/swiftproxy-result.png#lightbox)
 
-祝贺你！ 你已成功创建了一个 Xamarin iOS 应用和一个使用 Swift 框架的绑定库。 上述应用程序将在 iOS 12.2 + 上成功运行，因为从此 iOS 版本[Apple 开始引入 ABI 稳定性](https://swift.org/blog/swift-5-1-released/)，并且每个 iOS 启动 12.2 +，都包含 swift 运行时库，可用于运行使用 swift 5.1 + 编译的应用程序。 如果需要添加对早期 iOS 版本的支持，需要完成以下几个步骤：
+恭喜！ 你已成功创建了一个 Xamarin iOS 应用和一个使用 Swift 框架的绑定库。 上述应用程序将在 iOS 12.2 + 上成功运行，因为从此 iOS 版本[Apple 开始引入 ABI 稳定性](https://swift.org/blog/swift-5-1-released/)，并且每个 iOS 启动 12.2 +，都包含 swift 运行时库，可用于运行使用 swift 5.1 + 编译的应用程序。 如果需要添加对早期 iOS 版本的支持，需要完成以下几个步骤：
 
 1. 为了添加对 iOS 12.1 和更早版本的支持，你需要提供用于编译框架的特定 Swift dylib。 使用[SwiftRuntimeSupport](https://www.nuget.org/packages/Xamarin.iOS.SwiftRuntimeSupport/) NuGet 包，通过 IPA 处理和复制所需的库。 将 NuGet 引用添加到目标项目并重新生成应用程序。 不需要执行任何其他步骤，NuGet 包将安装特定任务，这些任务是在生成过程中执行的，用于识别所需的 Swift dylib 并将其与最终 IPA 一起打包。
 
