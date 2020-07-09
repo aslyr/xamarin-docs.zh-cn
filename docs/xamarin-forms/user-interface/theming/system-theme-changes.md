@@ -10,16 +10,16 @@ ms.date: 06/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 28bcbed3a03a2abbec42a619062579419a3063a4
-ms.sourcegitcommit: 8a18471b3d96f3f726b66f9bc50a829f1c122f29
+ms.openlocfilehash: b451fe004ca21c8770658f31c9c38253e073c259
+ms.sourcegitcommit: 82eabb0eaa4a674897aa6d5e64efb91fd580c330
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84988210"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86100178"
 ---
 # <a name="respond-to-system-theme-changes-in-xamarinforms-applications"></a>响应应用程序中的系统主题更改 Xamarin.Forms
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
 
 设备通常包括浅色和深色主题，它们分别引用可在操作系统级别设置的各种外观首选项。 应用程序应遵守这些系统主题，并在系统主题发生更改时立即做出响应。
 
@@ -158,6 +158,9 @@ Application.Current.RequestedThemeChanged += (s, a) =>
 ```
 
 `AppThemeChangedEventArgs`事件附带的对象 `RequestedThemeChanged` 具有名为的单个属性 `RequestedTheme` ，类型为 `OSAppTheme` 。 可以检查此属性以检测请求的系统主题。
+
+> [!IMPORTANT]
+> 若要响应 Android 上的主题更改，你必须 `ConfigChanges.UiMode` 在类的属性中包含该标志 `Activity` `MainActivity` 。
 
 ## <a name="related-links"></a>相关链接
 
