@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/18/2020
-ms.openlocfilehash: dfe6da8a76b447bf0c2a6c0a3bea9823e498d5e4
-ms.sourcegitcommit: 8a18471b3d96f3f726b66f9bc50a829f1c122f29
+ms.openlocfilehash: 0aafe01fcbde6cf1aacf3e2dd47444d4b77021e2
+ms.sourcegitcommit: 79ba3deb031c8a60d0841bb3dbeaaf65daf2b224
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84988197"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85846382"
 ---
 # <a name="xamarinforms-multi-bindings"></a>Xamarin.Forms 多绑定
 
@@ -44,7 +44,7 @@ ms.locfileid: "84988197"
 
 ## <a name="define-a-imultivalueconverter"></a>定义 IMultiValueConverter
 
-使用 `IMultiValueConverter` 接口，可以将自定义逻辑应用于 `MultiBinding`。 若要将转换器与 `MultiBinding` 相关联，请先创建实现 `IValueConverter` 接口的类，再实现 `Convert` 和 `ConvertBack` 方法：
+使用 `IMultiValueConverter` 接口，可以将自定义逻辑应用于 `MultiBinding`。 若要将转换器与 `MultiBinding` 相关联，请先创建实现 `IMultiValueConverter` 接口的类，再实现 `Convert` 和 `ConvertBack` 方法：
 
 ```csharp
 public class AllTrueMultiConverter : IMultiValueConverter

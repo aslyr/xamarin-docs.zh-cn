@@ -8,12 +8,12 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 578e750afd718c684d70217355629a0286d2b028
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6b094ddd7334da777d39d403eb06d72558c96ed2
+ms.sourcegitcommit: 82eabb0eaa4a674897aa6d5e64efb91fd580c330
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84801876"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86100201"
 ---
 # <a name="xamarinessentials-web-authenticator"></a>Xamarin.Essentials：Web 验证器
 
@@ -192,7 +192,7 @@ var accessToken = r?.AccessToken;
 
 1. 在 ASP.NET Core Web 应用中设置所需的[外部社交验证提供程序](https://docs.microsoft.com/aspnet/core/security/authentication/social/?view=aspnetcore-3.1&tabs=visual-studio)。
 2. 在 `.AddAuthentication()` 调用中设置 `CookieAuthenticationDefaults.AuthenticationScheme` 的默认身份验证方案。
-3. 在 Startup.cs `.AddAuthentication()` 调用中使用 `.AddCookies()`。
+3. 在 Startup.cs `.AddAuthentication()` 调用中使用 `.AddCookie()`。
 4. 必须将所有提供程序配置为 `.SaveTokens = true;`。
 
 > [!TIP]

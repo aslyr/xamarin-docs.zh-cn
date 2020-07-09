@@ -405,6 +405,32 @@
                   href: user-interface/map/native-map-app.md
             - name: MediaElement
               href: user-interface/mediaelement.md
+            - name: 形状
+              items:
+                - name: 概述
+                  href: user-interface/shapes/index.md
+                - name: 椭圆形
+                  href: user-interface/shapes/ellipse.md
+                - name: 填充规则
+                  href: user-interface/shapes/fillrules.md
+                - name: 几何图形
+                  href: user-interface/shapes/geometries.md
+                - name: 线
+                  href: user-interface/shapes/line.md
+                - name: 路径
+                  items:
+                    - name: 路径
+                      href: user-interface/shapes/path.md
+                    - name: 路径标记语法
+                      href: user-interface/shapes/path-markup-syntax.md
+                    - name: 路径转换
+                      href: user-interface/shapes/path-transforms.md
+                - name: 多边形
+                  href: user-interface/shapes/polygon.md
+                - name: 折线
+                  href: user-interface/shapes/polyline.md
+                - name: 矩形
+                  href: user-interface/shapes/rectangle.md
             - name: WebView
               href: user-interface/webview.md
         - name: 启动命令
@@ -537,32 +563,6 @@
               href: user-interface/text/fonts.md
             - name: 使用 SkiaSharp 处理图形
               href: user-interface/graphics/skiasharp/index.md
-            - name: 形状
-              items:
-                - name: 概述
-                  href: user-interface/shapes/index.md
-                - name: 椭圆形
-                  href: user-interface/shapes/ellipse.md
-                - name: 填充规则
-                  href: user-interface/shapes/fillrules.md
-                - name: 几何图形
-                  href: user-interface/shapes/geometries.md
-                - name: 线
-                  href: user-interface/shapes/line.md
-                - name: 路径
-                  items:
-                    - name: 路径
-                      href: user-interface/shapes/path.md
-                    - name: 路径标记语法
-                      href: user-interface/shapes/path-markup-syntax.md
-                    - name: 路径转换
-                      href: user-interface/shapes/path-transforms.md
-                - name: 多边形
-                  href: user-interface/shapes/polygon.md
-                - name: 折线
-                  href: user-interface/shapes/polyline.md
-                - name: 矩形
-                  href: user-interface/shapes/rectangle.md
             - name: 初始屏幕
               href: user-interface/splashscreen.md
             - name: 样式
