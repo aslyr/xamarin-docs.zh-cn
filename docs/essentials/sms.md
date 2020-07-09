@@ -18,7 +18,7 @@ ms.locfileid: "84801837"
 ---
 # <a name="xamarinessentials-sms"></a>Xamarin.Essentials：SMS
 
-**** SMS 类允许应用程序使用要发送到收件人的指定消息打开默认短信应用程序。
+SMS 类允许应用程序使用要发送到收件人的指定消息打开默认短信应用程序。
 
 ## <a name="get-started"></a>入门
 

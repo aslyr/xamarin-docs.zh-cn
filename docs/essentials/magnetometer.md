@@ -17,7 +17,7 @@ ms.locfileid: "84802279"
 ---
 # <a name="xamarinessentials-magnetometer"></a>Xamarin.Essentials：磁力计
 
-Magnetometer 类使你能够监视设备的磁力计传感器，此传感器指示设备相对于地球磁场的方向****。
+Magnetometer 类使你能够监视设备的磁力计传感器，此传感器指示设备相对于地球磁场的方向。
 
 ## <a name="get-started"></a>入门
 

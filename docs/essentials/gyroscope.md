@@ -17,7 +17,7 @@ ms.locfileid: "84802292"
 ---
 # <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials：陀螺仪
 
-Gyroscope 类使你能够监控设备的陀螺仪传感器，此传感器测量围绕设备三个主轴的旋转****。
+Gyroscope 类使你能够监控设备的陀螺仪传感器，此传感器测量围绕设备三个主轴的旋转。
 
 ## <a name="get-started"></a>入门
 

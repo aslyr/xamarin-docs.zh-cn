@@ -18,7 +18,7 @@ ms.locfileid: "84802458"
 ---
 # <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials：剪贴板
 
-Clipboard 类使你能够在应用程序之间将文本复制并粘贴到系统剪贴板****。
+Clipboard 类使你能够在应用程序之间将文本复制并粘贴到系统剪贴板。
 
 ## <a name="get-started"></a>入门
 
@@ -32,19 +32,19 @@ Clipboard 类使你能够在应用程序之间将文本复制并粘贴到系统�
 using Xamarin.Essentials;
 ```
 
-检查 Clipboard 是否有当前已准备好要粘贴的文本****：
+检查 Clipboard 是否有当前已准备好要粘贴的文本：
 
 ```csharp
 var hasText = Clipboard.HasText;
 ```
 
-将文本设置到 Clipboard****：
+将文本设置到 Clipboard：
 
 ```csharp
 await Clipboard.SetTextAsync("Hello World");
 ```
 
-从 Clipboard 读取文本****：
+从 Clipboard 读取文本：
 
 ```csharp
 var text = await Clipboard.GetTextAsync();

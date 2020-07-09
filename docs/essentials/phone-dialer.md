@@ -18,7 +18,7 @@ ms.locfileid: "84802200"
 ---
 # <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials：电话拨号程序
 
-PhoneDialer 类使应用程序能够在拨号程序中打开一个电话号码****。
+PhoneDialer 类使应用程序能够在拨号程序中打开一个电话号码。
 
 ## <a name="get-started"></a>入门
 

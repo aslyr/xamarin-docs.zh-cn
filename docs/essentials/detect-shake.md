@@ -18,7 +18,7 @@ ms.locfileid: "84802431"
 ---
 # <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials：检测抖动
 
-[Accelerometer](accelerometer.md) 类可用于监视设备的加速计传感器，指示设备在三维空间内的加速度****。 此外，该类还能够在用户抖动设备时注册事件。
+[Accelerometer](accelerometer.md) 类可用于监视设备的加速计传感器，指示设备在三维空间内的加速度。 此外，该类还能够在用户抖动设备时注册事件。
 
 ## <a name="get-started"></a>入门
 

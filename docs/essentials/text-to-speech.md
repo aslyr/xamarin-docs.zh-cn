@@ -18,7 +18,7 @@ ms.locfileid: "84801824"
 ---
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials：文本到语音转换
 
-**** TextToSpeech 类允许应用程序使用内置的文本到语音转换引擎回讲设备中的文本并查询引擎可以支持的可用语言。
+TextToSpeech 类允许应用程序使用内置的文本到语音转换引擎回讲设备中的文本并查询引擎可以支持的可用语言。
 
 ## <a name="get-started"></a>入门
 
