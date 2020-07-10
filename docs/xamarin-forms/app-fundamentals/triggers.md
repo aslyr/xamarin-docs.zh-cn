@@ -1,6 +1,6 @@
 ---
-title: title:"Xamarin.Forms触发器”说明：“本文介绍如何使用 Xamarin.Forms 触发器来响应 XAML 的用户界面更改。
-description: '触发器允许你在根据事件或属性更改更改控件外观的 XAML 中以声明的方式表达操作。” ms.prod: xamarin ms.assetid:60460F57-63C6-4916-BBB5-A870F1DF53D7 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2020 年 4 月 17 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms 触发器
+description: 此文章介绍了如何使用 Xamarin.Forms 触发器来响应 XAML 的用户界面更改。 触发器允许你在根据事件或属性更改更改控件外观的 XAML 中以声明的方式表达操作。
 ms.prod: xamarin
 ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
 ms.technology: xamarin-forms
@@ -10,12 +10,12 @@ ms.date: 04/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f92ad47ae883f4b1b413ae5192a9add83045bb77
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: a287ff28ab62fcfcc00c88858cf3595ba2fa5118
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84136950"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853135"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms 触发器
 
@@ -319,11 +319,7 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
 
 ## <a name="state-triggers"></a>状态触发器
 
-状态触发器已在 Xamarin.Forms 4.5 中引入，这是一组专门的触发器，定义了在哪些条件下应该应用 [`VisualState`](xref:Xamarin.Forms.VisualState)。 不过，它们目前还处于试验阶段，只能通过在 App.xaml.cs 文件中添加以下代码行来使用：
-
-```csharp
-Device.SetFlags(new string[]{ "StateTriggers_Experimental" });
-```
+状态触发器是一组专门的触发器，它们定义了在哪些条件下应该应用 [`VisualState`](xref:Xamarin.Forms.VisualState)。 
 
 状态触发器添加到 [`VisualState`](xref:Xamarin.Forms.VisualState) 的 [`StateTriggers`](xref:Xamarin.Forms.VisualState.StateTriggers) 集合。 此集合可以包含一个或多个状态触发器。 当此集合中的任何状态触发器处于活动状态时，便会应用 [`VisualState`](xref:Xamarin.Forms.VisualState)。
 

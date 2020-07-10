@@ -7,14 +7,17 @@ ms.technology: xamarin-android
 author: alexeystrakh
 ms.author: alstrakh
 ms.date: 02/11/2020
-ms.openlocfilehash: cbd7c796cd13aa45dc107bddf06ca44d6adbdf9d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: af926b518c55bd0d6c73180e512dd669e93778f7
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77519668"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853060"
 ---
 # <a name="walkthrough-bind-an-android-kotlin-library"></a>演练：绑定 Android Kotlin 库
+
+> [!IMPORTANT]
+> 我们当前正在调查 Xamarin 平台上的自定义绑定使用情况。 请参与[此调查](https://www.surveymonkey.com/r/KKBHNLT)，告诉我们将来应该进行哪些开发工作。
 
 借助 Xamarin，移动开发人员能够通过 Visual Studio 和 C# 创建跨平台的本机移动应用。 可以使用现成的 Android 平台 SDK 组件，但在许多情况下，你还会希望使用为该平台编写的第三方 SDK，Xamarin 允许你通过绑定来实现此目的。 若要将第三方 Android 框架合并到 Xamarin.Android 应用程序，需要先为其创建一个 Xamarin.Android 绑定，然后才能在应用程序中使用它。
 
@@ -40,17 +43,17 @@ Kotlin 于 2016 年 2 月发布，并于 2017 年作为标准 Java 编译器的�
 
 ![GitHub BubblePicker 演示](walkthrough-images/github-bubblepicker-demo.png)
 
-1. 从 GitHub 下载该库的[源代码](https://github.com/igalata/Bubble-Picker/archive/develop.zip)，并将其解压到本地文件夹 Bubble-Picker  。
+1. 从 GitHub 下载该库的[源代码](https://github.com/igalata/Bubble-Picker/archive/develop.zip)，并将其解压到本地文件夹 Bubble-Picker。
 
-1. 启动 Android Studio 并选择“打开现有 Android Studio项目”  菜单选项，选择 Bubble-Picker 本地文件夹：
+1. 启动 Android Studio 并选择“打开现有 Android Studio项目”菜单选项，选择 Bubble-Picker 本地文件夹：
 
     ![Android Studio 开放项目](walkthrough-images/android-studio-open-project.png)
 
 1. 验证 Android Studio 是否是最新的，包括 Gradle。 可以在 Android Studio v3.5.3、Gradle v5.4.1 上成功生成源代码。 有关如何将 Gradle 更新到最新 Gradle 版本的说明，请参阅[此处](https://gradle.org/install/)。
 
-1. 验证是否安装了所需的 Android SDK。 源代码需要 Android SDK v25。 打开“工具”>“SDK 管理器”  菜单选项以安装 SDK 组件。
+1. 验证是否安装了所需的 Android SDK。 源代码需要 Android SDK v25。 打开“工具”>“SDK 管理器”菜单选项以安装 SDK 组件。
 
-1. 更新和同步位于项目文件夹根目录的主 build.gradle  配置文件：
+1. 更新和同步位于项目文件夹根目录的主 build.gradle 配置文件：
 
     - 将 Kotlin 版本设置为 1.3.10
 
@@ -73,7 +76,7 @@ Kotlin 于 2016 年 2 月发布，并于 2017 年作为标准 Java 编译器的�
         }
         ```
 
-    - 配置文件更新后，它将不再同步，Gradle 会显示“立即同步”  按钮，按下它，等待同步过程完成：
+    - 配置文件更新后，它将不再同步，Gradle 会显示“立即同步”按钮，按下它，等待同步过程完成：
 
         ![立即同步 Android Studio Gradle](walkthrough-images/android-studio-gradle-syncnow.png)
 
@@ -86,11 +89,11 @@ Kotlin 于 2016 年 2 月发布，并于 2017 年作为标准 Java 编译器的�
         > [!TIP]
         > 项目可能使用的是第三方插件，该插件与项目中的其他插件或项目请求的 Gradle 版本不兼容。
 
-1. 打开右侧的 Gradle 菜单，导航到“bubblepicker”>“任务”  菜单，通过双击来执行“生成”  任务，并等待生成过程完成：
+1. 打开右侧的 Gradle 菜单，导航到“bubblepicker”>“任务”菜单，通过双击来执行“生成”任务，并等待生成过程完成：
 
     ![Android Studio Gradle 执行任务](walkthrough-images/android-studio-gradle-execute-task.png)
 
-1. 打开根文件夹文件浏览器并导航到“生成”文件夹：“Bubble-Picker”->“bubblepicker”->“生成”->“输出”->“aar”  ，将“bubblepicker-release.aar”  文件另存为“bubblepicker-v1.0.aar”  ，稍后将在绑定过程中使用此文件：
+1. 打开根文件夹文件浏览器并导航到“生成”文件夹：“Bubble-Picker”->“bubblepicker”->“生成”->“输出”->“aar”，将“bubblepicker-release.aar”文件另存为“bubblepicker-v1.0.aar”，稍后将在绑定过程中使用此文件：
 
     ![Android Studio AAR 输出](walkthrough-images/android-studio-aar-output.png)
 
@@ -102,7 +105,7 @@ AAR 文件是 Android 存档，其中包含 Android 使用此 SDK 运行应用�
 
 元数据使用 [XPath](https://www.w3.org/TR/xpath/)  语法，由绑定生成器用来影响绑定程序集的创建。 [Java 绑定元数据](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata)一文提供了有关转换的详细信息，可应用这些信息：
 
-1. 创建一个空的 Metadata.xml  文件：
+1. 创建一个空的 Metadata.xml 文件：
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -165,7 +168,7 @@ AAR 文件是 Android 存档，其中包含 Android 使用此 SDK 运行应用�
     }
     ```
 
-    若要为其指定一个有意义的名称，可将以下元数据添加到 Metadata.xml  ，这会将该名称重新更新为 Kotlin 代码中最初定义的名称：
+    若要为其指定一个有意义的名称，可将以下元数据添加到 Metadata.xml，这会将该名称重新更新为 Kotlin 代码中最初定义的名称：
 
     ```xml
     <attr path="/api/package[@name='com.microsoft.simplekotlinlib']/class[@name='FooClass']/method[@name='fooUIntArrayMethod--ajY-9A']" name="managedName">fooUIntArrayMethod</attr>
@@ -201,7 +204,7 @@ AAR 文件是 Android 存档，其中包含 Android 使用此 SDK 运行应用�
 
 下一步是使用 Visual Studio 绑定模板创建 Xamarin.Android 绑定项目，添加所需的元数据和本机引用，然后生成项目以生成可使用的库：
 
-1. 打开 Visual Studio for Mac 并创建新的 Xamarin.Android 绑定库项目，为其指定一个名称，在本例中为“testBubblePicker.Binding”  并完成向导。 Xamarin.Android 绑定模板位于以下路径： **“Android”>“库”>“绑定库”** ：
+1. 打开 Visual Studio for Mac 并创建新的 Xamarin.Android 绑定库项目，为其指定一个名称，在本例中为“testBubblePicker.Binding”并完成向导。 Xamarin.Android 绑定模板位于以下路径： **“Android”>“库”>“绑定库”** ：
 
     ![Visual Studio 创建绑定](walkthrough-images/visual-studio-create-binding.png)
 
@@ -211,13 +214,13 @@ AAR 文件是 Android 存档，其中包含 Android 使用此 SDK 运行应用�
     - **EnumFields.xml** – 包含 Java int 常量和 C# 枚举之间的映射。
     - **EnumMethods.xml** – 允许更改方法参数，并将返回类型从 Java int 常数更改为 C# 枚举。
 
-    使“EnumFields”  和“EnumMethods”  文件保持为空，并更新“Metadata.xml”  来定义转换。
+    使“EnumFields”和“EnumMethods”文件保持为空，并更新“Metadata.xml”来定义转换。
 
-1. 将现有的“Transformations/Metadata.xml”  文件替换为在上一步创建的“Metadata.xml”  文件。 在“属性”窗口中，验证“生成操作”  文件是否设置为“TransformationFile”  ：
+1. 将现有的“Transformations/Metadata.xml”文件替换为在上一步创建的“Metadata.xml”文件。 在“属性”窗口中，验证“生成操作”文件是否设置为“TransformationFile”：
 
     ![Visual Studio 元数据](walkthrough-images/visual-studio-metadata.png)
 
-1. 将在步骤 1 中生成的“bubblepicker-v1.0.aar”  文件作为本机引用添加到绑定项目。 若要添加本机库引用，请打开查找器，然后导航到带有 Android 存档的文件夹。 将存档拖放到“解决方案资源管理器”的 Jars 文件夹中。 或者，可以使用 Jars 文件夹上的“添加”  上下文菜单选项，然后选择“现有文件...”  。 出于本演练的目的，请选择将文件复制到目录。 请确保验证“生成操作”  是否设置为“LibraryProjectZip”  ：
+1. 将在步骤 1 中生成的“bubblepicker-v1.0.aar”文件作为本机引用添加到绑定项目。 若要添加本机库引用，请打开查找器，然后导航到带有 Android 存档的文件夹。 将存档拖放到“解决方案资源管理器”的 Jars 文件夹中。 或者，可以使用 Jars 文件夹上的“添加”上下文菜单选项，然后选择“现有文件...”。 出于本演练的目的，请选择将文件复制到目录。 请确保验证“生成操作”是否设置为“LibraryProjectZip”：
 
     ![Visual Studio 本机引用](walkthrough-images/visual-studio-native-reference.png)
 
@@ -232,7 +235,7 @@ AAR 文件是 Android 存档，其中包含 Android 使用此 SDK 运行应用�
 
 最后一步是在 Xamarin.Android 应用程序中使用 Xamarin.Android 绑定库。 创建新的 Xamarin.Android 项目，添加对绑定库的引用并呈现 Bubble Picker UI：
 
-1. 创建 Xamarin.Android 项目。 使用“Android”>“应用”>“Android 应用”  作为起点，并在“目标平台”选项中选择“最新和最大平台”  ，以避免兼容性问题。 以下所有步骤均面向此项目：
+1. 创建 Xamarin.Android 项目。 使用“Android”>“应用”>“Android 应用”作为起点，并在“目标平台”选项中选择“最新和最大平台”，以避免兼容性问题。 以下所有步骤均面向此项目：
 
     ![Visual Studio 创建应用](walkthrough-images/visual-studio-create-app.png)
 
@@ -244,7 +247,7 @@ AAR 文件是 Android 存档，其中包含 Android 使用此 SDK 运行应用�
 
     ![Visual Studio Add StdLib NuGet](walkthrough-images/visual-studio-add-stdlib-nuget.png)
 
-1. 将 `BubblePicker` 控件添加到 `MainActivity` 的 Android 布局。 打开 testBubblePicker/Resources/layout/content_main.xml  文件，并将 BubblePicker 控件节点附加为根 RelativeLayout 控件的最后一个元素：
+1. 将 `BubblePicker` 控件添加到 `MainActivity` 的 Android 布局。 打开 testBubblePicker/Resources/layout/content_main.xml 文件，并将 BubblePicker 控件节点附加为根 RelativeLayout 控件的最后一个元素：
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>

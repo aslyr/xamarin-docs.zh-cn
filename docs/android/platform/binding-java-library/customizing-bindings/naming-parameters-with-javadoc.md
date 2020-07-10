@@ -7,14 +7,17 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/20/2017
-ms.openlocfilehash: 060c4759d39bc3b8c424ce46dc615644540fe9c2
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: bcfc5778ed4e5486d188f4eefbd32811792b44e5
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73027670"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85852982"
 ---
 # <a name="naming-parameters-with-javadoc"></a>使用 Javadoc 命名参数
+
+> [!IMPORTANT]
+> 我们当前正在调查 Xamarin 平台上的自定义绑定使用情况。 请参与[此调查](https://www.surveymonkey.com/r/KKBHNLT)，告诉我们将来应该进行哪些开发工作。
 
 _本文说明如何使用 Java 项目生成的 Javadoc 恢复 Java 绑定项目中的参数名称。_
 

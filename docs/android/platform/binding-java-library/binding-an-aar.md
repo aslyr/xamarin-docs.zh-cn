@@ -7,20 +7,23 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/11/2018
-ms.openlocfilehash: 103720c8cb47b1ac4cfe5cfadeb6b18828318ad3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 514157873412b3af31e43ba211aa636c9b53c112
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73618534"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853107"
 ---
 # <a name="binding-an-aar"></a>绑定 .AAR
+
+> [!IMPORTANT]
+> 我们当前正在调查 Xamarin 平台上的自定义绑定使用情况。 请参与[此调查](https://www.surveymonkey.com/r/KKBHNLT)，告诉我们将来应该进行哪些开发工作。
 
 _本演练将提供从 Android .AAR 文件创建 Xamarin.Android Java 绑定库的分步说明。_
 
 ## <a name="overview"></a>概述
 
-Android 存档 (.AAR)  文件是 Android 库的文件格式。
+Android 存档 (.AAR) 文件是 Android 库的文件格式。
 .AAR 文件是 .ZIP 存档，其中包含以下内容：
 
 - 已编译的 Java 代码
@@ -35,7 +38,7 @@ Android 存档 (.AAR)  文件是 Android 库的文件格式。
 
 ## <a name="walkthrough"></a>演练
 
-我们将为 Android Studio 中创建的示例 Android 存档文件创建一个绑定库，即 [textanalyzer.aar](https://github.com/xamarin/monodroid-samples/blob/master/JavaIntegration/AarBinding/Resources/textanalyzer.aar?raw=true)。 该 .AAR 包含一个具有静态方法的 `TextCounter` 类，这些方法会对字符串中的元音和辅音进行计数。 另外，textanalyzer.aar  包含一个图像资源以帮助显示计数结果。
+我们将为 Android Studio 中创建的示例 Android 存档文件创建一个绑定库，即 [textanalyzer.aar](https://github.com/xamarin/monodroid-samples/blob/master/JavaIntegration/AarBinding/Resources/textanalyzer.aar?raw=true)。 该 .AAR 包含一个具有静态方法的 `TextCounter` 类，这些方法会对字符串中的元音和辅音进行计数。 另外，textanalyzer.aar 包含一个图像资源以帮助显示计数结果。
 
 我们将使用以下步骤从 .AAR 文件创建绑定库：
 
@@ -51,7 +54,7 @@ Android 存档 (.AAR)  文件是 Android 库的文件格式。
 
 创建绑定库后，我们将开发一个小型的 Android 应用，该应用会提示用户输入文本字符串，调用 .AAR 方法来分析文本，检索 .AAR 中的图像，并显示结果以及图像。
 
-该示例应用将访问 textanalyzer.aar  的 `TextCounter` 类：
+该示例应用将访问 textanalyzer.aar 的 `TextCounter` 类：
 
 ```java
 package com.xamarin.textcounter;
@@ -66,39 +69,39 @@ public class TextCounter
 }
 ```
 
-此外，此示例应用还将检索并显示打包在 textanalyzer.aar  中的图像资源：
+此外，此示例应用还将检索并显示打包在 textanalyzer.aar 中的图像资源：
 
 [![Xamarin monkey 图像](binding-an-aar-images/00-monkey-sml.png)](binding-an-aar-images/00-monkey.png#lightbox)
 
-该图像资源位于 textanalyzer.aar  中的 res/drawable/monkey.png  。
+该图像资源位于 textanalyzer.aar 中的 res/drawable/monkey.png。
 
 ### <a name="creating-the-bindings-library"></a>创建绑定库
 
 在开始以下步骤之前，请下载示例 [textanalyzer.aar](https://github.com/xamarin/monodroid-samples/blob/master/JavaIntegration/AarBinding/Resources/textanalyzer.aar?raw=true) Android 存档文件：
 
-1. 从 Android 绑定库模板开始，创建一个新的绑定库项目。 可以使用 Visual Studio for Mac 或 Visual Studio（下面的屏幕截图显示 Visual Studio，但 Visual Studio for Mac 非常相似）。 将该解决方案命名为 AarBinding  ：
+1. 从 Android 绑定库模板开始，创建一个新的绑定库项目。 可以使用 Visual Studio for Mac 或 Visual Studio（下面的屏幕截图显示 Visual Studio，但 Visual Studio for Mac 非常相似）。 将该解决方案命名为 AarBinding：
 
     [![创建 AarBindings 项目](binding-an-aar-images/01-new-bindings-library-vs-sml.w160.png)](binding-an-aar-images/01-new-bindings-library-vs.w160.png#lightbox)
 
-2. 该模板包括一个 Jars  文件夹，可以在其中将 .AAR 添加到“绑定库”项目中。 右键单击 Jars 文件夹，并选择“添加”>“现有项”   ：
+2. 该模板包括一个 Jars 文件夹，可以在其中将 .AAR 添加到“绑定库”项目中。 右键单击 Jars 文件夹，并选择“添加”>“现有项” ：
 
     [![添加现有项](binding-an-aar-images/02-add-existing-item-vs-sml.png)](binding-an-aar-images/02-add-existing-item-vs.png#lightbox)
 
-3. 导航到之前下载的 textanalyzer.aar  文件，选中它，然后单击“添加”  ：
+3. 导航到之前下载的 textanalyzer.aar 文件，选中它，然后单击“添加”：
 
     [![添加 textanalayzer.aar](binding-an-aar-images/03-select-aar-file-vs-sml.png)](binding-an-aar-images/03-select-aar-file-vs.png#lightbox)
 
-4. 验证 textanalyzer.aar  文件是否已成功添加到项目中：
+4. 验证 textanalyzer.aar 文件是否已成功添加到项目中：
 
     [![已添加 textanalyzer.aar 文件](binding-an-aar-images/04-aar-added-vs-sml.png)](binding-an-aar-images/04-aar-added-vs.png#lightbox)
 
-5. 将 textanalyzer.aar  的生成操作设置为 `LibraryProjectZip`。 在 Visual Studio for Mac 中，右键单击“textanalyzer.aar”  以设置生成操作。 在 Visual Studio 中，可以在“属性”  窗格中设置生成操作：
+5. 将 textanalyzer.aar 的生成操作设置为 `LibraryProjectZip`。 在 Visual Studio for Mac 中，右键单击“textanalyzer.aar”以设置生成操作。 在 Visual Studio 中，可以在“属性”窗格中设置生成操作：
 
     [![将 textanalyzer.aar 生成操作设置为 LibraryProjectZip](binding-an-aar-images/05-embedded-aar-vs-sml.png)](binding-an-aar-images/05-embedded-aar-vs.png#lightbox)
 
-6. 打开项目属性以配置目标框架  。 如果 .AAR 使用任何 Android API，请将目标框架设置为 .AAR 预计的 API 级别。 （有关目标框架设置和 Android API 级别的更多概要信息，请参阅[了解 Android API 级别](~/android/app-fundamentals/android-api-levels.md)。）
+6. 打开项目属性以配置目标框架。 如果 .AAR 使用任何 Android API，请将目标框架设置为 .AAR 预计的 API 级别。 （有关目标框架设置和 Android API 级别的更多概要信息，请参阅[了解 Android API 级别](~/android/app-fundamentals/android-api-levels.md)。）
 
-    设置绑定库的目标 API 级别。 在此示例中，可以随意使用最新的平台 API 级别（API 级别 23），因为 textanalyzer  不依赖于 Android API：
+    设置绑定库的目标 API 级别。 在此示例中，可以随意使用最新的平台 API 级别（API 级别 23），因为 textanalyzer 不依赖于 Android API：
 
     [![将目标级别设置为 API 23](binding-an-aar-images/06-set-target-framework-vs-sml.png)](binding-an-aar-images/06-set-target-framework-vs.png#lightbox)
 
@@ -108,23 +111,23 @@ public class TextCounter
 
 要在 Xamarin.Android 应用中使用此 .DLL，必须首先添加对绑定库的引用。 请使用以下步骤：
 
-1. 我们将在与绑定库相同的“解决方案”中创建此应用，以简化此演练。 （使用绑定库的应用也可以驻留在其他“解决方案”中。）创建一个新的 Xamarin.Android 应用：右键单击“解决方案”，然后选择“添加新项目”  。 将新项目命名为 BindingTest  ：
+1. 我们将在与绑定库相同的“解决方案”中创建此应用，以简化此演练。 （使用绑定库的应用也可以驻留在其他“解决方案”中。）创建一个新的 Xamarin.Android 应用：右键单击“解决方案”，然后选择“添加新项目”。 将新项目命名为 BindingTest：
 
     [![创建新的 BindingTest 项目](binding-an-aar-images/07-add-new-project-vs-sml.w157.png)](binding-an-aar-images/07-add-new-project-vs.w157.png#lightbox)
 
-2. 右键单击 BindingTest 项目的“引用”节点并选择“添加引用...”    ：
+2. 右键单击 BindingTest 项目的“引用”节点并选择“添加引用...”  ：
 
     [![单击“添加引用”](binding-an-aar-images/08-add-reference-vs-sml.png)](binding-an-aar-images/08-add-reference-vs.png#lightbox)
 
-3. 选择之前创建的 AarBinding  项目，然后单击“确定”  ：
+3. 选择之前创建的 AarBinding 项目，然后单击“确定”：
 
     [![查看 AAR 绑定项目](binding-an-aar-images/09-choose-aar-binding-vs-sml.png)](binding-an-aar-images/09-choose-aar-binding-vs.png#lightbox)
 
-4. 打开 BindingTest  项目的“引用”  节点，以验证是否存在 AarBinding  引用：
+4. 打开 BindingTest 项目的“引用”节点，以验证是否存在 AarBinding 引用：
 
     [![AarBinding 在“引用”下列出](binding-an-aar-images/10-references-shows-aarbinding-vs-sml.png)](binding-an-aar-images/10-references-shows-aarbinding-vs.png#lightbox)
 
-如果想查看绑定库项目的内容，可以双击引用以在“对象浏览器”  中打开它。 可以查看 `Com.Xamarin.Textcounter` 命名空间的映射内容（从 Java `com.xamarin.textanalyzezr` 包映射），还可以查看 `TextCounter` 类的成员：
+如果想查看绑定库项目的内容，可以双击引用以在“对象浏览器”中打开它。 可以查看 `Com.Xamarin.Textcounter` 命名空间的映射内容（从 Java `com.xamarin.textanalyzezr` 包映射），还可以查看 `TextCounter` 类的成员：
 
 [![查看“对象浏览器”](binding-an-aar-images/11-object-browser-vs-sml.png)](binding-an-aar-images/11-object-browser-vs.png#lightbox)
 
@@ -150,7 +153,7 @@ var name = employee.BuildFullName ();
 
 以下步骤将代码添加到应用，以便应用提示用户输入文本，并使用 `TextCounter` 分析文本，然后显示结果。
 
-用以下 XML 替换 BindingTest  布局 (Main.axml  )。 此布局具有用于文本输入的 `EditText` 和两个用于启动元音和辅音计数的按钮：
+用以下 XML 替换 BindingTest 布局 (Main.axml)。 此布局具有用于文本输入的 `EditText` 和两个用于启动元音和辅音计数的按钮：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -188,7 +191,7 @@ var name = employee.BuildFullName ();
 </LinearLayout>
 ```
 
-将 MainActivity.cs  的内容替换为以下代码。 如本例所示，按钮事件处理程序调用驻留在 .AAR 中的包装好的 `TextCounter` 方法，并使用 toast 显示结果。 注意，绑定库的命名空间的 `using` 语句（在本例中为 `Com.Xamarin.Textcounter`）：
+将 MainActivity.cs 的内容替换为以下代码。 如本例所示，按钮事件处理程序调用驻留在 .AAR 中的包装好的 `TextCounter` 方法，并使用 toast 显示结果。 注意，绑定库的命名空间的 `using` 语句（在本例中为 `Com.Xamarin.Textcounter`）：
 
 ```csharp
 using System;
@@ -246,31 +249,31 @@ namespace BindingTest
 }
 ```
 
-编译并运行 BindingTest  项目。 该应用将启动并在左侧显示屏幕截图（`EditText` 用一些文本进行初始化，但你可以点击它以对其进行更改）。 点击“COUNT VOWELS”  时，toast 会显示元音的数量，如右图所示：
+编译并运行 BindingTest 项目。 该应用将启动并在左侧显示屏幕截图（`EditText` 用一些文本进行初始化，但你可以点击它以对其进行更改）。 点击“COUNT VOWELS”时，toast 会显示元音的数量，如右图所示：
 
 [![运行 BindingTest 的屏幕截图](binding-an-aar-images/12-count-vowels.png)](binding-an-aar-images/12-count-vowels.png#lightbox)
 
-尝试点击“COUNT CONSONANTS”  按钮。 另外，可以修改文本行并再次点击这些按钮以测试不同的元音和辅音计数。
+尝试点击“COUNT CONSONANTS”按钮。 另外，可以修改文本行并再次点击这些按钮以测试不同的元音和辅音计数。
 
 ### <a name="accessing-aar-resources"></a>访问 .AAR 资源
 
-Xamarin 工具将 .AAR 中的 R  数据合并到应用的 Resource  类中。 因此，可以从布局（和从代码隐藏）访问 .AAR 资源，其访问方式与访问项目“资源”  路径中的资源的方式相同。
+Xamarin 工具将 .AAR 中的 R 数据合并到应用的 Resource 类中。 因此，可以从布局（和从代码隐藏）访问 .AAR 资源，其访问方式与访问项目“资源”路径中的资源的方式相同。
 
-若要访问图像资源，请将包装在 .AAR 中的图像命名为 Resource.Drawable  。 例如，可以使用 `@drawable/image` 来引用 .AAR 文件中的 image.png  ：
+若要访问图像资源，请将包装在 .AAR 中的图像命名为 Resource.Drawable。 例如，可以使用 `@drawable/image` 来引用 .AAR 文件中的 image.png：
 
 ```xml
 <ImageView android:src="@drawable/image" ... />
 ```
 
-还可以访问 .AAR 中的资源布局。 为此，请将打包在 .AAR 中的布局命名为 Resource.Layout  。 例如：
+还可以访问 .AAR 中的资源布局。 为此，请将打包在 .AAR 中的布局命名为 Resource.Layout。 例如：
 
 ```csharp
 var a = new ArrayAdapter<string>(this, Resource.Layout.row_layout, ...);
 ```
 
-textanalyzer.aar  示例包含一个位于 res/drawable/monkey.png  的图像文件。 让我们访问此图像资源并在示例应用中使用它：
+textanalyzer.aar 示例包含一个位于 res/drawable/monkey.png 的图像文件。 让我们访问此图像资源并在示例应用中使用它：
 
-编辑 BindingTest  布局 (Main.axml  )，并将 `ImageView` 添加到 `LinearLayout` 容器的末尾。 此 `ImageView` 显示在 \@drawable/monkey  处找到的图像；该图像将从 textanalyzer.aar  的资源部分进行加载：
+编辑 BindingTest 布局 (Main.axml)，并将 `ImageView` 添加到 `LinearLayout` 容器的末尾。 此 `ImageView` 显示在 \@drawable/monkey处找到的图像；该图像将从 textanalyzer.aar 的资源部分进行加载：
 
 ```xml
     ...
@@ -284,7 +287,7 @@ textanalyzer.aar  示例包含一个位于 res/drawable/monkey.png  的图像文
 </LinearLayout>
 ```
 
-编译并运行 BindingTest  项目。 该应用将启动并在左侧显示屏幕截图 &ndash; 在点击“COUNT CONSONANTS”  时，将显示结果，如右图所示：
+编译并运行 BindingTest 项目。 该应用将启动并在左侧显示屏幕截图 &ndash; 在点击“COUNT CONSONANTS”时，将显示结果，如右图所示：
 
 [![BindingTest 显示辅音计数](binding-an-aar-images/13-count-consonants.png)](binding-an-aar-images/13-count-consonants.png#lightbox)
 

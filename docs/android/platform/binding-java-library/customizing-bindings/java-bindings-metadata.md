@@ -7,25 +7,28 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 2a88888b2306589930ad6386fb69bbd3b48924b7
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 5439e213c0016ea01935d617f5f6b5a3edf3eee8
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571371"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853008"
 ---
 # <a name="java-bindings-metadata"></a>Java 绑定元数据
+
+> [!IMPORTANT]
+> 我们当前正在调查 Xamarin 平台上的自定义绑定使用情况。 请参与[此调查](https://www.surveymonkey.com/r/KKBHNLT)，告诉我们将来应该进行哪些开发工作。
 
 _Xamarin.Android 中的 C# 代码通过绑定调用 Java 库，这些绑定是一种机制，用于提取 Java 本机接口 (JNI) 中指定的低级别详细信息。Xamarin.Android 提供生成这些绑定的工具。使用此工具，开发人员可以控制如何使用元数据创建绑定，进而允许修改命名空间和重命名成员等过程。本文档讨论元数据的工作原理，概述了元数据支持的属性，并说明如何通过修改此元数据来解决绑定问题。_
 
 ## <a name="overview"></a>概述
 
-Xamarin.Android Java 绑定库  尝试通过一个有时被称为“绑定生成器”  的工具来自动完成绑定现有 Android 库所需的大量工作。 绑定 Java 库时，Xamarin.Android 将检查 Java 类并生成所有要绑定的包、类型和成员的列表。 此 API 列表存储在一个 XML 文件中，在发行  版本中，该文件位于 \{project directory}\obj\Release\api.xml  ，在调试  版本中，该文件位于 \{project directory}\obj\Debug\api.xml  。
+Xamarin.Android Java 绑定库尝试通过一个有时被称为“绑定生成器”的工具来自动完成绑定现有 Android 库所需的大量工作。 绑定 Java 库时，Xamarin.Android 将检查 Java 类并生成所有要绑定的包、类型和成员的列表。 此 API 列表存储在一个 XML 文件中，在发行版本中，该文件位于 \{project directory}\obj\Release\api.xml，在调试版本中，该文件位于 \{project directory}\obj\Debug\api.xml。
 
 ![obj/Debug 文件夹中的 api.xml 文件的位置](java-bindings-metadata-images/java-bindings-metadata-01.png)
 
-绑定生成器将使用 api.xml  文件作为指导来生成所需的 C# 包装类。 此 XML 文件的内容是 Google Android 开源项目  格式的变体。
-以下代码片段是 api.xml  文件的内容示例：
+绑定生成器将使用 api.xml 文件作为指导来生成所需的 C# 包装类。 此 XML 文件的内容是 Google Android 开源项目格式的变体。
+以下代码片段是 api.xml 文件的内容示例：
 
 ```xml
 <api>
@@ -45,14 +48,14 @@ Xamarin.Android Java 绑定库  尝试通过一个有时被称为“绑定生成
 </api>
 ```
 
-在此示例中，api.xml  在扩展 `java.lang.Object` 的 `android` 包中声明一个 `Manifest` 类。
+在此示例中，api.xml 在扩展 `java.lang.Object` 的 `android` 包中声明一个 `Manifest` 类。
 
 在许多情况下，需要人工协助使 Java API 感觉更像 .NET 或修正阻止绑定程序集编译的问题。 例如，可能需要将 Java 包名称更改为 .NET 命名空间、重命名类或更改方法的返回类型。
 
-不能通过直接修改 api.xml  来实现这些更改。
+不能通过直接修改 api.xml 来实现这些更改。
 而要在“Java 绑定库”模板提供的特殊 XML 文件中记录更改。 在编译 Xamarin.Android 绑定程序集时，绑定生成器在创建绑定程序集时将受到这些映射文件的影响
 
-可以在项目的“转换”  文件夹中找到这些 XML 映射文件：
+可以在项目的“转换”文件夹中找到这些 XML 映射文件：
 
 - **MetaData.xml** &ndash; 允许对最终 API 进行更改，如更改生成绑定的命名空间。 
 
@@ -60,7 +63,7 @@ Xamarin.Android Java 绑定库  尝试通过一个有时被称为“绑定生成
 
 - **EnumMethods.xml** &ndash; 允许更改方法参数，并将返回类型从 Java `int` 常数更改为 C# `enums`。 
 
-MetaData.xml  文件是这些文件中的最常见的导入，因为它允许对绑定进行一般用途的更改，例如：
+MetaData.xml 文件是这些文件中的最常见的导入，因为它允许对绑定进行一般用途的更改，例如：
 
 - 重命名命名空间、类、方法或字段，使其遵循 .NET 约定。 
 
@@ -70,18 +73,18 @@ MetaData.xml  文件是这些文件中的最常见的导入，因为它允许对
 
 - 添加其他支持类，使绑定的设计遵循 .NET 框架模式。 
 
-让我们更详细地讨论 Metadata.xml  。
+让我们更详细地讨论 Metadata.xml。
 
 ## <a name="metadataxml-transform-file"></a>Metadata.xml 转换文件
 
-正如我们了解到的，绑定生成器使用文件 Metadata.xml  来影响绑定程序集的创建。
-元数据格式使用 [XPath](https://www.w3.org/TR/xpath/) 语法，与 [GAPI 元数据](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)指南中介绍的 GAPI 元数据  几乎相同。 此实现几乎是 XPath 1.0 的完整实现，因此支持 1.0 标准版中的项。 此文件是一种功能强大的基于 XPath 的机制，可用于更改、添加、隐藏或移动 API 文件中的任何元素或属性。 元数据规范中的所有规则元素都包含一个路径属性，用于标识要向其应用规则的节点。 这些规则按以下顺序应用：
+正如我们了解到的，绑定生成器使用文件 Metadata.xml 来影响绑定程序集的创建。
+元数据格式使用 [XPath](https://www.w3.org/TR/xpath/) 语法，与 [GAPI 元数据](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)指南中介绍的 GAPI 元数据几乎相同。 此实现几乎是 XPath 1.0 的完整实现，因此支持 1.0 标准版中的项。 此文件是一种功能强大的基于 XPath 的机制，可用于更改、添加、隐藏或移动 API 文件中的任何元素或属性。 元数据规范中的所有规则元素都包含一个路径属性，用于标识要向其应用规则的节点。 这些规则按以下顺序应用：
 
 - **add-node** &ndash; 将子节点追加到 path 属性指定的节点。
 - **attr** &ndash; 设置 path 属性指定的元素的属性值。
 - **remove-node** &ndash; 删除与指定 XPath 匹配的节点。
 
-下面是 Metadata.xml  文件的一个示例：
+下面是 Metadata.xml 文件的一个示例：
 
 ```xml
 <metadata>
@@ -111,7 +114,7 @@ MetaData.xml  文件是这些文件中的最常见的导入，因为它允许对
 
 ### <a name="adding-types"></a>添加类型
 
-`add-node` 元素将通知 Xamarin.Android 绑定项目将新包装类添加到 api.xml  。 例如，下面的代码片段将指示绑定生成器使用构造函数和单个字段创建类：
+`add-node` 元素将通知 Xamarin.Android 绑定项目将新包装类添加到 api.xml。 例如，下面的代码片段将指示绑定生成器使用构造函数和单个字段创建类：
 
 ```xml
 <add-node path="/api/package[@name='org.alljoyn.bus']">
@@ -124,7 +127,7 @@ MetaData.xml  文件是这些文件中的最常见的导入，因为它允许对
 
 ### <a name="removing-types"></a>删除类型
 
-可能会指示 Xamarin.Android 绑定生成器忽略 Java 类型，而不绑定它。 这是通过将 `remove-node` XML 元素添加到 metadata.xml  文件来完成的：
+可能会指示 Xamarin.Android 绑定生成器忽略 Java 类型，而不绑定它。 这是通过将 `remove-node` XML 元素添加到 metadata.xml 文件来完成的：
 
 ```xml
 <remove-node path="/api/package[@name='{package_name}']/class[@name='{name}']" />
@@ -132,10 +135,10 @@ MetaData.xml  文件是这些文件中的最常见的导入，因为它允许对
 
 ### <a name="renaming-members"></a>重命名成员
 
-不能通过直接编辑 api.xml  文件对成员进行重命名，因为 Xamarin.Android 需要原始 Java 本机接口 (JNI) 名称。 因此，不能更改 `//class/@name` 属性；如果更改，绑定将不起作用。
+不能通过直接编辑 api.xml 文件对成员进行重命名，因为 Xamarin.Android 需要原始 Java 本机接口 (JNI) 名称。 因此，不能更改 `//class/@name` 属性；如果更改，绑定将不起作用。
 
 请考虑要重命名 `android.Manifest` 类型的情况。
-为实现此目的，我们可能会尝试直接编辑 api.xml  并重命名类，如下所示：
+为实现此目的，我们可能会尝试直接编辑 api.xml 并重命名类，如下所示：
 
 ```xml
 <attr path="/api/package[@name='android']/class[@name='Manifest']" 
@@ -162,7 +165,7 @@ public class NewName : Java.Lang.Object { ... }
 
 #### <a name="renaming-eventarg-wrapper-classes"></a>重命名 `EventArg` 包装类
 
-当 Xamarin.Android 绑定生成器侦听器类型  标识 `onXXX` setter 方法时，将生成一个 C# 事件和 `EventArgs` 子类，以支持基于 Java 的侦听器模式的 .NET 风格的 API。 例如，请考虑下面的 Java 类和方法：
+当 Xamarin.Android 绑定生成器侦听器类型标识 `onXXX` setter 方法时，将生成一个 C# 事件和 `EventArgs` 子类，以支持基于 Java 的侦听器模式的 .NET 风格的 API。 例如，请考虑下面的 Java 类和方法：
 
 ```xml
 com.someapp.android.mpa.guidance.NavigationManager.on2DSignNextManuever(NextManueverListener listener);
@@ -216,7 +219,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 `managedType` 用于更改方法的返回类型。 在某些情况下，绑定生成器将错误地推断 Java 方法的返回类型，这将导致编译时错误。 在此情况下，一种可行的解决方案是更改方法的返回类型。
 
-例如，绑定生成器认为 Java 方法 `de.neom.neoreadersdk.resolution.compareTo()` 应返回 `int` 并采用 `Object` 作为参数，这将导致错误消息“错误 CS0535：  DE.Neom.Neoreadersdk.Resolution’”不实现接口成员“Java.Lang.IComparable.CompareTo(Java.Lang.Object)”。 下面的代码片段演示如何将生成的 C# 方法的第一个参数类型从 `DE.Neom.Neoreadersdk.Resolution` 更改为 `Java.Lang.Object`： 
+例如，绑定生成器认为 Java 方法 `de.neom.neoreadersdk.resolution.compareTo()` 应返回 `int` 并采用 `Object` 作为参数，这将导致错误消息“错误 CS0535：DE.Neom.Neoreadersdk.Resolution’”不实现接口成员“Java.Lang.IComparable.CompareTo(Java.Lang.Object)”。 下面的代码片段演示如何将生成的 C# 方法的第一个参数类型从 `DE.Neom.Neoreadersdk.Resolution` 更改为 `Java.Lang.Object`： 
 
 ```xml
 <attr path="/api/package[@name='de.neom.neoreadersdk']/
@@ -241,8 +244,8 @@ NavigationManager.2DSignNextManueverEventArgs
 
 模糊处理 Java 库的工具可能会影响 Xamarin.Android 绑定生成器及其生成 C# 包装类的功能。 混淆类的特征包括： 
 
-- 类名包括 $  ，即 a$.class 
-- 类名完全由小写字母组成，即 a.class 
+- 类名包括 $，即 a$.class
+- 类名完全由小写字母组成，即 a.class
 
 此代码片段举例说明如何生成“非混淆”C# 类型：
 
@@ -295,11 +298,11 @@ NavigationManager.2DSignNextManueverEventArgs
 
 ## <a name="enumfieldsxml-and-enummethodsxml"></a>EnumFields.xml 和 EnumMethods.xml
 
-在某些情况下，Android 库使用整数常量表示传递到库的属性或方法的状态。 在许多情况下，将这些整数常量绑定到中 C# 中的枚举很有用。 若要简化此映射，请在绑定项目中使用 EnumFields.xml  和 EnumMethods.xml  文件。 
+在某些情况下，Android 库使用整数常量表示传递到库的属性或方法的状态。 在许多情况下，将这些整数常量绑定到中 C# 中的枚举很有用。 若要简化此映射，请在绑定项目中使用 EnumFields.xml 和 EnumMethods.xml 文件。 
 
 ### <a name="defining-an-enum-using-enumfieldsxml"></a>使用 EnumFields.xml 定义枚举
 
-EnumFields.xml  文件包含 Java `int` 常量和 C# `enums` 之间的映射。 下面的示例演示了如何为一组 `int` 常量创建 C# 枚举： 
+EnumFields.xml 文件包含 Java `int` 常量和 C# `enums` 之间的映射。 下面的示例演示了如何为一组 `int` 常量创建 C# 枚举： 
 
 ```xml 
 <mapping jni-class="com/skobbler/ngx/map/realreach/SKRealReachSettings" clr-enum-type="Skobbler.Ngx.Map.RealReach.SKMeasurementUnit">
@@ -313,9 +316,9 @@ EnumFields.xml  文件包含 Java `int` 常量和 C# `enums` 之间的映射。 
 
 ### <a name="defining-gettersetter-methods-using-enummethodsxml"></a>使用 EnumMethods.xml 方法定义 Getter/Setter 方法
 
-EnumMethods.xml  文件允许更改方法参数，并将返回类型从 Java `int` 常数更改为 C# `enums`。 换句话说，它将 C# 枚举的读取和写入（在“EnumFields”  文件中定义）映射到 Java `int` 常量 `get` 和 `set` 方法。
+EnumMethods.xml 文件允许更改方法参数，并将返回类型从 Java `int` 常数更改为 C# `enums`。 换句话说，它将 C# 枚举的读取和写入（在“EnumFields”文件中定义）映射到 Java `int` 常量 `get` 和 `set` 方法。
 
-根据上面定义的 `SKRealReachSettings` 枚举，以下“EnumMethods.xml”  文件将为此枚举定义 getter/setter：
+根据上面定义的 `SKRealReachSettings` 枚举，以下“EnumMethods.xml”文件将为此枚举定义 getter/setter：
 
 ```xml
 <mapping jni-class="com/skobbler/ngx/map/realreach/SKRealReachSettings">
@@ -334,7 +337,7 @@ realReachSettings.MeasurementUnit = SKMeasurementUnit.Second;
 
 ## <a name="summary"></a>总结
 
-本文讨论了 Xamarin.Android 如何使用元数据来转换 Google  AOSP 格式  的 API 定义。 在介绍了使用 Metadata.xml  可以进行的更改之后，本文研究了重命名成员时会遇到的限制，并展示了支持的 XML 属性列表，描述应在什么情况下使用相应的属性。
+本文讨论了 Xamarin.Android 如何使用元数据来转换 Google AOSP 格式的 API 定义。 在介绍了使用 Metadata.xml 可以进行的更改之后，本文研究了重命名成员时会遇到的限制，并展示了支持的 XML 属性列表，描述应在什么情况下使用相应的属性。
 
 ## <a name="related-links"></a>相关链接
 
