@@ -9,12 +9,12 @@ ms.date: 06/07/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ffa44beb68dc845a64d8bf2a9f86f6d7e56df8f9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4ef1f9aadd93c971adb66ede442796c2b72c2c9a
+ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139433"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226828"
 ---
 # <a name="azure-signalr-service-with-xamarinforms"></a>Azure SignalR 服务Xamarin.Forms
 
@@ -310,7 +310,7 @@ void AddMessage(string message)
 
 ## <a name="related-links"></a>相关链接
 
-* [用 Xamarin 和 SignalR 编制实时移动应用](https://mybuild.techcommunity.microsoft.com/sessions/77333/)
+* [用 Xamarin 和 SignalR 编制实时移动应用](https://www.youtube.com/watch?v=AlqZ1LpUXeg)
 * [SignalR 简介](/aspnet/signalr/overview/getting-started/introduction-to-signalr)
 * [Azure Functions 简介](/azure/azure-functions/functions-overview)
 * [Azure Functions 文档](/azure/azure-functions/)

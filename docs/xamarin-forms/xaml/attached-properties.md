@@ -10,12 +10,12 @@ ms.date: 06/02/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1f26a4415a75b2b02fd7d6893e366ef81156f077
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1277b3cd875c1b4e05e45202a8e30ef2ff93972a
+ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138185"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226789"
 ---
 # <a name="attached-properties"></a>附加属性
 
@@ -42,7 +42,10 @@ ms.locfileid: "84138185"
 
 当创建附加属性以用于其他类型时，创建属性的类不必派生自 [`BindableObject`](xref:Xamarin.Forms.BindableObject) 。 但是，访问器的*target*属性应为，或派生自 [`BindableObject`](xref:Xamarin.Forms.BindableObject) 。
 
-可以通过声明类型的属性来创建附加属性 `public static readonly` [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。 可绑定的属性应设置为 [ `BindableProperty.CreateAttached` ] （x：）之一的返回值 Xamarin.Forms 。BindableProperty，CreateAttached （System.string，System.string，，system.object， Xamarin.Forms ，，System.windows.data.bindingmode>、 Xamarin.Forms 。BindableProperty. ValidateValueDelegate， Xamarin.Forms 。BindableProperty. BindingPropertyChangedDelegate， Xamarin.Forms 。BindableProperty. BindingPropertyChangingDelegate， Xamarin.Forms 。BindableProperty. CoerceValueDelegate， Xamarin.Forms 。BindableProperty. CreateDefaultValueDelegate））方法重载。 声明应在所属类的主体中，但在任何成员定义的外部。
+可以通过声明类型的属性来创建附加属性 `public static readonly` [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。 可绑定的属性应设置为 [ `BindableProperty.CreateAttached` ] (x：的其中一个的返回值 Xamarin.Forms 。BindableProperty，CreateAttached (，system.object，system.object，，，， Xamarin.Forms 。System.windows.data.bindingmode>、 Xamarin.Forms 。BindableProperty. ValidateValueDelegate， Xamarin.Forms 。BindableProperty. BindingPropertyChangedDelegate， Xamarin.Forms 。BindableProperty. BindingPropertyChangingDelegate， Xamarin.Forms 。BindableProperty. CoerceValueDelegate， Xamarin.Forms 。BindableProperty. CreateDefaultValueDelegate) # A3 方法重载。 声明应在所属类的主体中，但在任何成员定义的外部。
+
+> [!IMPORTANT]
+> 附加属性的命名约定是：附加属性标识符必须与方法中指定的属性名称匹配 `CreateAttached` ，并追加 "property"。
 
 下面的代码演示了附加属性的示例：
 
@@ -51,7 +54,7 @@ public static readonly BindableProperty HasShadowProperty =
   BindableProperty.CreateAttached ("HasShadow", typeof(bool), typeof(ShadowEffect), false);
 ```
 
-这将创建一个名为 `HasShadow` 的附加属性，类型为 `bool` 。 属性由 `ShadowEffect` 类拥有，其默认值为 `false` 。 附加属性的命名约定是：附加属性标识符必须与方法中指定的属性名称匹配 `CreateAttached` ，并追加 "property"。 因此，在上面的示例中，附加的属性标识符是 `HasShadowProperty` 。
+这将创建一个名为 `HasShadowProperty` 的附加属性，类型为 `bool` 。 属性由 `ShadowEffect` 类拥有，其默认值为 `false` 。
 
 有关创建可绑定属性的详细信息，包括在创建过程中可以指定的参数，请参阅[创建可绑定属性](~/xamarin-forms/xaml/bindable-properties.md#consume-a-bindable-property)。
 
@@ -63,7 +66,7 @@ public static readonly BindableProperty HasShadowProperty =
 public static valueType GetPropertyName(BindableObject target)
 ```
 
-`Get` *PropertyName*访问器应返回附加属性的相应字段中包含的值 `BindableProperty` 。 这可以通过调用 [ `GetValue` ] （x：）来实现 Xamarin.Forms 。Msds-bindableobject （ Xamarin.Forms 。BindableProperty））方法，传递要获取其值的可绑定属性标识符，然后将结果值强制转换为所需的类型。
+`Get` *PropertyName*访问器应返回附加属性的相应字段中包含的值 `BindableProperty` 。 可以通过调用 [ `GetValue` ] (x：来实现此目的 Xamarin.Forms 。Msds-bindableobject (Xamarin.Forms 。BindableProperty) # A3 方法，传递要获取其值的可绑定属性标识符，然后将生成的值强制转换为所需的类型。
 
 `Set` *PropertyName*访问器应符合以下签名：
 
@@ -71,7 +74,7 @@ public static valueType GetPropertyName(BindableObject target)
 public static void SetPropertyName(BindableObject target, valueType value)
 ```
 
-`Set` *PropertyName*访问器应 `BindableProperty` 为附加属性设置相应字段的值。 这可以通过调用 [ `SetValue` ] （x：）来实现 Xamarin.Forms 。Msds-bindableobject （ Xamarin.Forms 。BindableProperty，System.object）方法，传递要在其上设置值的可绑定属性标识符和要设置的值。
+`Set` *PropertyName*访问器应 `BindableProperty` 为附加属性设置相应字段的值。 可以通过调用 [ `SetValue` ] (x：来实现此目的 Xamarin.Forms 。Msds-bindableobject (Xamarin.Forms 。BindableProperty，System.object) # A3 方法，并传入要设置值的可绑定属性标识符，以及要设置的值。
 
 对于这两个访问器，*目标*对象应为，或派生自 [`BindableObject`](xref:Xamarin.Forms.BindableObject) 。
 
@@ -91,7 +94,7 @@ public static void SetHasShadow (BindableObject view, bool value)
 
 ### <a name="consume-an-attached-property"></a>使用附加属性
 
-创建附加属性后，可以从 XAML 或代码中使用它。 在 XAML 中，这是通过使用前缀的命名空间声明来实现的，命名空间声明指示公共语言运行时（CLR）命名空间名称，也可以是程序集名称。 有关详细信息，请参阅[XAML 命名空间](~/xamarin-forms/xaml/namespaces.md)。
+创建附加属性后，可以从 XAML 或代码中使用它。 在 XAML 中，这是通过以下方式实现的：使用前缀声明命名空间，命名空间声明指示公共语言运行时 (CLR) 命名空间名称，并选择性地包含程序集名称。 有关详细信息，请参阅[XAML 命名空间](~/xamarin-forms/xaml/namespaces.md)。
 
 下面的代码示例演示包含附加属性的自定义类型的 XAML 命名空间，该属性在与引用自定义类型的应用程序代码相同的程序集中进行定义：
 
