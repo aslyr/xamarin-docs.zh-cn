@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/02/2018
-ms.openlocfilehash: c6a606bf326d1e59398ab77c51b1de5ed3e497e0
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 66d2f66f0118e84778b25fc0e872099439510ce2
+ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571527"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226841"
 ---
 # <a name="signing-the-android-application-package"></a>对 Android 应用程序包进行签名
 
@@ -20,7 +20,7 @@ ms.locfileid: "84571527"
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-在[存档以便进行发布](~/android/deploy-test/release-prep/index.md#archive)中，“分发渠道”对话框提供了两种分发选择。 选择“即席”：
+在[“存档以供发布”](~/android/deploy-test/release-prep/index.md#archive)中，“分发通道”对话框显示两个分发选项。 选择“即席”：
 
 [![“分发通道”对话框](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png#lightbox)
 
@@ -46,7 +46,7 @@ ms.locfileid: "84571527"
 
 [![临时签名标识](images/vs/02-ad-hoc-signing-identity-vs-sml.png)](images/vs/02-ad-hoc-signing-identity-vs.png#lightbox)
 
-会显示“创建 Android 密钥存储”对话框；使用此对话框可创建可以用于对 Android 应用程序进行签名的新签名证书。 输入所需信息（具有红色边框），如此对话框中所示：
+“创建 Android 密钥存储库”对话框显示；使用此对话框来新建可用于对 Android 应用进行签名的签名证书。 输入所需信息（具有红色边框），如此对话框中所示：
 
 [![“创建 Android 密钥存储”对话框](images/vs/03-create-android-key-store-vs-sml.png)](images/vs/03-create-android-key-store-vs.png#lightbox)
 
@@ -62,8 +62,10 @@ C:\\Users\\USERNAME\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\ALIAS\
 
 C:\\Users\\USERNAME\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\chimp\\chimp.keystore
 
-> [!NOTE]
-> 请确保将生成的密钥存储文件和密码备份在安全的位置 &ndash; 它不包含在解决方案中。 如果密钥存储文件（例如，因为移动到另一台计算机或重新安装了 Windows）丢失，将无法使用与以前版本相同的证书对应用签名。
+> [!IMPORTANT]
+> 默认情况下，“AppData”文件夹是隐藏的，你可能需要取消隐藏它来访问它。
+>
+> 此外，请务必将生成的密钥存储库文件和密码备份在安全的位置 &ndash; 它不包含在解决方案中。 如果密钥存储文件（例如，因为移动到另一台计算机或重新安装了 Windows）丢失，将无法使用与以前版本相同的证书对应用签名。
 
 有关密钥存储的详细信息，请参阅[查找密钥存储的 MD5 或 SHA1 签名](~/android/deploy-test/signing/keystore-signature.md)。
 

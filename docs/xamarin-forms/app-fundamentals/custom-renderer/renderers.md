@@ -1,21 +1,21 @@
 ---
-title: title:"呈现器基类和本机控件" description:"每个 Xamarin.Forms 控件都有一个附带的呈现器，适用于创建本机控件实例的各个平台。
-description: '本文列出了用于实现每个 Xamarin.Forms 页面、布局、视图和单元的呈现器和本机控件类。" ms.prod: xamarin ms.assetid:A8909AE3-ED0E-4D24-BF96-B49E732E3B93 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2020 年 4 月 17 日 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: 呈现器基类和本机控件
+description: 每个 Xamarin.Forms 控件都有一个附带的呈现器，适用于创建本机控件实例的各个平台。 本文列出了用于实现每个 Xamarin.Forms 页面、布局、视图和单元的呈现器和本机控件类。
 ms.prod: xamarin
 ms.assetid: A8909AE3-ED0E-4D24-BF96-B49E732E3B93
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/17/2020
+ms.date: 07/09/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9f6eff831f3eb653e281dd9ee750bae7f7dfda06
-ms.sourcegitcommit: 2105091f2eeb7844b19ae94708a6ab07e3e79bce
+ms.openlocfilehash: 612200a23c198cbb1127119548c0a1dcc2928645
+ms.sourcegitcommit: cd0c0999b53e825b60471bfbfd4144cfcd783587
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84198386"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86225463"
 ---
 # <a name="renderer-base-classes-and-native-controls"></a>呈现器基类和本机控件
 
@@ -80,26 +80,32 @@ ms.locfileid: "84198386"
 |[`BoxView`](xref:Xamarin.Forms.BoxView)|BoxRenderer (iOS 和 Android), BoxViewRenderer (UWP)|UIView|ViewGroup||矩形|
 |[`Button`](xref:Xamarin.Forms.Button)|ButtonRenderer|UIButton|Button|AppCompatButton|Button|
 |[`CarouselView`](xref:Xamarin.Forms.CarouselView)|CarouselViewRenderer|UICollectionView||RecyclerView|ListViewBase|
-|`CheckBox`|CheckBoxRenderer|UIButton||AppCompatCheckBox|CheckBox|
+|[`CheckBox`](xref:Xamarin.Forms.CheckBox)|CheckBoxRenderer|UIButton||AppCompatCheckBox|CheckBox|
 |[`CollectionView`](xref:Xamarin.Forms.CollectionView)|CollectionViewRenderer|UICollectionView||RecyclerView|ListViewBase|
 |[`DatePicker`](xref:Xamarin.Forms.DatePicker)|DatePickerRenderer|UITextField|EditText||DatePicker|
 |[`Editor`](xref:Xamarin.Forms.Editor)|EditorRenderer|UITextView|EditText||文本框|
+|[`Ellipse`](xref:Xamarin.Forms.Shapes.Ellipse)|EllipseRenderer|CALayer|视图||椭圆形|
 |[`Entry`](xref:Xamarin.Forms.Entry)|[EntryRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/entry.md)|UITextField|EditText||文本框|
 |[`Image`](xref:Xamarin.Forms.Image)|ImageRenderer|UIImageView|ImageView||图像|
 |[`ImageButton`](xref:Xamarin.Forms.ImageButton)|ImageButtonRenderer|UIButton||AppCompatImageButton|Button|
-|`IndicatorView`|IndicatorViewRenderer|UIPageControl||LinearLayout||
+|[`IndicatorView`](xref:Xamarin.Forms.IndicatorView)|IndicatorViewRenderer|UIPageControl||LinearLayout||
 |[`Label`](xref:Xamarin.Forms.Label)|LabelRenderer|UILabel|TextView||TextBlock|
+|[`Line`](xref:Xamarin.Forms.Shapes.Line)|LineRenderer|CALayer|视图||线|
 |[`ListView`](xref:Xamarin.Forms.ListView)|[ListViewRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/listview.md)|UITableView|ListView||ListView|
 |[`Map`](xref:Xamarin.Forms.Maps.Map)|[MapRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)|MKMapView|MapView||MapControl|
 |[`MediaElement`](xref:Xamarin.Forms.MediaElement)|MediaElementRenderer|UIView||VideoView|MediaElement|
+|[`Path`](xref:Xamarin.Forms.Shapes.Path)|PathRenderer|CALayer|视图||路径|
 |[`Picker`](xref:Xamarin.Forms.Picker)|PickerRenderer|UITextField|EditText|EditText|组合框|
-|`RadioButton`|RadioButtonRenderer|UIButton||AppCompatRadioButton|RadioButton|
+|[`Polygon`](xref:Xamarin.Forms.Shapes.Polygon)|PolygonRenderer|CALayer|视图||多边形|
+|[`Polyline`](xref:Xamarin.Forms.Shapes.Polyline)|PolylineRenderer|CALayer|视图||折线|
 |[`ProgressBar`](xref:Xamarin.Forms.ProgressBar)|ProgressBarRenderer|UIProgressView|ProgressBar||ProgressBar|
+|[`RadioButton`](xref:Xamarin.Forms.RadioButton)|RadioButtonRenderer|UIButton||AppCompatRadioButton|RadioButton|
+|[`Rectangle`](xref:Xamarin.Forms.Shapes.Rectangle)|RectangleRenderer|CALayer|视图||矩形|
 |[`RefreshView`](xref:Xamarin.Forms.RefreshView)|RefreshViewRenderer|UIView||SwipeRefreshLayout|RefreshContainer|
 |[`SearchBar`](xref:Xamarin.Forms.SearchBar)|SearchBarRenderer|UISearchBar|SearchView||AutoSuggestBox|
 |[`Slider`](xref:Xamarin.Forms.Slider)|SliderRenderer|UISlider|SeekBar||Slider|
 |[`Stepper`](xref:Xamarin.Forms.Stepper)|StepperRenderer|UIStepper|LinearLayout||控件|
-|`SwipeView`|SwipeViewRenderer|UIView||视图|SwipeControl|
+|[`SwipeView`](xref:Xamarin.Forms.SwipeView)|SwipeViewRenderer|UIView||视图|SwipeControl|
 |[`Switch`](xref:Xamarin.Forms.Switch)|SwitchRenderer|UISwitch|开关|SwitchCompat|ToggleSwitch|
 |[`TableView`](xref:Xamarin.Forms.TableView)|TableViewRenderer|UITableView|ListView||ListView|
 |[`TimePicker`](xref:Xamarin.Forms.TimePicker)|TimePickerRenderer|UITextField|EditText||TimePicker|
