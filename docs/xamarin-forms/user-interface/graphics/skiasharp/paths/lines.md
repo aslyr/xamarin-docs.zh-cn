@@ -10,22 +10,22 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 87b97ad913e08c42d16bbf055f168c07b9bd60e8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 644e6ab4acffa7acf2d86733d68fed8db07a752a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137197"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932361"
 ---
 # <a name="lines-and-stroke-caps"></a>线和笔划大写字母
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _了解如何使用 SkiaSharp 来绘制具有不同笔划帽的线条_
 
 在 SkiaSharp 中，呈现单行与呈现一系列连接的直线非常不同。 不过，即使在绘制单条行时，也经常需要为行指定一个特定的笔划宽度。 当这些行变宽时，行尾的外观也会变得很重要。 线条末尾的外观称为 "*笔划帽*"：
 
-![](lines-images/strokecapsexample.png "The three stroke caps options")
+![三个笔划大写字母选项](lines-images/strokecapsexample.png)
 
 对于绘制单行， `SKCanvas` 定义一个简单的 [`DrawLine`](xref:SkiaSharp.SKCanvas.DrawLine(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint)) 方法，该方法的参数指示行的起始和结束坐标与 `SKPaint` 对象：
 
@@ -97,7 +97,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 对于枚举中的每个成员 `SKStrokeCap` ，处理程序将绘制两行，其中一个笔画的粗细为50像素，另一个行位于顶部，并以两个像素为笔画宽度。 此第二行旨在说明行的几何起点和终点（与线条粗细和笔划帽无关）：
 
-[![](lines-images/strokecaps-small.png "Triple screenshot of the Stroke Caps page")](lines-images/strokecaps-large.png#lightbox "Triple screenshot of the Stroke Caps page")
+[![笔划顶端页面的三向屏幕截图](lines-images/strokecaps-small.png)](lines-images/strokecaps-large.png#lightbox "笔划顶端页面的三向屏幕截图")
 
 正如您所看到的， `Square` 和 `Round` 笔划的 caps 会有效地将行的长度扩展到行首的半个笔划宽度处，并在末尾再次扩展。 如果需要确定呈现的图形对象的维度，则此扩展插件非常重要。
 
@@ -231,7 +231,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 屏幕截图显示了多种 `Picker` 选择：
 
-[![](lines-images/multiplelines-small.png "Triple screenshot of the Multiple Lines page")](lines-images/multiplelines-large.png#lightbox "Triple screenshot of the Multiple Lines page")
+[![多行页面的三个屏幕截图](lines-images/multiplelines-small.png)](lines-images/multiplelines-large.png#lightbox "多行页面的三个屏幕截图")
 
 左侧的 iPhone 显示 `SKPointMode.Points` 枚举成员如何导致 `DrawPoints` 数组中的每个点呈现 `SKPoint` 为一个正方形（如果行帽为 `Butt` 或） `Square` 。 如果线帽为，则呈现圆圈 `Round` 。
 

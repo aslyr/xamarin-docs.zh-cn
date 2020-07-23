@@ -10,12 +10,12 @@ ms.date: 02/01/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0ecbc850960465296dc4047277bdafe78ac800a4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8c53b1e58ad97f7d0e17972a2b232c16e05ecc1a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573243"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934883"
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>平板电脑和桌面应用的布局
 
@@ -43,7 +43,7 @@ Xamarin.Forms支持在受支持的平台上使用的所有设备类型，因此�
 在 iOS 9 之前，所有应用程序都在设备上占用整个屏幕，但有些 Ipad 现在可以执行[拆分屏幕多任务](~/ios/platform/multitasking.md)。
 这意味着，你的应用程序可能会在屏幕的一侧（50% 的宽度）或整个屏幕上只占用一个超薄柱形。
 
-[![](tablet-images/ipad-sml.png "iPad Split Screen Example")](tablet-images/ipad.png#lightbox "iPad Split Screen Example")
+[![iPad 拆分屏幕示例](tablet-images/ipad-sml.png)](tablet-images/ipad.png#lightbox "iPad 拆分屏幕示例")
 
 拆分屏幕功能意味着您应该将您的应用程序设计为在最大宽度为320像素的情况下正常工作，或者尽可能多1366像素。
 
@@ -60,7 +60,7 @@ Android 生态系统提供多种受支持的屏幕大小（从小手机到大平
 
 除了运行全屏外，还可以将 Windows 平板电脑和桌面上运行的应用调整为任意尺寸。
 
-[![](tablet-images/splitscreen-sml.png "Windows Split Screen Example")](tablet-images/splitscreen.png#lightbox "Windows Split Screen Example")
+[![Windows 拆分屏幕示例](tablet-images/splitscreen-sml.png)](tablet-images/splitscreen.png#lightbox "Windows 拆分屏幕示例")
 
 ## <a name="optimize-for-tablet-and-desktop"></a>为平板电脑和桌面优化
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/13/2016
-ms.openlocfilehash: 3dcd5f17b35b9829831adcf997d8bde97c0572e7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a7b0f0af887232da52cdca6f6506124fa5e0eef8
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030157"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930086"
 ---
 # <a name="watchos-project-references-in-xamarin"></a>Xamarin 中的 watchOS 项目引用
 
@@ -26,20 +26,20 @@ WatchOS 解决方案中的三个项目*自动配置*为以特定方式相互引�
 
 - **iPhone 应用**引用**监视应用**
 
-  ![](project-references-images/catalog-reference1.png "iPhone app references Watch App")
+  ![iPhone 应用引用监视应用](project-references-images/catalog-reference1.png)
 
 - **监视应用**引用**监视应用扩展**
 
-  ![](project-references-images/catalog-reference2.png "iPhone app references Watch App")
+  ![iPhone 应用引用监视应用](project-references-images/catalog-reference2.png)
 
 - **Watch 应用扩展**未引用任何其他项目
 
-  ![](project-references-images/catalog-reference3.png "Watch App Extension does not reference the other projects")
+  ![监视应用扩展未引用其他项目](project-references-images/catalog-reference3.png)
 
 ## <a name="bundle-identifiers"></a>捆绑标识符
 
 还需要确保**捆绑标识符**是正确的。
-所有三个项目都应有*相同*的标识符前缀，两个监视项目具有 `watchkitextension` 和 `watchkitapp`的预定义扩展，如下所示（适用于**WatchKitCatalog**示例）：
+所有三个项目都应具有*相同*的标识符前缀，两个监视项目具有和的预定义扩展，如下所示 `watchkitextension` `watchkitapp` （对于**WatchKitCatalog**示例）：
 
 - Xamarin iOS 统一项目-`com.xamarin.WatchKitCatalog`
 
@@ -49,7 +49,7 @@ WatchOS 解决方案中的三个项目*自动配置*为以特定方式相互引�
 
 此外，请确保这些**信息 info.plist**设置正确：
 
-- Watch 应用项目的 `WKCompanionAppBundleIdentifier` 与父/容器应用的捆绑 ID （即在 iPhone 上运行的 ID）匹配;
+- Watch 应用项目 `WKCompanionAppBundleIdentifier` 与父/容器应用的捆绑 ID （即在 iPhone 上运行的应用程序）匹配;
 
 - 手表套件扩展项目的**WKApp 捆绑 id**与 watch 应用项目的捆绑 id 匹配。
 
@@ -57,11 +57,11 @@ WatchOS 解决方案中的三个项目*自动配置*为以特定方式相互引�
 
 此屏幕截图是**监视扩展的**info.plist 文件，还显示了**watch 应用的**标识符：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ![](project-references-images/infoplist-extension.png "This screenshot is the Watch Extension's Info.plist file")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![](project-references-images/infoplist-extension-vs.png "This screenshot is the Watch Extension's Info.plist file")
 
@@ -70,6 +70,6 @@ WatchOS 解决方案中的三个项目*自动配置*为以特定方式相互引�
 此屏幕截图是**监视应用的**info.plist 文件。
 当前**监视操作系统**版本为8.2，因此监视应用的**部署目标**应为**8.2**。 请注意，如果安装了 Xcode 6.3，此值可能设置为 8.3-应将其更改为8.2。
 
-![](project-references-images/infoplist-watchapp.png "The watch Info.plist file")
+![Watch info.plist 文件](project-references-images/infoplist-watchapp.png)
 
 监视应用的部署目标可以不同于监视扩展和 iOS 应用。

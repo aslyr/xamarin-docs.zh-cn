@@ -10,16 +10,16 @@ ms.date: 04/12/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e8d11add988828fa4e26d3f6728dd0b4319b3630
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 020319761ba1274495b7595a0d18435f98a5f990
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84133297"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937171"
 ---
 # <a name="matrix-transforms-in-skiasharp"></a>SkiaSharp 中的矩阵转换
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _利用多样的转换矩阵深入了解 SkiaSharp 转换_
 
@@ -27,7 +27,7 @@ _利用多样的转换矩阵深入了解 SkiaSharp 转换_
 
 正如您所看到的，可以在 SkiaSharp 中使用转换，而无需知道转换矩阵，但是转换矩阵对于理论观点非常重要，在使用变换来修改路径或处理复杂的触摸输入时，这两种情况都非常重要。
 
-![](matrix-images/matrixtransformexample.png "A bitmap subjected to an affine transform")
+![用于仿射转换的位图](matrix-images/matrixtransformexample.png)
 
 `SKCanvas`通过访问只读属性，可以随时使用应用于的当前转换矩阵 [`TotalMatrix`](xref:SkiaSharp.SKCanvas.TotalMatrix) 。 您可以使用方法设置新的转换矩阵 [`SetMatrix`](xref:SkiaSharp.SKCanvas.SetMatrix(SkiaSharp.SKMatrix)) ，还可以通过调用将该转换矩阵还原为默认值 [`ResetMatrix`](xref:SkiaSharp.SKCanvas.ResetMatrix) 。
 
@@ -407,7 +407,7 @@ public class PathTransformPage : ContentPage
 
 它显示在画布的左上角：
 
-[![](matrix-images/pathtransform-small.png "Triple screenshot of the Path Transform page")](matrix-images/pathtransform-large.png#lightbox "Triple screenshot of the Path Transform page")
+[![路径转换页面的三向屏幕截图](matrix-images/pathtransform-small.png)](matrix-images/pathtransform-large.png#lightbox "路径转换页面的三向屏幕截图")
 
 此程序的构造函数将矩阵应用到具有以下调用的路径：
 
@@ -593,7 +593,7 @@ public partial class ShowAffineMatrixPage : ContentPage
 
 下面的 iOS 屏幕显示第一次加载页面时的位图，而另两个屏幕在执行某种操作后显示该位图：
 
-[![](matrix-images/showaffinematrix-small.png "Triple screenshot of the Show Affine Matrix page")](matrix-images/showaffinematrix-large.png#lightbox "Triple screenshot of the Show Affine Matrix page")
+[!["显示仿射矩阵" 页的三个屏幕截图](matrix-images/showaffinematrix-small.png)](matrix-images/showaffinematrix-large.png#lightbox ""显示仿射矩阵" 页的三个屏幕截图")
 
 尽管触摸点看起来好像是触摸点，但这只是一种错觉。 从触摸点计算的矩阵会转换位图，使拐角与触摸点重合。
 

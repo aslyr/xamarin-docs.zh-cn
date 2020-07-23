@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 76b4633e6b224e234f9d5f693f4e01ed7a35d6db
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0c2bbc89f503cfbaad24d8f1ac5d0635c1c22e48
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138042"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937808"
 ---
 # <a name="page-toolbar-placement-on-windows"></a>Windows 上的页面工具栏布局
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此通用 Windows 平台平台特定用于更改工具栏在上的位置 [`Page`](xref:Xamarin.Forms.Page) ，并通过将 [`Page.ToolbarPlacement`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty) 附加属性设置为枚举的值来在 XAML 中使用 [`ToolbarPlacement`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement) ：
 
@@ -45,7 +45,7 @@ page.On<Windows>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 
 结果是将指定的工具栏位置应用到 [`Page`](xref:Xamarin.Forms.Page) 实例：
 
-[![](page-toolbar-placement-images/toolbar-placement.png "Toolbar Placement Platform-Specific")](page-toolbar-placement-images/toolbar-placement-large.png#lightbox "Toolbar Placement Platform-Specific")
+[![工具栏放置平台特定的](page-toolbar-placement-images/toolbar-placement.png)](page-toolbar-placement-images/toolbar-placement-large.png#lightbox "工具栏放置平台特定的")
 
 ## <a name="related-links"></a>相关链接
 

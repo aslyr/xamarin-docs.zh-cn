@@ -7,19 +7,19 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2018
-ms.openlocfilehash: c6beb55eed1502808c7bf91bebec32607a20f1a4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5b7f65c3135bb5645b3816a8e0285c2491de1a78
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73004761"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933011"
 ---
 # <a name="ios-backgrounding-guidance"></a>iOS 后台处理指南
 
 请参阅下图，选择 iOS 6 中的后台处理技术：
 
- [![](ios-backgrounding-guidance-images/image10.png "Choose a backgrounding technique in iOS 6")](ios-backgrounding-guidance-images/image10.png#lightbox)
+ [![选择 iOS 6 中的后台处理技术](ios-backgrounding-guidance-images/image10.png)](ios-backgrounding-guidance-images/image10.png#lightbox)
 
 请参阅下图，在 iOS 7 中选择后台处理技术：
 
- [![](ios-backgrounding-guidance-images/image10b.png "Choose a backgrounding technique in iOS 7")](ios-backgrounding-guidance-images/image10b.png#lightbox)
+ [![在 iOS 7 中选择后台处理技术](ios-backgrounding-guidance-images/image10b.png)](ios-backgrounding-guidance-images/image10b.png#lightbox)

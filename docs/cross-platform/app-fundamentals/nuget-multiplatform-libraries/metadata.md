@@ -6,12 +6,12 @@ ms.assetid: 147BA370-67A7-4E6C-BF17-AA7C536C0A48
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 5e71ff86869c42d478fbf1ee3f6de5bff59431fc
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: 858d2a2399e1d294767b8afad36502b809955224
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728208"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933262"
 ---
 # <a name="editing-nuget-metadata"></a>编辑 NuGet 元数据
 
@@ -21,11 +21,11 @@ _使用项目选项编辑多平台库的 NuGet 元数据_
 
 **Metadata**节配置[ **nuspec** NuGet 包清单文件](https://docs.microsoft.com/nuget/create-packages/creating-a-package#the-role-and-structure-of-the-nuspec-file)中使用的值。
 
-## <a name="required-information"></a>必需的信息
+## <a name="required-information"></a>必需信息
 
 "**常规**" 选项卡包含四个字段，必须输入这些字段才能生成 NuGet 包：
 
-[![](metadata-images/metadata-general-sml.png "NuGet package required metadata window")](metadata-images/metadata-general.png#lightbox)
+[![NuGet 包所需的元数据窗口](metadata-images/metadata-general-sml.png)](metadata-images/metadata-general.png#lightbox)
 
 - **ID** –包标识符，在 NuGet.org （或包将分发到的任何位置）中应该是唯一的。 遵循本[指南](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)，只使用在 URL 中有效的字符（无空格，并避免使用大多数特殊字符）。
 - **版本**–选择与[NuGet 的版本控制规则](https://docs.microsoft.com/nuget/create-packages/dependency-versions)一致的版本号。
@@ -44,7 +44,7 @@ _使用项目选项编辑多平台库的 NuGet 元数据_
 
 "**详细信息**" 选项卡包含要包含在 NuGet 包清单文件中的可选字段。
 
-[![](metadata-images/metadata-detail-sml.png "NuGet package optional metadata window")](metadata-images/metadata-detail.png#lightbox)
+[![NuGet 包可选元数据窗口](metadata-images/metadata-detail-sml.png)](metadata-images/metadata-detail.png#lightbox)
 
 有关必填字段和可选字段的详细信息，请参阅[可选的元素参考](https://docs.microsoft.com/nuget/schema/nuspec#optional-metadata-elements)。
 

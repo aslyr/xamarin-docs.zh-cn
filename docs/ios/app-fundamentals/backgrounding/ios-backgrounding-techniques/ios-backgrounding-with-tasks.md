@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 63d59d9f11932343c6ca57e0b3735077eabb6a9a
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: a8259cf47f8af6e356c9a860c61ad0eea0c8927a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571813"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932972"
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS 后台处理及任务
 
@@ -113,11 +113,11 @@ Task.Factory.StartNew( () => {
 
 请记住，在后台运行的任务需要600秒钟才能完成。 此限制的一个原因是，在后台运行的任务会使设备在任务持续期间处于唤醒状态：
 
- [![](ios-backgrounding-with-tasks-images/ios6.png "Graph of the task keeping the app awake pre-iOS 7")](ios-backgrounding-with-tasks-images/ios6.png#lightbox)
+ [![使应用保持唤醒状态的任务的图形预 iOS 7](ios-backgrounding-with-tasks-images/ios6.png)](ios-backgrounding-with-tasks-images/ios6.png#lightbox)
 
 iOS 7 后台处理已针对更长的电池寿命进行了优化。 在 iOS 7 中，后台处理成为了机会：在设备进入睡眠状态时，任务会考虑到设备处于睡眠状态，而不是使设备处于唤醒状态，而是在设备唤醒以处理电话呼叫、通知、传入电子邮件和其他常见中断时，以区块处理它们。 下图提供了对任务的分解方式的深入了解：
 
- [![](ios-backgrounding-with-tasks-images/ios7.png "Graph of the task being broken into chunks post-iOS 7")](ios-backgrounding-with-tasks-images/ios7.png#lightbox)
+ [![IOS 7 之后拆分为块区的任务图](ios-backgrounding-with-tasks-images/ios7.png)](ios-backgrounding-with-tasks-images/ios7.png#lightbox)
 
 因为任务运行时间不是连续的，所以在 iOS 7 中，执行网络传输的任务必须以不同的方式进行处理。 鼓励开发人员使用 `NSURlSession` API 来处理网络传输。 下一部分概述了后台传输。
 

@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 0d5ec4bc10747a287def3fd9a83a703d2ec4b2a2
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 0f3c91e175e5ccdefeaf3d6c9c83e9eb3e012e14
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572372"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935390"
 ---
 # <a name="working-with-tvos-navigation-bars-in-xamarin"></a>在 Xamarin 中使用 tvOS 导航栏
 
 可以将导航栏添加到视图顶部，以显示标题和可选导航栏按钮。 通常，当用户从主页（如表视图、集合或菜单）导航到显示所选项的详细信息的子视图时使用它们。
 
-[![](navigation-bars-images/navbar01.png "Sample Navigation Bar")](navigation-bars-images/navbar01.png#lightbox)
+[![示例导航栏](navigation-bars-images/navbar01.png)](navigation-bars-images/navbar01.png#lightbox)
 
 除了在中心显示的标题外，导航栏还可以 `UIBarButtonItem` 在条形图的左侧和右侧包含一个或多个导航栏按钮（）。
 
@@ -36,16 +36,16 @@ ms.locfileid: "84572372"
 1. 在**Solution Pad**中，双击 " `Main.storyboard` 文件" 并将其打开以进行编辑。
 1. 将**导航栏**从**工具箱**拖放到屏幕顶部的视图上：
 
-    [![](navigation-bars-images/navbar02.png "A Navigation Bar")](navigation-bars-images/navbar02.png#lightbox)
+    [![导航栏](navigation-bars-images/navbar02.png)](navigation-bars-images/navbar02.png#lightbox)
 1. 双击**导航栏**以选择**导航项**。 在**Properties Pad**的 "**小组件**" 选项卡中，可以设置**标题**：
 
-    [![](navigation-bars-images/navbar03.png "Set the Title")](navigation-bars-images/navbar03.png#lightbox)
+    [![设置标题](navigation-bars-images/navbar03.png)](navigation-bars-images/navbar03.png#lightbox)
 1. 接下来，可以将一个或多个**条形按钮项**添加到栏的任一端：
 
-    [![](navigation-bars-images/navbar04.png "A Bar Button Item")](navigation-bars-images/navbar04.png#lightbox)
+    [![条形按钮项](navigation-bars-images/navbar04.png)](navigation-bars-images/navbar04.png#lightbox)
 1. 最后，在 "**属性资源管理器**" 的 "**事件**" 选项卡中将**条形按钮项**向上连接到操作：
 
-    [![](navigation-bars-images/navbar05.png "A Bar Button Item Action")](navigation-bars-images/navbar05.png#lightbox)
+    [![条形按钮项操作](navigation-bars-images/navbar05.png)](navigation-bars-images/navbar05.png#lightbox)
 1. 保存所做更改。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -53,16 +53,16 @@ ms.locfileid: "84572372"
 1. 在**解决方案资源管理器**中，双击 " `Main.storyboard` 文件" 并将其打开以进行编辑。
 1. 将**导航栏**从**工具箱**拖放到屏幕顶部的视图上：
 
-    [![](navigation-bars-images/navbar02-vs.png "A Navigation Bar")](navigation-bars-images/navbar02-vs.png#lightbox)
+    [![导航栏](navigation-bars-images/navbar02-vs.png)](navigation-bars-images/navbar02-vs.png#lightbox)
 1. 双击**导航栏**以选择**导航项**。 在 "**属性资源管理器**" 的 "**小组件**" 选项卡中，您可以设置**标题**：
 
-    [![](navigation-bars-images/navbar03-vs.png "Set the Title")](navigation-bars-images/navbar03-vs.png#lightbox)
+    [![设置标题](navigation-bars-images/navbar03-vs.png)](navigation-bars-images/navbar03-vs.png#lightbox)
 1. 接下来，可以将一个或多个**条形按钮项**添加到栏的任一端：
 
-    [![](navigation-bars-images/navbar04-vs.png "A Bar Button Items")](navigation-bars-images/navbar04-vs.png#lightbox)
+    [![条形按钮项](navigation-bars-images/navbar04-vs.png)](navigation-bars-images/navbar04-vs.png#lightbox)
 1. 最后，在 "**属性资源管理器**" 的 "**事件**" 选项卡中将**条形按钮项**向上连接到操作：
 
-    [![](navigation-bars-images/navbar05-vs.png "A Bar Button Item Actions")](navigation-bars-images/navbar05-vs.png#lightbox)
+    [![条形按钮项操作](navigation-bars-images/navbar05-vs.png)](navigation-bars-images/navbar05-vs.png#lightbox)
 1. 保存所做更改。
 
 -----

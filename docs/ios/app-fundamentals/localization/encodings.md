@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/28/2017
-ms.openlocfilehash: 78c048d793fd792576e2482491ebf11460d5b511
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 88f95f797d1230c818a635376f7b17a2264afadf
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571800"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930333"
 ---
 # <a name="internationalization-encodings-in-xamarinios"></a>Xamarin 中的国际化编码
 
@@ -22,9 +22,9 @@ ms.locfileid: "84571800"
 
 这是通过在 Visual Studio for Mac 或 Visual Studio 中的 "iOS 生成"/"高级" 窗格中选择额外的编码来完成的：
 
- [![](encodings-images/00.png "Selecting the extra encodings")](encodings-images/00.png#lightbox)
+ [![选择额外的编码](encodings-images/00.png)](encodings-images/00.png#lightbox)
 
- [![](encodings-images/00a.png "Selecting the extra encodings")](encodings-images/00a.png#lightbox)
+ [![选择额外的编码](encodings-images/00a.png)](encodings-images/00a.png#lightbox)
 
 您可以选择以下其中一项：
 
@@ -33,7 +33,7 @@ ms.locfileid: "84571800"
 - 其他：西里尔语、波罗的语、越南语、乌克兰语和泰语
 - 罕见： EBCDIC 编码和其他罕见代码页
 - 西部：拉丁语语言、复活节和西欧
-- 全部
+- all
 
  <a name="cjk"></a>
 

@@ -10,12 +10,12 @@ ms.date: 01/22/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d62e533d127294c77c0779c20fd9c78ef2231200
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2a46d099520103ba6f1552d5bda3f619c07b743d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135715"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928518"
 ---
 # <a name="authenticate-a-restful-web-service"></a>对 RESTful Web 服务进行身份验证
 
@@ -31,11 +31,11 @@ _HTTP 支持使用多种身份验证机制来控制对资源的访问。基本�
 
 - 如果 web 服务接收到受保护资源的请求，则会拒绝请求，并显示 HTTP 状态代码401（拒绝访问）并设置 WWW 身份验证响应标头，如下图所示：
 
-![](rest-images/basic-authentication-fail.png "Basic Authentication Failing")
+![基本身份验证失败](rest-images/basic-authentication-fail.png)
 
 - 如果 web 服务接收到受保护资源的请求，并且 `Authorization` 正确设置了标头，则 web 服务将使用 HTTP 状态代码200进行响应，这表示请求成功，且请求的信息在响应中。 下图显示了此方案：
 
-![](rest-images/basic-authentication-success.png "Basic Authentication Succeeding")
+![基本身份验证成功](rest-images/basic-authentication-success.png)
 
 > [!NOTE]
 > 基本身份验证仅应在 HTTPS 连接上使用。 当在 HTTP 连接上使用时， `Authorization` 如果攻击者捕获 http 流量，则可以轻松地对标头进行解码。

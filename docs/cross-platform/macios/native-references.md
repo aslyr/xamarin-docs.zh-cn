@@ -6,12 +6,12 @@ ms.assetid: E53185FB-CEF5-4AB5-94F9-CC9B57C52300
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: a06bc0cb91ff3d3894bb7be5bbb275aca35da07d
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e2f874446b48726afc2218e5cdcac9b8736e1681
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570955"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930437"
 ---
 # <a name="native-references-in-ios-mac-and-bindings-projects"></a>IOS、Mac 和绑定项目中的本机引用
 
@@ -73,13 +73,13 @@ _本机引用使你能够将本机框架嵌入到 Xamarin 或 Xamarin 或 Xamari
 1. 创建新的或打开现有的 Xamarin、Xamarin 或绑定项目。
 2. 在**解决方案资源管理器**中，右键单击项目名称，然后选择 "**添加**" "添加  >  **本机引用**"： 
 
-    [![](native-references-images/ref01.png "In the Solution Explorer, right-click on the project name and select Add Native Reference")](native-references-images/ref01.png#lightbox)
+    [![在解决方案资源管理器中，右键单击项目名称，然后选择 "添加本机引用"](native-references-images/ref01.png)](native-references-images/ref01.png#lightbox)
 3. 从 "**打开**" 对话框中，选择要嵌入的本机框架的名称，然后单击 "**打开**" 按钮： 
 
-    [![](native-references-images/ref02.png "Select the name of the Native Framework to embed and click the Open button")](native-references-images/ref02.png#lightbox)
+    [![选择要嵌入的本机框架的名称，然后单击 "打开" 按钮](native-references-images/ref02.png)](native-references-images/ref02.png#lightbox)
 4. 该框架将添加到项目的树中： 
 
-    [![](native-references-images/ref03.png "The framework will be added to the projects tree")](native-references-images/ref03.png#lightbox)
+    [![框架将添加到项目树中](native-references-images/ref03.png)](native-references-images/ref03.png#lightbox)
 
 在编译项目时，本机框架将嵌入应用程序的捆绑包。
 

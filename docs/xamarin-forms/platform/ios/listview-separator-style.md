@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c8d660896684283ba9b40cde168adbfe30ca0c51
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: fda45bc0aa2b7bc582c30b752662055bd4bd4865
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135988"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937054"
 ---
 # <a name="listview-separator-style-on-ios"></a>IOS 上的 ListView 分隔符样式
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 iOS 平台特定控制中的单元格之间的分隔符是否 [`ListView`](xref:Xamarin.Forms.ListView) 使用的完整宽度 `ListView` 。 它通过将 [`ListView.SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.ListView.SeparatorStyleProperty) 附加属性设置为枚举的值，在 XAML 中使用 [`SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle) ：
 
@@ -51,7 +51,7 @@ listView.On<iOS>().SetSeparatorStyle(SeparatorStyle.FullWidth);
 
 结果就是，将指定的 [`SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle) 值应用于 [`ListView`](xref:Xamarin.Forms.ListView) ，后者控制单元格之间的分隔符的宽度：
 
-![](listview-separator-style-images/listview-separatorstyle.png "ListView SeparatorStyle Platform-Specific")
+![ListView SeparatorStyle 平台特定](listview-separator-style-images/listview-separatorstyle.png)
 
 > [!NOTE]
 > 分隔符样式设置为后 `FullWidth` ，不能 `Default` 在运行时更改回。

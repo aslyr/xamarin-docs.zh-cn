@@ -10,22 +10,22 @@ ms.date: 02/09/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6d01018f4393ac5562220fa1f9524bc0d9872c67
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0c1ae9e05b6671d45d8df485a89cfc0dea86632d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137665"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937301"
 ---
 # <a name="pixels-and-device-independent-units"></a>像素和与设备无关的单位
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _探索 SkiaSharp 坐标和坐标之间的差异 Xamarin.Forms_
 
 本文探讨了 SkiaSharp 和中使用的坐标系统之间的差异 Xamarin.Forms 。 您可以获取信息以在两个坐标系统之间进行转换，还可以绘制填充特定区域的图形：
 
-![](pixels-images/screenfillexample.png "An oval that fills the screen")
+![填充屏幕的椭圆](pixels-images/screenfillexample.png)
 
 如果已在中进行了 Xamarin.Forms 一段时间的编程，则可能会有 Xamarin.Forms 坐标和大小。 前面的两篇文章中所画的圆可能对您而言有些小。
 
@@ -104,7 +104,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 下面是正在运行的程序：
 
-[![](pixels-images/surfacesize-small.png "Triple screenshot of the Surface Size  page")](pixels-images/surfacesize-large.png#lightbox "Triple screenshot of the Surface Size  page")
+[!["表面大小" 页的三向屏幕截图](pixels-images/surfacesize-small.png)](pixels-images/surfacesize-large.png#lightbox ""表面大小" 页的三向屏幕截图")
 
 正如您所看到的， `CanvasSize` 的属性 `SKCanvasView` 和 `Size` 值的属性 `SKImageInfo` 在报告像素维度时是一致的。 的 `Height` 和 `Width` 属性 `SKCanvasView` 是 Xamarin.Forms 属性，并报告了平台定义的与设备无关的单位中的视图大小。
 
@@ -147,7 +147,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 此处运行的是：
 
-[![](pixels-images/ellipsefill-small.png "Triple screenshot of the Surface Size  page")](pixels-images/ellipsefill-large.png#lightbox "Triple screenshot of the Surface Size  page")
+[!["表面大小" 页的三向屏幕截图](pixels-images/ellipsefill-small.png)](pixels-images/ellipsefill-large.png#lightbox ""表面大小" 页的三向屏幕截图")
 
 另一 [`DrawOval`](xref:SkiaSharp.SKCanvas.DrawOval(SkiaSharp.SKRect,SkiaSharp.SKPaint)) 种方法具有 [`SKRect`](xref:SkiaSharp.SKRect) 参数，该参数是根据其左上角和右下角的 X 和 Y 坐标定义的矩形。 该椭圆将填充该矩形，这表示可以在 "**椭圆形填充**" 页中使用它，如下所示：
 

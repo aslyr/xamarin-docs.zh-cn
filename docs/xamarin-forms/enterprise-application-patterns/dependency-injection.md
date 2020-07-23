@@ -10,12 +10,12 @@ ms.date: 11/04/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 99cac3c597cf1d7351d3214ce59fd0a0a0a46400
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8aea3ad36f6c35e9faf2771fc6b54c378c304afb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84572346"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933596"
 ---
 # <a name="dependency-injection"></a>依赖关系注入
 
@@ -62,7 +62,7 @@ public class ProfileViewModel : ViewModelBase
 
 在 TinyIoC 中， `TinyIoCContainer` 类型提供了依赖关系注入容器。 图3-1 显示了使用此容器时的依赖关系，这将实例化 `IOrderService` 对象并将其插入到 `ProfileViewModel` 类中。
 
-![](dependency-injection-images/dependencyinjection.png "Dependencies example when using dependency injection")
+![使用依赖关系注入时的依赖关系示例](dependency-injection-images/dependencyinjection.png)
 
 **图3-1：** 使用依赖关系注入时的依赖关系
 
@@ -160,7 +160,7 @@ _container.Register<LoginViewModel>().AsSingleton();
 > [!NOTE]
 > 注册为单一实例的类型会在容器被释放时释放。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 依赖关系注入允许从依赖于这些类型的代码分离具体类型。 它通常使用容器来保存接口与抽象类型之间的注册和映射列表，以及实现或扩展这些类型的具体类型。
 

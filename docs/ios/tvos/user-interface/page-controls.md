@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 9a45e87165101a8e8afcfc51d15d085982b6499e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d4a1cab23b8d295d899c47edc5ffe77f6d20a467
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569928"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939758"
 ---
 # <a name="working-with-tvos-page-controls-in-xamarin"></a>在 Xamarin 中使用 tvOS 页面控件
 
 有时，可能需要在 tvOS 应用中显示一系列页面或图像。 页面控件旨在清楚地显示用户在最多页的最大数目。 页面控件显示一系列的点，这些点针对的是深色 oval 形背景。 当前页将显示一个实心点，所有其他页显示为空心点。 如果背景区域内容纳太多无法容纳，则页面控件将剪裁外最多点。
 
-[![](page-controls-images/page01.png "Sample Page control")](page-controls-images/page01.png#lightbox)
+[![示例页控件](page-controls-images/page01.png)](page-controls-images/page01.png#lightbox)
 
 非交互式元素中的页面控件，旨在仅向用户提供反馈。 您将需要添加其他控件以更改当前页码（如手势或按钮）。
 
@@ -38,14 +38,14 @@ Apple 在使用页面控件时具有以下建议：
 1. 在**Solution Pad**中，双击该文件， `Main.storyboard` 然后将其打开进行编辑。
 1. 从 "**工具箱**" 中将**页面控件**拖放到视图上：
 
-    [![](page-controls-images/page02.png "A Page Control")](page-controls-images/page02.png#lightbox)
+    [![页面控件](page-controls-images/page02.png)](page-controls-images/page02.png#lightbox)
 1. 在**Properties Pad**的 "**小组件" 选项卡**中，可以调整页控件的多个属性，如其**当前页**和**页数**：
 
-    [![](page-controls-images/page03.png "The Widget Tab")](page-controls-images/page03.png#lightbox)
+    [!["小组件" 选项卡](page-controls-images/page03.png)](page-controls-images/page03.png#lightbox)
 1. 接下来，向视图添加控件或笔势，以便在页的集合中向后移动。
 1. 最后，为控件分配**名称**，以便可以在 c # 代码中对其进行响应。 例如：
 
-    [![](page-controls-images/page04.png "Name the control")](page-controls-images/page04.png#lightbox)
+    [![命名控件](page-controls-images/page04.png)](page-controls-images/page04.png#lightbox)
 1. 保存所做更改。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -53,14 +53,14 @@ Apple 在使用页面控件时具有以下建议：
 1. 在**解决方案资源管理器**中，双击该文件， `Main.storyboard` 然后将其打开进行编辑。
 1. 从 "**工具箱**" 中将**页面控件**拖放到视图上：
 
-    [![](page-controls-images/page02-vs.png "A Page Control")](page-controls-images/page02-vs.png#lightbox)
+    [![页面控件](page-controls-images/page02-vs.png)](page-controls-images/page02-vs.png#lightbox)
 1. 在 "**属性资源管理器**" 的 "**小组件" 选项卡**中，可以调整页控件的多个属性，如其**当前页**和**页数**：
 
-    [![](page-controls-images/page03-vs.png "The Widget tab")](page-controls-images/page03-vs.png#lightbox)
+    [!["小组件" 选项卡](page-controls-images/page03-vs.png)](page-controls-images/page03-vs.png#lightbox)
 1. 接下来，向视图添加控件或笔势，以便在页的集合中向后移动。
 1. 最后，为控件分配**名称**，以便可以在 c # 代码中对其进行响应。 例如：
 
-    [![](page-controls-images/page04-vs.png "Name the control")](page-controls-images/page04-vs.png#lightbox)
+    [![命名控件](page-controls-images/page04-vs.png)](page-controls-images/page04-vs.png#lightbox)
 1. 保存所做更改。
 
 -----

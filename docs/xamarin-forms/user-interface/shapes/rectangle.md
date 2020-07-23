@@ -10,18 +10,18 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1fd985aa2997be2b35fe3b22606b891aa0b66cf3
-ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
+ms.openlocfilehash: 91960c08640a412e02298ed051469a86c1a9f368
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85243732"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930567"
 ---
 # <a name="xamarinforms-shapes-rectangle"></a>Xamarin.Forms形状：矩形
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![预发布 API](~/media/shared/preview.png "此 API 当前为预发布版本")
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Rectangle`类派生自 `Shape` 类，可用于绘制矩形和正方形。 有关 `Rectangle` 该类继承自类的属性的信息 `Shape` ，请参阅[ Xamarin.Forms 形状](index.md)。
 

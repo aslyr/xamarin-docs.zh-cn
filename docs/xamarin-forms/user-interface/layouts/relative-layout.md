@@ -10,26 +10,26 @@ ms.date: 11/25/2015
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f250b109f759bcf6bb7fa4ac0573743ac12c4bc1
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e9c6bc604368f36646260d6a3766cc5417a1ff52
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127184"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937782"
 ---
 # <a name="xamarinforms-relativelayout"></a>Xamarin.FormsRelativeLayout
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
 `RelativeLayout`用于相对于布局或同级视图的属性定位和调整视图的大小。 与不同的是 `AbsoluteLayout` ，没有 `RelativeLayout` 移动锚的概念，并且没有用于相对于布局的下边缘或右边缘定位元素的工具。 `RelativeLayout`支持将元素定位在其自身的边界之外。
 
-[![](relative-layout-images/layouts-sml.png "Xamarin.Forms Layouts")](relative-layout-images/layouts.png#lightbox "Xamarin.Forms Layouts")
+[![Xamarin.Forms布局](relative-layout-images/layouts-sml.png)](relative-layout-images/layouts.png#lightbox "[!基金.无 LOC （Xamarin）] 布局")
 
 ## <a name="purpose"></a>目的
 
 `RelativeLayout`可用于相对于整体布局或其他视图将视图定位在屏幕上。
 
-![](relative-layout-images/flag.png "RelativeLayout Exploration")
+![RelativeLayout 探索](relative-layout-images/flag.png)
 
 ## <a name="usage"></a>用法
 
@@ -43,7 +43,7 @@ ms.locfileid: "84127184"
 - **常量** &ndash;要用作值偏移量的值。
 - **ElementName** &ndash;与约束相关的视图的名称。
 
-在 XAML 中，约束表示为 `ConstraintExpression` s。 请考虑以下示例：
+在 XAML 中，约束表示为 `ConstraintExpression` s。 请看下面的示例：
 
 ```xaml
 <BoxView Color="Green" WidthRequest="50" HeightRequest="50"
@@ -133,7 +133,7 @@ layout.Children.Add (blueBox, Constraint.RelativeToView (redBox, (Parent, siblin
 
 这将生成以下输出，其中蓝色框的位置_相对_于红色框的位置确定：
 
-![](relative-layout-images/red-blue-box.png "RelativeLayout with Red and Blue BoxViews")
+![RelativeLayout 红和蓝 BoxViews](relative-layout-images/red-blue-box.png)
 
 ### <a name="sizing"></a>调整大小
 
@@ -226,7 +226,7 @@ Title="RelativeLayout">
 
 上面的代码将生成以下布局：
 
-![](relative-layout-images/relative.png "Complex RelativeLayout")
+![复杂 RelativeLayout](relative-layout-images/relative.png)
 
 请注意 `RelativeLayouts` ，s 是嵌套的，因为在某些情况下，嵌套布局比在同一布局中呈现所有元素更容易。 另请注意，某些元素是 `RelativeToView` ，因为当视图指南定位时，这允许更简单、更直观的布局。
 

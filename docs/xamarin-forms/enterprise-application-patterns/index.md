@@ -10,18 +10,18 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cc0f98d94c76ff63e7a002dfb92b51eae153d7b4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1d993afa7163beb0b24e496b0c876d903f2396e7
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139394"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934285"
 ---
 # <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>《使用 Xamarin.Forms企业应用程序模式》电子书
 
 _用于开发可自适应、可维护且可测试的 Xamarin.Forms 企业应用程序的体系结构指南_
 
-![](images/cover-sml.png "Enterprise Application Patterns using Xamarin.Forms eBook")
+《![使用 Xamarin.Forms企业应用程序模式》电子书](images/cover-sml.png)
 
 此电子书提供有关如何实现模型-视图-ViewModel （MVVM）模式、依赖关系注入、导航、验证和配置管理，同时保持松散耦合的指导。 此外，还提供了有关通过 IdentityServer 执行身份验证和授权、从容器化微服务访问数据和单元测试的指南。
 

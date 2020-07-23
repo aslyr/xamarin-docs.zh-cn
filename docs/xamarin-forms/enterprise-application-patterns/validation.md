@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a4b82552956ab0e75d0a76a14ce7c919c744e09a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cf7e3a260308a81dc40c4fe81be66e5436ed7c63
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84565325"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935793"
 ---
 # <a name="validation-in-enterprise-apps"></a>企业应用程序中的验证
 
@@ -23,7 +23,7 @@ ms.locfileid: "84565325"
 
 在 ViewModel （MVVM）模式的上下文中，视图模型或模型通常需要执行数据验证并向视图发出任何验证错误信号，以便用户可以更正这些错误。 EShopOnContainers 移动应用执行视图模型属性的同步客户端验证，通过突出显示包含无效数据的控件，并通过显示错误消息通知用户数据无效的原因，向用户通知任何验证错误。 图6-1 显示了在 eShopOnContainers 移动应用程序中执行验证所涉及的类。
 
-[![](validation-images/validation.png "Validation classes in the eShopOnContainers mobile app")](validation-images/validation-large.png#lightbox "Validation classes in the eShopOnContainers mobile app")
+[![EShopOnContainers 移动应用中的验证类](validation-images/validation.png)](validation-images/validation-large.png#lightbox "EShopOnContainers 移动应用中的验证类")
 
 **图 6-1**： eShopOnContainers 移动应用中的验证类
 
@@ -215,7 +215,7 @@ public bool Validate()
 
 EShopOnContainers 移动应用通过以下方式向用户通知任何验证错误：突出显示包含无效数据的控件，并显示一条错误消息，告知用户数据在包含无效数据的控件下方无效的原因。 当更正无效数据时，该行将变为黑色，并删除错误消息。 图6-2 显示验证错误时 eShopOnContainers 移动应用中的登录视图。
 
-![](validation-images/validation-login.png "Displaying validation errors during login")
+![在登录过程中显示验证错误](validation-images/validation-login.png)
 
 **图6-2：** 在登录过程中显示验证错误
 
@@ -379,7 +379,7 @@ namespace eShopOnContainers.iOS.Effects
 
 当在控件中输入有效数据时 [`Entry`](xref:Xamarin.Forms.Entry) ，它将在控件的底部应用一条黑线，以指示不存在验证错误。 图6-3 显示了一个示例。
 
-![](validation-images/validation-blackline.png "Black line indicating no validation error")
+![指示无验证错误的黑色线条](validation-images/validation-blackline.png)
 
 **图 6-3**：指示无验证错误的黑色线条
 
@@ -402,7 +402,7 @@ namespace eShopOnContainers.iOS.Effects
 
 这会 [`DataTrigger`](xref:Xamarin.Forms.DataTrigger) 监视 `UserName.IsValid` 属性，如果其值为 `false` ，它将执行 [`Setter`](xref:Xamarin.Forms.Setter) ，这会将 `LineColor` 附加行为的附加属性更改 `LineColorBehavior` 为红色。 图6-4 显示了一个示例。
 
-![](validation-images/validation-redline.png "Red line indicating validation error")
+![指示验证错误的红线](validation-images/validation-redline.png)
 
 **图 6-4**：指示验证错误的红色行
 
@@ -421,7 +421,7 @@ UI 在其数据验证失败的每个控件下的标签控件中显示验证错�
 
 每个 [`Label`](xref:Xamarin.Forms.Label) 绑定到要 `Errors` 验证的视图模型对象的属性。 `Errors`属性由 `ValidatableObject<T>` 类提供，且的类型为 `List<string>` 。 由于 `Errors` 属性可能包含多个验证错误，因此将 `FirstValidationErrorConverter` 使用实例来检索要显示的集合中的第一个错误。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 EShopOnContainers 移动应用执行视图模型属性的同步客户端验证，通过突出显示包含无效数据的控件，并通过显示错误消息通知用户数据无效的原因，向用户通知任何验证错误。
 

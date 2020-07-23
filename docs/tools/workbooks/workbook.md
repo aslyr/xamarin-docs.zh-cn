@@ -1,17 +1,17 @@
 ---
 title: 交互式工作簿
-description: 本文档介绍了如何使用 Xamarin Workbooks 创建包含C#试验、教学、培训或浏览代码的活动文档。
+description: '本文档介绍了如何使用 Xamarin Workbooks 创建包含用于试验、教学、培训或浏览的 c # 代码的活动文档。'
 ms.prod: xamarin
 ms.assetid: B79E5DE9-5389-4691-9AA3-FF4336CE294E
 author: davidortinau
 ms.author: daortin
 ms.date: 03/30/2017
-ms.openlocfilehash: a6ca347c231d001cab521d7280a66b714b6a5aef
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5e08df73d506617a0ae09708b804f0202161136e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029559"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936859"
 ---
 # <a name="interactive-workbooks"></a>交互式工作簿
 
@@ -27,13 +27,13 @@ ms.locfileid: "73029559"
 
 代码编辑窗口提供代码完成、语法着色、内联实时诊断和多行语句支持。
 
-[![](workbook-images/inspector-0.6.0-repl-small.png "The code editing window provides code completion, syntax coloring, inline live-diagnostics, and multi-line statement support")](workbook-images/inspector-0.6.0-repl.png#lightbox)
+[![代码编辑窗口提供代码完成、语法着色、内联实时诊断和多行语句支持](workbook-images/inspector-0.6.0-repl-small.png)](workbook-images/inspector-0.6.0-repl.png#lightbox)
 
-Xamarin Workbooks 保存在 `.workbook` 文件中，该文件是一个 CommonMark 文件，其中包含顶部的一些元数据（有关如何保存工作簿的详细信息，请参阅[工作簿文件类型](#workbooks-files-types)）。
+Xamarin Workbooks 保存在一个 `.workbook` 文件中，该文件是一个 CommonMark 文件，其中包含顶部的一些元数据（有关如何保存工作簿的详细信息，请参阅[工作簿文件类型](#workbooks-files-types)）。
 
 ### <a name="nuget-package-support"></a>NuGet 包支持
 
-Xamarin Workbooks 中直接支持许多常用 NuGet 包。 可以通过浏览到**文件 > 添加包**来搜索包。 添加包将自动引入引用包程序集的 `#r` 语句，使你可以立即使用它们。
+Xamarin Workbooks 中直接支持许多常用 NuGet 包。 可以通过浏览到**文件 > 添加包**来搜索包。 添加包将自动引入 `#r` 引用包程序集的语句，使你可以立即使用它们。
 
 使用包引用保存工作簿时，还会保存这些引用。 如果与其他人共享工作簿，则会自动下载引用的包。
 
@@ -45,7 +45,7 @@ Xamarin Workbooks 中直接支持许多常用 NuGet 包。 可以通过浏览到
 
 ### <a name="xamarinforms-support"></a>Xamarin。窗体支持
 
-如果在工作簿中引用 Xamarin NuGet 包，则工作簿应用会将其主视图更改为 Xamarin。基于窗体。 可以通过 `Xamarin.Forms.Application.Current.MainPage`来访问它。
+如果在工作簿中引用 Xamarin NuGet 包，则工作簿应用会将其主视图更改为 Xamarin。基于窗体。 可以通过访问 `Xamarin.Forms.Application.Current.MainPage` 。
 
 "查看检查器" 选项卡还具有显示 Xamarin. Forms 视图层次结构的特殊支持，可帮助您了解您的布局。
 
@@ -53,7 +53,7 @@ Xamarin Workbooks 中直接支持许多常用 NuGet 包。 可以通过浏览到
 
 你可以使用包含的富文本编辑器来编辑代码周围的文本，如下所示：
 
-![](workbook-images/inspector-0.6.2-editing.gif "Edit the text around the code using the built-in rich text editor")
+![使用内置的富文本编辑器编辑代码周围的文本](workbook-images/inspector-0.6.2-editing.gif)
 
 ### <a name="markdown-authoring"></a>Markdown 创作
 
@@ -61,7 +61,7 @@ Xamarin Workbooks 中直接支持许多常用 NuGet 包。 可以通过浏览到
 
 请注意，如果随后在工作簿客户端中编辑并保存工作簿，则可能会重新格式化 CommonMark 文本。
 
-请注意，由于我们使用的 CommonMark 扩展在工作簿文件中启用 YAML 元数据，因此将为此目的保留 `---`。 若要在文本中创建[主题中断](https://spec.commonmark.org/0.27/#thematic-break)，应改为使用 `***` 或 `___`。 在工作簿1.2 和更早版本中，应避免使用此类中断，因为保存过程中存在 bug。
+请注意，由于用于在工作簿文件中启用 YAML 元数据的 CommonMark 扩展， `---` 该扩展是为此目的而保留的。 若要在文本中创建[主题中断](https://spec.commonmark.org/0.27/#thematic-break)，应使用 `***` 或 `___` 。 在工作簿1.2 和更早版本中，应避免使用此类中断，因为保存过程中存在 bug。
 
 ### <a name="improvements-in-workbooks-13"></a>工作簿1.3 中的改进
 
@@ -80,16 +80,16 @@ Xamarin Workbooks 中直接支持许多常用 NuGet 包。 可以通过浏览到
 1. 删除字母数字和短划线以外的所有字符。
 1. 所有空格均替换为短划线。
 
-这意味着标头（如 "重要标头"）将获取 id `important-header` 并可以通过插入工作簿中 `#important-header` 的链接将其链接到。
+这意味着标头（如 "重要标头"）获取的 id `important-header` ，可以通过 `#important-header` 在工作簿中插入指向的链接来链接到。
 
 ## <a name="document-structure"></a>文档结构
 
-### <a name="cell"></a>芯
+### <a name="cell"></a>单元
 
 表示可执行代码或 markdown 的离散内容单元。 代码单元包含最多四个子组件：
 
 - 编辑器
-  - 缓冲区
+  - Buffer
 - 编译器诊断
 - 控制台输出
 - 执行结果
@@ -98,7 +98,7 @@ Xamarin Workbooks 中直接支持许多常用 NuGet 包。 可以通过浏览到
 
 单元格的交互式文本组件。 对于代码单元，这是实际的代码编辑器，其中包含语法突出显示，等等。对于 markdown 单元格，这是一个具有上下文相关格式和创作工具栏的富文本内容编辑器。
 
-### <a name="buffer"></a>缓冲区
+### <a name="buffer"></a>Buffer
 
 编辑器的实际文本内容。
 
@@ -118,29 +118,29 @@ Xamarin Workbooks 中直接支持许多常用 NuGet 包。 可以通过浏览到
 
 ### <a name="plain-files"></a>普通文件
 
-默认情况下，工作簿另存为包含 CommonMark 格式文本的纯文本 `.workbook` 文件。
+默认情况下，工作簿另存为 `.workbook` 包含 CommonMark 格式文本的纯文本文件。
 
-### <a name="packages"></a>package
+### <a name="packages"></a>包
 
-工作簿包是以 `.workbook` 扩展名命名的目录。
+工作簿包是一个名为的目录，其中包含 `.workbook` 扩展名。
 在 Mac 的查找器和 "Xamarin Workbooks 打开" 对话框和 "最近使用的文件" 菜单中，会将此目录识别为文件。
 
-目录必须包含一个 `index.workbook` 文件，该文件是将在 Xamarin Workbooks 中加载的实际纯文本工作簿。 该目录还可以包含 `index.workbook`所需的资源，包括图像或其他文件。
+目录必须包含 `index.workbook` 文件，该文件是将在 Xamarin Workbooks 中加载的实际纯文本工作簿。 该目录还可以包含所需的资源 `index.workbook` ，包括图像或其他文件。
 
-如果在工作簿0.99.3 或更高版本中打开从其同一目录引用资源的纯文本 `.workbook` 文件，则在保存该文件时，它将转换为 `.workbook` 包。 这一点适用于 Mac 和 Windows。
+如果 `.workbook` 在工作簿0.99.3 或更高版本中打开从其相同目录引用资源的纯文本文件，则在保存该文件后，它将转换为 `.workbook` 包。 这一点适用于 Mac 和 Windows。
 
 > [!NOTE]
-> Windows 用户将直接打开 `package.workbook\index.workbook` 文件，否则包的行为与 Mac 上的行为相同。
+> Windows 用户将直接打开该 `package.workbook\index.workbook` 文件，否则包的行为与 Mac 上的行为相同。
 
 ### <a name="archives"></a>截至
 
-工作簿包是目录，很难通过 internet 轻松地分发。 解决方案是工作簿存档。 工作簿存档是 zip 压缩的工作簿包，以 `.workbook` 扩展名命名。
+工作簿包是目录，很难通过 internet 轻松地分发。 解决方案是工作簿存档。 工作簿存档是 zip 压缩的工作簿包，并以 `.workbook` 扩展名命名。
 
 从工作簿1.1 开始，保存工作簿包时，"保存" 对话框提供了将另存为存档的选项。 工作簿1.0 没有创建或保存存档的内置方法。
 
 在工作簿1.0 中，打开工作簿存档后，它会以透明方式转换为工作簿包，并丢失 zip 文件。 在工作簿1.1 中，zip 文件仍然存在。 用户保存存档时，会将其替换为新的 zip 文件。
 
-您可以通过右键单击工作簿包并选择 "在 Mac 上**压缩**" 或 "**发送到 Windows 上 > 压缩（zipped）文件夹**" 来手动创建工作簿存档。 然后，将 zip 文件重命名为具有 `.workbook` 的文件扩展名。 这仅适用于工作簿包，而不能用于普通工作簿文件。
+您可以通过右键单击工作簿包并选择 "在 Mac 上**压缩**" 或 "**发送到 Windows 上 > 压缩（zipped）文件夹**" 来手动创建工作簿存档。 然后，将 zip 文件重命名为具有 `.workbook` 文件扩展名。 这仅适用于工作簿包，而不能用于普通工作簿文件。
 
 ## <a name="related-links"></a>相关链接
 

@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
-ms.openlocfilehash: 67e66d5d8f1023c0e7561791ff29ed2952ac040b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 6508f7ec48d10196b47e0b51fc30e54e3c3668a6
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571007"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930554"
 ---
 # <a name="binding-objective-c-libraries"></a>绑定目标-C 库
 
@@ -39,14 +39,14 @@ ms.locfileid: "84571007"
 创建绑定的最简单方法是创建一个 Xamarin iOS 绑定项目。
 可以通过选择项目类型 " **iOS > 库" > 绑定库**来执行 Visual Studio for Mac 此操作：
 
-[![](objective-c-libraries-images/00-sml.png "Do this from Visual Studio for Mac by selecting the project type, iOS Library Bindings Library")](objective-c-libraries-images/00.png#lightbox)
+[![通过选择项目类型 "iOS 库绑定库" Visual Studio for Mac 执行此操作](objective-c-libraries-images/00-sml.png)](objective-c-libraries-images/00.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 创建绑定的最简单方法是创建一个 Xamarin iOS 绑定项目。
 可以通过在 Windows 上通过 Visual Studio 执行此操作，方法是选择项目类型， **Visual c # > iOS > 绑定库（ios）**：
 
-[![](objective-c-libraries-images/00vs-sml.png "iOS Bindings Library iOS")](objective-c-libraries-images/00vs.png#lightbox)
+[![iOS 绑定库 iOS](objective-c-libraries-images/00vs-sml.png)](objective-c-libraries-images/00vs.png#lightbox)
 
 > [!IMPORTANT]
 > 注意：仅 Visual Studio for Mac 支持**Xamarin**的绑定项目。
@@ -104,7 +104,7 @@ namespace Cocos2D {
 
 此图显示了文件之间的关系：
 
- [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png "This chart shows the relationship between the files")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png#lightbox)
+ [![此图显示了文件之间的关系](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png)](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png#lightbox)
 
 API 定义文件将只包含命名空间和接口定义（具有接口可以包含的任何成员），不应包含类、枚举、委托或结构。 API 定义文件只是将用于生成 API 的协定。
 
@@ -135,7 +135,7 @@ public partial class Camera {
 若要完成此绑定，应将本机库添加到项目。  为此，可以将本机库添加到项目中，方法是：在解决方案资源管理器中将本机库拖放到项目中，或通过右键单击项目并选择 "**添加**  >  **文件**" 以选择本机库。
 本机库按约定从单词 "lib" 开始，以扩展名 ". a" 结尾。 当你执行此操作时，Visual Studio for Mac 将添加两个文件：。一个文件和一个自动填充的 c # 文件，其中包含有关本机库包含的内容的信息：
 
- [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png "Native libraries by convention start with the word lib and end with the extension .a")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
+ [![本机库按约定从 word lib 开始，以扩展名结束。](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png)](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
 
 此文件的内容 `libMagicChord.linkwith.cs` 包含有关如何使用此库的信息，并指示 IDE 将此二进制文件打包到生成的 DLL 文件中：
 
@@ -169,7 +169,7 @@ API 定义文件包含多个接口。 API 定义中的接口将转换为类声�
 
 最简单的绑定是绑定方法。 只需使用 c # 命名约定在接口中声明方法，并使用[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)
 属性中。 [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)特性是将 c # 名称与 Xamarin 运行时中的目标-c 名称进行链接。 的参数。[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) 
-attribute 是目标-C 选择器的名称。 下面是一些示例：
+attribute 是目标-C 选择器的名称。 以下是一些示例：
 
 ```csharp
 // A method, that takes no arguments
@@ -1197,7 +1197,7 @@ void SomeString (ref NSObject byref);
 
 以上会将值标记为具有 "保留" 语义。 可用的语义包括：
 
-- 分配
+- 赋值
 - 复制
 - 保留
 

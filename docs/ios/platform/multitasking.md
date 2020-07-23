@@ -8,18 +8,18 @@ ms.custom: xamu-video
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: e166f513a75faaa082e8557dc6f610f014547a25
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b86f3a159a144f02ea13663bfddb41ed0100f740
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574138"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931399"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>Xamarin 中的 iPad 多任务
 
 _iOS 9 支持同时运行两个应用，同时使用 "滑动" 或 "拆分" 视图。它还支持视频播放图片。_
 
-![](multitasking-images/about02-sml.png "拆分屏幕示例") ![](multitasking-images/about03-sml.png "图片中示例")
+![拆分屏幕示例](multitasking-images/about02-sml.png) ![图片中示例](multitasking-images/about03-sml.png)
 
 iOS 9 增加了对在特定 iPad 硬件上同时运行两个应用程序的多任务支持。 通过以下功能支持 iPad 的多任务：
 
@@ -64,7 +64,7 @@ iOS 9 在 iPad 上提供了新的多任务功能，同时引入了 "_幻灯片�
 
 使用滑动功能，用户可以选择第二个应用并将其显示在小型滑动面板中，以提供快速交互。 滑动面板是临时性的，当用户再次使用主应用时将关闭。
 
-[![](multitasking-images/about01.png "The Slide Over panel")](multitasking-images/about01.png#lightbox)
+[![滑动面板](multitasking-images/about01.png)](multitasking-images/about01.png#lightbox)
 
 需要注意的主要问题是，用户决定两个应用并行运行，开发人员不能控制此过程。 因此，需要执行一些操作来确保你的 Xamarin iOS 应用在面板上可正确运行：
 
@@ -79,7 +79,7 @@ iOS 9 在 iPad 上提供了新的多任务功能，同时引入了 "_幻灯片�
 
 在支持的 iPad 硬件上（仅限 iPad Air 2、iPad 迷你4和 iPad Pro），用户可以选择第二个应用并在拆分屏幕模式下并行运行与当前运行的应用程序。 用户可以通过拖动屏幕分隔线来控制每个应用占有的主屏幕的百分比。
 
-[![](multitasking-images/about02.png "The Split View")](multitasking-images/about02.png#lightbox)
+[![拆分视图](multitasking-images/about02.png)](multitasking-images/about02.png#lightbox)
 
 如滑过，用户将决定两个应用并行运行，开发人员不能控制这一过程。 因此，"拆分" 视图对 Xamarin iOS 应用程序的要求类似于：
 
@@ -94,7 +94,7 @@ iOS 9 在 iPad 上提供了新的多任务功能，同时引入了 "_幻灯片�
 
 "图片" 功能中的新图片（也称为_PIP_）允许用户在小型浮动窗口中观看视频，用户可以将其放置在其他正在运行的应用上的任何位置。
 
-[![](multitasking-images/about03.png "An example Picture in Picture floating window")](multitasking-images/about03.png#lightbox)
+[![图片浮动窗口中的示例图片](multitasking-images/about03.png)](multitasking-images/about03.png#lightbox)
 
 与 "滑动" 和 "拆分" 视图一样，用户可以完全控制在图片模式下观看视频。 如果你的应用程序的主要功能是观看视频，则需要进行一些修改才能在 PIP 模式下正常运行。 否则，不需要进行任何更改即可支持 PIP。
 
@@ -118,7 +118,7 @@ iOS 9 在 iPad 上提供了新的多任务功能，同时引入了 "_幻灯片�
 
 在 iOS 9 之前，你可以针对特定的设备屏幕大小和方向设计你的应用程序。 由于应用现在可以在 "滑出" 面板或 "拆分" 视图模式下运行，因此它可以在 iPad 上的紧凑或普通水平大小类中运行，而不考虑设备的物理方向或屏幕大小。
 
-[![](multitasking-images/sizeclasses01.png "Screen Size and Orientation Considerations")](multitasking-images/sizeclasses01.png#lightbox)
+[![屏幕大小和方向注意事项](multitasking-images/sizeclasses01.png)](multitasking-images/sizeclasses01.png#lightbox)
 
 在 iPad 上，全屏应用具有常规的水平和垂直大小类。 除了 iPhone 6 Plus 和 iPhone 6s Plus 外，所有 Iphone 都在任意方向上都具有紧凑大小的类。 在横向模式下，iPhone 6 Plus 和 iPhone 6s Plus 具有常规的水平大小类和精简垂直大小类（与 iPad 迷你非常类似）。
 
@@ -127,16 +127,16 @@ iOS 9 在 iPad 上提供了新的多任务功能，同时引入了 "_幻灯片�
 | **打印** | **主要应用** | **辅助应用** |
 |--- |--- |--- |
 | **纵向** |75% 的屏幕<br />水平压缩<br />常规垂直|25% 的屏幕<br />水平压缩<br />常规垂直|
-| **纵向** |75% 的屏幕<br />常规水平<br />常规垂直|25% 的屏幕<br />水平压缩<br />常规垂直|
-| **纵向** |50% 的屏幕<br />水平压缩<br />常规垂直|50% 的屏幕<br />水平压缩<br />常规垂直|
+| **横向** |75% 的屏幕<br />常规水平<br />常规垂直|25% 的屏幕<br />水平压缩<br />常规垂直|
+| **横向** |50% 的屏幕<br />水平压缩<br />常规垂直|50% 的屏幕<br />水平压缩<br />常规垂直|
 
 在示例[MuliTask](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-multitask)应用中，如果它在 "横向" 模式下的 iPad 上以全屏方式运行，则会同时显示列表和详细信息视图：
 
-[![](multitasking-images/sizeclasses03.png "The list and the detail view presented at the same time")](multitasking-images/sizeclasses03.png#lightbox)
+[![同时显示的列表和详细信息视图](multitasking-images/sizeclasses03.png)](multitasking-images/sizeclasses03.png#lightbox)
 
 如果在幻灯片上方的幻灯片中运行同一应用程序，则该应用程序将布局为精简水平大小类并仅显示列表：
 
-[![](multitasking-images/sizeclasses04.png "Only the list presented when the device is horizontal")](multitasking-images/sizeclasses04.png#lightbox)
+[![仅当设备为水平时显示的列表](multitasking-images/sizeclasses04.png)](multitasking-images/sizeclasses04.png#lightbox)
 
 若要确保你的应用在这些情况下正常运行，你应采用特性集合以及大小类并符合 `IUIContentContainer` 和 `IUITraitEnvironment` 接口。 有关详细信息，请参阅 Apple 的[UITraitCollection 类参考](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/doc/uid/TP40014202)和[统一的情节提要指南简介](~/ios/user-interface/storyboards/unified-storyboards.md)。
 
@@ -154,11 +154,11 @@ iOS 9 在 iPad 上提供了新的多任务功能，同时引入了 "_幻灯片�
 
 **命令选项卡**将显示一个应用切换器，使用户能够在应用程序之间快速切换，就像 Mac OS 一样：
 
-[![](multitasking-images/keyboard01.png "The app switcher")](multitasking-images/keyboard01.png#lightbox)
+[![应用切换器](multitasking-images/keyboard01.png)](multitasking-images/keyboard01.png#lightbox)
 
 如果 iOS 9 应用包含键盘快捷方式，则用户可以按住**命令**、**选项**或**控制**键在弹出窗口中显示它们：
 
-[![](multitasking-images/keyboard02.png "The keyboard shortcuts popup")](multitasking-images/keyboard02.png#lightbox)
+[![键盘快捷方式弹出窗口](multitasking-images/keyboard02.png)](multitasking-images/keyboard02.png#lightbox)
 
 #### <a name="defining-custom-keyboard-shortcuts"></a>定义自定义键盘快捷方式
 
@@ -194,7 +194,7 @@ public void NewEntry() {
 
 如果在附加了硬件键盘的 iPad 上运行此应用，并且用户键入**命令-N**，则会向列表中添加一个新条目。 如果用户按住**命令**键，将显示快捷方式的列表：
 
-[![](multitasking-images/keyboard03.png "The keyboard shortcuts popup")](multitasking-images/keyboard03.png#lightbox)
+[![键盘快捷方式弹出窗口](multitasking-images/keyboard03.png)](multitasking-images/keyboard03.png#lightbox)
 
 有关示例实现，请参阅示例工作时[应用](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-multitask)。
 
@@ -228,7 +228,7 @@ public void NewEntry() {
 
 如果你的 Xamarin iOS 应用程序选择不在 "滑出" 面板或 "拆分" 视图模式下运行，则编辑项目的**info.plist**文件并选中 "**需要全屏**"：
 
-[![](multitasking-images/fullscreen01.png "Opting Out of Multitasking")](multitasking-images/fullscreen01.png#lightbox)
+[![退出多任务](multitasking-images/fullscreen01.png)](multitasking-images/fullscreen01.png#lightbox)
 
 > [!IMPORTANT]
 > 尽管选择退出多任务会阻止你的应用程序在 "幻灯片 Out" 或 "拆分" 视图中运行，但它不会阻止其他应用程序在 "滑出" 或 "图片" 视频中运行，因为它与你的应用程序一起显示。

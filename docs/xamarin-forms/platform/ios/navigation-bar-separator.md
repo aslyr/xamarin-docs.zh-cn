@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 39d203cf0fb7fff026106d98cfb512aad42f83d2
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: c74f9bd17f8da5cd41a55f8b35a66e21df81a8d2
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128240"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931178"
 ---
 # <a name="navigationpage-bar-separator-on-ios"></a>IOS 上的 NavigationPage Bar 分隔符
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 iOS 平台特定用于隐藏位于上导航栏底部的分隔线和阴影 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 。 它通过将 [`NavigationPage.HideNavigationBarSeparator`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty) 可绑定的属性设置为来在 XAML 中使用 `false` ：
 
@@ -50,7 +50,7 @@ public class iOSTitleViewNavigationPageCS : Xamarin.Forms.NavigationPage
 
 结果就是可以隐藏的导航栏分隔符 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ：
 
-![](navigation-bar-separator-images/navigationpage-hideseparatorbar.png "NavigationPage navigation bar hidden")
+![隐藏的 NavigationPage 导航栏](navigation-bar-separator-images/navigationpage-hideseparatorbar.png)
 
 ## <a name="related-links"></a>相关链接
 

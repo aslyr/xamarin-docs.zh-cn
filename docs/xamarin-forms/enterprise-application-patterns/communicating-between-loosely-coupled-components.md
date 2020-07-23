@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c35cd6e30e7843cda0431581025aa7440a21cc29
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0a43ce2d27c8152137101d616302f6e56a57bd39
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140044"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931971"
 ---
 # <a name="communicating-between-loosely-coupled-components"></a>松散耦合组件之间的通信
 
@@ -29,7 +29,7 @@ Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 类可实�
 
 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 类提供多播发布-订阅功能。 这意味着可以有多个发布者发布单个消息，并且可以有多个订阅服务器侦听同一消息。 图4-1 说明了此关系：
 
-![](communicating-between-loosely-coupled-components-images/messagingcenter.png "Multicast publish-subscribe functionality")
+![多播发布-订阅功能](communicating-between-loosely-coupled-components-images/messagingcenter.png)
 
 **图4-1：** 多播发布-订阅功能
 
@@ -123,7 +123,7 @@ MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessengerKeys
 
 在此示例中， [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) 方法语法反映了在订阅接收消息时指定的类型参数 `AddProduct` 。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 类可实现发布-订阅模式，允许不便按对象和类型引用进行链接的组件之间进行基于消息的通信。 此机制使发布服务器和订阅服务器无需彼此引用即可进行通信，有助于减少组件之间的依赖关系，同时允许单独开发和测试组件。
 

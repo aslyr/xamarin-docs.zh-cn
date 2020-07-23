@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a05de34089fdf6ad90740067b88edea0b62f55a7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4f30b8be762e23f84a90595a56912587cc3aa838
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84134649"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934246"
 ---
 # <a name="unit-testing-enterprise-apps"></a>对企业应用进行单元测试
 
@@ -55,7 +55,7 @@ public class OrderDetailViewModel : ViewModelBase
 
 `OrderDetailViewModel`类依赖于 `IOrderService` 容器在实例化对象时解析的类型 `OrderDetailViewModel` 。 但是，不是创建 `OrderService` 对象对类进行单元测试，而是将 `OrderDetailViewModel` 对象替换 `OrderService` 为模拟，以用于测试目的。 图10-1 说明了这种关系。
 
-![](unit-testing-images/unittesting.png "Classes that implement the IOrderService interface")
+![实现 IOrderService 接口的类](unit-testing-images/unittesting.png)
 
 **图10-1：** 实现 IOrderService 接口的类
 
@@ -221,7 +221,7 @@ public void CheckValidationFailsWhenOnlyForenameHasDataTest()
 
 此单元测试检查在 `Surname` 的属性没有 `MockViewModel` 任何数据，且 `Value` `IsValid` `Errors` 每个实例的、和属性 `ValidatableObject<T>` 设置正确时，验证是否失败。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 单元测试采用一小部分应用，通常是一种方法，将其与代码的其余部分隔离，并验证它是否按预期方式工作。 其目标是检查每个功能单元是否按预期执行，以便不会在整个应用中传播错误。
 

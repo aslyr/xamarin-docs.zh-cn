@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: de4b6e8b95eed33e7fb38baf51a0da73cef313c0
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: bfa2a74bf9cd30fb7b9888ecd7339a80fe472c9e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574127"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939082"
 ---
 # <a name="introduction-to-ios-9"></a>iOS 9 简介
 
 _本文介绍了适用于 Xamarin 的 iOS 开发人员提供的所有新的和修改的 Api 和功能。_
 
-![](images/ios9-sml.png "The iOS 9 logo")
+![IOS 9 徽标](images/ios9-sml.png)
 
 Apple 在 iOS 9 中添加了几个新的 Api 和服务，并对现有功能进行了很多增强。
 

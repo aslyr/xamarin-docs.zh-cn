@@ -10,16 +10,16 @@ ms.date: 10/01/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8478db85bd9904ee6c5cfeab9b2af390e7d3096d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e0c6e305287c97abac3500cba4771479b60381ac
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139498"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939797"
 ---
 # <a name="platform-specifics"></a>平台特定内容
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 _平台说明允许使用仅在特定平台上可用的功能，而无需实现自定义呈现器或效果。_
 
@@ -58,7 +58,7 @@ _平台说明允许使用仅在特定平台上可用的功能，而无需实现�
 
 该[示例应用程序](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific)演示了一个 `Shadow` 特定于平台的，它将阴影添加到控件所显示的文本 [`Label`](xref:Xamarin.Forms.Label) ：
 
-![](images/screenshots.png "Shadow Platform-Specific")
+![特定于影子平台](images/screenshots.png)
 
 该[示例应用程序](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific) `Shadow` 在每个平台上实现特定于平台的，以便于理解。 但除每个平台特定的效果实现外，影子类的实现在很大程度上与每个平台相同。 因此，本指南重点介绍了影子类的实现，并对单个平台产生关联的影响。
 

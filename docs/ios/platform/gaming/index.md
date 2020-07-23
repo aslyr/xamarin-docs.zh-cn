@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: fd79153520036ae49fd6fd9abe652e2c7459b30d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b21e72cc072b614c2e900d7c7b3aa04c9f0812cb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032504"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939771"
 ---
 # <a name="ios-gaming-apis-in-xamarinios"></a>Xamarin 中的 iOS 游戏 Api
 
@@ -21,7 +21,7 @@ _本文介绍 iOS 9 提供的新游戏增强功能，这些增强功能可用于
 Apple 在 iOS 9 中对游戏 Api 做出了多项技术改进，使 Xamarin iOS 应用中的游戏图形和音频更容易实现。
 其中包括通过高级框架的轻松开发，并利用 iOS 设备 GPU 的强大功能提高速度和图形性能。
 
-[![](images/flocking01.png "An example of an app running flocking")](images/flocking01.png#lightbox)
+[![运行群的应用的示例](images/flocking01.png)](images/flocking01.png#lightbox)
 
 这包括 GameplayKit、ReplayKit、Model i/o、MetalKit 和金属绩效着色器，以及金属、SceneKit 和 SpriteKit 的新增功能和增强功能。
 
@@ -56,9 +56,9 @@ Pathfinding 是游戏的 AI 元素在游戏板上查找其方式的功能。
 
 请看下面的地图：
 
-[![](images/gkpathfindpath.png "An example pathfinding map")](images/gkpathfindpath.png#lightbox)
+[![Pathfinding 映射示例](images/gkpathfindpath.png)](images/gkpathfindpath.png#lightbox)
 
-使用 pathfinding， C#此代码可通过以下方式查找：
+使用 pathfinding 此 c # 代码可通过以下方式查找：
 
 ```csharp
 var a = GKGraphNode2D.FromPoint (new Vector2 (0, 5));
@@ -84,7 +84,7 @@ Console.WriteLine(String.Join ("->", (object[]) a2f));
 
 ### <a name="classical-expert-system"></a>经典专家系统
 
-以下C#代码片段演示了如何使用 GameplayKit 来实现传统专家系统：
+以下 c # 代码片段演示了如何使用 GameplayKit 来实现传统专家系统：
 
 ```csharp
 string output = "";
@@ -145,13 +145,13 @@ protected Func<GKRuleSystem, bool> mod(int m)
 }
 ```
 
-根据一组给定的规则（`GKRule`）和一组已知的输入，专家系统（`GKRuleSystem`）将创建可预测的输出（在上面的示例中为`fizzbuzz`）。
+根据一组给定的规则（ `GKRule` ）和一组已知的输入，专家系统（ `GKRuleSystem` ）将创建可预测的输出（在 `fizzbuzz` 上面的示例中）。
 
 ### <a name="flocking"></a>群
 
 群允许一组 AI 控制的游戏实体表现为 flock，其中，该组响应潜在顾客实体的运动和动作，如航班或鱼游泳的一 flock。
 
-以下C#代码片段使用 GameplayKit 和 SpriteKit 来实现图形显示的群行为：
+以下 c # 代码片段使用 GameplayKit 和 SpriteKit 来实现图形显示的群行为：
 
 ```csharp
 using System;
@@ -365,17 +365,17 @@ public override void ViewWillLayoutSubviews ()
 
 运行时，"Boids" 这一小动画的 _""_ 将围绕指尖 flock：
 
-[![](images/flocking01.png "The little animated Boids will flock around the finger taps")](images/flocking01.png#lightbox)
+[![轻微的动画 Boids 将围绕指尖 flock](images/flocking01.png)](images/flocking01.png#lightbox)
 
 ### <a name="other-apple-examples"></a>其他 Apple 示例
 
-除了上面提供的示例，Apple 还提供了以下可转码C#和 Xamarin 的示例应用：
+除了上面提供的示例，Apple 还提供了以下可转码到 c # 和 Xamarin 的示例应用：
 
 - [FourInARow：对对手 AI 使用 GameplayKit Minmax 战略家](https://developer.apple.com/library/prerelease/ios/samplecode/FourInARow/Introduction/Intro.html#//apple_ref/doc/uid/TP40016142)
 - [AgentsCatalog：在 GameplayKit 中使用代理系统](https://developer.apple.com/library/prerelease/ios/samplecode/AgentsCatalog/Introduction/Intro.html#//apple_ref/doc/uid/TP40016141)
 - [DemoBots：使用 SpriteKit 和 GameplayKit 构建跨平台游戏](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)
 
-## <a name="metal"></a>Metal
+## <a name="metal"></a>金属
 
 在 iOS 9 中，Apple 已对金属进行了几项更改和添加，以提供对 GPU 的低开销访问。 使用金属可以最大程度地提高 iOS 应用的图形和计算能力。
 
@@ -404,9 +404,9 @@ MetalKit 框架提供了一组实用工具类和功能，可减少在 iOS 应用
 
 金属性能着色器框架提供一组常见着色器，例如：
 
-- **高斯模糊**（`MPSImageGaussianBlur`）
-- **Sobel Edge 检测**（`MPSImageSobel`）
-- **图像直方图**（`MPSImageHistogram`）
+- **高斯模糊**（ `MPSImageGaussianBlur` ）
+- **Sobel Edge 检测**（ `MPSImageSobel` ）
+- **图像直方图**（ `MPSImageHistogram` ）
 
 有关详细信息，请参阅 Apple 的[金属着色语言指南](https://developer.apple.com/library/prerelease/ios/documentation/Metal/Reference/MetalShadingLanguageGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014364)。
 
@@ -440,8 +440,8 @@ Apple 的 new ReplayKit framework 使你可以轻松地将游戏录制的记录�
 Apple 向 SceneKit for iOS 9 添加了以下新功能：
 
 - Xcode 现在提供了一个场景编辑器，通过它可以直接从 Xcode 内编辑场景来快速生成游戏和交互式3D 应用。
-- `SCNView` 和 `SCNSceneRenderer` 类可用于启用金属渲染（在支持的 iOS 设备上）。
-- `SCNAudioPlayer` 和 `SCNNode` 类可用于添加可自动跟踪到 iOS 应用程序的播放机位置的空间音频效果。
+- `SCNView`和 `SCNSceneRenderer` 类可用于启用金属渲染（在支持的 iOS 设备上）。
+- `SCNAudioPlayer`和 `SCNNode` 类可用于添加可自动跟踪到 iOS 应用程序的播放机位置的空间音频效果。
 
 有关详细信息，请参阅[SceneKit 文档](~/ios/platform/introduction-to-ios8.md#scenekit)和 Apple [SceneKit Framework 参考](https://developer.apple.com/library/prerelease/ios/documentation/SceneKit/Reference/SceneKit_Framework/index.html#//apple_ref/doc/uid/TP40012283)和[Fox：使用 Xcode 场景编辑器示例项目构建 SceneKit 游戏](https://developer.apple.com/library/prerelease/ios/samplecode/Fox/Introduction/Intro.html#//apple_ref/doc/uid/TP40016154)。
 
@@ -455,9 +455,9 @@ Apple 向 SceneKit for iOS 9 添加了以下新功能：
 
 Apple 向 SpriteKit for iOS 9 添加了以下新功能：
 
-- 空间音频效果，可自动跟踪播放机与 `SKAudioNode` 类的位置。
+- 空间音频效果，可自动跟踪播放机与类的位置 `SKAudioNode` 。
 - Xcode 现在使用场景编辑器和操作编辑器来实现2D 游戏和应用创建。
-- 支持新的相机节点（`SKCameraNode`）对象的轻松滚动游戏。
+- 支持新的相机节点（）对象的轻松滚动游戏 `SKCameraNode` 。
 - 在支持金属的 iOS 设备上，SpriteKit 会自动将其用于渲染，即使您已使用自定义 OpenGL ES 着色器也是如此。
 
 有关详细信息，请参阅[SpriteKit 文档](~/ios/platform/introduction-to-ios8.md#spritekit)Apple [SpriteKit Framework 参考](https://developer.apple.com/library/prerelease/ios/documentation/SpriteKit/Reference/SpriteKitFramework_Ref/index.html#//apple_ref/doc/uid/TP40013041)及其[DemoBots：使用 SpriteKit 和 GameplayKit 示例应用构建跨平台游戏](https://developer.apple.com/library/prerelease/ios/samplecode/DemoBots/Introduction/Intro.html#//apple_ref/doc/uid/TP40015179)。

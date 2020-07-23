@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/07/2017
-ms.openlocfilehash: 63aa344ec94730ebe448aba090e2d91af9da64b5
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 0de41379800d3f8fcb26e2bc58497010b8e3bf95
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574036"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931373"
 ---
 # <a name="working-with-tvos-buttons-in-xamarin"></a>使用 Xamarin 中的 tvOS 按钮
 
 使用类的实例 `UIButton` 在 tvOS 窗口中创建可获得焦点的可选择按钮。 当用户选择一个按钮时，它将向目标对象发送一个操作消息，以允许你的 tvOS 应用响应用户的输入。
 
-[![](buttons-images/buttons01.png "Example buttons")](buttons-images/buttons01.png#lightbox)
+[![示例按钮](buttons-images/buttons01.png)](buttons-images/buttons01.png#lightbox)
 
 若要详细了解如何使用 Siri 遥控器并进行导航，请参阅使用[导航和焦点](~/ios/tvos/app-fundamentals/navigation-focus.md)和[Siri 远程和蓝牙控制器](~/ios/tvos/platform/remote-bluetooth.md)文档。
 
@@ -28,7 +28,7 @@ ms.locfileid: "84574036"
 
 在 tvOS 中，按钮用于特定于应用程序的操作，并且可能包含标题、图标或两者。 当用户使用[Siri 远程](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote)浏览应用程序的用户界面时，焦点将移到给定按钮，使其更改文本和背景色。 阴影还适用于添加三维效果的按钮，使其看起来比用户界面的其余部分更高。
 
-[![](buttons-images/buttons01.png "Example buttons")](buttons-images/buttons01.png#lightbox)
+[![示例按钮](buttons-images/buttons01.png)](buttons-images/buttons01.png#lightbox)
 
 Apple 对于使用按钮有以下建议：
 
@@ -66,19 +66,19 @@ Apple 建议你为按钮图标使用简单、高度可识别的图像。 很难�
 1. 在**解决方案资源管理器**中，双击该文件， `Main.storyboard` 然后将其打开进行编辑。
 1. 将一个**按钮**从**库**中拖放到视图上： 
 
-    [![](buttons-images/storyboard01.png "A button")](buttons-images/storyboard01.png#lightbox)
+    [![A 按钮](buttons-images/storyboard01.png)](buttons-images/storyboard01.png#lightbox)
 1. 在 "**属性资源管理器**" 中，您可以调整按钮的几个属性，例如其**标题**和**文本颜色**： 
 
-    [![](buttons-images/storyboard02.png "Button properties")](buttons-images/storyboard02.png#lightbox)
+    [![按钮属性](buttons-images/storyboard02.png)](buttons-images/storyboard02.png#lightbox)
 1. 接下来，切换到 "**事件" 选项卡**，然后将**事件**连接到**按钮**，并将其调用 `ButtonPressed` ： 
 
-    [![](buttons-images/storyboard03.png "The Events Tab")](buttons-images/storyboard03.png#lightbox)
+    [!["事件" 选项卡](buttons-images/storyboard03.png)](buttons-images/storyboard03.png#lightbox)
 1. 你将自动切换到该 `ViewController.cs` 视图，你可以在其中使用**向上**和**向下**箭头键将新操作放置在代码中： 
 
-    [![](buttons-images/storyboard04.png "Placing a new Action in code")](buttons-images/storyboard04.png#lightbox)
+    [![在代码中放置新操作](buttons-images/storyboard04.png)](buttons-images/storyboard04.png#lightbox)
 1. 按**enter**选择位置： 
 
-    [![](buttons-images/storyboard05.png "The code editor")](buttons-images/storyboard05.png#lightbox)
+    [![代码编辑器](buttons-images/storyboard05.png)](buttons-images/storyboard05.png#lightbox)
 1. 保存对所有文件所做的更改。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -86,13 +86,13 @@ Apple 建议你为按钮图标使用简单、高度可识别的图像。 很难�
 1. 在**解决方案资源管理器**中，双击该文件， `Main.storyboard` 然后将其打开进行编辑。
 1. 将一个**按钮**从**库**中拖放到视图上： 
 
-    [![](buttons-images/storyboard01vs.png "A button")](buttons-images/storyboard01vs.png#lightbox)
+    [![A 按钮](buttons-images/storyboard01vs.png)](buttons-images/storyboard01vs.png#lightbox)
 1. 在 "**属性资源管理器**" 中，您可以调整按钮的几个属性，例如其**标题**和**文本颜色**： 
 
-    [![](buttons-images/storyboard02vs.png "The Properties Explorer")](buttons-images/storyboard02vs.png#lightbox)
+    [![属性资源管理器](buttons-images/storyboard02vs.png)](buttons-images/storyboard02vs.png#lightbox)
 1. 接下来，切换到 "**事件" 选项卡**，然后将**事件**连接到**按钮**，并将其调用 `ButtonPressed` ： 
 
-    [![](buttons-images/storyboard03vs.png "The Events Tab")](buttons-images/storyboard03vs.png#lightbox)
+    [!["事件" 选项卡](buttons-images/storyboard03vs.png)](buttons-images/storyboard03vs.png#lightbox)
 1. 保存对所有文件所做的更改。
 
 编辑视图控制器（示例 `ViewController.cs` ）文件，并添加以下代码以处理所选的按钮：

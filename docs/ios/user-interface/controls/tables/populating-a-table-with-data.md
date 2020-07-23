@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 9acdde897a3a700d0138cb67db6735a8cce07120
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 48aeaf8e3036c9b4e1ed548208b7daa822a00913
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570825"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933414"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>使用 Xamarin 中的数据填充表
 
@@ -89,7 +89,7 @@ public override void ViewDidLoad ()
 
 生成的表如下所示：
 
- [![](populating-a-table-with-data-images/image3.png "Sample table running")](populating-a-table-with-data-images/image3.png#lightbox)
+ [![运行的示例表](populating-a-table-with-data-images/image3.png)](populating-a-table-with-data-images/image3.png#lightbox)
 
 大多数表使用户能够通过触摸行来选择它，并执行一些其他操作（例如播放歌曲、调用联系人或显示其他屏幕）。 若要实现此目的，需要执行一些操作。 首先，让我们创建一个 AlertController，通过向方法中添加以下内容，在用户单击行时显示一条消息 `RowSelected` ：
 
@@ -141,7 +141,7 @@ public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 
 现在用户可以触摸一行，此时将显示一个警报：
 
- [![](populating-a-table-with-data-images/image4.png "The row selected alert")](populating-a-table-with-data-images/image4.png#lightbox)
+ [![选定的行警报](populating-a-table-with-data-images/image4.png)](populating-a-table-with-data-images/image4.png#lightbox)
 
 ## <a name="cell-reuse"></a>单元格重复使用
 
@@ -220,7 +220,7 @@ public class MyCell : UITableViewCell
 
 索引可帮助用户滚动长列表（通常按字母顺序排序），尽管你可以按所需的任何条件进行索引。 **BasicTableIndex**示例从文件中加载更长的项列表，以演示索引。 索引中的每一项对应于表的 "section"。
 
- [![](populating-a-table-with-data-images/image5.png "The Index display")](populating-a-table-with-data-images/image5.png#lightbox)
+ [![索引显示](populating-a-table-with-data-images/image5.png)](populating-a-table-with-data-images/image5.png#lightbox)
 
 若要支持 "节"，需要对表后面的数据进行分组，因此，BasicTableIndex 示例 `Dictionary<>` 使用每个项的第一个字母作为字典键，从字符串数组创建一个。
 
@@ -268,7 +268,7 @@ public override string[] SectionIndexTitles (UITableView tableView)
 可以使用页眉和页脚直观地对表中的行进行分组。 所需的数据结构非常类似于添加索引–工作非常 `Dictionary<>` 好。 此示例将按住类型对蔬菜分组，而不是使用字母对单元进行分组。
 输出如下所示：
 
- [![](populating-a-table-with-data-images/image6.png "Sample Headers and Footers")](populating-a-table-with-data-images/image6.png#lightbox)
+ [![示例页眉和页脚](populating-a-table-with-data-images/image6.png)](populating-a-table-with-data-images/image6.png#lightbox)
 
 若要显示页眉和页脚， `UITableViewSource` 子类需要以下附加方法：
 

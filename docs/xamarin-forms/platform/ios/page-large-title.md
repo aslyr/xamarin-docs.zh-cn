@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0db20620870340386ccd0cedf7f98cb2975527ba
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 88761472c4beae3f40f2ca6852eea4db8276c4c9
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128026"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930674"
 ---
 # <a name="large-page-titles-on-ios"></a>IOS 上的大型页面标题
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 iOS 平台特定用于在的导航栏上将页面标题显示为大标题 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ，适用于使用 iOS 11 或更高版本的设备。 当用户开始滚动内容时，较大的标题将左对齐并使用较大的字体，并转换为标准标题，以便有效地使用屏幕房地产。 但在横向方向，标题将返回到导航栏的中心，以优化内容布局。 它通过将 `NavigationPage.PrefersLargeTitles` 附加属性设置为值在 XAML 中使用 `boolean` ：
 
@@ -100,7 +100,7 @@ switch (On<iOS>().LargeTitleDisplay())
 
 因此，指定的 `LargeTitleDisplayMode` 将应用于 [`Page`](xref:Xamarin.Forms.Page) ，后者控制大标题行为：
 
-![](page-large-title-images/large-title.png "Blur Effect Platform-Specific")
+![特定于平台的模糊效果](page-large-title-images/large-title.png)
 
 ## <a name="related-links"></a>相关链接
 

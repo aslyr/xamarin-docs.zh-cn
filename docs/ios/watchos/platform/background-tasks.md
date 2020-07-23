@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/13/2017
-ms.openlocfilehash: 0ca65c56a742aaf23874f581b976ef50b3d16192
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 60e7c2b5771f7f65c07926b2fb5958fdc3f419fb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574335"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931029"
 ---
 # <a name="watchos-background-tasks-in-xamarin"></a>Xamarin 中的 watchOS 后台任务
 
@@ -26,9 +26,9 @@ ms.locfileid: "84574335"
 
 在讨论开发人员可以让 watchOS 应用程序的数据和用户界面保持最新和更新的所有方法之前，此部分将查看一组典型的使用模式，以及用户在当天的 iPhone 与其 Apple Watch 之间（基于当天的时间和当前正在进行的活动，例如驱车）的方式。
 
-请参见以下示例：
+执行以下示例：
 
-[![](background-tasks-images/update00.png "How a user might move between their iPhone and their Apple Watch throughout the day")](background-tasks-images/update00.png#lightbox)
+[![用户当天的 iPhone 及其 Apple Watch 之间的移动方式](background-tasks-images/update00.png)](background-tasks-images/update00.png#lightbox)
 
 1. 在早上，在等待咖啡时，用户会在其 iPhone 上浏览当前新闻几分钟。
 2. 在离开咖啡店之前，他们会快速查看天气，并看看其观看面上的难点。
@@ -41,7 +41,7 @@ ms.locfileid: "84574335"
 
 使用新的 Api Apple 已包含在 watchOS 3 中，应用可以计划_后台刷新_，并在用户请求之前准备好所需的信息。 采用上述天气的示例：
 
-[![](background-tasks-images/update01.png "An example of the Weather Complication")](background-tasks-images/update01.png#lightbox)
+[![天气的示例](background-tasks-images/update01.png)](background-tasks-images/update01.png#lightbox)
 
 1. 应用计划在特定时间唤醒系统。 
 2. 此应用将获取生成更新时所需的信息。
@@ -50,7 +50,7 @@ ms.locfileid: "84574335"
 
 如上所示，watchOS 系统使用一个或多个任务唤醒应用程序，该应用程序具有非常有限的池可用：
 
-[![](background-tasks-images/update02.png "The watchOS system wakes the app using one or more Tasks")](background-tasks-images/update02.png#lightbox)
+[![WatchOS 系统使用一个或多个任务唤醒应用](background-tasks-images/update02.png)](background-tasks-images/update02.png#lightbox)
 
 Apple 建议在应用完成自行更新过程之前，充分利用此任务（因为它是应用的有限资源）。
 
@@ -84,7 +84,7 @@ namespace MonkeyWatch.MonkeySeeExtension
 
 当应用完成了给定任务后，它会将其标记为 "已完成"，从而将其返回给系统：
 
-[![](background-tasks-images/update03.png "The Task returns to the system by marking it completed")](background-tasks-images/update03.png#lightbox)
+[![任务通过将其标记为已完成来返回到系统](background-tasks-images/update03.png)](background-tasks-images/update03.png#lightbox)
 
 <a name="New-Background-Tasks"></a>
 
@@ -105,7 +105,7 @@ watchOS 3 引入了多个后台任务，应用可以使用这些任务来更新�
 
 `WKApplicationRefreshBackgroundTask`是一种通用任务，可计划在将来的某个日期使应用唤醒：
 
-[![](background-tasks-images/update04.png "A WKApplicationRefreshBackgroundTask woken at a future date")](background-tasks-images/update04.png#lightbox)
+[![未来日期的 WKApplicationRefreshBackgroundTask 唤醒](background-tasks-images/update04.png)](background-tasks-images/update04.png#lightbox)
 
 在任务的运行时，应用可以执行任何类型的本地处理，例如更新复杂的时间线或使用获取一些必需的数据 `NSUrlSession` 。
 
@@ -115,7 +115,7 @@ watchOS 3 引入了多个后台任务，应用可以使用这些任务来更新�
 
 `WKURLSessionRefreshBackgroundTask`当数据完成下载并准备好由应用程序处理时，系统会发送。
 
-[![](background-tasks-images/update05.png "The WKURLSessionRefreshBackgroundTask when the data has finished downloading")](background-tasks-images/update05.png#lightbox)
+[![数据下载完成后的 WKURLSessionRefreshBackgroundTask](background-tasks-images/update05.png)](background-tasks-images/update05.png#lightbox)
 
 在后台下载数据时，应用程序不会处于运行状态。 相反，应用程序会计划数据请求，然后将其挂起，系统将处理数据下载，仅在下载完成时 reawakening 应用。
 
@@ -125,17 +125,17 @@ watchOS 3 引入了多个后台任务，应用可以使用这些任务来更新�
 
 在 watchOS 3 中，Apple 添加了插接，用户可在其中固定喜爱的应用并对其进行快速访问。 当用户按下 Apple Watch 上的侧按钮时，将显示固定应用程序快照的库。 用户可以向左或向右轻扫以查找所需的应用程序，然后点击应用程序以启动它，并将快照替换为正在运行的应用程序的接口。
 
-[![](background-tasks-images/update06.png "Replacing the Snapshot with the running apps interface")](background-tasks-images/update06.png#lightbox)
+[![将快照替换为正在运行的应用接口](background-tasks-images/update06.png)](background-tasks-images/update06.png#lightbox)
 
 系统会定期拍摄应用程序的 UI 快照（通过发送 `WKSnapshotRefreshBackgroundTask` ），并使用这些快照填充停靠。 watchOS 使应用有机会在拍摄此快照之前更新其内容和 UI。
 
 快照在 watchOS 3 中非常重要，因为它们充当应用程序的预览和启动映像。 如果用户在停靠中显示某个应用程序，它会扩展到全屏显示，进入前台并开始运行，因此，必须保持快照最新：
 
-[![](background-tasks-images/update07.png "If the user settles on an app in the Dock, it will expand to full screen")](background-tasks-images/update07.png#lightbox)
+[![如果用户在停靠中的某个应用上进行了结算，它将扩展到全屏](background-tasks-images/update07.png)](background-tasks-images/update07.png#lightbox)
 
 同样，系统将发出， `WKSnapshotRefreshBackgroundTask` 以便在拍摄快照之前，应用程序可以准备（通过更新数据和 UI）：
 
-[![](background-tasks-images/update08.png "The app can prepare by updating the data and the UI before the snapshot is taken")](background-tasks-images/update08.png#lightbox)
+[![在拍摄快照之前，应用可以通过更新数据和 UI 做好准备](background-tasks-images/update08.png)](background-tasks-images/update08.png#lightbox)
 
 应用标记为 `WKSnapshotRefreshBackgroundTask` 已完成时，系统将自动拍摄应用 UI 的快照。
 
@@ -144,7 +144,7 @@ watchOS 3 引入了多个后台任务，应用可以使用这些任务来更新�
 
 此外，当用户从应用程序收到通知并点击该通知以使应用程序进入前台时，快照必须是最新的，因为它也充当启动屏幕：
 
-[![](background-tasks-images/update09.png "The user receives a notification from the app and taps it to bring the app to the foreground")](background-tasks-images/update09.png#lightbox)
+[![用户从应用程序收到通知，并点击该通知以使应用程序进入前台](background-tasks-images/update09.png)](background-tasks-images/update09.png#lightbox)
 
 如果已超过一小时，因为用户已与 watchOS 应用交互，它将能够返回到其默认状态。 默认状态对于不同的应用程序可能有不同的含义，根据应用程序的设计，它可能根本没有默认状态。
 
@@ -156,13 +156,13 @@ watchOS 3 引入了多个后台任务，应用可以使用这些任务来更新�
 
 在 watchOS 3 中，Apple 通过新的与后台刷新 API 集成了监视连接 `WKWatchConnectivityRefreshBackgroundTask` 。 使用这项新功能，iPhone 应用可以将最新的数据传递到其手表应用对应项，同时在后台运行 watchOS 应用程序：
 
-[![](background-tasks-images/update10.png "An iPhone app can deliver fresh data to its watch app counterpart, while the watchOS app is running in the background")](background-tasks-images/update10.png#lightbox)
+[![IPhone 应用可以将新数据传递到其监视应用对应项，同时在后台运行 watchOS 应用](background-tasks-images/update10.png)](background-tasks-images/update10.png#lightbox)
 
 启动复杂的推送、应用上下文、从 iPhone 应用发送文件或更新用户信息时，会在后台唤醒 Apple Watch 应用。
 
 当通过唤醒监视应用时， `WKWatchConnectivityRefreshBackgroundTask` 将需要使用标准 API 方法接收 iPhone 应用中的数据。
 
-[![](background-tasks-images/update11.png "The WKWatchConnectivityRefreshBackgroundTask data flow")](background-tasks-images/update11.png#lightbox)
+[![WKWatchConnectivityRefreshBackgroundTask 数据流](background-tasks-images/update11.png)](background-tasks-images/update11.png#lightbox)
 
 1. 确保会话已激活。
 2. 监视新 `HasContentPending` 属性只要值为 `true` ，应用仍有要处理的数据。 与之前一样，应用程序应一直保存到任务，直到处理完所有数据为止。
@@ -174,7 +174,7 @@ watchOS 3 引入了多个后台任务，应用可以使用这些任务来更新�
 
 将所有新的后台任务 API 放在一起，一组典型的交互如下所示：
 
-[![](background-tasks-images/update12.png "The Background API Lifecycle")](background-tasks-images/update12.png#lightbox)
+[![后台 API 生命周期](background-tasks-images/update12.png)](background-tasks-images/update12.png#lightbox)
 
 1. 首先，watchOS 应用计划一个后台任务，使其在将来的某个时间点而唤醒于。
 2. 此应用唤醒系统并发送任务。
@@ -207,7 +207,7 @@ WatchOS 应用程序在此生态系统中的工作方式很重要，因为它限
 
 请看下面的典型使用方案：
 
-[![](background-tasks-images/update14.png "The typical usage scenario")](background-tasks-images/update14.png#lightbox)
+[![典型使用方案](background-tasks-images/update14.png)](background-tasks-images/update14.png#lightbox)
 
 用户的喜爱的足球团队正在播放从 7:00 PM 到 9:00 PM 的大匹配项，因此该应用程序应定期检查该分数，并决定30分钟的更新间隔。
 
@@ -256,7 +256,7 @@ private void ScheduleNextBackgroundUpdate ()
 
 接下来，请仔细查看5分钟窗口，其中显示了更新评分所需的步骤：
 
-[![](background-tasks-images/update15.png "The 5 minute window showing the steps required to update the score")](background-tasks-images/update15.png#lightbox)
+[![显示更新评分所需步骤的5分钟窗口](background-tasks-images/update15.png)](background-tasks-images/update15.png#lightbox)
 
 1. 下午7:30:02，此应用程序会被系统唤醒，并提供更新后台任务。 第一种优先级是从服务器获取最新分数。 请参阅下面[的计划 NSUrlSession](#Scheduling-a-NSUrlSession) 。
 2. 在7:30:05，应用完成了原始任务，系统会将应用置于睡眠状态，并继续在后台下载请求的数据。
@@ -523,7 +523,7 @@ snapshotTask.SetTaskCompleted (false, expirationDate, userInfo);
 
 如前面的示例中所示，MonkeySoccer 应用程序用来更新其评分，通过高效地工作并使用新的 watchOS 3 后台任务，该应用只需15秒的活动状态： 
 
-[![](background-tasks-images/update16.png "The app was only active for a total of 15 seconds")](background-tasks-images/update16.png#lightbox)
+[![此应用只会处于活动状态的时间超过15秒](background-tasks-images/update16.png)](background-tasks-images/update16.png#lightbox)
 
 这会降低应用对可用 Apple Watch 资源和电池寿命的影响，还可让应用更好地与在手表上运行的其他应用程序一起工作。
 
@@ -611,7 +611,7 @@ private void UpdateComplication ()
 
 在 watchOS 3 中，Apple 添加了插接，用户可在其中固定喜爱的应用并对其进行快速访问。 当用户按下 Apple Watch 上的侧按钮时，将显示固定应用程序快照的库。 用户可以向左或向右轻扫以查找所需的应用程序，然后点击应用程序以启动它，并将快照替换为正在运行的应用程序的接口。
 
-[![](background-tasks-images/dock01.png "The Dock")](background-tasks-images/dock01.png#lightbox)
+[![停靠](background-tasks-images/dock01.png)](background-tasks-images/dock01.png#lightbox)
 
 系统会定期拍摄应用 UI 的快照，并使用这些快照来填充文档。watchOS 使应用有机会在拍摄此快照之前更新其内容和 UI。
 
@@ -638,7 +638,7 @@ private void UpdateComplication ()
 
 <a name="Best-Practices"></a>
 
-## <a name="best-practices"></a>最佳实践 
+## <a name="best-practices"></a>最佳方案 
 
 Apple 建议在使用后台任务时采用以下最佳做法：
 
@@ -670,7 +670,7 @@ Apple 建议在使用后台任务时采用以下最佳做法：
 
 Apple 建议使用以下项来处理数据流：
 
-[![](background-tasks-images/update17.png "App Data Flow Diagram")](background-tasks-images/update17.png#lightbox)
+[![应用数据流关系图](background-tasks-images/update17.png)](background-tasks-images/update17.png#lightbox)
 
 外部事件（如手表连接）唤醒应用。 这会强制应用程序更新其数据模型（表示应用程序的当前状态）。 由于数据模型更改，应用将需要更新其复杂性，请求新的快照，可能会启动一个后台 `NSURLSession` 来请求更多的数据，并计划进一步的后台刷新。
 

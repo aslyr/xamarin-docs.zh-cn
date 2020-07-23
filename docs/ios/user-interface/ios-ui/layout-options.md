@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 2514287fe06216d62b994cf19ba8f0901dd36c49
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 6cfb567e6f74228a0b7e9ce017c57436df06cb56
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73003329"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939095"
 ---
 # <a name="layout-options-in-xamarinios"></a>Xamarin 中的布局选项
 
@@ -23,13 +23,13 @@ ms.locfileid: "73003329"
 
 ## <a name="autosizing"></a>自动调整
 
-当用户调整窗口大小时，如设备旋转和方向发生变化时，系统会根据自动调整规则自动调整该窗口内的视图的大小。 可以C#使用`UIView`的`AutoresizingMask`属性或 IOS 设计器的**Properties Pad**设置这些规则，如下所示：
+当用户调整窗口大小时，如设备旋转和方向发生变化时，系统会根据自动调整规则自动调整该窗口内的视图的大小。 可以在 c # 中使用 `AutoresizingMask` `UIView` 或在 IOS 设计器的**Properties Pad**中设置这些规则，如下所示：
 
- [![](layout-options-images/image41.png "Visual Studio for Mac Designer")](layout-options-images/image41.png#lightbox)
+ [![Visual Studio for Mac 设计器](layout-options-images/image41.png)](layout-options-images/image41.png#lightbox)
 
 选择控件后，可以手动指定控件的位置和尺寸，还可以选择 "**自动调整**行为"。 如以下屏幕截图所示，我们可以使用自动调整控件中的弹簧和 struts 来定义所选视图与父视图的关系：
 
- [![](layout-options-images/image42.png "Visual Studio for Mac Designer")](layout-options-images/image42.png#lightbox)
+ [![Visual Studio for Mac 设计器](layout-options-images/image42.png)](layout-options-images/image42.png#lightbox)
 
 调整*弹簧*会使视图根据其父视图的宽度或高度进行调整。 调整*strut*将使视图在该特定边缘上维持其自身与其父视图之间的恒定距离。
 
@@ -42,7 +42,7 @@ textfield1.AutoresizingMask = UIViewAutoresizing.FlexibleRightMargin | UIViewAut
 
 若要测试自动调整设置，请在项目的选项中启用不同的**受支持设备方向**：
 
- [![](layout-options-images/image43a.png "Autosizing Settings")](layout-options-images/image43a.png#lightbox)
+ [![自动调整设置](layout-options-images/image43a.png)](layout-options-images/image43a.png#lightbox)
 
 在后面的代码中，我们可以使用以下代码，这会导致两个文本控件水平调整大小：
 
@@ -54,13 +54,13 @@ imageview1.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutor
 
 我们还可以使用设计器调整控件。 选择如下所示的 "struts" 将使图像保持右对齐状态，而不会被剪裁到视图底部：
 
- [![](layout-options-images/autoresize.png "Autorotation")](layout-options-images/autoresize.png#lightbox)
+ [![Autorotation](layout-options-images/autoresize.png)](layout-options-images/autoresize.png#lightbox)
 
 这些屏幕截图显示了在屏幕旋转时控件如何调整大小或重新定位：
 
- [![](layout-options-images/image44a.png "Autorotation")](layout-options-images/image44a.png#lightbox)
+ [![Autorotation](layout-options-images/image44a.png)](layout-options-images/image44a.png#lightbox)
 
-请注意，由于 "`FlexibleWidth`" 设置的原因，文本视图和文本字段都延伸以保持相同的左右边距。 图像的上边缘和左边距是灵活的，这意味着它将保留下边距和右边距–旋转屏幕时，使图像处于视图中。 复杂布局通常需要在每个可见控件上组合这些设置，以使用户界面保持一致，并防止控件在视图的边界发生更改时（由于旋转或其他调整大小事件）。
+请注意，由于设置的原因，文本视图和文本字段都延伸以保持相同的左右边距 `FlexibleWidth` 。 图像的上边缘和左边距是灵活的，这意味着它将保留下边距和右边距–旋转屏幕时，使图像处于视图中。 复杂布局通常需要在每个可见控件上组合这些设置，以使用户界面保持一致，并防止控件在视图的边界发生更改时（由于旋转或其他调整大小事件）。
 
 ## <a name="related-links"></a>相关链接
 

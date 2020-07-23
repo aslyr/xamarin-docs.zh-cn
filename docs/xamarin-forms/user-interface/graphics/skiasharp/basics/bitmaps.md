@@ -10,22 +10,22 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1e4c170f818dc62640b1cd72ec3b70f48d227d93
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 440a078857a940f57f5700a18f91fc8b25bdfae8
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137730"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937197"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp 中的位图基础知识
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _从各种源加载位图并显示它们。_
 
 支持 SkiaSharp 中的位图。 本文仅介绍 &mdash; 如何加载位图以及如何显示它们：
 
-![](bitmaps-images/basicbitmaps-small.png "The display of two bitmaps")
+![两个位图的显示](bitmaps-images/basicbitmaps-small.png)
 
 可以在[SkiaSharp 位图](../bitmaps/index.md)部分找到更深入的位图浏览。
 
@@ -208,7 +208,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 位图延伸到矩形的尺寸，这就是在这些屏幕截图中，猴子水平拉伸的原因：
 
-[![](bitmaps-images/basicbitmaps-small.png "A triple screenshot of the Basic Bitmaps page")](bitmaps-images/basicbitmaps-large.png#lightbox "A triple screenshot of the Basic Bitmaps page")
+[![基本位图页面的三个屏幕截图](bitmaps-images/basicbitmaps-small.png)](bitmaps-images/basicbitmaps-large.png#lightbox "基本位图页面的三个屏幕截图")
 
 第三个图像 &mdash; ，您只能查看是否运行程序并从自己的图片库中加载照片 &mdash; ，还会在矩形中显示，但会调整矩形的位置和大小以保持位图的纵横比。 此计算更多，因为它需要根据位图和目标矩形的大小计算缩放因子，并在该区域中居中矩形：
 

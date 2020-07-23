@@ -10,12 +10,12 @@ ms.date: 01/29/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 062dd77f1dc7b82f16bfbc6d46e44d4adeb73350
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4381b1fbe7b38c2695bce645903d599bdb792fc2
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84564701"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937431"
 ---
 # <a name="adding-ios-specific-formatting"></a>添加特定于 iOS 的格式
 
@@ -42,11 +42,11 @@ nav.BarTextColor = Color.White;
 
 结果显示在下面的屏幕代码段中。 请注意，状态栏项为黑色（无法在中设置此项， Xamarin.Forms 因为它是特定于平台的功能）。
 
-![](theme-images/status-default-sml.png "iOS Theming")
+![iOS 主题](theme-images/status-default-sml.png)
 
 理想情况下，状态栏也是白色-我们可以直接在 iOS 项目中完成此操作。 将以下条目添加到**info.plist** ，以强制将状态栏作为白色：
 
-![](theme-images/info-plist.png "iOS Info.plist Entries")
+![iOS info.plist 条目](theme-images/info-plist.png)
 
 或直接编辑相应的**info.plist**文件以包括：
 
@@ -59,7 +59,7 @@ nav.BarTextColor = Color.White;
 
 现在，当应用程序运行时，导航栏为绿色，其文本为白色（由于 Xamarin.Forms 格式设置） *，并且*由于特定于 iOS 的配置，状态栏文本也是白色的：
 
-![](theme-images/status-white-sml.png "iOS Theming")
+![iOS 主题](theme-images/status-white-sml.png)
 
 ## <a name="uiappearance-api"></a>UIAppearance API
 
@@ -88,7 +88,7 @@ public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 默认情况下，中的选定选项卡栏图标[`TabbedPage`](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md)
 为蓝色：
 
-![](theme-images/tabbar-default.png "Default iOS Tab Bar Icon in TabbedPage")
+![TabbedPage 中的默认 iOS 选项卡栏图标](theme-images/tabbar-default.png)
 
 若要更改此行为，请设置 `UITabBar.Appearance` 属性：
 
@@ -98,7 +98,7 @@ UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); 
 
 这会导致所选的选项卡为绿色：
 
-![](theme-images/tabbar-custom.png "Green iOS Tab Bar Icon in TabbedPage")
+![TabbedPage 中的绿色 iOS 选项卡图标](theme-images/tabbar-custom.png)
 
 使用此 API，你可以自定义Xamarin.Forms
 `TabbedPage`在 iOS 上，代码非常少。 有关使用自定义呈现器设置选项卡的特定字体的详细信息，请参阅[自定义选项卡食谱](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/customize-tabs)。
@@ -113,7 +113,7 @@ UISwitch.Appearance.OnTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); // green
 
 这两个屏幕捕获将在 `UISwitch` 左侧显示默认控件，并在 Todo 示例的右侧显示自定义版本（设置 `Appearance` ）： [Todo sample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 
-![](theme-images/switch-default.png "默认 UISwitch 颜色") ![](theme-images/switch-custom.png "自定义的 UISwitch 颜色")
+![默认 UISwitch 颜色](theme-images/switch-default.png) ![自定义的 UISwitch 颜色](theme-images/switch-custom.png)
 
 ### <a name="other-controls"></a>其他控件
 

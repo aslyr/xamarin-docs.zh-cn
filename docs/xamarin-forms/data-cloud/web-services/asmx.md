@@ -10,16 +10,16 @@ ms.date: 04/02/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1f7a0d04d1e7b6abc9931c05c0e46ef49f8ba09c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: aa600974cdf25f8f85d9152edc4a377334cc8c78
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138458"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936547"
 ---
 # <a name="consume-an-aspnet-web-service-asmx"></a>使用 ASP.NET Web 服务 (ASMX)
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
 
 _使用该功能，可以生成使用简单对象访问协议（SOAP）发送消息的 web 服务。SOAP 是一种独立于平台和语言的协议，用于生成和访问 web 服务。对于用于实现服务的平台、对象模型或编程语言，使用该服务的使用者不需要了解有关该服务的任何信息。它们只需要了解如何发送和接收 SOAP 消息。本文演示如何从应用程序使用 .ASMX SOAP 服务 Xamarin.Forms 。_
 
@@ -34,7 +34,7 @@ SOAP 可以在许多传输协议（包括 HTTP、SMTP、TCP 和 UDP）上运行�
 
 此示例包括在物理设备或模拟设备上运行的移动应用程序，以及提供用于获取、添加、编辑和删除数据的方法的一个服务。 当移动应用程序运行时，它们将连接到本地托管的 .ASMX 服务，如以下屏幕截图所示：
 
-![](asmx-images/portal.png "Sample Application")
+![示例应用程序](asmx-images/portal.png)
 
 > [!NOTE]
 > 在 iOS 9 及更高版本中，应用传输安全（ATS）在 internet 资源（如应用的后端服务器）和应用之间强制实施安全连接，从而防止意外泄漏敏感信息。 由于默认情况下在为 iOS 9 构建的应用中启用了 ATS，因此所有连接都将受到 ATS 的安全要求。 如果连接不满足这些要求，它们将失败并出现异常。

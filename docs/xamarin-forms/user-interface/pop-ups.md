@@ -10,16 +10,16 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a7ddd9134b7214b84a883e171d7b0cadaba3390b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 75cc3070f552ef05c3e8702d27caf7c353ac0a8f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136313"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931867"
 ---
 # <a name="display-pop-ups"></a>显示弹出窗口
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
 
 显示警报，要求用户进行选择或显示提示是常见的 UI 任务。 Xamarin.Forms在类上有三种方法 [`Page`](xref:Xamarin.Forms.Page) ，可通过弹出窗口与用户进行交互： [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) 、 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) 和 `DisplayPromptAsync` 。 在每个平台上使用相应的本机控件呈现。
 
@@ -31,7 +31,7 @@ ms.locfileid: "84136313"
 await DisplayAlert ("Alert", "You have been alerted", "OK");
 ```
 
-![](pop-ups-images/alert.png "Alert Dialog with One Button")
+![带有按钮的警告对话框](pop-ups-images/alert.png)
 
 本例不收集用户的信息。 警报以模式显示，一旦用户被解雇，就会继续与应用程序进行交互。
 
@@ -61,7 +61,7 @@ async void OnActionSheetSimpleClicked (object sender, EventArgs e)
 }
 ```
 
-![](pop-ups-images/action.png "ActionSheet Dialog")
+![ActionSheet 对话框](pop-ups-images/action.png)
 
 `destroy` 按钮的呈现方式与其他按钮不同，可以保留 `null` 或指定为第三个字符串参数。 下面的示例使用 `destroy` 按钮：
 

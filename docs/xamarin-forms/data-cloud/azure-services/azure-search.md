@@ -10,16 +10,16 @@ ms.date: 12/05/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 33675fbb644c5967726fee29b3e235247aec633a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 29e73f4051eda9117663992af9e710483e4b772b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84565352"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934090"
 ---
 # <a name="search-data-with-azure-search-and-xamarinforms"></a>在 Azure 搜索中搜索数据Xamarin.Forms
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
 
 _Azure 搜索是一种云服务，可为上载的数据提供索引和查询功能。这消除了传统上与在应用程序中实现搜索功能相关的基础结构要求和搜索算法复杂性。本文演示如何使用 Microsoft Azure 搜索库将 Azure 搜索集成到 Xamarin.Forms 应用程序中。_
 
@@ -44,7 +44,7 @@ Azure 搜索还支持根据搜索输入检索建议。 有关详细信息，请�
 > [!NOTE]
 > 如果还没有 [Azure 订阅](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，可以在开始前创建一个[免费帐户](https://aka.ms/azfree-docs-mobileapps)。
 
-## <a name="setup"></a>设置
+## <a name="setup"></a>安装
 
 将 Azure 搜索集成到应用程序的过程如下所示 Xamarin.Forms ：
 
@@ -97,11 +97,11 @@ static void CreateSearchIndex()
 `Index.Name`应将属性设置为索引的名称，并且 `Index.Fields` 应将属性设置为对象的数组 `Field` 。 每个 `Field` 实例指定一个名称、一个类型和任何属性，这些属性指定字段的使用方式。 这些属性包括：
 
 - `IsKey`-指示此字段是否为索引的键。 必须将一个类型为的索引中的一个字段 `DataType.String` 指定为键字段。
-- `IsFacetable`-指示是否可以在此字段上执行分面导航。 默认值为 `false`。
-- `IsFilterable`-指示是否可以在筛选器查询中使用该字段。 默认值为 `false`。
-- `IsRetrievable`-指示是否可以在搜索结果中检索字段。 默认值为 `true`。
-- `IsSearchable`–指示全文搜索中是否包含字段。 默认值为 `false`。
-- `IsSortable`-指示是否可在表达式中使用该字段 `OrderBy` 。 默认值为 `false`。
+- `IsFacetable`-指示是否可以在此字段上执行分面导航。 默认值是 `false`。
+- `IsFilterable`-指示是否可以在筛选器查询中使用该字段。 默认值是 `false`。
+- `IsRetrievable`-指示是否可以在搜索结果中检索字段。 默认值是 `true`。
+- `IsSearchable`–指示全文搜索中是否包含字段。 默认值是 `false`。
+- `IsSortable`-指示是否可在表达式中使用该字段 `OrderBy` 。 默认值是 `false`。
 
 > [!NOTE]
 > 在部署后更改索引需要重新生成和重新加载数据。
@@ -222,7 +222,7 @@ var searchResults = await indexClient.Documents.SearchAsync<Monkey>(text, parame
 
 `SearchAsync`方法返回一个 `DocumentSearchResult` 包含查询结果的对象。 枚举此对象，并将每个 `Document` 对象都创建为 `Monkey` 对象并将其添加到 `Monkeys` `ObservableCollection` 以显示。 以下屏幕截图显示了从 Azure 搜索返回的搜索查询结果：
 
-![](azure-search-images/search.png "Search Results")
+![搜索结果](azure-search-images/search.png)
 
 有关搜索和筛选的详细信息，请参阅[使用 .NET SDK 查询 Azure 搜索索引](/azure/search/search-query-dotnet/)。
 
@@ -272,11 +272,11 @@ async Task AzureSuggestions(string text)
 
 `SuggestAsync`方法返回一个 `DocumentSuggestResult` 包含查询结果的对象。 枚举此对象，并将每个 `Document` 对象都创建为 `Monkey` 对象并将其添加到 `Monkeys` `ObservableCollection` 以显示。 以下屏幕截图显示了从 Azure 搜索返回的建议结果：
 
-![](azure-search-images/suggest.png "Suggestion Results")
+![建议结果](azure-search-images/suggest.png)
 
 请注意，在示例应用程序中， `SuggestAsync` 仅当用户完成输入搜索词时才会调用方法。 不过，它还可用于通过对每个按键执行来支持自动完成的搜索查询。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文演示了如何使用 Microsoft Azure 搜索库将 Azure 搜索集成到 Xamarin.Forms 应用程序中。 Azure 搜索是一种云服务，可为上载的数据提供索引和查询功能。 这消除了传统上与在应用程序中实现搜索功能相关的基础结构要求和搜索算法复杂性。
 

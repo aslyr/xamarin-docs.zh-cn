@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: dcbc20139b989ced11f2d1d890ca7dd99a780e96
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ffadcf5153938a812fffbcdee90ec12430ebe531
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137054"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931438"
 ---
 # <a name="navigationpage-bar-text-color-mode-on-ios"></a>IOS 上的 NavigationPage 栏文本颜色模式
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此特定于平台的控件控制上的状态栏文本颜色是否 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 经过调整以匹配导航栏的发光度。 它通过将 [`NavigationPage.StatusBarTextColorMode`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.StatusBarTextColorModeProperty) 附加属性设置为枚举的值，在 XAML 中使用 [`StatusBarTextColorMode`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode) ：
 
@@ -75,7 +75,7 @@ IsPresentedChanged += (sender, e) =>
 
 因此，可以调整上的状态栏文本颜色 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ，使其与导航栏的发光度相匹配。 在此示例中，当用户在 [`Master`](xref:Xamarin.Forms.MasterDetailPage.Master) 的和页面之间切换时，状态栏文本颜色会发生更改 [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) ：
 
-![](status-bar-text-color-images/status-bar-text-color-mode.png "Status Bar Text Color Mode Platform-Specific")
+![状态栏文本颜色模式特定于平台](status-bar-text-color-images/status-bar-text-color-mode.png)
 
 ## <a name="related-links"></a>相关链接
 

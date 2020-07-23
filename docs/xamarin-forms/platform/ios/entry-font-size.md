@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 57498811d8789d8ef9ef775f8f39f141b77659c8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a0c30d32d53397392a4be2ca984ac5f60975ca78
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138523"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936313"
 ---
 # <a name="entry-font-size-on-ios"></a>IOS 上的输入字体大小
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 iOS 平台特定用于缩放的字体大小 [`Entry`](xref:Xamarin.Forms.Entry) ，以确保输入的文本适合控件。 它通过将 [`Entry.AdjustsFontSizeToFitWidth`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidthProperty) 附加属性设置为值在 XAML 中使用 `boolean` ：
 
@@ -54,7 +54,7 @@ entry.On<iOS>().SetAdjustsFontSizeToFitWidth(!entry.On<iOS>().AdjustsFontSizeToF
 
 结果就是缩放的字体大小， [`Entry`](xref:Xamarin.Forms.Entry) 以确保输入的文本适合控件：
 
-![](entry-font-size-images/entry-font-size.png "Adjust Entry Font Size Platform-Specific")
+![调整特定于平台的入口字体大小](entry-font-size-images/entry-font-size.png)
 
 ## <a name="related-links"></a>相关链接
 

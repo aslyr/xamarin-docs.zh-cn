@@ -10,16 +10,16 @@ ms.date: 05/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ff384605b35f6406b628da99de500b550da811c9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ac7b90fb3e70fd07fcafe78a68136338469862e0
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136053"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936352"
 ---
 # <a name="perceived-emotion-recognition-using-the-face-api"></a>使用人脸 API 感知情感识别
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 人脸 API 可以执行情感检测，在基于人为普通人的可感知批注的面部表达式中检测愤怒、蔑视、厌恶、恐惧、幸福、中性、悲伤和惊喜。 但是，请务必注意，单独的面部表达式可能不一定表示用户的内部状态。
 
@@ -54,8 +54,8 @@ public FaceRecognitionService()
 
 情感识别的执行方式是将包含映像的 POST 请求 `detect` 置于 `https://[location].api.cognitive.microsoft.com/face/v1.0` 中，其中 `[location]]` 是用于获取 api 密钥的区域。 可选的请求参数包括：
 
-- `returnFaceId`–是否返回检测到的人脸的 faceIds。 默认值为 `true`。
-- `returnFaceLandmarks`–是否返回检测到的人脸特征点。 默认值为 `false`。
+- `returnFaceId`–是否返回检测到的人脸的 faceIds。 默认值是 `true`。
+- `returnFaceLandmarks`–是否返回检测到的人脸特征点。 默认值是 `false`。
 - `returnFaceAttributes`–是否分析并返回一个或多个指定的面部特性。 支持的面部特性包括 `age` 、 `gender` 、 `headPose` 、 `smile` 、、、 `facialHair` `glasses` `emotion` `hair` `makeup` `occlusion` `accessories` `blur` `exposure` `noise` 、、、、、、和。 请注意，人脸属性分析具有额外的计算和时间成本。
 
 图像内容必须作为 URL 或二进制数据放置在 POST 请求的正文中。
@@ -178,7 +178,7 @@ emotionResultLabel.Text = faces.FirstOrDefault().FaceAttributes.Emotion.ToRanked
 
 以下屏幕截图显示了示例应用程序中情感识别过程的结果：
 
-![](emotion-recognition-images/emotion-recognition.png "Emotion Recognition")
+![情感识别](emotion-recognition-images/emotion-recognition.png)
 
 ## <a name="related-links"></a>相关链接
 

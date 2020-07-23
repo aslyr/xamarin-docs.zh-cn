@@ -10,16 +10,16 @@ ms.date: 12/13/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 40af5aeaa51025dae70113faa6f7ff83edf43c73
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5fa9c7592ecd2cb314ce12d7e303677447a5e104
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138020"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931165"
 ---
 # <a name="layout-compression"></a>布局压缩
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)
 
 _布局压缩从可视化树中删除指定的布局，以尝试改善页面呈现性能。本文介绍如何启用布局压缩以及它可以引入的优点。_
 
@@ -36,7 +36,7 @@ Xamarin.Forms使用两序列递归方法调用执行布局：
 
 例如，请考虑示例应用程序中用于登录 Facebook 的以下按钮：
 
-![](layout-compression-images/facebook-button.png "Facebook Button")
+![Facebook 按钮](layout-compression-images/facebook-button.png)
 
 此按钮被指定为具有以下 XAML 视图层次结构的自定义控件：
 
@@ -60,7 +60,7 @@ Xamarin.Forms使用两序列递归方法调用执行布局：
 
 可以通过[Xamarin Inspector](~/tools/inspector/index.md)来检查生成的嵌套视图层次结构。 在 Android 上，嵌套视图层次结构包含17个视图：
 
-![](layout-compression-images/no-compression.png "View Hierarchy for Facebook Button")
+!["为 Facebook 查看层次结构" 按钮](layout-compression-images/no-compression.png)
 
 布局压缩（适用于 Xamarin.Forms iOS 和 Android 平台上的应用程序）旨在通过从可视化树中删除指定布局来平展视图嵌套，这可以提高页面呈现性能。 所传送的性能权益因页面的复杂性、所使用的操作系统版本以及运行应用程序的设备而异。 不过，在旧设备上实现的性能提升最大。
 
@@ -101,7 +101,7 @@ CompressedLayout.SetIsHeadless(stackLayout, true);
 
 在 Android 上，这会导致嵌套视图层次结构为14个视图：
 
-![](layout-compression-images/layout-compression.png "View Hierarchy for Facebook Button with Layout Compression")
+![带有布局压缩功能的 Facebook 的 "查看层次结构" 按钮](layout-compression-images/layout-compression.png)
 
 与17个视图的原始嵌套视图层次结构相比，这表示17% 的视图数减少。 虽然这种减少可能显得不明显，但整个页面的视图缩减可能更重要。
 
@@ -111,13 +111,13 @@ CompressedLayout.SetIsHeadless(stackLayout, true);
 
 对于示例应用程序中的 "Facebook" 按钮，合并布局压缩和快速呈现器将生成一个8视图的嵌套视图层次结构：
 
-![](layout-compression-images/layout-compression-with-fast-renderers.png "View Hierarchy for Facebook Button with Layout Compression and Fast Renderers")
+![带有布局压缩和快速呈现器的 Facebook 的 "查看层次结构" 按钮](layout-compression-images/layout-compression-with-fast-renderers.png)
 
 与17视图的原始嵌套视图层次结构相比，这表示缩减了52%。
 
 示例应用程序包含从实际应用程序中提取的页面。 如果没有布局压缩和快速呈现器，该页将在 Android 上生成130视图的嵌套视图层次结构。 对相应的布局类启用快速呈现器和布局压缩会将嵌套视图层次结构减小到70视图，减少了46%。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 布局压缩从可视化树中删除指定的布局，以尝试改善页面呈现性能。 这带来的性能优势因页面复杂性、要使用的操作系统版本以及运行应用的设备而异。 不过，在旧设备上实现的性能提升最大。
 

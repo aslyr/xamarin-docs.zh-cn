@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 044792f37fbba13699a5ab31d815b4f2c5dafe17
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 00e5b2a2238763822172a1b7d7a7c3090634ed17
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84565481"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938081"
 ---
 # <a name="alerts-in-xamarinmac"></a>Xamarin 中的警报
 
@@ -22,7 +22,7 @@ _本文介绍如何在 Xamarin. Mac 应用程序中使用警报。它介绍了�
 
 警报是一种特殊类型的对话框，在出现严重问题（如错误）或警告（例如，准备删除文件）时出现。 由于警报是一个对话框，因此它还需要用户响应才能关闭。
 
-[![](alert-images/alert06.png "An example alert")](alert-images/alert06.png#lightbox)
+[![示例警报](alert-images/alert06.png)](alert-images/alert06.png#lightbox)
 
 在本文中，我们将介绍在 Xamarin. Mac 应用程序中使用警报的基本知识。 
 
@@ -60,7 +60,7 @@ alert.RunModal ();
 
 上面的代码将显示一个警报，其中的应用程序图标叠加在警告图标、标题、警告消息和单个 **"确定"** 按钮上：
 
-[![](alert-images/alert01.png "An alert with a OK button")](alert-images/alert01.png#lightbox)
+[![带有 "确定" 按钮的警报](alert-images/alert01.png)](alert-images/alert01.png#lightbox)
 
 Apple 提供了几个可用于自定义警报的属性：
 
@@ -93,7 +93,7 @@ alert.RunModal ();
 
 如果运行此代码，将显示以下内容：
 
-[![](alert-images/alert02.png "A simple alert")](alert-images/alert02.png#lightbox)
+[![简单警报](alert-images/alert02.png)](alert-images/alert02.png#lightbox)
 
 下面的代码显示与工作表相同的警报：
 
@@ -108,7 +108,7 @@ alert.BeginSheet (this);
 
 如果运行此代码，将显示以下内容：
 
-[![](alert-images/alert03.png "An alert displayed as a sheet")](alert-images/alert03.png#lightbox)
+[![显示为工作表的警报](alert-images/alert03.png)](alert-images/alert03.png#lightbox)
 
 <a name="Working_with_Alert_Buttons"></a>
 
@@ -136,7 +136,7 @@ var result = alert.RunModal ();
 
 如果运行此代码，将显示以下内容：
 
-[![](alert-images/alert04.png "An alert with three button options")](alert-images/alert04.png#lightbox)
+[![带有三个按钮选项的警报](alert-images/alert04.png)](alert-images/alert04.png#lightbox)
 
 下面是与工作表相同的警报的代码：
 
@@ -156,7 +156,7 @@ alert.BeginSheetForResponse (this, (result) => {
 
 如果运行此代码，将显示以下内容：
 
-[![](alert-images/alert05.png "A three button alert displayed as a sheet")](alert-images/alert05.png#lightbox)
+[![显示为工作表的三个按钮警报](alert-images/alert05.png)](alert-images/alert05.png#lightbox)
 
 > [!IMPORTANT]
 > 永远不要将三个以上的按钮添加到警报。
@@ -185,7 +185,7 @@ Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.Suppression
 
 如果代码正在运行，将显示以下内容：
 
-[![](alert-images/alert06.png "An alert with a suppress button")](alert-images/alert06.png#lightbox)
+[![带有 "取消" 按钮的警报](alert-images/alert06.png)](alert-images/alert06.png#lightbox)
 
 下面是与工作表相同的警报的代码：
 
@@ -206,7 +206,7 @@ alert.BeginSheetForResponse (this, (result) => {
 
 如果运行此代码，将显示以下内容：
 
-[![](alert-images/alert07.png "An alert with a suppress button display as a sheet")](alert-images/alert07.png#lightbox)
+[![带有 "取消" 按钮显示为工作表的警报](alert-images/alert07.png)](alert-images/alert07.png#lightbox)
 
 <a name="Adding_a_Custom_SubView"></a>
 
@@ -236,7 +236,7 @@ Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.Suppression
 
 如果运行此代码，将显示以下内容：
 
-[![](alert-images/alert08.png "If we run the code, the following will be displayed")](alert-images/alert08.png#lightbox)
+[![如果运行此代码，将显示以下](alert-images/alert08.png)](alert-images/alert08.png#lightbox)
 
 下面是与工作表相同的警报：
 
@@ -261,7 +261,7 @@ alert.BeginSheetForResponse (this, (result) => {
 
 如果运行此代码，将显示以下内容：
 
-[![](alert-images/alert09.png "An alert with a custom view")](alert-images/alert09.png#lightbox)
+[![带有自定义视图的警报](alert-images/alert09.png)](alert-images/alert09.png#lightbox)
 
 <a name="Summary"></a>
 

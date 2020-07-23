@@ -10,12 +10,12 @@ ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3054180a9deb1357357c90db7b7fbdd8058b6773
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 9ed7e485adbc13862ff6fb6af9b02c43cc6a1f10
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84565494"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935637"
 ---
 # <a name="creating-a-xamarinforms-datatemplate"></a>创建 Xamarin.Forms DataTemplate
 
@@ -31,7 +31,7 @@ _可通过内联方式创建数据模板，也可在 ResourceDictionary 中或�
 
 无论使用何种技术，结果都是 [`ListView`](xref:Xamarin.Forms.ListView) 中每个单元的外观由 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 定义，如以下屏幕截图所示：
 
-![](creating-images/data-template-appearance.png "ListView with a DataTemplate")
+![使用 DataTemplate 的 ListView](creating-images/data-template-appearance.png)
 
 ## <a name="creating-an-inline-datatemplate"></a>创建内联 DataTemplate
 

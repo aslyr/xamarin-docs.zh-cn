@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: ef54cebebb3881f5bb08aa6edfdc344169f179b4
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 729289c1764746f9777ef3d720e77865c9a71389
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574088"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937249"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>在 Xamarin 中创建用户界面对象
 
@@ -42,17 +42,17 @@ using UIKit;
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
- [![](creating-ui-objects-images/image2b.png "Toolbox Pad")](creating-ui-objects-images/image2b.png#lightbox)
+ [![工具箱面板](creating-ui-objects-images/image2b.png)](creating-ui-objects-images/image2b.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
- [![](creating-ui-objects-images/image2b-vs.png "Toolbox Pad - Visual Stuio")](creating-ui-objects-images/image2b.png#lightbox)
+ [![工具箱面板-视觉对象 Studio](creating-ui-objects-images/image2b-vs.png)](creating-ui-objects-images/image2b.png#lightbox)
 
 -----
 
 在设计图面上选择控件时， **Properties Pad**将显示该控件的特性。 在下面的屏幕截图中填充的**小组件 > 标识 > Name** "字段，用作*插座*名称。 这是你可以在 c # 中引用控件的方式：
 
- [![](creating-ui-objects-images/image3b.png "Properties Widget Pad")](creating-ui-objects-images/image3b.png#lightbox)
+ [![属性小组件板](creating-ui-objects-images/image3b.png)](creating-ui-objects-images/image3b.png#lightbox)
 
 有关使用 iOS 设计器的更深入了解，请参阅[Ios 设计器简介](~/ios/user-interface/designer/introduction.md)指南。
 
@@ -64,27 +64,27 @@ using UIKit;
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
- [![](creating-ui-objects-images/imagexcode.png "Storyboard context menu - Xcode")](creating-ui-objects-images/imagexcode.png#lightbox)
+ [![情节提要上下文菜单-Xcode](creating-ui-objects-images/imagexcode.png)](creating-ui-objects-images/imagexcode.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](creating-ui-objects-images/imagexcode-vs.png "Storyboard context menu - Xcode")](creating-ui-objects-images/imagexcode-vs.png#lightbox)
+[![情节提要上下文菜单-Xcode](creating-ui-objects-images/imagexcode-vs.png)](creating-ui-objects-images/imagexcode-vs.png#lightbox)
 
 -----
 
 控件可以从如下所示的**对象库**拖动到 Design Surface：
 
- [![](creating-ui-objects-images/image5a.png "Xcode Object Library")](creating-ui-objects-images/image5a.png#lightbox)
+ [![Xcode 对象库](creating-ui-objects-images/image5a.png)](creating-ui-objects-images/image5a.png#lightbox)
 
 使用 Interface Builder 设计 UI 时，必须为希望在 c # 中引用的每个控件创建一个**插座**。 这是通过使用 Xcode 工具栏按钮上的 "中心**编辑器**" 按钮打开**助手编辑器**来完成的：
 
- [![](creating-ui-objects-images/image6a.png "Assistant Editor button")](creating-ui-objects-images/image6a.png#lightbox)
+ [!["助手编辑器" 按钮](creating-ui-objects-images/image6a.png)](creating-ui-objects-images/image6a.png#lightbox)
 
 单击用户界面对象;然后，**控制拖动**到 .h 文件中。 若要**控制拖动**，请按住 ctrl 键，然后单击并按住你要为其创建插座的用户界面对象。 在拖动到标头文件中时，请按住 Ctrl 键。 完成定义下面的拖动操作 `@interface` 。 将显示一条带有标题插入插座或插座的蓝线，如以下屏幕截图中所示。
 
 当你发布单击时，系统将提示你提供插座的名称，此名称将用于创建可在代码中引用的 c # 属性：
 
- [![](creating-ui-objects-images/image8a.png "Creating an outlet")](creating-ui-objects-images/image8a.png#lightbox)
+ [![创建输出口](creating-ui-objects-images/image8a.png)](creating-ui-objects-images/image8a.png#lightbox)
 
 有关 Xcode Interface Builder 如何与 Visual Studio for Mac 集成的详细信息，请参阅[Xib 代码生成](~/ios/internals/xib-code-generation.md#generated)文档。
 
@@ -118,7 +118,7 @@ public override void ViewDidLoad () {
 
 将视图控制器添加到 Design Surface 时，将在项目中创建两个对应的 c # 文件。 在此示例中， `ControlsViewController.cs` 和已 `ControlsViewController.designer.cs` 自动创建：
 
- [![](creating-ui-objects-images/image9b.png "ViewController partial class")](creating-ui-objects-images/image9b.png#lightbox)
+ [![ViewController 分部类](creating-ui-objects-images/image9b.png)](creating-ui-objects-images/image9b.png#lightbox)
 
 此 `ControlsViewController.cs` 文件用于您的*代码*。 这是 `View` 实现生命周期方法（如和）的位置 `ViewDidLoad` `ViewWillAppear` ，可以在其中添加自己的属性、字段和方法。
 

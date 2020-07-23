@@ -10,18 +10,18 @@ ms.date: 03/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2c1a958bd4cb56096f554acf26756019eeb0693c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b3063a644a48a8796b03b1a6acedbbcbfc7acbf7
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84572229"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934259"
 ---
 # <a name="create-a-custom-layout-in-xamarinforms"></a>在中创建自定义布局Xamarin.Forms
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 
-_Xamarin 定义五个布局类： StackLayout、AbsoluteLayout、RelativeLayout、Grid 和 FlexLayout，每个都以不同的方式排列其子级。但是，有时需要使用未提供的布局来组织页面内容 Xamarin.Forms 。本文介绍如何编写自定义布局类，并演示一个区分方向的 WrapLayout 类，该类在页面上水平排列其子元素，然后将后续子项的显示范围封装到其他行。_
+_Xamarin.Forms定义五个布局类-StackLayout、AbsoluteLayout、RelativeLayout、Grid 和 FlexLayout，并以不同的方式排列其子级。但是，有时需要使用未提供的布局来组织页面内容 Xamarin.Forms 。本文介绍如何编写自定义布局类，并演示一个区分方向的 WrapLayout 类，该类在页面上水平排列其子元素，然后将后续子项的显示范围封装到其他行。_
 
 在中 Xamarin.Forms ，所有布局类均派生自 [`Layout<T>`](xref:Xamarin.Forms.Layout`1) 类，并将泛型类型约束为 [`View`](xref:Xamarin.Forms.View) 及其派生类型。 反过来， `Layout<T>` 该类派生自 [`Layout`](xref:Xamarin.Forms.Layout) 类，该类提供了用于定位和调整子元素大小的机制。
 
@@ -40,7 +40,7 @@ Xamarin.Forms若要创建自定义布局，需要全面了解布局和失效循�
 
 此循环可确保页上的每个可视元素都接收对 `Measure` 和 `Layout` 方法的调用。 下图显示了此过程：
 
-![](custom-images/layout-cycle.png "Xamarin.Forms Layout Cycle")
+![Xamarin.Forms布局周期](custom-images/layout-cycle.png)
 
 > [!NOTE]
 > 请注意，如果更改了影响布局的内容，则布局循环也可能出现在可视化树的子集上。 这包括在集合中添加或删除的项，例如中的 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 、元素属性中的 [`IsVisible`](xref:Xamarin.Forms.VisualElement.IsVisible) 更改或元素的大小更改。
@@ -60,7 +60,7 @@ Xamarin.Forms具有或属性的每个类 `Content` `Children` 都具有可重写
 
 [`Layout`](xref:Xamarin.Forms.Layout)类 [`MeasureInvalidated`](xref:Xamarin.Forms.VisualElement.MeasureInvalidated) 在添加到其属性或集合的每个子元素上设置事件的处理程序 `Content` `Children` ，并在移除子级时分离该处理程序。 因此，当其中的一个子元素更改大小时，将会提醒可视化树中具有子级的每个元素。 下图说明了可视化树中元素的大小变化如何导致树上的更改出现：
 
-![](custom-images/invalidation.png "Invalidation in the Visual Tree")
+![可视化树中的无效](custom-images/invalidation.png)
 
 但是， `Layout` 类会尝试限制更改对页面布局的更改所造成的影响。 如果布局为大小限制，则子大小更改不会影响任何比可视化树中的父布局更高的布局。 但是，布局大小变化通常会影响布局排列其子级的方式。 因此，布局的大小中的任何更改都将开始布局的布局周期，并且布局将接收对其 [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) 和方法的调用 [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) 。
 
@@ -400,13 +400,13 @@ async Task<ImageList> GetImageListAsync()
 
 当包含的页 `WrapLayout` 出现时，示例应用程序会以异步方式访问包含照片列表的远程 JSON 文件， [`Image`](xref:Xamarin.Forms.Image) 并为每张照片创建一个元素，并将其添加到中 `WrapLayout` 。 这会导致如以下屏幕截图中所示的外观：
 
-![](custom-images/portait-screenshots.png "Sample Application Portrait Screenshots")
+![示例应用程序纵向屏幕截图](custom-images/portait-screenshots.png)
 
 下面的屏幕截图在 `WrapLayout` 旋转到横向后显示：
 
-![](custom-images/landscape-ios.png "Sample iOS Application Landscape Screenshot")
-![](custom-images/landscape-android.png "Sample Android Application Landscape Screenshot")
-![](custom-images/landscape-uwp.png "Sample UWP Application Landscape Screenshot")
+![示例 iOS 应用程序横向屏幕截图示例 Android 应用程序横向屏幕截图示例 ](custom-images/landscape-ios.png)
+ ![ ](custom-images/landscape-android.png)
+ ![ UWP 应用程序环境屏幕截图](custom-images/landscape-uwp.png)
 
 每行中的列数取决于照片大小、屏幕宽度和每个与设备无关的单位的像素数。 这些 [`Image`](xref:Xamarin.Forms.Image) 元素将异步加载照片，因此， `WrapLayout` 类将接收对其方法的频繁调用， [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) 因为每个 `Image` 元素都会收到基于已加载照片的新大小。
 

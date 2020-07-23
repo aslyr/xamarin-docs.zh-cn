@@ -10,18 +10,18 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 725f892a667b4e89d55266abcf69e5394b09b6a5
-ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
+ms.openlocfilehash: b4369fdb7c5a35d6b9a192d9222fd82670b7e3f3
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85243780"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933583"
 ---
 # <a name="xamarinforms-shapes-ellipse"></a>Xamarin.Forms形状：椭圆形
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![预发布 API](~/media/shared/preview.png "此 API 当前为预发布版本")
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Ellipse`类派生自 `Shape` 类，可用于绘制椭圆和圆。 有关 `Ellipse` 该类继承自类的属性的信息 `Shape` ，请参阅[ Xamarin.Forms 形状](index.md)。
 
@@ -58,7 +58,7 @@ ms.locfileid: "85243780"
 
 在此示例中，绘制了一个具有尺寸150x150 （与设备无关的单位）的红圆圈：
 
-![单独](ellipse-images/circle.png "圆形")
+![圆形](ellipse-images/circle.png "圆形")
 
 有关绘制虚线椭圆的信息，请参阅[绘制虚线形状](index.md#draw-dashed-shapes)。
 

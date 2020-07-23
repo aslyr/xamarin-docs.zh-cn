@@ -10,16 +10,16 @@ ms.date: 04/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2abc255964df35fbdfeb4191911c57df9be99fd9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 20bf6d3d8c802c1d4919cd16885d3939cb0102aa
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128006"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930619"
 ---
 # <a name="modal-page-presentation-style-on-ios"></a>IOS 上的模式页呈现样式
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 iOS 平台特定用于设置模式页面的表示形式，此外还可用于显示具有透明背景的模式页面。 它通过将 `Page.ModalPresentationStyle` 可绑定的属性设置为一个枚举值在 XAML 中使用 `UIModalPresentationStyle` ：
 
@@ -60,7 +60,7 @@ public class iOSModalFormSheetPageCS : ContentPage
 
 结果就是可以设置上的模式呈现样式 [`Page`](xref:Xamarin.Forms.Page) ：
 
-[![](page-presentation-style-images/modal-presentation-style-small.png "Modal Presentation Styles")](page-presentation-style-images/modal-presentation-style-large.png#lightbox "Modal Presentation Styles")
+[![模式演示样式](page-presentation-style-images/modal-presentation-style-small.png)](page-presentation-style-images/modal-presentation-style-large.png#lightbox "模式演示样式")
 
 > [!NOTE]
 > 使用此特定于平台的的页面设置模式呈现样式必须使用模式导航。 有关详细信息，请参阅[ Xamarin.Forms 模式页面](~/xamarin-forms/app-fundamentals/navigation/modal.md)。

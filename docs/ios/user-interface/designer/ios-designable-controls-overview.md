@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: e8c38ec407d13a99e2990a6d4cf39b5a23728b1d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5c8a852a37e2cd5c679283bc4d078f19e6e5d241
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73003978"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939680"
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>Xamarin Designer for iOS 中的自定义控件
 
@@ -45,9 +45,9 @@ Xamarin Designer for iOS 是一种功能强大的工具，可用于可视化应�
 
 ## <a name="initialization"></a>初始化
 
-对于 `UIViewController` 子类，应为依赖于在设计器中创建的视图的代码使用[ViewDidLoad](xref:UIKit.UIViewController.ViewDidLoad)方法。
+对于 `UIViewController` 子类，你应为依赖于在设计器中创建的视图的代码使用[ViewDidLoad](xref:UIKit.UIViewController.ViewDidLoad)方法。
 
-对于 `UIView` 和其他 `NSObject` 子类，建议使用[AwakeFromNib](xref:Foundation.NSObject.AwakeFromNib)方法在从布局文件中加载自定义控件后执行自定义控件的初始化。 这是因为在运行控件的构造函数时，不会设置属性面板中设置的任何自定义属性，但在调用 `AwakeFromNib` 之前将设置这些属性：
+对于 `UIView` 和其他 `NSObject` 子类，建议使用[AwakeFromNib](xref:Foundation.NSObject.AwakeFromNib)方法在从布局文件中加载自定义控件后执行自定义控件的初始化。 这是因为在运行控件的构造函数时，不会设置属性面板中设置的任何自定义属性，但在调用之前将设置这些属性 `AwakeFromNib` ：
 
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
@@ -122,14 +122,14 @@ public class CustomView : UIView {
 }
 ```
 
-`CustomView` 组件公开了一个 `Counter` 属性，开发人员可在 iOS 设计器中对其进行设置。 但是，无论在设计器中设置什么值，`Counter` 属性的值将始终为零（0）。 原因是：
+`CustomView`组件公开 `Counter` 可由开发人员在 IOS 设计器中设置的属性。 但是，无论在设计器中设置什么值，属性的值 `Counter` 始终为零（0）。 原因如下：
 
-- 将从情节提要文件中放大 `CustomControl` 的实例。
-- 设置在 iOS 设计器中修改的任何属性（例如，将 `Counter` 的值设置为2（2））。
-- 执行 `AwakeFromNib` 方法，并调用该组件的 `Initialize` 方法。
-- 在 `Initialize` 将 `Counter` 属性的值重置为零（0）。
+- 的实例 `CustomControl` 从情节提要文件中放大。
+- 设置在 iOS 设计器中修改的任何属性（例如，将的值设置 `Counter` 为二（2））。
+- `AwakeFromNib`执行方法，并调用该组件的 `Initialize` 方法。
+- 在 `Initialize` 属性的值中， `Counter` 将重置为零（0）。
 
-若要修复上述情况，请在其他位置（例如，在组件的构造函数中）初始化 `Counter` 属性，或者不重写 `AwakeFromNib` 方法 `Initialize`，如果组件要求在当前由其构造函数处理。
+若要修复上述情况，请 `Counter` 在其他位置（例如，在组件的构造函数中）初始化属性，或者不重写 `AwakeFromNib` 方法， `Initialize` 如果组件不需要在其构造函数当前正在处理的之外进一步初始化，则调用。
 
 ## <a name="design-mode"></a>设计模式
 
@@ -163,8 +163,8 @@ public class DesignerAwareLabel : UILabel, IComponent {
 }
 ```
 
-应该始终检查 `null` 的 `Site` 属性，然后再尝试访问其任何成员。 如果 `null``Site`，则可以安全地假定该控件未在设计器中运行。
-在设计模式下，将在运行控件的构造函数之后、调用 `AwakeFromNib` 之前设置 `Site`。
+在 `Site` `null` 尝试访问其任何成员之前，应始终检查的属性。 如果 `Site` 为 `null` ，则假定该控件未在设计器中运行，则可以放心。
+在设计模式下， `Site` 将在控件的构造函数运行之后和调用之前设置 `AwakeFromNib` 。
 
 ## <a name="debugging"></a>调试
 
@@ -173,14 +173,14 @@ public class DesignerAwareLabel : UILabel, IComponent {
 
 设计图面通常可以捕获各个控件引发的异常，同时继续呈现其他控件。 错误的控件被替换为红色占位符，你可以通过单击感叹号图标来查看异常跟踪：
 
- ![](ios-designable-controls-overview-images/exception-box.png "A faulty control as red placeholder and the exception details")
+ ![错误的控件作为红色占位符和异常详细信息](ios-designable-controls-overview-images/exception-box.png)
 
 如果调试符号可用于控件，则跟踪将包含文件名和行号。
 双击堆栈跟踪中的某一行将跳转到源代码中的该行。
 
 如果设计器无法隔离出错的控件，则会在设计图面顶部显示一条警告消息：
 
- ![](ios-designable-controls-overview-images/info-bar.png "A warning message at the top of the design surface")
+ ![设计图面顶部的警告消息](ios-designable-controls-overview-images/info-bar.png)
 
 当错误的控件已修复或从设计图面中删除时，将恢复完全呈现。
 

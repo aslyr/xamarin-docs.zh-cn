@@ -7,20 +7,20 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/17/2018
-ms.openlocfilehash: 13f34f6287d68736ee509e6fb43e5fc47321b907
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: bb3fd0623d0361a42c573cf2b2bcb8249d32181c
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73011189"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933160"
 ---
 # <a name="application-lifecycle-demo-for-xamarinios"></a>适用于 Xamarin 的应用程序生命周期演示
 
-本文和[代码示例](https://docs.microsoft.com/samples/xamarin/ios-samples/lifecycledemo)演示了 iOS 中的四种应用程序状态，以及在状态发生更改时通知应用程序的 `AppDelegate` 方法的角色。 应用程序会在应用更改状态时将更新打印到控制台：
+本文和[代码示例](https://docs.microsoft.com/samples/xamarin/ios-samples/lifecycledemo)演示了 iOS 中的四种应用程序状态，以及 `AppDelegate` 在状态发生更改时通知应用程序的方法的角色。 应用程序会在应用更改状态时将更新打印到控制台：
 
-[![](application-lifecycle-demo-images/image3-sml.png "The sample app")](application-lifecycle-demo-images/image3.png#lightbox)
+[![示例应用](application-lifecycle-demo-images/image3-sml.png)](application-lifecycle-demo-images/image3.png#lightbox)
 
-[![](application-lifecycle-demo-images/image4.png "The app will print updates to the console whenever the app changes state")](application-lifecycle-demo-images/image4.png#lightbox)
+[![应用会在应用更改状态时将更新打印到控制台](application-lifecycle-demo-images/image4.png)](application-lifecycle-demo-images/image4.png#lightbox)
 
 ## <a name="walkthrough"></a>演练
 
@@ -51,11 +51,11 @@ ms.locfileid: "73011189"
     }
     ```
 
-1. 在模拟器或设备上启动应用程序。 应用启动时将调用 `OnActivated`。 应用程序现在处于 "_活动_" 状态。
-1. 点击模拟器或设备上的 "主页" 按钮，使应用程序进入背景。 当应用从 `Active` 转换为 `Inactive` 并进入 `Backgrounded` 状态时，将调用 `OnResignActivation` 和 `DidEnterBackground`。 由于没有设置为在后台执行的应用程序代码，因此该应用程序在内存中被视为_挂起_。
-1. 向后导航到该应用，使其返回到前台。 将调用 `WillEnterForeground` 和 `OnActivated`：
+1. 在模拟器或设备上启动应用程序。 `OnActivated`应用启动时将调用。 应用程序现在处于 "_活动_" 状态。
+1. 点击模拟器或设备上的 "主页" 按钮，使应用程序进入背景。 `OnResignActivation``DidEnterBackground`当应用从转换到状态时，将调用和 `Active` `Inactive` `Backgrounded` 。 由于没有设置为在后台执行的应用程序代码，因此该应用程序在内存中被视为_挂起_。
+1. 向后导航到该应用，使其返回到前台。 `WillEnterForeground`和 `OnActivated` 都将调用：
 
-    ![](application-lifecycle-demo-images/image4.png "State changes printed to the console")
+    ![将状态更改打印到控制台](application-lifecycle-demo-images/image4.png)
 
     当应用程序从后台进入前台并更改屏幕上显示的文本时，将执行视图控制器中的以下代码行：
 
@@ -73,7 +73,7 @@ ms.locfileid: "73011189"
 
     [![向上轻扫以删除正在运行的应用](application-lifecycle-demo-images/app-switcher-swipe-sml.png "向上轻扫以删除正在运行的应用")](application-lifecycle-demo-images/app-switcher-swipe.png#lightbox)
 
-iOS 将终止应用程序。 请注意，由于应用程序已在后台_挂起_，因此不会调用 `WillTerminate`。
+iOS 将终止应用程序。 请注意， `WillTerminate` 由于应用程序已在后台_挂起_，因此不会调用。
 
 ## <a name="related-links"></a>相关链接
 

@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c07fc9f42c4175b4e4569ab95a951b24c130c4f3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cc0528e7696130a772e93be67526ea9d6b10373f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84572047"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936521"
 ---
 # <a name="the-model-view-viewmodel-pattern"></a>模型-视图-ViewModel 模式
 
@@ -27,7 +27,7 @@ Xamarin.Forms开发人员体验通常涉及在 XAML 中创建一个用户界面�
 
 MVVM 模式中有三个核心组件：模型、视图和视图模型。 每个服务都有一个不同的用途。 图2-1 显示了这三个组件之间的关系。
 
-![](mvvm-images/mvvm.png "The MVVM pattern")
+![MVVM 模式](mvvm-images/mvvm.png)
 
 **图 2-1**： MVVM 模式
 
@@ -71,7 +71,7 @@ MVVM 模式中有三个核心组件：模型、视图和视图模型。 每个�
 
 对于集合，提供友好的视图 `ObservableCollection<T>` 。 此集合实现集合更改通知，使开发人员无需 `INotifyCollectionChanged` 在集合上实现接口。
 
-### <a name="model"></a>“模型”
+### <a name="model"></a>型号
 
 模型类是封装应用数据的非视觉类。 因此，可以将模型视为表示应用的域模型，此模型通常包含一个数据模型以及业务和验证逻辑。 模型对象的示例包括数据传输对象（Dto）、普通旧 CLR 对象（Poco）以及生成的实体和代理对象。
 
@@ -357,7 +357,7 @@ public class EventToCommandBehavior : BindableBehavior<View>
 
 有关行为的详细信息，请参阅[行为](~/xamarin-forms/app-fundamentals/behaviors/index.md)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 模型-视图-ViewModel （MVVM）模式有助于将应用程序的业务和表示逻辑与用户界面（UI）完全分开。 在应用程序逻辑与 UI 之间保持干净分离有助于解决众多开发问题，并使应用程序更易于测试、维护和发展。 它还可以极大地提高代码重复使用机会，并使开发人员和 UI 设计人员在开发应用程序的各自部分时可以更轻松地进行协作。
 

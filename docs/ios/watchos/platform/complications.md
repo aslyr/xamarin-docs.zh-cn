@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/03/2017
-ms.openlocfilehash: 139b58fd1953924d5a848fc79c3a1706afb760b0
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e3ef2a667996f3fc38008521c2804cc644cfb328
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84565628"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928600"
 ---
 # <a name="watchos-complications-in-xamarin"></a>Xamarin 中的 watchOS 复杂性
 
@@ -24,7 +24,7 @@ _watchOS 允许开发人员为观看面部编写自定义的复杂问题_
 
 首先阅读[Apple 的文档](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ManagingComplications.html)，以确定你的应用是否适合于复杂性。 有 5 `CLKComplicationFamily` 种显示类型可供选择：
 
-[![](complications-images/all-complications-sml.png "The 5 CLKComplicationFamily types available: Circular Small, Modular Small, Modular Large, Utilitarian Small, Utilitarian Large")](complications-images/all-complications.png#lightbox)
+[![可用的5个 CLKComplicationFamily 类型：圆形 Small、模块式 Small、模块式大型、实用 Small、实用大](complications-images/all-complications-sml.png)](complications-images/all-complications.png#lightbox)
 
 应用只能实现一种样式，也可以仅实现五种类型，具体取决于所显示的数据。
 你还可以支持时间段，并在用户打开 Digital Crown 的情况下为过去和/或未来的时间提供值。
@@ -33,7 +33,7 @@ _watchOS 允许开发人员为观看面部编写自定义的复杂问题_
 
 ## <a name="adding-a-complication"></a>添加复杂
 
-### <a name="configuration"></a>Configuration
+### <a name="configuration"></a>配置
 
 可以在创建期间将复杂性添加到 watch 应用，也可以手动添加到现有解决方案。
 
@@ -41,7 +41,7 @@ _watchOS 允许开发人员为观看面部编写自定义的复杂问题_
 
 "**添加新项目 ...** " 向导包含一个复选框，该复选框将自动创建一个复杂的控制器类并配置**info.plist**文件：
 
-![](complications-images/file-new-project-sml.png "The Include Complication checkbox")
+!["包含复杂化" 复选框](complications-images/file-new-project-sml.png)
 
 ### <a name="existing-projects"></a>现有项目
 
@@ -83,7 +83,7 @@ public class ComplicationController : CLKComplicationDataSource
 
 监视扩展的**info.plist**文件应指定的名称 `CLKComplicationDataSource` 以及要支持的复杂系列：
 
-[![](complications-images/complications-config-sml.png "The complication family types")](complications-images/complications-config.png#lightbox)
+[![更复杂的系列类型](complications-images/complications-config-sml.png)](complications-images/complications-config.png#lightbox)
 
 **数据源类**条目列表将显示子类的类名称，这些 `CLKComplicationDataSource` 子类包含您的复杂逻辑。
 

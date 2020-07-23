@@ -10,16 +10,16 @@ ms.date: 02/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1703f0049408381a86da73fb28696ef8708cc790
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4c07f2667230695c6b884eb4902e68f7f4120f6b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139290"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939498"
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>使用必应拼写检查 API 进行拼写检查
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _必应拼写检查对文本执行上下文拼写检查，并为拼写错误的单词提供内联建议。本文介绍如何使用必应拼写检查 REST API 更正应用程序中的拼写错误 Xamarin.Forms 。_
 
@@ -157,14 +157,14 @@ foreach (var flaggedToken in spellCheckResult.FlaggedTokens)
 
 此代码循环访问 `FlaggedTokens` 集合，并在第一个建议中替换源文本中任何拼写错误或语法不正确的单词。 以下屏幕截图显示拼写检查前后的内容：
 
-![](spell-check-images/before-spell-check.png "Before Spell Check")
+![拼写检查之前](spell-check-images/before-spell-check.png)
 
-![](spell-check-images/after-spell-check.png "After Spell Check")
+![之后拼写检查](spell-check-images/after-spell-check.png)
 
 > [!NOTE]
 > 上面的示例使用 `Replace` 简单，但在大量文本中，它可以替换错误的标记。 API 提供了一个 `offset` 值，应在生产应用中使用该值来识别源文本中用于执行更新的正确位置。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文介绍了如何使用必应拼写检查 REST API 更正应用程序中的拼写错误 Xamarin.Forms 。 必应拼写检查对文本执行上下文拼写检查，并为拼写错误的单词提供内联建议。
 

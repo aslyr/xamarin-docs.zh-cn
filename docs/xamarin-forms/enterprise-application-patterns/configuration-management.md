@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f6f61503f619c08ed3e4eae2adf6ddb2c474f99f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6def31ebfe2a619f1d5db1e0fba071494afbcd3e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84571475"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931958"
 ---
 # <a name="configuration-management"></a>配置管理
 
@@ -124,7 +124,7 @@ public class GlobalSetting
 
 在 eShopOnContainers 移动应用中，会 `SettingsView` 公开两个用户设置。 这些设置允许配置应用是否应从部署为 Docker 容器的微服务中检索数据，或应用是否应从无需 internet 连接的 mock 服务中检索数据。 选择从容器化的微服务中检索数据时，必须指定微服务的基本终结点 URL。 图7-1 显示 `SettingsView` 用户选择从容器化微服务检索数据的时间。
 
-![](configuration-management-images/settings-endpoint.png "User settings exposed by the eShopOnContainers mobile app")
+![EShopOnContainers 移动应用公开的用户设置](configuration-management-images/settings-endpoint.png)
 
 **图 7-1**： eShopOnContainers 移动应用公开的用户设置
 
@@ -182,7 +182,7 @@ public override Task InitializeAsync(object navigationData)
 
 此机制可确保每次用户导航到 SettingsView 时，都会从特定于平台的存储检索用户设置，并通过数据绑定来显示用户设置。 然后，如果用户更改设置值，数据绑定将确保它们立即保留回平台特定的存储。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 设置允许将配置应用行为的数据与代码分离，从而允许更改行为而无需重新生成应用。 应用程序设置是指应用程序创建和管理的数据，用户设置是应用程序的可自定义设置，它会影响应用程序的行为，而不需要频繁重新调整。
 

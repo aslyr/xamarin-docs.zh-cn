@@ -10,18 +10,18 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f97e6930f543f47383e2b8da09b36573bd3192d0
-ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
+ms.openlocfilehash: 9d79f232a77972b6abbce23ba65d9c277b090311
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85243745"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935442"
 ---
 # <a name="xamarinforms-shapes-line"></a>Xamarin.Forms形状：线条
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![预发布 API](~/media/shared/preview.png "此 API 当前为预发布版本")
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Line`类派生自 `Shape` 类，可用于绘制线条。 有关 `Line` 该类继承自类的属性的信息 `Shape` ，请参阅[ Xamarin.Forms 形状](index.md)。
 
@@ -55,7 +55,7 @@ ms.locfileid: "85243745"
 
 在此示例中，将从（40，0）到（0120）绘制红色对角线：
 
-![线](line-images/line.png "线")
+![Line](line-images/line.png "线")
 
 由于 `X1` 、 `Y1` 、 `X2` 和 `Y2` 属性的默认值为0，因此可以使用最小语法绘制一些行：
 

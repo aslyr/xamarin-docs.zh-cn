@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 11/15/2018
-ms.openlocfilehash: 6366a51f18ae2af8a94cf60a82e31ff413180e2d
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e2dcd5ea0f099ea84d7824eda4170df8efb22cb6
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573945"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937210"
 ---
 # <a name="appearance-api-in-xamarinios"></a>Xamarin 中的外观 API
 
@@ -32,7 +32,7 @@ iOS 允许您自定义许多 UIKit 控件的外观，使标准控件符合您要
 
 外观示例应用程序演示了所有这三种方法，如以下屏幕截图所示：
 
-[![](introduction-to-the-appearance-api-images/appearance01-sml.png "The Appearance sample application demonstrates all three methods")](introduction-to-the-appearance-api-images/appearance01.png#lightbox)
+[![外观示例应用程序演示了所有这三种方法](introduction-to-the-appearance-api-images/appearance01-sml.png)](introduction-to-the-appearance-api-images/appearance01.png#lightbox)
 
 在 iOS 8 中，外观代理已扩展到 TraitCollections。
  `AppearanceForTraitCollection`可用于设置特定特征集合的默认外观。 有关详细信息，请参阅[情节提要指南简介](~/ios/user-interface/storyboards/unified-storyboards.md)。
@@ -85,11 +85,11 @@ sg1.TintColor = UIColor.Magenta;
 
 或者，在设计器的 "属性" pad 中设置值：
 
-[![](introduction-to-the-appearance-api-images/propertiespadtint.png "Properties Pad Tint")](introduction-to-the-appearance-api-images/propertiespadtint.png#lightbox)
+[![Properties Pad 淡色](introduction-to-the-appearance-api-images/propertiespadtint.png)](introduction-to-the-appearance-api-images/propertiespadtint.png#lightbox)
 
 下图说明，这只会在名为 "sg1" 的控件上设置色调。
 
-[![](introduction-to-the-appearance-api-images/image53.png "Setting the individual control tint")](introduction-to-the-appearance-api-images/image53.png#lightbox)
+[![设置各个控件的色调](introduction-to-the-appearance-api-images/image53.png)](introduction-to-the-appearance-api-images/image53.png#lightbox)
 
 若要以这种方式设置许多控件完全低效，可以改为在 `Appearance` 类本身上设置静态属性。 下面的代码对此进行了演示：
 
@@ -99,7 +99,7 @@ UISegmentedControl.Appearance.TintColor = UIColor.Magenta;
 
 下图显示了将外观设置为洋红色的分段控件：
 
-[![](introduction-to-the-appearance-api-images/image54.png "Setting the Appearance control tint")](introduction-to-the-appearance-api-images/image54.png#lightbox)
+[![设置外观控件色调](introduction-to-the-appearance-api-images/image54.png)](introduction-to-the-appearance-api-images/image54.png#lightbox)
 
 `Appearance`在应用程序生命周期（如 AppDelegate 的 `FinishedLaunching` 事件中）或 ViewController 中显示受影响的控件之前，应提前设置属性。
 

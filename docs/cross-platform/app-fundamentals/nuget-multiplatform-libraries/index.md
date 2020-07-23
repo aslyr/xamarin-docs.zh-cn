@@ -6,12 +6,12 @@ ms.assetid: F0A5A9BB-86CD-44C9-8EE8-74D1E5E74A30
 author: davidortinau
 ms.author: daortin
 ms.date: 07/25/2018
-ms.openlocfilehash: 5744bb9947b196ee319535729338bcf64a5cd09e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: ac8e4b2eef0905ba50cb24b9eb035d50a05dd84a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016765"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932233"
 ---
 # <a name="nuget-multiplatform-library-projects-nugetizer-3000"></a>NuGet 多平台库项目（Nugetizer 3000）
 
@@ -19,13 +19,13 @@ _使用 "Nugetizer 3000" 自动创建 NuGet 包，以便跨平台共享代码！
 
 使用_Nugetizer 3000_，可以自动创建 NuGet 包，以便跨平台共享代码。 这使得可以从现有库项目或通过创建新的多**平台库项目**来创建 NuGet 包。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-Nugetizer 3000 随附 Visual Studio for Mac &ndash; 在 "新建" 窗口中的 " **> 文件**" 查找**库 > 库**项目类型：
+Nugetizer 3000 随附在 &ndash; **文件 > "新建**" 窗口中 Visual Studio for Mac 查找**库 > 库**项目类型：
 
-[![](images/mulitplatform-library-sml.png "Create new Multiplatform Library window")](images/mulitplatform-library.png#lightbox)
+[![创建新的多平台库窗口](images/mulitplatform-library-sml.png)](images/mulitplatform-library.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 若要在 Visual Studio 中使用 Nugetizer 3000，请[下载并运行 VSIX 安装程序](https://bit.ly/nugetizer-2017)。
 

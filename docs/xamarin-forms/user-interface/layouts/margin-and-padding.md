@@ -10,12 +10,12 @@ ms.date: 04/27/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6ae4116be99f076a7afd5ed9c2823bc12f445e18
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b8ba915f3bc701b6a100d206dc791f9572fa594b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137979"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936612"
 ---
 # <a name="margin-and-padding"></a>边距和填充
 
@@ -30,7 +30,7 @@ _在用户界面中呈现元素时，边距和填充属性控制布局的行为�
 
 下图说明了这两个概念：
 
-[![](margin-and-padding-images/margins-and-padding-sml.png "Margins and Padding Concepts")](margin-and-padding-images/margins-and-padding.png#lightbox "Margins and Padding Concepts")
+[![边距和填充概念](margin-and-padding-images/margins-and-padding-sml.png)](margin-and-padding-images/margins-and-padding.png#lightbox "边距和填充概念")
 
 请注意， [`Margin`](xref:Xamarin.Forms.View.Margin) 值是累加的。 因此，如果两个相邻元素指定的边距为20个像素，则这些元素之间的距离将为40像素。 此外，边距和填充在应用两者时是累加的，因为在元素和任何内容之间的距离将为边距加上填充。
 
@@ -68,7 +68,7 @@ var stackLayout = new StackLayout {
 > [!NOTE]
 > `Thickness`值可以为负数，这通常会剪辑或 overdraws 内容。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文说明了和属性之间的 [`Margin`](xref:Xamarin.Forms.View.Margin) 差异 [`Padding`](xref:Xamarin.Forms.Layout.Padding) ，以及如何设置它们。 元素在用户界面中呈现时的属性控件布局行为。
 

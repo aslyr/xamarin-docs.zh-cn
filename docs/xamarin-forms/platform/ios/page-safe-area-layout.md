@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5ca30481fbc0e5631ff75000c688dd805793e670
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5bab1166ade7a5eeebbb720fa48f6116b4ec95d0
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128039"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933700"
 ---
 # <a name="safe-area-layout-guide-on-ios"></a>IOS 上的安全区域布局指南
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 iOS 平台特定用于确保页面内容定位在屏幕上，此区域对于使用 iOS 11 及更高版本的所有设备是安全的。 具体而言，它有助于确保不会通过圆角设备、主指示器或 iPhone X 上的传感器机架来剪裁内容。它通过将 `Page.UseSafeArea` 附加属性设置为值在 XAML 中使用 `boolean` ：
 
@@ -48,7 +48,7 @@ On<iOS>().SetUseSafeArea(true);
 
 结果就是页面内容可以定位在屏幕上的所有 Iphone 都安全的区域上：
 
-[![](page-safe-area-images/safe-area-layout.png "Safe Area Layout Guide")](page-safe-area-images/safe-area-layout-large.png#lightbox "Safe Area Layout Guide")
+[![安全区域布局指南](page-safe-area-images/safe-area-layout.png)](page-safe-area-images/safe-area-layout-large.png#lightbox "安全区域布局指南")
 
 > [!NOTE]
 > Apple 定义的安全区域用于 Xamarin.Forms 设置 [`Page.Padding`](xref:Xamarin.Forms.Page.Padding) 属性，并将覆盖已设置的此属性以前的任何值。

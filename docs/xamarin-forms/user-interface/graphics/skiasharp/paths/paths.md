@@ -10,22 +10,22 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6ceac2d866e67af5cf3496fcf8c072ae83ecfe38
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a7a4e8c4467438d1f732508a15bee7045310109b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140239"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931217"
 ---
 # <a name="path-basics-in-skiasharp"></a>SkiaSharp 中的路径基础知识
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _浏览用于组合连接的线条和曲线的 SkiaSharp SKPath 对象_
 
 图形路径的最重要功能之一是能够定义多行的连接时间和不应连接的时间。 差别很大，因为这两个三角形的顶部演示：
 
-![](paths-images/connectedlinesexample.png "Two triangles showing the difference between connected and disconnected lines")
+![显示连接线路和断开线路之间的差异的两个三角形](paths-images/connectedlinesexample.png)
 
 图形路径由 [`SKPath`](xref:SkiaSharp.SKPath) 对象封装。 路径是一个或多个*轮廓*的集合。 每个轮廓都是*连接*的直线和曲线的集合。 等高线并不相互连接，但它们可能会相互重叠。 有时，单个等高线可能会相互重叠。
 
@@ -104,7 +104,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 第一条轮廓包含对 [`MoveTo`](xref:SkiaSharp.SKPath.MoveTo(System.Single,System.Single)) X 和 Y 坐标（而不是 `SKPoint` 值）的调用，后面跟有三个对的调用，用来 [`LineTo`](xref:SkiaSharp.SKPath.LineTo(System.Single,System.Single)) 绘制三角形的三个边。 第二个轮廓只包含两个对 `LineTo` 的调用，但通过调用来完成等高线 [`Close`](xref:SkiaSharp.SKPath.Close) ，这会闭合轮廓。 差别很大：
 
-[![](paths-images/twotrianglecontours-small.png "Triple screenshot of the Two Triangle Contours page")](paths-images/twotrianglecontours-large.png#lightbox "Triple screenshot of the Two Triangle Contours page")
+[![两个三角形等高线页面的三向屏幕截图](paths-images/twotrianglecontours-small.png)](paths-images/twotrianglecontours-large.png#lightbox "两个三角形等高线页面的三向屏幕截图")
 
 正如您所看到的，第一个等高线显然是一系列由三个连接的线，但最终不会与开始进行连接。 这两行在顶部重叠。 第二个轮廓明显闭合，并使用较少的调用完成， `LineTo` 因为 `Close` 方法会自动添加最后一行来结束等高线。
 
@@ -194,7 +194,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 下面是正在运行的程序：
 
-[![](paths-images/strokejoins-small.png "Triple screenshot of the Stroke Joins page")](paths-images/strokejoins-large.png#lightbox "Triple screenshot of the Stroke Joins page")
+[!["笔划联接" 页的三向屏幕截图](paths-images/strokejoins-small.png)](paths-images/strokejoins-large.png#lightbox ""笔划联接" 页的三向屏幕截图")
 
 斜接联接包含直线连接的尖点。 当两条直线以小角度联接时，斜切联接可能会非常长。 为了防止过长的斜接联接，斜切联接的长度受的属性值的限制 [`StrokeMiter`](xref:SkiaSharp.SKPaint.StrokeMiter) `SKPaint` 。 超过此长度的斜接联接将截为 "斜角联接"。
 

@@ -10,16 +10,16 @@ ms.date: 03/23/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0d6aa84a886d450d1dc42ec31edf16380b795404
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2c271c3537c6e96497763c67c5b8128148191f16
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84564627"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937353"
 ---
 # <a name="native-views-in-xaml"></a>采用 XAML 的本机视图
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
 
 _可以直接从 XAML 文件引用 iOS、Android 和通用 Windows 平台中的本机视图 Xamarin.Forms 。可以在本机视图上设置属性和事件处理程序，并且可以与视图进行交互 Xamarin.Forms 。本文演示如何从 XAML 文件使用本机视图 Xamarin.Forms 。_
 
@@ -106,8 +106,8 @@ Android 小组件构造函数通常要求将 Android `Context` 对象作为参�
 
 该页还包含每个平台的本机开关。 每个本机开关使用 [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) 绑定来更新属性的值 `NativeSwitchPageViewModel.IsSwitchOn` 。 因此，当开关处于关闭状态时，将被 `Entry` 禁用，当开关处于开启状态时，将 `Entry` 启用。 以下屏幕截图显示了每个平台上的此功能：
 
-![](xaml-images/native-switch-disabled.png "Native Switch Disabled")
-![](xaml-images/native-switch-enabled.png "Native Switch Enabled")
+![已启用本机交换机禁用的 ](xaml-images/native-switch-disabled.png)
+ ![ 本机切换](xaml-images/native-switch-enabled.png)
 
 自动支持双向绑定，前提是本机属性实现了 `INotifyPropertyChanged` ，或支持 iOS 上的键-值观察（KVO）或 `DependencyProperty` UWP 上的。 但是，许多本机视图不支持属性更改通知。 对于这些视图，您可以 [`UpdateSourceEventName`](xref:Xamarin.Forms.Binding.UpdateSourceEventName) 将属性值指定为绑定表达式的一部分。 应将此属性设置为本机视图中的事件名称，该事件指示目标属性已更改。 然后，当本机开关的值发生更改时， `Binding` 会通知类用户已更改开关值，并 `NativeSwitchPageViewModel.IsSwitchOn` 更新属性值。
 
@@ -178,7 +178,7 @@ Android 小组件构造函数通常要求将 Android `Context` 对象作为参�
 
 下面的屏幕截图显示了指定工厂方法和构造函数参数以在不同的本机视图上设置字体的结果：
 
-![](xaml-images/passing-arguments.png "Setting Fonts on Native Views")
+![在本机视图上设置字体](xaml-images/passing-arguments.png)
 
 有关在 XAML 中传递参数的详细信息，请参阅[在 xaml 中传递参数](~/xamarin-forms/xaml/passing-arguments.md)。
 
@@ -265,7 +265,7 @@ public partial class NativeViewInsideContentViewPage : ContentPage
 
 IOS 和 Android 本机按钮共享同一 `OnButtonTap` 事件处理程序，因为每个本机按钮都将使用一个 `EventHandler` 委托来响应触控事件。 但是，通用 Windows 平台（UWP）使用单独的 `RoutedEventHandler` ，后者又使用 `OnButtonTap` 此示例中的事件处理程序。 因此，当单击 "本机" 按钮时， `OnButtonTap` 事件处理程序将执行，该事件处理程序会缩放和旋转包含在指定的中的本机控件 [`ContentView`](xref:Xamarin.Forms.ContentView) `contentViewTextParent` 。 下面的屏幕截图演示了每个平台上出现的情况：
 
-![](xaml-images/contentview.png "ContentView Containing a Native Control")
+![包含本机控件的 ContentView](xaml-images/contentview.png)
 
 ## <a name="subclass-native-views"></a>子类本机视图
 
@@ -306,7 +306,7 @@ IOS 和 Android 本机按钮共享同一 `OnButtonTap` 事件处理程序，因�
 
 该页还包含每个平台的本机选取器视图。 每个本机视图都通过将其属性绑定到集合来显示水果的集合 `ItemSource` `SubclassedNativeControlsPageViewModel.Fruits` 。 这允许用户选取水果，如以下屏幕截图所示：
 
-![](xaml-images/sub-classed.png "Subclassed Native Views")
+![子类本机视图](xaml-images/sub-classed.png)
 
 在 iOS 和 Android 上，本机选取器使用方法设置控件。 因此，这些选取器必须是子类才能公开属性，以使其能够识别 XAML。 在通用 Windows 平台（UWP）上， `ComboBox` 已经是 XAML 友好的，因此不需要进行子类化。
 

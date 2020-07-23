@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 9f4e88cdc04431660376b885faef0a855e14efc2
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b36ae9f9fe04ea060ef0238d5af25fb771cafe85
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572112"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932335"
 ---
 # <a name="text-input-in-xamarinios"></a>Xamarin 中的文本输入
 
@@ -20,9 +20,9 @@ ms.locfileid: "84572112"
 
 下面的屏幕截图显示了这些控件的图标，这些控件位于 Visual Studio for Mac 的 "工具箱" 面板中：
 
- [![](text-input-images/image11a.png "UITextField")](text-input-images/image11a.png#lightbox)
+ [![UITextField](text-input-images/image11a.png)](text-input-images/image11a.png#lightbox)
 
- [![](text-input-images/image13a.png "UITextView")](text-input-images/image13a.png#lightbox)
+ [![UITextView](text-input-images/image13a.png)](text-input-images/image13a.png#lightbox)
 
 命名插座并保存情节提要文件后，Visual Studio for Mac 将更新 `.designer.cs` 分部类，您可以将引用控件的 c # 代码添加到您的类文件中。 每个控件都有其自己的唯一属性和可在 c # 代码中访问的事件。
 
@@ -32,7 +32,7 @@ ms.locfileid: "84572112"
 
 `UITextField`控件最常用于接受单行文本输入，例如用户名或密码。 下面显示了一些可用于自定义控件的选项：
 
- [![](text-input-images/image15a.png "UITextField Properties")](text-input-images/image15a.png#lightbox)
+ [![UITextField 属性](text-input-images/image15a.png)](text-input-images/image15a.png#lightbox)
 
 这些控件如下所述：
 
@@ -74,7 +74,7 @@ View.Add(textfield1);
 
 `UITextView`控件可用于显示只读文本或接受多行文本输入。 它具有许多与相同的选项 `UITextField` （如大小写、更正等）。
 
- [![](text-input-images/image16a.png "UITextView Properties")](text-input-images/image16a.png#lightbox)
+ [![UITextView 属性](text-input-images/image16a.png)](text-input-images/image16a.png#lightbox)
 
 特定属性包括：
 
