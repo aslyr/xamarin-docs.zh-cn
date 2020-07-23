@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 1ad4ecad90238436f8d2a02727596186c6205eeb
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 8b1ffe54ad199acbc7bf3918c187e198d96b51c8
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572086"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939394"
 ---
 # <a name="working-with-watchos-navigation-in-xamarin"></a>在 Xamarin 中使用 watchOS 导航
 
@@ -49,7 +49,7 @@ DismissController();
 
 呈现可导航回来的场景，就像 `UINavigationController` 在 iOS 上工作一样。 可以将场景推送到导航堆栈上，并将其弹出（以编程方式或通过用户选择）。
 
-![](navigation-images/hierarchy-1.png "可将场景推送到导航堆栈上") ![](navigation-images/hierarchy-2.png "可以从导航堆栈中弹出场景")
+![可将场景推送到导航堆栈上](navigation-images/hierarchy-1.png) ![可以从导航堆栈中弹出场景](navigation-images/hierarchy-2.png)
 
 与 iOS 一样，左侧的滑动向后导航到分层导航堆栈中的父控制器。
 
@@ -95,7 +95,7 @@ public override NSObject GetContextForSegue (string segueIdentifier)
 
 基于页面的接口从左到右轻扫，就像 `UIPageViewController` 在 iOS 上工作一样。 指示器点显示在屏幕的底部，用于显示当前显示的页面。
 
-![](navigation-images/paged-1.png "示例第一页") ![](navigation-images/paged-2.png "示例第二页") ![](navigation-images/paged-5.png "第五页示例")
+![示例第一页](navigation-images/paged-1.png) ![示例第二页](navigation-images/paged-2.png) ![第五页示例](navigation-images/paged-5.png)
 
 若要使基于页面的接口成为 watch 应用程序的主要 UI，请将 `ReloadRootControllers` 与接口控制器和上下文的数组结合使用：
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 1d1e40de646362e9b573ad7040ab08ba6d01d6e8
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: ac4c8d7bbd28946b6089e7f22a36727d2d73ec18
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571605"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939199"
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac 扩展支持
 
@@ -42,7 +42,7 @@ ms.locfileid: "84571605"
 - 任何未捕获的异常都将导致扩展过程崩溃，仅在**系统日志**中提供少量有用的信息。 在 `try/catch` 重新引发之前，在（异常）块中包装有麻烦的代码 `NSLog` 可能会很有用。
 - 可以从**应用**程序实用工具下的**控制台**应用程序访问**系统日志**  >  **Utilities**：
 
-    [![](extensions-images/extension02.png "The system log")](extensions-images/extension02.png#lightbox)
+    [![系统日志](extensions-images/extension02.png)](extensions-images/extension02.png#lightbox)
 - 如上所述，运行扩展主机应用程序会将其注册到系统。 删除应用程序包，并将其取消注册。 
 - 如果注册了应用扩展的 "游离" 版本，请使用以下命令进行查找（以便可以删除它们）：`plugin kit -mv`
 

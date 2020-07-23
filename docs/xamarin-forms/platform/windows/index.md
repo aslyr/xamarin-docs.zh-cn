@@ -10,18 +10,18 @@ ms.date: 01/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 52246ce5d54ba97e91777f598f25c187901f89c4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0cdbd39f0217b0e4d175eb2443250eb3df8dd046
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137769"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936170"
 ---
 # <a name="windows-platform-features"></a>Windows 平台功能
 
 开发 Xamarin.Forms 适用于 Windows 平台的应用程序需要 Visual Studio。 "[支持的平台" 页](~/get-started/supported-platforms.md)包含有关先决条件的详细信息。
 
-![](images/allhanselman.png "Xamarin.Forms Applications Running on Windows")
+![Xamarin.Forms在 Windows 上运行的应用程序](images/allhanselman.png)
 
 ## <a name="platform-specifics"></a>平台特定内容
 

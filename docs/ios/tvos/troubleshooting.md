@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: c73be27ed82a643b01528ccba3887f59beeceb53
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 91ead74f1ae26e10046b1e57d722e84014546108
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574049"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929020"
 ---
 # <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>用 Xamarin 构建的 tvOS 应用疑难解答
 
@@ -47,7 +47,7 @@ Xamarin 的 tvOS 支持的当前版本具有以下已知问题：
 1. 在 Visual Studio for Mac 中，右键单击**解决方案资源管理器**中的 TvOS 项目文件，然后选择 "**选项**"。
 2. 选择 " **TvOS 生成**"，并确保你在 "**发布**" 配置上： 
 
-    [![](troubleshooting-images/ts01.png "Select tvOS Build options")](troubleshooting-images/ts01.png#lightbox)
+    [![选择 tvOS 生成选项](troubleshooting-images/ts01.png)](troubleshooting-images/ts01.png#lightbox)
 3. 添加 `--bitcode=asmonly` 到 "**其他 mtouch 参数**" 字段，然后单击 **"确定"** 按钮。
 4. 在**发布**配置中重新生成应用。
 
@@ -125,7 +125,7 @@ _"仅包含 arm64 切片的应用还必须在 info.plist 的 UIRequiredDeviceCap
 
 如果你使用的是第三方库（如 MonoGame），并且你的发布编译失败，并在结束时出现一系列长错误消息 `Task "MTouch" execution -- FAILED` ，请尝试添加 `-gcc_flags="-framework OpenAL"` **其他触控参数**：
 
-[![](troubleshooting-images/mtouch01.png "Task MTouch execution")](troubleshooting-images/mtouch01.png#lightbox)
+[![任务 MTouch 执行](troubleshooting-images/mtouch01.png)](troubleshooting-images/mtouch01.png#lightbox)
 
 还应 `--bitcode=asmonly` 在**附加的触控参数**中包含，将链接器选项设置为 "**全部链接**"，并执行干净的编译。
 

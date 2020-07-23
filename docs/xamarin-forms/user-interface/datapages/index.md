@@ -10,16 +10,16 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7d99870dd975d0996ffcd05d4aef153f3515ec9e
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5e1ea94e42e98609b3f77f0198e125b94e2b437d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84134311"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928830"
 ---
 # <a name="xamarinforms-datapages"></a>Xamarin.FormsDataPages
 
-![](~/media/shared/preview.png "This API is currently in preview")
+![此 API 目前处于预览阶段](~/media/shared/preview.png)
 
 > [!IMPORTANT]
 > DataPages 需要 Xamarin.Forms 主题引用以呈现。 这涉及到安装[ Xamarin.Forms 。主题：基本](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/)NuGet 包到你的项目中，然后是[ Xamarin.Forms 。主题浅](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/)或[ Xamarin.Forms 。主题深色](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)NuGet 包。
@@ -30,7 +30,7 @@ DataPages 提供了一个 API，用于快速轻松地将数据源绑定到预先
 
 若要查看演化的主题演示如何工作，请查看[入门指南](get-started.md)。
 
-[![](images/demo-sml.png "DataPages Sample Application")](images/demo.png#lightbox "DataPages Sample Application")
+[![DataPages 示例应用程序](images/demo-sml.png)](images/demo.png#lightbox "DataPages 示例应用程序")
 
 ## <a name="introduction"></a>简介
 

@@ -10,16 +10,16 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 86b526fff305b195221aca3fb6a86ad0823cb145
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e206c89de278c8b85848294e76e4431825eaee85
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84569395"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938952"
 ---
 # <a name="datapages-controls-reference"></a>DataPages 控件引用
 
-![](~/media/shared/preview.png "This API is currently in preview")
+![此 API 目前处于预览阶段](~/media/shared/preview.png)
 
 > [!IMPORTANT]
 > DataPages 需要 Xamarin.Forms 主题引用以呈现。 这涉及到安装[ Xamarin.Forms 。主题：基本](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/)NuGet 包到你的项目中，然后是[ Xamarin.Forms 。主题浅](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/)或[ Xamarin.Forms 。主题深色](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)NuGet 包。
@@ -47,7 +47,7 @@ Xamarin.FormsDataPages NuGet 包含多个可以利用数据源绑定的控件。
 
 `HeroImage`控件具有四个属性：
 
-* 文本
+* Text
 * 详细信息
 * ImageSource
 * 方面
@@ -62,11 +62,11 @@ Xamarin.FormsDataPages NuGet 包含多个可以利用数据源绑定的控件。
 
 **Android**
 
-![](controls-images/heroimage-light-android.png "Android 上的 HeroImage 控件") ![](controls-images/heroimage-dark-android.png "Android 上的 HeroImage 控件")
+![Android 上的 HeroImage 控件](controls-images/heroimage-light-android.png) ![Android 上的 HeroImage 控件](controls-images/heroimage-dark-android.png)
 
 **iOS**
 
-![](controls-images/heroimage-light-ios.png "IOS 上的 HeroImage 控件") ![](controls-images/heroimage-dark-ios.png "IOS 上的 HeroImage 控件")
+![IOS 上的 HeroImage 控件](controls-images/heroimage-light-ios.png) ![IOS 上的 HeroImage 控件](controls-images/heroimage-dark-ios.png)
 
 ### <a name="listitem"></a>ListItem
 
@@ -74,7 +74,7 @@ Xamarin.FormsDataPages NuGet 包含多个可以利用数据源绑定的控件。
 
 有五个属性：
 
-* 标题
+* Title
 * 详细信息
 * ImageSource
 * PlaceholdImageSource
@@ -94,11 +94,11 @@ Xamarin.FormsDataPages NuGet 包含多个可以利用数据源绑定的控件。
 
 **Android**
 
-![](controls-images/listitem-light-android.png "Android 上的 "有") ![](controls-images/listitem-dark-android.png "Android 上的 "有")
+![Android 上的 "有](controls-images/listitem-light-android.png) ![Android 上的 "有](controls-images/listitem-dark-android.png)
 
 **iOS**
 
-![](controls-images/listitem-light-ios.png "IOS 上的 "有") ![](controls-images/listitem-dark-ios.png "IOS 上的 "有")
+![IOS 上的 "有](controls-images/listitem-light-ios.png) ![IOS 上的 "有](controls-images/listitem-dark-ios.png)
 
 ## <a name="custom-control-example"></a>自定义控件示例
 
@@ -106,7 +106,7 @@ Xamarin.FormsDataPages NuGet 包含多个可以利用数据源绑定的控件。
 
 它将包含三个属性：
 
-* 文本
+* Text
 * 详细信息
 * ImageSource
 
@@ -124,11 +124,11 @@ Xamarin.FormsDataPages NuGet 包含多个可以利用数据源绑定的控件。
 
 **Android**
 
-![](controls-images/cardview-light-android.png "Android 上的 CardView 自定义控件") ![](controls-images/cardview-dark-android.png "Android 上的 CardView 自定义控件")
+![Android 上的 CardView 自定义控件](controls-images/cardview-light-android.png) ![Android 上的 CardView 自定义控件](controls-images/cardview-dark-android.png)
 
 **iOS**
 
-![](controls-images/cardview-light-ios.png "IOS 上的 CardView 自定义控件") ![](controls-images/cardview-dark-ios.png "IOS 上的 CardView 自定义控件")
+![IOS 上的 CardView 自定义控件](controls-images/cardview-light-ios.png) ![IOS 上的 CardView 自定义控件](controls-images/cardview-dark-ios.png)
 
 ### <a name="building-the-custom-cardview"></a>构建自定义 CardView
 
