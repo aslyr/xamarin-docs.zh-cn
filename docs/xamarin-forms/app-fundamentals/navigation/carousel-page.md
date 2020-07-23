@@ -1,6 +1,6 @@
 ---
-title: title:"Xamarin.Forms传送页”说明：“Xamarin.Forms CarouselPage 页面就像一个库，用户可从一侧轻扫到另一侧以浏览内容页面。
-description: '本文演示如何使用 CarouselPage 浏览页集合。” ms.prod: xamarin ms.assetid:2D14FC9D-DF5F-427E-9006-2AAE61ECF8DC ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2017/12/01 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms 传送页
+description: Xamarin.Forms CarouselPage 页面就像一个库，用户可从一侧轻扫到另一侧以浏览内容页面。 本文演示如何使用 CarouselPage 浏览页集合。
 ms.prod: xamarin
 ms.assetid: 2D14FC9D-DF5F-427E-9006-2AAE61ECF8DC
 ms.technology: xamarin-forms
@@ -10,33 +10,33 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 896f652d69bca0f186e53185926ee5c46d87fa7c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: c234af1a5d47446149c92a71e9ce592dc0366b8f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570669"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937457"
 ---
 # <a name="xamarinforms-carousel-page"></a>Xamarin.Forms 传送页
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-carouselpage)
 
-_Xamarin.Forms CarouselPage 页面就像一个库，用户可从一侧轻扫到另一侧以浏览内容页面。本文演示如何使用 CarouselPage 浏览页集合。
+_ CarouselPage 页面就像一个库，用户可从一侧轻扫到另一侧以浏览内容页面。本文演示如何使用 CarouselPage 浏览页集合。
 
 > [!IMPORTANT]
 > [`CarouselView`](xref:Xamarin.Forms.CarouselView) 取代了 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)并提供一个可供用户轻扫浏览一系列项的可滚动布局。 有关 `CarouselView` 的详细信息，请参阅 [Xamarin.Forms CarouselView](~/xamarin-forms/user-interface/carouselview/index.md)。
 
 以下屏幕截图显示每个平台上的 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)：
 
-![](carousel-page-images/thirdpage.png "CarouselPage Third Item")
+![CarouselPage 第三项](carousel-page-images/thirdpage.png)
 
 每个平台上的 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 布局完全相同。 可以通过从右向左轻扫的方式在集合中向前浏览页面，也可以通过从左向右轻扫的方式在集合中向后浏览页面。 以下屏幕截图显示 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 实例中的第一页：
 
-![](carousel-page-images/firstpage.png "CarouselPage First Item")
+![CarouselPage 第一项](carousel-page-images/firstpage.png)
 
 从右向左轻扫以移动到第二个页面，如以下屏幕截图中所示：
 
-![](carousel-page-images/secondpage.png "CarouselPage Second Item")
+![CarouselPage 第二项](carousel-page-images/secondpage.png)
 
 再次从右向左轻扫会移动到第三个页面上，而从左向右轻扫则返回到前一页面。
 

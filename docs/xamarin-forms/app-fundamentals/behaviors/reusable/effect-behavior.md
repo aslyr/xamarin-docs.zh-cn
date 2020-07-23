@@ -10,12 +10,12 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0a105548f869eb448a990a1cc12e6feff4197d48
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 7ecc094abf816f11dcb16d9eba7d715c8c4e4ab1
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135780"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939147"
 ---
 # <a name="reusable-effectbehavior"></a>可重用 EffectBehavior
 
@@ -160,7 +160,7 @@ label.Behaviors.Add (new EffectBehavior {
 
 在运行时，当行为附加到 [`Label`](xref:Xamarin.Forms.Label) 控件时，`Xamarin.LabelShadowEffect` 将添加到控件的 [`Effects`](xref:Xamarin.Forms.Element.Effects) 集合中。 这就使阴影被添加到 `Label` 控件显示的文本中，如以下屏幕截图所示：
 
-![](effect-behavior-images/screenshots.png "Sample Application with EffectsBehavior")
+![具有 EffectsBehavior 的示例应用程序](effect-behavior-images/screenshots.png)
 
 使用这种行为从控件中添加和删除效果的优点是，可以从代码隐藏文件中删除冗余重复的效果处理代码。
 

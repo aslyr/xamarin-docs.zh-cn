@@ -10,12 +10,12 @@ ms.date: 05/09/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e1590d0a4f9716541f18bc4f50a2c480c5e4478a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 47770b4f57da530677dead051fc657ab24e776f5
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84129774"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933804"
 ---
 # <a name="keyboard-accessibility-in-xamarinforms"></a>Xamarin.Forms 中的键盘辅助功能
 
@@ -56,7 +56,7 @@ ms.locfileid: "84129774"
 
 以下屏幕截图显示了此代码示例的默认 Tab 键顺序：
 
-![](keyboard-images/default-tab-order.png "Default Row-based Tab Order")
+![默认基于行的 Tab 键顺序](keyboard-images/default-tab-order.png)
 
 此处的 Tab 键顺序是基于行的，是在 XAML 中列出控件的顺序。 因此，按 Tab 键可以导航到名 [`Entry`](xref:Xamarin.Forms.Entry) 实例，然后是姓氏 `Entry` 实例。 但是，更直观的体验是使用列优先的 Tab 导航，这样按下 Tab 键就可以通过名字对导航。 这可以通过指定输入控件的 Tab 键顺序来实现。
 
@@ -113,7 +113,7 @@ ms.locfileid: "84129774"
 
 以下屏幕截图显示了此代码示例的 Tab 键顺序：
 
-![](keyboard-images/correct-tab-order.png "Column-based Tab Order")
+![于列的 Tab 键顺序](keyboard-images/correct-tab-order.png)
 
 此处的 Tab 键顺序是基于列的。 因此，按 Tab 键可以通过姓-名 [`Entry`](xref:Xamarin.Forms.Entry) 对导航。
 

@@ -10,12 +10,12 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 06ff88f1d4f272d9b77737d2168418c007afe8bc
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4a9dca7556e9e08915e7e8915a0c01cd1ce6f676
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573893"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935715"
 ---
 # <a name="customizing-a-map-pin"></a>自定义图钉
 
@@ -27,7 +27,7 @@ ms.locfileid: "84573893"
 
 下图说明了 [`Map`](xref:Xamarin.Forms.Maps.Map) 和实现它的相应本机控件之间的关系：
 
-![](map-pin-images/map-classes.png "Relationship Between the Map Control and the Implementing Native Controls")
+![地图控件和实现的本机控件之间的关系](map-pin-images/map-classes.png)
 
 通过在每个平台上为 [`Map`](xref:Xamarin.Forms.Maps.Map) 创建自定义呈现器，可以使用呈现过程来实现特定于平台的自定义。 执行此操作的过程如下：
 
@@ -135,11 +135,11 @@ public MapPage()
 
 下图说明了示例应用程序中每个项目的职责，以及它们之间的关系：
 
-![](map-pin-images/solution-structure.png "CustomMap Custom Renderer Project Responsibilities")
+![CustomMap 自定义呈现器项目的职责](map-pin-images/solution-structure.png)
 
 `CustomMap` 控件由平台特定的呈现器类呈现，这些类均派生自各平台的 `MapRenderer` 类。 这导致每个 `CustomMap` 控件都使用特定于平台的控件呈现，如下面的屏幕截图所示：
 
-![](map-pin-images/screenshots.png "CustomMap on each Platform")
+![每个平台上的 CustomMap](map-pin-images/screenshots.png)
 
 `MapRenderer` 类公开 `OnElementChanged` 方法，创建 Xamarin.Forms 自定义地图时调用此方法以呈现对应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素 。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `CustomMap` 实例的引用。
 
@@ -174,7 +174,7 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 
 下面的屏幕截图显示自定义前后的地图：
 
-![](map-pin-images/map-layout-ios.png "Map Control Before and After Customization")
+![自定义前后的地图控件](map-pin-images/map-layout-ios.png)
 
 在 iOS 上，图钉称为“注释”，可以是自定义映像，也可以是不同颜色的系统定义的图钉。 注释可以选择性地显示标注，以在用户选择注释时作出响应。 标注显示 `Pin` 实例的 `Label` 和 `Address` 属性，以及可选的左和右附件视图。 上面的屏幕截图中，左附件视图是猴子图像，而右附件视图是“信息”按钮。
 
@@ -347,7 +347,7 @@ void OnDidDeselectAnnotationView(object sender, MKAnnotationViewEventArgs e)
 
 下面的屏幕截图显示自定义前后的地图：
 
-![](map-pin-images/map-layout-android.png "Map Control Before and After Customization")
+![自定义前后的地图控件](map-pin-images/map-layout-android.png)
 
 在 Android 上，图钉称为“标记”，可以是自定义图像，也可以是不同颜色的系统定义的标记。 标记可以显示信息窗口，在用户点击标记时作出响应。 信息窗口显示 `Pin` 实例的 `Label` 和 `Address` 属性，并可以通过自定义包含其他内容。 但是，一次只可以显示一个信息窗口。
 
@@ -510,7 +510,7 @@ void OnInfoWindowClick(object sender, GoogleMap.InfoWindowClickEventArgs e)
 
 下面的屏幕截图显示自定义前后的地图：
 
-![](map-pin-images/map-layout-uwp.png "Map Control Before and After Customization")
+![自定义前后的地图控件](map-pin-images/map-layout-uwp.png)
 
 在 UWP 上，图钉称为“地图图标”，可以是自定义图像，也可以是系统定义的默认图像。 地图图标可以显示 `UserControl`，在用户点击地图图标时显示。 `UserControl` 可以显示任何内容，包括 `Pin` 实例的 `Label` 和 `Address` 属性。
 

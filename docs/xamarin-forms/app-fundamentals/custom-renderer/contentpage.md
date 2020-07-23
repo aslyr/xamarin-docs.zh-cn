@@ -10,12 +10,12 @@ ms.date: 11/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ca9a541c3d152d1b84ed682881c395f2199b9eaf
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: adbceca38fca2cbe65c739f0d7fe26f18bdf5450
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84574374"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939849"
 ---
 # <a name="customizing-a-contentpage"></a>自定义 ContentPage
 
@@ -27,7 +27,7 @@ ContentPage 是一个可视元素，它显示单个视图并占据大部分屏�
 
 下图说明了 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 和实现它的相应本机控件之间的关系：
 
-![](contentpage-images/contentpage-classes.png "Relationship Between ContentPage Class and Implementing Native Controls")
+![ContentPage 类和实现本机控件之间的关系](contentpage-images/contentpage-classes.png)
 
 通过在每个平台上为 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 创建自定义呈现器，可以利用呈现过程来实现特定于平台的自定义。 执行此操作的过程如下：
 
@@ -102,11 +102,11 @@ async void OnTakePhotoButtonClicked (object sender, EventArgs e)
 
 下图说明了示例应用程序中每个项目的职责，以及它们之间的关系：
 
-![](contentpage-images/solution-structure.png "CameraPage Custom Renderer Project Responsibilities")
+![CameraPage 自定义呈现器项目的职责](contentpage-images/solution-structure.png)
 
 `CameraPage` 实例由平台特定的 `CameraPageRenderer` 类呈现，它们均派生自该平台的 `PageRenderer` 类。 这会导致使用实时摄像头源呈现 `CameraPage` 实例，如下面的屏幕截图中所示：
 
-![](contentpage-images/screenshots.png "CameraPage on each Platform")
+![每个平台上的 CameraPage](contentpage-images/screenshots.png)
 
 `PageRenderer` 类会公开 `OnElementChanged` 方法，此方法会在创建 Xamarin.Forms 页面时被调用以呈现相应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素 。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `CameraPage` 实例的引用。
 

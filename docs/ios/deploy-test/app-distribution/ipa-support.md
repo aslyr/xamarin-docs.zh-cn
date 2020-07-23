@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: b9254afdcb6286edcffc67a1a69af8b049f08b6b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 9bb76fd43b5761f15537d37262f6950d7da2b43a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573217"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933141"
 ---
 # <a name="ipa-support-in-xamarinios"></a>Xamarin.iOS 中的 IPA 支持
 
-本文介绍如何创建可通过 Ad Hoc 分发用来部署应用程序的 IPA 文件，用于内部应用程序的测试或内部分发。 
+本文介绍如何创建可通过 Ad Hoc 分发用来部署应用程序的 IPA 文件，用于内部应用程序的测试或内部分发。
 
 除了通过 iTunes App Store 发布应用程序进行出售，还可部署它用于以下用途：
 
@@ -60,27 +60,27 @@ ms.locfileid: "84573217"
 
 在开始针对跨平台解决方案创建 IPA 之前，确保已选择 iOS 项目作为启动项目：
 
-![](ipa-support-images/setasstartup.png "Selected the iOS project as the startup project")
+![已选择 iOS 项目作为启动项目](ipa-support-images/setasstartup.png)
 
 ### <a name="build-your-archive"></a>生成存档
 
-若要生成 IPA，需要创建应用程序发布版本的存档  。 该存档包含应用及其相关标识信息。
+若要生成 IPA，需要创建应用程序发布版本的存档。 该存档包含应用及其相关标识信息。
 
-1. 在 Visual Studio for Mac 中选择“发布 | 设备”  配置： !
+1. 在 Visual Studio for Mac 中选择“发布 | 设备”配置： !
 
-    ![](ipa-support-images/buildxs01new.png "Select the Release | Device configuration")
+    ![选择“发布 | 设备”配置](ipa-support-images/buildxs01new.png)
 
-1. 在“生成”  菜单中，选择“存档以供发布”  ：
+1. 在“生成”菜单中，选择“存档以供发布”：
 
-    ![](ipa-support-images/buildxs02new.png "Select Archive for Publishing")
+    ![选择“存档以供发布”](ipa-support-images/buildxs02new.png)
 
-1. 存档创建完成后，将显示“存档”  视图：
+1. 存档创建完成后，将显示“存档”视图：
 
-    ![](ipa-support-images/buildxs03new.png "The Archives view will be displayed")
+    ![将显示“存档”视图](ipa-support-images/buildxs03new.png)
 
 ### <a name="sign-and-distribute-your-app"></a>签名和分发应用
 
-每次生成用于存档的应用程序时，都会自动打开“存档视图”  ，显示所有已存档的项目（按解决方案分组）。 默认情况下，此视图只显示当前打开的解决方案。 若要查看拥有存档的所有解决方案，请单击“显示所有存档”  选项。
+每次生成用于存档的应用程序时，都会自动打开“存档视图”，显示所有已存档的项目（按解决方案分组）。 默认情况下，此视图只显示当前打开的解决方案。 若要查看拥有存档的所有解决方案，请单击“显示所有存档”选项。
 
 建议保留部署到客户（Ad-Hoc 或 In-House 部署）的存档，以便之后可代表生成的任何调试信息。
 
@@ -88,33 +88,33 @@ ms.locfileid: "84573217"
 
 对应用进行签名并准备分发：
 
-1. 选择“签名并分发...”  按钮，如下所示：
+1. 选择“签名并分发...”按钮，如下所示：
 
-    ![](ipa-support-images/buildxs04new.png "Select Sign and Distribute...")
+    ![选择“签名和分发...”](ipa-support-images/buildxs04new.png)
 
-1. 这将打开发布向导。 选择 **Ad-Hoc** 或“企业”  (In-House) 分发渠道来创建包：
+1. 这将打开发布向导。 选择 **Ad-Hoc** 或“企业”(In-House) 分发渠道来创建包：
 
-    ![](ipa-support-images/distribute01.png "Select the Ad-Hoc or Enterprise In-House distribution")
+    ![选择“临时”或“企业内部”分发](ipa-support-images/distribute01.png)
 
 1. 在“配置文件”屏幕上，选择签名标识和对应的配置文件，或使用其他标识重新签名：
 
-    ![](ipa-support-images/distribute02.png "Select the signing identity and corresponding provisioning profile")
+    ![选择签名标识和相应的预配配置文件](ipa-support-images/distribute02.png)
 
-1. 验证包的详细信息，然后单击“发布”  ：
+1. 验证包的详细信息，然后单击“发布”：
 
-    ![](ipa-support-images/distribute03.png "Verify the package details")
+    ![验证包的详细信息](ipa-support-images/distribute03.png)
 
 1. 最后，将 IPA 保存到计算机：
 
-    ![](ipa-support-images/distribute04.png "Save the IPA to the computer")
+    ![将 IPA 保存到计算机](ipa-support-images/distribute04.png)
 
 ### <a name="building-via-the-command-line-on-mac"></a>（在 Mac 上）通过命令行生成
 
 在某些情况下，如在 CI 环境中，可能需要通过命令行生成 IPA。 为此，请按照以下步骤进行操作：
 
-1. 确保已选中“项目选项”>“iOS IPA 选项”>“包含 iTunes 图稿图像”  ，并且已选中“生成 Ad-Hoc/企业包 (IPA)”  ：
+1. 确保已选中“项目选项”>“iOS IPA 选项”>“包含 iTunes 图稿图像”，并且已选中“生成 Ad-Hoc/企业包 (IPA)”：
 
-    ![](ipa-support-images/imagexs04.png "Include iTunesArtwork images and Build ad-hoc/enterprise package IPA is checked")
+    ![添加 iTunesArtwork 图像并选中“生成临时/企业包 IPA”](ipa-support-images/imagexs04.png)
 
     如果愿意，可转而在文本编辑器中编辑 **.csproj** 文件，并向将用于生成应用的配置的 `PropertyGroup` 手动添加两个对应属性：
 
@@ -123,11 +123,11 @@ ms.locfileid: "84573217"
     <IpaIncludeArtwork>false</IpaIncludeArtwork>
     ```
 
-1. 如果要包含可选的 **iTunesMetadata.plist** 文件，请单击“...”  选项，从列表选择它，然后单击“确定”  按钮：
+1. 如果要包含可选的 **iTunesMetadata.plist** 文件，请单击“...”选项，从列表选择它，然后单击“确定”按钮：
 
-     ![](ipa-support-images/imagexs03.png "Select iTunesMetadata.plist from the list")
+     ![从列表中选择 iTunesMetadata.plist](ipa-support-images/imagexs03.png)
 
-1. 直接调用 msbuild  并在命令行上传递此属性：
+1. 直接调用 msbuild 并在命令行上传递此属性：
 
     ```bash
     /Library/Frameworks/Mono.framework/Commands/msbuild YourSolution.sln /p:Configuration=Ad-Hoc /p:Platform=iPhone /p:BuildIpa=true
@@ -135,33 +135,33 @@ ms.locfileid: "84573217"
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-在创建并选择了预配配置文件、创建了可选的 iTunesMetadata.plist  文件，以及在 Visual Studio 中设置了 iTunes Artwork 后，便可以生成 IPA 以供分发。 接下来，需要配置项目。 请执行以下操作：
+在创建并选择了预配配置文件、创建了可选的 iTunesMetadata.plist 文件，以及在 Visual Studio 中设置了 iTunes Artwork 后，便可以生成 IPA 以供分发。 接下来，需要配置项目。 请执行以下操作：
 
-1. 在“解决方案资源管理器”  中，右键单击 Xamarin.iOS 项目名称，选择“属性”  将其打开进行编辑：
+1. 在“解决方案资源管理器”中，右键单击 Xamarin.iOS 项目名称，选择“属性”将其打开进行编辑：
 
-    ![](ipa-support-images/imagevs01.png "Select Properties")
+    ![选择“属性”](ipa-support-images/imagevs01.png)
 
-2. 选择“iOS IPA 选项”  ，然后从“配置”  下拉列表选择“Ad-Hoc”  ：
+2. 选择“iOS IPA 选项”，然后从“配置”下拉列表选择“Ad-Hoc”：
 
-    ![](ipa-support-images/imagevs02.png "Select Ad-Hoc from the Configuration dropdown list")
+    ![从“配置”下拉列表选择“临时”](ipa-support-images/imagevs02.png)
 
     > [!NOTE]
-    > Ad-Hoc 配置可能不适用于较新的 Xamarin.iOS 项目。 如果不可用，请选择“发布”  配置。
+    > Ad-Hoc 配置可能不适用于较新的 Xamarin.iOS 项目。 如果不可用，请选择“发布”配置。
 
-3. 如果要包含可选 **iTunesMetadata.plist** 文件，请单击“...”  选项，从列表中选择它，然后单击“打开”  按钮：
+3. 如果要包含可选 **iTunesMetadata.plist** 文件，请单击“...”选项，从列表中选择它，然后单击“打开”按钮：
 
-    ![](ipa-support-images/imagevs03.png "Select iTunesMetadata.plist from the list")
+    ![从列表中选择 iTunesMetadata.plist](ipa-support-images/imagevs03.png)
 
 4. 可选择指定 IPA 的**包名称**，若未指定，则将使用与 Xamarin.iOS 项目相同的名称。
 5. 保存对“项目属性”所做的更改。
-6. 如果可用，从“生成配置”  下拉列表选择“Ad Hoc”  。 否则，选择“发布”  ：
+6. 如果可用，从“生成配置”下拉列表选择“Ad Hoc”。 否则，选择“发布”：
 
-    ![](ipa-support-images/imagevs05.png "Select Ad Hoc from the Build Configuration dropdown")
+    ![从“生成配置”下拉列表选择“临时”](ipa-support-images/imagevs05.png)
 
 7. 生成项目以创建 IPA 包。
-8. IPA 将在“Bin”>“iOS 设备”>“Ad Hoc”（或 Release）  文件夹中生成：
+8. IPA 将在“Bin”>“iOS 设备”>“Ad Hoc”（或 Release）文件夹中生成：
 
-    ![](ipa-support-images/imagevs06.png "The IPA in the file explorer")
+    ![文件资源管理器中的 IPA](ipa-support-images/imagevs06.png)
 
 -----
 
@@ -173,7 +173,7 @@ ms.locfileid: "84573217"
 
 通过几种可能的方法使用新属性：
 
-例如，若要将 **.ipa** 文件输出到旧的默认目录（正如在 Xamarin.iOS 9.6 和更低版本中），可以使用以下其中一种方法将 `IpaPackageDir` 属性设为 `$(OutputPath)`。 两种方法都与所有 Unified API Xamarin.iOS 内部版本兼容，包括 IDE 版本，以及使用 msbuild、xbuild 或 mdtool 的命令行版本    ：
+例如，若要将 **.ipa** 文件输出到旧的默认目录（正如在 Xamarin.iOS 9.6 和更低版本中），可以使用以下其中一种方法将 `IpaPackageDir` 属性设为 `$(OutputPath)`。 两种方法都与所有 Unified API Xamarin.iOS 内部版本兼容，包括 IDE 版本，以及使用 msbuild、xbuild 或 mdtool 的命令行版本  ：
 
 - 第一个选项是，在 **MSBuild** 文件的 `<PropertyGroup>` 元素内，设置 `IpaPackageDir` 属性。 例如，可将以下 `<PropertyGroup>` 添加到 iOS 应用项目 **.csproj** 文件的底部（右 `</Project>` 标记前）：
 
@@ -207,7 +207,7 @@ ms.locfileid: "84573217"
     </PropertyGroup>
     ```
 
-另一种用于 msbuild 或 xbuild 命令行生成的方法是添加 `/p:` 参数来设置 `IpaPackageDir` 属性   。 请注意，在这种情况下，**msbuild** 不会展开传入到命令行的 `$()` 表达式，因此不能使用 `$(OutputPath)` 语法。 必须改为提供完整路径名称。 Mono 的 xbuild  命令确实会展开 `$()` 表达式，但仍建议使用完整路径名称，因为 xbuild  已因支持 msbuild 的[跨平台版本  ](https://www.mono-project.com/docs/about-mono/releases/5.0.0/#msbuild) 而被弃用。
+另一种用于 msbuild 或 xbuild 命令行生成的方法是添加 `/p:` 参数来设置 `IpaPackageDir` 属性 。 请注意，在这种情况下，**msbuild** 不会展开传入到命令行的 `$()` 表达式，因此不能使用 `$(OutputPath)` 语法。 必须改为提供完整路径名称。 Mono 的 xbuild 命令确实会展开 `$()` 表达式，但仍建议使用完整路径名称，因为 xbuild 已因支持 msbuild 的[跨平台版本](https://www.mono-project.com/docs/about-mono/releases/5.0.0/#msbuild) 而被弃用。
 
 使用此方法的完整示例可能与 Windows 上的以下示例类似：
 
@@ -227,15 +227,15 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 
 生成的 IPA 包可以传递给测试用户，以便在其 iOS 设备上安装或将其进行装运，用于企业部署。 无论选择哪种方法，最终用户都将在其 Mac 或 Windows 电脑上的 iTunes 应用程序中，通过双击 IPA 文件或将文件拖动到打开的 iTunes 窗口来安装包。
 
-新的 iOS 应用程序将显示在“我的应用”  部分，在其中右键单击应用程序即可获取它的相关信息：
+新的 iOS 应用程序将显示在“我的应用”部分，在其中右键单击应用程序即可获取它的相关信息：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
- ![](ipa-support-images/installxs01.png "The new iOS application in the My Apps section")
+ ![“我的应用”部分中的新 iOS 应用程序](ipa-support-images/installxs01.png)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
- ![](ipa-support-images/installvs01.png "The new iOS application in the My Apps section")
+ ![“我的应用”部分中的新 iOS 应用程序](ipa-support-images/installvs01.png)
 
 -----
 

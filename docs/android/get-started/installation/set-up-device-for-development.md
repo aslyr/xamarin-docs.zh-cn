@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: 72e0a2adc79796b3df7b6fb4eca62448f1a1a7a4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 0b0bfc650ffa271a7616d7c6e6a436fafa2664c8
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79510726"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932595"
 ---
 # <a name="set-up-device-for-development"></a>设置设备进行开发
 
@@ -32,20 +32,20 @@ ms.locfileid: "79510726"
 
 1. 转到“设置”  屏幕。
 2. 选择“关于电话”  。
-3. 点击“生成号”  7次，直到显示“你现在已经是开发人员了！”  选项为止。
+3. 点击“生成号”  7次，直到显示“你现在已经是开发人员了！” 选项为止。
 
 ### <a name="android-80-and-android-81"></a>Android 8.0 和 Android 8.1
 
 1. 转到“设置”  屏幕。
 2. 选择“系统”  。
-3. 选择“关于电话” 
-4. 点击“生成号”  7次，直到显示“你现在已经是开发人员了！”  选项为止。
+3. 选择“关于电话”
+4. 点击“生成号”  7次，直到显示“你现在已经是开发人员了！” 选项为止。
 
 ### <a name="android-71-and-lower"></a>Android 7.1 及更低版本
 
 1. 转到“设置”  屏幕。
 2. 选择“关于电话”  。
-3. 点击“生成号”  7次，直到显示“你现在已经是开发人员了！”  选项为止。
+3. 点击“生成号”  7次，直到显示“你现在已经是开发人员了！” 选项为止。
 
 [![Android 9.0 上的“开发人员选项”屏幕](set-up-device-for-development-images/build-version-sml.png)](set-up-device-for-development-images/build-version.png#lightbox)
 
@@ -77,7 +77,7 @@ ms.locfileid: "79510726"
 
 如果之前未用该计算机调试过，操作时会收到一个提示，询问设备是否要信任该计算机。 还可以选中“始终允许连接此计算机”  ，从而避免每次连接设备时都出现此提示。
 
-![](set-up-device-for-development-images/trust-computer-for-usb-debugging.png "Google USB")
+![Google USB](set-up-device-for-development-images/trust-computer-for-usb-debugging.png)
 
 ## <a name="alternate-connection-via-wifi"></a>其他连接方式：通过 Wifi
 
@@ -87,11 +87,11 @@ ms.locfileid: "79510726"
 
 默认情况下，[Android Debug Bridge](https://developer.android.com/tools/help/adb.html) (*ADB*) 配置为通过 USB 与 Android 设备进行通信。 可将其重新配置为使用 TCP/IP，而不是使用 USB。 为此，设备和计算机必须处于同一 WiFi 网络上。 若要通过 WiFi 设置调试环境，请从命令行执行以下步骤：
 
-1. 确定 Android 设备的 IP 地址。 查找 IP 地址的一种方法是在“设置”>“网络和 Internet”>“Wi-Fi”  下查看，然后点击设备所连接的 WiFi 网络，接着点击“高级”  。 此时会打开一个下拉列表，显示网络连接的相关信息，类似下面的屏幕截图中所示：
+1. 确定 Android 设备的 IP 地址。 查找 IP 地址的一种方法是在“设置”>“网络和 Internet”>“Wi-Fi”下查看，然后点击设备所连接的 WiFi 网络，接着点击“高级”。 此时会打开一个下拉列表，显示网络连接的相关信息，类似下面的屏幕截图中所示：
 
     [![IP 地址](set-up-device-for-development-images/ip-settings-sml.png)](set-up-device-for-development-images/ip-settings.png#lightbox)
 
-    某些版本的 Android 上不会列出 IP 地址，但可在“设置”>“关于手机”>“状态”下找到 IP 地址  。
+    某些版本的 Android 上不会列出 IP 地址，但可在“设置”>“关于手机”>“状态”下找到 IP 地址。
 
 2. 通过 USB 将 Android 设备连接到计算机。
 
@@ -147,11 +147,11 @@ ms.locfileid: "79510726"
 Google Nexus 设备（Galaxy Nexus 除外）需要 Google USB 驱动程序。 Galaxy Nexus 的驱动程序[由 Samsung 分发](https://www.samsung.com/us/support/downloads/)。
 所有其他 Android 设备应使用[来自其各自制造商的 USB 驱动程序](https://developer.android.com/tools/extras/oem-usb.html#Drivers)。
 
-通过启动 Android SDK 管理器并展开“附加程序”  文件夹，安装 **Google USB 驱动程序**包，如下面的屏幕截图所示：
+通过启动 Android SDK 管理器并展开“附加程序”文件夹，安装 **Google USB 驱动程序**包，如下面的屏幕截图所示：
 
-![](set-up-device-for-development-images/google-usb-driver.png "Google USB driver selected")
+![选择了 Google USB 驱动程序](set-up-device-for-development-images/google-usb-driver.png)
 
-选中“Google USB 驱动程序”  框，然后单击“应用更改”  按钮。
+选中“Google USB 驱动程序”框，然后单击“应用更改”按钮。
 驱动程序文件将下载到以下位置：
 
 `[Android SDK install path]\extras\google\usb\_driver`
@@ -167,20 +167,20 @@ USB 驱动程序下载完成后，请将其安装。
 
 1. 通过 USB 线，将设备连接到计算机。
 
-2. 在桌面或 Windows 资源管理器中右键单击“计算机”，然后选择“管理”  。
+2. 在桌面或 Windows 资源管理器中右键单击“计算机”，然后选择“管理”。
 
-3. 在左窗格中，选择“设备”  。
+3. 在左窗格中，选择“设备”。
 
-4. 在右窗格中，找到并展开“其它设备”  。
+4. 在右窗格中，找到并展开“其它设备”。
 
-5. 右键单击设备名，并选择“更新驱动程序软件”  。
+5. 右键单击设备名，并选择“更新驱动程序软件”。
     这将启动硬件更新向导。
 
-6. 选择“浏览计算机以查找驱动程序软件”，然后单击“下一步”   。
+6. 选择“浏览计算机以查找驱动程序软件”，然后单击“下一步” 。
 
-7. 单击“浏览”，找到 USB 驱动程序文件夹（Google USB 驱动程序位于 [Android SDK install path]\extras\google\usb_driver   ）。
+7. 单击“浏览”，找到 USB 驱动程序文件夹（Google USB 驱动程序位于 [Android SDK install path]\extras\google\usb_driver ）。
 
-8. 单击“下一步”  安装驱动程序。
+8. 单击“下一步”安装驱动程序。
 
 ## <a name="summary"></a>总结
 

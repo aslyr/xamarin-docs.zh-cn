@@ -10,12 +10,12 @@ ms.date: 03/31/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8c83742896af4a22bcff327df82c1b14ff983bb2
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e0653e46d2c349e05df8716e5114de8f631cab1a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138965"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939537"
 ---
 # <a name="customizing-a-webview"></a>自定义 WebView
 
@@ -27,7 +27,7 @@ Xamarin.Forms `WebView` 是在应用中显示 Web 和 HTML 内容的视图。本
 
 下图说明了 [`View`](xref:Xamarin.Forms.View) 和实现它的相应本机控件之间的关系：
 
-![](hybridwebview-images/webview-classes.png "Relationship Between the WebView Class and its Implementing Native Classes")
+![WebView 类及其实现本机类之间的关系](hybridwebview-images/webview-classes.png)
 
 通过在每个平台上为 [`WebView`](xref:Xamarin.Forms.WebView) 创建自定义呈现器，可使用呈现过程来实现平台自定义。 执行此操作的过程如下：
 
@@ -155,11 +155,11 @@ public partial class HybridWebViewPage : ContentPage
 
 下图说明了示例应用程序中每个项目的职责，以及它们之间的关系：
 
-![](hybridwebview-images/solution-structure.png "HybridWebView Custom Renderer Project Responsibilities")
+![HybridWebView 自定义呈现器项目的责任](hybridwebview-images/solution-structure.png)
 
 `HybridWebView` 自定义控件由平台呈现器类呈现，这些类在 iOS 上派生自 `WkWebViewRenderer` 类，而在 Android 和 UWP 上，则派生自 `WebViewRenderer` 类。 这导致每个 `HybridWebView` 自定义控件都使用本机 Web 控件呈现，如以下屏幕截图所示：
 
-![](hybridwebview-images/screenshots.png "HybridWebView on each Platform")
+![每个平台上的 HybridWebView](hybridwebview-images/screenshots.png)
 
 `WkWebViewRenderer` 和 `WebViewRenderer` 类公开 `OnElementChanged` 方法，创建 Xamarin.Forms 自定义控件时会调用此方法以呈现对应的本机 Web 控件。 此方法采用 `VisualElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素 。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `HybridWebView` 实例的引用。
 

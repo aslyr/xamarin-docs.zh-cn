@@ -11,12 +11,12 @@ ms.date: 11/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c7f5979b93ff35b14ec7c13418a4565604f46bd7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d2bd0bf696e652e95e0feb88cca7cf685b14433b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570630"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936495"
 ---
 # <a name="application-indexing-and-deep-linking"></a>应用程序索引和深层链接
 
@@ -32,7 +32,7 @@ Xamarin.Forms 应用程序索引和深层链接提供一个 API，在用户浏�
 
 示例演示了一个待办事项列表应用程序，其中数据存储于本地 SQLite 数据库，如以下屏幕截图所示：
 
-![](deep-linking-images/screenshots.png "TodoList Application")
+![TodoList 应用程序](deep-linking-images/screenshots.png)
 
 用户创建的每个 `TodoItem` 实例都进行了索引。 然后可使用特定于平台的搜索来查找来自应用程序的索引数据。 当用户点击应用程序的搜索结果项时，将启动该应用程序，并导航到 `TodoItemPage`，还将显示引用自深层链接的 `TodoItem`。
 
@@ -141,7 +141,7 @@ Application.Current.AppLinks.RegisterLink (appLink);
 
 将 [`AppLinkEntry`](xref:Xamarin.Forms.AppLinkEntry) 实例注册为进行索引后，它可显示在搜索结果中。 下面的屏幕截图显示了出现在 iOS 平台上搜索结果中的索引的内容：
 
-![](deep-linking-images/ios-search.png "Indexed Content in Search Results on iOS")
+![iOS 上搜索结果中索引的内容](deep-linking-images/ios-search.png)
 
 ## <a name="de-registering-indexed-content"></a>取消注册索引的内容
 

@@ -1,6 +1,6 @@
 ---
-title: title:“将效果参数作为公共语言运行时属性传递”说明：“公共语言运行时 (CLR) 属性可用于定义不响应运行时属性更改的效果参数。
-description: '本文演示如何使用 CLR 属性将参数传递给效果。” ms.prod: xamarin ms.assetid:4B50466C-5DBD-45DD-B1E6-BE9524C92F27 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2016/08/05 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: 将效果参数作为公共语言运行时属性传递
+description: 公共语言运行时 (CLR) 属性可用于定义不响应运行时属性更改的效果参数。 本文演示如何使用 CLR 属性将参数传递给效果。
 ms.prod: xamarin
 ms.assetid: 4B50466C-5DBD-45DD-B1E6-BE9524C92F27
 ms.technology: xamarin-forms
@@ -10,12 +10,12 @@ ms.date: 08/05/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 37d870509e034f4c23afba60fa055965ed9df4de
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 24468e88d39283d2b8282fe0cb9b59f33fcef2f0
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84138859"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936690"
 ---
 # <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>将效果参数作为公共语言运行时属性传递
 
@@ -33,11 +33,11 @@ ms.locfileid: "84138859"
 
 示例应用程序展示了向 [`Label`](xref:Xamarin.Forms.Label) 控件显示的文本添加阴影的 `ShadowEffect`。 下图说明了示例应用程序中每个项目的职责，以及它们之间的关系：
 
-![](clr-properties-images/shadow-effect.png "Shadow Effect Project Responsibilities")
+![阴影效果项目职责](clr-properties-images/shadow-effect.png)
 
 `HomePage` 上的 [`Label`](xref:Xamarin.Forms.Label) 控件由特定于平台的各项目中的 `LabelShadowEffect` 自定义。 参数通过 `ShadowEffect` 类中的属性传递给每个 `LabelShadowEffect`。 每个 `LabelShadowEffect` 类均派生自各平台的 `PlatformEffect` 类。 这就使阴影被添加到 `Label` 控件显示的文本中，如以下屏幕截图所示：
 
-![](clr-properties-images/screenshots.png "Shadow Effect on each Platform")
+![每个平台上的阴影效果](clr-properties-images/screenshots.png)
 
 ## <a name="creating-effect-parameters"></a>创建效果参数
 

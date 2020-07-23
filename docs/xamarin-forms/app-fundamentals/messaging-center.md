@@ -1,6 +1,6 @@
 ---
-title: title:"Xamarin.FormsMessagingCenter”说明：“Xamarin.Forms MessagingCenter 类可实现发布-订阅模式，允许不便按对象和类型引用进行链接的组件之间进行基于消息的通信。”
-description: 'ms.prod: xamarin ms.assetid:EDFE7B19-C5FD-40D5-816C-FAE56532E885 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2019/10/08 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms MessagingCenter
+description: Xamarin.Forms MessagingCenter 类可实现发布-订阅模式，允许不便按对象和类型引用进行链接的组件之间进行基于消息的通信。
 ms.prod: xamarin
 ms.assetid: EDFE7B19-C5FD-40D5-816C-FAE56532E885
 ms.technology: xamarin-forms
@@ -10,12 +10,12 @@ ms.date: 10/08/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d1407c3c948afe764854cbd99f5c29332f7041aa
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: c817936c77764b95842226b9a9a31c26667d6d0f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84137535"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937444"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
@@ -29,7 +29,7 @@ Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 类可实�
 
 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 类提供多播发布-订阅功能。 这意味着可以有多个发布方发布单个消息，并且可能有多个订阅方正在侦听同一消息：
 
-![](messaging-center-images/messaging-center.png "Multicast publish-subscribe functionality")
+![多播发布-订阅功能](messaging-center-images/messaging-center.png)
 
 发布方使用 [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*) 方法发送消息，而订阅方使用 [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) 方法侦听消息。 此外，订阅方还可以使用 [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) 方法取消消息订阅（如果需要）。
 

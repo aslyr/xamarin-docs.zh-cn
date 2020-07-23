@@ -10,24 +10,24 @@ ms.date: 12/07/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c908da816352e8b3790ded0bef932e1485170abd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: bb6167eae394b41583195911bfac9d691e48d361
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573867"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929371"
 ---
 # <a name="customizing-a-viewcell"></a>自定义 ViewCell
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
 
-Xamarin.Forms ViewCell 是可以添加到 ListView 或 TableView 中的单元，它包含开发人员定义的视图。本文演示如何为 Xamarin.Forms ListView 控件中托管的 ViewCell 创建自定义呈现器。这可防止在 ListView 滚动期间重复调用 Xamarin.Forms 布局计算。__
+Xamarin.Forms ViewCell 是可以添加到 ListView 或 TableView 中的单元，它包含开发人员定义的视图。本文演示如何为 Xamarin.Forms ListView 控件中托管的 ViewCell 创建自定义呈现器。这可防止在 ListView 滚动期间重复调用 Xamarin.Forms 布局计算。
 
 每个 Xamarin.Forms 单元都有一个附带的呈现器，适用于创建本机控件实例的各个平台。 当 Xamarin.Forms 应用程序呈现 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 时，将在 iOS 中实例化 `ViewCellRenderer` 类，而该操作又会实例化本机 `UITableViewCell` 控件。 在 Android 平台上，`ViewCellRenderer` 类实例化本机 `View` 控件。 在通用 Windows 平台 (UWP) 上，`ViewCellRenderer` 类实例化本机 `DataTemplate`。 有关 Xamarin.Forms 控件映射到的呈现器和本机控件类的详细信息，请参阅[呈现器基类和本机控件](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
 下图说明了 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 和实现它的相应本机控件之间的关系：
 
-![](viewcell-images/viewcell-classes.png "Relationship Between the ViewCell Control and the Implementing Native Controls")
+![ViewCell 控件和实现的本机控件之间的关系](viewcell-images/viewcell-classes.png)
 
 通过在每个平台上为 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 创建自定义呈现器，可以利用呈现过程来实现特定于平台的自定义。 执行此操作的过程如下：
 
@@ -164,11 +164,11 @@ Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 控件用于显示数据
 
 下图说明了示例应用程序中每个项目的职责，以及它们之间的关系：
 
-![](viewcell-images/solution-structure.png "NativeCell Custom Renderer Project Responsibilities")
+![NativeCell 自定义呈现器项目的职责](viewcell-images/solution-structure.png)
 
 `NativeCell` 自定义单元由平台特定的呈现器类呈现，这些类均派生自各平台的 `ViewCellRenderer` 类。 这导致每个 `NativeCell` 自定义单元都使用特定于平台的布局呈现，如下面的屏幕截图所示：
 
-![](viewcell-images/screenshots.png "NativeCell on each Platform")
+![每个平台上的 NativeCell](viewcell-images/screenshots.png)
 
 `ViewCellRenderer` 类公开呈现自定义单元的特定于平台的方法。 这是 iOS 平台上的 `GetCell` 方法、Android 平台上的 `GetCellCore` 方法和 UWP 上的 `GetTemplate` 方法。
 

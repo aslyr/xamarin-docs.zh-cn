@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 65a89afb3f301fd88ac4819bb8c3658a2be5e29d
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 76f5a10720505796e30079d6be3506bc66636f7e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573191"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938120"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Xamarin.iOS 应用中的 iTunesMetadata.plist 文件
 
-本文介绍了 iTunesMetadata.plist 文件，该文件用于向 iTunes 提供 iOS 应用程序使用 Ad Hoc 分发进行测试或企业部署的相关信息。 
+本文介绍了 iTunesMetadata.plist 文件，该文件用于向 iTunes 提供 iOS 应用程序使用 Ad Hoc 分发进行测试或企业部署的相关信息。
 
 在 iTunes Connect 中创建 iOS 应用程序（无论是用于在 iTunes App Store 中销售还是免费发布）时，开发人员可指定应用程序类型、子类型、版权声明、支持的 iOS 设备和必需设备功能等信息。 对于通过 Ad Hoc 分发传递给测试员或企业用户的 iOS 应用程序，缺少此信息。
 
@@ -297,29 +297,29 @@ ms.locfileid: "84573191"
 
 请执行以下操作：
 
-1. 在“解决方案资源管理器”  中，右键单击 Xamarin.iOS 项目文件，再依次选择“添加”   > “新文件...” 
+1. 在“解决方案资源管理器”  中，右键单击 Xamarin.iOS 项目文件，再依次选择“添加”   > “新文件...”
 2. 在“新文件”对话框中，依次选择“iOS”   > “属性列表”  ：
 
-    ![](itunesmetadata-images/image01.png "Select iOS Property List")
-3. 对“名称”  输入 `iTunesMetadata`，然后单击“新建”  按钮。
-4. 在“解决方案资源管理器”  中，双击打开 `iTunesMetadata.plist` 文件进行编辑：
+    ![选择 iOS 属性列表](itunesmetadata-images/image01.png)
+3. 对“名称”输入 `iTunesMetadata`，然后单击“新建”按钮。
+4. 在“解决方案资源管理器”中，双击打开 `iTunesMetadata.plist` 文件进行编辑：
 
-    ![](itunesmetadata-images/image02.png "The iTunesMetadata.plist editor")
-5. 单击绿色的“+”  新建条目，再输入“`UIRequiredDeviceCapabilities`”作为键名称：
+    ![iTunesMetadata.plist 编辑器](itunesmetadata-images/image02.png)
+5. 单击绿色的“+”新建条目，再输入“`UIRequiredDeviceCapabilities`”作为键名称：
 
-    ![](itunesmetadata-images/image03.png "Create a new entry and enter UIRequiredDeviceCapabilities as the key name")
-6. 单击“字符串”  值类型，再从弹出列表中选择“字典”  ：
+    ![创建新条目并输入 UIRequiredDeviceCapabilities 作为键名称](itunesmetadata-images/image03.png)
+6. 单击“字符串”值类型，再从弹出列表中选择“字典”：
 
-    ![](itunesmetadata-images/image04.png "Select Dictionary from the popup list")
+    ![从弹出列表中选择字典](itunesmetadata-images/image04.png)
 7. 单击属性名左侧的折叠图标，以显示字典条目：
 
-    ![](itunesmetadata-images/image05.png "Reveal the dictionary entries")
-8. 依次单击“添加新条目”  文本和绿色的“+”  ，向字典添加条目：
+    ![显示字典条目](itunesmetadata-images/image05.png)
+8. 依次单击“添加新条目”文本和绿色的“+”，向字典添加条目：
 
-    ![](itunesmetadata-images/image06.png "Add an entry to the dictionary")
-9. 输入“`armv7`”作为键名称，选择“布尔”  类型，再输入“Yes”  作为值：
+    ![向字典添加一个条目](itunesmetadata-images/image06.png)
+9. 输入“`armv7`”作为键名称，选择“布尔”类型，再输入“Yes”作为值：
 
-    ![](itunesmetadata-images/image07.png "Enter armv7 for the key name, select a type of Boolean and enter Yes as the value")
+    ![输入“armv7”作为键名称，选择“布尔”类型，并输入“Yes”作为值](itunesmetadata-images/image07.png)
 10. 重复上述步骤，直到已使用所有必需键/值对填充 `iTunesMetadata.plist` 文件（有关详细信息，请参阅上方的 [iTunesMetadata.plist 内容](#iTunesMetadata_contents)部分）。
 
 11. 保存对 plist 文件的更改。
@@ -332,9 +332,9 @@ ms.locfileid: "84573191"
 2. 复制上面的 [iTunesMetadata.plist 内容](#iTunesMetadata_contents)中的示例内容。
 3. 将内容粘贴到文件并按需进行编辑。
 4. 保存文件并返回 Visual Studio for Mac。
-5. 在“解决方案资源管理器”  中，右键单击 Xamarin.iOS 项目文件，再依次选择“添加”   > “现有文件...”  。
-6. 在“打开文件”对话框中，选择上面创建的 `iTunesMetadata.plist` 文件，然后单击“确定”  按钮。
-7. 将此文件的“生成操作”  保留设置为“无”  。
+5. 在“解决方案资源管理器”中，右键单击 Xamarin.iOS 项目文件，再依次选择“添加” > “现有文件...”。
+6. 在“打开文件”对话框中，选择上面创建的 `iTunesMetadata.plist` 文件，然后单击“确定”按钮。
+7. 将此文件的“生成操作”保留设置为“无”。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -346,9 +346,9 @@ ms.locfileid: "84573191"
 2. 复制上面的 [iTunesMetadata.plist 内容](#iTunesMetadata_contents)中的示例内容。
 3. 将内容粘贴到文件并按需进行编辑。
 4. 保存文件并返回 Visual Studio。
-5. 在“解决方案资源管理器”  中，右键单击 Xamarin.iOS 项目文件，再依次选择“添加”   > “现有文件...”  。
-6. 在“打开文件”对话框中，选择上面创建的 `iTunesMetadata.plist` 文件，然后单击“打开”  按钮。
-7. 将此文件的“生成操作”  保留设置为“无”  。
+5. 在“解决方案资源管理器”中，右键单击 Xamarin.iOS 项目文件，再依次选择“添加” > “现有文件...”。
+6. 在“打开文件”对话框中，选择上面创建的 `iTunesMetadata.plist` 文件，然后单击“打开”按钮。
+7. 将此文件的“生成操作”保留设置为“无”。
 
 -----
 
@@ -366,4 +366,4 @@ ms.locfileid: "84573191"
 - [内部分发](~/ios/deploy-test/app-distribution/in-house-distribution.md)
 - [Ad Hoc 分发](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
 - [IPA 支持](~/ios/deploy-test/app-distribution/ipa-support.md)
-- [疑难解答](~/ios/deploy-test/troubleshooting.md)
+- [故障排除](~/ios/deploy-test/troubleshooting.md)

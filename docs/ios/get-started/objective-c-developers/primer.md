@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 56ee74e7a276edc960d2251bd33ccb90c1fa3cb4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 451e69be771a1a3214a772f0f9afc48893a6fa8d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80070369"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929579"
 ---
 # <a name="c-primer-for-objective-c-developers"></a>面向 Objective-C 开发人员的 C# 入门
 
@@ -58,7 +58,7 @@ public static class UITextViewExtensions
 
 然后，当在代码中创建 `UITextView` 的实例时，该方法将出现在自动完成列表中，如下所示：
 
- ![](primer-images/01-extensionmethodintellisense.png "The method available in the autocomplete")
+ ![自动完成列表中可用的方法](primer-images/01-extensionmethodintellisense.png)
 
 当调用扩展方法时，实例将传递给参数，如本示例中的 `textView`。
 
@@ -117,7 +117,7 @@ public string Address {
 
 ### <a name="static-keyword"></a>Static 关键字
 
- static 关键字在 Objective-C 和 C# 之间具有截然不同的含义。 在 Objective-C 中，静态函数用于将函数的作用域限制为当前文件。 但是，在 C# 中，作用域通过  public、  private 和  internal 关键字进行维护。
+static 关键字在 Objective-C 和 C# 之间具有截然不同的含义。 在 Objective-C 中，静态函数用于将函数的作用域限制为当前文件。 但是，在 C# 中，作用域通过 public、private 和 internal 关键字进行维护。
 
 当 static 关键字应用于 Objective-C 中的变量时，变量会在函数调用之间维护其值。
 
@@ -125,7 +125,7 @@ C# 也具有 static 关键字。 当应用于某个方法时，它会有效地�
 
 ### <a name="nsarray-vs-list-initialization"></a>NSArray 与列表初始化
 
-Objective-C 现在包含用于 `NSArray` 的文本语法，使初始化更加容易。 但是，C# 具有称为 `List` 的更丰富类型，即“泛型”  ，这意味着列表所包含的类型可以由创建列表的代码提供（如 C++ 中的模板）。 此外，列表还支持自动初始化语法，如下所示：
+Objective-C 现在包含用于 `NSArray` 的文本语法，使初始化更加容易。 但是，C# 具有称为 `List` 的更丰富类型，即“泛型”，这意味着列表所包含的类型可以由创建列表的代码提供（如 C++ 中的模板）。 此外，列表还支持自动初始化语法，如下所示：
 
 ```csharp
 MyClass object1 = new MyClass ();
@@ -135,7 +135,7 @@ List<MyClass> myList = new List<MyClass>{ object1, object2 };
 
 ### <a name="blocks-vs-lambda-expressions"></a>块与Lambda 表达式
 
-Objective-C 使用块  创建闭包，可以在其中创建函数内联，以便使用其中包含的状态。 通过使用 lambda 表达式，C# 具有类似的概念。 在 C# 中，lambda 表达式通过 `=>` 运算符创建而成，如下所示：
+Objective-C 使用块创建闭包，可以在其中创建函数内联，以便使用其中包含的状态。 通过使用 lambda 表达式，C# 具有类似的概念。 在 C# 中，lambda 表达式通过 `=>` 运算符创建而成，如下所示：
 
 ```csharp
 (args) => {

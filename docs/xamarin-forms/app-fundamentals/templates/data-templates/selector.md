@@ -1,6 +1,6 @@
 ---
-title: title:“创建 Xamarin.Forms DataTemplateSelector”说明：“本文演示如何创建和使用 DataTemplateSelector，它可以用于在运行时根据数据绑定属性的值选择 DataTemplate。”
-description: 'ms.prod: xamarin ms.assetid:A4629E8F-2BAF-45CE-A76E-DF225FE8D26C ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2016/03/08 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: 创建 Xamarin.Forms DataTemplateSelector
+description: 本文演示如何创建和使用 DataTemplateSelector，它可以用于在运行时根据数据绑定属性的值选择 DataTemplate。
 ms.prod: xamarin
 ms.assetid: A4629E8F-2BAF-45CE-A76E-DF225FE8D26C
 ms.technology: xamarin-forms
@@ -10,12 +10,12 @@ ms.date: 03/08/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 74650eb2c52f1da9d0c539b711784896267ed183
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 7cbeeb9a0eed37ec109b2e71c46e3f04cd08822d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84135949"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936443"
 ---
 # <a name="creating-a-xamarinforms-datatemplateselector"></a>创建 Xamarin.Forms DataTemplateSelector
 
@@ -94,7 +94,7 @@ public class PersonDataTemplateSelector : DataTemplateSelector
 
 以下屏幕截图显示了 [`ListView`](xref:Xamarin.Forms.ListView) 对基础集合中的每个对象应用 `PersonDataTemplateSelector` 的结果：
 
-![](selector-images/data-template-selector.png "ListView with a Data Template Selector")
+![带有数据模板选择器的 ListView](selector-images/data-template-selector.png)
 
 任何 `DateOfBirth` 属性值大于或等于 1980 的 `Person` 对象都以绿色显示，其余对象以红色显示。
 

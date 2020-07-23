@@ -10,12 +10,12 @@ ms.date: 01/19/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e2bed4d5e8f89efa2997fb085278c4b549870245
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0eb768f5d6cabbb41b07a5aad33269fc0f493237
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135316"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939524"
 ---
 # <a name="introduction-to-custom-renderers"></a>自定义呈现器简介
 
@@ -59,7 +59,7 @@ public class MyEntry : Entry
 
 然后在每个平台上呈现背景为灰色的 `MyEntry` 自定义控件，如以下屏幕截图中所示：
 
-![](introduction-images/screenshots.png "MyEntry Custom Control on each Platform")
+![每个平台上的 MyEntry 自定义控件](introduction-images/screenshots.png)
 
 仅通过将控件子类化即可完成对每个平台上的控件背景色的更改。 但是，由于无法利用特定于平台的增强和自定义，这种技术的用途有限。 必要时，必须实现自定义呈现器。
 

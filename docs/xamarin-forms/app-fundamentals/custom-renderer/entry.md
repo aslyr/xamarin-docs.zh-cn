@@ -10,12 +10,12 @@ ms.date: 11/26/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d28a9079d27310dde0e5ea5bf80c83895bbcf1d4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d5a5dc7de2835038079a1bdf8af5be44a173f86e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84571566"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939823"
 ---
 # <a name="customizing-an-entry"></a>自定义 Entry
 
@@ -27,7 +27,7 @@ Xamarin.Forms Entry 控件允许对单行文本进行编辑。本文演示了如
 
 下图说明了 [`Entry`](xref:Xamarin.Forms.Entry) 控件和实现它的相应本机控件之间的关系：
 
-![](entry-images/entry-classes.png "Relationship Between Entry Control and Implementing Native Controls")
+![Entry 控件和实现的本机控件之间的关系](entry-images/entry-classes.png)
 
 通过在每个平台上为 [`Entry`](xref:Xamarin.Forms.Entry) 控件创建自定义呈现器，可以利用呈现过程来实现特定于平台的自定义。 执行此操作的过程如下：
 
@@ -108,11 +108,11 @@ public class MainPage : ContentPage
 
 下图说明了示例应用程序中每个项目的职责，以及它们之间的关系：
 
-![](entry-images/solution-structure.png "MyEntry Custom Renderer Project Responsibilities")
+![MyEntry 自定义呈现器项目的职责](entry-images/solution-structure.png)
 
 `MyEntry` 控件由平台特定的 `MyEntryRenderer` 类呈现，这些类均派生自各平台的 `EntryRenderer` 类。 这导致每个 `MyEntry` 控件都使用特定于平台的背景色呈现，如下面的屏幕截图所示：
 
-![](entry-images/screenshots.png "MyEntry Control on each Platform")
+![每个平台上的 MyEntry 控件](entry-images/screenshots.png)
 
 `EntryRenderer` 类公开 `OnElementChanged` 方法，创建 Xamarin.Forms 控件时调用此方法以呈现对应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素 。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `MyEntry` 控件的引用。
 

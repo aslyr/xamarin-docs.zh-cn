@@ -10,12 +10,12 @@ ms.date: 04/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a287ff28ab62fcfcc00c88858cf3595ba2fa5118
-ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
+ms.openlocfilehash: 2a71f48fb9911267188e7aa4b4124cd9b7488d31
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85853135"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936469"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms 触发器
 
@@ -257,7 +257,7 @@ XAML 如下所示。 请注意下面的示例与第一个触发器示例之间�
 这些屏幕截图显示了上述两个多触发器示例之间的差异。 在屏幕的顶部，仅一个 `Entry` 中的文本输入便足以启用“保存”按钮。
 在屏幕的底部，“登录”按钮在两个字段均包含数据迁保持非活动状态。
 
-![](triggers-images/multi-requireall.png "MultiTrigger Examples")
+![MultiTrigger 示例](triggers-images/multi-requireall.png)
 
 ## <a name="enteractions-and-exitactions"></a>EnterActions 和 ExitActions
 
