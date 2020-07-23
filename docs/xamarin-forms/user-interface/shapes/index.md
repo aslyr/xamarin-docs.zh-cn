@@ -10,16 +10,16 @@ ms.date: 06/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1a1ba09b5be6901b1b07ed9aa3fd9a1b88770efc
-ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
+ms.openlocfilehash: 053da71fdd91af91f0a037e7573def91c36df503
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85795021"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935507"
 ---
 # <a name="xamarinforms-shapes"></a>Xamarin.Forms形状
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![预发布 API](~/media/shared/preview.png "此 API 当前为预发布版本")
 
 `Shape`是的一种类型 [`View`](xref:Xamarin.Forms.View) ，它使您能够在屏幕上绘制形状。 `Shape`对象可在布局类和大多数控件内使用，因为 `Shape` 该类派生自 `View` 类。
 

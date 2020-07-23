@@ -10,12 +10,12 @@ ms.date: 09/12/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cdede547e3ef7cf9f7b6d89751c7476a2ce66d3d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 05a001d3b49f38b2cb5306d8a19a08b4f8392425
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84129007"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935559"
 ---
 # <a name="customizing-listview-cell-appearance"></a>自定义 ListView 单元格外观
 
@@ -37,7 +37,7 @@ Xamarin.Forms附带了适用于许多应用程序的内置单元：
 
 [`TextCell`](xref:Xamarin.Forms.TextCell)用于显示文本的单元格，可选择使用第二行作为详细信息文本。 以下屏幕截图显示 `TextCell` iOS 和 Android 上的项：
 
-![](customizing-cell-appearance-images/text-cell-default.png "Default TextCell Example")
+![默认 TextCell 示例](customizing-cell-appearance-images/text-cell-default.png)
 
 TextCells 在运行时呈现为本机控件，因此与自定义相比，性能非常好 `ViewCell` 。 TextCells 可自定义，允许你设置以下属性：
 
@@ -48,7 +48,7 @@ TextCells 在运行时呈现为本机控件，因此与自定义相比，性能�
 
 以下屏幕截图显示 `TextCell` 具有自定义颜色属性的项目：
 
-![](customizing-cell-appearance-images/text-cell-custom.png "Custom TextCell Example")
+![自定义 TextCell 示例](customizing-cell-appearance-images/text-cell-custom.png)
 
 ### <a name="imagecell"></a>ImageCell
 
