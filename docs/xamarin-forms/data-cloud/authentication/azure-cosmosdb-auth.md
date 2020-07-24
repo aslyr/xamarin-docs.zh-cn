@@ -10,12 +10,12 @@ ms.date: 06/16/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7e1fb6342db4c97ea6946db366d356267c8c1b90
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 05547e960ba1ea141a830396f803dfc265283627
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570552"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936456"
 ---
 # <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>使用 Azure Cosmos DB 文档数据库对用户进行身份验证并Xamarin.Forms
 
@@ -36,7 +36,7 @@ _Azure Cosmos DB 文档数据库支持分区集合，这些集合可以跨多个
 
 请求、生成资源令牌并将其传递到移动应用程序的典型方法是使用资源令牌代理。 下图显示了示例应用程序如何使用资源令牌代理来管理对文档数据库数据的访问的高级概述：
 
-![](azure-cosmosdb-auth-images/documentdb-authentication.png "Document Database Authentication Process")
+![文档数据库身份验证过程](azure-cosmosdb-auth-images/documentdb-authentication.png)
 
 资源令牌代理是托管在 Azure App Service 中的中间层 Web API 服务，它拥有 Cosmos DB 帐户的主密钥。 示例应用程序使用资源令牌代理来管理对文档数据库数据的访问，如下所示：
 
@@ -85,7 +85,7 @@ _Azure Cosmos DB 文档数据库支持分区集合，这些集合可以跨多个
 
     以下屏幕截图演示了此配置：
 
-    [![](azure-cosmosdb-auth-images/azure-web-app-settings.png "App Service Web App Settings")](azure-cosmosdb-auth-images/azure-web-app-settings-large.png#lightbox "App Service Web App Settings")
+    [![应用服务 Web 应用设置](azure-cosmosdb-auth-images/azure-web-app-settings.png)](azure-cosmosdb-auth-images/azure-web-app-settings-large.png#lightbox "应用服务 Web 应用设置")
 
 1. 将资源令牌代理解决方案发布到 Azure App Service web 应用。
 
@@ -102,7 +102,7 @@ _Azure Cosmos DB 文档数据库支持分区集合，这些集合可以跨多个
 
   以下屏幕截图演示了此配置：
 
-  ![](azure-cosmosdb-auth-images/facebook-oauth-settings.png "Facebook Login OAuth Settings")
+  ![Facebook 登录 OAuth 设置](azure-cosmosdb-auth-images/facebook-oauth-settings.png)
 
 有关详细信息，请参阅[将应用程序注册到 Facebook](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-nameregister-aregister-your-application-with-facebook)。
 
@@ -117,7 +117,7 @@ _Azure Cosmos DB 文档数据库支持分区集合，这些集合可以跨多个
 
     以下屏幕截图演示了此配置：
 
-    [![](azure-cosmosdb-auth-images/app-service-authentication-settings.png "App Service Web App Authentication Settings")](azure-cosmosdb-auth-images/app-service-authentication-settings-large.png#lightbox "App Service Web App Authentication Settings")
+    [![应用服务 Web 应用身份验证设置](azure-cosmosdb-auth-images/app-service-authentication-settings.png)](azure-cosmosdb-auth-images/app-service-authentication-settings-large.png#lightbox "应用服务 Web 应用身份验证设置")
 
 应用服务 web 应用还应配置为与 Facebook 应用通信，以启用身份验证流。 为此，可以选择 Facebook 标识提供者，并在 Facebook 开发人员中心的 Facebook 应用设置中输入**应用程序 ID**和**应用程序密钥**值。 有关详细信息，请参阅[将 Facebook 信息添加到应用程序](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-namesecrets-aadd-facebook-information-to-your-application)。
 
@@ -144,7 +144,7 @@ var auth = new Xamarin.Auth.WebRedirectAuthenticator(
 
 这会导致在 Azure App Service 和 Facebook 之间启动 OAuth 身份验证流，这将显示 Facebook 登录页：
 
-![](azure-cosmosdb-auth-images/login.png "Facebook Login")
+![Facebook 登录](azure-cosmosdb-auth-images/login.png)
 
 可以通过在 iOS 上按 "**取消**" 按钮或按 Android 上的 "**后退**" 按钮来取消登录，在这种情况下，用户将保持未经身份验证，并且将从屏幕中删除标识提供程序用户界面。
 

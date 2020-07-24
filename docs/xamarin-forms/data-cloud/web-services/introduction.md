@@ -10,12 +10,12 @@ ms.date: 02/28/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d714b4c9d598d8cca26ae992abf3f15df703d11b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cd9815c6448efae0bb0af982c8807c47263ae13e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139173"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938198"
 ---
 # <a name="xamarinforms-web-services-introduction"></a>Xamarin.FormsWeb 服务简介
 
@@ -34,8 +34,8 @@ _本主题提供了 Xamarin.Forms 演示如何与不同 web 服务通信的示�
 
 当应用程序启动时，将显示一个页面，其中列出了从 web 服务检索到的所有任务，并允许用户创建新任务。 单击某任务会将该应用程序导航到第二页，可在其中编辑、保存、删除和朗读该任务。 最终的应用程序如下所示：
 
-![](introduction-images/app-example-1.png "Todo application - first page")
-![](introduction-images/app-example-2.png "Todo application - second page")
+![Todo 应用程序-第一页 ](introduction-images/app-example-1.png)
+ ![ todo 应用程序-第二页](introduction-images/app-example-2.png)
 
 本指南中的每个主题都提供一个下载链接，该链接指向演示特定类型的 web 服务后端的应用程序的*不同*版本。 下载与每个 web 服务样式相关的页面上的相关示例代码。
 
@@ -43,7 +43,7 @@ _本主题提供了 Xamarin.Forms 演示如何与不同 web 服务通信的示�
 
 每个示例应用程序的共享代码项目由三个主要文件夹组成：
 
-|文件夹|目的|
+|Folder|目的|
 |--- |--- |
 |数据|包含用于管理数据项以及与 web 服务进行通信的类和接口。 其中至少包括 `TodoItemManager` 类，该类通过类中的属性公开， `App` 用于调用 web 服务操作。|
 |模型|包含应用程序的数据模型类。 其中至少包括 `TodoItem` 类，该类对应用程序使用的单个数据项建模。 此文件夹还可以包含用于对用户数据建模的任何其他类。|
@@ -66,7 +66,7 @@ _本主题提供了 Xamarin.Forms 演示如何与不同 web 服务通信的示�
 
 此外，某些示例应用程序还包含用于管理用户身份验证过程的其他页面。
 
-### <a name="model-the-data"></a>为数据建模
+### <a name="model-the-data"></a>数据建模
 
 每个示例应用程序都使用 `TodoItem` 类对显示的数据进行建模并发送到用于存储的 web 服务。 以下代码示例演示 `TodoItem` 类：
 

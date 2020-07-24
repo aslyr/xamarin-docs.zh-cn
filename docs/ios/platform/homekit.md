@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: b9b8d1dbaf7872ab629392e15d906540ae491db4
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 7319cc50a147da93018bdd1c2036d70cf01e9b80
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572593"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936677"
 ---
 # <a name="homekit-in-xamarinios"></a>Xamarin 中的 HomeKit
 
 _HomeKit 是 Apple 的框架，用于控制家庭自动化设备。本文介绍了 HomeKit，并介绍了如何在 HomeKit 配件模拟器中配置测试附件，并编写了一个简单的 Xamarin iOS 应用来与这些附件交互。_
 
-[![](homekit-images/accessory01.png "An example HomeKit enabled App")](homekit-images/accessory01.png#lightbox)
+[![启用 HomeKit 的应用示例](homekit-images/accessory01.png)](homekit-images/accessory01.png#lightbox)
 
 Apple 在 iOS 8 中引入了 HomeKit，以将多个家庭自动化设备从不同供应商无缝集成到一个一致的单位。 通过提升常见协议来发现、配置和控制家庭自动化设备，HomeKit 允许非相关供应商提供的设备协同工作，所有这些设备都无需协调工作。
 
@@ -50,28 +50,28 @@ HomeKit 将给定位置中的所有自动化设备组织到一个主集合。 �
 
 由于 HomeKit 施加了安全要求，因此必须在 Apple 开发人员门户和 Xamarin iOS 项目文件中正确配置使用 HomeKit 框架的 Xamarin iOS 应用。
 
-请执行以下操作：
+执行以下操作：
 
 1. 登录到[Apple 开发人员门户](https://developer.apple.com)。
 2. 单击 "**证书、标识符 & 配置文件**。
 3. 如果尚未执行此操作，请单击 "**标识符**"，为应用创建一个 ID （例如 `com.company.appname` ），或者编辑现有 id。
 4. 确保已针对给定 ID 检查**HomeKit**服务： 
 
-    [![](homekit-images/provision01.png "Enable the HomeKit service for the given ID")](homekit-images/provision01.png#lightbox)
+    [![为给定 ID 启用 HomeKit 服务](homekit-images/provision01.png)](homekit-images/provision01.png#lightbox)
 5. 保存所做更改。
 6. 单击 "**预配配置文件**  >  **开发**"，为你的应用创建新的开发预配配置文件： 
 
-    [![](homekit-images/provision02.png "Create a new development provisioning profile for the app")](homekit-images/provision02.png#lightbox)
+    [![为应用程序创建新的开发预配配置文件](homekit-images/provision02.png)](homekit-images/provision02.png#lightbox)
 7. 下载并安装新的预配配置文件，或使用 Xcode 下载并安装该配置文件。
 8. 编辑 Xamarin iOS 项目选项，确保使用的是刚才创建的预配配置文件： 
 
-    [![](homekit-images/provision03.png "Select provisioning profile just created")](homekit-images/provision03.png#lightbox)
+    [![选择刚创建的预配配置文件](homekit-images/provision03.png)](homekit-images/provision03.png#lightbox)
 9. 接下来，请编辑**info.plist**文件，并确保使用的是用于创建预配配置文件的应用 ID： 
 
-    [![](homekit-images/provision04.png "Set the App ID ")](homekit-images/provision04.png#lightbox)
+    [![设置应用 ID](homekit-images/provision04.png)](homekit-images/provision04.png#lightbox)
 10. 最后，编辑**info.plist**文件，并确保已选择**HomeKit**权利： 
 
-    [![](homekit-images/provision05.png "Enable the HomeKit entitlement")](homekit-images/provision05.png#lightbox)
+    [![启用 HomeKit 权限](homekit-images/provision05.png)](homekit-images/provision05.png#lightbox)
 11. 保存对所有文件所做的更改。
 
 设置好这些设置后，应用程序便可访问 HomeKit Framework Api。 有关预配的详细信息，请参阅[设备预配](~/ios/get-started/installation/device-provisioning/index.md)和[预配应用](~/ios/get-started/installation/device-provisioning/index.md)指南。
@@ -87,12 +87,12 @@ HomeKit 将给定位置中的所有自动化设备组织到一个主集合。 �
 
 Apple 提供 HomeKit 附属模拟器作为来自 Xcode 的单独下载，因此你需要先安装它，然后才能继续。
 
-请执行以下操作：
+执行以下操作：
 
 1. 在 web 浏览器中，访问[Apple 开发人员的下载](https://developer.apple.com/download/more/?name=for%20Xcode)
 2. 下载**适用于 Xcode xxx 的其他工具**（其中 xxx 是已安装的 Xcode 版本）： 
 
-    [![](homekit-images/simulator01.png "Download the Additional Tools for Xcode")](homekit-images/simulator01.png#lightbox)
+    [![下载适用于 Xcode 的其他工具](homekit-images/simulator01.png)](homekit-images/simulator01.png#lightbox)
 3. 打开磁盘映像，并在**应用程序**目录中安装工具。
 
 安装 HomeKit 附件模拟器后，可以创建虚拟附件进行测试。
@@ -103,22 +103,22 @@ Apple 提供 HomeKit 附属模拟器作为来自 Xcode 的单独下载，因此�
 
 1. 从 "应用程序" 文件夹中，启动 HomeKit 附件模拟器： 
 
-    [![](homekit-images/simulator02.png "The HomeKit Accessory Simulator")](homekit-images/simulator02.png#lightbox)
+    [![HomeKit 配件模拟器](homekit-images/simulator02.png)](homekit-images/simulator02.png#lightbox)
 2. 单击该 **+** 按钮，然后选择 "**新建附件 ...**"： 
 
-    [![](homekit-images/simulator03.png "Add a new accessory")](homekit-images/simulator03.png#lightbox)
+    [![添加新附件](homekit-images/simulator03.png)](homekit-images/simulator03.png#lightbox)
 3. 填写有关新附件的信息，然后单击 "**完成**" 按钮： 
 
-    [![](homekit-images/simulator04.png "Fill out the information about the new accessory")](homekit-images/simulator04.png#lightbox)
+    [![填写有关新附件的信息](homekit-images/simulator04.png)](homekit-images/simulator04.png#lightbox)
 4. 单击 "**添加服务"。** 按钮，然后从下拉列表中选择一个服务类型： 
 
-    [![](homekit-images/simulator05.png "Select a service type from the dropdown")](homekit-images/simulator05.png#lightbox)
+    [![从下拉列表中选择一种服务类型](homekit-images/simulator05.png)](homekit-images/simulator05.png#lightbox)
 5. 提供服务的**名称**，然后单击 "**完成**" 按钮： 
 
-    [![](homekit-images/simulator06.png "Enter a Name for the service")](homekit-images/simulator06.png#lightbox)
+    [![输入服务的名称](homekit-images/simulator06.png)](homekit-images/simulator06.png#lightbox)
 6. 可以通过单击 "**添加特征**" 按钮并配置所需的设置，为服务提供可选特征： 
 
-    [![](homekit-images/simulator07.png "Configuring the required settings")](homekit-images/simulator07.png#lightbox)
+    [![配置所需设置](homekit-images/simulator07.png)](homekit-images/simulator07.png#lightbox)
 7. 重复上述步骤，以创建 HomeKit 支持的每种类型的虚拟 home 自动化设备之一。
 
 创建和配置一些示例虚拟 HomeKit 附件后，你现在可以通过 Xamarin iOS 应用使用和控制这些设备。
@@ -127,7 +127,7 @@ Apple 提供 HomeKit 附属模拟器作为来自 Xcode 的单独下载，因此�
 
 对于 iOS 10 （和更高版本），开发人员需要将密钥添加 `NSHomeKitUsageDescription` 到应用文件中， `Info.plist` 并提供一个字符串来声明应用要访问用户的 HomeKit 数据库的原因。 首次运行应用时，将向用户显示此字符串：
 
-[![](homekit-images/info01.png "The HomeKit permission dialog")](homekit-images/info01.png#lightbox)
+[![HomeKit 权限对话框](homekit-images/info01.png)](homekit-images/info01.png#lightbox)
 
 若要设置此密钥，请执行以下操作：
 
@@ -136,11 +136,11 @@ Apple 提供 HomeKit 附属模拟器作为来自 Xcode 的单独下载，因此�
 3. 向列表中添加新**项**。
 4. 从下拉列表中，选择 "**隐私-HomeKit 使用说明**"： 
 
-    [![](homekit-images/info02.png "Select Privacy - HomeKit Usage Description")](homekit-images/info02.png#lightbox)
+    [![选择隐私-HomeKit 使用说明](homekit-images/info02.png)](homekit-images/info02.png#lightbox)
 5. 输入应用要访问用户的 HomeKit 数据库的原因说明： 
 
-    [![](homekit-images/info03.png "Enter a description")](homekit-images/info03.png#lightbox)
-6. 保存对该文件所做的更改。
+    [![输入描述](homekit-images/info03.png)](homekit-images/info03.png#lightbox)
+6. 保存对文件所做的更改。
 
 > [!IMPORTANT]
 > `NSHomeKitUsageDescription` `Info.plist` 如果在 iOS 10 （或更高版本）中运行时未出现错误，则无法设置文件中的密钥将导致应用程序以_静默方式失败_（在运行时由系统关闭）。
@@ -189,7 +189,7 @@ public override void FinishedLaunching (UIApplication application)
 
 首次运行应用程序时，系统会询问用户是否允许它访问其 HomeKit 信息：
 
-[![](homekit-images/home01.png "The user will be asked if they want to allow it to access their HomeKit information")](homekit-images/home01.png#lightbox)
+[![如果用户想要允许其访问 HomeKit 信息，则会询问用户](homekit-images/home01.png)](homekit-images/home01.png#lightbox)
 
 如果用户回答 **"确定"**，则该应用程序将能够使用其 HomeKit 附件，否则将不会，并且对 HomeKit 的任何调用都将失败并出现错误。
 
@@ -282,7 +282,7 @@ ThisApp.HomeManager.AddHome(HomeName.Text,(home,error) =>{
 
 找到新的附件后，应该向用户显示它，以便他们选择它并将其添加到主页。 示例：
 
-[![](homekit-images/accessory01.png "Finding a new accessory")](homekit-images/accessory01.png#lightbox)
+[![查找新附件](homekit-images/accessory01.png)](homekit-images/accessory01.png#lightbox)
 
 调用 `AddAccessory` 方法以将所选附件添加到 home 的集合中。 例如：
 
@@ -299,11 +299,11 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 
 如果该 `err` 属性不为 `null` ，则会发生错误并向用户显示错误消息。 否则，系统会要求用户输入要添加的设备的安装代码：
 
-[![](homekit-images/accessory02.png "Enter the setup code for the device to add")](homekit-images/accessory02.png#lightbox)
+[![输入要添加的设备的安装代码](homekit-images/accessory02.png)](homekit-images/accessory02.png#lightbox)
 
 在 HomeKit 配件模拟器中，可以在 "**安装代码**" 字段下找到此编号：
 
-[![](homekit-images/accessory03.png "The Setup Code field in the HomeKit Accessory Simulator")](homekit-images/accessory03.png#lightbox)
+[![HomeKit 配件模拟器中的 "设置代码" 字段](homekit-images/accessory03.png)](homekit-images/accessory03.png#lightbox)
 
 对于实际的 HomeKit 附件，设置代码将打印在设备本身的标签上、产品盒中或附件的用户手册中。
 
@@ -319,7 +319,7 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 
 `HMHome`对象包含分配的附件列表，可在其属性中向用户显示该列表 `Accessories` 。 例如：
 
-[![](homekit-images/accessory04.png "An example accessory")](homekit-images/accessory04.png#lightbox)
+[![示例附件](homekit-images/accessory04.png)](homekit-images/accessory04.png#lightbox)
 
 在此窗体中，用户可以选择给定附件，并使用其提供的服务。
 
@@ -367,7 +367,7 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 
 加载后， `HMAccessory` 您可以查询 `HNService` 它提供的各个对象并向用户显示该信息：
 
-[![](homekit-images/accessory05.png "Displaying Service Information")](homekit-images/accessory05.png#lightbox)
+[![显示服务信息](homekit-images/accessory05.png)](homekit-images/accessory05.png#lightbox)
 
 尝试使用之前，应始终检查 `Reachable` 的属性 `HMAccessory` 。 如果用户不在设备范围内或已拔出，则无法访问附件。
 
@@ -657,7 +657,7 @@ Characteristic.WriteValue(NSObject.FromObject(value),(err) =>{
 
 在实际 iOS 设备硬件上运行**HomeKitIntro**应用程序时，应立即在 HomeKit 附件模拟器中看到对特征值所做的更改。 例如，在 iOS 应用中更改光的状态：
 
-[![](homekit-images/test01.png "Changing the state of a light in an iOS app")](homekit-images/test01.png#lightbox)
+[![更改 iOS 应用中的灯光状态](homekit-images/test01.png)](homekit-images/test01.png#lightbox)
 
 应更改 HomeKit 附件模拟器中光源的状态。 如果值不更改，请在写入新的特征值时检查错误消息的状态，并确保附件仍可访问。
 
@@ -701,7 +701,7 @@ Apple 已对适用于 iOS 9 的 HomeKit 进行了以下更改和添加：
 
 有关 iOS 9 中 HomeKit 的新功能的详细信息，请参阅 Apple 的[HomeKit 索引](https://developer.apple.com/homekit/)和[HomeKit 视频中的新增](https://developer.apple.com/videos/wwdc/2015/?id=210)功能。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了 Apple 的 HomeKit home 自动化框架。 其中介绍了如何使用 HomeKit 附件模拟器设置和配置测试设备，以及如何使用 HomeKit 创建一个简单的 Xamarin iOS 应用来发现、使用和控制主自动化设备。
 

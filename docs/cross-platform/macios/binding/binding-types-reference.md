@@ -6,12 +6,12 @@ ms.assetid: C6618E9D-07FA-4C84-D014-10DAC989E48D
 author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
-ms.openlocfilehash: da6bf97bfc5769647c63b55c289293e63f50e5cb
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 8549e993bf46ffd3b24ad8ec495791eb25b25023
+ms.sourcegitcommit: bd49f28105218f04e978e58143bba8cdec9fd4a9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570994"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925979"
 ---
 # <a name="binding-types-reference-guide"></a>绑定类型参考指南
 
@@ -30,7 +30,7 @@ interface MyType : [Protocol1, Protocol2] {
 }
 ```
 
-协定定义中的每个接口都具有为 [`[BaseType]`](#BaseTypeAttribute) 生成的对象声明基类型的特性。 在以上声明中， `MyType` 将生成一个 c # 类型的 c # 类型，该类型绑定到名为的目标 C 类型 `MyType` 。
+协定定义中具有特性的每个接口都 [`[BaseType]`](#BaseTypeAttribute) 为生成的对象声明基类型。 在以上声明中， `MyType` 将生成一个 c # 类型的 c # 类型，该类型绑定到名为的目标 C 类型 `MyType` 。
 
 如果你使用接口继承语法指定 typename 之后（在上面的示例中）指定任何类型 `Protocol1` ，则 `Protocol2` 这些接口的内容将会内联，就好像它们是的协定的一部分一样 `MyType` 。
 类型采用协议的 Xamarin 表面的方式是将协议中声明的所有方法和属性内联到类型本身中。
@@ -356,7 +356,7 @@ public partial class CBAdvertisement  {
 它们的不同之处在于，运行时仅向目标-C 注册实际已被覆盖的方法。
 否则，将不注册该方法。
 
-这通常意味着，当你为已使用标记的类提供子类时 `ModelAttribute` ，不应调用基方法。   调用该方法将引发异常，您应该在您的子类上对您重写的任何方法实现整个行为。
+这通常意味着，当你为已使用标记的类提供子类时 `ModelAttribute` ，不应调用基方法。   调用该方法将引发以下异常：地基. You_Should_Not_Call_base_In_This_Method。 假设您要对您重写的任何方法的子类实现整个行为。
 
 <a name="AbstractAttribute"></a>
 
@@ -1721,7 +1721,7 @@ enum NSRunLoopMode {
 
 通过上述绑定定义，生成器将创建 `enum` 自身，还会创建一个 `*Extensions` 静态类型，其中包含枚举值和常量之间的双向转换方法 `NSString` 。 这意味着，即使它们不是 API 的一部分，它们仍可供开发人员使用。
 
-示例：
+示例:
 
 ```csharp
 // using the NSString constant in a different API / framework / 3rd party code
@@ -1843,7 +1843,7 @@ public class LinkWithAttribute : Attribute {
 
 请注意， `LinkTarget` 由 Xamarin 推导参数，无需设置。
 
-示例：
+示例:
 
 ```csharp
 // Specify additional linker:

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: be78e76e2a52fb6e924fd67e3f0de9e0890ee25b
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: b81e7b980c37f238fe9c2a299aa360cc01294ebe
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933427"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997184"
 ---
 # <a name="introduction-to-ios-6"></a>iOS 6 简介
 
@@ -25,7 +25,7 @@ _iOS 6 包括多种用于开发应用的新技术，即 iOS 6 向 c # 开发人�
 
 ## <a name="introduction-to-collection-views"></a>[集合视图简介](~/ios/user-interface/controls/uicollectionview.md)
 
-集合视图允许使用任意布局显示内容。 它们允许轻松地在框中创建类似于网格的布局，同时还支持自定义布局。 有关详细信息，请参阅[集合视图简介](~/ios/user-interface/controls/uicollectionview.md) [](~/ios/user-interface/controls/uicollectionview.md) 指南。
+集合视图允许使用任意布局显示内容。 它们允许轻松地在框中创建类似于网格的布局，同时还支持自定义布局。 有关详细信息，请参阅[集合视图简介](~/ios/user-interface/controls/uicollectionview.md)指南。
 
 ## <a name="introduction-to-passkit"></a>[PassKit 简介](~/ios/platform/passkit.md)
 

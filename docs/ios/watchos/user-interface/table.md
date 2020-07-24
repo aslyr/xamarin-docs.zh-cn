@@ -7,25 +7,25 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 015f0732e4d8cdf771af3e1d0b3cc3e31b6e806c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 0358e1570a5e38e008894a7eb9b6ca1985a0fed0
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572246"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997249"
 ---
 # <a name="watchos-table-controls-in-xamarin"></a>Xamarin 中的 watchOS 表控件
 
 WatchOS `WKInterfaceTable` 控件比它的 iOS 副本简单得多，但会执行类似的角色。 它创建可具有自定义布局以及响应触控事件的行的滚动列表。
 
-![](table-images/table-list-sml.png "监视表列表") ![](table-images/table-detail-sml.png)
+![监视表列表 ](table-images/table-list-sml.png) ![ 监视表详细信息](table-images/table-detail-sml.png)
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 ## <a name="adding-a-table"></a>添加表
 
 将 "**表**" 控件拖到场景中。 默认情况下，它将如下所示（显示单个未指定的行布局）：
 
-[![](table-images/add-table-sml.png "Adding a table")](table-images/add-table.png#lightbox)
+[![添加表](table-images/add-table-sml.png)](table-images/add-table.png#lightbox)
 
 在**Properties** pad 的 "**名称**" 框中为该表命名，以便在代码中引用它。
 
@@ -35,7 +35,7 @@ WatchOS `WKInterfaceTable` 控件比它的 iOS 副本简单得多，但会执行
 
 若要设置行控制器的**类**，请在**文档大纲**中选择该行，并在**Properties** pad 中键入类名：
 
-[![](table-images/add-row-controller-sml.png "Entering a class name in the Properties pad")](table-images/add-row-controller.png#lightbox)
+[![在 Properties pad 中输入类名](table-images/add-row-controller-sml.png)](table-images/add-row-controller.png#lightbox)
 
 设置行控制器的类后，IDE 将在项目中创建相应的 c # 文件。 将控件（如标签）拖到行上，并为其指定名称，以便可以在代码中引用它们。
 
@@ -107,11 +107,11 @@ public override NSObject GetContextForSegue (string segueIdentifier, WKInterface
 
 默认情况下，table 控件具有可设计的单行类型。 若要添加更多行 "模板"，请使用**Properties** pad 中的 "**行**" 框创建更多行控制器：
 
-![](table-images/prototype-rows1.png "Setting the number of Prototype rows")
+![设置原型行的数目](table-images/prototype-rows1.png)
 
 将**Rows**属性设置为**3**将创建额外的行占位符，以便您将控件拖放到中。 对于每一行，在**Properties** pad 中设置**类**名称，以确保行控制器类已创建。
 
-![](table-images/prototype-rows2.png "The prototype rows in the designer")
+![设计器中的原型行](table-images/prototype-rows2.png)
 
 若要填充具有不同行类型的表，请使用 `SetRowTypes` 方法来指定要用于表中每一行的行控制器类型。 使用行的标识符来指定应将哪个行控制器用于每一行。
 
@@ -142,14 +142,14 @@ for (var i = 0; i < rows.Count; i++) {
 
 watchOS 3 为表引入了一项新功能：滚动浏览与每行相关的详细信息页，无需返回到表并选择其他行。 详细信息屏幕可以通过向上和向下轻扫，或使用 Digital Crown 进行滚动。
 
-![](table-images/table-scroll-sml.png "垂直详细信息分页示例") ![](table-images/table-detail-sml.png)
+![垂直详细信息分页示例](table-images/table-scroll-sml.png) ![垂直分页详细信息](table-images/table-detail-sml.png)
 
 > [!IMPORTANT]
 > 此功能当前仅可通过在 Xcode Interface Builder 中编辑情节提要来使用。
 
 若要启用此功能，请 `WKInterfaceTable` 在设计图面上选择并勾选**垂直详细信息分页**选项：
 
-![](table-images/vertical-detail-paging-sml.png "Selecting the Vertical Detail Paging option")
+![选择垂直详细信息分页选项](table-images/vertical-detail-paging-sml.png)
 
 如[Apple 所述](https://developer.apple.com/reference/watchkit/wkinterfacetable#1682023)，表导航必须使用 segue 才能使用分页功能。 改为重新编写使用 segue 的所有现有代码 `PushController` 。
 

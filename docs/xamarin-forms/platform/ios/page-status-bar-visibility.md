@@ -19,7 +19,7 @@ ms.locfileid: "86936820"
 ---
 # <a name="page-status-bar-visibility-on-ios"></a>IOS 上的页面状态栏可见性
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 iOS 平台特定用于设置上状态栏的可见性 [`Page`](xref:Xamarin.Forms.Page) ，并且它包括控制状态栏进入或离开的方式 `Page` 。 它通过将 `Page.PrefersStatusBarHidden` 附加属性设置为枚举的值 `StatusBarHiddenMode` ，并根据需要将 `Page.PreferredStatusBarUpdateAnimation` 附加属性设置为枚举的值，以在 XAML 中使用 `UIStatusBarAnimation` ：
 

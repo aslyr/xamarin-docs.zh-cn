@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 81ad57119ff7271094966cf9b0c372876646f81b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d8dcf64f9a905557bea69402bcaf7fcfb51fb10b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573425"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928570"
 ---
 # <a name="programmatic-layout-constraints-in-xamarinios"></a>Xamarin 中的编程布局约束
 
@@ -67,9 +67,9 @@ OrangeView.TrailingAnchor.ConstraintEqualTo (margins.TrailingAnchor).Active = tr
 OrangeView.HeightAnchor.ConstraintEqualTo (OrangeView.WidthAnchor, 2.0f);
 ```
 
-典型的布局约束可以简单地表示为线性表达式。 请参见以下示例：
+典型的布局约束可以简单地表示为线性表达式。 执行以下示例：
 
-[![](programmatic-layout-constraints-images/graph01.png "A Layout Constraint expressed as a linear expression")](programmatic-layout-constraints-images/graph01.png#lightbox)
+[![以线性表达式形式表示的布局约束](programmatic-layout-constraints-images/graph01.png)](programmatic-layout-constraints-images/graph01.png#lightbox)
 
 这会使用布局定位点转换为以下 c # 代码行：
 
@@ -155,7 +155,7 @@ NSLayoutConstraint.ActivateConstraints (constraints);
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本指南介绍了如何在 c # 中创建和使用自动布局约束，而不是在 iOS 设计器中以图形方式创建它们。 首先，它查看使用布局定位点（ `NSLayoutAnchor` ）处理自动布局。 接下来，它演示了如何使用布局约束（ `NSLayoutConstraint` ）。 最后，它使用自动布局的视觉格式语言显示。
 

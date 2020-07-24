@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: ac746c8489dae600bc2d8c6d1752d8fb10d4e016
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 84e21378a8ac7b61bc1a389352eb53b75881592a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84564714"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929644"
 ---
 # <a name="core-graphics-in-xamarinios"></a>Xamarin 中的核心图形
 
@@ -133,7 +133,7 @@ path.CloseSubpath ();
 
 生成的视图如下所示：
 
- ![](core-graphics-images/00-bluetriangle.png "The sample output triangle")
+ ![示例输出三角形](core-graphics-images/00-bluetriangle.png)
 
 ## <a name="creating-gradient-fills"></a>创建渐变填充
 
@@ -167,7 +167,7 @@ g.Clip ();
 
 这些更改生成渐变填充，如下所示：
 
- ![](core-graphics-images/01-gradient-fill.png "The example with a gradient fill")
+ ![带有渐变填充的示例](core-graphics-images/01-gradient-fill.png)
 
 ## <a name="modifying-line-patterns"></a>修改线条模式
 
@@ -180,7 +180,7 @@ g.SetLineDash (0, new nfloat[] { 10, 4 * (nfloat)Math.PI });
 
 在任何绘图操作之前添加此代码将导致虚线笔划10个单位长，并在短划线之间添加4个单元间距，如下所示：
 
- ![](core-graphics-images/02-dashed-stroke.png "Adding this code before any drawing operations results in dashed strokes")
+ ![在任何绘图操作之前添加此代码会导致虚线笔划](core-graphics-images/02-dashed-stroke.png)
 
 请注意，在 Xamarin 中使用 Unified API 时，数组类型需要是 `nfloat` ，并且还需要显式转换为 Math。
 
@@ -203,7 +203,7 @@ public override void Draw (CGRect rect)
 
 但是，这会生成一个倒置的图像，如下所示：
 
- ![](core-graphics-images/03-upside-down-monkey.png "An image drawn upside down")
+ ![倒置绘制的图像](core-graphics-images/03-upside-down-monkey.png)
 
 出现这种情况的原因是，图像绘制的核心图形原点在左下角，而视图的原点位于左上角。 因此，若要正确显示图像，需要修改源，这可以通过修改*当前变换矩阵* *（CTM）* 来完成。 CTM 定义点的位置，也称为*用户空间*。 在 y 方向上反方向反转 CTM，并在负 y 方向将其沿边界的高度移位，可以翻转图像。
 
@@ -225,7 +225,7 @@ public override void Draw (CGRect rect)
 
 然后，生成的图像显示为直立的：
 
- ![](core-graphics-images/04-upright-monkey.png "The sample image displayed upright")
+ ![垂直显示的示例图像](core-graphics-images/04-upright-monkey.png)
 
 > [!IMPORTANT]
 > 对图形上下文所做的更改将应用于所有后续的绘图操作。 因此，在转换 CTM 时，它会影响任何其他绘图。 例如，如果您在 CTM 转换后绘制了三角形，则它会倒置显示。
@@ -264,7 +264,7 @@ public override void Draw (RectangleF rect)
 
 生成的文本将与图像一起显示，如下所示：
 
- ![](core-graphics-images/05-text-on-image.png "The resulting text is displayed with the image")
+ ![生成的文本与图像一起显示](core-graphics-images/05-text-on-image.png)
 
 ## <a name="memory-backed-images"></a>支持内存的映像
 
@@ -421,7 +421,7 @@ UIGraphics.EndPDFContent ();
 
 生成的文本将被绘制到 PDF，后者随后将包含在 `NSData` 可以保存、上传、通过电子邮件发送等的中。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了通过*核心图形*框架提供的图形功能。 我们了解到如何使用核心图形在的上下文中以及在支持内存的图形上下文中绘制几何、图像和 Pdf `UIView,` 。
 

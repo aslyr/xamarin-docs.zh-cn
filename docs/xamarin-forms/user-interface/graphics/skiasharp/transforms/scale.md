@@ -10,12 +10,12 @@ ms.date: 03/23/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bdf33f499bf43d99436cef815c03d35b27866b80
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5cb43bfe572b98a6530dfeb8d923ac71b5b633a7
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140174"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932036"
 ---
 # <a name="the-scale-transform"></a>缩放转换
 
@@ -25,7 +25,7 @@ _发现用于将对象缩放到各种大小的 SkiaSharp 缩放变换_
 
 正如你在[**翻译转换**](translate.md)一文中看到的那样，转换转换可以将图形对象从一个位置移到另一个位置。 与此相反，缩放变换会改变图形对象的大小：
 
-![](scale-images/scaleexample.png "A tall word scaled in size")
+![缩放大小为高的一字](scale-images/scaleexample.png)
 
 缩放转换通常还会使图形坐标在变大时移动。
 
@@ -109,7 +109,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 正如您所看到的，调用后绘制的所有内容都 `Scale` 按比例增加：
 
-[![](scale-images/basicscale-small.png "Triple screenshot of the Basic Scale page")](scale-images/basicscale-large.png#lightbox "Triple screenshot of the Basic Scale page")
+[![基本缩放页面的三向屏幕截图](scale-images/basicscale-small.png)](scale-images/basicscale-large.png#lightbox "基本缩放页面的三向屏幕截图")
 
 文本、虚线的宽度、该线条的划线的长度、角的舍入和画布的左边缘和上边缘之间的10像素的边距，都服从相同的缩放比例。
 
@@ -171,7 +171,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 圆角矩形的左上角定位 `margin` 于画布左侧的像素和 `margin` 顶部的像素。 方法的最后两个参数 `Scale` 设置为这些值以及文本的宽度和高度，这也是圆角矩形的宽度和高度。 这意味着所有缩放均相对于该矩形的中心：
 
-[![](scale-images/centeredscale-small.png "Triple screenshot of the Centered Scale page")](scale-images/centeredscale-large.png#lightbox "Triple screenshot of the Centered Scale page")
+[![中心刻度页面的三向屏幕截图](scale-images/centeredscale-small.png)](scale-images/centeredscale-large.png#lightbox "中心刻度页面的三向屏幕截图")
 
 `Slider`此程序中的元素的范围为 &ndash; 10 到10。 正如您所看到的，垂直缩放的负值（如在中心的 Android 屏幕上）会导致对象在水平轴之间来回翻转，该轴穿过缩放中心。 水平缩放的负值（如右侧 UWP 屏幕中的值）会导致对象在垂直轴上翻转，沿缩放中心穿过。
 
@@ -252,7 +252,7 @@ using (SKPaint strokePaint = new SKPaint
 
 在 `pathBounds` 此代码的顶部附近获取矩形，然后将其用于调用中画布的宽度和高度 `Scale` 。 当通过调用呈现路径时，此调用会缩放路径的坐标， `DrawPath` 而星号将在画布的右上角进行居中。 它需要向下和向左移动。 这是调用的作业 `Translate` 。 这两个属性 `pathBounds` 大约为–100，因此翻译因素约为100。 由于 `Translate` 调用之后调用，因此 `Scale` 这些值通过缩放因子有效地缩放，因此它们将星形中心移动到画布中心：
 
-[![](scale-images/anisotropicscaling-small.png "Triple screenshot of the Anisotropic Scaling page")](scale-images/anisotropicscaling-large.png#lightbox "Triple screenshot of the Anisotropic Scaling page")
+[!["各向异性缩放" 页的三向屏幕截图](scale-images/anisotropicscaling-small.png)](scale-images/anisotropicscaling-large.png#lightbox ""各向异性缩放" 页的三向屏幕截图")
 
 您可以考虑和调用的另一种方法 `Scale` `Translate` 是通过反向顺序来确定效果：调用会将 `Translate` 路径移动到完全可见，但在画布的左上角。 `Scale`然后，方法会使该星形相对于左上角更大。
 
@@ -295,7 +295,7 @@ using (SKPaint textPaint = new SKPaint
 
 它类似于逻辑，文本根据从返回的文本边界矩形 `MeasureText` （比实际文本稍大）扩展到页面的大小：
 
-[![](scale-images/anisotropictext-small.png "Triple screenshot of the Anisotropic Test page")](scale-images/anisotropictext-large.png#lightbox "Triple screenshot of the Anisotropic Test page")
+[!["各向异性测试" 页的三个屏幕截图](scale-images/anisotropictext-small.png)](scale-images/anisotropictext-large.png#lightbox ""各向异性测试" 页的三个屏幕截图")
 
 如果需要保留图形对象的纵横比，则需要使用 isotropic 缩放。 " **Isotropic 缩放**" 页对11形星形显示了此项。 从概念上讲，在页面中心使用 isotropic 缩放显示图形对象的步骤如下：
 
@@ -344,7 +344,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 该代码还显示星号10次，每次将缩放因子降低10%，并将颜色从红色逐渐更改为蓝色：
 
-[![](scale-images/isotropicscaling-small.png "Triple screenshot of the Isotropic Scaling page")](scale-images/isotropicscaling-large.png#lightbox "Triple screenshot of the Isotropic Scaling page")
+[![Isotropic 缩放页的三向屏幕截图](scale-images/isotropicscaling-small.png)](scale-images/isotropicscaling-large.png#lightbox "Isotropic 缩放页的三向屏幕截图")
 
 ## <a name="related-links"></a>相关链接
 

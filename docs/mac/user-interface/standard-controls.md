@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 9a6e302885570f35bb8323a5504cc9a4d8256ac1
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b9e32fecab7fc5048de319d35ed1a1e55f32b96c
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572099"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929800"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Xamarin 中的标准控件
 
@@ -22,7 +22,7 @@ _本文介绍如何使用 AppKit 应用程序中的标准控件，例如按钮�
 
 AppKit 控件是用于创建 Xamarin Mac 应用程序的用户界面的 UI 元素。 它们由元素组成，如按钮、标签、文本字段、复选框和分段控件，并在用户处理即时操作或可见结果时引发。
 
-[![](standard-controls-images/intro01.png "The example app main screen")](standard-controls-images/intro01.png#lightbox)
+[![示例应用主屏幕](standard-controls-images/intro01.png)](standard-controls-images/intro01.png#lightbox)
 
 在本文中，我们将介绍在 Xamarin. Mac 应用程序中使用 AppKit 控件的基本知识。 强烈建议您先完成[Hello，Mac](~/mac/get-started/hello-mac.md)一文，特别是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)及[输出口和操作](~/mac/get-started/hello-mac.md#outlets-and-actions)部分的简介，因为它涵盖了我们将在本文中使用的重要概念和技巧。
 
@@ -51,7 +51,7 @@ macOS （以前称为 Mac OS X）通过 AppKit 框架提供一组标准用户界
 
 有一个 AppKit 控件子集，其中包含一个显示样式，使其可以包含在窗口的框架区域中。 有关示例，请参阅邮件应用的工具栏：
 
-[![](standard-controls-images/mailapp.png "A Mac Window frame")](standard-controls-images/mailapp.png#lightbox)
+[![Mac 窗口框架](standard-controls-images/mailapp.png)](standard-controls-images/mailapp.png#lightbox)
 
 - 带样式的**圆形按钮**-a `NSButton` `NSTexturedRoundedBezelStyle` 。
 - 带有样式的**纹理舍入控件**-A `NSSegmentedControl` `NSSegmentStyleTexturedRounded` 。
@@ -73,15 +73,15 @@ macOS （以前称为 Mac OS X）通过 AppKit 框架提供一组标准用户界
 
 创建新的 Xamarin Cocoa 应用程序时，默认情况下会获得一个标准空白窗口。 此窗口在 `.storyboard` 项目中自动包含的文件中定义。 若要编辑 windows 设计，请在**解决方案资源管理器**中双击该 `Main.storyboard` 文件：
 
-[![](standard-controls-images/edit01.png "Selecting the Main Storyboard in the Solution Explorer")](standard-controls-images/edit01.png#lightbox)
+[![选择解决方案资源管理器中的主情节提要](standard-controls-images/edit01.png)](standard-controls-images/edit01.png#lightbox)
 
 这将在 Xcode 的 Interface Builder 中打开窗口设计：
 
-[![](standard-controls-images/edit02.png "Editing the storyboard in Xcode")](standard-controls-images/edit02.png#lightbox)
+[![在 Xcode 中编辑情节提要](standard-controls-images/edit02.png)](standard-controls-images/edit02.png#lightbox)
 
 若要创建用户界面，请将 UI 元素（AppKit 控件）从 "**库" 检查器**拖动到 Interface Builder 中的 "**界面编辑器**"。 在下面的示例中，**垂直拆分视图**控件已从**库检查器**中获得药品，并将其放置在 "**界面编辑器**" 中的窗口中：
 
-[![](standard-controls-images/edit03.png "Selecting a Split View from the Library")](standard-controls-images/edit03.png#lightbox)
+[![从库中选择拆分视图](standard-controls-images/edit03.png)](standard-controls-images/edit03.png#lightbox)
 
 有关在 Interface Builder 中创建用户界面的详细信息，请参阅[Xcode 和 Interface Builder 文档简介](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)。
 
@@ -91,21 +91,21 @@ macOS （以前称为 Mac OS X）通过 AppKit 框架提供一组标准用户界
 
 在用户界面中包含控件后 **，可以通过**手动输入值来设置其位置和大小，并控制在父窗口或视图调整大小时，控件自动定位和调整大小的方式：
 
-[![](standard-controls-images/edit04.png "Setting the constraints")](standard-controls-images/edit04.png#lightbox)
+[![设置约束](standard-controls-images/edit04.png)](standard-controls-images/edit04.png#lightbox)
 
 使用 " **Autoresizing** " 框外的**光标** _，将控件_控制到给定的（x，y）位置。 例如： 
 
-[![](standard-controls-images/edit05.png "Editing a constraint")](standard-controls-images/edit05.png#lightbox)
+[![编辑约束](standard-controls-images/edit05.png)](standard-controls-images/edit05.png#lightbox)
 
 指定在调整大小或移动所选控件（在**层次结构视图**  &  **界面编辑器**中）时，该控件将会停滞到窗口或视图的右上或右位置。 
 
 编辑器控件属性的其他元素，如 Height 和 Width：
 
-[![](standard-controls-images/edit06.png "Setting the height")](standard-controls-images/edit06.png#lightbox)
+[![设置高度](standard-controls-images/edit06.png)](standard-controls-images/edit06.png#lightbox)
 
 你还可以使用**对齐编辑器**来控制元素与约束的对齐方式：
 
-[![](standard-controls-images/edit07.png "The Alignment Editor")](standard-controls-images/edit07.png#lightbox)
+[![对齐编辑器](standard-controls-images/edit07.png)](standard-controls-images/edit07.png#lightbox)
 
 > [!IMPORTANT]
 > 不同于 iOS，其中（0，0）是屏幕的左上角，在 macOS （0，0）中是左下角。 这是因为 macOS 使用一个数学坐标系统，其数字值向上和向右增大。 在用户界面上放置 AppKit 控件时，需要考虑这一点。
@@ -197,7 +197,7 @@ namespace AppKit
 
 在上述代码准备就绪后，您可以将您要扩展的基类型的 AppKit 控件拖到设计图面上（在以下示例中为**源列表**），切换到**标识检查器**，并将**自定义类**设置为向目标-C 公开的名称（示例 `SourceListView` ）：
 
-[![](standard-controls-images/edit10.png "Setting a custom class in Xcode")](standard-controls-images/edit10.png#lightbox)
+[![在 Xcode 中设置自定义类](standard-controls-images/edit10.png)](standard-controls-images/edit10.png#lightbox)
 
 <a name="Exposing_Outlets_and_Actions"></a>
 
@@ -205,15 +205,15 @@ namespace AppKit
 
 在 c # 代码中访问 AppKit 控件之前，需要将它公开为**插座**或和**操作**。 若要执行此操作，请在 "**界面层次结构**" 或 "**界面编辑器**" 中选择给定的控件，并切换到 "**助手" 视图**（确保已选择要编辑的窗口的 `.h` ）：
 
-[![](standard-controls-images/edit11.png "Selecting the correct file to edit")](standard-controls-images/edit11.png#lightbox)
+[![选择要编辑的正确文件](standard-controls-images/edit11.png)](standard-controls-images/edit11.png#lightbox)
 
 Control-从 "AppKit" 控件拖动到 "给定 `.h` 文件"，开始创建**插座**或**操作**：
 
-[![](standard-controls-images/edit12.png "Dragging to create an Outlet or Action")](standard-controls-images/edit12.png#lightbox)
+[![拖动以创建插座或操作](standard-controls-images/edit12.png)](standard-controls-images/edit12.png#lightbox)
 
 选择要创建的公开类型，并为**插座**或**操作**指定**名称**： 
 
-[![](standard-controls-images/edit13.png "Configuring the Outlet or Action")](standard-controls-images/edit13.png#lightbox)
+[![配置插座或操作](standard-controls-images/edit13.png)](standard-controls-images/edit13.png#lightbox)
 
 有关使用**输出口**和**操作**的详细信息，请参阅[Xcode 和 Interface Builder 文档简介](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)中的 "[插座和操作](~/mac/get-started/hello-mac.md#outlets-and-actions)" 部分。
 
@@ -225,7 +225,7 @@ Control-从 "AppKit" 控件拖动到 "给定 `.h` 文件"，开始创建**插座
 
 如果你 `SplitViewController.designer.cs` 在**解决方案资源管理器**中选择了，你将能够看到你的**插座**和**操作**在我们的 c # 代码中如何连接：
 
-[![](standard-controls-images/sync01.png "Synchronizing Changes with Xcode")](standard-controls-images/sync01.png#lightbox)
+[![与 Xcode 同步更改](standard-controls-images/sync01.png)](standard-controls-images/sync01.png#lightbox)
 
 请注意该文件中的定义 `SplitViewController.designer.cs` ：
 
@@ -269,7 +269,7 @@ AppKit.NSSplitView SplitView { get; set; }
 
 AppKit 提供了几种可在用户界面设计中使用的按钮类型。 有关详细信息，请参阅 Apple [OS X 人体学接口准则](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)的 "[按钮](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsButtons.html#//apple_ref/doc/uid/20000957-CH48-SW1)" 部分。 
 
-[![](standard-controls-images/buttons01.png "An example of the different button types")](standard-controls-images/buttons01.png#lightbox)
+[![不同按钮类型的示例](standard-controls-images/buttons01.png)](standard-controls-images/buttons01.png#lightbox)
 
 如果已通过**输出口**公开了某个按钮，以下代码将对其进行响应：
 
@@ -310,7 +310,7 @@ DisclosureButton.Activated += (sender, e) => {
 
 若要将按钮设置为默认值，请在 Xcode 的 Interface Builder 中选择它。 接下来，在 "**属性检查器**" 中，选择 "**等效关键字**" 字段并按**Return/enter**键：
 
-[![](standard-controls-images/buttons03.png "Editing the Key Equivalent")](standard-controls-images/buttons03.png#lightbox)
+[![编辑密钥等效项](standard-controls-images/buttons03.png)](standard-controls-images/buttons03.png#lightbox)
 
 同样，可以使用键盘而不是鼠标来分配可用于激活按钮的任何键序列。 例如，在上面的图像中按命令 C 键。
 
@@ -322,7 +322,7 @@ DisclosureButton.Activated += (sender, e) => {
 
 AppKit 提供了几种类型的复选框和单选按钮组，可用于用户界面设计。 有关详细信息，请参阅 Apple [OS X 人体学接口准则](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)的 "[按钮](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsButtons.html#//apple_ref/doc/uid/20000957-CH48-SW1)" 部分。 
 
-[![](standard-controls-images/buttons02.png "An example of the available checkbox types")](standard-controls-images/buttons02.png#lightbox)
+[![可用复选框类型的示例](standard-controls-images/buttons02.png)](standard-controls-images/buttons02.png#lightbox)
 
 复选框和单选按钮（通过**插座**公开）具有状态（如**开启**和**关闭**），可以使用 `State` 属性对枚举进行检查或设置状态 `NSCellStateValue` 。 例如：
 
@@ -349,11 +349,11 @@ partial void SelectCar (Foundation.NSObject sender) {
 
 若要获取单选按钮的集合以作为组并自动处理选定状态，请创建新**操作**并将组中的每个按钮附加到其中：
 
-![](standard-controls-images/buttons04.png "Creating a new Action")
+![创建新操作](standard-controls-images/buttons04.png)
 
 接下来， `Tag` 在**属性检查器**中为每个单选按钮指定唯一的：
 
-![](standard-controls-images/buttons05.png "Editing a radio button tag")
+![编辑单选按钮标记](standard-controls-images/buttons05.png)
 
 保存更改并返回到 Visual Studio for Mac，添加代码以处理所有单选按钮附加到的**操作**：
 
@@ -373,7 +373,7 @@ partial void NumberChanged(Foundation.NSObject sender)
 
 AppKit 提供了几种类型的菜单控件，可用于用户界面设计。 有关详细信息，请参阅 Apple [OS X 人体学接口准则](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)的 "[菜单控件](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlswithMenus.html#//apple_ref/doc/uid/20000957-CH100-SW1)" 部分。 
 
-[![](standard-controls-images/menu01.png "Example menu controls")](standard-controls-images/menu01.png#lightbox)
+[![示例菜单控件](standard-controls-images/menu01.png)](standard-controls-images/menu01.png#lightbox)
 
 <a name="Providing-Menu-Control-Data"></a>
 
@@ -427,7 +427,7 @@ AppKit 提供了几种类型的菜单控件，可用于用户界面设计。 有
 
 对于的下拉类型 `NSPopupButtons` ，第一个菜单项提供控件的标题。 例如： 
 
-[![](standard-controls-images/menu02.png "An example menu control")](standard-controls-images/menu02.png#lightbox)
+[![示例菜单控件](standard-controls-images/menu02.png)](standard-controls-images/menu02.png#lightbox)
 
 若要更改标题，请将此项公开为**插座**，并使用如下所示的代码：
 
@@ -479,7 +479,7 @@ partial void ItemOne (Foundation.NSObject sender) {
 
 AppKit 提供了几种类型的选择控件，可用于用户界面设计。 有关详细信息，请参阅 Apple [OS X 人体学接口准则](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)的 "[选择控件](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsSelection.html#//apple_ref/doc/uid/20000957-CH49-SW1)" 部分。 
 
-[![](standard-controls-images/select01.png "Example selection controls")](standard-controls-images/select01.png#lightbox)
+[![示例选择控件](standard-controls-images/select01.png)](standard-controls-images/select01.png#lightbox)
 
 可以通过两种方法来跟踪选择控件是否具有用户交互，方法是将其作为**操作**公开。 例如：
 
@@ -524,7 +524,7 @@ ImageWell.Image = NSImage.ImageNamed ("tag.png");
 
 AppKit 提供了几种类型的指示器控件，可用于用户界面设计。 有关详细信息，请参阅 Apple [OS X 人体学接口准则](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)的 "[指示器控件](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsIndicators.html#//apple_ref/doc/uid/20000957-CH50-SW1)" 部分。 
 
-[![](standard-controls-images/level01.png "Example indicator controls")](standard-controls-images/level01.png#lightbox)
+[![示例指示器控件](standard-controls-images/level01.png)](standard-controls-images/level01.png#lightbox)
 
 可以通过两种方法来跟踪指示器控件是否具有用户交互，方法是将其公开为**操作**或**插座**，并将**委托**附加到 `Activated` 事件。 例如：
 
@@ -555,7 +555,7 @@ AsyncProgress.StartAnimation (this);
 
 AppKit 提供了几种类型的文本控件，可用于用户界面设计。 有关详细信息，请参阅 Apple [OS X 人体学接口准则](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)的 "[文本控制](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsText.html#//apple_ref/doc/uid/20000957-CH51-SW1)" 部分。 
 
-[![](standard-controls-images/text01.png "Example text controls")](standard-controls-images/text01.png#lightbox)
+[![示例文本控件](standard-controls-images/text01.png)](standard-controls-images/text01.png#lightbox)
 
 对于文本字段（ `NSTextField` ），可以使用以下事件来跟踪用户交互：
 
@@ -587,7 +587,7 @@ SourceWriter 代码已经完全注释，且在可用时，提供了相关链接�
 
 AppKit 提供了几种类型的内容视图，可用于用户界面设计。 有关详细信息，请参阅 Apple [OS X 人体学接口准则](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)的[内容视图](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsView.html#//apple_ref/doc/uid/20000957-CH52-SW1)部分。
 
-[![](standard-controls-images/content01.png "An example content view")](standard-controls-images/content01.png#lightbox)
+[![内容视图示例](standard-controls-images/content01.png)](standard-controls-images/content01.png#lightbox)
 
 <a name="Popovers"></a>
 
@@ -600,16 +600,16 @@ Segue 是一个瞬态 UI 元素，它提供直接与特定控件或屏幕区域�
 1. 打开 `.storyboard` 要添加 segue 的窗口的文件，方法是在**解决方案资源管理器**中双击它。
 2. 将 "**视图控制器**" 从 "**库" 检查器**拖到 "**界面编辑器**"： 
 
-    [![](standard-controls-images/content02.png "Selecting a View Controller from the Library")](standard-controls-images/content02.png#lightbox)
+    [![从库中选择视图控制器](standard-controls-images/content02.png)](standard-controls-images/content02.png#lightbox)
 3. 定义**自定义视图**的大小和布局： 
 
-    [![](standard-controls-images/content04.png "Editing the layout")](standard-controls-images/content04.png#lightbox)
+    [![编辑布局](standard-controls-images/content04.png)](standard-controls-images/content04.png#lightbox)
 4. 按住 ctrl 的同时单击并拖动到**视图控制器**： 
 
-    [![](standard-controls-images/content05.png "Dragging to create a segue")](standard-controls-images/content05.png#lightbox)
+    [![拖动以创建 segue](standard-controls-images/content05.png)](standard-controls-images/content05.png#lightbox)
 5. 从弹出菜单中选择 " **segue** "： 
 
-    [![](standard-controls-images/content06.png "Setting the segue type")](standard-controls-images/content06.png#lightbox)
+    [![设置 segue 类型](standard-controls-images/content06.png)](standard-controls-images/content06.png#lightbox)
 6. 保存更改并返回到 Visual Studio for Mac 以与 Xcode 同步。
 
 <a name="Tab_Views"></a>
@@ -620,11 +620,11 @@ Segue 是一个瞬态 UI 元素，它提供直接与特定控件或屏幕区域�
 
 使用 Xcode 的 Interface Builder 中的选项卡视图时，请使用 "**属性检查器**" 设置选项卡的数目：
 
-[![](standard-controls-images/content08.png "Editing the number of tabs")](standard-controls-images/content08.png#lightbox)
+[![编辑选项卡数](standard-controls-images/content08.png)](standard-controls-images/content08.png#lightbox)
 
 选择**接口层次结构**中的每个选项卡，以设置其**标题**并向其**窗格**添加 UI 元素：
 
-[![](standard-controls-images/content09.png "Editing the tabs in Xcode")](standard-controls-images/content09.png#lightbox)
+[![编辑 Xcode 中的选项卡](standard-controls-images/content09.png)](standard-controls-images/content09.png#lightbox)
 
 <a name="Data_Binding_AppKit_Controls"></a>
 
@@ -638,7 +638,7 @@ Segue 是一个瞬态 UI 元素，它提供直接与特定控件或屏幕区域�
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文详细介绍了如何使用标准的 AppKit 控件，如 Xamarin. Mac 应用程序中的按钮、标签、文本字段、复选框和分段控件。 其中介绍了如何将它们添加到 Xcode 的 Interface Builder 中的用户界面设计中，通过插座和操作将它们公开给代码，并使用 c # 代码中的 AppKit 控件。
 

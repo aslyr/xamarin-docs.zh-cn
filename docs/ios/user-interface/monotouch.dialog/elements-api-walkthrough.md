@@ -137,7 +137,7 @@ public class Task
 
 在 `EntryElement` 和 `DateElement` 事例（或 monotouch.dialog 中的任何数据输入元素）中，对值所做的任何更改都将自动保留。 我们可以通过编辑日期，然后在根屏幕和各种任务详细信息之间来回导航来对此进行演示，详细信息屏幕中的值将保留在其中。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了如何使用 Monotouch.dialog 元素 API 的演练。 其中介绍了使用 MT 创建多屏幕应用程序的基本步骤。D. 包括如何使用 `DialogViewController` 以及如何添加元素和节来创建屏幕。 此外，它还演示了如何使用 MT。D 与一起使用 `UINavigationController` 。
 

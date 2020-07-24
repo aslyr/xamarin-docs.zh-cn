@@ -19,7 +19,7 @@ ms.locfileid: "86937301"
 ---
 # <a name="pixels-and-device-independent-units"></a>像素和与设备无关的单位
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _探索 SkiaSharp 坐标和坐标之间的差异 Xamarin.Forms_
 

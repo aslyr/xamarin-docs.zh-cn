@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: ed58694073f8d04d16cf19840a07f5210f0afb91
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1274fc409cd20b974c44fecd87b6d1b175591710
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574062"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930164"
 ---
 # <a name="working-with-tvos-alerts-in-xamarin"></a>在 Xamarin 中使用 tvOS 警报
 
@@ -20,7 +20,7 @@ _本文介绍如何使用 UIAlertController 在 tvOS 中向用户显示警报消
 
 如果需要 tvOS 用户或请求权限来执行破坏性操作（如删除文件），则可以使用显示警报消息 `UIAlertViewController` ：
 
-[![](alerts-images/alert01.png "An example UIAlertViewController")](alerts-images/alert01.png#lightbox)
+[![示例 UIAlertViewController](alerts-images/alert01.png)](alerts-images/alert01.png#lightbox)
 
 如果除了显示消息以外，还可以向警报添加按钮和文本字段，以允许用户响应操作并提供反馈。
 
@@ -30,7 +30,7 @@ _本文介绍如何使用 UIAlertController 在 tvOS 中向用户显示警报消
 
 如上所述，警报用于使用户注意，并通知用户应用状态或请求反馈。 警报必须包含一个标题，可以有选择地包含一个消息和一个或多个按钮或文本字段。
 
-[![](alerts-images/alert04.png "An example alert")](alerts-images/alert04.png#lightbox)
+[![示例警报](alerts-images/alert04.png)](alerts-images/alert04.png#lightbox)
 
 Apple 提供了以下有关使用警报的建议：
 
@@ -117,11 +117,11 @@ UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ =>
 
 除了向警报添加操作（按钮）以外，还可以向警报添加文本字段，以允许用户填写用户 Id 和密码等信息：
 
-[![](alerts-images/alert02.png "Text Field in an alert")](alerts-images/alert02.png#lightbox)
+[![警报中的文本字段](alerts-images/alert02.png)](alerts-images/alert02.png#lightbox)
 
 如果用户选择文本字段，将显示标准的 tvOS 键盘，使其能够为字段输入值：
 
-[![](alerts-images/alert03.png "Entering text")](alerts-images/alert03.png#lightbox)
+[![输入文本](alerts-images/alert03.png)](alerts-images/alert03.png#lightbox)
 
 以下代码显示一个 "确定"/"取消" 警报，其中包含用于输入值的单个文本字段：
 
@@ -363,7 +363,7 @@ partial void DisplayTextInputAlert (Foundation.NSObject sender) {
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍 `UIAlertController` 如何使用将警报消息显示给 tvOS 中的用户。 首先，它展示了如何显示简单的警报并添加按钮。 接下来，该示例演示如何向警报添加文本字段。 最后，它说明了如何使用 helper 类来减少显示警报所需的重复代码量。
 

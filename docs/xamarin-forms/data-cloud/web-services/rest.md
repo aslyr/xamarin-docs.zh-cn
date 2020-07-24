@@ -10,12 +10,12 @@ ms.date: 05/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8d7ae5eb16b8a94f16b6eca013b4ec7a93f427bd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 972a5ac99ff775ea7301f803c333d8239ae7f193
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84198132"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938185"
 ---
 # <a name="consume-a-restful-web-service"></a>使用 RESTful Web 服务
 
@@ -43,7 +43,7 @@ REST 的简单性有助于使其成为在移动应用程序中访问 web 服务�
 
 运行示例应用程序时，它将连接到本地托管的 REST 服务，如以下屏幕截图所示：
 
-![](rest-images/portal.png "Sample Application")
+![示例应用程序](rest-images/portal.png)
 
 > [!NOTE]
 > 在 iOS 9 及更高版本中，应用传输安全（ATS）在 internet 资源（如应用的后端服务器）和应用之间强制实施安全连接，从而防止意外泄漏敏感信息。 由于默认情况下在为 iOS 9 构建的应用中启用了 ATS，因此所有连接都将受到 ATS 的安全要求。 如果连接不满足这些要求，它们将失败并出现异常。
@@ -54,7 +54,7 @@ REST 的简单性有助于使其成为在移动应用程序中访问 web 服务�
 
 REST 服务使用 ASP.NET Core 编写，并提供以下操作：
 
-|Operation|HTTP 方法|相对 URI|参数|
+|操作|HTTP 方法|相对 URI|参数|
 |--- |--- |--- |--- |
 |获取待办事项的列表|GET|/api/todoitems/|
 |创建新的待办事项|POST|/api/todoitems/|JSON 格式的 TodoItem|

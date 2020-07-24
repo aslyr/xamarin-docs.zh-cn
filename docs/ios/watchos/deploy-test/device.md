@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: cbbf8194505e9caa09587471020026d495f9f99b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: a1ff70349ca7d7b97431b2e3d07aa4c8028c38c0
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569685"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996352"
 ---
 # <a name="testing-on-apple-watch-devices"></a>Apple Watch 设备上的测试
 
@@ -28,19 +28,19 @@ ms.locfileid: "84569685"
 
 在实际 iPhone 或 iPad 上测试 iOS 应用始终需要在开发人员中心注册设备。 设备列表如下所示（单击加号 **+** 以添加新设备）：
 
-![](device-images/devices-sml.png "The device list looks like this")
+![设备列表如下所示](device-images/devices-sml.png)
 
 监视没有什么不同-你现在需要在将应用部署到 Apple Watch 设备之前添加它。 使用**Xcode**查找监视的 UDID （**Windows > 设备**列表）。 当配对电话连接时，还会显示该手表的信息：
 
-[![](device-images/xcode-devices-sml.png "Paired Watch Information")](device-images/xcode-devices.png#lightbox)
+[![配对的手表信息](device-images/xcode-devices-sml.png)](device-images/xcode-devices.png#lightbox)
 
 知道手表的 UDID 后，将其添加到开发人员中心内的设备列表：
 
-![](device-images/devices-watch-sml.png "The Watch's UDID in the device list")
+![设备列表中的手表 UDID](device-images/devices-watch-sml.png)
 
 添加监视设备后，请确保在创建的任何新的或现有的开发或即席预配配置文件中选择该设备：
 
-![](device-images/devices-provisioning.png "Available device list")
+![可用设备列表](device-images/devices-provisioning.png)
 
 别忘了编辑现有的预配配置文件以进行下载并重新安装！
 
@@ -52,17 +52,17 @@ ms.locfileid: "84569685"
 
 如果你有通配符应用 ID，则*只需要一个配置文件*;但是，如果每个项目都有单独的应用 ID，则每个应用 ID 都需要一个预配配置文件：
 
-![](device-images/provisioningprofile-development.png "The Development Provisioning Profile")
+![开发预配配置文件](device-images/provisioningprofile-development.png)
 
 创建所有三个配置文件后，它们将显示在列表中。 请记住下载并安装每个：
 
-![](device-images/provisioningprofiles.png "The available Development Provisioning Profiles")
+![可用的开发预配配置文件](device-images/provisioningprofiles.png)
 
 可以通过选择 "**生成" > "IOS 捆绑签名**" 屏幕，然后选择 "**发布**" 或 "**调试 iPhone** " 配置来验证 "**项目选项**" 中的预配配置文件。
 
 "**预配配置文件**" 列表将显示所有匹配的配置文件，你应在此下拉列表中看到已创建的匹配配置文件：
 
-![](device-images/options-selectprofile.png "The Provisioning Profile list")
+![预配配置文件列表](device-images/options-selectprofile.png)
 
 <a name="testing"></a>
 
@@ -97,7 +97,7 @@ ms.locfileid: "84569685"
 
 若要*暂时*解决此问题，请在 "监视扩展**项目选项" > 生成 > watchOS 生成**"窗口中禁用**增量生成**：
 
-[![](device-images/disable-incremental-sml.png "The Incremental Builds checkbox")](device-images/disable-incremental.png#lightbox)
+[!["增量生成" 复选框](device-images/disable-incremental-sml.png)](device-images/disable-incremental.png#lightbox)
 
 这将在将来的版本中得到修复，之后，可以重新启用增量生成以利用更快的生成时间。
 
@@ -112,7 +112,7 @@ Failed to install [APPNAME]
 Invalid executable/Application Verification Failed
 ```
 
-![](device-images/invalid-application-executable.png "Invalid Application Executable alert")
+![应用程序可执行的警报无效](device-images/invalid-application-executable.png)
 
 如果在应用尝试安装后这些消息出现*在 "监视" 屏幕上*，可能会出现以下几个问题：
 

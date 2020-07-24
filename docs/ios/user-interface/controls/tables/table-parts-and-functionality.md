@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: bf023543d3159f5d5baf7f7036a576b8a746cf9e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 6002e5cc62dfe30c14f21943c690a5a1b15a0c12
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572125"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936586"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>Xamarin 中的表部件和功能
 
@@ -21,12 +21,12 @@ UITableView 可以具有 "分组" 或 "纯" 样式，由以下部分组成：
 - [节标头](#Section_Header)
 - [单元格](#Cells)（如果需要，还可以使用行）
 - [节页脚](#Section_Footer)
-- [索引](#Index)
+- [Index](#Index)
 - [编辑模式](#Edit_Features)（包括 "轻扫到删除" 和拖动控点以更改行顺序） 
 
 这些屏幕截图显示部分行、页眉、页脚、编辑控件和索引的显示方式。
 
- [![](table-parts-and-functionality-images/image1a.png "These screenshots show how section rows, headers, footers, edit controls and the index are displayed")](table-parts-and-functionality-images/image1a.png#lightbox)
+ [![这些屏幕截图显示部分行、页眉、页脚、编辑控件和索引的显示方式](table-parts-and-functionality-images/image1a.png)](table-parts-and-functionality-images/image1a.png#lightbox)
 
 下面更详细地介绍了这些部分：
 
@@ -72,7 +72,7 @@ UITableView 可以具有 "分组" 或 "纯" 样式，由以下部分组成：
 
 用于显示表视图的主要类如下所示：
 
-[![](table-parts-and-functionality-images/classdiagram.png "The primary classes used to display table views are shown here")](table-parts-and-functionality-images/classdiagram.png#lightbox)
+[![此处显示了用于显示表视图的主类](table-parts-and-functionality-images/classdiagram.png)](table-parts-and-functionality-images/classdiagram.png#lightbox)
 
 每个类的用途如下所述：
 

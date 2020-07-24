@@ -19,7 +19,7 @@ ms.locfileid: "86936547"
 ---
 # <a name="consume-an-aspnet-web-service-asmx"></a>使用 ASP.NET Web 服务 (ASMX)
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
 
 _使用该功能，可以生成使用简单对象访问协议（SOAP）发送消息的 web 服务。SOAP 是一种独立于平台和语言的协议，用于生成和访问 web 服务。对于用于实现服务的平台、对象模型或编程语言，使用该服务的使用者不需要了解有关该服务的任何信息。它们只需要了解如何发送和接收 SOAP 消息。本文演示如何从应用程序使用 .ASMX SOAP 服务 Xamarin.Forms 。_
 
@@ -44,7 +44,7 @@ SOAP 可以在许多传输协议（包括 HTTP、SMTP、TCP 和 UDP）上运行�
 
 .ASMX 服务提供以下操作：
 
-|Operation|说明|参数|
+|操作|说明|参数|
 |--- |--- |--- |
 |GetTodoItems|获取待办事项的列表|
 |CreateTodoItem|创建新的待办事项|XML 序列化 TodoItem|

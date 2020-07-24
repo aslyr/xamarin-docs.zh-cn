@@ -10,12 +10,12 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 76724ff17613fcebe35cb68518a1c932eee8aad7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: fb4d1e28fded70005ef23eb4f7540eccd2fba372
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128719"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939303"
 ---
 # <a name="page-lifecycle-events-on-android"></a>Android 上的页面生命周期事件
 
@@ -58,7 +58,7 @@ Xamarin.Forms.Application.Current.On<Android>()
 
 结果是，不会 [`Disappearing`](xref:Xamarin.Forms.Page.Appearing) [`Appearing`](xref:Xamarin.Forms.Page.Appearing) 在应用程序暂停并分别恢复时触发和页面事件，并且如果在应用程序暂停时显示软键盘，则当应用程序恢复时，也会显示该事件：
 
-[![](page-lifecycle-events-images/keyboard-on-resume.png "Lifecycle Events Platform-Specific")](page-lifecycle-events-images/keyboard-on-resume-large.png#lightbox "Lifecycle Events Platform-Specific")
+[![生命周期事件平台特定](page-lifecycle-events-images/keyboard-on-resume.png)](page-lifecycle-events-images/keyboard-on-resume-large.png#lightbox "生命周期事件平台特定")
 
 ## <a name="related-links"></a>相关链接
 

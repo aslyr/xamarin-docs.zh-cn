@@ -10,12 +10,12 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5554341493b52d20c946a4bcfe2d1230e4a02759
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3efcd5cd7c2d00e9d646c937863fd7e55d17f240
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135559"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929865"
 ---
 # <a name="button-padding-and-shadows-on-android"></a>Android 上的按钮填充和阴影
 
@@ -49,7 +49,7 @@ button.On<Android>().SetUseDefaultPadding(true).SetUseDefaultShadow(true);
 
 结果是， Xamarin.Forms 按钮可以使用 Android 按钮的默认填充和阴影值：
 
-![](button-padding-shadow-images/button-padding-and-shadow.png "Default Padding and Shadow Values on Android Buttons")
+![Android 按钮上的默认填充和阴影值](button-padding-shadow-images/button-padding-and-shadow.png)
 
 请注意，在上面的屏幕截图中，每个 [`Button`](xref:Xamarin.Forms.Button) 都具有相同的定义，只不过右侧 `Button` 使用 Android 按钮的默认填充和阴影值。
 

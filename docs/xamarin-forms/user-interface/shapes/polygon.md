@@ -10,16 +10,16 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9c90b0ae4ae3d241dcd6d6d749f220dcfb683693
-ms.sourcegitcommit: 8f6cc5208f675c8cfb645bd9ffb0fc1f8ea71411
+ms.openlocfilehash: 628218f47f318aebe7e4d0ff30efdce9617eb2c6
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85326140"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937639"
 ---
 # <a name="xamarinforms-shapes-polygon"></a>Xamarin.Forms形状：多边形
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![预发布 API](~/media/shared/preview.png "此 API 当前为预发布版本")
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/18/2016
-ms.openlocfilehash: 2259566fc6342a40a8c0a94bacd1c146b6509d52
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e976f5bf0789ca6c703a14b667e75b05a7f47819
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574153"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937847"
 ---
 # <a name="accessibility-on-ios"></a>IOS 上的辅助功能
 
@@ -29,7 +29,7 @@ iOS 为 `AccessibilityLabel` 开发人员提供了和 `AccessibilityHint` 属性
 
 **Properties Pad**包含可访问性部分，允许在 IOS UI 设计器中选择控件时编辑这些设置：
 
-![](accessibility-images/ios-designer-sml.png "Accessibility Settings")
+![辅助功能设置](accessibility-images/ios-designer-sml.png)
 
 **C#**
 
@@ -115,7 +115,7 @@ notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more
 
 通过导航到**一般 > 辅助功能 > VoiceOver**，在 "**设置**" 应用中启用 VoiceOver：
 
-![](accessibility-images/settings-sml.png "Setting the speaking rate")
+![设置语速](accessibility-images/settings-sml.png)
 
 **辅助功能**屏幕还提供了 "缩放"、"文本大小"、"颜色 & 对比度" 选项、"语音设置" 和其他配置选项的设置。
 
@@ -125,12 +125,12 @@ notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more
 
 在模拟器中测试时，可**访问性检查器**可用于帮助验证辅助功能属性和事件是否正确配置。 在 "**设置**" 应用中打开检查器，方法是导航到 "**常规" > 辅助功能 > 辅助功能检查器**：
 
-![](accessibility-images/settings-inspector-sml.png "Enable Accessibility Inspector")
+![启用辅助功能检查器](accessibility-images/settings-inspector-sml.png)
 
 启用后，检查器窗口将始终悬停在 iOS 屏幕上。
 下面是在选择表视图行时的输出示例-请注意，**标签**包含提供行内容以及 "完成" 的句子（即勾选标记可见）：
 
-![](accessibility-images/tableview-a11y-sml.png "Using Accessibility Inspector")
+![使用辅助功能检查器](accessibility-images/tableview-a11y-sml.png)
 
 如果检查器可见，请使用左上角的 "X" 图标来暂时显示和隐藏覆盖区，并启用/禁用辅助功能设置。
 

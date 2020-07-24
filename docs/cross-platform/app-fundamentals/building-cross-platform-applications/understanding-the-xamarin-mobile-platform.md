@@ -6,40 +6,40 @@ ms.assetid: FBCEF258-D3D8-A420-79ED-3AAB4A7308E4
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: e10e9f5330de3226fb0f08051ab135ea58900fe7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b010af4794c31e3dd3ccb85a81c9c05bcb6aec55
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016866"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930801"
 ---
 # <a name="part-1--understanding-the-xamarin-mobile-platform"></a>第1部分–了解 Xamarin Mobile 平台
 
 Xamarin 平台由多个元素组成，这些元素允许你开发适用于 iOS 和 Android 的应用程序：
 
-- language-允许使用熟悉的语法和复杂功能，如泛型、LINQ 和并行任务库。 **C#**
+- **C # 语言**–允许使用熟悉的语法和复杂功能，如泛型、LINQ 和并行任务库。
 - **Mono .net framework** –提供 Microsoft .net framework 中广泛功能的跨平台实现。
 - **编译器**–根据平台生成本机应用（例如 iOS）或集成的 .NET 应用程序和运行时（例如 Android）。 编译器还会为移动部署执行许多优化，如链接到不使用的代码。
 - **IDE 工具**– Mac 和 Windows 上的 Visual Studio 允许您创建、生成和部署 Xamarin 项目。
 
-此外，由于基础语言是C# .net framework，因此可将项目构建为共享还可部署到 Windows Phone 的代码。
+此外，由于基础语言是 c # （.NET framework），因此可以将项目构建为共享还可部署到 Windows Phone 的代码。
 
 ## <a name="under-the-hood"></a>在后台
 
-虽然 Xamarin 允许你在中C#编写应用程序，并在多个平台上共享相同的代码，但每个系统上的实际实现都非常不同。
+虽然 Xamarin 允许你用 c # 编写应用程序，并在多个平台上共享相同的代码，但每个系统上的实际实现非常不同。
 
 ## <a name="compilation"></a>编译
 
-C#源在每个平台上以非常不同的方式为本机应用程序：
+C # 源以非常不同的方式在每个平台上实现本机应用：
 
-- **iOS** – C#预先（AOT）编译为 ARM 汇编语言。 .NET framework 包括在内，在链接过程中将去除未使用的类，以减少应用程序大小。 Apple 不允许在 iOS 上生成运行时代码，因此某些语言功能不可用（请参阅[Xamarin IOS 限制](~/ios/internals/limitations.md)）。
-- **Android** – C#编译为 IL 并打包为 MonoVM + JIT'ing。 在链接期间，框架中未使用的类将被去除。 应用程序并行运行，并使用 Java/ART （Android 运行时），并通过 JNI 与本机类型交互（请参阅[Xamarin Android 限制](~/android/internals/limitations.md)）。
-- **Windows** – C#编译为 IL 并由内置运行时执行，不需要 Xamarin 工具。 使用 Xamarin 指南设计 Windows 应用程序可以更轻松地在 iOS 和 Android 上重复使用代码。
+- **iOS** – c # 预先（AOT）编译为 ARM 汇编语言。 .NET framework 包括在内，在链接过程中将去除未使用的类，以减少应用程序大小。 Apple 不允许在 iOS 上生成运行时代码，因此某些语言功能不可用（请参阅[Xamarin IOS 限制](~/ios/internals/limitations.md)）。
+- **Android** – c # 编译为 IL 并打包为 MonoVM + JIT'ing。 在链接期间，框架中未使用的类将被去除。 应用程序并行运行，并使用 Java/ART （Android 运行时），并通过 JNI 与本机类型交互（请参阅[Xamarin Android 限制](~/android/internals/limitations.md)）。
+- **Windows** – c # 编译为 IL 并由内置运行时执行，不需要 Xamarin 工具。 使用 Xamarin 指南设计 Windows 应用程序可以更轻松地在 iOS 和 Android 上重复使用代码。
   请注意，通用 Windows 平台还具有一个 **.NET Native**选项，此选项的行为类似于 XAMARIN 的 AOT 编译。
 
 [Xamarin](~/ios/deploy-test/linker.md)和[xamarin](~/android/deploy-test/linker.md)的链接器文档提供了有关编译过程的此部分的详细信息。
 
-运行时 "编译" –应避免用 `System.Reflection.Emit` 动态生成代码。
+运行时 "编译" –应避免生成用–动态生成的代码 `System.Reflection.Emit` 。
 
 Apple 内核可防止在 iOS 设备上生成动态代码，因此，在 Xamarin 中即时发出代码将无法正常运行。 同样，动态语言运行时功能也不能与 Xamarin 工具一起使用。
 
@@ -47,15 +47,15 @@ Apple 内核可防止在 iOS 设备上生成动态代码，因此，在 Xamarin 
 
 ## <a name="platform-sdk-access"></a>平台 SDK 访问
 
-Xamarin 使用熟悉C#的语法使平台特定 SDK 提供的功能易于访问：
+Xamarin 使平台特定 SDK 提供的功能可通过熟悉的 c # 语法轻松访问：
 
-- **ios** – Xamarin 公开 Apple 的 CocoaTouch SDK 框架作为命名空间，你可以从C#这些命名空间进行引用。 例如，可以将包含所有用户界面控件的 UIKit 框架包含在一个简单的 `using UIKit;` 语句中。
-- **Android** – Xamarin 将 Google 的 Android SDK 公开为命名空间，因此你可以使用 using 语句（如 `using Android.Views;` 访问用户界面控件）引用受支持的 SDK 的任何部分。
+- **ios** – Xamarin 将 Apple 的 CocoaTouch SDK 框架公开为可从 c # 引用的命名空间。 例如，包含所有用户界面控件的 UIKit 框架可以包含在一个简单的 `using UIKit;` 语句中。
+- **Android** – Xamarin 将 Google 的 Android SDK 公开为命名空间，因此你可以使用 using 语句（如） `using Android.Views;` 访问用户界面控件，来引用支持的 SDK 的任何部分。
 - **Windows** -windows 应用是使用 Visual Studio 在 windows 上生成的。 项目类型包括 Windows 窗体、WPF、WinRT 和通用 Windows 平台（UWP）。
 
 ## <a name="seamless-integration-for-developers"></a>面向开发人员的无缝集成
 
-Xamarin 的优点是，尽管在幕后，Xamarin 和 Xamarin （与 Microsoft 的 Windows Sdk 结合在一起）提供了一个无缝的体验，可以在所有三C#个平台上重复使用这些代码。
+Xamarin 的优点是，尽管本质上存在差异，Xamarin 和 Xamarin （与 Microsoft 的 Windows Sdk 结合使用）为编写可跨所有三个平台重复使用的 c # 代码提供了无缝体验。
 
 业务逻辑、数据库使用情况、网络访问和其他常见函数可以一次写入并在每个平台上重复使用，从而为作为本机应用程序的外观和执行的平台特定用户界面提供基础。
 
@@ -86,11 +86,11 @@ Android 应用程序开发需要安装 Java 和 Android Sdk。 这些工具提�
 
 Xamarin 提供了一个统一的安装程序，该安装程序将使用必备的 Java、Android 和 Xamarin 工具（包括用于屏幕布局的可视化设计器）来配置系统。 有关详细说明，请参阅[Xamarin Android 安装指南](~/android/get-started/installation/index.md)。
 
-你可以在实际设备上构建和测试应用程序，而无需使用 Google 的任何许可证，但是，若要通过商店（例如 Google Play、Amazon 或 Barnes &amp; Noble）分发应用程序，可能会向操作员收取注册费。 Google Play 将立即发布你的应用程序，而其他存储的审批过程类似于 Apple。
+你可以在实际设备上构建和测试应用程序，而无需使用 Google 的任何许可证，但是，若要通过商店（例如 Google Play、Amazon 或 Barnes Noble）分发应用程序， &amp; 可能会向操作员收取注册费。 Google Play 将立即发布你的应用程序，而其他存储的审批过程类似于 Apple。
 
 ### <a name="windows"></a>Windows
 
-Windows 应用（WinForms、WPF 或 UWP）是通过 Visual Studio 生成的。 它们不会直接使用 Xamarin。 但是， C#可以在 Windows、IOS 和 Android 之间共享代码。
+Windows 应用（WinForms、WPF 或 UWP）是通过 Visual Studio 生成的。 它们不会直接使用 Xamarin。 但是，c # 代码可以在 Windows、iOS 和 Android 之间共享。
 请访问 Microsoft 的[开发人员中心](https://developer.microsoft.com/)，了解 Windows 开发所需的工具。
 
 ## <a name="creating-the-user-interface-ui"></a>创建用户界面 (UI)
@@ -115,7 +115,7 @@ Windows 应用（WinForms、WPF 或 UWP）是通过 Visual Studio 生成的。 �
 
 这些屏幕截图显示每个平台上可用的视觉屏幕设计器：
 
- [![](understanding-the-xamarin-mobile-platform-images/designer-all1.png "These screenshots show the visual screen designers available on each platform")](understanding-the-xamarin-mobile-platform-images/designer-all1.png#lightbox)
+ [![这些屏幕截图显示每个平台上可用的视觉屏幕设计器](understanding-the-xamarin-mobile-platform-images/designer-all1.png)](understanding-the-xamarin-mobile-platform-images/designer-all1.png#lightbox)
 
 在所有情况下，都可以在代码中引用以可视化方式创建的元素。
 
@@ -137,13 +137,13 @@ Windows 应用（WinForms、WPF 或 UWP）是通过 Visual Studio 生成的。 �
 
 ## <a name="library-and-code-re-use"></a>库和代码重复使用
 
-Xamarin 平台允许跨所有平台重复使用现有C#代码，并将为每个平台本机编写的库集成。
+Xamarin 平台允许跨所有平台重复使用现有的 c # 代码，以及将为每个平台本机编写的库集成。
 
-### <a name="c-source-and-libraries"></a>C#源和库
+### <a name="c-source-and-libraries"></a>C # 源和库
 
-由于 Xamarin 产品使用C#和 .net framework，因此可以在 Xamarin 或 xamarin 项目中重复使用许多现有源代码（开放源代码和内部项目）。 通常，只需将源添加到 Xamarin 解决方案，即可立即工作。 如果使用了不受支持的 .NET framework 功能，可能需要进行一些调整。
+由于 Xamarin 产品使用 c # 和 .NET framework，因此可以在 Xamarin 或 Xamarin 项目中重复使用许多现有源代码（开放源代码和内部项目）。 通常，只需将源添加到 Xamarin 解决方案，即可立即工作。 如果使用了不受支持的 .NET framework 功能，可能需要进行一些调整。
 
-可在C# Xamarin 或 xamarin 中使用的源示例包括： SQLITE-NET、Newtonsoft.json 和 SharpZipLib。
+可在 Xamarin 或 Xamarin 中使用的 c # 源代码的示例包括： SQLite-NET、NewtonSoft.JSON 和 SharpZipLib。
 
 ### <a name="objective-c-bindings--binding-projects"></a>目标-C 绑定 + 绑定项目
 
@@ -159,7 +159,7 @@ Xamarin 支持在 Xamarin 中使用现有的 Java 库。 有关如何使用的�
 
 ### <a name="c-via-pinvoke"></a>C via PInvoke
 
-"平台调用" 技术（P/Invoke）允许托管代码（C#）调用本机库中的方法，并支持本机库回调到托管代码。
+"平台调用" 技术（P/Invoke）允许托管代码（c #）调用本机库中的方法，并支持本机库回调到托管代码。
 
 例如， [SQLITE 网络](https://github.com/praeclarum/sqlite-net)库使用如下所示的语句：
 
@@ -169,8 +169,8 @@ public static extern Result Open (string filename, out IntPtr db);
 ```
 
 这将绑定到 iOS 和 Android 中的本机 C 语言 SQLite 实现。
-熟悉现有 C API 的开发人员可以构建一组C#类，以映射到本机 API 并利用现有的平台代码。 在 Xamarin 中提供了用于[链接本机库](~/ios/platform/native-interop.md)的文档，类似的原则适用于 xamarin。
+熟悉现有 C API 的开发人员可以构造一组 c # 类，以便映射到本机 API 并利用现有的平台代码。 在 Xamarin 中提供了用于[链接本机库](~/ios/platform/native-interop.md)的文档，类似的原则适用于 xamarin。
 
-### <a name="c-via-cppsharp"></a>C++via CppSharp
+### <a name="c-via-cppsharp"></a>C + + via CppSharp
 
-Miguel 介绍他[博客](https://tirania.org/blog/archive/2011/Dec-19.html)上的 CXXI （现在称为[CppSharp](https://github.com/mono/CppSharp)）。 直接绑定到C++库的另一种方法是创建 C 包装，并通过 P/Invoke 绑定到。
+Miguel 介绍他[博客](https://tirania.org/blog/archive/2011/Dec-19.html)上的 CXXI （现在称为[CppSharp](https://github.com/mono/CppSharp)）。 直接绑定到 c + + 库的另一种方法是创建 C 包装，并通过 P/Invoke 绑定到该包装。

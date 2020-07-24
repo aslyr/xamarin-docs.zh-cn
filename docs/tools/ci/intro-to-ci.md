@@ -6,12 +6,12 @@ ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
 author: davidortinau
 ms.author: daortin
 ms.date: 07/19/2017
-ms.openlocfilehash: 2862f05f2d183c9345d2b92268ddf2101cc2492e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 21c8cba39031e133d96ed6a5ebeeab87f945af51
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029806"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938234"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>与 Xamarin 持续集成简介
 
@@ -32,13 +32,13 @@ _持续集成是一种软件工程实践，在项目的版本控制存储库中�
 
 下图说明了此过程：
 
-[![](intro-to-ci-images/intro01-small.png "This diagram illustrates this process")](intro-to-ci-images/intro01.png#lightbox)
+[![此图说明了此过程](intro-to-ci-images/intro01-small.png)](intro-to-ci-images/intro01.png#lightbox)
 
 移动应用为持续集成带来了独特的挑战。 应用可能需要仅在物理设备上可用的传感器，如 GPS 或相机。 此外，模拟器或仿真程序只是硬件的近似值，可能会隐藏或掩盖问题。 最终，需要在真实硬件上测试移动应用，以确保它真正可供客户使用。
 
 [App Center 测试](https://docs.microsoft.com/appcenter/test-cloud)通过直接在数百台物理设备上测试应用来解决此特定问题。 开发人员编写自动化的验收测试，以实现功能强大的 UI 测试。 将这些测试上传到 App Center 后，CI 服务器就可以将它们作为 CI 过程的一部分自动运行，如下图所示：
 
-[![](intro-to-ci-images/intro02-small.png "Once these tests are uploaded to App Center, the CI server can run them automatically as part of a CI process as shown in this diagram")](intro-to-ci-images/intro02.png#lightbox)
+[![将这些测试上传到 App Center 后，CI 服务器就可以将它们作为 CI 过程的一部分自动运行，如下图所示](intro-to-ci-images/intro02-small.png)](intro-to-ci-images/intro02.png#lightbox)
 
 ## <a name="components-of-continuous-integration"></a>持续集成的组件
 
@@ -50,7 +50,7 @@ _持续集成是一种软件工程实践，在项目的版本控制存储库中�
 
 [Azure DevOps](https://azure.microsoft.com/services/devops/)和[Team Foundation Server](https://visualstudio.microsoft.com/tfs/) （TFS）是 Microsoft 的协作工具，用于持续集成生成服务、任务跟踪、敏捷规划和报告工具和版本控制。 使用版本控制，Azure DevOps 和 TFS 可以使用其自己的系统（Team Foundation 版本控制或 TFVC），也可以使用 GitHub 上托管的项目。
 
-- Azure DevOps 通过云提供服务。 其主要优点是不需要专用的硬件或基础结构，可以通过 web 浏览器从任何位置进行访问，也可以通过常用的开发工具（如 Visual Studio）进行访问，使其成为地理上分散的团队的吸引力. 对于五个开发人员或更少的团队而言，它是免费的，在此之后，可以购买更多的许可证来容纳不断增长的团队。
+- Azure DevOps 通过云提供服务。 其主要优点是不需要专用的硬件或基础结构，可以通过 web 浏览器从任何位置进行访问，也可以通过常用的开发工具（如 Visual Studio）进行访问，使其成为地理上分散的团队的吸引力。 对于五个开发人员或更少的团队而言，它是免费的，在此之后，可以购买更多的许可证来容纳不断增长的团队。
 - TFS 专用于本地 Windows 服务器，并通过本地网络或与该网络的 VPN 连接进行访问。 其主要优点是你完全控制生成服务器的配置，并可以安装所需的任何其他软件或服务。 TFS 具有适用于小型团队的免费入门级速成版。
 
 TFS 和 Azure DevOps 与 Visual Studio 紧密集成，使开发人员能够轻松地在单个 IDE 中执行许多版本控制和 CI 任务。 Eclipse 的 Team Explorer Everywhere 插件（请参阅下文）也可用。 Visual Studio for Mac 具有[可用的 TFVC 预览](/visualstudio/mac/tf-version-control/)。
@@ -97,7 +97,7 @@ Git 可以通过 web 浏览器或在 Linux、Mac OSX 和 Windows 上运行的[GU
 
 下图说明了此拓扑：
 
-[![](intro-to-ci-images/intro03-small.png "This diagram illustrates this topography")](intro-to-ci-images/intro03.png#lightbox)
+[![此图说明了此拓扑](intro-to-ci-images/intro03-small.png)](intro-to-ci-images/intro03.png#lightbox)
 
 还可以将本地 TFS 服务器链接到 Azure DevOps 项目，以便将 Azure DevOps 构建委托给本地服务器。 有关详细信息，请参阅[生成和发布代理](https://docs.microsoft.com/azure/devops/pipelines/agents/agents/)。
 
@@ -105,13 +105,13 @@ Git 可以通过 web 浏览器或在 Linux、Mac OSX 和 Windows 上运行的[GU
 
 如果使用 Jenkins 生成应用，则可以将代码存储在 Azure DevOps 或 Team Foundation Server 中，并继续为 CI 生成使用 Jenkins。 当你将代码推送到你的团队项目的 Git 存储库或将代码签入 TFVC 时，可以触发 Jenkins 生成。 有关详细信息，请参阅[Jenkins With Azure DevOps](https://docs.microsoft.com/azure/devops/service-hooks/services/jenkins)。
 
-[![](intro-to-ci-images/intro04-small.png "If you use Jenkins to build your apps, you can store your code in Azure DevOps or Team Foundation Server and continue to use Jenkins for your CI builds")](intro-to-ci-images/intro04.png#lightbox)
+[![如果使用 Jenkins 生成应用，则可以将代码存储在 Azure DevOps 或 Team Foundation Server 中，并继续对 CI 生成使用 Jenkins](intro-to-ci-images/intro04-small.png)](intro-to-ci-images/intro04.png#lightbox)
 
 #### <a name="git-and-jenkins"></a>Git 和 Jenkins
 
 另一种常见的 CI 环境可以是完整的操作系统 X。 此方案涉及使用 Git 进行源代码控制，并使用 Jenkins 生成服务器。 这两个在安装 Visual Studio for Mac 的单个 Mac OS X 计算机上运行。 这非常类似于上一节中讨论的 Azure DevOps + Jenkins 环境：
 
-[![](intro-to-ci-images/intro05-small.png "This is very similar to the Azure DevOps + Jenkins environment discussed in the previous section")](intro-to-ci-images/intro05.png#lightbox)
+[![这非常类似于上一节中讨论的 Azure DevOps + Jenkins 环境](intro-to-ci-images/intro05-small.png)](intro-to-ci-images/intro05.png#lightbox)
 
 > [!IMPORTANT]
 > **[Microsoft 不支持](~/cross-platform/troubleshooting/questions/xamarin-jenkins.md)Jenkins。**

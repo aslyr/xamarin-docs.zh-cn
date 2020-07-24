@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 11/12/2018
-ms.openlocfilehash: c9e5b2504fd8af8b4232eea0dcf39d9c4760b555
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a552b7c395634c264114a378ee3f5c67d164d9f3
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73010606"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937951"
 ---
 # <a name="file-system-access-in-xamarinios"></a>Xamarin 中的文件系统访问
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/ios-samples/filesystemsamplecode)
 
-您可以使用 Xamarin 和 *.Net 基类库（BCL）* 中的 `System.IO` 类来访问 iOS 文件系统。 `File` 类可以创建、删除和读取文件，`Directory` 类可以创建、删除或枚举目录的内容。 你还可以使用 `Stream` 子类，这可以提供对文件操作（如文件中的压缩或位置搜索）的更大控制。
+您可以使用 Xamarin 和 `System.IO` *.Net 基类库（BCL）* 中的类来访问 iOS 文件系统。 `File` 类可以创建、删除和读取文件，`Directory` 类可以创建、删除或枚举目录的内容。 你还可以使用 `Stream` 子类，该子类可以更好地控制文件操作（如文件中的压缩或位置搜索）。
 
 iOS 对应用程序使用文件系统执行的操作施加了一些限制，以保留应用程序数据的安全性，并保护 malignant 应用程序中的用户。 这些限制是*应用程序沙箱*的一部分–一组规则，用于限制应用程序访问文件、首选项、网络资源、硬件等。应用程序只能在其主目录（安装位置）中读取和写入文件;它无法访问其他应用程序的文件。
 
@@ -30,7 +30,7 @@ iOS 还具有一些特定于文件系统的功能：某些目录需要在备份�
 
 ## <a name="general-file-access"></a>常规文件访问
 
-Xamarin 允许你使用 .NET `System.IO` 类在 iOS 上执行文件系统操作。
+Xamarin 允许在 `System.IO` ios 上使用 .net 类进行文件系统操作。
 
 以下代码片段演示了一些常见的文件操作。 在本文的示例应用程序中，你将在**SampleCode.cs**文件中找到这些文件。
 
@@ -66,7 +66,7 @@ using (TextReader reader = new StreamReader("./TestData/test.xml")) {
 }
 ```
 
-有关详细信息，请参阅有关[system.web](xref:System.Xml)和[序列化](xref:System.Xml.Serialization)的文档。 请参阅链接器上的[Xamarin 文档](~/ios/deploy-test/linker.md)–通常需要将 `[Preserve]` 特性添加到要序列化的类。
+有关详细信息，请参阅[System.Xml](xref:System.Xml)和[序列化](xref:System.Xml.Serialization)的文档。 请参阅链接器上的[Xamarin 文档](~/ios/deploy-test/linker.md)–通常需要将 `[Preserve]` 属性添加到要序列化的类。
 
 ### <a name="creating-files-and-directories"></a>创建文件和目录
 
@@ -94,9 +94,9 @@ Directory.CreateDirectory(directoryname);
 
 [Json.NET](http://www.newtonsoft.com/json)是一种高性能 Json 框架，适用于 Xamarin，可在 NuGet 上获取。 将 NuGet 包添加到应用程序项目，并在 Visual Studio for Mac 中使用 "**添加 nuget** "：
 
-[![](file-system-images/json01.png "Adding the NuGet package to the applications project")](file-system-images/json01.png#lightbox)
+[![将 NuGet 包添加到应用程序项目](file-system-images/json01.png)](file-system-images/json01.png#lightbox)
 
-接下来，添加一个类，用作序列化/反序列化的数据模型（在本例中为 `Account.cs`）：
+接下来，添加一个类，用作序列化/反序列化的数据模型（在本例中为 `Account.cs` ）：
 
 ```csharp
 using System;
@@ -119,7 +119,7 @@ namespace FileSystem
 }
 ```
 
-最后，创建 `Account` 类的实例，将其序列化为 json 数据并将其写入文件：
+最后，创建类的实例 `Account` ，将其序列化为 json 数据并将其写入文件：
 
 ```csharp
 // Create a new record
@@ -141,7 +141,7 @@ File.WriteAllText(filename, json);
 
 有关使用 .NET 应用程序中的 json 数据的详细信息，请参阅 Json。 NET 的[文档](https://www.newtonsoft.com/json/help)。
 
-## <a name="special-considerations"></a>特殊的注意事项
+## <a name="special-considerations"></a>特殊注意事项
 
 尽管 Xamarin 和 .NET 文件操作之间的相似之处，但在一些重要方面，iOS 和 Xamarin 不同于 .NET。
 
@@ -149,11 +149,11 @@ File.WriteAllText(filename, json);
 
 默认情况下，如果你将文件添加到项目，则它不会包含在最终程序集中，因此不会提供给你的应用程序使用。 若要将文件包含在程序集中，必须使用一个名为 Content 的特殊生成操作对其进行标记。
 
-若要标记要包含的文件，请右键单击该文件，然后在 Visual Studio for Mac 中选择 "**生成操作" &gt; 内容**。 您还可以在文件的**属性**表中更改 "**生成" 操作**。
+若要标记要包含的文件，请右键单击该文件，然后选择 "Visual Studio for Mac 中的"**生成操作 &gt; 内容**"。 您还可以在文件的**属性**表中更改 "**生成" 操作**。
 
-### <a name="case-sensitivity"></a>区分大小写
+### <a name="case-sensitivity"></a>事例敏感性
 
-必须了解 iOS 文件系统*区分大小写*。 区分大小写意味着文件和目录名称必须完全匹配– readme.txt**和 readme.txt 将被**视为**不同的文件名**。
+必须了解 iOS 文件系统*区分大小写*。 区分大小写意味着文件和目录名称必须完全匹配– **README.txt**和**readme.txt**被视为不同的文件名。
 
 对于更熟悉 Windows 文件系统（不*区分大小写*）的 .net 开发人员而言，这可能会造成混淆–**文件**、**文件**和**文件**都将引用相同的目录。
 
@@ -165,7 +165,7 @@ File.WriteAllText(filename, json);
 
 iOS 使用正斜杠 "/" 作为路径分隔符（这不同于 Windows，后者使用反斜杠 "\"）。
 
-由于这种混乱的区别，因此最好使用 `System.IO.Path.Combine` 方法，该方法可调整当前平台，而不是硬编码特定路径分隔符。 这是一个简单的步骤，使你的代码更易于移植到其他平台。
+由于这种混乱的差异，因此最好使用为 `System.IO.Path.Combine` 当前平台调整的方法，而不是硬编码特定路径分隔符。 这是一个简单的步骤，使你的代码更易于移植到其他平台。
 
 ## <a name="application-sandbox"></a>应用程序沙盒
 
@@ -186,7 +186,7 @@ iOS 使用正斜杠 "/" 作为路径分隔符（这不同于 Windows，后者使
 
 右键单击此图标，然后选择 "**显示包内容**"，浏览应用程序包目录的内容。 内容与常规目录的内容一样，如下所示：
 
-[![应用程序包的内容](file-system-images/45-bundle-sml.png)](file-system-images/45-bundle.png#lightbox)
+[![应用捆绑包的内容](file-system-images/45-bundle-sml.png)](file-system-images/45-bundle.png#lightbox)
 
 应用程序捆绑包是在模拟器上或在测试期间在设备上安装的，最终会将其提交到 Apple 以包含在 App Store 中。
 
@@ -198,22 +198,22 @@ iOS 使用正斜杠 "/" 作为路径分隔符（这不同于 Windows，后者使
 
 &nbsp;
 
-|目录|描述|
+|Directory|说明|
 |---|---|
-|[ApplicationName] app.config/|**在 iOS 7 及更早版本中**，这是存储应用程序可执行文件的 `ApplicationBundle` 目录。 在应用程序中创建的目录结构存在于此目录中（例如，已在 Visual Studio for Mac 项目中标记为资源的图像和其他文件类型）。<br /><br />如果需要访问应用程序捆绑中的内容文件，可通过 `NSBundle.MainBundle.BundlePath` 属性获取该目录的路径。|
-|文档|使用此目录来存储用户文档和应用程序数据文件。<br /><br />此目录的内容可以通过 iTunes 文件共享提供给用户（尽管默认情况下禁用此功能）。 向 info.plist 文件添加一个 `UIFileSharingEnabled` 的布尔键，以允许用户访问这些文件。<br /><br />即使应用程序不会立即启用文件共享，也应避免将应在此目录中的用户隐藏的文件（如数据库文件，除非你打算共享这些文件）。 如果敏感文件保持隐藏状态，则在将来的版本中启用文件共享时，这些文件将不会公开（并可能被 iTunes 移动、修改或删除）。<br /><br /> 可以使用 `Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments)` 方法获取应用程序的文档目录路径。<br /><br />此目录的内容由 iTunes 备份。|
+|[ApplicationName] app.config/|**在 iOS 7 及更早版本中**，这是 `ApplicationBundle` 存储应用程序可执行文件的目录。 在应用程序中创建的目录结构存在于此目录中（例如，已在 Visual Studio for Mac 项目中标记为资源的图像和其他文件类型）。<br /><br />如果需要访问应用程序捆绑中的内容文件，则可以通过属性访问此目录的路径 `NSBundle.MainBundle.BundlePath` 。|
+|文档|使用此目录来存储用户文档和应用程序数据文件。<br /><br />此目录的内容可以通过 iTunes 文件共享提供给用户（尽管默认情况下禁用此功能）。 将一个 `UIFileSharingEnabled` 布尔键添加到 info.plist 文件，以允许用户访问这些文件。<br /><br />即使应用程序不会立即启用文件共享，也应避免将应在此目录中的用户隐藏的文件（如数据库文件，除非你打算共享这些文件）。 如果敏感文件保持隐藏状态，则在将来的版本中启用文件共享时，这些文件将不会公开（并可能被 iTunes 移动、修改或删除）。<br /><br /> 可以使用 `Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments)` 方法获取应用程序的文档目录路径。<br /><br />此目录的内容由 iTunes 备份。|
 |类库|库目录是存储不是由用户直接创建的文件（如数据库或其他应用程序生成的文件）的好地方。 此目录的内容绝不会通过 iTunes 公开给用户。<br /><br />可以在库中创建自己的子目录;但是，这里已经有一些系统创建的目录，你应该注意这些目录，包括首选项和缓存。<br /><br />此目录的内容（缓存子目录除外）由 iTunes 备份。 将备份您在库中创建的自定义目录。|
-|库/首选项/|特定于应用程序的首选项文件存储在此目录中。 不要直接创建这些文件。 请改用 `NSUserDefaults` 类。<br /><br />此目录的内容由 iTunes 备份。|
+|库/首选项/|特定于应用程序的首选项文件存储在此目录中。 不要直接创建这些文件。 而应使用 `NSUserDefaults` 类。<br /><br />此目录的内容由 iTunes 备份。|
 |库/缓存/|缓存目录是存储可以帮助你的应用程序运行，但可以轻松重新创建的数据文件的好地方。 应用程序应根据需要创建和删除这些文件，并在必要时重新创建这些文件。 iOS 5 还可能会删除这些文件（在较低的存储环境下），但它不会在应用程序运行时执行此操作。<br /><br />ITunes 不会备份此目录的内容，这意味着，如果用户还原设备，则不会显示此目录的内容，并且在安装更新版本的应用程序后可能不会显示这些内容。<br /><br />例如，如果应用程序无法连接到网络，则可以使用 cache 目录来存储数据或文件，以提供良好的脱机体验。 应用程序可以在等待网络响应时快速保存和检索此数据，但不需要进行备份，也可以在还原或版本更新后轻松恢复或重新创建。|
-|tmp|应用程序可以在此目录中存储只需要很短时间的临时文件。 若要节省空间，应在不再需要文件时将其删除。 当应用程序未运行时，操作系统也可能会删除此目录中的文件。<br /><br />ITunes 不会备份此目录的内容。<br /><br />例如，tmp 目录可用于存储下载的用于向用户显示的临时文件（如 Twitter 头像或电子邮件附件），但在查看这些文件后，可以将其删除（如果以后需要，还可以将其下载）.|
+|tmp|应用程序可以在此目录中存储只需要很短时间的临时文件。 若要节省空间，应在不再需要文件时将其删除。 当应用程序未运行时，操作系统也可能会删除此目录中的文件。<br /><br />ITunes 不会备份此目录的内容。<br /><br />例如，tmp 目录可用于存储下载的用于向用户显示的临时文件（如 Twitter 头像或电子邮件附件），但在查看这些文件后，可以将其删除（如果以后需要，还会被删除）。|
 
 此屏幕截图显示查找器窗口中的目录结构：
 
-[![](file-system-images/08-library-directory.png "This screenshot shows the directory structure in a Finder window")](file-system-images/08-library-directory.png#lightbox)
+[![此屏幕截图显示查找器窗口中的目录结构](file-system-images/08-library-directory.png)](file-system-images/08-library-directory.png#lightbox)
 
 ### <a name="accessing-other-directories-programmatically"></a>以编程方式访问其他目录
 
-早期的目录和文件示例访问 `Documents` 目录。 若要写入另一个目录，必须使用 ".." 语法构造路径，如下所示：
+前面的目录和文件示例访问了 `Documents` 目录。 若要写入另一个目录，必须使用 ".." 语法构造路径，如下所示：
 
 ```csharp
 var documents = Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments);
@@ -231,7 +231,7 @@ var directoryname = Path.Combine (library, "NewLibraryDirectory");
 Directory.CreateDirectory(directoryname);
 ```
 
-可以按如下方式构造 `Caches` 和 `tmp` 目录的路径：
+可以按如下 `Caches` 方式 `tmp` 构造和目录的路径：
 
 ```csharp
 var documents = Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments);
@@ -241,7 +241,7 @@ var tmp = Path.Combine (documents, "..", "tmp");
 
 ## <a name="sharing-with-the-files-app"></a>与文件应用共享
 
-iOS 11 引入了**文件**应用程序-适用于 iOS 的文件浏览器，用户可以在 iCloud 中查看其文件并与其交互，还可以通过支持它的任何应用程序来存储这些文件。 若要允许用户直接访问应用中的文件，请在**info.plist**文件中创建一个新的布尔键 `LSSupportsOpeningDocumentsInPlace` 并将其设置为 `true`，如下所示：
+iOS 11 引入了**文件**应用程序-适用于 iOS 的文件浏览器，用户可以在 iCloud 中查看其文件并与其交互，还可以通过支持它的任何应用程序来存储这些文件。 若要允许用户直接访问应用中的文件，请在**info.plist**文件中创建一个新的布尔键， `LSSupportsOpeningDocumentsInPlace` 并将其设置为 `true` ，如下所示：
 
 ![设置 LSSupportsOpeningDocumentsInPlace 中的 info.plist](file-system-images/51-supports-opening.png)
 
@@ -251,11 +251,11 @@ iOS 11 引入了**文件**应用程序-适用于 iOS 的文件浏览器，用户
 
 ## <a name="sharing-files-with-the-user-through-itunes"></a>通过 iTunes 与用户共享文件
 
-用户可以通过在 "**源**" 视图中编辑 `Info.plist` 和创建**支持 iTunes 共享**（`UIFileSharingEnabled`）条目的应用程序来访问应用程序的 "文档" 目录中的文件，如下所示：
+用户可以通过 `Info.plist` 在源视图中编辑和创建**支持 iTunes 共享**（）条目的应用程序来访问应用程序文档目录中的文件 `UIFileSharingEnabled` ，如下所示： **Source**
 
-[添加应用程序![支持 iTunes 共享属性](file-system-images/09-uifilesharingenabled-plist-sml.png)](file-system-images/09-uifilesharingenabled-plist.png#lightbox)
+[![添加应用程序支持 iTunes 共享属性](file-system-images/09-uifilesharingenabled-plist-sml.png)](file-system-images/09-uifilesharingenabled-plist.png#lightbox)
 
-当设备已连接并且用户选择 "`Apps`" 选项卡时，可在 iTunes 中访问这些文件。例如，以下屏幕截图显示通过 iTunes 共享的选定应用中的文件：
+当设备已连接并且用户选择该选项卡时，可在 iTunes 中访问这些文件 `Apps` 。例如，以下屏幕截图显示通过 iTunes 共享的选定应用中的文件：
 
 [![此屏幕截图显示通过 iTunes 共享的选定应用中的文件](file-system-images/10-itunes-file-sharing-sml.png)](file-system-images/10-itunes-file-sharing.png#lightbox)
 
@@ -269,7 +269,7 @@ iOS 11 引入了**文件**应用程序-适用于 iOS 的文件浏览器，用户
 
 有关如何为应用程序以及您创建的任何自定义文档类型设置图标的信息，请参阅使用[图像](~/ios/app-fundamentals/images-icons/index.md)。
 
-如果 `UIFileSharingEnabled` 项为 false 或不存在，则默认情况下，文件共享将处于禁用状态，并且用户将无法与文档目录交互。
+如果该 `UIFileSharingEnabled` 密钥为 false 或不存在，则默认情况下，"文件共享" 将处于禁用状态，并且用户将无法与文档目录交互。
 
 ## <a name="backup-and-restore"></a>备份和还原
 
@@ -290,15 +290,15 @@ iOS 11 引入了**文件**应用程序-适用于 iOS 的文件浏览器，用户
 > [!NOTE]
 > 尽管此策略是在 iOS 5 中首次引入（看起来很长一段时间）的，但本指南仍与应用程序相关。
 
-Apple 在 iOS 5 中引入了*ICloud 备份*功能。 启用 iCloud 备份后，应用程序主目录中的所有文件（不包括通常备份的目录，例如，应用程序捆绑包、`Caches`和 `tmp`）将备份到 iCloud 服务器。 此功能在设备丢失、被盗或损坏时为用户提供完整的备份。
+Apple 在 iOS 5 中引入了*ICloud 备份*功能。 启用 iCloud 备份后，应用程序主目录中的所有文件（不包括通常备份的目录，例如，应用程序捆绑包、 `Caches` 和 `tmp` ）会备份到 iCloud 服务器。 此功能在设备丢失、被盗或损坏时为用户提供完整的备份。
 
 由于 iCloud 仅向每个用户提供 5 Gb 的可用空间，并避免不必要地使用带宽，因此 Apple 预期应用程序仅备份用户生成的重要数据。 若要遵守 iOS 数据存储准则，应通过遵循以下各项来限制备份的数据量：
 
 - 仅存储用户生成的数据，或在文档目录中（备份了）无法重新创建的数据。
-- 存储任何其他可以轻松地在 `Library/Caches` 或 `tmp` （未备份，并且可以 "清除"）上重新创建或重新下载的数据。
-- 如果你的文件可能适用于 `Library/Caches` 或 `tmp` 文件夹，但你不希望进行 "清理"，请将其存储在其他位置（例如 `Library/YourData`），并应用 "不备份" 属性，以防止这些文件使用高 iCloud 备份带宽和 storage 空间。 此数据仍占用设备上的空间，因此你应仔细管理此数据，并在可能的情况下将其删除。
+- 存储可以在或中轻松地重新创建或重新下载的任何其他数据 `Library/Caches` `tmp` （这是未备份的，可以是 "已清理"）。
+- 如果你的文件可能适用于 `Library/Caches` 或 `tmp` 文件夹，但你不希望进行 "清理"，请将其存储在其他位置（例如）， `Library/YourData` 并应用 "不备份" 属性，以防止文件使用高 iCloud 备份带宽和存储空间。 此数据仍占用设备上的空间，因此你应仔细管理此数据，并在可能的情况下将其删除。
 
-使用 `NSFileManager` 类设置 "不备份" 特性。 请确保类 `using Foundation`，并调用如下 `SetSkipBackupAttribute`：
+使用类设置 "不备份" 特性 `NSFileManager` 。 确保你的类为 `using Foundation` ，并调用 `SetSkipBackupAttribute` 如下所示：
 
 ```csharp
 var documents = Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments);
@@ -307,7 +307,7 @@ File.WriteAllText(filename, "This file will never get backed-up. It would need t
 NSFileManager.SetSkipBackupAttribute (filename, true); // backup will be skipped for this file
 ```
 
-当 `SetSkipBackupAttribute` 时 `true` 不会备份文件，无论存储在何处（甚至是 `Documents` 目录）。 您可以使用 `GetSkipBackupAttribute` 方法查询属性，还可以通过使用 `false`调用 `SetSkipBackupAttribute` 方法来重置该属性，如下所示：
+如果 `SetSkipBackupAttribute` 为 `true` ，则不会备份文件，无论存储在何处（甚至是 `Documents` 目录）。 您可以使用方法查询属性 `GetSkipBackupAttribute` ，还可以通过调用方法来重置该属性 `SetSkipBackupAttribute` `false` ，如下所示：
 
 ```csharp
 NSFileManager.SetSkipBackupAttribute (filename, false); // file will be backed-up
@@ -319,7 +319,7 @@ NSFileManager.SetSkipBackupAttribute (filename, false); // file will be backed-u
 
 ### <a name="configure-an-app-group"></a>配置应用组
 
-通过[应用组](https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19)配置共享位置，这是在 [iOS 开发中心](https://developer.apple.com/devcenter/ios/)的**证书、标识符和描述文件**部分配置的。 还必须在每个项目的“Entitlements.plist”中引用此值。
+通过[应用组](https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19)配置共享位置，这是在 [iOS 开发中心](https://developer.apple.com/devcenter/ios/)的**证书、标识符和描述文件**部分配置的。 还必须在每个项目的**info.plist**中引用此值。
 
 有关创建和配置应用组的信息，请参阅[应用组功能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)指南。
 
@@ -339,18 +339,18 @@ Console.WriteLine ("Group Path: " + appGroupContainerPath);
 ```
 
 > [!IMPORTANT]
-> 如果返回的组路径 `null`，请检查权利和预配配置文件的配置，并确保它们是正确的。
+> 如果返回的组路径为 `null` ，请检查权利和预配配置文件的配置，并确保它们是正确的。
 
 ## <a name="application-version-updates"></a>应用程序版本更新
 
 下载新版本的应用程序时，iOS 会创建一个新的主目录，并在其中存储新的应用程序捆绑包。 然后，iOS 将以下文件夹从您的应用程序捆绑包的先前版本移至新的主目录：
 
-- **文档**
+- 文档
 - **Library**
 
 其他目录还可以在新的主目录中进行复制和放置，但是不能保证复制它们，因此应用程序不应依赖于此系统行为。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文说明了 Xamarin 的文件系统操作与任何其他 .NET 应用程序类似。 它还引入了应用程序沙箱，并检查了它所造成的安全隐患。 接下来，它探讨了应用程序捆绑包的概念。 最后，它枚举了可用于你的应用程序的专用目录，并在应用程序升级和备份过程中解释了其角色。
 

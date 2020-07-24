@@ -19,7 +19,7 @@ ms.locfileid: "86937782"
 ---
 # <a name="xamarinforms-relativelayout"></a>Xamarin.FormsRelativeLayout
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
 `RelativeLayout`用于相对于布局或同级视图的属性定位和调整视图的大小。 与不同的是 `AbsoluteLayout` ，没有 `RelativeLayout` 移动锚的概念，并且没有用于相对于布局的下边缘或右边缘定位元素的工具。 `RelativeLayout`支持将元素定位在其自身的边界之外。
 

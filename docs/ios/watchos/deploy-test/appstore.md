@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: f42c4a6dd2f4408d7b0ccf65e60851ebd29b76f6
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1581a58d9a6851ad880d2631660e261685260e40
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574532"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932790"
 ---
 # <a name="deploying-watchos-apps-to-the-app-store"></a>将 watchOS 应用部署到 App Store
 
@@ -51,17 +51,17 @@ ms.locfileid: "84574532"
 
 如果你有通配符应用 ID，则*只需要一个配置文件*;但是，如果每个项目都有单独的应用 ID，则每个应用 ID 都需要一个预配配置文件：
 
-![](appstore-images/provisioningprofile-distribution-sml.png "The App Store Distribution profile")
+![App Store 分发配置文件](appstore-images/provisioningprofile-distribution-sml.png)
 
 创建所有三个配置文件后，它们将显示在列表中。 请记住，下载并安装每个（通过双击此项）：
 
-![](appstore-images/provisioningprofiles-sml.png "The list of available profiles")
+![可用配置文件列表](appstore-images/provisioningprofiles-sml.png)
 
 可以通过选择 "**生成 > IOS 捆绑签名**" 屏幕并选择 " **AppStore | iPhone** " 配置来验证 "**项目选项**" 中的预配配置文件。
 
 "**预配配置文件**" 列表将显示所有匹配的配置文件，你应在此下拉列表中看到已创建的匹配配置文件。
 
-![](appstore-images/options-selectprofile-sml.png "The iOS Bundle Signing dialog")
+![IOS 捆绑签名对话框](appstore-images/options-selectprofile-sml.png)
 
 <a name="iTunes_Connect"></a>
 
@@ -74,7 +74,7 @@ ms.locfileid: "84574532"
 
 在 iTunes Connect 中配置应用时，请不要忘记添加 "监视" 图标和屏幕截图：
 
-![](appstore-images/itunesconnect-watch-sml.png "The Watch icon and screenshots in iTunes Connect")
+![ITunes Connect 中的 "监视" 图标和屏幕截图](appstore-images/itunesconnect-watch-sml.png)
 
 图标文件应为1024x1024 像素，并将在显示时应用圆形掩码。 图标不应具有 alpha 通道。
 
@@ -88,19 +88,19 @@ ms.locfileid: "84574532"
 
 1. 确保 iOS 应用是启动项目。 如果不是，请右键单击以设置它：
 
-   ![](appstore-images/xs-startup.png "Setting the startup project")
+   ![设置启动项目](appstore-images/xs-startup.png)
 
 2. 选择 " **AppStore**生成配置"：
 
-   ![](appstore-images/xs-appstore.png "The AppStore build configuration")
+   ![AppStore 生成配置](appstore-images/xs-appstore.png)
 
 3. 选择 "**生成 > 存档**" 菜单项以启动存档过程：
 
-   ![](appstore-images/xs-archive.png "The Build menu")
+   !["生成" 菜单](appstore-images/xs-archive.png)
 
 你还可以选择 "**查看 > 存档 ...** " 菜单项以查看之前创建的存档。
 
-  ![](appstore-images/xs-archives-sml.png "The Archives view")
+  ![存档视图](appstore-images/xs-archives-sml.png)
 
 <a name="xcode"></a>
 
@@ -110,21 +110,21 @@ Xcode 会自动显示 Visual Studio for Mac 中创建的存档。
 
 1. 启动 Xcode 并选择 " **Window > 组织**程序"：
 
-   ![](appstore-images/xc-organizer.png "The Window menu")
+   !["窗口" 菜单](appstore-images/xc-organizer.png)
 
 2. 切换到 "**存档**" 选项卡，然后选择已创建的存档 Visual Studio for Mac：
 
-   ![](appstore-images/xc-archives.png "The Archives tab")
+   !["存档" 选项卡](appstore-images/xc-archives.png)
 
 3. 选择 "**验证**"，然后选择 "**提交 ...** "，将应用上传到 iTunes Connect。
 
 4. 选择开发团队（如果你属于多个），然后确认提交：
 
-   ![](appstore-images/xc-submit1.png "The development team section")
+   !["开发团队" 部分](appstore-images/xc-submit1.png)
 
 5. 再次访问 iTunes Connect，查看上传的二进制文件。 请访问应用的 "配置" 页，然后从顶部菜单中选择 "**预发行**"，查看 "**生成**" 列表：
 
-   [![](appstore-images/itc-prerelease-sml.png "The apps configuration page in iTunes Connect")](appstore-images/itc-prerelease.png#lightbox)
+   [![ITunes Connect 中的 "应用" 配置页](appstore-images/itc-prerelease-sml.png)](appstore-images/itc-prerelease.png#lightbox)
 
 然后，你可以在 "**版本**" 页上提交要审批的应用。 有关详细信息，请参阅[iOS 应用分发概述](~/ios/deploy-test/app-distribution/index.md)。
 
@@ -172,12 +172,12 @@ Missing Icon. The watch application '...watchkitextension.appex/WatchApp.app'
 is missing icon with name pattern '*44x44@2x.png' (Home Screen 42mm).
 ```
 
-请确保具有最新版本的 Visual Studio for Mac，并且**appicons.appiconset**包含一组完整的映像。 如果仍看到此错误，请查看**内容**的源，以确认它是否包含所有所需映像的条目。 或者，在确保使用最新版本的 Xamarin 后，请删除并重新创建**appicons.appiconset**。
+请确保具有最新版本的 Visual Studio for Mac，并且**appicons.appiconset**包含一组完整的映像。 如果仍看到此错误，请查看**Contents.js**的源以确认它是否包含所有所需映像的条目。 或者，在确保使用最新版本的 Xamarin 后，请删除并重新创建**appicons.appiconset**。
 
 > [!IMPORTANT]
 > Visual Studio for Mac 的 "监视" 图标支持中有一个已知 bug：它需要图像的88x88 像素图像 **29x29@3x** （应为87x87 像素）。
 
-无法在 Visual Studio for Mac 中解决此问题-请在 Xcode 中编辑图像资产，或者手动编辑**内容 json**文件。
+无法在 Visual Studio for Mac 中解决此问题-在 Xcode 中编辑图像资产，或者手动编辑文件**Contents.js** 。
 
 ### <a name="invalid-watchkit-support"></a>WatchKit 支持无效
 

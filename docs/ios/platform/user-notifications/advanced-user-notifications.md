@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/03/2018
-ms.openlocfilehash: 75ee2c4df9c7f54fa0200272ebc1e9682622ab31
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: edf224428103c318307f3a05dc79e1e8d286f512
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031444"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935106"
 ---
 # <a name="advanced-user-notifications-in-xamarinios"></a>Xamarin 中的高级用户通知
 
@@ -53,7 +53,7 @@ IOS 10 中的用户通知提供了一个新的 UI 设计，提供了更多内容
 
 在 iOS 8 中，Apple 引入了可操作的通知，开发人员可在其中将自定义操作附加到通知，并允许用户在不启动应用的情况下执行通知。 在 iOS 9 中，使用 "快速回复" 的 Apple 增强了可操作通知，用户可以使用该通知通过文本输入对通知进行响应。
 
-由于用户通知是 iOS 10 中用户体验的一个更重要部分，因此 Apple 进一步扩展了可操作的通知，以支持3D 触摸，其中用户按了通知并显示自定义用户界面来提供丰富的交互通知。
+由于用户通知是 iOS 10 中用户体验的一个更重要部分，因此 Apple 进一步扩展了可操作的通知，以支持3D 触摸，其中用户按了通知并显示自定义用户界面，以便与通知进行丰富的交互。
 
 当显示自定义用户通知 UI 时，如果用户与任何附加到通知的操作进行交互，则可以立即更新自定义 UI，以提供与更改内容有关的反馈。
 
@@ -61,11 +61,11 @@ IOS 10 中的用户通知提供了一个新的 UI 设计，提供了更多内容
 
 ## <a name="adding-media-attachments"></a>添加媒体附件
 
-在用户之间共享的较常见的项目之一是照片，因此，iOS 10 添加了直接将媒体项目（如照片）附加到通知的功能，在这种情况下，系统会向用户以及通知的其余部分提供上下文nt.
+在用户之间共享的较常见的项目之一是照片，因此，iOS 10 添加了直接将媒体项目（如照片）附加到通知的功能，在那里，它将显示并随时供用户使用以及其余通知内容。
 
 但是，因为即使是在发送小图像时所涉及的大小，但将其附加到远程通知有效负载是不切实际的。 若要处理这种情况，开发人员可以在 iOS 10 中使用新的服务扩展，从另一个源（如 CloudKit 数据存储）下载映像，并将其附加到通知的内容，然后将其显示给用户。
 
-对于要由服务扩展修改的远程通知，其有效负载必须标记为可变。 例如:
+对于要由服务扩展修改的远程通知，其有效负载必须标记为可变。 例如：
 
 ```csharp
 {
@@ -79,9 +79,9 @@ IOS 10 中的用户通知提供了一个新的 UI 设计，提供了更多内容
 
 请查看以下过程概述：
 
-[![](advanced-user-notifications-images/extension02.png "Adding Media Attachments process")](advanced-user-notifications-images/extension02.png#lightbox)
+[![添加媒体附件过程](advanced-user-notifications-images/extension02.png)](advanced-user-notifications-images/extension02.png#lightbox)
 
-将远程通知传递到设备后（通过 APNs），服务扩展即可通过任何所需的方法（如 `NSURLSession`）下载所需的映像，并在收到该映像后，可以修改通知的内容并将其显示为用户。
+将远程通知传递到设备后（通过 APNs），服务扩展即可通过任何所需的方法（如）下载所需的映像 `NSURLSession` ，并在收到映像后，可以修改通知的内容并将其显示给用户。
 
 下面是如何在代码中处理此过程的示例：
 
@@ -134,11 +134,11 @@ namespace MonkeyNotification
 }
 ```
 
-从 APNs 收到通知时，将从内容中读取图像的自定义地址，并从服务器下载文件。 然后，使用唯一 ID 和映像的本地位置（作为 `NSUrl`）创建 `UNNotificationAttachement`。 将创建通知内容的可变副本并添加媒体附件。 最后，通过调用 `contentHandler`向用户显示通知。
+从 APNs 收到通知时，将从内容中读取图像的自定义地址，并从服务器下载文件。 然后， `UNNotificationAttachement` 使用唯一 ID 和映像的本地位置（作为 `NSUrl` ）创建。 将创建通知内容的可变副本并添加媒体附件。 最后，通过调用来向用户显示通知 `contentHandler` 。
 
 一旦将附件添加到通知，系统就会接管该文件的移动和管理。
 
-除了上面提供的远程通知外，还会支持本地通知中的媒体附件，其中 `UNNotificationAttachement` 创建并附加到通知及其内容。
+除了上面提供的远程通知外，还支持从本地通知创建媒体附件，其中创建了 `UNNotificationAttachement` 通知，并将其内容附加到了通知。
 
 IOS 10 中的通知支持图像（静态和 Gif）、音频或视频的媒体附件，当向用户显示通知时，系统将自动为每种类型的附件显示正确的自定义 UI。
 
@@ -155,7 +155,7 @@ IOS 10 中的通知支持图像（静态和 Gif）、音频或视频的媒体附
 
 向用户显示带有自定义 UI 的用户通知时，它将包含以下元素：
 
-[![](advanced-user-notifications-images/customui01.png "A User Notification with a Custom UI elements")](advanced-user-notifications-images/customui01.png#lightbox)
+[![使用自定义 UI 元素的用户通知](advanced-user-notifications-images/customui01.png)](advanced-user-notifications-images/customui01.png#lightbox)
 
 如果用户与自定义操作（如下所示）交互，则可以更新用户界面，以便向用户提供反馈，就像调用给定操作时所发生的情况。
 
@@ -165,27 +165,27 @@ IOS 10 中的通知支持图像（静态和 Gif）、音频或视频的媒体附
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在 Visual Studio for Mac 中打开应用的解决方案。
-2. 在**Solution Pad**中右键单击解决方案名称，然后选择 "**添加** > "**添加新项目**"。
-3. 选择 " **iOS** > **扩展** > **通知内容扩展**"，然后单击 "**下一步**" 按钮： 
+2. 在**Solution Pad**中右键单击解决方案名称，然后选择 "**添加**" "  >  **添加新项目**"。
+3. 选择 " **iOS**  >  **扩展**  >  **通知内容扩展**"，然后单击 "**下一步**" 按钮： 
 
-    [![](advanced-user-notifications-images/notify01.png "Select Notification Content Extensions")](advanced-user-notifications-images/notify01.png#lightbox)
+    [![选择通知内容扩展](advanced-user-notifications-images/notify01.png)](advanced-user-notifications-images/notify01.png#lightbox)
 4. 输入扩展的**名称**，然后单击 "**下一步**" 按钮： 
 
-    [![](advanced-user-notifications-images/notify02.png "Enter a Name for the extension")](advanced-user-notifications-images/notify02.png#lightbox)
+    [![输入扩展的名称](advanced-user-notifications-images/notify02.png)](advanced-user-notifications-images/notify02.png#lightbox)
 5. 如果需要，请调整**项目名称**和/或**解决方案名称**，并单击 "**创建**" 按钮： 
 
-    [![](advanced-user-notifications-images/notify03.png "Adjust the Project Name and/or Solution Name")](advanced-user-notifications-images/notify03.png#lightbox)
+    [![调整项目名称和/或解决方案名称](advanced-user-notifications-images/notify03.png)](advanced-user-notifications-images/notify03.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. 在 Visual Studio for Mac 中打开应用的解决方案。
-2. 在**解决方案资源管理器**中右键单击解决方案名称，然后选择 "**添加 >" 新建项目 ...** "。
-3. 选择**Visual C# > IOS 扩展 > 通知内容扩展**：
+2. 在**解决方案资源管理器**中右键单击解决方案名称，然后选择 "**添加 >" 新建项目 ...**"。
+3. 选择 " **Visual c # > IOS 扩展 > 通知内容扩展**：
 
-    [![](advanced-user-notifications-images/notify01.w157-sml.png "Select Notification Content Extensions")](advanced-user-notifications-images/notify01.w157.png#lightbox)
+    [![选择通知内容扩展](advanced-user-notifications-images/notify01.w157-sml.png)](advanced-user-notifications-images/notify01.w157.png#lightbox)
 4. 输入扩展的**名称**，然后单击 **"确定"** 按钮。
 
 -----
@@ -193,10 +193,10 @@ IOS 10 中的通知支持图像（静态和 Gif）、音频或视频的媒体附
 向解决方案添加通知内容扩展时，将在扩展的项目中创建三个文件：
 
 1. `NotificationViewController.cs`-这是通知内容扩展插件的主视图控制器。
-2. `MainInterface.storyboard`-开发人员在 iOS 设计器中为通知内容扩展提供可视 UI 的布局。
+2. `MainInterface.storyboard`-开发人员在 iOS 设计器中将通知内容扩展的可见 UI 布局。
 3. `Info.plist`-控制通知内容扩展插件的配置。
 
-默认 `NotificationViewController.cs` 文件如下所示：
+默认文件如下所 `NotificationViewController.cs` 示：
 
 ```csharp
 using System;
@@ -240,67 +240,67 @@ namespace MonkeyChatNotifyExtension
 }
 ```
 
-当用户扩展通知时，将调用 `DidReceiveNotification` 方法，以便通知内容扩展可以使用 `UNNotification`的内容填充自定义 UI。 在上面的示例中，已向视图添加标签，并将其公开给名称为 `label` 的代码，并用于显示通知的正文。
+`DidReceiveNotification`当用户扩展通知时，将调用方法，以便通知内容扩展可以使用的内容填充自定义 UI `UNNotification` 。 在上面的示例中，已向视图添加标签，并将其公开给名称为的代码， `label` 并用于显示通知的正文。
 
 ### <a name="setting-the-notification-content-extensions-categories"></a>设置通知内容扩展的类别
 
-系统需要知道如何根据它所响应的特定类别查找应用的通知内容扩展。 请执行以下操作：
+系统需要知道如何根据它所响应的特定类别查找应用的通知内容扩展。 执行以下操作：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 双击**Solution Pad**中的扩展 `Info.plist` 文件，将其打开进行编辑。
-2. 切换到 "**源**" 视图。
-3. 展开 `NSExtension` 项。
-4. 将 `UNNotificationExtensionCategory` 键添加为类型**字符串**，其中包含扩展所属类别的值（在此示例中为 "事件-邀请"）： 
+1. 双击 `Info.plist` **Solution Pad**中的扩展文件，将其打开进行编辑。
+2. 切换到“源”视图。
+3. 展开该 `NSExtension` 密钥。
+4. 添加 `UNNotificationExtensionCategory` 键作为类型**字符串**，其中包含扩展所属类别的值（在此示例中为 "事件-邀请"）： 
 
-    [![](advanced-user-notifications-images/customui02.png "Add the UNNotificationExtensionCategory key")](advanced-user-notifications-images/customui02.png#lightbox)
-5. 保存更改。
+    [![添加 UNNotificationExtensionCategory 项](advanced-user-notifications-images/customui02.png)](advanced-user-notifications-images/customui02.png#lightbox)
+5. 保存所做更改。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 双击**解决方案资源管理器**中的扩展 `Info.plist` 文件，将其打开进行编辑。
-2. 展开 `NSExtension` 项。
-3. 将 `UNNotificationExtensionCategory` 键添加为类型**字符串**，其中包含扩展所属类别的值（在此示例中为 "事件-邀请"）： 
+1. 双击 `Info.plist` **解决方案资源管理器**中的扩展文件，将其打开进行编辑。
+2. 展开该 `NSExtension` 密钥。
+3. 添加 `UNNotificationExtensionCategory` 键作为类型**字符串**，其中包含扩展所属类别的值（在此示例中为 "事件-邀请"）： 
 
-    [![](advanced-user-notifications-images/customui02w.png "Add the UNNotificationExtensionCategory key")](advanced-user-notifications-images/customui02w.png#lightbox)
-4. 保存更改。
+    [![添加 UNNotificationExtensionCategory 项](advanced-user-notifications-images/customui02w.png)](advanced-user-notifications-images/customui02w.png#lightbox)
+4. 保存所做更改。
 
 -----
 
-通知内容扩展类别（`UNNotificationExtensionCategory`）使用用于注册通知操作的相同类别值。 如果应用将为多个类别使用同一 UI，请将 `UNNotificationExtensionCategory` 切换到类型**阵列**，并提供所需的所有类别。 例如:
+通知内容扩展类别（ `UNNotificationExtensionCategory` ）使用用于注册通知操作的相同类别值。 如果应用将为多个类别使用同一 UI，请将切换 `UNNotificationExtensionCategory` 到类型**阵列**，并提供所需的所有类别。 例如：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](advanced-user-notifications-images/customui03.png "Notification Content Extension Categories")](advanced-user-notifications-images/customui03.png#lightbox)
+[![通知内容扩展类别](advanced-user-notifications-images/customui03.png)](advanced-user-notifications-images/customui03.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](advanced-user-notifications-images/customui03w.png "Notification Content Extension Categories")](advanced-user-notifications-images/customui03w.png#lightbox)
+[![通知内容扩展类别](advanced-user-notifications-images/customui03w.png)](advanced-user-notifications-images/customui03w.png#lightbox)
 
 -----
 
 ### <a name="hiding-the-default-notification-content"></a>隐藏默认通知内容
 
-在自定义通知 UI 将显示与默认通知相同的内容的情况下（标题、副标题和正文会自动显示在通知 UI 的底部），可以通过添加 `UNNotificationExtensionDefaultContentHidden` 隐藏此默认信息在扩展的 `Info.plist` 文件中，`NSExtensionAttributes` 密钥的键作为类型**布尔**值 `YES`
+如果自定义通知 UI 将显示与默认通知相同的内容（标题、副标题和正文自动显示在通知 UI 的底部），则可以通过将密钥添加到密钥，将其 `UNNotificationExtensionDefaultContentHidden` `NSExtensionAttributes` 作为类型**布尔**值添加到 `YES` 扩展文件中的值，从而隐藏此默认信息 `Info.plist` ：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](advanced-user-notifications-images/customui04.png "Finding default information")](advanced-user-notifications-images/customui04.png#lightbox)
+[![查找默认信息](advanced-user-notifications-images/customui04.png)](advanced-user-notifications-images/customui04.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](advanced-user-notifications-images/customui04w.png "Finding default information")](advanced-user-notifications-images/customui04w.png#lightbox)
+[![查找默认信息](advanced-user-notifications-images/customui04w.png)](advanced-user-notifications-images/customui04w.png#lightbox)
 
 -----
 
 ### <a name="designing-the-custom-ui"></a>设计自定义 UI
 
-若要设计通知内容扩展插件的自定义用户界面，请双击 `MainInterface.storyboard` 文件以将其打开，以便在 iOS 设计器中进行编辑，并在生成所需的接口所需的元素中拖动（如 `UILabels` 和 `UIImageViews`）。
+若要设计通知内容扩展插件的自定义用户界面，请双击该 `MainInterface.storyboard` 文件以在 IOS 设计器中将其打开以进行编辑，并在生成所需的接口所需的元素中拖动（如 `UILabels` 和 `UIImageViews` ）。
 
 > [!NOTE]
 > 从 iOS 12，通知内容扩展可以包含交互式控件，如按钮和文本字段。 有关详细信息，请参阅[iOS 12 文档中的交互式通知](~/ios/platform/introduction-to-ios12/notifications/interactive.md)。
 
-在 UI 已布局并且向C#代码公开所需的控件后，打开用于编辑的`NotificationViewController.cs`，并修改`DidReceiveNotification`方法，以便在用户展开通知时填充 UI。 例如:
+UI 已布局并且向 c # 代码公开所需的控件后，打开 `NotificationViewController.cs` 以进行编辑，并修改 `DidReceiveNotification` 方法以便在用户展开通知时填充 UI。 例如：
 
 ```csharp
 using System;
@@ -357,19 +357,19 @@ namespace MonkeyChatNotifyExtension
 
 ### <a name="setting-the-content-area-size"></a>设置内容区域大小
 
-若要调整向用户显示的内容区域的大小，请按以下代码将 `ViewDidLoad` 方法中的 `PreferredContentSize` 属性设置为所需的大小。 还可以通过在 iOS 设计器中将约束应用于视图来调整此大小，开发人员可以选择最适合自己的方法。
+若要调整向用户显示的内容区域的大小，请按以下代码将 `PreferredContentSize` 方法中的属性设置 `ViewDidLoad` 为所需的大小。 还可以通过在 iOS 设计器中将约束应用于视图来调整此大小，开发人员可以选择最适合自己的方法。
 
 由于在调用通知内容扩展之前通知系统已在运行，因此，内容区域将以完全大小开始，并在向用户显示时向下动态显示所请求的大小。
 
-为了消除这种影响，请编辑扩展的 `Info.plist` 文件，并将 `NSExtensionAttributes` 键的 `UNNotificationExtensionInitialContentSizeRatio` 键设置为类型**Number** ，其值表示所需的比率。 例如:
+若要消除这种影响，请在文件中编辑 `Info.plist` 扩展，并将 `UNNotificationExtensionInitialContentSizeRatio` 键的键设置 `NSExtensionAttributes` 为类型**Number** ，并将值设置为表示所需的比率。 例如：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](advanced-user-notifications-images/customui05.png "The UNNotificationExtensionInitialContentSizeRatio key")](advanced-user-notifications-images/customui05.png#lightbox)
+[![UNNotificationExtensionInitialContentSizeRatio 键](advanced-user-notifications-images/customui05.png)](advanced-user-notifications-images/customui05.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](advanced-user-notifications-images/customui05w.png "The UNNotificationExtensionInitialContentSizeRatio key")](advanced-user-notifications-images/customui05w.png#lightbox)
+[![UNNotificationExtensionInitialContentSizeRatio 键](advanced-user-notifications-images/customui05w.png)](advanced-user-notifications-images/customui05w.png#lightbox)
 
 -----
 
@@ -377,7 +377,7 @@ namespace MonkeyChatNotifyExtension
 
 由于媒体附件（如上面的[添加媒体附件](#adding-media-attachments)部分所示）是通知有效负载的一部分，因此可以在通知内容扩展中对其进行访问和显示，就像在默认通知 UI 中一样。
 
-例如，如果上面的自定义 UI 包含向C#代码公开的 `UIImageView`，则可以使用以下代码从媒体附件填充它：
+例如，如果上面的自定义 UI 包含 `UIImageView` 向 c # 代码公开的，则可以使用以下代码将其从媒体附件填充：
 
 ```csharp
 using System;
@@ -440,7 +440,7 @@ namespace MonkeyChatNotifyExtension
 }
 ```
 
-因为媒体附件由系统进行管理，所以它不在应用的沙箱中。 扩展需要通过调用 `StartAccessingSecurityScopedResource` 方法来通知系统它需要访问文件。 完成对文件的扩展后，它需要调用 `StopAccessingSecurityScopedResource` 以释放其连接。
+因为媒体附件由系统进行管理，所以它不在应用的沙箱中。 扩展需要通过调用方法来通知系统它需要访问文件 `StartAccessingSecurityScopedResource` 。 扩展完成后，需要调用 `StopAccessingSecurityScopedResource` 以释放其连接。
 
 ### <a name="adding-custom-actions-to-a-custom-ui"></a>将自定义操作添加到自定义 UI
 
@@ -453,7 +453,7 @@ namespace MonkeyChatNotifyExtension
 
 通知内容扩展还可以在用户调用其中一个自定义操作时更新他们的 UI，例如，当用户点击 "**接受**自定义操作" 按钮时将日期显示为 "已接受"。 此外，通知内容扩展可以告知系统延迟通知 UI 的消除，以便用户可以在通知关闭之前查看操作的效果。
 
-这是通过实现 `DidReceiveNotification` 方法的第二个版本来完成的，该方法包含完成处理程序。 例如:
+这是通过实现 `DidReceiveNotification` 包含完成处理程序的方法的第二个版本来完成的。 例如：
 
 ```csharp
 using System;
@@ -527,7 +527,7 @@ namespace myApp {
 }
 ```
 
-通过将 `Server.PostEventResponse` 处理程序添加到通知内容扩展的 `DidReceiveNotification` 方法中，扩展*必须*处理所有自定义操作。 扩展还可以通过更改 `UNNotificationContentExtensionResponseOption`将自定义操作转发到包含应用程序。 例如:
+通过将 `Server.PostEventResponse` 处理程序添加到 `DidReceiveNotification` 通知内容扩展的方法中，该扩展插件*必须*处理所有自定义操作。 扩展还可以通过更改将自定义操作转发到包含应用程序 `UNNotificationContentExtensionResponseOption` 。 例如：
 
 ```csharp
 // Close Notification
@@ -538,7 +538,7 @@ completionHandler (UNNotificationContentExtensionResponseOption.DismissAndForwar
 
 有时可能需要用户在通知中输入文本（例如，答复消息），这取决于应用程序的设计和通知。 与标准通知一样，通知内容扩展可以访问内置文本输入操作。
 
-例如:
+例如：
 
 ```csharp
 using System;
@@ -676,7 +676,7 @@ namespace MonkeyChatNotifyExtension
 }
 ```
 
-此代码将创建一个新的文本输入操作，并将其添加到扩展的类别（在 `MakeExtensionCategory`中）方法。 在 `DidReceive` 重写方法中，它通过以下代码处理用户输入文本：
+此代码将创建一个新的文本输入操作，并将其添加到扩展的类别（在中为 `MakeExtensionCategory` ）方法。 在 `DidReceive` 重写方法中，它通过以下代码处理用户输入文本：
 
 ```csharp
 // Is text input?
@@ -725,7 +725,7 @@ Server.PostEventResponse += (response) {
 };
 ```
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文大致介绍了如何在 Xamarin iOS 应用中使用新的用户通知框架。 本文介绍了如何将媒体附件添加到本地和远程通知，并介绍了如何使用新的用户通知 UI 创建自定义通知 ui。
 

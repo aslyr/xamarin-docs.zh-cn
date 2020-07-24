@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cef3c2369bb4aee81a52ddd27d6ad732d7544dfa
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: df79a9b6a7b0ab44d4fcf03f12a7b4d8aabd0a82
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573841"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939264"
 ---
 # <a name="accessing-remote-data"></a>访问远程数据
 
@@ -54,7 +54,7 @@ EShopOnContainers 移动应用使用 `HttpClient` 类通过 HTTP 发出请求，
 
 图10-1 显示了从目录微服务读取目录数据以便显示的类的交互 `CatalogView` 。
 
-[![](accessing-remote-data-images/catalogdata.png "Retrieving data from the catalog microservice")](accessing-remote-data-images/catalogdata-large.png#lightbox "Retrieving data from the catalog microservice")
+[![从目录微服务中检索数据](accessing-remote-data-images/catalogdata.png)](accessing-remote-data-images/catalogdata-large.png#lightbox "从目录微服务中检索数据")
 
 **图 10-1**：从目录微服务检索数据
 
@@ -159,7 +159,7 @@ public async Task<IActionResult> Items(
 
 图10-2 显示了将显示的购物篮数据发送 `BasketView` 到购物篮微服务的类的交互。
 
-[![](accessing-remote-data-images/basketdata.png "Sending data to the basket microservice")](accessing-remote-data-images/basketdata-large.png#lightbox "Sending data to the basket microservice")
+[![将数据发送到购物篮微服务](accessing-remote-data-images/basketdata.png)](accessing-remote-data-images/basketdata-large.png#lightbox "将数据发送到购物篮微服务")
 
 **图 10-2**：向购物篮发送数据微服务
 
@@ -232,7 +232,7 @@ public async Task<IActionResult> Post([FromBody]CustomerBasket value)
 
 图10-3 显示了从购物篮微服务删除购物篮数据的类的交互 `CheckoutView` 。
 
-![](accessing-remote-data-images/checkoutdata.png "Deleteing data from the basket microservice")
+![从购物篮微服务中删除数据](accessing-remote-data-images/checkoutdata.png)
 
 **图 10-3**：从购物篮中删除数据微服务
 
@@ -372,7 +372,7 @@ FFImageLoading 的 `CachedImage` 控件是控件的替代 Xamarin.Forms [`Image`
 > [!NOTE]
 > 尝试次数最短的重试策略和大量重试会使运行接近或达到容量的远程服务下降。 此外，此类重试策略还可能会影响应用的响应能力，前提是它正尝试执行失败的操作。
 
-如果在重试多次后请求仍失败，则应用程序可以防止进一步请求进入同一资源并报告故障。 然后，在设定的时间段之后，应用程序可以对资源进行一个或多个请求，以查看它们是否成功。 有关详细信息，请参阅[断路器模式](#circuit-breaker-pattern)。
+如果在重试多次后请求仍失败，则应用程序可以防止进一步请求进入同一资源并报告故障。 然后，在设定的时间段之后，应用程序可以对资源进行一个或多个请求，以查看它们是否成功。 有关详细信息，请参阅断路器[模式](#circuit-breaker-pattern)。
 
 > [!TIP]
 > 切勿实施永不结束的重试机制。 使用有限的重试次数，或实现[断路](/azure/architecture/patterns/circuit-breaker/)器模式以允许服务恢复。

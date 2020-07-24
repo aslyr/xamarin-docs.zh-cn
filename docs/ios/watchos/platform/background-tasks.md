@@ -7,20 +7,20 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/13/2017
-ms.openlocfilehash: 60e7c2b5771f7f65c07926b2fb5958fdc3f419fb
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 84953ce2ec09cc757b5719991e499dc24b708cae
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931029"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996105"
 ---
 # <a name="watchos-background-tasks-in-xamarin"></a>Xamarin 中的 watchOS 后台任务
 
-使用 watchOS 3，手表应用可通过以下三种主要方式将其信息保持在最新状态： 
+使用 watchOS 3，手表应用可通过以下三种主要方式将其信息保持在最新状态：
 
-- 使用几个新的后台任务之一。 
-- 在手表面上有一个复杂的问题（为它提供额外的更新时间）。 
-- 让用户将应用固定到新的停靠（其保留在内存中并经常更新）。 
+- 使用几个新的后台任务之一。
+- 在手表面上有一个复杂的问题（为它提供额外的更新时间）。
+- 让用户将应用固定到新的停靠（其保留在内存中并经常更新）。
 
 ## <a name="keeping-an-app-up-to-date"></a>使应用保持最新状态
 
@@ -43,7 +43,7 @@ ms.locfileid: "86931029"
 
 [![天气的示例](background-tasks-images/update01.png)](background-tasks-images/update01.png#lightbox)
 
-1. 应用计划在特定时间唤醒系统。 
+1. 应用计划在特定时间唤醒系统。
 2. 此应用将获取生成更新时所需的信息。
 3. 应用程序重新生成其用户界面，以反映新的数据。
 4. 当用户深入了解应用程序时，它具有最新信息，用户无需等待更新。
@@ -190,7 +190,7 @@ WatchOS 应用程序在此生态系统中的工作方式很重要，因为它限
 
 请查看以下方案：
 
-[![](background-tasks-images/update13.png "A watchOS app limits its drain on the system's shared resources")](background-tasks-images/update13.png#lightbox)
+[![WatchOS 应用限制了系统共享资源的消耗](background-tasks-images/update13.png)](background-tasks-images/update13.png#lightbox)
 
 1. 用户在下午1:00 启动 watchOS 应用。
 2. 应用计划一个任务在下午2:00 的一小时内唤醒和下载新内容。
@@ -203,7 +203,7 @@ WatchOS 应用程序在此生态系统中的工作方式很重要，因为它限
 
 ## <a name="implementing-background-tasks"></a>实现后台任务
 
-例如，本文档将使用向用户报告足球评分的虚假 MonkeySoccer 运动应用。 
+例如，本文档将使用向用户报告足球评分的虚假 MonkeySoccer 运动应用。
 
 请看下面的典型使用方案：
 
@@ -215,7 +215,7 @@ WatchOS 应用程序在此生态系统中的工作方式很重要，因为它限
 2. 应用会接收该任务并更新其数据和 UI，并在30分钟后计划另一后台任务。 开发人员必须记住计划另一后台任务，否则应用程序将不会重新唤醒以获取更多更新，这一点很重要。
 3. 同样，应用程序将接收该任务并更新其数据，更新其 UI，并在30分钟后计划另一后台任务。
 4. 同一过程再次重复。
-5. 接收到最后一个后台任务，应用再次更新其数据和 UI。 由于这是最终评分，因此不会计划新的后台刷新。 
+5. 接收到最后一个后台任务，应用再次更新其数据和 UI。 由于这是最终评分，因此不会计划新的后台刷新。
 
 <a name="Scheduling-for-Background-Update"></a>
 
@@ -229,7 +229,7 @@ private void ScheduleNextBackgroundUpdate ()
   // Create a fire date 30 minutes into the future
   var fireDate = NSDate.FromTimeIntervalSinceNow (30 * 60);
 
-  // Create 
+  // Create
   var userInfo = new NSMutableDictionary ();
   userInfo.Add (new NSString ("LastActiveDate"), NSDate.FromTimeIntervalSinceNow(0));
   userInfo.Add (new NSString ("Reason"), new NSString ("UpdateScore"));
@@ -260,7 +260,7 @@ private void ScheduleNextBackgroundUpdate ()
 
 1. 下午7:30:02，此应用程序会被系统唤醒，并提供更新后台任务。 第一种优先级是从服务器获取最新分数。 请参阅下面[的计划 NSUrlSession](#Scheduling-a-NSUrlSession) 。
 2. 在7:30:05，应用完成了原始任务，系统会将应用置于睡眠状态，并继续在后台下载请求的数据。
-3. 当系统完成下载时，它将创建一个新任务来唤醒应用程序，以便它可以处理下载的信息。 请参阅[处理后台任务](#Handling-Background-Tasks)和[处理下面的下载](#Handling-the-Download-Completing)。 
+3. 当系统完成下载时，它将创建一个新任务来唤醒应用程序，以便它可以处理下载的信息。 请参阅[处理后台任务](#Handling-Background-Tasks)和[处理下面的下载](#Handling-the-Download-Completing)。
 4. 应用保存更新后的信息并将任务标记为已完成。 开发人员目前可能会尝试更新应用程序的用户界面，但 Apple 建议计划快照任务来处理该过程。 请参阅下面[的计划快照更新](#Scheduling-a-Snapshot-Update)。
 5. 应用会接收快照任务、更新其用户界面并将任务标记为已完成。 请参阅下面[的处理快照更新](#Handling-a-Snapshot-Update)。
 
@@ -308,7 +308,7 @@ namespace MonkeySoccer.MonkeySoccerExtension
     #endregion
 
     ...
-    
+
     #region Public Methods
     public void CompleteTask (WKRefreshBackgroundTask task)
     {
@@ -316,7 +316,7 @@ namespace MonkeySoccer.MonkeySoccerExtension
       task.SetTaskCompleted ();
       PendingTasks.Remove (task);
     }
-    #endregion 
+    #endregion
 
     #region Override Methods
     public override void HandleBackgroundTasks (NSSet<WKRefreshBackgroundTask> backgroundTasks)
@@ -341,7 +341,7 @@ namespace MonkeySoccer.MonkeySoccerExtension
       }
     }
     #endregion
-    
+
     ...
   }
 }
@@ -521,7 +521,7 @@ snapshotTask.SetTaskCompleted (false, expirationDate, userInfo);
 
 ## <a name="working-efficiently"></a>有效地工作
 
-如前面的示例中所示，MonkeySoccer 应用程序用来更新其评分，通过高效地工作并使用新的 watchOS 3 后台任务，该应用只需15秒的活动状态： 
+如前面的示例中所示，MonkeySoccer 应用程序用来更新其评分，通过高效地工作并使用新的 watchOS 3 后台任务，该应用只需15秒的活动状态：
 
 [![此应用只会处于活动状态的时间超过15秒](background-tasks-images/update16.png)](background-tasks-images/update16.png#lightbox)
 
@@ -531,7 +531,7 @@ snapshotTask.SetTaskCompleted (false, expirationDate, userInfo);
 
 ## <a name="how-scheduling-works"></a>计划的工作方式
 
-当 watchOS 3 应用处于前台时，它将始终计划运行，并可执行所需的任何类型的处理（如更新数据或重绘其 UI）。 当应用移到后台时，它通常被系统挂起，所有运行时操作都将暂停。 
+当 watchOS 3 应用处于前台时，它将始终计划运行，并可执行所需的任何类型的处理（如更新数据或重绘其 UI）。 当应用移到后台时，它通常被系统挂起，所有运行时操作都将暂停。
 
 当应用处于后台时，系统可能会将其设定为目标，以快速运行特定的任务。 因此，在 watchOS 2 中，系统可能会暂时唤醒后台应用程序以执行操作，例如处理长时间通知或更新应用程序的问题。 在 watchOS 3 中，有几种新方法可在后台运行应用。
 
@@ -638,7 +638,7 @@ private void UpdateComplication ()
 
 <a name="Best-Practices"></a>
 
-## <a name="best-practices"></a>最佳方案 
+## <a name="best-practices"></a>最佳方案
 
 Apple 建议在使用后台任务时采用以下最佳做法：
 
@@ -651,7 +651,7 @@ Apple 建议在使用后台任务时采用以下最佳做法：
   - 后台刷新。
 - 用于 `ScheduleBackgroundRefresh` 常规用途后台运行时，例如：
   - 轮询系统以获取信息。
-  - 计划将来 `NSURLSessions` 请求背景数据。 
+  - 计划将来 `NSURLSessions` 请求背景数据。
   - 已知时间转换。
   - 触发复杂的更新。
 
@@ -693,7 +693,7 @@ Apple 提供以下建议：
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了 Apple 对 watchOS 的增强功能，以及如何使用它们来使手表应用保持最新状态。 首先，它涵盖了 Apple 添加到 watchOS 3 中的所有新后台任务。 然后，它介绍了后台 API 生命周期，以及如何实现 Xamarin watchOS 应用程序中的后台任务。 最后，它介绍了计划的工作方式，并提供了一些最佳实践。
 

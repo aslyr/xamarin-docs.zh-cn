@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: e90ee165073dbbe792e4ca1916463517ad86255d
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 39a18a775946c2f139b4c032d2c360bc5680a0e7
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572294"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937912"
 ---
 # <a name="alternate-app-icons-in-xamarinios"></a>Xamarin 中的备用应用程序图标
 
@@ -25,7 +25,7 @@ Apple 向 iOS 10.3 添加了几项增强功能，使应用程序可以管理其�
 - `AlternateIconName`-返回当前选定的备用图标的名称， `null` 如果使用主图标，则返回。
 - `SetAlternameIconName`-使用此方法将应用的图标切换到给定的替代图标。
 
-![](alternate-app-icons-images/icons04.png "A sample alert when an app changes its icon")
+![应用更改图标时的示例警报](alternate-app-icons-images/icons04.png)
 
 <a name="Adding-Alternate-Icons"></a>
 
@@ -33,19 +33,19 @@ Apple 向 iOS 10.3 添加了几项增强功能，使应用程序可以管理其�
 
 若要允许应用切换到备用图标，需要在 Xamarin iOS 应用项目中包含图标图像的集合。 不能使用典型方法将这些图像添加到项目 `Assets.xcassets` 中，它们必须直接添加到**Resources**文件夹中。
 
-请执行以下操作：
+执行以下操作：
 
 1. 选择文件夹中所需的图标图像，选择 "全部"，并将其拖动到**解决方案资源管理器**中的 "**资源**" 文件夹中：
 
-    ![](alternate-app-icons-images/icons00.png "Select the icons images from a folder")
+    ![从文件夹中选择图标图像](alternate-app-icons-images/icons00.png)
 
 2. 出现提示时，选择 "**复制**"，**对所有选定的文件使用相同的操作**，并单击 **"确定"** 按钮：
 
-    ![](alternate-app-icons-images/icons02.png "The Add File to Folder dialog box")
+    !["将文件添加到文件夹" 对话框](alternate-app-icons-images/icons02.png)
 
 3. "**资源**" 文件夹在完成后应如下所示：
 
-    ![](alternate-app-icons-images/icons01.png "The Resources folder should look like this")
+    ![Resources 文件夹应如下所示](alternate-app-icons-images/icons01.png)
 
 <a name="Modifying-the-Info.plist-File"></a>
 
@@ -53,21 +53,21 @@ Apple 向 iOS 10.3 添加了几项增强功能，使应用程序可以管理其�
 
 将所需的映像添加到**Resources**文件夹后，需要将[CFBundleAlternateIcons](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-SW13)项添加到项目的**info.plist**文件中。 此密钥将定义新图标的名称和组成它的映像。
 
-请执行以下操作：
+执行以下操作：
 
 1. 在“解决方案资源管理器”**** 中，双击“Info.plist”**** 文件，将其打开进行编辑。
-2. 切换到 "**源**" 视图。
+2. 切换到“源”视图。
 3. 添加 "**捆绑" 图标**键并将 "**类型**" 设置为 "**字典**"。
 4. 添加 `CFBundleAlternateIcons` 密钥并将 "**类型**" 设置为 "**字典**"。
 5. 添加 `AppIcon2` 密钥并将 "**类型**" 设置为 "**字典**"。 这将是新的备用应用图标集的名称。
 6. 添加 `CFBundleIconFiles` 密钥并将**类型**设置为**数组**
 7. 将一个新字符串添加到 `CFBundleIconFiles` 每个图标文件的数组中，并保留扩展名和 `@2x` 、等 `@3x` 后缀（例如 `100_icon` ）。 为组成备用图标集的每个文件重复此步骤。
 8. 向 `UIPrerenderedIcon` 字典中添加键 `AppIcon2` ，将 "**类型**" 设置为 "**布尔**值"，将 "值" 设置为 "**否**"。
-9. 保存对该文件所做的更改。
+9. 保存对文件所做的更改。
 
 完成后，生成的**info.plist**文件应如下所示：
 
-![](alternate-app-icons-images/icons03.png "The completed Info.plist file")
+![已完成的 info.plist 文件](alternate-app-icons-images/icons03.png)
 
 例如，如果在文本编辑器中打开，则：
 
@@ -158,15 +158,15 @@ partial void UseAlternateIcon (Foundation.NSObject sender)
 
 当应用程序运行时，如果用户选择备用图标，将显示如下所示的警报：
 
-![](alternate-app-icons-images/icons04.png "A sample alert when an app changes its icon")
+![应用更改图标时的示例警报](alternate-app-icons-images/icons04.png)
 
 如果用户切换回主图标，将显示如下所示的警报：
 
-![](alternate-app-icons-images/icons05.png "A sample alert when an app changes to the primary icon")
+![应用更改为主图标时的示例警报](alternate-app-icons-images/icons05.png)
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了如何向 Xamarin iOS 项目添加备用应用程序图标并在应用程序中使用它们。
 

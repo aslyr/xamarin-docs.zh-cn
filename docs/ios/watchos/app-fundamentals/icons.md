@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/26/2018
-ms.openlocfilehash: c8c5b8d0417fb7fd1069d2bf6fa5d9887d569453
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e2beb12ea366918219d2c83532e8a62d94e688b5
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73001562"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996261"
 ---
 # <a name="working-with-watchos-icons-in-xamarin"></a>使用 Xamarin 中的 watchOS 图标
 
@@ -23,7 +23,7 @@ Apple Watch 解决方案需要两组图标：
 
 ## <a name="apple-watch-icons"></a>Apple Watch 图标
 
-| | | |
+|图标|描述|外观|
 |-|-|-|
 |iOS 应用程序图标|出现在 iPhone 上并启动父应用程序|![iOS 应用程序图标](icons-images/icon-ios.png)|
 |"监视应用" 图标|显示在 Apple Watch 主屏幕上|![watchOS 应用图标](icons-images/icon-home.png)|
@@ -42,7 +42,7 @@ Apple Watch 解决方案需要两组图标：
 
 " [Apple Watch 设置" 应用](~/ios/watchos/app-fundamentals/settings.md)中的 "监视" 应用旁边显示的字符串在**iOS 应用的 info.plist**中配置。
 
-确认你的**info.plist**具有 `CFBundleName` 键和值（注意：这不同于 `CFBundleDisplayName`，你可以同时拥有两者）：
+确认你的**info.plist**具有 `CFBundleName` 密钥和值（注意：这不同于 `CFBundleDisplayName` ，你可以同时拥有两者）：
 
 ```xml
 <key>CFBundleName</key>
@@ -53,23 +53,23 @@ Apple Watch 解决方案需要两组图标：
 
 [父应用](~/ios/watchos/app-fundamentals/parent-app.md)配置图标后，需要将应用程序图标资产目录添加到 watch 应用。
 
-1. 右键单击 "监视" 应用项目，然后选择 "**文件" > "添加 > 新建文件 ..."> iOS > 资产目录**将资产目录添加到项目。
+1. 右键单击 "监视应用程序" 项目，然后选择 "**文件" > 添加 > 新建文件 ... > iOS > 资产目录**"，将资产目录添加到项目。
 
-    ![](icons-images/newasset.png "Add an asset catalog to the project")
+    ![向项目添加资产目录](icons-images/newasset.png)
 
-2. 双击**appicons.appiconset/内容 json**文件
+2. 双击文件上的**appicons.appiconset/Contents.js**
 
-    ![](icons-images/xcassets-iconset-sml.png "The AppIcon contents")
+    ![AppIcon 内容](icons-images/xcassets-iconset-sml.png)
 
 3. 添加所有 watchOS 图像，如以下屏幕截图所示：
 
-    [![](icons-images/appicons-sml.png "Add all the watchOS images, as shown in this screenshot")](icons-images/appicons.png#lightbox)
+    [![添加所有 watchOS 映像，如以下屏幕截图所示](icons-images/appicons-sml.png)](icons-images/appicons.png#lightbox)
 
     请参阅 Apple 的所需大小的[图标准则](https://developer.apple.com/design/human-interface-guidelines/watchos/icons-and-images/menu-icons/)（还会在屏幕上显示维度）。 请记住，这些图标会自动裁剪，以在圆形中呈现。
 
     图标列表应类似于：
 
-    ![](icons-images/xcassets-complete-sml.png "The icon list in the Solution Explorer")
+    ![解决方案资源管理器中的图标列表](icons-images/xcassets-complete-sml.png)
 
 4. 若要确保在应用中包含资产目录，请将以下键和值添加到**Watch 应用的信息中。 info.plist**：
 

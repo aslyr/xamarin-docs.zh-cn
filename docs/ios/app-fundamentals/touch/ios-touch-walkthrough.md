@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: ca1acd58ba9b5c598e19424f46cc0bcb838315aa
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b547d21b19d223aebb345f7c4a1dc8dc126fb0d6
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571774"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928778"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>演练：在 Xamarin 中使用触控
 
@@ -34,7 +34,7 @@ ms.locfileid: "84571774"
 
 1. 打开项目**Touch_Start**。 首先运行项目以确保一切正常，并触摸 "**触摸示例**" 按钮。 应该会看到类似于下面的屏幕（尽管所有按钮都不起作用）：
 
-    [![](ios-touch-walkthrough-images/image4.png "Sample app run with non-working buttons")](ios-touch-walkthrough-images/image4.png#lightbox)
+    [![使用非工作按钮运行示例应用](ios-touch-walkthrough-images/image4.png)](ios-touch-walkthrough-images/image4.png#lightbox)
 
 1. 编辑文件**TouchViewController.cs**并将以下两个实例变量添加到类 `TouchViewController` ：
 
@@ -163,9 +163,9 @@ ms.locfileid: "84571774"
 
 1. 此时，"触摸示例" 屏幕已完成。 请注意，当你与每个图像交互时，屏幕会发生变化，如以下屏幕截图所示：
 
-    [![](ios-touch-walkthrough-images/image4.png "The starting app screen")](ios-touch-walkthrough-images/image4.png#lightbox)
+    [![正在启动应用程序屏幕](ios-touch-walkthrough-images/image4.png)](ios-touch-walkthrough-images/image4.png#lightbox)
 
-    [![](ios-touch-walkthrough-images/image5.png "The screen after the user drags a button")](ios-touch-walkthrough-images/image5.png#lightbox)
+    [![用户拖动按钮后的屏幕](ios-touch-walkthrough-images/image5.png)](ios-touch-walkthrough-images/image5.png#lightbox)
 
 <a name="Gesture_Recognizer_Samples"></a>
 
@@ -294,7 +294,7 @@ ms.locfileid: "84571774"
 1. 运行应用程序，并与两个图像交互。
 以下屏幕截图是这些交互的一个示例：
 
-    [![](ios-touch-walkthrough-images/image7.png "This screenshot shows a drag interaction")](ios-touch-walkthrough-images/image7.png#lightbox)
+    [![此屏幕截图显示了一个拖动交互](ios-touch-walkthrough-images/image7.png)](ios-touch-walkthrough-images/image7.png#lightbox)
 
 <a name="Custom_Gesture_Recognizer"></a>
 
@@ -302,7 +302,7 @@ ms.locfileid: "84571774"
 
 在本部分中，我们将应用前面几节中的概念以生成自定义手势识别器。 自定义手势识别器将为子类 `UIGestureRecognizer` ，并识别用户在屏幕上绘制 "V"，然后切换位图。 下面的屏幕截图是此屏幕的一个示例：
 
- [![](ios-touch-walkthrough-images/image8.png "The app will recognize when the user draws a `V` on the screen")](ios-touch-walkthrough-images/image8.png#lightbox)
+ [![此应用将识别用户在屏幕上绘制 "V" 的时间](ios-touch-walkthrough-images/image8.png)](ios-touch-walkthrough-images/image8.png#lightbox)
 
 按照以下步骤创建自定义手势识别器：
 
@@ -476,9 +476,9 @@ ms.locfileid: "84571774"
 
 1. 运行应用程序，并尝试在屏幕上绘制 "V"。 应会看到图像显示更改，如以下屏幕截图所示：
 
-    [![](ios-touch-walkthrough-images/image9.png "The button checked")](ios-touch-walkthrough-images/image9.png#lightbox)
+    [![已选中按钮](ios-touch-walkthrough-images/image9.png)](ios-touch-walkthrough-images/image9.png#lightbox)
 
-    [![](ios-touch-walkthrough-images/image10.png "The button unchecked")](ios-touch-walkthrough-images/image10.png#lightbox)
+    [![未选中按钮](ios-touch-walkthrough-images/image10.png)](ios-touch-walkthrough-images/image10.png#lightbox)
 
 上述三个部分演示了在 iOS 中响应触控事件的不同方法：使用触控事件、内置笔势识别器或使用自定义笔势识别器。
 

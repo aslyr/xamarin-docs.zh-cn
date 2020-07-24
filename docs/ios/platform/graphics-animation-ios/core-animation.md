@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 74d6dfb2b6a722e5af4dc97cdf23b84aa4bd95d0
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: ddd46da0787f853e949d08c45dff5be17b9451fd
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84565039"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932751"
 ---
 # <a name="core-animation-in-xamarinios"></a>Xamarin 中的核心动画
 
@@ -70,7 +70,7 @@ PresentViewController (vc2, true, null);
 
 以下屏幕截图显示了 `PartialCurl` 这种情况下的转换：
 
- ![](core-animation-images/06-view-transitions.png "This screenshot shows the PartialCurl transition")
+ ![此屏幕截图显示了 PartialCurl 转换](core-animation-images/06-view-transitions.png)
 
 ### <a name="view-transitions"></a>查看过渡
 
@@ -92,7 +92,7 @@ UIView.Transition (
 
 下面的屏幕截图显示使用时图像视图之间的动画转换 `TransitionFlipFromTop` ：
 
- ![](core-animation-images/07-animated-transition.png "This screenshot shows the animated transition between the image views when TransitionFlipFromTop is used")
+ ![此屏幕截图显示使用 TransitionFlipFromTop 时图像视图之间的动画转换](core-animation-images/07-animated-transition.png)
 
 ### <a name="view-property-animations"></a>查看属性动画
 
@@ -100,7 +100,7 @@ UIKit 支持 `UIView` 对类的各种属性进行免费动态操作，包括：
 
 - Frame
 - 边界
-- 中心
+- Center
 - Alpha
 - 转换
 - 颜色
@@ -125,17 +125,17 @@ UIView.Animate (
 
 这会使图像在屏幕的顶部来回进行动画处理，如下所示：
 
- ![](core-animation-images/08-animate-center.png "An image animating back and forth across the top of the screen as the output")
+ ![图像作为输出在屏幕的顶部来回进行动画处理](core-animation-images/08-animate-center.png)
 
 与方法一样 `Transition` ， `Animate` 允许设置持续时间和缓动函数。 此示例还使用了 `UIViewAnimationOptions.Autoreverse` 选项，该选项会使动画从值动画返回到第一个值。 但是，此代码还会 `Center` 在完成处理程序中将设置回其初始值。 当动画在一段时间内插值属性值时，属性的实际模型值始终是已设置的最终值。 在此示例中，值是 superview 右侧附近的一个点。 如果不将设置 `Center` 为初始点（动画完成的原因是由于 `Autoreverse` 正在设置该点），则在动画完成后，图像会与右侧对齐，如下所示：
 
- ![](core-animation-images/09-animation-complete.png "Without setting the Center to the initial point, the image would snap back to the right side after the animation completes")
+ ![如果不将中心设置为初始点，则在动画完成后，图像会靠后靠右对齐。](core-animation-images/09-animation-complete.png)
 
 ## <a name="using-core-animation"></a>使用核心动画
 
  `UIView`动画允许多种功能，如果可能，则应使用动画。 如前文所述，UIView 动画使用核心动画框架。 但是，某些操作不能使用 `UIView` 动画完成，如对不能使用视图进行动画处理的附加属性进行动画处理，或沿非线性路径插值。 在需要更精细控制的情况下，也可以直接使用核心动画。
 
-### <a name="layers"></a>层
+### <a name="layers"></a>图层
 
 使用核心动画时，动画通过类型为的*层*发生 `CALayer` 。 层在概念上类似于视图，其中有一个层层次结构，与视图层次结构非常类似。 实际上，层返回视图，视图添加了对用户交互的支持。 您可以通过视图的属性访问任何视图的层 `Layer` 。 事实上，在的方法中使用的上下文 `Draw` `UIView` 实际上是从层创建的。 在内部，将支持层的 `UIView` 委托设置为视图本身，这是调用 `Draw` 。 因此，当绘制到时 `UIView` ，实际上就是绘制到它的层。
 
@@ -184,11 +184,11 @@ public override void ViewDidAppear (bool animated)
 
 下图显示了位置和定位点：
 
- ![](core-animation-images/10-postion-anchorpt.png "This figure shows the position and anchor point")
+ ![下图显示了位置和定位点](core-animation-images/10-postion-anchorpt.png)
 
 运行该示例时，和会 `Position` `BorderWidth` `BorderColor` 进行动画处理，如以下屏幕截图所示：
 
- ![](core-animation-images/11-implicit-animation.png "When the example is run, the Position, BorderWidth and BorderColor animate as shown")
+ ![运行该示例时，位置、BorderWidth 和边框会按如下所示进行动画处理](core-animation-images/11-implicit-animation.png)
 
 ### <a name="explicit-animations"></a>显式动画
 
@@ -229,9 +229,9 @@ public override void ViewDidAppear (bool animated)
 
 下面的屏幕截图显示了一个层，其中包含通过指定路径动画显示的图像：
 
- ![](core-animation-images/12-explicit-animation.png "This screenshot shows the layer containing the image animating through the specified path")
+ ![此屏幕截图显示了一个层，其中包含图像通过指定路径进行动画处理](core-animation-images/12-explicit-animation.png)
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了通过*核心动画*框架提供的动画功能。 我们检查了核心动画，同时显示了它在 UIKit 中的动画效果，以及如何将其直接用于较低级别的动画控件。
 

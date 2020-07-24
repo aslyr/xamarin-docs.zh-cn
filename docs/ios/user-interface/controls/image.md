@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/13/2018
-ms.openlocfilehash: 70d3e7ddc8b88651ec68552d35dbd4a3e9c90bd0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 32f145d791a40bd90e848f1124ce150cbd9c7575
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022068"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937747"
 ---
 # <a name="displaying-images-with-xamarinios"></a>用 Xamarin 显示映像
 
@@ -26,7 +26,7 @@ Visual Studio for Mac 还支持名为**资源**的特殊目录，该目录还可
 
 此屏幕截图显示在右键单击文件时显示的**生成操作**选项：
 
- [![](image-images/image30a.png "Build Action menu")](image-images/image30a.png#lightbox)
+ [!["生成操作" 菜单](image-images/image30a.png)](image-images/image30a.png#lightbox)
 
 Visual Studio for Mac 通常会自动选择正确的**生成操作**，但是你应该知道这些设置，尤其是在你的项目中移动文件时。
 
@@ -34,15 +34,15 @@ Visual Studio for Mac 通常会自动选择正确的**生成操作**，但是你
 
 若要将图像文件添加到项目中，请先右键单击该项目，然后选择 "**添加文件 ...** "
 
- [![](image-images/image31a.png "Add Files... menu")](image-images/image31a.png#lightbox)
+ [![添加文件 .。。下拉菜单](image-images/image31a.png)](image-images/image31a.png#lightbox)
 
 选择要包含在标准文件对话框中的图像。 将**BundleResource**映像的默认生成操作–不要覆盖此值，除非有特定的原因。
 
- [![](image-images/image32a.png "Add Files dialog")](image-images/image32a.png#lightbox)
+ [!["添加文件" 对话框](image-images/image32a.png)](image-images/image32a.png#lightbox)
 
 该图像将添加到项目中，并可在代码中加载和显示。 此屏幕截图显示了添加到 iOS 应用程序项目的图像：
 
- [![](image-images/image33a.png "Image in project")](image-images/image33a.png#lightbox)
+ [![项目中的图像](image-images/image33a.png)](image-images/image33a.png#lightbox)
 
 ### <a name="what-is-the-resources-directory"></a>什么是资源目录？
 
@@ -51,7 +51,7 @@ Visual Studio for Mac 通常会自动选择正确的**生成操作**，但是你
 - 存储在应用程序的属性中配置的映像，例如，默认启动映像和应用程序图标。
 - 将其他图像和文件与代码分开存储，使其更易于管理（复制资源目录内容时，会保留子目录）。
 
-**资源**目录在库项目中特别有用，因为代码可以假设这些图像将复制到使用应用程序的根目录中，这样就可以更轻松地编写需要图像、声音、视频、XML 或其他文件。
+**资源**目录在库项目中特别有用，因为代码可以假设这些图像将复制到使用应用程序的根目录中，这样就可以更轻松地编写需要图像、声音、视频、XML 或其他文件的共享代码库。
 
 **Resources**目录必须为，因此，所有文件都应将生成操作设置为**BundleResource**。
 
@@ -59,21 +59,21 @@ Visual Studio for Mac 通常会自动选择正确的**生成操作**，但是你
 
 在 iOS 设计器中，使用**图像视图**显示图像或动画序列的图像。 工具箱中的**图像视图**图标如下所示：
 
- [![](image-images/image35a.png "ImageView in Toolbox")](image-images/image35.png#lightbox)
+ [![工具箱中的 ImageView](image-images/image35a.png)](image-images/image35.png#lightbox)
 
 将 "**图像" 视图**从 "**工具箱**" 拖到视图控制器上。 然后，在 "**图像视图 > 图像**" 下，下拉列表将提供项目中所有可用图像文件的列表。 选择其中任何一个，以将其添加到图像视图。
 
- [![](image-images/image36a.png "ImageView in Toolbox")](image-images/image36.png#lightbox)
+ [![工具箱中的 ImageView](image-images/image36a.png)](image-images/image36.png#lightbox)
 
 ### <a name="displaying-the-image-programmatically"></a>以编程方式显示图像
 
-由于**SF 的猴子**是位于**Resources**目录的根目录中，因此它将在应用程序捆绑包的根中在运行时可用。 若要在图像视图控件中显示此图像，请使用以下代码：
+由于**SF Monkey.jpg**位于**Resources**目录的根目录中，因此它将在应用程序捆绑包的根中的运行时可用。 若要在图像视图控件中显示此图像，请使用以下代码：
 
 ```csharp
 imageview1.Image = UIImage.FromBundle("SF Monkey.png");
 ```
 
-如果已将该图像放入 **/Resources/Pics/SF**，则代码会在路径中包括 "**图片**" 文件夹：
+如果将图像置于 **/Resources/Pics/SF Monkey.jpg**中，则代码会在路径中包括 "**图片**" 文件夹：
 
 ```csharp
 imageview1.Image = UIImage.FromBundle("Pics/SF Monkey.png");

@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e78e7c3056d4f1e22114819f54c1df261aec70e1
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 665971607d8c67f77ad5172778cddcd97bf79841
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84198119"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932621"
 ---
 # <a name="introduction-to-enterprise-app-development"></a>企业应用程序开发简介
 
@@ -37,7 +37,7 @@ ms.locfileid: "84198119"
 - 它提高了重用性，并完全分离了应用的水平功能（例如身份验证和数据访问）和垂直功能（如特定于应用的业务功能）之间的问题。 这允许更轻松地管理应用程序组件之间的依赖关系和交互。
 - 它通过允许不同的个人或团队根据自己的专业知识来重点关注特定的任务或功能，帮助维护角色分离。 特别是，它提供用户界面和应用程序的业务逻辑之间的更清晰分隔。
 
-但是，将应用分区为分离松耦合组件时，必须解决许多问题。 这些方法包括：
+但是，将应用分区为分离松耦合组件时，必须解决许多问题。 其中包括：
 
 - 确定如何在用户界面控件与其逻辑之间提供清晰的问题分离。 创建企业应用程序时，最重要的决策之一 Xamarin.Forms 是是在代码隐藏文件中放置业务逻辑，还是在用户界面控件与其逻辑之间创建完全分离的问题，从而使应用程序更易于维护和可测试。 有关详细信息，请参阅[ViewModel](~/xamarin-forms/enterprise-application-patterns/mvvm.md)。
 - 确定是否要使用依赖关系注入容器。 依赖关系注入容器通过提供一项功能来构造类的实例并注入依赖关系，从而减少对象之间的依赖关系，并基于容器的配置来管理其生存期。 有关详细信息，请参阅[依赖关系注入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)。
@@ -65,7 +65,7 @@ ms.locfileid: "84198119"
 
 图1-1 提供示例应用程序的体系结构的高级概述。
 
-![](introduction-images/architecture.png "eShopOnContainers high-level architecture")
+![eShopOnContainers 高级体系结构](introduction-images/architecture.png)
 
 **图 1-1**： eShopOnContainers 高级体系结构
 
@@ -92,7 +92,7 @@ ms.locfileid: "84198119"
 
 本指南重点介绍如何使用生成跨平台的企业应用 Xamarin.Forms ，并使用 eShopOnContainers 移动应用作为示例。 图1-2 显示了 eShopOnContainers 移动应用中的页面，其中提供了前面概述的功能。
 
-[![](introduction-images/screenshots.png "The eShopOnContainers mobile app")](introduction-images/screenshots-large.png#lightbox "The eShopOnContainers mobile app")
+[![EShopOnContainers 移动应用](introduction-images/screenshots.png)](introduction-images/screenshots-large.png#lightbox "EShopOnContainers 移动应用")
 
 **图 1-2**： eShopOnContainers 移动应用
 
@@ -122,7 +122,7 @@ EShopOnContainers 移动应用 Xamarin.Forms 执行以下功能：
 
 EShopOnContainers 移动应用解决方案将源代码和其他资源组织到项目中。 所有项目都使用文件夹将源代码和其他资源组织到类别中。 下表概述了组成 eShopOnContainers 移动应用的项目：
 
-|Project|说明|
+|项目|说明|
 |--- |--- |
 |eShopOnContainers|此项目是可移植类库（PCL）项目，其中包含共享代码和共享 UI。|
 |eShopOnContainers. Droid|此项目包含 Android 特定的代码，是 Android 应用的入口点。|
@@ -139,7 +139,7 @@ EShopOnContainers 移动应用中的类可在任何应用程序中重复使用 X
 
 EShopOnContainers PCL 项目包含以下文件夹：
 
-|文件夹|说明|
+|Folder|说明|
 |--- |--- |
 |动画|包含使动画可在 XAML 中使用的类。|
 |行为|包含向视图类公开的行为。|
@@ -147,7 +147,7 @@ EShopOnContainers PCL 项目包含以下文件夹：
 |转换器|包含将自定义逻辑应用于绑定的值转换器。|
 |效果|包含 `EntryLineColorEffect` 类，该类用于更改特定控件的边框颜色 `Entry` 。|
 |例外|包含自定义 `ServiceAuthenticationException` 。|
-|Extensions|包含和类的扩展 `VisualElement` 方法 `IEnumerable` 。|
+|扩展|包含和类的扩展 `VisualElement` 方法 `IEnumerable` 。|
 |帮助程序|包含应用程序的帮助器类。|
 |模型|包含应用程序的模型类。|
 |“属性”|包含 `AssemblyInfo.cs` .net 程序集元数据文件。|

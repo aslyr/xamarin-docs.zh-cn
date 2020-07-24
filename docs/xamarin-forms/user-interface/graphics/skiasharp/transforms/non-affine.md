@@ -10,12 +10,12 @@ ms.date: 04/14/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 91a639b2d3c2f6a8437a09a70808dc6d793ba76b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b4c6569acbade7edf64c9aaf54237ebaa342ea54
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131750"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936638"
 ---
 # <a name="non-affine-transforms"></a>非仿射转换
 
@@ -27,7 +27,7 @@ _利用转换矩阵的第三列创建透视和锥度效果_
 
 但是，SkiaSharp 还支持非仿射转换，这种转换可以将矩形转换为任意凸四边形：
 
-![](non-affine-images/nonaffinetransformexample.png "A bitmap transformed into a convex quadrilateral")
+![转换为凸四边形的位图](non-affine-images/nonaffinetransformexample.png)
 
 凸四边形是一个四面图形，其中的内部角度始终小于180度，而且没有彼此相交的边。
 
@@ -99,7 +99,7 @@ y "= y/（0.01 · x + 1）
 
 当 x 为100时，z 的分母为2，因此 x 和 y 坐标实际上减半。 框的右侧将变短于左侧：
 
-![](non-affine-images/nonaffinetransform.png "A box subjected to a non-affine transform")
+![用于非仿射转换的 box](non-affine-images/nonaffinetransform.png)
 
 `Persp`这些单元格名称的一部分是指 "透视"，因为透视收缩建议该框现在与查看器的右侧倾斜。
 
@@ -233,7 +233,7 @@ public partial class TestPerspectivePage : ContentPage
 
 下面是一些示例图像：
 
-[![](non-affine-images/testperspective-small.png "Triple screenshot of the Test Perspective page")](non-affine-images/testperspective-large.png#lightbox "Triple screenshot of the Test Perspective page")
+[![测试透视页面的三向屏幕截图](non-affine-images/testperspective-small.png)](non-affine-images/testperspective-large.png#lightbox "测试透视页面的三向屏幕截图")
 
 当您试验滑块时，您会发现值超过0.0066 或更低–0.0066 导致图像突然断开并一致。 正在转换的位图为300像素的正方形。 它相对于其中心进行转换，因此位图范围从–150到150的坐标。 请记住，z "的值为：
 
@@ -245,7 +245,7 @@ z "= Persp0 · x + Persp1 · y + 1
 
 这种非仿射转换是一个*锥形转换*。 这种类型的非仿射转换将保留矩形的整体尺寸，但 tapers 一侧：
 
-![](non-affine-images/tapertransform.png "A box subjected to a taper transform")
+![对锥形转换的 box](non-affine-images/tapertransform.png)
 
 [`TaperTransform`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransform.cs)类基于这些参数执行非仿射转换的一般化计算：
 
@@ -397,13 +397,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 下面是一些示例：
 
-[![](non-affine-images/tapertransform-small.png "Triple screenshot of the Taper Transform page")](non-affine-images/tapertransform-large.png#lightbox "Triple screenshot of the Taper Transform page")
+[!["锥度转换" 页的三向屏幕截图](non-affine-images/tapertransform-small.png)](non-affine-images/tapertransform-large.png#lightbox ""锥度转换" 页的三向屏幕截图")
 
 另一种通用化非仿射转换是三维旋转，这在下一篇[**三维**](3d-rotation.md)旋转中进行了演示。
 
 非仿射转换可以将矩形转换为任意凸四边形。 "**显示非仿射矩阵**" 页演示了这种情况。 它与 "显示[**矩阵转换**](matrix.md)" 一文中的 "**显示仿射矩阵**" 页非常相似，不同之处在于它具有 `TouchPoint` 用于处理位图第四个角的第四个对象：
 
-[![](non-affine-images/shownonaffinematrix-small.png "Triple screenshot of the Show Non-Affine Matrix page")](non-affine-images/shownonaffinematrix-large.png#lightbox "Triple screenshot of the Show Non-Affine Matrix page")
+[!["显示非仿射矩阵" 页的三个屏幕截图](non-affine-images/shownonaffinematrix-small.png)](non-affine-images/shownonaffinematrix-large.png#lightbox ""显示非仿射矩阵" 页的三个屏幕截图")
 
 只要您不尝试使位图的其中一个角的内部角度大于180度，或使两个边彼此交叉，程序就会使用类中的此方法成功计算转换 [`ShowNonAffineMatrixPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs) ：
 

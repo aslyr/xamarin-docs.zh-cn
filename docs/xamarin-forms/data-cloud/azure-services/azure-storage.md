@@ -10,12 +10,12 @@ ms.date: 12/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a69edd3bf014809cc479dcb7cba0e430dcefbe5b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f67543a6c678e2c3a1395f816e020d69af4bf873
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84564675"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936651"
 ---
 # <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>在 Azure 存储中存储和访问数据Xamarin.Forms
 
@@ -46,7 +46,7 @@ Azure 存储提供以下四种存储服务：
 
 Blob 存储由三个组件组成，如下图所示：
 
-![](azure-storage-images/blob-storage.png "Blob Storage Concepts")
+![Blob 存储概念](azure-storage-images/blob-storage.png)
 
 对 Azure 存储的所有访问都是通过存储帐户进行的。 一个存储帐户可以包含无限数量的容器，一个容器可以存储无限数量的 blob，直至达到存储帐户的容量限制。
 

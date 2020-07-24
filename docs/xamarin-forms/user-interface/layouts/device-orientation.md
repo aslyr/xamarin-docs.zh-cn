@@ -10,12 +10,12 @@ ms.date: 04/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0b1a47d4dcc92fca4d280708a2cbbe9374c17da8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: de5ebf086af7fa8d7c6360bf3a1f48f57b834e44
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573282"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938432"
 ---
 # <a name="device-orientation"></a>设备方向
 
@@ -123,11 +123,11 @@ protected override void OnSizeAllocated(double width, double height)
 
 检测到设备方向发生变化后，你可能需要在用户界面中添加或删除其他视图，以响应可用空间的更改。 例如，考虑每个纵向平台上的内置计算器：
 
-![](device-orientation-images/calculator-portrait.png "Calculator Application in Portrait")
+![纵向计算器应用程序](device-orientation-images/calculator-portrait.png)
 
 和横向：
 
-![](device-orientation-images/calculator-landscape.png "Calculator Application in Landscape")
+![横向计算器应用程序](device-orientation-images/calculator-landscape.png)
 
 请注意，应用会通过在横向添加更多功能来利用可用空间。
 
@@ -147,11 +147,11 @@ protected override void OnSizeAllocated(double width, double height)
 
 请考虑以下应用程序，纵向显示：
 
-![](device-orientation-images/photo-stack-portrait.png "Photo Application in Portrait")
+![纵向照片应用程序](device-orientation-images/photo-stack-portrait.png)
 
 和横向：
 
-![](device-orientation-images/photo-stack-landscape.png "Photo Application in Landscape")
+![横向照片应用程序](device-orientation-images/photo-stack-landscape.png)
 
 这是通过以下 XAML 实现的：
 
@@ -221,11 +221,11 @@ protected override void OnSizeAllocated (double width, double height){
 
 请考虑以下应用程序，纵向显示：
 
-![](device-orientation-images/photo-abs-portrait.png "Photo Application in Portrait")
+![纵向照片应用程序](device-orientation-images/photo-abs-portrait.png)
 
 和横向：
 
-![](device-orientation-images/photo-abs-landscape.png "Photo Application in Landscape")
+![横向照片应用程序](device-orientation-images/photo-abs-landscape.png)
 
 这是通过以下 XAML 实现的：
 
@@ -273,11 +273,11 @@ Title="AbsoluteLayout - XAML" BackgroundImageSource="deer.jpg">
 
 请考虑以下应用程序，纵向显示：
 
-![](device-orientation-images/photo-rel-portrait.png "Photo Application in Portrait")
+![纵向照片应用程序](device-orientation-images/photo-rel-portrait.png)
 
 和横向：
 
-![](device-orientation-images/photo-rel-landscape.png "Photo Application in Landscape")
+![横向照片应用程序](device-orientation-images/photo-rel-landscape.png)
 
 这是通过以下 XAML 实现的：
 
@@ -360,15 +360,15 @@ BackgroundImageSource="deer.jpg">
 - 由于页面布局的方式，无需执行过程代码来引入响应能力。
 - 将 `ScrollView` 用于允许标签可见，即使屏幕的高度小于按钮和图像的固定高度之和也是如此。
 
-### <a name="grid"></a>Grid
+### <a name="grid"></a>网格
 
 请考虑以下应用程序，纵向显示：
 
-![](device-orientation-images/photo-grid-portrait.png "Photo Application in Portrait")
+![纵向照片应用程序](device-orientation-images/photo-grid-portrait.png)
 
 和横向：
 
-![](device-orientation-images/photo-grid-landscape.png "Photo Application in Landscape")
+![横向照片应用程序](device-orientation-images/photo-grid-landscape.png)
 
 这是通过以下 XAML 实现的：
 

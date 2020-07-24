@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 395ac62cd4db62c02863e352ed5643958348dcff
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 8b911be4b1bf547a9a1ad5d6b795894ddba3c26d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574385"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939056"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Xamarin 中的情节提要简介
 
@@ -20,7 +20,7 @@ _本文介绍了如何在 Xamarin 应用程序中使用情节提要。其中介�
 
 利用情节提要，你可以为 Xamarin 应用程序开发一个用户界面，该用户界面不仅包括窗口定义和控件，而且还包含不同窗口（通过 segue）和视图状态之间的链接。
 
-[![](images/intro01.png "A sample UI in Xcode")](images/intro01.png#lightbox)
+[![Xcode 中的示例 UI](images/intro01.png)](images/intro01.png#lightbox)
 
 本文将介绍如何使用情节提要定义 Xamarin 应用程序的用户界面。
 
@@ -36,11 +36,11 @@ _本文介绍了如何在 Xamarin 应用程序中使用情节提要。其中介�
 
 如上所述，情节提要将给定应用的所有 UI 定义为细分为其_视图控制器_的功能概述。 在 Xcode 的 Interface Builder 中，其中每个控制器都位于其自身的_场景_中。
 
-[![](images/intro02.png "An example view controller")](images/intro02.png#lightbox)
+[![示例视图控制器](images/intro02.png)](images/intro02.png#lightbox)
 
 每个场景表示给定的视图和视图控制器对，其中包含一组用于连接 UI 中的每个场景的线条（称为 Segue），从而显示其关系。 某些 Segue 定义了一个视图控制器如何包含一个或多个子视图或视图控制器。 其他 Segue，定义视图控制器之间的转换（例如显示 segue 或对话框）。 
 
-[![](images/intro03.png "A sample segue")](images/intro03.png#lightbox)
+[![示例 segue](images/intro03.png)](images/intro03.png#lightbox)
 
 要注意的最重要的一点是，每个 Segue 表示应用 UI 的给定元素之间某种形式的数据流。
 
@@ -50,7 +50,7 @@ _本文介绍了如何在 Xamarin 应用程序中使用情节提要。其中介�
 
 视图控制器定义 Mac 应用内的给定信息视图与提供该信息的数据模型之间的关系。 情节提要中的每个顶层场景都代表 Xamarin 应用程序代码中的一个视图控制器。
 
-[![](images/intro04.png "An example slips view controller")](images/intro04.png#lightbox)
+[![示例单视图控制器](images/intro04.png)](images/intro04.png#lightbox)
 
 通过这种方式，每个视图控制器都是一种独立的、可重复使用的信息的可视化表示形式（视图）和逻辑，用于显示和控制该信息。
 
@@ -108,13 +108,13 @@ SourceWriter 代码已经完全注释，且在可用时，提供了相关链接�
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文大致介绍了如何在 Xamarin 应用程序中使用情节提要。 我们了解到如何使用情节提要创建新的应用程序，以及如何定义用户界面。 我们还了解了如何使用 segue 在不同窗口和视图状态之间导航。
 
 ## <a name="related-links"></a>相关链接
 
-- [Hello，Mac 示例](https://docs.microsoft.com/samples/xamarin/mac-samples/hello-mac)
+- [你好，Mac （示例）](https://docs.microsoft.com/samples/xamarin/mac-samples/hello-mac)
 - [了解 Mac](~/mac/get-started/hello-mac.md)
 - [使用 Windows](~/mac/user-interface/window.md)
 - [OS X 人机界面指南](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)

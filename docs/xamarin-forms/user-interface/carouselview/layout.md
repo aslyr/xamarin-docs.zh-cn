@@ -10,16 +10,16 @@ ms.date: 01/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 44df710df0272afe3c6f6911381af1a88c8cf923
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d245ebbf42333ad822e0d6ed8569cc8193f1b478
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140278"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936703"
 ---
 # <a name="xamarinforms-carouselview-layout"></a>Xamarin.FormsCarouselView 布局
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![预发布 API](~/media/shared/preview.png "此 API 当前为预发布版本")
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
@@ -30,7 +30,7 @@ ms.locfileid: "84140278"
 
 这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着属性可以是数据绑定的目标。
 
-默认情况下， [`CarouselView`](xref:Xamarin.Forms.CarouselView) 会在水平方向上显示其项。 屏幕上将显示一项，其中包含滑动手势，导致在项集合中向前和向后导航。 但是，也可以使用垂直方向。 这是因为 [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout) 属性的类型为 `LinearItemsLayout` ，它继承自 [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout) 类。 `ItemsLayout`类定义以下属性：
+默认情况下， [`CarouselView`](xref:Xamarin.Forms.CarouselView) 会在水平方向上显示其项。 屏幕上将显示一项，其中包含滑动手势，导致在项集合中向前和向后导航。 但是，也可以使用垂直方向。 这是因为 [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout) 属性的类型为 `LinearItemsLayout` ，它继承自 [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout) 类。 `ItemsLayout` 类定义了以下属性：
 
 - [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation)类型为的 [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation) 指定 [`CarouselView`](xref:Xamarin.Forms.CarouselView) 添加添加项的方向。
 - [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)类型为的 [`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment) 指定对齐点如何与项对齐。
@@ -274,5 +274,5 @@ void OnImageTapped(object sender, EventArgs e)
 ## <a name="related-links"></a>相关链接
 
 - [CarouselView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
-- [从右到左本地化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)
+- [从右到左的本地化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)
 - [Xamarin.FormsCarouselView 滚动](scrolling.md)

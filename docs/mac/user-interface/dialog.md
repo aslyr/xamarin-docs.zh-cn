@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 0831ec2fae62d4e2230761a157a39f99f13b416a
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 631b1019313ddde6b53ffe63600be8f3fc58673a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571657"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931464"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Xamarin 中的对话框
 
@@ -22,7 +22,7 @@ ms.locfileid: "84571657"
 
 Windows 可以在无模式状态（如可以同时打开多个文档的文本编辑器）或模式（例如，在应用程序可以继续之前必须关闭的 "导出" 对话框）中使用。
 
-[![](dialog-images/dialog03.png "An open dialog box")](dialog-images/dialog03.png#lightbox)
+[!["打开" 对话框](dialog-images/dialog03.png)](dialog-images/dialog03.png#lightbox)
 
 在本文中，我们将介绍在 Xamarin. Mac 应用程序中使用对话框和模式窗口的基本知识。 强烈建议您先完成[Hello，Mac](~/mac/get-started/hello-mac.md)一文，特别是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)及[输出口和操作](~/mac/get-started/hello-mac.md#outlets-and-actions)部分的简介，因为它涵盖了我们将在本文中使用的重要概念和技巧。
 
@@ -44,25 +44,25 @@ Windows 可以在无模式状态（如可以同时打开多个文档的文本编
 
 任何标准 `NSWindow` 都可通过模式显示来用作自定义对话框：
 
-[![](dialog-images/modal01.png "An example modal window")](dialog-images/modal01.png#lightbox)
+[![模式窗口示例](dialog-images/modal01.png)](dialog-images/modal01.png#lightbox)
 
 ### <a name="document-modal-dialog-sheets"></a>文档模式对话框工作表
 
 _工作表_是附加到给定文档窗口的模式对话框，阻止用户在关闭该对话框之前与窗口交互。 工作表附加到其所从其上发现的窗口，并且一次只能为窗口打开一个工作表。
 
-[![](dialog-images/sheet08.png "An example modal sheet")](dialog-images/sheet08.png#lightbox)
+[![示例模式表](dialog-images/sheet08.png)](dialog-images/sheet08.png#lightbox)
 
 ### <a name="preferences-windows"></a>首选项窗口
 
 "首选项" 窗口是一个无模式对话框，其中包含用户不常更改的应用程序设置。 首选项 Windows 通常包含一个工具栏，使用户能够在不同的设置组之间切换：
 
-[![](dialog-images/dialog02.png "An example preference window")](dialog-images/dialog02.png#lightbox)
+[![一个示例首选项窗口](dialog-images/dialog02.png)](dialog-images/dialog02.png#lightbox)
 
 ### <a name="open-dialog"></a>打开对话框
 
 "打开" 对话框为用户提供了在应用程序中查找和打开项的一致方式：
 
-[![](dialog-images/dialog03.png "A open dialog box")](dialog-images/dialog03.png#lightbox)
+[!["打开" 对话框](dialog-images/dialog03.png)](dialog-images/dialog03.png#lightbox)
 
 ### <a name="print-and-page-setup-dialogs"></a>打印和页面设置对话框
 
@@ -70,37 +70,37 @@ macOS 提供了应用程序可以显示的标准打印和页面设置对话框�
 
 "打印" 对话框可以同时显示为 "自由浮动" 对话框：
 
-[![](dialog-images/print01.png "A print dialog box")](dialog-images/print01.png#lightbox)
+[!["打印" 对话框](dialog-images/print01.png)](dialog-images/print01.png#lightbox)
 
 也可以将其显示为工作表：
 
-[![](dialog-images/print02.png "A print sheet")](dialog-images/print02.png#lightbox)
+[![打印工作表](dialog-images/print02.png)](dialog-images/print02.png#lightbox)
 
 "页面设置" 对话框可以同时显示为 "自由浮动" 对话框：
 
-[![](dialog-images/print03.png "A page setup dialog")](dialog-images/print03.png#lightbox)
+[!["页面设置" 对话框](dialog-images/print03.png)](dialog-images/print03.png#lightbox)
 
 也可以将其显示为工作表：
 
-[![](dialog-images/print04.png "A page setup sheet")](dialog-images/print04.png#lightbox)
+[![页面设置表](dialog-images/print04.png)](dialog-images/print04.png#lightbox)
 
 ### <a name="save-dialogs"></a>保存对话框
 
 "保存" 对话框为用户提供了在应用程序中保存项的一致方式。 "保存" 对话框有两种状态： "**最小**" （也称为 "折叠"）：
 
-[![](dialog-images/save01.png "A save dialog")](dialog-images/save01.png#lightbox)
+[![保存对话框](dialog-images/save01.png)](dialog-images/save01.png#lightbox)
 
 并且**展开**状态：
 
-[![](dialog-images/save02.png "An expanded save dialog")](dialog-images/save02.png#lightbox)
+[![展开的 "保存" 对话框](dialog-images/save02.png)](dialog-images/save02.png#lightbox)
 
 "**最小**保存" 对话框也可以显示为工作表：
 
-[![](dialog-images/save03.png "A minimal save sheet")](dialog-images/save03.png#lightbox)
+[![最小保存工作表](dialog-images/save03.png)](dialog-images/save03.png#lightbox)
 
 与**展开**的 "保存" 对话框一样：
 
-[![](dialog-images/save04.png "An expanded save sheet")](dialog-images/save04.png#lightbox)
+[![扩展的保存表](dialog-images/save04.png)](dialog-images/save04.png#lightbox)
 
 有关详细信息，请参阅 Apple [OS X 人体学接口准则](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)的[对话框](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowDialogs.html#//apple_ref/doc/uid/20000957-CH43-SW1)部分
 
@@ -115,20 +115,20 @@ macOS 提供了应用程序可以显示的标准打印和页面设置对话框�
 1. 在**解决方案资源管理器**中，打开 `Main.storyboard` 要在 Xcode 的 Interface Builder 中进行编辑的文件。
 2. 将新的**视图控制器**拖动到 Design Surface：
 
-    [![](dialog-images/new01.png "Selecting a View Controller from the Library")](dialog-images/new01.png#lightbox)
+    [![从库中选择视图控制器](dialog-images/new01.png)](dialog-images/new01.png#lightbox)
 3. 在**标识检查器**中，输入 `CustomDialogController` 作为**类名**： 
 
-    [![](dialog-images/new02.png "Setting the class name")](dialog-images/new02.png#lightbox)
+    [![设置类名](dialog-images/new02.png)](dialog-images/new02.png#lightbox)
 4. 切换回 Visual Studio for Mac，使其与 Xcode 同步并创建 `CustomDialogController.h` 文件。
 5. 返回到 Xcode 并设计接口： 
 
-    [![](dialog-images/new03.png "Designing the UI in Xcode")](dialog-images/new03.png#lightbox)
+    [![在 Xcode 中设计 UI](dialog-images/new03.png)](dialog-images/new03.png#lightbox)
 6. 从应用程序的主窗口中创建一个**模式 Segue** ，方法是：从应用程序的主窗口拖到新视图控制器。 指定**标识符** `ModalSegue` ： 
 
-    [![](dialog-images/new06.png "A modal segue")](dialog-images/new06.png#lightbox)
+    [![模式 segue](dialog-images/new06.png)](dialog-images/new06.png#lightbox)
 7. 连接任何**操作**和**插座**： 
 
-    [![](dialog-images/new04.png "Configuring an Action")](dialog-images/new04.png#lightbox)
+    [![配置操作](dialog-images/new04.png)](dialog-images/new04.png#lightbox)
 8. 保存更改并返回到 Visual Studio for Mac 以与 Xcode 同步。
 
 使文件如下所 `CustomDialogController.cs` 示：
@@ -248,7 +248,7 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 
 我们可以运行应用程序并显示自定义对话框：
 
-[![](dialog-images/new05.png "An example dialog")](dialog-images/new05.png#lightbox)
+[![示例对话框](dialog-images/new05.png)](dialog-images/new05.png#lightbox)
 
 有关在 Xamarin Mac 应用程序中使用 windows 的详细信息，请参阅使用[windows](~/mac/user-interface/window.md)文档。
 
@@ -263,19 +263,19 @@ _工作表_是附加到给定文档窗口的模式对话框，阻止用户在关
 1. 在**解决方案资源管理器**中，打开 `Main.storyboard` 要在 Xcode 的 Interface Builder 中进行编辑的文件。
 2. 将新的**视图控制器**拖动到 Design Surface：
 
-    [![](dialog-images/new01.png "Selecting a View Controller from the Library")](dialog-images/new01.png#lightbox)
+    [![从库中选择视图控制器](dialog-images/new01.png)](dialog-images/new01.png#lightbox)
 3. 设计用户界面：
 
-    [![](dialog-images/sheet01.png "The UI design")](dialog-images/sheet01.png#lightbox)
+    [![UI 设计](dialog-images/sheet01.png)](dialog-images/sheet01.png#lightbox)
 4. 从主窗口创建**工作表 Segue**到新的视图控制器： 
 
-    [![](dialog-images/sheet02.png "Selecting the Sheet segue type")](dialog-images/sheet02.png#lightbox)
+    [![选择工作表 segue 类型](dialog-images/sheet02.png)](dialog-images/sheet02.png#lightbox)
 5. 在**标识检查器**中，将视图控制器的**类**命名 `SheetViewController` 为： 
 
-    [![](dialog-images/sheet03.png "Setting the class name")](dialog-images/sheet03.png#lightbox)
+    [![设置类名](dialog-images/sheet03.png)](dialog-images/sheet03.png#lightbox)
 6. 定义任何所需的**插座**和**操作**： 
 
-    [![](dialog-images/sheet04.png "Defining the required Outlets and Actions")](dialog-images/sheet04.png#lightbox)
+    [![定义所需的插座和操作](dialog-images/sheet04.png)](dialog-images/sheet04.png#lightbox)
 7. 保存更改并返回到要同步的 Visual Studio for Mac。
 
 接下来，编辑 `SheetViewController.cs` 文件，使其类似于以下内容：
@@ -406,7 +406,7 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 
 如果运行应用程序并打开工作表，则该工作表将附加到窗口：
 
-[![](dialog-images/sheet08.png "An example sheet")](dialog-images/sheet08.png#lightbox)
+[![示例表](dialog-images/sheet08.png)](dialog-images/sheet08.png#lightbox)
 
 <a name="Creating_a_Preferences_Dialog"></a>
 
@@ -480,36 +480,36 @@ namespace MacWindows
 1. 在**解决方案资源管理器**中，打开 `Main.storyboard` 要在 Xcode 的 Interface Builder 中进行编辑的文件。
 2. 将新的**窗口控制器**拖动到 Design Surface：
 
-    [![](dialog-images/pref01.png "Select a Window Controller from the Library")](dialog-images/pref01.png#lightbox)
+    [![从库中选择一个窗口控制器](dialog-images/pref01.png)](dialog-images/pref01.png#lightbox)
 3. 在**菜单栏**设计器附近排列窗口：
 
-    [![](dialog-images/pref02.png "Adding the new Window")](dialog-images/pref02.png#lightbox)
+    [![添加新窗口](dialog-images/pref02.png)](dialog-images/pref02.png#lightbox)
 4. 创建附加视图控制器的副本，因为首选项视图中将显示选项卡：
 
-    [![](dialog-images/pref03.png "Adding the required View Controllers")](dialog-images/pref03.png#lightbox)
+    [![添加所需的视图控制器](dialog-images/pref03.png)](dialog-images/pref03.png#lightbox)
 5. 从**库**中拖动新的**工具栏控制器**：
 
-    [![](dialog-images/pref04.png "Select a Toolbar Controller from the Library")](dialog-images/pref04.png#lightbox)
+    [![从库中选择工具栏控制器](dialog-images/pref04.png)](dialog-images/pref04.png#lightbox)
 6. 并将其放在 Design Surface 的窗口中：
 
-    [![](dialog-images/pref05.png "Adding a new Toolbar Controller")](dialog-images/pref05.png#lightbox)
+    [![添加新的工具栏控制器](dialog-images/pref05.png)](dialog-images/pref05.png#lightbox)
 7. 布局工具栏的设计：
 
-    [![](dialog-images/pref06.png "Layout the toolbar")](dialog-images/pref06.png#lightbox)
+    [![布局工具栏](dialog-images/pref06.png)](dialog-images/pref06.png#lightbox)
 8. 按住 ctrl 并从每个**工具栏按钮**拖动到前面创建的视图。 选择**自定义**segue 类型：
 
-    [![](dialog-images/pref07.png "Setting the segue type")](dialog-images/pref07.png#lightbox)
+    [![设置 segue 类型](dialog-images/pref07.png)](dialog-images/pref07.png#lightbox)
 9. 选择新的 Segue 并将**类**设置为 `ReplaceViewSegue` ：
 
-    [![](dialog-images/pref08.png "Setting the segue class")](dialog-images/pref08.png#lightbox)
+    [![设置 segue 类](dialog-images/pref08.png)](dialog-images/pref08.png#lightbox)
 10. 在 Design Surface 上的菜单**栏设计器**中，从 "应用程序" 菜单中选择 "**首选项 ...**"，然后单击并拖动到 "首选项" 窗口，创建**Show** segue：
 
-    [![](dialog-images/pref09.png "Setting the segue type")](dialog-images/pref09.png#lightbox)
+    [![设置 segue 类型](dialog-images/pref09.png)](dialog-images/pref09.png#lightbox)
 11. 保存更改并返回到要同步的 Visual Studio for Mac。
 
 如果运行代码并从 "**应用程序" 菜单**中选择 "**首选项 ...** "，则将显示该窗口：
 
-[![](dialog-images/pref10.png "An example preferences window")](dialog-images/pref10.png#lightbox)
+[![示例首选项窗口](dialog-images/pref10.png)](dialog-images/pref10.png#lightbox)
 
 有关使用 Windows 和工具栏的详细信息，请参阅我们的[windows](~/mac/user-interface/window.md)和[工具栏](~/mac/user-interface/toolbar.md)文档。
 
@@ -718,7 +718,7 @@ namespace SourceWriter
 
 接下来，将首选项类连接到首选项窗口和上面创建的视图上的 UI 元素。 在 Interface Builder 中，选择一个首选项视图控制器并切换到**标识检查器**，为控制器创建一个自定义类： 
 
-[![](dialog-images/prefs12.png "The Identity Inspector")](dialog-images/prefs12.png#lightbox)
+[![标识检查器](dialog-images/prefs12.png)](dialog-images/prefs12.png#lightbox)
 
 切换回 Visual Studio for Mac 以同步您的更改并打开新创建的类以进行编辑。 使类看起来如下所示：
 
@@ -757,7 +757,7 @@ namespace SourceWriter
 
 接下来，双击情节提要文件以 Interface Builder 中将其重新打开（并查看上面刚刚做出的更改）。 将生成首选项接口所需的所有 UI 控件拖到视图中。 对于每个控件，切换到**绑定检查器**并绑定到**AppPreference**类的各个属性：
 
-[![](dialog-images/prefs13.png "The Binding Inspector")](dialog-images/prefs13.png#lightbox)
+[![绑定检查器](dialog-images/prefs13.png)](dialog-images/prefs13.png#lightbox)
 
 针对所有面板（"视图控制器"）和所需的首选项属性，重复以上步骤。
 
@@ -902,7 +902,7 @@ namespace SourceWriter
 
 进行所有这些更改后，如果用户编辑应用的首选项并关闭首选项窗口，则所做的更改将应用于所有打开的窗口：
 
-[![](dialog-images/prefs14.png "An example preferences window")](dialog-images/prefs14.png#lightbox)
+[![示例首选项窗口](dialog-images/prefs14.png)](dialog-images/prefs14.png#lightbox)
 
 <a name="The_Open_Dialog"></a>
 
@@ -953,7 +953,7 @@ if (dlg.RunModal () == 1) {
 
 如果运行该程序，并从 "**文件**" 菜单中选择 "**打开 ...** " 项，则会显示以下内容： 
 
-[![](dialog-images/dialog03.png "An open dialog box")](dialog-images/dialog03.png#lightbox)
+[!["打开" 对话框](dialog-images/dialog03.png)](dialog-images/dialog03.png#lightbox)
 
 <a name="The_Print_and_Page_Setup_Dialogs"></a>
 
@@ -990,11 +990,11 @@ void ShowDocument (NSObject sender) {
 
 如果将属性设置 `ShowPrintAsSheet` 为 `false` ，则运行应用程序并显示 "打印" 对话框，将显示以下内容：
 
-[![](dialog-images/print01.png "A print dialog box")](dialog-images/print01.png#lightbox)
+[!["打印" 对话框](dialog-images/print01.png)](dialog-images/print01.png#lightbox)
 
 如果将 `ShowPrintAsSheet` 属性设置为 `true` ，则运行应用程序并显示 "打印" 对话框，将显示以下内容：
 
-[![](dialog-images/print02.png "A print sheet")](dialog-images/print02.png#lightbox)
+[![打印工作表](dialog-images/print02.png)](dialog-images/print02.png#lightbox)
 
 以下代码将显示 "页面布局" 对话框：
 
@@ -1021,11 +1021,11 @@ void ShowLayout (NSObject sender) {
 
 如果将属性设置 `ShowPrintAsSheet` 为 `false` ，则运行应用程序并显示 "打印布局" 对话框，将显示以下内容：
 
-[![](dialog-images/print03.png "A page setup dialog")](dialog-images/print03.png#lightbox)
+[!["页面设置" 对话框](dialog-images/print03.png)](dialog-images/print03.png#lightbox)
 
 如果将 `ShowPrintAsSheet` 属性设置为 `true` ，则运行应用程序并显示 "打印布局" 对话框，将显示以下内容：
 
-[![](dialog-images/print04.png "A page setup sheet")](dialog-images/print04.png#lightbox)
+[![页面设置表](dialog-images/print04.png)](dialog-images/print04.png#lightbox)
 
 有关使用 "打印" 和 "页面设置" 对话框的详细信息，请参阅 Apple 的[NSPrintPanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPrintPanel_Class/index.html#//apple_ref/doc/uid/TP40004092)和[NSPageLayout](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPageLayout_Class/index.html#//apple_ref/doc/uid/TP40004080)文档。
 
@@ -1075,25 +1075,25 @@ void ShowSaveAs (NSObject sender)
 
 如果将属性设置 `ShowSaveAsSheet` 为 `false` ，请运行应用程序，并从 "**文件**" 菜单中选择 "**另存为 ...** "，将显示以下内容：
 
-[![](dialog-images/save01.png "A save dialog box")](dialog-images/save01.png#lightbox)
+[!["保存" 对话框](dialog-images/save01.png)](dialog-images/save01.png#lightbox)
 
 用户可以展开对话框：
 
-[![](dialog-images/save02.png "An expanded save dialog box")](dialog-images/save02.png#lightbox)
+[![展开的 "保存" 对话框](dialog-images/save02.png)](dialog-images/save02.png#lightbox)
 
 如果将属性设置 `ShowSaveAsSheet` 为 `true` ，请运行应用程序，并从 "**文件**" 菜单中选择 "**另存为 ...** "，将显示以下内容：
 
-[![](dialog-images/save03.png "A save sheet")](dialog-images/save03.png#lightbox)
+[![保存工作表](dialog-images/save03.png)](dialog-images/save03.png#lightbox)
 
 用户可以展开对话框：
 
-[![](dialog-images/save04.png "An expanded save sheet")](dialog-images/save04.png#lightbox)
+[![扩展的保存表](dialog-images/save04.png)](dialog-images/save04.png#lightbox)
 
 有关使用 "保存" 对话框的详细信息，请参阅 Apple 的[NSSavePanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSSavePanel_Class/index.html#//apple_ref/doc/uid/TP40004098)文档。
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文详细介绍了如何在 Xamarin. Mac 应用程序中使用模式窗口、工作表和标准系统对话框。 我们看到了模式窗口、工作表和对话框的不同类型和使用方法，如何在 Xcode 的 Interface Builder 中创建和维护模式窗口和表，以及如何使用 c # 代码中的模式窗口、工作表和对话框。
 

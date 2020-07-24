@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: cbf5f8c6f53b075f587a0e7763a4019d44352f14
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: bbd3d1663c3d796768095a12e5048b18f447fa7a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84568992"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937015"
 ---
 # <a name="search-with-nsuseractivity-in-xamarinios"></a>在 Xamarin 中通过 NSUserActivity 进行搜索
 
@@ -21,7 +21,7 @@ ms.locfileid: "84568992"
 
 新到 iOS 9， `NSUserActivity` 可以通过聚焦搜索和 Safari 进行索引（公开和私下）和搜索。 通过将标记 `NSUserActivity` 为可搜索并添加可索引的元数据，可以在 iOS 设备上的搜索结果中列出该活动。
 
-[![](nsuseractivity-images/apphistory01.png "The App History overview")](nsuseractivity-images/apphistory01.png#lightbox)
+[![应用历史记录概述](nsuseractivity-images/apphistory01.png)](nsuseractivity-images/apphistory01.png#lightbox)
 
 如果用户从应用程序中选择属于某个活动的搜索结果，将启动该应用，并将 `NSUserActivity` 重新启动并向用户显示所描述的活动。
 
@@ -59,7 +59,7 @@ Apple 建议对活动类型标识符使用反向 DNS 样式表示法，以避免
 
 若要创建所需的活动类型标识符以支持此行为，请编辑**info.plist**文件，并切换到 "**源**" 视图。 添加 `NSUserActivityTypes` 密钥并使用以下格式创建标识符：
 
-[![](nsuseractivity-images/type01.png "The NSUserActivityTypes key and required identifiers in the plist editor")](nsuseractivity-images/type01.png#lightbox)
+[![Info.plist 编辑器中的 NSUserActivityTypes 键和必需的标识符](nsuseractivity-images/type01.png)](nsuseractivity-images/type01.png#lightbox)
 
 在上面的示例中，我们为搜索活动创建了一个新的活动类型标识符（ `com.xamarin.platform` ）。 创建自己的应用时，将数组的内容替换为 `NSUserActivityTypes` 特定于应用支持的活动的活动类型标识符。
 
@@ -88,7 +88,7 @@ activity.BecomeCurrent();
 
 可以通过设置的属性来添加更多详细信息 `ContentAttributeSet` `NSUserActivity` ，如下所示：
 
-[![](nsuseractivity-images/apphistory02.png "Addition Search Details overview")](nsuseractivity-images/apphistory02.png#lightbox)
+[![添加搜索详细信息概述](nsuseractivity-images/apphistory02.png)](nsuseractivity-images/apphistory02.png#lightbox)
 
 通过使用 `ContentAttributeSet` ，您可以创建丰富的搜索结果，以吸引最终用户与之交互。
 
@@ -115,7 +115,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 请注意，这是用于响应移交请求的相同方法重写。 现在，如果用户在聚焦搜索结果中单击应用的链接，则会将应用置于前台（或启动（如果尚未运行），并且将显示该链接所表示的内容、导航或功能：
 
-[![](nsuseractivity-images/apphistory03.png "Restore Previous State from Search")](nsuseractivity-images/apphistory03.png#lightbox)
+[![从搜索还原以前的状态](nsuseractivity-images/apphistory03.png)](nsuseractivity-images/apphistory03.png#lightbox)
 
 <a name="indexing"></a>
 

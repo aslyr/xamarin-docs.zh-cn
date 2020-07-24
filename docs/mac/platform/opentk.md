@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: bd5217173e00de7d09e4ec14a5acf4d6a8389b10
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: fbd6e4a3b1c5cdb45a057f1ed664a0d5e71e224d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574439"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937886"
 ---
 # <a name="introduction-to-opentk-in-xamarinmac"></a>Xamarin 中的 OpenTK 简介
 
 OpenTK （开放工具包）是一种高级的低级别 c # 库，可让你更轻松地使用 OpenGL、OpenCL 和 OpenAL。 OpenTK 可用于需要3D 图形、音频或计算功能的游戏、科学应用程序或其他项目。 本文简要介绍了如何在 Xamarin 应用程序中使用 OpenTK。
 
-[![](opentk-images/intro01.png "An example app run")](opentk-images/intro01.png#lightbox)
+[![示例应用运行](opentk-images/intro01.png)](opentk-images/intro01.png#lightbox)
 
 本文介绍了 Xamarin OpenTK 应用程序中的基础知识。 强烈建议您先完成[Hello，Mac](~/mac/get-started/hello-mac.md)一文，特别是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)及[输出口和操作](~/mac/get-started/hello-mac.md#outlets-and-actions)部分的简介，因为它涵盖了我们将在本文中使用的重要概念和技巧。
 
@@ -54,11 +54,11 @@ OpenTK 可用于需要3D 图形、音频或计算功能的游戏、科学应用�
 
 开始 Visual Studio for Mac 并创建新的 Xamarin Mac 解决方案。 选择**Mac**  >  **应用**  >  **常规**  >  **Cocoa 应用**：
 
-[![](opentk-images/sample01.png "Adding a new Cocoa App")](opentk-images/sample01.png#lightbox)
+[![添加新的 Cocoa 应用](opentk-images/sample01.png)](opentk-images/sample01.png#lightbox)
 
 输入 `MacOpenTK` 作为**项目名称**：
 
-[![](opentk-images/sample02.png "Setting the project name")](opentk-images/sample02.png#lightbox)
+[![设置项目名称](opentk-images/sample02.png)](opentk-images/sample02.png#lightbox)
 
 单击 "**创建**" 按钮以生成新项目。
 
@@ -70,7 +70,7 @@ OpenTK 可用于需要3D 图形、音频或计算功能的游戏、科学应用�
 
 勾选 `OpenTK` 并单击 **"确定"** 按钮：
 
-[![](opentk-images/sample03.png "Editing the project references")](opentk-images/sample03.png#lightbox)
+[![编辑项目引用](opentk-images/sample03.png)](opentk-images/sample03.png#lightbox)
 
 <a name="Using_OpenTK"></a>
 
@@ -297,7 +297,7 @@ Game.Run(60.0);
 
 运行应用程序并查看输出：
 
-[![](opentk-images/intro01.png "A sample of the apps output")](opentk-images/intro01.png#lightbox)
+[![应用输出示例](opentk-images/intro01.png)](opentk-images/intro01.png#lightbox)
 
 如果调整窗口的大小，则游戏视图也会随之驻留，同时也会调整三角形的大小并进行实时更新。
 
@@ -319,7 +319,7 @@ Game.Run(60.0);
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文大致介绍了如何在 Xamarin. Mac 应用程序中使用 OpenTK。 我们了解了如何创建游戏窗口，如何将游戏窗口附加到 Mac 窗口，以及如何在游戏窗口中呈现简单的形状。
 

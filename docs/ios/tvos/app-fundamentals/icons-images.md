@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 72c10d10e65194171479d66845d597e313281cdf
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 69ea9b0786170345109f0845f3af6e5fd01d2b7c
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573776"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997106"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>在 Xamarin 中使用 tvOS 图标和图像
 
@@ -32,13 +32,13 @@ ms.locfileid: "84573776"
 
 ## <a name="launch-image"></a>启动映像
 
-启动映像是首次在 Apple 电视上开始使用 tvOS 应用时显示的内容，因此，每个 tvOS 应用都必须提供启动映像。 
+启动映像是首次在 Apple 电视上开始使用 tvOS 应用时显示的内容，因此，每个 tvOS 应用都必须提供启动映像。
 
 启动图像会快速显示，并为您的应用程序提供快速且响应迅速。 Apple TV 会将启动图像替换为应用程序的第一个屏幕不久之后。
 
 启动图像不是广告或艺术表达式的一种机会，它们只是为了给您的应用程序快速启动并准备好使用的印象。
 
-|启动映像大小|说明|
+|启动映像大小|注释|
 |---|---|
 |1920x1080px|仅限非分层 .png 文件|
 
@@ -55,15 +55,15 @@ Apple 提供以下建议，用于设计应用程序的启动映像：
 
 若要设置 tvOS 项目的启动映像，请执行以下操作：
 
-1. 在**解决方案资源管理器**中，双击 `Assets.xcassets` 将其打开以进行编辑： 
+1. 在**解决方案资源管理器**中，双击 `Assets.xcassets` 将其打开以进行编辑：
 
-    [![](icons-images-images/asset01.png "The Assets.xcassets file")](icons-images-images/asset01.png#lightbox)
-2. 在**资产编辑器**中，单击 `LaunchImages` 资产： 
+    [![Assets.xcassets 文件](icons-images-images/asset01.png)](icons-images-images/asset01.png#lightbox)
+2. 在**资产编辑器**中，单击 `LaunchImages` 资产：
 
-    [![](icons-images-images/asset02.png "The LaunchImages asset")](icons-images-images/asset02.png#lightbox)
-3. 单击 " **1X APPLE TV** " 条目，并选择 "启动" 映像，或者在中从文件系统中选择一个新图像（可选）： 
+    [![LaunchImages 资产](icons-images-images/asset02.png)](icons-images-images/asset02.png#lightbox)
+3. 单击 " **1X APPLE TV** " 条目，并选择 "启动" 映像，或者在中从文件系统中选择一个新图像（可选）：
 
-    [![](icons-images-images/asset03.png "Select a Launch Image")](icons-images-images/asset03.png#lightbox)
+    [![选择启动图像](icons-images-images/asset03.png)](icons-images-images/asset03.png#lightbox)
 4. 保存所做更改。
 
 <a name="Layered-Images"></a>
@@ -74,7 +74,7 @@ Apple 提供以下建议，用于设计应用程序的启动映像：
 
 分层图像包含两（2）到五（5）个单独的层，它们组合在一起形成一个完整的映像。 除了背景层以外，每一层都使用其 Z 顺序和透明度来创建深度的错觉。 当用户与分层图像交互时，Z 顺序越大，Z 排序层就会进行缩放并重叠，以创建此效果。
 
-[![](icons-images-images/layered01.png "Layered Images Z-ordered diagram")](icons-images-images/layered01.png#lightbox)
+[![分层图像 Z 顺序图](icons-images-images/layered01.png)](icons-images-images/layered01.png#lightbox)
 
 > [!IMPORTANT]
 > 应用的图标需要分层图像，对于其他可[设定焦点的项目](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection)（例如，上架图像）是可选的。 但是，Apple 建议对可在应用中获得焦点的任何图像使用分层映像。
@@ -96,7 +96,7 @@ Apple 为设计分层映像提供以下建议：
 
 务必要记住，将_安全区域_边框包含到将组成分层图像的每个层中。 由于可以在视差效果中缩放和裁剪各个层，因此，如果层的内容太近，则可以将它们裁剪掉：
 
-[![](icons-images-images/layered02.png "35 pixel border")](icons-images-images/layered02.png#lightbox)
+[![35像素边框](icons-images-images/layered02.png)](icons-images-images/layered02.png#lightbox)
 
 <a name="Creating-Layered-Images"></a>
 
@@ -115,7 +115,7 @@ tvOS 采用以下格式处理分层图像：
 
 Apple 创建了[视差](https://itunespartner.apple.com/assets/downloads/Parallax%20Previewer.dmg)预览器，用于预览和创建应用程序图标和可选可获得焦点的项所需的分层映像。 预览器会显示构成完成的分层映像的每个层：
 
-[![](icons-images-images/layered03.png "The Parallax Previewer")](icons-images-images/layered03.png#lightbox)
+[![视差预览器](icons-images-images/layered03.png)](icons-images-images/layered03.png#lightbox)
 
 预览分层图像时，可以使用鼠标旋转图像并预览视差效果。 使用 " **+** （加）" 和 " **-** （减号）" 按钮可添加和删除层。
 
@@ -129,13 +129,13 @@ Apple 创建了[视差](https://itunespartner.apple.com/assets/downloads/Paralla
 
 你的 tvOS 应用不仅需要 Apple TV 主屏幕的应用图标，还需要应用商店的图标。 应用图标是您首次做出的更改，可让您的潜在用户印象非常好，并应一目了然地传达您的应用程序的用途。
 
-[![](icons-images-images/icon01.png "The App Icon")](icons-images-images/icon01.png#lightbox)
+[![应用程序图标](icons-images-images/icon01.png)](icons-images-images/icon01.png#lightbox)
 
 每个应用都必须同时提供小版本的应用图标。 安装应用程序时，将在 Apple TV 主屏幕上使用小图标。 应用商店使用大版本。 大型应用图标应模拟小图标版本的外观。
 
-|小图标||大图标||
+|小图标|解决方法|大图标|解决方法|
 |---|---|---|---|
-|实际大小|400x240px|大小|1280x768px|
+|实际大小|400x240px||1280x768px|
 |安全区域大小|370x222px|||
 |失去焦点大小|300x180px|||
 |重点大小|370x222px|||
@@ -160,18 +160,18 @@ Apple 提供了以下有关创建应用图标的建议：
 
 若要设置 tvOS 项目所需的应用图标，请执行以下操作：
 
-1. 在**解决方案资源管理器**中，双击 `Assets.xcassets` 将其打开以进行编辑： 
+1. 在**解决方案资源管理器**中，双击 `Assets.xcassets` 将其打开以进行编辑：
 
-    [![](icons-images-images/asset01.png "The Assets.xcassets fileg")](icons-images-images/asset01.png#lightbox)
-2. 在**资产编辑器**中，展开 `App Icon & Top Shelf Image` 资产： 
+    [![Assets.xcassets fileg](icons-images-images/asset01.png)](icons-images-images/asset01.png#lightbox)
+2. 在**资产编辑器**中，展开 `App Icon & Top Shelf Image` 资产：
 
-    [![](icons-images-images/asset04.png "Expand the Top Shelf Image asset")](icons-images-images/asset04.png#lightbox)
-3. 接下来，展开 `App Icon - Small` 资产： 
+    [![展开顶部图像资产](icons-images-images/asset04.png)](icons-images-images/asset04.png#lightbox)
+3. 接下来，展开 `App Icon - Small` 资产：
 
-    [![](icons-images-images/asset05.png "Expand the App Icon - Small asset")](icons-images-images/asset05.png#lightbox)
-4. 然后展开 `Back` 资产，并单击 `Contents` 条目： 
+    [![展开应用程序图标-小型资产](icons-images-images/asset05.png)](icons-images-images/asset05.png#lightbox)
+4. 然后展开 `Back` 资产，并单击 `Contents` 条目：
 
-    [![](icons-images-images/asset06.png "Then expand the Back asset")](icons-images-images/asset06.png#lightbox)
+    [![然后展开 "后退" 资产](icons-images-images/asset06.png)](icons-images-images/asset06.png#lightbox)
 5. 单击 " **1X APPLE TV" 条目**，并选择 "图像文件"。
 6. 为和资产重复上述步骤 `Front` `Middle` 。
 7. 然后重复相同的步骤来定义 `App Icon - Large` 资产。
@@ -183,11 +183,11 @@ Apple 提供了以下有关创建应用图标的建议：
 
 如果用户将 tvOS 应用放置在 Apple TV 主屏幕上的最上面一行，则当用户选择应用程序时，将显示一个大型的顶部图像。 此图像应突出显示应用的功能，或提供指向其内容的直接链接。
 
-[![](icons-images-images/topshelf01.png "Top Shelf Image example")](icons-images-images/topshelf01.png#lightbox)
+[![靠上的图像示例](icons-images-images/topshelf01.png)](icons-images-images/topshelf01.png#lightbox)
 
 可以将顶架图像作为单个静态 `.png` 或 `.lsr` 文件提供（请参阅[创建分层映像](#Creating-Layered-Images)），也可以在运行时将其作为可设定焦点项的单个行进行动态创建（请参阅下面的[动态 Top 架子内容](#Dynamic-Top-Shelf-Content)）。
 
-|最大架映像大小|说明|
+|最大架映像大小|注释|
 |---|---|
 |1920x720px|静态 .png 或 lsr 文件|
 
@@ -203,15 +203,15 @@ Apple 提供了以下有关创建顶级映像的建议：
 
 若要为 tvOS 项目设置所需的顶层映像，请执行以下操作：
 
-1. 在**解决方案资源管理器**中，双击 `Assets.xcassets` 将其打开以进行编辑： 
+1. 在**解决方案资源管理器**中，双击 `Assets.xcassets` 将其打开以进行编辑：
 
-    [![](icons-images-images/asset01.png "The Assets.xcassets file")](icons-images-images/asset01.png#lightbox)
-2. 在**资产编辑器**中，展开 `App Icon & Top Shelf Image` 资产： 
+    [![Assets.xcassets 文件](icons-images-images/asset01.png)](icons-images-images/asset01.png#lightbox)
+2. 在**资产编辑器**中，展开 `App Icon & Top Shelf Image` 资产：
 
-    [![](icons-images-images/asset04.png "Expand the Top Shelf Image asset")](icons-images-images/asset04.png#lightbox)
-3. 单击 `Top Shelf Image` 资产： 
+    [![展开顶部图像资产](icons-images-images/asset04.png)](icons-images-images/asset04.png#lightbox)
+3. 单击 `Top Shelf Image` 资产：
 
-    [![](icons-images-images/asset07.png "The Top Shelf Image asset")](icons-images-images/asset07.png#lightbox)
+    [![靠上盘的图像资产](icons-images-images/asset07.png)](icons-images-images/asset07.png#lightbox)
 4. 单击 " **1X APPLE TV" 条目**，并选择 "图像文件"。
 5. 保存所做更改。
 
@@ -231,7 +231,7 @@ Apple 提供了以下有关创建顶级映像的建议：
 
 需要以下内容大小：
 
-||海报（2:3）|正方形（1:1）|HDTV （16:9）|
+|大小|海报（2:3）|正方形（1:1）|HDTV （16:9）|
 |---|---|---|---|
 |实际大小|404x608px|608x608px|908x512px|
 |安全区域大小|380x570px|570x570px|852x479px|
@@ -253,7 +253,7 @@ Apple 为分段内容行提供以下建议：
 
 **横幅图像（超大）**
 
-|   |   |
+| 大小 | 解决方法 |
 |---|---|
 |实际大小|1940x624px|
 |安全区域大小|1740x620px|
@@ -279,7 +279,7 @@ Apple 提供以下有关滚动条带横幅的建议：
 - **面板图稿**-可提供一个可选的图像，该图像将显示在应用程序仪表板顶部 Game Center 中。 这些映像不可获得焦点。
 - **排行榜图稿**-你必须为应用支持的每个排行榜提供一（1）到3（3）16:9 纵横比映像。 这些文件可能是静态 `.png` 文件或分层 `.lsr` 文件。 排行榜图稿可获得焦点。
 
-||成就图标|面板图稿|排行榜图稿|
+|大小|成就图标|面板图稿|排行榜图稿|
 |---|---|---|---|
 |可见大小|200x200px|923x150px|不适用|
 |实际大小|320x320px|不适用|659x371px|
@@ -301,20 +301,20 @@ Apple 提供以下有关滚动条带横幅的建议：
 
 如上所述，所有 tvOS 应用都需要一个[启动映像](#Launch-Image)和[应用图标](#App-Icons)。 本部分介绍在资产目录中设置 tvOS 应用项目后，为其选择 "启动映像" 和 "应用" 图标。
 
-请执行以下操作：
+执行以下操作：
 
-1. 在**解决方案资源管理器**中，双击将 `Info.plist` 其打开以进行编辑： 
+1. 在**解决方案资源管理器**中，双击将 `Info.plist` 其打开以进行编辑：
 
-    [![](icons-images-images/info01.png "The Info.plist file")](icons-images-images/info01.png#lightbox)
-2. 在**Info.plist 编辑器**中，在 "**应用程序图标**" 的 "[设置应用程序图标](#Setting-the-App-Icons)" 部分中选择 "资产" 目录（前面已配置）： 
+    [![Info.plist 文件](icons-images-images/info01.png)](icons-images-images/info01.png#lightbox)
+2. 在**Info.plist 编辑器**中，在 "**应用程序图标**" 的 "[设置应用程序图标](#Setting-the-App-Icons)" 部分中选择 "资产" 目录（前面已配置）：
 
-    [![](icons-images-images/info02.png "The Info.Plist Editor")](icons-images-images/info02.png#lightbox)
+    [![Info.plist 编辑器](icons-images-images/info02.png)](icons-images-images/info02.png#lightbox)
 3. 接下来，在 "**启动**映像" 部分的 "[设置" "启动映像](#Setting-the-Launch-Image)" 部分中选择 "资产" 目录（前面已配置）。
 4. 保存所做更改。
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了 tvOS 应用程序中使用的所有映像类型和大小。 首先，它涵盖了启动图像、分层图像、应用图标、顶架图像和 Game Center 图像。 然后，它介绍了如何在 tvOS 应用程序中使用图像。
 

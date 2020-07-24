@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: 1a6391c0e626c60fe35acee61f55f2f202f077b8
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: bdbff7760e7680173c57e5fc83cecb80967c0a51
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573438"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996092"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>使用反射 API 创建 Xamarin iOS 应用程序
 
@@ -27,12 +27,12 @@ MT。D 反射 API 允许用 MT 的特性修饰类。D 使用自动创建屏幕�
 使用反射 API 非常简单，如下所示：
 
 1. 创建用 MT 修饰的类。D 特性。
-1. 创建一个 `BindingContext` 实例，并将上面的类的一个实例传递给它。 
-1. 创建 `DialogViewController` ，并将其传递给 `BindingContext’s` `RootElement` 。 
+1. 创建一个 `BindingContext` 实例，并将上面的类的一个实例传递给它。
+1. 创建 `DialogViewController` ，并将其传递给 `BindingContext’s` `RootElement` 。
 
 我们来看一个示例，说明如何使用反射 API。 在此示例中，我们将生成一个简单的数据输入屏幕，如下所示：
 
- [![](reflection-api-walkthrough-images/01-expense-entry.png "In this example, we'll build a simple data entry screen as shown here")](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
+ [![在此示例中，我们将构建一个简单的数据输入屏幕，如下所示](reflection-api-walkthrough-images/01-expense-entry.png)](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
 
 ## <a name="creating-a-class-with-mtd-attributes"></a>使用 MT 创建类。D 特性
 
@@ -45,13 +45,13 @@ public class Expense
 
     [Entry("Enter expense name")]
     public string Name;
-        
+
     [Section("Expense Details")]
-  
+
     [Caption("Description")]
     [Entry]
     public string Details;
-        
+
     [Checkbox]
     public bool IsApproved = true;
 }
@@ -81,14 +81,14 @@ UIWindow window;
 public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 {   
     window = new UIWindow (UIScreen.MainScreen.Bounds);
-            
+
     var expense = new Expense ();
     var bctx = new BindingContext (null, expense, "Create a task");
     var dvc = new DialogViewController (bctx.Root);
-            
+
     window.RootViewController = dvc;
     window.MakeKeyAndVisible ();
-            
+
     return true;
 }
 ```
@@ -106,7 +106,7 @@ window.RootViewController = nav;
 
 现在，运行应用程序时，标题将显示在 `UINavigationController’s` 导航栏中，如以下屏幕截图所示：
 
- [![](reflection-api-walkthrough-images/02-create-task.png "Now when we run the application, the title appears in the UINavigationControllers navigation bar")](reflection-api-walkthrough-images/02-create-task.png#lightbox)
+ [![现在，运行应用程序时，标题会显示在 UINavigationControllers 导航栏中。](reflection-api-walkthrough-images/02-create-task.png)](reflection-api-walkthrough-images/02-create-task.png#lightbox)
 
 通过包括 `UINavigationController` ，我们现在可以利用 MT 的其他功能。需要导航的 D。 例如，可以向类添加枚举 `Expense` ，以定义支出和 MT 的类别。D 将自动创建选择屏幕。 若要演示，请修改 `Expense` 类以包括 `ExpenseCategory` 字段，如下所示：
 
@@ -117,7 +117,7 @@ public enum Category
     Lodging,
     Books
 }
-        
+
 public class Expense
 {
     …
@@ -129,15 +129,15 @@ public class Expense
 
 现在，运行应用程序会在表中显示一个新行，如下所示：
 
- [![](reflection-api-walkthrough-images/03-set-details.png "Running the application now results in a new row in the table for the category as shown")](reflection-api-walkthrough-images/03-set-details.png#lightbox)
+ [![现在，运行应用程序会在表中显示一个新行，如下所示](reflection-api-walkthrough-images/03-set-details.png)](reflection-api-walkthrough-images/03-set-details.png#lightbox)
 
 选择该行后，应用程序会导航到一个新屏幕，其中包含与枚举相对应的行，如下所示：
 
- [![](reflection-api-walkthrough-images/04-set-category.png "Selecting the row results in the application navigating to a new screen with rows corresponding to the enumeration")](reflection-api-walkthrough-images/04-set-category.png#lightbox)
+ [![选择该行后，应用程序会导航到一个新屏幕，其中包含与枚举相对应的行](reflection-api-walkthrough-images/04-set-category.png)](reflection-api-walkthrough-images/04-set-category.png#lightbox)
 
  <a name="Summary"></a>
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了反射 API 的演练。 我们演示了如何将属性添加到类以控制显示的内容。 还介绍了如何使用将 `BindingContext` 数据从类绑定到创建的元素层次结构，以及如何使用 MT。D 替换为 `UINavigationController` 。
 

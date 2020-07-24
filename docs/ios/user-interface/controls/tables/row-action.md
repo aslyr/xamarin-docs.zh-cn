@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: cc83fa65fd040b30d71a30fb703da866c5d0824c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 40640f903ad82c5f154dbb74307c0003d7271561
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570812"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936599"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>在 Xamarin 中使用行操作
 
@@ -175,7 +175,7 @@ table.Delegate = tableDelegate;
 
 运行上述代码，并将用户 swipes 到表行时，将显示 " **Hi** " 按钮，而不是默认显示的 "**删除**" 按钮：
 
-[![](row-action-images/action01.png "The Hi button being displayed instead of the Delete button")](row-action-images/action01.png#lightbox)
+[![显示的是 "高" 按钮，而不是 "删除" 按钮](row-action-images/action01.png)](row-action-images/action01.png#lightbox)
 
 如果用户点击 " **Hi** " 按钮， `Hello World!` 当应用程序在调试模式下运行时，将写出到 Visual Studio for Mac 或 Visual Studio 中的控制台。
 

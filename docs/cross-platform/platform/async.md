@@ -1,21 +1,21 @@
 ---
 title: 异步支持概述
-description: 本文档介绍了如何对 async 和 await 进行编程， C#这是在5中引入的概念，以便更轻松地编写异步代码。
+description: '本文档介绍了如何对 async 和 await 进行编程，这是 c # 5 中引入的概念，以便更轻松地编写异步代码。'
 ms.prod: xamarin
 ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 8978dbce97948d02d520b788d024fb50f4884635
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 3bb2ba863913c2cc3098a2481ebd034c78eabdea
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488876"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938850"
 ---
 # <a name="async-support-overview"></a>异步支持概述
 
-_C#5引入了两个关键字，用于简化异步编程： async 和 await。通过这些关键字，可以编写简单的代码，该代码利用任务并行库来执行另一个线程中长时间运行的操作（例如网络访问），并在完成后轻松访问结果。最新版本的 Xamarin 和 Xamarin 支持 async 和 await-本文档提供了说明，并举例说明了如何结合使用新语法和 Xamarin。_
+_C # 5 引入了两个关键字，用于简化异步编程： async 和 await。通过这些关键字，可以编写简单的代码，该代码利用任务并行库来执行另一个线程中长时间运行的操作（例如网络访问），并在完成后轻松访问结果。最新版本的 Xamarin 和 Xamarin 支持 async 和 await-本文档提供了说明，并举例说明了如何结合使用新语法和 Xamarin。_
 
 Xamarin 的异步支持构建在 Mono 3.0 基础之上，并将 API 配置文件从升级为移动友好版本的 Silverlight，作为 .NET 4.5 的移动友好版本。
 
@@ -23,39 +23,39 @@ Xamarin 的异步支持构建在 Mono 3.0 基础之上，并将 API 配置文件
 
 本文档介绍新的 async 和 await 关键字，并演练在 Xamarin 和 Xamarin 中实现异步方法的一些简单示例。
 
-有关C# 5 的新异步功能（包括许多示例和不同的使用方案）的更完整讨论，请参阅[异步编程](https://docs.microsoft.com/dotnet/csharp/async)一文。
+有关 c # 5 的新异步功能（包括许多示例和不同使用方案）的更完整讨论，请参阅[异步编程](https://docs.microsoft.com/dotnet/csharp/async)一文。
 
 该示例应用程序将创建一个简单的异步 web 请求（不阻止主线程），然后使用下载的 html 和字符计数更新 UI。
 
- [![](async-images/AsyncAwait_427x368.png "The sample application makes a simple asynchronous web request without blocking the main thread then updates the UI with the downloaded html and character count")](async-images/AsyncAwait.png#lightbox)
+ [![该示例应用程序会发出简单的异步 web 请求，而不会阻止主线程，然后使用下载的 html 和字符计数来更新 UI。](async-images/AsyncAwait_427x368.png)](async-images/AsyncAwait.png#lightbox)
 
 Xamarin 的异步支持构建在 Mono 3.0 基础之上，并将 API 配置文件从升级为移动友好版本的 Silverlight，作为 .NET 4.5 的移动友好版本。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>要求
 
-C#5功能需要在 Xamarin 6.4 和 Xamarin 4.8 中包含的 Mono 3.0。 系统将提示您升级 Mono、Xamarin、Xamarin 和 Xamarin，以利用它。
+C # 5 功能需要 6.4 Xamarin 3.0 中包含的 Mono 和 Xamarin 4.8。 系统将提示您升级 Mono、Xamarin、Xamarin 和 Xamarin，以利用它。
 
 ## <a name="using-async-amp-await"></a>使用 async &amp; await
 
- `async` 和 `await` 是与C#任务并行库结合使用的新语言功能，便于编写线程代码以执行长时间运行的任务，而不会阻止应用程序的主线程。
+ `async`和 `await` 是与任务并行库结合使用的新 c # 语言功能，便于编写线程代码以执行长时间运行的任务，而不会阻止应用程序的主线程。
 
 ## <a name="async"></a>async
 
 ### <a name="declaration"></a>声明
 
-`async` 关键字放置在方法声明（或 lambda 或匿名方法）中，以指示它包含可异步运行的代码，即 ie。不阻止调用方的线程。
+`async`关键字放置在方法声明（或 lambda 或匿名方法）中，以指示它包含可异步运行的代码，即不阻止调用方的线程。
 
-标记为 `async` 的方法应包含至少一个 await 表达式或语句。 如果方法中不存在 `await` 语句，则它将以同步方式运行（与没有 `async` 修饰符的情况相同）。 这也会导致编译器警告（而不是错误）。
+标记为的方法 `async` 应包含至少一个 await 表达式或语句。 如果 `await` 方法中不存在任何语句，则它将以同步方式运行（与没有修饰符的情况相同 `async` ）。 这也会导致编译器警告（而不是错误）。
 
 ### <a name="return-types"></a>返回类型
 
-异步方法应返回 `Task`、`Task<TResult>` 或 `void`。
+异步方法应返回 `Task` `Task<TResult>` 或 `void` 。
 
-如果方法不返回任何其他值，则指定 `Task` 返回类型。
+`Task`如果方法不返回任何其他值，则指定返回类型。
 
-如果方法需要返回 `TResult` 值（例如，`int`，例如），则指定 `Task<TResult>`。
+`Task<TResult>`如果方法需要返回值，则指定，其中 `TResult` 是要返回的类型（ `int` 例如）。
 
-`void` 返回类型主要用于需要它的事件处理程序。 不能对结果 `await` 调用返回 void 的异步方法的代码。
+`void`返回类型主要用于需要它的事件处理程序。 调用返回 void 的异步方法的代码不能 `await` 出现在结果上。
 
 ### <a name="parameters"></a>参数
 
@@ -73,15 +73,15 @@ Await 运算符可应用于标记为 async 的方法中的任务。 这会使方
 
 ## <a name="exception-handling"></a>异常处理
 
-异步方法中发生的异常存储在任务中，当任务 `await`时引发。 可以在 try catch 块中捕获和处理这些异常。
+异步方法中发生的异常存储在任务中，并在任务为 ed 时引发 `await` 。 可以在 try catch 块中捕获和处理这些异常。
 
 ## <a name="cancellation"></a>取消
 
 需要很长时间才能完成的异步方法应支持取消操作。 通常，按如下所示调用取消：
 
-- 创建 `CancellationTokenSource` 对象。
-- `CancellationTokenSource.Token` 实例会传递给可取消异步方法。
-- 通过调用 `CancellationTokenSource.Cancel` 方法来请求取消。
+- `CancellationTokenSource`创建对象。
+- `CancellationTokenSource.Token`实例被传递给可取消异步方法。
+- 通过调用方法来请求取消 `CancellationTokenSource.Cancel` 。
 
 然后，该任务会自行取消并确认取消。
 
@@ -89,11 +89,11 @@ Await 运算符可应用于标记为 async 的方法中的任务。 这会使方
 
 ## <a name="example"></a>示例
 
-下载适用于 iOS 和 Android 的[示例 Xamarin 解决方案](https://docs.microsoft.com/samples/xamarin/mobile-samples/asyncawait/)，以查看移动应用中 `async` 和 `await` 的工作示例。 本部分将对该示例代码进行更详细的讨论。
+下载[示例 Xamarin 解决方案](https://docs.microsoft.com/samples/xamarin/mobile-samples/asyncawait/)（适用于 IOS 和 Android），以查看 `async` 移动应用中和的工作示例 `await` 。 本部分将对该示例代码进行更详细的讨论。
 
 ### <a name="writing-an-async-method"></a>编写 async 方法
 
-下面的方法演示如何使用 `await`ed 任务对 `async` 方法进行编码：
+下面的方法演示如何 `async` 使用 ed 任务对方法进行编码 `await` ：
 
 ```csharp
 public async Task<int> DownloadHomepage()
@@ -120,9 +120,9 @@ public async Task<int> DownloadHomepage()
 
 请注意以下几点：
 
-- 方法声明包括 `async` 关键字。
-- 返回类型是 `Task<int>` 以便调用代码可以访问在此方法中计算的 `int` 值。
-- Return 语句 `return exampleInt;` 是一个整数对象-该方法 `Task<int>` 返回的事实是语言改进的一部分。
+- 方法声明包含 `async` 关键字。
+- 返回类型为 `Task<int>` ，因此调用代码可以访问 `int` 在此方法中计算的值。
+- 返回语句是 `return exampleInt;` 一个整数对象-该方法返回的事实 `Task<int>` 是语言改进的一部分。
 
 ### <a name="calling-an-async-method-1"></a>调用 async 方法1
 
@@ -148,14 +148,14 @@ GetButton.Click += async (sender, e) => {
 注意：
 
 - 匿名委托具有 async 关键字前缀。
-- 异步方法 DownloadHomepage 返回\<int > 的任务，该任务存储在 sizeTask 变量中。
+- 异步方法 DownloadHomepage 返回 \<int> 存储在 sizeTask 变量中的任务。
 - 代码等待 sizeTask 变量。  *这*是方法挂起的位置，并将控制权返回给调用代码，直到异步任务在自己的线程上完成。
 - 当在方法的第一行上创建任务时，不管在该处创建任务，*执行不会暂停。* Await 关键字表示执行暂停的位置。
 - 异步任务完成后，将从 await 行中设置 intResult，并在原始线程上继续执行。
 
 ### <a name="calling-an-async-method-2"></a>调用 async 方法2
 
-在 iOS 示例应用程序中，示例的编写方式略有不同，以说明替代方法。 此示例不使用匿名委托，而是声明分配的 `async` 事件处理程序，如常规事件处理程序所示：
+在 iOS 示例应用程序中，示例的编写方式略有不同，以说明替代方法。 此示例不使用匿名委托，而是声明 `async` 分配的事件处理程序，如常规事件处理程序：
 
 ```csharp
 GetButton.TouchUpInside += HandleTouchUpInside;
@@ -179,9 +179,9 @@ async void HandleTouchUpInside (object sender, EventArgs e)
 
 一些重要事项：
 
-- 方法标记为 `async`，但返回 `void`。 通常仅对事件处理程序执行此操作（否则，你将返回 `Task` 或 `Task<TResult>`）。
-- `DownloadHomepage` 方法上的 `await` 关键字会直接分配给一个变量（`intResult`），这与前面的示例不同，我们使用了中间 `Task<int>` 变量来引用该任务。  *这*是将控件返回给调用方的位置，直到异步方法在另一个线程上完成。
-- 当异步方法完成并返回时，执行将在 `await` 恢复，这意味着将返回整数结果，并呈现在 UI 小组件中。
+- 方法标记为， `async` 但返回 `void` 。 通常仅对事件处理程序执行此操作（否则，你将返回 `Task` 或 `Task<TResult>` ）。
+- `await`方法上的关键字 `DownloadHomepage` 直接赋给变量（），这 `intResult` 与前面的示例不同，在此示例中，我们使用了中间 `Task<int>` 变量来引用该任务。  *这*是将控件返回给调用方的位置，直到异步方法在另一个线程上完成。
+- 当异步方法完成并返回时，执行将继续， `await` 这意味着返回整数结果，然后在 UI 小组件中呈现。
 
 ## <a name="summary"></a>摘要
 
@@ -201,4 +201,4 @@ async void HandleTouchUpInside (object sender, EventArgs e)
 - [Await 和 UI，以及死锁！哦！](https://devblogs.microsoft.com/pfxteam/await-and-ui-and-deadlocks-oh-my/)
 - [处理完成的任务](https://devblogs.microsoft.com/pfxteam/processing-tasks-as-they-complete/)
 - [基于任务的异步模式 (TAP)](https://msdn.microsoft.com/library/hh873175.aspx)
-- [异步 in C# 5 （Eric Lippert 的博客）-介绍关键字](https://blogs.msdn.microsoft.com/ericlippert/2010/11/11/asynchrony-in-c-5-part-six-whither-async/)
+- [C # 5 中的异步（Eric Lippert 的博客）-介绍关键字](https://blogs.msdn.microsoft.com/ericlippert/2010/11/11/asynchrony-in-c-5-part-six-whither-async/)

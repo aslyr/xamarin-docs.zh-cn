@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: a31b0bcf3a61b5a1ea7e84f35131e6ceca1eef82
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: f9f1b09c5cbd5660018e8e8d346aa1d25e51dab2
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569876"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937379"
 ---
 # <a name="working-with-tvos-segmented-controls-in-xamarin"></a>在 Xamarin 中使用 tvOS 分段控件
 
 分段控件提供一组线性元素，每个元素都可以包含一个图标或文本，并用于向用户提供一组相关选项。
 
-[![](segmented-controls-images/segment01.png "Sample segment controls")](segmented-controls-images/segment01.png#lightbox)
+[![示例段控件](segmented-controls-images/segment01.png)](segmented-controls-images/segment01.png#lightbox)
 
 Apple 对于使用分段控件有以下建议：
 
@@ -59,15 +59,15 @@ Apple 提出以下有关使用段文本的建议：
 1. 在**Solution Pad**中，双击该文件， `Main.storyboard` 然后将其打开进行编辑。
 1. 将 "**段" 控件**从 "**工具箱**" 拖放到视图上： 
 
-    [![](segmented-controls-images/segment02.png "A Segment Control")](segmented-controls-images/segment02.png#lightbox)
+    [![段控件](segmented-controls-images/segment02.png)](segmented-controls-images/segment02.png#lightbox)
 1. 在**属性板**的 "**小组件" 选项卡**中，可以调整段控件的多个属性，例如其**样式**和**状态**： 
 
-    [![](segmented-controls-images/segment03.png "The Widget Tab")](segmented-controls-images/segment03.png#lightbox)
+    [!["小组件" 选项卡](segmented-controls-images/segment03.png)](segmented-controls-images/segment03.png#lightbox)
 1. 使用 "**段**" 字段可以控制控制器中段的数量。
 1. 从 "**段" 下拉列表**中选择给定段以调整其各个属性（如**标题**或**图像**），并控制在显示控件时是**启用**还是**选中**某个给定段。
 1. 最后，为控件分配**名称**，以便可以在 c # 代码中对其进行响应。 例如： 
 
-    [![](segmented-controls-images/segment04.png "Assign a Name")](segmented-controls-images/segment04.png#lightbox)
+    [![分配名称](segmented-controls-images/segment04.png)](segmented-controls-images/segment04.png#lightbox)
 1. 保存所做更改。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -75,15 +75,15 @@ Apple 提出以下有关使用段文本的建议：
 1. 在**解决方案资源管理器**中，双击该文件， `Main.storyboard` 然后将其打开进行编辑。
 1. 将 "**段" 控件**从 "**工具箱**" 拖放到视图上： 
 
-    [![](segmented-controls-images/segment02-vs.png "A Segment Control")](segmented-controls-images/segment02-vs.png#lightbox)
+    [![段控件](segmented-controls-images/segment02-vs.png)](segmented-controls-images/segment02-vs.png#lightbox)
 1. 在**属性资源管理器**的 "**小组件" 选项卡**中，可以调整段控件的多个属性，例如其**样式**和**状态**： 
 
-    [![](segmented-controls-images/segment03-vs.png "The Widget Tab")](segmented-controls-images/segment03-vs.png#lightbox)
+    [!["小组件" 选项卡](segmented-controls-images/segment03-vs.png)](segmented-controls-images/segment03-vs.png#lightbox)
 1. 使用 "**段**" 字段可以控制控制器中段的数量。
 1. 从 "**段" 下拉列表**中选择给定段以调整其各个属性（如**标题**或**图像**），并控制在显示控件时是**启用**还是**选中**某个给定段。
 1. 最后，为控件分配**名称**，以便可以在 c # 代码中对其进行响应。 例如： 
 
-    [![](segmented-controls-images/segment04-vs.png "Assign a Name")](segmented-controls-images/segment04-vs.png#lightbox)
+    [![分配名称](segmented-controls-images/segment04-vs.png)](segmented-controls-images/segment04-vs.png#lightbox)
 1. 保存所做更改。
 
 -----
@@ -206,10 +206,10 @@ SegmentedControl.SetBackgroundImage (UIImage.FromFile("background.png"), UIContr
 
 其中 `UIControlState` 指定为其设置图像的控件的状态：
 
-- 一般
+- 普通
 - Highlighted
 - 已禁用
-- 已选定
+- 选定
 - 已设定焦点
 
 并 `UIBarMetrics` 指定要使用的度量值：
@@ -229,7 +229,7 @@ SegmentedControl.SetDividerImage (UIImage.FromFile("divider.png"), UIControlStat
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了如何在 tvOS 应用内设计和使用分段控件。
 

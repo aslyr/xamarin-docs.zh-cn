@@ -19,7 +19,7 @@ ms.locfileid: "86933310"
 ---
 # <a name="soft-keyboard-input-mode-on-android"></a>Android 上的软键盘输入模式
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 Android 平台特定用于设置软键盘输入区域的运行模式，通过将 [`Application.WindowSoftInputModeAdjust`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.WindowSoftInputModeAdjustProperty) 附加属性设置为枚举的值，可在 XAML 中使用该模式 [`WindowSoftInputModeAdjust`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust) ：
 

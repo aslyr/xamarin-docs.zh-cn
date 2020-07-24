@@ -10,12 +10,12 @@ ms.date: 02/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7c2a63c40d1006c7d83c9dde871e17d4b194bdca
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cce5b0fc9c3d1d04c20b1be242197e3bc9e4f901
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84129709"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929332"
 ---
 # <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin.Forms和 Azure 认知服务简介
 
@@ -42,17 +42,17 @@ _Microsoft 认知服务是一组可供开发人员使用的 Api、Sdk 和服务�
 
 `TodoListPage`当应用程序启动时，将显示。 此页显示存储在本地数据库中的所有任务的列表，并允许用户创建新任务或对应用程序进行评分：
 
-![](introduction-images/sample-application-1.png "TodoListPage")
+![TodoListPage](introduction-images/sample-application-1.png)
 
 可以通过单击 " *+* 导航到" 按钮来创建新项 `TodoItemPage` 。 还可以通过选择任务导航到此页面：
 
-![](introduction-images/sample-application-2.png "TodoItemPage")
+![TodoItemPage](introduction-images/sample-application-2.png)
 
 `TodoItemPage`允许创建、编辑、拼写检查、转换、保存和删除任务。 语音识别可用于创建或编辑任务。 这是通过以下方式实现的：按下麦克风按钮开始录制，并再次按下相同按钮以停止录制，这会将录制发送到必应语音识别 API。
 
 单击上的 "smilies" 按钮将 `TodoListPage` 导航到 `RateAppPage` ，用于在面部表达式的图像上执行情感识别：
 
-![](introduction-images/sample-application-3.png "RateAppPage")
+![RateAppPage](introduction-images/sample-application-3.png)
 
 `RateAppPage`允许用户拍摄人脸照片，并将其提交到人脸 API 并显示返回的情感。
 
@@ -60,7 +60,7 @@ _Microsoft 认知服务是一组可供开发人员使用的 Api、Sdk 和服务�
 
 示例应用程序的共享代码项目包含五个主要文件夹：
 
-|文件夹|目的|
+|Folder|目的|
 |--- |--- |
 |模型|包含应用程序的数据模型类。 这包括 `TodoItem` 类，该类用于对应用程序使用的单个数据项建模。 此文件夹还包括用于对从不同 Microsoft 认知服务 Api 返回的 JSON 响应建模的类。|
 |存储库|包含 `ITodoItemRepository` `TodoItemRepository` 用于执行数据库操作的接口和类。|
@@ -86,7 +86,7 @@ _Microsoft 认知服务是一组可供开发人员使用的 Api、Sdk 和服务�
 
 此外，这些 NuGet 包还会安装其自己的依赖项。
 
-### <a name="model-the-data"></a>为数据建模
+### <a name="model-the-data"></a>数据建模
 
 示例应用程序使用 `TodoItem` 类对在本地 SQLite 数据库中显示和存储的数据进行建模。 以下代码示例演示 `TodoItem` 类：
 

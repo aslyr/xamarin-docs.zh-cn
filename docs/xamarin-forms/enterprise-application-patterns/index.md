@@ -1,6 +1,6 @@
 ---
-title: 《使用 Xamarin.Forms企业应用程序模式》电子书
-description: 此电子书提供了开发可自适应、可维护且可测试的企业应用程序的体系结构指南 Xamarin.Forms 。
+title: 《使用 :::no-loc(Xamarin.Forms):::企业应用程序模式》电子书
+description: '此电子书提供了开发可自适应、可维护且可测试的企业应用程序的体系结构指南 :::no-loc(Xamarin.Forms)::: 。'
 ms.prod: xamarin
 ms.assetid: 28cfed6c-6175-4223-a8cc-798d40bf0832
 ms.technology: xamarin-forms
@@ -8,20 +8,20 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1d993afa7163beb0b24e496b0c876d903f2396e7
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+- ':::no-loc(Xamarin.Forms):::'
+- ':::no-loc(Xamarin.Essentials):::'
+ms.openlocfilehash: 549fe496cdb1d68d091d5fb3ed247ccef5a111a8
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934285"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996157"
 ---
-# <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>《使用 Xamarin.Forms企业应用程序模式》电子书
+# <a name="enterprise-application-patterns-using-no-locxamarinforms-ebook"></a>《使用 :::no-loc(Xamarin.Forms):::企业应用程序模式》电子书
 
-_用于开发可自适应、可维护且可测试的 Xamarin.Forms 企业应用程序的体系结构指南_
+_用于开发可自适应、可维护且可测试的 :::no-loc(Xamarin.Forms)::: 企业应用程序的体系结构指南_
 
-《![使用 Xamarin.Forms企业应用程序模式》电子书](images/cover-sml.png)
+![使用：： no loc （Xamarin）：：：电子书的企业应用程序模式](images/cover-sml.png)
 
 此电子书提供有关如何实现模型-视图-ViewModel （MVVM）模式、依赖关系注入、导航、验证和配置管理，同时保持松散耦合的指导。 此外，还提供了有关通过 IdentityServer 执行身份验证和授权、从容器化微服务访问数据和单元测试的指南。
 
@@ -45,11 +45,11 @@ _用于开发可自适应、可维护且可测试的 Xamarin.Forms 企业应用�
 
 ## <a name="communicating-between-loosely-coupled-components"></a>[松散耦合组件之间的通信](communicating-between-loosely-coupled-components.md)
 
-Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 类可实现发布-订阅模式，允许不便按对象和类型引用进行链接的组件之间进行基于消息的通信。 此机制使发布服务器和订阅服务器无需彼此引用即可进行通信，有助于减少组件之间的依赖关系，同时允许单独开发和测试组件。
+:::no-loc(Xamarin.Forms)::: [`MessagingCenter`](xref::::no-loc(Xamarin.Forms):::.MessagingCenter) 类可实现发布-订阅模式，允许不便按对象和类型引用进行链接的组件之间进行基于消息的通信。 此机制使发布服务器和订阅服务器无需彼此引用即可进行通信，有助于减少组件之间的依赖关系，同时允许单独开发和测试组件。
 
 ## <a name="navigation"></a>[导航](navigation.md)
 
-Xamarin.Forms支持页面导航，这通常是由于用户与 UI 交互导致的，或者是由于内部逻辑驱动状态更改而导致的。 但是，导航可能会很复杂，无法在使用 MVVM 模式的应用中实现。
+:::no-loc(Xamarin.Forms):::支持页面导航，这通常是由于用户与 UI 交互导致的，或者是由于内部逻辑驱动状态更改而导致的。 但是，导航可能会很复杂，无法在使用 MVVM 模式的应用中实现。
 
 本章介绍了一个 `NavigationService` 类，该类用于执行视图模型的视图模型优先导航。 在视图模型类中放置导航逻辑意味着可以通过自动测试实现逻辑。 此外，视图模型可以实现逻辑来控制导航，以确保强制实施某些业务规则。
 
@@ -69,7 +69,7 @@ Xamarin.Forms支持页面导航，这通常是由于用户与 UI 交互导致的
 
 ## <a name="authentication-and-authorization"></a>[身份验证和授权](authentication-and-authorization.md)
 
-有多种方法可以将身份验证和授权集成到 Xamarin.Forms 与 ASP.NET MVC web 应用程序通信的应用程序中。 此处，使用 IdentityServer 4 的容器化标识微服务来执行身份验证和授权。 IdentityServer 是一个开源 OpenID Connect 和 OAuth 2.0 framework，适用于与 ASP.NET Core 标识集成以执行持有者令牌身份验证的 ASP.NET Core。
+有多种方法可以将身份验证和授权集成到 :::no-loc(Xamarin.Forms)::: 与 ASP.NET MVC web 应用程序通信的应用程序中。 此处，使用 IdentityServer 4 的容器化标识微服务来执行身份验证和授权。 IdentityServer 是一个开源 OpenID Connect 和 OAuth 2.0 framework，适用于与 ASP.NET Core 标识集成以执行持有者令牌身份验证的 ASP.NET Core。
 
 ## <a name="accessing-remote-data"></a>[访问远程数据](accessing-remote-data.md)
 
@@ -79,7 +79,7 @@ Xamarin.Forms支持页面导航，这通常是由于用户与 UI 交互导致的
 
 从 MVVM 应用程序测试模型和查看模型与测试任何其他类相同，并且可以使用相同的工具和技术。 但有些模式通常是模型和视图模型类的典型模式，这些模式可受益于特定单元测试技术。
 
-## <a name="feedback"></a>反馈
+## <a name="community-site"></a>社区网站
 
 此项目有一个社区网站，您可以在其中发布问题并提供反馈。 社区网站位于[GitHub](https://github.com/dotnet-architecture/eShopOnContainers)上。 或者，可以通过电子邮件将有关电子书的反馈发送到 [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com) 。
 

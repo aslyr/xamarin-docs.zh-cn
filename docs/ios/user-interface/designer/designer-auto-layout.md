@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 5aa3baa6aba76483866911d905687be6c3a5ae4e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 44297e32821721d483a265e7d2a69016f4e1a87b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569824"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86940018"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>用 Xamarin Designer for iOS 自动布局
 
@@ -45,13 +45,13 @@ View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, 
 1. 单击设计图面上的空白区域。 这会取消选择所有元素并显示情节提要文档的属性。
 1. 选中或取消选中 "属性" 面板中的 "**使用自动布局**" 复选框：
 
-    ![](designer-auto-layout-images/image01.png "The Use Autolayout checkbox in the property panel")
+    ![属性面板中的 "使用自动布局" 复选框](designer-auto-layout-images/image01.png)
 
 默认情况下，不在图面上创建或显示任何约束。 相反，它们会在编译时从帧信息自动推断。 若要添加约束，需要在设计图面上选择一个元素并向其添加约束。 可以使用**约束工具栏**执行此操作。
 
 ## <a name="constraints-toolbar"></a>约束工具栏
 
- [![](designer-auto-layout-images/toolbarnew.png "The Context Menu Commands")](designer-auto-layout-images/toolbarnew.png#lightbox)
+ [![上下文菜单命令](designer-auto-layout-images/toolbarnew.png)](designer-auto-layout-images/toolbarnew.png#lightbox)
 
 约束工具栏已更新，现在包含两个主要部分：
 
@@ -93,7 +93,7 @@ IOS 设计器工具提供了两种类型的控件用于在设计图面上操作�
 
 若要创建约束，请选取一个句柄并将其拖到设计图面上的某个位置。 当你开始拖动时，将在表面上显示一系列绿色线条/框，告诉你你可以限制哪些内容。 例如，在下面的屏幕截图中，我们将约束中间按钮的顶部：
 
- [![](designer-auto-layout-images/image07.png "Constraining the top side of the middle button")](designer-auto-layout-images/image07.png#lightbox)
+ [![约束中间按钮的顶部](designer-auto-layout-images/image07.png)](designer-auto-layout-images/image07.png#lightbox)
 
 请注意两个按钮之间的三个绿色虚线。 绿线指示*放置区*，或可以约束的其他元素的特性。 在上面的屏幕截图中，另外两个按钮提供3个垂直的拖放区域（*底部*、 *system.windows.media.rotatetransform.centery*、*顶部*），以限制我们的按钮。 视图顶部的虚线绿色线条表示视图控制器在视图顶部提供了一个约束，而绿色的绿色框表示视图控制器在顶部布局参考线下面提供了一个约束。
 
@@ -106,13 +106,13 @@ IOS 设计器工具提供了两种类型的控件用于在设计图面上操作�
 
 大小限制-*高度*和*宽度*-有两个选项。 第一种方法是拖动句柄以约束到相邻元素大小，如上述示例所示。 另一种方法是双击句柄以创建自约束。 这样，我们就可以指定常量大小值，如以下屏幕截图所示：
 
- [![](designer-auto-layout-images/sizec.png "Drag the handle to constrain to a neighbor element size, as illustrated here")](designer-auto-layout-images/sizec.png#lightbox)
+ [![拖动句柄以约束到相邻元素大小，如此处所示](designer-auto-layout-images/sizec.png)](designer-auto-layout-images/sizec.png#lightbox)
 
 ### <a name="center-constraints"></a>中心约束
 
 正方形控点将根据上下文创建*system.windows.media.rotatetransform.centerx*或*system.windows.media.rotatetransform.centery*约束。 拖动正方形控点会使其他元素亮起，以提供垂直和水平拖放区域，如以下屏幕截图所示：
 
- [![](designer-auto-layout-images/centerc.png "Center Constraints")](designer-auto-layout-images/centerc.png#lightbox)
+ [![中心约束](designer-auto-layout-images/centerc.png)](designer-auto-layout-images/centerc.png#lightbox)
 
 如果选择垂直拖放区域，则将创建*system.windows.media.rotatetransform.centery*约束。 如果选择水平放置区，则约束将基于*system.windows.media.rotatetransform.centerx*。
 
@@ -120,17 +120,17 @@ IOS 设计器工具提供了两种类型的控件用于在设计图面上操作�
 
 若要在两个元素之间创建对齐和大小相等约束，您可以从顶部工具栏选择项以指定-按顺序水平对齐、垂直对齐和大小 equalities，如下面的屏幕截图所示：
 
- [![](designer-auto-layout-images/image06.png "Combinational Constraints")](designer-auto-layout-images/image06.png#lightbox)
+ [![Combinational 约束](designer-auto-layout-images/image06.png)](designer-auto-layout-images/image06.png#lightbox)
 
 ### <a name="visualizing-and-editing-constraints"></a>可视化和编辑约束
 
 当您添加约束时，它将在您选择项时显示在设计图面上：
 
- [![](designer-auto-layout-images/image09.png "Visualizing Constraints")](designer-auto-layout-images/image09.png#lightbox)
+ [![可视化约束](designer-auto-layout-images/image09.png)](designer-auto-layout-images/image09.png#lightbox)
 
 您可以通过单击一条蓝线并直接在属性面板中编辑约束值来选择约束。 或者，双击蓝线会显示一个 segue，您可以直接在设计图面上编辑这些值：
 
- [![](designer-auto-layout-images/image08.png "Editing Constraints")](designer-auto-layout-images/image08.png#lightbox)
+ [![编辑约束](designer-auto-layout-images/image08.png)](designer-auto-layout-images/image08.png#lightbox)
 
 ## <a name="constraint-issues"></a>约束问题
 
@@ -146,27 +146,27 @@ IOS 设计器工具提供了两种类型的控件用于在设计图面上操作�
 
 冲突的约束标为红色，并且具有警告符号。 如果将鼠标悬停在警告符号上，将显示一个 segue，其中包含有关冲突的信息：
 
- [![](designer-auto-layout-images/image11.png "Conflicting Constraints warning")](designer-auto-layout-images/image11.png#lightbox)
+ [![冲突约束警告](designer-auto-layout-images/image11.png)](designer-auto-layout-images/image11.png#lightbox)
 
 ### <a name="underconstrained-items"></a>Underconstrained 项
 
 Underconstrained 项以橙色显示，并触发视图控制器对象栏中橙色标记图标的外观：
 
- [![](designer-auto-layout-images/image02.png "Underconstrained items appear in orange")](designer-auto-layout-images/image02.png#lightbox)
+ [![Underconstrained 项显示为橙色](designer-auto-layout-images/image02.png)](designer-auto-layout-images/image02.png#lightbox)
 
 如果单击该标记图标，则可以获取有关场景中 underconstrained 项的信息，并通过完全约束这些问题或删除其约束来解决问题，如以下屏幕截图所示：
 
- [![](designer-auto-layout-images/image10.png "Fixing Underconstrained Items")](designer-auto-layout-images/image10.png#lightbox)
+ [![修复 Underconstrained 项](designer-auto-layout-images/image10.png)](designer-auto-layout-images/image10.png#lightbox)
 
 ### <a name="frame-misplacement"></a>帧 Misplacement
 
 Frame misplacement 使用与 underconstrained 项相同的颜色代码。 该项目将始终使用其本机帧在表面上呈现，但对于帧 misplacement，红色矩形会标记在应用程序运行时项目的最终位置，如以下屏幕截图所示：
 
- [![](designer-auto-layout-images/image05.png "Sample Frame Misplacement view")](designer-auto-layout-images/image05.png#lightbox)
+ [![示例框架 Misplacement 视图](designer-auto-layout-images/image05.png)](designer-auto-layout-images/image05.png#lightbox)
 
 若要解决帧 misplacement 错误，请从 "约束" 工具栏（最右侧的按钮）中选择 "**基于约束更新帧**" 按钮：
 
- [![](designer-auto-layout-images/image03.png "Update Frames based on Constraints toolbar button")](designer-auto-layout-images/image03.png#lightbox)
+ [![基于约束工具栏按钮更新帧](designer-auto-layout-images/image03.png)](designer-auto-layout-images/image03.png#lightbox)
 
 这将自动调整元素框以匹配控件定义的位置。
 
@@ -181,10 +181,10 @@ Frame misplacement 使用与 underconstrained 项相同的颜色代码。 该项
 1. 以 normal 形式创建约束（使用以上列出的方法）。
 2. 在 "**文档大纲资源管理器**" 中，找到所需的约束并将其选中：
 
-    [![](designer-auto-layout-images/modify01.png "The Document Outline Explorer")](designer-auto-layout-images/modify01.png#lightbox)
+    [![文档大纲资源管理器](designer-auto-layout-images/modify01.png)](designer-auto-layout-images/modify01.png#lightbox)
 3. 接下来，在 "**属性资源管理器**" 的 "**小组件**" 选项卡中为约束指定一个**名称**：
 
-    [![](designer-auto-layout-images/modify02.png "The Widget Tab")](designer-auto-layout-images/modify02.png#lightbox)
+    [!["小组件" 选项卡](designer-auto-layout-images/modify02.png)](designer-auto-layout-images/modify02.png#lightbox)
 4. 保存所做更改。
 
 在进行上述更改后，你可以在代码中访问约束并修改其属性。 例如，可以使用以下项将附加视图的高度设置为零：
@@ -195,7 +195,7 @@ ViewInfoHeight.Constant = 0;
 
 在 iOS 设计器中给定约束的以下设置：
 
-[![](designer-auto-layout-images/modify03.png "Editing a Constraint in the Property Explorer")](designer-auto-layout-images/modify03.png#lightbox)
+[![在属性资源管理器中编辑约束](designer-auto-layout-images/modify03.png)](designer-auto-layout-images/modify03.png#lightbox)
 
 ### <a name="the-deferred-layout-pass"></a>延迟的布局传递
 
@@ -224,7 +224,7 @@ UIView.CommitAnimations();
 
 此处的关键是在 `LayoutIfNeeded` 动画块中调用父视图的方法。 这会告知视图绘制动态位置或大小变化的每个 "帧"。 如果没有此行，视图只会与最终版本对齐，而不进行动画处理。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本指南介绍了 iOS 自动（或 "自适应"）布局和约束概念，作为设计图面上元素间关系的数学表示形式。 它介绍了如何在 iOS 设计器中启用自动布局、使用 "**约束" 工具栏**以及在设计图面上分别编辑约束。 接下来，它介绍了如何排查三个常见的约束问题。 最后，它演示了如何在代码中修改约束。
 

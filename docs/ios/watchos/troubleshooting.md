@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 17ccc67b2976b93fbb290a1d2425168cab50228e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 497096e7f422e8337498339737ab304b0d896dfe
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84568784"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938991"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS 故障排除
 
@@ -36,7 +36,7 @@ ms.locfileid: "84568784"
 <a name="deploy"></a>
 
 - 较早版本的 Visual Studio for Mac 错误地将**AppleCompanionSettings**图标之一显示为88x88 像素;如果尝试提交到 App Store，则会导致**缺少图标错误**。
-    此图标应为87x87 像素（29个单元用于 **@3x** Retina 屏幕）。 无法在 Visual Studio for Mac 中解决此问题-请在 Xcode 中编辑图像资产，或者手动编辑**内容 json**文件。
+    此图标应为87x87 像素（29个单元用于 **@3x** Retina 屏幕）。 无法在 Visual Studio for Mac 中解决此问题-在 Xcode 中编辑图像资产，或者手动编辑文件**Contents.js** 。
 
 - 如果未[正确设置](~/ios/watchos/get-started/project-references.md)监视扩展项目的**Info.plist > WKApp 捆绑 Id**与 WATCH 应用的**捆绑 id**相匹配，则调试器将无法连接，并且 Visual Studio for Mac 将等待消息 *"等待调试程序连接"*。
 
@@ -47,7 +47,7 @@ ms.locfileid: "84568784"
 - 不能将两个添加 `WKNotificationControllers` 到情节提要。
     解决方法： `notificationCategory` STORYBOARD XML 中的元素始终以相同的方式插入 `id` 。 若要解决此问题，你可以添加两个（或多个）通知控制器，在文本编辑器中打开情节提要文件，然后手动将 `id` 元素更改为唯一。
 
-    [![](troubleshooting-images/duplicate-id-sml.png "Opening the storyboard file in a text editor and manually change the id element to be unique")](troubleshooting-images/duplicate-id.png#lightbox)
+    [![在文本编辑器中打开情节提要文件，并手动将 id 元素更改为唯一](troubleshooting-images/duplicate-id-sml.png)](troubleshooting-images/duplicate-id.png#lightbox)
 
 - 尝试启动应用程序时，可能会看到错误 "尚未生成应用程序"。 如果启动项目设置为监视扩展项目，则会在**清除**后出现这种情况。
     解决方法是选择 "**生成" > "全部重新生成**"，然后重新启动应用。
@@ -74,7 +74,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
 2. 如果出现 alpha 通道，则显示的对话框将包括**alpha**复选框。
 
-    ![](troubleshooting-images/remove-alpha-sml.png "The dialog that appears will include an Alpha checkbox if an alpha channel is present")
+    ![如果存在 alpha 通道，则显示的对话框将包括 Alpha 复选框](troubleshooting-images/remove-alpha-sml.png)
 
 3. *Untick* " **Alpha** " 复选框，并将文件**保存**到正确的位置。
 
@@ -91,15 +91,15 @@ with an alpha channel. Icons should not have an alpha channel.
 
 1. 在 Xcode 中打开 "监视" 应用的**界面。情节提要** **Interface Builder**。
 
-    ![](troubleshooting-images/add-6.png "Opening the storyboard in Xcode Interface Builder")
+    ![在 Xcode 中打开情节提要 Interface Builder](troubleshooting-images/add-6.png)
 
 2. 将新的拖 `InterfaceController` 到情节提要：
 
-    ![](troubleshooting-images/add-1.png "A InterfaceController")
+    ![InterfaceController](troubleshooting-images/add-1.png)
 
 3. 你现在可以将控件拖到接口控制器上（例如 标签和按钮），但你仍无法创建插座或操作，因为不存在 **.h**头文件。 以下步骤将导致创建所需的 **.h**头文件。
 
-    ![](troubleshooting-images/add-2.png "A button in the layout")
+    ![布局中的按钮](troubleshooting-images/add-2.png)
 
 4. 关闭情节提要并返回到 Visual Studio for Mac。 在 "**监视应用扩展**" 项目中创建新的 c # 文件**MyInterfaceController.cs** （或任何所需的名称）（而不是情节提要的 "监视" 应用本身）。 添加下面的代码（更新命名空间、classname 和构造函数名称）：
 
@@ -158,34 +158,34 @@ with an alpha channel. Icons should not have an alpha channel.
     > [!TIP]
     > 您可以选择将此文件作为第一个文件的子节点，方法是将其拖到 Visual Studio for Mac Solution Pad 中的其他 c # 文件中。 它将如下所示：
 
-    ![](troubleshooting-images/add-5.png "The Solution pad")
+    ![解决方案板](troubleshooting-images/add-5.png)
 
 6. 选择 "**生成" > "生成所有**"，以便 Xcode 同步将识别使用的新类（通过 `Register` 属性）。
 
 7. 右键单击 "监视应用情节提要" 文件并选择 "**打开方式" > Xcode "Interface Builder**，重新打开情节提要：
 
-    ![](troubleshooting-images/add-6.png "Opening the storyboard in Interface Builder")
+    ![在 Interface Builder 中打开情节提要](troubleshooting-images/add-6.png)
 
 8. 选择新的接口控制器，并为其指定上面定义的类名，例如。 `MyInterfaceController`.
     如果一切都正常工作，则它应自动显示在**类：** 下拉列表中，你可以从该下拉列表中选择它。
 
-    ![](troubleshooting-images/add-4.png "Setting a custom class")
+    ![设置自定义类](troubleshooting-images/add-4.png)
 
 9. 选择 Xcode 中的 "**助手编辑器**" 视图（具有两个重叠圆圈的图标），以便您可以并排查看情节提要和代码：
 
-    ![](troubleshooting-images/add-7.png "The Assistant Editor toolbar item")
+    ![助手编辑器工具栏项](troubleshooting-images/add-7.png)
 
     当焦点位于 "代码" 窗格中时，请确保查看的是 **.h**头文件，如果不在痕迹导航栏中右键单击并选择正确的文件（**MyInterfaceController**）
 
-    ![](troubleshooting-images/add-8.png "Select MyInterfaceController")
+    ![选择 MyInterfaceController](troubleshooting-images/add-8.png)
 
 10. 你现在可以通过**Ctrl +** 从情节提要拖到 **.h**头文件来创建输出口和操作。
 
-    ![](troubleshooting-images/add-9.png "Creating outlets and actions")
+    ![创建输出口和操作](troubleshooting-images/add-9.png)
 
     当你放开拖动时，系统将提示你选择是创建输出口还是使用操作，并选择其名称：
 
-    ![](troubleshooting-images/add-a.png "The outlet and an action dialog")
+    !["输出口" 和 "操作" 对话框](troubleshooting-images/add-a.png)
 
 11. 保存情节提要更改并关闭 Xcode 后，将返回 Visual Studio for Mac。 它将检测头文件更改，并自动将代码添加到**designer.cs**文件中：
 

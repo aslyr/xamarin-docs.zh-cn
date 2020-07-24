@@ -216,7 +216,7 @@ foreach (var filter in filters){
 
 列出的每个筛选器已作为 Xamarin 中的类公开，因此你也可以在程序集浏览器中浏览 CoreImage API，或在 Visual Studio for Mac 或 Visual Studio 中使用自动完成。 
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了如何使用一些新的 iOS 5 核图像框架功能，如人脸检测和对图像应用筛选器。 框架中提供了许多不同的映像筛选器供你使用。
 

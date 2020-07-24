@@ -10,25 +10,25 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bb08d359048d53639a700cc5ff526f26d6b077b6
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 325aa7be9e8a1eb6da816ef4ec6403c2882c6ed4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84571462"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928908"
 ---
 # <a name="getting-started-with-datapages"></a>入门与 DataPages
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/Pages/DataPagesDemo)
 
-![](~/media/shared/preview.png "This API is currently in preview")
+![此 API 目前处于预览阶段](~/media/shared/preview.png)
 
 > [!IMPORTANT]
 > DataPages 需要 Xamarin.Forms 主题引用以呈现。 这涉及到安装[ Xamarin.Forms 。主题：基本](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/)NuGet 包到你的项目中，然后是[ Xamarin.Forms 。主题浅](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/)或[ Xamarin.Forms 。主题深色](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)NuGet 包。
 
 若要开始使用 DataPages 预览版构建简单的数据驱动页面，请执行以下步骤。 此演示在预览版本中使用硬编码样式（"事件"），该样式仅适用于代码中的特定 JSON 格式。
 
-[![](get-started-images/demo-sml.png "DataPages Sample Application")](get-started-images/demo.png#lightbox "DataPages Sample Application")
+[![DataPages 示例应用程序](get-started-images/demo-sml.png)](get-started-images/demo.png#lightbox "DataPages 示例应用程序")
 
 ## <a name="1-add-nuget-packages"></a>1. 添加 NuGet 包
 
@@ -140,7 +140,7 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 以上步骤应会生成一个工作数据页：
 
-[![](get-started-images/demo-sml.png "DataPages Sample Application")](get-started-images/demo.png#lightbox "DataPages Sample Application")
+[![DataPages 示例应用程序](get-started-images/demo-sml.png)](get-started-images/demo.png#lightbox "DataPages 示例应用程序")
 
 这是因为预建的样式 **"事件"** 存在于浅色主题 NuGet 包中，并定义了与数据源匹配的样式（例如 "title"、"image"、"呈现器"）。
 
@@ -169,7 +169,7 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 通过提供 `DataTemplate` 此代码，将重写 `StyleClass` 并改用的默认布局 `ListItemControl` 。
 
-[![](get-started-images/custom-sml.png "DataPages Sample Application")](get-started-images/custom.png#lightbox "DataPages Sample Application")
+[![DataPages 示例应用程序](get-started-images/custom-sml.png)](get-started-images/custom.png#lightbox "DataPages 示例应用程序")
 
 更倾向于 XAML 的开发人员也可以创建数据源绑定（请记住包含 `using Xamarin.Forms.Pages;` 语句）：
 

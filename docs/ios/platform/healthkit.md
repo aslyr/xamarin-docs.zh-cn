@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 8090cb3c694083be4ef12294799d6aadf26b6038
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 0c733789883c9752d63824d0bca7356a88d05659
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569122"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929657"
 ---
 # <a name="healthkit-in-xamarinios"></a>Xamarin 中的 HealthKit
 
@@ -30,7 +30,7 @@ ms.locfileid: "84569122"
 
 在本文中，我们将创建一个示例应用程序来记录用户的心率：
 
-[![](healthkit-images/image01.png "A sample application to record the users heart rate")](healthkit-images/image01.png#lightbox)
+[![用于记录用户心率的示例应用程序](healthkit-images/image01.png)](healthkit-images/image01.png#lightbox)
 
 ## <a name="requirements"></a>要求
 
@@ -66,21 +66,21 @@ ms.locfileid: "84569122"
 
 若要创建显式**应用 ID**，请单击 **+** 右上角的按钮以转到 "**注册 iOS 应用 id** " 页：
 
-[![](healthkit-images/image02.png "Registering an app on the Apple Developer Portal")](healthkit-images/image02.png#lightbox)
+[![在 Apple 开发人员门户中注册应用](healthkit-images/image02.png)](healthkit-images/image02.png#lightbox)
 
 如上图所示，在创建应用程序说明后，请使用 "**显式应用 id** " 部分为应用程序创建 ID。 在 "**应用服务**" 部分中，检查 "**启用服务**" 部分中的**运行状况工具包**。
 
 完成后，请按 "**继续**" 按钮，在帐户中注册**应用 ID** 。 你将返回到 "**证书、标识符和配置文件**" 页。 单击 "**预配配置文件**"，转到当前预配配置文件的列表，然后单击 **+** 右上角的按钮以转到 "**添加 IOS 预配配置文件**" 页。 选择 " **IOS 应用开发**" 选项，然后单击 "**继续**" 以转到 "**选择应用 ID** " 页。 在此处选择之前指定的显式**应用 ID** ：
 
-[![](healthkit-images/image03.png "Select the explicit App ID")](healthkit-images/image03.png#lightbox)
+[![选择显式应用 ID](healthkit-images/image03.png)](healthkit-images/image03.png#lightbox)
 
 单击 "**继续**"，然后浏览其余屏幕，你将在其中指定你的**开发人员证书**、**设备**以及此**预配配置文件**的**名称**：
 
-[![](healthkit-images/image04.png "Generating the Provisioning Profile")](healthkit-images/image04.png#lightbox)
+[![正在生成预配配置文件](healthkit-images/image04.png)](healthkit-images/image04.png#lightbox)
 
 单击 "**生成**" 并等待创建配置文件。 下载文件，然后双击该文件以安装在 Xcode 中。 你可以在**Xcode > 首选项 > 帐户 > 查看详细信息 ...** 你应该会看到刚刚安装的预配配置文件，并且它的 "**权利**" 行中应该有用于运行状况工具包和任何其他特殊服务的图标：
 
-[![](healthkit-images/image05.png "Viewing the profile in Xcode")](healthkit-images/image05.png#lightbox)
+[![查看 Xcode 中的配置文件](healthkit-images/image05.png)](healthkit-images/image05.png#lightbox)
 
 <a name="associating-appid"></a>
 
@@ -90,11 +90,11 @@ ms.locfileid: "84569122"
 
 请不要手动完成创建 Xamarin iOS 8 项目的过程，而是打开附加到本文的示例应用（其中包括预建的情节提要和代码）。 若要将示例应用与运行状况工具包的**预配配置文件**相关联，请在**Solution Pad**中右键单击你的项目并打开其 "**选项**" 对话框。 切换到 " **IOS 应用程序**" 面板，然后输入之前创建的显式**应用 ID**作为应用的**捆绑包标识符**：
 
-[![](healthkit-images/image06.png "Enter the explicit App ID")](healthkit-images/image06.png#lightbox)
+[![输入显式应用 ID](healthkit-images/image06.png)](healthkit-images/image06.png#lightbox)
 
 现在，切换到 " **IOS 捆绑签名**" 面板。 最近安装的**预配配置文件**及其与显式**应用 ID**的关联现在将作为**预配配置文件**提供：
 
-[![](healthkit-images/image07.png "Select the Provisioning Profile")](healthkit-images/image07.png#lightbox)
+[![选择预配配置文件](healthkit-images/image07.png)](healthkit-images/image07.png#lightbox)
 
 如果**预配配置文件**不可用，请在**ios 应用程序**面板中仔细检查**捆绑标识符**，与**ios 开发人员中心**中指定的相同，并确保已安装**预配配置文件**（**Xcode > 首选项 > 帐户 > 查看详细信息 ...**"）。
 
@@ -141,11 +141,11 @@ ms.locfileid: "84569122"
 
 运行状况工具包数据存储中的存储类型是的所有子类 `HKObjectType` 。 `HKCharacteristicType`对象存储生物性爱、血糖类型和出生日期。 但更常见的是 `HKSampleType` 对象，这些对象表示在特定时间或一段时间内采样的数据。 
 
-[![](healthkit-images/image08.png "HKSampleType objects chart")](healthkit-images/image08.png#lightbox)
+[![HKSampleType 对象图](healthkit-images/image08.png)](healthkit-images/image08.png#lightbox)
 
 `HKSampleType`是抽象的，并且具有四个具体子类。 目前只有一种类型的 `HKCategoryType` 数据，即休眠分析。 运行状况工具包中的大部分数据的类型为 `HKQuantityType` ，并将其数据存储在 `HKQuantitySample` 对象中，这些对象是使用熟悉的工厂设计模式创建的：
 
-[![](healthkit-images/image09.png "The large majority of data in Health Kit are of type HKQuantityType and store their data in HKQuantitySample objects")](healthkit-images/image09.png#lightbox)
+[![运行状况工具包中的大部分数据类型为 HKQuantityType，并将其数据存储在 HKQuantitySample 对象中](healthkit-images/image09.png)](healthkit-images/image09.png#lightbox)
 
 `HKQuantityType`类型的范围从 `HKQuantityTypeIdentifier.ActiveEnergyBurned` 到 `HKQuantityTypeIdentifier.StepCount` 。 
 
@@ -155,11 +155,11 @@ ms.locfileid: "84569122"
 
 最终用户必须执行相应的步骤，以允许应用读取或写入健康套件数据。 这是通过预安装在 iOS 8 设备上的运行状况应用来完成的。 首次运行运行状况包应用时，将向用户提供系统控制的**运行状况访问**对话框：
 
-[![](healthkit-images/image10.png "The user is presented with a system-controlled Health Access dialog")](healthkit-images/image10.png#lightbox)
+[![用户显示系统控制的运行状况访问对话框](healthkit-images/image10.png)](healthkit-images/image10.png#lightbox)
 
 之后，用户可以使用运行状况应用的 "**源**" 对话框更改权限：
 
-[![](healthkit-images/image11.png "The user can change permissions using Health apps Sources dialog")](healthkit-images/image11.png#lightbox)
+[![用户可以使用 "健康应用源" 对话框更改权限](healthkit-images/image11.png)](healthkit-images/image11.png#lightbox)
 
 由于运行状况信息非常敏感，应用程序开发人员应该编写其程序保守，并假定在应用程序运行时权限将被拒绝和更改。 最常见的用法是在方法中请求权限 `UIApplicationDelegate.OnActivated` ，然后根据需要修改用户界面。
 
@@ -404,11 +404,11 @@ IOS 模拟器不支持运行状况工具包。 必须在运行 iOS 8 的物理�
 
 假设预配已正确设置，你的应用程序将启动。 当它达到其 `OnActivated` 方法时，它将请求健康工具包授权。 首次遇到此错误时，用户将看到以下对话框：
 
-[![](healthkit-images/image12.png "The user will be presented with this dialog")](healthkit-images/image12.png#lightbox)
+[![此对话框将显示用户](healthkit-images/image12.png)](healthkit-images/image12.png#lightbox)
 
 启用应用程序以更新心率数据，应用将重新出现。 `ReactToHealthCarePermissions`回调将异步激活。 这将导致 `HeartRateModel’s` `Enabled` 属性更改，这将引发 `EnabledChanged` 事件，这将导致 `HKPermissionsViewController.OnEnabledChanged()` 事件处理程序运行，从而启用 `StoreData` 按钮。 下图显示了顺序：
 
-[![](healthkit-images/image13.png "This diagram shows the sequence of events")](healthkit-images/image13.png#lightbox)
+[![此图显示了事件的顺序](healthkit-images/image13.png)](healthkit-images/image13.png#lightbox)
 
 按 "**录制**" 按钮。 这将导致 `StoreData_TouchUpInside()` 处理程序运行，这将尝试分析 `heartRate` 文本字段的值， `HKQuantity` 通过前面讨论的函数转换为， `HeartRateModel.HeartRateInBeatsPerMinute()` 并将此数量传递到 `HeartRateModel.StoreHeartRate()` 。 如前所述，这会尝试存储数据，并将引发 `HeartRateStored` 或 `ErrorMessageChanged` 事件。
 
@@ -426,7 +426,7 @@ IOS 模拟器不支持运行状况工具包。 必须在运行 iOS 8 的物理�
 
 在撰写本文时，当前没有与 Android 或 Windows Phone 中的运行状况工具包等效的。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本文中，我们了解了运行状况工具包如何允许应用程序存储、检索和共享运行状况相关信息，同时还提供了允许用户访问和控制此数据的标准运行状况应用。 
 

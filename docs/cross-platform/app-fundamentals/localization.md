@@ -6,12 +6,12 @@ ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: f496a831c226e377f62e2a6fab8ed328bf1be0b9
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: dab6d1ff573f0f74b3b230732aa4669ba9fda0d5
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571061"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934857"
 ---
 # <a name="localization"></a>本地化
 
@@ -59,7 +59,7 @@ ms.locfileid: "84571061"
 
 将 iOS 主屏幕上几项的字符串长度与英语、德语和日语进行比较：
 
-[![](localization-images/language-compare-sml.png "German vs Japanese string length")](localization-images/language-compare.png#lightbox)
+[![德语和日语字符串长度](localization-images/language-compare-sml.png)](localization-images/language-compare.png#lightbox)
 
 请注意，英语（8个字符）的**设置**需要德语转换的13个字符，但在日语中只需要2个字符。
 
@@ -281,7 +281,7 @@ IOS 和 Android 都支持从右到左布局和字体渲染，同时提供了可�
 
 其中一项已知服务是[LionBridge](https://www.lionbridge.com/)。 大多数专业服务支持所有常见的文件类型，包括字符串、XML、RESX 和 .POT/PO。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了在对应用进行国际化之前应熟悉的一些概念，并对资源进行本地化，还介绍了如何更改每个平台的语言首选项。
 

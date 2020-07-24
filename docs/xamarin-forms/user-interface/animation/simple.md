@@ -10,12 +10,12 @@ ms.date: 11/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 89f0182bfebc4d018eb083904595f0fbb211e3ba
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b13ec7ab079dcf7069b5f4b0dccbb52faf25f927
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573373"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933791"
 ---
 # <a name="simple-animations-in-xamarinforms"></a>简单动画Xamarin.Forms
 
@@ -53,7 +53,7 @@ _ViewExtensions 类提供了可用于构建简单动画的扩展方法。本文�
 
 中的每个扩展方法 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 实现一个动画操作，该操作在一段时间内从一个值逐渐更改一个值到另一个值。 本部分将探讨每个动画操作。
 
-### <a name="rotation"></a>旋转
+### <a name="rotation"></a>轮换
 
 下面的代码示例演示如何使用 [ `RotateTo` ] （x： Xamarin.Forms 。ViewExtensions. RotateTo （ Xamarin.Forms 。VisualElement、system.string、 Xamarin.Forms system.object。缓动））方法对的属性进行动画处理 [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation) [`Image`](xref:Xamarin.Forms.Image) ：
 
@@ -66,7 +66,7 @@ image.Rotation = 0;
 
 以下屏幕截图显示每个平台上正在进行的旋转：
 
-![](simple-images/rotateto.png "Rotation Animation")
+![旋转动画](simple-images/rotateto.png)
 
 > [!NOTE]
 > 除了 [ `RotateTo` ] （x： Xamarin.Forms 。ViewExtensions. RotateTo （ Xamarin.Forms 。VisualElement、system.string、 Xamarin.Forms system.object。缓动））方法，还有 [ `RotateXTo` ] （x： Xamarin.Forms 。ViewExtensions. RotateXTo （ Xamarin.Forms 。VisualElement、system.string、 Xamarin.Forms system.object。缓动））和 [ `RotateYTo` ] （x： Xamarin.Forms 。ViewExtensions. RotateYTo （ Xamarin.Forms 。VisualElement、system.string、 Xamarin.Forms system.object。缓动））方法，分别对和属性进行动画处理 [`RotationX`](xref:Xamarin.Forms.VisualElement.RotationX) [`RotationY`](xref:Xamarin.Forms.VisualElement.RotationY) 。
@@ -83,7 +83,7 @@ await image.RelRotateTo (360, 2000);
 
 以下屏幕截图显示每个平台上正在进行的相对旋转：
 
-![](simple-images/relrotateto.png "Relative Rotation Animation")
+![相对旋转动画](simple-images/relrotateto.png)
 
 ### <a name="scaling"></a>扩展
 
@@ -97,7 +97,7 @@ await image.ScaleTo (2, 2000);
 
 下面的屏幕截图显示每个平台上正在进行的缩放：
 
-![](simple-images/scaleto.png "Scaling Animation")
+![缩放动画](simple-images/scaleto.png)
 
 > [!NOTE]
 > 除了方法之外，还有一些 [`ScaleTo`](xref:Xamarin.Forms.ViewExtensions.ScaleTo*) `ScaleXTo` 方法， `ScaleYTo` 分别用于对和属性进行动画处理 [`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX) [`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY) 。
@@ -126,7 +126,7 @@ await image.RotateTo(360, 2000);
 
 若要 [`Image`](xref:Xamarin.Forms.Image) 围绕布局中心旋转实例，则 [`AnchorX`](xref:Xamarin.Forms.VisualElement.AnchorX) 和 [`AnchorY`](xref:Xamarin.Forms.VisualElement.AnchorY) 属性必须设置为相对于宽度和高度的值 `Image` 。 在此示例中，的中心 `Image` 定义为位于布局的中心，因此，0.5 的默认 `AnchorX` 值不需要更改。 但是，将 `AnchorY` 属性重新定义为从顶部 `Image` 到布局中心点的值。 这可确保在 `Image` 布局的中心点围绕中心点生成360度的完整旋转，如以下屏幕截图所示：
 
-![](simple-images/rotate-anchors.png "Rotation Animation with Anchors")
+![带有锚点的旋转动画](simple-images/rotate-anchors.png)
 
 ### <a name="translation"></a>翻译
 
@@ -140,7 +140,7 @@ await image.TranslateTo (-100, -100, 1000);
 
 以下屏幕截图显示每个平台上正在进行的转换：
 
-![](simple-images/translateto.png "Translation Animation")
+![翻译动画](simple-images/translateto.png)
 
 > [!NOTE]
 > 如果某个元素最初在屏幕上进行布局，然后在屏幕上转换，则在转换后，该元素的输入布局将保留在屏幕之外，并且用户无法与之交互。 因此，建议视图应在其最终位置布局，然后执行所需的任何翻译。
@@ -158,7 +158,7 @@ await image.FadeTo (1, 4000);
 
 以下屏幕截图显示每个平台上的淡化：
 
-![](simple-images/fadeto.png "Fading Animation")
+![褪色动画](simple-images/fadeto.png)
 
 ## <a name="compound-animations"></a>复合动画
 
@@ -218,7 +218,7 @@ await Task.WhenAll (
 
 以下屏幕截图显示每个平台上正在进行的多个旋转：
 
-![](simple-images/multiple-rotations.png "Composite Animation")
+![复合动画](simple-images/multiple-rotations.png)
 
 ## <a name="canceling-animations"></a>取消动画
 

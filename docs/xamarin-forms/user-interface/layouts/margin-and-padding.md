@@ -68,7 +68,7 @@ var stackLayout = new StackLayout {
 > [!NOTE]
 > `Thickness`值可以为负数，这通常会剪辑或 overdraws 内容。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文说明了和属性之间的 [`Margin`](xref:Xamarin.Forms.View.Margin) 差异 [`Padding`](xref:Xamarin.Forms.Layout.Padding) ，以及如何设置它们。 元素在用户界面中呈现时的属性控件布局行为。
 

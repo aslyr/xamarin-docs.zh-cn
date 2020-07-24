@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: a97d3da4f451051dcb17c68da54cadf7d841fd50
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 743bdf4d843d9e427e2343bf58cc29b98ec07e2b
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84566222"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997041"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>适用于 Xamarin 中 tvOS 的 Siri 远程和蓝牙控制器
 
@@ -20,7 +20,7 @@ ms.locfileid: "84566222"
 
 如果你的应用程序是一项游戏，你可以根据需要为你的应用中的 iOS （MFI）[蓝牙游戏控制器](#Bluetooth-Game-Controllers)创建第三方支持。
 
-[![](remote-bluetooth-images/intro01.png "The Bluetooth Remote and Game Controller")](remote-bluetooth-images/intro01.png#lightbox)
+[![蓝牙远程和游戏控制器](remote-bluetooth-images/intro01.png)](remote-bluetooth-images/intro01.png#lightbox)
 
 本文介绍了[Siri 远程](#The-Siri-Remote)、[触控 Surface 手势](#Touch-Surface-Gestures)和[Siri 遥控器](#Siri-Remote-Buttons)，并演示了如何通过[笔势和情节提要](#Gestures-and-Storyboards)、[笔势和代码](#Gestures-and-Code)以及[低级别事件处理](#Low-Level-Event-Handling)来处理它们。 最后介绍了如何在 tvOS 应用程序中使用[游戏控制器](#Working-with-Game-Controllers)。
 
@@ -32,17 +32,17 @@ ms.locfileid: "84566222"
 
 作为 tvOS 应用开发人员，您的挑战是创建一个快速、易于使用且视觉引人注目的用户界面，该界面利用 Siri 遥控器的触摸面、加速感应、陀螺仪和按钮。
 
-[![](remote-bluetooth-images/remote01.png "The Siri Remote")](remote-bluetooth-images/remote01.png#lightbox)
+[![Siri 远程](remote-bluetooth-images/remote01.png)](remote-bluetooth-images/remote01.png#lightbox)
 
 Siri 远程在 tvOS 应用程序中具有以下功能和预期用法：
 
 |功能|一般应用使用情况|游戏应用使用情况|
 |---|---|---|
-|**触摸表面**<br />轻扫以导航，按选择并按住上下文菜单。|**点击/刷**<br />可设定焦点项之间的 UI 导航。<br /><br />**单击**<br />激活选定的（焦点）项。|**点击/刷**<br />取决于游戏设计，并可通过点击边缘来用作一种3-D 板。<br /><br />**单击**<br />执行主按钮函数。|
-|**下拉菜单**<br />按返回上一个屏幕或菜单。|返回到上一个屏幕，从主应用屏幕退出到 Apple TV 主屏幕。|暂停和恢复游戏，返回到上一屏幕并从主应用屏幕退出到 Apple TV 主屏幕。|
+|**触摸表面**<br />轻扫以导航，按选择并按住上下文菜单。|**点击/刷**<br />可设定焦点项之间的 UI 导航。<br /><br />**依次**<br />激活选定的（焦点）项。|**点击/刷**<br />取决于游戏设计，并可通过点击边缘来用作一种3-D 板。<br /><br />**依次**<br />执行主按钮函数。|
+|**菜单**<br />按返回上一个屏幕或菜单。|返回到上一个屏幕，从主应用屏幕退出到 Apple TV 主屏幕。|暂停和恢复游戏，返回到上一屏幕并从主应用屏幕退出到 Apple TV 主屏幕。|
 |**Siri/搜索**<br />在带有 Siri 的国家/地区，在所有其他国家/地区按下并保持语音控制，显示搜索屏幕。|不适用|不适用|
 |**播放/暂停**<br />播放和暂停媒体，或在应用中提供辅助功能。|开始播放媒体和暂停/恢复播放。|执行辅助按钮功能，或跳过简介视频（如果存在）。|
-|**主页**<br />按返回主屏幕，双击以显示正在运行的应用程序，按下并保持进入睡眠状态。|不适用|不适用|
+|**Home**<br />按返回主屏幕，双击以显示正在运行的应用程序，按下并保持进入睡眠状态。|不适用|不适用|
 |**数据量(Volume)**<br />控制附加音频/视频设备量。|不适用|不适用|
 
 <a name="Touch-Surface-Gestures"></a>
@@ -53,7 +53,7 @@ Siri 远程的触摸图面能够检测到你可以在 tvOS 应用程序中响应
 
 |轻扫|单击|点击|
 |---|---|---|
-|![](remote-bluetooth-images/Gesture01.png)|![](remote-bluetooth-images/Gesture02.png)|![](remote-bluetooth-images/Gesture03.png)|
+|![移动选定内容](remote-bluetooth-images/Gesture01.png)|![在职选定项](remote-bluetooth-images/Gesture02.png)|![方向按钮](remote-bluetooth-images/Gesture03.png)|
 |在屏幕上的 UI 元素之间移动选定内容（焦点）（向上、向下、向右）。 轻扫可用于使用惯性快速滚动大列表内容。|激活选定的（焦点）项，或充当游戏中的主要按钮。 单击并按住可激活上下文菜单或辅助功能。|轻轻地点击边缘上的触摸图面可像在一屏上方向按钮一样，向上、向下、向左或向右移动，具体取决于点击的区域。 根据应用，可以使用来显示隐藏的控件。|
 
 Apple 提供了以下有关使用触摸 Surface 势的建议：
@@ -85,14 +85,14 @@ Apple 提供了以下有关使用触摸 Surface 势的建议：
 1. 在**解决方案资源管理器**中，双击该 `Main.storyboard` 文件，然后将其打开以便编辑接口设计器。
 2. 从**库**中拖放一个 "拖动"**手势识别器**，并将其放在视图上：
 
-    [![](remote-bluetooth-images/storyboard01.png "A Tap Gesture Recognizer")](remote-bluetooth-images/storyboard01.png#lightbox)
+    [![分流手势识别器](remote-bluetooth-images/storyboard01.png)](remote-bluetooth-images/storyboard01.png#lightbox)
 3. 选中 "**属性检查器**" 的 "**按钮**" 部分中的 "**选择**"：
 
-    [![](remote-bluetooth-images/storyboard02.png "Check Select")](remote-bluetooth-images/storyboard02.png#lightbox)
+    [![选中选择](remote-bluetooth-images/storyboard02.png)](remote-bluetooth-images/storyboard02.png#lightbox)
 4. **选择**表示该笔势将响应用户单击 Siri 遥控器上的**触摸表面**。 你还可以选择响应**菜单**、**播放/暂停**、**向上**、**向下**、向**左**和**向右**按钮。
 5. 接下来，从 "**点击手势识别器**" 向上绑定一个**操作**并调用它 `TouchSurfaceClicked` ：
 
-    [![](remote-bluetooth-images/storyboard03.png "An Action from the Tap Gesture Recognizer")](remote-bluetooth-images/storyboard03.png#lightbox)
+    [![来自点击手势识别器的操作](remote-bluetooth-images/storyboard03.png)](remote-bluetooth-images/storyboard03.png#lightbox)
 6. 保存更改并返回到 Visual Studio for Mac。
 
 编辑视图控制器（示例 `FirstViewController.cs` ）文件，并添加以下代码来处理要触发的手势：
@@ -271,7 +271,7 @@ namespace tvRemote
 
 除了 Apple TV 第三方随附的标准 Siri 远程（MFI）蓝牙游戏控制器外，还可以与 Apple TV 配对，并用于控制 tvOS 应用。
 
-[![](remote-bluetooth-images/game01.png "Bluetooth Game Controllers")](remote-bluetooth-images/game01.png#lightbox)
+[![蓝牙游戏控制器](remote-bluetooth-images/game01.png)](remote-bluetooth-images/game01.png#lightbox)
 
 游戏控制器可用于增强游戏，并在游戏中提供浸入式。 它们还可用于控制标准 Apple TV 接口，因此使用不必在远程控制器和控制器之间切换。
 
@@ -287,7 +287,7 @@ namespace tvRemote
 |**B**|返回到上一个屏幕，或在应用程序的主屏幕上退出主屏幕。|执行辅助按钮函数或返回到上一屏幕。|
 |**X**|开始播放媒体，或暂停/恢复播放。|依赖于游戏。|
 |**是**|不适用|依赖于游戏。|
-|**下拉菜单**|返回到上一个屏幕，或在应用程序的主屏幕上退出主屏幕。|暂停/恢复游戏，返回到上一屏幕或在应用程序的主屏幕上退出主屏幕。|
+|**菜单**|返回到上一个屏幕，或在应用程序的主屏幕上退出主屏幕。|暂停/恢复游戏，返回到上一屏幕或在应用程序的主屏幕上退出主屏幕。|
 |**左肩按钮**|向左导航。|依赖于游戏。|
 |**左触发器**|向左导航。|依赖于游戏。|
 |**右肩按钮**|向右导航。|依赖于游戏。|
@@ -329,7 +329,7 @@ Apple 提供了以下有关使用游戏控制器的建议：
 
 若要在 tvOS 应用中启用游戏控制器支持，请 `Info.plist` 在**解决方案资源管理器**中双击该文件以将其打开进行编辑：
 
-[![](remote-bluetooth-images/game02.png "The Info.plist editor")](remote-bluetooth-images/game02.png#lightbox)
+[![Info.plist 编辑器](remote-bluetooth-images/game02.png)](remote-bluetooth-images/game02.png#lightbox)
 
 在 "**游戏控制器**" 部分下，选中 "**启用游戏控制器**"，然后检查应用将支持的所有游戏控制器类型。
 
@@ -361,7 +361,7 @@ Apple TV 附带的 Siri 远程可用作受限游戏控制器。 与其他游戏�
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了 Apple TV、触控 Surface 手势和 Siri 遥控器随附的新 Siri 遥控器。 接下来，它涉及到使用笔势和情节提要、笔势和代码以及低级别事件。 最后，如果讨论了如何使用游戏控制器。
 

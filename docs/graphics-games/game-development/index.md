@@ -6,12 +6,12 @@ ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: 5992e8df3080bb35fd123483e5ffb5e64f268b1a
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 8f7ec5175895a31746710fad9ea7372052b698ff
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76724757"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936482"
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>Xamarin 游戏开发简介
 
@@ -34,7 +34,7 @@ ms.locfileid: "76724757"
 
 下面是一个简单的游戏循环示意图：
 
-![](images/image1.png "This is a diagram of a simple game loop")
+![这是一个简单的游戏循环示意图](images/image1.png)
 
 下面讨论的技术将抽象掉实际的 while 循环，但尽管这一抽象，每帧更新的概念也将会出现。
 
@@ -67,7 +67,7 @@ ms.locfileid: "76724757"
 
 如果您熟悉笛卡尔平面（使用 X 和 Y 坐标定位对象），则您可以了解游戏开发的入门知识。 下图显示了正面 Y 指向上方的笛卡尔平面：
 
-![](images/image2.png "This shows a Cartesian plane with positive Y pointing upward")
+![这会显示一个笛卡尔平面，其中正 Y 指向向上](images/image2.png)
 
 > [!IMPORTANT]
 > 某些引擎/Api 使用坐标系统，在此系统中，增加对象的 Y 值会将其向下移动，而其他系统则使用坐标系统，其中 Y 为向上。 如果要在系统之间移动，请记住这一点。
@@ -86,8 +86,8 @@ ms.locfileid: "76724757"
 游戏开发为此过程中涉及的个人引入了新的角色和职务。 大多数游戏开发人员都无法满足发布完整游戏所需的广泛技能，因此存在许多专业。 请记住，这并不是完整的开发领域列表，只是其中一些更常见的部分。
 
 - **程序员**–阅读本文的大多数人都属于此类别。 程序员在游戏开发中的作用类似于编程人员在非游戏应用程序中的角色。 职责包括编写逻辑来控制游戏流、在给定项目的上下文中为常见任务开发系统、添加和显示内容，当然还修复了 bug。
-- **2d 艺术家**–2d 艺术家负责创建*2d 资产*。 其中包括用于游戏 GUI、粒子、环境和字符的图像文件。 如果正在开发的游戏是三维，则2D 艺术家可能不负责环境和字符。 您可以在[http://opengameart.org/](http://opengameart.org/)上查找游戏的自由艺术。
-- **3d 艺术家**–3d 艺术家负责创建*3d 资产*。 其中包括适用于环境、字符和属性（家具、植物和其他 inanimate 对象）的3D 模型。 某些团队区分3D 艺术家和 3D animators，具体取决于团队大小。 可以在[http://opengameart.org/](http://opengameart.org/)上查找游戏的免费3d 艺术。
+- **2d 艺术家**–2d 艺术家负责创建*2d 资产*。 其中包括用于游戏 GUI、粒子、环境和字符的图像文件。 如果正在开发的游戏是三维，则2D 艺术家可能不负责环境和字符。 你可以在上找到适用于你的游戏的自由作品 [http://opengameart.org/](http://opengameart.org/) 。
+- **3d 艺术家**–3d 艺术家负责创建*3d 资产*。 其中包括适用于环境、字符和属性（家具、植物和其他 inanimate 对象）的3D 模型。 某些团队区分3D 艺术家和 3D animators，具体取决于团队大小。 你可以在上找到适用于你的游戏的免费3D 艺术 [http://opengameart.org/](http://opengameart.org/) 。
 - **游戏设计器**-游戏设计人员负责定义游戏的播放方式。 这可能包括高级决定，例如游戏的设置、游戏的整体目标以及玩家在游戏中的进展情况。 游戏设计器还可以参与非常详细的决策，如将输入映射到操作、定义移动或级别的系数以及设计级别布局。 请记住，术语 "*设计器*" 可以指游戏设计器或可视化设计器，具体取决于上下文。
 - **声音设计器**–声音设计器负责游戏的音频资产。 某些团队可能会区分负责创建音响效果和作曲者的人员，而较小的团队可能只有单个人负责所有音频。
 
@@ -121,11 +121,11 @@ MonoGame 不提供标准的可视化开发环境，因此使用 MonoGame 需要�
 
 FEZ:
 
-![](images/image7.png "FEZ")
+![FEZ](images/image7.png)
 
 起
 
-![](images/image8.jpg "Bastion")
+![Bastion](images/image8.jpg)
 
 若要开始使用 MonoGame，请转到我们的[MonoGame 指南](~/graphics-games/monogame/index.md)。
 
@@ -133,7 +133,7 @@ FEZ:
 
 UrhoSharp 是一种跨平台的高级3D 和2D 引擎，可用于为应用程序创建使用几何、材料、光源和照相机的动画3D 和2D 场景。
 
-![](images/urhosharp.gif "UrhoSharp is a cross-platform high-level 3D and 2D engine that can be used to create animated 3D and 2D scenes")
+![UrhoSharp 是一个跨平台的高级3D 和2D 引擎，可用于创建动画3D 和2D 场景](images/urhosharp.gif)
 
 若要开始，请查看[UrhoSharp 指南](~/graphics-games/urhosharp/index.md)。
 
@@ -141,9 +141,9 @@ UrhoSharp 是一种跨平台的高级3D 和2D 引擎，可用于为应用程序�
 
 上面突出显示的技术只是可用技术的示例。 其他重要技术包括：
 
-- **动画工具包**– Xamarin 提供对 Apple 的 Sprite 包游戏框架的支持，使你可以访问本机 API 的所有功能。 由于 Sprite 工具包是 Apple 创建的技术，因此它可以与 iOS 生态系统的其余部分进行深层集成。 当然，Sprite 套件不是跨平台的，因此不能在 Android 上使用。 有关使用动画工具箱的详细信息，请参阅此文章： [https://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](https://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
-- **场景工具包**– Xamarin 还支持 Apple 的场景工具包框架，这简化了将3d 图形部署到 iOS 应用中的情况。 场景工具包也是 Apple 提供的技术，因此它具有上述用于 Sprite 工具包的集成和平台特定的注意事项。 有关场景工具包的详细信息，请参阅此文章： [https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
-- **OpenTK –** OpenTK （代表开放工具工具包）提供对 iOS、Apple 和 Mac 硬件的低级别 OpenGL 访问。 有关 OpenTK 的详细信息，请参阅位于以下位置的主页： [https://opentk.net/](https://opentk.net/)
+- **动画工具包**– Xamarin 提供对 Apple 的 Sprite 包游戏框架的支持，使你可以访问本机 API 的所有功能。 由于 Sprite 工具包是 Apple 创建的技术，因此它可以与 iOS 生态系统的其余部分进行深层集成。 当然，Sprite 套件不是跨平台的，因此不能在 Android 上使用。 有关使用动画工具箱的详细信息，请参阅此文章：[https://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](https://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
+- **场景工具包**– Xamarin 还支持 Apple 的场景工具包框架，这简化了将3d 图形部署到 iOS 应用中的情况。 场景工具包也是 Apple 提供的技术，因此它具有上述用于 Sprite 工具包的集成和平台特定的注意事项。 有关场景工具包的详细信息，请参阅此文章：[https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
+- **OpenTK –** OpenTK （代表开放工具工具包）提供对 iOS、Apple 和 Mac 硬件的低级别 OpenGL 访问。 有关 OpenTK 的详细信息，请参阅以下网页：[https://opentk.net/](https://opentk.net/)
 
 ## <a name="related-links"></a>相关链接
 

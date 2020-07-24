@@ -6,12 +6,12 @@ ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 71d5ed3512980086d244acc5a604d7b33a5dd77c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 87ba471dad102059788695f3fe50633bc1a3de0c
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571345"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930177"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>跨平台应用案例研究： Tasky
 
@@ -42,7 +42,7 @@ ms.locfileid: "84571345"
 从可跨目标平台实现的高级设计着手。 请注意针对特定 UI 约束。 例如， `TabBarController` 在 iOS 中，可以显示超过五个按钮，而 Windows Phone 等效的最多可显示四个按钮。
 使用所选的工具（工作方式）绘制屏幕流。
 
- [![](case-study-tasky-images/taskydesign.png "Draw the screen-flow using the tool of your choice paper works")](case-study-tasky-images/taskydesign.png#lightbox)
+ [![使用所选的纸张工具绘制屏幕流](case-study-tasky-images/taskydesign.png)](case-study-tasky-images/taskydesign.png#lightbox)
 
  <a name="Data_Model"></a>
 
@@ -79,7 +79,7 @@ Tasky 需要为每个 "TaskItem" 存储三个属性：
 - **通用代码**-包含用于存储任务数据的重复使用代码的常见项目;公开模型类和 API 以管理数据的保存和加载。
 - **特定于平台的代码**–特定于平台的项目，这些项目实现每个操作系统的本机 UI，并利用通用代码作为 "后端"。
 
-[![](case-study-tasky-images/taskypro-architecture.png "Platform-specific projects implement a native UI for each operating system, utilizing the common code as the back end")](case-study-tasky-images/taskypro-architecture.png#lightbox)
+[![特定于平台的项目实现每个操作系统的本机 UI，并利用通用代码作为后端](case-study-tasky-images/taskypro-architecture.png)](case-study-tasky-images/taskypro-architecture.png#lightbox)
 
 以下各部分介绍了这两个部分。
 
@@ -93,17 +93,17 @@ Tasky 便携使用可移植类库策略来共享通用代码。 请参阅[共享
 
 下面演示了完整的 PCL 项目。 可移植库中的所有代码都与每个目标平台兼容。 部署时，每个本机应用都将引用该库。
 
-![](case-study-tasky-images/portable-project.png "When deployed, each native app will reference that library")
+![部署时，每个本机应用都将引用该库](case-study-tasky-images/portable-project.png)
 
 下图显示按层分组的类。 `SQLiteConnection`类是来自 SQLITE 网络包的样板代码。 类的其余部分是 Tasky 的自定义代码。 `TaskItemManager`和 `TaskItem` 类表示向特定于平台的应用程序公开的 API。
 
- [![](case-study-tasky-images/classdiagram-core.png "The TaskItemManager and TaskItem classes represent the API that is exposed to the platform-specific applications")](case-study-tasky-images/classdiagram-core.png#lightbox)
+ [![TaskItemManager 和 TaskItem 类表示向特定于平台的应用程序公开的 API](case-study-tasky-images/classdiagram-core.png)](case-study-tasky-images/classdiagram-core.png#lightbox)
 
 使用命名空间分隔层可帮助管理每个层之间的引用。 特定于平台的项目应该只需要为 `using` 业务层包含一条语句。 数据访问层和数据层应由 `TaskItemManager` 在业务层中公开的 API 进行封装。
 
  <a name="References"></a>
 
-### <a name="references"></a>参考
+### <a name="references"></a>参考资料
 
 可移植类库需要在多个平台上可用，每个平台都具有对平台和框架功能的不同级别的支持。 因此，可使用哪些包和框架库存在限制。 例如，Xamarin 不支持 c # `dynamic` 关键字，因此可移植类库不能使用依赖于动态代码的任何包，即使此类代码可在 Android 上运行。 Visual Studio for Mac 将会阻止你添加不兼容的包和引用，但你需要考虑一些限制，以免以后出现惊喜。
 
@@ -255,22 +255,22 @@ path> Android 的 "/Documents/TaskDB.db3" 或 Windows Phone 的 "TaskDB"。
 
 使用通用 PCL 项目存储和检索数据时，只需使用少量的类即可实现 iOS Tasky 应用程序。 完整的 iOS Xamarin iOS 项目如下所示：
 
- ![](case-study-tasky-images/taskyios-solution.png "iOS project is shown here")
+ ![iOS 项目显示在此处](case-study-tasky-images/taskyios-solution.png)
 
 此关系图中显示了这些类，并将其分组到层中。
 
- [![](case-study-tasky-images/classdiagram-android.png "The classes are shown in this diagram, grouped into layers")](case-study-tasky-images/classdiagram-android.png#lightbox)
+ [![此关系图中显示了这些类，分为各个层](case-study-tasky-images/classdiagram-android.png)](case-study-tasky-images/classdiagram-android.png#lightbox)
 
  <a name="References"></a>
 
-### <a name="references"></a>参考
+### <a name="references"></a>参考资料
 
 IOS 应用引用特定于平台的 SDK 库–例如： Xamarin 和 Monotouch.dialog。
 
 它还必须引用 `TaskyPortableLibrary` PCL 项目。
 引用列表如下所示：
 
- ![](case-study-tasky-images/taskyios-references.png "The references list is shown here")
+ ![引用列表显示在此处](case-study-tasky-images/taskyios-references.png)
 
 应用程序层和用户界面层是在此项目中使用这些引用实现的。
 
@@ -328,7 +328,7 @@ public class TaskDialog {
 
 主屏幕是一个 `MonoTouch.Dialog` 屏幕，其中显示了 SQLite 数据库中的任务列表。 它继承自 `DialogViewController` 并实现代码，以将设置 `Root` 为包含要显示的对象的集合 `TaskItem` 。
 
- [![](case-study-tasky-images/ios-taskylist.png "It inherits from DialogViewController and implements code to set the Root to contain a collection of TaskItem objects for display")](case-study-tasky-images/ios-taskylist.png#lightbox)
+ [![它从 DialogViewController 继承，并实现代码以设置根，使其包含用于显示的 TaskItem 对象的集合](case-study-tasky-images/ios-taskylist.png)](case-study-tasky-images/ios-taskylist.png#lightbox)
 
 与显示任务列表和交互相关的两个主要方法是：
 
@@ -345,7 +345,7 @@ Tasky 使用 `MonoTouch.Dialog` 的反射 API 显示屏幕，因此没有 `UIVie
 
 此屏幕截图显示了一个空屏幕，其中显示了在 `Entry` "**名称**" 和 "**注释**" 字段中设置水印文本的属性：
 
- [![](case-study-tasky-images/ios-taskydetail.png "This screenshot shows an empty screen that demonstrates the Entry attribute setting the watermark text in the Name and Notes fields")](case-study-tasky-images/ios-taskydetail.png#lightbox)
+ [![此屏幕截图显示了一个空屏幕，其中显示了在 "名称" 和 "注释" 字段中设置水印文本的条目属性](case-study-tasky-images/ios-taskydetail.png)](case-study-tasky-images/ios-taskydetail.png#lightbox)
 
 "**任务详细信息**" 屏幕（如保存或删除任务）的功能必须在类中实现 `HomeScreen` ，因为这是创建的位置 `MonoTouch.Dialog.BindingContext` 。 以下 `HomeScreen` 方法支持 "任务详细信息" 屏幕：
 
@@ -359,21 +359,21 @@ Tasky 使用 `MonoTouch.Dialog` 的反射 API 显示屏幕，因此没有 `UIVie
 
 完整的 Xamarin Android 项目如下图所示：
 
- ![](case-study-tasky-images/taskyandroid-solution.png "Android project is pictured here")
+ ![Android 项目显示在此处](case-study-tasky-images/taskyandroid-solution.png)
 
 类图，具有按层分组的类：
 
- [![](case-study-tasky-images/classdiagram-android.png "The class diagram, with classes grouped by layer")](case-study-tasky-images/classdiagram-android.png#lightbox)
+ [![类图，包含按层分组的类](case-study-tasky-images/classdiagram-android.png)](case-study-tasky-images/classdiagram-android.png#lightbox)
 
  <a name="References"></a>
 
-### <a name="references"></a>参考
+### <a name="references"></a>参考资料
 
 Android 应用程序项目必须引用特定于平台的 Xamarin 程序集才能访问 Android SDK 中的类。
 
 它还必须引用 PCL 项目（例如 TaskyPortableLibrary）访问通用数据和业务层代码。
 
- ![](case-study-tasky-images/taskyandroid-references.png "TaskyPortableLibrary to access the common data and business layer code")
+ ![TaskyPortableLibrary 访问通用数据和业务层代码](case-study-tasky-images/taskyandroid-references.png)
 
  <a name="Application_Layer_(AL)"></a>
 
@@ -399,7 +399,7 @@ Android 应用的用户界面层是代码和 XML 标记的组合。
 
 主屏幕包含一个活动子类 `HomeScreen` 和 `HomeScreen.axml` 定义布局（按钮和任务列表的位置）的文件。 屏幕如下所示：
 
- [![](case-study-tasky-images/android-taskylist.png "The screen looks like this")](case-study-tasky-images/android-taskylist.png#lightbox)
+ [![屏幕如下所示](case-study-tasky-images/android-taskylist.png)](case-study-tasky-images/android-taskylist.png#lightbox)
 
 主屏幕代码定义处理程序，用于单击按钮并单击列表中的项，并在方法中填充列表 `OnResume` （以便反映在 "任务详细信息" 屏幕中所做的更改）。 使用业务层 `TaskItemManager` 和 `TaskListAdapter` 应用程序层中的来加载数据。
 
@@ -409,7 +409,7 @@ Android 应用的用户界面层是代码和 XML 标记的组合。
 
 "任务详细信息" 屏幕还包括一个 `Activity` 子类和一个 main.axml 布局文件。 布局确定输入控件的位置，c # 类定义加载和保存对象的行为 `TaskItem` 。
 
- [![](case-study-tasky-images/android-taskydetail.png "The class defines the behavior to load and save TaskItem objects")](case-study-tasky-images/android-taskydetail.png#lightbox)
+ [![类定义加载和保存 TaskItem 对象的行为](case-study-tasky-images/android-taskydetail.png)](case-study-tasky-images/android-taskydetail.png#lightbox)
 
 对 PCL 库的所有引用都通过类来完成 `TaskItemManager` 。
 
@@ -418,21 +418,21 @@ Android 应用的用户界面层是代码和 XML 标记的组合。
 ## <a name="windows-phone-app"></a>Windows Phone 应用
 完整的 Windows Phone 项目：
 
- ![](case-study-tasky-images/taskywp7-solution.png "Windows Phone App The complete Windows Phone project")
+ ![Windows Phone 应用完成 Windows Phone 项目](case-study-tasky-images/taskywp7-solution.png)
 
 下图显示了分组为层的类：
 
- [![](case-study-tasky-images/classdiagram-wp7.png "This diagram presents the classes grouped into layers")](case-study-tasky-images/classdiagram-wp7.png#lightbox)
+ [![此关系图显示分组到层中的类](case-study-tasky-images/classdiagram-wp7.png)](case-study-tasky-images/classdiagram-wp7.png#lightbox)
 
  <a name="References"></a>
 
-### <a name="references"></a>参考
+### <a name="references"></a>参考资料
 
 特定于平台的项目必须引用特定平台特定的库（例如 `Microsoft.Phone` 和 `System.Windows` ），以创建有效的 Windows Phone 应用程序。
 
 它还必须引用 PCL 项目（例如 `TaskyPortableLibrary`）以利用 `TaskItem` 类和数据库。
 
- ![](case-study-tasky-images/taskywp7-references.png "TaskyPortableLibrary to utilize the TaskItem class and database")
+ ![使用 TaskItem 类和数据库的 TaskyPortableLibrary](case-study-tasky-images/taskywp7-references.png)
 
  <a name="Application_Layer_(AL)"></a>
 
@@ -479,7 +479,7 @@ MainPage 类使用 `TaskListViewModel` XAML 的数据绑定功能来显示数据
 
 应用程序使用 iOS 标准用户界面设计，如定位在导航栏中的 "添加" 按钮和使用内置**加号（+）** 图标。 它还使用默认的 `UINavigationController` "后退" 按钮行为，并支持表中的 "轻扫到删除"。
 
- [![](case-study-tasky-images/ios-taskylist.png "它还使用默认的 UINavigationController "后退" 按钮行为，并支持表中的 "轻扫删除"")](case-study-tasky-images/ios-taskylist.png#lightbox) [![](case-study-tasky-images/ios-taskylist.png "它还使用默认的 UINavigationController "后退" 按钮行为，并支持表中的 "轻扫删除"")](case-study-tasky-images/ios-taskylist.png#lightbox)
+ [ ![ 它还使用默认的 UINavigationController "后退" 按钮行为，并支持表中的 "轻扫-删除](case-study-tasky-images/ios-taskylist.png)](case-study-tasky-images/ios-taskylist.png#lightbox)"。 [ ![ 它还使用默认的 UINavigationController "后退" 按钮行为，并支持表中的 "轻扫删除](case-study-tasky-images/ios-taskylist.png)](case-study-tasky-images/ios-taskylist.png#lightbox)"
 
  <a name="Android"></a>
 
@@ -487,7 +487,7 @@ MainPage 类使用 `TaskListViewModel` XAML 的数据绑定功能来显示数据
 
 Android 应用使用内置控件，包括需要显示 "刻度" 的行的内置布局。 除了屏幕上的 "后退" 按钮外，还支持硬件/系统返回行为。
 
- [![](case-study-tasky-images/android-taskylist.png "The hardware/system back behavior is supported in addition to an on-screen back button")](case-study-tasky-images/android-taskylist.png#lightbox)[![](case-study-tasky-images/android-taskylist.png "The hardware/system back behavior is supported in addition to an on-screen back button")](case-study-tasky-images/android-taskylist.png#lightbox)
+ [ ![ 除了](case-study-tasky-images/android-taskylist.png)](case-study-tasky-images/android-taskylist.png#lightbox)屏幕上的 "后退" 按钮外，还支持硬件/系统后退行为除屏幕上的 "后退" 按钮外，还支持[ ![ 硬件/系统后退行为](case-study-tasky-images/android-taskylist.png)](case-study-tasky-images/android-taskylist.png#lightbox)
 
  <a name="Windows_Phone"></a>
 
@@ -495,11 +495,11 @@ Android 应用使用内置控件，包括需要显示 "刻度" 的行的内置�
 
 Windows Phone 应用使用标准布局，在屏幕底部填充应用栏，而不是在顶部显示导航栏。
 
- [![](case-study-tasky-images/wp-taskylist.png "Windows Phone 应用使用标准布局，在屏幕底部填充应用栏，而不是在顶部显示导航栏")](case-study-tasky-images/wp-taskylist.png#lightbox) [![](case-study-tasky-images/wp-taskylist.png "Windows Phone 应用使用标准布局，在屏幕底部填充应用栏，而不是在顶部显示导航栏")](case-study-tasky-images/wp-taskylist.png#lightbox)
+ [ ![ Windows Phone 应用使用标准布局，在屏幕底部填充应用栏（而不是 Windows Phone 顶部的导航栏](case-study-tasky-images/wp-taskylist.png)](case-study-tasky-images/wp-taskylist.png#lightbox)） [ ![ 使用标准布局，在屏幕底部填充应用栏，而不是在顶部显示导航栏](case-study-tasky-images/wp-taskylist.png)](case-study-tasky-images/wp-taskylist.png#lightbox)
 
  <a name="Summary"></a>
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文档提供了有关如何将分层应用程序设计原则应用于简单应用程序的详细说明，以方便在三个移动平台之间重复使用代码： iOS、Android 和 Windows Phone。
 

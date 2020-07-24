@@ -123,7 +123,7 @@ MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessengerKeys
 
 在此示例中， [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) 方法语法反映了在订阅接收消息时指定的类型参数 `AddProduct` 。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 类可实现发布-订阅模式，允许不便按对象和类型引用进行链接的组件之间进行基于消息的通信。 此机制使发布服务器和订阅服务器无需彼此引用即可进行通信，有助于减少组件之间的依赖关系，同时允许单独开发和测试组件。
 

@@ -10,16 +10,16 @@ ms.date: 10/08/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 891f1ff8ad8f254ff3a2805d08d0f7e115bb0fff
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 40b918adff523fa446e69c064029311c54d01290
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137366"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935039"
 ---
 # <a name="xamarinforms-carouselview"></a>Xamarin.FormsCarouselView
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![预发布 API](~/media/shared/preview.png "此 API 当前为预发布版本")
 
 ## <a name="introduction"></a>[简介](introduction.md)
 

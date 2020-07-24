@@ -10,12 +10,12 @@ ms.date: 11/25/2015
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 110b01d6482fbe3e23a772c90194b6bf40d54877
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 923f7643bd1e137192bfb80dbbc7c5d2c25b5471
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570526"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938419"
 ---
 # <a name="xamarinforms-absolutelayout"></a>Xamarin.FormsAbsoluteLayout
 
@@ -23,7 +23,7 @@ ms.locfileid: "84570526"
 
 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)定位子元素并调整其大小，使其与自己的大小和位置或绝对值成正比。 可以使用比例值或静态值定位和调整子视图的大小，并且可以混合使用比例和静态值。
 
-[![](absolute-layout-images/layouts-sml.png "Xamarin.Forms Layouts")](absolute-layout-images/layouts.png#lightbox "Xamarin.Forms Layouts")
+[![Xamarin.Forms布局](absolute-layout-images/layouts-sml.png)](absolute-layout-images/layouts.png#lightbox "[!基金.无 LOC （Xamarin）] 布局")
 
 本文介绍：
 
@@ -53,9 +53,9 @@ ms.locfileid: "84570526"
 
 请注意，在下面的屏幕截图中，框的定位点为白点。 请注意，定位点和框在整个布局中移动时的关系：
 
-![](absolute-layout-images/anchor-start.png "Anchor at Start")
-![](absolute-layout-images/anchor-center.png "Anchor at Center")
-![](absolute-layout-images/anchor-end.png "Anchor at End")
+![位于结束位置的 ](absolute-layout-images/anchor-start.png)
+ ![ 中心 ](absolute-layout-images/anchor-center.png)
+ ![ 锚点处的定位点处](absolute-layout-images/anchor-end.png)
 
 ### <a name="specifying-values"></a>指定值
 
@@ -83,7 +83,7 @@ ms.locfileid: "84570526"
 - **PositionProportional** &ndash;将 `X` 和 `Y` 值解释为成比例，而大小值解释为绝对。
 - **SizeProportional** &ndash;将 `Width` 和 `Height` 值解释为比例，而位置值是绝对的。
 
-在 XAML 中，使用属性将边界和标志设置为布局中的视图定义的一部分 `AbsoluteLayout.LayoutBounds` 。 界限设置为以逗号分隔的值列表，按 `X` `Y` `Width` `Height` 顺序排列。 还可以使用属性在布局中的视图声明中指定标志 `AbsoluteLayout.LayoutFlags` 。 请注意，可以使用以逗号分隔的列表将标志组合到 XAML 中。 请考虑以下示例：
+在 XAML 中，使用属性将边界和标志设置为布局中的视图定义的一部分 `AbsoluteLayout.LayoutBounds` 。 界限设置为以逗号分隔的值列表，按 `X` `Y` `Width` `Height` 顺序排列。 还可以使用属性在布局中的视图声明中指定标志 `AbsoluteLayout.LayoutFlags` 。 请注意，可以使用以逗号分隔的列表将标志组合到 XAML 中。 请看下面的示例：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -109,7 +109,7 @@ Title="Absolute Layout Exploration">
 </ContentPage>
 ```
 
-![](absolute-layout-images/exploration.png "AbsoluteLayout Examples")
+![AbsoluteLayout 示例](absolute-layout-images/exploration.png)
 
 注意以下事项：
 
@@ -275,7 +275,7 @@ Title="AbsoluteLayout">
 
 上面的代码将生成以下布局：
 
-![](absolute-layout-images/abs.png "Complex AbsoluteLayout")
+![复杂 AbsoluteLayout](absolute-layout-images/abs.png)
 
 请注意 `AbsoluteLayout` ，s 是嵌套的，因为在某些情况下，嵌套布局比在同一布局中呈现所有元素更容易。
 

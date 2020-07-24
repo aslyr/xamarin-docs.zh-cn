@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ce28a9ef2d5cbf4bdf1c12a85ea64ac9bb8bee8b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 44504ed47ca5ea94ed22c9569f8674ca0e63d89a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137002"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937860"
 ---
 # <a name="visualelement-blur-on-ios"></a>IOS 上的 VisualElement 模糊
 
@@ -49,7 +49,7 @@ boxView.On<iOS>().UseBlurEffect(BlurEffectStyle.ExtraLight);
 
 结果是，指定的 [`BlurEffectStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) 将应用于 [`BoxView`](xref:Xamarin.Forms.BoxView) 实例，这会使 [`Image`](xref:Xamarin.Forms.Image) 其下的分层模糊：
 
-![](applying-blur-images/blur-effect.png "Blur Effect Platform-Specific")
+![特定于平台的模糊效果](applying-blur-images/blur-effect.png)
 
 > [!NOTE]
 > 向添加模糊效果时 [`VisualElement`](xref:Xamarin.Forms.VisualElement) ，触摸事件仍将由接收 `VisualElement` 。

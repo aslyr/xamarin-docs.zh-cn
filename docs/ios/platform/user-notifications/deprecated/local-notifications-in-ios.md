@@ -1,5 +1,5 @@
 ---
-title: Xamarin 中的通知
+title: Xamarin.iOS 中的通知
 description: 本部分说明如何在 Xamarin 中实现本地通知。 它将解释 iOS 通知的各种 UI 元素，并讨论创建和显示通知所涉及的 API。
 ms.prod: xamarin
 ms.assetid: 5BB76915-5DB0-48C7-A267-FA9F7C50793E
@@ -7,14 +7,14 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/13/2018
-ms.openlocfilehash: 0cd0937229e8679af46313d0bce4c62792c0f36b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 04631993d47a1d51858ab24948ab61170d37bb6e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031385"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939866"
 ---
-# <a name="notifications-in-xamarinios"></a>Xamarin 中的通知
+# <a name="notifications-in-xamarinios"></a>Xamarin.iOS 中的通知
 
 > [!IMPORTANT]
 > 本部分中的信息适用于 iOS 9 及更早的。 对于 iOS 10 及更高版本，请参阅[用户通知框架指南](~/ios/platform/user-notifications/index.md)。
@@ -43,7 +43,7 @@ application.RegisterUserNotificationSettings(notificationSettings);
 
 [![确认发送本地通知的能力](local-notifications-in-ios-images/image0-sml.png "确认发送本地通知的能力")](local-notifications-in-ios-images/image0.png#lightbox)
 
-若要计划本地通知，请创建 `UILocalNotification` 对象，设置 `FireDate`，并通过 `UIApplication.SharedApplication` 对象上的 `ScheduleLocalNotification` 方法对其进行计划。 下面的代码片段演示了如何计划一个通知，该通知将在将来激发一分钟，并显示一条消息，其中包含一条消息：
+若要计划本地通知，请创建 `UILocalNotification` 对象，设置 `FireDate` ，并通过对象上的方法对其进行安排 `ScheduleLocalNotification` `UIApplication.SharedApplication` 。 下面的代码片段演示了如何计划一个通知，该通知将在将来激发一分钟，并显示一条消息，其中包含一条消息：
 
 ```csharp
 UILocalNotification notification = new UILocalNotification();
@@ -56,7 +56,7 @@ UIApplication.SharedApplication.ScheduleLocalNotification(notification);
 
 以下屏幕截图显示了此警报的外观：
 
-[![](local-notifications-in-ios-images/image2-sml.png "An example alert")](local-notifications-in-ios-images/image2.png#lightbox)
+[![示例警报](local-notifications-in-ios-images/image2-sml.png)](local-notifications-in-ios-images/image2.png#lightbox)
 
 请注意，如果用户选择*不允许*通知，则不会显示任何内容。
 
@@ -79,7 +79,7 @@ notification.SoundName = UILocalNotification.DefaultSoundName;
 
 ## <a name="handling-notifications"></a>处理通知
 
-iOS 应用程序以几乎完全相同的方式处理远程和本地通知。 当应用程序运行时，将调用 `AppDelegate` 类的 `ReceivedLocalNotification` 方法或 `ReceivedRemoteNotification` 方法，并且通知信息将作为参数传递。
+iOS 应用程序以几乎完全相同的方式处理远程和本地通知。 当应用程序运行时， `ReceivedLocalNotification` 将调用类中的方法或 `ReceivedRemoteNotification` 方法 `AppDelegate` ，并且通知信息将作为参数传递。
 
 应用程序可以通过不同的方式处理通知。 例如，应用程序可能只显示一个警报，提醒用户关于某个事件。 或者，通知可用于向用户显示进程已完成的警报，如将文件同步到服务器。
 
@@ -99,7 +99,7 @@ public override void ReceivedLocalNotification(UIApplication application, UILoca
 }
 ```
 
-如果应用程序未运行，则 iOS 会播放声音并/或更新图标徽章（如果适用）。 当用户启动与警报相关联的应用程序时，应用程序将启动，并将调用应用程序委托上的 `FinishedLaunching` 方法，并通过 `launchOptions` 参数传入通知信息。 如果选项字典包含密钥 `UIApplication.LaunchOptionsLocalNotificationKey`，则 `AppDelegate` 知道应用程序是从本地通知启动的。 以下代码段演示了此过程：
+如果应用程序未运行，则 iOS 会播放声音并/或更新图标徽章（如果适用）。 当用户启动与警报相关联的应用程序时，应用程序将启动，并将 `FinishedLaunching` 调用应用程序委托上的方法，并且将通过参数传入通知信息 `launchOptions` 。 如果选项字典包含该键，则 `UIApplication.LaunchOptionsLocalNotificationKey` `AppDelegate` 知道应用程序是从本地通知启动的。 以下代码段演示了此过程：
 
 ```csharp
 // check for a local notification
@@ -119,7 +119,7 @@ if (launchOptions.ContainsKey(UIApplication.LaunchOptionsLocalNotificationKey))
 }
 ```
 
-对于远程通知，`launchOptions` 将具有一个 `LaunchOptionsRemoteNotificationKey`，其中包含一个包含远程通知负载的关联 `NSDictionary`。 可以通过 `alert`、`badge`和 `sound` 密钥提取通知有效负载。 下面的代码段演示如何获取远程通知：
+对于远程通知， `launchOptions` 将拥有一个 `LaunchOptionsRemoteNotificationKey` ，其中包含与 `NSDictionary` 远程通知有效负载相关联的。 可以通过 `alert` 、和键来提取通知有效负载 `badge` `sound` 。 下面的代码段演示如何获取远程通知：
 
 ```csharp
 NSDictionary remoteNotification = options[UIApplication.LaunchOptionsRemoteNotificationKey];
@@ -129,9 +129,9 @@ if(remoteNotification != null)
 }
 ```
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
-本部分说明如何在 Xamarin 中创建和发布通知。 它显示应用程序如何通过重写 `AppDelegate`中的 `ReceivedLocalNotification` 方法或 `ReceivedRemoteNotification` 方法来对通知做出反应。
+本部分说明如何在 Xamarin 中创建和发布通知。 它显示应用程序如何通过重写 `ReceivedLocalNotification` 中的方法或方法来对通知做出反应 `ReceivedRemoteNotification` `AppDelegate` 。
 
 ## <a name="related-links"></a>相关链接
 

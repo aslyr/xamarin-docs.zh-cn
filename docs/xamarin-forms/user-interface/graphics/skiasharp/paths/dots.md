@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8698bacd7257df431b12166c749f5826e8d6fd3c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 47182578a6583dde34cb7f06e3433cdb2703f6ba
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138445"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937674"
 ---
 # <a name="dots-and-dashes-in-skiasharp"></a>SkiaSharp 中的点和短划线
 
@@ -25,7 +25,7 @@ _掌握 SkiaSharp 中绘制点线和虚线的复杂性_
 
 SkiaSharp 使你能够绘制不是纯色的行，而是由点和短划线组成：
 
-![](dots-images/dottedlinesample.png "Dotted line")
+![虚线](dots-images/dottedlinesample.png)
 
 使用路径效果执行此操作，*路径效果*是 [`SKPathEffect`](xref:SkiaSharp.SKPathEffect) 您设置为的属性的类的实例 [`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect) `SKPaint` 。 您可以使用由定义的静态创建方法之一创建路径效果（或组合路径效果） `SKPathEffect` 。 （ `SKPathEffect` 这是 SkiaSharp 支持的六个效果之一; 其他是在[**SkiaSharp 效果**](../effects/index.md)部分中介绍的。）
 
@@ -153,7 +153,7 @@ float[] GetPickerArray(Picker picker)
 
 在下面的屏幕截图中，最左侧的 iOS 屏幕显示一条虚线：
 
-[![](dots-images/dotsanddashes-small.png "Triple screenshot of the Dots and Dashes page")](dots-images/dotsanddashes-large.png#lightbox "Triple screenshot of the Dots and Dashes page")
+[![点和短划线页面的三向屏幕截图](dots-images/dotsanddashes-small.png)](dots-images/dotsanddashes-large.png#lightbox "点和短划线页面的三向屏幕截图")
 
 不过，Android 屏幕也应该使用数组 {10，10} 显示一条虚线，而不是直线。 发生了什么情况？ 问题在于 Android 屏幕还具有的笔划帽设置 `Square` 。 这会将所有短划线扩展为笔划宽度的一半，使其填满空白。
 
@@ -214,7 +214,7 @@ public class AnimatedSpiralPage : ContentPage
 
 当然，您必须实际运行该程序才能看到动画：
 
-[![](dots-images/animatedspiral-small.png "Triple screenshot of the Animated Spiral page")](dots-images/animatedspiral-large.png#lightbox "Triple screenshot of the Animated Spiral page")
+[![动画螺旋线页面的三向屏幕截图](dots-images/animatedspiral-small.png)](dots-images/animatedspiral-large.png#lightbox "动画螺旋线页面的三向屏幕截图")
 
 ## <a name="related-links"></a>相关链接
 

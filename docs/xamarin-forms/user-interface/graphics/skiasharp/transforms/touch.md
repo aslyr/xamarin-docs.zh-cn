@@ -10,12 +10,12 @@ ms.date: 09/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f5738f376e2a814ef1af455178c2e68135184402
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6de2caf95d4ce983f7e97e0bc017932df534aedb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140161"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931854"
 ---
 # <a name="touch-manipulations"></a>触摸操作
 
@@ -25,7 +25,7 @@ _使用矩阵变换实现触控拖动、收缩和旋转_
 
 在多点触控环境（如移动设备上的环境）中，用户通常使用其手指操作屏幕上的对象。 常见的手势（如一个指尖拖动和一个双指的挤压）可以移动和缩放对象，甚至可以旋转对象。 这些手势通常是使用转换矩阵实现的，本文介绍了如何执行此操作。
 
-![](touch-images/touchmanipulationsexample.png "A bitmap subjected to translation, scaling, and rotation")
+![用于转换、缩放和旋转的位图](touch-images/touchmanipulationsexample.png)
 
 此处显示的所有示例都使用 Xamarin.Forms 在[**调用来自效果的事件**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)一文中介绍的触摸跟踪效果。
 
@@ -920,7 +920,7 @@ public partial class TouchManipulationPage : ContentPage
 
 `PaintSurface`处理程序通过显示一个 `MatrixDisplay` 显示累积 touch 矩阵的对象结束：
 
-[![](touch-images/touchmanipulation-small.png "Triple screenshot of the Touch Manipulation page")](touch-images/touchmanipulation-large.png#lightbox "Triple screenshot of the Touch Manipulation page")
+[![触摸操作页的三向屏幕截图](touch-images/touchmanipulation-small.png)](touch-images/touchmanipulation-large.png#lightbox "触摸操作页的三向屏幕截图")
 
 ## <a name="manipulating-multiple-bitmaps"></a>处理多个位图
 
@@ -1058,7 +1058,7 @@ public partial class BitmapScatterViewPage : ContentPage
 
 代码循环遍历集合，并显示从集合开头到末尾的位图堆：
 
-[![](touch-images/bitmapscatterview-small.png "Triple screenshot of the Bitmap Scatter View page")](touch-images/bitmapscatterview-large.png#lightbox "Triple screenshot of the Bitmap Scatter View page")
+[![位图散点视图页面的三向屏幕截图](touch-images/bitmapscatterview-small.png)](touch-images/bitmapscatterview-large.png#lightbox "位图散点视图页面的三向屏幕截图")
 
 ## <a name="single-finger-scaling"></a>单指缩放
 

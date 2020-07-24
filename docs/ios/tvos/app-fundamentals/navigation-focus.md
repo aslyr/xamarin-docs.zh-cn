@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 69886a0da53d419a0c40bdf34f91d301c9efe504
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d9e8d91b03a5a82373012da215bd29a747e67d3e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573711"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939446"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>在 Xamarin 中使用 tvOS 导航和焦点
 
@@ -20,7 +20,7 @@ _本文介绍了焦点的概念以及如何使用它来呈现和处理 tvOS 应�
 
 本文介绍了[焦点](#Focus-and-Selection)的概念以及如何使用它来处理 Xamarin tvOS 应用的用户界面中的[导航](#Navigation)。 我们将检查内置 tvOS 导航控件如何使用焦点、突出显示和选择以提供 Xamarin. tvOS 应用程序的用户界面导航。
 
-[![](navigation-focus-images/intro01.png "tvOS apps User Interface Navigation")](navigation-focus-images/intro01.png#lightbox)
+[![tvOS apps 用户界面导航](navigation-focus-images/intro01.png)](navigation-focus-images/intro01.png#lightbox)
 
 接下来，我们将介绍如何将焦点与[视差](#Focus-and-Parallax)和*分层图像*一起使用，为最终用户提供当前导航状态的视觉线索。
 
@@ -34,7 +34,7 @@ _本文介绍了焦点的概念以及如何使用它来呈现和处理 tvOS 应�
 
 成功的 tvOS 应用以平稳地支持应用的目的和它所提供的数据的结构，而无需注意导航本身的方式实现导航。 设计你的导航，使其感觉自然和熟悉，无需占据用户界面或将焦点从内容和应用程序用户体验中消失。
 
-[![](navigation-focus-images/nav01.png "The tvOS settings app")](navigation-focus-images/nav01.png#lightbox)
+[![TvOS 设置应用](navigation-focus-images/nav01.png)](navigation-focus-images/nav01.png#lightbox)
 
 使用 Apple TV 时，用户通常会在一组堆积屏幕上导航，每个屏幕都提供一组给定的内容。 反过来，每个新屏幕都可能使用标准 UI 控件（如[按钮](~/ios/tvos/user-interface/buttons.md)、[选项卡栏](~/ios/tvos/user-interface/tab-bars.md)、表、[集合视图](~/ios/tvos/user-interface/collection-views.md)或[拆分视图](~/ios/tvos/user-interface/split-views.md)）来导致内容的一个或多个子屏幕。
 
@@ -57,7 +57,7 @@ Apple 建议在设计 tvOS 应用的导航时请牢记以下事项：
 
 在 Apple TV 上，当它是当前导航的目标时，图像、按钮或其他 UI 元素将被视为_处于焦点_。
 
-[![](navigation-focus-images/focus01.png "Focus and Selection example")](navigation-focus-images/focus01.png#lightbox)
+[![焦点和选择示例](navigation-focus-images/focus01.png)](navigation-focus-images/focus01.png#lightbox)
 
 不同于 iOS 设备，其中用户直接与设备的触摸屏上的元素交互，用户使用 Siri 远程与室内的 tvOS 元素交互。 为了提供和处理此用户交互，Apple TV 使用基于_焦点_的模型。
 
@@ -134,7 +134,7 @@ playButton.PreferredFocusedView = true;
 
 对于示例，请使用以下 UI 布局：
 
- [![](navigation-focus-images/guide01.png "Working with Focus Guides example")](navigation-focus-images/guide01.png#lightbox)
+ [![使用焦点指南示例](navigation-focus-images/guide01.png)](navigation-focus-images/guide01.png#lightbox)
 
 由于 "**详细信息**" 按钮并不在具有 "**购买**" 按钮的水平和垂直网格上，因此用户将无法访问它。 但是，可以使用_重点指南_轻松地纠正这种情况，以便向焦点引擎提供移动提示。 
 
@@ -166,7 +166,7 @@ public override void ViewDidLoad ()
 
 接下来，重点指南的顶部、左侧、宽度和高度锚点相对于**详细信息**进行调整，并**购买**按钮将其置于不同位置。 请参阅：
 
-[![](navigation-focus-images/guide02.png "Example Focus Guide")](navigation-focus-images/guide02.png#lightbox)
+[![示例焦点指南](navigation-focus-images/guide02.png)](navigation-focus-images/guide02.png#lightbox)
 
 另外，请务必注意，在创建新约束时通过将它们的 `Active` 属性设置为 `true` ：
 
@@ -270,7 +270,7 @@ myImageView.AdjustsImageWhenAncestorFocused = true;
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了焦点的概念以及如何使用它来处理 Xamarin tvOS 应用的用户界面中的导航。 它将检查内置 tvOS 导航控件如何使用焦点、突出显示和选择以提供导航。 接下来，了解如何通过视差和分层图像使用焦点，为最终用户提供当前导航状态的视觉线索。 最后，它研究了如何使用焦点、重点更新、集中精力和启用视差。
 

@@ -10,12 +10,12 @@ ms.date: 05/03/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a3183997eb229fd3548a1afeccf82670cf651a71
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 31b82586b47ead1a851000d59c8271deec063020
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84565299"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933765"
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>使用 CocosSharpXamarin.Forms
 
@@ -59,11 +59,11 @@ CocosSharp NuGet 包包含 `CocosSharpView` 用于在中承载 CocosSharp 的类
 添加**CocosSharp** NuGet 和**CocosSharp**也会自动添加。
 为此，请右键单击 .NET Standard 库项目中的 "**包**" 文件夹，然后选择 "**添加包 ...**"。输入搜索词 " **CocosSharp**"，选择 " ** Xamarin.Forms CocosSharp **"，然后单击 "**添加包**"。
 
-![](cocossharp-images/image1.png "Add Packages Dialog")
+!["添加包" 对话框](cocossharp-images/image1.png)
 
 **CocosSharp**和**CocosSharp** NuGet 包都将添加到项目中：
 
-![](cocossharp-images/image2.png "Packages Folder")
+![包文件夹](cocossharp-images/image2.png)
 
 针对特定于平台的项目（如 iOS 和 Android）重复上述步骤。
 
@@ -129,7 +129,7 @@ public HomePage ()
 
 在 iOS 上，如下 `HomePage` 图所示：
 
-![](cocossharp-images/image3.png "HomePage Screenshot")
+![主页屏幕快照](cocossharp-images/image3.png)
 
 ### <a name="2-adding-a-cocossharpview"></a>2. 添加 CocosSharpView
 
@@ -181,7 +181,7 @@ void HandleViewCreated (object sender, EventArgs e)
 
 下图可帮助可视化典型的 CocosSharp 层次结构：
 
-![](cocossharp-images/image4.png "Typical CocosSharp Hierarchy")
+![典型的 CocosSharp 层次结构](cocossharp-images/image4.png)
 
 一次只能有一个 `CCScene` 处于活动状态。 大多数游戏使用多个 `CCLayer` 实例对内容进行排序，但我们的应用程序只使用一个。 同样，大多数游戏使用多个视觉对象，但我们的应用程序中仅有一个。 有关 CocosSharp 可视层次结构的更详细的讨论，请参阅[BouncingGame 演练](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/bouncing-game.md)。
 
@@ -207,7 +207,7 @@ GameScene gameScene;
 
 现在，我们可以编译项目并运行它，以查看 CocosSharp 的运行情况。 我们未向我们添加任何内容， `GameScene,` 因此我们的页面的上半部分为黑色– CocosSharp 场景的默认颜色：
 
-![](cocossharp-images/image5.png "Blank GameScene")
+![空白 GameScene](cocossharp-images/image5.png)
 
 ### <a name="4-adding-a-circle"></a>4. 添加圆圈
 
@@ -239,7 +239,7 @@ public class GameScene : CCScene
 
 运行应用程序时，会在 CocosSharp 显示区域的左侧显示一个圆圈：
 
-![](cocossharp-images/image6.png "Circle in GameScene")
+![GameScene 中的圆圈](cocossharp-images/image6.png)
 
 #### <a name="understanding-designresolution"></a>了解 DesignResolution
 
@@ -247,7 +247,7 @@ public class GameScene : CCScene
 
 `DesignResolution`表示用于放置和调整对象大小的 CocosSharp 区域的宽度和高度。 区域的实际分辨率以*像素*为单位进行测量，而以 `DesignResolution` 世界*单位*来度量。 下图显示了在具有640x1136 像素屏幕分辨率的 iPhone 5 上显示的视图的各个部分的分辨率：
 
-![](cocossharp-images/image7.png "iPhone 5s Design Resolution")
+![iPhone 5s 设计解决方案](cocossharp-images/image7.png)
 
 上图以黑色文本显示屏幕外的像素尺寸。 单元在关系图的内部以白色文本显示。 下面是上面显示的一些重要详细信息：
 
@@ -313,7 +313,7 @@ void CreateBottomHalf(Grid grid)
 
 现在，CocosSharp 圆会移动以响应单击。 我们还可以通过将圆周向左或向右移动来清楚地查看 CocosSharp 画布的边界：
 
-![](cocossharp-images/image8.png "GameScene with Moving Circle")
+![带有移动圆圈的 GameScene](cocossharp-images/image8.png)
 
 ## <a name="summary"></a>摘要
 

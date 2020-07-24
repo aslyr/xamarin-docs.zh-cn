@@ -10,12 +10,12 @@ ms.date: 08/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8b712b2a5d7eeb2ee5e71047b9e6c460eb10d72a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5550ea7a355492f724459449f3b37cdcb8d05b1e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573828"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932140"
 ---
 # <a name="authentication-and-authorization"></a>身份验证和授权
 
@@ -42,7 +42,7 @@ OpenID Connect 和 OAuth 2.0 的组合结合了身份验证和 API 访问的两�
 
 在使用直接客户端到微服务通信的应用程序（如 eShopOnContainers 引用应用程序）中，可使用专用身份验证微服务作为安全令牌服务（STS）来对用户进行身份验证，如图9-1 所示。 有关直接的客户端到微服务通信的详细信息，请参阅[客户端和微服务之间的通信](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md#communication-between-client-and-microservices)。
 
-![](authentication-and-authorization-images/authentication.png "Authentication by a dedicated authentication microservice")
+![通过专用身份验证微服务进行身份验证](authentication-and-authorization-images/authentication.png)
 
 **图9-1：** 通过专用身份验证微服务进行身份验证
 
@@ -211,7 +211,7 @@ public static IEnumerable<Client> GetClients(Dictionary<string,string> clien
 
 - 隐式。 此流针对基于浏览器的应用程序进行了优化，并且应该用于仅用户身份验证或身份验证和访问令牌请求。 所有令牌都是通过浏览器传输的，因此不允许使用刷新令牌等高级功能。
 - 授权代码。 通过此流，可以在后端通道上检索令牌，而不是浏览器前端通道，同时还支持客户端身份验证。
-- 混合： 此流是隐式和授权代码授予类型的组合。 标识令牌通过浏览器通道传输，包含签名协议响应以及其他项目，如授权代码。 成功验证响应后，应使用后信道来检索访问和刷新令牌。
+- 混合。 此流是隐式和授权代码授予类型的组合。 标识令牌通过浏览器通道传输，包含签名协议响应以及其他项目，如授权代码。 成功验证响应后，应使用后信道来检索访问和刷新令牌。
 
 > [!TIP]
 > 使用混合身份验证流。 混合身份验证流可缓解适用于浏览器通道的大量攻击，对于需要检索访问令牌（并且可能会刷新令牌）的本机应用程序，建议使用此流。
@@ -224,7 +224,7 @@ public static IEnumerable<Client> GetClients(Dictionary<string,string> clien
 
 EShopOnContainers 移动应用通过混合身份验证流进行身份验证，如图9-2 所示。
 
-![](authentication-and-authorization-images/sign-in.png "High-level overview of the sign-in process")
+![登录过程的高级概述](authentication-and-authorization-images/sign-in.png)
 
 **图9-2：** 登录过程的高级概述
 
@@ -232,7 +232,7 @@ EShopOnContainers 移动应用通过混合身份验证流进行身份验证，�
 
 EShopOnContainers 移动应用通过将请求发送到 `<base endpoint>:5105/connect/endsession` ，并使用其他参数来注销 IdentityServer。 注销发生后，IdentityServer 会通过将注销后重定向 URI 发送回移动应用来做出响应。 图9-3 说明了此过程。
 
-![](authentication-and-authorization-images/sign-out.png "High-level overview of the sign-out process")
+![注销过程的高级概述](authentication-and-authorization-images/sign-out.png)
 
 **图9-3：** 注销过程的高级概述
 
@@ -288,7 +288,7 @@ public string CreateAuthorizationRequest()
 
 返回的 URI 存储在类的 `LoginUrl` 属性中 `LoginViewModel` 。 当 `IsLogin` 属性为时 `true` ，中的将 [`WebView`](xref:Xamarin.Forms.WebView) `LoginView` 变为可见。 `WebView`数据会将其 [`Source`](xref:Xamarin.Forms.WebView.Source) 属性绑定到 `LoginUrl` 类的属性 `LoginViewModel` ，并在 `LoginUrl` 属性设置为 IdentityServer 的授权终结点时向 IdentityServer 发出登录请求。 当 IdentityServer 收到此请求并且用户未通过身份验证时， `WebView` 将重定向到已配置的登录页，如图9-4 所示。
 
-![](authentication-and-authorization-images/login.png "Login page displayed by the WebView")
+![Web 视图显示的登录页](authentication-and-authorization-images/login.png)
 
 **图9-4：** Web 视图显示的登录页
 
@@ -409,7 +409,7 @@ public class BasketController : Controller
 
 IdentityServer 可以集成到授权工作流，以便它提供控制授权。 此方法如图9-5 所示。
 
-![](authentication-and-authorization-images/authorization.png "Authorization by access token")
+![按访问令牌授权](authentication-and-authorization-images/authorization.png)
 
 **图9-5：** 按访问令牌授权
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/28/2017
-ms.openlocfilehash: c42b41f9b853fba58ef70b8bd2f8ab20a3369647
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1f5f9e13607d672a6fdec5ed8fb116466973a260
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569230"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938029"
 ---
 # <a name="localization-in-xamarinios"></a>Xamarin 中的本地化
 
@@ -24,7 +24,7 @@ _本文档介绍 iOS SDK 的本地化功能，以及如何使用 Xamarin 访问�
 
 本部分介绍 iOS 中的一些本地化功能。 跳到[下一节](#localization-basics-in-ios)，查看具体的代码和示例。
 
-### <a name="language"></a>语言
+### <a name="language"></a>Language
 
 用户在 "**设置**" 应用程序中选择其语言。 此设置会影响操作系统和应用程序中显示的语言字符串和图像。
 
@@ -173,9 +173,9 @@ Xamarin 中的以下功能可以轻松地在 Xamarin 中利用，以提供用于
     UIImage.FromBundle("flag");
     ```
 
-2. 将默认图像文件**标记** **lproj** （本机开发语言目录）。
+2. 将默认图像文件**flag.png**在**lproj** （本机开发语言目录）中。
 
-3. （可选）在每种语言的**lproj**文件夹中放置图像的本地化版本（例如 **lproj**， **lproj**）。 在每个语言目录中使用相同的文件名**标志。**
+3. （可选）在每种语言的**lproj**文件夹中放置图像的本地化版本（例如 **lproj**， **lproj**）。 请在每个语言目录中**flag.png**相同的文件名。
 
 如果某一特定语言没有图像，则 iOS 将回退到默认的本地语言文件夹，并从该文件夹中加载图像。
 
@@ -255,9 +255,9 @@ iOS 提供了许多功能，可帮助构建 RTL 感知的应用：
 
 下面的屏幕截图显示了阿拉伯语和希伯来语（尽管已在字段中输入英语）的[本地化 Tasky 示例](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)：
 
-[![](images/rtl-ar-sml.png "Localization in Arabic")](images/rtl-ar.png#lightbox "Arabic")
+[![阿拉伯语本地化](images/rtl-ar-sml.png)](images/rtl-ar.png#lightbox "阿拉伯语")
 
-[![](images/rtl-he-sml.png "Localization in Hebrew")](images/rtl-he.png#lightbox "Hebrew")
+[![希伯来语本地化](images/rtl-he-sml.png)](images/rtl-he.png#lightbox "希伯来语")
 
 iOS 自动反转 `UINavigationController` ，其他控件置于 `UIStackView` 自动布局内部或与之对齐。
 使用**字符串**文件对 RTL 文本进行本地化，其方式与 LTR 文本相同。
@@ -270,7 +270,7 @@ iOS 自动反转 `UINavigationController` ，其他控件置于 `UIStackView` �
 
 ### <a name="project-structure"></a>项目结构
 
-![](images/solution-code.png "Resources tree")
+![资源树](images/solution-code.png)
 
 ### <a name="localizablestrings-file"></a>可本地化的字符串文件
 
@@ -311,7 +311,7 @@ someControl.Text = localizedString;
 
 其他语言目录包含代码中引用的任何字符串资源的可**本地化的字符串**文件以及包含情节提要中的文本翻译的**mainstoryboard.storyboard**文件。
 
-![](images/solution-storyboard.png "Resources tree")
+![资源树](images/solution-storyboard.png)
 
 语言目录应包含已本地化的任何映像的副本，以替代**lproj**中存在的映像。
 
@@ -324,7 +324,7 @@ someControl.Text = localizedString;
 
 此字符串值通常具有如下所示的窗体： "NF3-h8-xmR"，如以下屏幕截图所示：
 
-![](images/xs-designer-localization-id.png "Xcode view of Storyboard localization")
+![情节提要本地化的 Xcode 视图](images/xs-designer-localization-id.png)
 
 此值用于**字符串**文件中，用于将已翻译的文本自动分配给每个控件。
 
@@ -347,7 +347,7 @@ someControl.Text = localizedString;
 > [!IMPORTANT]
 > 使用带有大小类的情节提要可能会导致不会在应用程序中出现的翻译。 [Apple 的 Xcode 发行说明](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html)表明，如果三个条件成立，则情节提要或 XIB 将不会正确本地化：它使用大小类，基本本地化和生成目标设置为通用，生成目标为 iOS 7.0。 解决方法是将情节提要字符串文件复制到两个相同的文件中： **mainstoryboard.storyboard ~ iphone. string**和**mainstoryboard.storyboard ~ ipad**，如以下屏幕截图所示：
 >
-> ![](images/xs-dup-strings.png "Strings files")
+> ![字符串文件](images/xs-dup-strings.png)
 
 <a name="appstore"></a>
 
@@ -355,7 +355,7 @@ someControl.Text = localizedString;
 
 遵循 Apple 的[应用商店本地化](https://itunespartner.apple.com/en/apps/faq/App%20Store_Localization)常见问题解答，为你的应用销售的每个国家/地区输入翻译。 请注意，如果您的应用程序还包含该语言的本地化的**lproj**目录，则会出现转换。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍使用内置资源处理和情节提要功能本地化 iOS 应用程序的基础知识。
 

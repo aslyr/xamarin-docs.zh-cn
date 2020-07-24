@@ -10,12 +10,12 @@ ms.date: 09/25/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5142965216b328172ae7fa04cdc0c13590f5ff38
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 287b116d9ba2cb84e4e196fff080b8212e4eca3b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139881"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938406"
 ---
 # <a name="listview-interactivity"></a>ListView 交互性
 
@@ -48,7 +48,7 @@ Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 类支持用户与它所
 
 以下屏幕截图显示了一个 [`ListView`](xref:Xamarin.Forms.ListView) 具有默认选择模式的：
 
-![](interactivity-images/selection-default.png "ListView with Selection Enabled")
+![启用了选择的 ListView](interactivity-images/selection-default.png)
 
 ### <a name="disable-selection"></a>禁用选定内容
 
@@ -66,7 +66,7 @@ var listView = new ListView { ... SelectionMode = ListViewSelectionMode.None };
 
 通常，用户需要对中的项执行操作 `ListView` 。 例如，请考虑邮件应用中的电子邮件列表。 在 iOS 上，可以通过轻扫来删除消息：
 
-![](interactivity-images/context-default.png "ListView with Context Actions")
+![包含上下文操作的 ListView](interactivity-images/context-default.png)
 
 上下文操作可以在 c # 和 XAML 中实现。 下面你会找到这两种方案的具体指南，但首先我们来了解一下这两种情况的一些关键实现细节。
 
@@ -181,11 +181,11 @@ listView.RefreshControlColor = Color.Red;
 
 以下屏幕截图显示了在用户请求时的请求刷新：
 
-![](interactivity-images/refresh-start.png "ListView Pull to Refresh In-Progress")
+![ListView 正在进行刷新](interactivity-images/refresh-start.png)
 
 下面的屏幕截图显示了在用户释放请求之后的请求刷新，并在更新时显示微调框 [`ListView`](xref:Xamarin.Forms.ListView) ：
 
-![](interactivity-images/refresh-in-progress.png "ListView Pull to Refresh Complete")
+![ListView 请求刷新完成](interactivity-images/refresh-in-progress.png)
 
 [`ListView`](xref:Xamarin.Forms.ListView)触发 [`Refreshing`](xref:Xamarin.Forms.ListView.Refreshing) 事件以启动刷新，并将 [`IsRefreshing`](xref:Xamarin.Forms.ListView.IsRefreshing) 属性设置为 `true` 。 若要刷新的内容所需的任何代码 `ListView` ，则应由事件的事件处理程序 `Refreshing` 或执行的方法执行 [`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand) 。 刷新后 `ListView` ， `IsRefreshing` 应将属性设置为 `false` ，或 [`EndRefresh`](xref:Xamarin.Forms.ListView.EndRefresh) 调用方法以指示刷新已完成。
 

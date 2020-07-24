@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/13/2017
-ms.openlocfilehash: a7534ec706633a856e5e095369e29f5fdef5f6a7
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 74647a3c9128496373917e714755f5aaa7f73187
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574218"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931685"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>Xamarin 中的应用传输安全
 
@@ -87,7 +87,7 @@ TLS 级别由正在使用的 web 服务控制，因此在应用程序的控件�
 
 若要设置 iOS 应用使用的 HTTPClient 实现，请双击 "**解决方案资源管理器**中的**项目**以打开**项目选项**。 导航到 " **IOS 生成**"，然后在 " **HttpClient 实现**" 下拉列表中选择所需的客户端类型：
 
-![](ats-images/client01.png "Setting the iOS Build Options")
+![设置 iOS 生成选项](ats-images/client01.png)
 
 #### <a name="managed-handler"></a>托管处理程序
 
@@ -212,7 +212,7 @@ NSAppTransportSecurity
 
 在 Visual Studio for Mac 中，双击 `Info.plist` "**解决方案资源管理器**中的文件，切换到"**源**"视图并添加上述项：
 
-[![](ats-images/ats01.png "The Source view of the Info.plist file")](ats-images/ats01.png#lightbox)
+[![Info.plist 文件的源视图](ats-images/ats01.png)](ats-images/ats01.png#lightbox)
 
 如果你的应用程序需要从非安全站点中加载和显示 web 内容，请将以下内容添加到你的应用程序的**info.plist**文件中，以便在应用程序的其余部分仍启用 Apple 传输安全（ATS）保护时正确加载网页：
 
@@ -236,7 +236,7 @@ NSAppTransportSecurity
 
 在 Visual Studio for Mac 中，双击 `Info.plist` "**解决方案资源管理器**中的文件，切换到"**源**"视图并添加上述项：
 
-[![](ats-images/ats02.png "The Source view of the Info.plist file")](ats-images/ats02.png#lightbox)
+[![Info.plist 文件的源视图](ats-images/ats02.png)](ats-images/ats02.png#lightbox)
 
 > [!IMPORTANT]
 > 如果你的应用程序需要连接到不安全的网站，则应**始终**使用将该域输入为异常， `NSExceptionDomains` 而不是使用完全关闭 ATS `NSAllowsArbitraryLoads` 。 `NSAllowsArbitraryLoads`只应在极端紧急情况下使用。
@@ -245,7 +245,7 @@ NSAppTransportSecurity
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了应用传输安全（ATS）并介绍了如何通过 internet 进行安全通信。 首先，我们介绍了 ATS 在 iOS 9 上运行的 Xamarin iOS 应用所需的更改。 然后我们介绍了如何控制 ATS 的功能和选项。 最后，我们在 Xamarin iOS 应用中介绍了 ATS。
 

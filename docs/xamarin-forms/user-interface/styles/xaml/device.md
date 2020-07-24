@@ -10,18 +10,18 @@ ms.date: 02/17/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b835847fea39e1c2f968e7b81fb9d22f68ea461c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 04669479bb321da4fee6c45fd0f2c00deb5bbf1a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140096"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929722"
 ---
 # <a name="device-styles-in-xamarinforms"></a>设备样式Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
 
-_Xamarin 在 Device 类中包含六种动态样式，称为设备样式。_
+_Xamarin.Forms在 Device 类中包含六种动态样式，称为设备样式。_
 
 *设备*样式为：
 
@@ -70,7 +70,7 @@ _Xamarin 在 Device 类中包含六种动态样式，称为设备样式。_
 
 使用标记扩展将设备样式绑定到 `DynamicResource` 。 通过更改文本大小的**辅助功能**设置，可在 iOS 中查看样式的动态特性。 *设备*样式的外观在每个平台上都是不同的，如以下屏幕截图所示：
 
-![](device-images/device-styles.png "Device Styles on Each Platform")
+![每个平台上的设备样式](device-images/device-styles.png)
 
 *Device*通过将 [`BaseResourceKey`](xref:Xamarin.Forms.Style.BaseResourceKey) 属性设置为设备样式的键名称，也可以从派生设备样式。 在上面的代码示例中， `myBodyStyle` 从继承， [`BodyStyle`](xref:Xamarin.Forms.Device.Styles.BodyStyle) 并设置了重音文本颜色。 有关动态样式继承的详细信息，请参阅[动态样式继承](~/xamarin-forms/user-interface/styles/xaml/dynamic.md#dynamic-style-inheritance)。
 
@@ -114,17 +114,17 @@ public class DeviceStylesPageCS : ContentPage
 
 [`Style`](xref:Xamarin.Forms.NavigableElement.Style)每个实例的属性 [`Label`](xref:Xamarin.Forms.Label) 都设置为类中的相应属性 [`Devices.Styles`](xref:Xamarin.Forms.Device.Styles) 。
 
-## <a name="accessibility"></a>辅助功能
+## <a name="accessibility"></a>可访问性
 
 *设备*样式遵循辅助功能首选项，因此在每个平台上更改辅助功能首选项时，字体大小将会改变。 因此，为了支持可访问的文本，请确保将*设备*样式用作应用程序内任何文本样式的基础。
 
 以下屏幕截图演示了每个平台上的设备样式，可访问的最小字体大小：
 
-[![](device-images/minimum-size.png "Accessible Small Device Styles on Each Platform")](device-images/minimum-size-large.png#lightbox "Accessible Small Device Styles on Each Platform")
+[![可在每个平台上访问的小型设备样式](device-images/minimum-size.png)](device-images/minimum-size-large.png#lightbox "可在每个平台上访问的小型设备样式")
 
 以下屏幕截图演示了每个平台上具有最大可访问字体大小的设备样式：
 
-![](device-images/maximum-size.png "Accessible Large Device Styles on Each Platform")
+![可在每个平台上访问大型设备样式](device-images/maximum-size.png)
 
 ## <a name="related-links"></a>相关链接
 

@@ -10,12 +10,12 @@ ms.date: 03/11/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fbf717092da7f77e265803fae87efb5bf0e9876f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: fd1893a91d9d8e5d2c2581a9f3f9b5ef8ee59f1f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84574361"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937665"
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>使用 UrhoSharpXamarin.Forms
 
@@ -28,8 +28,8 @@ ms.locfileid: "84574361"
 UrhoSharp 可用于在应用程序中呈现图形 Xamarin.Forms 。
 此[示例](https://github.com/xamarin/urho-samples/tree/master/FormsSample)演示如何使用 UrhoSharp 构造交互式三维图表：
 
-![](urhosharp-images/ios-animation.gif "UrhoSharp 3D Interactive Chart on iOS")
-![](urhosharp-images/android-animation.gif "UrhoSharp 3D Interactive Chart on Android")
+![IOS 上的 UrhoSharp 3D 交互式图表 ](urhosharp-images/ios-animation.gif)
+ ![ UrhoSharp Android 上的3D 交互式图表](urhosharp-images/android-animation.gif)
 
 ## <a name="adding-the-urhosharp-nuget-packages"></a>添加 UrhoSharp NuGet 包
 
@@ -38,11 +38,11 @@ UrhoSharp 可用于在应用程序中呈现图形 Xamarin.Forms 。
 UrhoSharp NuGet 包包含创建 UrhoSharp 对象所需的所有对象。 UrhoSharp NuGet 包包含 `UrhoSurface` 用于在中承载 UrhoSharp 的类 Xamarin.Forms 。
 若要开始，请右键单击 .NET Standard 库项目中的 "**包**" 文件夹，然后选择 "**添加包 ...**"。输入搜索词 " **UrhoSharp**"，选择 " ** Xamarin.Forms UrhoSharp **"，然后单击 "**添加包**"。
 
-[![](urhosharp-images/add-package-sml.png "Add Packages Dialog")](urhosharp-images/add-package.png#lightbox "Add Packages Dialog")
+[!["添加包" 对话框](urhosharp-images/add-package-sml.png)](urhosharp-images/add-package.png#lightbox ""添加包" 对话框")
 
 将 UrhoSharp NuGet 包添加到项目中：
 
-![](urhosharp-images/packages.png "Packages Folder")
+![包文件夹](urhosharp-images/packages.png)
 
 针对特定于平台的项目（如 iOS 和 Android）重复上述步骤。
 

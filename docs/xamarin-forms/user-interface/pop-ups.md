@@ -19,7 +19,7 @@ ms.locfileid: "86931867"
 ---
 # <a name="display-pop-ups"></a>显示弹出窗口
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
 
 显示警报，要求用户进行选择或显示提示是常见的 UI 任务。 Xamarin.Forms在类上有三种方法 [`Page`](xref:Xamarin.Forms.Page) ，可通过弹出窗口与用户进行交互： [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) 、 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) 和 `DisplayPromptAsync` 。 在每个平台上使用相应的本机控件呈现。
 

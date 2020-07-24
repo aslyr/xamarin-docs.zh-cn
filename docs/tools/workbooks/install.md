@@ -6,12 +6,12 @@ ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: a044169f86b46abff4158011e99320c528180ffc
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 99ecf661679f02bda6cfffa6093bd4a904676bce
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573880"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939342"
 ---
 # <a name="workbooks-installation-and-requirements"></a>工作簿安装和要求
 
@@ -37,14 +37,14 @@ ms.locfileid: "84573880"
 
 ## <a name="requirements"></a>要求
 
-#### <a name="supported-operating-systems"></a>Supported Operating Systems
+#### <a name="supported-operating-systems"></a>受支持的操作系统
 
 - **Mac** -OS X 10.11 或更高版本
 - **Windows** -windows 7 或更高版本（包含 Internet Explorer 11 或更高版本以及 .net 4.6.1 或更高版本）
 
 #### <a name="supported-app-platforms"></a>支持的应用平台
 
-|应用平台|OS 支持|说明|
+|应用平台|OS 支持|注释|
 |--- |--- |--- |
 |Mac|仅在 Mac 上受支持|
 |iOS|在 Mac 和 Windows 上受支持|需要在 Mac 上安装 Xamarin 11.0 和 Xcode 9.0 或更高版本。 在 Windows 上运行 iOS 工作簿需要运行上述所有的 Mac 生成主机，以及在 Windows 上安装的[远程 IOS 模拟器](~/tools/ios-simulator/index.md)。|
@@ -128,7 +128,7 @@ Visual Studio
 
 > **> 系统 > 应用程序 & 功能启动 > 设置**
 
-![](install-images/windows-remove.png "Xamarin Workbooks as listed in &quot;Apps &amp; features&quot;")
+![&quot;应用功能中列出的 &amp; Xamarin Workbooks&quot;](install-images/windows-remove.png)
 
 **你仍应按照 Visual Studio 安装程序的过程进行操作，以确保在不知情的情况下不会重新安装工作簿。**
 

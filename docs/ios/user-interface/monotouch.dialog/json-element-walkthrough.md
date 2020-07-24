@@ -161,7 +161,7 @@ _rootElement = new RootElement ("Json Example") {
 
  [![此文件将由 MT 检索和分析。D 当用户导航到第二个视图时](json-element-walkthrough-images/04-json-web-example.png)](json-element-walkthrough-images/04-json-web-example.png#lightbox)
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍如何使用 MT 创建接口。D 从 JSON。 其中介绍了如何使用应用程序以及从远程 Url 加载文件中包含的 JSON。 它还演示了如何在运行时访问 JSON 中所述的元素。
 

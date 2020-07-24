@@ -618,7 +618,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文详细介绍了如何在 Xamarin. Mac 应用程序中使用源列表。 我们已了解如何在 Xcode 的 Interface Builder 中创建和维护源列表，以及如何在 c # 代码中使用源列表。
 

@@ -10,16 +10,16 @@ ms.date: 01/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 462948905f40679e2b931d4aa0039308c64a0a8f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cf5d3924a726247ea1884acc75720566d76c76e4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136486"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929211"
 ---
 # <a name="xamarinforms-carouselview-scrolling"></a>Xamarin.FormsCarouselView 滚动
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![预发布 API](~/media/shared/preview.png "此 API 当前为预发布版本")
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
@@ -145,7 +145,7 @@ carouselView.ScrollTo(monkey, position: ScrollToPosition.Start);
 
 此示例代码会将项滚动到视图的开头。
 
-### <a name="center"></a>中心
+### <a name="center"></a>Center
 
 [`ScrollToPosition.Center`](xref:Xamarin.Forms.ScrollToPosition)成员指示该项应滚动到视图的中心：
 
@@ -265,7 +265,7 @@ CarouselView carouselView = new CarouselView
 
 [![IOS 和 Android 上的 CarouselView 与开始对齐点的屏幕截图](scrolling-images/snappoints-start.png "具有开始对齐点的 CarouselView")](scrolling-images/snappoints-start-large.png#lightbox "具有开始对齐点的 CarouselView")
 
-#### <a name="center"></a>中心
+#### <a name="center"></a>Center
 
 `SnapPointsAlignment.Center`成员指示对齐点与项的中心对齐。
 

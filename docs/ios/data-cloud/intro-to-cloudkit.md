@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/11/2016
-ms.openlocfilehash: 3ff868ed10d59a7c1026a222f314a1166a8de45e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 588dadbfe63a46bc7658d5d29a052cebe52be65c
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930190"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997405"
 ---
 # <a name="cloudkit-in-xamarinios"></a>Xamarin 中的 CloudKit
 
@@ -64,7 +64,7 @@ CloudKit 支持结构化数据和大容量数据。 它能够无缝地处理大�
 4. 右键单击解决方案中的 iOS 项目，然后选择 "**选项**"。
 5. 选择 " **IOS 捆绑签名**"，选择上面创建的**开发人员标识**和**预配配置文件**。
 6. 确保**info.plist**包括**启用 iCloud**、**键值存储**和**CloudKit**。
-7. 请确保应用程序存在**无处不容器**。 示例：`iCloud.com.your-company.CloudKitAtlas`
+7. 请确保应用程序存在**无处不容器**。 示例： `iCloud.com.your-company.CloudKitAtlas`
 8. 保存对文件所做的更改。
 
 设置好这些设置后，示例应用现已准备好访问 CloudKit Framework Api 以及后台、位置和通知服务。
@@ -103,7 +103,7 @@ ICloud 数据的容器化还允许 CloudKit 封装用户信息。 通过这种�
 
 容器由应用程序的开发人员通过 WW 门户进行完全管理。 容器的命名空间在所有 Apple 开发人员中都是全局性的，因此，对于给定的开发人员和应用程序，该容器不仅必须是唯一的。
 
-Apple 建议在为应用程序容器创建命名空间时使用反向 DNS 表示法。 示例：`iCloud.com.company-name.application-name`
+Apple 建议在为应用程序容器创建命名空间时使用反向 DNS 表示法。 示例： `iCloud.com.company-name.application-name`
 
 默认情况下，容器默认绑定到给定应用程序，可以在应用程序之间共享。 因此，多个应用程序可以协调单个容器。 单个应用程序也可以与多个容器进行通信。
 
@@ -218,7 +218,7 @@ await CloudManager.SaveAsync (newRecord);
 var recordID =  new CKRecordID("My Record");
 ```
 
-### <a name="references"></a>参考
+### <a name="references"></a>参考资料
 
 引用在给定的数据库中提供相关记录之间的关系：
 
@@ -811,7 +811,7 @@ CloudKit 为应用程序的记录类型和数据提供单独的开发和生产�
 
 6. 选择应用程序的存档，并单击 "**导出 ...** " 按钮：
 
-    [![](intro-to-cloudkit-images/shipping05.png "The application's archive")](intro-to-cloudkit-images/shipping05.png#lightbox)
+    [![应用程序的存档](intro-to-cloudkit-images/shipping05.png)](intro-to-cloudkit-images/shipping05.png#lightbox)
 
 7. 选择要导出的方法，然后单击 "**下一步**" 按钮：
 
@@ -848,7 +848,7 @@ CloudKit 为应用程序的记录类型和数据提供单独的开发和生产�
 
 考虑到这些用例，开发人员应选择正确的 iCloud 技术来提供当前所需的应用程序功能，并为将来的增长提供良好的可伸缩性。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了 CloudKit API 的简介。 它演示了如何预配和配置 Xamarin iOS 应用程序以使用 CloudKit。 它已涵盖 CloudKit 便利性 API 的功能。 它演示了如何使用查询和订阅为可缩放性设计 CloudKit 启用的应用程序。 最后，它显示了通过 CloudKit 向应用程序公开的用户帐户信息。
 

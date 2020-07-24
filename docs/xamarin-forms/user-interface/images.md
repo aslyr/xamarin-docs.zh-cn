@@ -10,12 +10,12 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7ae6e5e764dc066940971dd9b5a8fdc36c7a1970
-ms.sourcegitcommit: cd0c0999b53e825b60471bfbfd4144cfcd783587
+ms.openlocfilehash: 3ad0981c0249bc81a97d5c48489167d81a1523de
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86225489"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938458"
 ---
 # <a name="images-in-xamarinforms"></a>中的映像Xamarin.Forms
 
@@ -32,7 +32,7 @@ _可以在平台之间共享映像 Xamarin.Forms ，可以为每个平台专门�
 Xamarin.Forms使用 [`Image`](xref:Xamarin.Forms.Image) 视图在页面上显示图像。 它有几个重要属性：
 
 - [`Source`](xref:Xamarin.Forms.Image.Source)- [`ImageSource`](xref:Xamarin.Forms.ImageSource) 实例，文件、Uri 或资源，用于设置要显示的图像。
-- [`Aspect`](xref:Xamarin.Forms.Image.Aspect)-如何在中显示图像的边界内显示该图像 (是否拉伸、裁剪或黑边) 。
+- [`Aspect`](xref:Xamarin.Forms.Image.Aspect)-如何在它所显示的边界内调整图像大小（是伸展、裁剪还是黑边）。
 
 [`ImageSource`](xref:Xamarin.Forms.ImageSource)对于每种类型的映像源，都可以使用静态方法获取实例：
 
@@ -44,8 +44,8 @@ Xamarin.Forms使用 [`Image`](xref:Xamarin.Forms.Image) 视图在页面上显示
 [`Aspect`](xref:Xamarin.Forms.Image.Aspect)属性确定如何缩放图像以适合显示区域：
 
 - [`Fill`](xref:Xamarin.Forms.Aspect.Fill)-将图像拉伸到完全完全填充显示区域。 这可能会导致图像扭曲。
-- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill)-剪辑图像，使其填充显示区域，同时保持方位 (即) 无扭曲。
-- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit)-Letterboxes 图像 (如有必要) 以便将整个图像适应显示区域，并根据图像的宽度或高度，将空白区域添加到顶部/底部或边。
+- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill)-剪辑图像，使其在保留该方位（即无扭曲）的情况下填充显示区域。
+- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit)-Letterboxes 图像（如有必要），以便将整个图像适应显示区域，并根据图像的宽度或高度增加空白区域。
 
 可以从[本地文件](#local-images)、[嵌入资源](#embedded-images)、[下载](#download-images)或从流中加载图像。 此外， [`Image`](xref:Xamarin.Forms.Image) 通过在对象中指定字体图标数据，可通过视图显示字体图标 `FontImageSource` 。 有关详细信息，请参阅[字体](~/xamarin-forms/user-interface/text/fonts.md)指南中的[显示字体图标](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)。
 
@@ -53,11 +53,11 @@ Xamarin.Forms使用 [`Image`](xref:Xamarin.Forms.Image) 视图在页面上显示
 
 可以将图像文件添加到每个应用程序项目并从 Xamarin.Forms 共享代码中引用。 当图像特定于平台时，例如在不同平台上使用不同分辨率或稍微不同的设计时，需要这种分发图像的方法。
 
-若要在所有应用中使用单个图像，*必须在每个平台上使用相同的文件名*，该名称应为有效的 Android 资源名称 (即，只允许) 小写字母、数字、下划线和句点。
+若要在所有应用中使用单个图像，*必须在每个平台上使用相同的文件名*，并且它应该是有效的 Android 资源名称（即，只允许使用小写字母、数字、下划线和句点）。
 
 - **ios** -从 ios 9 开始管理和支持映像的首选方法是使用**资产目录映像集，该映像集**应包含支持各种设备所需的所有版本映像和应用程序的缩放比例。 有关详细信息，请参阅[将图像添加到资产目录映像集](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
-- 带有生成操作的 "**资源/** 图形目录" 中的**Android**位置图像 **： AndroidResource**。 还可以在适当命名的**资源**子目录（如**ldpi**、 **hdpi**和**xhdpi**) ）中 (提供图像的高 DPI 和低 DPI 版本。
-- **通用 Windows 平台 (UWP) ** -默认情况下，应将图像放置在应用程序的根目录中，其中包含**生成操作： Content**。 或者，可以将图像置于不同的目录中，然后使用特定于平台的来指定映像。 有关详细信息，请参阅[Windows 上的默认图像目录](~/xamarin-forms/platform/windows/default-image-directory.md)。
+- 带有生成操作的 "**资源/** 图形目录" 中的**Android**位置图像 **： AndroidResource**。 还可以提供图像的高 DPI 和低 DPI 版本（在适当命名的**资源**子目录中，如**ldpi**、 **hdpi**和可**绘制-xhdpi**）。
+- **通用 Windows 平台（UWP）** -默认情况下，应将图像放在应用程序的根目录中，**生成操作： Content**。 或者，可以将图像置于不同的目录中，然后使用特定于平台的来指定映像。 有关详细信息，请参阅[Windows 上的默认图像目录](~/xamarin-forms/platform/windows/default-image-directory.md)。
 
 > [!IMPORTANT]
 > 在 iOS 9 之前，映像通常放置在包含生成操作的**Resources**文件夹中 **： BundleResource**。 但是，Apple 不推荐使用此方法来处理 iOS 应用中的图像。 有关详细信息，请参阅[图像大小和文件名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
@@ -89,13 +89,13 @@ image.Source = Device.RuntimePlatform == Device.Android
 > [!IMPORTANT]
 > 若要在所有平台上使用相同的映像文件名，该名称必须在所有平台上都有效。 Android 绘图具有命名限制–只允许使用小写字母、数字、下划线和句点–对于跨平台兼容性，还必须在所有其他平台上遵循这一点。 示例文件名**waterfront.png**遵循规则，但无效文件名的示例包括 "水 front.png"、"WaterFront.png"、"water-front.png" 和 "wåterfront.png"。
 
-### <a name="native-resolutions-retina-and-high-dpi"></a>本机分辨率 (retina 和高 DPI) 
+### <a name="native-resolutions-retina-and-high-dpi"></a>本机分辨率（retina 和高 DPI）
 
 iOS、Android 和 UWP 包括支持不同的映像分辨率，其中操作系统会根据设备的功能在运行时选择适当的映像。 Xamarin.Forms使用本机平台的 Api 来加载本地映像，因此，如果这些文件正确命名并位于项目中，则它会自动支持备用解决方案。
 
 自 iOS 9 以后管理映像的首选方法是将图像拖动到相应资产目录图像集所需的每个解析。 有关详细信息，请参阅[将图像添加到资产目录映像集](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
 
-在 iOS 9 之前，retina 的映像版本可放置在**资源**文件夹中，在 **@2x** 文件扩展名 (的情况下，会在文件名中放置一个或后缀三倍的 **@3x** 后缀。 **myimage@2x.png**). 但是，Apple 不推荐使用此方法来处理 iOS 应用中的图像。 有关详细信息，请参阅[图像大小和文件名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
+在 iOS 9 之前，可能会在**资源**文件夹中放置图像的 retina 版本，在文件扩展名之前，可以将图像的两个版本和 **@2x** **@3x** 文件名上的后缀（例如 **myimage@2x.png**). 但是，Apple 不推荐使用此方法来处理 iOS 应用中的图像。 有关详细信息，请参阅[图像大小和文件名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
 
 Android 备用分辨率图像应放置在 Android 项目的[特殊命名目录](https://developer.android.com/guide/practices/screens_support.html)中，如以下屏幕截图所示：
 
@@ -118,7 +118,7 @@ UWP 图像文件名称[可以在 `.scale-xxx` 文件扩展名之前带有后缀]
 
 ## <a name="embedded-images"></a>嵌入图像
 
-嵌入的图像还附带了应用程序 (例如本地映像) ，而不是在每个应用程序的文件结构中都有图像的副本，而是将映像文件作为资源嵌入到程序集中。 当在每个平台上使用相同的图像时，建议使用这种分发图像的方法，尤其适合创建组件时，因为图像与代码捆绑在一起。
+嵌入图像还随应用程序一起提供（例如本地映像），但在每个应用程序的文件结构中不会有图像的副本，而是将该图像文件作为资源嵌入到程序集中。 当在每个平台上使用相同的图像时，建议使用这种分发图像的方法，尤其适合创建组件时，因为图像与代码捆绑在一起。
 
 若要在项目中嵌入图像，请右键单击 "添加新项"，然后选择要添加的映像。 默认情况下，该映像将包含**生成操作： None**;这需要设置为**生成操作： EmbeddedResource**。
 
@@ -131,23 +131,23 @@ UWP 图像文件名称[可以在 `.scale-xxx` 文件扩展名之前带有后缀]
 可以在文件的 "**属性**" 窗口中查看和更改**生成操作**。
 
 在此示例中，资源 ID **WorkingWithImages.beach.jpg**。
-IDE 通过将此项目的**默认命名空间**与文件名连接来生成此默认命名空间，并在每个值之间使用句点 (。 ) 。
+IDE 通过使用文件名连接此项目的**默认命名空间**（在每个值之间使用句点（.））来生成此默认值。
 <!-- https://msdn.microsoft.com/library/ms950960.aspx -->
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-![](images-images/xs-buildaction.png "Set Build Action: EmbeddedResource")
+![设置生成操作： EmbeddedResource](images-images/xs-buildaction.png)
 
 还可以在文件的**Properties** pad 中查看和更改**生成操作**。
 此面板显示用于在代码中引用资源的**资源 ID** 。 在下面的屏幕截图中，**资源 ID**是**WorkingWithImages.beach.jpg**。
-IDE 通过将此项目的**默认命名空间**与文件名连接来生成此默认命名空间，并在每个值之间使用句点 (。 ) 。
+IDE 通过使用文件名连接此项目的**默认命名空间**（在每个值之间使用句点（.））来生成此默认值。
 可以在**Properties** pad 中编辑此 ID，但对于这些示例，将使用**WorkingWithImages.beach.jpg**值。
 
 [![嵌入的资源属性板](images-images/xs-embeddedproperties-sml.png)](images-images/xs-embeddedproperties.png#lightbox)
 
 -----
 
-如果将嵌入的图像放入项目中的文件夹，则文件夹名称还会按句点分隔 (。在资源 ID 中 ) 。 将**beach.jpg**图像移动到名为**MyImages**的文件夹中会导致资源 ID 为**WorkingWithImages.MyImages.beach.jpg**
+如果将嵌入的图像放入项目中的文件夹，则在资源 ID 中，文件夹名称还由句点（.）分隔。 将**beach.jpg**图像移动到名为**MyImages**的文件夹中会导致资源 ID 为**WorkingWithImages.MyImages.beach.jpg**
 
 加载嵌入图像的代码只是将**资源 ID**传递到方法，如下 [`ImageSource.FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) 所示：
 
@@ -280,7 +280,7 @@ webImage.Source = "https://aka.ms/campus.jpg";
 
 [`UriImageSource`](xref:Xamarin.Forms.UriImageSource)还支持缓存下载的映像，这些映像通过以下属性进行配置：
 
-- [`CachingEnabled`](xref:Xamarin.Forms.UriImageSource.CachingEnabled)-默认情况下是否启用缓存 (`true`) 。
+- [`CachingEnabled`](xref:Xamarin.Forms.UriImageSource.CachingEnabled)-是否启用缓存（ `true` 默认值）。
 - [`CacheValidity`](xref:Xamarin.Forms.UriImageSource.CacheValidity)-一个 `TimeSpan` ，它定义将在本地存储图像的时间长度。
 
 默认情况下，缓存处于启用状态，并将在本地存储该图像24小时。 若要为特定映像禁用缓存，请按如下所示实例化映像源：
@@ -289,7 +289,7 @@ webImage.Source = "https://aka.ms/campus.jpg";
 image.Source = new UriImageSource { CachingEnabled = false, Uri = new Uri("https://server.com/image") };
 ```
 
-若要设置特定的缓存期间 (例如，5天) 实例化映像源，如下所示：
+若要设置特定的缓存时间段（例如5天），请按如下所示实例化映像源：
 
 ```csharp
 webImage.Source = new UriImageSource
@@ -300,7 +300,7 @@ webImage.Source = new UriImageSource
 };
 ```
 
-利用内置缓存，可轻松支持滚动列表等方案，在这些方案中，你可以在每个单元格中设置 (或绑定) 图像，并让内置缓存在单元格滚动回视图时处理重新加载图像。
+利用内置缓存，可以非常轻松地支持图像滚动列表等方案，在这些方案中，你可以在每个单元格中设置（或绑定）一个图像，并让内置缓存在单元格滚动回 "查看" 时，处理重新加载该图像。
 
 ## <a name="animated-gifs"></a>动画 Gif
 
@@ -319,7 +319,7 @@ Xamarin.Forms支持显示小型动画 Gif。 这是通过将属性设置 [`Image
 
 > [!NOTE]
 > 在 Android 上，动态 GIF 支持要求你的应用程序使用快速呈现器，如果你已选择使用旧呈现器，则不能正常工作。
-> 在 UWP 上，动态 GIF 支持要求最小版本的 Windows 10 周年更新 (版本 1607) 。
+> 在 UWP 上，动态 GIF 支持要求最小版本的 Windows 10 周年更新（版本1607）。
 
 ## <a name="icons-and-splash-screens"></a>图标和初始屏幕
 
@@ -335,13 +335,13 @@ Xamarin.Forms在每个应用程序项目中，为应用设置图标和初始屏�
 
 ## <a name="splash-screens"></a>初始屏幕
 
-只有 iOS 和 UWP 应用程序需要初始屏幕 (也称为启动屏幕或默认图像) 。
+只有 iOS 和 UWP 应用程序需要初始屏幕（也称为启动屏幕或默认图像）。
 
 请参阅 Windows 开发人员中心上的 IOS 文档，[使用图像](~/ios/app-fundamentals/images-icons/index.md)和[初始屏幕](/windows/uwp/launch-resume/splash-screens/)。
 
 ## <a name="related-links"></a>相关链接
 
-- [WorkingWithImages (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
+- [WorkingWithImages （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
 - [iOS 使用映像](~/ios/app-fundamentals/images-icons/index.md)
 - [Android 插图](https://developer.android.com/design/style/iconography.html)
 - [磁贴和图标资源指南](/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets/)

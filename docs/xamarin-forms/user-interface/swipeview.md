@@ -10,16 +10,16 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9c9d0621cdd5bb85690771d8bdfd0060b6a352cb
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 94fa094f579ad33947f1cc89e0d36c862c824472
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136248"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938939"
 ---
 # <a name="xamarinforms-swipeview"></a>Xamarin.FormsSwipeView
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![预发布 API](~/media/shared/preview.png "此 API 当前为预发布版本")
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-swipeviewdemos/)
 
@@ -147,7 +147,7 @@ SwipeView swipeView = new SwipeView
 
 ## <a name="swipe-items"></a>刷物品
 
-`LeftItems`、 `RightItems` 、 `TopItems` 和 `BottomItems` 集合都属于类型 `SwipeItems` 。 `SwipeItems`类定义以下属性：
+`LeftItems`、 `RightItems` 、 `TopItems` 和 `BottomItems` 集合都属于类型 `SwipeItems` 。 `SwipeItems` 类定义了以下属性：
 
 - `Mode`，类型为 `SwipeMode` ，指示滑动交互的效果。 有关轻扫模式的详细信息，请参阅[滑动模式](#swipe-mode)。
 - `SwipeBehaviorOnInvoked`，类型为 `SwipeBehaviorOnInvoked` ，指示在 `SwipeView` 调用一项刷卡器后的行为方式。 有关轻扫行为的详细信息，请参阅[轻扫行为](#swipe-behavior)。

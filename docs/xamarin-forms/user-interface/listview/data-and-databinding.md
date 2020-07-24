@@ -10,12 +10,12 @@ ms.date: 03/23/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 38a895c9064fc012aec35b37eac78bb16ff009a9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1e5f3b6cb84081f5e167d9afe7e7f2f2dffce247
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131503"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938107"
 ---
 # <a name="listview-data-sources"></a>ListView 数据源
 
@@ -63,7 +63,7 @@ listView.ItemsSource = new string[]
 };
 ```
 
-![](data-and-databinding-images/itemssource-simple.png "ListView Displaying List of Strings")
+![ListView 显示字符串列表](data-and-databinding-images/itemssource-simple.png)
 
 此方法将 `ListView` 使用字符串列表填充。 默认情况下， `ListView` 将 `ToString` 为每行调用并显示中的结果 `TextCell` 。 若要自定义数据的显示方式，请参阅[单元格外观](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)。
 
@@ -144,7 +144,7 @@ public EmployeeListPage()
 
 此 XAML 示例定义一个 `ContentPage` 包含的 `ListView` 。 可通过 `ItemsSource` 属性设置 `ListView` 的数据源。 在 `ListView.ItemTemplate` 元素内定义 `ItemsSource` 中每一行的布局。 这会生成以下屏幕截图：
 
-![](data-and-databinding-images/bound-data.png "ListView using Data Binding")
+![使用数据绑定的 ListView](data-and-databinding-images/bound-data.png)
 
 > [!WARNING]
 > `ObservableCollection` 不是线程安全的。 修改 `ObservableCollection` 会导致 UI 更新在执行修改的同一线程上发生。 如果该线程不是主 UI 线程，则会引发异常。

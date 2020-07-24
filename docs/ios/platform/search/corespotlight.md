@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 102c0e7dbd2f4c903793e83d7551a84a52cac4fb
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 285243c832d080d93e557deada5bb824e03f8d89
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031577"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939420"
 ---
 # <a name="search-with-core-spotlight-in-xamarinios"></a>在 Xamarin 中通过核心聚焦搜索
 
@@ -47,11 +47,11 @@ CSSearchableIndex.DefaultSearchableIndex.Index (new CSSearchableItem[]{ item }, 
 
 此信息将在搜索结果中显示如下：
 
-[![](corespotlight-images/corespotlight01.png "Core Spotlight search result overview")](corespotlight-images/corespotlight01.png#lightbox)
+[![核心聚焦搜索结果概述](corespotlight-images/corespotlight01.png)](corespotlight-images/corespotlight01.png#lightbox)
 
 ## <a name="restoring-an-item"></a>还原项
 
-当用户通过应用的核心聚焦点击添加到搜索结果中的项时，将调用 `AppDelegate` 方法 `ContinueUserActivity` （此方法还用于 `NSUserActivity`）。 例如:
+当用户通过应用的核心聚焦点击添加到搜索结果的项时，将 `AppDelegate` `ContinueUserActivity` 调用方法（此方法还用于 `NSUserActivity` ）。 例如：
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application,
@@ -74,14 +74,14 @@ public override bool ContinueUserActivity (UIApplication application,
 }
 ```
 
-请注意，这次我们要检查是否有 `CSSearchableItem.ActionType``ActivityType` 的活动。
+请注意，这次我们要检查是否有的活动 `ActivityType` `CSSearchableItem.ActionType` 。
 
 ## <a name="updating-an-item"></a>更新项
 
 在某些情况下，我们使用核心聚光灯创建的索引项需要修改，如需要更改标题或缩略图。 若要进行此更改，我们使用的方法与最初创建索引时使用的方法相同。
-使用与创建项相同的 ID 创建新 `CSSearchableItem`，并附加包含已修改属性的新 `CSSearchableItemAttributeSet`：
+我们 `CSSearchableItem` 使用与创建项相同的 ID 创建新的，并附加一个 `CSSearchableItemAttributeSet` 包含修改后的属性的新的：
 
-[![](corespotlight-images/corespotlight02.png "Updating an Item overview")](corespotlight-images/corespotlight02.png#lightbox)
+[![更新项概述](corespotlight-images/corespotlight02.png)](corespotlight-images/corespotlight02.png#lightbox)
 
 将此项写入可搜索索引时，将用新信息更新现有项。
 
@@ -101,7 +101,7 @@ CSSearchableIndex.DefaultSearchableIndex.Delete(new string[]{"1","16"},(error) =
 });
 ```
 
-接下来，可以按其域名删除一组索引项。 例如:
+接下来，可以按其域名删除一组索引项。 例如：
 
 ```csharp
 // Delete by Domain Name
@@ -129,8 +129,8 @@ CSSearchableIndex.DefaultSearchableIndex.DeleteAll((error) => {
 
 核心聚焦具有以下功能，可帮助保持索引准确并保持最新状态：
 
-- **批处理更新支持**–如果你的应用程序需要同时创建或修改大组索引，则可以通过一次调用将整个批处理发送到 `CSSearchableIndex` 类的 `Index` 方法。
-- 对**索引更改做出响应**–使用 `CSSearchableIndexDelegate` 应用可以响应可搜索索引中的更改和通知。
+- **批处理更新支持**–如果你的应用程序需要同时创建或修改大组索引，则可以通过一次调用将整个批处理发送到 `Index` 类的方法 `CSSearchableIndex` 。
+- **响应索引更改**–使用您的 `CSSearchableIndexDelegate` 应用程序可以响应可搜索索引中的更改和通知。
 - **应用数据保护**–使用数据保护类，可以对使用核心聚焦添加到可搜索索引的项实施安全性。
 
 ## <a name="related-links"></a>相关链接

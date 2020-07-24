@@ -125,7 +125,7 @@ Xbox one 游戏控制器是适用于 Xbox one 的最常见输入设备。 `GameP
 
 ![游戏板类提供游戏控制器硬件的输入值](input-images/image3.png)
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本指南提供 MonoGame 的 `GamePad` 类概述、如何实现输入-读取逻辑，以及常用实现关系图 `GamePad` 。
 

@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fb873102bfb8568b8298a39ea2429fb6c27af175
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 785532d1a8fedfaef367c8fb8ae437220c3de9c4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137717"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938172"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>在 SkiaSharp 中绘制简单圆圈
 
@@ -27,7 +27,7 @@ _了解 SkiaSharp 的基础知识，包括画布和画图对象_
 
 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序包含此系列 SkiaSharp 文章的所有示例代码。 第一页的标题为**简单圆圈**，并调用 page 类 [`SimpleCirclePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs) 。 此代码演示如何在页面中心绘制一个圆，半径为100像素。 圆圈的轮廓为红色，圆的内部为蓝色。
 
-![](circle-images/circleexample.png "A blue circle outlined in red")
+![红色圆圈](circle-images/circleexample.png)
 
 [`SimpleCircle`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)Page 类派生自 `ContentPage` ，其中包含 `using` SkiaSharp 命名空间的两个指令：
 
@@ -146,7 +146,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 下面是在 iOS 和 Android 上运行的程序：
 
-[![](circle-images/simplecircle-small.png "Triple screenshot of the Simple Circle page")](circle-images/simplecircle-large.png#lightbox "Triple screenshot of the Simple Circle page")
+[![简单圆形页面的三向屏幕截图](circle-images/simplecircle-small.png)](circle-images/simplecircle-large.png#lightbox "简单圆形页面的三向屏幕截图")
 
 当你自行运行该程序时，你可以将手机或模拟器侧向旋转，以查看图形的重绘方式。 每次需要重绘图形时， `PaintSurface` 都会再次调用事件处理程序。
 

@@ -10,12 +10,12 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 30e6a39b1a7649fbb9e09dfeeb85ee889da68fc1
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e52ee0a9b61a654ae048fd0fb4a14c402c932524
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128799"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929814"
 ---
 # <a name="listview-fast-scrolling-on-android"></a>在 Android 上 ListView 快速滚动
 
@@ -59,7 +59,7 @@ listView.On<Android>().SetIsFastScrollEnabled(!listView.On<Android>().IsFastScro
 
 结果是，可以在中快速滚动浏览数据 [`ListView`](xref:Xamarin.Forms.ListView) ，这将更改滚动块的大小：
 
-[![](listview-fast-scrolling-images/fastscroll.png "ListView FastScroll Platform-Specific")](listview-fast-scrolling-images/fastscroll-large.png#lightbox "ListView FastScroll Platform-Specific")
+[![ListView FastScroll 平台特定](listview-fast-scrolling-images/fastscroll.png)](listview-fast-scrolling-images/fastscroll-large.png#lightbox "ListView FastScroll 平台特定")
 
 ## <a name="related-links"></a>相关链接
 

@@ -10,12 +10,12 @@ ms.date: 04/14/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3706139a2c15d01af67203c2bd09b281de80ed52
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 855fde62483dcbc6f8769e7a8eb66d84aadfe1da
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140200"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934974"
 ---
 # <a name="3d-rotations-in-skiasharp"></a>SkiaSharp 中的三维旋转
 
@@ -25,7 +25,7 @@ _使用非仿射转换在三维空间中旋转2D 对象。_
 
 非仿射转换的一个常见应用是模拟3D 空间中2D 对象的旋转：
 
-![](3d-rotation-images/3drotationsexample.png "A text string rotated in 3D space")
+![在3D 空间中旋转的文本字符串](3d-rotation-images/3drotationsexample.png)
 
 此作业涉及使用三维旋转，然后派生执行这些3D 旋转的非仿射 `SKMatrix` 转换。
 
@@ -412,7 +412,7 @@ public partial class Rotation3DPage : ContentPage
 
 当您试验第四个滑块时，您会注意到不同的深度设置并不从查看器进一步移动对象，而是更改透视效果的范围：
 
-[![](3d-rotation-images/rotation3d-small.png "Triple screenshot of the Rotation 3D page")](3d-rotation-images/rotation3d-large.png#lightbox "Triple screenshot of the Rotation 3D page")
+[![旋转三维页面的三向屏幕截图](3d-rotation-images/rotation3d-small.png)](3d-rotation-images/rotation3d-large.png#lightbox "旋转三维页面的三向屏幕截图")
 
 **动画旋转三维**也使用 `SKMatrix44` 对三维空间中的文本字符串进行动画处理。 `textPaint`将对象设置为字段在构造函数中用于确定文本的界限：
 
@@ -536,7 +536,7 @@ public class AnimatedRotation3DPage : ContentPage
 
 此3D 旋转围绕着几个2D 变换，将旋转中心移动到屏幕的中心，并缩放文本字符串的大小，使其宽度与屏幕相同：
 
-[![](3d-rotation-images/animatedrotation3d-small.png "Triple screenshot of the Animated Rotation 3D page")](3d-rotation-images/animatedrotation3d-large.png#lightbox "Triple screenshot of the Animated Rotation 3D page")
+[![动画旋转三维页面的三向屏幕截图](3d-rotation-images/animatedrotation3d-small.png)](3d-rotation-images/animatedrotation3d-large.png#lightbox "动画旋转三维页面的三向屏幕截图")
 
 ## <a name="related-links"></a>相关链接
 

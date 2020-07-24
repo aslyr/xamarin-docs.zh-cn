@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms形状：路径转换
-description: Xamarin.Forms转换定义如何将路径对象从一个坐标空间转换到另一个坐标空间。
+title: :::no-loc(Xamarin.Forms):::形状：路径转换
+description: :::no-loc(Xamarin.Forms):::转换定义如何将路径对象从一个坐标空间转换到另一个坐标空间。
 ms.prod: xamarin
 ms.assetid: 07DE3D66-1820-4642-BDDF-84146D40C99D
 ms.technology: xamarin-forms
@@ -8,31 +8,31 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/02/2020
 no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 41de95c452212dce77d6365265e4813170c9b9b9
-ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
+- ':::no-loc(Xamarin.Forms):::'
+- ':::no-loc(Xamarin.Essentials):::'
+ms.openlocfilehash: 30036fdde589fdc5d47735c215196b52a32dd732
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85853046"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997431"
 ---
-# <a name="xamarinforms-shapes-path-transforms"></a>Xamarin.Forms形状：路径转换
+# <a name="no-locxamarinforms-shapes-path-transforms"></a>:::no-loc(Xamarin.Forms):::形状：路径转换
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![预发布 API](~/media/shared/preview.png "此 API 当前为预发布版本")
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Transform`定义如何将 `Path` 对象从一个坐标空间转换到另一个坐标空间。 将转换应用于 `Path` 对象时，它会更改对象在 UI 中的呈现方式。
 
-转换可以分为四个通用分类：旋转、缩放、倾斜和平移。 Xamarin.Forms为以下每种转换分类定义一个类：
+转换可以分为四个通用分类：旋转、缩放、倾斜和平移。 :::no-loc(Xamarin.Forms):::为以下每种转换分类定义一个类：
 
 - `RotateTransform`，它 `Path` 通过指定的旋转 `Angle` 。
 - `ScaleTransform`，它 `Path` 按指定 `ScaleX` 和量缩放对象 `ScaleY` 。
 - `SkewTransform`，它 `Path` 按指定 `AngleX` 和量倾斜对象 `AngleY` 。
 - `TranslateTransform`，它 `Path` 按指定 `X` 和数量移动对象 `Y` 。
 
-Xamarin.Forms还提供了以下类来创建更复杂的转换：
+:::no-loc(Xamarin.Forms):::还提供了以下类来创建更复杂的转换：
 
 - `TransformGroup`，它表示由多个转换对象组成的复合转换。
 - `CompositeTransform`，它将多个转换操作应用到一个 `Path` 对象。
@@ -52,7 +52,7 @@ Xamarin.Forms还提供了以下类来创建更复杂的转换：
 - `CenterX`类型为的， `double` 表示旋转中心点的 x 坐标。 此属性的默认值为0.0。
 - `CenterY`类型为的， `double` 表示旋转中心点的 y 坐标。 此属性的默认值为0.0。
 
-这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
+这些属性是由对象支持的 [`BindableProperty`](xref::::no-loc(Xamarin.Forms):::.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
 
 `CenterX`和 `CenterY` 属性指定对象要旋转的点 `Path` 。 此中心点在转换对象的坐标空间中表示。 默认情况下，旋转应用于（0，0），这是对象的左上角 `Path` 。
 
@@ -86,7 +86,7 @@ Xamarin.Forms还提供了以下类来创建更复杂的转换：
 - `CenterX`，类型为 `double` ，表示此变换中心点的 x 坐标。 此属性的默认值为0.0。
 - `CenterY`，类型为 `double` ，表示此转换的中心点的 y 坐标。 此属性的默认值为0.0。
 
-这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
+这些属性是由对象支持的 [`BindableProperty`](xref::::no-loc(Xamarin.Forms):::.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
 
 和的值 `ScaleX` 对 `ScaleY` 生成的缩放产生大的影响：
 
@@ -131,7 +131,7 @@ Xamarin.Forms还提供了以下类来创建更复杂的转换：
 - `CenterX`，类型为 `double` ，表示变换中心的 x 坐标。 此属性的默认值为0.0。
 - `CenterY`，类型为 `double` ，表示变换中心的 y 坐标。 此属性的默认值为0.0。
 
-这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
+这些属性是由对象支持的 [`BindableProperty`](xref::::no-loc(Xamarin.Forms):::.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
 
 若要预测斜切转换的效果，请考虑将 `AngleX` x 轴值与原始坐标系统相对倾斜。 因此，对于 `AngleX` 30，y 轴通过原点旋转30度，并将 x 的值从该原点倾斜30度。 同样，值为30时，将 `AngleY` 对象的 y 值 `Path` 从原点倾斜30度。
 
@@ -167,7 +167,7 @@ Xamarin.Forms还提供了以下类来创建更复杂的转换：
 - `X`，类型为 `double` ，表示沿 x 轴移动的距离。 此属性的默认值为0.0。
 - `Y`，类型为 `double` ，表示沿 y 轴移动的距离。 此属性的默认值为0.0。
 
-这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
+这些属性是由对象支持的 [`BindableProperty`](xref::::no-loc(Xamarin.Forms):::.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
 
 负值 `X` 将对象向左移动，正值将对象向右移动。 负值 `Y` 将对象上移，正值将对象向下移动。
 
@@ -191,13 +191,13 @@ Xamarin.Forms还提供了以下类来创建更复杂的转换：
 
 ## <a name="multiple-transforms"></a>多个转换
 
-Xamarin.Forms具有两个支持将多个转换应用于 `Path` 对象的类。 这些是 `TransformGroup` 、和 `CompositeTransform` 。 `TransformGroup`按任何所需顺序执行转换，同时 `CompositeTransform` 按特定顺序执行转换。
+:::no-loc(Xamarin.Forms):::具有两个支持将多个转换应用于 `Path` 对象的类。 这些是 `TransformGroup` 、和 `CompositeTransform` 。 `TransformGroup`按任何所需顺序执行转换，同时 `CompositeTransform` 按特定顺序执行转换。
 
 ### <a name="transform-groups"></a>转换组
 
 转换组表示由多个对象组成的复合转换 `Transform` 。
 
-`TransformGroup`派生自类的类 `Transform` 定义 `Children` 类型的属性， `TransformCollection` 该属性表示对象的集合 `Transform` 。 此属性由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象支持，这意味着它可以是数据绑定的目标和样式。
+`TransformGroup`派生自类的类 `Transform` 定义 `Children` 类型的属性， `TransformCollection` 该属性表示对象的集合 `Transform` 。 此属性由 [`BindableProperty`](xref::::no-loc(Xamarin.Forms):::.BindableProperty) 对象支持，这意味着它可以是数据绑定的目标和样式。
 
 在使用类的复合转换中，转换顺序很重要 `TransformGroup` 。 例如，如果您首先旋转，然后缩放，然后再翻译，则会得到不同于第一次平移、旋转和缩放的结果。 其中一个原因是重要的是，旋转和缩放等转换是相对于坐标系统的原点执行的。 缩放以原点为中心的对象将产生不同的结果，以便缩放已移出原点的对象。 同样，旋转位于原点中心的对象会产生不同的结果，而不是旋转远离原点的对象。
 
@@ -238,7 +238,7 @@ Xamarin.Forms具有两个支持将多个转换应用于 `Path` 对象的类。 �
 - `TranslateX`，类型为 `double` ，表示沿 x 轴移动的距离。 此属性的默认值为0.0。
 - `TranslateY`，类型为 `double` ，表示沿 y 轴移动的距离。 此属性的默认值为0.0。
 
-这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
+这些属性是由对象支持的 [`BindableProperty`](xref::::no-loc(Xamarin.Forms):::.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
 
 `CompositeTransform`按以下顺序应用转换：
 
@@ -294,13 +294,41 @@ Xamarin.Forms具有两个支持将多个转换应用于 `Path` 对象的类。 �
 
 此外，该 `Matrix` 结构公开了一系列方法，这些方法可用于操作矩阵值，包括、、 `Append` `Invert` `Multiply` 等 `Prepend` 。
 
-下表显示了矩阵的结构 Xamarin.Forms ：
+下表显示了矩阵的结构 :::no-loc(Xamarin.Forms)::: ：
 
-| | | |
-|---------|---------|-----|
-| M11     | M12     | 0.0 |
-| M21     | M22     | 0.0 |
-| OffsetX | OffsetY | 1.0 |
+:::row:::
+    :::column:::
+        M11
+    :::column-end:::
+    :::column:::
+        M12
+    :::column-end:::
+    :::column:::
+        0.0
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
+        M21
+    :::column-end:::
+    :::column:::
+        M22
+    :::column-end:::
+    :::column:::
+        0.0
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
+        OffsetX
+    :::column-end:::
+    :::column:::
+        OffsetY
+    :::column-end:::
+    :::column:::
+        1.0
+    :::column-end:::
+:::row-end:::
 
 > [!NOTE]
 > 仿射转换矩阵的最终列等于（0，0，1），因此只需指定前两列中的成员。
@@ -309,7 +337,7 @@ Xamarin.Forms具有两个支持将多个转换应用于 `Path` 对象的类。 �
 
 ## <a name="custom-transforms"></a>自定义转换
 
-`MatrixTransform`派生自类的类 `Transform` 定义 `Matrix` 类型的属性， `Matrix` 该属性表示定义转换的矩阵。 此属性由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象支持，这意味着它可以是数据绑定的目标和样式。
+`MatrixTransform`派生自类的类 `Transform` 定义 `Matrix` 类型的属性， `Matrix` 该属性表示定义转换的矩阵。 此属性由 [`BindableProperty`](xref::::no-loc(Xamarin.Forms):::.BindableProperty) 对象支持，这意味着它可以是数据绑定的目标和样式。
 
 可以使用、、或对象描述的任何转换都 `TranslateTransform` `ScaleTransform` `RotateTransform` `SkewTransform` 可以同样通过进行描述 `MatrixTransform` 。 但是，与 `TranslateTransform` `ScaleTransform` `RotateTransform` `SkewTransform` 在中设置向量组件相比，、、和类更易于理解 `Matrix` 。 因此， `MatrixTransform` 类通常用于创建由 `RotateTransform` 、 `ScaleTransform` 、 `SkewTransform` 或类不提供的自定义转换 `TranslateTransform` 。
 
@@ -336,7 +364,7 @@ Xamarin.Forms具有两个支持将多个转换应用于 `Path` 对象的类。 �
 
 在此示例中， `Path` 对象在 X 和 Y 维中拉伸、倾斜和偏移。
 
-此外，还可以使用内置的类型转换器以简化的形式编写 Xamarin.Forms ：
+此外，还可以使用内置的类型转换器以简化的形式编写 :::no-loc(Xamarin.Forms)::: ：
 
 ```xaml
 <Path Stroke="Black"
@@ -364,4 +392,4 @@ Xamarin.Forms具有两个支持将多个转换应用于 `Path` 对象的类。 �
 ## <a name="related-links"></a>相关链接
 
 - [ShapeDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.Forms形状](index.md)
+- [:::no-loc(Xamarin.Forms):::形状](index.md)

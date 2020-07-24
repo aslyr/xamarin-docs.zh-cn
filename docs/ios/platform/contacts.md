@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 918030120e6b7d0e22abdf5ea3e57f3849b86616
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 0af77464f849971050246a1676f89fe4702737e8
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572567"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997288"
 ---
 # <a name="contacts-and-contactsui-in-xamarinios"></a>Xamarin 中的联系人和 ContactsUI
 
@@ -27,7 +27,7 @@ _本文介绍如何在 Xamarin iOS 应用中使用新的 "联系人" 和 "联系
 
 - [**ContactsUI**](#contactsui) -提供 XAMARIN ios UI 元素，用于在 iOS 设备上显示、编辑、选择和创建联系人。
 
-[![](contacts-images/add01.png "An example Contact Sheet on an iOS device")](contacts-images/add01.png#lightbox)
+[![IOS 设备上的示例联系人表](contacts-images/add01.png)](contacts-images/add01.png#lightbox)
 
 > [!IMPORTANT]
 > `AddressBook` `AddressBookUI` Ios 8 （及更早）使用的现有和框架已在 ios 9 中弃用，并且应 `Contacts` `ContactsUI` 尽快为任何现有的 Xamarin 应用替换为新的和框架。 新应用应针对新框架编写。
@@ -46,7 +46,7 @@ Contact 框架提供对用户的联系人信息的 Xamarin iOS 访问权限。 �
 
 `CNContact`类提供对联系人属性（如姓名、地址或电话号码）的线程安全、只读访问。 `CNContact`和等函数 `NSDictionary` 包含多个只读属性集合（如地址或电话号码）：
 
-[![](contacts-images/contactobjects.png "Contact Object overview")](contacts-images/contactobjects.png#lightbox)
+[![联系人对象概述](contacts-images/contactobjects.png)](contacts-images/contactobjects.png#lightbox)
 
 对于可以具有多个值（如电子邮件地址或电话号码）的任何属性，这些属性将表示为对象的数组 `NSLabeledValue` 。 `NSLabeledValue`是由一组只读标签和值组成的线程安全元组，其中标签定义用户的值（例如，家庭或工作电子邮件）。 联系人框架提供了一系列预定义标签（通过 `CNLabelKey` 和 `CNLabelPhoneNumberKey` 静态类），可以在应用中使用这些标签，也可以根据需要定义自定义标签。
 
@@ -110,7 +110,7 @@ else
 
 如果在 iOS 9 设备上运行此代码，则会将新联系人添加到用户的集合。 例如：
 
-[![](contacts-images/add01.png "A new contact added to the user's collection")](contacts-images/add01.png#lightbox)
+[![添加到用户的集合中的新联系人](contacts-images/add01.png)](contacts-images/add01.png#lightbox)
 
 ### <a name="contact-formatting-and-localization"></a>联系人格式设置和本地化
 
@@ -193,7 +193,7 @@ if (!contact.IsKeyAvailable(CNContactOption.PostalAddresses)) {
 
 用户可能会在其 contact 数据库中为单个用户提供不同的联系信息源（如 iCloud、Facebook 或 Google Mail）。 在 iOS 和 OS X 应用中，此联系人信息将自动链接在一起，并作为单个_统一联系人_显示给用户：
 
-[![](contacts-images/unified01.png "Unified Contacts overview")](contacts-images/unified01.png#lightbox)
+[![统一联系人概述](contacts-images/unified01.png)](contacts-images/unified01.png#lightbox)
 
 此统一联系人是一个临时的内存中视图，其中提供了链接联系人信息，该联系人信息将获得自己唯一的标识符（如果需要，应使用该联系人重新提取联系人）。 默认情况下，Contact 框架将尽可能返回统一的联系人。
 
@@ -258,11 +258,11 @@ if (store.ExecuteSaveRequest(saveRequest, out error)) {
 
 用户的联系人可以位于用户的设备上，也可以是从一个或多个服务器帐户（例如 Facebook 或 Google）同步到设备的联系人。 联系人的每个池都有其自己的_容器_，并且给定联系人只能存在于一个容器中。
 
-[![](contacts-images/containers01.png "Containers and Groups overview")](contacts-images/containers01.png#lightbox)
+[![容器和组概述](contacts-images/containers01.png)](contacts-images/containers01.png#lightbox)
 
 某些容器允许将联系人分成一个或多个_组_或_子组_。 此行为取决于给定容器的后备存储。 例如，iCloud 只有一个容器，但可以有多个组（但不包含子组）。 另一方面，Microsoft Exchange 不支持组，但可以有多个容器（每个 Exchange 文件夹一个）。
 
-[![](contacts-images/containers02.png "Overlap within Containers and Groups")](contacts-images/containers02.png#lightbox)
+[![容器和组内的重叠](contacts-images/containers02.png)](contacts-images/containers02.png#lightbox)
 
 <a name="contactsui"></a>
 
@@ -353,7 +353,7 @@ var view = CNContactViewController.FromContact(contact);
 PresentViewController(view, true, null);
 ```
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文详细介绍了如何在 Xamarin iOS 应用程序中使用联系人和联系人 UI 框架。 首先，它涵盖了 Contact framework 提供的不同类型的对象，以及如何使用它们来创建新联系人或访问现有联系人。 它还检查联系 UI 框架以选择现有联系人并显示联系信息。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 2341d90a297d6241c47a5f03fbe8fffa89dd34b0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 6d87f99ae504346d55c4ddf86a093799ba9ddbd5
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032316"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936716"
 ---
 # <a name="purchasing-non-consumable-products-in-xamarinios"></a>在 Xamarin 中购买不可耗用的产品
 
@@ -24,13 +24,13 @@ ms.locfileid: "73032316"
 
 此系列屏幕截图显示了购买过程– "**购买**" 按钮将成为功能激活按钮：   
 
- [![](purchasing-non-consumable-products-images/image34.png "The purchase process is shown in this series of screenshots")](purchasing-non-consumable-products-images/image34.png#lightbox)   
+ [![此系列屏幕截图显示了购买过程](purchasing-non-consumable-products-images/image34.png)](purchasing-non-consumable-products-images/image34.png#lightbox)   
 
 购买过程与耗材产品相同;主要区别在于如何在应用程序代码中跟踪购买情况。 在此示例中，仅当尚未购买产品时，"购买" 按钮才可用，否则该按钮将激活功能本身。   
 
 下图显示了类和 App Store 服务器之间的交互，以执行不可耗用的产品购买：   
 
- [![](purchasing-non-consumable-products-images/image35.png "The interactions between classes and the App Store server to perform a non-consumable product purchase")](purchasing-non-consumable-products-images/image35.png#lightbox)   
+ [![类和 App Store 服务器之间的交互，以执行不可耗用的产品购买](purchasing-non-consumable-products-images/image35.png)](purchasing-non-consumable-products-images/image35.png#lightbox)   
 
 此可耗用示例的主要区别在于，一旦购买完成，用户界面就会更新，以防重新购买。 在此示例中，成功的事务通知将更新用户界面，以便将 "**购买**" 按钮转换为激活该功能本身的按钮。
 
@@ -47,5 +47,5 @@ ms.locfileid: "73032316"
 此方案中的代码路径与常规购买完全相同，唯一的区别在于：
 
 - 用户不会再为该产品付费。
-- 传递给应用程序的 `SKPaymentTransaction` 对象将具有一个 `OriginalTransaction` 属性，该属性引用最初购买产品时生成的事务。 
+- `SKPaymentTransaction`传递给应用程序的对象将具有一个 `OriginalTransaction` 属性，该属性引用最初购买产品时生成的事务。 
 - 销售非耗用产品的应用程序还必须实现 StoreKit 的**还原**功能，以帮助用户检索现有购买内容。 

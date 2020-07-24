@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: b69328b00778b0c3c03cd4d954b2e0bef33e4784
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d50f104b8b6e3e82fb7e9d6dbea45757742a5739
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574595"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937028"
 ---
 # <a name="introduction-to-3d-touch-in-xamarinios"></a>Xamarin 中的3D 触控简介
 
 _本文介绍如何在应用中使用新的 iPhone 6s 和 iPhone 6s 以及3D 触摸手势。_
 
-[![](3d-touch-images/info01.png "Examples of 3D Touch enabled apps")](3d-touch-images/info01.png#lightbox)
+[![启用 3D Touch 的应用的示例](3d-touch-images/info01.png)](3d-touch-images/info01.png#lightbox)
 
 本文将介绍如何使用新的 3D Touch Api 向在新的 iPhone 6s 和 iPhone 6s Plus 设备上运行的 Xamarin 应用程序添加压力敏感度。
 
@@ -39,7 +39,7 @@ _本文介绍如何在应用中使用新的 iPhone 6s 和 iPhone 6s 以及3D 触
 
 如上所述，通过使用[UITouch](xref:UIKit.UITouch)类的新属性，可以测量用户应用到 iOS 设备屏幕的压力量，并在用户界面中使用此信息。 例如，根据压力量使画笔笔划更半透明或不透明。
 
-[![](3d-touch-images/pressure01.png "A brush stroke rendered as more translucent or opaque based on the amount of pressure")](3d-touch-images/pressure01.png#lightbox)
+[![根据压力量呈现为更半透明或不透明的画笔笔划](3d-touch-images/pressure01.png)](3d-touch-images/pressure01.png#lightbox)
 
 3D 触摸的结果是，如果你的应用在 iOS 9 （或更高版本）上运行，并且 iOS 设备能够支持3D 触摸，则压力改变将导致 `TouchesMoved` 引发事件。
 
@@ -77,7 +77,7 @@ public override void TouchesMoved (NSSet touches, UIEvent evt)
 
 例如，如果你的应用程序显示的是一张消息，则用户可以按下某个项目的 "hard" 来预览覆盖视图（Apple*指的是查看）中*的内容。
 
-[![](3d-touch-images/peekandpop01.png "An example of Peeking at content")](3d-touch-images/peekandpop01.png#lightbox)
+[![查看内容的示例](3d-touch-images/peekandpop01.png)](3d-touch-images/peekandpop01.png#lightbox)
 
 如果用户按 "困难"，他们将进入常规消息视图（这在视图中称为 "*弹出*ping"）。
 
@@ -205,7 +205,7 @@ public override void ViewDidLoad ()
 
 如上所述，可以考虑在用户右键单击桌面应用程序中的某一项时，可以弹出的上下文菜单等快速操作。 您应该使用 "快速操作" 提供应用程序的最常见函数或功能的快捷方式。
 
-[![](3d-touch-images/quickactions01.png "An example of a Quick Actions menu")](3d-touch-images/quickactions01.png#lightbox)
+[!["快速操作" 菜单示例](3d-touch-images/quickactions01.png)](3d-touch-images/quickactions01.png#lightbox)
 
 ### <a name="defining-static-quick-actions"></a>定义静态快速操作
 
@@ -270,7 +270,7 @@ public override void ViewDidLoad ()
   - `UIApplicationShortcutIconTypeTime`
   - `UIApplicationShortcutIconTypeUpdate`
 
-  ![](3d-touch-images/uiapplicationshortcuticontype.png "UIApplicationShortcutIconType imagery")
+  ![UIApplicationShortcutIconType 图像](3d-touch-images/uiapplicationshortcuticontype.png)
 
 - `UIApplicationShortcutItemSubtitle`-定义项的副标题。
 - `UIApplicationShortcutItemTitle`-定义项的标题。
@@ -430,11 +430,11 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 
 若要启用此功能，请在支持3D 触摸的模拟 iPhone 硬件（iPhone 6s 及更高版本）中运行任何应用。 接下来，选择 iOS 模拟器中的 "**硬件**" 菜单，并启用 "**对3d 触摸菜单项使用触控板强制**" 菜单项：
 
-[![](3d-touch-images/simulator01.png "Select the Hardware menu in the iOS Simulator and enable the Use Trackpad Force for 3D touch menu item")](3d-touch-images/simulator01.png#lightbox)
+[![选择 iOS 模拟器中的 "硬件" 菜单，并启用 "对3D 触摸菜单项使用触控板强制" 菜单项](3d-touch-images/simulator01.png)](3d-touch-images/simulator01.png#lightbox)
 
 此功能处于活动状态时，你可以在 Mac 的触控板上按更难的方式启用3D 触摸，就像在实际的 iPhone 硬件上一样。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了在 iOS 9 中提供的新 3D Touch Api，适用于 iPhone 6s 和 iPhone 6s Plus。 它涵盖了向应用程序添加压力敏感度。使用速览和 Pop 快速显示当前上下文中的应用内信息，而无需导航;并使用 "快速操作" 提供应用最常用功能的快捷方式。
 

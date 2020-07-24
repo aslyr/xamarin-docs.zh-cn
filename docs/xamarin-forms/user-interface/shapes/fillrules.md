@@ -21,7 +21,7 @@ ms.locfileid: "86937288"
 
 ![预发布 API](~/media/shared/preview.png "此 API 当前为预发布版本")
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 多个 Xamarin.Forms 形状类具有 `FillRule` 类型为的属性 `FillRule` 。 其中包括 `Polygon` 、 `Polyline` 和 `GeometryGroup` 。
 

@@ -19,7 +19,7 @@ ms.locfileid: "86937197"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp 中的位图基础知识
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _从各种源加载位图并显示它们。_
 

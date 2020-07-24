@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 57d7ef3578fd2f71e078e730de29c241b1b7fed7
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: a74996c0390191a4fef8d20ba3f46d0e2578d17a
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937834"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997171"
 ---
 # <a name="document-picker-in-xamarinios"></a>Xamarin 中的文档选取器
 
-文档选取器允许在应用之间共享文档。 这些文档可以存储在 iCloud 或其他应用的目录中。 文档通过用户在其设备上安装的一组[文档提供程序扩展](~/ios/platform/extensions.md)来共享。 
+文档选取器允许在应用之间共享文档。 这些文档可以存储在 iCloud 或其他应用的目录中。 文档通过用户在其设备上安装的一组[文档提供程序扩展](~/ios/platform/extensions.md)来共享。
 
 由于跨应用和云保持文档同步非常困难，它们会引入一定程度的必要的复杂性。
 
@@ -227,14 +227,14 @@ fileCoordinator.CoordinateAccess (intents, queue, (err) => {
 IOS 8 中添加了以下新功能 `NSMetadataQuery` ：
 
 - `NSMetatadataQuery`现在可以列出存储在云中的非本地文档。
-- 添加了新的 Api 来访问基于云的文档的元数据信息。 
+- 添加了新的 Api 来访问基于云的文档的元数据信息。
 - 有一个新的 `NSUrl_PromisedItems` API，它将访问文件的文件属性，这些文件可能或可能不具有本地可用内容。
 - 使用 `GetPromisedItemResourceValue` 方法获取有关给定文件的信息，或使用 `GetPromisedItemResourceValues` 方法一次获取多个文件的相关信息。
 
 添加了两个新的文件协调标志来处理元数据：
 
-- `NSFileCoordinatorReadImmediatelyAvailableMetadataOnly` 
-- `NSFileCoordinatorWriteContentIndependentMetadataOnly` 
+- `NSFileCoordinatorReadImmediatelyAvailableMetadataOnly`
+- `NSFileCoordinatorWriteContentIndependentMetadataOnly`
 
 使用上述标志，文档文件的内容不需要本地可用即可供使用。
 
@@ -251,7 +251,7 @@ using ObjCRuntime;
 using System.IO;
 
 #region Static Properties
-public const string TestFilename = "test.txt"; 
+public const string TestFilename = "test.txt";
 #endregion
 
 #region Computed Properties
@@ -361,7 +361,7 @@ public void CreateNewDocument() {
     var docPath = Path.Combine (docsFolder, TestFilename);
     var ubiq = new NSUrl (docPath, false);
 
-    // Create new document at path 
+    // Create new document at path
     Console.WriteLine ("Creating Document at:" + ubiq.AbsoluteString);
     Document = new GenericTextDocument (ubiq);
 
@@ -421,7 +421,7 @@ Apple 认为，为应用程序列出文档时最好的用户体验是使用预�
 
 在 iOS 8 之前，显示文档预览需要自定义实现。 IOS 8 的新增特性是文件系统属性，使开发人员能够快速处理文档缩略图。
 
-#### <a name="retrieving-document-thumbnails"></a>检索文档缩略图 
+#### <a name="retrieving-document-thumbnails"></a>检索文档缩略图
 
 通过调用 `GetPromisedItemResourceValue` 或 `GetPromisedItemResourceValues` 方法， `NSUrl_PromisedItems` `NSUrlThumbnailDictionary` 将返回 API。 此字典中的唯一键是 `NSThumbnial1024X1024SizeKey` 和其匹配项 `UIImage` 。
 
@@ -433,7 +433,7 @@ Apple 认为，为应用程序列出文档时最好的用户体验是使用预�
 
 ## <a name="enabling-icloud-in-xamarin"></a>在 Xamarin 中启用 iCloud
 
-需要在应用程序中和 Apple 中启用 iCloud 支持，然后才能在 Xamarin iOS 应用程序中使用文档选取器。 
+需要在应用程序中和 Apple 中启用 iCloud 支持，然后才能在 Xamarin iOS 应用程序中使用文档选取器。
 
 以下步骤演练为 iCloud 进行设置的过程。
 
@@ -449,7 +449,7 @@ Apple 认为，为应用程序列出文档时最好的用户体验是使用预�
 
 1. 在 Visual Studio for Mac 或 Visual Studio 中打开项目。
 2. 在**解决方案资源管理器**中，右键单击项目，然后选择 "选项"。
-3. 在 "选项" 对话框中，选择 " **IOS 应用程序**"，确保**捆绑标识符**与上面为应用程序创建的**应用程序 ID**中定义的标识符相匹配。 
+3. 在 "选项" 对话框中，选择 " **IOS 应用程序**"，确保**捆绑标识符**与上面为应用程序创建的**应用程序 ID**中定义的标识符相匹配。
 4. 选择 " **IOS 捆绑签名**"，选择上面创建的**开发人员标识**和**预配配置文件**。
 5. 单击 **"确定"** 按钮保存更改并关闭对话框。
 6. 右键单击 `Entitlements.plist` "**解决方案资源管理器**" 以在编辑器中打开它。
@@ -458,7 +458,7 @@ Apple 认为，为应用程序列出文档时最好的用户体验是使用预�
     > 在 Visual Studio 中，你可能需要通过右键单击来打开 "权限编辑器"，然后选择 "**打开方式 ...** " 和选择属性列表编辑器
 
 7. 选中 "**启用 icloud** 、 **icloud 文档**、**键值存储**和**CloudKit** "。
-8. 请确保应用程序的**容器**（如上所创建）。 示例：`iCloud.com.your-company.AppName`
+8. 请确保应用程序的**容器**（如上所创建）。 示例： `iCloud.com.your-company.AppName`
 9. 保存对文件所做的更改。
 
 有关权利的详细信息，请参阅[使用权利](~/ios/deploy-test/provisioning/entitlements.md)指南。
@@ -486,7 +486,7 @@ namespace DocPicker
     public partial class AppDelegate : UIApplicationDelegate
     {
         #region Static Properties
-        public const string TestFilename = "test.txt"; 
+        public const string TestFilename = "test.txt";
         #endregion
 
         #region Computed Properties
@@ -599,7 +599,7 @@ namespace DocPicker
             var docPath = Path.Combine (docsFolder, TestFilename);
             var ubiq = new NSUrl (docPath, false);
 
-            // Create new document at path 
+            // Create new document at path
             Console.WriteLine ("Creating Document at:" + ubiq.AbsoluteString);
             Document = new GenericTextDocument (ubiq);
 
@@ -689,15 +689,15 @@ namespace DocPicker
                 CheckingForiCloud = false;
 
             })).Start();
-                
+
         }
-        
+
         // This method is invoked when the application is about to move from active to inactive state.
         // OpenGL applications should use this method to pause.
         public override void OnResignActivation (UIApplication application)
         {
         }
-        
+
         // This method should be used to release shared resources and it should store the application state.
         // If your application supports background execution this method is called instead of WillTerminate
         // when the user quits.
@@ -729,7 +729,7 @@ namespace DocPicker
                 Console.WriteLine ("Error: {0}", e.Message);
             }
         }
-        
+
         // This method is called as part of the transition from background to active state.
         public override void WillEnterForeground (UIApplication application)
         {
@@ -758,7 +758,7 @@ namespace DocPicker
             }
 
         }
-        
+
         // This method is called when the application is about to terminate. Save data, if needed.
         public override void WillTerminate (UIApplication application)
         {
@@ -827,7 +827,7 @@ public AppDelegate ThisApp {
 
 在 iOS 8 中，应用程序能够轻松地在其自己的应用程序容器外访问文档：
 
- [![](document-picker-images/image32.png "Discovering Documents Outside of an App's Container")](document-picker-images/image32.png#lightbox)
+ [![在应用容器外发现文档](document-picker-images/image32.png)](document-picker-images/image32.png#lightbox)
 
 使用新的 iCloud 文档选取器（ `UIDocumentPickerViewController` ），iOS 应用程序可直接在其应用程序容器外发现和访问。 `UIDocumentPickerViewController`提供了一种机制，使用户能够通过权限授予和编辑所发现的文档。
 
@@ -1024,7 +1024,7 @@ if (Bookmark != null) {
 
 1. 首先在本地或临时位置创建新文档。
 1. 创建一个 `NSUrl` 指向新文档的。
-1. 打开新的文档选取器视图控制器，并将其传递到的 `NSUrl` 模式 `MoveToService` 。 
+1. 打开新的文档选取器视图控制器，并将其传递到的 `NSUrl` 模式 `MoveToService` 。
 1. 用户选择新位置后，该文档将从其当前位置移动到新位置。
 1. 引用文档将写入应用程序的应用程序容器，以便创建应用程序仍可以访问该文件。
 
@@ -1032,7 +1032,7 @@ if (Bookmark != null) {
 
 上述过程返回的引用文档与文档选取器的打开模式创建的文档完全相同。 但是，有时应用程序可能希望在不保留对文档的引用的情况下移动文档。
 
-若要移动文档而不生成引用，请使用 `ExportToService` 模式。 示例：`var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.ExportToService);`
+若要移动文档而不生成引用，请使用 `ExportToService` 模式。 示例： `var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.ExportToService);`
 
 使用模式时 `ExportToService` ，会将文档复制到外部容器，现有副本将保留在其原始位置。
 
@@ -1083,7 +1083,7 @@ if (Bookmark != null) {
 将发生以下过程：
 
 1. 应用程序将进入背景，并需要保持其状态。 它将调用 `NSUrl` 以在备用存储中为文件创建书签。
-1. `NSUrl`调用文件提供程序扩展以获取文档的持久性 URL。 
+1. `NSUrl`调用文件提供程序扩展以获取文档的持久性 URL。
 1. 文件提供程序扩展将 URL 以字符串的形式返回到 `NSUrl` 。
 1. 将 `NSUrl` URL 捆绑到一个书签，并将其返回给应用程序。
 1. 当应用程序 awakes 在后台并且需要还原状态时，它会将书签传递给 `NSUrl` 。
@@ -1116,9 +1116,9 @@ if (Bookmark != null) {
 用户的帐户迁移到 iCloud 驱动器后，只有使用 iCloud 驱动器的设备才能将更改传播到这些设备上的文档。
 
 > [!IMPORTANT]
-> 开发人员应注意，本文中所述的新功能仅在用户帐户已迁移到 iCloud 驱动器时才可用。 
+> 开发人员应注意，本文中所述的新功能仅在用户帐户已迁移到 iCloud 驱动器时才可用。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了支持 iCloud 驱动器和新的文档选取器视图控制器所需的现有 iCloud Api 更改。 它涵盖了文件协调以及在使用基于云的文档时它非常重要的原因。 它介绍了在 Xamarin iOS 应用程序中启用基于云的文档所需的设置，并提供了介绍如何使用文档选取器视图控制器在应用的应用程序容器外使用文档的介绍。
 

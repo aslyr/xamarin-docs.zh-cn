@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 13d1709f77b312dbdf357c8ce1871727b2073fef
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 5d10f1def56d73c6837587bbbd47299d208a345a
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574426"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997470"
 ---
 # <a name="building-modern-macos-apps"></a>生成新式 macOS 应用
 
@@ -24,7 +24,7 @@ _本文介绍了开发人员可用于在 Xamarin 中生成新式 macOS 应用程
 
 新式外观将包括一个新式窗口和工具栏外观，如下面所示的示例应用：
 
-[![](modern-cocoa-apps-images/content08.png "An example of a modern Mac app UI")](modern-cocoa-apps-images/content08.png#lightbox)
+[![新式 Mac 应用 UI 的示例](modern-cocoa-apps-images/content08.png)](modern-cocoa-apps-images/content08.png#lightbox)
 
 <a name="Enabling-Full-Sized-Content-Views"></a>
 
@@ -64,7 +64,7 @@ namespace MacModern
 
 还可以通过选择窗口并检查**完整大小的内容视图**，在 Xcode 的 Interface Builder 中启用此功能：
 
-[![](modern-cocoa-apps-images/content01.png "Editing the main storyboard in Xcode's Interface Builder")](modern-cocoa-apps-images/content01.png#lightbox)
+[![编辑 Xcode 的主情节提要 Interface Builder](modern-cocoa-apps-images/content01.png)](modern-cocoa-apps-images/content01.png#lightbox)
 
 使用完整大小的内容视图时，开发人员可能需要偏移标题和工具栏区域下的内容，以便特定内容（例如标签）不会滑下。
 
@@ -145,11 +145,11 @@ topConstraint.Active = true;
 
 正常的 macOS 窗口包括运行时的标准标题栏以及窗口的上边缘。 如果该窗口还包含工具栏，它将显示在此标题栏区域下：
 
-[![](modern-cocoa-apps-images/content02.png "A standard Mac Toolbar")](modern-cocoa-apps-images/content02.png#lightbox)
+[![标准 Mac 工具栏](modern-cocoa-apps-images/content02.png)](modern-cocoa-apps-images/content02.png#lightbox)
 
 使用简化的工具栏时，标题区域会消失，工具栏会向上移动到标题栏的位置，并使窗口关闭、最小化和最大化按钮：
 
-[![](modern-cocoa-apps-images/content03.png "A streamlined Mac Toolbar")](modern-cocoa-apps-images/content03.png#lightbox)
+[![简化的 Mac 工具栏](modern-cocoa-apps-images/content03.png)](modern-cocoa-apps-images/content03.png#lightbox)
 
 通过重写的方法来启用简化的工具栏 `ViewWillAppear` `NSViewController` ，使其看起来如下所示：
 
@@ -163,7 +163,7 @@ public override void ViewWillAppear ()
 }
 ```
 
-此效果通常用于_Shoebox 应用程序_（一种窗口应用程序），如地图、日历、注释和系统首选项。 
+此效果通常用于_Shoebox 应用程序_（一种窗口应用程序），如地图、日历、注释和系统首选项。
 
 <a name="Using-Accessory-View-Controllers"></a>
 
@@ -171,22 +171,22 @@ public override void ViewWillAppear ()
 
 根据应用程序的设计，开发人员可能还需要使用显示在标题/工具栏区域下方的附件视图控制器来补充标题栏区域，以根据当前所采用的活动向用户提供上下文相关控件：
 
-[![](modern-cocoa-apps-images/content04.png "An example Accessory View Controller")](modern-cocoa-apps-images/content04.png#lightbox)
+[![示例附件视图控制器](modern-cocoa-apps-images/content04.png)](modern-cocoa-apps-images/content04.png#lightbox)
 
 系统无需开发人员干预，会自动对附件视图控制器进行模糊并调整其大小。
 
 若要添加附件视图控制器，请执行以下操作：
 
 1. 在“解决方案资源管理器”**** 中，双击 `Main.storyboard` 文件，将其打开进行编辑。
-2. 将**自定义视图控制器**拖动到窗口的层次结构中： 
+2. 将**自定义视图控制器**拖动到窗口的层次结构中：
 
-    [![](modern-cocoa-apps-images/content05.png "Adding a new Custom View Controller")](modern-cocoa-apps-images/content05.png#lightbox)
-3. 布局附件视图的 UI： 
+    [![添加新的自定义视图控制器](modern-cocoa-apps-images/content05.png)](modern-cocoa-apps-images/content05.png#lightbox)
+3. 布局附件视图的 UI：
 
-    [![](modern-cocoa-apps-images/content06.png "Designing the new view")](modern-cocoa-apps-images/content06.png#lightbox)
-4. 将附件视图公开为**插座**，并向其 UI 公开任何其他**操作**或**插座**： 
+    [![设计新视图](modern-cocoa-apps-images/content06.png)](modern-cocoa-apps-images/content06.png#lightbox)
+4. 将附件视图公开为**插座**，并向其 UI 公开任何其他**操作**或**插座**：
 
-    [![](modern-cocoa-apps-images/content07.png "Adding the required OUtlet")](modern-cocoa-apps-images/content07.png#lightbox)
+    [![添加所需的插座](modern-cocoa-apps-images/content07.png)](modern-cocoa-apps-images/content07.png#lightbox)
 5. 保存更改。
 6. 返回到 Visual Studio for Mac 以同步更改。
 
@@ -248,7 +248,7 @@ accessoryView.LayoutAttribute = NSLayoutAttribute.Bottom;
 
 此外，macOS 系统可能会将附件视图控制器添加到应用的窗口中。 例如，若要创建选项卡式窗口，其中有多个应用程序窗口合并为一个虚拟窗口：
 
-[![](modern-cocoa-apps-images/content08.png "An example of a tabbed Mac Window")](modern-cocoa-apps-images/content08.png#lightbox)
+[![选项卡式 Mac 窗口的示例](modern-cocoa-apps-images/content08.png)](modern-cocoa-apps-images/content08.png#lightbox)
 
 通常，开发人员需要采取有限的操作，使用其 Xamarin 应用程序中的选项卡式窗口，系统将自动处理它们，如下所示：
 
@@ -302,7 +302,7 @@ namespace MacModern
 
             // Display
             controller.ShowWindow (this);
-        } 
+        }
         #endregion
     }
 }
@@ -430,7 +430,7 @@ public override void GetNewWindowForTab (NSObject sender)
 
 可以通过 `WantsLayer` `NSView` 检查 " `true` **核心动画" 层**，在 "**查看效果" 检查器**下，通过将 Xcode 的 Interface Builder 设置为或内部来启用层后备：
 
-[![](modern-cocoa-apps-images/content09.png "The View Effects Inspector")](modern-cocoa-apps-images/content09.png#lightbox)
+[![视图效果检查器](modern-cocoa-apps-images/content09.png)](modern-cocoa-apps-images/content09.png#lightbox)
 
 <a name="Redrawing-Views-with-Layers"></a>
 
@@ -496,7 +496,7 @@ namespace MacModern
         {
             base.UpdateLayer ();
 
-            // Draw view 
+            // Draw view
             Layer.BackgroundColor = NSColor.Red.CGColor;
         }
         #endregion
@@ -571,7 +571,7 @@ namespace MacModern
         {
             // Return required pasteboard writer
             ...
-            
+
             // Pasteboard writer failed
             return null;
         }
@@ -733,7 +733,7 @@ Static `NSTableViewRowAction.FromStyle` 用于创建以下样式的新的表行�
 
 <a name="Scroll-View-Enhancements"></a>
 
-## <a name="scroll-view-enhancements"></a>滚动视图增强功能 
+## <a name="scroll-view-enhancements"></a>滚动视图增强功能
 
 当直接使用滚动视图（ `NSScrollView` ）或作为另一个控件（例如）的一部分时 `NSTableView` ，滚动视图的内容可以使用新式外观和视图在 Xamarin 应用程序的标题和工具栏区域下滑动。
 
@@ -760,9 +760,9 @@ Apple 在 Xcode 中加入了几项技术，使开发人员可以轻松创建国�
 
 <a name="Implementing-Base-Internationalization"></a>
 
-### <a name="implementing-base-internationalization"></a>实现基本国际化 
+### <a name="implementing-base-internationalization"></a>实现基本国际化
 
-通过实现基本国际化，开发人员可以提供单个 Storyboard 文件来表示应用的 UI 并分离出所有面向用户的字符串。 
+通过实现基本国际化，开发人员可以提供单个 Storyboard 文件来表示应用的 UI 并分离出所有面向用户的字符串。
 
 当开发人员创建定义应用程序用户界面的初始情节提要文件（或文件）时，它们将在基本国际化（开发人员所说的语言）中生成。
 
@@ -792,7 +792,7 @@ Apple 建议执行以下操作：
 
 Apple 在 Xcode 的 Interface Builder 中提供了若干功能，开发人员可以在设计或编辑应用的 UI 时使用这些功能来支持本地化。 **特性检查器**的 "**文本方向**" 部分允许开发人员提供有关如何使用和在选择基于文本的视图（例如）上进行更新的提示 `NSTextField` ：
 
-[![](modern-cocoa-apps-images/content10.png "The Text Direction options")](modern-cocoa-apps-images/content10.png#lightbox)
+[![文本方向选项](modern-cocoa-apps-images/content10.png)](modern-cocoa-apps-images/content10.png#lightbox)
 
 **文本方向**有三个可能的值：
 
@@ -851,7 +851,7 @@ var button2 = NSButton.CreateButton (myTitle, myImage, () => {
 
 新式 macOS 应用可采用全新的深色界面外观，适用于创建、编辑或展示应用的映像：
 
-[![](modern-cocoa-apps-images/content11.png "An example of a dark Mac Window UI")](modern-cocoa-apps-images/content11.png#lightbox)
+[![深色 Mac 窗口 UI 的示例](modern-cocoa-apps-images/content11.png)](modern-cocoa-apps-images/content11.png#lightbox)
 
 这可以通过在显示窗口之前添加一行代码来完成。 例如：
 
@@ -865,7 +865,7 @@ namespace MacModern
     public partial class ViewController : NSViewController
     {
         ...
-    
+
         #region Override Methods
         public override void ViewWillAppear ()
         {
@@ -898,7 +898,7 @@ Apple 对于使用系统外观具有以下建议：
 
 控制器允许开发人员将元素收集到组合和 Segue 抽象单元中，并删除在整个视图层次结构中移动所需的典型 "胶水代码"：
 
-[![](modern-cocoa-apps-images/content12.png "Editing the UI in Xcode's Interface Builder")](modern-cocoa-apps-images/content12.png#lightbox)
+[![在 Xcode 的 Interface Builder 中编辑 UI](modern-cocoa-apps-images/content12.png)](modern-cocoa-apps-images/content12.png#lightbox)
 
 有关详细信息，请参阅[介绍情节提要](~/mac/platform/storyboards/index.md)文档。
 
@@ -948,7 +948,7 @@ Apple 在 macOS Sierra 中包含了几个面向用户的功能，使开发人员
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了一些提示、功能和技术，开发人员可以使用这些技巧在 Xamarin 中构建现代 macOS 应用。
 

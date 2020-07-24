@@ -19,7 +19,7 @@ ms.locfileid: "86937054"
 ---
 # <a name="listview-separator-style-on-ios"></a>IOS 上的 ListView 分隔符样式
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 iOS 平台特定控制中的单元格之间的分隔符是否 [`ListView`](xref:Xamarin.Forms.ListView) 使用的完整宽度 `ListView` 。 它通过将 [`ListView.SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.ListView.SeparatorStyleProperty) 附加属性设置为枚举的值，在 XAML 中使用 [`SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle) ：
 

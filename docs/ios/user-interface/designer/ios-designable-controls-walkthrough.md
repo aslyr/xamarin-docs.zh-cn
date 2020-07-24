@@ -260,7 +260,7 @@ public override void Draw(CGRect rect)
 
  [![编辑设计时属性](ios-designable-controls-walkthrough-images/11-customproperty.png)](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了如何创建自定义控件，以及如何使用 iOS 设计器在 iOS 应用程序中使用它。 我们了解了如何创建和生成控件，使其可用于设计器的**工具箱**中的应用程序。 此外，我们还讨论了如何实现控件，使其在设计时和运行时都能正确呈现，以及如何在设计器中公开自定义控件属性。
 

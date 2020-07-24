@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: ae08d7d2d8d9de700570311f2294df737240b73f
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 2e5b7a65f565f8c4f3265c5c95e6e4a296e4681f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572151"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938094"
 ---
 # <a name="updating-a-xamarinios-app-in-the-background"></a>在后台更新 Xamarin iOS 应用
 
@@ -43,7 +43,7 @@ iOS 提供两个识别位置的 Api，具有后台处理功能：
 
 若要实现后台提取，请编辑*info.plist* ，并选中 "**启用后台模式**" 和 "**后台提取**" 复选框：
 
- [![](updating-an-application-in-the-background-images/fetch.png "Edit the Info.plist and check the Enable Background Modes and Background Fetch check boxes")](updating-an-application-in-the-background-images/fetch.png#lightbox)
+ [![编辑 info.plist，并选中 "启用后台模式" 和 "后台提取" 复选框](updating-an-application-in-the-background-images/fetch.png)](updating-an-application-in-the-background-images/fetch.png#lightbox)
 
 接下来，在中 `AppDelegate` ，重写 `FinishedLaunching` 方法以设置最小提取间隔。 在此示例中，我们让 OS 决定获取新内容的频率：
 
@@ -101,7 +101,7 @@ public override void PerformFetch (UIApplication application, Action<UIBackgroun
 
 若要实施远程通知，请编辑*info.plist* ，并选中 "**启用后台模式**" 和 "**远程通知**" 复选框：
 
- [![](updating-an-application-in-the-background-images/remote.png "Background Mode set to Enable Background Modes and Remote notifications")](updating-an-application-in-the-background-images/remote.png#lightbox)
+ [![设置为启用后台模式和远程通知的后台模式](updating-an-application-in-the-background-images/remote.png)](updating-an-application-in-the-background-images/remote.png#lightbox)
 
 接下来，将 `content-available` 推送通知本身的标志设置为1。 这使应用程序在显示警报之前知道要提取新内容：
 
@@ -147,7 +147,7 @@ public override void DidReceiveRemoteNotification (UIApplication application, NS
 
 但是，APNs 会使无提示的通知与正常的远程通知或保持活动响应一起 "发送"。 因为定期通知不受速率限制，所以可用于将存储的无提示通知从 APNs 推送到设备，如下图所示：
 
- [![](updating-an-application-in-the-background-images/silent.png "Regular notifications can be used to push stored silent notifications from the APNs to the device, as illustrated by this diagram")](updating-an-application-in-the-background-images/silent.png#lightbox)
+ [![定期通知可用于将存储的无提示通知从 APNs 推送到设备，如图所示](updating-an-application-in-the-background-images/silent.png)](updating-an-application-in-the-background-images/silent.png#lightbox)
 
 > [!IMPORTANT]
 > Apple 鼓励开发人员在应用程序需要时发送无提示推送通知，并让 APNs 计划其交付。

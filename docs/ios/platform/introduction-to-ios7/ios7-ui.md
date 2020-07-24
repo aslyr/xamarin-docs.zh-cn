@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 49ea0cf7bd45a7fc261f6be3dc3becd2c847ad0c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: c02b810cc61779f5c3b5ee5eb61169e8c3fceab4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84564896"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931204"
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 用户界面概述
 
@@ -32,7 +32,7 @@ UIKit 中的所有视图都符合 iOS 7 的全新外观。 本部分重点介绍
 
 默认情况下，从类创建的按钮 `UIButton` 是无边框的，默认情况下没有背景，如下所示：
 
- ![](ios7-ui-images/button.png "Sample UIButton")
+ ![示例 UIButton](ios7-ui-images/button.png)
 
 `UIButtonType.RoundedRect`样式已被弃用。 如果在 iOS 7 中使用， `UIButtonType.RoundedRect` 将导致 `UIButtonType.System` 使用，这将产生没有背景或可见边缘的默认按钮样式，如上所示。
 
@@ -40,13 +40,13 @@ UIKit 中的所有视图都符合 iOS 7 的全新外观。 本部分重点介绍
 
 类似于 `UIButton` ，条形按钮也有无边框，默认为如下 `UIBarButtonItemStyle.Plain` 所示的新样式：
 
- ![](ios7-ui-images/barbuttonplain.png "Sample UIBarButtonItem")
+ ![示例 UIBarButtonItem](ios7-ui-images/barbuttonplain.png)
 
 此外， `UIBarButtonItemStyle.Bordered` 样式已不推荐使用。 `UIBarButtonItemStyle.Bordered`IOS 7 中的设置将导致 `UIBarButtonItemStyle.Plain` 使用样式。
 
 `UIBarButtonItemStyle.Done`尚未弃用样式。 不过，它还将创建一个无边框按钮，只使用粗体文本样式，如下所示：
 
- ![](ios7-ui-images/barbuttondone.png "Sample UIBarButtonItem in the Done style")
+ ![完成样式中的 UIBarButtonItem 示例](ios7-ui-images/barbuttondone.png)
 
 ### <a name="uialertview"></a>UIAlertView
 
@@ -68,7 +68,7 @@ UIBarButtonItem button = new UIBarButtonItem ("Bar Button", UIBarButtonItemStyle
 
 这会生成一个标准警报视图，其中的子视图被忽略，如下所示：
 
- ![](ios7-ui-images/alert.png "Sample UIAlertView")
+ ![示例 UIAlertView](ios7-ui-images/alert.png)
 
  注意： UIAlertView 在 iOS 8 中已弃用。 查看有关在 iOS 8 及更高版本中使用警报视图的[警报控制器](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)食谱。
 
@@ -76,7 +76,7 @@ UIBarButtonItem button = new UIBarButtonItem ("Bar Button", UIBarButtonItemStyle
 
 IOS 7 中的分段控件是透明的，并且支持的色调颜色。 淡色颜色用于文本和边框颜色。 选择段后，颜色将在背景和文本之间交换，使用淡色颜色突出显示选定段，如下所示：
 
- ![](ios7-ui-images/segmentedcontrol.png "Sample UISegmentedControl")
+ ![示例 UISegmentedControl](ios7-ui-images/segmentedcontrol.png)
 
 此外， `UISegmentedControlStyle` iOS 7 中已弃用。
 
@@ -84,7 +84,7 @@ IOS 7 中的分段控件是透明的，并且支持的色调颜色。 淡色颜�
 
 选择器视图的 API 在很大程度上保持不变;但是，iOS 7 设计指导原则现在应以内联方式展示选取器视图，而不是显示为在屏幕底部或新控制器中推入到导航控制器堆栈上的新控制器的输入视图。 此操作可在系统日历应用中查看：
 
- ![](ios7-ui-images/inlinepicker.png "This can be seen in the system calendar app")
+ ![此项可在系统日历应用中查看](ios7-ui-images/inlinepicker.png)
 
 ### <a name="uisearchdisplaycontroller"></a>UISearchDisplayController
 
@@ -92,7 +92,7 @@ IOS 7 中的分段控件是透明的，并且支持的色调颜色。 淡色颜�
 
 以下屏幕截图显示了中的搜索栏 `UISearchDisplayController` ：
 
- ![](ios7-ui-images/searchbar.png "Sample UISearchDisplayController")
+ ![示例 UISearchDisplayController](ios7-ui-images/searchbar.png)
 
 ### <a name="uitableview"></a>UITableView
 
@@ -102,7 +102,7 @@ IOS 7 中的分段控件是透明的，并且支持的色调颜色。 淡色颜�
 
 已更改的分组样式已经更新，内容现在延伸到屏幕边缘，如下所示：
 
- ![](ios7-ui-images/table1.png "Sample Grouped Table Style")
+ ![示例分组表样式](ios7-ui-images/table1.png)
 
 #### <a name="separatorinset"></a>SeparatorInset
 
@@ -114,13 +114,13 @@ cell.SeparatorInset = new UIEdgeInsets (0, 50, 0, 0);
 
 这会在表视图中生成缩进的单元格，如下所示：
 
- ![](ios7-ui-images/separatorinset.png "Sample UITableView SeparatorInset")
+ ![UITableView SeparatorInset 示例](ios7-ui-images/separatorinset.png)
 
 #### <a name="table-button-styles"></a>表按钮样式
 
 在表视图中使用的各种按钮都已更改。 以下屏幕截图显示了编辑模式下的表视图：
 
- ![](ios7-ui-images/table2.png "This screenshot presents a table view in editing mode")
+ ![此屏幕快照在编辑模式下显示了表视图](ios7-ui-images/table2.png)
 
 ### <a name="additional-control-changes"></a>其他控件更改
 
@@ -146,7 +146,7 @@ iOS 7 设计为允许应用程序利用整个屏幕。 视图控制器现在显�
 
  `TopLayoutGuide`和用作 `BottomLayoutGuide` 视图的开始或结束位置的参考，以便内容不会被半透明 `UIKit` 栏重叠，如以下示例中所示：
 
- [![](ios7-ui-images/clipped.png "Sample content not overlapped by a translucent UIKit bar")](ios7-ui-images/clipped.png#lightbox)
+ [![不是由透明的 UIKit 栏重叠的示例内容](ios7-ui-images/clipped.png)](ios7-ui-images/clipped.png#lightbox)
 
 这些 Api 可用于计算视图在屏幕顶部或底部的置换，并相应地调整内容位置：
 
@@ -166,7 +166,7 @@ public override void ViewDidLayoutSubviews ()
 
 我们可以使用以上计算得出的值 `ImageView` ，从屏幕顶部设置置换，使整个图像可见：
 
- [![](ios7-ui-images/good2.png "Example ImageViews displacement from the top of the screen")](ios7-ui-images/good2.png#lightbox)
+ [![屏幕顶部的 ImageViews 置换示例](ios7-ui-images/good2.png)](ios7-ui-images/good2.png#lightbox)
 
 有关工作示例，请参阅[ImageViewer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios7-ui-updates/) 。
 
@@ -179,15 +179,15 @@ public override void ViewDidLayoutSubviews ()
 
 此 API 指定视图的哪些边缘应扩展到全屏，而不考虑半透明度的条形。 在 iOS 7 中，导航栏和工具栏显示在控制器视图上方，与以前的 iOS 版本不同，它们不占用相同空间。 IOS 7 照片应用程序演示了默认 `UIViewController.EdgesForExtendedLayout` 值 `UIRectEdge.All` 。 此设置用内容填充视图中的所有四个边缘，从而创建重叠和全屏效果：
 
- [![](ios7-ui-images/photos.png "Sample EdgesForExtendedLayout")](ios7-ui-images/photos.png#lightbox)
+ [![示例 EdgesForExtendedLayout](ios7-ui-images/photos.png)](ios7-ui-images/photos.png#lightbox)
 
 点击图像会删除条形，并以全屏显示图像：
 
- [![](ios7-ui-images/photos2.png "EdgesForExtendedLayout with the bars removed")](ios7-ui-images/photos2.png#lightbox)
+ [![删除了条带的 EdgesForExtendedLayout](ios7-ui-images/photos2.png)](ios7-ui-images/photos2.png#lightbox)
 
 由于全屏内容是默认内容，因此，为 iOS 6 配置的应用程序将具有剪裁视图的一部分，如以下屏幕截图所示：
 
- [![](ios7-ui-images/clipped.png "Apps configured for iOS 6 will have part of the view clipped, as in this screenshot")](ios7-ui-images/clipped.png#lightbox)
+ [![为 iOS 6 配置的应用将包含已剪裁的视图的一部分，如以下屏幕截图所示](ios7-ui-images/clipped.png)](ios7-ui-images/clipped.png#lightbox)
 
 修改 `UIViewController.EdgesForExtendedLayout` 属性将针对此行为进行调整。 我们可以指定视图不填充任何边缘，因此我们的视图将避免在导航或工具栏（每个方向）所占用的空间中显示内容：
 
@@ -199,7 +199,7 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) {
 
 在我们的应用程序中，我们会看到视图再次重新定位，使整个图像可见：
 
- [![](ios7-ui-images/good.png "Example with whole image visible")](ios7-ui-images/good.png#lightbox)
+ [![整个图像可见的示例](ios7-ui-images/good.png)](ios7-ui-images/good.png#lightbox)
 
 请注意，虽然 `TopLayoutGuide/BottomLayoutGuide` 和 api 的作用 `EdgesForExtendedLayout` 类似，但它们的作用是用于填充不同的目标。 `EdgesForExtendedLayout`默认情况下，更改此设置可能会修复为 iOS 6 设计的应用程序中的剪辑视图，但良好的 iOS 7 设计应遵循全屏幕美观，并提供全屏查看体验，并依赖 `TopLayoutGuide` 并 `BottomLayoutGuide` 适当地将旨在操纵的内容定位到用户的舒适位置。
 
@@ -209,7 +209,7 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) {
 
 状态栏和导航栏是透明的。 状态栏是透明的，而工具栏和导航栏是半透明且模糊的，可以在用户界面中表达深度。 以下屏幕截图显示了这种模糊和透明度，其中，集合视图的蓝色背景色在状态和导航栏中显示，为其提供浅蓝色外观：
 
- ![](ios7-ui-images/transparent-navbar.png "Sample Status and Navigation Bar blurring")
+ ![示例状态和导航栏模糊](ios7-ui-images/transparent-navbar.png)
 
 #### <a name="status-bar-styles"></a>状态栏样式
 
@@ -226,7 +226,7 @@ public override UIStatusBarStyle PreferredStatusBarStyle ()
 
 这将导致状态栏显示如下：
 
- ![](ios7-ui-images/light-status-bar.png "Sample Status Bar")
+ ![示例状态栏](ios7-ui-images/light-status-bar.png)
 
 若要将状态栏从视图控制器的代码中隐藏，请重写 `PrefersStatusBarHidden` ，如下所示：
 
@@ -239,7 +239,7 @@ public override bool PrefersStatusBarHidden ()
 
 这将隐藏状态栏：
 
- ![](ios7-ui-images/status-bar-hidden.png "Status Bar hidden")
+ ![隐藏状态栏](ios7-ui-images/status-bar-hidden.png)
 
 ### <a name="tint-color"></a>淡色颜色
 
@@ -247,7 +247,7 @@ public override bool PrefersStatusBarHidden ()
 
 例如，以下屏幕截图显示了将导航控制器的视图上的色调颜色更改为紫色的效果：
 
- ![](ios7-ui-images/tint-color.png "Purple tint color on a navigation controllers view")
+ ![导航控制器视图上的紫色淡色颜色](ios7-ui-images/tint-color.png)
 
 当设置为时，可以将淡色颜色应用于图像 `RenderingMode` `UIImageRenderingMode.AlwaysTemplate` 。
 
@@ -258,7 +258,7 @@ public override bool PrefersStatusBarHidden ()
 
 在 iOS 7 中，用户可以在系统设置中指定文本大小。 对于动态类型，会动态调整字体，使其看起来很好，而不考虑大小。 `UIFont.PreferredFontForTextStyle`应使用来获取为用户控制的大小优化的字体。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍 iOS 7 中对用户界面元素所做的更改。 它将检查对 UIKit 中的视图和控件所做的几项更改，同时突出显示视觉对象更改以及相关 Api 更改。 最后，它引入了新的 Api 来处理全屏内容、新的淡色颜色支持和动态类型。
 

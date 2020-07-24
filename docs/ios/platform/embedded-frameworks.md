@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2018
-ms.openlocfilehash: cf74c31b149c24bc6e515c0f00803a60b10d5d1c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 690aaf81ee2600bd792a36f14b81df3d15e2d21b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032538"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930268"
 ---
 # <a name="embedded-frameworks-in-xamarinios"></a>Xamarin 中的嵌入式框架
 
@@ -20,7 +20,7 @@ _本文档介绍应用程序开发人员如何在其应用程序中嵌入用户�
 
 使用 iOS 8.0 Apple，可以创建嵌入框架，以便在应用扩展和 Xcode 中的主应用之间共享代码。
 
-Xamarin 9.0 添加了对在 Xamarin iOS 应用中使用这些嵌入式框架（使用 Xcode 创建）的支持。 *不 **能从任何类型的** Xamarin iOS 项目创建嵌入的框架，只会使用现有的本机（目标-C）框架。*
+Xamarin 9.0 添加了对在 Xamarin iOS 应用中使用这些嵌入式框架（使用 Xcode 创建）的支持。 ***不**能从任何类型的 Xamarin iOS 项目创建嵌入的框架，只会使用现有的本机（目标-C）框架。*
 
 可以通过两种方法在 Xamarin 中使用框架：
 
@@ -34,17 +34,17 @@ Xamarin 9.0 添加了对在 Xamarin iOS 应用中使用这些嵌入式框架（�
 
 - 从上下文菜单添加本机引用
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 右键单击 "项目" 并浏览以添加本机引用
 
-![](embedded-frameworks-images/xam-native-refs.png "Select Add native references in Visual Studio for Mac")
+![选择 "添加本机引用 Visual Studio for Mac](embedded-frameworks-images/xam-native-refs.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 右键单击 "项目" 并浏览以添加本机引用
 
-![](embedded-frameworks-images/vs-native-refs.png "Select Add native references in Visual Studio")
+![选择 "在 Visual Studio 中添加本机引用"](embedded-frameworks-images/vs-native-refs.png)
 
 -----
 
@@ -73,4 +73,4 @@ Xamarin 9.0 添加了对在 Xamarin iOS 应用中使用这些嵌入式框架（�
 - `--mono:static`：静态链接到 Mono 运行时。
 - `--mono:framework`：将 Mono 运行时作为框架的链接。
 
-将 Mono 运行时链接为框架的一种情况是，即使对于不带扩展的应用程序，也要减小可执行文件大小，以克服 Apple 强制执行的任何大小限制。 作为参考，Mono 运行时为每个体系结构添加大约 1.7 MB （与 Xamarin 8.12 相比，其版本不同，甚至在应用之间有所不同）。 Mono 框架每个体系结构大约增加了 2.3 MB，这意味着，对于没有任何扩展的单体系结构应用程序，使应用程序与 Mono 运行时作为框架进行链接会将可执行文件收缩 ~ 1.7 MB，但会添加 ~ 2.3 MB 框架，从而在大约 0.6 MB 的应用一起或者中。
+将 Mono 运行时链接为框架的一种情况是，即使对于不带扩展的应用程序，也要减小可执行文件大小，以克服 Apple 强制执行的任何大小限制。 作为参考，Mono 运行时为每个体系结构添加大约 1.7 MB （与 Xamarin 8.12 相比，其版本不同，甚至在应用之间有所不同）。 Mono 框架每个体系结构大约增加了 2.3 MB，这意味着，对于没有任何扩展的单体系结构应用程序，使应用程序与 Mono 运行时作为框架进行链接会将可执行文件收缩 ~ 1.7 MB，但添加 ~ 2.3 MB 框架，这将导致大约 0.6 MB 的应用一起或者。

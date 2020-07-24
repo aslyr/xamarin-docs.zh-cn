@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: d7491af1ced4e8e0309bb3e22298d33ee5a042be
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 25de402742978ed9d2a4e16e87d786a014f596a0
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571540"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933767"
 ---
 # <a name="changes-to-storekit-in-ios-6"></a>iOS 6 中对 StoreKit 的更改
 
@@ -34,7 +34,7 @@ IOS6 中存储工具包的主要变化是这两项新功能：
 IOS 中的全新应用内购买功能允许用户查看产品信息并从应用中购买或下载产品。
 之前的应用程序必须触发 iTunes、App Store 或 Ibooks store 色情，这会导致用户离开原始应用程序。 完成后，此新功能会自动将用户返回到应用。
 
-[![](changes-to-storekit-images/image1.png "Automatically returning to an app after purchase")](changes-to-storekit-images/image1.png#lightbox)
+[![在购买后自动返回到应用](changes-to-storekit-images/image1.png)](changes-to-storekit-images/image1.png#lightbox)
 
 如何使用此方法的示例包括：
 
@@ -88,7 +88,7 @@ void Buy (int productId)
 
 运行时，应用程序看起来像下面的屏幕截图–下载或购买完全在以下范围内 `SKStoreProductViewController` ：
 
-[![](changes-to-storekit-images/image2.png "The app looks like this when running")](changes-to-storekit-images/image2.png#lightbox)
+[![此应用在运行时如下所示](changes-to-storekit-images/image2.png)](changes-to-storekit-images/image2.png#lightbox)
 
 ### <a name="supporting-older-operating-systems"></a>支持较早的操作系统
 
@@ -125,7 +125,7 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (6,0)) {
 
 对于发布的应用程序，可以轻松地在 iTunes Connect 中找到**APPLE ID** ：
 
-[![](changes-to-storekit-images/image3.png "Finding the Apple ID in iTunes Connect")](changes-to-storekit-images/image3.png#lightbox)
+[![在 iTunes Connect 中查找 Apple ID](changes-to-storekit-images/image3.png)](changes-to-storekit-images/image3.png#lightbox)
 
  <a name="Search_API"></a>
 
@@ -185,7 +185,7 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 在 iOS 6 中，Apple 提供了服务器交付的产品的变化形式：它们会在其服务器上托管你的内容文件。 这使得生成服务器交付的产品变得更加简单，因为你无需运行单独的服务器，并且存储工具包提供了你之前必须自行编写的后台下载功能。 若要利用 Apple 托管，请为新的应用内购买产品启用内容托管，并修改应用商店工具包代码以利用它。 然后，使用 Xcode 构建产品内容文件，并将其上传到 Apple 的服务器进行审核和发布。
 
-[![](changes-to-storekit-images/image4.png "The build and deliver process")](changes-to-storekit-images/image4.png#lightbox)
+[![生成和交付过程](changes-to-storekit-images/image4.png)](changes-to-storekit-images/image4.png#lightbox)
 
 使用应用商店，*通过托管内容*提供应用内购买需要以下设置和配置：
 
@@ -198,11 +198,11 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 ### <a name="sample-code"></a>代码示例
 
-示例项目*HostedNonConsumables* （在 StoreKitiOS6 中）使用托管内容。 该应用提供了两个 "书籍" 章节用于销售，其内容托管在 Apple 的服务器上。 内容由文本文件和图像组成，但在实际应用程序中可以使用更复杂的内容。
+示例项目*HostedNonConsumables* （StoreKitiOS6.zip）使用托管内容。 该应用提供了两个 "书籍" 章节用于销售，其内容托管在 Apple 的服务器上。 内容由文本文件和图像组成，但在实际应用程序中可以使用更复杂的内容。
 
 在购买过程中和之后，应用如下所示：
 
- [![](changes-to-storekit-images/image5.png "The app looks like this before, during and after a purchase")](changes-to-storekit-images/image5.png#lightbox)
+ [![在购买过程中和之后，应用如下所示](changes-to-storekit-images/image5.png)](changes-to-storekit-images/image5.png#lightbox)
 
 下载文本文件和图像，并将其复制到应用程序的文档目录。 有关可用于应用程序存储的不同目录的详细信息，请参阅[文件系统文档](~/ios/app-fundamentals/file-system.md)。
 
@@ -210,19 +210,19 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 创建将使用 Apple 内容托管的新产品时，请确保选择**不**需要的产品类型。 其他产品类型不支持内容承载。 此外，不应为销售的*现有*产品启用内容托管;只为新产品打开内容托管。
 
- [![](changes-to-storekit-images/image6.png "Select the Non-Consumable product type")](changes-to-storekit-images/image6.png#lightbox)
+ [![选择非可耗用产品类型](changes-to-storekit-images/image6.png)](changes-to-storekit-images/image6.png#lightbox)
 
 输入**产品 ID**。 稍后在为此产品创建内容时，将需要此 ID。
 
- [![](changes-to-storekit-images/image7.png "Enter a Product ID")](changes-to-storekit-images/image7.png#lightbox)
+ [![输入产品 ID](changes-to-storekit-images/image7.png)](changes-to-storekit-images/image7.png#lightbox)
 
 内容托管在详细信息部分中进行设置。 在应用内购买活动之前，如果想要取消，请取消选中 "**使用 Apple 提供主机内容**" 复选框（即使你已上传了一些测试内容）。 但是，在应用内购买后，不能删除内容托管。
 
- [![](changes-to-storekit-images/image8.png "Hosting content with Apple")](changes-to-storekit-images/image8.png#lightbox)
+ [![通过 Apple 托管内容](changes-to-storekit-images/image8.png)](changes-to-storekit-images/image8.png#lightbox)
 
 启用托管内容后，该产品将进入 "**等待上传**状态" 并显示以下消息：
 
- [![](changes-to-storekit-images/image9.png "The product will enter Waiting for Upload status and show this message")](changes-to-storekit-images/image9.png#lightbox)
+ [![该产品将进入等待上传状态并显示此消息](changes-to-storekit-images/image9.png)](changes-to-storekit-images/image9.png#lightbox)
 
 应使用 Xcode 创建内容包，并使用存档工具上传该内容包。 下一节创建中提供了用于创建内容包的说明 **。.PKG 文件**。
 
@@ -249,17 +249,17 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 首先从菜单中选择 "**文件" > "新建项目**"，然后选择 "**应用内购买内容**"：
 
- [![](changes-to-storekit-images/image10.png "Choose In-App Purchase Content")](changes-to-storekit-images/image10.png#lightbox)
+ [![选择应用内购买内容](changes-to-storekit-images/image10.png)](changes-to-storekit-images/image10.png#lightbox)
 
 输入 "**产品名称**" 和 "**公司标识符**"，以使 "**捆绑标识符**" 与在 "此产品的 ITunes CONNECT" 中输入的**产品 ID**匹配。
 
-[![](changes-to-storekit-images/image11.png "Enter the  Name and Identifier")](changes-to-storekit-images/image11.png#lightbox)
+[![输入名称和标识符](changes-to-storekit-images/image11.png)](changes-to-storekit-images/image11.png#lightbox)
 
 现在，你将拥有一个空白**的应用内购买内容**项目。 你可以右键单击并**添加文件 ...** 或将它们拖动到**项目导航器**中。 确保**ContentVersion**正确（应从1.0 开始，但如果稍后选择更新内容，请记得增加内容）。
 
 此屏幕截图显示了 Xcode，其中包含项目中包含的内容文件和主窗口中显示的 info.plist 项：
 
-[![](changes-to-storekit-images/image12.png "This screenshot shows Xcode with the content files included in the project and the plist entries visible in the main window")](changes-to-storekit-images/image12.png#lightbox)
+[![此屏幕截图显示了 Xcode，其中包含项目中包含的内容文件和主窗口中显示的 info.plist 条目](changes-to-storekit-images/image12.png)](changes-to-storekit-images/image12.png#lightbox)
 
 添加了所有内容文件后，你可以保存此项目并稍后再次编辑它或开始上载过程。
 
@@ -267,20 +267,20 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 上传内容包的最简单方法是通过**Xcode 存档工具**。 从菜单中选择要开始的**产品 > 存档**：
 
-![](changes-to-storekit-images/image13.png "Choose Archiven")
+![选择 Archiven](changes-to-storekit-images/image13.png)
 
 内容包随后将显示在存档中，如下所示。
 "存档类型" 和图标显示此行是**应用内购买内容存档**。 单击 "**验证 ...** " 检查内容包是否有错误，而不实际执行上传。
 
-[![](changes-to-storekit-images/image14.png "Validate the package")](changes-to-storekit-images/image14.png#lightbox)
+[![验证包](changes-to-storekit-images/image14.png)](changes-to-storekit-images/image14.png#lightbox)
 
 用 iTunes Connect 凭据登录：
 
-[![](changes-to-storekit-images/image15.png "Login with your iTunes Connect credentials")](changes-to-storekit-images/image15.png#lightbox)
+[![用 iTunes 连接凭据登录](changes-to-storekit-images/image15.png)](changes-to-storekit-images/image15.png#lightbox)
 
 选择正确的应用程序和应用内购买，以将此内容与相关联：
 
-[![](changes-to-storekit-images/image16.png "Choose the correct application and in-app purchase to associate this content with")](changes-to-storekit-images/image16.png#lightbox)
+[![选择正确的应用程序和应用内购买，以将此内容与关联](changes-to-storekit-images/image16.png)](changes-to-storekit-images/image16.png#lightbox)
 
 应会看到类似于以下屏幕截图的消息：
 
@@ -296,23 +296,23 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 再次登录：
 
-[![](changes-to-storekit-images/image15.png "Login in")](changes-to-storekit-images/image15.png#lightbox)
+[![登录](changes-to-storekit-images/image15.png)](changes-to-storekit-images/image15.png#lightbox)
 
 选择正确的应用程序和应用内购买记录，将内容上传到：
 
-[![](changes-to-storekit-images/image20.png "Choose the application and in-app purchase record")](changes-to-storekit-images/image20.png#lightbox)
+[![选择应用程序和应用内购买记录](changes-to-storekit-images/image20.png)](changes-to-storekit-images/image20.png#lightbox)
 
 正在上载文件，请稍候：
 
-[![](changes-to-storekit-images/image21.png "The content upload dialog")](changes-to-storekit-images/image21.png#lightbox)
+[![内容上传对话框](changes-to-storekit-images/image21.png)](changes-to-storekit-images/image21.png#lightbox)
 
 上传完成后，将显示一条消息，告知你已将内容提交到 App Store。
 
-[![](changes-to-storekit-images/image22.png "An example successful upload message")](changes-to-storekit-images/image22.png#lightbox)
+[![成功上传消息示例](changes-to-storekit-images/image22.png)](changes-to-storekit-images/image22.png#lightbox)
 
 完成此操作后，当你返回 iTunes Connect 上的产品页时，将显示包详细信息并**准备好提交**状态。 当产品处于此状态时，您可以在沙盒环境中开始测试。 不需要在沙盒中 "提交" 产品进行测试。
 
-[![](changes-to-storekit-images/image23.png "iTunes Connect it will show the package details and be in Ready to Submit status")](changes-to-storekit-images/image23.png#lightbox)
+[![iTunes Connect 它将显示包详细信息，并准备好提交状态](changes-to-storekit-images/image23.png)](changes-to-storekit-images/image23.png#lightbox)
 
 可能需要一些时间（例如 几分钟）上传存档和更新 iTunes Connect 状态之间的时间。 您可以单独提交产品以供查看，也可以与应用程序二进制文件一起提交。 仅在 Apple 正式批准后，它才会在生产应用商店中提供，以供在应用中购买。
 
@@ -320,7 +320,7 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 使用 Xcode 和存档工具创建并上载托管的内容包意味着你永远看不到包本身的内容。 为示例应用程序创建的包中的文件和目录类似于下面的屏幕截图，根目录中的**info.plist**文件和**目录**子目录中的产品文件：
 
-[![](changes-to-storekit-images/image24.png "The plist file in the root and the product files in a Contents subdirectory")](changes-to-storekit-images/image24.png#lightbox)
+[![根目录中的 info.plist 文件和目录子目录中的产品文件](changes-to-storekit-images/image24.png)](changes-to-storekit-images/image24.png#lightbox)
 
 请注意包的目录结构（特别是子目录中文件的位置）， `Contents` 因为你将需要了解此信息以便从设备上的包中提取文件。
 
@@ -340,7 +340,7 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 在此图中演示了具有托管内容的产品购买和下载时发生的事件序列：
 
-[![](changes-to-storekit-images/image25.png "The sequence of events that occurs when a product with hosted content is purchased and download")](changes-to-storekit-images/image25.png#lightbox)
+[![当购买包含托管内容的产品并下载时所发生的事件的顺序](changes-to-storekit-images/image25.png)](changes-to-storekit-images/image25.png#lightbox)
 
 1. 新产品可在 iTunes Connect 中创建，并启用托管内容。 实际内容单独构建在 Xcode 中（就像将文件拖到文件夹中），然后存档并上载到 iTunes （无需编码）。 然后，每个产品都将提交以供审批。 在示例代码中，这些产品 Id 是硬编码的，但如果将可用产品列表存储在远程服务器上，则使用 Apple 托管内容更灵活，以便在将新产品和内容提交到 iTunes Connect 时可以进行更新。
 1. 当用户购买产品时，将在付款队列中放置一个交易以便进行处理。
@@ -376,7 +376,7 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 示例代码中的类之间的交互显示在此图中（特定于托管内容购买的代码显示为绿色）：
 
-[![](changes-to-storekit-images/image26.png "Hosted content purchases is shown in green in this diagram")](changes-to-storekit-images/image26.png#lightbox)
+[![此关系图中以绿色显示托管内容购买](changes-to-storekit-images/image26.png)](changes-to-storekit-images/image26.png#lightbox)
 
 本部分的其余部分显示了已使用这些类的示例代码：
 
@@ -515,7 +515,7 @@ public void SaveDownload (SKDownload download)
 
 Apple 的 iCloud 备份指导原则表明，不应备份从服务器轻松还原的非用户内容（因为它会*不*必要地占用 iCloud 存储空间）。 有关设置备份属性的详细信息，请参阅[文件系统](~/ios/app-fundamentals/file-system.md)文档。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了 iOS6 中的应用商店工具包的两项新功能：从应用中购买 iTunes 和其他内容，并利用 Apple 服务器来托管你自己的应用内购买。 本简介应与现有的[应用内购买文档](~/ios/platform/in-app-purchasing/index.md)一起阅读，以全面了解如何实现商店工具包功能。
 

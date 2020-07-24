@@ -10,12 +10,12 @@ ms.date: 02/09/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9e763184f38719cda4526eb0a2dfdf39b2191a03
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 60f53fb00786b183f36f7cfefa6af9062bb682db
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137691"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938159"
 ---
 # <a name="integrating-with-xamarinforms"></a>与集成Xamarin.Forms
 
@@ -25,7 +25,7 @@ _创建响应触摸和元素的 SkiaSharp 图形 Xamarin.Forms_
 
 SkiaSharp 图形可通过多种方式与的其余部分集成 Xamarin.Forms 。 可以将 SkiaSharp 画布和元素合并到 Xamarin.Forms 同一个页面上，甚至将 Xamarin.Forms 元素放置在 SkiaSharp 画布的顶部：
 
-![](integration-images/integrationexample.png "Selecting a color with sliders")
+![使用滑块选择颜色](integration-images/integrationexample.png)
 
 在中创建交互式 SkiaSharp 图形的另一种方法 Xamarin.Forms 是通过触摸。
 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)计划中的第二页有权**点击 "切换填充**"。 它绘制一个简单的圆点 &mdash; ，无需填充，并 &mdash; 通过点击切换填充。 [`TapToggleFillPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs)类显示如何更改 SkiaSharp 图形以响应用户输入。
@@ -240,7 +240,7 @@ public partial class ColorExplorePage : ContentPage
 
 但若要了解这两种模型，最好的方法是自行试验：
 
-[![](integration-images/colorexplore-large.png "Triple screenshot of the Color Explore page")](integration-images/colorexplore-small.png#lightbox "Triple screenshot of the Color Explore page")
+[!["颜色浏览" 页的三个屏幕截图](integration-images/colorexplore-large.png)](integration-images/colorexplore-small.png#lightbox ""颜色浏览" 页的三个屏幕截图")
 
 ## <a name="related-links"></a>相关链接
 

@@ -10,12 +10,12 @@ ms.date: 12/13/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c7fdecdb0ce209c88dbe9e6f4e6e6588ec4fd3fd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: be8dd5d29aebf29395885d650fbd28082013d0d1
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139914"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929159"
 ---
 # <a name="listview-appearance"></a>ListView 外观
 
@@ -114,7 +114,7 @@ static PageTypeGroup()
 
 下面的屏幕截图显示了生成的 UI：
 
-![](customizing-list-appearance-images/grouping-depth.png "ListView Grouping Example")
+![ListView 分组示例](customizing-list-appearance-images/grouping-depth.png)
 
 ### <a name="customizing-grouping"></a>自定义分组
 
@@ -183,7 +183,7 @@ ListView HeaderList = new ListView()
 </ListView>
 ```
 
-![](customizing-list-appearance-images/header-default.png "ListView with Header and Footer")
+![具有页眉和页脚的 ListView](customizing-list-appearance-images/header-default.png)
 
 若要创建自定义的页眉和页脚，请定义页眉和页脚视图：
 
@@ -204,7 +204,7 @@ ListView HeaderList = new ListView()
 </ListView.Footer>
 ```
 
-![](customizing-list-appearance-images/header-custom.png "ListView with Customized Header and Footer")
+![带有自定义页眉和页脚的 ListView](customizing-list-appearance-images/header-custom.png)
 
 ## <a name="scrollbar-visibility"></a>滚动条可见性
 
@@ -235,7 +235,7 @@ XAML
 <ListView x:Name="SeparatorDemoListView" SeparatorVisibility="Default" />
 ```
 
-![](customizing-list-appearance-images/separator-default.png "ListView with Default Row Separators")
+![具有默认行分隔符的 ListView](customizing-list-appearance-images/separator-default.png)
 
 “无”：
 
@@ -251,7 +251,7 @@ XAML
 <ListView x:Name="SeparatorDemoListView" SeparatorVisibility="None" />
 ```
 
-![](customizing-list-appearance-images/separator-none.png "ListView without Row Separators")
+![不带行分隔符的 ListView](customizing-list-appearance-images/separator-none.png)
 
 还可以通过属性设置分隔线的颜色 `SeparatorColor` ：
 
@@ -267,7 +267,7 @@ XAML
 <ListView x:Name="SeparatorDemoListView" SeparatorColor="Green" />
 ```
 
-![](customizing-list-appearance-images/separator-custom.png "ListView with Green Row Separators")
+![带有绿色行分隔符的 ListView](customizing-list-appearance-images/separator-custom.png)
 
 > [!NOTE]
 > 加载后在 Android 上设置任一属性会导致 `ListView` 性能大幅下降。
@@ -295,7 +295,7 @@ XAML
 <ListView x:Name="RowHeightDemoListView" RowHeight="100" />
 ```
 
-![](customizing-list-appearance-images/height-custom.png "ListView with Fixed Row Height")
+![具有固定行高的 ListView](customizing-list-appearance-images/height-custom.png)
 
 ### <a name="uneven-rows"></a>非对称行
 
@@ -313,7 +313,7 @@ XAML
 <ListView x:Name="RowHeightDemoListView" HasUnevenRows="true" />
 ```
 
-![](customizing-list-appearance-images/height-uneven.png "ListView with Uneven Rows")
+![包含非对称行的 ListView](customizing-list-appearance-images/height-uneven.png)
 
 ### <a name="resize-rows-at-runtime"></a>在运行时调整行的大小
 
@@ -334,7 +334,7 @@ void OnImageTapped (object sender, EventArgs args)
 
 此 `OnImageTapped` 事件处理程序将执行，以响应 [`Image`](xref:Xamarin.Forms.Image) 正在攻入的单元中的，并增加 `Image` 单元格中显示的大小，使其易于查看。
 
-![](customizing-list-appearance-images/dynamic-row-resizing.png "ListView with Runtime Row Resizing")
+![运行时行大小调整的 ListView](customizing-list-appearance-images/dynamic-row-resizing.png)
 
 > [!WARNING]
 > 过度运行时行调整大小可能会导致性能下降。

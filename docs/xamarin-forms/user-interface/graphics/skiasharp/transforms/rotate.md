@@ -10,12 +10,12 @@ ms.date: 03/23/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 520c4c3b61049bf17c2c964523714db196da6839
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 533cb607cc2c47bf108d5e03733f31ebfc2fe475
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84132179"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934129"
 ---
 # <a name="the-rotate-transform"></a>旋转转换
 
@@ -25,7 +25,7 @@ _探索 SkiaSharp 旋转转换可能出现的效果和动画_
 
 旋转变换后，SkiaSharp 图形对象会断开与水平轴和垂直轴对齐的约束：
 
-![](rotate-images/rotateexample.png "Text rotated around a center")
+![围绕中心旋转的文本](rotate-images/rotateexample.png)
 
 对于围绕点（0，0）旋转图形对象，SkiaSharp 同时支持 [`RotateDegrees`](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single)) 方法和 [`RotateRadians`](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single)) 方法：
 
@@ -63,7 +63,7 @@ using (SKPaint textPaint = new SKPaint
 
 由于旋转围绕画布的左上角，因此对于在此程序中设置的大多数角度，文本将在屏幕上旋转：
 
-[![](rotate-images/basicrotate-small.png "Triple screenshot of the Basic Rotate page")](rotate-images/basicrotate-large.png#lightbox "Triple screenshot of the Basic Rotate page")
+[![基本旋转页面的三向屏幕截图](rotate-images/basicrotate-small.png)](rotate-images/basicrotate-large.png#lightbox "基本旋转页面的三向屏幕截图")
 
 通常，您需要使用以下版本的和方法围绕指定的透视点旋转中心内容 [`RotateDegrees`](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single,System.Single,System.Single)) [`RotateRadians`](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single,System.Single,System.Single)) ：
 
@@ -91,7 +91,7 @@ using (SKPaint textPaint = new SKPaint
 
 现在，文本围绕用于放置文本的点进行旋转，这是文本基线的水平中心：
 
-[![](rotate-images/centeredrotate-small.png "Triple screenshot of the Centered Rotate page")](rotate-images/centeredrotate-large.png#lightbox "Triple screenshot of the Centered Rotate page")
+[![居中旋转页面的三向屏幕截图](rotate-images/centeredrotate-small.png)](rotate-images/centeredrotate-large.png#lightbox "居中旋转页面的三向屏幕截图")
 
 与方法的居中版本一样 `Scale` ，调用的居中版本 `RotateDegrees` 是一个快捷方式。 下面是方法：
 
@@ -145,7 +145,7 @@ canvas.DrawText(Title, 0, 0, textPaint);
 
 通常有多种方法可用于合并旋转和转换。 **旋转的文本**页会创建以下显示内容：
 
-[![](rotate-images/rotatedtext-small.png "Triple screenshot of the Rotated Text page")](rotate-images/rotatedtext-large.png#lightbox "Triple screenshot of the Rotated Text page")
+[![旋转文本页的三向屏幕截图](rotate-images/rotatedtext-small.png)](rotate-images/rotatedtext-large.png#lightbox "旋转文本页的三向屏幕截图")
 
 下面是 `PaintSurface` 类的处理程序 [`RotatedTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/RotatedTextPage.cs) ：
 
@@ -369,7 +369,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 虽然这种情况相当粗糙，但时钟当然是有效的：
 
-[![](rotate-images/uglyanalogclock-small.png "Triple screenshot of the Ugly Analog Clock Text page")](rotate-images/uglyanalogclock-large.png#lightbox "Triple screenshot of the Ugly Analog page")
+[!["有缺陷的模拟时钟文本" 页的三向屏幕截图](rotate-images/uglyanalogclock-small.png)](rotate-images/uglyanalogclock-large.png#lightbox "极差模拟页面的三向屏幕截图")
 
 若要获得更具吸引力的时钟，请参阅文章[**SkiaSharp 中的 SVG 路径数据**](../curves/path-data.md)。
 

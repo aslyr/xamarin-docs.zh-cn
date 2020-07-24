@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: bcf293b29d6ddca10ab60ae061491b60f1e30520
-ms.sourcegitcommit: b751605179bef8eee2df92cb484011a7dceb6fda
+ms.openlocfilehash: a70095c5897163d3699d03ec42c33826f6d40419
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77495635"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997145"
 ---
 # <a name="ios-platform-features-overview"></a>iOS 平台功能概述
 
@@ -20,9 +20,9 @@ ms.locfileid: "77495635"
 
 ## <a name="ios-releases"></a>iOS 版本
 
-|  |  |
+| 发布 | 说明 |
 |-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [IOS 13 简介](~/ios/platform/ios13/index.md) | 本文档介绍 Xamarin （iOS）。|
+| [iOS 13 简介](~/ios/platform/ios13/index.md) | 本文档介绍 Xamarin （iOS）。|
 | [iOS 12 简介](~/ios/platform/introduction-to-ios12/index.md) | 本文档介绍生成 Xamarin iOS 应用程序时可使用的 iOS 12 功能。|
 | [iOS 11 简介](~/ios/platform/introduction-to-ios11/index.md) | 本文档介绍 iOS 11 和 Xcode 9 中的新增功能和更新功能，如 ARKit、Core ML、Core NFC、拖放、MapKit、PDFKit、SiriKit 和视觉。 它链接到介绍如何将这些功能与 Xamarin 一起使用的指南。 |
 | [iOS 10 简介](~/ios/platform/introduction-to-ios10/index.md) | iOS 10 包括几个新的 Api 和服务，可让你开发具有新特性和功能的应用程序。 使用 iOS 10，应用具有新功能，例如扩展地图、消息、手机和 Siri。 本部分演示了如何在 Xamarin iOS 应用程序中利用这些功能的方式。 |
@@ -41,7 +41,7 @@ IOS 10 中的新 CallKit API 提供了一种方法，让 VOIP 应用与 iPhone U
 
 ## <a name="contacts-and-contactsui"></a>[联系人和 ContactsUI](~/ios/platform/contacts.md)
 
-引入 iOS 9 后，Apple 发布了两个新框架（`Contacts` 和 `ContactsUI`），用来替换 iOS 8 及更早版本使用的现有通讯簿和通讯簿 UI 框架。
+随着 iOS 9 的引入，Apple 发布了两个新框架， `Contacts` 以及 `ContactsUI` 替换 iOS 8 及更早版本使用的现有通讯簿和通讯簿 UI 框架。
 
 ## <a name="document-picker"></a>[文档选取器](~/ios/platform/document-picker.md)
 
@@ -53,9 +53,9 @@ iOS 中内置了两个日历相关的应用程序：日历应用程序和提醒�
 
 ## <a name="ios-extensions"></a>[iOS 扩展](~/ios/platform/extensions.md)
 
-IOS 8 中引入的扩展是由 iOS 在诸如**通知中心**内的标准上下文中提供的专用 `UIViewControllers`，这是由用户请求的自定义键盘类型来执行专用输入或其他上下文（例如编辑照片，其中扩展可提供特殊效果筛选器）。
+IOS 8 中引入的扩展是专用的， `UIViewControllers` 由 ios 在诸如**通知中心**内的标准上下文中提供，作为用户请求的自定义键盘类型，以执行专用输入或其他上下文（例如编辑照片，其中扩展可以提供特殊效果筛选器）。
 
-## <a name="graphics-and-animation-in-ios"></a>[IOS 中的图形和动画](~/ios/platform/graphics-animation-ios/index.md)
+## <a name="graphics-and-animation-in-ios"></a>[iOS 中的图形和动画](~/ios/platform/graphics-animation-ios/index.md)
 
 IOS 中的图形和动画涵盖了 iOS 中的核心图形概念，如 CoreImage、核心图形和核心动画。
 
@@ -99,7 +99,7 @@ Passbook 是适用于 Iphone 和 iPod 的应用，适用于 iOS 6。 它存储�
 
 ## <a name="request-app-review"></a>[请求应用评审](~/ios/platform/request-app-review.md)
 
-新的 iOS 10.3，`RequestReview()` 方法允许 iOS 应用要求用户对其进行评级或查看。 在用户已从应用商店安装的装运应用中调用此方法时，iOS 10 将处理开发人员的整个评级和审核过程。 由于此过程由应用商店策略控制，因此可能会显示警报，也可能不显示。
+新到 iOS 10.3，该 `RequestReview()` 方法允许 iOS 应用要求用户对其进行评级或查看。 在用户已从应用商店安装的装运应用中调用此方法时，iOS 10 将处理开发人员的整个评级和审核过程。 由于此过程由应用商店策略控制，因此可能会显示警报，也可能不显示。
 
 ## <a name="search-apis"></a>[搜索 API](~/ios/platform/search/index.md)
 
@@ -133,21 +133,21 @@ Touch ID 和人脸 ID 是自 iOS 8 以后可用的生物识别身份验证系统
 
 用户通知框架是 iOS 10 的新功能，它允许传递和处理本地和远程通知。 使用此框架，应用或应用扩展可以通过指定一组条件（如位置或一天的时间）来计划本地通知的传送。
 
-## <a name="wide-color"></a>[广泛的颜色](~/ios/platform/wide-color.md)
+## <a name="wide-color"></a>[宽域颜色](~/ios/platform/wide-color.md)
 
 iOS 10 和 macOS Sierra 增强了对整个系统（包括核心图形、核心图像、金属和 AVFoundation 等框架）中的扩展范围像素格式和宽色域颜色空间的支持。 通过在整个图形堆栈中提供此行为，可进一步减轻对具有宽颜色显示的设备的支持。
 
 ## <a name="binding-objective-c"></a>[绑定 Objective-C](binding-objective-c/index.md)
 
-使用 iOS 时，可能会遇到需要使用第三方目标-C 库的情况。 在这些情况下，可以使用 Monotouch.dialog 的绑定项目创建到本机C#目标 C 库的绑定。 该项目使用的工具与用于引入 iOS Api 的工具相同C#。 本文档介绍如何绑定目标 C Api。
+使用 iOS 时，可能会遇到需要使用第三方目标-C 库的情况。 在这些情况下，可以使用 Monotouch.dialog 的绑定项目来创建到本机目标 C 库的 c # 绑定。 该项目使用的工具与用于将 iOS Api 引入 c # 的工具相同。 本文档介绍如何绑定目标 C Api。
 
 ## <a name="bind-ios-swift-libraries"></a>[绑定 iOS Swift 库](binding-swift/index.md)
 
-本文档介绍如何创建C#对 Swift 代码的绑定，使其能够在 Xamarin iOS 应用程序中使用本机库和 CocoaPods。
+本文档介绍如何创建对 Swift 代码的 c # 绑定，使其能够在 Xamarin iOS 应用程序中使用本机库和 CocoaPods。
 
 ## <a name="referencing-native-libraries"></a>[引用本机库](native-interop.md)
 
-Xamarin.iOS 支持本机 C 库和 Objective-C 库链接。 本文档介绍如何将本机 C 库与你的 Xamarin iOS 项目链接在一起。
+Xamarin 支持与本机 C 库和目标 C 库链接。 本文档介绍如何将本机 C 库与你的 Xamarin iOS 项目链接在一起。
 
 ## <a name="embedded-frameworks"></a>[嵌入式框架](embedded-frameworks.md)
 

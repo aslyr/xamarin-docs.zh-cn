@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: dd453ab5397e409cc9a7ccef9b4b845d47f32a8b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1b2b9cdc08f20e2867d51c3b9c413f45c7cbdf69
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573724"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939316"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>发布到 Apple TV App Store
 
@@ -47,7 +47,7 @@ Apple 还会维护 Apple TV 应用商店提交提示的列表。 可在[在 App 
 
 [ITunes Connect](https://itunesconnect.apple.com/WebObjects/iTunesConnect.woa)是一套基于 web 的工具，用于在 Apple TV 应用商店上管理 tvOS 应用。 你的 Xamarin tvOS 应用需要在 iTunes Connect 中正确设置和配置，然后才能提交到 Apple 进行审核并最终在 Apple TV 应用商店中发布以供销售或免费应用。
 
-请执行以下操作：
+执行以下操作：
 
 1. 验证 iTunes Connect 的**协议、税款和银行**部分中是否具备恰当的最新协议，以便发布免费或付费的 iOS 应用程序。
 2. 为应用程序创建新的**ITunes Connect 记录**，并指定其**显示名称**（如 Apple TV 应用商店中所示）。
@@ -125,7 +125,7 @@ tvOS 使用*预配配置文件*来控制如何部署特定的应用程序版本�
 
 默认情况下，当你创建新的 tvOS 应用时，将自动为**调试**和**发布**部署创建_生成配置_。 在执行要提交到 Apple 的应用的最终版本之前，需要对基本**版本**配置进行一些修改。
 
-请执行以下操作：
+执行以下操作：
 
 1. 右键单击 "**解决方案资源管理器**" 和 "选择"**选项**中的**项目名称**以将其打开以进行编辑。
 2. 如果要以 tvOS 的特定版本为目标，请在 "**生成**  >  **iOS SDK 版本**" 下选择该版本。 对于 tvOS 支持的预览版本，请将此值设置为 "**默认**值"。
@@ -145,17 +145,17 @@ tvOS 使用*预配配置文件*来控制如何部署特定的应用程序版本�
 
 1. 在 Visual Studio for Mac 中选择“发布 | 设备”**** 配置：
 
-    ![](app-store-publishing-images/buildxs01new.png "Select the Release configuration")
-2. 在 "**生成**" 菜单中，选择 "**存档以供发布**"：
+    ![选择 "发布" 配置](app-store-publishing-images/buildxs01new.png)
+2. 在“生成”菜单中，选择“存档以供发布”：
 
-    [![](app-store-publishing-images/buildxs02new.png "Select Archive for Publishing")](app-store-publishing-images/buildxs02new.png#lightbox)
-3. 存档创建完成后，将显示“存档”**** 视图：
+    [![选择“存档以供发布”](app-store-publishing-images/buildxs02new.png)](app-store-publishing-images/buildxs02new.png#lightbox)
+3. 存档创建完成后，将显示“存档”视图：
 
-    [![](app-store-publishing-images/buildxs03new.png "The Archives view")](app-store-publishing-images/buildxs03new.png#lightbox)
+    [![存档视图](app-store-publishing-images/buildxs03new.png)](app-store-publishing-images/buildxs03new.png#lightbox)
 
 ### <a name="sign-and-distribute-your-app"></a>签名和分发应用
 
-每次生成用于存档的应用程序时，都会自动打开“存档视图”**，显示所有已存档的项目（按解决方案分组）。 默认情况下，此视图只显示当前打开的解决方案。 若要查看拥有存档的所有解决方案，请单击“显示所有存档”**** 选项。
+每次生成用于存档的应用程序时，都会自动打开“存档视图”，显示所有已存档的项目（按解决方案分组）。 默认情况下，此视图只显示当前打开的解决方案。 若要查看拥有存档的所有解决方案，请单击“显示所有存档”选项。
 
 建议保留部署到客户（App Store 或企业部署）的存档，以便可在稍后的日期表示生成的任何调试信息。
 
@@ -163,19 +163,19 @@ tvOS 使用*预配配置文件*来控制如何部署特定的应用程序版本�
 
 1. 选择 "**签名并分发 ...**"，如下所示：
 
-    [![](app-store-publishing-images/buildxs04new.png ", Select theSign and Distribute...")](app-store-publishing-images/buildxs04new.png#lightbox)
+    [![，选择 "theSign"，然后选择 "分发 ..."](app-store-publishing-images/buildxs04new.png)](app-store-publishing-images/buildxs04new.png#lightbox)
 2. 这将打开发布向导。 选择用于创建包的**App Store**分发通道，并打开应用程序加载程序：
 
-    [![](app-store-publishing-images/distribute01.png "Select the App Store distribution channel")](app-store-publishing-images/distribute01.png#lightbox)
+    [![选择应用商店分发通道](app-store-publishing-images/distribute01.png)](app-store-publishing-images/distribute01.png#lightbox)
 3. 在 "预配配置文件" 屏幕上，选择签名标识和对应的配置文件，或者用其他标识重新签名：
 
-    [![](app-store-publishing-images/distribute02.png "Select the signing identity and corresponding provisioning profile")](app-store-publishing-images/distribute02.png#lightbox)
+    [![选择签名标识和相应的预配配置文件](app-store-publishing-images/distribute02.png)](app-store-publishing-images/distribute02.png#lightbox)
 4. 验证包的详细信息，再单击“发布”**** 以保存 `.ipa` 包：
 
-    [![](app-store-publishing-images/distribute03.png "Verify the details of the package")](app-store-publishing-images/distribute03.png#lightbox)
+    [![验证包的详细信息](app-store-publishing-images/distribute03.png)](app-store-publishing-images/distribute03.png#lightbox)
 5. 保存 `.ipa` 后，应用即可通过应用加载程序上传到 iTunes Connect：
 
-    [![](app-store-publishing-images/distribute04.png "Uploaded to iTunes Connect via the Application Loader")](app-store-publishing-images/distribute04.png#lightbox)
+    [![已通过应用程序加载程序上传到 iTunes Connect](app-store-publishing-images/distribute04.png)](app-store-publishing-images/distribute04.png#lightbox)
 
 创建分发生成并将其存档后，现可将应用程序提交到 iTunes Connect。
 
@@ -189,15 +189,15 @@ tvOS 使用*预配配置文件*来控制如何部署特定的应用程序版本�
 
 1. 选择“提交应用”**，单击“选择”** 按钮：
 
-    [![](app-store-publishing-images/publishvs01.png "Select Deliver Your App")](app-store-publishing-images/publishvs01.png#lightbox)
+    [![选择 "交付应用"](app-store-publishing-images/publishvs01.png)](app-store-publishing-images/publishvs01.png#lightbox)
 
 2. 选择前面创建的 zip 或 IPA 文件，单击“确定”**** 按钮。
 3. 应用加载程序将验证文件：
 
-    [![](app-store-publishing-images/publishvs02.png "The Application Loader validation screen")](app-store-publishing-images/publishvs02.png#lightbox)
+    [![应用程序加载程序验证屏幕](app-store-publishing-images/publishvs02.png)](app-store-publishing-images/publishvs02.png#lightbox)
 4. 单击“下一步”** 按钮，应用程序将针对 App Store 进行验证：
 
-    [![](app-store-publishing-images/publishvs03.png "The application being validated against the App Store")](app-store-publishing-images/publishvs03.png#lightbox)
+    [![要针对应用商店验证的应用程序](app-store-publishing-images/publishvs03.png)](app-store-publishing-images/publishvs03.png#lightbox)
 5. 单击“发送”**** 按钮，将应用程序发送到 Apple 以供审核。
 6. 文件成功上传后，应用程序加载程序将通知你。
 
@@ -207,7 +207,7 @@ tvOS 使用*预配配置文件*来控制如何部署特定的应用程序版本�
 
 如果重新登录到 iTunes Connect，并从可用应用列表中选择应用，iTunes Connect 中的状态现在应显示为 "正在**等待审核**" （它可能会在处理过程中暂时读取 "**上载接收**"）：
 
-[![](app-store-publishing-images/image21.png "The status in iTunes Connect showing Waiting for Review")](app-store-publishing-images/image21.png#lightbox)
+[![ITunes Connect 中的状态显示正在等待审阅](app-store-publishing-images/image21.png)](app-store-publishing-images/image21.png#lightbox)
 
 <a name="Troubleshooting"></a>
 
@@ -217,7 +217,7 @@ tvOS 使用*预配配置文件*来控制如何部署特定的应用程序版本�
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了如何配置、生成和提交 Apple TV App Store 发布的应用。 首先，介绍创建并安装分发配置文件所需的步骤。 接下来，本演练逐步介绍如何使用 Visual Studio for Mac 来创建分发版本。 最后，该示例演示了如何使用 iTunes Connect 和 Xcode 存档工具将应用程序提交到 Apple TV App Store。
 

@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3ebd3940cbd61342977bde60addc773460a08854
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3f85c6528a1bf599c38a39b4e88400bc8b0c4f05
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84569564"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931984"
 ---
 # <a name="containerized-microservices"></a>容器化微服务
 
@@ -23,7 +23,7 @@ ms.locfileid: "84569564"
 
 尤其是在云的时代，不能轻松缩放单个组件。 单一应用程序包含特定于域的功能，通常由功能层划分，如前端、业务逻辑和数据存储。 通过将整个应用程序克隆到多台计算机来扩展单一应用程序，如图8-1 所示。
 
-![](containerized-microservices-images/monolithicapp.png "Monolithic application scaling approach")
+![单一应用程序缩放方法](containerized-microservices-images/monolithicapp.png)
 
 **图 8-1**：单一应用程序缩放方法
 
@@ -33,7 +33,7 @@ ms.locfileid: "84569564"
 
 与横向扩展的巨大单一应用程序相比，微服务可以独立扩展。 这意味着，可以缩放特定功能区域，这需要更多的处理能力或网络带宽来支持需求，而不是不必要地扩展应用程序的其他区域。 图8-2 说明了这种方法，在此方法中，微服务是单独部署和缩放的，它跨计算机创建服务的实例。
 
-![](containerized-microservices-images/microservicesapp.png "Microservices application scaling approach")
+![微服务应用程序缩放方法](containerized-microservices-images/microservicesapp.png)
 
 **图 8-2**：微服务应用程序缩放方法
 
@@ -67,7 +67,7 @@ ms.locfileid: "84569564"
 
 容器和虚拟机之间存在很多相似之处，如图8-3 所示。
 
-![](containerized-microservices-images/containersvsvirtualmachines.png "Microservices application scaling approach")
+![微服务应用程序缩放方法](containerized-microservices-images/containersvsvirtualmachines.png)
 
 **图 8-3**：虚拟机和容器的比较
 
@@ -87,7 +87,7 @@ ms.locfileid: "84569564"
 
 EShopOnContainers 参考应用程序使用 Docker 来托管四个容器化后端微服务，如图8-4 所示。
 
-![](containerized-microservices-images/microservicesarchitecture.png "eShopOnContainers reference application back-end microservices")
+![eShopOnContainers 引用应用程序后端微服务](containerized-microservices-images/microservicesarchitecture.png)
 
 **图 8-4**： eShopOnContainers 引用应用程序后端微服务
 
@@ -101,7 +101,7 @@ EShopOnContainers 参考应用程序使用 Docker 来托管四个容器化后端
 
 EShopOnContainers 移动应用与容器化后端微服务通信，并使用*直接的客户端到微服务*通信，如图8-5 所示。
 
-![](containerized-microservices-images/directclienttomicroservicecommunication.png "Microservices application scaling approach")
+![微服务应用程序缩放方法](containerized-microservices-images/directclienttomicroservicecommunication.png)
 
 **图 8-5**：直接的客户端到微服务通信
 
@@ -120,19 +120,19 @@ EShopOnContainers 移动应用与容器化后端微服务通信，并使用*直�
 
 事件总线允许微服务之间的发布-订阅通信，无需彼此明确地识别组件，如图8-6 所示。
 
-![](containerized-microservices-images/eventbus.png "Publish-subscribe with an event bus")
+![发布-订阅事件总线](containerized-microservices-images/eventbus.png)
 
 **图8-6：** 发布-订阅事件总线
 
 从应用程序的角度来看，事件总线只是通过接口公开的发布-订阅通道。 但是，实现事件总线的方式可能会有所不同。 例如，事件总线实现可使用 RabbitMQ、Azure 服务总线或其他服务总线，如 NServiceBus 和 MassTransit。 图8-7 显示了如何在 eShopOnContainers 引用应用程序中使用事件总线。
 
-![](containerized-microservices-images/microservicesarchitecturewitheventbus.png "Asynchronous event-driven communication in the reference application")
+![引用应用程序中异步事件驱动的通信](containerized-microservices-images/microservicesarchitecturewitheventbus.png)
 
 **图8-7：** 引用应用程序中异步事件驱动的通信
 
 使用 RabbitMQ 实现的 eShopOnContainers 事件总线提供一对多的异步发布-订阅功能。 这意味着在发布事件之后，可以有多个订阅服务器侦听同一事件。 图8-9 说明了这种关系。
 
-![](containerized-microservices-images/eventdrivencommunication.png "One-to-many communication")
+![一对多通信](containerized-microservices-images/eventdrivencommunication.png)
 
 **图 8-9**：一对多通信
 

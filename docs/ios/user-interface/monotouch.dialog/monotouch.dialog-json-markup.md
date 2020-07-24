@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: fc6066155a4171b106e772c1fe6fe7ee3e5c67cf
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 023a85451ca83df6c15e8b3bbc3169f2884a0a46
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573503"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936560"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json 标记
 
@@ -77,7 +77,7 @@ ms.locfileid: "84573503"
 
 上述标记生成以下 UI：
 
- [![](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png "The UI created by the given markup")](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png#lightbox)
+ [![给定标记创建的 UI](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png)](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png#lightbox)
 
 树中的每个元素都可以包含属性 `"id"` 。 可以在运行时使用 JsonElement 索引器引用单个节或元素。 类似于下面这样：
 
@@ -126,7 +126,7 @@ Root 元素包含以下值：
 
  <a name="type"></a>
 
-### <a name="type"></a>type
+### <a name="type"></a>类型
 
 `"root"`当此部分出现在节（用于嵌套控制器）时，必须设置为。
 
@@ -148,7 +148,7 @@ Root 元素包含以下值：
 
  <a name="header"></a>
 
-### <a name="header"></a>标头
+### <a name="header"></a>标头的值开始缓存响应
 
 如果存在，则标题文本显示为节的标题。
 
@@ -206,7 +206,7 @@ Root 元素包含以下值：
 }
 ```
 
-呈现元素可以同时显示两个字符串，一个是标题，另一个是值。 如何呈现这些字符串取决于样式，可使用属性对其进行设置 `"style"` 。 默认值将在左侧显示标题，在右侧显示值。 有关更多详细信息，请参阅 style 部分。 颜色是使用 "#" 符号后跟十六进制数字（表示红色、绿色、蓝色和 alpha 值的值）进行编码的。 内容可以采用表示 RGB 或 RGBA 值的缩写形式（3或4个十六进制数字）进行编码。 或表示 RGB 或 RGBA 值的长格式（6或8位数字）。 Short 版本是两次写入同一十六进制数字的简写形式。 因此，"#1bc" 常量看作为 red = 0x11，绿 = 0xbb，blue = 0xcc。 如果 alpha 值不存在，则颜色不透明。 下面是一些示例：
+呈现元素可以同时显示两个字符串，一个是标题，另一个是值。 如何呈现这些字符串取决于样式，可使用属性对其进行设置 `"style"` 。 默认值将在左侧显示标题，在右侧显示值。 有关更多详细信息，请参阅 style 部分。 颜色是使用 "#" 符号后跟十六进制数字（表示红色、绿色、蓝色和 alpha 值的值）进行编码的。 内容可以采用表示 RGB 或 RGBA 值的缩写形式（3或4个十六进制数字）进行编码。 或表示 RGB 或 RGBA 值的长格式（6或8位数字）。 Short 版本是两次写入同一十六进制数字的简写形式。 因此，"#1bc" 常量看作为 red = 0x11，绿 = 0xbb，blue = 0xcc。 如果 alpha 值不存在，则颜色不透明。 以下是一些示例：
 
 ```json
 "background": "#f00"
@@ -257,7 +257,7 @@ Root 元素包含以下值：
 
 ### <a name="linebreak"></a>linebreak
 
-确定如何分离行。 可能的值为：
+确定如何分离行。 可能的值包括：
 
 - `character-wrap`
 - `clip`
@@ -300,7 +300,7 @@ class Foo {
 ### <a name="style"></a>样式
 
 样式确定将用于呈现内容并且与 UITableViewCellStyle 枚举值相对应的单元格样式的类型。
-可能的值为：
+可能的值包括：
 
 - `"default"`
 - `"value1"`
@@ -322,7 +322,7 @@ class Foo {
 
  <a name="value"></a>
 
-### <a name="value"></a>value
+### <a name="value"></a>值
 
 要在呈现元素上显示的辅助值。 此设置会影响此的布局 `"style"` 。 可以通过设置和自定义字体和颜色 `"detailfont"` `"detailcolor"` 。
 
@@ -330,7 +330,7 @@ class Foo {
 
 ## <a name="boolean-elements"></a>布尔值元素
 
-布尔值元素应将类型设置为 `"bool"` ，可以包含 `"caption"` 要显示的，并且 `"value"` 设置为 true 或 false。 如果 `"on"` 设置了和 `"off"` 属性，则假定它们是图像。 相对于应用程序中的当前工作目录解析映像。 如果要引用绑定相关的文件，可以使用 `"~"` 作为快捷方式来表示应用程序包目录。 例如， `"~/favorite.png"` 将是包含在绑定文件中的最喜爱的 .png。 例如：
+布尔值元素应将类型设置为 `"bool"` ，可以包含 `"caption"` 要显示的，并且 `"value"` 设置为 true 或 false。 如果 `"on"` 设置了和 `"off"` 属性，则假定它们是图像。 相对于应用程序中的当前工作目录解析映像。 如果要引用绑定相关的文件，可以使用 `"~"` 作为快捷方式来表示应用程序包目录。 例如， `"~/favorite.png"` 将是包含在绑定文件中的 favorite.png。 例如：
 
 ```json
 { 
@@ -350,7 +350,7 @@ class Foo {
 
  <a name="type"></a>
 
-### <a name="type"></a>type
+### <a name="type"></a>类型
 
 类型可以设置为 `"boolean"` 或 `"checkbox"` 。 如果设置为布尔值，则它将使用 UISlider 或映像（如果同时 `"on"` `"off"` 设置了和）。 如果设置为复选框，则将使用 checkbox。 `"group"`属性可用于标记属于特定组的布尔元素。 如果包含根的属性为根，则这非常有用，它 `"group"` 将使用属于同一组的所有布尔值（或复选框）的计数来汇总结果。
 
@@ -397,7 +397,7 @@ class Foo {
 
 ### <a name="capitalization"></a>大小写
 
-要用于该项的大小写样式。 可能的值为：
+要用于该项的大小写样式。 可能的值包括：
 
 - `all`
 - `none`
@@ -414,7 +414,7 @@ class Foo {
 
 ### <a name="keyboard"></a>键盘
 
-用于数据输入的键盘类型。 可能的值为：
+用于数据输入的键盘类型。 可能的值包括：
 
 - `ascii`
 - `decimal`
@@ -436,7 +436,7 @@ class Foo {
 
 ### <a name="return-key"></a>返回键
 
-用于返回键的标签。 可能的值为：
+用于返回键的标签。 可能的值包括：
 
 - `default`
 - `done`
@@ -452,7 +452,7 @@ class Foo {
 
  <a name="value"></a>
 
-### <a name="value"></a>value
+### <a name="value"></a>值
 
 条目的初始值
 
