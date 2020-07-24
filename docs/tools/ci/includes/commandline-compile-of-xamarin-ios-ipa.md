@@ -7,7 +7,7 @@ ms.lasthandoff: 10/21/2019
 ms.locfileid: "69529112"
 ---
 
-以下命令行为 iPhone 指定解决方案**SOLUTION_FILE**的发布版本。 可以通过在命令行上指定 `IpaPackageDir` 属性来设置 IPA 的位置：
+以下命令行用于指定适用于 iPhone **SOLUTION_FILE**的解决方案的发布版本。 可以通过 `IpaPackageDir` 在命令行上指定属性来设置 IPA 的位置：
 
 - 在 Mac 上，使用**xbuild**：
 
@@ -30,6 +30,6 @@ ms.locfileid: "69529112"
           /t:Build MyProject.sln
   ```
 
-**msbuild**不会自动扩展命令行传入 `$( )` 表达式。 出于此原因，建议您在命令行中设置 `IpaPackageDir` 时使用完整路径。
+**msbuild**不会自动扩展 `$( )` 命令行传入的表达式。 出于此原因，建议您在命令行设置时使用完整路径 `IpaPackageDir` 。
 
-有关 `IpaPackageDir` 属性的更多详细信息，请参阅[iOS 9.8 的发行说明](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/xamarin.ios_9/xamarin.ios_9.8.md#new-msbuild-property-ipapackagedir-to-customize-ipa-output-location)。
+有关该属性的更多详细信息，请参阅[iOS 9.8 的发行说明](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/xamarin.ios_9/xamarin.ios_9.8.md#new-msbuild-property-ipapackagedir-to-customize-ipa-output-location) `IpaPackageDir` 。
