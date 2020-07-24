@@ -10,12 +10,12 @@ ms.date: 02/26/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8c4fc732082a77a2e471465af448a487862b513c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a15ca2e11dabb73054f5f0a1dc3f79342d8ce7f5
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136287"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938601"
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>设置选取器的 ItemsSource 属性
 
@@ -178,7 +178,7 @@ detailsLabel.SetBinding(Label.TextProperty, "SelectedMonkey.Details");
 
 [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem)属性数据绑定到类型为的 `SelectedMonkey` 已连接视图模型的属性 `Monkey` 。 因此，当用户选择中的项时 [`Picker`](xref:Xamarin.Forms.Picker) ， `SelectedMonkey` 属性将设置为所选 `Monkey` 对象。 `SelectedMonkey`对象数据按和视图显示在用户界面中 [`Label`](xref:Xamarin.Forms.Label) [`Image`](xref:Xamarin.Forms.Image) ：
 
-![](populating-itemssource-images/monkeys.png "Picker Item Selection")
+![选取器项选择](populating-itemssource-images/monkeys.png)
 
 > [!NOTE]
 > 请注意， [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) 和 [`SelectedIndex`](xref:Xamarin.Forms.Picker.SelectedIndex) 属性默认支持双向绑定。

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: d92de14dc42f7c20a1f25b6454623c7ad4441e8a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 605f82c90f98bb4b50e5b630a53721d186ff35a1
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032289"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935754"
 ---
 # <a name="transactions-and-verification-in-xamarinios"></a>Xamarin 中的事务和验证
 
@@ -29,7 +29,7 @@ ms.locfileid: "73032289"
 
 ### <a name="implementing-restore"></a>执行还原
 
-"用户界面**还原**" 按钮调用以下方法，该方法在 `SKPaymentQueue`上触发 RestoreCompletedTransactions。
+"用户界面**还原**" 按钮调用以下方法，该方法将在上触发 RestoreCompletedTransactions `SKPaymentQueue` 。
 
 ```csharp
 public void Restore()
@@ -41,7 +41,7 @@ public void Restore()
 
 StoreKit 会将还原请求异步发送到 Apple 的服务器。   
    
-由于 `CustomPaymentObserver` 注册为事务观察程序，因此当 Apple 的服务器响应时，它将接收消息。 响应将包含此用户在该应用程序中执行的所有事务（跨其所有设备）。 代码循环遍历每个事务，检测还原状态并调用 `UpdatedTransactions` 方法来处理该状态，如下所示：
+由于 `CustomPaymentObserver` 已注册为事务观察程序，因此当 Apple 的服务器响应时，它将接收消息。 响应将包含此用户在该应用程序中执行的所有事务（跨其所有设备）。 代码循环遍历每个事务，检测还原状态，并调用 `UpdatedTransactions` 方法来处理该状态，如下所示：
 
 ```csharp
 // called when the transaction status is updated
@@ -67,9 +67,9 @@ default:
 }
 ```
 
-如果用户没有可恢复的产品，则不会调用 `UpdatedTransactions`。   
+如果没有为用户提供可还原的产品， `UpdatedTransactions` 则不会调用。   
    
-在示例中还原给定事务的最简单代码可能执行的操作与进行购买时相同，只不过 `OriginalTransaction` 属性用于访问产品 ID：
+在示例中还原给定事务的最简单的可能代码执行的操作与进行购买时相同，只 `OriginalTransaction` 是该属性用于访问产品 ID：
 
 ```csharp
 public void RestoreTransaction (SKPaymentTransaction transaction)
@@ -82,11 +82,11 @@ public void RestoreTransaction (SKPaymentTransaction transaction)
 }
 ```
 
-更复杂的实现可能会检查其他 `transaction.OriginalTransaction` 属性，如原始日期和接收号码。 此信息将对某些产品类型（如订阅）有用。
+更复杂的实现可以检查其他 `transaction.OriginalTransaction` 属性，例如原始日期和接收号。 此信息将对某些产品类型（如订阅）有用。
 
 #### <a name="restore-completion"></a>还原完成
 
-当还原过程完成（成功或失败）时，`CustomPaymentObserver` 有两个附加方法，StoreKit 将调用该方法，如下所示：
+`CustomPaymentObserver`具有两个附加方法，当还原过程完成（成功或失败）时，StoreKit 将调用该方法，如下所示：
 
 ```csharp
 public override void PaymentQueueRestoreCompletedTransactionsFinished (SKPaymentQueue queue)
@@ -103,13 +103,13 @@ public override void RestoreCompletedTransactionsFailedWithError (SKPaymentQueue
 
 ## <a name="securing-purchases"></a>保护购买
 
-本文档中的两个示例使用 `NSUserDefaults` 来跟踪购买：   
+本文档中的两个示例用于 `NSUserDefaults` 跟踪购买：   
    
- **耗材**–信贷购买的 "平衡" 是一种简单的 `NSUserDefaults` 整数值，每次购买都会递增。   
+ **耗材**–信贷购买的 "余额" 是一个简单的 `NSUserDefaults` 整数值，每次购买都会递增。   
    
- **非耗材**–每个照片筛选器购买都存储为 `NSUserDefaults`中的键值对。
+ **非耗材**–每个照片筛选器购买都存储为中的键值对 `NSUserDefaults` 。
 
-使用 `NSUserDefaults` 可使示例代码简单简单，但不提供非常安全的解决方案，因为在技术上相投的用户可能会更新设置（绕过付款机制）。   
+使用 `NSUserDefaults` 可以简化示例代码，但不提供非常安全的解决方案，因为在技术上相投的用户可能会更新设置（绕过付款机制）。   
    
 注意：实际应用程序应采用安全的机制来存储不受用户篡改限制的已购买内容。 这可能涉及加密和/或其他技术（包括远程服务器身份验证）。   
    
@@ -121,7 +121,7 @@ public override void RestoreCompletedTransactionsFailedWithError (SKPaymentQueue
 
 到目前为止，本文档中的示例仅包含与应用商店服务器直接通信的应用程序，以执行采购事务，这些事务可解锁已编码到应用程序中的功能或功能。   
    
-Apple 通过允许其他服务器独立验证采购收据提供额外级别的购买安全性，这在作为购买的一部分交付数字内容之前验证请求（例如数字书籍或杂志）。   
+Apple 通过允许其他服务器独立验证采购收据提供额外级别的购买安全性，这在作为购买的一部分（例如数字书籍或杂志）交付数字内容之前验证请求会很有用。   
    
  **内置产品**–如本文档中的示例，要购买的产品作为应用程序附带的功能存在。 应用内购买使用户能够访问功能。
 产品 Id 进行硬编码。   
@@ -137,7 +137,7 @@ Apple 通过允许其他服务器独立验证采购收据提供额外级别的�
 
 由于产品是远程交付的，因此还可以添加更多产品（不更新应用程序代码），例如添加更多书籍或新的杂志问题。 为了使应用程序可以发现这些新闻产品并将其显示给用户，其他服务器应存储和传递此信息。   
    
-[![](transactions-and-verification-images/image38.png "Getting Prices for Server-Delivered Products")](transactions-and-verification-images/image38.png#lightbox)   
+[![获取服务器交付产品的价格](transactions-and-verification-images/image38.png)](transactions-and-verification-images/image38.png#lightbox)   
    
 1. 产品信息必须存储在多个位置：你的服务器上和 iTunes Connect。 此外，每个产品都具有与之关联的内容文件。 这些文件将在成功购买后交付。   
    
@@ -151,21 +151,21 @@ Apple 通过允许其他服务器独立验证采购收据提供额外级别的�
    
 6. ITunes 服务器用有效的产品信息（说明和当前价格）进行响应。   
    
-7. 应用程序的 `SKProductsRequestDelegate` 将向用户传递要显示的产品信息。
+7. 向应用程序 `SKProductsRequestDelegate` 传递要显示给用户的产品信息。
 
 #### <a name="purchasing-server-delivered-products"></a>购买服务器交付的产品
 
 由于远程服务器需要某种方式来验证内容请求是否有效（例如，已为支付了），因此会将回执信息传递到身份验证。 远程服务器会将该数据转发给 iTunes 进行验证，如果成功，则包括对应用程序的响应中的产品内容。   
    
- [![](transactions-and-verification-images/image39.png "Purchasing Server-Delivered Products")](transactions-and-verification-images/image39.png#lightbox)   
+ [![购买服务器交付的产品](transactions-and-verification-images/image39.png)](transactions-and-verification-images/image39.png#lightbox)   
    
-1. 应用程序将 `SKPayment` 添加到队列。 如果需要，将提示用户输入其 Apple ID，并要求确认付款。   
+1. 应用将添加 `SKPayment` 到队列中。 如果需要，将提示用户输入其 Apple ID，并要求确认付款。   
    
 2. StoreKit 将请求发送到服务器进行处理。   
    
 3. 事务完成后，服务器将使用事务回执进行响应。   
    
-4. `SKPaymentTransactionObserver` 子类接收并处理接收。 由于产品必须从服务器下载，因此应用程序会向远程服务器发起网络请求。   
+4. `SKPaymentTransactionObserver`子类接收并处理该接收。 由于产品必须从服务器下载，因此应用程序会向远程服务器发起网络请求。   
    
 5. 下载请求附带收据数据，以便远程服务器可以验证它是否有权访问内容。 应用程序的网络客户端将等待对此请求的响应。   
    
@@ -177,15 +177,15 @@ Apple 通过允许其他服务器独立验证采购收据提供额外级别的�
   
 9. 应用程序接收并分析响应，并将产品内容保存到设备的文件系统。   
    
-10. 应用程序启用产品，然后调用 StoreKit 的 `FinishTransaction`。 然后，应用程序可以选择显示购买的内容（例如，显示购买的书籍或杂志问题的第一页）。
+10. 应用程序启用该产品，然后调用 StoreKit 的 `FinishTransaction` 。 然后，应用程序可以选择显示购买的内容（例如，显示购买的书籍或杂志问题的第一页）。
 
-非常大的产品内容文件的替代实现可能只需在步骤中存储事务收据 #9 以便可以快速完成事务，并为用户提供用户界面以下载实际产品内容稍后进行。 后续下载请求可以重新发送存储的收据以访问所需的产品内容文件。
+非常大的产品内容文件的一种替代实现可能只是在步骤中存储事务收据 #9 以便快速完成事务，并为用户提供用户界面，供用户在以后的某个时间下载实际产品内容。 后续下载请求可以重新发送存储的收据以访问所需的产品内容文件。
 
 ### <a name="writing-server-side-receipt-verification-code"></a>正在编写服务器端回执验证代码
 
 使用简单的 HTTP POST 请求/响应（包括工作流关系图中的 #8 #5 步骤）来验证服务器端代码中的回执。   
    
-提取应用中的 `SKPaymentTansaction.TransactionReceipt` 属性。 这是需要发送到 iTunes 进行验证的数据（步骤 #5）。
+`SKPaymentTansaction.TransactionReceipt`在应用程序中提取属性。 这是需要发送到 iTunes 进行验证的数据（步骤 #5）。
 
 Base64 编码事务接收数据（在步骤 #5 或 #6 中）。
 
@@ -197,7 +197,7 @@ Base64 编码事务接收数据（在步骤 #5 或 #6 中）。
 }
 ```
 
-HTTP POST JSON 到[https://buy.itunes.apple.com/verifyReceipt](https://buy.itunes.apple.com/verifyReceipt)用于生产或[https://sandbox.itunes.apple.com/verifyReceipt](https://sandbox.itunes.apple.com/verifyReceipt)用于测试。   
+HTTP 将 JSON 发送到以 [https://buy.itunes.apple.com/verifyReceipt](https://buy.itunes.apple.com/verifyReceipt) 进行生产或 [https://sandbox.itunes.apple.com/verifyReceipt](https://sandbox.itunes.apple.com/verifyReceipt) 测试。   
    
  JSON 响应将包含以下项：
 
@@ -208,6 +208,6 @@ HTTP POST JSON 到[https://buy.itunes.apple.com/verifyReceipt](https://buy.itune
 }
 ```
 
-状态为零表示有效回执。 你的服务器可以继续完成购买产品的内容。 接收密钥包含与应用收到的 `SKPaymentTransaction` 对象具有相同属性的 JSON 字典，因此服务器代码可以查询此字典以检索信息，如 product_id 和购买量。
+状态为零表示有效回执。 你的服务器可以继续完成购买产品的内容。 接收密钥包含的 JSON 字典的属性与应用收到的对象的属性相同 `SKPaymentTransaction` ，因此服务器代码可以查询此字典以检索信息，例如采购 product_id 和数量。
 
 有关其他信息，请参阅 Apple 的[收据验证编程指南](https://developer.apple.com/library/archive/releasenotes/General/ValidateAppStoreReceipt/Introduction.html)文档。

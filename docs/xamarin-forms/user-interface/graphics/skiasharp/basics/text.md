@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ee97ee2aae11e4e54a0d25e80ffd7bce301fa2f3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a98c7210f2e71f6f26d53da3555f3f9b5e016952
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137678"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935975"
 ---
 # <a name="integrating-text-and-graphics"></a>将文本和图形集成
 
@@ -25,7 +25,7 @@ _请参阅如何确定呈现的文本字符串的大小，以将文本与 SkiaSh
 
 本文演示了如何度量文本，如何将文本缩放到特定大小，以及如何将文本与其他图形集成：
 
-![](text-images/textandgraphicsexample.png "Text surrounded by rectangles")
+![矩形周围的文本](text-images/textandgraphicsexample.png)
 
 该图像还包括一个圆角矩形。 SkiaSharp `Canvas` 类包括 [`DrawRect`](xref:SkiaSharp.SKCanvas.DrawRect*) 用于绘制矩形的方法以及 [`DrawRoundRect`](xref:SkiaSharp.SKCanvas.DrawRoundRect*) 用于绘制圆角的矩形。 这些方法允许将矩形定义为 `SKRect` 值或以其他方式定义。
 
@@ -126,7 +126,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 接下来，该方法的其余部分为直接。 它为边框创建另一个 `SKPaint` 对象，并调用 `DrawRoundRect` 两次。 第二个调用使用放大了10个像素的矩形。 第一次调用指定20像素的拐角半径。 第二个角半径为30像素，因此它们看起来是并行的：
 
- [![](text-images/framedtext-small.png "Triple screenshot of the Framed Text page")](text-images/framedtext-large.png#lightbox "Triple screenshot of the Framed Text page")
+ [![分帧文本页的三向屏幕截图](text-images/framedtext-small.png)](text-images/framedtext-large.png#lightbox "分帧文本页的三向屏幕截图")
 
 你可以通过横向打开手机或模拟器来查看文本和帧大小的增加。
 
@@ -134,7 +134,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 可以像处理任何其他图形对象一样处理文本。 一个简单的选项是显示文本字符的轮廓：
 
-[![](text-images/outlinedtext-small.png "Triple screen shot of the Outlined Text page")](text-images/outlinedtext-large.png#lightbox "Triple screenshot of the Outlined Text page")
+[![大纲文本页的三屏幕截图](text-images/outlinedtext-small.png)](text-images/outlinedtext-large.png#lightbox "大纲文本页的三向屏幕截图")
 
 只需通过将对象的 "常规" `Style` 属性 `SKPaint` 从其默认设置更改 `SKPaintStyle.Fill` 为 `SKPaintStyle.Stroke` ，并通过指定笔划宽度来完成此操作。 `PaintSurface`**分级**显示的文本页的处理程序显示了它是如何完成的：
 

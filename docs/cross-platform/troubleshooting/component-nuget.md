@@ -7,12 +7,12 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: davidortinau
 ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: f81df8ac253e53b16c3ab09bf80d66a7b6324854
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b9b771efe338fbcc250aa6e7a83b73f35269d3bf
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571514"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996807"
 ---
 # <a name="updating-component-references-to-nuget"></a>将组件引用更新到 NuGet
 
@@ -27,7 +27,7 @@ ms.locfileid: "84571514"
 
 ## <a name="manually-removing-component-references"></a>手动删除组件引用
 
-15.6 版本的 Visual Studio 和7.4 版本的 Visual Studio for Mac 不再支持项目中的组件。 
+15.6 版本的 Visual Studio 和7.4 版本的 Visual Studio for Mac 不再支持项目中的组件。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -37,7 +37,7 @@ ms.locfileid: "84571514"
 
 从项目中删除组件：
 
-1. 打开 **.csproj** 文件。 为此，请右键单击项目名称，然后选择 "**卸载项目**"。 
+1. 打开 **.csproj** 文件。 为此，请右键单击项目名称，然后选择 "**卸载项目**"。
 
 2. 再次右键单击卸载的项目，然后选择 "**编辑 {你的项目名称}. .csproj**"。
 
@@ -151,7 +151,7 @@ NuGet 包将继续在 "**包**" 节点中列出，并且你的应用程序将照
 
 请注意，"**包**" 选项卡可能为空：
 
-![](component-nuget-images/packages-tab-empty-sml.png)
+![包选项卡](component-nuget-images/packages-tab-empty-sml.png)
 
 _它可能包含 NuGet 依赖项，但可以忽略这些依赖项。_
 
@@ -179,7 +179,7 @@ _它可能包含 NuGet 依赖项，但可以忽略这些依赖项。_
 1. 右键单击 "**包**" 节点，然后选择 "**添加包 ...**"。
 2. 按名称或作者搜索 NuGet 替换：
 
-    ![](component-nuget-images/nuget-search-sml.png)
+    ![NuGet 搜索](component-nuget-images/nuget-search-sml.png)
 
 3. 按 "**添加包**"。
 

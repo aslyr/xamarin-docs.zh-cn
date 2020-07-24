@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c8c54f3d3815e418d2f71960dc7733711cb40ae2
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e82572d88e380997fb2435179dba824c1b3f0c2f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139043"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936183"
 ---
 # <a name="the-path-fill-types"></a>路径填充类型
 
@@ -25,7 +25,7 @@ _发现 SkiaSharp 路径填充类型可能产生的不同效果_
 
 路径中的两个轮廓可以重叠，构成单个等高线的线条可能会重叠。 任何封闭区域都可以进行填充，但您可能不希望填写所有包含的区域。 下面是一个示例：
 
-![](fill-types-images/filltypeexample.png "Five-pointed star partially filles")
+![五角星部分 filles](fill-types-images/filltypeexample.png)
 
 对此有一些控制。 填充算法由的 [`SKFillType`](xref:SkiaSharp.SKPath.FillType) 属性控制 `SKPath` ，您可以将其设置为枚举的成员 [`SKPathFillType`](xref:SkiaSharp.SKPathFillType) ：
 
@@ -173,7 +173,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 通常，路径填充类型只会影响填充，而不会影响笔划，但这两种 `Inverse` 模式会影响填充和笔划。 对于填充，两种 `Inverse` 类型填充区域 oppositely，以使星形外的区域填满。 对于笔划，这两种 `Inverse` 类型的颜色都与笔划不同。 使用这些反转填充类型可能会产生一些奇怪的效果，如 iOS 屏幕截图所示：
 
-[![](fill-types-images/fivepointedstar-small.png "Triple screenshot of the Five-Pointed Star page")](fill-types-images/fivepointedstar-large.png#lightbox "Triple screenshot of the Five-Pointed Star page")
+[![五指星形页面的三向屏幕截图](fill-types-images/fivepointedstar-small.png)](fill-types-images/fivepointedstar-large.png#lightbox "五指星形页面的三向屏幕截图")
 
 Android 屏幕快照显示了典型的偶数和缠绕效果，但笔划和填充的顺序也会影响结果。
 
@@ -226,7 +226,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 使用最少的代码创建了一个有趣的图像：
 
-[![](fill-types-images/overlappingcircles-small.png "Triple screenshot of the Overlapping Circles page")](fill-types-images/overlappingcircles-large.png#lightbox "Triple screenshot of the Overlapping Circles page")
+[![重叠圆圈页面的三向屏幕截图](fill-types-images/overlappingcircles-small.png)](fill-types-images/overlappingcircles-large.png#lightbox "重叠圆圈页面的三向屏幕截图")
 
 ## <a name="related-links"></a>相关链接
 

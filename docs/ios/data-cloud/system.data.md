@@ -1,18 +1,18 @@
 ---
 title: Xamarin 中的 system.object
-description: 本文档介绍了如何使用 system.exception 和 Mono 在 Xamarin iOS 应用程序中访问 SQLite 数据。
+description: 本文档介绍如何使用 System.web 和 Mono.Data.Sqlite.dll 访问 Xamarin iOS 应用程序中的 SQLite 数据。
 ms.prod: xamarin
 ms.assetid: F10C0C57-7BDE-A3F3-B011-9839949D15C8
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: 736d70aebcf861b5557d5f076a42ff0a3dcfc043
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: eb3453c3475fdc2e309a888a1aa1318eccc59228
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569943"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938731"
 ---
 # <a name="systemdata-in-xamarinios"></a>Xamarin 中的 system.object
 
@@ -34,7 +34,7 @@ Xamarin 8.10 添加[了对](xref:System.Data) `Mono.Data.Sqlite.dll` ADO.NET 提
 
 首先，右键单击 "**引用**" 节点，然后选择 "**编辑引用 ...** "，然后 `System.Data` 选择 `Mono.Data.Sqlite` 和：
 
-[![](system.data-images/edit-references-sml.png "Adding new references")](system.data-images/edit-references.png#lightbox)
+[![添加新引用](system.data-images/edit-references-sml.png)](system.data-images/edit-references.png#lightbox)
 
 ### <a name="sample-code"></a>代码示例
 
@@ -139,7 +139,7 @@ using (var addCmd = conn.CreateCommand ()) {
 
 ### <a name="systemdata"></a>System.Data
 
-**System.web**中缺少的功能包含：
+**System.Data.dll**中缺少的功能包括：
 
 - 需要[system.object 的](xref:System.CodeDom)任何内容（例如 [TypedDataSetGenerator](xref:System.Data.TypedDataSetGenerator) ）
 - XML 配置文件支持（例如 [DbProviderConfigurationHandler](xref:System.Data.Common.DbProviderConfigurationHandler) ）。
@@ -152,7 +152,7 @@ using (var addCmd = conn.CreateCommand ()) {
 
 ### <a name="monodatasqlite"></a>Mono. 数据 Sqlite
 
-同时， **Mono** . node.js 不会更改源代码，而是在绑定 Sqlite 3.5 后，可能会遇到多个*运行时*问题。 `Mono.Data.Sqlite.dll` 同时，iOS 8 附带 SQLite 3.8.5。 说到，这两个版本之间的某些内容已发生了变化。
+同时， **Mono.Data.Sqlite.dll**不会发生源代码更改，而是在绑定 SQLite 3.5 后，可能会遇到许多*运行时*问题 `Mono.Data.Sqlite.dll` 。 同时，iOS 8 附带 SQLite 3.8.5。 说到，这两个版本之间的某些内容已发生了变化。
 
 旧版本的 iOS 附带以下版本的 SQLite：
 

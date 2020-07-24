@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 93b4dba3e8543bd2cc2a4f2187f617aae5daff77
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d8ca0dfb533dc5fb0b7442b85de41dcf7c18fec8
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137067"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938536"
 ---
 # <a name="slider-thumb-tap-on-ios"></a>滚动条点击 iOS
 
@@ -48,7 +48,7 @@ slider.On<iOS>().SetUpdateOnTap(true);
 
 结果是，在栏上点击 [`Slider`](xref:Xamarin.Forms.Slider) 可以移动 `Slider` 滚动块并设置 [`Slider.Value`](xref:Xamarin.Forms.Slider.Value) 属性：
 
-![](slider-thumb-images/slider-updateontap.png "Slider Update on Tap enabled")
+![启用了点击的滑块更新](slider-thumb-images/slider-updateontap.png)
 
 ## <a name="related-links"></a>相关链接
 

@@ -127,7 +127,7 @@ namespace MySingleView
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本文介绍了如何在 tvOS 应用程序中设计和使用导航栏。
 

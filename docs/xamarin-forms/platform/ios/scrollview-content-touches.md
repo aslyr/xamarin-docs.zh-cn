@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9b8f743b2c3d7f4b38feb4cfc5015b1113620562
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1161600ad9b587c30ef28be1828fdb9e3b94f665
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137093"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938549"
 ---
 # <a name="scrollview-content-touches-on-ios"></a>ScrollView 内容涉及 iOS
 
@@ -60,7 +60,7 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 
 结果是 [`ScrollView`](xref:Xamarin.Forms.ScrollView) 可以禁止延迟接收内容的接收，因此，在此方案中，会 [`Slider`](xref:Xamarin.Forms.Slider) 接收该笔势，而不是接收的 [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) 页面 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) ：
 
-[![](scrollview-content-touches-images/scrollview-delay-content-touches.png "ScrollView Delay Content Touches Platform-Specific")](scrollview-content-touches-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView Delay Content Touches Platform-Specific")
+[![ScrollView 延迟内容触及特定于平台](scrollview-content-touches-images/scrollview-delay-content-touches.png)](scrollview-content-touches-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView 延迟内容触及特定于平台")
 
 ## <a name="related-links"></a>相关链接
 

@@ -10,12 +10,12 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9fe0d751b1aa1cb609100e43c0f0015fd804327a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0e4300354588e5055e58251caa547a56c751fd94
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128838"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936066"
 ---
 # <a name="visualelement-legacy-color-mode-on-android"></a>Android 上的 VisualElement 旧版颜色模式
 
@@ -53,7 +53,7 @@ _legacyColorModeDisabledButton.On<Android>().SetIsLegacyColorModeEnabled(false);
 
 结果就是可以禁用旧的颜色模式，这样，即使在禁用视图时，用户也仍会保留对视图设置的颜色：
 
-![](legacy-color-mode-images/legacy-color-mode-disabled.png "Legacy color mode disabled")
+![已禁用旧版颜色模式](legacy-color-mode-images/legacy-color-mode-disabled.png)
 
 > [!NOTE]
 > 在 [`VisualStateGroup`](xref:Xamarin.Forms.VisualStateGroup) 视图上设置时，旧的颜色模式完全被忽略。 有关可视状态的详细信息，请[参阅 Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)。

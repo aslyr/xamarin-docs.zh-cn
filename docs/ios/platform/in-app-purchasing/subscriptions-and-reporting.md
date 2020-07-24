@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 5e1019417ff7ac93abfe2396a4acaa76c66d182f
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 534ecb6a2f779875a6934306c7f9956450d880ed
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725366"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938497"
 ---
 # <a name="subscriptions-and-reporting-in-xamarinios"></a>Xamarin 中的订阅和报表
 
@@ -48,19 +48,19 @@ ms.locfileid: "76725366"
 
 验证服务器上的自动可续订订阅时，必须在 JSON 请求中使用应用内购买共享机密。 通过 iTunes Connect 创建/访问共享机密。
 
-从 iTunes Connect 主页中选择 **"我的应用"** ：   
+从 iTunes Connect 主页中选择 **"我的应用"**：   
 
- [![](subscriptions-and-reporting-images/image2.png "Select My Apps")](subscriptions-and-reporting-images/image2.png#lightbox)  
+ [![选择我的应用](subscriptions-and-reporting-images/image2.png)](subscriptions-and-reporting-images/image2.png#lightbox)  
 
 选择一个应用程序，并单击 "**应用内购买**" 选项卡：
 
-[![](subscriptions-and-reporting-images/image6.png "Click on the In-App Purchases tab")](subscriptions-and-reporting-images/image6.png#lightbox)
+[![单击 "应用内购买" 选项卡](subscriptions-and-reporting-images/image6.png)](subscriptions-and-reporting-images/image6.png#lightbox)
 
 从页面底部选择 "**查看或生成共享机密**"：
 
- [![](subscriptions-and-reporting-images/image40.png "Select View or generate a shared secret")](subscriptions-and-reporting-images/image40.png#lightbox)
+ [![选择 "查看或生成共享机密"](subscriptions-and-reporting-images/image40.png)](subscriptions-and-reporting-images/image40.png#lightbox)
 
- [![](subscriptions-and-reporting-images/image41.png "Generate a shared secret")](subscriptions-and-reporting-images/image41.png#lightbox)   
+ [![生成共享机密](subscriptions-and-reporting-images/image41.png)](subscriptions-and-reporting-images/image41.png#lightbox)   
 
 若要使用共享机密，请将其包含在为自动可续订订阅验证应用内购买回执的 JSON 有效负载中，如下所示：
 
@@ -98,7 +98,7 @@ SKPaymentTransaction 对象不包括订阅术语–应为每个术语使用不�
 
 为了更轻松地测试订阅，在沙盒中进行测试时，它们的持续时间会压缩。 1周订阅每3分钟续订一次，1年订阅每小时续订一次。 在沙盒中进行测试时，订阅将自动续订最多6次。
 
-## <a name="reporting"></a>Reporting
+## <a name="reporting"></a>报表
 
 iTunes Connect （ [itunesconnect.apple.com](https://itunesconnect.apple.com)）提供：   
 
@@ -108,8 +108,8 @@ iTunes Connect （ [itunesconnect.apple.com](https://itunesconnect.apple.com)）
 
 示例销售和趋势报表如下所示：   
 
- [![](subscriptions-and-reporting-images/image42.png "An example Sales and Trends report")](subscriptions-and-reporting-images/image42.png#lightbox)   
+ [![销售和趋势报表示例](subscriptions-and-reporting-images/image42.png)](subscriptions-and-reporting-images/image42.png#lightbox)   
 
  此外，还提供了一个 "**宋体" 连接移动**iOS 应用。 下面显示了一些可用统计信息的 iPhone 屏幕截图：   
 
- [![](subscriptions-and-reporting-images/image43.png "iPhone screenshots for some of the statistics available")](subscriptions-and-reporting-images/image43.png#lightbox)
+ [![某些可用统计信息的 iPhone 屏幕截图](subscriptions-and-reporting-images/image43.png)](subscriptions-and-reporting-images/image43.png#lightbox)

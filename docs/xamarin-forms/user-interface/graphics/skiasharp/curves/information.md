@@ -10,12 +10,12 @@ ms.date: 09/12/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 931b8d0946f1af5e697e581a04c0feefb31ba2d3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4fee695a20cae26537beb30513423492114e5c77
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131919"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936222"
 ---
 # <a name="path-information-and-enumeration"></a>路径信息和枚举
 
@@ -29,7 +29,7 @@ _获取有关路径和枚举内容的信息_
 
 还可用于获取构成路径的所有绘图操作和点。 首先，此功能可能看起来不必要：如果程序创建了路径，则程序已经知道了内容。 但是，你已了解到，路径也可以通过[路径效果](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)创建，并将[文本字符串转换为路径](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)。 还可以获取构成这些路径的所有绘图操作和点。 一种可能的方法是将算法转换应用于所有点，例如，在半球环绕文本：
 
-![](information-images/pathenumerationsample.png "Text wrapped on a hemisphere")
+![半球上环绕的文本](information-images/pathenumerationsample.png)
 
 ## <a name="getting-the-path-length"></a>获取路径长度
 
@@ -115,7 +115,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `Length`新创建的对象的属性 `SKPathMeasure` 获取路径的长度。 路径长度除以 `baseTextWidth` 值（这是文本的宽度（以文本大小为10），然后再乘以基准文本大小10。 结果是一种新的文本大小，用于沿该路径显示文本：
 
-[![](information-images/pathlength-small.png "Triple screenshot of the Path Length page")](information-images/pathlength-large.png#lightbox "Triple screenshot of the Path Length page")
+[![路径长度页面的三次屏幕截图](information-images/pathlength-small.png)](information-images/pathlength-large.png#lightbox "路径长度页面的三次屏幕截图")
 
 当 Bezier 曲线变得更长或更短时，您可以看到文本大小的变化。
 
@@ -141,7 +141,7 @@ Boolean GetMatrix (Single distance, out SKMatrix matrix, SKPathMeasureMatrixFlag
 
 **Unicycle 半管道**页面在看上去沿三次贝赛尔曲线来回退的 Unicycle 上动画
 
-[![](information-images/unicyclehalfpipe-small.png "Triple screenshot of the Unicycle Half-Pipe page")](information-images/unicyclehalfpipe-large.png#lightbox "Triple screenshot of the Unicycle Half-Pipe page")
+[![Unicycle 半管道页面的三向屏幕截图](information-images/unicyclehalfpipe-small.png)](information-images/unicyclehalfpipe-large.png#lightbox "Unicycle 半管道页面的三向屏幕截图")
 
 `SKPaint`用于对半管道和 unicycle 进行描边的对象定义为类中的字段 `UnicycleHalfPipePage` 。 此外，还定义了 `SKPath` unicycle 的对象：
 
@@ -252,7 +252,7 @@ SKPathVerb pathVerb = rawIterator.Next(points);
 
 有时需要将算法转换应用于路径，以便以某种方式对其进行 malform：
 
-![](information-images/pathenumerationsample.png "Text wrapped on a hemisphere")
+![半球上环绕的文本](information-images/pathenumerationsample.png)
 
 其中的大多数字母都由直线组成，但这些直线显然都在弯曲。 这是如何实现的？
 
@@ -441,7 +441,7 @@ static class PathExtensions
 
 **GlobularText**示例使用此扩展方法，看起来围绕3d 效果中的半球环绕文本：
 
-[![](information-images/globulartext-small.png "Triple screenshot of the Globular Text page")](information-images/globulartext-large.png#lightbox "Triple screenshot of the Globular Text page")
+[![Globular 文本页的三向屏幕截图](information-images/globulartext-small.png)](information-images/globulartext-large.png#lightbox "Globular 文本页的三向屏幕截图")
 
 [`GlobularTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs)类构造函数执行此转换。 它 `SKPaint` 为文本创建一个对象，然后 `SKPath` 从该方法获取一个对象 `GetTextPath` 。 这是传递给 `CloneWithTransform` 扩展方法的路径以及转换函数：
 

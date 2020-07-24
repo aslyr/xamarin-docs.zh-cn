@@ -10,12 +10,12 @@ ms.date: 03/28/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cf95427807e0179a608b428bc7e02499c9616fe7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cee301178880a62695f4208161965b01bb6f522e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139147"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938575"
 ---
 # <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>使用 Windows Communication Foundation （WCF） Web 服务
 
@@ -41,7 +41,7 @@ ASP.NET Web Services （.ASMX）和 WCF 之间存在差异，但 WCF 支持与�
 
 示例应用程序解决方案包括一个可在本地运行的 WCF 服务，如以下屏幕截图所示：
 
-![](wcf-images/portal.png "Sample Application")
+![示例应用程序](wcf-images/portal.png)
 
 > [!NOTE]
 > 在 iOS 9 及更高版本中，应用传输安全（ATS）在 internet 资源（如应用的后端服务器）和应用之间强制实施安全连接，从而防止意外泄漏敏感信息。 由于默认情况下在为 iOS 9 构建的应用中启用了 ATS，因此所有连接都将受到 ATS 的安全要求。 如果连接不满足这些要求，它们将失败并出现异常。
@@ -52,7 +52,7 @@ ASP.NET Web Services （.ASMX）和 WCF 之间存在差异，但 WCF 支持与�
 
 WCF 服务提供以下操作：
 
-|Operation|说明|参数|
+|操作|说明|参数|
 |--- |--- |--- |
 |GetTodoItems|获取待办事项的列表|
 |CreateTodoItem|创建新的待办事项|XML 序列化 TodoItem|

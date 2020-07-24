@@ -19,7 +19,7 @@ ms.locfileid: "86936313"
 ---
 # <a name="entry-font-size-on-ios"></a>IOS 上的输入字体大小
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 iOS 平台特定用于缩放的字体大小 [`Entry`](xref:Xamarin.Forms.Entry) ，以确保输入的文本适合控件。 它通过将 [`Entry.AdjustsFontSizeToFitWidth`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidthProperty) 附加属性设置为值在 XAML 中使用 `boolean` ：
 

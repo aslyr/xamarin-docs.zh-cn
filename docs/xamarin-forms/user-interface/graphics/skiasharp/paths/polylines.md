@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b435e99180791b64e0a8ad975527fb3cb5316b7d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8ffa7ab7c9d2cebb9854ed155c3a00fe65e497c9
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140213"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936131"
 ---
 # <a name="polylines-and-parametric-equations"></a>折线和参数等式
 
@@ -25,7 +25,7 @@ _使用 SkiaSharp 呈现可以使用参数化公式定义的任何行_
 
 在本指南的 " [**SkiaSharp 曲线和路径**](../curves/index.md)" 部分中，您将看到 [`SKPath`](xref:SkiaSharp.SKPath) 定义用于呈现特定曲线类型的各种方法。 但是，有时需要绘制不直接支持的曲线类型 `SKPath` 。 在这种情况下，您可以使用折线（一系列连接的线）绘制您可以数学定义的任何曲线。 如果使线条足够小并且足够大，结果将显示为曲线。 此螺旋实际上是3600小行：
 
-![](polylines-images/spiralexample.png "A spiral")
+![螺旋](polylines-images/spiralexample.png)
 
 通常，最好按照一对参数方程来定义曲线。 它们是 X 和 Y 坐标的等式，它们依赖于第三个变量（有时称为 "时间"） `t` 。 例如，下面的参数方程定义一个圆，其半径为1，中心为0到1之间的*t* （0，0）：
 
@@ -120,7 +120,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 结果也称为*算术螺旋*，因为每个循环之间的偏移是常量：
 
-[![](polylines-images/archimedeanspiral-small.png "Triple screenshot of the Archimedean Spiral page")](polylines-images/archimedeanspiral-large.png#lightbox "Triple screenshot of the Archimedean Spiral page")
+[![Archimedean 螺旋页面的三向屏幕截图](polylines-images/archimedeanspiral-small.png)](polylines-images/archimedeanspiral-large.png#lightbox "Archimedean 螺旋页面的三向屏幕截图")
 
 请注意， `SKPath` 是在块中创建的 `using` 。 这会 `SKPath` 占用比 `SKPath` 上一个程序中的对象更多的内存，这表明 `using` 更适合使用块来释放任何非托管资源。
 

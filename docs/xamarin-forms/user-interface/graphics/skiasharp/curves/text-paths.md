@@ -10,12 +10,12 @@ ms.date: 08/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b0cbb7d26a2aea02a3255fc75947c20a3d803b86
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e0964ad7d2bf517a6a4c7cf7965c346629716166
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131893"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936014"
 ---
 # <a name="paths-and-text-in-skiasharp"></a>SkiaSharp 中的路径和文本
 
@@ -29,7 +29,7 @@ _探索路径和文本的交集_
 
 除了使用路径效果来为字符轮廓描边，还可以创建基于从字符串派生的路径的路径效果，甚至可以将这两个效果组合在一起：
 
-![](text-paths-images/pathsandtextsample.png "Text Path Effect")
+![文本路径效果](text-paths-images/pathsandtextsample.png)
 
 在前面的文章中[**，您**](effects.md)了解了如何 [`GetFillPath`](xref:SkiaSharp.SKPaint.GetFillPath(SkiaSharp.SKPath,SkiaSharp.SKPath,SkiaSharp.SKRect,System.Single)) `SKPaint` 获取描边轨迹的轮廓。 你还可以将此方法用于派生自字符轮廓的路径。
 
@@ -49,7 +49,7 @@ public SKPath GetTextPath (String text, Single x, Single y)
 
 其中一项任务是剪辑。 "**剪辑文本**" 页基于 "代码" 一词的字符轮廓创建剪切路径。 此路径将拉伸到页面大小，以剪切包含**剪辑文本**源代码的图像的位图：
 
-[![](text-paths-images/clippingtext-small.png "Triple screenshot of the Clipping Text page")](text-paths-images/clippingtext-large.png#lightbox "Triple screenshot of the Clipping Text page")
+[![剪贴文本页的三向屏幕截图](text-paths-images/clippingtext-small.png)](text-paths-images/clippingtext-large.png#lightbox "剪贴文本页的三向屏幕截图")
 
 [`ClippingTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs)类构造函数在解决方案的**媒体**文件夹中加载存储为嵌入资源的位图：
 
@@ -129,7 +129,7 @@ public class ClippingTextPage : ContentPage
 
 "**文本路径效果**" 页将单个 "&" 字符转换为路径，以创建一维路径效果。 然后，使用带有此路径效果的 "画图" 对象来勾画相同字符的较大版本的轮廓：
 
-[![](text-paths-images/textpatheffect-small.png "Triple screenshot of the Text Path Effect page")](text-paths-images/textpatheffect-large.png#lightbox "Triple screenshot of the Text Path Effect page")
+[![文本路径效果页面的三向屏幕截图](text-paths-images/textpatheffect-small.png)](text-paths-images/textpatheffect-large.png#lightbox "文本路径效果页面的三向屏幕截图")
 
 类中的大部分工作都 [`TextPathEffectPath`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) 出现在字段和构造函数中。 `SKPaint`定义为字段的两个对象用于两个不同目的：第一个（名为 `textPathPaint` ）用于将与50的符号转换为一 `TextSize` 维路径效果的路径。 第二个（ `textPaint` ）用于显示与该路径效果的符号的较大版本。 出于此原因， `Style` 此第二个 paint 对象的设置为 `Stroke` ，但 `StrokeWidth` 未设置属性，因为在使用1d 路径效果时，此属性不是必需的：
 
@@ -274,7 +274,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `PaintSurface`然后，处理程序将创建一个名为的新路径 `outlinePath` 。 这将成为对的调用中的目标路径 `GetFillPath` 。 如果 `StrokeWidth` 属性为25，则 `outlinePath` 说明25像素宽路径的轮廓将文本字符描边。 然后，此路径以红色显示，笔划宽度为5：
 
-[![](text-paths-images/characteroutlineoutlines-small.png "Triple screenshot of the Character Outline Outlines page")](text-paths-images/characteroutlineoutlines-large.png#lightbox "Triple screenshot of the Character Outline Outlines page")
+[![字符轮廓轮廓页面的三向屏幕截图](text-paths-images/characteroutlineoutlines-small.png)](text-paths-images/characteroutlineoutlines-large.png#lightbox "字符轮廓轮廓页面的三向屏幕截图")
 
 仔细查看并看到重叠，其中路径轮廓构成了尖角。 这是此过程的普通项目。
 
@@ -327,7 +327,7 @@ public class CircularTextPage : ContentPage
 
 然后，对的 `TextSize` 属性 `textPaint` 进行调整，使文本宽度与圆的周长匹配：
 
-[![](text-paths-images/circulartext-small.png "Triple screenshot of the Circular Text page")](text-paths-images/circulartext-large.png#lightbox "Triple screenshot of the Circular Text page")
+[![圆形文本页的三向屏幕截图](text-paths-images/circulartext-small.png)](text-paths-images/circulartext-large.png#lightbox "圆形文本页的三向屏幕截图")
 
 文本本身也被选为有点循环：单词 "circle" 既是句子的主题，也是 prepositional 短语的对象。
 

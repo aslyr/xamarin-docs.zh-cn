@@ -10,12 +10,12 @@ ms.date: 02/17/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2a222c3ee2234904cce94b52a14654728a1aa6d1
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ae3759c1e111906b82596af80d4bdcffd5d23305
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140122"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938523"
 ---
 # <a name="global-styles-in-xamarinforms"></a>中的全局样式Xamarin.Forms
 
@@ -65,7 +65,7 @@ _通过将样式添加到应用程序的资源字典中，可以全局使用样�
 
 这会导致如以下屏幕截图中所示的外观：
 
-[![](application-images/application-styles-1.png "Global Styles Example")](application-images/application-styles-1-large.png#lightbox "Global Styles Example")
+[![全局样式示例](application-images/application-styles-1.png)](application-images/application-styles-1-large.png#lightbox "全局样式示例")
 
 有关在页面的中创建样式的信息 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ，请参阅[显式样式](~/xamarin-forms/user-interface/styles/explicit.md)和[隐式样式](~/xamarin-forms/user-interface/styles/implicit.md)。
 
@@ -103,7 +103,7 @@ _通过将样式添加到应用程序的资源字典中，可以全局使用样�
 
 在 `buttonStyle` 应用程序级别定义的原始在 `buttonStyle` 页级别定义的实例重写。 此外，页面级别样式被控件级别重写 `buttonStyle` 。 因此， [`Button`](xref:Xamarin.Forms.Button) 实例显示为蓝色文本，如以下屏幕截图所示：
 
-[![](application-images/application-styles-2.png "Overriding Styles Example")](application-images/application-styles-2-large.png#lightbox "Overriding Styles Example")
+[![重写样式示例](application-images/application-styles-2.png)](application-images/application-styles-2-large.png#lightbox "重写样式示例")
 
 ## <a name="create-a-global-style-in-c35"></a>在 C 中创建全局样式&#35;
 
