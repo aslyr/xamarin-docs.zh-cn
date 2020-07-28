@@ -10,12 +10,12 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 08b1c738dc87bb9373436a3fd96486eb15341112
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a705eef2ecd240b8944117a67a90ebeebc382bcb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139420"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933739"
 ---
 # <a name="attached-behaviors"></a>附加行为
 
@@ -106,7 +106,7 @@ NumericValidationBehavior.SetAttachBehavior (entry, true);
 
 在运行时，根据行为实现，行为将响应与控件的交互。 以下屏幕截图演示了响应无效输入的附加行为：
 
-[![](attached-images/screenshots-sml.png "Sample Application with Attached Behavior")](attached-images/screenshots.png#lightbox "Sample Application with Attached Behavior")
+[![具有附加行为的示例应用程序](attached-images/screenshots-sml.png)](attached-images/screenshots.png#lightbox "具有附加行为的示例应用程序")
 
 > [!NOTE]
 > 附加行为是为特定的控件类型（或者可以应用于许多控件的超类）编写的，它们只应添加到可兼容的控件中。 试图将行为附加到不可兼容的控件将导致未知行为，且这取决于行为实现。

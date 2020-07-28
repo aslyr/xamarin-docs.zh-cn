@@ -1,6 +1,6 @@
 ---
-title: title:“创建 Xamarin.Forms 行为”说明：“Xamarin.Forms 行为是通过从行为或行为 <T> 类派生来创建的。
-description: '本文演示如何创建和使用 Xamarin.Forms 行为。” ms.prod: xamarin ms.assetid:300C16FE-A7E0-445B-9099-8E93ABB6F73D ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2016/04/06 no-loc no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: 创建 Xamarin.Forms 行为
+description: Xamarin.Forms 行为是通过从行为或行为 <T> 类派生来创建的。 本文演示如何创建和使用 Xamarin.Forms 行为。
 ms.prod: xamarin
 ms.assetid: 300C16FE-A7E0-445B-9099-8E93ABB6F73D
 ms.technology: xamarin-forms
@@ -10,12 +10,12 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 67db30b5caadce75a41755530db2b245562d0304
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: f265d1da894b195402c91cbf9468a11837c53bcf
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84135819"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933702"
 ---
 # <a name="create-xamarinforms-behaviors"></a>创建 Xamarin.Forms 行为
 
@@ -113,7 +113,7 @@ entry.Behaviors.Add (new NumericValidationBehavior ());
 
 在运行时，根据行为实现，行为将响应与控件的交互。 以下屏幕截图演示了响应无效输入的行为：
 
-[![](creating-images/screenshots-sml.png "Sample Application with Xamarin.Forms Behavior")](creating-images/screenshots.png#lightbox "Sample Application with Xamarin.Forms Behavior")
+[![具有 Xamarin.Forms 行为的示例应用程序](creating-images/screenshots-sml.png)](creating-images/screenshots.png#lightbox "带有 Xamarin.Forms 行为的示例应用程序")
 
 > [!NOTE]
 > 行为是为特定的控件类型（或者可以应用于许多控件的超类）编写的，它们只应添加到兼容的控件中。 试图将行为附加到不兼容控件将引发异常。

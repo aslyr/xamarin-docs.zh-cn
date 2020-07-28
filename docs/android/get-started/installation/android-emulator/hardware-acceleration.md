@@ -8,16 +8,16 @@ ms.technology: xamarin-android
 author: jondouglas
 ms.author: jodou
 ms.date: 02/13/2020
-ms.openlocfilehash: 2a9260bc782d2b19e6fd74356738276e1648dcf2
-ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
+ms.openlocfilehash: 93336f5a741cf9643288163f2bf1d8ef44ea52d2
+ms.sourcegitcommit: d42dadc6da584953865b1adb616489d91a7b25d0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85104354"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86473432"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>通过硬件加速提高仿真器性能 (Hyper-V & HAXM)
 
-本文介绍了如何使用计算机的硬件加速功能最大限度提高 Android Emulator 的性能。__
+本文介绍了如何使用计算机的硬件加速功能最大限度提高 Android Emulator 的性能。
 
 Visual Studio 便于开发人员在无法使用 Android 设备的情况下通过使用 Android Emulator 来测试和调试 Xamarin.Android 应用程序。
 但是，如果硬件加速在运行 Android 仿真器的计算机上不可用，那么它的运行速度太慢。 通过将特殊的 x86 虚拟设备映像与计算机的虚拟化功能结合使用，可以极大地提高 Android Emulator 的性能。
@@ -46,10 +46,10 @@ Visual Studio 便于开发人员在无法使用 Android 设备的情况下通过
 
 - 硬件加速在开发计算机上可用并已启用。
 
-- 仿真器正在运行为基于 x86 的虚拟设备创建的系统映像****。
+- 仿真器正在运行为基于 x86 的虚拟设备创建的系统映像。
 
 > [!IMPORTANT]
-> 不可在另一 VM（例如由 VirtualBox、VMWare 或 Docker 托管的 VM）内运行经过 VM 加速的仿真器。 必须[直接在系统硬件上](https://developer.android.com/studio/run/emulator-acceleration.html#extensions)运行 Android Emulator 。
+> 不可在另一 VM（例如由 VirtualBox、VMware 或 Docker 托管的 VM）内运行经过 VM 加速的模拟器。 必须[直接在系统硬件上](https://developer.android.com/studio/run/emulator-acceleration.html#extensions)运行 Android Emulator 。
 
 有关使用 Android Emulator 进行启动和调试的信息，请参阅 [Android Emulator 调试](~/android/deploy-test/debugging/debug-on-emulator.md)。
 
@@ -76,10 +76,10 @@ Hyper-V 在 Windows 虚拟机监控程序平台上运行。 若要将 Android Em
 
 - 计算机必须更新到 Windows 10 2018 年 4 月更新（版本 1803）或更高版本。 可使用以下步骤验证 Windows 版本是否为最新版本：
 
-  1. 在 Windows 搜索框中，输入“关于”****。
-  2. 在搜索结果中选择“关于你的电脑”****。
-  3. 在“关于”对话框中向下滚动到“Windows 规范”部分**** ****。
-  4. 验证“版本”最低为 1803 版****：
+  1. 在 Windows 搜索框中，输入“关于”。
+  2. 在搜索结果中选择“关于你的电脑”。
+  3. 在“关于”对话框中向下滚动到“Windows 规范”部分 。
+  4. 验证“版本”最低为 1803 版：
 
       [![Windows 规范](hardware-acceleration-images/win/01-about-windows-w10-sml.png)](hardware-acceleration-images/win/01-about-windows-w10.png#lightbox)
 
@@ -89,7 +89,7 @@ Hyper-V 在 Windows 虚拟机监控程序平台上运行。 若要将 Android Em
 systeminfo
 ```
 
-如果列出的所有 Hyper-V 要求的值均为“是”，则计算机可以支持 Hyper-V****。 例如：
+如果列出的所有 Hyper-V 要求的值均为“是”，则计算机可以支持 Hyper-V。 例如：
 
 [![示例 Systeminfo 输出](hardware-acceleration-images/win/02-systeminfo-w158-sml.png)](hardware-acceleration-images/win/02-systeminfo-w158.png#lightbox)
 
@@ -97,7 +97,7 @@ systeminfo
 
 若计算机符合上述条件，请执行以下步骤使用 Hyper-V 加速 Android Emulator：
 
-1. 在 Windows 搜索框中输入“Windows 功能”，然后在搜索结果中选择“打开或关闭 Windows 功能”**** ****。 在“Windows 功能”对话框中，启用“Hyper-V”和“Windows 虚拟机监控程序平台”**** **** ****：
+1. 在 Windows 搜索框中输入“Windows 功能”，然后在搜索结果中选择“打开或关闭 Windows 功能” 。 在“Windows 功能”对话框中，启用“Hyper-V”和“Windows 虚拟机监控程序平台”  ：
 
     [![启用 Hyper-V 和 Windows 虚拟机监控程序平台](hardware-acceleration-images/win/03-hyper-v-settings-w158-sml.png)](hardware-acceleration-images/win/03-hyper-v-settings-w158.png#lightbox)
 
@@ -107,13 +107,13 @@ systeminfo
 >
 > 在 Windows 10 2018 年 10 月更新(RS5) 及更高版本中，你只需启用 Hyper-V 即可，因为它将自动使用 Windows 虚拟机监控程序平台 (WHPX)。
 
-2. 安装 [Visual Studio 15.8 或更高版本](https://visualstudio.microsoft.com/vs/)（此版本 Visual Studio 通过 Hyper-V 提供用于运行 Android Emulator 的 IDE 支持）****。
+2. 安装 [Visual Studio 15.8 或更高版本](https://visualstudio.microsoft.com/vs/)（此版本 Visual Studio 通过 Hyper-V 提供用于运行 Android Emulator 的 IDE 支持）。
 
-3. **安装 Android Emulator 包 27.2.7 或更高版本**。 要安装此包，请在 Visual Studio 中导航到“工具”>“Android”>“Android SDK 管理器”****。 选择“工具”选项卡，确保 Android Emulator 版本至少为 27.2.7****。 另请确保 Android SDK Tools 版本为 26.1.1 或更高版本：
+3. **安装 Android Emulator 包 27.2.7 或更高版本**。 要安装此包，请在 Visual Studio 中导航到“工具”>“Android”>“Android SDK 管理器”。 选择“工具”选项卡，确保 Android Emulator 版本至少为 27.2.7。 另请确保 Android SDK Tools 版本为 26.1.1 或更高版本：
 
     [![“Android SDK 和工具”对话框](hardware-acceleration-images/win/04-sdk-manager-w158-sml.png)](hardware-acceleration-images/win/04-sdk-manager-w158.png#lightbox)
 
-创建虚拟设备时（参阅[使用 Android Device Manager 管理虚拟设备](~/android/get-started/installation/android-emulator/device-manager.md)），请确保选择基于 x86 的系统映像****。 如果使用基于 ARM 的系统映像，虚拟设备将无法加速并且运行缓慢。
+创建虚拟设备时（参阅[使用 Android Device Manager 管理虚拟设备](~/android/get-started/installation/android-emulator/device-manager.md)），请确保选择基于 x86 的系统映像。 如果使用基于 ARM 的系统映像，虚拟设备将无法加速并且运行缓慢。
 
 ## <a name="accelerating-with-haxm"></a>使用 HAXM 加速
 
@@ -146,11 +146,11 @@ systeminfo
 
 1. 从 Intel 网站下载适用于 Windows 的最新 [HAXM 虚拟化引擎](https://github.com/intel/haxm/releases)安装程序。 直接从 Intel 网站下载 HAXM 安装程序的优点是可以确保使用最新版本。
 
-2. 运行 intelhaxm android.exe****，启动 HAXM 安装程序。 接受安装程序对话框中的默认值：
+2. 运行 intelhaxm android.exe，启动 HAXM 安装程序。 接受安装程序对话框中的默认值：
 
    ![“Intel 硬件加速执行管理器安装程序”窗口](hardware-acceleration-images/win/06-haxm-installer.png)
 
-创建虚拟设备时（参阅[使用 Android Device Manager 管理虚拟设备](~/android/get-started/installation/android-emulator/device-manager.md)），请确保选择基于 x86 的系统映像****。 如果使用基于 ARM 的系统映像，虚拟设备将无法加速并且运行缓慢。
+创建虚拟设备时（参阅[使用 Android Device Manager 管理虚拟设备](~/android/get-started/installation/android-emulator/device-manager.md)），请确保选择基于 x86 的系统映像。 如果使用基于 ARM 的系统映像，虚拟设备将无法加速并且运行缓慢。
 
 ## <a name="troubleshooting"></a>疑难解答
 
@@ -173,11 +173,11 @@ systeminfo
 
 - 硬件加速在开发计算机上可用并已启用。
 
-- 仿真器正在运行为基于 x86 的虚拟设备创建的系统映像****。
+- 仿真器正在运行为基于 x86 的虚拟设备创建的系统映像。
 
 > [!IMPORTANT]
 >
-> 不可在另一 VM（例如由 VirtualBox、VMWare 或 Docker 托管的 VM）内运行经过 VM 加速的仿真器。 必须[直接在系统硬件上](https://developer.android.com/studio/run/emulator-acceleration.html#extensions)运行 Android Emulator 。
+> 不可在另一 VM（例如由 VirtualBox、VMware 或 Docker 托管的 VM）内运行经过 VM 加速的模拟器。 必须[直接在系统硬件上](https://developer.android.com/studio/run/emulator-acceleration.html#extensions)运行 Android Emulator 。
 
 有关使用 Android Emulator 进行启动和调试的信息，请参阅 [Android Emulator 调试](~/android/deploy-test/debugging/debug-on-emulator.md)。
 
@@ -199,7 +199,7 @@ systeminfo
 
 ## <a name="accelerating-with-haxm"></a>使用 HAXM 加速
 
-若你的 Mac 不支持虚拟机监控程序框架（或者 macOS 版本低于 10.10），则可使用“Intel 的硬件加速执行管理器”([HAXM](https://software.intel.com/articles/intel-hardware-accelerated-execution-manager-intel-haxm)) 来加速 Android Emulator****。
+若你的 Mac 不支持虚拟机监控程序框架（或者 macOS 版本低于 10.10），则可使用“Intel 的硬件加速执行管理器”([HAXM](https://software.intel.com/articles/intel-hardware-accelerated-execution-manager-intel-haxm)) 来加速 Android Emulator。
 
 在首次将 HAXM 与 Android Emulator 配合使用之前，最好先验证 HAXM 是否已安装并可供 Android Emulator 使用。
 
@@ -213,7 +213,7 @@ systeminfo
     ~/Library/Developer/Xamarin/android-sdk-macosx/tools/emulator -accel-check
     ```
 
-   此命令假定将 Android SDK 安装在默认位置“~/Library/Developer/Xamarin/android-sdk-macosx”；否则，请在 Mac 上修改 Android SDK 位置的路径****。
+   此命令假定将 Android SDK 安装在默认位置“~/Library/Developer/Xamarin/android-sdk-macosx”；否则，请在 Mac 上修改 Android SDK 位置的路径。
 
 2. 若已安装 HAXM，则上面的命令将返回类似于以下结果的消息：
 
@@ -221,7 +221,7 @@ systeminfo
     HAXM version 7.2.0 (3) is installed and usable.
     ```
 
-   若 HAXM 未安装，则返回类似于以下输出的消息**：
+   若 HAXM 未安装，则返回类似于以下输出的消息：
 
     ```bash
     HAXM is not installed on this machine (/dev/HAX is missing).

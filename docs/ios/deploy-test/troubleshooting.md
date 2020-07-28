@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/23/2017
-ms.openlocfilehash: b27608642ed04216b10767d37d26699a0aef7f3e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 12194eed21fc95aaadc194be8a57319cf5c3cd3d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573763"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937236"
 ---
 # <a name="xamarinios-testing-and-deployment---troubleshooting"></a>Xamarin.iOS 测试和部署 - 疑难解答
 
@@ -22,7 +22,7 @@ iOS 方面的代码签名和设置可能非常麻烦，因此务必要确保代�
 
 - 大型团队应避免在 Xcode 中使用“修复问题”按钮，如此处所示：
 
-    [![](troubleshooting-images/fixissue.png "The Fix Issues dialog")](troubleshooting-images/fixissue.png#lightbox)
+    [![“修复问题”对话框](troubleshooting-images/fixissue.png)](troubleshooting-images/fixissue.png#lightbox)
 
     这会创建新的设置配置文件和证书。 在最好的情况下，这会在团队成员每次单击它时创建设置配置文件，从而导致配置文件杂乱无章。 在最坏的情况下，它会吊销公司中其他所有人的证书，从而导致其应用停止工作。
 

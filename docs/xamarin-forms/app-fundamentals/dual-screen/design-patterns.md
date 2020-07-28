@@ -1,6 +1,6 @@
 ---
-title: title:"Xamarin.Forms双屏设计模式”说明：“本指南介绍了 Xamarin.Forms 如何支持已针对双屏设备进行优化的各种不同设计模式。”
-description: 'ms.prod: xamarin ms.assetid:3176d792-6dba-4e00-b463-497c58678ee9 ms.technology: xamarin-forms author: davidortinau ms.author: daortin ms.date:2020/02/08 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms 双屏设计模式
+description: 本指南介绍了 Xamarin.Forms 如何支持已针对双屏设备进行优化的各种不同设计模式。
 ms.prod: xamarin
 ms.assetid: 3176d792-6dba-4e00-b463-497c58678ee9
 ms.technology: xamarin-forms
@@ -10,16 +10,16 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 277fb67eeea465239d9340e755240288286d2359
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 79c0f41e8ed0bffce0154ee618729316aab5e8e2
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84138783"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935273"
 ---
 # <a name="xamarinforms-dual-screen-design-patterns"></a>Xamarin.Forms 双屏设计模式
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![预发行版 API](~/media/shared/preview.png "此 API 当前为预发布版本")
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
@@ -29,7 +29,7 @@ ms.locfileid: "84138783"
 
 延展画布模式将两个屏幕看作一个大的画布，用来显示地图、图像、电子表格或其他因延展以占用最大空间而受益的类似内容：
 
-![](design-patterns-images/extended-canvas-sample.png "Extended canvas sample")
+![延展画布示例](design-patterns-images/extended-canvas-sample.png)
 
 ```xaml
 <ContentPage xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples"
@@ -59,7 +59,7 @@ ms.locfileid: "84138783"
 
 主从模式是指主视图（通常是左侧的一个列表）提供内容，用户从中选择项目，在右侧查看该项目的详细信息：
 
-![](design-patterns-images/master-detail-sample.png "Master detail sample")
+![主从示例](design-patterns-images/master-detail-sample.png)
 
 ```xaml
 <ContentPage xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples"
@@ -85,7 +85,7 @@ ms.locfileid: "84138783"
 
 双页模式非常适合使自身采用双列布局，例如文档阅读器、笔记或艺术板：
 
-![](design-patterns-images/two-page-sample.png "Two page sample")
+![双页示例](design-patterns-images/two-page-sample.png)
 
 ```xaml
 <Grid x:Name="layout">
@@ -126,7 +126,7 @@ ms.locfileid: "84138783"
 
 双视图模式看起来可能与“双页”视图类似，区别在于内容和用户场景。 在此模式下，你并排比较内容的目的可能是编辑文档或照片、比较不同的餐厅菜单，或者区分代码文件的合并冲突：
 
-![](design-patterns-images/dual-view-sample.png "Dual view sample")
+![双视图示例](design-patterns-images/dual-view-sample.png)
 
 ```xaml
 <ContentPage xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples"
@@ -164,7 +164,7 @@ ms.locfileid: "84138783"
 
 伴随模式演示了如何使用第二个屏幕来提供与主视图相关的第二层内容，例如在绘制应用、游戏或媒体编辑的情况下：
 
-![](design-patterns-images/companion-pane-sample.png "Companion pane sample")
+![伴随窗格示例](design-patterns-images/companion-pane-sample.png)
 
 ```xaml
 <ContentPage xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples"

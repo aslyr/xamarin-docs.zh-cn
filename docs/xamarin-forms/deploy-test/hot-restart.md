@@ -10,12 +10,12 @@ ms.date: 03/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 45b7d0d20c43aa22ebde3a17552f10ceea77a48b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5367d7933e70c59298faacff85c1d5f533bc0776
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139134"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929276"
 ---
 # <a name="xamarin-hot-restart-preview"></a>Xamarin 热重启（预览版）
 
@@ -44,7 +44,7 @@ Xamarin 热重启使你可以在开发过程中快速测试对应用进行的更
 
 2. 在工具栏中选择并单击“本地设备”，以启动设置向导：
 
-    [![](hot-restart-images/toolbar.png "Screenshot of the Visual Studio toolbar with local device set as the debug target.")](hot-restart-images/toolbar.png)
+    [![将本地设备设置为调试目标的 Visual Studio 工具栏屏幕截图。](hot-restart-images/toolbar.png)](hot-restart-images/toolbar.png)
 
 3. 如果未安装 iTunes，请单击“下载 iTunes”以下载安装程序。 iTunes 安装完成时单击“下一步”。
 
@@ -62,7 +62,7 @@ Xamarin 热重启使你可以在开发过程中快速测试对应用进行的更
 
 可以在调试时编辑代码文件，然后按调试工具栏中的“重启”按钮，或使用 Ctrl+Shift+F5 重启调试会话，并应用新更改：
 
-[![](hot-restart-images/restart.png "Screenshot of the debug toolbar with the restart button highlighted.")](hot-restart-images/toolbar.png)
+[![突出显示重启按钮的调试工具栏屏幕截图。](hot-restart-images/restart.png)](hot-restart-images/toolbar.png)
 
 还可以使用 `HOTRESTART` 预处理器符号来防止在使用 Xamarin 热重启进行调试时执行某些代码。
 

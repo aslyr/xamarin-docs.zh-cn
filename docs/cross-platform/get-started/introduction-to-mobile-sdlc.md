@@ -6,12 +6,12 @@ ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: davidortinau
 ms.author: daortin
 ms.date: 11/22/2016
-ms.openlocfilehash: c428d39911da9abff7d53d478fbe99dbe9a3604e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 32dec6b8fcdd5387e138a7812d8c3e2074673111
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76724829"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939615"
 ---
 # <a name="mobile-software-development-lifecycle"></a>移动软件开发生命周期
 
@@ -72,7 +72,7 @@ ms.locfileid: "76724829"
 
 UX 通常通过线框或模型使用众多[设计工具包](https://docs.microsoft.com/windows/uwp/design/downloads/)之一来实现。 通过 UX 原型可以设计 UX，而不必担心实际 UI 设计：
 
- [![](introduction-to-mobile-sdlc-images/balsamiq.png "UX is usually done via wireframes or mockups using tools such as Balsamiq")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
+ [![UX 通常通过线框或模型使用 Balsamiq 等工具来实现](introduction-to-mobile-sdlc-images/balsamiq.png)](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
 
 创建 UX 原型时，需要考虑应用所面向的各种平台的界面指南，这一点十分重要。 应用应在每种平台上都“轻松自如”。 每种平台的正式设计指南有：
 
@@ -82,13 +82,13 @@ UX 通常通过线框或模型使用众多[设计工具包](https://docs.microso
 
 例如，每个应用都提供一种工具以用于在应用程序中的各部分之间进行切换。 iOS 使用屏幕底部的选项卡栏，Android 使用屏幕顶部的选项卡栏，而 UWP 则使用[透视或选项卡](/windows/uwp/design/controls-and-patterns/pivot)视图。
 
-此外，硬件本身也会决定 UX 决策。 例如，iOS 设备没有物理返回  按钮，因此引入了导航控制器工具：
+此外，硬件本身也会决定 UX 决策。 例如，iOS 设备没有物理返回按钮，因此引入了导航控制器工具：
 
- ![](introduction-to-mobile-sdlc-images/01-navigation-controller.png "iOS devices have no physical back button, and therefore introduce the Navigation Controller metaphor")
+ ![iOS 设备没有物理返回按钮，因此引入了导航控制器工具](introduction-to-mobile-sdlc-images/01-navigation-controller.png)
 
 而且，外形规格也会影响 UX 决策。 平板电脑具有大得多的空间，因此可以显示更多信息。 通常，在手机上需要多个屏幕的内容对于平板电脑会压缩到一个屏幕中：
 
- [![](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png "Often what needs multiple screens on a phone is compressed into one for a tablet")](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png#lightbox)
+ [![通常，在手机上需要多个屏幕的内容在平板电脑上会压缩到一个屏幕中](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png)](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png#lightbox)
 
 由于存在各种外形规格，因此你还可能要面向中型外形规格（介于手机与平板电脑之间的某种外形规格）。
 
@@ -98,7 +98,7 @@ UX 通常通过线框或模型使用众多[设计工具包](https://docs.microso
 
 与 UX 一样，务必要了解每种平台都具有自己的设计语言，因此设计良好的应用程序在每种平台上的外观可能仍有所不同：
 
- [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "A well-designed application may still look different on each platform")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
+ [![设计良好的应用程序在每种平台上的外观可能仍有所不同](introduction-to-mobile-sdlc-images/multiplatform-1.png)](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
 
 ### <a name="development"></a>开发
 
@@ -108,7 +108,7 @@ UX 通常通过线框或模型使用众多[设计工具包](https://docs.microso
 
 ### <a name="stabilization"></a>稳定
 
-稳定是解决应用中的 bug 的过程。 不只是从功能角度，例如：“它在我单击此按钮时崩溃”，还涉及可用性和性能。 最好在开发过程中非常早的时候开始进行稳定，以便可以在成本高昂之前进行修正。 通常，应用程序会进入原型  、Alpha  、Beta  和候选发布  阶段。 不同人员会以不同方式定义这些阶段，但是它们通常遵循以下模式：
+稳定是解决应用中的 bug 的过程。 不只是从功能角度，例如：“它在我单击此按钮时崩溃”，还涉及可用性和性能。 最好在开发过程中非常早的时候开始进行稳定，以便可以在成本高昂之前进行修正。 通常，应用程序会进入原型、Alpha、Beta 和候选发布阶段。 不同人员会以不同方式定义这些阶段，但是它们通常遵循以下模式：
 
 1. **原型** – 应用仍处于概念证明阶段，只有核心功能（或应用程序的特定部分）在工作。 存在主要 bug。
 1. **Alpha** – 核心功能通常已代码完成（已生成，但未进行完整测试）。 仍存在主要 bug，可能仍然不存在外围功能。

@@ -10,18 +10,18 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8c907cd8a4a1d14b936dee309610bffc67ef363f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 65aa0f060e4d48834017a334d69b2f21645825f3
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137834"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937184"
 ---
 # <a name="xamarinforms-navigation"></a>Xamarin.Forms 导航
 
 Xamarin.Forms 提供多种不同的页面导航体验，具体取决于所使用的页面类型。
 
-![](images/page-types.png "Xamarin.Forms Page Types")
+![Xamarin.Forms 页面类型](images/page-types.png)
 
 或者，Xamarin.Forms Shell 应用程序使用基于 URI 的导航体验（不强制使用设置的导航层次结构）。 有关详细信息，请参阅 [Xamarin.Forms Shell 导航](~/xamarin-forms/app-fundamentals/shell/navigation.md)。
 

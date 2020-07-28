@@ -10,20 +10,28 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 12f3ac86d2418c6516d000371753fc8ae65d557c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 760d03cb5667853ab7eea021e281ebd863dd8dc4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946343"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935221"
 ---
-# <a name="xamarinforms-dual-screen-device-capabilities"></a>Xamarin.Forms 双屏设备功能
+# <a name="xamarinforms-dualscreeninfo-helper-class"></a>Xamarin.Forms DualScreenInfo 帮助程序类
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![预发行版 API](~/media/shared/preview.png "此 API 当前为预发布版本")
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
 `DualScreenInfo` 类可用于确定你的视图位于哪个窗格中、视图的大小如何、设备的放置方向如何，以及铰链的角度等等。
+
+## <a name="configure-dualscreeninfo"></a>配置 DualScreenInfo
+
+按照下列说明在应用中创建一个双屏布局：
+
+1. 按照[入门](index.md)说明添加 NuGet 并配置 Android `MainActivity` 类。
+1. 将 `using Xamarin.Forms.DualScreen;` 添加到类文件中。
+1. 在应用中使用 `DualScreenInfo.Current` 类。
 
 ## <a name="properties"></a>属性
 
@@ -213,7 +221,7 @@ public partial class GridUsingDualScreenInfo : ContentPage
 
 以下屏幕截图显示了生成的布局：
 
-![](dual-screen-info-images/grid-on-two-screens.png "Positioning Grid on Two Screens")
+![在双屏上放置网格](dual-screen-info-images/grid-on-two-screens.png)
 
 ## <a name="related-links"></a>相关链接
 

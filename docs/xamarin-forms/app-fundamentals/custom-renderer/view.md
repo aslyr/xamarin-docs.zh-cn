@@ -10,12 +10,12 @@ ms.date: 05/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c239955a093120c3a16ea3236946eb645ea9a4b4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8215454f80614c0c7cca79af5cf51e2dd96453ae
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570799"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929475"
 ---
 # <a name="implementing-a-view"></a>实现视图
 
@@ -27,7 +27,7 @@ _Xamarin.Forms 自定义用户界面控件应派生自视图类，该类用于�
 
 下图说明了 [`View`](xref:Xamarin.Forms.View) 和实现它的相应本机控件之间的关系：
 
-![](view-images/view-classes.png "Relationship Between the View Class and its Implementing Native Classes")
+![视图类及其实现本机类之间的关系](view-images/view-classes.png)
 
 通过在每个平台上为 [`View`](xref:Xamarin.Forms.View) 创建自定义呈现器，可以使用呈现过程来实现特定于平台的自定义。 执行此操作的过程如下：
 
@@ -118,13 +118,13 @@ public class MainPageCS : ContentPage
 
 下图说明了示例应用程序中每个项目的职责，以及它们之间的关系：
 
-![](view-images/solution-structure.png "CameraPreview Custom Renderer Project Responsibilities")
+![CameraPreview 自定义呈现器项目的职责](view-images/solution-structure.png)
 
 `CameraPreview` 自定义控件由特定于平台的呈现器类呈现，这些类全都派生自各平台的 `ViewRenderer` 类。 这导致每个 `CameraPreview` 自定义控件都使用特定于平台的控件呈现，如以下屏幕截图所示：
 
-![](view-images/screenshots.png "CameraPreview on each Platform")
+![每个平台上的 CameraPreview](view-images/screenshots.png)
 
-`ViewRenderer` 类公开 `OnElementChanged` 方法，创建 Xamarin.Forms 自定义控件时调用此方法以呈现对应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素** **。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `CameraPreview` 实例的引用。
+`ViewRenderer` 类公开 `OnElementChanged` 方法，创建 Xamarin.Forms 自定义控件时调用此方法以呈现对应的本机控件。 此方法采用 `ElementChangedEventArgs` 参数，其中包含 `OldElement` 和 `NewElement` 属性。 这两个属性分别表示呈现器“曾经”附加到的 Xamarin.Forms 元素和呈现器“现在”附加到的 Xamarin.Forms 元素 。 在示例应用程序中，`OldElement` 属性将为 `null`，且 `NewElement` 属性将包含对 `CameraPreview` 实例的引用。
 
 在每个特定于平台的呈现器类中，`OnElementChanged` 方法的替代版本是执行本机控件实例化和自定义的位置。 `SetNativeControl` 方法应该用于实例化本机控件，此方法还会将控件引用分配给 `Control` 属性。 此外，可以通过 `Element` 属性获取正在呈现的 Xamarin.Forms 控件的引用。
 

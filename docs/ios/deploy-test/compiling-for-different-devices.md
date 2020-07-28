@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 1f71179ccafc2daf65e792c4538bf47ea2df1e7d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 2f70dd3b18c36d478548672bb78d329cb2a4c9ab
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75663738"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938770"
 ---
 # <a name="compiling-for-different-devices-in-xamarinios"></a>在 Xamarin.iOS 中针对不同的设备进行编译
 
@@ -20,11 +20,11 @@ ms.locfileid: "75663738"
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](compiling-for-different-devices-images/image1.png "The Projects iOS Build properties page")](compiling-for-different-devices-images/image1.png#lightbox) 
+[![“项目 iOS 生成”属性页](compiling-for-different-devices-images/image1.png)](compiling-for-different-devices-images/image1.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](compiling-for-different-devices-images/image1a.png "The Projects iOS Build properties page")](compiling-for-different-devices-images/image1a.png#lightbox)
+[![“项目 iOS 生成”属性页](compiling-for-different-devices-images/image1a.png)](compiling-for-different-devices-images/image1a.png#lightbox)
 
 -----
 
@@ -34,11 +34,11 @@ ms.locfileid: "75663738"
 
 Visual Studio for Mac 允许你配置两个与 SDK 相关的重要属性：用于生成软件的 iOS SDK 版本和部署目标（或所需的最低 iOS 版本）。
 
-iOS SDK 版本  选项允许你使用不同版本的 Apple 发布的 SDK，这会将 Xamarin.iOS 定向到在生成过程中应该引用的编译器、链接器和库。 右键单击该项目，然后选择“选项”  和选项窗口中的“iOS 生成”  ：
+iOS SDK 版本选项允许你使用不同版本的 Apple 发布的 SDK，这会将 Xamarin.iOS 定向到在生成过程中应该引用的编译器、链接器和库。 右键单击该项目，然后选择“选项”和选项窗口中的“iOS 生成”：
 
 [![选择选项窗口中的 SDK 版本](compiling-for-different-devices-images/sdk-version-sml.png)](compiling-for-different-devices-images/sdk-version.png#lightbox)
 
-部署目标  设置用于选择在其上运行应用程序的操作系统所需的最低版本。 这在项目的 Info.plist 文件中设置  。 应该选取具有运行应用程序所需的所有 API 的最低版本。
+部署目标设置用于选择在其上运行应用程序的操作系统所需的最低版本。 这在项目的 Info.plist 文件中设置。 应该选取具有运行应用程序所需的所有 API 的最低版本。
 
 [![在 Info.plist 文件中设置部署目标](compiling-for-different-devices-images/deployment-target-sml.png)](compiling-for-different-devices-images/deployment-target.png#lightbox)
 
@@ -58,9 +58,9 @@ LLVM 优化后端引擎会生成比 Mono 引擎更快、更严格的代码，但
 
 你可以在 Visual Studio for Mac 或 Visual Studio 的 iOS 生成选项中启用它们。
 
-[![](compiling-for-different-devices-images/image2.png "Enabling LLVM")](compiling-for-different-devices-images/image2.png#lightbox)
+[![启用 LLVM](compiling-for-different-devices-images/image2.png)](compiling-for-different-devices-images/image2.png#lightbox)
 
-[![](compiling-for-different-devices-images/image2a.png "Enabling LLVM")](compiling-for-different-devices-images/image2a.png#lightbox)
+[![启用 LLVM](compiling-for-different-devices-images/image2a.png)](compiling-for-different-devices-images/image2a.png#lightbox)
 
 ## <a name="architecture-support"></a>体系结构支持
 
@@ -109,10 +109,10 @@ Thumb 是 ARM 处理器使用的更紧凑的指令集。 通过启用 Thumb 支�
 
 若要执行此操作，应执行以下步骤：
 
-- 打开“项目选项”  并导航到“iOS 生成”  窗格。
-- 将 `'-gcc_flags "-weak_framework iAd"'` 添加到你想弱链接到的每个配置上的其他选项  ：
+- 打开“项目选项”并导航到“iOS 生成”窗格。
+- 将 `'-gcc_flags "-weak_framework iAd"'` 添加到你想弱链接到的每个配置上的其他选项：
 
-[![](compiling-for-different-devices-images/image3.png "Additional Options")](compiling-for-different-devices-images/image3.png#lightbox)
+[![其他选项](compiling-for-different-devices-images/image3.png)](compiling-for-different-devices-images/image3.png#lightbox)
 
 除此以外，你需要防止使用在可能不存在旧版本 iOS 的位置运行旧版本 iOS 的类型。 有几种方法来实现此目的，其中一种是分析 `UIDevice.CurrentDevice.SystemVersion`。
 

@@ -1,6 +1,6 @@
 ---
-title: title:“为跨平台 Xamarin.Forms 应用程序设置样式”说明：“本文说明如何使用 XAML 样式为跨平台 Xamarin.Forms 应用程序设置样式。”
-description: 'zone_pivot_groups: platform ms.topic: quickstart ms.prod: xamarin ms.assetid:CCCF8E57-D021-4542-8709-5808570FC26A ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2020/02/07 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: 为跨平台 Xamarin.Forms 应用程序设置样式
+description: 本文说明如何使用 XAML 样式为跨平台 Xamarin.Forms 应用程序设置样式。
 zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
@@ -12,12 +12,12 @@ ms.date: 02/07/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2d458bafc5bb1c8dcffc7858fd15734187f7612b
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 05560ae7c3d255140c0782e5f442dd2356d86cad
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84134064"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937418"
 ---
 # <a name="style-a-cross-platform-xamarinforms-application"></a>为跨平台 Xamarin.Forms 应用程序设置样式
 
@@ -29,8 +29,8 @@ ms.locfileid: "84134064"
 
 本快速入门演练如何使用 XAML 样式为跨平台 Xamarin.Forms 应用程序设置样式。 最终的应用程序如下所示：
 
-[![](styling-images/screenshots1-sml.png "Notes Page")](styling-images/screenshots1.png#lightbox "Notes Page")
-[![](styling-images/screenshots2-sml.png "Note Entry Page")](styling-images/screenshots2.png#lightbox "Note Entry Page")
+[![便笺页面](styling-images/screenshots1-sml.png)](styling-images/screenshots1.png#lightbox "便笺页面")
+[![便笺输入页面](styling-images/screenshots2-sml.png)](styling-images/screenshots2.png#lightbox "便笺输入页面")
 
 ### <a name="prerequisites"></a>先决条件
 

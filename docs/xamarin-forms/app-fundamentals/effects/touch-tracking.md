@@ -1,6 +1,6 @@
 ---
-title: title:“从效果调用事件”说明：“一种效果可以定义和调用事件，指示基础本机视图中的更改。
-description: '本文介绍如何实现低级别多点触控手指跟踪，以及如何生成发出触摸活动信号的事件。” ms.prod: xamarin ms.assetid:6A724681-55EB-45B8-9EED-7E412AB19DD2 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2018/12/14 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: 从效果调用事件
+description: 一种效果可以定义和调用事件，指示基础本机视图中的更改。 本文介绍如何实现低级别多点触控手指跟踪，以及如何生成发出触摸活动信号的事件。
 ms.prod: xamarin
 ms.assetid: 6A724681-55EB-45B8-9EED-7E412AB19DD2
 ms.technology: xamarin-forms
@@ -10,12 +10,12 @@ ms.date: 12/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 892bffa4027a1a61d6c22cc26d1556fb007432d8
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: cc150ecffbf9b6b31ec2f533bcc33876100614dc
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84136976"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936846"
 ---
 # <a name="invoking-events-from-effects"></a>从效果调用事件
 
@@ -456,7 +456,7 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 可以使用不同手指同时移动多个 `BoxView` 元素。
 
-[![](touch-tracking-images/boxviewdragging-small.png "Triple screenshot of the BoxView Dragging page")](touch-tracking-images/boxviewdragging-large.png#lightbox "Triple screenshot of the BoxView Dragging page")
+[![BoxView 拖动页的三重屏幕截图](touch-tracking-images/boxviewdragging-small.png)](touch-tracking-images/boxviewdragging-large.png#lightbox "BoxView 拖动页的三重屏幕截图")
 
 ### <a name="subclassing-the-view"></a>对视图进行子类化
 
@@ -519,7 +519,7 @@ class DraggableBoxView : BoxView
 
 椭圆绘图页允许通过在屏幕上滑动手指来绘制一个椭圆。 具体取决于如何移动手指，可以自左上到右下，或是从任何其他的对角来绘制一个椭圆。 绘制的椭圆颜色和不透明度随机。
 
-[![](touch-tracking-images/ellipsedrawing-small.png "Triple screenshot of the Ellipse Drawing page")](touch-tracking-images/ellipsedrawing-large.png#lightbox "Triple screenshot of the Ellipse Drawing page")
+[![椭圆绘制页的三重屏幕截图](touch-tracking-images/ellipsedrawing-small.png)](touch-tracking-images/ellipsedrawing-large.png#lightbox "椭圆绘制页的三重屏幕截图")
 
 然后触摸其中一个椭圆，可将其拖动到其他位置。 此操作要求一种名为“命中测试”的技术，该技术涉及在特定的点搜索图形对象。 SkiaSharp 椭圆不是 Xamarin.Forms 元素，因此它们不能自己执行 `TouchEffect` 处理。 `TouchEffect` 必须应用于整个 `SKCanvasView` 对象。
 
@@ -691,7 +691,7 @@ case TouchActionType.Pressed:
 
 其他 SkiaSharp 示例位于手指绘制页中。 可以从两个 `Picker` 视图中选择笔划颜色和宽度，然后使用一个或多个手指进行绘制：
 
-[![](touch-tracking-images/fingerpaint-small.png "Triple screenshot of the Finger Paint page")](touch-tracking-images/fingerpaint-large.png#lightbox "Triple screenshot of the Finger Paint page")
+[![手指绘制页的三重屏幕截图](touch-tracking-images/fingerpaint-small.png)](touch-tracking-images/fingerpaint-large.png#lightbox "手指绘制页的三重屏幕截图")
 
 此示例还需要一个单独的类来表示屏幕上绘制的每一行：
 
@@ -799,7 +799,7 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 `WhiteKey` 和 `BlackKey` 的各种元素在页的 [XAML 文件](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/SilentKeyboardPage.xaml)中排列，以便于当手机保持在横向模式时显示效果最佳：
 
-[![](touch-tracking-images/silentkeyboard-small.png "Triple screenshot of the Silent Keyboard page")](touch-tracking-images/silentkeyboard-large.png#lightbox "Triple screenshot of the Silent Keyboard page")
+[![无提示键盘页的三重屏幕截图](touch-tracking-images/silentkeyboard-small.png)](touch-tracking-images/silentkeyboard-large.png#lightbox "无提示键盘页的三重屏幕截图")
 
 如果在键之间滑动手指，可以通过颜色的细微变化看见触摸事件从一个键传输到另一个键。
 

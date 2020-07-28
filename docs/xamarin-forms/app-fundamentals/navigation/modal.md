@@ -1,6 +1,6 @@
 ---
-title: title:"Xamarin.Forms模式页面”说明：“Xamarin.Forms 提供对模式页面的支持。
-description: '模式页面鼓励用户完成独立任务，在完成或取消该任务之前，不允许导航离开该任务。 本文演示如何导航到模式页面。” ms.prod: xamarin ms.assetid:486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2017/12/01 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms 模式页面
+description: Xamarin.Forms 支持模式页面。 模式页面鼓励用户完成独立任务，在完成或取消该任务之前，不允许导航离开该任务。 本文演示如何导航到模式页面。
 ms.prod: xamarin
 ms.assetid: 486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: aecab26efaed9815ec6916877b5f42297821582c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: ea0d38946a773dc7571a08f999be5eb6500bfc9b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569603"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934493"
 ---
 # <a name="xamarinforms-modal-pages"></a>Xamarin.Forms 模式页面
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-modal)
 
-Xamarin.Forms 支持模式页面。模式页面鼓励用户完成独立任务，在完成或取消该任务之前，不允许导航离开该任务。本文演示如何导航到模式页面。
+_ 支持模式页面。模式页面鼓励用户完成独立任务，在完成或取消该任务之前，不允许导航离开该任务。本文演示如何导航到模式页面。
 
 本文讨论以下主题：
 
@@ -32,11 +32,11 @@ Xamarin.Forms 支持模式页面。模式页面鼓励用户完成独立任务，
 
 模式页可以是 Xamarin.Forms 支持的任何[页面](~/xamarin-forms/user-interface/controls/pages.md)类型。 若要显示模式页面，应用程序会将页面推送到模式堆栈中，在堆栈中，该页面会变为活动页面，如下图所示：
 
-![](modal-images/pushing.png "Pushing a Page to the Modal Stack")
+![将页面推送到模式堆栈](modal-images/pushing.png)
 
 若要返到回前一页，应用程序会从模式堆栈弹出当前页面，而使最顶层的新页面成为活动页面，如下图所示：
 
-![](modal-images/popping.png "Popping a Page from the Modal Stack")
+![从模式堆栈中弹出页面](modal-images/popping.png)
 
 ## <a name="performing-navigation"></a>执行导航
 
@@ -64,7 +64,7 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 
 这会导致 `ModalPage` 实例被推送到模式堆栈中，在该堆栈中，该实例将变为活动页面，前提是已在 `MainPage` 实例上的 [`ListView`](xref:Xamarin.Forms.ListView) 中选择了一个项目。 `ModalPage` 实例如以下屏幕截图中所示：
 
-![](modal-images/modalpage.png "Modal Page Example")
+![模式页面示例](modal-images/modalpage.png)
 
 调用 [`PushModalAsync`](xref:Xamarin.Forms.INavigation.PushModalAsync*) 时，会发生以下事件：
 

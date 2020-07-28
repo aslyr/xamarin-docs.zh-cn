@@ -10,12 +10,12 @@ ms.date: 10/24/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0ed11ccacec73dd3c5c220c41bffd090af6c5b27
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d1aead9297312e190a5a04ee0f33328d81f2547a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139381"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939953"
 ---
 # <a name="creating-an-effect"></a>创建效果
 
@@ -38,12 +38,12 @@ _效果简化了控件的自定义。本文演示如何创建效果，在指向 
 
 示例应用程序演示了 `FocusEffect`，它在获得焦点时更改控件的背景颜色。 下图说明了示例应用程序中每个项目的职责，以及它们之间的关系：
 
-![](creating-images/focus-effect.png "Focus Effect Project Responsibilities")
+![焦点效果项目职责](creating-images/focus-effect.png)
 
 `HomePage` 上的 [`Entry`](xref:Xamarin.Forms.Entry) 控件由特定于平台的各项目中的 `FocusEffect` 类自定义。 每个 `FocusEffect` 类均派生自各平台的 `PlatformEffect` 类。 这导致使用特定于平台的背景颜色呈现 `Entry` 控件，背景颜色在控件获得焦点时变化，如以下屏幕截图所示：
 
-![](creating-images/screenshots-1.png "Focus Effect on each Platform")
-![](creating-images/screenshots-2.png "Focus Effect on each Platform")
+![各平台上的焦点效果](creating-images/screenshots-1.png)
+![各平台上的焦点效果](creating-images/screenshots-2.png)
 
 ## <a name="creating-the-effect-on-each-platform"></a>在各平台上创建效果
 

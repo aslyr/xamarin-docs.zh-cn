@@ -1,6 +1,6 @@
 ---
-title: title:“可重用 EventToCommandBehavior”说明：“行为可用于将命令与并非旨在与命令交互的控件关联。
-description: '本文演示了如何创建 Xamarin.Forms 行为并在事件触发后使用它来调用命令。” ms.prod: xamarin ms.assetid:EC7F6556-9776-40B8-9424-A8094482A2F3 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2018/11/09 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: 可重用 EventToCommandBehavior
+description: 行为可用于将命令与非旨在与命令交互的控件相关联。 本文演示了如何创建 Xamarin.Forms 行为并在事件触发后使用它来调用命令。
 ms.prod: xamarin
 ms.assetid: EC7F6556-9776-40B8-9424-A8094482A2F3
 ms.technology: xamarin-forms
@@ -10,12 +10,12 @@ ms.date: 11/09/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 46d1566c89de763a469f30ce8ed2c6ef919f1426
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 0967845ac61ddf5f8e1cc76664a50877d041f011
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84135793"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939667"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>可重用 EventToCommandBehavior
 
@@ -201,7 +201,7 @@ selectedItemLabel.SetBinding(Label.TextProperty, "SelectedItemText");
 
 在运行时，该行为将响应与控件的交互。 在 [`ListView`](xref:Xamarin.Forms.ListView) 中选定一个项目时，将触发 [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) 事件，该事件将在 ViewModel 中执行 `OutputAgeCommand`。 反过来，这又会更新 [`Label`](xref:Xamarin.Forms.Label) 绑定到的 ViewModel `SelectedItemText` 属性，如以下屏幕截图所示：
 
-[![](event-to-command-behavior-images/screenshots-sml.png "Sample Application with EventToCommandBehavior")](event-to-command-behavior-images/screenshots.png#lightbox "Sample Application with EventToCommandBehavior")
+[![具有 EventToCommandBehavior 的示例应用程序](event-to-command-behavior-images/screenshots-sml.png)](event-to-command-behavior-images/screenshots.png#lightbox "具有 EventToCommandBehavior 的示例应用程序")
 
 在事件触发时使用此行为执行命令的优点是，命令可与非旨在与命令交互的控件相关联。 此外，还可从代码隐藏文件中删除冗余重复事件处理代码。
 

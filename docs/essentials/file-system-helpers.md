@@ -9,12 +9,12 @@ ms.date: 11/04/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5fafc24d9c4bd35d4ef0010ae4530341316c878a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: eb35750372c5ccb878c7b38f9d25898b09fd7f1e
+ms.sourcegitcommit: e412858ce431b3280c88241e324fcab33066eb58
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84802364"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865892"
 ---
 # <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials：文件系统帮助程序
 
@@ -69,6 +69,9 @@ var mainDir = FileSystem.AppDataDirectory;
 
 - **CacheDirectory** - 返回 [Library/Caches](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) 目录。
 - **AppDataDirectory** - 返回由 iTunes 和 iCloud 备份的 [Library](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) 目录。
+
+> [!IMPORTANT]
+> 在 iOS 模拟器中，应用程序 ID （作为目录名称的一部分）会在每次生成时发生更改。因此，每次为模拟器构建应用程序时，都必须检索正确的 ID。
 
 将任何文件添加到 iOS 项目中的 Resources 文件夹中，并将生成操作标记为 BundledResource 以将其与 `OpenAppPackageFileAsync` 一起使用 。
 

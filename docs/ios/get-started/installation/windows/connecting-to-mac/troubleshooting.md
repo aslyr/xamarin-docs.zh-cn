@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 311e0a84cfc71421c0992ffcecde975429eb7d3a
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1214360f98464e1451da58aaca13df6a3964aba9
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572164"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933063"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Xamarin.iOS 生成主机连接疑难解答
 
@@ -44,15 +44,15 @@ ms.locfileid: "84572164"
 
 2. 确保在 Mac 上启用“远程登录”。 为“仅这些用户”设置访问权限，并确保 Mac 用户包含在列表或组中：
 
-    [![](troubleshooting-images/troubleshooting-image1.png "Set access for Only these users")](troubleshooting-images/troubleshooting-image1.png#lightbox)
+    [![为“仅这些用户”设置访问权限](troubleshooting-images/troubleshooting-image1.png)](troubleshooting-images/troubleshooting-image1.png#lightbox)
 
 3. 检查防火墙是否允许通过端口 22（用于 SSH 的默认端口）进行传入连接：
 
-    [![](troubleshooting-images/troubleshooting-image2.png "Check that the firewall allows incoming connections through port 22")](troubleshooting-images/troubleshooting-image2.png#lightbox)
+    [![检查防火墙是否允许通过端口 22 的传入连接](troubleshooting-images/troubleshooting-image2.png)](troubleshooting-images/troubleshooting-image2.png#lightbox)
 
     如果禁用了“自动允许已签名的软件接收传入连接”，则 OS X 会在配对过程中提供一个对话框，询问是否允许 `mono-sgen` 或 `mono-sgen32` 接收传入连接。 请务必在该对话框中单击“允许”：
 
-    [![](troubleshooting-images/troubleshooting-image4a.png "Click Allow on this dialog")](troubleshooting-images/troubleshooting-image4a.png#lightbox)
+    [![在此对话框上单击“允许”](troubleshooting-images/troubleshooting-image4a.png)](troubleshooting-images/troubleshooting-image4a.png#lightbox)
 
 4. 确认已登录到该 Mac 上的用户帐户，并且具有活动 GUI 会话。
 
@@ -62,11 +62,11 @@ ms.locfileid: "84572164"
 
     例如，在下面的屏幕截图中，帐户名称是“amyb”，而不是“Amy Burns”：
 
-    [![](troubleshooting-images/troubleshooting-image5a.png "Getting the account name from the Terminal app")](troubleshooting-images/troubleshooting-image5a.png#lightbox)
+    [![从终端应用获取帐户名称](troubleshooting-images/troubleshooting-image5a.png)](troubleshooting-images/troubleshooting-image5a.png#lightbox)
 
 6. 检查用于 Mac 的 IP 地址是否正确。 可以在 Mac 上依次转到“系统偏好设置”>“共享”>“远程登录”下，查找 IP 地址。
 
-    [![](troubleshooting-images/troubleshooting-image17.png "The IP address in the System Preferences app")](troubleshooting-images/troubleshooting-image17.png#lightbox)
+    [![“系统首选项”应用中的 IP 地址](troubleshooting-images/troubleshooting-image17.png)](troubleshooting-images/troubleshooting-image17.png#lightbox)
 
 7. 确认了 Mac 的 IP 地址之后，尝试在 Windows 上的 `cmd.exe` 中对该地址执行 `ping` 操作：
 
@@ -159,7 +159,7 @@ ms.locfileid: "84572164"
 
     1. 通过在终端命令提示中运行 `ls /etc/ssh/sshd_config` 和 `ls /etc/sshd_config` 来确认 **sshd\_config** 文件的位置。 对于所有其余步骤，请务必使用_不_ 返回“No such file or directory”的位置。
 
-        [![](troubleshooting-images/troubleshooting-image18.png "Running `ls /etc/ssh/sshd_config` and `ls /etc/sshd_config` in the Terminal")](troubleshooting-images/troubleshooting-image18.png#lightbox)
+        [![在终端中运行 `ls /etc/ssh/sshd_config` 和 `ls /etc/sshd_config`](troubleshooting-images/troubleshooting-image18.png)](troubleshooting-images/troubleshooting-image18.png#lightbox)
 
     2. 在终端中运行 `cp /etc/ssh/sshd_config "$HOME/Desktop/"` 以将文件复制到桌面。
 
@@ -193,7 +193,7 @@ ms.locfileid: "84572164"
     
 2. 在按住 Control 的同时单击 **XMA** 文件夹并选择“移动到回收站”：
 
-    [![](troubleshooting-images/troubleshooting-image8.png "Move the XMA folder to Trash")](troubleshooting-images/troubleshooting-image8.png#lightbox)
+    [![将 XMA 文件夹移至“回收站”](troubleshooting-images/troubleshooting-image8.png)](troubleshooting-images/troubleshooting-image8.png#lightbox)
 
 3. Windows 上有一个缓存，可帮助进行清除。 在 Windows 上以管理员身份打开命令提示符：
 
@@ -233,7 +233,7 @@ ms.locfileid: "84572164"
 2. 单击“显示输出来源”下拉菜单。
 3. 选择“Xamarin”。
 
-[![](troubleshooting-images/troubleshooting-image11.png "Select Xamarin in the Output tab")](troubleshooting-images/troubleshooting-image11.png#lightbox)
+[![在“输出”选项卡中选择“Xamarin”](troubleshooting-images/troubleshooting-image11.png)](troubleshooting-images/troubleshooting-image11.png#lightbox)
 
 #### <a name="log-files"></a>日志文件
 
@@ -248,17 +248,17 @@ ms.locfileid: "84572164"
 
 3. Visual Studio 遇到连接错误之后，会从“帮助”>“Xamarin”>“压缩日志”收集日志：
 
-    [![](troubleshooting-images/troubleshooting-image12.png "Collect the logs from Help > Xamarin > Zip Logs")](troubleshooting-images/troubleshooting-image12.png#lightbox)
+    [![从“帮助”>“Xamarin”>“压缩日志”收集日志](troubleshooting-images/troubleshooting-image12.png)](troubleshooting-images/troubleshooting-image12.png#lightbox)
 
 4. 打开 .zip 文件时，你会看到类似于以下示例的文件的列表。 对于连接错误，最重要的文件是 **\*Ide.log** 和 **\*Ide.svclog** 文件。 这两个文件以两种略有不同的格式包含相同消息。 **.svclog** 是 XML，在要浏览消息时非常有用。 **.log** 是纯文本，在你要使用命令行工具筛选消息时非常有用。
 
     若要浏览所有消息，请选择并打开 **.svclog** 文件：
 
-    [![](troubleshooting-images/troubleshooting-image13.png "Select the svclog file")](troubleshooting-images/troubleshooting-image13.png#lightbox)
+    [![选择 svclog 文件](troubleshooting-images/troubleshooting-image13.png)](troubleshooting-images/troubleshooting-image13.png#lightbox)
 
 5. **.svclog** 文件会在 **Microsoft Service Trace Viewer** 中打开。 可以按线程浏览消息以查看相关消息组。 若要按线程进行浏览，请首先选择“图表”选项卡，单击“布局模式”下拉菜单，然后选择“线程”：
 
-    [![](troubleshooting-images/troubleshooting-image14.png "Click the Layout Mode drop-down menu and select Thread")](troubleshooting-images/troubleshooting-image14.png#lightbox)
+    [![单击“布局模式”下拉菜单并选择“线程”](troubleshooting-images/troubleshooting-image14.png)](troubleshooting-images/troubleshooting-image14.png#lightbox)
 
 <a name="verboselogs"></a>
 
@@ -324,7 +324,7 @@ error : Building from a network share path is not supported at the moment. Pleas
 
 在 Mac 上启动 Xcode，并确保你的 Apple 开发人员帐户已登录并且你的 iOS 开发配置文件已下载：
 
-[![](troubleshooting-images/troubleshooting-image7.png "Ensuring that the Apple developer account is logged in and the iOS Development Profile is downloaded")](troubleshooting-images/troubleshooting-image7.png#lightbox)
+[![确保登录 Apple 开发者帐户并且下载 iOS 开发配置文件](troubleshooting-images/troubleshooting-image7.png)](troubleshooting-images/troubleshooting-image7.png#lightbox)
 
 ### <a name="a-socket-operation-was-attempted-to-an-unreachable-network"></a>“向一个无法连接的网络尝试了一个套接字操作”
 
@@ -350,7 +350,7 @@ error : Building from a network share path is not supported at the moment. Pleas
 ps -A | grep mono
 ```
 
-[![](troubleshooting-images/troubleshooting-image10.png "Running commands in Terminal on the Mac")](troubleshooting-images/troubleshooting-image10.png#lightbox)
+[![在 Mac 上的终端中运行命令](troubleshooting-images/troubleshooting-image10.png)](troubleshooting-images/troubleshooting-image10.png#lightbox)
 
 若要终止现有过程，请使用以下命令：
 
@@ -370,7 +370,7 @@ killall mono
 
 2. 在按住 Control 的同时单击 **mtbs** 文件夹并选择“移动到回收站”：
 
-    [![](troubleshooting-images/troubleshooting-image9.png "Move the mtbs folder to Trash")](troubleshooting-images/troubleshooting-image9.png#lightbox)
+    [![将 mtbs 文件夹移至“回收站”](troubleshooting-images/troubleshooting-image9.png)](troubleshooting-images/troubleshooting-image9.png#lightbox)
 
 ## <a name="related-links"></a>相关链接
 

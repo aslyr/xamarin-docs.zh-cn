@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 141d268e7a5670f9ba8002ae9edda828538a01a4
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 8dc70cc8f1bf29a58cb20540fa538be2025b2ba4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571787"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935624"
 ---
 # <a name="debugging-xamarinios-apps"></a>调试 Xamarin.iOS 应用
 
@@ -33,41 +33,41 @@ Xamarin.iOS 调试器使用 [Mono 软调试器](https://www.mono-project.com/doc
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](debugging-in-xamarin-ios-images/debugging1.png "Setting Breakpoints")](debugging-in-xamarin-ios-images/debugging1.png#lightbox)
+[![设置断点](debugging-in-xamarin-ios-images/debugging1.png)](debugging-in-xamarin-ios-images/debugging1.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](debugging-in-xamarin-ios-images/debugging1a.png "Setting Breakpoints")](debugging-in-xamarin-ios-images/debugging1a.png#lightbox)
+[![设置断点](debugging-in-xamarin-ios-images/debugging1a.png)](debugging-in-xamarin-ios-images/debugging1a.png#lightbox)
 
 -----
 
-可转到“Breakpoints pad”  面板，查看代码中已设置的所有断点：
+可转到“Breakpoints pad”面板，查看代码中已设置的所有断点：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](debugging-in-xamarin-ios-images/image0a.png "The Breakpoints pad")](debugging-in-xamarin-ios-images/image0a.png#lightbox)
+[![断点板](debugging-in-xamarin-ios-images/image0a.png)](debugging-in-xamarin-ios-images/image0a.png#lightbox)
 
- 如果“Breakpoints pad”未自动显示，可以依次选择“视图”>“调试窗口”>“断点”  调出它
+ 如果“Breakpoints pad”未自动显示，可以依次选择“视图”>“调试窗口”>“断点”调出它
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](debugging-in-xamarin-ios-images/image0.png "The Breakpoints pad")](debugging-in-xamarin-ios-images/image0.png#lightbox)
+[![断点板](debugging-in-xamarin-ios-images/image0.png)](debugging-in-xamarin-ios-images/image0.png#lightbox)
 
- 如果“Breakpoints pad”未自动显示，可以依次选择择“调试”>“窗口”>“断点”  调出它
+ 如果“Breakpoints pad”未自动显示，可以依次选择择“调试”>“窗口”>“断点”调出它
 
 -----
 
-开始调试任何应用程序之前，应始终确保配置已设为“调试”  ，因为其中有一套有用的工具，可支持调试（比如断点），使用数据可视化工具以及查看调用堆栈：
+开始调试任何应用程序之前，应始终确保配置已设为“调试”，因为其中有一套有用的工具，可支持调试（比如断点），使用数据可视化工具以及查看调用堆栈：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](debugging-in-xamarin-ios-images/debugging7.png "Debugging on simulator")](debugging-in-xamarin-ios-images/debugging7.png#lightbox)
-[![](debugging-in-xamarin-ios-images/debugging7a.png "Debugging on a physical device")](debugging-in-xamarin-ios-images/debugging7a.png#lightbox)
+[![在模拟器上调试](debugging-in-xamarin-ios-images/debugging7.png)](debugging-in-xamarin-ios-images/debugging7.png#lightbox)
+[![在物理设备上调试](debugging-in-xamarin-ios-images/debugging7a.png)](debugging-in-xamarin-ios-images/debugging7a.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](debugging-in-xamarin-ios-images/debugging7c.png "Debugging on simulator")](debugging-in-xamarin-ios-images/debugging7c.png#lightbox)
-[![](debugging-in-xamarin-ios-images/debugging7d.png "Debugging on a physical device")](debugging-in-xamarin-ios-images/debugging7d.png#lightbox)
+[![在模拟器上调试](debugging-in-xamarin-ios-images/debugging7c.png)](debugging-in-xamarin-ios-images/debugging7c.png#lightbox)
+[![在物理设备上调试](debugging-in-xamarin-ios-images/debugging7d.png)](debugging-in-xamarin-ios-images/debugging7d.png#lightbox)
 
 -----
 
@@ -76,53 +76,53 @@ Xamarin.iOS 调试器使用 [Mono 软调试器](https://www.mono-project.com/doc
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](debugging-in-xamarin-ios-images/debugging7b.png "Select the target device")](debugging-in-xamarin-ios-images/debugging7b.png#lightbox)
+[![选择目标设备](debugging-in-xamarin-ios-images/debugging7b.png)](debugging-in-xamarin-ios-images/debugging7b.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](debugging-in-xamarin-ios-images/debugging7e.png "Select the target device")](debugging-in-xamarin-ios-images/debugging7e.png#lightbox)
+[![选择目标设备](debugging-in-xamarin-ios-images/debugging7e.png)](debugging-in-xamarin-ios-images/debugging7e.png#lightbox)
 
 -----
 
-然后通过按“播放”  按钮部署应用程序。
+然后通过按“播放”按钮部署应用程序。
 
 命中断点时，代码会以黄色突出显示：
 
-[![](debugging-in-xamarin-ios-images/image2.png "The code will be highlighted yellow")](debugging-in-xamarin-ios-images/image2.png#lightbox)
+[![代码会以黄色突出显示](debugging-in-xamarin-ios-images/image2.png)](debugging-in-xamarin-ios-images/image2.png#lightbox)
 
 此时，可使用调试工具（如检查对象的值）获取代码中所发生情况的相关详细信息：
 
-[![](debugging-in-xamarin-ios-images/image3.png "Displaying a color value")](debugging-in-xamarin-ios-images/image3.png#lightbox)
+[![显示颜色值](debugging-in-xamarin-ios-images/image3.png)](debugging-in-xamarin-ios-images/image3.png#lightbox)
 
 ## <a name="conditional-breakpoints"></a>条件断点
 
-还可以设置规则，规定应该发生断点的情况，称为添加条件断点  。
+还可以设置规则，规定应该发生断点的情况，称为添加条件断点。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-若要设置条件断点，请访问“断点属性”  窗口。具体有以下两种操作方法：
+若要设置条件断点，请访问“断点属性”窗口。具体有以下两种操作方法：
 
 - 若要添加新的条件断点，请右键单击编辑器边缘（即要设置断点的代码行号左侧），再选择“新建断点”：
 
-  [![](debugging-in-xamarin-ios-images/image4.png "Select New Breakpoint")](debugging-in-xamarin-ios-images/image4.png#lightbox)
+  [![选择“新建断点”](debugging-in-xamarin-ios-images/image4.png)](debugging-in-xamarin-ios-images/image4.png#lightbox)
 
-- 若要向现有断点添加条件，请右键单击该断点并选择“断点属性”  ，或如下图所示在“断点”  面板中选择“属性”按钮：
+- 若要向现有断点添加条件，请右键单击该断点并选择“断点属性”，或如下图所示在“断点”面板中选择“属性”按钮：
 
-  [![](debugging-in-xamarin-ios-images/image5.png "The Breakpoints Pad")](debugging-in-xamarin-ios-images/image5.png#lightbox)
+  [![断点板](debugging-in-xamarin-ios-images/image5.png)](debugging-in-xamarin-ios-images/image5.png#lightbox)
 
 然后可输入想要断点发生的条件：
 
-[![](debugging-in-xamarin-ios-images/image6.png "Enter the condition for the breakpoint to occur")](debugging-in-xamarin-ios-images/image6.png#lightbox)
+[![输入断点发生的条件](debugging-in-xamarin-ios-images/image6.png)](debugging-in-xamarin-ios-images/image6.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 若要在 Visual Studio 中设置条件断点，请先[设置常规断点](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)。 右键单击断点，以显示其上下文菜单：
 
- [![](debugging-in-xamarin-ios-images/image4vs.png "The breakpoint context menu")](debugging-in-xamarin-ios-images/image4vs.png#lightbox)
+ [![断点上下文菜单](debugging-in-xamarin-ios-images/image4vs.png)](debugging-in-xamarin-ios-images/image4vs.png#lightbox)
 
-选择“条件...”  显示“断点设置”  菜单：
+选择“条件...”显示“断点设置”菜单：
 
- [![](debugging-in-xamarin-ios-images/image6vs.png "The Breakpoint Settings menu")](debugging-in-xamarin-ios-images/image6vs.png#lightbox)
+ [![“断点设置”菜单](debugging-in-xamarin-ios-images/image6vs.png)](debugging-in-xamarin-ios-images/image6vs.png#lightbox)
 
 可在此处输入想要断点发生的条件
 
@@ -138,12 +138,12 @@ Xamarin.iOS 调试器使用 [Mono 软调试器](https://www.mono-project.com/doc
 
 在 Visual Studio for Mac 中，它们将显示如下：
 
- [![](debugging-in-xamarin-ios-images/image7.png "The Debug tools enable the developer to get control over the program’s execution")](debugging-in-xamarin-ios-images/image7.png#lightbox)
+ [![开发者可通过调试工具控制程序执行](debugging-in-xamarin-ios-images/image7.png)](debugging-in-xamarin-ios-images/image7.png#lightbox)
 
 这些是：
 
-- “播放/停止”  -此按钮开始/停止执行代码，直至下一个断点处。
-- **单步跳过** - 此按钮执行下一行代码。 如果下一行是函数调用，“单步跳过”将执行该函数，并在该函数后  的下一行代码停止。
+- “播放/停止” -此按钮开始/停止执行代码，直至下一个断点处。
+- **单步跳过** - 此按钮执行下一行代码。 如果下一行是函数调用，“单步跳过”将执行该函数，并在该函数后的下一行代码停止。
 - **单步执行** - 此按钮也执行下一行代码。 如果下一行是函数调用，“单步执行”将在该函数的第一行停止，允许继续进行函数的逐行调试。 如果下一行不是函数，其行为与“单步跳过”相同。
 - **跳出** - 此按钮返回到调用当前函数的代码行。
 
@@ -151,14 +151,14 @@ Xamarin.iOS 调试器使用 [Mono 软调试器](https://www.mono-project.com/doc
 
 在 Visual Studio 中，它们如下所示：
 
-[![](debugging-in-xamarin-ios-images/image7vs.png "The Debug tools enable the developer to get control over the program’s execution")](debugging-in-xamarin-ios-images/image7vs.png#lightbox)
+[![开发者可通过调试工具控制程序执行](debugging-in-xamarin-ios-images/image7vs.png)](debugging-in-xamarin-ios-images/image7vs.png#lightbox)
 
 这些是：
 
-- “播放/停止”  -此按钮开始/停止执行代码，直至下一个断点处。
-- “单步跳过 (F11)”  - 此按钮执行下一行代码。 如果下一行是函数调用，“单步跳过”将执行该函数，并在该函数后  的下一行代码停止。
-- “单步执行 (F10)”  - 此按钮也执行下一行代码。 如果下一行是函数调用，“单步执行”将在该函数的第一行停止，允许继续进行函数的逐行调试。 如果下一行不是函数，其行为与“单步跳过”相同。
-- “跳出 (Shift+F11)”  - 此按钮返回到调用当前函数的行。
+- “播放/停止” -此按钮开始/停止执行代码，直至下一个断点处。
+- “单步跳过 (F11)” - 此按钮执行下一行代码。 如果下一行是函数调用，“单步跳过”将执行该函数，并在该函数后的下一行代码停止。
+- “单步执行 (F10)” - 此按钮也执行下一行代码。 如果下一行是函数调用，“单步执行”将在该函数的第一行停止，允许继续进行函数的逐行调试。 如果下一行不是函数，其行为与“单步跳过”相同。
+- “跳出 (Shift+F11)” - 此按钮返回到调用当前函数的行。
 
 有关调试的更多详细文档，请参阅[使用 Visual Studio 调试器浏览代码](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)。
 
@@ -214,13 +214,13 @@ Xamarin.iOS 随附用于 Mono 类库的源代码，可使用此代码在调试�
 
 由于此功能在调试过程中会占用更多内存，因此默认禁用。
 
-若要启用此功能，请确保在“Visual Studio for Mac”>“首选项”>“调试程序”  菜单下已取消选择“仅调试项目代码；不单步执行框架代码”  选项，如下图所示：
+若要启用此功能，请确保在“Visual Studio for Mac”>“首选项”>“调试程序”菜单下已取消选择“仅调试项目代码；不单步执行框架代码”选项，如下图所示：
 
 [![](debugging-in-xamarin-ios-images/debugging6.png "Debugging Mono's Class Libraries")](debugging-in-xamarin-ios-images/debugging6.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-若要在 Visual Studio 中调试类库，必须在“调试”>“选项”  菜单下禁用“仅我的代码”  。 在“调试”>“常规”  节点中，取消选中“启用‘仅我的代码’”  复选框：
+若要在 Visual Studio 中调试类库，必须在“调试”>“选项”菜单下禁用“仅我的代码”。 在“调试”>“常规”节点中，取消选中“启用‘仅我的代码’”复选框：
 
 [![](debugging-in-xamarin-ios-images/debugging6vs.png "Debugging Mono's Class Libraries")](debugging-in-xamarin-ios-images/debugging6vs.png#lightbox)
 

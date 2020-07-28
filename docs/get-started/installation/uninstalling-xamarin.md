@@ -9,12 +9,12 @@ ms.date: 01/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b4d644591ab85f185709e7bd53353580a6578d77
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1eae29e8531c9d401630f9d113b01eb3c2510689
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570105"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939160"
 ---
 # <a name="uninstall-xamarin-from-visual-studio"></a>从 Visual Studio 中卸载 Xamarin
 
@@ -30,25 +30,25 @@ ms.locfileid: "84570105"
 
 2. 针对想要更改的实例按“修改”按钮。
 
-    [![](uninstalling-xamarin-images/vs2017-02-sml.png "Press the modify button")](uninstalling-xamarin-images/vs2017-02.png#lightbox)
+    [![按“修改”按钮](uninstalling-xamarin-images/vs2017-02-sml.png)](uninstalling-xamarin-images/vs2017-02.png#lightbox)
 
 3. 在“工作负载”选项卡中，取消选择“使用 .NET 的移动开发”选项（在“移动与游戏”部分中）。
 
-    [![](uninstalling-xamarin-images/vs2017-03-sml.png "Uncheck the Mobile Development workload")](uninstalling-xamarin-images/vs2017-03.png#lightbox)
+    [![取消选中“移动开发”工作负载](uninstalling-xamarin-images/vs2017-03-sml.png)](uninstalling-xamarin-images/vs2017-03.png#lightbox)
 
 4. 在窗口的右下角中，单击“修改”按钮。
 
 5. 安装程序将删除已取消选择的组件（必须要在 Visual Studio 2017 关闭之后，安装程序才可进行修改）。
 
-    [![](uninstalling-xamarin-images/vs2017-04-sml.png "Press the Modify button")](uninstalling-xamarin-images/vs2017-04.png#lightbox)
+    [![按“修改”按钮](uninstalling-xamarin-images/vs2017-04-sml.png)](uninstalling-xamarin-images/vs2017-04.png#lightbox)
 
 通过在步骤 3 中切换到“各个组件”选项卡并取消选中特定组件，可卸载单个 Xamarin 组件（如 Profiler 或 Workbooks）：
 
-[![](uninstalling-xamarin-images/vs2017-components-sml.png "Uninstall individual components")](uninstalling-xamarin-images/vs2017-components.png#lightbox)
+[![卸载单个组件](uninstalling-xamarin-images/vs2017-components-sml.png)](uninstalling-xamarin-images/vs2017-components.png#lightbox)
 
 若要完全卸载 Visual Studio 2017，请从“启动”按钮旁具有三条横线的菜单中选择“卸载”。
 
-[![](uninstalling-xamarin-images/vs2017-uninstall-sml.png "Uninstall Visual Studio completely")](uninstalling-xamarin-images/vs2017-uninstall.png#lightbox)
+[![完全卸载 Visual Studio](uninstalling-xamarin-images/vs2017-uninstall-sml.png)](uninstalling-xamarin-images/vs2017-uninstall.png#lightbox)
 
 > [!IMPORTANT]
 > 如果并行 (SxS) 安装了两个（或多个）Visual Studio 的实例（如发行版和预览版），则卸载一个实例可能会删除另一个 Visual Studio 实例中的一些 Xamarin 功能，包括：
@@ -70,7 +70,7 @@ ms.locfileid: "84570105"
 
 通过“控制面板”，可从 Windows 计算机卸载 Xamarin。 导航到“程序和功能” ，或“程序”>“卸载程序”，如下所示：
 
- [![](uninstalling-xamarin-images/image3.png "Navigate to Programs and Features or Programs  Uninstall a Program as illustrated here")](uninstalling-xamarin-images/image3.png#lightbox)
+ [![导航到“程序和功能”，或“程序”>“卸载程序”，如下所示](uninstalling-xamarin-images/image3.png)](uninstalling-xamarin-images/image3.png#lightbox)
 
 在控制面板中，卸载存在的所有以下项目：
 

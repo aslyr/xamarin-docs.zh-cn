@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2018
-ms.openlocfilehash: ae32588d75ec3152a1b8b8558d40abbe2e76d1b4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 2650bda7115cd132e87bf669914320f63214e295
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73022479"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933219"
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Xamarin.iOS for Visual Studio 简介
 
@@ -53,7 +53,7 @@ Xamarin iOS for Visual Studio 将项添加到标准工具栏和新的 iOS 工具
 
 与 Xamarin iOS 开发相关的控件用红线圈出：
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/03.png "The controls relevant to Xamarin iOS development are circled in red")](introduction-to-xamarin-ios-for-visual-studio-images/03.png#lightbox "The controls relevant to Xamarin iOS development are circled in red")
+[![与 Xamarin iOS 开发相关的控件已用红线圈出](introduction-to-xamarin-ios-for-visual-studio-images/03.png)](introduction-to-xamarin-ios-for-visual-studio-images/03.png#lightbox "与 Xamarin iOS 开发相关的控件已用红线圈出")
 
 - **开始** - 开始在选定平台上调试或运行应用。 Mac 必须已连接（可查看 iOS 工具栏中的状态指示器）。
 - **解决方案配置** - 允许选择要使用的配置（例如，调试和发布）。
@@ -63,11 +63,11 @@ Xamarin iOS for Visual Studio 将项添加到标准工具栏和新的 iOS 工具
 
 iOS 工具栏在所有版本的 Visual Studio 中都类似。 外观如下所示：
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png "iOS Toolbar")](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png#lightbox)
+[![iOS 工具栏](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png)](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png#lightbox)
 
 下面解释每个项：
 
-- **Mac 代理/连接管理器** - 显示 Xamarin Mac 代理对话框。 正在连接时，此图标显示为橙色  ；已连接时，显示为绿色  。
+- **Mac 代理/连接管理器** - 显示 Xamarin Mac 代理对话框。 正在连接时，此图标显示为橙色；已连接时，显示为绿色。
 - **显示 iOS 模拟器** - 在 Mac 上将 iOS 模拟器窗口放在最前面。
 - **显示生成服务器上的 IPA 文件** - 打开 Mac 上的 Finder，找到应用程序的 IPA 输出文件位置。
 
@@ -75,69 +75,69 @@ iOS 工具栏在所有版本的 Visual Studio 中都类似。 外观如下所示
 
 ### <a name="output-window"></a>输出窗口
 
-“输出”  窗格具有多个选项，可以查看这些选项，发现有关生成、部署、连接消息和错误。
+“输出”窗格具有多个选项，可以查看这些选项，发现有关生成、部署、连接消息和错误。
 
 以下屏幕截图显示可用的输出窗口，这些窗口可能因项目类型而有所不同：
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/output-sml.png "The available output windows")](introduction-to-xamarin-ios-for-visual-studio-images/output-large.png#lightbox)
+[![可用输出窗口](introduction-to-xamarin-ios-for-visual-studio-images/output-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output-large.png#lightbox)
 
 - **Xamarin** - 此项包含仅与 Xamarin 相关的信息，如与 Mac 的连接情况和激活状态。
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output3-sml.png "Information relating solely to Xamarin, such as the connection to the Mac and activation status")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
+  [![仅与 Xamarin 相关的信息，例如与 Mac 的连接情况和激活状态](introduction-to-xamarin-ios-for-visual-studio-images/output3-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
 
 - **Xamarin 诊断** - 此窗格显示 Xamarin 项目的更多详细信息，如与 Android 的交互。
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output4-sml.png "Detailed information about the Xamarin project")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
+  [![有关 Xamarin 项目的详细信息](introduction-to-xamarin-ios-for-visual-studio-images/output4-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
 
 仍可以在“输出”视图中选择其他默认 Visual Studio 输出窗格（如“调试”和“生成”），以便调试输出和 MSBuild 输出：
 
 - **调试**
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output2-sml.png "Debugging Output")](introduction-to-xamarin-ios-for-visual-studio-images/output2-large.png#lightbox)
+  [![调试输出](introduction-to-xamarin-ios-for-visual-studio-images/output2-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output2-large.png#lightbox)
 
 - **生成**与**生成顺序**
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png "MSBuild Output")](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
+  [![MSBuild 输出](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
 
 ## <a name="ios-project-properties"></a>iOS 项目属性
 
-可通过右键单击项目名称并选择上下文菜单中的“属性”  找到 Visual Studio 的项目属性。 这样就可以配置 iOS 应用程序了，如以下屏幕截图所示：
+可通过右键单击项目名称并选择上下文菜单中的“属性”找到 Visual Studio 的项目属性。 这样就可以配置 iOS 应用程序了，如以下屏幕截图所示：
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/iosproperties.png "Configuring an iOS application")
+![配置 iOS 应用程序](introduction-to-xamarin-ios-for-visual-studio-images/iosproperties.png)
 
-- iOS 应用程序包签名  - 连接 Mac 以填充代码签名标识和预配配置文件：
+- iOS 应用程序包签名 - 连接 Mac 以填充代码签名标识和预配配置文件：
 
   ![填充代码签名标识和预配配置文件](introduction-to-xamarin-ios-for-visual-studio-images/bundlesigning.png)
 
-- iOS IPA 选项  - IPA 文件将保存到 Mac 文件系统中：
+- iOS IPA 选项 - IPA 文件将保存到 Mac 文件系统中：
 
   ![iOS IPA 选项](introduction-to-xamarin-ios-for-visual-studio-images/ipaoptions.png)
 
-- iOS 运行选项  - 配置其他参数：
+- iOS 运行选项 - 配置其他参数：
 
   ![iOS 运行选项](introduction-to-xamarin-ios-for-visual-studio-images/iosrunoptions.png)
 
 ## <a name="creating-a-new-project-for-ios-applications"></a>为 iOS 应用程序创建新的项目
 
-在 Visual Studio 中创建新的 iOS 项目同创建其他项目类型一样。 选择“文件”>“新建项目”  会打开如下所示的对话框，描述创建新的 iOS 项目的一些可用项目类型：
+在 Visual Studio 中创建新的 iOS 项目同创建其他项目类型一样。 选择“文件”>“新建项目”会打开如下所示的对话框，描述创建新的 iOS 项目的一些可用项目类型：
 
 ![创建新项目](introduction-to-xamarin-ios-for-visual-studio-images/newproject.w157.png)
 
-选择“iOS 应用(Xamarin)”  会显示如下所示的模板，用于创建新的 Xamarin.iOS 应用程序：
+选择“iOS 应用(Xamarin)”会显示如下所示的模板，用于创建新的 Xamarin.iOS 应用程序：
 
 ![选择 iOS 应用的模板](introduction-to-xamarin-ios-for-visual-studio-images/newproject-2.w157.png)
 
-可以在 Visual Studio 中使用 iOS 设计器编辑情节提要和 .xib 文件。 若要创建情节提要，请选择某个情节提要模板。 这会在“解决方案资源管理器”  中生成 **Main.storyboard** 文件，如以下屏幕截图所示：
+可以在 Visual Studio 中使用 iOS 设计器编辑情节提要和 .xib 文件。 若要创建情节提要，请选择某个情节提要模板。 这会在“解决方案资源管理器”中生成 **Main.storyboard** 文件，如以下屏幕截图所示：
 
 ![解决方案资源管理器中的 Main.storyboard 文件](introduction-to-xamarin-ios-for-visual-studio-images/solution-explorer-new.w157.png)
 
 若要开始创建或编辑情节提要，请双击 `Main.storyboard` 将其在 iOS 设计器中打开：
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/iosdesigner.png "The Main.storyboard in the iOS Designer")
+![iOS 设计器中的 Main.storyboard](introduction-to-xamarin-ios-for-visual-studio-images/iosdesigner.png)
 
-若要向视图添加对象，请使用“工具箱”  窗格，将项拖放到设计图面上。 如果尚未添加工具箱，可通过选择“视图”>“工具箱”  添加。 可使用“属性”  窗格修改对象属性、调整布局，并创建事件，如下所示：
+若要向视图添加对象，请使用“工具箱”窗格，将项拖放到设计图面上。 如果尚未添加工具箱，可通过选择“视图”>“工具箱”添加。 可使用“属性”窗格修改对象属性、调整布局，并创建事件，如下所示：
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/properties.png "The Properties pane")
+![“属性”窗格](introduction-to-xamarin-ios-for-visual-studio-images/properties.png)
 
  有关使用 iOS 设计器的详细信息，请参阅[设计器](~/ios/user-interface/designer/index.md)指南。
 
@@ -149,9 +149,9 @@ iOS 工具栏在所有版本的 Visual Studio 中都类似。 外观如下所示
 
 Visual Studio 新的“设备日志”工具窗口允许显示 Android 和 iOS 设备的日志。 执行以下任一命令均可显示此窗口：
 
-- “视图”>“其他窗口”>“设备日志” 
-- “工具”>“iOS”>“设备日志” 
-- “iOS 工具栏”>“设备日志” 
+- “视图”>“其他窗口”>“设备日志”
+- “工具”>“iOS”>“设备日志”
+- “iOS 工具栏”>“设备日志”
 
 在工具窗口显示后，用户便可以从“设备”下拉列表中选择物理设备。 选定设备后，日志将自动添加到表中。 在设备之间切换可停止和启动设备日志记录。
 
@@ -163,7 +163,7 @@ Visual Studio 新的“设备日志”工具窗口允许显示 Android 和 iOS �
 
 可以在应用程序中的任意位置设置断点，将信号发送到调试器以暂停程序执行。 若要在 Visual Studio 中设置断点，请在想要中断的代码行号旁边，单击编辑器的空白区：
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/image18.png "Setting a debug point")
+![设置调试点](introduction-to-xamarin-ios-for-visual-studio-images/image18.png)
 
 开始调试，并使用模拟器或设备将应用程序导航到断点。 命中断点时，将突出显示此行并启用 Visual Studio 的正常调试行为：你可以进入、结束或跳出代码，检查局部变量，或使用即时窗口。
 

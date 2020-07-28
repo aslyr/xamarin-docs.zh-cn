@@ -9,12 +9,12 @@ ms.date: 01/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5de10511d73614570d6308b6f4deb7b4ca55549a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d594e627fed21c3c2a73770313fcae29695370c5
+ms.sourcegitcommit: a658de488a6da916145ed4aa016825565110e767
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84802231"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86972553"
 ---
 # <a name="xamarinessentials-permissions"></a>Xamarin.Essentials：权限
 
@@ -148,7 +148,7 @@ public async Task<PermissionStatus> CheckAndRequestPermissionAsync<T>(T permissi
 
 ## <a name="extending-permissions"></a>扩展 Permissions
 
-Permissions API 灵活且可扩展，可用于需要额外验证或权限的应用程序，而这些验证或权限未包含在 Xamarin.Essentials 中。 新建继承自 `BasePermission` 的类，并实现相应抽象方法。 Then
+Permissions API 灵活且可扩展，可用于需要额外验证或权限的应用程序，而这些验证或权限未包含在 Xamarin.Essentials 中。 新建继承自 `BasePermission` 的类，并实现相应抽象方法。
 
 ```csharp
 public class MyPermission : BasePermission
@@ -173,21 +173,10 @@ public class MyPermission : BasePermission
 }
 ```
 
-在特定平台中实现权限时，可以继承自 `BasePlatformPermission` 类。 这提供了额外的平台帮助程序方法，用于自动检查声明。 这在创建自定义权限并进行分组时很有用。 例如，可以使用以下自定义权限请求对 Android 上存储的读写访问权限。
-
-在当前请求权限的项目中创建一个新权限。
+在特定平台中实现权限时，可以继承自 `BasePlatformPermission` 类。 这提供了额外的平台帮助程序方法，用于自动检查声明。 这在创建自定义权限来进行分组时很有用。 例如，可以使用以下自定义权限请求对 Android 上存储的读写访问权限。
 
 ```csharp
-public partial class ReadWriteStoragePermission  : Xamarin.Essentials.Permissions.BasePlatformPermission
-{
-
-}
-```
-
-在 Android 项目中，将权限扩展为想要请求的权限。
-
-```csharp
-public partial class ReadWriteStoragePermission : Xamarin.Essentials.Permissions.BasePlatformPermission
+public class ReadWriteStoragePermission : Xamarin.Essentials.Permissions.BasePlatformPermission
 {
     public override (string androidPermission, bool isRuntime)[] RequiredPermissions => new List<(string androidPermission, bool isRuntime)>
     {
@@ -197,10 +186,49 @@ public partial class ReadWriteStoragePermission : Xamarin.Essentials.Permissions
 }
 ```
 
-然后，你可以从共享逻辑请求新权限。
+然后，你可从 Android 项目请求新权限。
 
 ```csharp
 await Permissions.RequestAsync<ReadWriteStoragePermission>();
+```
+
+如果要从共享代码调用此 API，可创建一个接口，并使用[依赖项服务](https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/dependency-service/)来注册和获取该实现。
+
+```csharp
+public interface IReadWritePermission
+{        
+    Task<PermissionStatus> CheckStatusAsync();
+    Task<PermissionStatus> RequestAsync();
+}
+```
+
+然后在平台项目中实现该接口：
+
+```csharp
+public class ReadWriteStoragePermission : Xamarin.Essentials.Permissions.BasePlatformPermission, IReadWritePermission
+{
+    public override (string androidPermission, bool isRuntime)[] RequiredPermissions => new List<(string androidPermission, bool isRuntime)>
+    {
+        (Android.Manifest.Permission.ReadExternalStorage, true),
+        (Android.Manifest.Permission.WriteExternalStorage, true)
+    }.ToArray();
+}
+```
+
+接着可注册特定实现：
+
+```csharp
+DependencyService.Register<IReadWritePermission, ReadWriteStoragePermission>();
+```
+再从共享项目中解析并使用它：
+
+```csharp
+var readWritePermission = DependencyService.Get<IReadWritePermission>();
+var status = await readWritePermission.CheckStatusAsync();
+if (status != PermissionStatus.Granted)
+{
+    status = await readWritePermission.RequestAsync();
+}
 ```
 
 ## <a name="platform-implementation-specifics"></a>平台实现细节

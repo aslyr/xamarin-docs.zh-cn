@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: a2435b30b7d5b468fca6c55d295c87b9a0d20652
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 173af9638f4e7b2da39a89dd745ec53f54cf6c39
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303725"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937561"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API 设计
 
@@ -78,7 +78,7 @@ Xamarin.iOS 的核心有一个互操作引擎，它将 C# 环境与 Objective-C 
 
 ### <a name="assemblies"></a>程序集
 
-Xamarin.iOS 包含一些构成 Xamarin.iOS 配置文件  的程序集。 [程序集](~/cross-platform/internals/available-assemblies.md)页面包含更多信息。
+Xamarin.iOS 包含一些构成 Xamarin.iOS 配置文件的程序集。 [程序集](~/cross-platform/internals/available-assemblies.md)页面包含更多信息。
 
 ### <a name="major-namespaces"></a>主要命名空间
 
@@ -236,7 +236,7 @@ UIView [] GetViews ();
 
 `NSArray` 中公开了几种方法，在个别情况下，你可能想要直接使用 `NSArray`，但不建议在 API 绑定中使用。
 
-此外，在 Classic API  中，不从 CoreGraphics API 公开 `CGRect`、`CGPoint` 和 `CGSize`，而是将它们替换为 `System.Drawing` 实现 `RectangleF`、`PointF` 和 `SizeF`，因为它们可帮助开发人员保留使用 OpenTK 的现有 OpenGL 代码。 使用新的 64 位 Unified API  时，应该使用 CoreGraphics API。
+此外，在 Classic API 中，不从 CoreGraphics API 公开 `CGRect`、`CGPoint` 和 `CGSize`，而是将它们替换为 `System.Drawing` 实现 `RectangleF`、`PointF` 和 `SizeF`，因为它们可帮助开发人员保留使用 OpenTK 的现有 OpenGL 代码。 使用新的 64 位 Unified API 时，应该使用 CoreGraphics API。
 
 #### <a name="inheritance"></a>继承
 
@@ -316,7 +316,7 @@ void SetupTextField (UITextField tf)
 }
 ```
 
-在此情况下，`UITextField` 的 `ShouldReturn` 属性采用委托作为参数，该委托返回一个 bool 值，并确定 TextField 是否应在按下“返回”按钮的情况下执行操作。 在我们的方法中，将 true  返回给调用方，但我们也会从屏幕中删除键盘（当 textfield 调用 `ResignFirstResponder` 时，会发生这种情况）。
+在此情况下，`UITextField` 的 `ShouldReturn` 属性采用委托作为参数，该委托返回一个 bool 值，并确定 TextField 是否应在按下“返回”按钮的情况下执行操作。 在我们的方法中，将 true 返回给调用方，但我们也会从屏幕中删除键盘（当 textfield 调用 `ResignFirstResponder` 时，会发生这种情况）。
 
 ##### <a name="strongly-typed-via-a-delegate-property"></a>通过 Delegate 属性进行强类型化
 
@@ -535,9 +535,9 @@ public class AppController : UIApplicationDelegate {
 #### <a name="xib-outlets-and-c"></a>XIB 输出口和 C\#
 
 > [!IMPORTANT]
-> 本部分说明了使用 XIB 文件时与输出口的 IDE 集成。 使用 Xamarin Designer for iOS 时，将通过在 IDE“属性”部分中的“标识”>“名称”  下输入名称来替换，如下所示：
+> 本部分说明了使用 XIB 文件时与输出口的 IDE 集成。 使用 Xamarin Designer for iOS 时，将通过在 IDE“属性”部分中的“标识”>“名称”下输入名称来替换，如下所示：
 >
-> [![](images/designeroutlet.png "Entering an item Name in the iOS Designer")](images/designeroutlet.png#lightbox)
+> [![在 iOS 设计器中输入项名称](images/designeroutlet.png)](images/designeroutlet.png#lightbox)
 >
 >有关 iOS 设计器的详细信息，请参阅 [iOS 设计器简介](~/ios/user-interface/designer/introduction.md#how-it-works)文档。
 
@@ -547,8 +547,8 @@ public class AppController : UIApplicationDelegate {
 
 这只需几个步骤即可完成：
 
-1. 将输出口声明  添加到文件的所有者  。
-1. 将控件连接到文件的所有者  。
+1. 将输出口声明添加到文件的所有者。
+1. 将控件连接到文件的所有者。
 1. 将 UI 和连接存储到 XIB/NIB 文件中。
 1. 在运行时加载 NIB 文件。
 1. 访问输出口变量。
@@ -613,7 +613,7 @@ public class MyMath : NSObject {
 }
 ```
 
-请注意，选择器名称必须完全  匹配，包括中间和结尾的所有冒号 (:)（如果存在）。
+请注意，选择器名称必须完全匹配，包括中间和结尾的所有冒号 (:)（如果存在）。
 
 #### <a name="nsobject-constructors"></a>NSObject 构造函数
 

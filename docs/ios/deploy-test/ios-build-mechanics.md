@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 92bf7934b1ad4f6d959fc458f536cf3b3426df51
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 52a6c3c996e2d5df204b6d0df40368bc835e990f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73026371"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936768"
 ---
 # <a name="ios-build-mechanics"></a>iOS 生成机制
 
-本指南介绍如何安排应用的时间，以及如何使用可用于所有生成配置的更快生成的方法。 
+本指南介绍如何安排应用的时间，以及如何使用可用于所有生成配置的更快生成的方法。
 
 开发出色的应用程序不只是编写可用的代码。 一个良好编写的应用程序应包含一些优化，用于快速生成更小且运行速度更快的应用。 这些优化不仅可以带来更好的用户体验，还会为处理项目的用户或任何开发人员提供绝佳体验。 请务必确保在处理应用程序的各项操作时，一切都是计时的。 
 
@@ -30,10 +30,10 @@ ms.locfileid: "73026371"
 
 若要在 Visual Studio for Mac 中启用诊断 MSBuild 输出：
 
-1. 单击“Visual Studio for Mac”>“首选项…” 
-2. 在左侧树视图中，选择“项目”>“生成” 
-3. 在右侧面板中，将“日志详细级别”下拉列表设置为“诊断”  ：[![](ios-build-mechanics-images/image2.png "设置日志详细程度")](ios-build-mechanics-images/image2.png#lightbox)
-4. 单击“确定” 
+1. 单击“Visual Studio for Mac”>“首选项…”
+2. 在左侧树视图中，选择“项目”>“生成”
+3. 在右侧面板中，将“日志详细级别”下拉列表设置为“诊断”：[![设置日志详细程度](ios-build-mechanics-images/image2.png)](ios-build-mechanics-images/image2.png#lightbox)
+4. 单击“确定”
 5. 重启 Visual Studio for Mac
 6. 清除并重新生成包
 7. 通过单击“生成输出”按钮，查看“Errors Pad”中的诊断输出（“视图”>“板”>“错误”）
@@ -42,10 +42,10 @@ ms.locfileid: "73026371"
 
 若要在 Visual Studio 中启用诊断 MSBuild 输出：
 
-1. 单击“工具”>“选项…” 
-2. 在左侧树视图中，选择“项目和解决方案”>“生成并运行” 
-3. 在右侧面板中，将“MSBuild 生成输出详细程度”下拉列表设置为“诊断”   ：[![](ios-build-mechanics-images/image2-vs.png "设置 MSBuild 生成输出详细程度")](ios-build-mechanics-images/image2-vs.png#lightbox)
-4. 单击“确定” 
+1. 单击“工具”>“选项…”
+2. 在左侧树视图中，选择“项目和解决方案”>“生成并运行”
+3. 在右侧面板中，将“MSBuild 生成输出详细级别”下拉列表设置为“诊断”：[![设置 MSBuild 生成输出详细程度](ios-build-mechanics-images/image2-vs.png)](ios-build-mechanics-images/image2-vs.png#lightbox)
+4. 单击“确定”
 5. 清除并重新生成包。
 6. 诊断输出将显示在“输出”面板中。
 
@@ -97,7 +97,7 @@ Apple 提供用于 iOS 开发的模拟器，通过创建限制较少的代码运
 
 下面的屏幕截图演示了如何在 iOS 选项中设置模拟器的这些选项：
 
-[![](ios-build-mechanics-images/image3.png "Setting the options")](ios-build-mechanics-images/image3.png#lightbox)
+[![设置选项](ios-build-mechanics-images/image3.png)](ios-build-mechanics-images/image3.png#lightbox)
 
 ## <a name="device-tricks"></a>设备技巧
 
@@ -114,10 +114,10 @@ Apple 提供用于 iOS 开发的模拟器，通过创建限制较少的代码运
 
 理解生成和部署之间的关系同样至关重要。 部署时间是一个应用程序大小的函数。 应用程序越大部署时间越长。 通过将应用程序大小降至最低，可以缩短部署时间。
 
-此外，最小化应用程序大小还可以缩短生成时间。 这是因为从应用程序删除代码所需的时间比本机编译不使用的代码所需时间要少。 较小的对象文件就意味着更快的链接，这将创建一个更小的可执行文件，并生成较少的符号。 因此，节省空间具有双重收益，这就是为什么“链接 SDK”  是所有设备版本的默认设置。 
+此外，最小化应用程序大小还可以缩短生成时间。 这是因为从应用程序删除代码所需的时间比本机编译不使用的代码所需时间要少。 较小的对象文件就意味着更快的链接，这将创建一个更小的可执行文件，并生成较少的符号。 因此，节省空间具有双重收益，这就是为什么“链接 SDK”是所有设备版本的默认设置。 
 
 > [!NOTE]
-> “链接 SDK”  选项可能显示仅适用于链接框架 SDK 或者仅适用于链接 SDK 程序集，具体要取决于正在使用的 IDE。
+> “链接 SDK”选项可能显示仅适用于链接框架 SDK 或者仅适用于链接 SDK 程序集，具体要取决于正在使用的 IDE。
 
 ### <a name="tips"></a>提示
 
@@ -148,7 +148,7 @@ Apple 提供用于 iOS 开发的模拟器，通过创建限制较少的代码运
 
 下面的屏幕截图演示了如何在 iOS 选项中设置模拟器的这些选项：
 
-[![](ios-build-mechanics-images/image4.png "Setting the options")](ios-build-mechanics-images/image4.png#lightbox)
+[![设置选项](ios-build-mechanics-images/image4.png)](ios-build-mechanics-images/image4.png#lightbox)
 
 ## <a name="using-the-linker"></a>使用链接器
 
@@ -156,13 +156,13 @@ Apple 提供用于 iOS 开发的模拟器，通过创建限制较少的代码运
 
 使用链接器时，请考虑以下选项：
 
-- 对于设备生成选择“不链接”  将会花费更长的时间，而且还会生成更大的应用。 
+- 对于设备生成选择“不链接”将会花费更长的时间，而且还会生成更大的应用。 
   - 如果应用大小超过限制，Apple 将会拒绝。 根据 `MinimumOSVersion`，这可以小至 60 MB。 
   - 包含本机可执行文件。 
   - 对模拟器生成使用“不链接”会更快，因为使用 JIT 编译（而不是设备上的 AOT）。
 - 链接 SDK 是默认选项。
 - 使用“链接所有”可能不安全，特别是当你使用不是自己的代码时，如 NuGets 或部件。 如果选择“不链接程序集”，这些服务中的所有代码都将包含在应用程序中，可能会创建较大的应用。 
-  - 但是，如果选择“链接所有”  ，应用程序可能会崩溃，尤其是在使用外部组件的情况下。 这是因为某些组件使用特定类型的反射。
+  - 但是，如果选择“链接所有”，应用程序可能会崩溃，尤其是在使用外部组件的情况下。 这是因为某些组件使用特定类型的反射。
   - 静态分析和反射不能协同工作。 
 
 可以通过使用 [`[Preserve]` 属性](~/ios/deploy-test/linker.md)来指示工具将内容保存在应用程序中。 

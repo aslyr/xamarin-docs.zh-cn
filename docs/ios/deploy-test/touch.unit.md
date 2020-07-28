@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 08ddf282c8839a6283b90c0736c0b4259bd01469
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f5796ee17e947494d1e22f750bc43ff823d56d55
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73028446"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937275"
 ---
 # <a name="unit-testing-xamarinios-apps"></a>对 Xamarin.iOS 应用进行单元测试
 
@@ -23,11 +23,11 @@ ms.locfileid: "73028446"
 
 若要为项目创建单元测试框架，只需向解决方案添加“iOS 单元测试项目”类型的项目。 为此，请右键单击解决方案，然后选择“添加”>“添加新项目”。 从列表中选择“iOS”>“测试”>“统一 API”>“iOS 单元测试项目”（可选择 C# 或 F#）。
 
-![](touch.unit-images/00.png "Choose either C# or F#")
+![选择 C# 或 F#](touch.unit-images/00.png)
 
 上述操作将创建一个包含基本运行程序，并引用新 MonoTouch.NUnitLite 程序集的基本项目，项目如下所示：
 
-![](touch.unit-images/01.png "The project in the Solution Explorer")
+![解决方案资源管理器中的项目](touch.unit-images/01.png)
 
 `AppDelegate.cs` 类包含测试运行程序，如下所示：
 
@@ -105,14 +105,14 @@ namespace Fixtures {
 
 通过测试运行程序，可查看已注册的测试，并单独选择可执行的测试。
 
-[![](touch.unit-images/02-sml.png "The list of registered tests")](touch.unit-images/02.png#lightbox) 
-[![](touch.unit-images/03-sml.png "An individual text")](touch.unit-images/03.png#lightbox) 
+[![已注册测试的列表](touch.unit-images/02-sml.png)](touch.unit-images/02.png#lightbox) 
+[![单个文本](touch.unit-images/03-sml.png)](touch.unit-images/03.png#lightbox) 
 
-[![](touch.unit-images/04-sml.png "The run results")](touch.unit-images/04.png#lightbox)
+[![运行结果](touch.unit-images/04-sml.png)](touch.unit-images/04.png#lightbox)
 
 从嵌套视图中选择测试装置可运行单个测试装置，或选择“全部运行”运行所有测试。 如果运行默认测试，则应包含三个测试（一个通过、一个失败，一个已忽略）。 报表如下所示，你可以直接向下钻取失败测试并找出有关失败的详细信息：
 
-[![](touch.unit-images/05-sml.png "示例报表")](touch.unit-images/05.png#lightbox) [![](touch.unit-images/06-sml.png "示例报表")](touch.unit-images/06.png#lightbox) [![](touch.unit-images/07-sml.png "示例报表")](touch.unit-images/07.png#lightbox)
+[![示例报表](touch.unit-images/05-sml.png)](touch.unit-images/05.png#lightbox)[![示例报表](touch.unit-images/06-sml.png)](touch.unit-images/06.png#lightbox)[![示例报表](touch.unit-images/07-sml.png)](touch.unit-images/07.png#lightbox)
 
 还可在 IDE 中查看“应用程序输出”窗口，以查看正执行的测试及其当前状态。
 

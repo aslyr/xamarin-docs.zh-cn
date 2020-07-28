@@ -10,16 +10,16 @@ ms.date: 02/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: df10327b2ac12d2b119f1ab558d7f27e8c319507
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2e4d85077e1047f4158164d0c752570519c8ecdc
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131191"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936833"
 ---
 # <a name="xamarinforms-dual-screen-triggers"></a>Xamarin.Forms 双屏触发器
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![预发行版 API](~/media/shared/preview.png "此 API 当前为预发布版本")
 
 [`Xamarin.Forms.DualScreen`](xref:Xamarin.Forms.DualScreen) 命名空间包含两个状态触发器：
 

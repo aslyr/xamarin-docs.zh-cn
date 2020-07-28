@@ -1,6 +1,6 @@
 ---
-title: title:“创建单页 Xamarin.Forms 应用程序”说明：“本文说明如何创建单页跨平台 Xamarin.Forms 应用程序，以便输入便笺内容并将其保存到设备存储。”
-description: 'zone_pivot_groups: platform-dev16 ms.topic: quickstart ms.prod: xamarin ms.assetid:E8CF05B1-54B9-428B-8518-D068837BD61E ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2019/04/01 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: 创建单页 Xamarin.Forms 应用程序
+description: 本文说明如何创建单页跨平台 Xamarin.Forms 应用程序，使你可输入便笺内容并将其保存到设备存储。
 zone_pivot_groups: platform-dev16
 ms.topic: quickstart
 ms.prod: xamarin
@@ -12,12 +12,12 @@ ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b9a3017fc8188d3669b64d95c968b2d0a5325358
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: cc09f93a8d86b96324435bf63cd3d19b51242ed2
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84136066"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931798"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>创建单页 Xamarin.Forms 应用程序
 
@@ -31,7 +31,7 @@ ms.locfileid: "84136066"
 
 本快速入门演练如何创建跨平台 Xamarin.Forms 应用程序，使你可输入便笺内容并将其保存到设备存储。 最终的应用程序如下所示：
 
-[![](single-page-images/screenshots-sml.png "Notes Application")](single-page-images/screenshots.png#lightbox "Notes Application")
+[![Notes 应用程序](single-page-images/screenshots-sml.png)](single-page-images/screenshots.png#lightbox "Notes 应用程序")
 
 ::: zone pivot="windows"
 
@@ -47,28 +47,28 @@ ms.locfileid: "84136066"
 
 1. 启动 Visual Studio 2019，然后在开始窗口中单击“创建建项目”以创建新项目：
 
-    ![](single-page-images/vs/new-solution-2019.png "New Project")
+    ![新建项目](single-page-images/vs/new-solution-2019.png)
 
 2. 在“创建新项目”窗口中，在“项目类型”下拉菜单中选择“移动”，选择“移动应用(Xamarin.Forms)”，然后单击“下一步”按钮：
 
-    ![](single-page-images/vs/new-project-2019.png "Cross-Platform Project Templates")
+    ![跨平台项目模板](single-page-images/vs/new-project-2019.png)
 
 3. 在“配置新项目”对话框中，将“项目名称”设置为“Notes”，为项目选择合适的位置，然后单击“创建”按钮：
 
-    ![](single-page-images/vs/configure-project.png "Configure your Project")
+    ![配置项目](single-page-images/vs/configure-project.png)
 
     > [!IMPORTANT]
     > 本快速入门中的 C# 和 XAML 片段要求将解决方案命名为“便笺”。 使用不同的名称会导致：将本快速入门中的代码复制到解决方案中时出现生成错误。
 
 4. 在“新的跨平台应用”对话框中，单击“空白应用”，然后单击“确定”按钮：
 
-    ![](single-page-images/vs/new-app-2019.png "New Cross-Platform App")
+    ![新的跨平台应用](single-page-images/vs/new-app-2019.png)
 
     有关创建的 .NET Standard 库的详细信息，请参阅 [Xamarin.FormsXamarin.Forms 快速入门的深入探讨](deepdive.md)中的 [Xamarin.Forms 应用程序剖析](deepdive.md#anatomy-of-a-xamarinforms-application)。
 
 5. 在“解决方案资源管理器”的“便笺”项目中，双击“MainPage.xaml”将其打开  ：
 
-    ![](single-page-images/vs/open-mainpage-xaml-2019.png "Open MainPage.xaml")
+    ![打开 MainPage.xaml](single-page-images/vs/open-mainpage-xaml-2019.png)
 
 6. 在“MainPage.xaml”中，删除所有模板代码，替换为以下代码：
 
@@ -105,7 +105,7 @@ ms.locfileid: "84136066"
 
 7. 在“解决方案资源管理器”的“便笺”项目中，展开“MainPage.xaml”，然后双击“MainPage.xaml.cs”将其打开   ：
 
-    ![](single-page-images/vs/open-mainpage-codebehind-2019.png "Open MainPage.xaml.cs")
+    ![打开 MainPage.xaml.cs](single-page-images/vs/open-mainpage-codebehind-2019.png)
 
 8. 在“MainPage.xaml.cs”中，删除所有模板代码并将其替换为以下代码：
 
@@ -155,15 +155,15 @@ ms.locfileid: "84136066"
 
 1. 在 Visual Studio 中，选择“生成”>“生成解决方案”菜单项（或按 F6）。 将生成解决方案，Visual Studio 状态栏中将显示一条成功消息：
 
-      ![](single-page-images/vs/build-succeeded.png "Build Succeeded")
+      ![生成已成功](single-page-images/vs/build-succeeded.png)
 
     如果发生错误，请重复前面的步骤并更正任何错误，直到成功生成解决方案。
 
 2. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 Android Emulator 内的应用程序：
 
-    ![](single-page-images/vs/android-start.png "Visual Studio Android Toolbar")
+    ![Visual Studio Android 工具栏](single-page-images/vs/android-start.png)
 
-    [![](single-page-images/vs/notes-android.png "Notes in the Android Emulator")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
+    [![Android Emulator 中的便笺](single-page-images/vs/notes-android.png)](single-page-images/vs/notes-android-large.png#lightbox "Android 模拟器中的便笺")
 
     输入便笺内容，然后按“保存”按钮。
 
@@ -174,13 +174,13 @@ ms.locfileid: "84136066"
 
 3. 在 Visual Studio 工具栏中，右键单击“Notes.iOS”项目，然后选择“设为启动项目” 。
 
-      ![](single-page-images/vs/set-as-startup-project-ios.png "Set iOS as Startup Project")
+      ![将 iOS 设为启动项目](single-page-images/vs/set-as-startup-project-ios.png)
 
 4. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 [iOS 远程模拟器](~/tools/ios-simulator/index.md)内的应用程序：
 
-    ![](single-page-images/vs/ios-start.png "Visual Studio iOS Toolbar")
+    ![Visual Studio iOS 工具栏](single-page-images/vs/ios-start.png)
 
-    [![](single-page-images/vs/notes-ios.png "Notes in the iOS Simulator")](single-page-images/vs/notes-ios-large.png#lightbox "Notes in the iOS Simulator")
+    [![iOS 模拟器中的便笺](single-page-images/vs/notes-ios.png)](single-page-images/vs/notes-ios-large.png#lightbox "iOS 模拟器中的便笺")
 
     输入便笺内容，然后按“保存”按钮。
 
@@ -201,24 +201,24 @@ ms.locfileid: "84136066"
 
 1. 启动 Visual Studio 2017，然后在起始页上单击“创建新项目...”以创建新项目：
 
-    ![](single-page-images/vs/new-solution.png "New Project")
+    ![新建项目](single-page-images/vs/new-solution.png)
 
 2. 在“新建项目”对话框中，单击“跨平台”，选择“移动应用(Xamarin.Forms)”模板，将“名称”设为“便笺”，为项目选择合适的位置，然后单击“确定”按钮    ：
 
-    ![](single-page-images/vs/new-project.png "Cross-Platform Project Templates")
+    ![跨平台项目模板](single-page-images/vs/new-project.png)
 
     > [!IMPORTANT]
     > 本快速入门中的 C# 和 XAML 片段要求将解决方案命名为“便笺”。 使用不同的名称会导致：将本快速入门中的代码复制到解决方案中时出现生成错误。
 
 3. 在“新的跨平台应用”对话框中，单击“空白应用”，选择“.NET Standard”作为代码共享策略，然后单击“确定”按钮   ：
 
-    ![](single-page-images/vs/new-app.png "New Cross-Platform App")
+    ![新的跨平台应用](single-page-images/vs/new-app.png)
 
     有关创建的 .NET Standard 库的详细信息，请参阅 [Xamarin.FormsXamarin.Forms 快速入门的深入探讨](deepdive.md)中的 [Xamarin.Forms 应用程序剖析](deepdive.md#anatomy-of-a-xamarinforms-application)。
 
 4. 在“解决方案资源管理器”的“便笺”项目中，双击“MainPage.xaml”将其打开  ：
 
-    ![](single-page-images/vs/open-mainpage-xaml.png "Open MainPage.xaml")
+    ![打开 MainPage.xaml](single-page-images/vs/open-mainpage-xaml.png)
 
 5. 在“MainPage.xaml”中，删除所有模板代码，替换为以下代码：
 
@@ -255,7 +255,7 @@ ms.locfileid: "84136066"
 
 6. 在“解决方案资源管理器”的“便笺”项目中，展开“MainPage.xaml”，然后双击“MainPage.xaml.cs”将其打开   ：
 
-    ![](single-page-images/vs/open-mainpage-codebehind.png "Open MainPage.xaml.cs")
+    ![打开 MainPage.xaml.cs](single-page-images/vs/open-mainpage-codebehind.png)
 
 7. 在“MainPage.xaml.cs”中，删除所有模板代码并将其替换为以下代码：
 
@@ -305,15 +305,15 @@ ms.locfileid: "84136066"
 
 1. 在 Visual Studio 中，选择“生成”>“生成解决方案”菜单项（或按 F6）。 将生成解决方案，Visual Studio 状态栏中将显示一条成功消息：
 
-      ![](single-page-images/vs/build-succeeded.png "Build Succeeded")
+      ![生成已成功](single-page-images/vs/build-succeeded.png)
 
     如果发生错误，请重复前面的步骤并更正任何错误，直到成功生成解决方案。
 
 2. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 Android Emulator 内的应用程序：
 
-    ![](single-page-images/vs/android-start.png "Visual Studio Android Toolbar")
+    ![Visual Studio Android 工具栏](single-page-images/vs/android-start.png)
 
-    [![](single-page-images/vs/notes-android.png "Notes in the Android Emulator")](single-page-images/vs/notes-android-large.png#lightbox "Notes in the Android Simulator")
+    [![Android Emulator 中的便笺](single-page-images/vs/notes-android.png)](single-page-images/vs/notes-android-large.png#lightbox "Android 模拟器中的便笺")
 
     输入便笺内容，然后按“保存”按钮。
 
@@ -324,13 +324,13 @@ ms.locfileid: "84136066"
 
 3. 在 Visual Studio 工具栏中，右键单击“Notes.iOS”项目，然后选择“设为启动项目” 。
 
-      ![](single-page-images/vs/set-as-startup-project-ios.png "Set iOS as Startup Project")
+      ![将 iOS 设为启动项目](single-page-images/vs/set-as-startup-project-ios.png)
 
 4. 在 Visual Studio 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 [iOS 远程模拟器](~/tools/ios-simulator/index.md)内的应用程序：
 
-    ![](single-page-images/vs/ios-start.png "Visual Studio iOS Toolbar")
+    ![Visual Studio iOS 工具栏](single-page-images/vs/ios-start.png)
 
-    [![](single-page-images/vs/notes-ios.png "Notes in the iOS Simulator")](single-page-images/vs/notes-ios-large.png#lightbox "Notes in the iOS Simulator")
+    [![iOS 模拟器中的便笺](single-page-images/vs/notes-ios.png)](single-page-images/vs/notes-ios-large.png#lightbox "iOS 模拟器中的便笺")
 
     输入便笺内容，然后按“保存”按钮。
 
@@ -351,19 +351,19 @@ ms.locfileid: "84136066"
 
 1. 启动 Visual Studio for Mac，然后在开始窗口中单击“新建”以创建新项目：
 
-    ![](single-page-images/vsmac/new-project.png "New Solution")
+    ![新建解决方案](single-page-images/vsmac/new-project.png)
 
 2. 在“为新项目选择一个模板”对话框中，单击“多平台”>“应用”，选择“空白窗体应用”模板，然后单击“下一步”按钮   ：
 
-    ![](single-page-images/vsmac/choose-template.png "Choose a Template")
+    ![选择模板](single-page-images/vsmac/choose-template.png)
 
 3. 在“配置空白窗体应用”对话框中，将新应用命名为“便笺”，确保选中“使用 .NET Standard”单选按钮，然后单击“下一步”按钮   ：    
 
-    ![](single-page-images/vsmac/configure-app.png "Configure the Forms Application")
+    ![配置窗体应用程序](single-page-images/vsmac/configure-app.png)
 
 4. 在“配置新空白窗体应用”对话框中，将“解决方案”和“项目”名称保留设置为“便笺”，为项目选择合适的位置，然后单击“创建”按钮创建项目  ：
 
-    ![](single-page-images/vsmac/configure-project.png "Configure the Forms Project")
+    ![配置窗体项目](single-page-images/vsmac/configure-project.png)
 
     > [!IMPORTANT]
     > 本快速入门中的 C# 和 XAML 片段要求将解决方案和项目都命名为“便笺”。 使用不同的名称会导致：将本快速入门中的代码复制到项目中时出现生成错误。
@@ -372,7 +372,7 @@ ms.locfileid: "84136066"
 
 5. 在“Solution Pad”的“便笺”项目中，双击“MainPage.xaml”将其打开  ：
 
-    ![](single-page-images/vsmac/mainpage-xaml.png "MainPage.xaml")
+    ![MainPage.xaml](single-page-images/vsmac/mainpage-xaml.png)
 
 6. 在“MainPage.xaml”中，删除所有模板代码，替换为以下代码：
 
@@ -409,7 +409,7 @@ ms.locfileid: "84136066"
 
 7. 在“Solution Pad”的“便笺”项目中，展开“MainPage.xaml”，然后双击“MainPage.xaml.cs”将其打开   ：
 
-    ![](single-page-images/vsmac/mainpage-xaml-cs.png "MainPage.xaml.cs")
+    ![MainPage.xaml.cs](single-page-images/vsmac/mainpage-xaml-cs.png)
 
 8. 在“MainPage.xaml.cs”中，删除所有模板代码并将其替换为以下代码：
 
@@ -459,19 +459,19 @@ ms.locfileid: "84136066"
 
 1. 在 Visual Studio for Mac 中，选择“生成”>“生成所有”菜单项，或按 **&#8984; + B**。 项目将生成，并在 Visual Studio for Mac 工具栏中显示一条成功消息。
 
-      ![](single-page-images/vsmac/build-successful.png "Build Successful")
+      ![生成成功](single-page-images/vsmac/build-successful.png)
 
     如果发生错误，请重复前面的步骤并更正任何错误，直到成功生成项目。
 
 2. 在“Solution Pad”中选择“Notes.iOS”项目，右键单击并选择“设为启动项目”  ：
 
-      ![](single-page-images/vsmac/set-startup-project-ios.png "Set iOS as Startup Project")
+      ![将 iOS 设为启动项目](single-page-images/vsmac/set-startup-project-ios.png)
 
 3. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 iOS 模拟器内的应用程序：
 
-      ![](single-page-images/vsmac/start.png "Visual Studio for Mac Toolbar")
+      ![Visual Studio for Mac 工具栏](single-page-images/vsmac/start.png)
 
-      [![](single-page-images/vsmac/notes-ios.png "Notes in the iOS Simulator")](single-page-images/vsmac/notes-ios-large.png#lightbox "Notes in the iOS Simulator")
+      [![iOS 模拟器中的便笺](single-page-images/vsmac/notes-ios.png)](single-page-images/vsmac/notes-ios-large.png#lightbox "iOS 模拟器中的便笺")
 
     输入便笺内容，然后按“保存”按钮。
 
@@ -479,11 +479,11 @@ ms.locfileid: "84136066"
 
 4. 在“Solution Pad”中选择“Notes.Droid”项目，右键单击并选择“设为启动项目”  ：
 
-      ![](single-page-images/vsmac/set-startup-project-android.png "Set Android as Startup Project")
+      ![将 Android 设为启动项目](single-page-images/vsmac/set-startup-project-android.png)
 
 5. 在 Visual Studio for Mac 工具栏中，按“开始”按钮（类似“播放”按钮的三角形按钮），启动所选 Android Emulator 内的应用程序：
 
-      [![](single-page-images/vsmac/notes-android.png "Notes in the Android Emulator")](single-page-images/vsmac/notes-android-large.png#lightbox "Notes in the Android Simulator")
+      [![Android Emulator 中的便笺](single-page-images/vsmac/notes-android.png)](single-page-images/vsmac/notes-android-large.png#lightbox "Android 模拟器中的便笺")
 
     输入便笺内容，然后按“保存”按钮。
 

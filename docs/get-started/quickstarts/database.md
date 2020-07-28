@@ -12,12 +12,12 @@ ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2864c7edabde18faec06c2c42042168d3e6c9671
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a28e391c6bacd460f095c94e30b2d9433a5191e4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139797"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931789"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>将数据存储在本地 SQLite.NET 数据库中
 
@@ -30,8 +30,8 @@ ms.locfileid: "84139797"
 
 本快速入门演练如何将数据存储在本地 SQLite.NET 数据库中。 最终的应用程序如下所示：
 
-[![](database-images/screenshots1-sml.png "Notes Page")](database-images/screenshots1.png#lightbox "Notes Page")
-[![](database-images/screenshots2-sml.png "Note Entry Page")](database-images/screenshots2.png#lightbox "Note Entry Page")
+[![便笺页面](database-images/screenshots1-sml.png)](database-images/screenshots1.png#lightbox "便笺页面")
+[![便笺输入页面](database-images/screenshots2-sml.png)](database-images/screenshots2.png#lightbox "便笺输入页面")
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -45,11 +45,11 @@ ms.locfileid: "84139797"
 
 2. 在“解决方案资源管理器”中，选择“Notes”项目，然后右键单击并选择“管理 NuGet 包…”  ：
 
-    ![](database-images/vs/add-nuget-packages.png "Add NuGet Packages")    
+    ![添加 NuGet 包](database-images/vs/add-nuget-packages.png)    
 
 3. 在“NuGet 包管理器”中，选择“浏览”选项卡，搜索“sqlite-net-pcl”NuGet 包，选择它，然后单击“安装”按钮将其添加到项目   ：
 
-    ![](database-images/vs/add-package.png "Add Package")
+    ![添加包](database-images/vs/add-package.png)
 
     > [!NOTE]
     > 许多 NuGet 包都有着类似的名称。 正确的包具有以下属性：
@@ -262,11 +262,11 @@ ms.locfileid: "84139797"
 
 2. 在“Solution Pad”中，选择“Notes”项目，然后右键单击并选择“添加”>“添加 NuGet 包…”  ：
 
-    ![](database-images/vsmac/add-nuget-packages.png "Add NuGet Packages")    
+    ![添加 NuGet 包](database-images/vsmac/add-nuget-packages.png)    
 
 3. 在“添加包”窗口中，搜索“sqlite-net-pcl”NuGet 包，选择它，然后单击“添加包”按钮将其添加到项目  ：
 
-    ![](database-images/vsmac/add-package.png "Add Package")
+    ![添加包](database-images/vsmac/add-package.png)
 
     > [!NOTE]
     > 许多 NuGet 包都有着类似的名称。 正确的包具有以下属性：

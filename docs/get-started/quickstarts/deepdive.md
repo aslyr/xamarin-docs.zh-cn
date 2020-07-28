@@ -1,6 +1,6 @@
 ---
-title: title:"Xamarin.Forms快速入门深入探讨”说明：“本文介绍了使用 Xamarin.Forms 开发应用程序的基础知识。
-description: '涵盖的主题包括：Xamarin.Forms 应用程序剖析、体系结构和应用程序基础知识以及用户界面。” zone_pivot_groups: platform ms.topic: quickstart ms.prod: xamarin ms.custom: video ms.assetid:7B2340A1-6883-41D8-860C-0BB6C4E0C316 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2018/11/27 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms 快速入门深入探讨
+description: 本文介绍了使用 Xamarin.Forms 开发应用程序的基础知识。 涵盖的主题包括：Xamarin.Forms 应用程序剖析、体系结构和应用程序基础知识以及用户界面。
 zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
@@ -13,12 +13,12 @@ ms.date: 11/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1bfb76f71a2ac9d8bc9ae84152501909000b9623
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: d1670506fa78b39825368fc91d2452a44ddf8f03
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84132517"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939914"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms 快速入门深入探讨
 
@@ -30,7 +30,7 @@ ms.locfileid: "84132517"
 
 Visual Studio 将代码组织为解决方案和项目。 解决方案是可以容纳一个或多个项目的容器。 项目可以是应用程序、支持库、测试应用程序等。 Notes 应用程序包含 1 个内附 4 个项目的解决方案，如以下屏幕截图所示：
 
-![](deepdive-images/vs/solution.png "Visual Studio Solution Explorer")
+![Visual Studio 解决方案资源管理器](deepdive-images/vs/solution.png)
 
 这些项目如下：
 
@@ -43,7 +43,7 @@ Visual Studio 将代码组织为解决方案和项目。 解决方案是可以�
 
 以下屏幕截图显示 Visual Studio 中 Notes .NET Standard 库项目的内容：
 
-![](deepdive-images/vs/net-standard-project.png "Phoneword .NET Standard Project Contents")
+![Phoneword .NET Standard 项目内容](deepdive-images/vs/net-standard-project.png)
 
 项目具有包含 NuGet 和 SDK 节点的依赖项节点  ：
 
@@ -57,7 +57,7 @@ Visual Studio 将代码组织为解决方案和项目。 解决方案是可以�
 
 [Visual Studio for Mac](/visualstudio/mac/) 遵循将代码组织为解决方案和项目的 Visual Studio 做法 。 解决方案是可以容纳一个或多个项目的容器。 项目可以是应用程序、支持库、测试应用程序等。 Notes 应用程序包含 1 个内附 3 个项目的解决方案，如以下屏幕截图所示：
 
-![](deepdive-images/vsmac/solution.png "Visual Studio for Mac Solution Pane")
+![Visual Studio for Mac 解决方案窗格](deepdive-images/vsmac/solution.png)
 
 这些项目如下：
 
@@ -69,7 +69,7 @@ Visual Studio 将代码组织为解决方案和项目。 解决方案是可以�
 
 以下屏幕截图显示 Visual Studio for Mac 中 Notes .NET Standard 库项目的内容：
 
-![](deepdive-images/vsmac/net-standard-project.png "Phoneword .NET Standard Library Project Contents")
+![Phoneword .NET Standard 库项目内容](deepdive-images/vsmac/net-standard-project.png)
 
 项目具有包含 NuGet 和 SDK 节点的依赖项节点  ：
 
@@ -98,12 +98,12 @@ Xamarin.Forms 应用程序采用与传统跨平台应用程序相同的构建方
 
 ::: zone pivot="windows"
 
-![](deepdive-images/vs/architecture.png "Notes Architecture")
+![Notes 体系结构](deepdive-images/vs/architecture.png)
 
 ::: zone-end
 ::: zone pivot="macos"
 
-![](deepdive-images/vsmac/architecture.png "Notes Architecture")
+![Notes 体系结构](deepdive-images/vsmac/architecture.png)
 
 ::: zone-end
 
@@ -388,7 +388,7 @@ await Navigation.PopAsync();
 
 数据绑定连接两个对象，即源和目标。 源对象提供数据。 目标对象使用（并经常显示）来自源对象的数据。 例如，[`Editor`](xref:Xamarin.Forms.Editor)（目标对象）通常会将其 [`Text`](xref:Xamarin.Forms.InputView.Text) 属性绑定到源对象中的公共 `string` 属性。 下图说明了这种绑定关系：
 
-![](deepdive-images/data-binding.png "Data Binding")
+![数据绑定](deepdive-images/data-binding.png)
 
 数据绑定的主要优点是让你无需再担心视图和数据源之间的数据同步。 幕后的绑定框架源会将源对象中的更改自动推送到目标对象，且目标对象中的更改可选择性地推送回源对象。
 
@@ -532,7 +532,7 @@ Visual Studio for Mac 和 Visual Studio 均提供许多用于测试和部署应�
 - 还可以自定义每个平台上的本机控件的效果。 通过子类化 [`PlatformEffect`](xref:Xamarin.Forms.PlatformEffect`2) 类在特定于平台的项目中创建效果，并将其附加到相应的 Xamarin.Forms 控件中使用。 有关详细信息，请参阅[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
 - 共享代码可通过 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 类访问本机功能。 有关详细信息，请参阅[通过 DependencyService 访问本机功能](~/xamarin-forms/app-fundamentals/dependency-service/index.md)。
 
-此外，也可以阅读 Charles Petzold 撰写的[使用 Xamarin.Forms 创建移动应用](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)一书，了解有关 Xamarin.Forms 的详细信息。 可获取此书的 PDF 版本或多种电子书格式的版本。
+此外，也可阅读 Charles Petzold 撰写的[使用 Xamarin.Forms 创建移动应用](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)一书，了解有关 Xamarin.Forms 的详细信息。 可获取此书的 PDF 版本或多种电子书格式的版本。
 
 ## <a name="related-links"></a>相关链接
 

@@ -12,12 +12,12 @@ ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b3616d0cf4804dfb37d4fe65034796c672dec828
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8858a66d2caeea815bf06d5d2741bfc3623598f5
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127876"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933726"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>在多页 Xamarin.Forms 应用程序中执行导航
 
@@ -31,8 +31,8 @@ ms.locfileid: "84127876"
 
 本快速入门演练如何将能够存储单个便笺的单页跨平台 Xamarin.Forms 应用程序转换为能够存储多个便笺的多页应用程序。 最终的应用程序如下所示：
 
-[![](multi-page-images/screenshots1-sml.png "Notes Page")](multi-page-images/screenshots1.png#lightbox "Notes Page")
-[![](multi-page-images/screenshots2-sml.png "Note Entry Page")](multi-page-images/screenshots2.png#lightbox "Note Entry Page")
+[![便笺页面](multi-page-images/screenshots1-sml.png)](multi-page-images/screenshots1.png#lightbox "便笺页面")
+[![便笺输入页面](multi-page-images/screenshots2-sml.png)](multi-page-images/screenshots2.png#lightbox "便笺输入页面")
 
 ### <a name="prerequisites"></a>先决条件
 
@@ -44,23 +44,23 @@ ms.locfileid: "84127876"
 
 1. 启动 Visual Studio。 在开始窗口中，单击最近使用的项目/解决方案列表中的“Notes”解决方案，或单击“打开项目或解决方案”，然后在“打开项目/解决方案”对话框中，选择“Notes”项目的解决方案文件：
 
-    ![](multi-page-images/vs/open-solution.png "Open Project")
+    ![打开项目](multi-page-images/vs/open-solution.png)
 
 2. 在“解决方案资源管理器”中，右键单击“Notes”项目，并依次选择“添加”>“新文件夹”  ：
 
-    ![](multi-page-images/vs/add-new-item.png "Add New Item")
+    ![添加新项](multi-page-images/vs/add-new-item.png)
 
 3. 在“解决方案资源管理器”中，将新文件夹命名为“Models”：
 
-    ![](multi-page-images/vs/name-folder.png "Models Folder")
+    ![Models 文件夹](multi-page-images/vs/name-folder.png)
 
 4. 在“解决方案资源管理器”中选择“Models”文件夹，右键单击，然后选择“添加”>“新建项...”  ：
 
-    ![](multi-page-images/vs/add-new-models-file.png "Add New File")
+    ![添加新文件](multi-page-images/vs/add-new-models-file.png)
 
 5. 在“添加新项”对话框中，选择“Visual C# 项”>“类”，将新文件命名为“Note”，然后单击“添加”按钮：
 
-    ![](multi-page-images/vs/add-note-class.png "Add Note Class")
+    ![添加 Note 类](multi-page-images/vs/add-note-class.png)
 
     这会将名为 Note 的类添加到“Notes”项目的“Models”文件夹中。
 
@@ -86,7 +86,7 @@ ms.locfileid: "84127876"
 
 7. 在“解决方案资源管理器”中，右键单击“Notes”项目，并依次选择“添加”>“新建项...”  。在“添加新项”对话框中，选择“Visual C# 项”>“Xamarin.Forms”>“内容页”，将新文件命名为“NoteEntryPage”，然后单击“添加”按钮   ：
 
-    ![](multi-page-images/vs/add-note-entry-page.png "Add Xamarin.Forms ContentPage")
+    ![添加 Xamarin.Forms ContentPage](multi-page-images/vs/add-note-entry-page.png)
 
     这会将名为 NoteEntryPage 的新页添加到项目的根文件夹中。 此页会是应用程序中的第二页。
 
@@ -327,23 +327,23 @@ ms.locfileid: "84127876"
 
 1. 启动 Visual Studio for Mac。 在开始窗口单击“打开”，然后在对话框中选择“Notes”项目的解决方案文件：
 
-    ![](multi-page-images/vsmac/open-solution.png "Open Solution")
+    ![打开解决方案](multi-page-images/vsmac/open-solution.png)
 
 2. 在“Solution Pad”中，选择“Notes”项目，然后右键单击并选择“添加”>“新建文件夹”  ：
 
-    ![](multi-page-images/vsmac/add-new-folder.png "Add New Folder")
+    ![添加新文件夹](multi-page-images/vsmac/add-new-folder.png)
 
 3. 在“Solution Pad”中，将新文件夹命名为“Models”：
 
-    ![](multi-page-images/vsmac/name-folder.png "Models Folder")
+    ![Models 文件夹](multi-page-images/vsmac/name-folder.png)
 
 4. 在“Solution Pad”中选择“Models”文件夹，右键单击，然后选择“添加”>“新建文件...”  ：
 
-    ![](multi-page-images/vsmac/add-new-models-file.png "Add New File")
+    ![添加新文件](multi-page-images/vsmac/add-new-models-file.png)
 
 5. 在“新建文件”对话框中，选择“常规”>“空类”，将新文件命名为“Note”，然后单击“新建”按钮：
 
-    ![](multi-page-images/vsmac/add-note-class.png "Add Note Class")
+    ![添加 Note 类](multi-page-images/vsmac/add-note-class.png)
 
     这会将名为 Note 的类添加到“Notes”项目的“Models”文件夹中。
 
@@ -369,7 +369,7 @@ ms.locfileid: "84127876"
 
 7. 在“Solution Pad”中，选择“Notes”项目，然后右键单击并选择“添加”>“新建文件...”  。在“新建文件”对话框中，选择“窗体”>“窗体 ContentPage Xaml”，将新文件命名为“NoteEntryPage”，然后单击“新建”按钮：
 
-    ![](multi-page-images/vsmac/add-note-entry-page.png "Add Xamarin.Forms ContentPage")
+    ![添加 Xamarin.Forms ContentPage](multi-page-images/vsmac/add-note-entry-page.png)
 
     这会将名为 NoteEntryPage 的新页添加到项目的根文件夹中。 此页会是应用程序中的第二页。
 

@@ -10,18 +10,18 @@ ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f71e0a67b823d92a17158a076707f606f6a4c73f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3558352c9f43b8e301492077806bbb611e9b58cf
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136105"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929306"
 ---
 # <a name="introduction-to-xamarinforms-data-templates"></a>Xamarin.Forms 数据模板简介
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 
-_借助 Xamarin.Forms 数据模板，可定义受支持控件上的数据表示形式。本文介绍了数据模板，并且分析了它们必不可少的原因。_
+_Xamarin.Forms 数据模板让你可以在支持的控件上定义数据表示形式。本文介绍了数据模板，并且分析了它们必不可少的原因。_
 
 以显示 `Person` 对象集合的 [`ListView`](xref:Xamarin.Forms.ListView) 为例。 以下代码示例展示了 `Person` 类的定义：
 
@@ -93,7 +93,7 @@ public WithoutDataTemplatePageCS()
 
 当显示集合中的对象时，[`ListView`](xref:Xamarin.Forms.ListView) 调用 `ToString`。 由于没有 `Person.ToString` 重写，`ToString` 会返回每个对象的类型名称，如以下屏幕截图所示：
 
-![](introduction-images/no-data-template.png "ListView without a Data Template")
+![不使用数据模板的 ListView](introduction-images/no-data-template.png)
 
 `Person` 对象可以重写 `ToString` 方法以显示有意义的数据，如以下代码示例所示：
 
@@ -110,7 +110,7 @@ public class Person
 
 这导致 [`ListView`](xref:Xamarin.Forms.ListView) 显示集合中每个对象的 `Person.Name` 属性值，如以下屏幕截图所示：
 
-![](introduction-images/override-tostring.png "ListView with a Data Template")
+![使用数据模板的 ListView](introduction-images/override-tostring.png)
 
 `Person.ToString` 重写可能会返回由 `Name`、`Age` 和 `Location` 属性组成的格式化字符串。 但是，此方法仅对每个数据项的外观提供有限的控制。 为了提高灵活性，可以创建 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 来定义数据的外观。
 
