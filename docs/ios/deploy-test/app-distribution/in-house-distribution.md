@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 854fecd7945c1090b475b3571678388b8e1cf127
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1c70aca4812214b424820ecb5a769a871e7e703c
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573230"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937899"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Xamarin.iOS 应用的内部分发
 
@@ -56,15 +56,15 @@ Apple Developer Enterprise Program 证书将持续 3 年，配置文件将在 1 
 3. 单击“+”  按钮创建新证书。
 4. 在“生产”  标题下，选择“In-House 和 Ad Hoc”  ：
 
-   [![](in-house-distribution-images/createcertmanually01.png "Select In-House and Ad Hoc")](in-house-distribution-images/createcertmanually01.png#lightbox)
+   [![选择“内部”和“临时”](in-house-distribution-images/createcertmanually01.png)](in-house-distribution-images/createcertmanually01.png#lightbox)
 
 5. 单击“继续”，并按说明通过密钥链访问创建证书签名请求：
 
-   [![](in-house-distribution-images/createcertmanually02.png "Create a Certificate Signing Request via Keychain Access")](in-house-distribution-images/createcertmanually02.png#lightbox)
+   [![通过 Keychain Access 创建证书签名请求](in-house-distribution-images/createcertmanually02.png)](in-house-distribution-images/createcertmanually02.png#lightbox)
 
 6. 按指示创建 CSR 后，单击“继续”并将 CSR 上传到 Member Center：
 
-   [![](in-house-distribution-images/createcertmanually03.png "Upload the CSR to the Member Center")](in-house-distribution-images/createcertmanually03.png#lightbox)
+   [![将 CSR 上传到 Member Center](in-house-distribution-images/createcertmanually03.png)](in-house-distribution-images/createcertmanually03.png#lightbox)
 
 7. 单击“生成”创建证书。
 8. 下载已完成的证书，并双击该文件进行安装。
@@ -72,17 +72,17 @@ Apple Developer Enterprise Program 证书将持续 3 年，配置文件将在 1 
 
 或者，可通过 Xcode 中的”首选项”对话框请求证书。 为此，请执行以下步骤：
 
-1. 选择团队，再单击“查看详细信息”  ：
+1. 选择团队，再单击“查看详细信息”：
 
-   [![](in-house-distribution-images/selectteam.png "Select your team")](in-house-distribution-images/selectteam.png#lightbox)
+   [![选择团队](in-house-distribution-images/selectteam.png)](in-house-distribution-images/selectteam.png#lightbox)
 
-2. 然后，单击“iOS 分发证书”  旁边的“创建”  按钮：
+2. 然后，单击“iOS 分发证书”旁边的“创建”按钮：
 
-   [![](in-house-distribution-images/selectcert.png "Create the iOS Distribution Certificate")](in-house-distribution-images/selectcert.png#lightbox)
+   [![创建“iOS 分发证书”](in-house-distribution-images/selectcert.png)](in-house-distribution-images/selectcert.png#lightbox)
 
-3. 接下来，单击加号 (+) 按钮，然后选择“iOS App Store”   ：
+3. 接下来，单击加号 (+) 按钮，然后选择“iOS App Store” ：
 
-   [![](in-house-distribution-images/selectcert.png "Select iOS App Store")](in-house-distribution-images/selectcert.png#lightbox)
+   [![选择“iOS App Store”](in-house-distribution-images/selectcert.png)](in-house-distribution-images/selectcert.png#lightbox)
 
 <a name="profile"></a>
 
@@ -94,35 +94,35 @@ Apple Developer Enterprise Program 证书将持续 3 年，配置文件将在 1 
 
 与创建的其他任何配置文件一样，需要应用 ID 来标识将分发到用户设备的应用。 如果尚未创建此项，请按照以下步骤创建：
 
-1. 在 [Apple Developer Center](https://developer.apple.com/account/overview.action) 中，浏览到“证书、标识符和描述文件”  部分。 在“标识符”  下选择“应用 ID”  。
-2. 单击“+”  按钮并提供“名称”  ，该名称将在门户中标识它。
-3. 应用前缀需已设置为你的团队 ID 且不可更改。 选择显式或通配符应用程序 ID，并以反向 DNS 格式输入捆绑 ID，如：显式  ：com.[DomainName].[AppName] 通配符  ：com.[DomainName].*
+1. 在 [Apple Developer Center](https://developer.apple.com/account/overview.action) 中，浏览到“证书、标识符和描述文件”部分。 在“标识符”下选择“应用 ID”。
+2. 单击“+”按钮并提供“名称”，该名称将在门户中标识它。
+3. 应用前缀需已设置为你的团队 ID 且不可更改。 选择显式或通配符应用程序 ID，并以反向 DNS 格式输入捆绑 ID，如：显式：com.[DomainName].[AppName] 通配符：com.[DomainName].*
 4. 选择应用要求的任意[应用服务](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services)。
-5. 单击“继续”  按钮，按照屏幕上的说明创建新的应用程序 ID。
+5. 单击“继续”按钮，按照屏幕上的说明创建新的应用程序 ID。
 
 拥有创建分发配置文件所需的必要组件后，请按照下面的步骤进行创建：
 
-1. 返回 Apple 预配门户，选择“预配”   > “分发”  ：
+1. 返回 Apple 预配门户，选择“预配” > “分发”：
 
-   [![](in-house-distribution-images/distribute01.png "Select Provisioning > Distribution")](in-house-distribution-images/distribute01.png#lightbox)
+   [![选择“预配”>“分发”](in-house-distribution-images/distribute01.png)](in-house-distribution-images/distribute01.png#lightbox)
 
-2. 单击“+”  按钮，选择要创建为“In-House”  的分发配置文件类型：
+2. 单击“+”按钮，选择要创建为“In-House”的分发配置文件类型：
 
-   [![](in-house-distribution-images/distribute02.png "Create an In-House Distribution Profile")](in-house-distribution-images/distribute02.png#lightbox)
+   [![创建内部分发配置文件](in-house-distribution-images/distribute02.png)](in-house-distribution-images/distribute02.png#lightbox)
 
-3. 单击“继续”  按钮，然后在下拉列表中选择要为其创建分发配置文件的应用程序 ID：
+3. 单击“继续”按钮，然后在下拉列表中选择要为其创建分发配置文件的应用程序 ID：
 
-   [![](in-house-distribution-images/distribute03.png "Select App ID from the dropdown list")](in-house-distribution-images/distribute03.png#lightbox)
+   [![从下拉列表选择“App ID”](in-house-distribution-images/distribute03.png)](in-house-distribution-images/distribute03.png#lightbox)
 
-4. 单击“继续”  按钮，然后选择签名应用程序时所需的分发证书：
+4. 单击“继续”按钮，然后选择签名应用程序时所需的分发证书：
 
-   [![](in-house-distribution-images/distribute04.png "Select distribution certificate required to sign the application")](in-house-distribution-images/distribute04.png#lightbox)
+   [![选择对应用程序签名时所需的分发证书](in-house-distribution-images/distribute04.png)](in-house-distribution-images/distribute04.png#lightbox)
 
-5. 单击“继续”  按钮，为新的分发配置文件输入“名称”  ：
+5. 单击“继续”按钮，为新的分发配置文件输入“名称”：
 
-   [![](in-house-distribution-images/distribute06.png "Enter a Name for the new Distribution Profile")](in-house-distribution-images/distribute06.png#lightbox)
+   [![输入新的分发配置文件的名称](in-house-distribution-images/distribute06.png)](in-house-distribution-images/distribute06.png#lightbox)
 
-6. 单击“生成”  按钮，创建新的配置文件并完成该过程。
+6. 单击“生成”按钮，创建新的配置文件并完成该过程。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -151,7 +151,7 @@ Apple Developer Enterprise Program 证书将持续 3 年，配置文件将在 1 
 
 ### <a name="creating-an-ipa-for-in-house-deployment"></a>创建 IPA 进行 In-House部署
 
-完成预配后，可将应用程序打包到名为 IPA  的文件中。 这是一个 zip 文件，内含应用程序以及其他元数据和图标。 IPA 用于将应用程序本地添加到 iTunes，使其可直接同步到配置文件中的设备。
+完成预配后，可将应用程序打包到名为 IPA 的文件中。 这是一个 zip 文件，内含应用程序以及其他元数据和图标。 IPA 用于将应用程序本地添加到 iTunes，使其可直接同步到配置文件中的设备。
 
 若要深入了解如何创建 IPA，请参阅 [IPA 支持](~/ios/deploy-test/app-distribution/ipa-support.md)指南。
 
