@@ -10,14 +10,14 @@ ms.date: 12/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2268f9034a4b09adce697f5fb7b6652baa4feed6
-ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
+ms.openlocfilehash: 021831da13a936fc5eb9d2e4cb63412484ceb465
+ms.sourcegitcommit: 69d9a61ba479f707d96eb4c1c56a4b05a2a2a26f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226815"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87426859"
 ---
-# <a name="xamarinforms-local-databases"></a>Xamarin.Forms本地数据库
+# <a name="no-locxamarinforms-local-databases"></a>Xamarin.Forms本地数据库
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 
@@ -40,9 +40,9 @@ SQLite 数据库引擎允许 Xamarin.Forms 应用程序加载和保存共享代�
 许多 NuGet 包都有着类似的名称。 正确的包具有以下属性：
 
 - **ID：** sqlite net pcl
-- **作者)  (作者：** SQLite-net
-- **所有者 () ：** praeclarum
-- **项目 URL：**https://github.com/praeclarum/sqlite-net
+- **创建者：** SQLite-net
+- 所有者：praeclarum
+- 项目 URL：https://github.com/praeclarum/sqlite-net
 - **NuGet 链接：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 > [!NOTE]
@@ -122,8 +122,8 @@ public class TodoItemDatabase
             if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(TodoItem).Name))
             {
                 await Database.CreateTablesAsync(CreateFlags.None, typeof(TodoItem)).ConfigureAwait(false);
-                initialized = true;
             }
+            initialized = true;
         }
     }
 
@@ -173,11 +173,11 @@ public static class TaskExtensions
 
 `SafeFireAndForget`方法等待提供的对象的异步执行 `Task` ，并允许附加在 `Action` 引发异常时调用的。
 
-有关详细信息，请参阅[基于任务的异步模式 (点击) ](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)。
+有关详细信息，请参阅[基于任务的异步模式（单击）](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)。
 
 ### <a name="data-manipulation-methods"></a>数据操作方法
 
-`TodoItemDatabase`类包括用于四种类型的数据操作的方法：创建、读取、编辑和删除。 SQLite.NET 库提供了一个简单的对象关系映射 (ORM) ，可用于存储和检索对象，而无需编写 SQL 语句。
+`TodoItemDatabase`类包括用于四种类型的数据操作的方法：创建、读取、编辑和删除。 SQLite.NET 库提供了一个简单的对象关系映射（ORM），可用于存储和检索对象，而无需编写 SQL 语句。
 
 ```csharp
 public class TodoItemDatabase {
@@ -219,7 +219,7 @@ public class TodoItemDatabase {
 }
 ```
 
-## <a name="access-data-in-xamarinforms"></a>访问数据Xamarin.Forms
+## <a name="access-data-in-no-locxamarinforms"></a>访问数据Xamarin.Forms
 
 Xamarin.Forms `App` 类公开类的实例 `TodoItemDatabase` ：
 
@@ -260,7 +260,7 @@ SQLite 提供了一个功能强大的 API，该 API 的功能多于本文和示�
 
 默认情况下，SQLite 使用传统的 rollback 日志。 未更改的数据库内容的副本将写入单独的回滚文件中，然后将这些更改直接写入数据库文件。 删除回滚日志时进行提交。
 
-预写日志记录 (WAL) 首先将更改写入单独的 WAL 文件中。 在 WAL 模式下，COMMIT 是一个特殊记录，附加到 WAL 文件，这允许在单个 WAL 文件中发生多个事务。 在名为 "_检查点_" 的特殊操作中，WAL 文件将合并回数据库文件。
+预写日志记录（WAL）首先将更改写入单独的 WAL 文件中。 在 WAL 模式下，COMMIT 是一个特殊记录，附加到 WAL 文件，这允许在单个 WAL 文件中发生多个事务。 在名为 "_检查点_" 的特殊操作中，WAL 文件将合并回数据库文件。
 
 对于本地数据库，WAL 可能会更快，因为读取器和编写器彼此之间不会相互阻止，这允许进行读写操作。 但是，WAL 模式不允许更改_页面大小_、向数据库添加其他文件关联以及添加额外的_检查点_操作。
 
@@ -283,7 +283,7 @@ await Database.EnableWriteAheadLoggingAsync();
 通常，移动、重命名或复制数据库文件与其他任何文件类型的过程相同，但有一些其他注意事项：
 
 - 在尝试移动数据库文件之前，应关闭所有数据库连接。
-- 如果使用[预写日志记录](#write-ahead-logging)，则 SQLite 会创建 ( 的共享内存访问) 文件，并 (将日志)  ( 文件。 请确保也将任何更改应用于这些文件。
+- 如果使用[预写日志记录](#write-ahead-logging)，SQLite 将创建共享内存访问（. 具有 shm）文件和（写入日志）（wal）文件。 请确保也将任何更改应用于这些文件。
 
 有关详细信息，请参阅[ Xamarin.Forms 中的文件处理](~/xamarin-forms/data-cloud/data/files.md)。
 
@@ -294,5 +294,5 @@ await Database.EnableWriteAheadLoggingAsync();
 - [SQLite 文档](https://www.sqlite.org/docs.html)
 - [将 SQLite 用于 Android](~/android/data-cloud/data-access/using-sqlite-orm.md)
 - [将 SQLite 与 iOS 配合使用](~/ios/data-cloud/data/using-sqlite-orm.md)
-- [基于任务的异步模式 (点击) ](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
+- [基于任务的异步模式（点击）](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
 - [Lazy &lt; T &gt; 类](xref:System.Lazy`1)

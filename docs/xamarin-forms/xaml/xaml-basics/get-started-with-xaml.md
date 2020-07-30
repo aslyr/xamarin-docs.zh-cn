@@ -10,12 +10,12 @@ ms.date: 09/30/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e38080fc9bc4ef0b74eb8c12c3a3f646c4888f53
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 874793975f027e1323dbf8a8acd30d19e980370b
+ms.sourcegitcommit: 562d4f2d51a43af21b7dc3ab892dd3a4264349a1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84198082"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87177640"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部分。 XAML 入门
 
@@ -148,7 +148,7 @@ namespace XamlSamples
 
 编译和运行此程序时， `Label` 元素会显示在页面的中心，如 XAML 所示：
 
-[![默认 Xamarin.Forms 显示](get-started-with-xaml-images/xamlsamples.png)](get-started-with-xaml-images/xamlsamples-large.png#lightbox)
+[![Default：：： no loc （Xamarin）：：： display](get-started-with-xaml-images/xamlsamples.png)](get-started-with-xaml-images/xamlsamples-large.png#lightbox)
 
 对于更有趣的视觉对象，你只需了解更有趣的 XAML。
 
@@ -214,7 +214,7 @@ namespace XamlSamples
 
 有很多快捷方式可用于设置这些属性的值。 某些属性是基本数据类型：例如， `Title` 和 `Text` 属性的类型为，类型 `String` `Rotation` 为 `Double` ，而 `IsVisible` （ `true` 默认情况下，在此处设置为仅用于说明）的类型为 `Boolean` 。
 
-`HorizontalTextAlignment`属性的类型为 `TextAlignment` ，它是一个枚举。 对于任何枚举类型的属性，所需的全部都是成员名称。
+`HorizontalTextAlignment`属性的类型为 `TextAlignment` ，它是一个枚举。 对于任何枚举类型的属性，只需提供一个成员名称。
 
 但对于更复杂类型的属性，转换器用于分析 XAML。 这些是 Xamarin.Forms 派生自的类 `TypeConverter` 。 很多是公共类，但某些不是公共类。 对于此特定的 XAML 文件，其中几个类在幕后扮演角色：
 
@@ -452,7 +452,7 @@ public partial class XamlPlusCodePage : ContentPage {
 
 欢迎。 这是您的页面，而 XAML 只是生成其内容的工具。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文介绍了 XAML 文件和代码文件如何影响类定义以及 XAML 和代码文件如何交互。 但 XAML 还具有自己独特的语法功能，使其能够以非常灵活的方式使用。 你可以在第2部分中开始浏览这些项[。基本 XAML 语法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)。
 
