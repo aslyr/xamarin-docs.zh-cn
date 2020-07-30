@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 09/02/2018
-ms.openlocfilehash: 767282516d9fc2ce097d13641697290dad7bd8ad
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: fe052fee9bd72164ce0d739f01cc1c21a9517cc6
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938068"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997158"
 ---
 # <a name="hello-mac-walkthrough"></a>Hello, Mac – 演练
 
@@ -59,7 +59,7 @@ Xamarin.Mac 应用程序开发需要以下条件：
 
     [![主要的 Visual Studio for Mac 接口](hello-mac-images/setup01-sml.png)](hello-mac-images/setup01.png#lightbox)
 
-2. 单击“新建项目...”按钮以打开“新建项目”对话框，然后依次选择“Mac” > “应用” > “Cocoa 应用”，单击“下一步”按钮：     
+2. 单击“新建项目...”按钮以打开“新建项目”对话框，然后依次选择“Mac” > “应用” > “Cocoa 应用”，单击“下一步”按钮：
 
     [![选择 Cocoa 应用](hello-mac-images/setup02-sml.png)](hello-mac-images/setup02.png#lightbox)
 
@@ -324,7 +324,7 @@ namespace Hello_Mac
 
 3. 单击“属性检查器”中的 Title 属性，将此按钮的标题更改为“Click Me”：
 
-    [![](hello-mac-images/xcode09.png "Setting the button's properties")](hello-mac-images/xcode09.png#lightbox)
+    [![设置按钮的属性](hello-mac-images/xcode09.png)](hello-mac-images/xcode09.png#lightbox)
 
 4. 从“库”部分拖动“标签”：
 
@@ -405,7 +405,7 @@ namespace Hello_Mac
 
     [![查看 ViewController.h 文件](hello-mac-images/outlet03.png)](hello-mac-images/outlet03.png#lightbox)
 
-6. 最后一个步骤至关重要！：如果未选中正确的文件，则无法创建输出口和操作，或者会公开给 C# 中错误的类！ 
+6. 最后一个步骤至关重要！：如果未选中正确的文件，则无法创建输出口和操作，或者会公开给 C# 中错误的类！
 
 7. 在“界面编辑器”中，按住键盘上的 **Ctrl** 键，单击并将前面创建的标签拖动到代码编辑器中（`@interface ViewController : NSViewController {}` 代码下方）：
 
