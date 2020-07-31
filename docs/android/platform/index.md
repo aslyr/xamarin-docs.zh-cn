@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/21/2018
-ms.openlocfilehash: 38052eee1b71ace9795f5c16bdf714f9538e353d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 9b4b74b3dbde34cb94b2ce3b104b2b5a4e1abe21
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303471"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996885"
 ---
-# <a name="platform-features"></a>平台功能
+# <a name="xamarinandroid-platform-features"></a>Xamarin.Android 平台功能
 
 _本节中的文档介绍 Android 特有的功能。在这里，你将找到一些主题，如使用 Fragment、使用地图以及使用内容提供程序封装数据。_
 
@@ -40,7 +40,7 @@ Android 3.0 引入了 Fragment 功能，展示如何支持针对手机和平板�
 
 ## <a name="app-linking"></a>[应用链接](~/android/platform/app-linking.md)
 
-本指南介绍 Android 6.0 如何支持应用链接，这是一种允许移动应用响应网站上的 URL 的技术  。 它将介绍如何在 Android 6.0 应用程序中实现应用链接，以及如何将网站配置为向移动应用授予权限以处理域的应用链接。
+本指南介绍 Android 6.0 如何支持应用链接，这是一种允许移动应用响应网站上的 URL 的技术。 它将介绍如何在 Android 6.0 应用程序中实现应用链接，以及如何将网站配置为向移动应用授予权限以处理域的应用链接。
 
 ## <a name="androidx"></a>[AndroidX](~/android/platform/androidx.md)
 
@@ -80,7 +80,7 @@ Android 4.4 (KitKat) 为用户和开发人员提供了许多功能。 本指南�
 
 ## <a name="android-40-ice-cream-sandwich"></a>[Android 4.0 Ice Cream Sandwich](~/android/platform/ice-cream-sandwich.md)
 
-本文介绍了一些新功能，这些新功能适用于开发 Android 4 API - Ice Cream Sandwich 应用程序的开发人员  。
+本文介绍了一些新功能，这些新功能适用于开发 Android 4 API - Ice Cream Sandwich 应用程序的开发人员。
 它涵盖了几种新的用户界面技术，然后研究了 Android 4 为在应用程序之间和设备之间共享数据提供的各种新功能。
 
 ## <a name="working-with-the-android-manifest"></a>[使用 Android 清单](android-manifest.md)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: f020219f28ce9389c3f8d5157ddfddc32af07f0f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 1f86227573fc5e9dc39d4781125c49a067e8967d
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939966"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997483"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>使用 TestFlight 来分发 Xamarin.iOS 应用
 
@@ -75,7 +75,7 @@ TestFlight 是 Apple 向 iOS 应用推出的 Beta 测试服务，仅可通过 [i
 
 该窗体需反映与应用的 Info.plist 文件中完全相同的信息，如下所示：
 
-[![](testflight-images/infoplist.png "应用的 Info.plist")](testflight-images/infoplist.png#lightbox)
+[![应用的 Info.plist](testflight-images/infoplist.png)](testflight-images/infoplist.png#lightbox)
 [![iTunes Connect 上的窗体](testflight-images/newiosapp.png)](testflight-images/newiosapp.png#lightbox)
 
 - **名称** - 设置应用程序包时使用的描述性名称。 它必须与 `Info.plist` 中的“应用程序名称”条目完全匹配。
@@ -227,7 +227,7 @@ TestFlight 是 Apple 向 iOS 应用推出的 Beta 测试服务，仅可通过 [i
 
 如果有大量外部测试员，可使用“导入文件”链接导入一个每行采用以下格式的 `CSV` 文件：
 
-``` 
+```
 first name, last name, email address
 ```
 

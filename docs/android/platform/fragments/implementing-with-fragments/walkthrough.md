@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/21/2018
-ms.openlocfilehash: 043ad02f9ca9148910364ac82917551ee58d72ba
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 56c9fc307166ec9c72ab6cb1f7a726c4cd12cb3e
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73027407"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997028"
 ---
 # <a name="fragments-walkthrough-ndash-phone"></a>片段演练 &ndash; 电话
 
 本文是创建定目标到纵向 Android 设备的 Xamarin.Android 应用的演练的第一部分。 本演练将介绍如何在 Xamarin.Android 中创建片段，以及如何将片段添加到示例中。
 
-[![](./images/intro-screenshot-phone-sml.png)](./images/intro-screenshot-phone.png#lightbox)
+[![演练应用屏幕截图](./images/intro-screenshot-phone-sml.png)](./images/intro-screenshot-phone.png#lightbox)
 
 将为此应用创建以下类：
 
@@ -29,7 +29,7 @@ ms.locfileid: "73027407"
 
 ## <a name="1-create-the-android-project"></a>1.创建 Android 项目
 
-新建名为 FragmentSample  的 Xamarin.Android 项目。
+新建名为 FragmentSample 的 Xamarin.Android 项目。
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![新建 Xamarin.Android 项目](./walkthrough-images/01-newproject.w157-sml.png)](./walkthrough-images/01-newproject.w157.png#lightbox)
@@ -38,9 +38,9 @@ ms.locfileid: "73027407"
 
 [![新建 Xamarin.Android 项目](./walkthrough-images/01-newproject.m742-sml.png)](./walkthrough-images/01-newproject.m742.png#lightbox)
 
-建议为本演练选中“新式开发”  。
+建议为本演练选中“新式开发”。
 
-创建项目后，将文件 layout/main.axml  重命名为 layout/activity_main.axml  。
+创建项目后，将文件 layout/main.axml 重命名为 layout/activity_main.axml。
 
 -----
 
@@ -51,7 +51,7 @@ ms.locfileid: "73027407"
 * `Shakespeare.Titles` &nbsp; 此数组保留威廉·莎士比亚戏剧的列表。 这是 `TitlesFragment` 的数据源。
 * `Shakespeare.Dialogue` &nbsp; 此数组保留 `Shakespeare.Titles` 中的一部戏剧的引文列表。 这是 `PlayQuoteFragment` 的数据源。
 
-将新 C# 类添加到 FragmentSample  项目，并将它命名为 Shakespeare.cs  。 在此文件中，新建名为 `Shakespeare` 的 C# 类，其中包含以下内容
+将新 C# 类添加到 FragmentSample 项目，并将它命名为 Shakespeare.cs。 在此文件中，新建名为 `Shakespeare` 的 C# 类，其中包含以下内容
 
 ```csharp
 class Shakespeare
@@ -131,7 +131,7 @@ public class PlayQuoteFragment : Fragment
 
 这是 Android 应用中的常见模式，用于提供将实例化片段的工厂方法。 这确保创建的片段包含正常运行所必需的参数。 在本演练中，应用应使用 `PlayQuoteFragment.NewInstance` 方法，以便在每次选择引文时新建片段。 `NewInstance` 方法需要使用一个参数 &ndash; 要显示的引文的索引。
 
-当需要在屏幕上呈现片段时，Android 会调用 `OnCreateView` 方法。 它会返回作为片段的 Android `View` 对象。 此片段不使用布局文件来创建视图。 相反，它通过将 TextView  实例化为保留引文来以编程方式创建视图，并在 ScrollView  中显示此小组件。
+当需要在屏幕上呈现片段时，Android 会调用 `OnCreateView` 方法。 它会返回作为片段的 Android `View` 对象。 此片段不使用布局文件来创建视图。 相反，它通过将 TextView 实例化为保留引文来以编程方式创建视图，并在 ScrollView 中显示此小组件。
 
 > [!NOTE]
 > 片段子类必须有公共的默认无参数构造函数。
@@ -176,7 +176,7 @@ public class PlayQuoteActivity : Activity
 
 `TitlesFragment` 子类化称为 `ListFragment` 的专用片段，它封装了用于在片段中显示 `ListView` 的逻辑。 `ListFragment` 公开 `ListAdapter` 属性（被 `ListView` 用来显示它的内容）和名为 `OnListItemClick` 的事件处理程序（可便于片段响应用户单击 `ListView` 显示的行）。
 
-首先，请向项目添加新片段，并将它命名为 TitlesFragment  ：
+首先，请向项目添加新片段，并将它命名为 TitlesFragment：
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -237,7 +237,7 @@ public class TitlesFragment : ListFragment
 
 最后一步是，在 `MainActivity` 中显示 `TitlesFragment`。 活动不会动态加载片段。 相反，片段是静态加载的，具体方法是使用 `fragment` 元素在活动的布局文件中声明片段。 通过将 `android:name` 特性设置为片段类（包括类型的命名空间），标识要加载的片段。 例如，若要使用 `TitlesFragment`，则 `android:name` 会设置为 `FragmentSample.TitlesFragment`。
 
-编辑布局文件 activity_main.axml  ，将现有 XML 替换为以下内容：
+编辑布局文件 activity_main.axml，将现有 XML 替换为以下内容：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

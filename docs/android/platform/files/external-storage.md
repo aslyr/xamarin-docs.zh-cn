@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/23/2018
-ms.openlocfilehash: 96b0d6a00c7825939b1f89ed63e3e5559ca4ef59
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: e6eb62def5aeb9e4a4a347becffcae82116c1b11
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73020486"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997067"
 ---
 # <a name="external-storage"></a>外部存储
 
@@ -50,18 +50,18 @@ ms.locfileid: "73020486"
 
 `GetExternalFilesDir()` 的参数是一个字符串，用于指定应用程序目录  。 这是一个目录，旨在为文件的逻辑组织提供标准位置。 可以通过 `Android.OS.Environment` 类中的常数获取字符串值：
 
-| `Android.OS.Environment` | 目录 |
+| Android.OS.Environment | 目录 |
 |-|-|
-| DirectoryAlarms | PRIVATE\_EXTERNAL\_STORAGE  /Alarms  |
-| DirectoryDcim | PRIVATE\_EXTERNAL\_STORAGE  /DCIM  |
-| DirectoryDownloads | PRIVATE\_EXTERNAL\_STORAGE  /Download  |
-| DirectoryDocuments | PRIVATE\_EXTERNAL\_STORAGE  /Documents  |
-| DirectoryMovies | PRIVATE\_EXTERNAL\_STORAGE  /Movies  |
-| DirectoryMusic | PRIVATE\_EXTERNAL\_STORAGE  /Music  |
-| DirectoryNotifications | PRIVATE\_EXTERNAL\_STORAGE  /Notifications  |
-| DirectoryPodcasts | PRIVATE\_EXTERNAL\_STORAGE  /Podcasts  |
-| DirectoryRingtones | PRIVATE\_EXTERNAL\_STORAGE  /Ringtones  |
-| DirectoryPictures | PRIVATE\_EXTERNAL\_STORAGE  /Pictures  |
+| DirectoryAlarms | PRIVATE\_EXTERNAL\_STORAGE/Alarms |
+| DirectoryDcim | PRIVATE\_EXTERNAL\_STORAGE/DCIM |
+| DirectoryDownloads | PRIVATE\_EXTERNAL\_STORAGE/Download |
+| DirectoryDocuments | PRIVATE\_EXTERNAL\_STORAGE/Documents |
+| DirectoryMovies | PRIVATE\_EXTERNAL\_STORAGE/Movies |
+| DirectoryMusic | PRIVATE\_EXTERNAL\_STORAGE/Music |
+| DirectoryNotifications | PRIVATE\_EXTERNAL\_STORAGE/Notifications |
+| DirectoryPodcasts | PRIVATE\_EXTERNAL\_STORAGE/Podcasts |
+| DirectoryRingtones | PRIVATE\_EXTERNAL\_STORAGE/Ringtones |
+| DirectoryPictures | PRIVATE\_EXTERNAL\_STORAGE/Pictures |
 
 对于具有多个外部存储分区的设备，每个分区都有一个用于专用文件的目录。 方法 `Android.Content.Context.GetExternalFilesDirs(string type)` 会返回 `Java.IO.Files` 的数组。 每个对象都表示所有共享/外部存储设备上一个特定于应用程序的专用目录，应用程序可以在其中放置它拥有的文件。
 
@@ -76,9 +76,9 @@ ms.locfileid: "73020486"
 /storage/emulated/0/
 ```
 
-本文档将外部存储上公共文件的存储目录称为 PUBLIC\_EXTERNAL\_STORAGE  。
+本文档将外部存储上公共文件的存储目录称为 PUBLIC\_EXTERNAL\_STORAGE。
 
-Android 还支持 PUBLIC\_EXTERNAL\_STORAGE  上的应用程序目录这一概念。 这些目录与 `PRIVATE_EXTERNAL_STORAGE` 的应用程序目录完全相同，在上一部分的表中进行了介绍。 方法 `Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)` 会返回与公共应用程序目录对应的 `Java.IO.File` 对象。 `directoryType` 参数为必需参数，不能为 `null`。
+Android 还支持 PUBLIC\_EXTERNAL\_STORAGE 上的应用程序目录这一概念。 这些目录与 `PRIVATE_EXTERNAL_STORAGE` 的应用程序目录完全相同，在上一部分的表中进行了介绍。 方法 `Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)` 会返回与公共应用程序目录对应的 `Java.IO.File` 对象。 `directoryType` 参数为必需参数，不能为 `null`。
 
 例如，调用 `Environment.GetExternalStoragePublicDirectory(Environment.DirectoryDocuments).AbsolutePath` 会返回类似于下面这样的字符串：
 
@@ -93,8 +93,8 @@ Android 还支持 PUBLIC\_EXTERNAL\_STORAGE  上的应用程序目录这一概�
 
 Xamarin.Android 应用获取文件的完整路径后，它应利用任何标准 .NET API 来创建、读取、写入或删除文件。 这可最大程度地提高应用的跨平台兼容代码数量。 但是，在尝试访问文件之前，Xamarin.Android 应用必须确保可以访问该文件。
 
-1. 验证外部存储  &ndash; 根据外部存储的性质，它可能未装载，不可由应用使用。 所有应用都应在尝试使用外部存储之前检查其状态。
-2. 执行运行时权限检查  &ndash; Android 应用必须从用户处请求获取权限才能访问外部存储。 这意味着在进行任何文件访问之前都应执行运行时权限请求。 [Xamarin.Android 中的权限](~/android/app-fundamentals/permissions.md)指南包含有关 Android 权限的更多详细信息。
+1. 验证外部存储 &ndash; 根据外部存储的性质，它可能未装载，不可由应用使用。 所有应用都应在尝试使用外部存储之前检查其状态。
+2. 执行运行时权限检查 &ndash; Android 应用必须从用户处请求获取权限才能访问外部存储。 这意味着在进行任何文件访问之前都应执行运行时权限请求。 [Xamarin.Android 中的权限](~/android/app-fundamentals/permissions.md)指南包含有关 Android 权限的更多详细信息。
 
 下面将讨论这两个任务中的每个任务。
 
@@ -125,9 +125,9 @@ bool isWriteable = Environment.MediaMounted.Equals(Environment.ExternalStorageSt
 
 ## <a name="external-storage-permissions"></a>外部存储权限
 
-Android 将外部存储视为危险权限  ，这通常要求用户授予其访问资源的权限。 用户可以随时撤销此权限。  这意味着在进行任何文件访问之前都应执行运行时权限请求。 应用会被自动授予读取和写入其自己的专用文件的权限。 在用户[授予了权限](~/android/app-fundamentals/permissions.md)之后，应用可以读取和写入属于其他应用的专用文件。
+Android 将外部存储视为危险权限，这通常要求用户授予其访问资源的权限。 用户可以随时撤销此权限。  这意味着在进行任何文件访问之前都应执行运行时权限请求。 应用会被自动授予读取和写入其自己的专用文件的权限。 在用户[授予了权限](~/android/app-fundamentals/permissions.md)之后，应用可以读取和写入属于其他应用的专用文件。
 
-所有 Android 应用都必须在 AndroidManifest.xml  中为外部存储声明两个权限之一。 若要标识权限，必须将以下两个 `uses-permission` 元素之一添加到 AndroidManifest.xml  ：
+所有 Android 应用都必须在 AndroidManifest.xml 中为外部存储声明两个权限之一。 若要标识权限，必须将以下两个 `uses-permission` 元素之一添加到 AndroidManifest.xml：
 
 ```xml
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -135,17 +135,17 @@ Android 将外部存储视为危险权限  ，这通常要求用户授予其访�
 ```
 
 > [!NOTE]
-> 如果用户授予 `WRITE_EXTERNAL_STORAGE`，则也会隐式授予 `READ_EXTERNAL_STORAGE`。 无需在 AndroidManifest.xml  中请求两个权限。
+> 如果用户授予 `WRITE_EXTERNAL_STORAGE`，则也会隐式授予 `READ_EXTERNAL_STORAGE`。 无需在 AndroidManifest.xml 中请求两个权限。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-还可以使用解决方案属性  的“Android 清单”  选项卡添加权限：
+还可以使用解决方案属性的“Android 清单”选项卡添加权限：
 
 ![解决方案资源管理器 - Visual Studio 所需的权限](./images/required-permissions.w157.png)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-还可以使用解决方案 Properties Pad  的“Android 清单”  选项卡添加权限：
+还可以使用解决方案 Properties Pad的“Android 清单”选项卡添加权限：
 
 [![Solution Pad - Visual Studio for Mac 的所需权限](./images/required-permissions.m752-sml.png)](./images/required-permissions.m752.png#lightbox)
 
@@ -155,11 +155,11 @@ Android 将外部存储视为危险权限  ，这通常要求用户授予其访�
 
 ![外部存储权限检查的流程图](./images/external-permission-check-flowchart.png)
 
-有关执行运行时权限请求的详细信息，请参阅 [Xamarin.Android 中的权限](~/android/app-fundamentals/permissions.md)指南。 monodroid-sample  [本地文件](https://github.com/xamarin/monodroid-samples/tree/master/LocalFiles)也演示了一种执行运行时权限检查的方式。
+有关执行运行时权限请求的详细信息，请参阅 [Xamarin.Android 中的权限](~/android/app-fundamentals/permissions.md)指南。 monodroid-sample [本地文件](https://github.com/xamarin/monodroid-samples/tree/master/LocalFiles)也演示了一种执行运行时权限检查的方式。
 
 #### <a name="granting-and-revoking-permissions-with-adb"></a>通过 ADB 授予和撤销权限
 
-在开发 Android 应用的过程中，可能需要授予和撤销权限以测试运行时权限检查所涉及的各种工作流。 可以在命令提示符处使用 ADB 执行此操作。 以下命令行片段演示如何使用 ADB 为包名称为 com.companyname.app  的 Android 应用授予或撤销权限：
+在开发 Android 应用的过程中，可能需要授予和撤销权限以测试运行时权限检查所涉及的各种工作流。 可以在命令提示符处使用 ADB 执行此操作。 以下命令行片段演示如何使用 ADB 为包名称为 com.companyname.app 的 Android 应用授予或撤销权限：
 
 ```bash
 $ adb shell pm grant com.companyname.app android.permission.WRITE_EXTERNAL_STORAGE
@@ -177,5 +177,5 @@ System.IO.File.Delete("/storage/emulated/0/Android/data/com.companyname.app/file
 
 ## <a name="related-links"></a>相关链接
 
-* [monodroid-samples  上的 Xamarin.Android 本地文件示例](https://github.com/xamarin/monodroid-samples/tree/master/LocalFiles)
+* [monodroid-samples 上的 Xamarin.Android 本地文件示例](https://github.com/xamarin/monodroid-samples/tree/master/LocalFiles)
 * [Xamarin.Android 中的权限](~/android/app-fundamentals/permissions.md)

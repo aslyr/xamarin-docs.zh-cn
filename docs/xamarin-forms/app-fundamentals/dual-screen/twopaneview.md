@@ -10,14 +10,14 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fb5474c7436cb985a1404b662fcf842f22cfdc0d
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 4f7fdc0bb18a49e601c00ce1e3eb13371bb80be3
+ms.sourcegitcommit: 3698b35c823225a74892a47139d19e8ae8e6d9ed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937691"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87113824"
 ---
-# <a name="xamarinforms-twopaneview-layout"></a>Xamarin.Forms TwoPaneView 布局
+# <a name="no-locxamarinforms-twopaneview-layout"></a>Xamarin.Forms TwoPaneView 布局
 
 ![预发行版 API](~/media/shared/preview.png "此 API 当前为预发布版本")
 
@@ -77,8 +77,8 @@ ms.locfileid: "86937691"
 
 当 `TwoPaneView` 占用一个或两个屏幕时，将应用以下属性：
 
-- 在 Tall 模式下时，`TallModeConfiguration` 指示从左到右的排序方式；如果你根据 TwoPaneViewPriority 的定义仅希望使一个窗格可见，也可采用此属性。
-- 在 Wide 模式下时，`WideModeConfiguration` 指示从上到下的排序方式；如果你根据 TwoPaneViewPriority 的定义仅希望使一个窗格可见，也可采用此属性。
+- `TallModeConfiguration` 指明是处于高模式（上/下排列方式），还是只想一个窗格可见（如 TwoPaneViewPriority 所定义）。
+- `WideModeConfiguration` 指明是处于宽模式（左/右排列方式），还是只想一个窗格可见（如 TwoPaneViewPriority 所定义）。
 - `PanePriority` 指示在 SinglePane 模式下时是显示 Pane1 还是显示 Pane2。
 
 ## <a name="related-links"></a>相关链接

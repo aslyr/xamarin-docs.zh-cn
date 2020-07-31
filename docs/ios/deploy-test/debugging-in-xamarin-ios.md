@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 8dc70cc8f1bf29a58cb20540fa538be2025b2ba4
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: a5135d9bb481afcaefc851e392196a87b8ef80dd
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935624"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997197"
 ---
 # <a name="debugging-xamarinios-apps"></a>调试 Xamarin.iOS 应用
 
@@ -216,13 +216,13 @@ Xamarin.iOS 随附用于 Mono 类库的源代码，可使用此代码在调试�
 
 若要启用此功能，请确保在“Visual Studio for Mac”>“首选项”>“调试程序”菜单下已取消选择“仅调试项目代码；不单步执行框架代码”选项，如下图所示：
 
-[![](debugging-in-xamarin-ios-images/debugging6.png "Debugging Mono's Class Libraries")](debugging-in-xamarin-ios-images/debugging6.png#lightbox)
+[![调试 Mono 的类库](debugging-in-xamarin-ios-images/debugging6.png)](debugging-in-xamarin-ios-images/debugging6.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 若要在 Visual Studio 中调试类库，必须在“调试”>“选项”菜单下禁用“仅我的代码”。 在“调试”>“常规”节点中，取消选中“启用‘仅我的代码’”复选框：
 
-[![](debugging-in-xamarin-ios-images/debugging6vs.png "Debugging Mono's Class Libraries")](debugging-in-xamarin-ios-images/debugging6vs.png#lightbox)
+[![调试 Mono 的类库](debugging-in-xamarin-ios-images/debugging6vs.png)](debugging-in-xamarin-ios-images/debugging6vs.png#lightbox)
 
 -----
 

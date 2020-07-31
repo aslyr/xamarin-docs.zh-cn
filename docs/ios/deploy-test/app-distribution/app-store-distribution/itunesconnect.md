@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 1de157540011011be6d48db25414c8667195c679
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 90309fe8a9282110a685151455d0b1407b269128
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932703"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997353"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>在 iTunes Connect 中配置应用
 
@@ -185,7 +185,7 @@ Apple 要求开发人员提供其网站的链接，用于支持用户可能遇�
 4. 滚动到“名称”部分。
 5. 填写所有必填信息：
 
-    [![](itunesconnect-images/name01.png "Editing Name, Description, What's New, Keywords and URLs in iTunes Connect")](itunesconnect-images/name01.png#lightbox)
+    [![在 iTunes Connect 中编辑“名称”、“说明”、“新变化”、“关键字”和“URL”](itunesconnect-images/name01.png)](itunesconnect-images/name01.png#lightbox)
 6. 单击屏幕顶部的“保存”按钮，保存更改。
 
 > [!IMPORTANT]

@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: d21394b3c33b3f415cbe45ae13c84cabab1ec30b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 89b5dc2ae296b9e9033c45bf93c87de83054f721
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571033"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996482"
 ---
 # <a name="cross-platform-performance"></a>跨平台性能
 
@@ -298,11 +298,11 @@ SGen 启动垃圾回收时，将在回收内存的同时停止应用程序的线
 
 以下屏幕截图显示了 Visual Studio for Mac 中 Xamarin.iOS 项目的链接器选项：
 
-![](memory-perf-best-practices-images/linker-options-ios.png)
+![Xamarin.iOS 的链接器选项](memory-perf-best-practices-images/linker-options-ios.png)
 
 以下屏幕截图显示了 Visual Studio for Mac 中 Xamarin.Android 项目的链接器选项：
 
-![](memory-perf-best-practices-images/linker-options-droid.png)
+![Xamarin.Android 的链接器选项](memory-perf-best-practices-images/linker-options-droid.png)
 
 链接器提供 3 个可用于控制其行为的设置：
 
