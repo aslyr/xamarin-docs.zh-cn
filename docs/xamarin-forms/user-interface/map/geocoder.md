@@ -10,18 +10,21 @@ ms.date: 10/22/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fe099235857f6bd0531539e3aa84e41bf59b50ba
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 7e92385f3a82c2d12881be4ff3e54bc47533696d
+ms.sourcegitcommit: ea2abdc789d0e292c3e1700a2b53b92097e0e542
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139862"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517488"
 ---
-# <a name="xamarinforms-map-geocoding"></a>Xamarin.Forms地图地理编码
+# <a name="no-locxamarinforms-map-geocoding"></a>Xamarin.Forms地图地理编码
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps)命名空间提供了 [`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder) 一个类，该类在存储在对象中的字符串地址、纬度和经度坐标之间进行转换 [`Position`](xref:Xamarin.Forms.Maps.Position) 。 有关结构的详细信息 [`Position`](xref:Xamarin.Forms.Maps.Position) ，请参阅[地图位置和距离](position-distance.md)。
+
+> [!NOTE]
+> 替代的地理编码 API 是提供的 Xamarin.Essentials 。 Xamarin.Essentials `Geocoding` 地理编码地址时，api 提供结构化地址数据，而不是此 api 返回的字符串。 有关详细信息，请参阅[ Xamarin.Essentials ：地理编码](~/essentials/geocoding.md)。
 
 ## <a name="geocode-an-address"></a>地理编码地址
 
