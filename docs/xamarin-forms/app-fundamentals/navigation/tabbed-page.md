@@ -1,6 +1,6 @@
 ---
-title: title:"Xamarin.FormsTabbedPage”说明：“Xamarin.Forms TabbedPage 包含一系列选项卡和较大的详细信息区域，其中每个选项卡都可将内容加载到详细信息区域。
-description: '本文演示如何使用 TabbedPage 浏览页集合。” ms.prod: xamarin ms.assetid:C946057F-C77C-412D-82A0-DAF475A24EF5 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2019/11/07 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms TabbedPage
+description: Xamarin.Forms TabbedPage 包含一系列选项卡和较大的详细信息区域，其中每个选项卡都可将内容加载到详细信息区域。 本文演示如何使用 TabbedPage 浏览页集合。
 ms.prod: xamarin
 ms.assetid: C946057F-C77C-412D-82A0-DAF475A24EF5
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 11/07/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 38389867ba52e63d8310e3b59d7838f58e8cf488
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 733ec985f4d285f26aca62930868970026847825
+ms.sourcegitcommit: 69d9a61ba479f707d96eb4c1c56a4b05a2a2a26f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84137509"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87426872"
 ---
-# <a name="xamarinforms-tabbedpage"></a>Xamarin.Forms TabbedPage
+# <a name="no-locxamarinforms-tabbedpage"></a>Xamarin.Forms TabbedPage
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 
@@ -33,7 +33,7 @@ Xamarin.Forms [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 包含一系列选�
 在 Android 上，选项卡列表显示在屏幕顶部，详细信息区域显示在下方。 每个选项卡都包含一个标题和一个图标，该图标应为带有 alpha 通道的 PNG 文件。 但是，可以使用特定于平台布局将选项卡移动至屏幕底部。 如果有五个以上的选项卡，并且选项卡列表位于屏幕底部，会显示“更多”选项卡，可用于访问其他选项卡。 有关图标要求的信息，请参阅 material.io 上的[选项卡](https://material.io/components/tabs/#)和 developer.android.com 上的[支持不同的像素密度](https://developer.android.com/training/multiscreen/screendensities)。 有关将选项卡移动到屏幕底部的信息，请参阅[设置 TabbedPage 工具栏位置和颜色](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md)。
 
 > [!TIP]
-> `TabbedPageRenderer` for Android AppCompat 有可替代的 `GetIconDrawable` 方法，可以用来从自定义 `Drawable` 加载选项卡图标。 使用此替代方法可以将 SVG 图像用作 `TabbedPage` 上的图标，并且可以使用顶部和底部选项卡。 或者，可替代的 `SetTabIcon` 方法可用于从顶部标签栏的自定义 `Drawable` 加载选项卡图标。
+> `TabbedPageRenderer` for Android AppCompat 有可替代的 `SetTabIconImageSource` 方法，可以用来从自定义 `Drawable` 加载选项卡图标。 使用此替代方法可以将 SVG 图像用作 `TabbedPage` 上的图标，并且可以使用顶部和底部选项卡。
 
 在通用 Windows 平台 (UWP) 上，选项卡列表显示在屏幕顶部，详细信息区域显示在下方。 每个选项卡都包含一个标题。 但是，可以使用特定于平台布局向每个选项卡添加图标。 有关详细信息，请参阅 [Windows 上的 TabbedPage 图标](~/xamarin-forms/platform/windows/tabbedpage-icons.md)。
 

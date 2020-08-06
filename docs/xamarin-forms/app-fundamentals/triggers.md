@@ -10,14 +10,14 @@ ms.date: 04/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2a71f48fb9911267188e7aa4b4124cd9b7488d31
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: fa907babc8dae0f466fd870f55b0e5be23114498
+ms.sourcegitcommit: 37ad3c1ef8faa5bfeeb305fde06e7b4654a643e1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936469"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87795989"
 ---
-# <a name="xamarinforms-triggers"></a>Xamarin.Forms 触发器
+# <a name="no-locxamarinforms-triggers"></a>Xamarin.Forms 触发器
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
 
@@ -276,7 +276,7 @@ XAML 如下所示。 请注意下面的示例与第一个触发器示例之间�
         <Trigger TargetType="Entry"
                  Property="Entry.IsFocused" Value="True">
             <Trigger.EnterActions>
-                <local:FadeTriggerAction StartsFrom="0"" />
+                <local:FadeTriggerAction StartsFrom="0" />
             </Trigger.EnterActions>
 
             <Trigger.ExitActions>
@@ -319,7 +319,7 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
 
 ## <a name="state-triggers"></a>状态触发器
 
-状态触发器是一组专门的触发器，它们定义了在哪些条件下应该应用 [`VisualState`](xref:Xamarin.Forms.VisualState)。 
+状态触发器是一组专门的触发器，它们定义了在哪些条件下应该应用 [`VisualState`](xref:Xamarin.Forms.VisualState)。
 
 状态触发器添加到 [`VisualState`](xref:Xamarin.Forms.VisualState) 的 [`StateTriggers`](xref:Xamarin.Forms.VisualState.StateTriggers) 集合。 此集合可以包含一个或多个状态触发器。 当此集合中的任何状态触发器处于活动状态时，便会应用 [`VisualState`](xref:Xamarin.Forms.VisualState)。
 

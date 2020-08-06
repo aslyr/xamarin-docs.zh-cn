@@ -10,14 +10,14 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fa49cdb7944e3ab942ccda611af906e2822b072a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 7c4ed503e0379c2c7f235bd91621a031bd660c85
+ms.sourcegitcommit: 69d9a61ba479f707d96eb4c1c56a4b05a2a2a26f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139953"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87426885"
 ---
-# <a name="xamarinforms-shell-tabs"></a>Xamarin.Forms Shell 选项卡
+# <a name="no-locxamarinforms-shell-tabs"></a>Xamarin.Forms Shell 选项卡
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
@@ -268,7 +268,7 @@ Shell 具有隐式转换运算符，可以简化 Shell 的视觉层次结构，�
 </Shell>
 ```
 
-此 XAML 创建和显示 `CatsPage`，因为它是子类 `Shell` 对象中声明的第一个内容项。 可以通过底部选项卡导航到 `CatsPage` 和 `MonkeysPage`，只有在用户导航到它们时才会创建这些页面。 此方法的优点是避免了糟糕的启动体验，因为页面是根据响应导航需要创建的，而不是在应用程序启动时创建的。
+此 XAML 创建和显示 `CatsPage`，因为它是子类 `Shell` 对象中声明的第一个内容项。 可以通过底部选项卡导航到 `DogsPage` 和 `MonkeysPage`，只有在用户导航到它们时才会创建这些页面。 此方法的优点是避免了糟糕的启动体验，因为页面是根据响应导航需要创建的，而不是在应用程序启动时创建的。
 
 ## <a name="tab-appearance"></a>选项卡外观
 
