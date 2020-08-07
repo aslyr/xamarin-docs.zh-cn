@@ -10,18 +10,18 @@ ms.date: 07/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6b6fe37fda3fd54b4df5cb6f5dacce0d910ecb3f
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 254a4433888be0e441ae37d41c24b1886040998b
+ms.sourcegitcommit: 579ec4f2884fa391e5e214a3952cd6004c521eb8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87919102"
+ms.locfileid: "87919614"
 ---
 # <a name="no-locxamarinforms-brushes-gradients"></a>Xamarin.Forms画笔：渐变
 
 ![预览 API](~/media/shared/preview.png "此 API 当前为预发布版本")
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 
 `GradientBrush`类派生自 `Brush` 类，是描述渐变（由梯度停止点）的抽象类。 渐变画笔使用沿轴相互混合的多种颜色绘制区域。 派生自的类 `GradientBrush` 描述了解释渐变停止点的不同方式，并 Xamarin.Forms 提供了以下渐变画笔：
 
@@ -71,6 +71,6 @@ ms.locfileid: "87919102"
 
 ## <a name="related-links"></a>相关链接
 
-- [BrushesDemos (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+- [BrushesDemos (示例) ](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 - [Xamarin.Forms画笔：线性渐变](lineargradient.md)
 - [Xamarin.Forms画笔：径向渐变](radialgradient.md)

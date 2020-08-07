@@ -10,18 +10,18 @@ ms.date: 07/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e83e3cc110e2ab5f9bf6a1cda54fbb88e65bee17
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 734ecae4fdafd71f0c88ddc5e4b4ed0c672f2019
+ms.sourcegitcommit: 579ec4f2884fa391e5e214a3952cd6004c521eb8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87919080"
+ms.locfileid: "87919627"
 ---
 # <a name="no-locxamarinforms-brushes-linear-gradients"></a>Xamarin.Forms画笔：线性渐变
 
 ![预览 API](~/media/shared/preview.png "此 API 当前为预发布版本")
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 
 `LinearGradientBrush`类派生自 `GradientBrush` 类，并使用线性渐变绘制区域，这种方式将两个或更多的颜色沿称为渐变轴的线混合。 `GradientStop`对象用于指定渐变中的颜色及其位置。 有关对象的详细信息 `GradientStop` ，请参阅[ Xamarin.Forms 刷子：梯度](gradient.md)。
 
@@ -134,5 +134,5 @@ ms.locfileid: "87919080"
 
 ## <a name="related-links"></a>相关链接
 
-- [BrushesDemos (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+- [BrushesDemos (示例) ](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 - [Xamarin.Forms画笔：渐变](gradient.md)

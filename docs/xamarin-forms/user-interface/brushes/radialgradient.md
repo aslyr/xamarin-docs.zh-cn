@@ -10,18 +10,18 @@ ms.date: 07/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: dd915384c630cc08a2bd79a52dd22ccb40835dfa
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 897ffd8b86eb161f0264a095b5a041828e631dae
+ms.sourcegitcommit: 579ec4f2884fa391e5e214a3952cd6004c521eb8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87919081"
+ms.locfileid: "87919545"
 ---
 # <a name="no-locxamarinforms-brushes-radial-gradients"></a>Xamarin.Forms画笔：径向渐变
 
 ![预览 API](~/media/shared/preview.png "此 API 当前为预发布版本")
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 
 `RadialGradientBrush`类派生自 `GradientBrush` 类，并使用径向渐变绘制区域，这会在一个圆之间混合两种或多种颜色。 `GradientStop`对象用于指定渐变中的颜色及其位置。 有关对象的详细信息 `GradientStop` ，请参阅[ Xamarin.Forms 刷子：梯度](gradient.md)。
 
@@ -102,5 +102,5 @@ ms.locfileid: "87919081"
 
 ## <a name="related-links"></a>相关链接
 
-- [BrushesDemos (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+- [BrushesDemos (示例) ](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 - [Xamarin.Forms画笔：渐变](gradient.md)

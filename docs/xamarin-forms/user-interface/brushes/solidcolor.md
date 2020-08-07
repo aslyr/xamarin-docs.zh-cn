@@ -10,18 +10,18 @@ ms.date: 07/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 04e882f9b64d0e1f56e1170d353af4e13b079933
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 7b77cab7c0f87dbedf66651c3ab59ef20b7f3ecd
+ms.sourcegitcommit: 579ec4f2884fa391e5e214a3952cd6004c521eb8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87919076"
+ms.locfileid: "87919558"
 ---
 # <a name="no-locxamarinforms-brushes-solid-colors"></a>Xamarin.Forms画笔：纯色
 
 ![预览 API](~/media/shared/preview.png "此 API 当前为预发布版本")
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 
 `SolidColorBrush`类派生自 `Brush` 类，用于绘制带有纯色的区域。 有多种方法可以指定的颜色 `SolidColorBrush` 。 例如，你可以使用值指定其颜色， [`Color`](xref:Xamarin.Forms.Color) 或者使用类提供的预定义对象之一指定其颜色 `SolidColorBrush` `Brush` 。
 
@@ -131,5 +131,5 @@ Frame frame = new Frame
 
 ## <a name="related-links"></a>相关链接
 
-- [BrushesDemos (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+- [BrushesDemos (示例) ](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 - [颜色Xamarin.Forms](~/xamarin-forms/user-interface/colors.md)
