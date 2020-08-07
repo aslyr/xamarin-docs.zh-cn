@@ -6,28 +6,24 @@ ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/25/2019
+ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5c17d6a106474c4c5b183bd41923533ffc95789b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3738a0fa3519f18864c2430430a6716bed5be130
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136196"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918222"
 ---
-# <a name="xamarinforms-entry"></a>Xamarin.Forms条目
+# <a name="no-locxamarinforms-entry"></a>Xamarin.Forms条目
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
-
-_单行文本或密码输入_
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 Xamarin.Forms [`Entry`](xref:Xamarin.Forms.Entry) 用于单行文本输入。 与 `Entry` 视图一样， [`Editor`](xref:Xamarin.Forms.Editor) 支持多种键盘类型。 此外，还 `Entry` 可用作密码字段。
 
-## <a name="display-customization"></a>显示自定义
-
-### <a name="setting-and-reading-text"></a>设置和读取文本
+## <a name="set-and-read-text"></a>设置和读取文本
 
 `Entry`与其他文本显示视图一样，会公开 [`Text`](xref:Xamarin.Forms.InputView.Text) 属性。 此属性可用于设置和读取显示的文本 `Entry` 。 下面的示例演示如何 `Text` 在 XAML 中设置属性：
 
@@ -47,7 +43,7 @@ var MyEntry = new Entry { Text = "I am an Entry" };
 var text = MyEntry.Text;
 ```
 
-### <a name="setting-placeholder-text"></a>设置占位符文本
+## <a name="set-placeholder-text"></a>设置占位符文本
 
 [`Entry`](xref:Xamarin.Forms.Entry)当不存储用户输入时，可以将设置为显示占位符文本。 这是通过将属性设置 [`Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) 为来实现的 `string` ，它通常用于指示适用于的内容类型 `Entry` 。 此外，可以通过将属性设置为来控制占位符文本颜色 [`PlaceholderColor`](xref:Xamarin.Forms.InputView.PlaceholderColor) [`Color`](xref:Xamarin.Forms.Color) ：
 
@@ -62,7 +58,7 @@ var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive
 > [!NOTE]
 > `Entry`可以通过设置其属性来定义的宽度 `WidthRequest` 。 不依赖于 `Entry` 基于其属性值定义的的宽度 `Text` 。
 
-### <a name="preventing-text-entry"></a>防止文本输入
+## <a name="prevent-text-entry"></a>禁止文本输入
 
 [`Entry`](xref:Xamarin.Forms.Entry)通过将 `IsReadOnly` 属性（其默认值 `false` ）设置为，可以防止用户修改中的文本 `true` ：
 
@@ -78,7 +74,33 @@ var entry = new Entry { Text = "This is a read-only Entry", IsReadOnly = true })
 > [!NOTE]
 > `IsReadonly`属性不会改变的视觉外观 [`Entry`](xref:Xamarin.Forms.Entry) ，这与还会将 `IsEnabled` 的视觉外观改为灰色的属性不同 `Entry` 。
 
-### <a name="limiting-input-length"></a>限制输入长度
+## <a name="transform-text"></a>转换文本
+
+[`Entry`](xref:Xamarin.Forms.Entry) `Text` 通过将属性设置为枚举的值，可以转换存储在属性中的文本大小写 `TextTransform` `TextTransform` 。 此枚举具有四个值：
+
+- `None`指示不转换文本。
+- `Default`指示将使用平台的默认行为。 这是 `TextTransform` 属性的默认值。
+- `Lowercase`指示文本将转换为小写。
+- `Uppercase`指示文本将转换为大写。
+
+下面的示例演示如何将文本转换为大写：
+
+```xaml
+<Entry Text="This text will be displayed in uppercase."
+       TextTransform="Uppercase" />
+```
+
+等效 C# 代码如下：
+
+```csharp
+Entry entry = new Entry
+{
+    Text = "This text will be displayed in uppercase.",
+    TextTransform = TextTransform.Uppercase
+};
+```
+
+## <a name="limit-input-length"></a>限制输入长度
 
 [`MaxLength`](xref:Xamarin.Forms.InputView.MaxLength)属性可用于限制允许的输入长度 [`Entry`](xref:Xamarin.Forms.Entry) 。 应将此属性设置为正整数：
 
@@ -92,7 +114,7 @@ var entry = new Entry { ... MaxLength = 10 };
 
 如果 [`MaxLength`](xref:Xamarin.Forms.InputView.MaxLength) 属性值为0，则表示不允许任何输入，值 `int.MaxValue` （这是的默认值） [`Entry`](xref:Xamarin.Forms.Entry) 表示对可以输入的字符数没有有效限制。
 
-### <a name="character-spacing"></a>字符间距
+## <a name="character-spacing"></a>字符间距
 
 [`Entry`](xref:Xamarin.Forms.Entry)通过将 `Entry.CharacterSpacing` 属性设置为值，可将字符间距应用于 `double` ：
 
@@ -112,7 +134,7 @@ Entry entry = new Entry { CharacterSpacing = 10 };
 > [!NOTE]
 > `CharacterSpacing`属性值应用于和属性显示的文本 `Text` `Placeholder` 。
 
-### <a name="password-fields"></a>密码字段
+## <a name="password-fields"></a>密码字段
 
 `Entry`提供 `IsPassword` 属性。 当 `IsPassword` 为时 `true` ，该字段的内容将显示为黑色圆圈：
 
@@ -146,7 +168,7 @@ var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
 
 ![Entry IsPassword 和 Placeholder 示例](entry-images/passwordplaceholder.png)
 
-### <a name="setting-the-cursor-position-and-text-selection-length"></a>设置光标位置和文本选择长度
+## <a name="set-the-cursor-position-and-text-selection-length"></a>设置光标位置和文本选择长度
 
 [`CursorPosition`](xref:Xamarin.Forms.Entry.CursorPosition)属性可用于返回或设置将下一个字符插入属性中存储的字符串的位置 [`Text`](xref:Xamarin.Forms.InputView.Text) ：
 
@@ -172,7 +194,7 @@ var entry = new Entry { Text = "Cursor position and selection length set", Curso
 
 此属性的默认值 [`SelectionLength`](xref:Xamarin.Forms.Entry.SelectionLength) 为0，表示未选择任何文本。
 
-### <a name="displaying-a-clear-button"></a>显示 "清除" 按钮
+## <a name="display-a-clear-button"></a>显示 "清除" 按钮
 
 `ClearButtonVisibility`属性可用于控制是否 [`Entry`](xref:Xamarin.Forms.Entry) 显示 "清除" 按钮，该按钮使用户能够清除文本。 应将此属性设置为 `ClearButtonVisibility` 枚举成员：
 
@@ -196,7 +218,7 @@ var entry = new Entry { Text = "Xamarin.Forms", ClearButtonVisibility = ClearBut
 
 ![在 iOS 和 Android 上使用 "清除" 按钮的项的屏幕截图](entry-images/entry-clear-button.png)
 
-### <a name="customizing-the-keyboard"></a>自定义键盘
+## <a name="customize-the-keyboard"></a>自定义键盘
 
 用户与交互时显示的键盘 [`Entry`](xref:Xamarin.Forms.Entry) 可通过属性以编程方式设置 [`Keyboard`](xref:Xamarin.Forms.InputView.Keyboard) 为类中的以下属性之一 [`Keyboard`](xref:Xamarin.Forms.Keyboard) ：
 
@@ -255,7 +277,7 @@ var entry = new Entry { Placeholder = "Enter text here" };
 entry.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFlags.CapitalizeCharacter);
 ```
 
-#### <a name="customizing-the-return-key"></a>自定义返回键
+### <a name="customize-the-return-key"></a>自定义返回键
 
 可以通过将属性设置为枚举的值来自定义软键盘上的 return 键的外观，该键盘 [`Entry`](xref:Xamarin.Forms.Entry) 通过将属性设置为枚举的值来自定义 [`ReturnType`](xref:Xamarin.Forms.Entry.ReturnType) [`ReturnType`](xref:Xamarin.Forms.ReturnType) ：
 
@@ -283,7 +305,7 @@ var entry = new Entry { ReturnType = ReturnType.Send };
 
 按下 return 键时，将 [`Completed`](xref:Xamarin.Forms.Entry.Completed) 激发事件，并 `ICommand` 执行由属性指定的任何 [`ReturnCommand`](xref:Xamarin.Forms.Entry.ReturnCommand) 。 此外， `object` 由属性指定的任何 [`ReturnCommandParameter`](xref:Xamarin.Forms.Entry.ReturnCommandParameter) 都将作为参数传递给 `ICommand` 。 有关命令的详细信息，请参阅[命令接口](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)。
 
-### <a name="enabling-and-disabling-spell-checking"></a>启用和禁用拼写检查
+## <a name="enable-and-disable-spell-checking"></a>启用和禁用拼写检查
 
 [`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)属性控制是否启用拼写检查。 默认情况下，属性设置为 `true` 。 用户输入文本时，会显示拼写错误。
 
@@ -300,7 +322,7 @@ var entry = new Entry { ... IsSpellCheckEnabled = false };
 > [!NOTE]
 > 当 [`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) 属性设置为 `false` ，并且未使用自定义键盘时，将禁用本机拼写检查器。 但是，如果已 [`Keyboard`](xref:Xamarin.Forms.Keyboard) 设置的禁用拼写检查（如 [`Keyboard.Chat`](xref:Xamarin.Forms.Keyboard.Chat) ），则将 `IsSpellCheckEnabled` 忽略属性。 因此，不能使用属性对显式禁用该属性的启用拼写检查 `Keyboard` 。
 
-### <a name="enabling-and-disabling-text-prediction"></a>启用和禁用文本预测
+## <a name="enable-and-disable-text-prediction"></a>启用和禁用文本预测
 
 [`IsTextPredictionEnabled`](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled)属性控制是否启用文本预测和自动文本更正。 默认情况下，属性设置为 `true` 。 当用户输入文本时，将显示 word 预测。
 
@@ -317,7 +339,7 @@ var entry = new Entry { ... IsTextPredictionEnabled = false };
 > [!NOTE]
 > 如果将 [`IsTextPredictionEnabled`](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled) 属性设置为 `false` ，并且未使用自定义键盘，则会禁用文本预测和自动文本更正。 但是，如果已 [`Keyboard`](xref:Xamarin.Forms.Keyboard) 设置了禁用文本预测的，则 `IsTextPredictionEnabled` 忽略该属性。 因此，不能使用属性来为显式禁用它的启用文本预测 `Keyboard` 。
 
-### <a name="colors"></a>颜色
+## <a name="colors"></a>颜色
 
 可以通过以下可绑定属性将条目设置为使用自定义背景和文本颜色：
 
@@ -374,7 +396,7 @@ entry.BackgroundColor = Color.FromHex("#2c3e50");
 
 ### <a name="completed"></a>已完成
 
-`Completed`事件用于响应与项的交互的完成。 `Completed`当用户通过按键盘上的返回键（或按 UWP 上的 Tab 键）以字段结束输入时，将引发。 事件的处理程序是一个一般事件处理程序，该处理程序使用发送方和 `EventArgs` ：
+`Completed`事件用于响应与项的交互的完成。 `Completed`当用户通过按键盘上的 return 键 (或按 UWP) 上的 Tab 键来结束输入时，将引发。 事件的处理程序是一个一般事件处理程序，该处理程序使用发送方和 `EventArgs` ：
 
 ```csharp
 void Entry_Completed (object sender, EventArgs e)
@@ -427,5 +449,5 @@ entry.TextChanged += Entry_TextChanged;
 
 ## <a name="related-links"></a>相关链接
 
-- [文本（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+- [文本 (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [输入 API](xref:Xamarin.Forms.Entry)

@@ -6,24 +6,24 @@ ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/09/2020
+ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8bf6517e3624ad80c2fd4d209e5a77472460be76
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1fcfc2c3fbb91a7ee326db7aeef08459e05d834d
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570500"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917879"
 ---
-# <a name="xamarinforms-label"></a>Xamarin.Forms标识
+# <a name="no-locxamarinforms-label"></a>Xamarin.Forms标识
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
-_在 Xamarin. Forms 中显示文本_
+_显示文本Xamarin.Forms_
 
-[`Label`](xref:Xamarin.Forms.Label)视图用于显示文本，同时为单行和多行。 标签可以具有文本修饰、彩色文本和使用自定义字体（系列、大小和选项）。
+[`Label`](xref:Xamarin.Forms.Label)视图用于显示文本，同时为单行和多行。 标签可以具有文本修饰和彩色文本，并使用自定义字体)  (系列、大小和选项。
 
 ## <a name="text-decorations"></a>文本修饰
 
@@ -55,6 +55,32 @@ var bothLabel = new Label { Text = "This is underlined text with strikethrough."
 
 > [!NOTE]
 > 还可以对实例应用文本修饰 [`Span`](xref:Xamarin.Forms.Span) 。 有关类的详细信息 `Span` ，请参阅[格式化文本](#formatted-text)。
+
+## <a name="transform-text"></a>转换文本
+
+[`Label`](xref:Xamarin.Forms.Entry) `Text` 通过将属性设置为枚举的值，可以转换存储在属性中的文本大小写 `TextTransform` `TextTransform` 。 此枚举具有四个值：
+
+- `None`指示不转换文本。
+- `Default`指示将使用平台的默认行为。 这是 `TextTransform` 属性的默认值。
+- `Lowercase`指示文本将转换为小写。
+- `Uppercase`指示文本将转换为大写。
+
+下面的示例演示如何将文本转换为大写：
+
+```xaml
+<Label Text="This text will be displayed in uppercase."
+       TextTransform="Uppercase" />
+```
+
+等效 C# 代码如下：
+
+```csharp
+Label label = new Label
+{
+    Text = "This text will be displayed in uppercase.",
+    TextTransform = TextTransform.Uppercase
+};
+```
 
 ## <a name="character-spacing"></a>字符间距
 
@@ -320,7 +346,7 @@ public class LabelPageCode : ContentPage
 
 ## <a name="line-height"></a>行高
 
-[`Label`](xref:Xamarin.Forms.Label) [`Span`](xref:Xamarin.Forms.Span) 可以通过将 [`Label.LineHeight`](xref:Xamarin.Forms.Label.LineHeight) 属性设置为或将属性设置 [`Span.LineHeight`](xref:Xamarin.Forms.Span.LineHeight) 为值，自定义和的垂直高度 `double` 。 在 iOS 和 Android 上，这些值为原始行高的乘数，在通用 Windows 平台（UWP）上， `Label.LineHeight` 属性值为标签字体大小的乘数。
+[`Label`](xref:Xamarin.Forms.Label) [`Span`](xref:Xamarin.Forms.Span) 可以通过将 [`Label.LineHeight`](xref:Xamarin.Forms.Label.LineHeight) 属性设置为或将属性设置 [`Span.LineHeight`](xref:Xamarin.Forms.Span.LineHeight) 为值，自定义和的垂直高度 `double` 。 在 iOS 和 Android 上，这些值是原始行高的乘数，而通用 Windows 平台 (UWP) `Label.LineHeight` 属性值为标签字体大小的乘数。
 
 > [!NOTE]
 >
@@ -547,8 +573,8 @@ public class HyperlinkSpan : Span
 
 ## <a name="related-links"></a>相关链接
 
-- [文本（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
-- [超链接（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks)
+- [文本 (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+- [超链接 (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks)
 - [创建移动应用 Xamarin.Forms ，第3章](https://developer.xamarin.com/r/xamarin-forms/book/chapter03.pdf)
 - [标签 API](xref:Xamarin.Forms.Label)
 - [跨 API](xref:Xamarin.Forms.Span)

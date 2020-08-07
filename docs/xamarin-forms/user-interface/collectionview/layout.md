@@ -6,20 +6,20 @@ ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/22/2019
+ms.date: 07/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 425eb7abc14fb941dbfc28219907d98558cbfabb
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 73e7ace96c17aea2b397f2706e128ea498338b09
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137427"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918271"
 ---
-# <a name="xamarinforms-collectionview-layout"></a>Xamarin.FormsCollectionView 布局
+# <a name="no-locxamarinforms-collectionview-layout"></a>Xamarin.FormsCollectionView 布局
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)定义用于控制布局的下列属性：
 
@@ -97,7 +97,7 @@ ms.locfileid: "84137427"
 </CollectionView>
 ```
 
-但是，为了完整性， [`CollectionView`](xref:Xamarin.Forms.CollectionView) 可以通过将其属性设置为来将设置为在垂直列表中显示其项 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) `VerticalList` ：
+但是，在 XAML 中， [`CollectionView`](xref:Xamarin.Forms.CollectionView) 可以通过将其属性设置为，将其设置为在垂直列表中显示其项 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) `VerticalList` ：
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
@@ -133,7 +133,7 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="horizontal-list"></a>水平列表
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)可以通过将其属性设置为，在水平列表中显示其项 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) `HorizontalList` ：
+在 XAML 中， [`CollectionView`](xref:Xamarin.Forms.CollectionView) 可以通过将其 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) 属性设置为 `HorizontalList` ：
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
@@ -197,14 +197,11 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="vertical-grid"></a>垂直网格
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)可以通过将其属性设置为 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) [`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout) 对象 [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation) （其属性设置为），将其项显示在垂直网格中 `Vertical` ：
+在 XAML 中， [`CollectionView`](xref:Xamarin.Forms.CollectionView) 可以通过将其属性设置为来在垂直网格中显示其项 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) `VerticalGrid` ：
 
 ```xaml
-<CollectionView ItemsSource="{Binding Monkeys}">
-    <CollectionView.ItemsLayout>
-       <GridItemsLayout Orientation="Vertical"
-                        Span="2" />
-    </CollectionView.ItemsLayout>
+<CollectionView ItemsSource="{Binding Monkeys}"
+                ItemsLayout="VerticalGrid, 2">
     <CollectionView.ItemTemplate>
         <DataTemplate>
             <Grid Padding="10">
@@ -237,6 +234,18 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
+此外，也可以通过将属性设置为对象的 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) [`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout) [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation) 属性设置为来完成此布局 `Vertical` ：
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}">
+    <CollectionView.ItemsLayout>
+       <GridItemsLayout Orientation="Vertical"
+                        Span="2" />
+    </CollectionView.ItemsLayout>
+    ...
+</CollectionView>
+```
+
 等效 C# 代码如下：
 
 ```csharp
@@ -253,14 +262,11 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="horizontal-grid"></a>水平网格
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)可以通过将其属性设置为 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) [`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout) 对象 [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation) （其属性设置为），将其项显示在水平网格中 `Horizontal` ：
+在 XAML 中， [`CollectionView`](xref:Xamarin.Forms.CollectionView) 可以通过将其属性设置为，在水平网格中显示其项 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) `HorizontalGrid` ：
 
 ```xaml
-<CollectionView ItemsSource="{Binding Monkeys}">
-    <CollectionView.ItemsLayout>
-       <GridItemsLayout Orientation="Horizontal"
-                        Span="4" />
-    </CollectionView.ItemsLayout>
+<CollectionView ItemsSource="{Binding Monkeys}"
+                ItemsLayout="HorizontalGrid, 4">
     <CollectionView.ItemTemplate>
         <DataTemplate>
             <Grid Padding="10">
@@ -290,6 +296,18 @@ CollectionView collectionView = new CollectionView
             </Grid>
         </DataTemplate>
     </CollectionView.ItemTemplate>
+</CollectionView>
+```
+
+此外，也可以通过将属性设置为对象的 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) [`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout) [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation) 属性设置为来完成此布局 `Horizontal` ：
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}">
+    <CollectionView.ItemsLayout>
+       <GridItemsLayout Orientation="Horizontal"
+                        Span="4" />
+    </CollectionView.ItemsLayout>
+    ...
 </CollectionView>
 ```
 
@@ -599,6 +617,6 @@ void OnImageTapped(object sender, EventArgs e)
 
 ## <a name="related-links"></a>相关链接
 
-- [CollectionView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
-- [从右到左本地化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)
+- [CollectionView (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [从右到左的本地化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)
 - [Xamarin.FormsCollectionView 滚动](scrolling.md)

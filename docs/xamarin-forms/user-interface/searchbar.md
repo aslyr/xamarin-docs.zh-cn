@@ -6,26 +6,26 @@ ms.assetId: F5EFEA72-CB23-4DD6-9545-D9BB755AF3CB
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 11/04/2019
+ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d8ceb139b1b9cd77aa922f98c80884d5c3e1a474
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a4c782f95db0f8e777494c47e9e668e9af67a2cc
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127538"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917773"
 ---
-# <a name="xamarinforms-searchbar"></a>Xamarin.FormsSearchBar
+# <a name="no-locxamarinforms-searchbar"></a>Xamarin.FormsSearchBar
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
 
 Xamarin.Forms [`SearchBar`](xref:Xamarin.Forms.SearchBar) 是用于启动搜索的用户输入控件。 `SearchBar`控件支持占位符文本、查询输入、搜索执行和取消。 以下屏幕截图显示了一个 `SearchBar` 查询，其中显示了中的结果 `ListView` ：
 
 [![IOS 和 Android 上 SearchBar 的屏幕截图](searchbar-images/device-searchbars-cropped.png "IOS 和 Android 上的 SearchBar")](searchbar-images/device-searchbars.png#lightbox "IOS 和 Android 上的 SearchBar")
 
-`SearchBar`类定义以下属性：
+`SearchBar` 类定义了以下属性：
 
 * [`CancelButtonColor`](xref:Xamarin.Forms.SearchBar.CancelButtonColor)`Color`定义 "取消" 按钮的颜色的。
 * `CharacterSpacing`，属于 `double` 类型，是 `SearchBar` 文本字符之间的间距。
@@ -40,6 +40,7 @@ Xamarin.Forms [`SearchBar`](xref:Xamarin.Forms.SearchBar) 是用于启动搜索�
 * [`SearchCommandParameter`](xref:Xamarin.Forms.SearchBar.SearchCommandParameter)`object`指定应传递到的参数的 `SearchCommand` 。
 * [`Text`](xref:Xamarin.Forms.InputView.Text)是 `string` 包含中的查询文本的 `SearchBar` 。
 * [`TextColor`](xref:Xamarin.Forms.InputView.TextColor)`Color`定义查询文本颜色的。
+* `TextTransform``TextTransform`确定文本的大小写的值 `SearchBar` 。
 
 这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着 `SearchBar` 可以对进行自定义，并使其成为数据绑定的目标。 指定上的字体属性 `SearchBar` 与自定义其他[ Xamarin.Forms 文本控件](~/xamarin-forms/user-interface/text/index.md)上的文本一致。 有关详细信息，请参阅[中 Xamarin.Forms 的字体](~/xamarin-forms/user-interface/text/fonts.md)。
 
@@ -66,6 +67,7 @@ SearchBar searchBar = new SearchBar{ Placeholder = "Search items..." };
            CancelButtonColor="Orange"
            PlaceholderColor="Orange"
            TextColor="Orange"
+           TextTransform="Lowercase"
            HorizontalTextAlignment="Center"
            FontSize="Medium"
            FontAttributes="Italic" />
@@ -79,6 +81,7 @@ SearchBar searchBar = new SearchBar
     Placeholder = "Search items...",
     PlaceholderColor = Color.Orange,
     TextColor = Color.Orange,
+    TextTransform = TextTransform.Lowercase,
     HorizontalTextAlignment = TextAlignment.Center,
     FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(SearchBar)),
     FontAttributes = FontAttributes.Italic
@@ -129,7 +132,7 @@ void OnTextChanged(object sender, EventArgs e)
 
 ## <a name="perform-a-search-using-a-viewmodel"></a>使用 viewmodel 执行搜索
 
-通过将 `SearchCommand` 和属性绑定到实现，可以在没有事件处理程序的情况下执行搜索 `SearchCommandParameter` `ICommand` 。 示例项目使用模型-视图-ViewModel （MVVM）模式演示这些实现。 有关与 MVVM 的数据绑定的详细信息，请参阅[通过 mvvm 进行数据绑定](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
+通过将 `SearchCommand` 和属性绑定到实现，可以在没有事件处理程序的情况下执行搜索 `SearchCommandParameter` `ICommand` 。 示例项目使用模型-视图-ViewModel (MVVM) 模式演示这些实现。 有关与 MVVM 的数据绑定的详细信息，请参阅[通过 mvvm 进行数据绑定](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
 
 示例应用程序中的 viewmodel 包含以下代码：
 

@@ -10,18 +10,18 @@ ms.date: 05/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 279df31eeda506d6780533bac8ae190f799424a3
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3e8c95e84dd525c274403290712260ba86abd677
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936027"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918568"
 ---
-# <a name="xamarinforms-c-markup"></a>Xamarin.FormsC # 标记
+# <a name="no-locxamarinforms-c-markup"></a>Xamarin.FormsC # 标记
 
-![预发布 API](~/media/shared/preview.png "此 API 当前为预发布版本")
+![预发行版 API](~/media/shared/preview.png)
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 
 C # 标记是一组乐观的帮助器方法和类，用于简化 Xamarin.Forms 在 c # 中生成声明性用户界面的过程。 命名空间中提供了 c # 标记提供的 Fluent API `Xamarin.Forms.Markup` 。
 
@@ -231,7 +231,7 @@ new Label { Text = "Tap Me" }
 
 由于笔势识别器是 `BindableObject` ，因此你可以在 `Bind` 初始化时使用和 `BindCommand` 扩展方法。 还可以用扩展方法初始化自定义笔势识别器类型 `Gesture<TGestureElement, TGestureRecognizer>` 。
 
-## <a name="layout"></a>Layout
+## <a name="layout"></a>布局
 
 C # 标记包含一系列布局扩展方法，这些方法支持布局中的定位视图和视图中的内容：
 
@@ -247,7 +247,7 @@ C # 标记包含一系列布局扩展方法，这些方法支持布局中的定�
 
 ### <a name="left-to-right-and-right-to-left-support"></a>从左到右和从右到左的支持
 
-对于设计为支持从左到右（LTR）或从右到左（RTL）的流方向的 c # 标记，上面列出的扩展方法提供最直观的名称集： `Left` 、 `Right` `Top` 和 `Bottom` 。
+对于设计为支持从左向右 (LTR) 或从右到左 (RTL) flow 方向的 c # 标记，上面列出的扩展方法提供最直观的名称集： `Left` 、 `Right` `Top` 和 `Bottom` 。
 
 若要使正确的左侧和右侧扩展方法集可用，并在进程中显式设计标记的流方向，请包含以下两个 `using` 指令之一： `using Xamarin.Forms.Markup.LeftToRight;` 或 `using Xamarin.Forms.Markup.RightToLeft;` 。
 
@@ -394,7 +394,7 @@ using Xamarin.Forms.Markup;
 new ListView { } .Invoke (l => l.ItemTapped += OnListViewItemTapped)
 ```
 
-此外，还可以使用 `Assign` 扩展方法从 ui 标记之外访问控件（在 ui 逻辑文件中）：
+此外，还可以使用 `Assign` 扩展方法从 ui (的 ui 标记之外访问控件) ：
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -529,7 +529,7 @@ new ListView { } .iOSGroupHeaderStyle(PciOS.GroupHeaderStyle.Grouped)
 
 建议的属性和帮助器方法的顺序和分组如下：
 
-- **目的**：其值标识控件用途（例如，、）的任何属性或 helper `Text` 方法 `Placeholder` `Assign` 。
+- **目的**：其值标识控件用途的任何属性或 helper 方法 (例如 `Text` ， `Placeholder` `Assign`) 。
 - **其他**：在同一行或多行上不是布局或绑定的所有属性或 helper 方法。
 - **布局**：布局按顺序排列：行和列、布局选项、边距、大小、填充和内容对齐方式。
 - **Bind**：在方法链的末尾执行数据绑定，每行有一个绑定属性。 如果绑定了*默认*的可绑定属性，则它应位于方法链的末尾。
@@ -553,7 +553,7 @@ new Label { }
 
 ## <a name="related-links"></a>相关链接
 
-- [CSharpForMarkupDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
+- [CSharpForMarkupDemos (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 - [Android 平台功能](~/xamarin-forms/platform/android/index.md)
 - [iOS 平台功能](~/xamarin-forms/platform/ios/index.md)
 - [Windows 平台功能](~/xamarin-forms/platform/windows/index.md)

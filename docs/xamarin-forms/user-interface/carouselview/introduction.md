@@ -10,16 +10,16 @@ ms.date: 10/08/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 49aa0ffcf7e7fa4d22024ee08f8bdf509cafd73a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: a78536463b4966c38025d5c46a33aa07cb81bfdf
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937795"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918381"
 ---
-# <a name="xamarinforms-carouselview-introduction"></a>Xamarin.FormsCarouselView 简介
+# <a name="no-locxamarinforms-carouselview-introduction"></a>Xamarin.FormsCarouselView 简介
 
-![预发布 API](~/media/shared/preview.png "此 API 当前为预发布版本")
+![预发行版 API](~/media/shared/preview.png)
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)是一个视图，用于以可滚动的布局显示数据，用户可以在该视图中轻扫以便在项集合中移动。 默认情况下， `CarouselView` 会以水平方向显示其项。 屏幕上将显示一项，其中包含滑动手势，导致在项集合中向前和向后导航。 此外，可以显示表示中的每一项的指示器 `CarouselView` ：
 

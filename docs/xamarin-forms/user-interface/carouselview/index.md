@@ -10,22 +10,22 @@ ms.date: 10/08/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 40b918adff523fa446e69c064029311c54d01290
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2ff88431869c4a14919fb13e5059cd11fcdbdc3c
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935039"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918649"
 ---
-# <a name="xamarinforms-carouselview"></a>Xamarin.FormsCarouselView
+# <a name="no-locxamarinforms-carouselview"></a>Xamarin.FormsCarouselView
 
-![预发布 API](~/media/shared/preview.png "此 API 当前为预发布版本")
+![预发行版 API](~/media/shared/preview.png)
 
 ## <a name="introduction"></a>[简介](introduction.md)
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)是一个视图，用于以可滚动的布局显示数据，用户可在此视图中轻扫以便在项集合中移动。
 
-## <a name="data"></a>[数据](populate-data.md)
+## <a name="data"></a>[Data](populate-data.md)
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)使用数据填充数据，方法是将其 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) 属性设置为任何实现的集合 `IEnumerable` 。 可以通过将属性设置为来定义每个项的外观 [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。
 

@@ -10,16 +10,16 @@ ms.date: 06/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: be0c12231ff6106e07c935a111195df779698172
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 420099cadd3a541736084403265b9302c9a32b37
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934272"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918318"
 ---
-# <a name="xamarinforms-shapes-geometries"></a>Xamarin.Forms形状：几何图形
+# <a name="no-locxamarinforms-shapes-geometries"></a>Xamarin.Forms形状：几何图形
 
-![预发布 API](~/media/shared/preview.png "此 API 当前为预发布版本")
+![预发行版 API](~/media/shared/preview.png)
 
 [![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -62,7 +62,8 @@ ms.locfileid: "86934272"
 
 ```xaml
 <Path Fill="Blue"
-      Stroke="Red">
+      Stroke="Red"
+      StrokeThickness="1">
   <Path.Data>
     <EllipseGeometry Center="50,50"
                      RadiusX="50"
@@ -71,7 +72,7 @@ ms.locfileid: "86934272"
 </Path>
 ```
 
-在此示例中，的中心 `EllipseGeometry` 设置为（50，50），x 轴半径和 y 轴均设置为50。 这将创建一个红色圆圈，其直径为100与设备无关的单位，其内部绘制为蓝色：
+在此示例中，的中心 `EllipseGeometry` 设置为 (50，50) ，x 轴半径和 y 轴均设置为50。 这将创建一个红色圆圈，其直径为100与设备无关的单位，其内部绘制为蓝色：
 
 ![System.windows.media.ellipsegeometry>](geometry-images/ellipse.png "System.windows.media.ellipsegeometry>")
 
@@ -89,7 +90,8 @@ ms.locfileid: "86934272"
 下面的示例演示如何 `LineGeometry` 在对象中创建和呈现 `Path` ：
 
 ```xaml
-<Path Stroke="Black">
+<Path Stroke="Black"
+      StrokeThickness="1">
   <Path.Data>
     <LineGeometry StartPoint="10,20"
                   EndPoint="100,130" />
@@ -97,7 +99,7 @@ ms.locfileid: "86934272"
 </Path>
 ```
 
-在此示例中， `LineGeometry` 从（10，20）绘制到（100130）：
+在此示例中， `LineGeometry` 从 (10，20) 绘制到 (100130) ：
 
 ![LineGeometry](geometry-images/line.png "LineGeometry")
 
@@ -108,20 +110,21 @@ ms.locfileid: "86934272"
 
 矩形几何表示矩形或正方形的几何，并定义为 `Rect` 指定其相对位置及其高度和宽度的结构。
 
-`RectangleGeometry`类定义 `Rect` 类型的属性，该属性 [`Rectangle`](xref:Xamarin.Forms.Rectangle) 表示矩形的尺寸。 此属性由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象支持，这意味着它可以是数据绑定的目标和样式。
+`RectangleGeometry`类定义 `Rect` 类型的属性，该属性 `Rect` 表示矩形的尺寸。 此属性由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象支持，这意味着它可以是数据绑定的目标和样式。
 
 下面的示例演示如何 `RectangleGeometry` 在对象中创建和呈现 `Path` ：
 
 ```xaml
 <Path Fill="Blue"
-      Stroke="Red">
+      Stroke="Red"
+      StrokeThickness="1">
   <Path.Data>
     <RectangleGeometry Rect="10,10,150,100" />
   </Path.Data>
 </Path>
 ```
 
-矩形的位置和尺寸由 `Rect` 结构定义。 在此示例中，该位置为（10，10），宽度为150，高度为100与设备无关的单位：
+矩形的位置和尺寸由 `Rect` 结构定义。 在此示例中，该位置为 (10，10) ，宽度为150，高度为100与设备无关的单位：
 
 ![RectangleGeometry](geometry-images/rectangle.png "RectangleGeometry")
 
@@ -156,7 +159,8 @@ ms.locfileid: "86934272"
 内的段 `PathFigure` 合并为单个几何形状，其中每个段的终点都是下一段的起点。 的 `StartPoint` 属性 `PathFigure` 指定绘制第一段的起点。 每个后续段都从上一段的终点开始。 例如， `10,50` `10,150` 可以通过将 `StartPoint` 属性设置为 `10,50` 并创建 `LineSegment` 具有 `Point` 属性设置的 `10,150` 来定义中的垂直线：
 
 ```xaml
-<Path Stroke="Black">
+<Path Stroke="Black"
+      StrokeThickness="1">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -183,8 +187,8 @@ ms.locfileid: "86934272"
 
 `ArcSegment` 类定义了以下属性：
 
-- `Point`，类型为 [`Point`](xref:Xamarin.Forms.Point) ，表示椭圆弧的终结点。此属性的默认值为（0，0）。
-- `Size`，类型为 [`Size`](xref:Xamarin.Forms.Size) ，表示圆弧的 x 轴和 y 轴半径。此属性的默认值为（0，0）。
+- `Point`，类型为 [`Point`](xref:Xamarin.Forms.Point) ，表示椭圆弧的终结点。此属性的默认值为 (0，0) 。
+- `Size`，类型为 [`Size`](xref:Xamarin.Forms.Size) ，表示圆弧的 x 轴和 y 轴半径。此属性的默认值为 (0，0) 。
 - `RotationAngle`，类型为 `double` ，表示椭圆围绕 x 轴旋转的量（以度为单位）。 此属性的默认值为 0。
 - `SweepDirection`，类型为 `SweepDirection` ，它指定弧的绘制方向。 此属性的默认值为 `SweepDirection.CounterClockwise`。
 - `IsLargeArc`，类型为 `bool` ，指示弧是否应大于180度。 此属性的默认值为 `false`。
@@ -202,7 +206,8 @@ ms.locfileid: "86934272"
 下面的示例演示如何 `ArcSegment` 在对象中创建和呈现 `Path` ：
 
 ```xaml
-<Path Stroke="Black">
+<Path Stroke="Black"
+      StrokeThickness="1">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -225,7 +230,7 @@ ms.locfileid: "86934272"
 </Path>
 ```
 
-在此示例中，椭圆弧从（10100）绘制到（200100）。
+在此示例中，将从 (10100) 到 (200100) 绘制一个椭圆弧。
 
 ### <a name="create-a-beziersegment"></a>创建 System.windows.media.beziersegment>
 
@@ -233,9 +238,9 @@ ms.locfileid: "86934272"
 
 `BezierSegment` 类定义了以下属性：
 
-- `Point1`，类型为 [`Point`](xref:Xamarin.Forms.Point) ，它表示曲线的第一个控制点。 此属性的默认值为（0，0）。
-- `Point2`，类型为 [`Point`](xref:Xamarin.Forms.Point) ，它表示曲线的第二个控制点。 此属性的默认值为（0，0）。
-- `Point3`，类型为 [`Point`](xref:Xamarin.Forms.Point) ，表示曲线的终点。 此属性的默认值为（0，0）。
+- `Point1`，类型为 [`Point`](xref:Xamarin.Forms.Point) ，它表示曲线的第一个控制点。 此属性的默认值为 (0，0) 。
+- `Point2`，类型为 [`Point`](xref:Xamarin.Forms.Point) ，它表示曲线的第二个控制点。 此属性的默认值为 (0，0) 。
+- `Point3`，类型为 [`Point`](xref:Xamarin.Forms.Point) ，表示曲线的终点。 此属性的默认值为 (0，0) 。
 
 这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
 
@@ -247,7 +252,8 @@ ms.locfileid: "86934272"
 下面的示例演示如何 `BezierSegment` 在对象中创建和呈现 `Path` ：
 
 ```xaml
-<Path Stroke="Black">
+<Path Stroke="Black"
+      StrokeThickness="1">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -268,7 +274,7 @@ ms.locfileid: "86934272"
 </Path>
 ```
 
-在此示例中，一条三次方贝塞尔曲线从（10，10）绘制到（300，10）。 该曲线有两个控制点（100，0）和（200200）：
+在此示例中，一条三次方贝塞尔曲线从 (10，10) 绘制到 (300，10) 。 曲线在 (100、0) 和 (200200) 有两个控制点：
 
 ![System.windows.media.beziersegment>](geometry-images/beziersegment.png "System.windows.media.beziersegment>")
 
@@ -276,7 +282,7 @@ ms.locfileid: "86934272"
 
 在 `LineSegment` 两个点之间创建一条直线。
 
-`LineSegment`类定义 `Point` 类型的属性，该属性 [`Point`](xref:Xamarin.Forms.Point) 表示线段的终点。 此属性的默认值为（0，0），并且由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象支持，这意味着它可以是数据绑定的目标和样式。
+`LineSegment`类定义 `Point` 类型的属性，该属性 [`Point`](xref:Xamarin.Forms.Point) 表示线段的终点。 此属性的默认值为 (0，0) ，并由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象支持，这意味着它可以是数据绑定的目标和样式。
 
 > [!NOTE]
 > `LineSegment`类不包含行起点的属性。 它仅定义终结点。 直线的起点是添加到的的当前点 `PathFigure` `LineSegment` 。
@@ -285,6 +291,7 @@ ms.locfileid: "86934272"
 
 ```xaml
 <Path Stroke="Black"
+      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Start">
     <Path.Data>
@@ -307,7 +314,7 @@ ms.locfileid: "86934272"
 </Path>
 ```
 
-在此示例中，直线段从（10100）绘制到（100100），从（100100）绘制到（100，50）。 此外，将 `PathFigure` 关闭，因为其 `IsClosed` 属性设置为 `true` 。 这会导致绘制三角形：
+在此示例中，直线段从 (10100) 绘制到 (100100) ，从 (100100) 到 (100，50) 。 此外，将 `PathFigure` 关闭，因为其 `IsClosed` 属性设置为 `true` 。 这会导致绘制三角形：
 
 ![LineSegments](geometry-images/linesegments.png "LineSegments")
 
@@ -323,7 +330,8 @@ ms.locfileid: "86934272"
 下面的示例演示如何 `PolyBezierSegment` 在对象中创建和呈现 `Path` ：
 
 ```xaml
-<Path Stroke="Black">
+<Path Stroke="Black"
+      StrokeThickness="1">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -342,7 +350,7 @@ ms.locfileid: "86934272"
 </Path>
 ```
 
-在此示例中， `PolyBezierSegment` 指定两条三次贝塞尔曲线。 第一条曲线从（10，10）到（150100），控制点为（0，0），另一个控制点为（100，0）。 第二条曲线从（150100）到（300，10），控制点为（150，0），另一个控制点为（200，0）：
+在此示例中， `PolyBezierSegment` 指定两条三次贝塞尔曲线。 第一条曲线来自 (10，10) 到 (150100) ，控制点为 (0，0) ，另一个控制点为 (100，0) 。 第二条曲线来自 (150100) 到 (300，10) ，控制点为 (150，0) ，另一个控制点为 (200，0) ：
 
 ![PolyBezierSegment](geometry-images/polybeziersegment.png "PolyBezierSegment")
 
@@ -358,7 +366,8 @@ ms.locfileid: "86934272"
 下面的示例演示如何 `PolyLineSegment` 在对象中创建和呈现 `Path` ：
 
 ```xaml
-<Path Stroke="Black">
+<Path Stroke="Black"
+      StrokeThickness="1">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -373,7 +382,7 @@ ms.locfileid: "86934272"
 </Path>
 ```
 
-在此示例中， `PolyLineSegment` 指定两行。 第一行是从（10，10）到（50，10），第二行是从（50，10）到（50，50）：
+在此示例中， `PolyLineSegment` 指定两行。 第一行来自 (10，10) 到 (50，10) ，第二行是从 (50，10)  (到) 50，50：
 
 ![System.windows.media.polylinesegment>](geometry-images/polylinesegment.png "System.windows.media.polylinesegment>")
 
@@ -389,7 +398,8 @@ ms.locfileid: "86934272"
 下面的示例演示如何 `PolyQuadraticBezierSegment` 在对象中创建和呈现 `Path` ：
 
 ```xaml
-<Path Stroke="Black">
+<Path Stroke="Black"
+      StrokeThickness="1">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -408,7 +418,7 @@ ms.locfileid: "86934272"
 </Path>
 ```
 
-在此示例中， `PolyQuadraticBezierSegment` 指定两条贝塞尔曲线。 第一条曲线从（10，10）到（150，50），控制点为（100100）。 第二条曲线从（100100）到（15200），控制点为（0100）：
+在此示例中， `PolyQuadraticBezierSegment` 指定两条贝塞尔曲线。 第一条曲线是从 (10，10) 到 (150，50) ， (100100) 使用控制点。 第二条曲线是从 (100100) 到 (15200) ，其中控制点为 (0100) ：
 
 ![PolyQuadraticBezierSegment](geometry-images/polyquadraticbeziersegment.png "PolyQuadraticBezierSegment")
 
@@ -418,8 +428,8 @@ ms.locfileid: "86934272"
 
 `QuadraticBezierSegment` 类定义了以下属性：
 
-- `Point1`，类型为 [`Point`](xref:Xamarin.Forms.Point) ，表示曲线的控制点。 此属性的默认值为（0，0）。
-- `Point2`，类型为 [`Point`](xref:Xamarin.Forms.Point) ，表示曲线的终点。 此属性的默认值为（0，0）。
+- `Point1`，类型为 [`Point`](xref:Xamarin.Forms.Point) ，表示曲线的控制点。 此属性的默认值为 (0，0) 。
+- `Point2`，类型为 [`Point`](xref:Xamarin.Forms.Point) ，表示曲线的终点。 此属性的默认值为 (0，0) 。
 
 这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
 
@@ -429,7 +439,8 @@ ms.locfileid: "86934272"
 下面的示例演示如何 `QuadraticBezierSegment` 在对象中创建和呈现 `Path` ：
 
 ```xaml
-<Path Stroke="Black">
+<Path Stroke="Black"
+      StrokeThickness="1">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -449,7 +460,7 @@ ms.locfileid: "86934272"
 </Path>
 ```
 
-在此示例中，二次贝塞尔曲线从（10，10）绘制到（300，10）。 曲线的控制点为（200200）：
+在此示例中，二次贝塞尔曲线从 (10，10) 绘制到 (300，10) 。 曲线的控制点为 (200200) ：
 
 ![System.windows.media.quadraticbeziersegment>](geometry-images/quadraticbeziersegment.png "System.windows.media.quadraticbeziersegment>")
 
@@ -458,7 +469,8 @@ ms.locfileid: "86934272"
 可以通过组合使用对象来创建更复杂的几何 `PathSegment` 。 下面的示例使用、和创建形状 `BezierSegment` `LineSegment` `ArcSegment` ：
 
 ```xaml
-<Path Stroke="Black">
+<Path Stroke="Black"
+      StrokeThickness="1">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -600,7 +612,7 @@ ms.locfileid: "86934272"
 </Image>
 ```
 
-在此示例中， `EllipseGeometry` 的 `RadiusX` 和 `RadiusY` 值为100， `Center` 值（180180）设置为的 `Clip` 属性 [`Image`](xref:Xamarin.Forms.Image) 。 仅显示位于椭圆区域内的图像部分：
+在此示例中，的值为 `EllipseGeometry` `RadiusX` `RadiusY` 100， `Center` 值为 (180180) 设置为的 `Clip` 属性 [`Image`](xref:Xamarin.Forms.Image) 。 仅显示位于椭圆区域内的图像部分：
 
 ![使用 System.windows.media.ellipsegeometry> 剪切图像](geometries-images/clip-ellipsegeometry.png "使用 System.windows.media.ellipsegeometry> 剪切图像")
 
@@ -618,6 +630,6 @@ ms.locfileid: "86934272"
 
 ## <a name="related-links"></a>相关链接
 
-- [ShapeDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [ShapeDemos (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms形状](index.md)
 - [Xamarin.Forms形状：填充规则](fillrules.md)

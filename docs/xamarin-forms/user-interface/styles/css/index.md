@@ -1,28 +1,28 @@
 ---
-title: Xamarin.Forms使用级联样式表设置应用样式（CSS）
-description: Xamarin.Forms支持使用级联样式表（CSS）对视觉元素进行样式设置。
+title: Xamarin.Forms使用级联样式表 (CSS) 设置应用的样式
+description: Xamarin.Forms支持使用 (CSS) 级联样式表样式化视觉元素。
 ms.prod: xamarin
 ms.assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2
 ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/20/2020
+ms.date: 07/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9375c4078c75d8e4788cb31a3d6a6a3a10100f49
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 62c8fdd6a0dd2f07b17891346081ccbcebe26c77
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946216"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918577"
 ---
-# <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>Xamarin.Forms使用级联样式表设置应用样式（CSS）
+# <a name="styling-no-locxamarinforms-apps-using-cascading-style-sheets-css"></a>Xamarin.Forms使用级联样式表 (CSS) 设置应用的样式
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
 
-_Xamarin 支持使用级联样式表（CSS）对视觉元素进行样式设置。_
+_Xamarin.Forms支持使用 (CSS) 级联样式表样式化视觉元素。_
 
 Xamarin.Forms可使用 CSS 对应用程序进行样式设计。 样式表由规则列表组成，每个规则包含一个或多个选择器和一个声明块。 声明块包含用括号括起来的声明列表，每个声明都包含一个属性、一个冒号和一个值。 当块中有多个声明时，分号将插入为分隔符。 下面的代码示例演示了一些 Xamarin.Forms 兼容的 CSS：
 
@@ -363,109 +363,110 @@ stacklayout>image {
 
 ## <a name="property-reference"></a>属性参考
 
-支持以下 CSS 属性 Xamarin.Forms （在 "**值**" 列中，类型为 "_斜体_"，字符串文本为 `gray` ）：
+"值" 列中的 (支持以下 CSS 属性 Xamarin.Forms ，类型为_斜体_，而字符串文本**Values** `gray`) ：
 
-|属性|适用于|值|示例|
+|properties|适用于|值|示例|
 |---|---|---|---|
 |`align-content`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial` |`align-content: space-between;`|
 |`align-items`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial` |`align-items: flex-start;`|
 |`align-self`|`VisualElement`| `auto` \| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial`|`align-self: flex-end;`|
-|`background-color`|`VisualElement`|_color_ \| `initial` |`background-color: springgreen;`|
+|`background-color`|`VisualElement`|_颜色_ \|`initial` |`background-color: springgreen;`|
 |`background-image`|`Page`|_字符串_ \| `initial` |`background-image: bg.png;`|
-|`border-color`|`Button`, `Frame`, `ImageButton`|_color_ \| `initial`|`border-color: #9acd32;`|
-|`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_double_ \|`initial` |`border-radius: 10;`|
-|`border-width`|`Button`, `ImageButton`|_double_ \|`initial` |`border-width: .5;`|
-|`color`|`ActivityIndicator`, `BoxView`, `Button`, `CheckBox`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `ProgressBar`, `SearchBar`, `Switch`, `TimePicker`|_color_ \| `initial` |`color: rgba(255, 0, 0, 0.3);`|
-|`column-gap`|`Grid`|_double_ \|`initial`|`column-gap: 9;`|
+|`border-color`|`Button`, `Frame`, `ImageButton`|_颜色_ \|`initial`|`border-color: #9acd32;`|
+|`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_double_ \| `initial` |`border-radius: 10;`|
+|`border-width`|`Button`, `ImageButton`|_double_ \| `initial` |`border-width: .5;`|
+|`color`|`ActivityIndicator`, `BoxView`, `Button`, `CheckBox`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `ProgressBar`, `SearchBar`, `Switch`, `TimePicker`|_颜色_ \|`initial` |`color: rgba(255, 0, 0, 0.3);`|
+|`column-gap`|`Grid`|_double_ \| `initial`|`column-gap: 9;`|
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|
 |`flex-direction`|`FlexLayout`| `column` \| `columnreverse` \| `row` \| `rowreverse` \| `row-reverse` \| `column-reverse` \| `initial`|`flex-direction: column-reverse;`|
 |`flex-basis`|`VisualElement`|_float_ \|`auto` \| `initial`. 此外，可使用符号指定范围介于0% 到100% 之间的百分比 `%` 。|`flex-basis: 25%;`|
-|`flex-grow`|`VisualElement`|_float_ \|`initial`|`flex-grow: 1.5;`|
-|`flex-shrink`|`VisualElement`|_float_ \|`initial`|`flex-shrink: 1;`|
+|`flex-grow`|`VisualElement`|_FLOAT_ \| `initial`|`flex-grow: 1.5;`|
+|`flex-shrink`|`VisualElement`|_FLOAT_ \| `initial`|`flex-shrink: 1;`|
 |`flex-wrap`|`VisualElement`| `nowrap` \| `wrap` \| `reverse` \| `wrap-reverse` \| `initial`|`flex-wrap: wrap-reverse;`|
 |`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_字符串_ \| `initial` |`font-family: Consolas;`|
 |`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_double_ \|_namedsize_ \|  `initial` |`font-size: 12;`|
 |`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
-|`height`|`VisualElement`|_double_ \|`initial` |`min-height: 250;`|
+|`height`|`VisualElement`|_double_ \| `initial` |`min-height: 250;`|
 |`justify-content`|`FlexLayout`| `start` \| `center` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial`|`justify-content: flex-end;`|
-|`letter-spacing`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `SearchHandler`, `Span`, `TimePicker`|_double_ \|`initial`|`letter-spacing: 2.5;`|
-|`line-height`|`Label`, `Span`|_double_ \|`initial` |`line-height: 1.8;`|
+|`letter-spacing`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `SearchHandler`, `Span`, `TimePicker`|_double_ \| `initial`|`letter-spacing: 2.5;`|
+|`line-height`|`Label`, `Span`|_double_ \| `initial` |`line-height: 1.8;`|
 |`margin`|`View`|_粗细_ \|`initial` |`margin: 6 12;`|
 |`margin-left`|`View`|_粗细_ \|`initial` |`margin-left: 3;`|
 |`margin-top`|`View`|_粗细_ \|`initial` |`margin-top: 2;`|
 |`margin-right`|`View`|_粗细_ \|`initial` |`margin-right: 1;`|
 |`margin-bottom`|`View`|_粗细_ \|`initial` |`margin-bottom: 6;`|
 |`max-lines`|`Label`|_int_ \| `initial`|`max-lines: 2;`|
-|`min-height`|`VisualElement`|_double_ \|`initial` |`min-height: 50;`|
-|`min-width`|`VisualElement`|_double_ \|`initial` |`min-width: 112;`|
-|`opacity`|`VisualElement`|_double_ \|`initial` |`opacity: .3;`|
+|`min-height`|`VisualElement`|_double_ \| `initial` |`min-height: 50;`|
+|`min-width`|`VisualElement`|_double_ \| `initial` |`min-width: 112;`|
+|`opacity`|`VisualElement`|_double_ \| `initial` |`opacity: .3;`|
 |`order`|`VisualElement`|_int_ \| `initial`|`order: -1;`|
 |`padding`|`Button`, `ImageButton`, `Layout`, `Page`|_粗细_ \|`initial` |`padding: 6 12 12;`|
-|`padding-left`|`Button`, `ImageButton`, `Layout`, `Page`|_double_ \|`initial`|`padding-left: 3;`|
-|`padding-top`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \|`initial` |`padding-top: 4;`|
-|`padding-right`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \|`initial` |`padding-right: 2;`|
-|`padding-bottom`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \|`initial` |`padding-bottom: 6;`|
+|`padding-left`|`Button`, `ImageButton`, `Layout`, `Page`|_double_ \| `initial`|`padding-left: 3;`|
+|`padding-top`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \| `initial` |`padding-top: 4;`|
+|`padding-right`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \| `initial` |`padding-right: 2;`|
+|`padding-bottom`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \| `initial` |`padding-bottom: 6;`|
 |`position`|`FlexLayout`| `relative` \| `absolute` \| `initial`|`position: absolute;`|
-|`row-gap`|`Grid`| _double_ \|`initial`|`row-gap: 12;`|
+|`row-gap`|`Grid`| _double_ \| `initial`|`row-gap: 12;`|
 |`text-align`| `Entry`, `EntryCell`, `Label`, `SearchBar`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`. `left``right`在从右到左的环境中，应该避免。| `text-align: right;`|
 |`text-decoration`|`Label`, `Span`|`none` \| `underline` \| `strikethrough` \| `line-through` \| `initial`|`text-decoration: underline, line-through;`|
+|`text-transform`|`Button`,`Editor`, `Entry`, `Label`, `SearchBar`, `SearchHandler`|`none` \| `default` \| `uppercase` \| `lowercase` \| `initial` |`text-transform: uppercase;`|
 |`transform`|`VisualElement`| `none`, `rotate`, `rotateX`, `rotateY`, `scale`, `scaleX`, `scaleY`, `translate`, `translateX`, `translateY`, `initial` |`transform: rotate(180), scaleX(2.5);`|
 |`transform-origin`|`VisualElement`| _double_、 _double_ \|`initial` |`transform-origin: 7.5, 12.5;`|
 |`vertical-align`|`Label`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`|`vertical-align: bottom;`|
 |`visibility`|`VisualElement`|`true` \| `visible` \| `false` \| `hidden` \| `collapse` \| `initial`|`visibility: hidden;`|
-|`width`|`VisualElement`|_double_ \|`initial`|`min-width: 320;`|
+|`width`|`VisualElement`|_double_ \| `initial`|`min-width: 320;`|
 
 > [!NOTE]
-> `initial`是所有属性的有效值。 它清除了从另一种样式设置的值（重置为默认值）。
+> `initial`是所有属性的有效值。 它会清除值 (重置为从另一种样式设置的默认) 。
 
 当前不支持以下属性：
 
 - `all: initial`.
-- 布局属性（框或网格）。
+-  (框或网格) 的布局属性。
 - 速记属性，如 `font` 、和 `border` 。
 
 此外，没有任何值， `inherit` 因此不支持继承。 因此，您不能这样做，例如，在 `font-size` 布局上设置属性，并 [`Label`](xref:Xamarin.Forms.Label) 期望布局中的所有实例继承值。 一个例外是 `direction` 属性，该属性的默认值为 `inherit` 。
 
-目标 `Span` 元素有一个已知问题，即元素和名称（使用符号）阻止范围成为 CSS 样式的目标 `#` 。 `Span`元素派生自 `GestureElement` ，它不具有 `StyleClass` 属性，因此不支持 CSS 类定位。 有关详细信息，请参阅[无法将 CSS 样式应用于跨控件](https://github.com/xamarin/Xamarin.Forms/issues/5979)。
+目标 `Span` 元素有一个已知问题，即使用符号)  (元素和名称，阻止其成为 CSS 样式的目标 `#` 。 `Span`元素派生自 `GestureElement` ，它不具有 `StyleClass` 属性，因此不支持 CSS 类定位。 有关详细信息，请参阅[无法将 CSS 样式应用于跨控件](https://github.com/xamarin/Xamarin.Forms/issues/5979)。
 
-### <a name="xamarinforms-specific-properties"></a>Xamarin.Forms特定属性
+### <a name="no-locxamarinforms-specific-properties"></a>Xamarin.Forms特定属性
 
-Xamarin.Forms还支持以下特定 CSS 属性（在 "**值**" 列中，类型为 "_斜体_"，字符串文本为 `gray` ）：
+Xamarin.Forms还支持以下特定 CSS 属性 (在 "**值**" 列中，类型为_斜体_，而字符串文本 `gray`) ：
 
-|属性|适用于|值|示例|
+|properties|适用于|值|示例|
 |---|---|---|---|
-|`-xf-bar-background-color`|`NavigationPage`, `TabbedPage`|_color_ \| `initial` |`-xf-bar-background-color: teal;`|
-|`-xf-bar-text-color`|`NavigationPage`, `TabbedPage`|_color_ \| `initial` |`-xf-bar-text-color: gray`|
+|`-xf-bar-background-color`|`NavigationPage`, `TabbedPage`|_颜色_ \|`initial` |`-xf-bar-background-color: teal;`|
+|`-xf-bar-text-color`|`NavigationPage`, `TabbedPage`|_颜色_ \|`initial` |`-xf-bar-text-color: gray`|
 |`-xf-horizontal-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-horizontal-scroll-bar-visibility: never;`|
 |`-xf-max-length`|`Entry`, `Editor`, `SearchBar`|_int_ \| `initial` |`-xf-max-length: 20;`|
-|`-xf-max-track-color`|`Slider`|_color_ \| `initial` |`-xf-max-track-color: red;`|
-|`-xf-min-track-color`|`Slider`|_color_ \| `initial` |`-xf-min-track-color: yellow;`|
+|`-xf-max-track-color`|`Slider`|_颜色_ \|`initial` |`-xf-max-track-color: red;`|
+|`-xf-min-track-color`|`Slider`|_颜色_ \|`initial` |`-xf-min-track-color: yellow;`|
 |`-xf-orientation`|`ScrollView`, `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`. `both`仅在上受支持 `ScrollView` 。 |`-xf-orientation: horizontal;`|
 |`-xf-placeholder`|`Entry`, `Editor`, `SearchBar`|_带引号文本_ \|`initial` |`-xf-placeholder: Enter name;`|
-|`-xf-placeholder-color`|`Entry`, `Editor`, `SearchBar`|_color_ \| `initial` |`-xf-placeholder-color: green;`|
-|`-xf-spacing`|`StackLayout`|_double_ \|`initial` |`-xf-spacing: 8;`|
-|`-xf-thumb-color`|`Slider`, `Switch`|_color_ \| `initial` |`-xf-thumb-color: limegreen;`|
+|`-xf-placeholder-color`|`Entry`, `Editor`, `SearchBar`|_颜色_ \|`initial` |`-xf-placeholder-color: green;`|
+|`-xf-spacing`|`StackLayout`|_double_ \| `initial` |`-xf-spacing: 8;`|
+|`-xf-thumb-color`|`Slider`, `Switch`|_颜色_ \|`initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-vertical-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-vertical-scroll-bar-visibility: always;`|
 |`-xf-vertical-text-alignment`|`Label`| `start` \| `center` \| `end` \| `initial`|`-xf-vertical-text-alignment: end;`|
 |`-xf-visual`|`VisualElement`|_字符串_ \| `initial` |`-xf-visual: material;`|
 
-### <a name="xamarinforms-shell-specific-properties"></a>Xamarin.FormsShell 特定属性
+### <a name="no-locxamarinforms-shell-specific-properties"></a>Xamarin.FormsShell 特定属性
 
-Xamarin.Forms还支持以下 Shell 特定 CSS 属性（在 "**值**" 列中，类型为 "_斜体_"，字符串文本为 `gray` ）：
+Xamarin.Forms还支持以下 Shell 特定 CSS 属性 (在 "**值**" 列中，类型为 "_斜体_"，而字符串文本 `gray`) ：
 
-|属性|适用于|值|示例|
+|properties|适用于|值|示例|
 |---|---|---|---|
-|`-xf-flyout-background`|`Shell`|_color_ \| `initial` |`-xf-flyout-background: red;`|
-|`-xf-shell-background`|`Element`|_color_ \| `initial` |`-xf-shell-background: green;`|
-|`-xf-shell-disabled`|`Element`|_color_ \| `initial` |`-xf-shell-disabled: blue;`|
-|`-xf-shell-foreground`|`Element`|_color_ \| `initial` |`-xf-shell-foreground: yellow;`|
-|`-xf-shell-tabbar-background`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-background: white;`|
-|`-xf-shell-tabbar-disabled`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-disabled: black;`|
-|`-xf-shell-tabbar-foreground`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-foreground: gray;`|
-|`-xf-shell-tabbar-title`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-title: lightgray;`|
-|`-xf-shell-tabbar-unselected`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-unselected: cyan;`|
-|`-xf-shell-title`|`Element`|_color_ \| `initial` |`-xf-shell-title: teal;`|
-|`-xf-shell-unselected`|`Element`|_color_ \| `initial` |`-xf-shell-unselected: limegreen;`|
+|`-xf-flyout-background`|`Shell`|_颜色_ \|`initial` |`-xf-flyout-background: red;`|
+|`-xf-shell-background`|`Element`|_颜色_ \|`initial` |`-xf-shell-background: green;`|
+|`-xf-shell-disabled`|`Element`|_颜色_ \|`initial` |`-xf-shell-disabled: blue;`|
+|`-xf-shell-foreground`|`Element`|_颜色_ \|`initial` |`-xf-shell-foreground: yellow;`|
+|`-xf-shell-tabbar-background`|`Element`|_颜色_ \|`initial` |`-xf-shell-tabbar-background: white;`|
+|`-xf-shell-tabbar-disabled`|`Element`|_颜色_ \|`initial` |`-xf-shell-tabbar-disabled: black;`|
+|`-xf-shell-tabbar-foreground`|`Element`|_颜色_ \|`initial` |`-xf-shell-tabbar-foreground: gray;`|
+|`-xf-shell-tabbar-title`|`Element`|_颜色_ \|`initial` |`-xf-shell-tabbar-title: lightgray;`|
+|`-xf-shell-tabbar-unselected`|`Element`|_颜色_ \|`initial` |`-xf-shell-tabbar-unselected: cyan;`|
+|`-xf-shell-title`|`Element`|_颜色_ \|`initial` |`-xf-shell-title: teal;`|
+|`-xf-shell-unselected`|`Element`|_颜色_ \|`initial` |`-xf-shell-unselected: limegreen;`|
 
 ### <a name="color"></a>颜色
 
@@ -484,7 +485,7 @@ Xamarin.Forms还支持以下 Shell 特定 CSS 属性（在 "**值**" 列中，�
 
 - 单个值指示均匀宽度。
 - 两个值指示垂直和水平宽度。
-- 三个值指示顶部，然后是水平（左和右），然后是底部粗细。
+- 三个值指示 top，然后水平 (左和右) ，然后靠下。
 - 四个值指示 "上"、"右"、"下" 和 "左" 粗细。
 
 > [!NOTE]
@@ -502,7 +503,11 @@ Xamarin.Forms还支持以下 Shell 特定 CSS 属性（在 "**值**" 列中，�
 
 每个值的确切含义 `namedsize` 取决于平台和视图相关。
 
-## <a name="css-in-xamarinforms-with-xamarinuniversity"></a>Xamarin.Forms用 Xamarin 大学提供的 CSS
+## <a name="functions"></a>函数
+
+可以 `linear-gradient()` 分别使用和 CSS 函数指定线性和径向渐变 `radial-gradient()` 。 应将这些函数的结果分配给控件的 `background` 属性。
+
+## <a name="css-in-no-locxamarinforms-with-xamarinuniversity"></a>Xamarin.Forms用 Xamarin 大学提供的 CSS
 
 > [!VIDEO https://youtube.com/embed/va-Vb7vtan8]
 
@@ -510,6 +515,6 @@ Xamarin.Forms还支持以下 Shell 特定 CSS 属性（在 "**值**" 列中，�
 
 ## <a name="related-links"></a>相关链接
 
-- [MonkeyAppCSS （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
+- [MonkeyAppCSS (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
 - [资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [使用 XAML 样式设置 Xamarin.Forms 应用的样式](~/xamarin-forms/user-interface/styles/xaml/index.md)

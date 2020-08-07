@@ -6,18 +6,18 @@ ms.assetId: 85A0CCF5-C1D8-40BB-927F-A4D944E5534D
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 06/19/2020
+ms.date: 07/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9afad335de60e605ef6551b0878455674a40750f
-ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
+ms.openlocfilehash: b4c0ef44f528e3cbc56a27e98a1c38246736ff8c
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85795032"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918343"
 ---
-# <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Forms公共控件属性、方法和事件
+# <a name="no-locxamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Forms公共控件属性、方法和事件
 
 Xamarin.Forms `VisualElement` 类是应用程序中使用的大多数控件的基类 Xamarin.Forms 。 `VisualElement`类定义了许多用于派生类的[属性](#properties)、[方法](#methods)和[事件](#events)。
 
@@ -32,6 +32,10 @@ Xamarin.Forms `VisualElement` 类是应用程序中使用的大多数控件的�
 ### [`AnchorY`](xref:Xamarin.Forms.VisualElement.AnchorY)
 
 `AnchorY`属性是一个 `double` 值，用于定义 X 轴上用于缩放和旋转等转换的中心点。 默认值为0.5。
+
+### `Background`
+
+`Background`属性是一个 `Brush` 值，它使画笔可用作任何控件中的背景。 默认值为 `Brush.Default`。
 
 ### [`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor)
 
@@ -51,7 +55,7 @@ Xamarin.Forms `VisualElement` 类是应用程序中使用的大多数控件的�
 
 ### [`Effects`](xref:Xamarin.Forms.Element.Effects)
 
-`Effects`属性是 `List` `Effect` 从 `Element` （x：）继承的对象的 Xamarin.Forms 。元素）类。 效果允许自定义本机控件，通常用于小样式更改。 有关类的详细信息 `Effect` ，请参阅[ Xamarin.Forms 效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
+`Effects`属性是对象的 `List` `Effect` ，继承自 `Element` (x： Xamarin.Forms 。元素) 类。 效果允许自定义本机控件，通常用于小样式更改。 有关类的详细信息 `Effect` ，请参阅[ Xamarin.Forms 效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
 
 ### [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)
 

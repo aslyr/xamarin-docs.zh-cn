@@ -10,16 +10,16 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 91960c08640a412e02298ed051469a86c1a9f368
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 42ecfc9f09683ccc61640520975b3f50beedaaf5
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930567"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918503"
 ---
-# <a name="xamarinforms-shapes-rectangle"></a>Xamarin.Forms形状：矩形
+# <a name="no-locxamarinforms-shapes-rectangle"></a>Xamarin.Forms形状：矩形
 
-![预发布 API](~/media/shared/preview.png "此 API 当前为预发布版本")
+![预发行版 API](~/media/shared/preview.png)
 
 [![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -51,7 +51,7 @@ ms.locfileid: "86930567"
            HorizontalOptions="Start" />
 ```
 
-在此示例中，绘制了一个具有维度150x50 （与设备无关的单位）的红色实心矩形：
+在此示例中，绘制了一个具有维度150x50 的红色实心矩形，)  (与设备无关的单位：
 
 ![实心矩形](rectangle-images/filled.png "实心矩形")
 
@@ -76,5 +76,5 @@ ms.locfileid: "86930567"
 
 ## <a name="related-links"></a>相关链接
 
-- [ShapeDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [ShapeDemos (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms形状](index.md)

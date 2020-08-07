@@ -10,18 +10,18 @@ ms.date: 06/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8e23e4151c4841dd4dce80ba0358471c64a26f39
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 274ff08d7fffc1cd3a817906e14ebddfac2c9337
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937601"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918253"
 ---
-# <a name="xamarinforms-shapes-path"></a>Xamarin.Forms形状：路径
+# <a name="no-locxamarinforms-shapes-path"></a>Xamarin.Forms形状：路径
 
-![预发布 API](~/media/shared/preview.png "此 API 当前为预发布版本")
+![预发行版 API](~/media/shared/preview.png)
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Path`类派生自 `Shape` 类，可用于绘制曲线和复杂形状。 这些曲线和形状通常使用对象进行描述 `Geometry` 。 有关 `Path` 该类继承自类的属性的信息 `Shape` ，请参阅[ Xamarin.Forms 形状](index.md)。
 
@@ -48,6 +48,7 @@ ms.locfileid: "86937601"
 ```xaml
 <Path Data="M 10,100 L 100,100 100,50Z"
       Stroke="Black"
+      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Start" />
 ```
@@ -71,6 +72,7 @@ ms.locfileid: "86937601"
 
 ```xaml
 <Path Stroke="Black"
+      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Start">
     <Path.Data>
@@ -93,7 +95,7 @@ ms.locfileid: "86937601"
 </Path>
 ```
 
-在此示例中，三角形的起点是（10100）。 直线段从（10100）绘制到（100100），从（100100）绘制到（100，50）。 然后，将连接图的第一个和最后一个线段，因为 `PathFigure.IsClosed` 属性设置为 `true` 。 结果是一个三角形：
+在此示例中，三角形的起始点为 10100)  (。 直线段从 (10100) 绘制到 (100100) ，从 (100100) 到 (100，50) 。 然后，将连接图的第一个和最后一个线段，因为 `PathFigure.IsClosed` 属性设置为 `true` 。 结果是一个三角形：
 
 ![路径三角形](path-images/triangle.png "路径三角形")
 
@@ -101,7 +103,7 @@ ms.locfileid: "86937601"
 
 ## <a name="related-links"></a>相关链接
 
-- [ShapeDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [ShapeDemos (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms形状](index.md)
 - [Xamarin.Forms几何图形](geometries.md)
 - [Xamarin.Forms路径标记语法](path-markup-syntax.md)

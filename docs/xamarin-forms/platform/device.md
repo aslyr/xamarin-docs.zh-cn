@@ -6,20 +6,20 @@ ms.assetid: 2F304AEC-8612-4833-81E5-B2F3F469B2DF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/17/2020
+ms.date: 07/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ba4e93b8f364d6887439b05017a9cd373dce5985
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 38452ac477404d92468b7c9c4d2c88ce60104b50
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84572320"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918016"
 ---
-# <a name="xamarinforms-device-class"></a>Xamarin.Forms设备类
+# <a name="no-locxamarinforms-device-class"></a>Xamarin.Forms设备类
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
 
 [`Device`](xref:Xamarin.Forms.Device)类包含多个属性和方法，可帮助开发人员基于每个平台自定义布局和功能。
 
@@ -29,7 +29,7 @@ ms.locfileid: "84572320"
 
 在 Xamarin.Forms 2.3.4 之前，可以通过检查 [`Device.OS`](xref:Xamarin.Forms.Device.OS) 属性，并将其与 [`TargetPlatform.iOS`](xref:Xamarin.Forms.TargetPlatform.iOS) 、 [`TargetPlatform.Android`](xref:Xamarin.Forms.TargetPlatform.Android) 、 [`TargetPlatform.WinPhone`](xref:Xamarin.Forms.TargetPlatform.WinPhone) 和 [`TargetPlatform.Windows`](xref:Xamarin.Forms.TargetPlatform.Windows) 枚举值进行比较来获取运行应用程序的平台。 同样，其中一个 [`Device.OnPlatform`](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action)) 重载可用于向控件提供平台特定的值。
 
-但是，因为 Xamarin.Forms 2.3.4 已弃用并替换这些 api。 [`Device`](xref:Xamarin.Forms.Device)该类现在包含用于标识平台的公共字符串常量– [`Device.iOS`](xref:Xamarin.Forms.Device.iOS) 、 [`Device.Android`](xref:Xamarin.Forms.Device.Android) 、 `Device.WinPhone` （已弃用）、 `Device.WinRT` （不推荐使用）、 [`Device.UWP`](xref:Xamarin.Forms.Device.UWP) 和 [`Device.macOS`](xref:Xamarin.Forms.Device.macOS) 。 同样， [`Device.OnPlatform`](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action)) 重载已替换为 [`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1) 和 [`On`](xref:Xamarin.Forms.On) api。
+但是，因为 Xamarin.Forms 2.3.4 已弃用并替换这些 api。 [`Device`](xref:Xamarin.Forms.Device)该类现在包含用于标识平台的公共字符串常量- [`Device.iOS`](xref:Xamarin.Forms.Device.iOS) 、 [`Device.Android`](xref:Xamarin.Forms.Device.Android) 、 `Device.WinPhone` (不推荐使用的) 、 `Device.WinRT` (弃用) 、 [`Device.UWP`](xref:Xamarin.Forms.Device.UWP) 和 [`Device.macOS`](xref:Xamarin.Forms.Device.macOS) 。 同样， [`Device.OnPlatform`](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action)) 重载已替换为 [`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1) 和 [`On`](xref:Xamarin.Forms.On) api。
 
 在 c # 中，可以通过在 `switch` 属性上创建一个语句 [`Device.RuntimePlatform`](xref:Xamarin.Forms.Device.RuntimePlatform) ，然后 `case` 为所需的平台提供语句，来提供特定于平台的值：
 
@@ -76,7 +76,7 @@ layout.Margin = new Thickness(5, top, 5, 0);
 
 - **手机**– IPhone、iPod Touch 和 Android 设备的范围低于600
 - **Tablet** -IPad、Windows 设备和 Android 设备，宽于600
-- **桌面**–仅在 Windows 10 台式计算机上的[UWP 应用](~/xamarin-forms/platform/windows/installation/index.md)中返回（在 `Phone` 移动 Windows 设备上返回，包括在 Continuum 方案中）
+- **桌面**–仅在 Windows 10 台式计算机上的[UWP 应用](~/xamarin-forms/platform/windows/installation/index.md)中返回 (在 `Phone` 移动 Windows 设备上返回，包括在 Continuum 方案中) 
 - **电视**– TIZEN 的电视设备
 - **手表**– Tizen Watch 设备
 - **不支持**–未使用
@@ -136,7 +136,7 @@ this.FlowDirection = Device.FlowDirection;
 
 ## <a name="devicestyles"></a>设备样式
 
-[ `Styles` 属性](~/xamarin-forms/user-interface/styles/index.md)包含可应用于某些控件（例如）属性的内置样式定义 `Label` `Style` 。 可用样式包括：
+[ `Styles` 属性](~/xamarin-forms/user-interface/styles/index.md)包含可应用于某些控件的 (如) 属性的内置样式定义 `Label` `Style` 。 可用样式包括：
 
 - BodyStyle
 - CaptionStyle
@@ -160,7 +160,7 @@ someLabel.FontSize = Device.OnPlatform (
 
 ## <a name="devicegetnamedcolor"></a>Device.GetNamedColor
 
-Xamarin.Forms4.6 引入了对命名颜色的支持。 命名颜色是一种颜色，它具有不同的值，具体取决于设备上处于活动状态的系统模式（例如，亮或暗）。 在 Android 上，可以通过[R. Color](https://developer.android.com/reference/android/R.color#constants_2)类访问已命名的颜色。 在 iOS 上，命名颜色称为[系统颜色](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/#system-colors)。 在通用 Windows 平台上，名为的颜色称为[XAML 主题资源](/windows/uwp/design/controls-and-patterns/xaml-theme-resources)。
+Xamarin.Forms4.6 引入了对命名颜色的支持。 命名颜色是一种颜色，它具有不同的值，具体取决于哪个系统模式 (例如，设备上的亮或暗) 处于活动状态。 在 Android 上，可以通过[R. Color](https://developer.android.com/reference/android/R.color#constants_2)类访问已命名的颜色。 在 iOS 上，命名颜色称为[系统颜色](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/#system-colors)。 在通用 Windows 平台上，名为的颜色称为[XAML 主题资源](/windows/uwp/design/controls-and-patterns/xaml-theme-resources)。
 
 `GetNamedColor`方法可用于检索 Android、iOS 和 UWP 上的命名颜色。 方法采用 `string` 参数并返回 [`Color`](xref:Xamarin.Forms.Color) ：
 
@@ -176,32 +176,57 @@ Color color = Device.GetNamedColor(NamedPlatformColor.HoloBlueBright);
 
 `NamedPlatformColor`类包含定义适用于 Android、iOS 和 UWP 的命名颜色的常数：
 
-| Android | iOS | UWP |
-| --- | --- | --- |
-| `BackgroundDark` | `Label` | `SystemAltHighColor` |
-| `BackgroundLight` | `Link` | `SystemAltLowColor` |
-| `Black` | `OpaqueSeparator` | `SystemAltMediumColor` |
-| `DarkerGray` | `PlaceholderText` | `SystemAltMediumHighColor` |
-| `HoloBlueBright` | `QuaternaryLabel` | `SystemAltMediumLowColor` |
-| `HoloBlueDark` | `SecondaryLabel` | `SystemBaseHighColor` |
-| `HoloBlueLight` | `Separator` | `SystemBaseLowColor` |
-| `HoloGreenDark` | `SystemBlue` | `SystemBaseMediumColor` |
-| `HoloGreenLight` | `SystemGray` | `SystemBaseMediumHighColor` |
-| `HoloOrangeDark` | `SystemGray2` | `SystemBaseMediumLowColor` |
-| `HoloOrangeLight` | `SystemGray3` | `SystemChromeAltLowColor` |
-| `HoloPurple` | `SystemGray4` | `SystemChromeBlackHighColor` |
-| `HoloRedDark` | `SystemGray5` | `SystemChromeBlackLowColor` |
-| `HoloRedLight` | `SystemGray6` | `SystemChromeBlackMediumColor` |
-| `TabIndicatorText` | `SystemGreen` | `SystemChromeBlackMediumLowColor` |
-| `Transparent` | `SystemIndigo` | `SystemChromeDisabledHighColor` |
-| `White` | `SystemListLowColor` | `SystemChromeDisabledLowColor` |
-| `WidgetEditTextDark` | `SystemListMediumColor` | `SystemChromeHighColor` |
-| | `SystemPink` | `SystemChromeLowColor` |
-| | `SystemPurple` | `SystemChromeMediumColor` |
-| | `SystemRed` | `SystemChromeMediumLowColor` |
-| | `SystemTeal` | `SystemChromeWhiteColor` |
-| | `SystemYellow` |
-| | `TertiaryLabel` |
+| Android | iOS | macOS | UWP |
+| --- | --- | --- | --- |
+| `BackgroundDark` | `Label` | `AlternateSelectedControlTextColor` | `SystemAltHighColor` |
+| `BackgroundLight` | `Link` | `ControlAccent` | `SystemAltLowColor` |
+| `Black` | `OpaqueSeparator` | `ControlBackgroundColor` | `SystemAltMediumColor` |
+| `DarkerGray` | `PlaceholderText` | `ControlColor` | `SystemAltMediumHighColor` |
+| `HoloBlueBright` | `QuaternaryLabel` | `DisabledControlTextColor` | `SystemAltMediumLowColor` |
+| `HoloBlueDark` | `SecondaryLabel` | `FindHighlightColor` | `SystemBaseHighColor` |
+| `HoloBlueLight` | `Separator` | `GridColor` | `SystemBaseLowColor` |
+| `HoloGreenDark` | `SystemBlue` | `HeaderTextColor` | `SystemBaseMediumColor` |
+| `HoloGreenLight` | `SystemGray` | `HighlightColor` | `SystemBaseMediumHighColor` |
+| `HoloOrangeDark` | `SystemGray2` | `KeyboardFocusIndicatorColor` | `SystemBaseMediumLowColor` |
+| `HoloOrangeLight` | `SystemGray3` | `Label` | `SystemChromeAltLowColor` |
+| `HoloPurple` | `SystemGray4` | `LabelColor` | `SystemChromeBlackHighColor` |
+| `HoloRedDark` | `SystemGray5` | `Link` | `SystemChromeBlackLowColor` |
+| `HoloRedLight` | `SystemGray6` | `LinkColor` | `SystemChromeBlackMediumColor` |
+| `TabIndicatorText` | `SystemGreen` | `PlaceholderText` | `SystemChromeBlackMediumLowColor` |
+| `Transparent` | `SystemIndigo` | `PlaceholderTextColor` | `SystemChromeDisabledHighColor` |
+| `White` | `SystemOrange` | `QuaternaryLabel`| `SystemChromeDisabledLowColor` |
+| `WidgetEditTextDark` | `SystemPink` | `QuaternaryLabelColor` | `SystemChromeHighColor` |
+| | `SystemPurple` | `SecondaryLabel` | `SystemChromeLowColor` |
+| | `SystemRed` | `SecondaryLabelColor` | `SystemChromeMediumColor` |
+| | `SystemTeal` | `SelectedContentBackgroundColor` | `SystemChromeMediumLowColor` |
+| | `SystemYellow` | `SelectedControlColor` | `SystemChromeWhiteColor` |
+| | `TertiaryLabel` | `SelectedControlTextColor` | `SystemListLowColor` |
+| | | `SelectedMenuItemTextColor` | `SystemListMediumColor`|
+| | | `SelectedTextBackgroundColor` | |
+| | | `SelectedTextColor` | |
+| | | `Separator` | |
+| | | `SeparatorColor` | |
+| | | `ShadowColor` | |
+| | | `SystemBlue` | |
+| | | `SystemGray` | |
+| | | `SystemGreen` | |
+| | | `SystemIndigo` | |
+| | | `SystemOrange` | |
+| | | `SystemPink` | |
+| | | `SystemPurple` | |
+| | | `SystemRed` | |
+| | | `SystemTeal` | |
+| | | `SystemYellow` | |
+| | | `TertiaryLabel` | |
+| | | `TertiaryLabelColor` | |
+| | | `TextBackgroundColor` | |
+| | | `TextColor` | |
+| | | `UnderPageBackgroundColor` | |
+| | | `UnemphasizedSelectedContentBackgroundColor` | |
+| | | `UnemphasizedSelectedTextBackgroundColor` | |
+| | | `UnemphasizedSelectedTextColor` | |
+| | | `WindowBackgroundColor` | |
+| | | `WindowFrameTextColor` | |
 
 ## <a name="devicestarttimer"></a>StartTimer
 
@@ -215,7 +240,7 @@ Device.StartTimer (new TimeSpan (0, 0, 60), () =>
 });
 ```
 
-如果计时器内的代码与用户界面交互（如设置 `Label` 或显示警报的文本），则应在表达式内完成此操作 `BeginInvokeOnMainThread` （请参阅下文）。
+如果计时器内的代码与用户界面交互 (例如，设置的文本 `Label` 或显示警报) 应在表达式内完成此操作 `BeginInvokeOnMainThread` (参见下面的) 。
 
 > [!NOTE]
 > `System.Timers.Timer`和 `System.Threading.Timer` 类是使用方法的 .NET Standard 替代项 `Device.StartTimer` 。

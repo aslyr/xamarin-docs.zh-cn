@@ -10,18 +10,18 @@ ms.date: 04/29/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e8898120ae234c13c6650a7c818796fd25fa1101
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: f2359880626b292f410af094c82ba6bb3ed50426
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929107"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918406"
 ---
-# <a name="xamarinforms-carouselview-data"></a>Xamarin.FormsCarouselView 数据
+# <a name="no-locxamarinforms-carouselview-data"></a>Xamarin.FormsCarouselView 数据
 
-![预发布 API](~/media/shared/preview.png "此 API 当前为预发布版本")
+![预发行版 API](~/media/shared/preview.png)
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)包括以下属性，这些属性定义要显示的数据及其外观：
 
@@ -479,7 +479,7 @@ void OnCollectionViewRemainingItemsThresholdReached(object sender, EventArgs e)
 
 ## <a name="related-links"></a>相关链接
 
-- [CarouselView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+- [CarouselView (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 - [Xamarin.FormsIndicatorView](~/xamarin-forms/user-interface/indicatorview.md)
 - [Xamarin.FormsRefreshView](~/xamarin-forms/user-interface/refreshview.md)
 - [Xamarin.Forms数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)

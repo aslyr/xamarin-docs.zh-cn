@@ -10,18 +10,18 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9d79f232a77972b6abbce23ba65d9c277b090311
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: a5d130922a9bd8f30b33b99f7f3dc512f056269f
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935442"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918626"
 ---
-# <a name="xamarinforms-shapes-line"></a>Xamarin.Forms形状：线条
+# <a name="no-locxamarinforms-shapes-line"></a>Xamarin.Forms形状：线条
 
-![预发布 API](~/media/shared/preview.png "此 API 当前为预发布版本")
+![预发行版 API](~/media/shared/preview.png)
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Line`类派生自 `Shape` 类，可用于绘制线条。 有关 `Line` 该类继承自类的属性的信息 `Shape` ，请参阅[ Xamarin.Forms 形状](index.md)。
 
@@ -50,10 +50,11 @@ ms.locfileid: "86935442"
       Y1="0"
       X2="0"
       Y2="120"
-      Stroke="Red" />
+      Stroke="Red"
+      StrokeThickness="1" />
 ```
 
-在此示例中，将从（40，0）到（0120）绘制红色对角线：
+在此示例中，从 (40，0) 到 (0120) 绘制了一条红对角线：
 
 ![Line](line-images/line.png "线")
 
@@ -61,10 +62,11 @@ ms.locfileid: "86935442"
 
 ```xaml
 <Line Stroke="Red"
+      StrokeThickness="1"
       X2="200" />
 ```
 
-在此示例中，定义了200个与设备无关的单位的水平线。 由于其他属性默认为0，因此从（0，0）到（200，0）绘制线条。
+在此示例中，定义了200个与设备无关的单位的水平线。 由于其他属性在默认情况下为0，因此从 (0，0) 到 (200，0) 绘制线条。
 
 下面的 XAML 示例演示如何绘制虚线：
 
@@ -74,11 +76,12 @@ ms.locfileid: "86935442"
       X2="0"
       Y2="120"
       Stroke="DarkBlue"
+      StrokeThickness="1"
       StrokeDashArray="1,1"
       StrokeDashOffset="6" />
 ```
 
-在此示例中，将从（40，0）到（0120）绘制深蓝色虚线对角线：
+在此示例中，从 (40，0) 到 (0120) 绘制深蓝色虚线对角线：
 
 ![虚线](line-images/dashed-line.png "虚线")
 
@@ -86,5 +89,5 @@ ms.locfileid: "86935442"
 
 ## <a name="related-links"></a>相关链接
 
-- [ShapeDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [ShapeDemos (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms形状](index.md)
