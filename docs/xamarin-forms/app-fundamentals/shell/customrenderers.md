@@ -6,18 +6,18 @@ ms.assetid: 3B1A6AE8-1D1E-4C34-B9AB-48F4444FEF32
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
+ms.date: 07/29/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 321539f877a86804245d27a2d76d1edeb1abd1e9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 76f9b4e243af908e5d00ba8b812dfd143104fe65
+ms.sourcegitcommit: 69d9a61ba479f707d96eb4c1c56a4b05a2a2a26f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137782"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87426846"
 ---
-# <a name="xamarinforms-shell-custom-renderers"></a>Xamarin.Forms Shell 自定义呈现器
+# <a name="no-locxamarinforms-shell-custom-renderers"></a>Xamarin.Forms Shell 自定义呈现器
 
 Xamarin.Forms Shell 应用程序的优势之一是可通过各种 Shell 类公开的属性和方法对其外观和行为进行高度自定义。 不过，在需要更为复杂的平台特定的自定义时，也可创建 Shell 自定义呈现器。 与其他自定义呈现器一样，可以将 Shell 自定义呈现器添加到一个平台项目以自定义外观和行为，同时允许其他平台上的默认行为；或者可将其他 Shell 自定义呈现器添加到各个平台项目以自定义 iOS 和 Android 上的外观和行为。
 
@@ -42,14 +42,14 @@ Xamarin.Forms Shell 应用程序的优势之一是可通过各种 Shell 类公�
 
 `ShellRenderer` 类公开下列可重写的方法：
 
-| iOS | Android |
-| --- | --- |
-| `SetElementSize`<br />`CreateFlyoutRenderer`<br />`CreateNavBarAppearanceTracker`<br />`CreatePageRendererTracker`<br />`CreateShellFlyoutContentRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellItemTransition`<br />`CreateShellSearchResultsRenderer`<br />`CreateShellSectionRenderer`<br />`CreateTabBarAppearanceTracker`<br />`Dispose`<br />`OnCurrentItemChanged`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`UpdateBackgroundColor` | `CreateFragmentForPage`<br />`CreateShellFlyoutContentRenderer`<br />`CreateShellFlyoutRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellSectionRenderer`<br />`CreateTrackerForToolbar`<br />`CreateToolbarAppearanceTracker`<br />`CreateTabLayoutAppearanceTracker`<br />`CreateBottomNavViewAppearanceTracker`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`SwitchFragment`<br />`Dispose` |
+| iOS | Android | UWP |
+| --- | --- | --- |
+| `SetElementSize`<br />`CreateFlyoutRenderer`<br />`CreateNavBarAppearanceTracker`<br />`CreatePageRendererTracker`<br />`CreateShellFlyoutContentRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellItemTransition`<br />`CreateShellSearchResultsRenderer`<br />`CreateShellSectionRenderer`<br />`CreateTabBarAppearanceTracker`<br />`Dispose`<br />`OnCurrentItemChanged`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`UpdateBackgroundColor` | `CreateFragmentForPage`<br />`CreateShellFlyoutContentRenderer`<br />`CreateShellFlyoutRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellSectionRenderer`<br />`CreateTrackerForToolbar`<br />`CreateToolbarAppearanceTracker`<br />`CreateTabLayoutAppearanceTracker`<br />`CreateBottomNavViewAppearanceTracker`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`SwitchFragment`<br />`Dispose` | `CreateShellFlyoutTemplateSelector`<br />`CreateShellHeaderRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellSectionRenderer`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`UpdateFlyoutBackdropColor`<br />`UpdateFlyoutBackgroundColor` |
 
 `FlyoutItem` 和 `TabBar` 类是 `ShellItem` 类的别名，而 `Tab` 类是 `ShellSection` 类的别名。 因此，在为 `FlyoutItem` 对象创建自定义呈现器时应重写 `CreateShellItemRenderer` 方法，在为 `Tab` 对象创建自定义呈现器时应重写 `CreateShellSectionRenderer` 方法。
 
 > [!IMPORTANT]
-> iOS 和 Android 上都包含其他 Shell 呈现器类，如 `ShellSectionRenderer` 和 `ShellItemRenderer`。 但这些其他呈现器类由 `ShellRenderer` 类的重写创建而成。 因此，可以创建这些其他呈现器类的子类，并在子类 `ShellRenderer` 类的相应重写中创建该子类的实例，以此方式来自定义这些呈现器类的行为。
+> iOS、Android 和 UWP 上都包含其他 Shell 呈现器类，如 `ShellSectionRenderer` 和 `ShellItemRenderer`。 但这些其他呈现器类由 `ShellRenderer` 类的重写创建而成。 因此，可以创建这些其他呈现器类的子类，并在子类 `ShellRenderer` 类的相应重写中创建该子类的实例，以此方式来自定义这些呈现器类的行为。
 
 ### <a name="ios-example"></a>iOS 示例
 
