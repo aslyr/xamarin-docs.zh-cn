@@ -289,6 +289,8 @@ items:
             href: app-fundamentals/gestures/pan.md
           - name: 轻扫
             href: app-fundamentals/gestures/swipe.md
+          - name: 拖放
+            href: app-fundamentals/gestures/drag-and-drop.md
       - name: 本地通知
         href: app-fundamentals/local-notifications.md
       - name: 本地化
@@ -546,6 +548,20 @@ items:
                 href: user-interface/animation/easing.md
               - name: 自定义动画
                 href: user-interface/animation/custom.md
+          - name: 画笔
+            items:
+              - name: 概述
+                href: user-interface/brushes/index.md
+              - name: 纯色
+                href: user-interface/brushes/solidcolor.md
+              - name: 渐变
+                items:
+                  - name: 概述
+                    href: user-interface/brushes/gradient.md
+                  - name: 线性渐变
+                    href: user-interface/brushes/lineargradient.md
+                  - name: 径向渐变
+                    href: user-interface/brushes/radialgradient.md
           - name: 颜色
             href: user-interface/colors.md
           - name: DataPages
