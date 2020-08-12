@@ -10,22 +10,22 @@ ms.date: 08/21/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 16a48423d05ce1cede75c0020bf18f4f398f5adc
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 9a097d6dad067f209d3aad27bde382f28910324a
+ms.sourcegitcommit: c3329ab25d377907d8804cdd5e26dc84a274f39c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138497"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88130924"
 ---
-# <a name="choose-a-xamarinforms-layout"></a>选择 Xamarin.Forms 布局
+# <a name="choose-a-no-locxamarinforms-layout"></a>选择 Xamarin.Forms 布局
 
-[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
 Xamarin.Forms布局类使你能够在应用程序中排列和分组 UI 控件。 选择布局类需要了解布局是如何定位其子元素的，以及布局如何调整其子元素的大小。 此外，可能还需要嵌套布局以创建所需的布局。
 
 下图显示了可通过主布局类实现的典型布局 Xamarin.Forms ：
 
-[![中的主要布局类Xamarin.Forms](images/layouts.png "[!基金.非 LOC （Xamarin）] 布局类")](images/layouts-large.png#lightbox "[!基金.非 LOC （Xamarin）] 布局类")
+[![主布局类：：： no (Xamarin) ：：：](images/layouts.png "：： no (Xamarin) ：：： layout 类")](images/layouts-large.png#lightbox "：： no (Xamarin) ：：： layout 类")
 
 ## <a name="stacklayout"></a>StackLayout
 
@@ -151,7 +151,7 @@ Xamarin.Forms布局类使你能够在应用程序中排列和分组 UI 控件。
 
 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)用于相对于布局或同级元素的属性来定位元素和调整其大小。 默认情况下，元素位于布局的左上角。 `RelativeLayout`可用于创建跨设备大小按比例缩放的 ui。
 
-在中 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) ，位置和大小指定为 "约束"。 约束具有 [`Factor`](xref:Xamarin.Forms.ConstraintExpression.Factor) 和 [`Constant`](xref:Xamarin.Forms.ConstraintExpression.Constant) 属性，这些属性可用于将位置和大小定义为其他对象的多个属性（或小数）和一个常数。 此外，常量可以为负数。
+在中 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) ，位置和大小指定为 "约束"。 约束具有 [`Factor`](xref:Xamarin.Forms.ConstraintExpression.Factor) 和 [`Constant`](xref:Xamarin.Forms.ConstraintExpression.Constant) 属性，这些属性可用于将位置和大小定义为多个 (或小数) 其他对象属性和一个常数。 此外，常量可以为负数。
 
 > [!NOTE]
 > [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)支持将元素放在其自身的边界之外。
@@ -234,7 +234,7 @@ Xamarin.Forms布局类使你能够在应用程序中排列和分组 UI 控件。
 > [!CAUTION]
 > 请尽可能避免使用 [`AbsoluteLayout.AutoSize`](xref:Xamarin.Forms.AbsoluteLayout.AutoSize) 属性，因为这会导致布局引擎执行其他布局计算。
 
-有关详细信息，请参阅[ Xamarin.Forms AbsoluteLayout](absolute-layout.md)。
+有关详细信息，请参阅[ Xamarin.Forms AbsoluteLayout](absolutelayout.md)。
 
 ## <a name="input-transparency"></a>输入透明度
 
@@ -250,12 +250,12 @@ Xamarin.Forms布局类使你能够在应用程序中排列和分组 UI 控件。
 
 ## <a name="related-links"></a>相关链接
 
-- [布局（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
-- [Xamarin.Forms布局（视频）](https://youtu.be/4HlLjTZQzjM)
+- [布局 (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [Xamarin.Forms (视频的布局) ](https://youtu.be/4HlLjTZQzjM)
 - [Xamarin.FormsStackLayout](stacklayout.md)
 - [Xamarin.Forms格](grid.md)
 - [Xamarin.FormsFlexLayout](flex-layout.md)
-- [Xamarin.FormsAbsoluteLayout](absolute-layout.md)
+- [Xamarin.FormsAbsoluteLayout](absolutelayout.md)
 - [Xamarin.FormsRelativeLayout](relative-layout.md)
 - [优化布局性能](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)
 - [布局压缩](layout-compression.md)
