@@ -10,12 +10,12 @@ ms.date: 08/21/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9a097d6dad067f209d3aad27bde382f28910324a
-ms.sourcegitcommit: c3329ab25d377907d8804cdd5e26dc84a274f39c
+ms.openlocfilehash: 38b44bbb8f01f090d286bb2203014455a32a2290
+ms.sourcegitcommit: 808ff109928a1eea16e17e23ea81f8c903a239e8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88130924"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88181480"
 ---
 # <a name="choose-a-no-locxamarinforms-layout"></a>选择 Xamarin.Forms 布局
 
@@ -78,7 +78,7 @@ Xamarin.Forms布局类使你能够在应用程序中排列和分组 UI 控件。
 
 有关详细信息，请参阅[ Xamarin.Forms StackLayout](stacklayout.md)。
 
-## <a name="grid"></a>Grid
+## <a name="grid"></a>网格
 
 [`Grid`](xref:Xamarin.Forms.Grid)用于显示行和列中的元素，这些元素的大小可以是比例的也可以是绝对的。 网格的行和列使用 [`RowDefinitions`](xref:Xamarin.Forms.Grid.RowDefinitions) 和 [`ColumnDefinitions`](xref:Xamarin.Forms.Grid.ColumnDefinitions) 属性指定。
 
@@ -194,7 +194,7 @@ Xamarin.Forms布局类使你能够在应用程序中排列和分组 UI 控件。
 > [!WARNING]
 > 尽可能避免使用 `RelativeLayout`。 它会导致 CPU 不得不执行显著更多的工作。
 
-有关详细信息，请参阅[ Xamarin.Forms RelativeLayout](relative-layout.md)。
+有关详细信息，请参阅[ Xamarin.Forms RelativeLayout](relativelayout.md)。
 
 ## <a name="absolutelayout"></a>AbsoluteLayout
 
@@ -256,6 +256,6 @@ Xamarin.Forms布局类使你能够在应用程序中排列和分组 UI 控件。
 - [Xamarin.Forms格](grid.md)
 - [Xamarin.FormsFlexLayout](flex-layout.md)
 - [Xamarin.FormsAbsoluteLayout](absolutelayout.md)
-- [Xamarin.FormsRelativeLayout](relative-layout.md)
+- [Xamarin.FormsRelativeLayout](relativelayout.md)
 - [优化布局性能](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)
 - [布局压缩](layout-compression.md)

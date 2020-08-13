@@ -10,16 +10,16 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4f7fdc0bb18a49e601c00ce1e3eb13371bb80be3
-ms.sourcegitcommit: 3698b35c823225a74892a47139d19e8ae8e6d9ed
+ms.openlocfilehash: 734dea456af56f4103691e0368ae72202bce9556
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87113824"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918239"
 ---
 # <a name="no-locxamarinforms-twopaneview-layout"></a>Xamarin.Forms TwoPaneView 布局
 
-![预发行版 API](~/media/shared/preview.png "此 API 当前为预发布版本")
+![预发行版 API](~/media/shared/preview.png)
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
@@ -33,7 +33,7 @@ ms.locfileid: "87113824"
 1. 使用以下 XAML 从基本的 `TwoPaneView` 开始操作：
 
     ```xaml
-    <ContentPage 
+    <ContentPage
         xmlns:dualScreen="clr-namespace:Xamarin.Forms.DualScreen;assembly=Xamarin.Forms.DualScreen">
         <dualScreen:TwoPaneView>
             <dualScreen:TwoPaneView.Pane1>

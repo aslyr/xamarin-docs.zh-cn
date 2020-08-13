@@ -11,14 +11,14 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 - Firebase
-ms.openlocfilehash: 5f7b83c1fc907de790b382aabde0c5a957e5a8bb
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5fd657a3d55bd26b95e79e39540dcfe5b8bce08f
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84565416"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918589"
 ---
-# <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>使用 Azure 通知中心和 Xamarin.Forms 收发推送通知
+# <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-no-locxamarinforms"></a>使用 Azure 通知中心和 Xamarin.Forms 收发推送通知
 
 [![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurenotificationhub/)
 
@@ -77,7 +77,7 @@ Azure 通知中心要求移动应用程序向中心注册、定义模板并订�
 
 [为 Android 应用程序配置通知](#configure-the-android-application-for-notifications)和[为 iOS 配置通知](#configure-ios-for-notifications)部分进一步详细说明了每个平台的操作步骤。
 
-## <a name="xamarinforms-application-functionality"></a>Xamarin.Forms 应用程序功能
+## <a name="no-locxamarinforms-application-functionality"></a>Xamarin.Forms 应用程序功能
 
 示例 Xamarin.Forms 应用程序显示了一系列推送通知消息。 这通过 `AddMessage` 方法来实现，此方法将指定的推送通知消息添加到 UI。 此方法还可防止将重复的消息添加到 UI，并且它在主线程上运行，确保可从任何线程调用。 下面的代码演示了 `AddMessage` 方法：
 
@@ -169,7 +169,7 @@ public static class AppConstants
 </manifest>
 ```
 
-### <a name="override-firebasemessagingservice-to-handle-messages"></a>重写 `FirebaseMessagingService` 以处理消息
+### <a name="override-no-locfirebasemessagingservice-to-handle-messages"></a>重写 `FirebaseMessagingService` 以处理消息
 
 要向 Firebase 注册并处理消息，请将 `FirebaseMessagingService` 类声明为子类。 示例应用程序定义了一个 `FirebaseService` 类，其子类为 `FirebaseMessagingService`。 此类用 `IntentFilter` 属性标记，其中包括 `com.google.firebase.MESSAGING_EVENT` 筛选器。 此筛选器允许 Android 将传入消息传递给此类进行处理：
 
@@ -281,7 +281,7 @@ void SendMessageToMainPage(string body)
 > [!NOTE]
 > Android 应用程序只有在后台或前台运行时才会收到推送通知。 要在主 `Activity` 未运行时收到推送通知，必须实现服务，这不在本示例的范围之内。 有关详细信息，请参阅[创建 Android 服务](/xamarin/android/app-fundamentals/services/)
 
-### <a name="add-incoming-notifications-to-the-xamarinforms-ui"></a>将传入通知添加到 Xamarin.Forms UI
+### <a name="add-incoming-notifications-to-the-no-locxamarinforms-ui"></a>将传入通知添加到 Xamarin.Forms UI
 
 `MainActivity` 类需要获取处理通知和管理传入消息数据的权限。 以下代码演示了完整的 `MainActivity` 实现：
 
@@ -471,9 +471,9 @@ public override void RegisteredForRemoteNotifications(UIApplication application,
 ```
 
 > [!NOTE]
-> 在某些情况下（例如没有网络连接），注册远程通知可能会失败。 你可以选择重写 `FailedToRegisterForRemoveNotifications` 方法来处理注册失败。
+> 在某些情况下（例如没有网络连接），注册远程通知可能会失败。 你可以选择重写 `FailedToRegisterForRemoteNotifications` 方法来处理注册失败。
 
-### <a name="add-apns-notifications-to-xamarinforms-ui"></a>将 APNS 通知添加到 Xamarin.Forms UI
+### <a name="add-apns-notifications-to-no-locxamarinforms-ui"></a>将 APNS 通知添加到 Xamarin.Forms UI
 
 当设备收到远程通知时，iOS 会调用 `ReceivedRemoteNotification` 方法。 传入消息 JSON 会转换为 `NSDictionary` 对象，而 `ProcessNotification` 方法将从字典中提取值并将这些值发送到 Xamarin.Forms `MainPage` 实例。 重写 `ReceivedRemoteNotifications` 方法以调用 `ProcessNotification`，如以下代码所示：
 
