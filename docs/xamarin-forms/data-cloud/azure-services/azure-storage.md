@@ -10,14 +10,14 @@ ms.date: 12/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f67543a6c678e2c3a1395f816e020d69af4bf873
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d7b97f21e5184a445cfac85dc06a7da0e1a6a4c5
+ms.sourcegitcommit: f7fe46c0236a7130b63a33d9d1670d5111582dd2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936651"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88186208"
 ---
-# <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>在 Azure 存储中存储和访问数据Xamarin.Forms
+# <a name="store-and-access-data-in-azure-storage-from-no-locxamarinforms"></a>在 Azure 存储中存储和访问数据Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 
@@ -96,7 +96,7 @@ Azure 存储模拟器提供了一个模拟 Azure blob、队列和表服务以进
 UseDevelopmentStorage=true
 ```
 
-有关 Azure 存储模拟器的详细信息，请参阅[使用 Azure 存储模拟器进行开发和测试](https://azure.microsoft.com/documentation/articles/storage-use-emulator/)。
+有关 Azure 存储模拟器的详细信息，请参阅[使用 azure 存储模拟器进行开发和测试](https://azure.microsoft.com/documentation/articles/storage-use-emulator/)。
 
 ### <a name="connecting-to-azure-storage-using-a-shared-key"></a>使用共享密钥连接到 Azure 存储
 
@@ -122,7 +122,7 @@ DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAcc
 > [!NOTE]
 > 对于生产应用程序，建议使用 SAS 身份验证。 但是，在生产应用程序中，应根据需要从后端服务检索 SAS，而不是将其与应用程序捆绑在一起。
 
-有关共享访问签名的详细信息，请参阅[使用共享访问签名（SAS）](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
+有关共享访问签名的详细信息，请参阅[使用共享访问签名 (SAS) ](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
 
 ## <a name="creating-a-container"></a>创建容器
 
@@ -264,8 +264,8 @@ public static async Task<bool> DeleteFileAsync(ContainerType containerType, stri
 
 ## <a name="related-links"></a>相关链接
 
-- [Azure 存储（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
+- [Azure 存储 (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 - [存储简介](https://azure.microsoft.com/documentation/articles/storage-introduction/)
 - [如何通过 Xamarin 使用 Blob 存储](https://azure.microsoft.com/documentation/articles/storage-xamarin-blob-storage/)
 - [使用共享访问签名 (SAS)](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
-- [Windows Azure 存储（NuGet）](https://www.nuget.org/packages/WindowsAzure.Storage/)
+- [Windows Azure 存储 (NuGet) ](https://www.nuget.org/packages/WindowsAzure.Storage/)

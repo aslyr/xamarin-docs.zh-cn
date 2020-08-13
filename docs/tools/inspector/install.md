@@ -6,12 +6,12 @@ ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: 39e7a6c86a2d4ab4231a29c0e1014de702af01ac
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1545af984c0a409244c323048b448ec44e9be6a8
+ms.sourcegitcommit: f7fe46c0236a7130b63a33d9d1670d5111582dd2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573412"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88186182"
 ---
 # <a name="inspector-installation-and-requirements"></a>检查器安装和要求
 
@@ -33,10 +33,10 @@ ms.locfileid: "84573412"
 
 ## <a name="requirements"></a>要求
 
-### <a name="supported-operating-systems"></a>Supported Operating Systems
+### <a name="supported-operating-systems"></a>受支持的操作系统
 
 - **Mac** -OS X 10.11 或更高版本
-- **Windows** -windows 7 或更高版本（包含 Internet Explorer 11 或更高版本以及 .net 4.6.1 或更高版本）
+- **Windows** -windows 7 或更高版本 (与 Internet Explorer 11 或更高版本以及 .net 4.6.1 或更高版本) 
 
 ### <a name="supported-ides"></a>支持的 Ide
 
@@ -49,10 +49,10 @@ Live app 检查适用于企业客户。
 
 ### <a name="supported-app-platforms"></a>支持的应用平台
 
-|应用平台|IDE 支持|说明|
+|应用平台|IDE 支持|备注|
 |--- |--- |--- |
 |Mac|仅 Visual Studio for Mac 中支持|
-|iOS|在 Visual Studio 2017 和 Visual Studio for Mac 中受支持| 链接器行为必须设置为 "**不链接**" （在 " **iOS 生成**项目选项" 下） |
+|iOS|在 Visual Studio 2017 和 Visual Studio for Mac 中受支持| 链接器行为必须设置为 "在**IOS 生成**项目选项下[**不链接**](~/ios/deploy-test/linker.md) ()  |
 |Android|在 Visual Studio 2017 和 Visual Studio for Mac 中受支持|必须针对 Android >= 4.0.3，并启用**fastdev** 。<br />必须使用 Google、Visual Studio 或 Xamarin Android 仿真程序。 Android 7 仿真程序此时可能不允许检查。|
 |WPF|仅在 Visual Studio 2017 中受支持|
 
@@ -89,7 +89,7 @@ Visual Studio
 - Mac：`~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
 - Windows： `%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
 
-1.4. x 还可以直接从主菜单中选择查找器（macOS）或资源管理器（Windows）中的日志文件：
+1.4. x 还可以直接从主菜单中选择查找器中的日志文件 (macOS) 或资源管理器 (Windows) ：
 
 - **帮助 > 显示日志文件**
 
@@ -117,6 +117,6 @@ Visual Studio
 - Android：验证你是否正在使用 x86 模拟器
 - Android：你使用什么模拟器平台？ Google 模拟器？ Visual Studio Android Emulator？ Xamarin Android Player？
 - 您正在调试的应用程序是否出现并在设备中运行？
-- 设备是否具有网络连接（通过 web 浏览器检查）？
+- 设备是否 (通过 web 浏览器) 检查是否有网络连接？
 
 [client-bugs]: https://github.com/Microsoft/workbooks/issues/new

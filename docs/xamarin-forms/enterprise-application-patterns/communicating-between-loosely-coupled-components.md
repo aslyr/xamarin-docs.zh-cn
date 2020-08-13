@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0a43ce2d27c8152137101d616302f6e56a57bd39
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: bf0315d2d077e06ff3ded4d66814afe050fdfad4
+ms.sourcegitcommit: f7fe46c0236a7130b63a33d9d1670d5111582dd2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931971"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88186195"
 ---
 # <a name="communicating-between-loosely-coupled-components"></a>松散耦合组件之间的通信
 
@@ -58,7 +58,7 @@ EShopOnContainers 移动应用使用类在 [`MessagingCenter`](xref:Xamarin.Form
 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)消息是用于标识消息的字符串。 下面的代码示例显示在 eShopOnContainers 移动应用中定义的消息：
 
 ```csharp
-public class MessengerKeys  
+public class MessageKeys  
 {  
     // Add product to basket  
     public const string AddProduct = "AddProduct";  
@@ -78,7 +78,7 @@ public class MessengerKeys
 发布方通过一种 [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*) 重载通知订阅方查看消息。 下面的代码示例演示如何发布 `AddProduct` 消息：
 
 ```csharp
-MessagingCenter.Send(this, MessengerKeys.AddProduct, catalogItem);
+MessagingCenter.Send(this, MessageKeys.AddProduct, catalogItem);
 ```
 
 在此示例中，该 [`Send`](xref:Xamarin.Forms.MessagingCenter.Send*) 方法指定了三个参数：
@@ -118,16 +118,16 @@ MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(
 订阅者可以取消订阅他们不想再收到的消息。 这是通过重载之一实现的 [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) ，如下面的代码示例所示：
 
 ```csharp
-MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessengerKeys.AddProduct);
+MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessageKeys.AddProduct);
 ```
 
 在此示例中， [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) 方法语法反映了在订阅接收消息时指定的类型参数 `AddProduct` 。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 类可实现发布-订阅模式，允许不便按对象和类型引用进行链接的组件之间进行基于消息的通信。 此机制使发布服务器和订阅服务器无需彼此引用即可进行通信，有助于减少组件之间的依赖关系，同时允许单独开发和测试组件。
 
 ## <a name="related-links"></a>相关链接
 
-- [下载电子书（2Mb）](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers （GitHub）（示例）](https://github.com/dotnet-architecture/eShopOnContainers)
+- [下载电子书 (2Mb PDF) ](https://aka.ms/xamarinpatternsebook)
+- [eShopOnContainers (GitHub)  (示例) ](https://github.com/dotnet-architecture/eShopOnContainers)
