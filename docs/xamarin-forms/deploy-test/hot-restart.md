@@ -10,12 +10,12 @@ ms.date: 03/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5367d7933e70c59298faacff85c1d5f533bc0776
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3240906cdf964bcf798137e640a82dbd1e2341d9
+ms.sourcegitcommit: a662910a6ba14d241e01047739eb1cd87aa7d884
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929276"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88029716"
 ---
 # <a name="xamarin-hot-restart-preview"></a>Xamarin 热重启（预览版）
 
@@ -73,6 +73,7 @@ Xamarin 热重启使你可以在开发过程中快速测试对应用进行的更
 - 不支持情节提要和 XIB 文件，如果应用尝试在运行时加载这些文件，则应用可能会崩溃。 使用 `HOTRESTART` 预处理器符号可防止执行此代码。
 - 不支持静态 iOS 库和框架，如果应用尝试加载它们，则可能会看到运行时错误或崩溃。 使用 `HOTRESTART` 预处理器符号可防止执行此代码。 支持动态 iOS 库。
 - 无法使用 Xamarin 热重启创建应用捆绑包进行发布。 仍需要 Mac 计算机进行完整编译、签名和部署，以便将应用程序投入生产。
+- 暂不支持资产目录。 如果使用的是热重启，你的应用会显示 Xamarin 应用的默认图标和启动屏幕。 当与 Mac 配对或在 Mac 上开发时，资产目录将起作用。
 
 ## <a name="troubleshoot"></a>疑难解答
 

@@ -1,5 +1,5 @@
 ---
-title: 添加捏合手势识别器
+title: 添加收缩手势识别器
 description: 本文介绍如何使用捏合手势在捏合位置对图像进行交互式缩放。
 ms.prod: xamarin
 ms.assetid: 832F7810-F0CF-441A-B04A-3975F3FB8B29
@@ -10,14 +10,14 @@ ms.date: 01/21/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: da4a8bc66a7986efd3683de6dce1f6af618b85cc
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a3405e3bff1b500bcf0f7fab6bea1a888f2d4604
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137847"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918286"
 ---
-# <a name="adding-a-pinch-gesture-recognizer"></a>添加捏合手势识别器
+# <a name="add-a-pinch-gesture-recognizer"></a>添加收缩手势识别器
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pinchgesture)
 

@@ -6,18 +6,18 @@ ms.assetid: F8F9471D-6771-4D23-96C0-2B79473A06D4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/18/2019
+ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cc5e0c4cb8b474a1b7e23b476b0c5125eb2ba298
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 00dfec5b48507c83f43d0622c11770ecec304ea6
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138081"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917547"
 ---
-# <a name="xamarinforms-shell-search"></a>Xamarin.Forms Shell 搜索
+# <a name="no-locxamarinforms-shell-search"></a>Xamarin.Forms Shell 搜索
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
@@ -224,6 +224,7 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 - `HorizontalTextAlignment`，属于 `TextAlignment` 类型，是搜索框文本的水平对齐方式。
 - `PlaceholderColor`，属于 `Color` 类型，是搜索框文本的占位符颜色。
 - `TextColor`，属于 `Color` 类型，是搜索框文本的颜色。
+- `TextTransform`：类型为 `TextTransform`，确定搜索框文本的大小写。
 - `VerticalTextAlignment`，属于 `TextAlignment` 类型，是搜索框文本的垂直对齐方式。
 
 ## <a name="searchhandler-keyboard"></a>SearchHandler 键盘
@@ -320,6 +321,7 @@ searchHandler.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFla
 - `SelectedItem`，属于 `object` 类型，是从搜索结果选定的项。 此属性为只读属性，其默认值为 `null`。
 - `ShowsResults`，属于 `bool` 类型，用于指示输入文本后建议区是否应显示搜索结果。 默认值为 `false`。
 - `TextColor`，属于 `Color` 类型，是搜索框文本的颜色。
+- `TextTransform`：类型为 `TextTransform`，确定搜索框文本的大小写。
 
 所有这些属性都由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象提供支持，这意味着这些属性可以作为数据绑定的目标。
 

@@ -6,18 +6,18 @@ ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/10/2020
+ms.date: 07/30/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1a1d47b2b37fa532b3e2a64ada5f367e612f557d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 821eafab6896d8771ba38332a43c0cbc319797a7
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946255"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917843"
 ---
-# <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms Shell 浮出控件
+# <a name="no-locxamarinforms-shell-flyout"></a>Xamarin.Forms Shell 浮出控件
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
@@ -234,6 +234,7 @@ Shell 具有隐式转换运算符，可以简化 Shell 的视觉层次结构，�
 - `IsChecked`，属于 `boolean` 类型，定义项当前是否在浮出控件中突出显示。
 - `IsEnabled`，属于 `boolean` 类型，定义项是否可在 chrome 中选择。
 - `IsTabStop`，属于 `bool` 类型，指示 `FlyoutItem` 是否包含在 Tab 导航中。 其默认值是 `true`，当它的值是 `false` 时，Tab 导航基础设施将忽略 `FlyoutItem`，而不管是否设置了 `TabIndex`。
+- `IsVisible`：类型为 `bool`，指明 `FlyoutItem` 是否隐藏在浮出控件菜单中。 默认值为 `true`。
 - `TabIndex`，属于 `int` 类型，指示当用户通过按 Tab 键导航项时 `FlyoutItem` 对象接收焦点的顺序。 此属性的默认值为 0。
 - `Title`，属于 `string` 类型，表示在 UI 中显示的标题。
 - `Route`属于 `string` 类型，表示用于对项进行寻址的字符串。
@@ -249,6 +250,46 @@ Shell 具有隐式转换运算符，可以简化 Shell 的视觉层次结构，�
 - 只要 `IsTabStop` 属性更改就会调用 `OnTabStopPropertyChanged`。
 - `TabIndexDefaultValueCreator` 返回 `int`，并调用它以设置 `TabIndex` 属性的默认值。
 - `TabStopDefaultValueCreator` 返回 `bool`，并调用它以设置 `TabStop` 属性的默认值。
+
+## <a name="flyout-backdrop"></a>浮出控件背景
+
+通过将 `Shell.FlyoutBackdrop` 附加属性设置为 `Brush`，可以指定浮出控件的背景（即浮出控件叠加层的外观）：
+
+```xaml
+<Shell ...
+       FlyoutBackdrop="Silver">
+    ...
+</Shell>
+```
+
+在此示例中，浮出控件背景是用银色 `SolidColorBrush` 绘制的。
+
+> [!IMPORTANT]
+> `FlyoutBackdrop` 附加属性可以在任何 Shell 元素上设置，但只有在 `Shell`、 `FlyoutItem` 或 `TabBar` 对象上设置时才会应用。
+
+下面的示例展示了如何将 `FlyoutItem` 上的浮出控件背景设置为 `LinearGradientBrush`：
+
+```xaml
+<Shell ...>
+    <FlyoutItem ...>
+      <Shell.FlyoutBackdrop>
+          <LinearGradientBrush StartPoint="0,0"
+                               EndPoint="1,1">
+              <GradientStop Color="#8A2387"
+                            Offset="0.1" />
+              <GradientStop Color="#E94057"
+                            Offset="0.6" />
+              <GradientStop Color="#F27121"
+                            Offset="1.0" />
+          </LinearGradientBrush>
+      </Shell.FlyoutBackdrop>
+      ...
+    </FlyoutItem>
+    ...
+</Shell>
+```
+
+若要详细了解画笔，请参阅 [Xamarin.Forms 画笔](~/xamarin-forms/user-interface/brushes/index.md)。
 
 ## <a name="flyout-vertical-scroll"></a>浮出控件垂直滚动
 
@@ -652,3 +693,4 @@ Shell 包括三个可自动应用于 `FlyoutItem` 和 `MenuItem` 对象的样式
 - [Xaminals（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 - [Xamarin.Forms 样式类](~/xamarin-forms/user-interface/styles/xaml/style-class.md)
 - [Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.Forms 画笔](~/xamarin-forms/user-interface/brushes/index.md)

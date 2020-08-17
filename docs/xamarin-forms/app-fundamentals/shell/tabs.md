@@ -10,12 +10,12 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7c4ed503e0379c2c7f235bd91621a031bd660c85
-ms.sourcegitcommit: 69d9a61ba479f707d96eb4c1c56a4b05a2a2a26f
+ms.openlocfilehash: 9ecdc3aca3264b52163d35e29659f434f521147f
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87426885"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918612"
 ---
 # <a name="no-locxamarinforms-shell-tabs"></a>Xamarin.Forms Shell 选项卡
 
@@ -184,6 +184,7 @@ Shell 具有隐式转换运算符，可以简化 Shell 的视觉层次结构，�
 - `Icon`，属于 `ImageSource` 类型，定义要在 chrome 的非浮出控件部分显示的图标。
 - `IsChecked`，属于 `boolean` 类型，定义项当前是否在浮出控件中突出显示。
 - `IsEnabled`，属于 `boolean` 类型，定义项是否可在 chrome 中选择。
+- `IsVisible`：类型为 `bool`，指明 `ShellContent` 是否对所有 UI 结构都是隐藏的。 默认值为 `true`。
 - `MenuItems`，属于 `MenuItemCollection` 类型，表示当此 `ShellContent` 为呈现页面时，要在浮出控件中显示的菜单项。
 - `Title`，属于 `string` 类型，表示在 UI 中显示的标题。
 
