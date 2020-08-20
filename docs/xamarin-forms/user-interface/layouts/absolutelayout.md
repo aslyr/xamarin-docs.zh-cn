@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsAbsoluteLayout
+title: Xamarin.Forms AbsoluteLayout
 description: Xamarin.FormsAbsoluteLayout 用于使用显式值或与布局大小成正比的值来对元素进行定位和调整大小。
 ms.prod: xamarin
 ms.assetid: 01A5CCE0-AD45-4806-84FD-72C007005B38
@@ -7,19 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2020
+ms.custom: contperfq1
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a6efa4615f0061c83243f2d00d2d141a51607301
-ms.sourcegitcommit: 808ff109928a1eea16e17e23ea81f8c903a239e8
+ms.openlocfilehash: 3fa88976c49d3ccb89b74a0ce40de0583fa20795
+ms.sourcegitcommit: 9bd6b1b20d126b3f837c4cf859b25895c242e54e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88181493"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88648156"
 ---
-# <a name="no-locxamarinforms-absolutelayout"></a>Xamarin.FormsAbsoluteLayout
+# <a name="no-locxamarinforms-absolutelayout"></a>Xamarin.Forms AbsoluteLayout
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-absolutelayoutdemos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-absolutelayoutdemos)
 
 [![：： no (Xamarin。 Forms) ：：： AbsoluteLayout](absolutelayout-images/layouts.png)](absolutelayout-images/layouts-large.png#lightbox)
 
@@ -37,11 +38,11 @@ ms.locfileid: "88181493"
 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)类派生自 `Layout<T>` 类，该类定义 `Children` 类型的属性 `IList<T>` 。 `Children`属性是类的 `ContentProperty` `Layout<T>` ，因此无需从 XAML 显式设置。
 
 > [!TIP]
-> 若要获得最佳布局性能，请遵循[优化布局性能](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)中的准则。
+> 若要获得最佳布局性能，请遵循 [优化布局性能](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)中的准则。
 
 ## <a name="position-and-size-children"></a>位置和大小子项
 
-[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)通过 [`AbsoluteLayout.LayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty) 使用绝对值或成比例值设置每个子元素的附加属性，来定义中子元素的位置和大小。 当位置应为 "缩放" 时，"绝对" 和 "比例" 值可以混合，但大小应保持固定，反之亦然。 有关绝对值的信息，请参阅[绝对定位和调整大小](#absolute-positioning-and-sizing)。 有关比例值的信息，请参阅按[比例定位和调整大小](#proportional-positioning-and-sizing)。
+[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)通过 [`AbsoluteLayout.LayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty) 使用绝对值或成比例值设置每个子元素的附加属性，来定义中子元素的位置和大小。 当位置应为 "缩放" 时，"绝对" 和 "比例" 值可以混合，但大小应保持固定，反之亦然。 有关绝对值的信息，请参阅 [绝对定位和调整大小](#absolute-positioning-and-sizing)。 有关比例值的信息，请参阅按 [比例定位和调整大小](#proportional-positioning-and-sizing)。
 
 [`AbsoluteLayout.LayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty)无论使用的是绝对值还是按比例值，都可以使用两种格式设置附加的属性：
 
@@ -236,6 +237,6 @@ public class ProportionalDemoPageCS : ContentPage
 ## <a name="related-links"></a>相关链接
 
 - [AbsoluteLayout 演示 (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-absolutelayoutdemos)
-- [Xamarin.Forms附加属性](~/xamarin-forms/xaml/attached-properties.md)
+- [Xamarin.Forms 附加属性](~/xamarin-forms/xaml/attached-properties.md)
 - [选择 Xamarin.Forms 布局](choose-layout.md)
 - [提高 Xamarin.Forms 应用程序性能](~/xamarin-forms/deploy-test/performance.md)

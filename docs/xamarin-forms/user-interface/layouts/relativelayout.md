@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsRelativeLayout
+title: Xamarin.Forms RelativeLayout
 description: Xamarin.FormsRelativeLayout 使用相对于布局或同级元素属性的位置和大小子级。
 ms.prod: xamarin
 ms.assetid: 2530BCB8-01B8-4C4F-BF14-CA53659F1B5A
@@ -7,19 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/13/2020
+ms.custom: contperfq1
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b23da34239d99faa64578bd30c5a3e969cf4b289
-ms.sourcegitcommit: 808ff109928a1eea16e17e23ea81f8c903a239e8
+ms.openlocfilehash: 77b1837fb58d5743fd887b9f636f7f7311b807d3
+ms.sourcegitcommit: 9bd6b1b20d126b3f837c4cf859b25895c242e54e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88181804"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88648169"
 ---
-# <a name="no-locxamarinforms-relativelayout"></a>Xamarin.FormsRelativeLayout
+# <a name="no-locxamarinforms-relativelayout"></a>Xamarin.Forms RelativeLayout
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-relativelayoutdemos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-relativelayoutdemos)
 
 [![：： no (Xamarin。 Forms) ：：： RelativeLayout](relativelayout-images/layouts.png)](relativelayout-images/layouts-large.png#lightbox)
 
@@ -54,7 +55,7 @@ ms.locfileid: "88181804"
 | **绝对值** | 绝对约束通过将 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) 附加属性设置为值来指定 `double` 。 | 绝对约束由 [`Constraint.Constant`](xref:Xamarin.Forms.Constraint.Constant*) 方法指定，或通过使用 `Children.Add` 需要自变量的重载来指定 `Func<Rectangle>` 。 |
 | **相对值** | 相对约束通过将 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) 附加属性设置为 [`Constraint`](xref:Xamarin.Forms.Constraint) 标记扩展返回的对象来指定 `ConstraintExpression` 。 | 相对约束由类的 [`Constraint`](xref:Xamarin.Forms.Constraint) 方法返回的对象指定 `Constraint` 。 |
 
-有关使用绝对值指定约束的详细信息，请参阅[绝对定位和调整大小](#absolute-positioning-and-sizing)。 有关使用相对值指定约束的详细信息，请参阅[相对定位和调整大小](#relative-positioning-and-sizing)。
+有关使用绝对值指定约束的详细信息，请参阅 [绝对定位和调整大小](#absolute-positioning-and-sizing)。 有关使用相对值指定约束的详细信息，请参阅 [相对定位和调整大小](#relative-positioning-and-sizing)。
 
 在 c # 中，可以 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) 通过三个重载将子级添加到 `Add` 。 第一个重载需要 `Expression<Func<Rectangle>>` 指定子级的位置和大小。 第二个重载需要 `Expression<Func<double>>` `x` 、 `y` 、 `width` 和参数的可选对象 `height` 。 第三个重载需要 `Constraint` `x` 、 `y` 、 `width` 和参数的可选对象 `height` 。
 
@@ -224,7 +225,7 @@ public class StylishHeaderDemoPageCS : ContentPage
 在此示例中， [`BoxView`](xref:Xamarin.Forms.BoxView) 通过设置 [`XConstraint`](xref:Xamarin.Forms.RelativeLayout.XConstraintProperty) 和附加属性来定义每个对象的位置 [`YConstraint`](xref:Xamarin.Forms.RelativeLayout.YConstraintProperty) 。 第一个 `BoxView` 属性的 `XConstraint` 和 `YConstraint` 附加属性设置为常量，它们是绝对值。 其余 `BoxView` 对象均使用至少一个相对值设置其位置。 例如，黄色 `BoxView` 对象将 `XConstraint` 附加属性设置为其父级 ([`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)) 减40的宽度。 同样，这会 `BoxView` 将 `YConstraint` 附加属性设置为其父级减40的高度。 这确保了黄色 `BoxView` 出现在屏幕的右下角。
 
 > [!NOTE]
-> [`BoxView`](xref:Xamarin.Forms.BoxView)未指定大小的对象将自动调整大小为 40x40 Xamarin.Forms 。
+> [`BoxView`](xref:Xamarin.Forms.BoxView) 未指定大小的对象将自动调整大小为 40x40 Xamarin.Forms 。
 
 名为的白银 [`BoxView`](xref:Xamarin.Forms.BoxView) `oneThird` 相对于其父级进行集中定位。 它也相对于其父级进行了调整，它的宽度和高度均为三分之一。 这是通过将 [`XConstraint`](xref:Xamarin.Forms.RelativeLayout.XConstraintProperty) 和 [`WidthConstraint`](xref:Xamarin.Forms.RelativeLayout.WidthConstraintProperty) 附加属性设置为) 的父 (的宽度 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) （乘以0.33）来实现的。 同样， [`YConstraint`](xref:Xamarin.Forms.RelativeLayout.YConstraintProperty) 和 [`HeightConstraint`](xref:Xamarin.Forms.RelativeLayout.HeightConstraintProperty) 附加属性设置为父级的高度，乘以0.33。
 
@@ -341,7 +342,7 @@ public class RelativePositioningAndSizingDemoPageCS : ContentPage
 ## <a name="related-links"></a>相关链接
 
 - [RelativeLayout 演示 (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-relativelayoutdemos)
-- [Xamarin.Forms附加属性](~/xamarin-forms/xaml/attached-properties.md)
+- [Xamarin.Forms 附加属性](~/xamarin-forms/xaml/attached-properties.md)
 - [XAML 标记扩展](~/xamarin-forms/xaml/markup-extensions/index.md)
 - [选择 Xamarin.Forms 布局](choose-layout.md)
 - [提高 Xamarin.Forms 应用程序性能](~/xamarin-forms/deploy-test/performance.md)
