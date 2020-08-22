@@ -142,7 +142,7 @@ Picasso.With (this)
 
 [![JarBinding 显示在“引用”下](binding-a-jar-images/10-references-shows-jarbinding-sml.png)](binding-a-jar-images/10-references-shows-jarbinding.png#lightbox)
 
-修改 BindingTest 布局 (Main.axml)，使其具有单个 `ImageView` ：
+修改 BindingTest 布局 (Main.xml)，使其具有单个 `ImageView` ：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
